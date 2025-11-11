@@ -4,7 +4,6 @@ import { RegionCard } from "@/components/RegionCard";
 import { HowItWorks } from "@/components/HowItWorks";
 import { GeometricLines } from "@/components/GeometricLines";
 import { MapPin } from "lucide-react";
-import taxiLogo from "@/assets/taxi-nearme-logo.png";
 import { getRegionsData } from "@/data/cities";
 import { Link } from "react-router-dom";
 
@@ -21,15 +20,6 @@ const Index = () => {
         
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-8">
-            {/* Taxi Logo - Transparent PNG */}
-            <div className="mb-8">
-              <img
-                src={taxiLogo}
-                alt="Taxi NearMe Logo"
-                className="h-32 md:h-40 lg:h-48 w-auto mx-auto drop-shadow-lg hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground drop-shadow-lg">
               Taxi v každom meste
             </h1>
