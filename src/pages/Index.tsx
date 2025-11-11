@@ -1,26 +1,13 @@
 import { Header } from "@/components/Header";
 import { SearchPanel } from "@/components/SearchPanel";
-import { CityCard } from "@/components/CityCard";
+import { SlovakCityCard } from "@/components/SlovakCityCard";
 import { HowItWorks } from "@/components/HowItWorks";
 import { GeometricLines } from "@/components/GeometricLines";
 import { MapPin } from "lucide-react";
 import logo from "@/assets/logo-3d.jpg";
+import { slovakCities } from "@/data/cities";
 
 const Index = () => {
-  const cities = [
-    { name: "New York", country: "USA" },
-    { name: "Londýn", country: "Veľká Británia" },
-    { name: "Paríž", country: "Francúzsko" },
-    { name: "Tokio", country: "Japonsko" },
-    { name: "Dubaj", country: "SAE" },
-    { name: "Sydney", country: "Austrália" },
-    { name: "Singapur", country: "Singapur" },
-    { name: "Berlín", country: "Nemecko" },
-    { name: "Toronto", country: "Kanada" },
-    { name: "Mumbai", country: "India" },
-    { name: "Barcelona", country: "Španielsko" },
-    { name: "Amsterdam", country: "Holandsko" },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -59,20 +46,25 @@ const Index = () => {
       {/* Cities Grid with 3D Cards */}
       <section id="cities" className="py-24 px-8 relative">
         <GeometricLines variant="subtle" count={6} />
-        
+
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-black mb-6 text-foreground drop-shadow-md">
-              Obľúbené mestá
+              Taxislužby na Slovensku
             </h2>
             <p className="text-xl text-foreground/90 font-bold">
-              Dostupní sme vo veľkých mestách po celom svete
+              Nájdite spoľahlivé taxi v týchto mestách
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {cities.map((city) => (
-              <CityCard key={city.name} name={city.name} country={city.country} />
+            {slovakCities.map((city) => (
+              <SlovakCityCard
+                key={city.slug}
+                name={city.name}
+                region={city.region}
+                slug={city.slug}
+              />
             ))}
           </div>
         </div>
