@@ -153,18 +153,26 @@ export const SearchPanel = () => {
               city.name.toLowerCase() === detectedCity.toLowerCase()
           );
 
-          if (cityInDatabase) {
-            // City found in database, navigate to it directly
+          // Check if city has taxi services
+          const hasTaxiServices = cityInDatabase && cityInDatabase.taxiServices && cityInDatabase.taxiServices.length > 0;
+
+          if (cityInDatabase && hasTaxiServices) {
+            // City found in database with taxi services, navigate to it directly
             toast.success(`Poloha nájdená: ${cityInDatabase.name}`);
             navigate(`/taxi/${cityInDatabase.slug}`);
           } else {
-            // City not in database, find nearest city from our list
-            toast.info("Hľadám najbližšie mesto z nášho zoznamu...");
+            // City not in database or has no taxi services, find nearest city from our list
+            if (cityInDatabase && !hasTaxiServices) {
+              toast.info(`${detectedCity} nemá zatiaľ taxislužby. Hľadám najbližšie mesto...`);
+            } else {
+              toast.info("Hľadám najbližšie mesto z nášho zoznamu...");
+            }
 
             const nearestCity = await findNearestCity(
               latitude,
               longitude,
-              detectedRegion
+              detectedRegion,
+              detectedCity  // Exclude the detected city from search
             );
 
             if (nearestCity) {
@@ -175,7 +183,7 @@ export const SearchPanel = () => {
               if (nearestCityData) {
                 toast.success(
                   detectedCity
-                    ? `Najbližšie mesto v našom zozname: ${nearestCity} (ste v: ${detectedCity})`
+                    ? `Najbližšie mesto: ${nearestCity} (ste v: ${detectedCity})`
                     : `Najbližšie mesto nájdené: ${nearestCity}`
                 );
                 navigate(`/taxi/${nearestCityData.slug}`);

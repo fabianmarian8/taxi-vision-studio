@@ -44,11 +44,16 @@ const regionMapping: Record<string, string> = {
 export const findNearestCity = async (
   userLatitude: number,
   userLongitude: number,
-  detectedRegion?: string
+  detectedRegion?: string,
+  excludeCityName?: string
 ): Promise<string | null> => {
-  // Filter cities that have GPS coordinates
+  // Filter cities that have GPS coordinates and exclude detected city if specified
   let citiesToCheck = slovakCities.filter(
-    (city) => city.latitude !== undefined && city.longitude !== undefined
+    (city) => {
+      const hasCoordinates = city.latitude !== undefined && city.longitude !== undefined;
+      const notExcluded = !excludeCityName || city.name.toLowerCase() !== excludeCityName.toLowerCase();
+      return hasCoordinates && notExcluded;
+    }
   );
 
   if (citiesToCheck.length === 0) {
