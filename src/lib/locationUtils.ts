@@ -1,16 +1,5 @@
 import { slovakCities } from "@/data/cities";
 
-interface Coordinates {
-  latitude: number;
-  longitude: number;
-}
-
-interface CityWithDistance {
-  name: string;
-  slug: string;
-  distance: number;
-}
-
 // Haversine formula to calculate distance between two GPS coordinates
 export const calculateDistance = (
   lat1: number,
@@ -39,50 +28,6 @@ const toRad = (degrees: number): number => {
   return (degrees * Math.PI) / 180;
 };
 
-// Cache for city coordinates to avoid repeated API calls
-const coordinatesCache: Record<string, Coordinates> = {};
-
-// Get coordinates for a city using Nominatim API
-export const getCityCoordinates = async (
-  cityName: string
-): Promise<Coordinates | null> => {
-  // Check cache first
-  if (coordinatesCache[cityName]) {
-    return coordinatesCache[cityName];
-  }
-
-  try {
-    const response = await fetch(
-      `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
-        cityName + ", Slovakia"
-      )}&limit=1&accept-language=sk`
-    );
-
-    if (!response.ok) {
-      return null;
-    }
-
-    const data = await response.json();
-
-    if (data && data.length > 0) {
-      const coords: Coordinates = {
-        latitude: parseFloat(data[0].lat),
-        longitude: parseFloat(data[0].lon),
-      };
-
-      // Cache the result
-      coordinatesCache[cityName] = coords;
-
-      return coords;
-    }
-
-    return null;
-  } catch (error) {
-    console.error(`Error fetching coordinates for ${cityName}:`, error);
-    return null;
-  }
-};
-
 // Map OSM region/state names to our Slovak region names
 const regionMapping: Record<string, string> = {
   "Bratislavský kraj": "Bratislavský kraj",
@@ -95,74 +40,52 @@ const regionMapping: Record<string, string> = {
   "Košický kraj": "Košický kraj",
 };
 
-// Find the nearest city from the database based on user's coordinates and detected region
+// Find the nearest city from the database based on user's coordinates
 export const findNearestCity = async (
   userLatitude: number,
   userLongitude: number,
   detectedRegion?: string
 ): Promise<string | null> => {
-  let citiesToCheck = slovakCities;
+  // Filter cities that have GPS coordinates
+  let citiesToCheck = slovakCities.filter(
+    (city) => city.latitude !== undefined && city.longitude !== undefined
+  );
+
+  if (citiesToCheck.length === 0) {
+    console.error("No cities with GPS coordinates found in database");
+    return null;
+  }
 
   // If we have a detected region, filter cities by that region first
   if (detectedRegion) {
     const mappedRegion = regionMapping[detectedRegion] || detectedRegion;
-    const citiesInRegion = slovakCities.filter(
+    const citiesInRegion = citiesToCheck.filter(
       (city) => city.region === mappedRegion
     );
 
+    // Only use region filtering if we found cities in that region
     if (citiesInRegion.length > 0) {
       citiesToCheck = citiesInRegion;
     }
   }
 
-  const citiesWithDistance: CityWithDistance[] = [];
-
-  // Process cities in smaller batches to respect API rate limits
-  const batchSize = 3;
-
-  for (let i = 0; i < citiesToCheck.length; i += batchSize) {
-    const batch = citiesToCheck.slice(i, i + batchSize);
-
-    const batchPromises = batch.map(async (city, index) => {
-      // Add delay between requests (200ms per request)
-      await new Promise((resolve) => setTimeout(resolve, index * 300));
-
-      const coords = await getCityCoordinates(city.name);
-
-      if (coords) {
-        const distance = calculateDistance(
-          userLatitude,
-          userLongitude,
-          coords.latitude,
-          coords.longitude
-        );
-
-        return {
-          name: city.name,
-          slug: city.slug,
-          distance,
-        };
-      }
-
-      return null;
-    });
-
-    const results = await Promise.all(batchPromises);
-    citiesWithDistance.push(
-      ...results.filter((r): r is CityWithDistance => r !== null)
+  // Calculate distances for all cities (this is now fast since we have coordinates in the database)
+  const citiesWithDistance = citiesToCheck.map((city) => {
+    const distance = calculateDistance(
+      userLatitude,
+      userLongitude,
+      city.latitude!,
+      city.longitude!
     );
 
-    // Add delay between batches
-    if (i + batchSize < citiesToCheck.length) {
-      await new Promise((resolve) => setTimeout(resolve, 500));
-    }
-  }
+    return {
+      name: city.name,
+      distance,
+    };
+  });
 
   // Sort by distance and return the nearest city
-  if (citiesWithDistance.length > 0) {
-    citiesWithDistance.sort((a, b) => a.distance - b.distance);
-    return citiesWithDistance[0].name;
-  }
+  citiesWithDistance.sort((a, b) => a.distance - b.distance);
 
-  return null;
+  return citiesWithDistance[0]?.name || null;
 };
