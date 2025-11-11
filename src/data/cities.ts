@@ -1,3 +1,5 @@
+import citiesDataJson from './cities.json';
+
 export interface TaxiService {
   name: string;
   website?: string;
@@ -14,116 +16,8 @@ export interface CityData {
   taxiServices: TaxiService[];
 }
 
-export const slovakCities: CityData[] = [
-  {
-    name: "Bratislava",
-    slug: "bratislava",
-    region: "Bratislavský kraj",
-    description: "Hlavné mesto Slovenska s najväčším počtom taxislužieb. Nájdite si spoľahlivé taxi v Bratislave kedykoľvek potrebujete.",
-    metaDescription: "Taxi Bratislava - Nájdite spoľahlivé taxislužby v Bratislave. Kompletný zoznam taxi služieb s kontaktmi a webovými stránkami.",
-    keywords: ["taxi bratislava", "taxislužba bratislava", "taxi v bratislave", "objednať taxi bratislava", "taxi bratislava ceny"],
-    taxiServices: [] // Neskôr doplníme
-  },
-  {
-    name: "Košice",
-    slug: "kosice",
-    region: "Košický kraj",
-    description: "Druhé najväčšie mesto Slovenska s kvalitnou ponukou taxislužieb. Vyberte si z overených taxíkov v Košiciach.",
-    metaDescription: "Taxi Košice - Spoľahlivé taxislužby v Košiciach. Zoznam overených taxi služieb s aktuálnymi kontaktmi a cenami.",
-    keywords: ["taxi košice", "taxislužba košice", "taxi v košiciach", "objednať taxi košice", "taxi košice ceny"],
-    taxiServices: []
-  },
-  {
-    name: "Prešov",
-    slug: "presov",
-    region: "Prešovský kraj",
-    description: "Centrum východného Slovenska s dostupnými taxislužbami pre obyvateľov aj návštevníkov. Nájdite taxi v Prešove.",
-    metaDescription: "Taxi Prešov - Zoznam taxislužieb v Prešove. Rýchle a spoľahlivé taxi služby s overenými kontaktmi.",
-    keywords: ["taxi prešov", "taxislužba prešov", "taxi v prešove", "objednať taxi prešov", "taxi prešov telefón"],
-    taxiServices: []
-  },
-  {
-    name: "Žilina",
-    slug: "zilina",
-    region: "Žilinský kraj",
-    description: "Významné mesto severného Slovenska s rozvinutou sieťou taxislužieb. Objednajte si taxi v Žiline jednoduchom.",
-    metaDescription: "Taxi Žilina - Kompletný prehľad taxislužieb v Žiline. Nájdite si overené taxi rýchlo a jednoducho.",
-    keywords: ["taxi žilina", "taxislužba žilina", "taxi v žiline", "objednať taxi žilina", "taxi žilina cenník"],
-    taxiServices: []
-  },
-  {
-    name: "Nitra",
-    slug: "nitra",
-    region: "Nitriansky kraj",
-    description: "Historické mesto s modernými taxislužbami. Vyberte si spoľahlivé taxi v Nitre pre pohodlnú dopravu.",
-    metaDescription: "Taxi Nitra - Spoľahlivé taxislužby v Nitre. Zoznam overených taxi služieb s kontaktmi a informáciami.",
-    keywords: ["taxi nitra", "taxislužba nitra", "taxi v nitre", "objednať taxi nitra", "taxi nitra telefón"],
-    taxiServices: []
-  },
-  {
-    name: "Banská Bystrica",
-    slug: "banska-bystrica",
-    region: "Banskobystrický kraj",
-    description: "Centrum stredného Slovenska s kvalitnou ponukou taxislužieb. Nájdite si taxi v Banskej Bystrici.",
-    metaDescription: "Taxi Banská Bystrica - Prehľad taxislužieb v Banskej Bystrici. Overené taxi služby s aktuálnymi kontaktmi.",
-    keywords: ["taxi banská bystrica", "taxislužba banská bystrica", "taxi v banskej bystrici", "objednať taxi banská bystrica", "taxi bb"],
-    taxiServices: []
-  },
-  {
-    name: "Trnava",
-    slug: "trnava",
-    region: "Trnavský kraj",
-    description: "Malý Rím Slovenska s dostupnými taxislužbami. Vyberte si spoľahlivé taxi v Trnave pre vašu cestu.",
-    metaDescription: "Taxi Trnava - Zoznam taxislužieb v Trnave. Spoľahlivé a overené taxi služby s kontaktmi.",
-    keywords: ["taxi trnava", "taxislužba trnava", "taxi v trnave", "objednať taxi trnava", "taxi trnava ceny"],
-    taxiServices: []
-  },
-  {
-    name: "Trenčín",
-    slug: "trencin",
-    region: "Trenčiansky kraj",
-    description: "Mesto pod Trenčianskym hradom s kvalitnou dopravnou infraštruktúrou. Nájdite taxi v Trenčíne.",
-    metaDescription: "Taxi Trenčín - Kompletný zoznam taxislužieb v Trenčíne. Rýchle objednanie taxi s overenými kontaktmi.",
-    keywords: ["taxi trenčín", "taxislužba trenčín", "taxi v trenčíne", "objednať taxi trenčín", "taxi trenčín telefón"],
-    taxiServices: []
-  },
-  {
-    name: "Martin",
-    slug: "martin",
-    region: "Žilinský kraj",
-    description: "Kultúrne centrum Slovenska s rozvinutou sieťou taxislužieb. Objednajte si taxi v Martine.",
-    metaDescription: "Taxi Martin - Prehľad taxislužieb v Martine. Spoľahlivé taxi služby s aktuálnymi kontaktmi a cenami.",
-    keywords: ["taxi martin", "taxislužba martin", "taxi v martine", "objednať taxi martin", "taxi martin cenník"],
-    taxiServices: []
-  },
-  {
-    name: "Poprad",
-    slug: "poprad",
-    region: "Prešovský kraj",
-    description: "Brána Vysokých Tatier s dostupnými taxislužbami pre turistov aj obyvateľov. Nájdite taxi v Poprade.",
-    metaDescription: "Taxi Poprad - Taxislužby v Poprade a okolí Vysokých Tatier. Overené taxi služby s kontaktmi.",
-    keywords: ["taxi poprad", "taxislužba poprad", "taxi v poprade", "objednať taxi poprad", "taxi poprad tatry"],
-    taxiServices: []
-  },
-  {
-    name: "Prievidza",
-    slug: "prievidza",
-    region: "Trenčiansky kraj",
-    description: "Centrum hornej Nitry s kvalitnou ponukou taxislužieb. Vyberte si spoľahlivé taxi v Prievidzi.",
-    metaDescription: "Taxi Prievidza - Zoznam taxislužieb v Prievidzi. Rýchle a spoľahlivé taxi služby s overenými kontaktmi.",
-    keywords: ["taxi prievidza", "taxislužba prievidza", "taxi v prievidzi", "objednať taxi prievidza", "taxi prievidza telefón"],
-    taxiServices: []
-  },
-  {
-    name: "Zvolen",
-    slug: "zvolen",
-    region: "Banskobystrický kraj",
-    description: "Historické mesto so spoľahlivými taxislužbami. Nájdite si overené taxi vo Zvolene pre pohodlnú dopravu.",
-    metaDescription: "Taxi Zvolen - Kompletný prehľad taxislužieb vo Zvolene. Spoľahlivé taxi služby s kontaktmi a informáciami.",
-    keywords: ["taxi zvolen", "taxislužba zvolen", "taxi vo zvolene", "objednať taxi zvolen", "taxi zvolen ceny"],
-    taxiServices: []
-  }
-];
+// Načítanie dát z JSON súboru
+export const slovakCities: CityData[] = citiesDataJson.cities as CityData[];
 
 export const getCityBySlug = (slug: string): CityData | undefined => {
   return slovakCities.find(city => city.slug === slug);
