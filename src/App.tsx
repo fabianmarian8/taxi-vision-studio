@@ -12,6 +12,7 @@ import TaxiScraperTool from "./components/TaxiScraperTool";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminEditCity from "./pages/AdminEditCity";
+import AdminSuggestions from "./pages/AdminSuggestions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/edit/:citySlug" element={<AdminEditCity />} />
+          <Route path="/admin/suggestions" element={<AdminSuggestions />} />
           {/* Region routes - SEO optimized pages for each region */}
           <Route path="/kraj/:regionSlug" element={<RegionPage />} />
           {/* City routes - SEO optimized pages for each city */}

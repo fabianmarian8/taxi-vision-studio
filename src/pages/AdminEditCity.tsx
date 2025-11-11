@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { ArrowLeft, Plus, Trash2, Save } from 'lucide-react';
+import { ArrowLeft, Plus, Trash2, Save, Search } from 'lucide-react';
 
 interface TaxiService {
   name: string;
@@ -26,6 +26,7 @@ export default function AdminEditCity() {
   const [taxiServices, setTaxiServices] = useState<TaxiService[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
+  const [isScrapingInProgress, setIsScrapingInProgress] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -126,6 +127,78 @@ export default function AdminEditCity() {
     }
   };
 
+  const handleFindNewServices = async () => {
+    if (!city) return;
+
+    setIsScrapingInProgress(true);
+
+    try {
+      // Spusti GBP scraper
+      const scraperResponse = await fetch('/api/gbp-scraper', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          city: city.name,
+          limit: 15,
+        }),
+      });
+
+      if (!scraperResponse.ok) {
+        throw new Error('Scraping failed');
+      }
+
+      const scraperData = await scraperResponse.json();
+
+      if (!scraperData.success || scraperData.count === 0) {
+        toast({
+          title: 'Informácia',
+          description: 'Nenašli sa žiadne nové taxislužby',
+        });
+        setIsScrapingInProgress(false);
+        return;
+      }
+
+      // Pridaj návrhy do systému
+      const token = localStorage.getItem('adminToken');
+      const suggestionsResponse = await fetch('/api/suggestions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          action: 'add',
+          citySlug,
+          suggestions: scraperData.results,
+        }),
+      });
+
+      if (!suggestionsResponse.ok) {
+        throw new Error('Failed to save suggestions');
+      }
+
+      const result = await suggestionsResponse.json();
+
+      toast({
+        title: 'Úspech',
+        description: `Našlo sa ${scraperData.count} výsledkov. Pridaných ${result.added} nových návrhov (${result.skipped} duplicít preskočených).`,
+      });
+
+      // Naviguj na stránku návrhov
+      navigate('/admin/suggestions');
+    } catch (error) {
+      toast({
+        title: 'Chyba',
+        description: 'Nepodarilo sa nájsť nové taxislužby',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsScrapingInProgress(false);
+    }
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -163,10 +236,20 @@ export default function AdminEditCity() {
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span>Taxislužby v meste {city.name}</span>
-              <Button onClick={handleAddService}>
-                <Plus className="w-4 h-4 mr-2" />
-                Pridať službu
-              </Button>
+              <div className="flex gap-2">
+                <Button
+                  onClick={handleFindNewServices}
+                  variant="outline"
+                  disabled={isScrapingInProgress}
+                >
+                  <Search className="w-4 h-4 mr-2" />
+                  {isScrapingInProgress ? 'Hľadám...' : 'Nájsť nové taxislužby'}
+                </Button>
+                <Button onClick={handleAddService}>
+                  <Plus className="w-4 h-4 mr-2" />
+                  Pridať službu
+                </Button>
+              </div>
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
