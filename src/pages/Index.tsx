@@ -16,13 +16,13 @@ const Index = () => {
       <Header />
       
       {/* Hero Section with 3D Effects */}
-      <section className="pt-20 pb-32 px-8 relative hero-3d-bg">
+      <section className="pt-8 pb-32 px-8 relative hero-3d-bg">
         <GeometricLines variant="hero" count={10} />
         
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center space-y-8">
+          <div className="text-center space-y-3">
             {/* Taxi Logo */}
-            <div className="mb-8">
+            <div className="mb-0">
               <img
                 src={taxiLogo}
                 alt="Taxi NearMe Logo"
