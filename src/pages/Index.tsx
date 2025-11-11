@@ -7,7 +7,6 @@ import { MapPin } from "lucide-react";
 import logo from "@/assets/logo-3d.jpg";
 import { getRegionsData } from "@/data/cities";
 import { Link } from "react-router-dom";
-import "@/components/LogoSection.css";
 
 const Index = () => {
   const regions = getRegionsData();
@@ -17,38 +16,30 @@ const Index = () => {
       <Header />
       
       {/* Hero Section with 3D Effects */}
-      <section className="relative hero-3d-bg" style={{margin: 0, padding: 0}}>
+      <section className="pt-20 pb-32 px-8 relative hero-3d-bg">
         <GeometricLines variant="hero" count={10} />
         
-        <div className="hero-content-wrapper">
-          {/* Large Hero Logo - Perfectly Integrated */}
-          <div className="logo-hero-section">
-            <div className="logo-hero-container">
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center space-y-8">
+            {/* Large Hero Logo - Integrated Design */}
+            <div className="mb-12">
               <img
                 src={logo}
                 alt="Taxi NearMe"
-                className="logo-hero-image"
-                style={{width: '100%', maxWidth: '800px', height: 'auto', display: 'block'}}
+                className="h-80 md:h-96 lg:h-[32rem] w-auto mx-auto transition-opacity duration-500 hover:opacity-95"
               />
             </div>
-          </div>
 
-          {/* Text Content Section */}
-          <div className="hero-text-section px-8 pb-32 relative z-10">
-            <div className="container mx-auto max-w-6xl">
-              <div className="text-center space-y-8">
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground drop-shadow-lg">
-                  Taxi v každom meste
-                </h1>
-                
-                <p className="text-xl md:text-2xl text-foreground/90 max-w-2xl mx-auto font-bold">
-                  Nájdite spoľahlivé taxislužby kdekoľvek ste. Rýchlo, jednoducho a vždy nablízku.
-                </p>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground drop-shadow-lg">
+              Taxi v každom meste
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-foreground/90 max-w-2xl mx-auto font-bold">
+              Nájdite spoľahlivé taxislužby kdekoľvek ste. Rýchlo, jednoducho a vždy nablízku.
+            </p>
 
-                <div className="pt-6">
-                  <SearchPanel />
-                </div>
-              </div>
+            <div className="pt-6">
+              <SearchPanel />
             </div>
           </div>
         </div>
