@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-11T13:09:56.606Z",
+  "lastUpdated": "2025-11-11T13:10:40.632Z",
   "cities": [
     {
       "name": "Bratislava",
@@ -194,6 +194,11 @@
           "name": "VIP Taxi Zvolen",
           "website": "www.viptaxizv.sk",
           "phone": "+421 917 388 888"
+        },
+        {
+          "name": "AIR TAXI ZVOLEN",
+          "website": "https://airtaxizvolen.sk/",
+          "phone": "+421 905 891 958"
         }
       ]
     }
