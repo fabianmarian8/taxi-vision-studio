@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import RegionPage from "./pages/RegionPage";
 import CityPage from "./pages/CityPage";
 import TaxiServicePage from "./pages/TaxiServicePage";
 import NotFound from "./pages/NotFound";
@@ -32,6 +33,8 @@ const App = () => (
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/edit/:citySlug" element={<AdminEditCity />} />
+          {/* Region routes - SEO optimized pages for each region */}
+          <Route path="/kraj/:regionSlug" element={<RegionPage />} />
           {/* City routes - SEO optimized pages for each city */}
           <Route path="/taxi/:citySlug" element={<CityPage />} />
           {/* Individual taxi service pages - SEO optimized for each service */}
