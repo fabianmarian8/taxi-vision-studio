@@ -3,6 +3,7 @@ import { SearchPanel } from "@/components/SearchPanel";
 import { CityCard } from "@/components/CityCard";
 import { HowItWorks } from "@/components/HowItWorks";
 import { MapPin } from "lucide-react";
+import logo from "@/assets/logo-large.jpg";
 
 const Index = () => {
   const cities = [
@@ -40,9 +41,13 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center space-y-8">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-card border-4 border-foreground mb-4 shadow-medium">
-              <MapPin className="h-10 w-10 text-foreground" strokeWidth={3} />
+          <div className="text-center space-y-10">
+            <div className="mb-10">
+              <img 
+                src={logo} 
+                alt="Taxi NearMe" 
+                className="h-48 md:h-56 lg:h-64 w-auto mx-auto border-4 border-foreground rounded-2xl shadow-lifted" 
+              />
             </div>
             
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground">
