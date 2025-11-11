@@ -25,18 +25,31 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-32 px-8">
-        <div className="container mx-auto max-w-6xl">
+      <section className="pt-24 pb-32 px-8 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          {[...Array(12)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute h-full border-l-4 border-foreground"
+              style={{
+                left: `${(i + 1) * 8}%`,
+                transform: `rotate(${-15 + i * 2}deg)`,
+              }}
+            />
+          ))}
+        </div>
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-8">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-4">
-              <MapPin className="h-10 w-10 text-primary" strokeWidth={2} />
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-card border-4 border-foreground mb-4 shadow-medium">
+              <MapPin className="h-10 w-10 text-foreground" strokeWidth={3} />
             </div>
             
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground">
               Taxi in Every City
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto font-medium">
+            <p className="text-xl md:text-2xl text-foreground max-w-2xl mx-auto font-bold">
               Find reliable taxi services wherever you are. Fast, simple, and always nearby.
             </p>
 
@@ -48,13 +61,13 @@ const Index = () => {
       </section>
 
       {/* Cities Grid */}
-      <section id="cities" className="py-24 px-8 bg-secondary/20">
+      <section id="cities" className="py-24 px-8 bg-secondary/40">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
               Popular Cities
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-foreground font-bold">
               We're available in major cities worldwide
             </p>
           </div>
@@ -74,20 +87,20 @@ const Index = () => {
       <section className="py-24 px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
               Available Everywhere
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-foreground font-bold">
               Expanding to new cities every month
             </p>
           </div>
 
-          <div className="relative bg-secondary/30 rounded-3xl p-16 shadow-soft min-h-[400px] flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
+          <div className="relative bg-card rounded-3xl p-16 border-4 border-foreground shadow-soft min-h-[400px] flex items-center justify-center overflow-hidden">
+            <div className="absolute inset-0 opacity-5">
               {[...Array(20)].map((_, i) => (
                 <div
                   key={i}
-                  className="absolute w-3 h-3 bg-primary rounded-full animate-pulse"
+                  className="absolute w-3 h-3 bg-foreground rounded-full animate-pulse"
                   style={{
                     left: `${Math.random() * 100}%`,
                     top: `${Math.random() * 100}%`,
@@ -98,9 +111,9 @@ const Index = () => {
             </div>
             
             <div className="relative z-10 text-center">
-              <MapPin className="h-24 w-24 text-primary mx-auto mb-6" strokeWidth={1.5} />
-              <h3 className="text-3xl font-bold mb-4">Coming Soon to Your City</h3>
-              <p className="text-muted-foreground text-lg">
+              <MapPin className="h-24 w-24 text-foreground mx-auto mb-6" strokeWidth={2.5} />
+              <h3 className="text-3xl font-bold mb-4 text-foreground">Coming Soon to Your City</h3>
+              <p className="text-foreground/70 text-lg font-medium">
                 Join thousands of users finding taxis with ease
               </p>
             </div>
@@ -109,21 +122,21 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12 px-8">
+      <footer className="border-t-4 border-foreground py-12 px-8 bg-secondary/40">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-muted-foreground">
+            <div className="text-sm text-foreground font-bold">
               © 2024 Taxi NearMe. All rights reserved.
             </div>
             
             <div className="flex gap-8">
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors">
                 Contact
               </a>
             </div>

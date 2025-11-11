@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 38 100% 55%;
     --foreground: 0 0% 6%;
 
     --card: 0 0% 100%;
@@ -17,34 +17,35 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 6%;
 
-    --primary: 45 97% 54%;
+    --primary: 38 100% 55%;
     --primary-foreground: 0 0% 6%;
 
-    --secondary: 0 0% 96%;
+    --secondary: 40 100% 65%;
     --secondary-foreground: 0 0% 6%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 42 100% 70%;
+    --muted-foreground: 0 0% 20%;
 
-    --accent: 45 97% 54%;
-    --accent-foreground: 0 0% 6%;
+    --accent: 0 0% 6%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 45 97% 54%;
+    --border: 0 0% 6%;
+    --input: 0 0% 6%;
+    --ring: 0 0% 6%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
     
-    --taxi-yellow: 45 97% 54%;
+    --taxi-yellow: 38 100% 55%;
     --taxi-dark: 0 0% 6%;
-    --taxi-light: 48 100% 67%;
+    --taxi-light: 40 100% 65%;
+    --taxi-orange: 36 100% 50%;
 
-    --shadow-soft: 0 20px 40px -20px rgba(0, 0, 0, 0.08);
-    --shadow-medium: 0 8px 24px -8px rgba(0, 0, 0, 0.12);
-    --shadow-lifted: 0 12px 32px -12px rgba(0, 0, 0, 0.16);
+    --shadow-soft: 4px 4px 0px rgba(0, 0, 0, 0.15);
+    --shadow-medium: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    --shadow-lifted: 8px 8px 0px rgba(0, 0, 0, 0.25);
 
     --sidebar-background: 0 0% 98%;
 
@@ -67,34 +68,35 @@ All colors MUST be HSL.
     --background: 0 0% 6%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 6%;
+    --card: 0 0% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 6%;
+    --popover: 0 0% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 45 97% 54%;
+    --primary: 38 100% 55%;
     --primary-foreground: 0 0% 6%;
 
-    --secondary: 0 0% 12%;
+    --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 12%;
+    --muted: 0 0% 15%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 45 97% 54%;
+    --accent: 38 100% 55%;
     --accent-foreground: 0 0% 6%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 45 97% 54%;
+    --border: 0 0% 98%;
+    --input: 0 0% 98%;
+    --ring: 38 100% 55%;
     
-    --taxi-yellow: 45 97% 54%;
+    --taxi-yellow: 38 100% 55%;
     --taxi-dark: 0 0% 6%;
-    --taxi-light: 48 100% 67%;
+    --taxi-light: 40 100% 65%;
+    --taxi-orange: 36 100% 50%;
   }
 }
 
