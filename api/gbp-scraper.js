@@ -55,9 +55,9 @@ export default async function handler(req, res) {
   const GOOGLE_API_KEY = process.env.GOOGLE_PLACES_API_KEY;
   if (!GOOGLE_API_KEY) {
     console.error('GOOGLE_PLACES_API_KEY is not set in environment variables');
-    return res.status(500).json({ 
+    return res.status(500).json({
       error: 'API key not configured',
-      message: 'Google Places API key is missing'
+      message: 'Google Places API kľúč nie je nakonfigurovaný. Prosím, skontrolujte nastavenia prostredia vo Vercel (GOOGLE_PLACES_API_KEY).'
     });
   }
 
@@ -78,9 +78,23 @@ export default async function handler(req, res) {
 
     if (searchResponse.data.status !== 'OK' && searchResponse.data.status !== 'ZERO_RESULTS') {
       console.error('Places API error:', searchResponse.data.status, searchResponse.data.error_message);
+
+      let errorMessage = 'Chyba Google Places API';
+      if (searchResponse.data.status === 'REQUEST_DENIED') {
+        errorMessage = 'API kľúč je neplatný alebo nemá povolené používať Places API. Skontrolujte nastavenia API kľúča v Google Cloud Console.';
+      } else if (searchResponse.data.status === 'OVER_QUERY_LIMIT') {
+        errorMessage = 'Prekročený limit požiadaviek na Google Places API. Skúste to neskôr.';
+      } else if (searchResponse.data.status === 'INVALID_REQUEST') {
+        errorMessage = 'Neplatná požiadavka na Google Places API. Skontrolujte parametre vyhľadávania.';
+      } else if (searchResponse.data.error_message) {
+        errorMessage = `Google Places API: ${searchResponse.data.error_message}`;
+      } else {
+        errorMessage = `Google Places API chyba: ${searchResponse.data.status}`;
+      }
+
       return res.status(500).json({
         error: 'Places API error',
-        message: searchResponse.data.error_message || searchResponse.data.status
+        message: errorMessage
       });
     }
 
