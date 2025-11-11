@@ -26,7 +26,7 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-32 px-8 relative overflow-hidden">
+      <section className="pt-12 pb-24 px-8 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           {[...Array(12)].map((_, i) => (
             <div
@@ -41,8 +41,8 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center space-y-10">
-            <div className="mb-10">
+          <div className="text-center space-y-6">
+            <div>
               <img 
                 src={logo} 
                 alt="Taxi NearMe" 
@@ -58,7 +58,7 @@ const Index = () => {
               Nájdite spoľahlivé taxislužby kdekoľvek ste. Rýchlo, jednoducho a vždy nablízku.
             </p>
 
-            <div className="pt-8">
+            <div className="pt-4">
               <SearchPanel />
             </div>
           </div>
