@@ -46,7 +46,7 @@ const Index = () => {
       </section>
 
       {/* Regions Grid with 3D Cards */}
-      <section id="regions" className="py-24 px-8 relative">
+      <section id="cities" className="py-24 px-8 relative">
         <GeometricLines variant="subtle" count={6} />
 
         <div className="container mx-auto max-w-7xl relative z-10">
