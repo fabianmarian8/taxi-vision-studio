@@ -118,26 +118,79 @@ export default async function handler(req, res) {
     const searchQuery = encodeURIComponent(`taxislužba ${city}`);
     const googleUrl = `https://www.google.com/search?q=${searchQuery}&num=${searchLimit * 2}`;
 
+    console.log(`Fetching Google URL: ${googleUrl}`);
+
     // Fetch Google search results
     const searchResponse = await axios.get(googleUrl, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'sk-SK,sk;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Referer': 'https://www.google.com/'
       },
       timeout: 10000
     });
 
+    console.log(`Google response status: ${searchResponse.status}`);
+    console.log(`Google response length: ${searchResponse.data.length} bytes`);
+
     const $ = cheerio.load(searchResponse.data);
     const urls = [];
 
-    // Extrakcia URLs z Google výsledkov
-    $('a[href^="http"]').each((i, elem) => {
+    // Lepšia extrakcia URLs - skúsime viacero selektorov
+    console.log('Parsing Google results...');
+    
+    // Metóda 1: Štandardné search result linky
+    $('a').each((i, elem) => {
       const href = $(elem).attr('href');
-      if (href && !href.includes('google.com') && !href.includes('youtube.com')) {
+      if (href) {
+        // Google používa /url?q= format
+        if (href.startsWith('/url?q=')) {
+          try {
+            const urlParams = new URLSearchParams(href.substring(6));
+            const actualUrl = urlParams.get('q');
+            if (actualUrl && !actualUrl.includes('google.com') && !actualUrl.includes('youtube.com')) {
+              const url = new URL(actualUrl);
+              const cleanUrl = `${url.protocol}//${url.hostname}`;
+              if (!urls.includes(cleanUrl) && urls.length < searchLimit * 2) {
+                urls.push(cleanUrl);
+                console.log(`Found URL (method 1): ${cleanUrl}`);
+              }
+            }
+          } catch (e) {
+            // Invalid URL, skip
+          }
+        }
+        // Priame HTTP linky
+        else if (href.startsWith('http') && !href.includes('google.com') && !href.includes('youtube.com')) {
+          try {
+            const url = new URL(href);
+            const cleanUrl = `${url.protocol}//${url.hostname}`;
+            if (!urls.includes(cleanUrl) && urls.length < searchLimit * 2) {
+              urls.push(cleanUrl);
+              console.log(`Found URL (method 2): ${cleanUrl}`);
+            }
+          } catch (e) {
+            // Invalid URL, skip
+          }
+        }
+      }
+    });
+
+    // Metóda 2: Cite tagy (často obsahujú domain)
+    $('cite').each((i, elem) => {
+      const text = $(elem).text().trim();
+      if (text && !text.includes('google.com')) {
         try {
-          const url = new URL(href);
-          const cleanUrl = `${url.protocol}//${url.hostname}${url.pathname === '/' ? '' : url.pathname}`;
+          // Odstráň › a podobné znaky
+          const cleanText = text.split('›')[0].trim();
+          const url = cleanText.startsWith('http') ? cleanText : `https://${cleanText}`;
+          const parsedUrl = new URL(url);
+          const cleanUrl = `${parsedUrl.protocol}//${parsedUrl.hostname}`;
           if (!urls.includes(cleanUrl) && urls.length < searchLimit * 2) {
             urls.push(cleanUrl);
+            console.log(`Found URL (method 3): ${cleanUrl}`);
           }
         } catch (e) {
           // Invalid URL, skip
@@ -146,6 +199,23 @@ export default async function handler(req, res) {
     });
 
     console.log(`Found ${urls.length} URLs from Google`);
+
+    // Ak nenájdeme žiadne URLs, vrátime debug info
+    if (urls.length === 0) {
+      console.error('No URLs found! Returning debug info...');
+      return res.status(200).json({
+        success: false,
+        city,
+        count: 0,
+        results: [],
+        debug: {
+          googleResponseLength: searchResponse.data.length,
+          googleResponsePreview: searchResponse.data.substring(0, 500),
+          linksFound: $('a').length,
+          citesFound: $('cite').length
+        }
+      });
+    }
 
     // Paralelné spracovanie URLs
     const results = [];
@@ -162,6 +232,8 @@ export default async function handler(req, res) {
           // Skip ak už máme tento URL
           if (seenUrls.has(url)) return null;
           seenUrls.add(url);
+
+          console.log(`Processing URL: ${url}`);
 
           // Overiť health
           const isHealthy = await checkUrlHealth(url);
@@ -183,6 +255,7 @@ export default async function handler(req, res) {
             return null;
           }
 
+          console.log(`Found valid result: ${data.name} - ${data.phone}`);
           seenPhones.add(data.phone);
           return data;
         })
@@ -212,7 +285,8 @@ export default async function handler(req, res) {
     console.error('Error in taxi-scraper:', error);
     return res.status(500).json({ 
       error: 'Internal server error', 
-      message: error.message 
+      message: error.message,
+      stack: error.stack
     });
   }
 }
