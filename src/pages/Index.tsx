@@ -1,14 +1,15 @@
 import { Header } from "@/components/Header";
 import { SearchPanel } from "@/components/SearchPanel";
-import { SlovakCityCard } from "@/components/SlovakCityCard";
+import { RegionCard } from "@/components/RegionCard";
 import { HowItWorks } from "@/components/HowItWorks";
 import { GeometricLines } from "@/components/GeometricLines";
 import { MapPin } from "lucide-react";
 import logo from "@/assets/logo-3d.jpg";
-import { slovakCities } from "@/data/cities";
+import { getRegionsData } from "@/data/cities";
 import { Link } from "react-router-dom";
 
 const Index = () => {
+  const regions = getRegionsData();
 
   return (
     <div className="min-h-screen bg-background">
@@ -44,8 +45,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Cities Grid with 3D Cards */}
-      <section id="cities" className="py-24 px-8 relative">
+      {/* Regions Grid with 3D Cards */}
+      <section id="regions" className="py-24 px-8 relative">
         <GeometricLines variant="subtle" count={6} />
 
         <div className="container mx-auto max-w-7xl relative z-10">
@@ -54,17 +55,17 @@ const Index = () => {
               Taxislužby na Slovensku
             </h2>
             <p className="text-xl text-foreground/90 font-bold">
-              Nájdite spoľahlivé taxi v týchto mestách
+              Vyberte si kraj a nájdite spoľahlivé taxi vo vašom meste
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {slovakCities.map((city) => (
-              <SlovakCityCard
-                key={city.slug}
-                name={city.name}
-                region={city.region}
-                slug={city.slug}
+            {regions.map((region) => (
+              <RegionCard
+                key={region.slug}
+                name={region.name}
+                slug={region.slug}
+                citiesCount={region.citiesCount}
               />
             ))}
           </div>
