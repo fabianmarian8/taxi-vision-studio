@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-11T13:09:09.238Z",
+  "lastUpdated": "2025-11-11T13:09:56.606Z",
   "cities": [
     {
       "name": "Bratislava",
@@ -189,6 +189,11 @@
           "name": "Europa Taxi Zvolen",
           "website": "www.eutaxi.sk",
           "phone": "+421 908 599 909"
+        },
+        {
+          "name": "VIP Taxi Zvolen",
+          "website": "www.viptaxizv.sk",
+          "phone": "+421 917 388 888"
         }
       ]
     }
