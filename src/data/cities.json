@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-11T13:10:40.632Z",
+  "lastUpdated": "2025-11-11T13:11:29.904Z",
   "cities": [
     {
       "name": "Bratislava",
@@ -199,6 +199,11 @@
           "name": "AIR TAXI ZVOLEN",
           "website": "https://airtaxizvolen.sk/",
           "phone": "+421 905 891 958"
+        },
+        {
+          "name": "Taxi Zvolen",
+          "website": "www.taxizvolen.eu",
+          "phone": "+421 905 921 070"
         }
       ]
     }
