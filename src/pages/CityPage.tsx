@@ -111,7 +111,7 @@ const CityPage = () => {
           </div>
 
           {city.taxiServices.length > 0 ? (
-            <div className="grid gap-3">
+            <div className="grid gap-2">
               {city.taxiServices.map((service, index) => {
                 // Generate slug for the taxi service
                 const serviceSlug = service.name
@@ -124,24 +124,24 @@ const CityPage = () => {
                 return (
                   <Card key={index} className="perspective-1000">
                     <Link to={`/taxi/${citySlug}/${serviceSlug}`}>
-                      <div className="card-3d shadow-3d-md hover:shadow-3d-lg transition-all cursor-pointer">
-                        <CardHeader className="pb-2">
-                          <CardTitle className="text-lg font-bold flex items-center gap-2">
-                            <MapPin className="h-4 w-4 text-foreground flex-shrink-0" />
+                      <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all cursor-pointer">
+                        <CardHeader className="pb-1 pt-3 px-4">
+                          <CardTitle className="text-base font-bold flex items-center gap-2">
+                            <MapPin className="h-3.5 w-3.5 text-foreground flex-shrink-0" />
                             {service.name}
                           </CardTitle>
                         </CardHeader>
-                        <CardContent className="pt-0">
-                          <div className="flex flex-col gap-1.5 text-sm">
+                        <CardContent className="pt-0 pb-3 px-4">
+                          <div className="flex flex-col gap-1 text-xs">
                             {service.phone && (
-                              <div className="flex items-center gap-2 text-foreground font-medium">
-                                <Phone className="h-3.5 w-3.5 flex-shrink-0" />
+                              <div className="flex items-center gap-1.5 text-foreground font-medium">
+                                <Phone className="h-3 w-3 flex-shrink-0" />
                                 {service.phone}
                               </div>
                             )}
                             {service.website && (
-                              <div className="flex items-center gap-2 text-foreground font-medium truncate">
-                                <Globe className="h-3.5 w-3.5 flex-shrink-0" />
+                              <div className="flex items-center gap-1.5 text-foreground font-medium truncate">
+                                <Globe className="h-3 w-3 flex-shrink-0" />
                                 <span className="truncate">{service.website}</span>
                               </div>
                             )}
