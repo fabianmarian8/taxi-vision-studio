@@ -4,7 +4,6 @@ import { Header } from "@/components/Header";
 import { HowItWorks } from "@/components/HowItWorks";
 import { GeometricLines } from "@/components/GeometricLines";
 import { MapPin, Phone, Globe } from "lucide-react";
-import logo from "@/assets/logo-3d.jpg";
 import { getCityBySlug, type CityData } from "@/data/cities";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -94,39 +93,8 @@ const CityPage = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero Section with 3D Effects */}
-      <section className="pt-20 pb-32 px-8 relative hero-3d-bg">
-        <GeometricLines variant="hero" count={10} />
-
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center space-y-8">
-            {/* 3D Floating Logo without border */}
-            <div className="perspective-1500 mb-8">
-              <img
-                src={logo}
-                alt="Taxi NearMe"
-                className="h-56 md:h-64 lg:h-72 w-auto mx-auto rounded-3xl shadow-3d-xl float-3d hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground drop-shadow-lg">
-              TAXI - {city.name}
-            </h1>
-
-            <p className="text-xl md:text-2xl text-foreground/90 max-w-2xl mx-auto font-bold">
-              {city.description}
-            </p>
-
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-card rounded-full shadow-3d-md">
-              <MapPin className="h-5 w-5 text-foreground" />
-              <span className="text-foreground font-bold">{city.region}</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Taxi Services Section */}
-      <section className="py-24 px-8 relative">
+      <section className="pt-24 py-24 px-8 relative">
         <GeometricLines variant="subtle" count={6} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
