@@ -14,6 +14,8 @@ export interface CityData {
   metaDescription: string;
   keywords: string[];
   taxiServices: TaxiService[];
+  latitude?: number;
+  longitude?: number;
 }
 
 // Načítanie dát z JSON súboru

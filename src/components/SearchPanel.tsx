@@ -128,7 +128,7 @@ export const SearchPanel = () => {
           size="icon"
           onClick={handleLocationClick}
           disabled={isLoadingLocation}
-          className="rounded-full h-12 w-12 shadow-3d-sm hover:shadow-3d-md transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="rounded-full h-12 w-12 shadow-3d-sm hover:shadow-3d-md transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isLoadingLocation ? (
             <Loader2 className="h-5 w-5 animate-spin" />
