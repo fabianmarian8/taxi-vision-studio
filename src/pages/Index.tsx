@@ -19,12 +19,12 @@ const Index = () => {
         
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center space-y-8">
-            {/* 3D Floating Logo without border */}
+            {/* 3D Logo - Static */}
             <div className="perspective-1500 mb-8">
-              <img 
-                src={logo} 
-                alt="Taxi NearMe" 
-                className="h-56 md:h-64 lg:h-72 w-auto mx-auto rounded-3xl shadow-3d-xl float-3d hover:scale-105 transition-transform duration-300" 
+              <img
+                src={logo}
+                alt="Taxi NearMe"
+                className="h-56 md:h-64 lg:h-72 w-auto mx-auto rounded-3xl shadow-3d-xl hover:scale-105 transition-transform duration-300"
               />
             </div>
             
