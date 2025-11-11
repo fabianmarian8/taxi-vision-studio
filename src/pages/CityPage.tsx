@@ -1,0 +1,268 @@
+import { useParams, Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { Header } from "@/components/Header";
+import { HowItWorks } from "@/components/HowItWorks";
+import { GeometricLines } from "@/components/GeometricLines";
+import { MapPin, Phone, Globe } from "lucide-react";
+import logo from "@/assets/logo-3d.jpg";
+import { getCityBySlug, type CityData } from "@/data/cities";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const CityPage = () => {
+  const { citySlug } = useParams<{ citySlug: string }>();
+  const city = citySlug ? getCityBySlug(citySlug) : undefined;
+
+  useEffect(() => {
+    if (city) {
+      // Dynamické nastavenie meta tagov pre SEO
+      document.title = `TAXI - ${city.name} | Taxi NearMe`;
+
+      // Meta description
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.setAttribute('name', 'description');
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.setAttribute('content', city.metaDescription);
+
+      // Meta keywords
+      let metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (!metaKeywords) {
+        metaKeywords = document.createElement('meta');
+        metaKeywords.setAttribute('name', 'keywords');
+        document.head.appendChild(metaKeywords);
+      }
+      metaKeywords.setAttribute('content', city.keywords.join(', '));
+
+      // Open Graph tags
+      let ogTitle = document.querySelector('meta[property="og:title"]');
+      if (!ogTitle) {
+        ogTitle = document.createElement('meta');
+        ogTitle.setAttribute('property', 'og:title');
+        document.head.appendChild(ogTitle);
+      }
+      ogTitle.setAttribute('content', `TAXI - ${city.name}`);
+
+      let ogDescription = document.querySelector('meta[property="og:description"]');
+      if (!ogDescription) {
+        ogDescription = document.createElement('meta');
+        ogDescription.setAttribute('property', 'og:description');
+        document.head.appendChild(ogDescription);
+      }
+      ogDescription.setAttribute('content', city.metaDescription);
+
+      // Structured data (JSON-LD) pre lepšie SEO
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": `Taxi služby ${city.name}`,
+        "description": city.description,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": city.name,
+          "addressRegion": city.region,
+          "addressCountry": "SK"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": city.name
+        },
+        "serviceType": "Taxi služby"
+      };
+
+      let script = document.querySelector('script[type="application/ld+json"]');
+      if (!script) {
+        script = document.createElement('script');
+        script.setAttribute('type', 'application/ld+json');
+        document.head.appendChild(script);
+      }
+      script.textContent = JSON.stringify(structuredData);
+    }
+
+    // Cleanup funkcia pre návrat na pôvodnú stránku
+    return () => {
+      document.title = "Taxi NearMe - Find Taxis in Every City";
+    };
+  }, [city]);
+
+  if (!city) {
+    return <Navigate to="/404" replace />;
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+
+      {/* Hero Section with 3D Effects */}
+      <section className="pt-20 pb-32 px-8 relative hero-3d-bg">
+        <GeometricLines variant="hero" count={10} />
+
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center space-y-8">
+            {/* 3D Floating Logo without border */}
+            <div className="perspective-1500 mb-8">
+              <img
+                src={logo}
+                alt="Taxi NearMe"
+                className="h-56 md:h-64 lg:h-72 w-auto mx-auto rounded-3xl shadow-3d-xl float-3d hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground drop-shadow-lg">
+              TAXI - {city.name}
+            </h1>
+
+            <p className="text-xl md:text-2xl text-foreground/90 max-w-2xl mx-auto font-bold">
+              {city.description}
+            </p>
+
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-card rounded-full shadow-3d-md">
+              <MapPin className="h-5 w-5 text-foreground" />
+              <span className="text-foreground font-bold">{city.region}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Taxi Services Section */}
+      <section className="py-24 px-8 relative">
+        <GeometricLines variant="subtle" count={6} />
+
+        <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-black mb-6 text-foreground drop-shadow-md">
+              Taxislužby v meste {city.name}
+            </h2>
+            <p className="text-xl text-foreground/90 font-bold">
+              Kompletný zoznam overených taxislužieb
+            </p>
+          </div>
+
+          {city.taxiServices.length > 0 ? (
+            <div className="grid gap-6">
+              {city.taxiServices.map((service, index) => (
+                <Card key={index} className="perspective-1000">
+                  <div className="card-3d shadow-3d-lg hover:shadow-3d-xl transition-all">
+                    <CardHeader>
+                      <CardTitle className="text-2xl font-black flex items-center gap-3">
+                        <MapPin className="h-6 w-6 text-foreground" />
+                        {service.name}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-col gap-3">
+                        {service.phone && (
+                          <a
+                            href={`tel:${service.phone}`}
+                            className="flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold"
+                          >
+                            <Phone className="h-4 w-4" />
+                            {service.phone}
+                          </a>
+                        )}
+                        {service.website && (
+                          <a
+                            href={service.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold"
+                          >
+                            <Globe className="h-4 w-4" />
+                            Webová stránka
+                          </a>
+                        )}
+                      </div>
+                    </CardContent>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <Card className="perspective-1000">
+              <div className="card-3d shadow-3d-lg">
+                <CardContent className="py-12">
+                  <div className="text-center space-y-4">
+                    <MapPin className="h-16 w-16 text-foreground/50 mx-auto" />
+                    <h3 className="text-2xl font-black text-foreground">
+                      Zoznam taxislužieb sa pripravuje
+                    </h3>
+                    <p className="text-foreground/70 font-bold">
+                      Čoskoro tu nájdete kompletný prehľad všetkých taxislužieb v meste {city.name}
+                    </p>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+          )}
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <HowItWorks />
+
+      {/* SEO Content Section */}
+      <section className="py-24 px-8 relative bg-card/30">
+        <GeometricLines variant="section" count={8} />
+
+        <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="prose prose-lg mx-auto">
+            <div className="bg-card rounded-3xl p-8 shadow-3d-lg">
+              <h2 className="text-4xl font-black mb-6 text-foreground">
+                Prečo si vybrať taxi v meste {city.name}?
+              </h2>
+              <div className="space-y-4 text-foreground/90 font-medium">
+                <p>
+                  Mesto <strong>{city.name}</strong> ({city.region}) ponúka široký výber kvalitných
+                  taxislužieb pre obyvateľov aj návštevníkov. Či už potrebujete odvoz na letisko,
+                  prepravu po meste, alebo dlhšiu cestu, nájdete tu overené a spoľahlivé taxi služby.
+                </p>
+                <p>
+                  Naša platforma vám pomáha jednoducho nájsť a porovnať taxislužby v meste {city.name}.
+                  Všetky uvedené služby sú overené a poskytujú kvalitné služby za férové ceny.
+                </p>
+                <p>
+                  <strong>Výhody objednania taxi v meste {city.name}:</strong>
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Rýchla dostupnosť taxíkov v celom meste</li>
+                  <li>Profesionálni vodiči s miestnou znalosťou</li>
+                  <li>Transparentné ceny bez skrytých poplatkov</li>
+                  <li>Možnosť online objednávky</li>
+                  <li>Moderné a čisté vozidlá</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer with 3D Border */}
+      <footer className="border-t-4 border-foreground py-12 px-8 relative">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-foreground/20 to-transparent"></div>
+
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-sm text-foreground font-bold">
+              © 2024 Taxi NearMe. Všetky práva vyhradené.
+            </div>
+
+            <div className="flex gap-8">
+              <a href="/#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
+                Ochrana súkromia
+              </a>
+              <a href="/#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
+                Podmienky používania
+              </a>
+              <a href="/#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
+                Kontakt
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default CityPage;
