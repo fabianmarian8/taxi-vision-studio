@@ -131,13 +131,13 @@ const CityPage = () => {
                         )}
                         {service.website && (
                           <a
-                            href={service.website}
+                            href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold"
                           >
                             <Globe className="h-4 w-4" />
-                            Webová stránka
+                            {service.website}
                           </a>
                         )}
                       </div>

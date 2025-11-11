@@ -216,9 +216,12 @@ export default function AdminEditCity() {
                         id={`website-${index}`}
                         value={service.website || ''}
                         onChange={(e) => handleServiceChange(index, 'website', e.target.value)}
-                        placeholder="https://example.com"
+                        placeholder="www.example.com alebo https://example.com"
                         type="url"
                       />
+                      <p className="text-xs text-gray-500">
+                        Môžete zadať s protokolom (https://) alebo bez neho (www.example.com)
+                      </p>
                     </div>
                   </div>
                 </div>
