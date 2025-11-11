@@ -1,79 +1,13 @@
 {
-  "lastUpdated": "2025-11-11T13:20:59.156Z",
+  "lastUpdated": "2025-11-11T14:30:00.000Z",
   "cities": [
     {
-      "name": "Bratislava",
-      "slug": "bratislava",
-      "region": "Bratislavský kraj",
-      "description": "Hlavné mesto Slovenska s najväčším počtom taxislužieb. Nájdite si spoľahlivé taxi v Bratislave kedykoľvek potrebujete.",
-      "metaDescription": "Taxi Bratislava - Nájdite spoľahlivé taxislužby v Bratislave. Kompletný zoznam taxi služieb s kontaktmi a webovými stránkami.",
-      "keywords": [
-        "taxi bratislava",
-        "taxislužba bratislava",
-        "taxi v bratislave",
-        "objednať taxi bratislava",
-        "taxi bratislava ceny"
-      ],
-      "taxiServices": []
-    },
-    {
-      "name": "Košice",
-      "slug": "kosice",
-      "region": "Košický kraj",
-      "description": "Druhé najväčšie mesto Slovenska s kvalitnou ponukou taxislužieb. Vyberte si z overených taxíkov v Košiciach.",
-      "metaDescription": "Taxi Košice - Spoľahlivé taxislužby v Košiciach. Zoznam overených taxi služieb s aktuálnymi kontaktmi a cenami.",
-      "keywords": [
-        "taxi košice",
-        "taxislužba košice",
-        "taxi v košiciach",
-        "objednať taxi košice",
-        "taxi košice ceny"
-      ],
-      "taxiServices": []
-    },
-    {
-      "name": "Prešov",
-      "slug": "presov",
-      "region": "Prešovský kraj",
-      "description": "Centrum východného Slovenska s dostupnými taxislužbami pre obyvateľov aj návštevníkov. Nájdite taxi v Prešove.",
-      "metaDescription": "Taxi Prešov - Zoznam taxislužieb v Prešove. Rýchle a spoľahlivé taxi služby s overenými kontaktmi.",
-      "keywords": [
-        "taxi prešov",
-        "taxislužba prešov",
-        "taxi v prešove",
-        "objednať taxi prešov",
-        "taxi prešov telefón"
-      ],
-      "taxiServices": []
-    },
-    {
-      "name": "Žilina",
-      "slug": "zilina",
-      "region": "Žilinský kraj",
-      "description": "Významné mesto severného Slovenska s rozvinutou sieťou taxislužieb. Objednajte si taxi v Žiline jednoduchom.",
-      "metaDescription": "Taxi Žilina - Kompletný prehľad taxislužieb v Žiline. Nájdite si overené taxi rýchlo a jednoducho.",
-      "keywords": [
-        "taxi žilina",
-        "taxislužba žilina",
-        "taxi v žiline",
-        "objednať taxi žilina",
-        "taxi žilina cenník"
-      ],
-      "taxiServices": []
-    },
-    {
-      "name": "Nitra",
-      "slug": "nitra",
-      "region": "Nitriansky kraj",
-      "description": "Historické mesto s modernými taxislužbami. Vyberte si spoľahlivé taxi v Nitre pre pohodlnú dopravu.",
-      "metaDescription": "Taxi Nitra - Spoľahlivé taxislužby v Nitre. Zoznam overených taxi služieb s kontaktmi a informáciami.",
-      "keywords": [
-        "taxi nitra",
-        "taxislužba nitra",
-        "taxi v nitre",
-        "objednať taxi nitra",
-        "taxi nitra telefón"
-      ],
+      "name": "Bánovce nad Bebravou",
+      "slug": "banovce-nad-bebravou",
+      "region": "Trenčiansky kraj",
+      "description": "Okresné mesto v Trenčianskom kraji s dostupnými taxislužbami pre obyvateľov aj návštevníkov. Nájdite si taxi v Bánovciach nad Bebravou.",
+      "metaDescription": "Taxi Bánovce nad Bebravou - Zoznam taxislužieb v Bánovciach nad Bebravou. Spoľahlivé taxi služby s overenými kontaktmi.",
+      "keywords": ["taxi bánovce nad bebravou", "taxislužba bánovce", "taxi v bánovciach", "objednať taxi bánovce", "taxi bánovce telefón"],
       "taxiServices": []
     },
     {
@@ -82,43 +16,367 @@
       "region": "Banskobystrický kraj",
       "description": "Centrum stredného Slovenska s kvalitnou ponukou taxislužieb. Nájdite si taxi v Banskej Bystrici.",
       "metaDescription": "Taxi Banská Bystrica - Prehľad taxislužieb v Banskej Bystrici. Overené taxi služby s aktuálnymi kontaktmi.",
-      "keywords": [
-        "taxi banská bystrica",
-        "taxislužba banská bystrica",
-        "taxi v banskej bystrici",
-        "objednať taxi banská bystrica",
-        "taxi bb"
-      ],
+      "keywords": ["taxi banská bystrica", "taxislužba banská bystrica", "taxi v banskej bystrici", "objednať taxi banská bystrica", "taxi bb"],
       "taxiServices": []
     },
     {
-      "name": "Trnava",
-      "slug": "trnava",
-      "region": "Trnavský kraj",
-      "description": "Malý Rím Slovenska s dostupnými taxislužbami. Vyberte si spoľahlivé taxi v Trnave pre vašu cestu.",
-      "metaDescription": "Taxi Trnava - Zoznam taxislužieb v Trnave. Spoľahlivé a overené taxi služby s kontaktmi.",
-      "keywords": [
-        "taxi trnava",
-        "taxislužba trnava",
-        "taxi v trnave",
-        "objednať taxi trnava",
-        "taxi trnava ceny"
-      ],
+      "name": "Banská Štiavnica",
+      "slug": "banska-stiavnica",
+      "region": "Banskobystrický kraj",
+      "description": "Historické banské mesto zapísané do UNESCO s dostupnými taxislužbami. Nájdite taxi v Banskej Štiavnici.",
+      "metaDescription": "Taxi Banská Štiavnica - Taxislužby v historickej Banskej Štiavnici. Spoľahlivé taxi služby pre obyvateľov a turistov.",
+      "keywords": ["taxi banská štiavnica", "taxislužba banská štiavnica", "taxi v banskej štiavnici", "objednať taxi štiavnica", "taxi štiavnica"],
       "taxiServices": []
     },
     {
-      "name": "Trenčín",
-      "slug": "trencin",
+      "name": "Bardejov",
+      "slug": "bardejov",
+      "region": "Prešovský kraj",
+      "description": "Historické kúpeľné mesto s kvalitnou dopravnou infraštruktúrou. Vyberte si overené taxi v Bardejove.",
+      "metaDescription": "Taxi Bardejov - Kompletný zoznam taxislužieb v Bardejove. Rýchle a spoľahlivé taxi služby s kontaktmi.",
+      "keywords": ["taxi bardejov", "taxislužba bardejov", "taxi v bardejove", "objednať taxi bardejov", "taxi bardejov ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Bojnice",
+      "slug": "bojnice",
       "region": "Trenčiansky kraj",
-      "description": "Mesto pod Trenčianskym hradom s kvalitnou dopravnou infraštruktúrou. Nájdite taxi v Trenčíne.",
-      "metaDescription": "Taxi Trenčín - Kompletný zoznam taxislužieb v Trenčíne. Rýchle objednanie taxi s overenými kontaktmi.",
-      "keywords": [
-        "taxi trenčín",
-        "taxislužba trenčín",
-        "taxi v trenčíne",
-        "objednať taxi trenčín",
-        "taxi trenčín telefón"
-      ],
+      "description": "Kúpeľné mesto s rozprávkovým zámkom. Nájdite spoľahlivé taxi v Bojniciach pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Bojnice - Taxislužby v Bojniciach. Overené taxi služby pre turistov a obyvateľov.",
+      "keywords": ["taxi bojnice", "taxislužba bojnice", "taxi v bojniciach", "objednať taxi bojnice", "taxi bojnice zámok"],
+      "taxiServices": []
+    },
+    {
+      "name": "Bratislava",
+      "slug": "bratislava",
+      "region": "Bratislavský kraj",
+      "description": "Hlavné mesto Slovenska s najväčším počtom taxislužieb. Nájdite si spoľahlivé taxi v Bratislave kedykoľvek potrebujete.",
+      "metaDescription": "Taxi Bratislava - Nájdite spoľahlivé taxislužby v Bratislave. Kompletný zoznam taxi služieb s kontaktmi a webovými stránkami.",
+      "keywords": ["taxi bratislava", "taxislužba bratislava", "taxi v bratislave", "objednať taxi bratislava", "taxi bratislava ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Brezno",
+      "slug": "brezno",
+      "region": "Banskobystrický kraj",
+      "description": "Centrum Horehronia s dostupnými taxislužbami. Objednajte si taxi v Brezne pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Brezno - Zoznam taxislužieb v Brezne. Spoľahlivé taxi služby s overenými kontaktmi.",
+      "keywords": ["taxi brezno", "taxislužba brezno", "taxi v brezne", "objednať taxi brezno", "taxi brezno telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Brezová pod Bradlom",
+      "slug": "brezova-pod-bradlom",
+      "region": "Trnavský kraj",
+      "description": "Mesto pri pamätníku M. R. Štefánika s dostupnými taxislužbami. Nájdite taxi v Brezovej pod Bradlom.",
+      "metaDescription": "Taxi Brezová pod Bradlom - Taxislužby v Brezovej pod Bradlom. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi brezová pod bradlom", "taxislužba brezová", "taxi v brezovej", "objednať taxi brezová", "taxi bradlo"],
+      "taxiServices": []
+    },
+    {
+      "name": "Bytča",
+      "slug": "bytca",
+      "region": "Žilinský kraj",
+      "description": "Okresné mesto v Žilinskom kraji s dostupnými taxislužbami. Vyberte si spoľahlivé taxi v Bytči.",
+      "metaDescription": "Taxi Bytča - Kompletný zoznam taxislužieb v Bytči. Rýchle a overené taxi služby.",
+      "keywords": ["taxi bytča", "taxislužba bytča", "taxi v bytči", "objednať taxi bytča", "taxi bytča telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Čadca",
+      "slug": "cadca",
+      "region": "Žilinský kraj",
+      "description": "Centrum Kysúc s kvalitnou ponukou taxislužieb. Nájdite si overené taxi v Čadci.",
+      "metaDescription": "Taxi Čadca - Prehľad taxislužieb v Čadci. Spoľahlivé taxi služby pre Kysuce.",
+      "keywords": ["taxi čadca", "taxislužba čadca", "taxi v čadci", "objednať taxi čadca", "taxi čadca ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Detva",
+      "slug": "detva",
+      "region": "Banskobystrický kraj",
+      "description": "Centrum Podpoľania s dostupnými taxislužbami. Objednajte si taxi v Detve.",
+      "metaDescription": "Taxi Detva - Taxislužby v Detve. Overené taxi služby s aktuálnymi kontaktmi.",
+      "keywords": ["taxi detva", "taxislužba detva", "taxi v detve", "objednať taxi detva", "taxi detva telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Dobšiná",
+      "slug": "dobsina",
+      "region": "Košický kraj",
+      "description": "Banské mesto s ľadovou jaskyňou. Nájdite spoľahlivé taxi v Dobšinej.",
+      "metaDescription": "Taxi Dobšiná - Zoznam taxislužieb v Dobšinej. Taxi služby pre turistov a obyvateľov.",
+      "keywords": ["taxi dobšiná", "taxislužba dobšiná", "taxi v dobšinej", "objednať taxi dobšiná", "taxi dobšiná jaskyňa"],
+      "taxiServices": []
+    },
+    {
+      "name": "Dolný Kubín",
+      "slug": "dolny-kubin",
+      "region": "Žilinský kraj",
+      "description": "Okresné mesto v Orave s rozvinutou sieťou taxislužieb. Vyberte si taxi v Dolnom Kubíne.",
+      "metaDescription": "Taxi Dolný Kubín - Kompletný prehľad taxislužieb v Dolnom Kubíne. Spoľahlivé taxi služby.",
+      "keywords": ["taxi dolný kubín", "taxislužba dolný kubín", "taxi v dolnom kubíne", "objednať taxi dolný kubín", "taxi orava"],
+      "taxiServices": []
+    },
+    {
+      "name": "Dubnica nad Váhom",
+      "slug": "dubnica-nad-vahom",
+      "region": "Trenčiansky kraj",
+      "description": "Priemyselné mesto s kvalitnou dopravnou infraštruktúrou. Nájdite taxi v Dubnici nad Váhom.",
+      "metaDescription": "Taxi Dubnica nad Váhom - Taxislužby v Dubnici nad Váhom. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi dubnica nad váhom", "taxislužba dubnica", "taxi v dubnici", "objednať taxi dubnica", "taxi dubnica ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Dudince",
+      "slug": "dudince",
+      "region": "Banskobystrický kraj",
+      "description": "Kúpeľné mesto s dostupnými taxislužbami. Objednajte si taxi v Dudinciach.",
+      "metaDescription": "Taxi Dudince - Zoznam taxislužieb v Dudinciach. Taxi služby pre kúpeľných hostí a obyvateľov.",
+      "keywords": ["taxi dudince", "taxislužba dudince", "taxi v dudinciach", "objednať taxi dudince", "taxi dudince kúpele"],
+      "taxiServices": []
+    },
+    {
+      "name": "Gabčíkovo",
+      "slug": "gabcikovo",
+      "region": "Trnavský kraj",
+      "description": "Mesto pri Dunaji s vodným diele. Nájdite spoľahlivé taxi v Gabčíkove.",
+      "metaDescription": "Taxi Gabčíkovo - Taxislužby v Gabčíkove. Overené taxi služby s aktuálnymi kontaktmi.",
+      "keywords": ["taxi gabčíkovo", "taxislužba gabčíkovo", "taxi v gabčíkove", "objednať taxi gabčíkovo", "taxi gabčíkovo telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Galanta",
+      "slug": "galanta",
+      "region": "Trnavský kraj",
+      "description": "Okresné mesto v Trnavskom kraji s rozvinutými taxislužbami. Vyberte si taxi v Galante.",
+      "metaDescription": "Taxi Galanta - Kompletný zoznam taxislužieb v Galante. Rýchle a spoľahlivé taxi služby.",
+      "keywords": ["taxi galanta", "taxislužba galanta", "taxi v galante", "objednať taxi galanta", "taxi galanta ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Gelnica",
+      "slug": "gelnica",
+      "region": "Košický kraj",
+      "description": "Historické banské mesto v Spiši. Nájdite overené taxi v Gelnici.",
+      "metaDescription": "Taxi Gelnica - Taxislužby v Gelnici. Spoľahlivé taxi služby s kontaktmi.",
+      "keywords": ["taxi gelnica", "taxislužba gelnica", "taxi v gelnici", "objednať taxi gelnica", "taxi gelnica telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Giraltovce",
+      "slug": "giraltovce",
+      "region": "Prešovský kraj",
+      "description": "Okresné mesto v Prešovskom kraji. Objednajte si taxi v Giraltovciach.",
+      "metaDescription": "Taxi Giraltovce - Zoznam taxislužieb v Giraltovciach. Overené taxi služby.",
+      "keywords": ["taxi giraltovce", "taxislužba giraltovce", "taxi v giraltovciach", "objednať taxi giraltovce", "taxi giraltovce ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Hanušovce nad Topľou",
+      "slug": "hanusovce-nad-toplou",
+      "region": "Prešovský kraj",
+      "description": "Mesto v regióne Zemplín s dostupnými taxislužbami. Nájdite taxi v Hanušovciach nad Topľou.",
+      "metaDescription": "Taxi Hanušovce nad Topľou - Taxislužby v Hanušovciach nad Topľou. Taxi služby s kontaktmi.",
+      "keywords": ["taxi hanušovce nad topľou", "taxislužba hanušovce", "taxi v hanušovciach", "objednať taxi hanušovce", "taxi hanušovce telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Hlohovec",
+      "slug": "hlohovec",
+      "region": "Trnavský kraj",
+      "description": "Historické mesto v Trnavskom kraji s kvalitnou ponukou taxislužieb. Vyberte si taxi v Hlohovci.",
+      "metaDescription": "Taxi Hlohovec - Kompletný prehľad taxislužieb v Hlohovci. Spoľahlivé taxi služby.",
+      "keywords": ["taxi hlohovec", "taxislužba hlohovec", "taxi v hlohovci", "objednať taxi hlohovec", "taxi hlohovec ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Hnúšťa",
+      "slug": "hnusta",
+      "region": "Banskobystrický kraj",
+      "description": "Mesto v južnej časti Slovenska. Nájdite spoľahlivé taxi v Hnúšti.",
+      "metaDescription": "Taxi Hnúšťa - Taxislužby v Hnúšti. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi hnúšťa", "taxislužba hnúšťa", "taxi v hnúšti", "objednať taxi hnúšťa", "taxi hnúšťa telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Holíč",
+      "slug": "holic",
+      "region": "Trnavský kraj",
+      "description": "Pohraničné mesto pri Českej republike. Objednajte si taxi v Holíči.",
+      "metaDescription": "Taxi Holíč - Zoznam taxislužieb v Holíči. Taxi služby s aktuálnymi kontaktmi.",
+      "keywords": ["taxi holíč", "taxislužba holíč", "taxi v holíči", "objednať taxi holíč", "taxi holíč ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Humenné",
+      "slug": "humenne",
+      "region": "Prešovský kraj",
+      "description": "Okresné mesto vo východnej časti Slovenska s rozvinutými taxislužbami. Nájdite taxi v Humennom.",
+      "metaDescription": "Taxi Humenné - Kompletný zoznam taxislužieb v Humennom. Rýchle a spoľahlivé taxi služby.",
+      "keywords": ["taxi humenné", "taxislužba humenné", "taxi v humennom", "objednať taxi humenné", "taxi humenné telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Hurbanovo",
+      "slug": "hurbanovo",
+      "region": "Nitriansky kraj",
+      "description": "Mesto v južnej časti Slovenska. Vyberte si overené taxi v Hurbanove.",
+      "metaDescription": "Taxi Hurbanovo - Taxislužby v Hurbanove. Spoľahlivé taxi služby s kontaktmi.",
+      "keywords": ["taxi hurbanovo", "taxislužba hurbanovo", "taxi v hurbanove", "objednať taxi hurbanovo", "taxi hurbanovo ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Ilava",
+      "slug": "ilava",
+      "region": "Trenčiansky kraj",
+      "description": "Okresné mesto v Trenčianskom kraji. Nájdite spoľahlivé taxi v Ilave.",
+      "metaDescription": "Taxi Ilava - Prehľad taxislužieb v Ilave. Overené taxi služby.",
+      "keywords": ["taxi ilava", "taxislužba ilava", "taxi v ilave", "objednať taxi ilava", "taxi ilava telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Jelšava",
+      "slug": "jelsava",
+      "region": "Banskobystrický kraj",
+      "description": "Historické banské mesto. Objednajte si taxi v Jelšave.",
+      "metaDescription": "Taxi Jelšava - Taxislužby v Jelšave. Taxi služby s kontaktmi.",
+      "keywords": ["taxi jelšava", "taxislužba jelšava", "taxi v jelšave", "objednať taxi jelšava", "taxi jelšava ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Kežmarok",
+      "slug": "kezmarok",
+      "region": "Prešovský kraj",
+      "description": "Historické spiššké mesto s bohatou históriou. Nájdite taxi v Kežmarku.",
+      "metaDescription": "Taxi Kežmarok - Kompletný zoznam taxislužieb v Kežmarku. Spoľahlivé taxi služby.",
+      "keywords": ["taxi kežmarok", "taxislužba kežmarok", "taxi v kežmarku", "objednať taxi kežmarok", "taxi kežmarok tatry"],
+      "taxiServices": []
+    },
+    {
+      "name": "Kolárovo",
+      "slug": "kolarovo",
+      "region": "Nitriansky kraj",
+      "description": "Mesto v južnej časti Slovenska. Vyberte si taxi v Kolárove.",
+      "metaDescription": "Taxi Kolárovo - Taxislužby v Kolárove. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi kolárovo", "taxislužba kolárovo", "taxi v kolárove", "objednať taxi kolárovo", "taxi kolárovo telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Komárno",
+      "slug": "komarno",
+      "region": "Nitriansky kraj",
+      "description": "Pohraničné mesto pri Dunaji s rozvinutou dopravnou infraštruktúrou. Nájdite taxi v Komárne.",
+      "metaDescription": "Taxi Komárno - Prehľad taxislužieb v Komárne. Rýchle a spoľahlivé taxi služby.",
+      "keywords": ["taxi komárno", "taxislužba komárno", "taxi v komárne", "objednať taxi komárno", "taxi komárno ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Košice",
+      "slug": "kosice",
+      "region": "Košický kraj",
+      "description": "Druhé najväčšie mesto Slovenska s kvalitnou ponukou taxislužieb. Vyberte si z overených taxíkov v Košiciach.",
+      "metaDescription": "Taxi Košice - Spoľahlivé taxislužby v Košiciach. Zoznam overených taxi služieb s aktuálnymi kontaktmi a cenami.",
+      "keywords": ["taxi košice", "taxislužba košice", "taxi v košiciach", "objednať taxi košice", "taxi košice ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Kráľovský Chlmec",
+      "slug": "kralovsky-chlmec",
+      "region": "Košický kraj",
+      "description": "Okresné mesto v regióne Zemplín. Objednajte si taxi v Kráľovskom Chlmci.",
+      "metaDescription": "Taxi Kráľovský Chlmec - Taxislužby v Kráľovskom Chlmci. Taxi služby s kontaktmi.",
+      "keywords": ["taxi kráľovský chlmec", "taxislužba kráľovský chlmec", "taxi v kráľovskom chlmci", "objednať taxi chlmec", "taxi chlmec telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Kremnica",
+      "slug": "kremnica",
+      "region": "Banskobystrický kraj",
+      "description": "Historické banské a mincové mesto. Nájdite spoľahlivé taxi v Kremnici.",
+      "metaDescription": "Taxi Kremnica - Zoznam taxislužieb v Kremnici. Overené taxi služby.",
+      "keywords": ["taxi kremnica", "taxislužba kremnica", "taxi v kremnici", "objednať taxi kremnica", "taxi kremnica ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Krupina",
+      "slug": "krupina",
+      "region": "Banskobystrický kraj",
+      "description": "Jedno z najstarších slovenských miest. Vyberte si taxi v Krupine.",
+      "metaDescription": "Taxi Krupina - Taxislužby v Krupine. Spoľahlivé taxi služby s kontaktmi.",
+      "keywords": ["taxi krupina", "taxislužba krupina", "taxi v krupine", "objednať taxi krupina", "taxi krupina telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Kysucké Nové Mesto",
+      "slug": "kysucke-nove-mesto",
+      "region": "Žilinský kraj",
+      "description": "Okresné mesto na Kysuciach. Nájdite taxi v Kysuckom Novom Meste.",
+      "metaDescription": "Taxi Kysucké Nové Mesto - Kompletný prehľad taxislužieb v Kysuckom Novom Meste. Taxi služby.",
+      "keywords": ["taxi kysucké nové mesto", "taxislužba kysucké nové mesto", "taxi v kysuckom novom meste", "objednať taxi kysuce", "taxi knm"],
+      "taxiServices": []
+    },
+    {
+      "name": "Leopoldov",
+      "slug": "leopoldov",
+      "region": "Trnavský kraj",
+      "description": "Mesto s pevnosťou v Trnavskom kraji. Objednajte si taxi v Leopoldove.",
+      "metaDescription": "Taxi Leopoldov - Taxislužby v Leopoldove. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi leopoldov", "taxislužba leopoldov", "taxi v leopoldove", "objednať taxi leopoldov", "taxi leopoldov telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Levoča",
+      "slug": "levoca",
+      "region": "Prešovský kraj",
+      "description": "Historické spiššké mesto zapísané v UNESCO. Nájdite taxi v Levoči.",
+      "metaDescription": "Taxi Levoča - Prehľad taxislužieb v Levoči. Spoľahlivé taxi služby pre turistov a obyvateľov.",
+      "keywords": ["taxi levoča", "taxislužba levoča", "taxi v levoči", "objednať taxi levoča", "taxi levoča unesco"],
+      "taxiServices": []
+    },
+    {
+      "name": "Levice",
+      "slug": "levice",
+      "region": "Nitriansky kraj",
+      "description": "Okresné mesto v Nitrianskom kraji s rozvinutými taxislužbami. Vyberte si taxi v Leviciach.",
+      "metaDescription": "Taxi Levice - Kompletný zoznam taxislužieb v Leviciach. Rýchle a spoľahlivé taxi služby.",
+      "keywords": ["taxi levice", "taxislužba levice", "taxi v leviciach", "objednať taxi levice", "taxi levice ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Liptovský Hrádok",
+      "slug": "liptovsky-hradok",
+      "region": "Žilinský kraj",
+      "description": "Okresné mesto v Liptove. Nájdite taxi v Liptovskom Hrádku.",
+      "metaDescription": "Taxi Liptovský Hrádok - Taxislužby v Liptovskom Hrádku. Overené taxi služby.",
+      "keywords": ["taxi liptovský hrádok", "taxislužba liptovský hrádok", "taxi v liptovskom hrádku", "objednať taxi liptov", "taxi hrádok"],
+      "taxiServices": []
+    },
+    {
+      "name": "Liptovský Mikuláš",
+      "slug": "liptovsky-mikulas",
+      "region": "Žilinský kraj",
+      "description": "Centrum Liptova s bohatou ponukou taxislužieb. Objednajte si taxi v Liptovskom Mikuláši.",
+      "metaDescription": "Taxi Liptovský Mikuláš - Kompletný prehľad taxislužieb v Liptovskom Mikuláši. Spoľahlivé taxi služby.",
+      "keywords": ["taxi liptovský mikuláš", "taxislužba liptovský mikuláš", "taxi v liptovskom mikuláši", "objednať taxi liptov", "taxi mikuláš"],
+      "taxiServices": []
+    },
+    {
+      "name": "Lučenec",
+      "slug": "lucenec",
+      "region": "Banskobystrický kraj",
+      "description": "Okresné mesto v južnej časti stredného Slovenska. Nájdite taxi v Lučenci.",
+      "metaDescription": "Taxi Lučenec - Zoznam taxislužieb v Lučenci. Rýchle a overené taxi služby.",
+      "keywords": ["taxi lučenec", "taxislužba lučenec", "taxi v lučenci", "objednať taxi lučenec", "taxi lučenec telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Malacky",
+      "slug": "malacky",
+      "region": "Bratislavský kraj",
+      "description": "Okresné mesto v Bratislavskom kraji. Vyberte si taxi v Malackách.",
+      "metaDescription": "Taxi Malacky - Taxislužby v Malackách. Spoľahlivé taxi služby s kontaktmi.",
+      "keywords": ["taxi malacky", "taxislužba malacky", "taxi v malackách", "objednať taxi malacky", "taxi malacky ceny"],
       "taxiServices": []
     },
     {
@@ -127,13 +385,178 @@
       "region": "Žilinský kraj",
       "description": "Kultúrne centrum Slovenska s rozvinutou sieťou taxislužieb. Objednajte si taxi v Martine.",
       "metaDescription": "Taxi Martin - Prehľad taxislužieb v Martine. Spoľahlivé taxi služby s aktuálnymi kontaktmi a cenami.",
-      "keywords": [
-        "taxi martin",
-        "taxislužba martin",
-        "taxi v martine",
-        "objednať taxi martin",
-        "taxi martin cenník"
-      ],
+      "keywords": ["taxi martin", "taxislužba martin", "taxi v martine", "objednať taxi martin", "taxi martin cenník"],
+      "taxiServices": []
+    },
+    {
+      "name": "Medzev",
+      "slug": "medzev",
+      "region": "Košický kraj",
+      "description": "Malé banské mesto v Košickom kraji. Nájdite taxi v Medzeve.",
+      "metaDescription": "Taxi Medzev - Taxislužby v Medzeve. Taxi služby s kontaktmi.",
+      "keywords": ["taxi medzev", "taxislužba medzev", "taxi v medzeve", "objednať taxi medzev", "taxi medzev telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Medzilaborce",
+      "slug": "medzilaborce",
+      "region": "Prešovský kraj",
+      "description": "Okresné mesto vo východnej časti Slovenska. Objednajte si taxi v Medzilaborcích.",
+      "metaDescription": "Taxi Medzilaborce - Zoznam taxislužieb v Medzilaborcích. Overené taxi služby.",
+      "keywords": ["taxi medzilaborce", "taxislužba medzilaborce", "taxi v medzilaborcích", "objednať taxi medzilaborce", "taxi medzilaborce ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Michalovce",
+      "slug": "michalovce",
+      "region": "Košický kraj",
+      "description": "Centrum regiónu Zemplín s kvalitnou ponukou taxislužieb. Nájdite taxi v Michalovciach.",
+      "metaDescription": "Taxi Michalovce - Kompletný prehľad taxislužieb v Michalovciach. Rýchle a spoľahlivé taxi služby.",
+      "keywords": ["taxi michalovce", "taxislužba michalovce", "taxi v michalovciach", "objednať taxi michalovce", "taxi michalovce telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Modra",
+      "slug": "modra",
+      "region": "Bratislavský kraj",
+      "description": "Vinárske mesto v Malokarpatskom regióne. Vyberte si taxi v Modre.",
+      "metaDescription": "Taxi Modra - Taxislužby v Modre. Spoľahlivé taxi služby pre obyvateľov a turistov.",
+      "keywords": ["taxi modra", "taxislužba modra", "taxi v modre", "objednať taxi modra", "taxi modra víno"],
+      "taxiServices": []
+    },
+    {
+      "name": "Modrý Kameň",
+      "slug": "modry-kamen",
+      "region": "Banskobystrický kraj",
+      "description": "Mesto s historickým hradom. Nájdite taxi v Modrom Kameni.",
+      "metaDescription": "Taxi Modrý Kameň - Zoznam taxislužieb v Modrom Kameni. Taxi služby s kontaktmi.",
+      "keywords": ["taxi modrý kameň", "taxislužba modrý kameň", "taxi v modrom kameni", "objednať taxi modrý kameň", "taxi kameň"],
+      "taxiServices": []
+    },
+    {
+      "name": "Moldava nad Bodvou",
+      "slug": "moldava-nad-bodvou",
+      "region": "Košický kraj",
+      "description": "Okresné mesto v Košickom kraji. Objednajte si taxi v Moldave nad Bodvou.",
+      "metaDescription": "Taxi Moldava nad Bodvou - Taxislužby v Moldave nad Bodvou. Overené taxi služby.",
+      "keywords": ["taxi moldava nad bodvou", "taxislužba moldava", "taxi v moldave", "objednať taxi moldava", "taxi moldava telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Myjava",
+      "slug": "myjava",
+      "region": "Trenčiansky kraj",
+      "description": "Okresné mesto v regióne Myjava. Nájdite spoľahlivé taxi v Myjave.",
+      "metaDescription": "Taxi Myjava - Kompletný zoznam taxislužieb v Myjave. Taxi služby s kontaktmi.",
+      "keywords": ["taxi myjava", "taxislužba myjava", "taxi v myjave", "objednať taxi myjava", "taxi myjava ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Námestovo",
+      "slug": "namestovo",
+      "region": "Žilinský kraj",
+      "description": "Okresné mesto v Orave pri Oravskej priehrade. Vyberte si taxi v Námestove.",
+      "metaDescription": "Taxi Námestovo - Prehľad taxislužieb v Námestove. Spoľahlivé taxi služby.",
+      "keywords": ["taxi námestovo", "taxislužba námestovo", "taxi v námestove", "objednať taxi námestovo", "taxi orava"],
+      "taxiServices": []
+    },
+    {
+      "name": "Nesvady",
+      "slug": "nesvady",
+      "region": "Nitriansky kraj",
+      "description": "Mesto v Nitrianskom kraji. Nájdite taxi v Nesvadiach.",
+      "metaDescription": "Taxi Nesvady - Taxislužby v Nesvadiach. Taxi služby s kontaktmi.",
+      "keywords": ["taxi nesvady", "taxislužba nesvady", "taxi v nesvadiach", "objednať taxi nesvady", "taxi nesvady telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Nitra",
+      "slug": "nitra",
+      "region": "Nitriansky kraj",
+      "description": "Historické mesto s modernými taxislužbami. Vyberte si spoľahlivé taxi v Nitre pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Nitra - Spoľahlivé taxislužby v Nitre. Zoznam overených taxi služieb s kontaktmi a informáciami.",
+      "keywords": ["taxi nitra", "taxislužba nitra", "taxi v nitre", "objednať taxi nitra", "taxi nitra telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Nová Baňa",
+      "slug": "nova-bana",
+      "region": "Banskobystrický kraj",
+      "description": "Banské mesto s bohatou históriou. Objednajte si taxi v Novej Bani.",
+      "metaDescription": "Taxi Nová Baňa - Zoznam taxislužieb v Novej Bani. Overené taxi služby.",
+      "keywords": ["taxi nová baňa", "taxislužba nová baňa", "taxi v novej bani", "objednať taxi nová baňa", "taxi baňa"],
+      "taxiServices": []
+    },
+    {
+      "name": "Nová Dubnica",
+      "slug": "nova-dubnica",
+      "region": "Trenčiansky kraj",
+      "description": "Mesto v Trenčianskom kraji. Nájdite taxi v Novej Dubnici.",
+      "metaDescription": "Taxi Nová Dubnica - Taxislužby v Novej Dubnici. Taxi služby s kontaktmi.",
+      "keywords": ["taxi nová dubnica", "taxislužba nová dubnica", "taxi v novej dubnici", "objednať taxi dubnica", "taxi nová dubnica telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Nováky",
+      "slug": "novaky",
+      "region": "Trenčiansky kraj",
+      "description": "Okresné mesto v regióne horná Nitra. Vyberte si taxi v Novákyách.",
+      "metaDescription": "Taxi Nováky - Kompletný prehľad taxislužieb v Novákyách. Spoľahlivé taxi služby.",
+      "keywords": ["taxi nováky", "taxislužba nováky", "taxi v novákyách", "objednať taxi nováky", "taxi nováky ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Nové Mesto nad Váhom",
+      "slug": "nove-mesto-nad-vahom",
+      "region": "Trenčiansky kraj",
+      "description": "Okresné mesto v Trenčianskom kraji s rozvinutými taxislužbami. Nájdite taxi v Novom Meste nad Váhom.",
+      "metaDescription": "Taxi Nové Mesto nad Váhom - Prehľad taxislužieb v Novom Meste nad Váhom. Rýchle taxi služby.",
+      "keywords": ["taxi nové mesto nad váhom", "taxislužba nové mesto", "taxi v novom meste", "objednať taxi nové mesto", "taxi nmn"],
+      "taxiServices": []
+    },
+    {
+      "name": "Nové Zámky",
+      "slug": "nove-zamky",
+      "region": "Nitriansky kraj",
+      "description": "Okresné mesto v južnej časti Slovenska. Objednajte si taxi v Nových Zámkoch.",
+      "metaDescription": "Taxi Nové Zámky - Kompletný zoznam taxislužieb v Nových Zámkoch. Spoľahlivé taxi služby.",
+      "keywords": ["taxi nové zámky", "taxislužba nové zámky", "taxi v nových zámkoch", "objednať taxi nové zámky", "taxi nz"],
+      "taxiServices": []
+    },
+    {
+      "name": "Partizánske",
+      "slug": "partizanske",
+      "region": "Trenčiansky kraj",
+      "description": "Mesto v Trenčianskom kraji. Nájdite spoľahlivé taxi v Partizánskom.",
+      "metaDescription": "Taxi Partizánske - Taxislužby v Partizánskom. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi partizánske", "taxislužba partizánske", "taxi v partizánskom", "objednať taxi partizánske", "taxi partizánske telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Pezinok",
+      "slug": "pezinok",
+      "region": "Bratislavský kraj",
+      "description": "Vinárske mesto v Malokarpatskom regióne. Vyberte si taxi v Pezinku.",
+      "metaDescription": "Taxi Pezinok - Zoznam taxislužieb v Pezinku. Rýchle a spoľahlivé taxi služby.",
+      "keywords": ["taxi pezinok", "taxislužba pezinok", "taxi v pezinku", "objednať taxi pezinok", "taxi pezinok ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Piešťany",
+      "slug": "piestany",
+      "region": "Trnavský kraj",
+      "description": "Najznámejšie kúpeľné mesto Slovenska. Nájdite taxi v Piešťanoch.",
+      "metaDescription": "Taxi Piešťany - Kompletný prehľad taxislužieb v Piešťanoch. Taxi služby pre kúpeľných hostí.",
+      "keywords": ["taxi piešťany", "taxislužba piešťany", "taxi v piešťanoch", "objednať taxi piešťany", "taxi piešťany kúpele"],
+      "taxiServices": []
+    },
+    {
+      "name": "Poltár",
+      "slug": "poltar",
+      "region": "Banskobystrický kraj",
+      "description": "Okresné mesto v Banskobystricom kraji. Objednajte si taxi v Poltári.",
+      "metaDescription": "Taxi Poltár - Taxislužby v Poltári. Spoľahlivé taxi služby s kontaktmi.",
+      "keywords": ["taxi poltár", "taxislužba poltár", "taxi v poltári", "objednať taxi poltár", "taxi poltár telefón"],
       "taxiServices": []
     },
     {
@@ -142,13 +565,25 @@
       "region": "Prešovský kraj",
       "description": "Brána Vysokých Tatier s dostupnými taxislužbami pre turistov aj obyvateľov. Nájdite taxi v Poprade.",
       "metaDescription": "Taxi Poprad - Taxislužby v Poprade a okolí Vysokých Tatier. Overené taxi služby s kontaktmi.",
-      "keywords": [
-        "taxi poprad",
-        "taxislužba poprad",
-        "taxi v poprade",
-        "objednať taxi poprad",
-        "taxi poprad tatry"
-      ],
+      "keywords": ["taxi poprad", "taxislužba poprad", "taxi v poprade", "objednať taxi poprad", "taxi poprad tatry"],
+      "taxiServices": []
+    },
+    {
+      "name": "Považská Bystrica",
+      "slug": "povazska-bystrica",
+      "region": "Trenčiansky kraj",
+      "description": "Okresné mesto na strednom Považí. Nájdite taxi v Považskej Bystrici.",
+      "metaDescription": "Taxi Považská Bystrica - Prehľad taxislužieb v Považskej Bystrici. Rýchle taxi služby.",
+      "keywords": ["taxi považská bystrica", "taxislužba považská bystrica", "taxi v považskej bystrici", "objednať taxi bystrica", "taxi pb"],
+      "taxiServices": []
+    },
+    {
+      "name": "Prešov",
+      "slug": "presov",
+      "region": "Prešovský kraj",
+      "description": "Centrum východného Slovenska s dostupnými taxislužbami pre obyvateľov aj návštevníkov. Nájdite taxi v Prešove.",
+      "metaDescription": "Taxi Prešov - Zoznam taxislužieb v Prešove. Rýchle a spoľahlivé taxi služby s overenými kontaktmi.",
+      "keywords": ["taxi prešov", "taxislužba prešov", "taxi v prešove", "objednať taxi prešov", "taxi prešov telefón"],
       "taxiServices": []
     },
     {
@@ -157,13 +592,493 @@
       "region": "Trenčiansky kraj",
       "description": "Centrum hornej Nitry s kvalitnou ponukou taxislužieb. Vyberte si spoľahlivé taxi v Prievidzi.",
       "metaDescription": "Taxi Prievidza - Zoznam taxislužieb v Prievidzi. Rýchle a spoľahlivé taxi služby s overenými kontaktmi.",
-      "keywords": [
-        "taxi prievidza",
-        "taxislužba prievidza",
-        "taxi v prievidzi",
-        "objednať taxi prievidza",
-        "taxi prievidza telefón"
-      ],
+      "keywords": ["taxi prievidza", "taxislužba prievidza", "taxi v prievidzi", "objednať taxi prievidza", "taxi prievidza telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Púchov",
+      "slug": "puchov",
+      "region": "Trenčiansky kraj",
+      "description": "Okresné mesto v Trenčianskom kraji. Objednajte si taxi v Púchove.",
+      "metaDescription": "Taxi Púchov - Kompletný zoznam taxislužieb v Púchove. Spoľahlivé taxi služby.",
+      "keywords": ["taxi púchov", "taxislužba púchov", "taxi v púchove", "objednať taxi púchov", "taxi púchov ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Rajec",
+      "slug": "rajec",
+      "region": "Žilinský kraj",
+      "description": "Mesto v Žilinskom kraji. Nájdite taxi v Rajci.",
+      "metaDescription": "Taxi Rajec - Taxislužby v Rajci. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi rajec", "taxislužba rajec", "taxi v rajci", "objednať taxi rajec", "taxi rajec telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Revúca",
+      "slug": "revuca",
+      "region": "Banskobystrický kraj",
+      "description": "Okresné mesto v Banskobystricom kraji. Vyberte si taxi v Revúcej.",
+      "metaDescription": "Taxi Revúca - Prehľad taxislužieb v Revúcej. Rýchle a spoľahlivé taxi služby.",
+      "keywords": ["taxi revúca", "taxislužba revúca", "taxi v revúcej", "objednať taxi revúca", "taxi revúca ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Rimavská Sobota",
+      "slug": "rimavska-sobota",
+      "region": "Banskobystrický kraj",
+      "description": "Okresné mesto v južnej časti stredného Slovenska. Nájdite taxi v Rimavskej Sobote.",
+      "metaDescription": "Taxi Rimavská Sobota - Kompletný zoznam taxislužieb v Rimavskej Sobote. Taxi služby s kontaktmi.",
+      "keywords": ["taxi rimavská sobota", "taxislužba rimavská sobota", "taxi v rimavskej sobote", "objednať taxi rimavská sobota", "taxi sobota"],
+      "taxiServices": []
+    },
+    {
+      "name": "Rožňava",
+      "slug": "roznava",
+      "region": "Košický kraj",
+      "description": "Okresné mesto v regióne Gemer. Objednajte si taxi v Rožňave.",
+      "metaDescription": "Taxi Rožňava - Taxislužby v Rožňave. Spoľahlivé taxi služby s overenými kontaktmi.",
+      "keywords": ["taxi rožňava", "taxislužba rožňava", "taxi v rožňave", "objednať taxi rožňava", "taxi rožňava telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Ružomberok",
+      "slug": "ruzomberok",
+      "region": "Žilinský kraj",
+      "description": "Okresné mesto v Liptove s rozvinutými taxislužbami. Nájdite taxi v Ružomberku.",
+      "metaDescription": "Taxi Ružomberok - Prehľad taxislužieb v Ružomberku. Rýchle a overené taxi služby.",
+      "keywords": ["taxi ružomberok", "taxislužba ružomberok", "taxi v ružomberku", "objednať taxi ružomberok", "taxi ružomberok ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Sabinov",
+      "slug": "sabinov",
+      "region": "Prešovský kraj",
+      "description": "Okresné mesto v Prešovskom kraji. Vyberte si taxi v Sabinove.",
+      "metaDescription": "Taxi Sabinov - Kompletný zoznam taxislužieb v Sabinove. Spoľahlivé taxi služby.",
+      "keywords": ["taxi sabinov", "taxislužba sabinov", "taxi v sabinove", "objednať taxi sabinov", "taxi sabinov telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Senec",
+      "slug": "senec",
+      "region": "Bratislavský kraj",
+      "description": "Mesto pri Slnečných jazerách. Nájdite taxi v Senci.",
+      "metaDescription": "Taxi Senec - Taxislužby v Senci. Overené taxi služby pre obyvateľov a turistov.",
+      "keywords": ["taxi senec", "taxislužba senec", "taxi v senci", "objednať taxi senec", "taxi senec jazerá"],
+      "taxiServices": []
+    },
+    {
+      "name": "Senica",
+      "slug": "senica",
+      "region": "Trnavský kraj",
+      "description": "Okresné mesto v Záhorí. Objednajte si taxi v Senici.",
+      "metaDescription": "Taxi Senica - Prehľad taxislužieb v Senici. Rýchle a spoľahlivé taxi služby.",
+      "keywords": ["taxi senica", "taxislužba senica", "taxi v senici", "objednať taxi senica", "taxi senica ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Sereď",
+      "slug": "sered",
+      "region": "Trnavský kraj",
+      "description": "Okresné mesto v Trnavskom kraji. Nájdite spoľahlivé taxi v Seredi.",
+      "metaDescription": "Taxi Sereď - Kompletný zoznam taxislužieb v Seredi. Taxi služby s kontaktmi.",
+      "keywords": ["taxi sereď", "taxislužba sereď", "taxi v seredi", "objednať taxi sereď", "taxi sereď telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Skalica",
+      "slug": "skalica",
+      "region": "Trnavský kraj",
+      "description": "Historické pohraničné mesto v Záhorí. Vyberte si taxi v Skalici.",
+      "metaDescription": "Taxi Skalica - Taxislužby v Skalici. Spoľahlivé taxi služby s overenými kontaktmi.",
+      "keywords": ["taxi skalica", "taxislužba skalica", "taxi v skalici", "objednať taxi skalica", "taxi skalica ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Sládkovičovo",
+      "slug": "sladkovicovo",
+      "region": "Trnavský kraj",
+      "description": "Mesto v Trnavskom kraji. Nájdite taxi v Sládkovičove.",
+      "metaDescription": "Taxi Sládkovičovo - Zoznam taxislužieb v Sládkovičove. Taxi služby s kontaktmi.",
+      "keywords": ["taxi sládkovičovo", "taxislužba sládkovičovo", "taxi v sládkovičove", "objednať taxi sládkovičovo", "taxi sládkovičovo telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Sliač",
+      "slug": "sliac",
+      "region": "Banskobystrický kraj",
+      "description": "Kúpeľné mesto s letiskom. Objednajte si taxi v Sliači.",
+      "metaDescription": "Taxi Sliač - Taxislužby v Sliači. Overené taxi služby pre kúpeľných hostí.",
+      "keywords": ["taxi sliač", "taxislužba sliač", "taxi v sliači", "objednať taxi sliač", "taxi sliač letisko"],
+      "taxiServices": []
+    },
+    {
+      "name": "Snina",
+      "slug": "snina",
+      "region": "Prešovský kraj",
+      "description": "Okresné mesto vo východnej časti Slovenska. Nájdite taxi v Snine.",
+      "metaDescription": "Taxi Snina - Kompletný prehľad taxislužieb v Snine. Spoľahlivé taxi služby.",
+      "keywords": ["taxi snina", "taxislužba snina", "taxi v snine", "objednať taxi snina", "taxi snina ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Sobrance",
+      "slug": "sobrance",
+      "region": "Košický kraj",
+      "description": "Okresné mesto vo východnej časti Slovenska. Vyberte si taxi v Sobranciach.",
+      "metaDescription": "Taxi Sobrance - Taxislužby v Sobranciach. Rýchle taxi služby s kontaktmi.",
+      "keywords": ["taxi sobrance", "taxislužba sobrance", "taxi v sobranciach", "objednať taxi sobrance", "taxi sobrance telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Spišská Belá",
+      "slug": "spisska-bela",
+      "region": "Prešovský kraj",
+      "description": "Historické mesto v regióne Spiš. Nájdite taxi v Spišskej Belej.",
+      "metaDescription": "Taxi Spišská Belá - Prehľad taxislužieb v Spišskej Belej. Taxi služby s kontaktmi.",
+      "keywords": ["taxi spišská belá", "taxislužba spišská belá", "taxi v spišskej belej", "objednať taxi belá", "taxi spiš"],
+      "taxiServices": []
+    },
+    {
+      "name": "Spišská Nová Ves",
+      "slug": "spisska-nova-ves",
+      "region": "Košický kraj",
+      "description": "Centrum regiónu Spiš s rozvinutými taxislužbami. Objednajte si taxi v Spišskej Novej Vsi.",
+      "metaDescription": "Taxi Spišská Nová Ves - Kompletný zoznam taxislužieb v Spišskej Novej Vsi. Spoľahlivé taxi služby.",
+      "keywords": ["taxi spišská nová ves", "taxislužba spišská nová ves", "taxi v spišskej novej vsi", "objednať taxi snv", "taxi spiš"],
+      "taxiServices": []
+    },
+    {
+      "name": "Spišská Stará Ves",
+      "slug": "spisska-stara-ves",
+      "region": "Prešovský kraj",
+      "description": "Mesto v regióne Spiš. Nájdite taxi v Spišskej Starej Vsi.",
+      "metaDescription": "Taxi Spišská Stará Ves - Taxislužby v Spišskej Starej Vsi. Taxi služby s kontaktmi.",
+      "keywords": ["taxi spišská stará ves", "taxislužba spišská stará ves", "taxi v spišskej starej vsi", "objednať taxi ssv", "taxi spiš"],
+      "taxiServices": []
+    },
+    {
+      "name": "Spišské Podhradie",
+      "slug": "spisske-podhradie",
+      "region": "Prešovský kraj",
+      "description": "Historické mesto pod Spišským hradom zapísané v UNESCO. Vyberte si taxi v Spišskom Podhradí.",
+      "metaDescription": "Taxi Spišské Podhradie - Zoznam taxislužieb v Spišskom Podhradí. Taxi služby pre turistov.",
+      "keywords": ["taxi spišské podhradie", "taxislužba spišské podhradie", "taxi v spišskom podhradí", "objednať taxi podhradie", "taxi spiš"],
+      "taxiServices": []
+    },
+    {
+      "name": "Spišské Vlachy",
+      "slug": "spisske-vlachy",
+      "region": "Košický kraj",
+      "description": "Mesto v regióne Spiš. Nájdite taxi v Spišských Vlachoch.",
+      "metaDescription": "Taxi Spišské Vlachy - Taxislužby v Spišských Vlachoch. Overené taxi služby.",
+      "keywords": ["taxi spišské vlachy", "taxislužba spišské vlachy", "taxi v spišských vlachoch", "objednať taxi vlachy", "taxi spiš"],
+      "taxiServices": []
+    },
+    {
+      "name": "Stará Ľubovňa",
+      "slug": "stara-lubovna",
+      "region": "Prešovský kraj",
+      "description": "Okresné mesto v regióne Zamagurie. Objednajte si taxi v Starej Ľubovni.",
+      "metaDescription": "Taxi Stará Ľubovňa - Kompletný prehľad taxislužieb v Starej Ľubovni. Spoľahlivé taxi služby.",
+      "keywords": ["taxi stará ľubovňa", "taxislužba stará ľubovňa", "taxi v starej ľubovni", "objednať taxi ľubovňa", "taxi zamagurie"],
+      "taxiServices": []
+    },
+    {
+      "name": "Stará Turá",
+      "slug": "stara-tura",
+      "region": "Trenčiansky kraj",
+      "description": "Okresné mesto v Trenčianskom kraji. Nájdite taxi v Starej Turej.",
+      "metaDescription": "Taxi Stará Turá - Taxislužby v Starej Turej. Rýchle taxi služby s kontaktmi.",
+      "keywords": ["taxi stará turá", "taxislužba stará turá", "taxi v starej turej", "objednať taxi stará turá", "taxi turá"],
+      "taxiServices": []
+    },
+    {
+      "name": "Strážske",
+      "slug": "strazske",
+      "region": "Košický kraj",
+      "description": "Mesto v Košickom kraji. Vyberte si taxi v Strážskom.",
+      "metaDescription": "Taxi Strážske - Prehľad taxislužieb v Strážskom. Taxi služby s kontaktmi.",
+      "keywords": ["taxi strážske", "taxislužba strážske", "taxi v strážskom", "objednať taxi strážske", "taxi strážske telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Stropkov",
+      "slug": "stropkov",
+      "region": "Prešovský kraj",
+      "description": "Okresné mesto v Prešovskom kraji. Nájdite taxi v Stropkove.",
+      "metaDescription": "Taxi Stropkov - Kompletný zoznam taxislužieb v Stropkove. Overené taxi služby.",
+      "keywords": ["taxi stropkov", "taxislužba stropkov", "taxi v stropkove", "objednať taxi stropkov", "taxi stropkov ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Stupava",
+      "slug": "stupava",
+      "region": "Bratislavský kraj",
+      "description": "Mesto v blízkosti Bratislavy. Objednajte si taxi v Stupave.",
+      "metaDescription": "Taxi Stupava - Taxislužby v Stupave. Spoľahlivé taxi služby s kontaktmi.",
+      "keywords": ["taxi stupava", "taxislužba stupava", "taxi v stupave", "objednať taxi stupava", "taxi stupava telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Svätý Jur",
+      "slug": "svaty-jur",
+      "region": "Bratislavský kraj",
+      "description": "Vinárske mesto v Malokarpatskom regióne. Nájdite taxi vo Svätom Jure.",
+      "metaDescription": "Taxi Svätý Jur - Prehľad taxislužieb vo Svätom Jure. Taxi služby pre obyvateľov a turistov.",
+      "keywords": ["taxi svätý jur", "taxislužba svätý jur", "taxi vo svätom jure", "objednať taxi svätý jur", "taxi víno"],
+      "taxiServices": []
+    },
+    {
+      "name": "Svidník",
+      "slug": "svidnik",
+      "region": "Prešovský kraj",
+      "description": "Okresné mesto v Prešovskom kraji. Vyberte si taxi v Svidníku.",
+      "metaDescription": "Taxi Svidník - Zoznam taxislužieb v Svidníku. Rýchle a spoľahlivé taxi služby.",
+      "keywords": ["taxi svidník", "taxislužba svidník", "taxi v svidníku", "objednať taxi svidník", "taxi svidník ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Svit",
+      "slug": "svit",
+      "region": "Prešovský kraj",
+      "description": "Mesto pri Poprade v blízkosti Tatier. Nájdite taxi v Svite.",
+      "metaDescription": "Taxi Svit - Taxislužby v Svite. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi svit", "taxislužba svit", "taxi v svite", "objednať taxi svit", "taxi svit tatry"],
+      "taxiServices": []
+    },
+    {
+      "name": "Šahy",
+      "slug": "sahy",
+      "region": "Nitriansky kraj",
+      "description": "Okresné mesto v južnej časti Slovenska. Objednajte si taxi v Šahách.",
+      "metaDescription": "Taxi Šahy - Kompletný prehľad taxislužieb v Šahách. Spoľahlivé taxi služby.",
+      "keywords": ["taxi šahy", "taxislužba šahy", "taxi v šahách", "objednať taxi šahy", "taxi šahy telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Šaľa",
+      "slug": "sala",
+      "region": "Nitriansky kraj",
+      "description": "Okresné mesto v Nitrianskom kraji. Nájdite taxi v Šali.",
+      "metaDescription": "Taxi Šaľa - Prehľad taxislužieb v Šali. Rýchle a overené taxi služby.",
+      "keywords": ["taxi šaľa", "taxislužba šaľa", "taxi v šali", "objednať taxi šaľa", "taxi šaľa ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Šamorín",
+      "slug": "samorin",
+      "region": "Trnavský kraj",
+      "description": "Mesto pri Dunaji v blízkosti Bratislavy. Vyberte si taxi v Šamoríne.",
+      "metaDescription": "Taxi Šamorín - Kompletný zoznam taxislužieb v Šamoríne. Taxi služby s kontaktmi.",
+      "keywords": ["taxi šamorín", "taxislužba šamorín", "taxi v šamoríne", "objednať taxi šamorín", "taxi šamorín telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Šaštín-Stráže",
+      "slug": "sastin-straze",
+      "region": "Trnavský kraj",
+      "description": "Pútnické mesto v Trnavskom kraji. Nájdite taxi v Šaštíne-Strážach.",
+      "metaDescription": "Taxi Šaštín-Stráže - Taxislužby v Šaštíne-Strážach. Overené taxi služby.",
+      "keywords": ["taxi šaštín-stráže", "taxislužba šaštín", "taxi v šaštíne", "objednať taxi šaštín", "taxi bazilika"],
+      "taxiServices": []
+    },
+    {
+      "name": "Štúrovo",
+      "slug": "sturovo",
+      "region": "Nitriansky kraj",
+      "description": "Pohraničné mesto pri Dunaji. Objednajte si taxi v Štúrove.",
+      "metaDescription": "Taxi Štúrovo - Prehľad taxislužieb v Štúrove. Spoľahlivé taxi služby s kontaktmi.",
+      "keywords": ["taxi štúrovo", "taxislužba štúrovo", "taxi v štúrove", "objednať taxi štúrovo", "taxi štúrovo dunaj"],
+      "taxiServices": []
+    },
+    {
+      "name": "Šurany",
+      "slug": "surany",
+      "region": "Nitriansky kraj",
+      "description": "Okresné mesto v Nitrianskom kraji. Nájdite taxi v Šuranoch.",
+      "metaDescription": "Taxi Šurany - Zoznam taxislužieb v Šuranoch. Rýchle taxi služby s kontaktmi.",
+      "keywords": ["taxi šurany", "taxislužba šurany", "taxi v šuranoch", "objednať taxi šurany", "taxi šurany telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Tisovec",
+      "slug": "tisovec",
+      "region": "Banskobystrický kraj",
+      "description": "Mesto v Gemeri. Vyberte si taxi v Tisovci.",
+      "metaDescription": "Taxi Tisovec - Taxislužby v Tisovci. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi tisovec", "taxislužba tisovec", "taxi v tisovci", "objednať taxi tisovec", "taxi tisovec ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Tlmače",
+      "slug": "tlmace",
+      "region": "Nitriansky kraj",
+      "description": "Mesto v Nitrianskom kraji. Nájdite taxi v Tlmačoch.",
+      "metaDescription": "Taxi Tlmače - Kompletný prehľad taxislužieb v Tlmačoch. Taxi služby s kontaktmi.",
+      "keywords": ["taxi tlmače", "taxislužba tlmače", "taxi v tlmačoch", "objednať taxi tlmače", "taxi tlmače telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Trebišov",
+      "slug": "trebisov",
+      "region": "Košický kraj",
+      "description": "Okresné mesto v regióne Zemplín. Objednajte si taxi v Trebišove.",
+      "metaDescription": "Taxi Trebišov - Prehľad taxislužieb v Trebišove. Spoľahlivé taxi služby s overenými kontaktmi.",
+      "keywords": ["taxi trebišov", "taxislužba trebišov", "taxi v trebišove", "objednať taxi trebišov", "taxi trebišov ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Trenčín",
+      "slug": "trencin",
+      "region": "Trenčiansky kraj",
+      "description": "Mesto pod Trenčianskym hradom s kvalitnou dopravnou infraštruktúrou. Nájdite taxi v Trenčíne.",
+      "metaDescription": "Taxi Trenčín - Kompletný zoznam taxislužieb v Trenčíne. Rýchle objednanie taxi s overenými kontaktmi.",
+      "keywords": ["taxi trenčín", "taxislužba trenčín", "taxi v trenčíne", "objednať taxi trenčín", "taxi trenčín telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Trenčianske Teplice",
+      "slug": "trencianske-teplice",
+      "region": "Trenčiansky kraj",
+      "description": "Kúpeľné mesto v Trenčianskom kraji. Nájdite taxi v Trenčianskych Tepliciach.",
+      "metaDescription": "Taxi Trenčianske Teplice - Taxislužby v Trenčianskych Tepliciach. Taxi služby pre kúpeľných hostí.",
+      "keywords": ["taxi trenčianske teplice", "taxislužba trenčianske teplice", "taxi v trenčianskych tepliciach", "objednať taxi teplice", "taxi kúpele"],
+      "taxiServices": []
+    },
+    {
+      "name": "Trnava",
+      "slug": "trnava",
+      "region": "Trnavský kraj",
+      "description": "Malý Rím Slovenska s dostupnými taxislužbami. Vyberte si spoľahlivé taxi v Trnave pre vašu cestu.",
+      "metaDescription": "Taxi Trnava - Zoznam taxislužieb v Trnave. Spoľahlivé a overené taxi služby s kontaktmi.",
+      "keywords": ["taxi trnava", "taxislužba trnava", "taxi v trnave", "objednať taxi trnava", "taxi trnava ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Trstená",
+      "slug": "trstena",
+      "region": "Žilinský kraj",
+      "description": "Okresné mesto v Orave. Objednajte si taxi v Trstenej.",
+      "metaDescription": "Taxi Trstená - Zoznam taxislužieb v Trstenej. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi trstená", "taxislužba trstená", "taxi v trstenej", "objednať taxi trstená", "taxi orava"],
+      "taxiServices": []
+    },
+    {
+      "name": "Turany",
+      "slug": "turany",
+      "region": "Žilinský kraj",
+      "description": "Mesto s letiskom v Žilinskom kraji. Nájdite taxi v Turanoch.",
+      "metaDescription": "Taxi Turany - Taxislužby v Turanoch. Taxi služby pre letisko a okolie.",
+      "keywords": ["taxi turany", "taxislužba turany", "taxi v turanoch", "objednať taxi turany", "taxi letisko turany"],
+      "taxiServices": []
+    },
+    {
+      "name": "Turčianske Teplice",
+      "slug": "turcianske-teplice",
+      "region": "Žilinský kraj",
+      "description": "Kúpeľné mesto v Žilinskom kraji. Vyberte si taxi v Turčianskych Tepliciach.",
+      "metaDescription": "Taxi Turčianske Teplice - Kompletný prehľad taxislužieb v Turčianskych Tepliciach. Taxi služby pre kúpele.",
+      "keywords": ["taxi turčianske teplice", "taxislužba turčianske teplice", "taxi v turčianskych tepliciach", "objednať taxi teplice", "taxi kúpele"],
+      "taxiServices": []
+    },
+    {
+      "name": "Turzovka",
+      "slug": "turzovka",
+      "region": "Žilinský kraj",
+      "description": "Mesto na Kysuciach. Nájdite taxi v Turzovke.",
+      "metaDescription": "Taxi Turzovka - Prehľad taxislužieb v Turzovke. Taxi služby s kontaktmi.",
+      "keywords": ["taxi turzovka", "taxislužba turzovka", "taxi v turzovke", "objednať taxi turzovka", "taxi kysuce"],
+      "taxiServices": []
+    },
+    {
+      "name": "Veľké Kapušany",
+      "slug": "velke-kapusany",
+      "region": "Košický kraj",
+      "description": "Okresné mesto vo východnej časti Slovenska. Objednajte si taxi vo Veľkých Kapušanoch.",
+      "metaDescription": "Taxi Veľké Kapušany - Taxislužby vo Veľkých Kapušanoch. Overené taxi služby.",
+      "keywords": ["taxi veľké kapušany", "taxislužba veľké kapušany", "taxi vo veľkých kapušanoch", "objednať taxi kapušany", "taxi kapušany"],
+      "taxiServices": []
+    },
+    {
+      "name": "Veľký Krtíš",
+      "slug": "velky-krtis",
+      "region": "Banskobystrický kraj",
+      "description": "Okresné mesto v južnej časti stredného Slovenska. Nájdite taxi vo Veľkom Krtíši.",
+      "metaDescription": "Taxi Veľký Krtíš - Zoznam taxislužieb vo Veľkom Krtíši. Spoľahlivé taxi služby.",
+      "keywords": ["taxi veľký krtíš", "taxislužba veľký krtíš", "taxi vo veľkom krtíši", "objednať taxi krtíš", "taxi krtíš"],
+      "taxiServices": []
+    },
+    {
+      "name": "Veľký Meder",
+      "slug": "velky-meder",
+      "region": "Nitriansky kraj",
+      "description": "Mesto v južnej časti Slovenska. Vyberte si taxi vo Veľkom Mederi.",
+      "metaDescription": "Taxi Veľký Meder - Kompletný prehľad taxislužieb vo Veľkom Mederi. Taxi služby s kontaktmi.",
+      "keywords": ["taxi veľký meder", "taxislužba veľký meder", "taxi vo veľkom mederi", "objednať taxi meder", "taxi meder"],
+      "taxiServices": []
+    },
+    {
+      "name": "Veľký Šariš",
+      "slug": "velky-saris",
+      "region": "Prešovský kraj",
+      "description": "Mesto v blízkosti Prešova. Nájdite taxi vo Veľkom Šariši.",
+      "metaDescription": "Taxi Veľký Šariš - Taxislužby vo Veľkom Šariši. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi veľký šariš", "taxislužba veľký šariš", "taxi vo veľkom šariši", "objednať taxi šariš", "taxi šariš"],
+      "taxiServices": []
+    },
+    {
+      "name": "Vranov nad Topľou",
+      "slug": "vranov-nad-toplou",
+      "region": "Prešovský kraj",
+      "description": "Okresné mesto v Prešovskom kraji. Objednajte si taxi vo Vranove nad Topľou.",
+      "metaDescription": "Taxi Vranov nad Topľou - Prehľad taxislužieb vo Vranove nad Topľou. Spoľahlivé taxi služby.",
+      "keywords": ["taxi vranov nad topľou", "taxislužba vranov", "taxi vo vranove", "objednať taxi vranov", "taxi vranov telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Vráble",
+      "slug": "vrable",
+      "region": "Nitriansky kraj",
+      "description": "Okresné mesto v Nitrianskom kraji. Nájdite taxi vo Vrábloch.",
+      "metaDescription": "Taxi Vráble - Kompletný zoznam taxislužieb vo Vrábloch. Rýchle taxi služby.",
+      "keywords": ["taxi vráble", "taxislužba vráble", "taxi vo vrábloch", "objednať taxi vráble", "taxi vráble ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Vrbové",
+      "slug": "vrbove",
+      "region": "Trnavský kraj",
+      "description": "Mesto v Trnavskom kraji. Vyberte si taxi vo Vrbovom.",
+      "metaDescription": "Taxi Vrbové - Taxislužby vo Vrbovom. Overené taxi služby s kontaktmi.",
+      "keywords": ["taxi vrbové", "taxislužba vrbové", "taxi vo vrbovom", "objednať taxi vrbové", "taxi vrbové telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Vrútky",
+      "slug": "vrutky",
+      "region": "Žilinský kraj",
+      "description": "Mesto v Žilinskom kraji s rozvinutou železničnou dopravou. Nájdite taxi vo Vrútkach.",
+      "metaDescription": "Taxi Vrútky - Prehľad taxislužieb vo Vrútkach. Spoľahlivé taxi služby s kontaktmi.",
+      "keywords": ["taxi vrútky", "taxislužba vrútky", "taxi vo vrútkach", "objednať taxi vrútky", "taxi vrútky stanica"],
+      "taxiServices": []
+    },
+    {
+      "name": "Vysoké Tatry",
+      "slug": "vysoke-tatry",
+      "region": "Prešovský kraj",
+      "description": "Turistické mesto vo Vysokých Tatrách. Objednajte si taxi vo Vysokých Tatrách.",
+      "metaDescription": "Taxi Vysoké Tatry - Kompletný zoznam taxislužieb vo Vysokých Tatrách. Taxi služby pre turistov.",
+      "keywords": ["taxi vysoké tatry", "taxislužba vysoké tatry", "taxi vo vysokých tatrách", "objednať taxi tatry", "taxi tatry"],
+      "taxiServices": []
+    },
+    {
+      "name": "Zlaté Moravce",
+      "slug": "zlate-moravce",
+      "region": "Nitriansky kraj",
+      "description": "Okresné mesto v Nitrianskom kraji. Nájdite taxi v Zlatých Moravciach.",
+      "metaDescription": "Taxi Zlaté Moravce - Taxislužby v Zlatých Moravciach. Rýchle a overené taxi služby.",
+      "keywords": ["taxi zlaté moravce", "taxislužba zlaté moravce", "taxi v zlatých moravciach", "objednať taxi zlaté moravce", "taxi moravce"],
       "taxiServices": []
     },
     {
@@ -172,13 +1087,7 @@
       "region": "Banskobystrický kraj",
       "description": "Historické mesto so spoľahlivými taxislužbami. Nájdite si overené taxi vo Zvolene pre pohodlnú dopravu.",
       "metaDescription": "Taxi Zvolen - Kompletný prehľad taxislužieb vo Zvolene. Spoľahlivé taxi služby s kontaktmi a informáciami.",
-      "keywords": [
-        "taxi zvolen",
-        "taxislužba zvolen",
-        "taxi vo zvolene",
-        "objednať taxi zvolen",
-        "taxi zvolen ceny"
-      ],
+      "keywords": ["taxi zvolen", "taxislužba zvolen", "taxi vo zvolene", "objednať taxi zvolen", "taxi zvolen ceny"],
       "taxiServices": [
         {
           "name": "Lešť Taxi (vojenský obvod)",
@@ -231,6 +1140,42 @@
           "phone": "+421 950 600 700"
         }
       ]
+    },
+    {
+      "name": "Žarnovica",
+      "slug": "zarnovica",
+      "region": "Banskobystrický kraj",
+      "description": "Okresné mesto v Banskobystricky kraji. Vyberte si taxi v Žarnovici.",
+      "metaDescription": "Taxi Žarnovica - Prehľad taxislužieb v Žarnovici. Taxi služby s kontaktmi.",
+      "keywords": ["taxi žarnovica", "taxislužba žarnovica", "taxi v žarnovici", "objednať taxi žarnovica", "taxi žarnovica telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Želiezovce",
+      "slug": "zeliezovce",
+      "region": "Nitriansky kraj",
+      "description": "Okresné mesto v Nitrianskom kraji. Nájdite taxi v Želiezovciach.",
+      "metaDescription": "Taxi Želiezovce - Kompletný zoznam taxislužieb v Želiezovciach. Overené taxi služby.",
+      "keywords": ["taxi želiezovce", "taxislužba želiezovce", "taxi v želiezovciach", "objednať taxi želiezovce", "taxi želiezovce ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Žiar nad Hronom",
+      "slug": "ziar-nad-hronom",
+      "region": "Banskobystrický kraj",
+      "description": "Okresné mesto v Banskobystricky kraji. Objednajte si taxi v Žiari nad Hronom.",
+      "metaDescription": "Taxi Žiar nad Hronom - Taxislužby v Žiari nad Hronom. Spoľahlivé taxi služby s kontaktmi.",
+      "keywords": ["taxi žiar nad hronom", "taxislužba žiar", "taxi v žiari", "objednať taxi žiar", "taxi žiar telefón"],
+      "taxiServices": []
+    },
+    {
+      "name": "Žilina",
+      "slug": "zilina",
+      "region": "Žilinský kraj",
+      "description": "Významné mesto severného Slovenska s rozvinutou sieťou taxislužieb. Objednajte si taxi v Žiline jednoduchom.",
+      "metaDescription": "Taxi Žilina - Kompletný prehľad taxislužieb v Žiline. Nájdite si overené taxi rýchlo a jednoducho.",
+      "keywords": ["taxi žilina", "taxislužba žilina", "taxi v žiline", "objednať taxi žilina", "taxi žilina cenník"],
+      "taxiServices": []
     }
   ]
 }
