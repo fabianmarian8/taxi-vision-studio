@@ -1,5 +1,4 @@
 import axios from 'axios';
-import * as cheerio from 'cheerio';
 
 // Regex pre slovenské telefónne čísla
 const PHONE_REGEX = /(\+421|00421|0)[\s]?[1-9][0-9]{2}[\s]?[0-9]{3}[\s]?[0-9]{3}/g;
@@ -18,71 +17,16 @@ function normalizePhone(phone) {
   return normalized;
 }
 
-// Helper: Extrakcia dát z Google Business Profile karty
-function extractGBPData($, element) {
-  const $elem = $(element);
-
-  // Extrakcia názvu - väčšinou v h3 alebo div s role="heading"
-  let name = $elem.find('h3').first().text().trim();
-  if (!name) {
-    name = $elem.find('[role="heading"]').first().text().trim();
+// Helper: Normalizácia URL
+function normalizeUrl(url) {
+  if (!url) return null;
+  try {
+    // Ak URL začína s http:// alebo https://, použij ho priamo
+    const urlObj = new URL(url.startsWith('http') ? url : `https://${url}`);
+    return `${urlObj.protocol}//${urlObj.hostname}`;
+  } catch (e) {
+    return null;
   }
-  if (!name) {
-    name = $elem.find('.qBF1Pd').first().text().trim(); // Google-specific class
-  }
-
-  // Extrakcia telefónu - hľadaj v textovom obsahu
-  const cardText = $elem.text();
-  const phoneMatches = cardText.match(PHONE_REGEX);
-  const phone = phoneMatches ? normalizePhone(phoneMatches[0]) : null;
-
-  // Extrakcia webovej stránky
-  let website = null;
-  $elem.find('a').each((_, link) => {
-    const href = $(link).attr('href');
-    if (href && (href.startsWith('http') || href.startsWith('www'))) {
-      // Skip Google-related URLs
-      if (!href.includes('google.com') && !href.includes('maps.google')) {
-        try {
-          const url = new URL(href.startsWith('http') ? href : `https://${href}`);
-          website = `${url.protocol}//${url.hostname}`;
-          return false; // break loop
-        } catch (e) {
-          // Invalid URL, continue
-        }
-      }
-    }
-  });
-
-  // Extrakcia adresy
-  let address = null;
-  // Hľadaj elementy ktoré by mohli obsahovať adresu
-  $elem.find('[class*="address"], [class*="Address"]').each((_, addrElem) => {
-    const text = $(addrElem).text().trim();
-    if (text && text.length > 5) {
-      address = text;
-      return false; // break
-    }
-  });
-
-  // Ak nemáme adresu, skús hľadať v texte
-  if (!address) {
-    const lines = cardText.split('\n').map(l => l.trim()).filter(l => l.length > 5);
-    for (const line of lines) {
-      // Hľadaj riadok ktorý obsahuje slovenské mesto alebo PSČ
-      if (/\d{3}\s?\d{2}/.test(line) || /ulica|nám\.|cesta/i.test(line)) {
-        address = line;
-        break;
-      }
-    }
-  }
-
-  return {
-    name: name || null,
-    phone,
-    website,
-    address
-  };
 }
 
 // Hlavná funkcia - Vercel Serverless Handler
@@ -107,139 +51,150 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'City parameter is required' });
   }
 
+  // Kontrola API key
+  const GOOGLE_API_KEY = process.env.GOOGLE_PLACES_API_KEY;
+  if (!GOOGLE_API_KEY) {
+    console.error('GOOGLE_PLACES_API_KEY is not set in environment variables');
+    return res.status(500).json({ 
+      error: 'API key not configured',
+      message: 'Google Places API key is missing'
+    });
+  }
+
   const searchLimit = Math.min(Math.max(parseInt(limit) || 10, 1), 20);
 
   try {
-    console.log(`Starting GBP search for: ${city}, limit: ${searchLimit}`);
+    console.log(`Starting Google Places API search for: ${city}, limit: ${searchLimit}`);
 
-    // Google search query optimized for Business Profiles
-    const searchQuery = encodeURIComponent(`taxi ${city}`);
-    const googleUrl = `https://www.google.com/search?q=${searchQuery}&num=${searchLimit * 2}`;
+    // Krok 1: Text Search - vyhľadaj taxislužby v meste
+    const searchQuery = encodeURIComponent(`taxi ${city} Slovakia`);
+    const textSearchUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}&language=sk&key=${GOOGLE_API_KEY}`;
 
-    console.log(`Fetching Google URL: ${googleUrl}`);
+    console.log(`Fetching Places API: ${textSearchUrl.replace(GOOGLE_API_KEY, 'API_KEY_HIDDEN')}`);
 
-    // Fetch Google search results
-    const searchResponse = await axios.get(googleUrl, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-        'Accept-Language': 'sk-SK,sk;q=0.9,en-US;q=0.8,en;q=0.7',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Referer': 'https://www.google.com/'
-      },
+    const searchResponse = await axios.get(textSearchUrl, {
       timeout: 10000
     });
 
-    console.log(`Google response status: ${searchResponse.status}`);
-    console.log(`Google response length: ${searchResponse.data.length} bytes`);
+    if (searchResponse.data.status !== 'OK' && searchResponse.data.status !== 'ZERO_RESULTS') {
+      console.error('Places API error:', searchResponse.data.status, searchResponse.data.error_message);
+      return res.status(500).json({
+        error: 'Places API error',
+        message: searchResponse.data.error_message || searchResponse.data.status
+      });
+    }
 
-    const $ = cheerio.load(searchResponse.data);
+    const places = searchResponse.data.results || [];
+    console.log(`Found ${places.length} places from Text Search`);
+
+    if (places.length === 0) {
+      return res.status(200).json({
+        success: true,
+        city,
+        count: 0,
+        results: [],
+        message: 'Nenašli sa žiadne taxislužby v tomto meste'
+      });
+    }
+
+    // Krok 2: Pre každé miesto získaj detailné informácie
     const results = [];
     const seenPhones = new Set();
     const seenNames = new Set();
 
-    console.log('Parsing Google Business Profile results...');
+    // Spracuj maximálne searchLimit miest
+    const placesToProcess = places.slice(0, searchLimit);
 
-    // Metóda 1: Hľadaj GBP karty pomocou tried (Google často používa špecifické triedy)
-    // Tieto selektory sú založené na bežných GBP štruktúrach
-    const gbpSelectors = [
-      '[data-attrid="kc:/local:one box"]', // Local knowledge panel
-      '[jsname]', // JS-generated business cards
-      '.g', // Standard search results (môže obsahovať GBP info)
-      '[data-sokoban-container]', // Business listings
-      '.VkpGBb', // Specific GBP class
-      '.rllt__details' // Local results details
-    ];
+    console.log(`Fetching details for ${placesToProcess.length} places...`);
 
-    for (const selector of gbpSelectors) {
-      $(selector).each((i, elem) => {
-        if (results.length >= searchLimit) return false;
+    // Spracuj paralelne po 5 naraz (aby sme nepreťažili API)
+    const batchSize = 5;
+    for (let i = 0; i < placesToProcess.length; i += batchSize) {
+      const batch = placesToProcess.slice(i, i + batchSize);
 
-        try {
-          const data = extractGBPData($, elem);
+      const batchResults = await Promise.allSettled(
+        batch.map(async (place) => {
+          try {
+            // Place Details API call
+            const detailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${place.place_id}&fields=name,formatted_phone_number,international_phone_number,website,formatted_address,url&language=sk&key=${GOOGLE_API_KEY}`;
 
-          // Validácia - musíme mať aspoň názov
-          if (!data.name || data.name.length < 3) return;
+            const detailsResponse = await axios.get(detailsUrl, {
+              timeout: 8000
+            });
 
-          // Skip duplicity podľa názvu
-          const nameLower = data.name.toLowerCase();
-          if (seenNames.has(nameLower)) {
-            console.log(`Skipping duplicate name: ${data.name}`);
-            return;
+            if (detailsResponse.data.status !== 'OK') {
+              console.warn(`Failed to get details for ${place.name}: ${detailsResponse.data.status}`);
+              return null;
+            }
+
+            const details = detailsResponse.data.result;
+
+            // Normalizuj telefón
+            const phone = normalizePhone(
+              details.international_phone_number || 
+              details.formatted_phone_number
+            );
+
+            // Normalizuj website
+            const website = normalizeUrl(details.website);
+
+            // Skip ak nemáme aspoň jeden kontakt
+            if (!phone && !website) {
+              console.log(`Skipping ${details.name} - no contact info`);
+              return null;
+            }
+
+            // Skip duplicity podľa názvu
+            const nameLower = details.name.toLowerCase();
+            if (seenNames.has(nameLower)) {
+              console.log(`Skipping duplicate name: ${details.name}`);
+              return null;
+            }
+
+            // Skip duplicity podľa telefónu
+            if (phone && seenPhones.has(phone)) {
+              console.log(`Skipping duplicate phone: ${phone}`);
+              return null;
+            }
+
+            console.log(`✓ Found: ${details.name} - Phone: ${phone || 'N/A'} - Website: ${website || 'N/A'}`);
+
+            seenNames.add(nameLower);
+            if (phone) seenPhones.add(phone);
+
+            return {
+              name: details.name,
+              phone: phone || null,
+              website: website || null,
+              address: details.formatted_address || null,
+              googleMapsUrl: details.url || null
+            };
+          } catch (error) {
+            console.error(`Error fetching details for ${place.name}:`, error.message);
+            return null;
           }
+        })
+      );
 
-          // Skip duplicity podľa telefónu
-          if (data.phone && seenPhones.has(data.phone)) {
-            console.log(`Skipping duplicate phone: ${data.phone}`);
-            return;
-          }
-
-          // Aspoň jeden kontakt musí byť prítomný
-          if (!data.phone && !data.website) {
-            console.log(`Skipping ${data.name} - no contact info`);
-            return;
-          }
-
-          console.log(`Found GBP result: ${data.name} - Phone: ${data.phone || 'N/A'} - Website: ${data.website || 'N/A'}`);
-
-          seenNames.add(nameLower);
-          if (data.phone) seenPhones.add(data.phone);
-
-          results.push({
-            name: data.name,
-            phone: data.phone,
-            website: data.website,
-            address: data.address
-          });
-        } catch (error) {
-          console.error(`Error parsing GBP element:`, error.message);
+      // Pridaj úspešné výsledky
+      batchResults.forEach(result => {
+        if (result.status === 'fulfilled' && result.value) {
+          results.push(result.value);
         }
       });
 
+      // Stop ak už máme dostatok výsledkov
       if (results.length >= searchLimit) break;
     }
 
-    // Metóda 2: Fallback - hľadaj v texte stránky pre telefónne čísla a názvy
-    if (results.length < 3) {
-      console.log('Using fallback method - searching for phone numbers in page text');
-
-      const pageText = $('body').text();
-      const allPhones = pageText.match(new RegExp(PHONE_REGEX, 'g')) || [];
-
-      const uniquePhones = [...new Set(allPhones.map(p => normalizePhone(p)))];
-
-      for (const phone of uniquePhones) {
-        if (results.length >= searchLimit) break;
-        if (seenPhones.has(phone)) continue;
-
-        // Skús nájsť názov v blízkosti telefónneho čísla
-        const phoneIndex = pageText.indexOf(phone);
-        if (phoneIndex > -1) {
-          const contextBefore = pageText.substring(Math.max(0, phoneIndex - 200), phoneIndex);
-          const lines = contextBefore.split('\n').filter(l => l.trim().length > 3);
-          const potentialName = lines[lines.length - 1]?.trim();
-
-          if (potentialName && potentialName.length < 100) {
-            console.log(`Found via fallback: ${potentialName} - ${phone}`);
-            results.push({
-              name: potentialName,
-              phone,
-              website: null,
-              address: null
-            });
-            seenPhones.add(phone);
-          }
-        }
-      }
-    }
-
-    console.log(`Returning ${results.length} GBP results`);
+    console.log(`Returning ${results.length} results from Google Places API`);
 
     return res.status(200).json({
       success: true,
       city,
       count: results.length,
-      results
+      results,
+      source: 'Google Places API'
     });
 
   } catch (error) {
