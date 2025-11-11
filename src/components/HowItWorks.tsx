@@ -4,18 +4,18 @@ export const HowItWorks = () => {
   const steps = [
     {
       icon: Search,
-      title: "Search Your City",
-      description: "Enter your city or use your current location",
+      title: "Vyhľadajte vaše mesto",
+      description: "Zadajte vaše mesto alebo použite aktuálnu polohu",
     },
     {
       icon: MapPin,
-      title: "Find Nearby",
-      description: "See available taxis in your area instantly",
+      title: "Nájdite v okolí",
+      description: "Okamžite zobrazíte dostupné taxíky vo vašej oblasti",
     },
     {
       icon: Car,
-      title: "Get a Ride",
-      description: "Connect with local taxi services quickly",
+      title: "Získajte odvoz",
+      description: "Spojte sa s miestnymi taxislužbami rýchlo",
     },
   ];
 
@@ -24,10 +24,10 @@ export const HowItWorks = () => {
       <div className="container mx-auto px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            How It Works
+            Ako to funguje
           </h2>
           <p className="text-xl text-foreground font-bold max-w-2xl mx-auto">
-            Finding a taxi has never been this simple
+            Nájsť taxi nikdy nebolo takéto jednoduché
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export const HowItWorks = () => {
               
               <div className="space-y-2">
                 <div className="text-sm font-black text-foreground mb-2">
-                  Step {index + 1}
+                  Krok {index + 1}
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-foreground">
                   {step.title}

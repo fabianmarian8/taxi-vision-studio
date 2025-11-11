@@ -10,7 +10,7 @@ export const SearchPanel = () => {
           <Search className="h-5 w-5 text-foreground" />
           <Input
             type="text"
-            placeholder="Enter city name..."
+            placeholder="Zadajte názov mesta..."
             className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base placeholder:text-muted-foreground text-foreground font-medium"
           />
         </div>
@@ -25,7 +25,7 @@ export const SearchPanel = () => {
       </div>
       
       <p className="text-center text-sm text-foreground font-bold mt-4">
-        Or use your location to find nearby taxis instantly
+        Alebo použite svoju polohu pre okamžité vyhľadanie taxíkov v okolí
       </p>
     </div>
   );
