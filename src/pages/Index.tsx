@@ -6,6 +6,7 @@ import { GeometricLines } from "@/components/GeometricLines";
 import { MapPin } from "lucide-react";
 import logo from "@/assets/logo-3d.jpg";
 import { slovakCities } from "@/data/cities";
+import { Link } from "react-router-dom";
 
 const Index = () => {
 
@@ -126,12 +127,12 @@ const Index = () => {
             </div>
             
             <div className="flex gap-8">
-              <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
+              <Link to="/ochrana-sukromia" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
                 Ochrana súkromia
-              </a>
-              <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
+              </Link>
+              <Link to="/podmienky-pouzivania" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
                 Podmienky používania
-              </a>
+              </Link>
               <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
                 Kontakt
               </a>

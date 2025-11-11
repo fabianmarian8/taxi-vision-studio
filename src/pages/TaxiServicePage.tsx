@@ -250,12 +250,12 @@ const TaxiServicePage = () => {
             </div>
 
             <div className="flex gap-8">
-              <a href="/#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
+              <Link to="/ochrana-sukromia" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
                 Ochrana súkromia
-              </a>
-              <a href="/#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
+              </Link>
+              <Link to="/podmienky-pouzivania" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
                 Podmienky používania
-              </a>
+              </Link>
               <a href="/#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
                 Kontakt
               </a>

@@ -11,6 +11,8 @@ import TaxiScraperTool from "./components/TaxiScraperTool";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminEditCity from "./pages/AdminEditCity";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/scraper" element={<TaxiScraperTool />} />
+          {/* Legal pages */}
+          <Route path="/ochrana-sukromia" element={<PrivacyPolicy />} />
+          <Route path="/podmienky-pouzivania" element={<TermsOfUse />} />
           {/* Admin routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
