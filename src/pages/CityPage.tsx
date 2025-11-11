@@ -1,4 +1,4 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -12,6 +12,9 @@ const CityPage = () => {
   const city = citySlug ? getCityBySlug(citySlug) : undefined;
 
   useEffect(() => {
+    // Scroll to top when page opens
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
     if (city) {
       // Dynamické nastavenie meta tagov pre SEO
       document.title = `TAXI - ${city.name} | Taxi NearMe`;
@@ -108,43 +111,47 @@ const CityPage = () => {
           </div>
 
           {city.taxiServices.length > 0 ? (
-            <div className="grid gap-6">
-              {city.taxiServices.map((service, index) => (
-                <Card key={index} className="perspective-1000">
-                  <div className="card-3d shadow-3d-lg hover:shadow-3d-xl transition-all">
-                    <CardHeader>
-                      <CardTitle className="text-2xl font-black flex items-center gap-3">
-                        <MapPin className="h-6 w-6 text-foreground" />
-                        {service.name}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex flex-col gap-3">
-                        {service.phone && (
-                          <a
-                            href={`tel:${service.phone}`}
-                            className="flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold"
-                          >
-                            <Phone className="h-4 w-4" />
-                            {service.phone}
-                          </a>
-                        )}
-                        {service.website && (
-                          <a
-                            href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold"
-                          >
-                            <Globe className="h-4 w-4" />
-                            {service.website}
-                          </a>
-                        )}
+            <div className="grid gap-3">
+              {city.taxiServices.map((service, index) => {
+                // Generate slug for the taxi service
+                const serviceSlug = service.name
+                  .toLowerCase()
+                  .normalize("NFD")
+                  .replace(/[\u0300-\u036f]/g, "") // Remove diacritics
+                  .replace(/[^a-z0-9]+/g, '-')
+                  .replace(/(^-|-$)/g, '');
+
+                return (
+                  <Card key={index} className="perspective-1000">
+                    <Link to={`/taxi/${citySlug}/${serviceSlug}`}>
+                      <div className="card-3d shadow-3d-md hover:shadow-3d-lg transition-all cursor-pointer">
+                        <CardHeader className="pb-2">
+                          <CardTitle className="text-lg font-bold flex items-center gap-2">
+                            <MapPin className="h-4 w-4 text-foreground flex-shrink-0" />
+                            {service.name}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="pt-0">
+                          <div className="flex flex-col gap-1.5 text-sm">
+                            {service.phone && (
+                              <div className="flex items-center gap-2 text-foreground font-medium">
+                                <Phone className="h-3.5 w-3.5 flex-shrink-0" />
+                                {service.phone}
+                              </div>
+                            )}
+                            {service.website && (
+                              <div className="flex items-center gap-2 text-foreground font-medium truncate">
+                                <Globe className="h-3.5 w-3.5 flex-shrink-0" />
+                                <span className="truncate">{service.website}</span>
+                              </div>
+                            )}
+                          </div>
+                        </CardContent>
                       </div>
-                    </CardContent>
-                  </div>
-                </Card>
-              ))}
+                    </Link>
+                  </Card>
+                );
+              })}
             </div>
           ) : (
             <Card className="perspective-1000">

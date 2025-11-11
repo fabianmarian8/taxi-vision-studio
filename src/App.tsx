@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import CityPage from "./pages/CityPage";
+import TaxiServicePage from "./pages/TaxiServicePage";
 import NotFound from "./pages/NotFound";
 import TaxiScraperTool from "./components/TaxiScraperTool";
 import AdminLogin from "./pages/AdminLogin";
@@ -28,6 +29,8 @@ const App = () => (
           <Route path="/admin/edit/:citySlug" element={<AdminEditCity />} />
           {/* City routes - SEO optimized pages for each city */}
           <Route path="/taxi/:citySlug" element={<CityPage />} />
+          {/* Individual taxi service pages - SEO optimized for each service */}
+          <Route path="/taxi/:citySlug/:serviceSlug" element={<TaxiServicePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
