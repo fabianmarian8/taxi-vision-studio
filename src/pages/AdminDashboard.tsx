@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { LogOut, MapPin, Edit } from 'lucide-react';
+import { LogOut, MapPin, Edit, Bell } from 'lucide-react';
 
 interface CityData {
   name: string;
@@ -15,6 +15,7 @@ interface CityData {
 export default function AdminDashboard() {
   const [cities, setCities] = useState<CityData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [pendingSuggestionsCount, setPendingSuggestionsCount] = useState(0);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -42,6 +43,25 @@ export default function AdminDashboard() {
         setCities(data.cities || []);
       } else {
         throw new Error('Failed to load data');
+      }
+
+      // Načítaj počet čakajúcich návrhov
+      try {
+        const suggestionsResponse = await fetch('/api/suggestions', {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+        });
+
+        if (suggestionsResponse.ok) {
+          const suggestionsData = await suggestionsResponse.json();
+          const pendingCount = suggestionsData.suggestions.filter(
+            (s: any) => s.status === 'pending'
+          ).length;
+          setPendingSuggestionsCount(pendingCount);
+        }
+      } catch (error) {
+        console.error('Failed to load suggestions count:', error);
       }
     } catch (error) {
       toast({
@@ -89,6 +109,29 @@ export default function AdminDashboard() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Návrhy - Quick Access */}
+        {pendingSuggestionsCount > 0 && (
+          <Card className="mb-6 border-blue-200 bg-blue-50">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-blue-900">
+                <Bell className="w-5 h-5" />
+                Čakajúce návrhy taxislužieb
+              </CardTitle>
+              <CardDescription>
+                Máte {pendingSuggestionsCount} nových návrhov čakajúcich na schválenie
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button
+                onClick={() => navigate('/admin/suggestions')}
+                className="w-full sm:w-auto"
+              >
+                Zobraziť návrhy
+              </Button>
+            </CardContent>
+          </Card>
+        )}
+
         <div className="mb-6">
           <h2 className="text-lg font-semibold text-gray-700 mb-2">Mestá na Slovensku</h2>
           <p className="text-gray-600">Kliknutím na mesto môžete upraviť zoznam taxislužieb</p>
