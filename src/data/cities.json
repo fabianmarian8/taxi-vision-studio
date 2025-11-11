@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-11T13:01:53.897Z",
+  "lastUpdated": "2025-11-11T13:09:09.238Z",
   "cities": [
     {
       "name": "Bratislava",
@@ -184,6 +184,11 @@
           "name": "Lešť Taxi (vojenský obvod)",
           "website": "www.lesttaxi.com",
           "phone": "+421 902 048 583"
+        },
+        {
+          "name": "Europa Taxi Zvolen",
+          "website": "www.eutaxi.sk",
+          "phone": "+421 908 599 909"
         }
       ]
     }
