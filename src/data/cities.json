@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-11T13:11:29.904Z",
+  "lastUpdated": "2025-11-11T13:12:18.985Z",
   "cities": [
     {
       "name": "Bratislava",
@@ -204,6 +204,11 @@
           "name": "Taxi Zvolen",
           "website": "www.taxizvolen.eu",
           "phone": "+421 905 921 070"
+        },
+        {
+          "name": "Star Taxi Zvolen",
+          "website": "https://maps.google.com/?cid=4351691881399156335",
+          "phone": "+421 905 579 050"
         }
       ]
     }
