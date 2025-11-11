@@ -145,11 +145,19 @@ export default function AdminEditCity() {
         }),
       });
 
-      if (!scraperResponse.ok) {
-        throw new Error('Scraping failed');
-      }
-
       const scraperData = await scraperResponse.json();
+
+      // Kontrola API chyby s konkrétnou správou
+      if (!scraperResponse.ok) {
+        const errorMessage = scraperData.message || scraperData.error || 'Neznáma chyba API';
+        toast({
+          title: 'Chyba API',
+          description: errorMessage,
+          variant: 'destructive',
+        });
+        setIsScrapingInProgress(false);
+        return;
+      }
 
       if (!scraperData.success || scraperData.count === 0) {
         toast({
@@ -176,7 +184,15 @@ export default function AdminEditCity() {
       });
 
       if (!suggestionsResponse.ok) {
-        throw new Error('Failed to save suggestions');
+        const suggestionsData = await suggestionsResponse.json();
+        const errorMessage = suggestionsData.message || suggestionsData.error || 'Nepodarilo sa uložiť návrhy';
+        toast({
+          title: 'Chyba',
+          description: errorMessage,
+          variant: 'destructive',
+        });
+        setIsScrapingInProgress(false);
+        return;
       }
 
       const result = await suggestionsResponse.json();
@@ -189,9 +205,10 @@ export default function AdminEditCity() {
       // Naviguj na stránku návrhov
       navigate('/admin/suggestions');
     } catch (error) {
+      console.error('Error in handleFindNewServices:', error);
       toast({
         title: 'Chyba',
-        description: 'Nepodarilo sa nájsť nové taxislužby',
+        description: error instanceof Error ? error.message : 'Nepodarilo sa nájsť nové taxislužby',
         variant: 'destructive',
       });
     } finally {

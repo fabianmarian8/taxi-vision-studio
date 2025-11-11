@@ -9,6 +9,9 @@
   "functions": {
     "api/taxi-scraper.js": {
       "maxDuration": 30
+    },
+    "api/gbp-scraper.js": {
+      "maxDuration": 30
     }
   }
 }
