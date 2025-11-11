@@ -1,4 +1,4 @@
-import { Car } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 interface CityCardProps {
   name: string;
@@ -7,23 +7,31 @@ interface CityCardProps {
 
 export const CityCard = ({ name, country }: CityCardProps) => {
   return (
-    <button className="group relative bg-card rounded-2xl p-8 border-4 border-foreground shadow-medium hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 w-full text-left overflow-hidden">
-      <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-        <Car className="h-16 w-16 text-foreground" strokeWidth={2} />
+    <div className="perspective-1000">
+      <div className="group relative bg-card rounded-2xl p-6 shadow-3d-md hover:shadow-3d-lg card-3d cursor-pointer overflow-hidden">
+        {/* 3D Decorative Element */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-foreground/5 to-transparent rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-300"></div>
+        
+        <div className="relative z-10 flex items-start gap-4">
+          <div className="flex-shrink-0 w-12 h-12 bg-foreground rounded-xl flex items-center justify-center shadow-3d-sm group-hover:scale-110 transition-transform duration-300">
+            <MapPin className="h-6 w-6 text-background" strokeWidth={2.5} />
+          </div>
+          
+          <div className="flex-1 min-w-0">
+            <h3 className="text-xl font-black text-foreground mb-1 group-hover:translate-x-1 transition-transform duration-300">
+              {name}
+            </h3>
+            {country && (
+              <p className="text-sm text-foreground/70 font-bold">
+                {country}
+              </p>
+            )}
+          </div>
+        </div>
+
+        {/* 3D Hover Effect Indicator */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-foreground/0 via-foreground/20 to-foreground/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
-      
-      <div className="relative z-10">
-        <h3 className="text-2xl font-bold text-foreground mb-1">
-          {name}
-        </h3>
-        {country && (
-          <p className="text-foreground/60 text-sm font-bold">
-            {country}
-          </p>
-        )}
-      </div>
-      
-      <div className="absolute bottom-0 right-0 w-24 h-24 bg-foreground/5 rounded-tl-full"></div>
-    </button>
+    </div>
   );
 };

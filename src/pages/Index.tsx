@@ -2,8 +2,9 @@ import { Header } from "@/components/Header";
 import { SearchPanel } from "@/components/SearchPanel";
 import { CityCard } from "@/components/CityCard";
 import { HowItWorks } from "@/components/HowItWorks";
+import { GeometricLines } from "@/components/GeometricLines";
 import { MapPin } from "lucide-react";
-import logo from "@/assets/logo-large.jpg";
+import logo from "@/assets/logo-3d.jpg";
 
 const Index = () => {
   const cities = [
@@ -25,59 +26,51 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section */}
-      <section className="pt-12 pb-24 px-8 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          {[...Array(12)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute h-full border-l-4 border-foreground"
-              style={{
-                left: `${(i + 1) * 8}%`,
-                transform: `rotate(${-15 + i * 2}deg)`,
-              }}
-            />
-          ))}
-        </div>
+      {/* Hero Section with 3D Effects */}
+      <section className="pt-20 pb-32 px-8 relative hero-3d-bg">
+        <GeometricLines variant="hero" count={10} />
         
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center space-y-6">
-            <div>
+          <div className="text-center space-y-8">
+            {/* 3D Floating Logo without border */}
+            <div className="perspective-1500 mb-8">
               <img 
                 src={logo} 
                 alt="Taxi NearMe" 
-                className="h-48 md:h-56 lg:h-64 w-auto mx-auto border-4 border-foreground rounded-2xl shadow-lifted" 
+                className="h-56 md:h-64 lg:h-72 w-auto mx-auto rounded-3xl shadow-3d-xl float-3d hover:scale-105 transition-transform duration-300" 
               />
             </div>
             
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground drop-shadow-lg">
               Taxi v každom meste
             </h1>
             
-            <p className="text-xl md:text-2xl text-foreground max-w-2xl mx-auto font-bold">
+            <p className="text-xl md:text-2xl text-foreground/90 max-w-2xl mx-auto font-bold">
               Nájdite spoľahlivé taxislužby kdekoľvek ste. Rýchlo, jednoducho a vždy nablízku.
             </p>
 
-            <div className="pt-4">
+            <div className="pt-6">
               <SearchPanel />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Cities Grid */}
-      <section id="cities" className="py-24 px-8 bg-secondary/40">
-        <div className="container mx-auto max-w-7xl">
+      {/* Cities Grid with 3D Cards */}
+      <section id="cities" className="py-24 px-8 relative">
+        <GeometricLines variant="subtle" count={6} />
+        
+        <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            <h2 className="text-5xl md:text-6xl font-black mb-6 text-foreground drop-shadow-md">
               Obľúbené mestá
             </h2>
-            <p className="text-xl text-foreground font-bold">
+            <p className="text-xl text-foreground/90 font-bold">
               Dostupní sme vo veľkých mestách po celom svete
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {cities.map((city) => (
               <CityCard key={city.name} name={city.name} country={city.country} />
             ))}
@@ -88,46 +81,52 @@ const Index = () => {
       {/* How It Works */}
       <HowItWorks />
 
-      {/* Map Section */}
-      <section className="py-24 px-8">
-        <div className="container mx-auto max-w-6xl">
+      {/* Map Section with 3D Effect */}
+      <section className="py-24 px-8 relative">
+        <GeometricLines variant="section" count={8} />
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            <h2 className="text-5xl md:text-6xl font-black mb-6 text-foreground drop-shadow-md">
               Dostupné všade
             </h2>
-            <p className="text-xl text-foreground font-bold">
+            <p className="text-xl text-foreground/90 font-bold">
               Každý mesiac expandujeme do nových miest
             </p>
           </div>
 
-          <div className="relative bg-card rounded-3xl p-16 border-4 border-foreground shadow-soft min-h-[400px] flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 opacity-5">
-              {[...Array(20)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-3 h-3 bg-foreground rounded-full animate-pulse"
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 2}s`,
-                  }}
-                />
-              ))}
-            </div>
-            
-            <div className="relative z-10 text-center">
-              <MapPin className="h-24 w-24 text-foreground mx-auto mb-6" strokeWidth={2.5} />
-              <h3 className="text-3xl font-bold mb-4 text-foreground">Čoskoro vo vašom meste</h3>
-              <p className="text-foreground/70 text-lg font-medium">
-                Pridajte sa k tisíckam užívateľov, ktorí jednoducho nachádzajú taxíky
-              </p>
+          <div className="perspective-1000">
+            <div className="relative bg-card rounded-3xl p-16 shadow-3d-lg card-3d min-h-[400px] flex items-center justify-center overflow-hidden">
+              <div className="absolute inset-0 opacity-5">
+                {[...Array(20)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-3 h-3 bg-foreground rounded-full animate-pulse"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                      animationDelay: `${Math.random() * 2}s`,
+                    }}
+                  />
+                ))}
+              </div>
+              
+              <div className="relative z-10 text-center">
+                <MapPin className="h-24 w-24 text-foreground mx-auto mb-6" strokeWidth={2.5} />
+                <h3 className="text-3xl font-black mb-4 text-foreground">Čoskoro vo vašom meste</h3>
+                <p className="text-foreground/70 text-lg font-medium">
+                  Pridajte sa k tisíckam užívateľov, ktorí jednoducho nachádzajú taxíky
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t-4 border-foreground py-12 px-8 bg-secondary/40">
+      {/* Footer with 3D Border */}
+      <footer className="border-t-4 border-foreground py-12 px-8 relative">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-foreground/20 to-transparent"></div>
+        
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-foreground font-bold">
@@ -135,13 +134,13 @@ const Index = () => {
             </div>
             
             <div className="flex gap-8">
-              <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors">
+              <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
                 Ochrana súkromia
               </a>
-              <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors">
+              <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
                 Podmienky používania
               </a>
-              <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors">
+              <a href="#" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
                 Kontakt
               </a>
             </div>

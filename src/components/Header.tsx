@@ -1,12 +1,12 @@
 import { MapPin } from "lucide-react";
 import { Button } from "./ui/button";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo-3d.jpg";
 export const Header = () => {
-  return <header className="sticky top-0 z-50 bg-background border-b-4 border-foreground">
+  return <header className="sticky top-0 z-50 bg-background border-b-4 border-foreground backdrop-blur-sm bg-background/95">
       <div className="container mx-auto px-8 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Taxi NearMe logo" className="h-10 w-auto border-4 border-foreground rounded-lg" />
+            <img src={logo} alt="Taxi NearMe logo" className="h-12 w-auto rounded-lg shadow-3d-sm hover:shadow-3d-md transition-all hover:scale-105" />
             <div className="flex flex-col -space-y-1">
               
               
@@ -25,7 +25,7 @@ export const Header = () => {
             </a>
           </nav>
 
-          <Button className="rounded-full px-6 py-6 shadow-medium hover:shadow-lifted transition-all font-bold">
+          <Button className="rounded-full px-6 py-6 shadow-3d-sm hover:shadow-3d-md transition-all font-bold hover:scale-105">
             <MapPin className="mr-2 h-4 w-4" />
             Nájsť taxi
           </Button>
