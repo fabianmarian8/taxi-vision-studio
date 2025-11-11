@@ -26,7 +26,7 @@ const Index = () => {
               <img
                 src={taxiLogo}
                 alt="Taxi NearMe Logo"
-                className="h-32 md:h-40 lg:h-48 w-auto mx-auto drop-shadow-lg hover:scale-105 transition-transform duration-300"
+                className="h-32 md:h-40 lg:h-48 w-auto mx-auto drop-shadow-lg"
               />
             </div>
             
