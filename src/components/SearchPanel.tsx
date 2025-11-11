@@ -3,6 +3,8 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useState } from "react";
 import { toast } from "sonner";
+import { findNearestCity } from "@/lib/locationUtils";
+import { slovakCities } from "@/data/cities";
 
 export const SearchPanel = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -34,19 +36,45 @@ export const SearchPanel = () => {
 
           const data = await response.json();
 
-          // Extract city name from the response
-          const city = data.address?.city ||
+          // Extract city name and region from the response
+          const detectedCity = data.address?.city ||
                       data.address?.town ||
                       data.address?.village ||
                       data.address?.municipality ||
-                      data.address?.county ||
                       "";
 
-          if (city) {
-            setSearchValue(city);
-            toast.success(`Poloha nájdená: ${city}`);
+          const detectedRegion = data.address?.state || "";
+
+          // Check if the detected city exists in our database
+          const cityInDatabase = slovakCities.find(
+            (city) =>
+              city.name.toLowerCase() === detectedCity.toLowerCase()
+          );
+
+          if (cityInDatabase) {
+            // City found in database, use it directly
+            setSearchValue(cityInDatabase.name);
+            toast.success(`Poloha nájdená: ${cityInDatabase.name}`);
           } else {
-            toast.error("Nepodarilo sa určiť mesto z vašej polohy");
+            // City not in database, find nearest city from our list
+            toast.info("Hľadám najbližšie mesto z nášho zoznamu...");
+
+            const nearestCity = await findNearestCity(
+              latitude,
+              longitude,
+              detectedRegion
+            );
+
+            if (nearestCity) {
+              setSearchValue(nearestCity);
+              toast.success(
+                detectedCity
+                  ? `Najbližšie mesto v našom zozname: ${nearestCity} (ste v: ${detectedCity})`
+                  : `Najbližšie mesto nájdené: ${nearestCity}`
+              );
+            } else {
+              toast.error("Nepodarilo sa nájsť najbližšie mesto z nášho zoznamu");
+            }
           }
         } catch (error) {
           console.error("Error fetching location:", error);
