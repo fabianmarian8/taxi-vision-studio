@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import CityPage from "./pages/CityPage";
 import NotFound from "./pages/NotFound";
 import TaxiScraperTool from "./components/TaxiScraperTool";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminEditCity from "./pages/AdminEditCity";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +22,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/scraper" element={<TaxiScraperTool />} />
+          {/* Admin routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/edit/:citySlug" element={<AdminEditCity />} />
           {/* City routes - SEO optimized pages for each city */}
           <Route path="/taxi/:citySlug" element={<CityPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -1,0 +1,32 @@
+{
+  "lastUpdated": "2025-01-15T00:00:00.000Z",
+  "cities": [
+    {
+      "name": "Bratislava",
+      "slug": "bratislava",
+      "region": "Bratislavský kraj",
+      "description": "Hlavné mesto Slovenska s najväčším počtom taxislužieb. Nájdite si spoľahlivé taxi v Bratislave kedykoľvek potrebujete.",
+      "metaDescription": "Taxi Bratislava - Nájdite spoľahlivé taxislužby v Bratislave. Kompletný zoznam taxi služieb s kontaktmi a webovými stránkami.",
+      "keywords": ["taxi bratislava", "taxislužba bratislava", "taxi v bratislave", "objednať taxi bratislava", "taxi bratislava ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Košice",
+      "slug": "kosice",
+      "region": "Košický kraj",
+      "description": "Druhé najväčšie mesto Slovenska s kvalitnou ponukou taxislužieb. Vyberte si z overených taxíkov v Košiciach.",
+      "metaDescription": "Taxi Košice - Spoľahlivé taxislužby v Košiciach. Zoznam overených taxi služieb s aktuálnymi kontaktmi a cenami.",
+      "keywords": ["taxi košice", "taxislužba košice", "taxi v košiciach", "objednať taxi košice", "taxi košice ceny"],
+      "taxiServices": []
+    },
+    {
+      "name": "Prešov",
+      "slug": "presov",
+      "region": "Prešovský kraj",
+      "description": "Centrum východného Slovenska s dostupnými taxislužbami pre obyvateľov aj návštevníkov. Nájdite taxi v Prešove.",
+      "metaDescription": "Taxi Prešov - Zoznam taxislužieb v Prešove. Rýchle a spoľahlivé taxi služby s overenými kontaktmi.",
+      "keywords": ["taxi prešov", "taxislužba prešov", "taxi v prešove", "objednať taxi prešov", "taxi prešov telefón"],
+      "taxiServices": []
+    }
+  ]
+}
