@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* Exact yellow from logo */
-    --background: 41 84% 55%;
+    --background: 40 76% 53%;
     --foreground: 0 0% 6%;
 
     --card: 0 0% 100%;
@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 6%;
 
-    --primary: 41 84% 55%;
+    --primary: 40 76% 53%;
     --primary-foreground: 0 0% 6%;
 
     --secondary: 43 88% 60%;
@@ -38,7 +38,7 @@
     --radius: 1rem;
     
     /* Custom 3D Design Tokens */
-    --taxi-yellow: 41 84% 55%;
+    --taxi-yellow: 40 76% 53%;
     --taxi-dark: 0 0% 6%;
     --taxi-white: 0 0% 100%;
     --taxi-shadow: 0 0% 0%;
@@ -84,7 +84,7 @@
     --popover: 0 0% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 41 84% 55%;
+    --primary: 40 76% 53%;
     --primary-foreground: 0 0% 6%;
 
     --secondary: 0 0% 15%;
