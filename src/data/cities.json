@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-11T13:16:25.162Z",
+  "lastUpdated": "2025-11-11T13:19:09.688Z",
   "cities": [
     {
       "name": "Bratislava",
@@ -219,6 +219,11 @@
           "name": "PP Taxi Zvolen",
           "website": "http://www.pptaxi.sk",
           "phone": "+421 908 616 666"
+        },
+        {
+          "name": "ONE TAXI Zvolen ",
+          "website": "https://www.instagram.com/one_taxi_zvolen/",
+          "phone": "+421 948 369 369"
         }
       ]
     }
