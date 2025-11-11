@@ -21,7 +21,7 @@ export const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-24 relative">
+    <section id="how-it-works" className="py-24 relative">
       <GeometricLines variant="subtle" count={6} />
       <div className="container mx-auto px-8 relative z-10">
         <div className="text-center mb-16">
