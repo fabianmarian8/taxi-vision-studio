@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T14:15:35.924Z",
+  "lastUpdated": "2025-11-12T14:16:41.607Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2233,8 +2233,9 @@
         "website": "https://kosicetaxi24.sk",
         "address": "Palackého 1426/10, 040 01 Košice, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-araukkncd",
@@ -2245,8 +2246,9 @@
         "website": null,
         "address": "Kukučínova 23, 040 01 Košice-Juh, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-zg6eurr2q",
@@ -2257,8 +2259,9 @@
         "website": "https://www.e-taxike.sk",
         "address": "Južná trieda 4a, 040 01 Košice-IV, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-lo6412bdc",
@@ -2269,8 +2272,9 @@
         "website": "https://www.mytaxikosice.sk",
         "address": "Hlavná 3, 040 01 Košice-Staré Mesto, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-mnokntw32",
@@ -2281,8 +2285,9 @@
         "website": "http://yellowtaxikosice.sk",
         "address": "Hlavná 5, 040 01 Košice-Staré Mesto, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-r08xcwpj1",
@@ -2293,8 +2298,9 @@
         "website": "http://www.taketaxi.sk",
         "address": "Toryská 5, 040 11 Košice - mestská časť Západ, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-8mbd2hvl7",
@@ -2305,8 +2311,9 @@
         "website": "http://www.taxi-plus.sk",
         "address": "4, Hlavná 5, 040 01 Košice-Staré Mesto, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-ww4aodeki",
@@ -2317,8 +2324,9 @@
         "website": "http://www.student-taxi.sk",
         "address": "Dénešova 23, 040 23 Košice-Sídlisko KVP, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-937q7q5or",
@@ -2329,8 +2337,9 @@
         "website": "https://www.ctctaxi.sk",
         "address": "Hlavná 1, 040 01 Košice, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-wpzdcb9di",
@@ -2341,8 +2350,9 @@
         "website": null,
         "address": "Rampová 2418/4, 040 01 Košice, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-nvjvu08dt",
@@ -2353,8 +2363,9 @@
         "website": "https://www.najpaxtaxikosice.sk",
         "address": "Rooseveltova, 040 01 Košice, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-wbzqdayoo",
@@ -2365,8 +2376,9 @@
         "website": "http://americantaxi.sk",
         "address": "Textilná 1832/5, 040 12 Košice-Nad jazerom, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-4tmnoo3oa",
@@ -2377,8 +2389,9 @@
         "website": "http://www.benze.sk",
         "address": "Medzinárodné letisko Košice - Kosice International Airport (KSC), 041 75 Košice-Barca, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-4411y6f37",
@@ -2389,8 +2402,9 @@
         "website": "https://sites.google.com",
         "address": "Myslavská 2B, 040 11 Košice, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     },
     {
       "id": "kosice-1762956935924-r7p5nhym0",
@@ -2401,8 +2415,9 @@
         "website": "http://www.hello-taxi.sk",
         "address": "Kysucká 16, 040 11 Košice - mestská časť Západ, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:15:35.924Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T14:15:35.924Z",
+      "approvedAt": "2025-11-12T14:16:41.607Z"
     }
   ]
 }
