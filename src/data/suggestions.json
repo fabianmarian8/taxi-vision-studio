@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:19:42.154Z",
+  "lastUpdated": "2025-11-12T11:19:45.657Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1258,8 +1258,9 @@
         "website": "https://www.taxigo.sk",
         "address": "Pod Hájom 4254, 018 41 Dubnica nad Váhom, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:19:22.381Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:19:22.381Z",
+      "approvedAt": "2025-11-12T11:19:45.657Z"
     },
     {
       "id": "dubnica-nad-vahom-1762946362381-asfjd5xis",
