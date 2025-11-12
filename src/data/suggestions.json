@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:28:35.739Z",
+  "lastUpdated": "2025-11-12T11:28:48.701Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1859,8 +1859,9 @@
         "website": null,
         "address": "Třebíčska 1844/25, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "rejectedAt": "2025-11-12T11:28:48.701Z"
     },
     {
       "id": "humenne-1762946889629-k2kljp36w",
