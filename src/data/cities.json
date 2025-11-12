@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:24:58.693Z",
+  "lastUpdated": "2025-11-12T11:25:41.413Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -929,7 +929,53 @@
         "objednať taxi hlohovec",
         "taxi hlohovec ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "BV TAXI Hlohovec",
+          "phone": "+421905174172",
+          "website": "http://www.bvtaxihc.sk"
+        },
+        {
+          "name": "Harlej Taxi Hlohovec",
+          "phone": "+421910966996",
+          "website": "https://www.facebook.com"
+        },
+        {
+          "name": "TAXI NONSTOP HLOHOVEC",
+          "phone": "+421908229955",
+          "website": "http://taxihc.webnode.sk"
+        },
+        {
+          "name": "Taxi Halás Hlohovec",
+          "phone": "+421904847888",
+          "website": "http://taxihlohovec.sk"
+        },
+        {
+          "name": "NAJ Taxi Hlohovec",
+          "phone": "+421940700666",
+          "website": "https://www.facebook.com"
+        },
+        {
+          "name": "MH TAXI - NONSTOP",
+          "phone": "+421908461546",
+          "website": "https://m.facebook.com"
+        },
+        {
+          "name": "Drink Taxi Hlohovec",
+          "phone": "+421908437145",
+          "website": null
+        },
+        {
+          "name": "RED TAXI",
+          "phone": "+421940933934",
+          "website": null
+        },
+        {
+          "name": "Žako Taxi Hlohovec",
+          "phone": "+421944820802",
+          "website": "https://zako-taxi.webnode.sk"
+        }
+      ],
       "latitude": 48.43,
       "longitude": 17.805
     },
