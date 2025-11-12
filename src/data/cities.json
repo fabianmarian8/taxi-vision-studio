@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:58:25.792Z",
+  "lastUpdated": "2025-11-12T10:59:15.125Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -114,6 +114,11 @@
           "name": "CORTO TAXI NONSTOP",
           "phone": "+421910714660",
           "website": null
+        },
+        {
+          "name": "ROYAL-TAXI",
+          "phone": "+421911082829",
+          "website": "https://www.facebook.com"
         }
       ],
       "latitude": 48.4583,
