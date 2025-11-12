@@ -1,33 +1,75 @@
-import fs from 'fs';
-import path from 'path';
+// Vercel Serverless Function pre správu taxislužieb pomocou GitHub API
+// STAGED CHANGES sa ukladajú do GitHub súboru "staged-changes.json"
 
-// Cesta k staged changes súboru na Verceli
-const STAGED_CHANGES_FILE = path.join('/tmp', 'staged-changes.json');
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_REPO = 'fabianmarian8/taxi-vision-studio';
+const FILE_PATH = 'src/data/cities.json';
+const STAGED_FILE_PATH = 'staged-changes.json';
 
-// Pomocná funkcia pre načítanie staged changes
-function loadStagedChanges() {
+// Pomocná funkcia pre načítanie staged changes z GitHub
+async function loadStagedChanges() {
   try {
-    if (fs.existsSync(STAGED_CHANGES_FILE)) {
-      const content = fs.readFileSync(STAGED_CHANGES_FILE, 'utf-8');
-      return JSON.parse(content);
+    const response = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO}/contents/${STAGED_FILE_PATH}`,
+      {
+        headers: {
+          'Authorization': `Bearer ${GITHUB_TOKEN}`,
+          'Accept': 'application/vnd.github.v3+json',
+        },
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      const content = Buffer.from(data.content, 'base64').toString('utf-8');
+      return { data: JSON.parse(content), sha: data.sha };
     }
   } catch (error) {
-    console.error('Error loading staged changes:', error);
+    console.log('No staged changes found:', error.message);
   }
-  return { changes: [] };
+  return { data: { changes: [] }, sha: null };
 }
 
-// Pomocná funkcia pre uloženie staged changes
-function saveStagedChanges(stagedData) {
+// Pomocná funkcia pre uloženie staged changes do GitHub
+async function saveStagedChanges(stagedData, sha) {
   try {
-    fs.writeFileSync(STAGED_CHANGES_FILE, JSON.stringify(stagedData, null, 2), 'utf-8');
+    const content = Buffer.from(JSON.stringify(stagedData, null, 2)).toString('base64');
+    
+    const body = {
+      message: 'Update staged changes',
+      content: content,
+      branch: 'main',
+    };
+
+    if (sha) {
+      body.sha = sha;
+    }
+
+    const response = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO}/contents/${STAGED_FILE_PATH}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${GITHUB_TOKEN}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(`Failed to save staged changes: ${JSON.stringify(errorData)}`);
+    }
+
+    return await response.json();
   } catch (error) {
     console.error('Error saving staged changes:', error);
     throw error;
   }
 }
 
-// Vercel Serverless Function pre správu taxislužieb
 export default async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -48,10 +90,6 @@ export default async function handler(req, res) {
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
-
-  const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-  const GITHUB_REPO = 'fabianmarian8/taxi-vision-studio';
-  const FILE_PATH = 'src/data/cities.json';
 
   try {
     if (req.method === 'GET') {
@@ -75,7 +113,7 @@ export default async function handler(req, res) {
       const citiesData = JSON.parse(content);
 
       // Načítanie staged changes a aplikovanie na dáta
-      const stagedData = loadStagedChanges();
+      const { data: stagedData } = await loadStagedChanges();
       
       // Aplikuj staged changes na cities data
       if (stagedData.changes && stagedData.changes.length > 0) {
@@ -91,7 +129,7 @@ export default async function handler(req, res) {
     }
 
     if (req.method === 'POST') {
-      // Uloženie zmien do staged-changes.json
+      // Uloženie zmien do staged-changes.json v GitHub
       const { citySlug, taxiServices } = req.body;
 
       if (!citySlug || !taxiServices) {
@@ -99,7 +137,7 @@ export default async function handler(req, res) {
       }
 
       // Načítaj aktuálne staged changes
-      const stagedData = loadStagedChanges();
+      const { data: stagedData, sha } = await loadStagedChanges();
 
       // Najdi existujúcu zmenu pre toto mesto alebo vytvor novú
       const changeIndex = stagedData.changes.findIndex(c => c.citySlug === citySlug);
@@ -118,8 +156,8 @@ export default async function handler(req, res) {
         stagedData.changes.push(change);
       }
 
-      // Ulož staged changes
-      saveStagedChanges(stagedData);
+      // Ulož staged changes do GitHub
+      await saveStagedChanges(stagedData, sha);
 
       return res.status(200).json({ 
         success: true, 
