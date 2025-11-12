@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:51.468Z",
+  "lastUpdated": "2025-11-12T11:06:00.606Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -712,8 +712,9 @@
         "website": "http://www.lacne-taxi-bratislava.sk",
         "address": "Mlynské nivy 56, 821 05 Bratislava-Ružinov, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:05:06.455Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:05:06.455Z",
+      "approvedAt": "2025-11-12T11:06:00.606Z"
     },
     {
       "id": "bratislava-1762945506455-rejw000ls",
