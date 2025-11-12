@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:23:49.254Z",
+  "lastUpdated": "2025-11-12T11:24:03.518Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1297,8 +1297,9 @@
         "website": "http://www.taxiotti.sk",
         "address": "28, Revolučná štvrť 969, 924 01 Galanta, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "approvedAt": "2025-11-12T11:24:03.518Z"
     },
     {
       "id": "galanta-1762946593110-7xfpe8by1",
@@ -1309,8 +1310,9 @@
         "website": "http://www.adotaxi.sk",
         "address": "Ružová 161/3, 924 01 Galanta, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "approvedAt": "2025-11-12T11:24:03.518Z"
     },
     {
       "id": "galanta-1762946593110-zb50mph79",
@@ -1321,8 +1323,9 @@
         "website": null,
         "address": "Hody 1358, 924 01 Galanta, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "approvedAt": "2025-11-12T11:24:03.518Z"
     },
     {
       "id": "galanta-1762946593110-kwymw7ioz",
@@ -1333,8 +1336,9 @@
         "website": "https://lajostaxi.mozellosite.com",
         "address": "Revolučná štvrť 970/16, 924 01 Galanta, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "approvedAt": "2025-11-12T11:24:03.518Z"
     },
     {
       "id": "galanta-1762946593110-0a3sggrij",
@@ -1345,8 +1349,9 @@
         "website": "http://www.taxigalanta.sk",
         "address": "Staničná 1, 924 01 Galanta, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "approvedAt": "2025-11-12T11:24:03.518Z"
     },
     {
       "id": "galanta-1762946593110-bgyyt04w7",
@@ -1357,8 +1362,9 @@
         "website": "https://emiltaxi.sk",
         "address": "Staničná 1, 924 01 Galanta, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "approvedAt": "2025-11-12T11:24:03.518Z"
     },
     {
       "id": "galanta-1762946593110-s7zft99fi",
@@ -1369,8 +1375,9 @@
         "website": null,
         "address": "Zoltána Kodálya, 924 01 Galanta, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "approvedAt": "2025-11-12T11:24:03.518Z"
     },
     {
       "id": "galanta-1762946593110-cjf302jxj",
@@ -1381,8 +1388,9 @@
         "website": "https://fortetaxi.sk",
         "address": "Vajanského, 924 01 Galanta, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "approvedAt": "2025-11-12T11:24:03.518Z"
     },
     {
       "id": "galanta-1762946593110-zlcya91g6",
@@ -1393,8 +1401,9 @@
         "website": null,
         "address": "Staničná, 924 01 Galanta, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "approvedAt": "2025-11-12T11:24:03.518Z"
     },
     {
       "id": "galanta-1762946593110-ig5wuw8hd",
@@ -1405,8 +1414,9 @@
         "website": null,
         "address": "44, Z. Kodálya 796, 924 01 Galanta, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "approvedAt": "2025-11-12T11:24:03.518Z"
     },
     {
       "id": "galanta-1762946593110-higcjyz2e",
@@ -1417,8 +1427,9 @@
         "website": null,
         "address": "Fučíkova 371, 925 21 Sládkovičovo, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "approvedAt": "2025-11-12T11:24:03.518Z"
     },
     {
       "id": "galanta-1762946593110-ixwsgo2nu",
