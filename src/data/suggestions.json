@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:19:10.694Z",
+  "lastUpdated": "2025-11-12T11:19:22.381Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1209,6 +1209,66 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:18:11.798Z",
       "approvedAt": "2025-11-12T11:19:10.694Z"
+    },
+    {
+      "id": "dubnica-nad-vahom-1762946362381-fzzbm7iua",
+      "citySlug": "dubnica-nad-vahom",
+      "taxiService": {
+        "name": "Taxi Omnia Dubnica nad Váhom",
+        "phone": "+421911703888",
+        "website": "https://omniataxi.sk",
+        "address": "Námestie Matice Slovenskej 1/1, 018 41 Dubnica nad Váhom, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:19:22.381Z"
+    },
+    {
+      "id": "dubnica-nad-vahom-1762946362381-zokc5cb1u",
+      "citySlug": "dubnica-nad-vahom",
+      "taxiService": {
+        "name": "RM TAXI Dubnica",
+        "phone": "+421949190158",
+        "website": "https://www.facebook.com",
+        "address": "Centrum II. 96/64, 018 41 Dubnica nad Váhom, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:19:22.381Z"
+    },
+    {
+      "id": "dubnica-nad-vahom-1762946362381-p7ax2w8d2",
+      "citySlug": "dubnica-nad-vahom",
+      "taxiService": {
+        "name": "CITY TAXI",
+        "phone": "+421948482727",
+        "website": "https://www.facebook.com",
+        "address": "Pod Hájom 1087/47, 018 41 Dubnica nad Váhom, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:19:22.381Z"
+    },
+    {
+      "id": "dubnica-nad-vahom-1762946362381-2ug1f2af9",
+      "citySlug": "dubnica-nad-vahom",
+      "taxiService": {
+        "name": "TAXI GO LETISKOVÉ TRANSFERY",
+        "phone": "+421948875999",
+        "website": "https://www.taxigo.sk",
+        "address": "Pod Hájom 4254, 018 41 Dubnica nad Váhom, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:19:22.381Z"
+    },
+    {
+      "id": "dubnica-nad-vahom-1762946362381-asfjd5xis",
+      "citySlug": "dubnica-nad-vahom",
+      "taxiService": {
+        "name": "Peter Kesely - BESTCOM",
+        "phone": "+421907740871",
+        "website": "http://www.bestcom.sk",
+        "address": "Kukučínova 506/4, 018 41 Dubnica nad Váhom, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:19:22.381Z"
     }
   ]
 }
