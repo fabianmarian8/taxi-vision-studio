@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:24:58.693Z",
+  "lastUpdated": "2025-11-12T11:25:09.596Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1534,6 +1534,138 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:24:49.463Z",
       "approvedAt": "2025-11-12T11:24:58.693Z"
+    },
+    {
+      "id": "hlohovec-1762946709596-p3xuv91x1",
+      "citySlug": "hlohovec",
+      "taxiService": {
+        "name": "BV TAXI Hlohovec",
+        "phone": "+421905174172",
+        "website": "http://www.bvtaxihc.sk",
+        "address": "Železničná 4, 920 01 Hlohovec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:09.596Z"
+    },
+    {
+      "id": "hlohovec-1762946709597-dinachc04",
+      "citySlug": "hlohovec",
+      "taxiService": {
+        "name": "Harlej Taxi Hlohovec",
+        "phone": "+421910966996",
+        "website": "https://www.facebook.com",
+        "address": "Hurbanova 23, 920 01 Hlohovec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:09.596Z"
+    },
+    {
+      "id": "hlohovec-1762946709597-en7tle366",
+      "citySlug": "hlohovec",
+      "taxiService": {
+        "name": "TAXI NONSTOP HLOHOVEC",
+        "phone": "+421908229955",
+        "website": "http://taxihc.webnode.sk",
+        "address": "Hviezdoslavova 26, 920 01 Hlohovec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:09.596Z"
+    },
+    {
+      "id": "hlohovec-1762946709597-t523zst4n",
+      "citySlug": "hlohovec",
+      "taxiService": {
+        "name": "Taxi Halás Hlohovec",
+        "phone": "+421904847888",
+        "website": "http://taxihlohovec.sk",
+        "address": "Hurbanova 624/10, 920 01 Hlohovec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:09.596Z"
+    },
+    {
+      "id": "hlohovec-1762946709597-fdvdyv3c9",
+      "citySlug": "hlohovec",
+      "taxiService": {
+        "name": "NAJ Taxi Hlohovec",
+        "phone": "+421940700666",
+        "website": "https://www.facebook.com",
+        "address": "Hurbanova 652/66, 920 01 Hlohovec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:09.596Z"
+    },
+    {
+      "id": "hlohovec-1762946709597-4zfldsxmu",
+      "citySlug": "hlohovec",
+      "taxiService": {
+        "name": "MH TAXI - NONSTOP",
+        "phone": "+421908461546",
+        "website": "https://m.facebook.com",
+        "address": "Námestie svätého Michala, 920 01 Hlohovec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:09.596Z"
+    },
+    {
+      "id": "hlohovec-1762946709597-d75ecswir",
+      "citySlug": "hlohovec",
+      "taxiService": {
+        "name": "Drink Taxi Hlohovec",
+        "phone": "+421908437145",
+        "website": null,
+        "address": "Pltnícka 246/37, Šulekovo, 920 03 Hlohovec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:09.596Z"
+    },
+    {
+      "id": "hlohovec-1762946709597-3dle7um2v",
+      "citySlug": "hlohovec",
+      "taxiService": {
+        "name": "RED TAXI",
+        "phone": "+421940933934",
+        "website": null,
+        "address": "Michalská 2344/6, 920 01 Hlohovec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:09.596Z"
+    },
+    {
+      "id": "hlohovec-1762946709597-wiuje0frw",
+      "citySlug": "hlohovec",
+      "taxiService": {
+        "name": "Žako Taxi Hlohovec",
+        "phone": "+421944820802",
+        "website": "https://zako-taxi.webnode.sk",
+        "address": "Hurbanova 588/23, 920 01 Hlohovec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:09.596Z"
+    },
+    {
+      "id": "hlohovec-1762946709597-hgk12xhii",
+      "citySlug": "hlohovec",
+      "taxiService": {
+        "name": "Leopoldov Taxi",
+        "phone": "+421904563000",
+        "website": null,
+        "address": "Stanica, 920 41 Leopoldov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:09.596Z"
+    },
+    {
+      "id": "hlohovec-1762946709597-c74wnptip",
+      "citySlug": "hlohovec",
+      "taxiService": {
+        "name": "Masárová Mária",
+        "phone": "+42133/7301819",
+        "website": null,
+        "address": "J. A. Gagarina 13, 920 01 Hlohovec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:09.596Z"
     }
   ]
 }
