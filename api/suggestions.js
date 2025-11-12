@@ -1,5 +1,6 @@
 // Vercel Serverless Function pre správu návrhov taxislužieb
 // NOVÁ LOGIKA: Návrhy sa ukladajú do staged-suggestions.json a commitujú až pri publish
+// Debug mode enabled for duplicate detection
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = 'fabianmarian8/taxi-vision-studio';
