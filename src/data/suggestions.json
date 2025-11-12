@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:23:13.110Z",
+  "lastUpdated": "2025-11-12T11:23:49.254Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1429,8 +1429,9 @@
         "website": "https://predajne.kaufland.sk",
         "address": "Esterházyovcov 2381/26, 924 01 Galanta, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:23:13.110Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T11:23:13.110Z",
+      "rejectedAt": "2025-11-12T11:23:49.254Z"
     }
   ]
 }
