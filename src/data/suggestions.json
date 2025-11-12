@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:00:10.884Z",
+  "lastUpdated": "2025-11-12T11:00:22.990Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -322,8 +322,9 @@
         "website": "http://www.eurotaxi-bn.sk",
         "address": "Hviezdoslavova 1602, 957 01 Bánovce nad Bebravou, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:00:03.895Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:00:03.895Z",
+      "approvedAt": "2025-11-12T11:00:22.990Z"
     },
     {
       "id": "banovce-nad-bebravou-1762945203895-m1fobqzrb",
