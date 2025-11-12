@@ -109,7 +109,11 @@ export default function AdminSuggestions() {
     try {
       const token = localStorage.getItem('adminToken');
       const response = await fetch('/api/suggestions-manage', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }, body: JSON.stringify({ action: 'delete', suggestionId }) });
-      if (!(response.status >= 200 && response.status < 300)) throw new Error('Reject failed');
+      if (!(response.status >= 200 && response.status < 300)) {
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Reject failed:', response.status, errorData);
+        throw new Error(errorData.message || 'Reject failed');
+      }
       setSuggestions(prev => prev.filter(s => s.id !== suggestionId));
       toast({ title: 'Úspech', description: 'Návrh bol zamietnutý' });
     } catch {
