@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:25:41.413Z",
+  "lastUpdated": "2025-11-12T11:25:58.519Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -992,7 +992,13 @@
         "objednať taxi hnúšťa",
         "taxi hnúšťa telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Zdenko Búr",
+          "phone": "+421907122575",
+          "website": null
+        }
+      ],
       "latitude": 48.6233,
       "longitude": 19.9467
     },
