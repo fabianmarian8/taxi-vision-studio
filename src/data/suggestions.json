@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:30:36.702Z",
+  "lastUpdated": "2025-11-12T11:31:07.411Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2071,8 +2071,9 @@
         "website": "http://transfers.sk",
         "address": "Slavkovská 1897/32, 060 01 Kežmarok, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:30:36.702Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T11:30:36.702Z",
+      "rejectedAt": "2025-11-12T11:31:07.411Z"
     }
   ]
 }
