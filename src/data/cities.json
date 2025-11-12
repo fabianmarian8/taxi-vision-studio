@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:18:59.413Z",
+  "lastUpdated": "2025-11-12T11:19:05.791Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -645,6 +645,11 @@
           "name": "2xRévai s.r.o.",
           "phone": "+421901735735",
           "website": null
+        },
+        {
+          "name": "M-TAXI - Michal Flajs",
+          "phone": "+421908888822",
+          "website": "https://www.m-taxi.sk"
         }
       ],
       "latitude": 49.21,
