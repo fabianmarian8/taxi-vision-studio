@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:58:26.297Z",
+  "lastUpdated": "2025-11-12T10:59:15.787Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -257,8 +257,9 @@
         "website": "https://www.facebook.com",
         "address": "Križovatka 1, 969 01 Banská Štiavnica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:57:46.707Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:57:46.707Z",
+      "approvedAt": "2025-11-12T10:59:15.787Z"
     },
     {
       "id": "banska-stiavnica-1762945066707-qb2z2d9ux",
