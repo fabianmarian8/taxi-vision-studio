@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:04:39.838Z",
+  "lastUpdated": "2025-11-12T11:04:52.606Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -241,7 +241,13 @@
         "objednať taxi bojnice",
         "taxi bojnice zámok"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Bojnice - Nonstop",
+          "phone": "+421918266886",
+          "website": "http://www.taxibojnice.sk"
+        }
+      ],
       "latitude": 48.7803,
       "longitude": 18.5775
     },
