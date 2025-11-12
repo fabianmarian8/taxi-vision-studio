@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:04:48.731Z",
+  "lastUpdated": "2025-11-12T11:04:52.997Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -530,8 +530,9 @@
         "website": "http://www.taxibojnice.sk",
         "address": "Sládkovičova 176/1, 972 01 Bojnice, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:04:48.731Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:04:48.731Z",
+      "approvedAt": "2025-11-12T11:04:52.997Z"
     },
     {
       "id": "bojnice-1762945488731-izwm3fi0c",
