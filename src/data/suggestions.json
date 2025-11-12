@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:14:19.362Z",
+  "lastUpdated": "2025-11-12T11:15:33.803Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -946,8 +946,9 @@
         "website": "https://abctaxi.eu",
         "address": "5, Komenského 128, 022 04 Čadca, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:13:44.059Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T11:13:44.059Z",
+      "rejectedAt": "2025-11-12T11:15:33.803Z"
     },
     {
       "id": "cadca-1762946024059-buddgjqtf",
