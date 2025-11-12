@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:27:57.946Z",
+  "lastUpdated": "2025-11-12T11:29:02.578Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1048,7 +1048,63 @@
         "objednať taxi humenné",
         "taxi humenné telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Black Taxi- Humenné",
+          "phone": "+421907902902",
+          "website": "http://www.blacktaxihe.sk"
+        },
+        {
+          "name": "Humenné TAXISLUŽBA",
+          "phone": "+421904372007",
+          "website": "https://humenne.taxi"
+        },
+        {
+          "name": "Sovqa taxi HUMENNÉ",
+          "phone": "+421908141811",
+          "website": null
+        },
+        {
+          "name": "Ahoj Taxi - Humenné",
+          "phone": "+421911320303",
+          "website": "https://www.ahojtaxihe.sk"
+        },
+        {
+          "name": "taxi janicko",
+          "phone": "+421918885458",
+          "website": null
+        },
+        {
+          "name": "BUBO TAXI",
+          "phone": "+421940801861",
+          "website": null
+        },
+        {
+          "name": "Taxi Viktor",
+          "phone": "+421905906650",
+          "website": null
+        },
+        {
+          "name": "BUKY TAXI",
+          "phone": "+421918477666",
+          "website": null
+        },
+        {
+          "name": "ABC Taxi - Ľuboš Klajban",
+          "phone": "+421905258039",
+          "website": null
+        },
+        {
+          "name": "Alfa Taxi Humenné",
+          "phone": "+421915111109",
+          "website": null
+        },
+        {
+          "name": "CHOPPER s.r.o.",
+          "phone": "+421905606336",
+          "website": null
+        }
+      ],
       "latitude": 48.935,
       "longitude": 21.9117
     },
