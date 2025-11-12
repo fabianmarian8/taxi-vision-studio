@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:16:12.475Z",
+  "lastUpdated": "2025-11-12T11:16:25.791Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -529,7 +529,13 @@
         "objednať taxi detva",
         "taxi detva telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Express TAXI Detva",
+          "phone": "+421910888250",
+          "website": null
+        }
+      ],
       "latitude": 48.5583,
       "longitude": 19.4192
     },
