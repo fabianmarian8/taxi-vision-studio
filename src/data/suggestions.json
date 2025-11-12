@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:46:37.564Z",
+  "lastUpdated": "2025-11-12T10:50:39.346Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -23,8 +23,9 @@
         "website": "https://intaxi.sk",
         "address": "29. augusta 37, 974 01 Banská Bystrica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "approvedAt": "2025-11-12T10:50:39.346Z"
     },
     {
       "id": "banska-bystrica-1762944164311-u7zyx8k7m",
