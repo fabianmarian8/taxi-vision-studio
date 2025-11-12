@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:19:36.240Z",
+  "lastUpdated": "2025-11-12T11:19:42.154Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1245,8 +1245,9 @@
         "website": "https://www.facebook.com",
         "address": "Pod Hájom 1087/47, 018 41 Dubnica nad Váhom, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:19:22.381Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:19:22.381Z",
+      "approvedAt": "2025-11-12T11:19:42.154Z"
     },
     {
       "id": "dubnica-nad-vahom-1762946362381-2ug1f2af9",
