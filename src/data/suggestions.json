@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:52:16.559Z",
+  "lastUpdated": "2025-11-12T10:52:24.169Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -114,8 +114,9 @@
         "website": null,
         "address": "Kyjevské námestie, 974 04 Banská Bystrica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "rejectedAt": "2025-11-12T10:52:24.169Z"
     },
     {
       "id": "banska-bystrica-1762944164311-04qr2nro4",
