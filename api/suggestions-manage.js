@@ -5,12 +5,6 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = 'fabianmarian8/taxi-vision-studio';
 const STAGED_SUGGESTIONS_FILE = 'staged-suggestions.json';
 
-// Optional admin auth if available
-let verifyAdminAuth = null;
-try {
-  ({ verifyAdminAuth } = require('./admin-auth'));
-} catch (_) {}
-
 async function loadStagedSuggestions() {
   try {
     const response = await fetch(
@@ -84,13 +78,8 @@ async function saveStagedSuggestions(suggestions, sha) {
   }
 }
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   try {
-    if (verifyAdminAuth) {
-      const ok = await verifyAdminAuth(req, res);
-      if (ok === false) return;
-    }
-
     if (req.method !== 'POST') {
       return res.status(405).json({ message: 'Method Not Allowed' });
     }
@@ -142,4 +131,4 @@ module.exports = async function handler(req, res) {
     console.error('suggestions-manage error', e);
     return res.status(500).json({ message: 'Internal Server Error', error: e.message });
   }
-};
+}
