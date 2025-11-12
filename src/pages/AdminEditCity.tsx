@@ -43,6 +43,46 @@ export default function AdminEditCity() {
     loadCityData();
   }, [citySlug, navigate]);
 
+  // Nový useEffect pre prijímanie suggestions z URL parametrov
+  useEffect(() => {
+    if (!city || taxiServices.length === 0) return;
+    
+    const params = new URLSearchParams(window.location.search);
+    const suggestionsParam = params.get('suggestions');
+    const suggestionIdsParam = params.get('suggestionIds');
+    
+    if (suggestionsParam) {
+      try {
+        const newServices: TaxiService[] = JSON.parse(decodeURIComponent(suggestionsParam));
+        
+        // Pridaj nové služby k existujúcim
+        const updated = [...taxiServices, ...newServices];
+        setTaxiServices(updated);
+        checkForChanges(updated);
+        
+        // Ulož IDs pre neskoršie označenie ako approved
+        if (suggestionIdsParam) {
+          sessionStorage.setItem('pendingSuggestionIds', suggestionIdsParam);
+        }
+        
+        toast({
+          title: '✅ Návrhy pridané lokálne',
+          description: `Pridaných ${newServices.length} návrhov. Skontrolujte ich a kliknite na "Publikovať zmeny".`,
+        });
+        
+        // Odstráň parametre z URL aby sa nepridali znova pri refresh
+        window.history.replaceState({}, '', window.location.pathname);
+      } catch (error) {
+        console.error('Error parsing suggestions:', error);
+        toast({
+          title: 'Chyba',
+          description: 'Nepodarilo sa načítať návrhy z URL',
+          variant: 'destructive',
+        });
+      }
+    }
+  }, [city, taxiServices.length]);
+
   // Kontrola zmien pri odchode zo stránky
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
@@ -144,6 +184,28 @@ export default function AdminEditCity() {
       });
 
       if (response.ok) {
+        // Označ suggestions ako approved ak existujú
+        const pendingIds = sessionStorage.getItem('pendingSuggestionIds');
+        if (pendingIds) {
+          try {
+            await fetch('/api/suggestions', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+              },
+              body: JSON.stringify({
+                action: 'mark-approved',
+                suggestionIds: pendingIds.split(','),
+              }),
+            });
+            sessionStorage.removeItem('pendingSuggestionIds');
+          } catch (err) {
+            console.error('Error marking suggestions as approved:', err);
+            // Netreba to považovať za kritickú chybu
+          }
+        }
+
         setOriginalServices(JSON.parse(JSON.stringify(taxiServices)));
         setHasUnsavedChanges(false);
         
@@ -171,6 +233,10 @@ export default function AdminEditCity() {
     if (confirm('Naozaj chcete zahodiť všetky neuložené zmeny?')) {
       setTaxiServices(JSON.parse(JSON.stringify(originalServices)));
       setHasUnsavedChanges(false);
+      
+      // Vyčisti pending suggestions
+      sessionStorage.removeItem('pendingSuggestionIds');
+      
       toast({
         title: 'Zmeny zahodené',
         description: 'Všetky neuložené zmeny boli zahodené',
