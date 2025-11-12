@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:00:29.756Z",
+  "lastUpdated": "2025-11-12T11:00:32.789Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -23,6 +23,11 @@
         {
           "name": "LAURA TAXI",
           "phone": "+421944104800",
+          "website": null
+        },
+        {
+          "name": "Bn Taxi",
+          "phone": "+421904109080",
           "website": null
         }
       ],
