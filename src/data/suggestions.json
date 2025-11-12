@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:25:41.413Z",
+  "lastUpdated": "2025-11-12T11:25:51.811Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1677,6 +1677,18 @@
       "status": "rejected",
       "timestamp": "2025-11-12T11:25:09.596Z",
       "rejectedAt": "2025-11-12T11:25:37.566Z"
+    },
+    {
+      "id": "hnusta-1762946751811-7ey6fipnt",
+      "citySlug": "hnusta",
+      "taxiService": {
+        "name": "Zdenko Búr",
+        "phone": "+421907122575",
+        "website": null,
+        "address": "Športová 459, 981 01 Hnúšťa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:25:51.811Z"
     }
   ]
 }
