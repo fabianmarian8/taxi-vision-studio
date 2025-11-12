@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T13:20:44.748Z",
+  "lastUpdated": "2025-11-12T14:15:35.924Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2223,6 +2223,186 @@
       "status": "approved",
       "timestamp": "2025-11-12T13:20:09.177Z",
       "approvedAt": "2025-11-12T13:20:44.748Z"
+    },
+    {
+      "id": "kosice-1762956935924-l1fqs6gyg",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "Taxi Košice - KošiceTaxi24",
+        "phone": "+421940242717",
+        "website": "https://kosicetaxi24.sk",
+        "address": "Palackého 1426/10, 040 01 Košice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-araukkncd",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "Easy Taxi Košice",
+        "phone": "+421902122224",
+        "website": null,
+        "address": "Kukučínova 23, 040 01 Košice-Juh, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-zg6eurr2q",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "E-Taxi Košice",
+        "phone": "+421911606206",
+        "website": "https://www.e-taxike.sk",
+        "address": "Južná trieda 4a, 040 01 Košice-IV, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-lo6412bdc",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "Taxi Košice Mytaxi",
+        "phone": "+421910340770",
+        "website": "https://www.mytaxikosice.sk",
+        "address": "Hlavná 3, 040 01 Košice-Staré Mesto, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-mnokntw32",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "Yellow Taxi",
+        "phone": "+421917434343",
+        "website": "http://yellowtaxikosice.sk",
+        "address": "Hlavná 5, 040 01 Košice-Staré Mesto, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-r08xcwpj1",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "TAKE TAXI",
+        "phone": "+421948777777",
+        "website": "http://www.taketaxi.sk",
+        "address": "Toryská 5, 040 11 Košice - mestská časť Západ, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-8mbd2hvl7",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "Taxi Plus",
+        "phone": "+421903998998",
+        "website": "http://www.taxi-plus.sk",
+        "address": "4, Hlavná 5, 040 01 Košice-Staré Mesto, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-ww4aodeki",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "Student taxi",
+        "phone": "+421949070707",
+        "website": "http://www.student-taxi.sk",
+        "address": "Dénešova 23, 040 23 Košice-Sídlisko KVP, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-937q7q5or",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "CTC TAXI",
+        "phone": "+421905955955",
+        "website": "https://www.ctctaxi.sk",
+        "address": "Hlavná 1, 040 01 Košice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-wpzdcb9di",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "Rádio Taxi Košice",
+        "phone": "+42155/6332525",
+        "website": null,
+        "address": "Rampová 2418/4, 040 01 Košice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-nvjvu08dt",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "Najpax taxi Košice , taxislužba Košice a okolie - Najpax s.r.o",
+        "phone": "+421902266004",
+        "website": "https://www.najpaxtaxikosice.sk",
+        "address": "Rooseveltova, 040 01 Košice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-wbzqdayoo",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "American Taxi",
+        "phone": "+421908335333",
+        "website": "http://americantaxi.sk",
+        "address": "Textilná 1832/5, 040 12 Košice-Nad jazerom, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-4tmnoo3oa",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "BENZE Transfer Košice",
+        "phone": "+421940645645",
+        "website": "http://www.benze.sk",
+        "address": "Medzinárodné letisko Košice - Kosice International Airport (KSC), 041 75 Košice-Barca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-4411y6f37",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "Airportdrivetaxi Košice",
+        "phone": null,
+        "website": "https://sites.google.com",
+        "address": "Myslavská 2B, 040 11 Košice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
+    },
+    {
+      "id": "kosice-1762956935924-r7p5nhym0",
+      "citySlug": "kosice",
+      "taxiService": {
+        "name": "Hello Taxi: Tomáš Kurčinka",
+        "phone": "+421911434343",
+        "website": "http://www.hello-taxi.sk",
+        "address": "Kysucká 16, 040 11 Košice - mestská časť Západ, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:15:35.924Z"
     }
   ]
 }
