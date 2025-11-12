@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:58:11.653Z",
+  "lastUpdated": "2025-11-12T10:58:20.914Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -231,8 +231,9 @@
         "website": null,
         "address": "Križovatka, 969 01 Banská Štiavnica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:57:46.707Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:57:46.707Z",
+      "approvedAt": "2025-11-12T10:58:20.914Z"
     },
     {
       "id": "banska-stiavnica-1762945066707-31jrgpkb5",
