@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:25:51.811Z",
+  "lastUpdated": "2025-11-12T11:25:58.922Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1687,8 +1687,9 @@
         "website": null,
         "address": "Športová 459, 981 01 Hnúšťa, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:51.811Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:25:51.811Z",
+      "approvedAt": "2025-11-12T11:25:58.922Z"
     }
   ]
 }
