@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:16:25.791Z",
+  "lastUpdated": "2025-11-12T11:16:30.148Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -533,6 +533,11 @@
         {
           "name": "Express TAXI Detva",
           "phone": "+421910888250",
+          "website": null
+        },
+        {
+          "name": "GOLD TAXI DETVA",
+          "phone": "+421949474323",
           "website": null
         }
       ],
