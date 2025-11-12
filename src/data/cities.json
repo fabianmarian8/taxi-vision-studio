@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:13:11.430Z",
+  "lastUpdated": "2025-11-12T11:13:48.668Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -466,7 +466,13 @@
         "objednať taxi čadca",
         "taxi čadca ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Tip Top Taxi Čadca",
+          "phone": "+421905566966",
+          "website": "http://www.tiptoptaxi.sk"
+        }
+      ],
       "latitude": 49.435,
       "longitude": 18.7889
     },
