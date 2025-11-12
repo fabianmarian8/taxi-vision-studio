@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:42.814Z",
+  "lastUpdated": "2025-11-12T11:05:45.360Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -673,8 +673,9 @@
         "website": "https://bratislava-taxi.sk",
         "address": "Seberíniho 1765/9, 821 04 Bratislava-Ružinov, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:05:06.455Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:05:06.455Z",
+      "approvedAt": "2025-11-12T11:05:45.360Z"
     },
     {
       "id": "bratislava-1762945506455-oueb1l436",
