@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
@@ -29,16 +28,57 @@ export default function AdminSuggestions() {
     loadSuggestions();
   }, [navigate]);
 
+  const take = (...vals: any[]) => {
+    for (const v of vals) { if (v !== undefined && v !== null && String(v).trim() !== '') return String(v).trim(); }
+    return '';
+  };
+
+  const fromNested = (obj: any, keys: string[]): any => {
+    let cur = obj;
+    for (const k of keys) { if (!cur) return undefined; cur = cur[k]; }
+    return cur;
+  };
+
   const normalize = (raw: any): TaxiServiceSuggestion | null => {
-    const id = String(raw?.id ?? raw?._id ?? raw?.uid ?? '');
-    const citySlug = String(raw?.citySlug ?? raw?.city ?? '');
-    const name = String(raw?.name ?? raw?.title ?? raw?.company ?? '').trim();
-    const website = raw?.website ?? raw?.url ?? raw?.link ?? undefined;
-    const phone = raw?.phone ?? raw?.phoneNumber ?? raw?.tel ?? undefined;
-    const address = raw?.address ?? raw?.formatted_address ?? raw?.addr ?? undefined;
-    const createdAt = raw?.createdAt ?? raw?.created_at ?? undefined;
+    const id = take(raw?.id, raw?._id, raw?.uid, fromNested(raw, ['gbp', 'id']), fromNested(raw, ['place', 'place_id']));
+    const citySlug = take(raw?.citySlug, raw?.city, fromNested(raw, ['gbp', 'citySlug']), fromNested(raw, ['place', 'citySlug']));
+    // názov – skús veľa aliasov aj vnorené polia z Places/GBP
+    const name = take(
+      raw?.name, raw?.title, raw?.company,
+      fromNested(raw, ['gbp', 'name']), fromNested(raw, ['gbp', 'title']),
+      fromNested(raw, ['place', 'name']), fromNested(raw, ['data', 'name'])
+    );
+    const website = take(
+      raw?.website, raw?.url, raw?.link,
+      fromNested(raw, ['gbp', 'website']), fromNested(raw, ['place', 'website'])
+    ) || undefined;
+    const phone = take(
+      raw?.phone, raw?.phoneNumber, raw?.tel,
+      fromNested(raw, ['gbp', 'phone']), fromNested(raw, ['place', 'formatted_phone_number']), fromNested(raw, ['place', 'international_phone_number'])
+    ) || undefined;
+    const address = take(
+      raw?.address, raw?.formatted_address, raw?.addr,
+      fromNested(raw, ['gbp', 'address']), fromNested(raw, ['place', 'vicinity']), fromNested(raw, ['place', 'formatted_address'])
+    ) || undefined;
+    const createdAt = take(raw?.createdAt, raw?.created_at, fromNested(raw, ['gbp', 'createdAt'])) || undefined;
+
     if (!id || !citySlug) return null;
-    return { id, citySlug, name, website, phone, address, createdAt };
+
+    // ak chýba name, skús odvodiť z webu/domény alebo telefónu
+    let finalName = name;
+    if (!finalName) {
+      if (website) {
+        try {
+          const u = website.startsWith('http') ? new URL(website) : new URL('https://' + website);
+          finalName = u.hostname.replace('www.', '');
+        } catch { /* ignore */ }
+      }
+      if (!finalName && phone) finalName = phone;
+      if (!finalName && address) finalName = address.split(',')[0];
+      if (!finalName) finalName = '—';
+    }
+
+    return { id, citySlug, name: finalName, website, phone, address, createdAt };
   };
 
   const loadSuggestions = async () => {
@@ -49,9 +89,7 @@ export default function AdminSuggestions() {
       if (!(response.status >= 200 && response.status < 300)) throw new Error('Load failed');
       const data = await response.json();
       const items = Array.isArray(data?.suggestions) ? data.suggestions : Array.isArray(data) ? data : [];
-      const normalized = items
-        .map(normalize)
-        .filter((x): x is TaxiServiceSuggestion => Boolean(x));
+      const normalized = items.map(normalize).filter((x): x is TaxiServiceSuggestion => Boolean(x));
       setSuggestions(normalized);
     } catch {
       toast({ title: 'Chyba', description: 'Nepodarilo sa načítať návrhy', variant: 'destructive' });
@@ -71,10 +109,10 @@ export default function AdminSuggestions() {
     }
   };
 
-  const grouped = suggestions.reduce((acc: Record<string, TaxiServiceSuggestion[]>, s) => {
+  const grouped = useMemo(() => suggestions.reduce((acc: Record<string, TaxiServiceSuggestion[]>, s) => {
     (acc[s.citySlug] ||= []).push(s);
     return acc;
-  }, {});
+  }, {}), [suggestions]);
 
   const display = (items: TaxiServiceSuggestion[]) => {
     const q = query.trim().toLowerCase();
