@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:46:46.583Z",
+  "lastUpdated": "2025-11-12T11:46:55.278Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2090,8 +2090,9 @@
         "website": "https://facebook.com",
         "address": "Staničná 714/62, 946 03 Kolárovo, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:33:57.916Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:33:57.916Z",
+      "approvedAt": "2025-11-12T11:46:55.278Z"
     },
     {
       "id": "kolarovo-1762947237916-dprpg0mgn",
@@ -2102,8 +2103,9 @@
         "website": null,
         "address": "Kostolné námestie 5, 946 03 Kolárovo, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:33:57.916Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:33:57.916Z",
+      "approvedAt": "2025-11-12T11:46:55.278Z"
     },
     {
       "id": "kolarovo-1762947237916-hp6gmr2mm",
@@ -2114,8 +2116,9 @@
         "website": null,
         "address": "9, 946 03 Kolárovo, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:33:57.916Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:33:57.916Z",
+      "approvedAt": "2025-11-12T11:46:55.278Z"
     }
   ]
 }
