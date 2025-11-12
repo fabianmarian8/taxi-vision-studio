@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:14:06.904Z",
+  "lastUpdated": "2025-11-12T11:14:14.716Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -490,6 +490,11 @@
         {
           "name": "TAXI AFTER DARK-ČADCA",
           "phone": "+421903161616",
+          "website": null
+        },
+        {
+          "name": "Relly Taxi",
+          "phone": "+421800101020",
           "website": null
         }
       ],
