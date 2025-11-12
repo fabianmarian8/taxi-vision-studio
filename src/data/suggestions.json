@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:31.804Z",
+  "lastUpdated": "2025-11-12T11:05:34.370Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -634,8 +634,9 @@
         "website": "https://bratislava-airport-taxi.com",
         "address": "Beňadická 3008/19, 851 06 Bratislava-Petržalka, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:05:06.455Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:05:06.455Z",
+      "approvedAt": "2025-11-12T11:05:34.370Z"
     },
     {
       "id": "bratislava-1762945506455-xneqiixax",
