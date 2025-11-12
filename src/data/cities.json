@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:46:16.453Z",
+  "lastUpdated": "2025-11-12T10:46:37.096Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -56,6 +56,11 @@
           "name": "IMPULZ TAXI - Richard Hudák",
           "phone": "+421911656545",
           "website": null
+        },
+        {
+          "name": "ECO Hybrid TAXI Banská Bystrica",
+          "phone": "+421909110110",
+          "website": "http://www.ecohybridtaxi.sk"
         }
       ],
       "latitude": 48.7361,
