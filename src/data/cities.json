@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:19:10.258Z",
+  "lastUpdated": "2025-11-12T11:19:31.523Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -673,7 +673,13 @@
         "objednať taxi dubnica",
         "taxi dubnica ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Omnia Dubnica nad Váhom",
+          "phone": "+421911703888",
+          "website": "https://omniataxi.sk"
+        }
+      ],
       "latitude": 48.9603,
       "longitude": 18.1714
     },
