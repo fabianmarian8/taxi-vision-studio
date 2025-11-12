@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:00:22.543Z",
+  "lastUpdated": "2025-11-12T11:00:29.756Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -19,6 +19,11 @@
           "name": "Euro Taxi BN",
           "phone": "+421902830000",
           "website": "http://www.eurotaxi-bn.sk"
+        },
+        {
+          "name": "LAURA TAXI",
+          "phone": "+421944104800",
+          "website": null
         }
       ],
       "latitude": 48.7192,
