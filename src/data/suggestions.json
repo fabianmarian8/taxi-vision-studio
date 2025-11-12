@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:31:07.411Z",
+  "lastUpdated": "2025-11-12T11:31:21.105Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1999,8 +1999,9 @@
         "website": "https://www.expresstaxi.sk",
         "address": "Karola Kuzmányho 1, 060 01 Kežmarok, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:30:36.702Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:30:36.702Z",
+      "approvedAt": "2025-11-12T11:31:21.105Z"
     },
     {
       "id": "kezmarok-1762947036702-uku2cujj7",
@@ -2011,8 +2012,9 @@
         "website": "https://www.facebook.com",
         "address": "Možiarska 3, 060 01 Kežmarok, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:30:36.702Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:30:36.702Z",
+      "approvedAt": "2025-11-12T11:31:21.105Z"
     },
     {
       "id": "kezmarok-1762947036702-jtxsq6anf",
@@ -2023,8 +2025,9 @@
         "website": "https://www.facebook.com",
         "address": "Starý trh 499/71, 060 01 Kežmarok, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:30:36.702Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:30:36.702Z",
+      "approvedAt": "2025-11-12T11:31:21.105Z"
     },
     {
       "id": "kezmarok-1762947036702-ba1bpvnp5",
@@ -2035,8 +2038,9 @@
         "website": "https://www.facebook.com",
         "address": "Lidl, Slavkovská 1, 060 01 Kežmarok, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:30:36.702Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:30:36.702Z",
+      "approvedAt": "2025-11-12T11:31:21.105Z"
     },
     {
       "id": "kezmarok-1762947036702-zuuv3zkro",
@@ -2047,8 +2051,9 @@
         "website": "http://www.citytaxikk.sk",
         "address": "Lanškrounská 15, 060 01 Kežmarok-Ľubica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:30:36.702Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:30:36.702Z",
+      "approvedAt": "2025-11-12T11:31:21.105Z"
     },
     {
       "id": "kezmarok-1762947036702-odk0juhl3",
@@ -2059,8 +2064,9 @@
         "website": "https://www.facebook.com",
         "address": "Michalská 691/21, 060 01 Kežmarok, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:30:36.702Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:30:36.702Z",
+      "approvedAt": "2025-11-12T11:31:21.105Z"
     },
     {
       "id": "kezmarok-1762947036702-7axq7tzkf",
