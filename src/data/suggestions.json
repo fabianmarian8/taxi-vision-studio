@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:52:24.169Z",
+  "lastUpdated": "2025-11-12T10:52:45.752Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -127,8 +127,9 @@
         "website": "http://www.ekotaxi.sk",
         "address": "Zvolenská cesta 1769/14, 974 05 Banská Bystrica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "rejectedAt": "2025-11-12T10:52:45.752Z"
     },
     {
       "id": "banska-bystrica-1762944164311-mdac7bbxj",
