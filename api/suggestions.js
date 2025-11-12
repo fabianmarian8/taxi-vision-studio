@@ -8,6 +8,23 @@ const SUGGESTIONS_FILE = 'src/data/suggestions.json';
 const STAGED_SUGGESTIONS_FILE = 'staged-suggestions.json';
 const CITIES_FILE = 'src/data/cities.json';
 
+// Pomocná funkcia pre normalizáciu návrhov (flatten taxiService)
+function normalizeSuggestion(s) {
+  const taxiService = s.taxiService || {};
+  return {
+    id: s.id || s._id || s.uid || '',
+    citySlug: s.citySlug || s.city || '',
+    taxiService: {
+      name: taxiService.name || s.name || '',
+      phone: taxiService.phone || s.phone || null,
+      website: taxiService.website || s.website || null,
+      address: taxiService.address || s.address || null
+    },
+    status: s.status || 'pending',
+    timestamp: s.timestamp || s.createdAt || s.created_at || new Date().toISOString()
+  };
+}
+
 // Pomocná funkcia pre načítanie staged suggestions z GitHub
 async function loadStagedSuggestions() {
   try {
@@ -127,6 +144,9 @@ export default async function handler(req, res) {
         console.log(`Total after merge: ${suggestionsData.suggestions.length}`);
         console.log(`Pending count: ${suggestionsData.suggestions.filter(s => s.status === 'pending').length}`);
       }
+
+      // Normalizuj všetky návrhy pred vrátením
+      suggestionsData.suggestions = suggestionsData.suggestions.map(normalizeSuggestion);
 
       return res.status(200).json(suggestionsData);
     }
