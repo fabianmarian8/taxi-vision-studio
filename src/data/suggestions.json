@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:50:50.245Z",
+  "lastUpdated": "2025-11-12T10:50:57.788Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -100,8 +100,9 @@
         "website": null,
         "address": "Jána Cikkera 5, 974 01 Banská Bystrica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "approvedAt": "2025-11-12T10:50:57.788Z"
     },
     {
       "id": "banska-bystrica-1762944164311-wxmhf7f2d",
