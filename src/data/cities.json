@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:57:20.041Z",
+  "lastUpdated": "2025-11-12T10:57:55.745Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -94,7 +94,13 @@
         "objednať taxi štiavnica",
         "taxi štiavnica"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Banská Štiavnica - Ján Molek",
+          "phone": "+421919345765",
+          "website": "http://www.taxibs.sk"
+        }
+      ],
       "latitude": 48.4583,
       "longitude": 18.8917
     },
