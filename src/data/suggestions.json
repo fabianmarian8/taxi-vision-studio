@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:15:40.885Z",
+  "lastUpdated": "2025-11-12T11:15:45.382Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -972,8 +972,9 @@
         "website": null,
         "address": "Slobody 43, 022 01 Čadca, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:13:44.059Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:13:44.059Z",
+      "approvedAt": "2025-11-12T11:15:45.382Z"
     },
     {
       "id": "cadca-1762946024059-3yta5cb1v",
