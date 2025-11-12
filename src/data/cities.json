@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:09:25.603Z",
+  "lastUpdated": "2025-11-12T11:09:38.324Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -428,7 +428,13 @@
         "objednať taxi bytča",
         "taxi bytča telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Daniel Adamov - Dami",
+          "phone": "+421904860846",
+          "website": null
+        }
+      ],
       "latitude": 49.2239,
       "longitude": 18.5583
     },
