@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:58:20.526Z",
+  "lastUpdated": "2025-11-12T10:58:25.792Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -108,6 +108,11 @@
         {
           "name": "TOP TAXI Banská Štiavnica",
           "phone": "+421950303530",
+          "website": null
+        },
+        {
+          "name": "CORTO TAXI NONSTOP",
+          "phone": "+421910714660",
           "website": null
         }
       ],
