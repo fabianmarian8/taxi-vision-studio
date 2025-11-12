@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:22:51.509Z",
+  "lastUpdated": "2025-11-12T11:23:02.385Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1284,8 +1284,9 @@
         "website": "http://www.elektrotaxi.szm.sk",
         "address": "Nový rad 790, 930 05 Gabčíkovo, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:22:51.509Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:22:51.509Z",
+      "approvedAt": "2025-11-12T11:23:02.385Z"
     }
   ]
 }
