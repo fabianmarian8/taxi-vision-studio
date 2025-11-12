@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:04:56.501Z",
+  "lastUpdated": "2025-11-12T11:05:06.455Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -546,6 +546,174 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:04:48.731Z",
       "approvedAt": "2025-11-12T11:04:56.501Z"
+    },
+    {
+      "id": "bratislava-1762945506455-3867hog95",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "Taxi-Bratislava-City 🚕 Spoľahlivá taxi služba 24/7",
+        "phone": "+421903106943",
+        "website": "https://taxi-bratislava-city.sk",
+        "address": "Beniakova 3, 821 09 Bratislava-Karlova Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-y898wgspx",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "Top-Taxi Bratislava",
+        "phone": "+421910177333",
+        "website": "http://www.taxibratislava.com",
+        "address": "Mlynské nivy 5, 811 09 Bratislava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-0m3uw2tmt",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "TAXI-TAXI Bratislava",
+        "phone": "+421910467999",
+        "website": "https://www.taxi-taxi.sk",
+        "address": "Liščie nivy 25, 821 08 Bratislava-Ružinov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-eutxpa95w",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "Taxi Bratislava NonStop - Drink Taxi",
+        "phone": "+421911516202",
+        "website": "http://www.taxi-bratislava.eu",
+        "address": "Cintorínska 6, 811 08 Bratislava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-srswl6v0u",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "Taxi Vienna Bratislava",
+        "phone": "+421903110018",
+        "website": "https://taxi-vienna-bratislava.com",
+        "address": "Svetlá 4167/7, 811 02 Bratislava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-sff6untsy",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "Limousineway Taxi Vienna Bratislava",
+        "phone": "+421911888801",
+        "website": "http://www.limousineway.com",
+        "address": "Zimná 3271/8, 821 02 Bratislava-Ružinov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-yk03l0wsf",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "Bratislava - Vienna airport taxi",
+        "phone": "+421903853359",
+        "website": "https://bratislava-airport-taxi.com",
+        "address": "Beňadická 3008/19, 851 06 Bratislava-Petržalka, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-xneqiixax",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "5 STAR TAXI BRATISLAVA",
+        "phone": "+421915515568",
+        "website": "https://5startaxi.sk",
+        "address": "Marie Curie-Sklodowskej 35, 851 04 Bratislava-Petržalka, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-zn8qxlzbl",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "A Taxi Bratislava",
+        "phone": "+421902404929",
+        "website": "https://a-taxi.sk",
+        "address": "2, Hviezdoslavovo námestie 185, 811 02 Bratislava-Staré Mesto, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-6hhjcazfa",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "Bratislava Taxi - Drink Taxi",
+        "phone": "+421911030399",
+        "website": "https://bratislava-taxi.sk",
+        "address": "Seberíniho 1765/9, 821 04 Bratislava-Ružinov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-oueb1l436",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "Hotel Taxis",
+        "phone": "+4212/20793242",
+        "website": "https://hoteltaxis.sk",
+        "address": "Jaskový rad 9, 831 01 Bratislava-Nové Mesto, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-dk9oproy4",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "Hello Tik Tak Taxi",
+        "phone": "+421905216321",
+        "website": "http://www.hellotaxi.sk",
+        "address": "Mlynské nivy 56, 821 09 Bratislava-Ružinov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-0x223659k",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "Lacné taxi Bratislava 02/16400",
+        "phone": "+421216400",
+        "website": "http://www.lacne-taxi-bratislava.sk",
+        "address": "Mlynské nivy 56, 821 05 Bratislava-Ružinov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
+    },
+    {
+      "id": "bratislava-1762945506455-rejw000ls",
+      "citySlug": "bratislava",
+      "taxiService": {
+        "name": "Taxi Bratislava Schwechat",
+        "phone": "+421944457600",
+        "website": "https://www.taxi-bratislava-schwechat.sk",
+        "address": "Mlynské nivy 4963/56, 821 05 Bratislava-Ružinov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:05:06.455Z"
     }
   ]
 }
