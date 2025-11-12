@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:16:30.578Z",
+  "lastUpdated": "2025-11-12T11:16:33.868Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1037,8 +1037,9 @@
         "website": "http://www.rktaxi.sk",
         "address": "Novosady 921/6, 962 12 Detva, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:16:21.647Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:16:21.647Z",
+      "approvedAt": "2025-11-12T11:16:33.868Z"
     },
     {
       "id": "detva-1762946181648-b2n3lshwo",
