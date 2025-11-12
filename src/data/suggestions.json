@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:59:24.330Z",
+  "lastUpdated": "2025-11-12T10:59:29.722Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -283,8 +283,9 @@
         "website": null,
         "address": "Banská Belá 316, 966 15 Banská Belá, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:57:46.707Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:57:46.707Z",
+      "approvedAt": "2025-11-12T10:59:29.722Z"
     },
     {
       "id": "banska-stiavnica-1762945066707-qcq8kmf4u",
