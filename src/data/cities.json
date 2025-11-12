@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:17.305Z",
+  "lastUpdated": "2025-11-12T11:05:20.784Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -279,6 +279,11 @@
           "name": "Top-Taxi Bratislava",
           "phone": "+421910177333",
           "website": "http://www.taxibratislava.com"
+        },
+        {
+          "name": "TAXI-TAXI Bratislava",
+          "phone": "+421910467999",
+          "website": "https://www.taxi-taxi.sk"
         }
       ],
       "latitude": 48.1486,
