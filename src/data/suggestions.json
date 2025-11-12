@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:02:17.707Z",
+  "lastUpdated": "2025-11-12T11:02:26.858Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -478,8 +478,9 @@
         "website": null,
         "address": "Slovenská, 085 01 Bardejov, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:01:23.643Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:01:23.643Z",
+      "approvedAt": "2025-11-12T11:02:26.858Z"
     },
     {
       "id": "bardejov-1762945283643-05jkiin2r",
