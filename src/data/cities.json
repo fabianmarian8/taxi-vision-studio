@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:46:37.096Z",
+  "lastUpdated": "2025-11-12T10:50:38.883Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -61,6 +61,11 @@
           "name": "ECO Hybrid TAXI Banská Bystrica",
           "phone": "+421909110110",
           "website": "http://www.ecohybridtaxi.sk"
+        },
+        {
+          "name": "TAXI Banská Bystrica - inTAXI - taxiK sro - NONSTOP",
+          "phone": "+421948887988",
+          "website": "https://intaxi.sk"
         }
       ],
       "latitude": 48.7361,
