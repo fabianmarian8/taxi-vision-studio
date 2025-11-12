@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:18:39.673Z",
+  "lastUpdated": "2025-11-12T11:18:45.677Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -620,6 +620,11 @@
           "name": "JTD Taxi Dolný Kubín",
           "phone": "+421904232232",
           "website": "https://www.taxikubin.sk"
+        },
+        {
+          "name": "JeKa -TAXI Dolný Kubín",
+          "phone": "+421907262000",
+          "website": null
         }
       ],
       "latitude": 49.21,
