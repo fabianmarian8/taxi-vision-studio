@@ -1,0 +1,40 @@
+{
+  "changes": [
+    {
+      "citySlug": "krupina",
+      "taxiServices": [
+        {
+          "name": "AA - TAXI Krupina",
+          "phone": "+421907580858",
+          "website": "https://taxikrupina.szm.com",
+          "address": "Záhradná 680/2, 963 01 Krupina, Slovensko"
+        },
+        {
+          "name": "Express TAXI Krupina",
+          "phone": "+421904404900",
+          "website": "http://krupinskyexpresstaxi0.webnode.sk",
+          "address": "Slnečná 33, 963 01 Krupina, Slovensko"
+        },
+        {
+          "name": "Eco Hybrid Taxi Krupina",
+          "phone": "+421911444655",
+          "website": "http://autokavos.sk",
+          "address": "Osloboditeľov 926/12, 963 01 Krupina, Slovensko"
+        },
+        {
+          "name": "ZDRAVOS - KRUPINČAN",
+          "phone": "+421944600638",
+          "website": "http://www.taxikrupina.com",
+          "address": "Fraňa Kráľa 14, 963 01 Krupina, Slovensko"
+        },
+        {
+          "name": "Taxislužba - Ján Dado",
+          "phone": "+42145/5521037",
+          "website": null,
+          "address": "963 01 Krupina, Slovensko"
+        }
+      ],
+      "timestamp": "2025-11-12T20:10:29.682Z"
+    }
+  ]
+}
