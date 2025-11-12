@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:12.897Z",
+  "lastUpdated": "2025-11-12T11:05:17.750Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -569,8 +569,9 @@
         "website": "http://www.taxibratislava.com",
         "address": "Mlynské nivy 5, 811 09 Bratislava, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:05:06.455Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:05:06.455Z",
+      "approvedAt": "2025-11-12T11:05:17.750Z"
     },
     {
       "id": "bratislava-1762945506455-0m3uw2tmt",
