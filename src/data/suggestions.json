@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:18:35.158Z",
+  "lastUpdated": "2025-11-12T11:18:40.142Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1115,8 +1115,9 @@
         "website": "https://www.taxikubin.sk",
         "address": "Vyšnokubínska 231, 026 01 Vyšný Kubín, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:18:11.798Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:18:11.798Z",
+      "approvedAt": "2025-11-12T11:18:40.142Z"
     },
     {
       "id": "dolny-kubin-1762946291798-1th9oayz8",
