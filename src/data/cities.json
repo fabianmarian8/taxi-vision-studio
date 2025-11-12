@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:30.918Z",
+  "lastUpdated": "2025-11-12T11:08:41.160Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -395,7 +395,13 @@
         "objednať taxi brezová",
         "taxi bradlo"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Myjava",
+          "phone": "+421907277588",
+          "website": "http://www.taxi-myjava.sk"
+        }
+      ],
       "latitude": 48.6667,
       "longitude": 17.5167
     },
