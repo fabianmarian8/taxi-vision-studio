@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:16:33.868Z",
+  "lastUpdated": "2025-11-12T11:16:41.673Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1050,8 +1050,9 @@
         "website": "https://taxi-ali9.webnode.sk",
         "address": "Piešť I, 962 12 Detva, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:16:21.647Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:16:21.647Z",
+      "approvedAt": "2025-11-12T11:16:41.673Z"
     }
   ]
 }
