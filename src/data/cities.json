@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:08:43.826Z",
+  "lastUpdated": "2025-11-12T11:09:25.603Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -405,6 +405,11 @@
           "name": "Taxi La Vita Myjava",
           "phone": "+421940095050",
           "website": "http://www.taxilavita.sk"
+        },
+        {
+          "name": "TAXI MY",
+          "website": "",
+          "phone": "+421 948 333 338"
         }
       ],
       "latitude": 48.6667,
