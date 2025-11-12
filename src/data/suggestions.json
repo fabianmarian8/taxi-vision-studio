@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:24.586Z",
+  "lastUpdated": "2025-11-12T11:06:28.823Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -764,8 +764,9 @@
         "website": "https://taxipodbrezova.sk",
         "address": "Kolkáreň 17/22, 976 81 Podbrezová, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:06:11.274Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:06:11.274Z",
+      "approvedAt": "2025-11-12T11:06:28.823Z"
     },
     {
       "id": "brezno-1762945571274-2z7d47swc",
