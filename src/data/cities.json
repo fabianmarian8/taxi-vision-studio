@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-11T18:10:44.102Z",
+  "lastUpdated": "2025-11-12T10:44:18.442Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -31,7 +31,13 @@
         "objednať taxi banská bystrica",
         "taxi bb"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "3 Taxi B. Bystrica",
+          "phone": "+421903654303",
+          "website": "https://www.3taxi.sk"
+        }
+      ],
       "latitude": 48.7361,
       "longitude": 19.1475
     },
