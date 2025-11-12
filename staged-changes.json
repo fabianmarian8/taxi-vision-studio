@@ -1,0 +1,58 @@
+{
+  "changes": [
+    {
+      "citySlug": "kysucke-nove-mesto",
+      "taxiServices": [
+        {
+          "name": "TAXI EXPRESS - KNM",
+          "phone": "+421907708080",
+          "website": "http://www.expresstaxi-knm.sk",
+          "address": "SNP, 024 01 Kysucké Nové Mesto, Slovensko"
+        },
+        {
+          "name": "Maxi Taxi KNM",
+          "phone": "+421911883883",
+          "website": null,
+          "address": "SNP 1, 024 01 Kysucké Nové Mesto, Slovensko"
+        },
+        {
+          "name": "VIP Taxi KNM",
+          "phone": "+421944558805",
+          "website": "http://www.viptaxiknm.sk",
+          "address": "SNP 20, 024 01 Kysucké Nové Mesto, Slovensko"
+        },
+        {
+          "name": "NEXUSS TAXI KNM",
+          "phone": "+421911111681",
+          "website": "https://taxi-nexuss-knm1.webnode.sk",
+          "address": "ČSA 1302, 024 04 Kysucké Nové Mesto, Slovensko"
+        },
+        {
+          "name": "City Taxi KNM",
+          "phone": "+421915777072",
+          "website": "http://citytaxiknm.webnode.sk",
+          "address": "1, SNP 560, 024 01 Kysucké Nové Mesto, Slovensko"
+        },
+        {
+          "name": "B&W Taxi KNM",
+          "phone": "+421911115105",
+          "website": "https://blackandwhiteknm.sk",
+          "address": "SNP 1, 024 01 Kysucké Nové Mesto, Slovensko"
+        },
+        {
+          "name": "OK Taxi KNM",
+          "phone": "+421903878003",
+          "website": null,
+          "address": "SNP 9, 024 01 Kysucké Nové Mesto, Slovensko"
+        },
+        {
+          "name": "TAXI - L&M servis, s.r.o.",
+          "phone": "+421915558585",
+          "website": null,
+          "address": "SNP, 024 01 Kysucké Nové Mesto, Slovensko"
+        }
+      ],
+      "timestamp": "2025-11-12T20:17:47.133Z"
+    }
+  ]
+}
