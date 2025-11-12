@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:33.884Z",
+  "lastUpdated": "2025-11-12T11:05:38.859Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -304,6 +304,11 @@
           "name": "Bratislava - Vienna airport taxi",
           "phone": "+421903853359",
           "website": "https://bratislava-airport-taxi.com"
+        },
+        {
+          "name": "5 STAR TAXI BRATISLAVA",
+          "phone": "+421915515568",
+          "website": "https://5startaxi.sk"
         }
       ],
       "latitude": 48.1486,
