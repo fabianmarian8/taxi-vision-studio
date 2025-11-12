@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:27:35.861Z",
+  "lastUpdated": "2025-11-12T11:27:57.946Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1020,7 +1020,18 @@
         "objednať taxi holíč",
         "taxi holíč ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Holič Topgun 908 51",
+          "phone": "+421911775565",
+          "website": "https://www.facebook.com"
+        },
+        {
+          "name": "Taxi Bella",
+          "phone": "+421907127540",
+          "website": "https://zoznamtaxi.sktaxi.sk"
+        }
+      ],
       "latitude": 48.8117,
       "longitude": 17.1597
     },
