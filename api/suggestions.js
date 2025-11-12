@@ -261,11 +261,29 @@ export default async function handler(req, res) {
         // Ulož do staged-suggestions.json (BEZ COMMITU DO suggestions.json!)
         await saveStagedSuggestions(stagedData, stagedSha);
 
+        // Debug info
+        console.log('=== SUGGESTIONS DEBUG ===');
+        console.log(`City: ${citySlug}`);
+        console.log(`Total scraped: ${suggestions.length}`);
+        console.log(`New (after dedup): ${newSuggestions.length}`);
+        console.log(`Skipped duplicates: ${suggestions.length - newSuggestions.length}`);
+        console.log(`Existing services in city: ${existingServices.length}`);
+        console.log(`Existing committed suggestions: ${existingSuggestionsData.suggestions.filter(s => s.citySlug === citySlug && s.status !== 'rejected').length}`);
+        console.log(`Staged suggestions: ${stagedData.suggestions.filter(s => s.citySlug === citySlug && s.status !== 'rejected').length}`);
+
         return res.status(200).json({
           success: true,
-          message: `Added ${newSuggestions.length} new suggestions to staging area. Click "Publish Changes" to commit.`,
+          message: `Added ${newSuggestions.length} new suggestions to staging area${newSuggestions.length === 0 ? ' (all were duplicates)' : ''}. ${newSuggestions.length > 0 ? 'Click "Publish Changes" to commit.' : ''}`,
           added: newSuggestions.length,
-          skipped: suggestions.length - newSuggestions.length
+          skipped: suggestions.length - newSuggestions.length,
+          debug: {
+            citySlug,
+            existingServicesCount: existingServices.length,
+            existingSuggestionsCount: existingSuggestionsData.suggestions.filter(s => s.citySlug === citySlug && s.status !== 'rejected').length,
+            stagedSuggestionsCount: stagedData.suggestions.filter(s => s.citySlug === citySlug && s.status !== 'rejected').length,
+            scrapedNames: suggestions.map(s => s.name),
+            existingNames: existingServices.map(s => s.name)
+          }
         });
       }
 
