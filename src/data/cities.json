@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:25:58.519Z",
+  "lastUpdated": "2025-11-12T11:27:35.861Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -997,6 +997,11 @@
           "name": "Zdenko Búr",
           "phone": "+421907122575",
           "website": null
+        },
+        {
+          "name": "Shot Taxi",
+          "website": "https://taxihnusta.sk/",
+          "phone": "+421 915051659"
         }
       ],
       "latitude": 48.6233,
