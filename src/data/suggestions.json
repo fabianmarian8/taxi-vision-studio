@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T14:16:41.607Z",
+  "lastUpdated": "2025-11-12T14:33:08.397Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,66 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "kralovsky-chlmec-1762957988397-je0fglbba",
+      "citySlug": "kralovsky-chlmec",
+      "taxiService": {
+        "name": "Elitt Taxi",
+        "phone": "+421940640640",
+        "website": "http://elittaxi.sk",
+        "address": "101, Ľ. Kossutha 1270, 077 01 Kráľovský Chlmec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:33:08.397Z"
+    },
+    {
+      "id": "kralovsky-chlmec-1762957988397-32ebl2ute",
+      "citySlug": "kralovsky-chlmec",
+      "taxiService": {
+        "name": "Szabi Taxi - Taxislužba",
+        "phone": "+421919066191",
+        "website": "https://sites.google.com",
+        "address": "M. Helmecziho 19, 077 01 Kráľovský Chlmec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:33:08.397Z"
+    },
+    {
+      "id": "kralovsky-chlmec-1762957988397-2hi34zve2",
+      "citySlug": "kralovsky-chlmec",
+      "taxiService": {
+        "name": "Transem spol. s r.o.",
+        "phone": "+421901911937",
+        "website": "http://transem.sk",
+        "address": "Pri štadióne 535/75, 077 01 Kráľovský Chlmec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:33:08.397Z"
+    },
+    {
+      "id": "kralovsky-chlmec-1762957988397-cf082nje4",
+      "citySlug": "kralovsky-chlmec",
+      "taxiService": {
+        "name": "BT-Taxi",
+        "phone": "+421947100777",
+        "website": null,
+        "address": "Kostolný rad 318/15, 077 01 Kráľovský Chlmec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:33:08.397Z"
+    },
+    {
+      "id": "kralovsky-chlmec-1762957988397-fveja59bd",
+      "citySlug": "kralovsky-chlmec",
+      "taxiService": {
+        "name": "Tony taxi",
+        "phone": "+421910746104",
+        "website": null,
+        "address": "Pribenícka, 077 01 Kráľovský Chlmec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:33:08.397Z"
     }
   ]
 }
