@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T13:20:09.177Z",
+  "lastUpdated": "2025-11-12T13:20:21.737Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2165,8 +2165,9 @@
         "website": null,
         "address": "Nám. M. R. Štefánika 11, Komárno, 945 01 Komárno, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T13:20:09.177Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T13:20:09.177Z",
+      "rejectedAt": "2025-11-12T13:20:21.737Z"
     },
     {
       "id": "komarno-1762953609178-p3u6dh8h1",
