@@ -5,7 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { ArrowLeft, Plus, Trash2, Save, Search } from 'lucide-react';
+import { ArrowLeft, Plus, Trash2, Save, Search, Upload } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 interface TaxiService {
   name: string;
@@ -23,7 +24,9 @@ interface CityData {
 export default function AdminEditCity() {
   const { citySlug } = useParams<{ citySlug: string }>();
   const [city, setCity] = useState<CityData | null>(null);
+  const [originalServices, setOriginalServices] = useState<TaxiService[]>([]);
   const [taxiServices, setTaxiServices] = useState<TaxiService[]>([]);
+  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isScrapingInProgress, setIsScrapingInProgress] = useState(false);
@@ -40,6 +43,19 @@ export default function AdminEditCity() {
     loadCityData();
   }, [citySlug, navigate]);
 
+  // Kontrola zmien pri odchode zo stránky
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (hasUnsavedChanges) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [hasUnsavedChanges]);
+
   const loadCityData = async () => {
     try {
       const token = localStorage.getItem('adminToken');
@@ -55,7 +71,9 @@ export default function AdminEditCity() {
         
         if (foundCity) {
           setCity(foundCity);
-          setTaxiServices(foundCity.taxiServices || []);
+          const services = foundCity.taxiServices || [];
+          setTaxiServices(services);
+          setOriginalServices(JSON.parse(JSON.stringify(services))); // Deep copy
         } else {
           toast({
             title: 'Chyba',
@@ -76,21 +94,39 @@ export default function AdminEditCity() {
     }
   };
 
+  const checkForChanges = (services: TaxiService[]) => {
+    const hasChanges = JSON.stringify(services) !== JSON.stringify(originalServices);
+    setHasUnsavedChanges(hasChanges);
+  };
+
   const handleAddService = () => {
-    setTaxiServices([...taxiServices, { name: '', website: '', phone: '' }]);
+    const updated = [...taxiServices, { name: '', website: '', phone: '' }];
+    setTaxiServices(updated);
+    checkForChanges(updated);
   };
 
   const handleRemoveService = (index: number) => {
-    setTaxiServices(taxiServices.filter((_, i) => i !== index));
+    const updated = taxiServices.filter((_, i) => i !== index);
+    setTaxiServices(updated);
+    checkForChanges(updated);
   };
 
   const handleServiceChange = (index: number, field: keyof TaxiService, value: string) => {
     const updated = [...taxiServices];
     updated[index] = { ...updated[index], [field]: value };
     setTaxiServices(updated);
+    checkForChanges(updated);
   };
 
-  const handleSave = async () => {
+  const handlePublishChanges = async () => {
+    if (!hasUnsavedChanges) {
+      toast({
+        title: 'Info',
+        description: 'Žiadne zmeny na publikovanie',
+      });
+      return;
+    }
+
     setIsSaving(true);
 
     try {
@@ -108,22 +144,37 @@ export default function AdminEditCity() {
       });
 
       if (response.ok) {
+        setOriginalServices(JSON.parse(JSON.stringify(taxiServices)));
+        setHasUnsavedChanges(false);
+        
         toast({
-          title: 'Úspech',
-          description: 'Dáta boli úspešne uložené',
+          title: '✅ Publikované!',
+          description: 'Zmeny boli úspešne publikované na produkciu. Vercel deployment sa spustil.',
         });
-        navigate('/admin/dashboard');
       } else {
         throw new Error('Save failed');
       }
     } catch (error) {
       toast({
         title: 'Chyba',
-        description: 'Nepodarilo sa uložiť dáta',
+        description: 'Nepodarilo sa publikovať zmeny',
         variant: 'destructive',
       });
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const handleDiscardChanges = () => {
+    if (!hasUnsavedChanges) return;
+
+    if (confirm('Naozaj chcete zahodiť všetky neuložené zmeny?')) {
+      setTaxiServices(JSON.parse(JSON.stringify(originalServices)));
+      setHasUnsavedChanges(false);
+      toast({
+        title: 'Zmeny zahodené',
+        description: 'Všetky neuložené zmeny boli zahodené',
+      });
     }
   };
 
@@ -233,22 +284,65 @@ export default function AdminEditCity() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-white border-b">
+      {/* Header */}
+      <div className="bg-white border-b sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center gap-4">
-            <Button onClick={() => navigate('/admin/dashboard')} variant="ghost">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Späť
-            </Button>
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">{city.name}</h1>
-              <p className="text-sm text-gray-600">{city.region}</p>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <Button onClick={() => navigate('/admin/dashboard')} variant="ghost">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Späť
+              </Button>
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">{city.name}</h1>
+                <p className="text-sm text-gray-600">{city.region}</p>
+              </div>
             </div>
+
+            {/* Publikovanie zmien - vpravo v headeri */}
+            {hasUnsavedChanges && (
+              <div className="flex gap-2">
+                <Button
+                  onClick={handleDiscardChanges}
+                  variant="outline"
+                  size="sm"
+                >
+                  Zahodiť zmeny
+                </Button>
+                <Button
+                  onClick={handlePublishChanges}
+                  disabled={isSaving}
+                  className="bg-green-600 hover:bg-green-700"
+                  size="sm"
+                >
+                  <Upload className="w-4 h-4 mr-2" />
+                  {isSaving ? 'Publikujem...' : 'Publikovať zmeny'}
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Upozornenie na neuložené zmeny */}
+        {hasUnsavedChanges && (
+          <Alert className="mb-6 bg-yellow-50 border-yellow-200">
+            <AlertDescription className="flex items-center justify-between">
+              <div>
+                <strong>⚠️ Máte neuložené zmeny</strong>
+                <p className="text-sm text-gray-600 mt-1">
+                  Zmeny sú uložené len lokálne. Kliknite na "Publikovať zmeny" pre uloženie na produkciu.
+                  <br />
+                  <span className="text-xs">
+                    💡 Môžete upraviť viacero taxislužieb naraz a publikovať všetko jedným kliknutím.
+                  </span>
+                </p>
+              </div>
+            </AlertDescription>
+          </Alert>
+        )}
+
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
@@ -328,14 +422,16 @@ export default function AdminEditCity() {
               ))
             )}
 
-            <div className="flex justify-end gap-4 pt-4 border-t">
-              <Button variant="outline" onClick={() => navigate('/admin/dashboard')}>
-                Zrušiť
-              </Button>
-              <Button onClick={handleSave} disabled={isSaving}>
-                <Save className="w-4 h-4 mr-2" />
-                {isSaving ? 'Ukladám...' : 'Uložiť zmeny'}
-              </Button>
+            {/* Info box */}
+            <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+              <h4 className="font-semibold text-blue-900 mb-2">💡 Ako to funguje?</h4>
+              <ul className="text-sm text-blue-800 space-y-1">
+                <li>• Upravujte taxislužby lokálne vo vašom prehliadači</li>
+                <li>• Môžete upraviť viacero taxislužieb naraz</li>
+                <li>• Keď ste hotový, kliknite na "Publikovať zmeny"</li>
+                <li>• Všetky zmeny sa uložia naraz jedným commitom = 1 deployment</li>
+                <li>• Šetrí Vercel deployment limity! 🎉</li>
+              </ul>
             </div>
           </CardContent>
         </Card>
