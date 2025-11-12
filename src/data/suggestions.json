@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:46:55.278Z",
+  "lastUpdated": "2025-11-12T13:20:09.177Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2119,6 +2119,102 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:33:57.916Z",
       "approvedAt": "2025-11-12T11:46:55.278Z"
+    },
+    {
+      "id": "komarno-1762953609177-qkrvjeor7",
+      "citySlug": "komarno",
+      "taxiService": {
+        "name": "City Taxi Komárno",
+        "phone": "+421910204080",
+        "website": "https://citytaxikomarno.sk",
+        "address": "Petöfiho 30, Komárno, 945 01 Komárno, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T13:20:09.177Z"
+    },
+    {
+      "id": "komarno-1762953609178-twsi6c7os",
+      "citySlug": "komarno",
+      "taxiService": {
+        "name": "W -TAXI KOMÁRNO",
+        "phone": "+421908080014",
+        "website": null,
+        "address": "Práce 426/19, Komárno, 945 01 Komárno, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T13:20:09.177Z"
+    },
+    {
+      "id": "komarno-1762953609178-bw5lp0ghv",
+      "citySlug": "komarno",
+      "taxiService": {
+        "name": "Tibor Bári - PT Taxi",
+        "phone": "+421908402020",
+        "website": null,
+        "address": "Boženy Němcovej 2655/13, Komárno, 945 01 Komárno, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T13:20:09.177Z"
+    },
+    {
+      "id": "komarno-1762953609178-xa5i9bpli",
+      "citySlug": "komarno",
+      "taxiService": {
+        "name": "AUTO BÓŽIK s.r.o.",
+        "phone": "+421911222501",
+        "website": null,
+        "address": "Nám. M. R. Štefánika 11, Komárno, 945 01 Komárno, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T13:20:09.177Z"
+    },
+    {
+      "id": "komarno-1762953609178-p3u6dh8h1",
+      "citySlug": "komarno",
+      "taxiService": {
+        "name": "Star Taxi",
+        "phone": "+421918076666",
+        "website": "https://www.facebook.com/share/19N47mRQjJ",
+        "address": "Mládeže 51, Komárno, 945 01 Komárno, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T13:20:09.177Z"
+    },
+    {
+      "id": "komarno-1762953609178-a83o2z4jc",
+      "citySlug": "komarno",
+      "taxiService": {
+        "name": "Premium Taxi - Hajósi János",
+        "phone": "+36708846722",
+        "website": "https://taxikomarom.com",
+        "address": "Komárom, Térffy Gyula u. 83, 2900 Maďarsko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T13:20:09.177Z"
+    },
+    {
+      "id": "komarno-1762953609178-8vrqddamf",
+      "citySlug": "komarno",
+      "taxiService": {
+        "name": "Zoli Taxi",
+        "phone": "+42135/7713143",
+        "website": "http://www.komarno-taxi.sk",
+        "address": "Vnútorná Okružná 8, Komárno, 945 01 Komárno, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T13:20:09.177Z"
+    },
+    {
+      "id": "komarno-1762953609178-yg7ir1lwu",
+      "citySlug": "komarno",
+      "taxiService": {
+        "name": "PT TAXI",
+        "phone": "+36204417713",
+        "website": null,
+        "address": "Petöfiho 24, Komárno, 945 01 Komárno, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T13:20:09.177Z"
     }
   ]
 }
