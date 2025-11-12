@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:51.016Z",
+  "lastUpdated": "2025-11-12T11:06:00.180Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -329,6 +329,11 @@
           "name": "Hello Tik Tak Taxi",
           "phone": "+421905216321",
           "website": "http://www.hellotaxi.sk"
+        },
+        {
+          "name": "Lacné taxi Bratislava 02/16400",
+          "phone": "+421216400",
+          "website": "http://www.lacne-taxi-bratislava.sk"
         }
       ],
       "latitude": 48.1486,
