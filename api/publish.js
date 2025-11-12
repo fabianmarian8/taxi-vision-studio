@@ -36,106 +36,9 @@ export default async function handler(req, res) {
   try {
     let changesSummary = [];
     let totalChanges = 0;
+    let approvedSuggestions = []; // Zoznam schválených návrhov na pridanie do cities
 
-    // 1. SPRACUJ STAGED CHANGES (cities.json)
-    try {
-      const stagedChangesResponse = await fetch(
-        `https://api.github.com/repos/${GITHUB_REPO}/contents/${STAGED_CHANGES_FILE}`,
-        {
-          headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json',
-          },
-        }
-      );
-
-      if (stagedChangesResponse.ok) {
-        const stagedData = await stagedChangesResponse.json();
-        const stagedContent = Buffer.from(stagedData.content, 'base64').toString('utf-8');
-        const stagedChanges = JSON.parse(stagedContent);
-
-        if (stagedChanges.changes && stagedChanges.changes.length > 0) {
-          // Načítaj cities.json
-          const citiesResponse = await fetch(
-            `https://api.github.com/repos/${GITHUB_REPO}/contents/${CITIES_FILE}`,
-            {
-              headers: {
-                'Authorization': `Bearer ${GITHUB_TOKEN}`,
-                'Accept': 'application/vnd.github.v3+json',
-              },
-            }
-          );
-
-          if (!citiesResponse.ok) {
-            throw new Error('Failed to fetch cities.json');
-          }
-
-          const citiesData = await citiesResponse.json();
-          const citiesContent = Buffer.from(citiesData.content, 'base64').toString('utf-8');
-          const citiesJson = JSON.parse(citiesContent);
-
-          // Aplikuj staged changes na cities
-          for (const change of stagedChanges.changes) {
-            const cityIndex = citiesJson.cities.findIndex(c => c.slug === change.citySlug);
-            if (cityIndex !== -1) {
-              citiesJson.cities[cityIndex].taxiServices = change.taxiServices;
-              changesSummary.push(`Updated ${change.citySlug}`);
-              totalChanges++;
-            }
-          }
-
-          citiesJson.lastUpdated = new Date().toISOString();
-
-          // Commitni cities.json
-          const newCitiesContent = Buffer.from(JSON.stringify(citiesJson, null, 2)).toString('base64');
-
-          const citiesUpdateResponse = await fetch(
-            `https://api.github.com/repos/${GITHUB_REPO}/contents/${CITIES_FILE}`,
-            {
-              method: 'PUT',
-              headers: {
-                'Authorization': `Bearer ${GITHUB_TOKEN}`,
-                'Accept': 'application/vnd.github.v3+json',
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                message: `Publish batch changes: ${changesSummary.join(', ')}`,
-                content: newCitiesContent,
-                sha: citiesData.sha,
-                branch: 'main',
-              }),
-            }
-          );
-
-          if (!citiesUpdateResponse.ok) {
-            const errorData = await citiesUpdateResponse.json();
-            throw new Error(`Failed to update cities.json: ${JSON.stringify(errorData)}`);
-          }
-
-          // Vymaž staged-changes.json
-          await fetch(
-            `https://api.github.com/repos/${GITHUB_REPO}/contents/${STAGED_CHANGES_FILE}`,
-            {
-              method: 'DELETE',
-              headers: {
-                'Authorization': `Bearer ${GITHUB_TOKEN}`,
-                'Accept': 'application/vnd.github.v3+json',
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                message: 'Clear staged changes after publish',
-                sha: stagedData.sha,
-                branch: 'main',
-              }),
-            }
-          );
-        }
-      }
-    } catch (error) {
-      console.log('No staged changes to publish:', error.message);
-    }
-
-    // 2. SPRACUJ STAGED SUGGESTIONS (suggestions.json)
+    // 1. SPRACUJ STAGED SUGGESTIONS NAJPRV (aby sme vedeli, čo treba pridať do cities)
     try {
       const stagedSuggestionsResponse = await fetch(
         `https://api.github.com/repos/${GITHUB_REPO}/contents/${STAGED_SUGGESTIONS_FILE}`,
@@ -153,6 +56,11 @@ export default async function handler(req, res) {
         const stagedSuggestions = JSON.parse(stagedSugContent);
 
         if (stagedSuggestions.suggestions && stagedSuggestions.suggestions.length > 0) {
+          // Zober schválené návrhy
+          approvedSuggestions = stagedSuggestions.suggestions.filter(s => s.status === 'approved');
+          
+          console.log(`Found ${approvedSuggestions.length} approved suggestions to add to cities`);
+
           // Načítaj suggestions.json
           const suggestionsResponse = await fetch(
             `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
@@ -227,6 +135,149 @@ export default async function handler(req, res) {
       }
     } catch (error) {
       console.log('No staged suggestions to publish:', error.message);
+    }
+
+    // 2. SPRACUJ STAGED CHANGES (cities.json) + PRIDAJ SCHVÁLENÉ NÁVRHY
+    try {
+      // Načítaj cities.json
+      const citiesResponse = await fetch(
+        `https://api.github.com/repos/${GITHUB_REPO}/contents/${CITIES_FILE}`,
+        {
+          headers: {
+            'Authorization': `Bearer ${GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json',
+          },
+        }
+      );
+
+      if (!citiesResponse.ok) {
+        throw new Error('Failed to fetch cities.json');
+      }
+
+      const citiesData = await citiesResponse.json();
+      const citiesContent = Buffer.from(citiesData.content, 'base64').toString('utf-8');
+      const citiesJson = JSON.parse(citiesContent);
+
+      let citiesModified = false;
+
+      // 2a. Aplikuj staged changes
+      try {
+        const stagedChangesResponse = await fetch(
+          `https://api.github.com/repos/${GITHUB_REPO}/contents/${STAGED_CHANGES_FILE}`,
+          {
+            headers: {
+              'Authorization': `Bearer ${GITHUB_TOKEN}`,
+              'Accept': 'application/vnd.github.v3+json',
+            },
+          }
+        );
+
+        if (stagedChangesResponse.ok) {
+          const stagedData = await stagedChangesResponse.json();
+          const stagedContent = Buffer.from(stagedData.content, 'base64').toString('utf-8');
+          const stagedChanges = JSON.parse(stagedContent);
+
+          if (stagedChanges.changes && stagedChanges.changes.length > 0) {
+            for (const change of stagedChanges.changes) {
+              const cityIndex = citiesJson.cities.findIndex(c => c.slug === change.citySlug);
+              if (cityIndex !== -1) {
+                citiesJson.cities[cityIndex].taxiServices = change.taxiServices;
+                changesSummary.push(`Updated ${change.citySlug}`);
+                totalChanges++;
+                citiesModified = true;
+              }
+            }
+
+            // Vymaž staged-changes.json
+            await fetch(
+              `https://api.github.com/repos/${GITHUB_REPO}/contents/${STAGED_CHANGES_FILE}`,
+              {
+                method: 'DELETE',
+                headers: {
+                  'Authorization': `Bearer ${GITHUB_TOKEN}`,
+                  'Accept': 'application/vnd.github.v3+json',
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  message: 'Clear staged changes after publish',
+                  sha: stagedData.sha,
+                  branch: 'main',
+                }),
+              }
+            );
+          }
+        }
+      } catch (error) {
+        console.log('No staged changes to publish:', error.message);
+      }
+
+      // 2b. PRIDAJ SCHVÁLENÉ NÁVRHY DO CITIES
+      if (approvedSuggestions.length > 0) {
+        console.log(`Adding ${approvedSuggestions.length} approved suggestions to cities.json`);
+        
+        // Zoskup návrhy podľa mesta
+        const suggestionsByCity = {};
+        approvedSuggestions.forEach(suggestion => {
+          if (!suggestionsByCity[suggestion.citySlug]) {
+            suggestionsByCity[suggestion.citySlug] = [];
+          }
+          suggestionsByCity[suggestion.citySlug].push(suggestion.taxiService);
+        });
+
+        // Pridaj služby do každého mesta
+        Object.entries(suggestionsByCity).forEach(([citySlug, services]) => {
+          const cityIndex = citiesJson.cities.findIndex(c => c.slug === citySlug);
+          if (cityIndex !== -1) {
+            if (!citiesJson.cities[cityIndex].taxiServices) {
+              citiesJson.cities[cityIndex].taxiServices = [];
+            }
+            
+            // Pridaj nové služby
+            citiesJson.cities[cityIndex].taxiServices.push(...services);
+            
+            changesSummary.push(`Added ${services.length} approved suggestions to ${citySlug}`);
+            totalChanges += services.length;
+            citiesModified = true;
+            
+            console.log(`Added ${services.length} services to ${citySlug}`);
+          }
+        });
+      }
+
+      // Ak boli nejaké zmeny v cities, commitni ich
+      if (citiesModified) {
+        citiesJson.lastUpdated = new Date().toISOString();
+
+        const newCitiesContent = Buffer.from(JSON.stringify(citiesJson, null, 2)).toString('base64');
+
+        const citiesUpdateResponse = await fetch(
+          `https://api.github.com/repos/${GITHUB_REPO}/contents/${CITIES_FILE}`,
+          {
+            method: 'PUT',
+            headers: {
+              'Authorization': `Bearer ${GITHUB_TOKEN}`,
+              'Accept': 'application/vnd.github.v3+json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              message: `Publish changes: ${changesSummary.join(', ')}`,
+              content: newCitiesContent,
+              sha: citiesData.sha,
+              branch: 'main',
+            }),
+          }
+        );
+
+        if (!citiesUpdateResponse.ok) {
+          const errorData = await citiesUpdateResponse.json();
+          throw new Error(`Failed to update cities.json: ${JSON.stringify(errorData)}`);
+        }
+
+        console.log('Successfully updated cities.json');
+      }
+    } catch (error) {
+      console.error('Error processing cities changes:', error);
+      throw error;
     }
 
     if (totalChanges === 0) {
