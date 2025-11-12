@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:15:44.946Z",
+  "lastUpdated": "2025-11-12T11:16:12.475Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -505,6 +505,11 @@
         {
           "name": "OK Taxi",
           "phone": "+42141/4326666",
+          "website": null
+        },
+        {
+          "name": "Taxi Express",
+          "phone": "+42141/4332111",
           "website": null
         }
       ],
