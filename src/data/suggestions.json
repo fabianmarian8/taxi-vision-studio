@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:08:41.615Z",
+  "lastUpdated": "2025-11-12T11:08:44.263Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -803,8 +803,9 @@
         "website": "http://www.taxilavita.sk",
         "address": "Pažického 416/14, 907 01 Myjava, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:06:39.595Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:06:39.595Z",
+      "approvedAt": "2025-11-12T11:08:44.263Z"
     }
   ]
 }
