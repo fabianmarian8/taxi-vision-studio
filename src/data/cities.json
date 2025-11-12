@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:24:24.484Z",
+  "lastUpdated": "2025-11-12T11:24:38.964Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -868,7 +868,18 @@
         "objednať taxi giraltovce",
         "taxi giraltovce ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI CITY Michal Horný",
+          "phone": "+421915903791",
+          "website": null
+        },
+        {
+          "name": "STARS TAXI Giraltovce",
+          "phone": "+421949298559",
+          "website": "https://www.facebook.com"
+        }
+      ],
       "latitude": 49.0992,
       "longitude": 21.5033
     },
