@@ -29,16 +29,33 @@ export default function AdminSuggestions() {
     loadSuggestions();
   }, [navigate]);
 
+  const normalize = (raw: any): TaxiServiceSuggestion | null => {
+    const id = String(raw?.id ?? raw?._id ?? raw?.uid ?? '');
+    const citySlug = String(raw?.citySlug ?? raw?.city ?? '');
+    const name = String(raw?.name ?? raw?.title ?? raw?.company ?? '').trim();
+    const website = raw?.website ?? raw?.url ?? raw?.link ?? undefined;
+    const phone = raw?.phone ?? raw?.phoneNumber ?? raw?.tel ?? undefined;
+    const address = raw?.address ?? raw?.formatted_address ?? raw?.addr ?? undefined;
+    const createdAt = raw?.createdAt ?? raw?.created_at ?? undefined;
+    if (!id || !citySlug) return null;
+    return { id, citySlug, name, website, phone, address, createdAt };
+  };
+
   const loadSuggestions = async () => {
     setIsLoading(true);
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/suggestions-list', { headers: { 'Authorization': `Bearer ${token}` } });
+      const response = await fetch('/api/suggestions', { headers: { 'Authorization': `Bearer ${token}` } });
       if (!(response.status >= 200 && response.status < 300)) throw new Error('Load failed');
       const data = await response.json();
-      setSuggestions(data.suggestions || []);
+      const items = Array.isArray(data?.suggestions) ? data.suggestions : Array.isArray(data) ? data : [];
+      const normalized = items
+        .map(normalize)
+        .filter((x): x is TaxiServiceSuggestion => Boolean(x));
+      setSuggestions(normalized);
     } catch {
       toast({ title: 'Chyba', description: 'Nepodarilo sa načítať návrhy', variant: 'destructive' });
+      setSuggestions([]);
     } finally { setIsLoading(false); }
   };
 
