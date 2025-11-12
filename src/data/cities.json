@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:23:01.972Z",
+  "lastUpdated": "2025-11-12T11:24:03.518Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -767,7 +767,63 @@
         "objednať taxi galanta",
         "taxi galanta ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI OTTI (OTTI s.r.o. )",
+          "phone": "+421915638595",
+          "website": "http://www.taxiotti.sk"
+        },
+        {
+          "name": "Ado Taxi Galanta",
+          "phone": "+421911807622",
+          "website": "http://www.adotaxi.sk"
+        },
+        {
+          "name": "Dzino - taxi, s.r.o.",
+          "phone": "+421911200268",
+          "website": null
+        },
+        {
+          "name": "Lajos Taxi Galanta",
+          "phone": "+421902235262",
+          "website": "https://lajostaxi.mozellosite.com"
+        },
+        {
+          "name": "IGOR TAXI GALANTA",
+          "phone": "+421915721188",
+          "website": "http://www.taxigalanta.sk"
+        },
+        {
+          "name": "TAXI EMIL - taxislužba GALANTA",
+          "phone": "+421918650401",
+          "website": "https://emiltaxi.sk"
+        },
+        {
+          "name": "Taxi Galanta",
+          "phone": "+421907200270",
+          "website": null
+        },
+        {
+          "name": "Forte Taxi Galanta",
+          "phone": "+421915704931",
+          "website": "https://fortetaxi.sk"
+        },
+        {
+          "name": "Zize TAXI GALANTA",
+          "phone": "+421911515514",
+          "website": null
+        },
+        {
+          "name": "G - Taxi",
+          "phone": "+421903716353",
+          "website": null
+        },
+        {
+          "name": "Kicir Taxi",
+          "phone": "+421940789998",
+          "website": null
+        }
+      ],
       "latitude": 48.19,
       "longitude": 17.7267
     },
