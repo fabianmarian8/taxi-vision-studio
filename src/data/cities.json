@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:38.859Z",
+  "lastUpdated": "2025-11-12T11:05:42.349Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -309,6 +309,11 @@
           "name": "5 STAR TAXI BRATISLAVA",
           "phone": "+421915515568",
           "website": "https://5startaxi.sk"
+        },
+        {
+          "name": "A Taxi Bratislava",
+          "phone": "+421902404929",
+          "website": "https://a-taxi.sk"
         }
       ],
       "latitude": 48.1486,
