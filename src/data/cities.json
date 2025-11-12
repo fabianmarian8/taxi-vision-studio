@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T20:10:31.480Z",
+  "lastUpdated": "2025-11-12T20:11:15.208Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1466,7 +1466,20 @@
         "objednať taxi kremnica",
         "taxi kremnica ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "EKO TAXI Kremnica",
+          "phone": "+421940606888",
+          "website": "https://www.ekotaxi.sk",
+          "address": "Námestie Slovenského národného povstania, 967 01 Kremnica, Slovensko"
+        },
+        {
+          "name": "Bijan Taxi",
+          "phone": "+421948984898",
+          "website": "https://www.bijantaxi.sk",
+          "address": "Dolná 44/11, 967 01 Kremnica, Slovensko"
+        }
+      ],
       "latitude": 48.705,
       "longitude": 18.9183
     },
