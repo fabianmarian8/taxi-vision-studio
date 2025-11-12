@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:19.763Z",
+  "lastUpdated": "2025-11-12T11:06:24.167Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -362,6 +362,11 @@
           "name": "PVS Taxi - Brezno",
           "phone": "+421905634444",
           "website": "http://www.pvsa.sk"
+        },
+        {
+          "name": "TD Taxi - Tomáš Demian",
+          "phone": "+421902493046",
+          "website": "http://www.tdtaxi.sk"
         }
       ],
       "latitude": 48.8033,
