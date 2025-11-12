@@ -2,11 +2,170 @@
 // NOVÁ LOGIKA: Návrhy sa ukladajú do staged-suggestions.json a commitujú až pri publish
 // Debug mode enabled for duplicate detection
 
+const fs = require('fs');
+const path = require('path');
+
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = 'fabianmarian8/taxi-vision-studio';
 const SUGGESTIONS_FILE = 'src/data/suggestions.json';
 const STAGED_SUGGESTIONS_FILE = 'staged-suggestions.json';
 const CITIES_FILE = 'src/data/cities.json';
+const STAGED_PATH = path.join(process.cwd(), STAGED_SUGGESTIONS_FILE);
+
+// Helper function to check if running locally (no GitHub token or explicit local mode)
+const isLocalMode = () => !GITHUB_TOKEN || process.env.NODE_ENV === 'development';
+
+// Normalizačná funkcia pre suggestions - zjednotí všetky tvary do konzistentného formátu
+function normalizeSuggestion(raw) {
+  // Helper to get first non-empty value
+  const take = (...vals) => {
+    for (const v of vals) {
+      if (v !== undefined && v !== null && String(v).trim() !== '') {
+        return String(v).trim();
+      }
+    }
+    return '';
+  };
+
+  // Helper to access nested properties
+  const fromNested = (obj, keys) => {
+    let cur = obj;
+    for (const k of keys) {
+      if (!cur) return undefined;
+      cur = cur[k];
+    }
+    return cur;
+  };
+
+  // Extract ID - try various field names including nested structures
+  const id = take(
+    raw?.id,
+    raw?._id,
+    raw?.uid,
+    fromNested(raw, ['gbp', 'id']),
+    fromNested(raw, ['place', 'place_id'])
+  );
+
+  // Extract citySlug
+  const citySlug = take(
+    raw?.citySlug,
+    raw?.city,
+    fromNested(raw, ['gbp', 'citySlug']),
+    fromNested(raw, ['place', 'citySlug'])
+  );
+
+  // Extract name - try many aliases including nested fields
+  let name = take(
+    raw?.name,
+    raw?.title,
+    raw?.company,
+    fromNested(raw, ['taxiService', 'name']),
+    fromNested(raw, ['gbp', 'name']),
+    fromNested(raw, ['gbp', 'title']),
+    fromNested(raw, ['place', 'name']),
+    fromNested(raw, ['data', 'name'])
+  );
+
+  // Extract website
+  const website = take(
+    raw?.website,
+    raw?.url,
+    raw?.link,
+    fromNested(raw, ['taxiService', 'website']),
+    fromNested(raw, ['gbp', 'website']),
+    fromNested(raw, ['place', 'website'])
+  ) || undefined;
+
+  // Extract phone
+  const phone = take(
+    raw?.phone,
+    raw?.phoneNumber,
+    raw?.tel,
+    fromNested(raw, ['taxiService', 'phone']),
+    fromNested(raw, ['gbp', 'phone']),
+    fromNested(raw, ['place', 'formatted_phone_number']),
+    fromNested(raw, ['place', 'international_phone_number'])
+  ) || undefined;
+
+  // Extract address
+  const address = take(
+    raw?.address,
+    raw?.formatted_address,
+    raw?.addr,
+    fromNested(raw, ['taxiService', 'address']),
+    fromNested(raw, ['gbp', 'address']),
+    fromNested(raw, ['place', 'vicinity']),
+    fromNested(raw, ['place', 'formatted_address'])
+  ) || undefined;
+
+  // Extract createdAt
+  const createdAt = take(
+    raw?.createdAt,
+    raw?.created_at,
+    raw?.timestamp,
+    fromNested(raw, ['gbp', 'createdAt'])
+  ) || undefined;
+
+  // If name is missing, derive from website, phone, or address
+  if (!name) {
+    if (website) {
+      try {
+        const url = website.startsWith('http') ? new URL(website) : new URL('https://' + website);
+        name = url.hostname.replace('www.', '');
+      } catch {
+        // ignore invalid URL
+      }
+    }
+    if (!name && phone) {
+      name = phone;
+    }
+    if (!name && address) {
+      name = address.split(',')[0].trim();
+    }
+    if (!name) {
+      name = '—'; // fallback to em dash
+    }
+  }
+
+  // Only return if we have at least id and citySlug
+  if (!id || !citySlug) {
+    return null;
+  }
+
+  return {
+    id,
+    citySlug,
+    name,
+    website,
+    phone,
+    address,
+    createdAt
+  };
+}
+
+// Read staged suggestions from local filesystem
+function readStagedLocal() {
+  try {
+    const raw = fs.readFileSync(STAGED_PATH, 'utf8');
+    const data = JSON.parse(raw);
+    if (!data || typeof data !== 'object') return { suggestions: [] };
+    if (!Array.isArray(data.suggestions)) return { suggestions: [] };
+    return data;
+  } catch (err) {
+    console.error('Error reading staged suggestions:', err.message);
+    return { suggestions: [] };
+  }
+}
+
+// Write staged suggestions to local filesystem
+function writeStagedLocal(data) {
+  try {
+    fs.writeFileSync(STAGED_PATH, JSON.stringify(data, null, 2), 'utf8');
+  } catch (err) {
+    console.error('Error writing staged suggestions:', err.message);
+    throw err;
+  }
+}
 
 // Pomocná funkcia pre načítanie staged suggestions z GitHub
 async function loadStagedSuggestions() {
@@ -94,41 +253,30 @@ export default async function handler(req, res) {
   }
 
   try {
-    // GET - Načítanie všetkých návrhov (vrátane staged)
+    // GET - Načítanie všetkých návrhov (len zo staging area, s normalizáciou)
     if (req.method === 'GET') {
-      const response = await fetch(
-        `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
-        {
-          headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json',
-          },
-        }
-      );
+      // V lokálnom režime čítame z filesystemu, v produkcii z GitHubu
+      let stagedData;
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch suggestions from GitHub');
+      if (isLocalMode()) {
+        // Local mode - read from filesystem
+        stagedData = readStagedLocal();
+      } else {
+        // Production mode - read from GitHub
+        const { data } = await loadStagedSuggestions();
+        stagedData = data;
       }
 
-      const data = await response.json();
-      const content = Buffer.from(data.content, 'base64').toString('utf-8');
-      const suggestionsData = JSON.parse(content);
-
-      // Načítaj staged suggestions a pridaj ich
-      const { data: stagedData } = await loadStagedSuggestions();
+      // Normalizuj všetky suggestions na jednotný tvar
+      const normalizedSuggestions = (stagedData.suggestions || [])
+        .map(normalizeSuggestion)
+        .filter(s => s !== null); // Remove any that couldn't be normalized
 
       console.log('=== GET SUGGESTIONS DEBUG ===');
-      console.log(`Committed suggestions: ${suggestionsData.suggestions.length}`);
-      console.log(`Staged suggestions: ${stagedData.suggestions ? stagedData.suggestions.length : 0}`);
+      console.log(`Raw suggestions: ${stagedData.suggestions ? stagedData.suggestions.length : 0}`);
+      console.log(`Normalized suggestions: ${normalizedSuggestions.length}`);
 
-      if (stagedData.suggestions && stagedData.suggestions.length > 0) {
-        // Merge staged suggestions s existujúcimi
-        suggestionsData.suggestions = [...suggestionsData.suggestions, ...stagedData.suggestions];
-        console.log(`Total after merge: ${suggestionsData.suggestions.length}`);
-        console.log(`Pending count: ${suggestionsData.suggestions.filter(s => s.status === 'pending').length}`);
-      }
-
-      return res.status(200).json(suggestionsData);
+      return res.status(200).json({ suggestions: normalizedSuggestions });
     }
 
     // POST - Pridanie nových návrhov alebo schválenie návrhu
@@ -295,58 +443,86 @@ export default async function handler(req, res) {
         });
       }
 
-      // Akcia: Označiť ako approved (len update staged suggestions, bez commitu)
+      // Akcia: DELETE - Odstrániť jeden návrh zo staging (zamietnuť)
+      if (action === 'delete') {
+        if (!suggestionId) {
+          return res.status(400).json({ error: 'suggestionId is required' });
+        }
+
+        // Load staged data based on environment
+        let stagedData, stagedSha;
+        if (isLocalMode()) {
+          stagedData = readStagedLocal();
+          stagedSha = null;
+        } else {
+          const result = await loadStagedSuggestions();
+          stagedData = result.data;
+          stagedSha = result.sha;
+        }
+
+        // Remove the suggestion from staging
+        const beforeCount = stagedData.suggestions.length;
+        stagedData.suggestions = stagedData.suggestions.filter(
+          s => String(s.id) !== String(suggestionId)
+        );
+        const removed = beforeCount - stagedData.suggestions.length;
+        stagedData.lastUpdated = new Date().toISOString();
+
+        // Save based on environment
+        if (isLocalMode()) {
+          writeStagedLocal(stagedData);
+        } else {
+          await saveStagedSuggestions(stagedData, stagedSha);
+        }
+
+        return res.status(200).json({
+          success: true,
+          removed,
+          message: 'Suggestion removed from staging'
+        });
+      }
+
+      // Akcia: MARK-APPROVED - Odstrániť schválené návrhy zo staging (bulk)
       if (action === 'mark-approved') {
         if (!suggestionIds || !Array.isArray(suggestionIds)) {
           return res.status(400).json({ error: 'suggestionIds array is required' });
         }
 
-        const { data: stagedData, sha: stagedSha } = await loadStagedSuggestions();
-        
-        // Označ suggestions ako approved v staged
-        suggestionIds.forEach(id => {
-          const suggestion = stagedData.suggestions.find(s => s.id === id);
-          if (suggestion) {
-            suggestion.status = 'approved';
-            suggestion.approvedAt = new Date().toISOString();
-          }
-        });
+        // Load staged data based on environment
+        let stagedData, stagedSha;
+        if (isLocalMode()) {
+          stagedData = readStagedLocal();
+          stagedSha = null;
+        } else {
+          const result = await loadStagedSuggestions();
+          stagedData = result.data;
+          stagedSha = result.sha;
+        }
 
+        // Remove approved suggestions from staging
+        const idsSet = new Set(suggestionIds.map(String));
+        const beforeCount = stagedData.suggestions.length;
+        stagedData.suggestions = stagedData.suggestions.filter(
+          s => !idsSet.has(String(s.id))
+        );
+        const removed = beforeCount - stagedData.suggestions.length;
         stagedData.lastUpdated = new Date().toISOString();
-        await saveStagedSuggestions(stagedData, stagedSha);
+
+        // Save based on environment
+        if (isLocalMode()) {
+          writeStagedLocal(stagedData);
+        } else {
+          await saveStagedSuggestions(stagedData, stagedSha);
+        }
 
         return res.status(200).json({
           success: true,
-          message: 'Suggestions marked as approved in staging'
+          removed,
+          message: 'Approved suggestions removed from staging'
         });
       }
 
       return res.status(400).json({ error: 'Invalid action' });
-    }
-
-    // DELETE - Zamietnuť návrh (tiež len v staged)
-    if (req.method === 'DELETE') {
-      const { suggestionId } = req.body;
-
-      if (!suggestionId) {
-        return res.status(400).json({ error: 'suggestionId is required' });
-      }
-
-      const { data: stagedData, sha: stagedSha } = await loadStagedSuggestions();
-
-      // Nájdi a označ návrh ako zamietnutý v staged
-      const suggestion = stagedData.suggestions.find(s => s.id === suggestionId);
-      if (!suggestion) {
-        return res.status(404).json({ error: 'Suggestion not found in staging' });
-      }
-
-      suggestion.status = 'rejected';
-      suggestion.rejectedAt = new Date().toISOString();
-      stagedData.lastUpdated = new Date().toISOString();
-
-      await saveStagedSuggestions(stagedData, stagedSha);
-
-      return res.status(200).json({ success: true, message: 'Suggestion rejected in staging' });
     }
 
     return res.status(405).json({ error: 'Method not allowed' });
