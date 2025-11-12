@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:19:06.257Z",
+  "lastUpdated": "2025-11-12T11:19:10.694Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1206,8 +1206,9 @@
         "website": null,
         "address": "J. Ťatliaka 1785/6, 026 01 Vyšný Kubín-Dolný Kubín, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:18:11.798Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:18:11.798Z",
+      "approvedAt": "2025-11-12T11:19:10.694Z"
     }
   ]
 }
