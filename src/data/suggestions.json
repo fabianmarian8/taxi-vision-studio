@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:44:18.881Z",
+  "lastUpdated": "2025-11-12T10:44:26.467Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -10,8 +10,9 @@
         "website": "http://www.onetaxi.sk",
         "address": "Dolná - Hušták 184/51 97404, 974 01 Banská Bystrica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "approvedAt": "2025-11-12T10:44:26.467Z"
     },
     {
       "id": "banska-bystrica-1762944164311-bdjel5hui",
