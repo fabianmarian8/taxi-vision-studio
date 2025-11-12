@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:01:45.744Z",
+  "lastUpdated": "2025-11-12T11:01:49.413Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -177,6 +177,11 @@
         {
           "name": "PEPIS TAXI Bardejov- odvoz v meste Bardejov, širokom okolí a letiskový transfer. Možnosť platby kartou bezkontaktne 🙂",
           "phone": "+421944450777",
+          "website": null
+        },
+        {
+          "name": "BOGY TAXI BARDEJOV - Spoľahlivo v Bardejove a okolí. Aj na letiská. Platba kartou možná.💳",
+          "phone": "+421940004002",
           "website": null
         }
       ],
