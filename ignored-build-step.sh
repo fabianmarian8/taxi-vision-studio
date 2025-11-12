@@ -3,6 +3,8 @@
 # Vercel Ignored Build Step
 # Exit code 0 = Skip build (ignore deployment)
 # Exit code 1 = Continue build (deploy)
+#
+# This script prevents unnecessary Vercel deployments when only staged files change
 
 echo "Checking if build should be skipped..."
 
