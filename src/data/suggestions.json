@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:01:23.643Z",
+  "lastUpdated": "2025-11-12T11:01:37.119Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -374,8 +374,9 @@
         "website": "https://taxiroman.sk",
         "address": "Jána Švermu 8, 085 01 Bardejov, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:01:23.643Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:01:23.643Z",
+      "approvedAt": "2025-11-12T11:01:37.119Z"
     },
     {
       "id": "bardejov-1762945283643-k6rw5a20x",
