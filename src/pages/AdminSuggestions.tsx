@@ -42,25 +42,29 @@ export default function AdminSuggestions() {
   const normalize = (raw: any): TaxiServiceSuggestion | null => {
     const id = take(raw?.id, raw?._id, raw?.uid, fromNested(raw, ['gbp', 'id']), fromNested(raw, ['place', 'place_id']));
     const citySlug = take(raw?.citySlug, raw?.city, fromNested(raw, ['gbp', 'citySlug']), fromNested(raw, ['place', 'citySlug']));
-    // názov – skús veľa aliasov aj vnorené polia z Places/GBP
+    // názov – skús veľa aliasov aj vnorené polia z Places/GBP/taxiService
     const name = take(
+      fromNested(raw, ['taxiService', 'name']),
       raw?.name, raw?.title, raw?.company,
       fromNested(raw, ['gbp', 'name']), fromNested(raw, ['gbp', 'title']),
       fromNested(raw, ['place', 'name']), fromNested(raw, ['data', 'name'])
     );
     const website = take(
+      fromNested(raw, ['taxiService', 'website']),
       raw?.website, raw?.url, raw?.link,
       fromNested(raw, ['gbp', 'website']), fromNested(raw, ['place', 'website'])
     ) || undefined;
     const phone = take(
+      fromNested(raw, ['taxiService', 'phone']),
       raw?.phone, raw?.phoneNumber, raw?.tel,
       fromNested(raw, ['gbp', 'phone']), fromNested(raw, ['place', 'formatted_phone_number']), fromNested(raw, ['place', 'international_phone_number'])
     ) || undefined;
     const address = take(
+      fromNested(raw, ['taxiService', 'address']),
       raw?.address, raw?.formatted_address, raw?.addr,
       fromNested(raw, ['gbp', 'address']), fromNested(raw, ['place', 'vicinity']), fromNested(raw, ['place', 'formatted_address'])
     ) || undefined;
-    const createdAt = take(raw?.createdAt, raw?.created_at, fromNested(raw, ['gbp', 'createdAt'])) || undefined;
+    const createdAt = take(raw?.createdAt, raw?.created_at, raw?.timestamp, fromNested(raw, ['gbp', 'createdAt'])) || undefined;
 
     if (!id || !citySlug) return null;
 
