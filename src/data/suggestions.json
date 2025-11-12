@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:19:45.657Z",
+  "lastUpdated": "2025-11-12T11:20:08.324Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1271,8 +1271,9 @@
         "website": "http://www.bestcom.sk",
         "address": "Kukučínova 506/4, 018 41 Dubnica nad Váhom, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:19:22.381Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T11:19:22.381Z",
+      "rejectedAt": "2025-11-12T11:20:08.324Z"
     }
   ]
 }
