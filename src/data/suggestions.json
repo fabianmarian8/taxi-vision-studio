@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:28.696Z",
+  "lastUpdated": "2025-11-12T11:05:31.804Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -621,8 +621,9 @@
         "website": "http://www.limousineway.com",
         "address": "Zimná 3271/8, 821 02 Bratislava-Ružinov, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:05:06.455Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:05:06.455Z",
+      "approvedAt": "2025-11-12T11:05:31.804Z"
     },
     {
       "id": "bratislava-1762945506455-yk03l0wsf",
