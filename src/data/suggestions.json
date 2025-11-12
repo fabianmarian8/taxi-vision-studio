@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:25:37.566Z",
+  "lastUpdated": "2025-11-12T11:25:41.413Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1544,8 +1544,9 @@
         "website": "http://www.bvtaxihc.sk",
         "address": "Železničná 4, 920 01 Hlohovec, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:09.596Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:25:09.596Z",
+      "approvedAt": "2025-11-12T11:25:41.412Z"
     },
     {
       "id": "hlohovec-1762946709597-dinachc04",
@@ -1556,8 +1557,9 @@
         "website": "https://www.facebook.com",
         "address": "Hurbanova 23, 920 01 Hlohovec, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:09.596Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:25:09.596Z",
+      "approvedAt": "2025-11-12T11:25:41.412Z"
     },
     {
       "id": "hlohovec-1762946709597-en7tle366",
@@ -1568,8 +1570,9 @@
         "website": "http://taxihc.webnode.sk",
         "address": "Hviezdoslavova 26, 920 01 Hlohovec, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:09.596Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:25:09.596Z",
+      "approvedAt": "2025-11-12T11:25:41.412Z"
     },
     {
       "id": "hlohovec-1762946709597-t523zst4n",
@@ -1580,8 +1583,9 @@
         "website": "http://taxihlohovec.sk",
         "address": "Hurbanova 624/10, 920 01 Hlohovec, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:09.596Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:25:09.596Z",
+      "approvedAt": "2025-11-12T11:25:41.412Z"
     },
     {
       "id": "hlohovec-1762946709597-fdvdyv3c9",
@@ -1592,8 +1596,9 @@
         "website": "https://www.facebook.com",
         "address": "Hurbanova 652/66, 920 01 Hlohovec, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:09.596Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:25:09.596Z",
+      "approvedAt": "2025-11-12T11:25:41.412Z"
     },
     {
       "id": "hlohovec-1762946709597-4zfldsxmu",
@@ -1604,8 +1609,9 @@
         "website": "https://m.facebook.com",
         "address": "Námestie svätého Michala, 920 01 Hlohovec, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:09.596Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:25:09.596Z",
+      "approvedAt": "2025-11-12T11:25:41.412Z"
     },
     {
       "id": "hlohovec-1762946709597-d75ecswir",
@@ -1616,8 +1622,9 @@
         "website": null,
         "address": "Pltnícka 246/37, Šulekovo, 920 03 Hlohovec, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:09.596Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:25:09.596Z",
+      "approvedAt": "2025-11-12T11:25:41.412Z"
     },
     {
       "id": "hlohovec-1762946709597-3dle7um2v",
@@ -1628,8 +1635,9 @@
         "website": null,
         "address": "Michalská 2344/6, 920 01 Hlohovec, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:09.596Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:25:09.596Z",
+      "approvedAt": "2025-11-12T11:25:41.412Z"
     },
     {
       "id": "hlohovec-1762946709597-wiuje0frw",
@@ -1640,8 +1648,9 @@
         "website": "https://zako-taxi.webnode.sk",
         "address": "Hurbanova 588/23, 920 01 Hlohovec, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:09.596Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:25:09.596Z",
+      "approvedAt": "2025-11-12T11:25:41.413Z"
     },
     {
       "id": "hlohovec-1762946709597-hgk12xhii",
