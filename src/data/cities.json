@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:59:29.310Z",
+  "lastUpdated": "2025-11-12T10:59:43.530Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -129,6 +129,11 @@
           "name": "BeriTaxi",
           "phone": "+421902345673",
           "website": null
+        },
+        {
+          "name": "Taxi Fero",
+          "phone": "+421905949671",
+          "website": "https://www.ferotaxi.sk"
         }
       ],
       "latitude": 48.4583,
