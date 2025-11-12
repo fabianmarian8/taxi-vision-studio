@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:02.986Z",
+  "lastUpdated": "2025-11-12T11:06:19.763Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -357,7 +357,13 @@
         "objednať taxi brezno",
         "taxi brezno telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "PVS Taxi - Brezno",
+          "phone": "+421905634444",
+          "website": "http://www.pvsa.sk"
+        }
+      ],
       "latitude": 48.8033,
       "longitude": 19.6367
     },
