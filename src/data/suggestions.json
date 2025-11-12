@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:17.750Z",
+  "lastUpdated": "2025-11-12T11:05:21.148Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -582,8 +582,9 @@
         "website": "https://www.taxi-taxi.sk",
         "address": "Liščie nivy 25, 821 08 Bratislava-Ružinov, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:05:06.455Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:05:06.455Z",
+      "approvedAt": "2025-11-12T11:05:21.148Z"
     },
     {
       "id": "bratislava-1762945506455-eutxpa95w",
