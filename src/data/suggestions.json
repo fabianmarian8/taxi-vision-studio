@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:34.370Z",
+  "lastUpdated": "2025-11-12T11:05:39.331Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -647,8 +647,9 @@
         "website": "https://5startaxi.sk",
         "address": "Marie Curie-Sklodowskej 35, 851 04 Bratislava-Petržalka, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:05:06.455Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:05:06.455Z",
+      "approvedAt": "2025-11-12T11:05:39.331Z"
     },
     {
       "id": "bratislava-1762945506455-zn8qxlzbl",
