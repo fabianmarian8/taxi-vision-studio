@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:27:57.946Z",
+  "lastUpdated": "2025-11-12T11:28:09.629Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1716,6 +1716,162 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:27:46.051Z",
       "approvedAt": "2025-11-12T11:27:57.946Z"
+    },
+    {
+      "id": "humenne-1762946889629-qhfz9sulb",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "Black Taxi- Humenné",
+        "phone": "+421907902902",
+        "website": "http://www.blacktaxihe.sk",
+        "address": "Námestie slobody 70, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-944zu0p7x",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "Humenné TAXISLUŽBA",
+        "phone": "+421904372007",
+        "website": "https://humenne.taxi",
+        "address": "SNP 2508/16, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-8misg7fl5",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "Sovqa taxi HUMENNÉ",
+        "phone": "+421908141811",
+        "website": null,
+        "address": "Laborecká 1, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-9emx1ldbt",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "Ahoj Taxi - Humenné",
+        "phone": "+421911320303",
+        "website": "https://www.ahojtaxihe.sk",
+        "address": "Staničná 1482/1, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-7fkn6fh6h",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "taxi janicko",
+        "phone": "+421918885458",
+        "website": null,
+        "address": "Dobrianskeho 1668, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-xq6g4bxh7",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "BUBO TAXI",
+        "phone": "+421940801861",
+        "website": null,
+        "address": "Puškinova 1720/16, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-52vkbcui1",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "Taxi Viktor",
+        "phone": "+421905906650",
+        "website": null,
+        "address": "Námestie slobody 70, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-u9h6jj3c6",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "BUKY TAXI",
+        "phone": "+421918477666",
+        "website": null,
+        "address": "Laborecká 15, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-1kk72jic1",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "ABC Taxi - Ľuboš Klajban",
+        "phone": "+421905258039",
+        "website": null,
+        "address": "Humenné, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-6dxwwgan4",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "Alfa Taxi Humenné",
+        "phone": "+421915111109",
+        "website": null,
+        "address": "Košická 38, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-tqlj45bfc",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "JETT Taxi",
+        "phone": "+421911661122",
+        "website": "http://www.taxi.jett.sk",
+        "address": "Lackovce 33, 066 01 Lackovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-x2bdj9jov",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "Bocko Jaroslav",
+        "phone": "+42157/7722122",
+        "website": null,
+        "address": "Třebíčska 1844/25, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
+    },
+    {
+      "id": "humenne-1762946889629-k2kljp36w",
+      "citySlug": "humenne",
+      "taxiService": {
+        "name": "CHOPPER s.r.o.",
+        "phone": "+421905606336",
+        "website": null,
+        "address": "Laborecká 1845/1, 066 01 Humenné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:28:09.629Z"
     }
   ]
 }
