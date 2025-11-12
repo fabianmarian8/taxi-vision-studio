@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:00:22.990Z",
+  "lastUpdated": "2025-11-12T11:00:30.259Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -335,8 +335,9 @@
         "website": null,
         "address": "Námestie Ľudovíta Štúra 6, 957 01 Bánovce nad Bebravou, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:00:03.895Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:00:03.895Z",
+      "approvedAt": "2025-11-12T11:00:30.259Z"
     },
     {
       "id": "banovce-nad-bebravou-1762945203895-aa2c0sx8r",
