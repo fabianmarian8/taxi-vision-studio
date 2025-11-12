@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T14:16:41.607Z",
+  "lastUpdated": "2025-11-12T20:09:30.684Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1442,7 +1442,14 @@
         "objednať taxi chlmec",
         "taxi chlmec telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Elitt Taxi",
+          "phone": "+421940640640",
+          "website": "http://elittaxi.sk",
+          "address": "101, Ľ. Kossutha 1270, 077 01 Kráľovský Chlmec, Slovensko"
+        }
+      ],
       "latitude": 48.4083,
       "longitude": 21.9817
     },
