@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:29:02.578Z",
+  "lastUpdated": "2025-11-12T11:29:26.391Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1121,7 +1121,23 @@
         "objednať taxi hurbanovo",
         "taxi hurbanovo ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "BRAVO Taxi s.r.o.",
+          "phone": "+421911152555",
+          "website": "http://www.bravotaxi.sk"
+        },
+        {
+          "name": "Limcar TAXI Hurbanovo",
+          "phone": "+421949112020",
+          "website": "http://limcar.sk"
+        },
+        {
+          "name": "Gabriel Tóth - B.M.G. International",
+          "phone": "+421903577774",
+          "website": null
+        }
+      ],
       "latitude": 47.8733,
       "longitude": 18.1917
     },
