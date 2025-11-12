@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:14:18.953Z",
+  "lastUpdated": "2025-11-12T11:15:44.946Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -500,6 +500,11 @@
         {
           "name": "SPEED TAXI",
           "phone": "+421910153143",
+          "website": null
+        },
+        {
+          "name": "OK Taxi",
+          "phone": "+42141/4326666",
           "website": null
         }
       ],
