@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:18:19.323Z",
+  "lastUpdated": "2025-11-12T11:18:23.235Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -600,6 +600,11 @@
           "name": "Drink Taxi",
           "phone": "+421905618000",
           "website": "http://www.autopozicovnaorava.sk"
+        },
+        {
+          "name": "Fan-TAXI Dolný Kubín",
+          "phone": "+421904231231",
+          "website": null
         }
       ],
       "latitude": 49.21,
