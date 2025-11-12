@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { ArrowLeft, Plus, Trash2, Save, Search, Upload } from 'lucide-react';
+import { ArrowLeft, Plus, Trash2, Upload, Search } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
 interface TaxiService {
   name: string;
-  website?: string;
-  phone?: string;
+  website?: string | null;
+  phone?: string | null;
 }
 
 interface CityData {
@@ -23,6 +23,7 @@ interface CityData {
 
 export default function AdminEditCity() {
   const { citySlug } = useParams<{ citySlug: string }>();
+  const [searchParams] = useSearchParams();
   const [city, setCity] = useState<CityData | null>(null);
   const [originalServices, setOriginalServices] = useState<TaxiService[]>([]);
   const [taxiServices, setTaxiServices] = useState<TaxiService[]>([]);
@@ -30,6 +31,7 @@ export default function AdminEditCity() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isScrapingInProgress, setIsScrapingInProgress] = useState(false);
+  const [pendingSuggestionIds, setPendingSuggestionIds] = useState<string | null>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -47,9 +49,8 @@ export default function AdminEditCity() {
   useEffect(() => {
     if (!city || taxiServices.length === 0) return;
     
-    const params = new URLSearchParams(window.location.search);
-    const suggestionsParam = params.get('suggestions');
-    const suggestionIdsParam = params.get('suggestionIds');
+    const suggestionsParam = searchParams.get('suggestions');
+    const suggestionIdsParam = searchParams.get('suggestionIds');
     
     if (suggestionsParam) {
       try {
@@ -62,7 +63,7 @@ export default function AdminEditCity() {
         
         // Ulož IDs pre neskoršie označenie ako approved
         if (suggestionIdsParam) {
-          sessionStorage.setItem('pendingSuggestionIds', suggestionIdsParam);
+          setPendingSuggestionIds(suggestionIdsParam);
         }
         
         toast({
@@ -171,7 +172,11 @@ export default function AdminEditCity() {
 
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/admin-data', {
+      
+      // NOVÁ LOGIKA: Zavolaj /api/publish namiesto /api/admin-data
+      const filteredServices = taxiServices.filter(s => s.name.trim() !== '');
+      
+      const response = await fetch('/api/publish', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -179,47 +184,31 @@ export default function AdminEditCity() {
         },
         body: JSON.stringify({
           citySlug,
-          taxiServices: taxiServices.filter(s => s.name.trim() !== ''),
+          servicesDraft: filteredServices,
+          approvedSuggestionIds: pendingSuggestionIds ? pendingSuggestionIds.split(',') : []
         }),
       });
 
       if (response.ok) {
-        // Označ suggestions ako approved ak existujú
-        const pendingIds = sessionStorage.getItem('pendingSuggestionIds');
-        if (pendingIds) {
-          try {
-            await fetch('/api/suggestions', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-              },
-              body: JSON.stringify({
-                action: 'mark-approved',
-                suggestionIds: pendingIds.split(','),
-              }),
-            });
-            sessionStorage.removeItem('pendingSuggestionIds');
-          } catch (err) {
-            console.error('Error marking suggestions as approved:', err);
-            // Netreba to považovať za kritickú chybu
-          }
-        }
-
-        setOriginalServices(JSON.parse(JSON.stringify(taxiServices)));
+        const result = await response.json();
+        
+        setOriginalServices(JSON.parse(JSON.stringify(filteredServices)));
         setHasUnsavedChanges(false);
+        setPendingSuggestionIds(null);
         
         toast({
           title: '✅ Publikované!',
-          description: 'Zmeny boli úspešne publikované na produkciu. Vercel deployment sa spustil.',
+          description: `Zmeny boli úspešne publikované. ${result.approvedCount > 0 ? `Schválených ${result.approvedCount} návrhov.` : ''} Vercel deployment sa spustil.`,
         });
       } else {
-        throw new Error('Save failed');
+        const errorData = await response.json();
+        throw new Error(errorData.message || errorData.error || 'Publish failed');
       }
     } catch (error) {
+      console.error('Publish error:', error);
       toast({
         title: 'Chyba',
-        description: 'Nepodarilo sa publikovať zmeny',
+        description: error instanceof Error ? error.message : 'Nepodarilo sa publikovať zmeny',
         variant: 'destructive',
       });
     } finally {
@@ -233,9 +222,7 @@ export default function AdminEditCity() {
     if (confirm('Naozaj chcete zahodiť všetky neuložené zmeny?')) {
       setTaxiServices(JSON.parse(JSON.stringify(originalServices)));
       setHasUnsavedChanges(false);
-      
-      // Vyčisti pending suggestions
-      sessionStorage.removeItem('pendingSuggestionIds');
+      setPendingSuggestionIds(null);
       
       toast({
         title: 'Zmeny zahodené',
@@ -264,7 +251,6 @@ export default function AdminEditCity() {
 
       const scraperData = await scraperResponse.json();
 
-      // Kontrola API chyby s konkrétnou správou
       if (!scraperResponse.ok) {
         const errorMessage = scraperData.message || scraperData.error || 'Neznáma chyba API';
         toast({
