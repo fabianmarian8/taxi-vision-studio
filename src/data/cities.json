@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:28.219Z",
+  "lastUpdated": "2025-11-12T11:05:31.264Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -294,6 +294,11 @@
           "name": "Taxi Vienna Bratislava",
           "phone": "+421903110018",
           "website": "https://taxi-vienna-bratislava.com"
+        },
+        {
+          "name": "Limousineway Taxi Vienna Bratislava",
+          "phone": "+421911888801",
+          "website": "http://www.limousineway.com"
         }
       ],
       "latitude": 48.1486,
