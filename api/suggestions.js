@@ -116,9 +116,16 @@ export default async function handler(req, res) {
 
       // Načítaj staged suggestions a pridaj ich
       const { data: stagedData } = await loadStagedSuggestions();
+
+      console.log('=== GET SUGGESTIONS DEBUG ===');
+      console.log(`Committed suggestions: ${suggestionsData.suggestions.length}`);
+      console.log(`Staged suggestions: ${stagedData.suggestions ? stagedData.suggestions.length : 0}`);
+
       if (stagedData.suggestions && stagedData.suggestions.length > 0) {
         // Merge staged suggestions s existujúcimi
         suggestionsData.suggestions = [...suggestionsData.suggestions, ...stagedData.suggestions];
+        console.log(`Total after merge: ${suggestionsData.suggestions.length}`);
+        console.log(`Pending count: ${suggestionsData.suggestions.filter(s => s.status === 'pending').length}`);
       }
 
       return res.status(200).json(suggestionsData);
