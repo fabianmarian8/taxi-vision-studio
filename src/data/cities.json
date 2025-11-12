@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:29:50.521Z",
+  "lastUpdated": "2025-11-12T11:30:19.634Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1187,7 +1187,18 @@
         "objednať taxi jelšava",
         "taxi jelšava ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI REVUCA",
+          "phone": "+421911456999",
+          "website": "https://www.facebook.com"
+        },
+        {
+          "name": "Marek Balag-trans",
+          "phone": "+421915812672",
+          "website": "http://marekbalag-trans.sk"
+        }
+      ],
       "latitude": 48.6317,
       "longitude": 20.2417
     },
