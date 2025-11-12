@@ -93,48 +93,20 @@ export default function AdminSuggestions() {
     }
   };
 
+  // NOVÁ FUNKCIA: Schváliť a presmerovať na AdminEditCity
   const handleApprove = async (suggestionId: string) => {
-    setProcessingIds(prev => new Set(prev).add(suggestionId));
+    const suggestion = Object.values(groupedSuggestions)
+      .flatMap(g => g.suggestions)
+      .find(s => s.id === suggestionId);
 
-    try {
-      const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/suggestions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          action: 'approve',
-          suggestionId,
-        }),
-      });
+    if (!suggestion) return;
 
-      if (response.ok) {
-        toast({
-          title: 'Úspech',
-          description: 'Návrh bol schválený a pridaný do mesta',
-        });
-        await loadSuggestions();
-      } else {
-        throw new Error('Failed to approve');
-      }
-    } catch (error) {
-      toast({
-        title: 'Chyba',
-        description: 'Nepodarilo sa schváliť návrh',
-        variant: 'destructive',
-      });
-    } finally {
-      setProcessingIds(prev => {
-        const next = new Set(prev);
-        next.delete(suggestionId);
-        return next;
-      });
-    }
+    // Presmeruj na AdminEditCity s návrhom v URL parametroch
+    const suggestionParam = encodeURIComponent(JSON.stringify([suggestion.taxiService]));
+    navigate(`/admin/edit/${suggestion.citySlug}?suggestions=${suggestionParam}&suggestionIds=${suggestionId}`);
   };
 
-  const handleReject = async (suggestionId: string) => {
+  const handleReject = async (suggestionId: string) {
     setProcessingIds(prev => new Set(prev).add(suggestionId));
 
     try {
@@ -174,61 +146,24 @@ export default function AdminSuggestions() {
     }
   };
 
+  // NOVÁ FUNKCIA: Bulk schválenie - presmerovanie s viacerými návrhmi
   const handleBulkApprove = async (citySlug: string) => {
     const suggestions = groupedSuggestions[citySlug]?.suggestions || [];
-    const suggestionIds = suggestions.map(s => s.id);
-
-    if (suggestionIds.length === 0) return;
+    
+    if (suggestions.length === 0) return;
 
     const confirmed = confirm(
-      `Naozaj chcete schváliť všetkých ${suggestionIds.length} návrhov pre mesto ${groupedSuggestions[citySlug].cityName}?`
+      `Naozaj chcete schváliť všetkých ${suggestions.length} návrhov pre mesto ${groupedSuggestions[citySlug].cityName}?`
     );
 
     if (!confirmed) return;
 
-    suggestionIds.forEach(id => {
-      setProcessingIds(prev => new Set(prev).add(id));
-    });
-
-    try {
-      const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/suggestions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          action: 'approve-bulk',
-          suggestionIds,
-        }),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        toast({
-          title: 'Úspech',
-          description: `${result.approvedCount} návrhov bolo schválených`,
-        });
-        await loadSuggestions();
-      } else {
-        throw new Error('Failed to bulk approve');
-      }
-    } catch (error) {
-      toast({
-        title: 'Chyba',
-        description: 'Nepodarilo sa hromadne schváliť návrhy',
-        variant: 'destructive',
-      });
-    } finally {
-      suggestionIds.forEach(id => {
-        setProcessingIds(prev => {
-          const next = new Set(prev);
-          next.delete(id);
-          return next;
-        });
-      });
-    }
+    // Presmeruj na AdminEditCity so všetkými návrhmi
+    const taxiServices = suggestions.map(s => s.taxiService);
+    const suggestionIds = suggestions.map(s => s.id).join(',');
+    const suggestionParam = encodeURIComponent(JSON.stringify(taxiServices));
+    
+    navigate(`/admin/edit/${citySlug}?suggestions=${suggestionParam}&suggestionIds=${suggestionIds}`);
   };
 
   const startEdit = (suggestion: Suggestion) => {
