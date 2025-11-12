@@ -114,7 +114,8 @@ export default function AdminSuggestions() {
         console.error('Reject failed:', response.status, errorData);
         throw new Error(errorData.message || 'Reject failed');
       }
-      setSuggestions(prev => prev.filter(s => s.id !== suggestionId));
+      // Reload suggestions from API to get fresh data from GitHub
+      await loadSuggestions();
       toast({ title: 'Úspech', description: 'Návrh bol zamietnutý' });
     } catch {
       toast({ title: 'Chyba', description: 'Nepodarilo sa zamietnuť návrh', variant: 'destructive' });
