@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:02:26.410Z",
+  "lastUpdated": "2025-11-12T11:02:31.302Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -212,6 +212,11 @@
         {
           "name": "Taxi Stenďo PJ Bard, s.r.o.",
           "phone": "+421908501101",
+          "website": null
+        },
+        {
+          "name": "Taxi Svam",
+          "phone": "+421949377399",
           "website": null
         }
       ],
