@@ -46,6 +46,7 @@ export default function AdminDashboard() {
       }
 
       // Načítaj počet čakajúcich návrhov
+      // Endpoint /api/suggestions teraz vracia len staged suggestions (všetky sú pending)
       try {
         const suggestionsResponse = await fetch('/api/suggestions', {
           headers: {
@@ -55,9 +56,10 @@ export default function AdminDashboard() {
 
         if (suggestionsResponse.ok) {
           const suggestionsData = await suggestionsResponse.json();
-          const pendingCount = suggestionsData.suggestions.filter(
-            (s: any) => s.status === 'pending'
-          ).length;
+          // All suggestions from staging are pending, so we just count them
+          const pendingCount = Array.isArray(suggestionsData.suggestions)
+            ? suggestionsData.suggestions.length
+            : 0;
           setPendingSuggestionsCount(pendingCount);
         }
       } catch (error) {

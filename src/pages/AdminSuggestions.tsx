@@ -28,59 +28,6 @@ export default function AdminSuggestions() {
     loadSuggestions();
   }, [navigate]);
 
-  const take = (...vals: any[]) => {
-    for (const v of vals) { if (v !== undefined && v !== null && String(v).trim() !== '') return String(v).trim(); }
-    return '';
-  };
-
-  const fromNested = (obj: any, keys: string[]): any => {
-    let cur = obj;
-    for (const k of keys) { if (!cur) return undefined; cur = cur[k]; }
-    return cur;
-  };
-
-  const normalize = (raw: any): TaxiServiceSuggestion | null => {
-    const id = take(raw?.id, raw?._id, raw?.uid, fromNested(raw, ['gbp', 'id']), fromNested(raw, ['place', 'place_id']));
-    const citySlug = take(raw?.citySlug, raw?.city, fromNested(raw, ['gbp', 'citySlug']), fromNested(raw, ['place', 'citySlug']));
-    // názov – skús veľa aliasov aj vnorené polia z Places/GBP
-    const name = take(
-      raw?.name, raw?.title, raw?.company,
-      fromNested(raw, ['gbp', 'name']), fromNested(raw, ['gbp', 'title']),
-      fromNested(raw, ['place', 'name']), fromNested(raw, ['data', 'name'])
-    );
-    const website = take(
-      raw?.website, raw?.url, raw?.link,
-      fromNested(raw, ['gbp', 'website']), fromNested(raw, ['place', 'website'])
-    ) || undefined;
-    const phone = take(
-      raw?.phone, raw?.phoneNumber, raw?.tel,
-      fromNested(raw, ['gbp', 'phone']), fromNested(raw, ['place', 'formatted_phone_number']), fromNested(raw, ['place', 'international_phone_number'])
-    ) || undefined;
-    const address = take(
-      raw?.address, raw?.formatted_address, raw?.addr,
-      fromNested(raw, ['gbp', 'address']), fromNested(raw, ['place', 'vicinity']), fromNested(raw, ['place', 'formatted_address'])
-    ) || undefined;
-    const createdAt = take(raw?.createdAt, raw?.created_at, fromNested(raw, ['gbp', 'createdAt'])) || undefined;
-
-    if (!id || !citySlug) return null;
-
-    // ak chýba name, skús odvodiť z webu/domény alebo telefónu
-    let finalName = name;
-    if (!finalName) {
-      if (website) {
-        try {
-          const u = website.startsWith('http') ? new URL(website) : new URL('https://' + website);
-          finalName = u.hostname.replace('www.', '');
-        } catch { /* ignore */ }
-      }
-      if (!finalName && phone) finalName = phone;
-      if (!finalName && address) finalName = address.split(',')[0];
-      if (!finalName) finalName = '—';
-    }
-
-    return { id, citySlug, name: finalName, website, phone, address, createdAt };
-  };
-
   const loadSuggestions = async () => {
     setIsLoading(true);
     try {
@@ -88,9 +35,9 @@ export default function AdminSuggestions() {
       const response = await fetch('/api/suggestions', { headers: { 'Authorization': `Bearer ${token}` } });
       if (!(response.status >= 200 && response.status < 300)) throw new Error('Load failed');
       const data = await response.json();
-      const items = Array.isArray(data?.suggestions) ? data.suggestions : Array.isArray(data) ? data : [];
-      const normalized = items.map(normalize).filter((x): x is TaxiServiceSuggestion => Boolean(x));
-      setSuggestions(normalized);
+      // Server now handles normalization, so we can use the data directly
+      const items = Array.isArray(data?.suggestions) ? data.suggestions : [];
+      setSuggestions(items);
     } catch {
       toast({ title: 'Chyba', description: 'Nepodarilo sa načítať návrhy', variant: 'destructive' });
       setSuggestions([]);
@@ -100,7 +47,12 @@ export default function AdminSuggestions() {
   const handleReject = async (suggestionId: string) => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/suggestions-manage', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }, body: JSON.stringify({ action: 'delete', suggestionId }) });
+      // Use unified /api/suggestions endpoint with POST action='delete'
+      const response = await fetch('/api/suggestions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        body: JSON.stringify({ action: 'delete', suggestionId })
+      });
       if (!(response.status >= 200 && response.status < 300)) throw new Error('Reject failed');
       setSuggestions(prev => prev.filter(s => s.id !== suggestionId));
       toast({ title: 'Úspech', description: 'Návrh bol zamietnutý' });

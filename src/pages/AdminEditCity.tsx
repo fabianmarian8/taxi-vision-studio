@@ -119,7 +119,12 @@ export default function AdminEditCity() {
       const pendingIds = sessionStorage.getItem('pendingSuggestionIds');
       if (pendingIds) {
         const ids = pendingIds.split(',').filter(Boolean);
-        await fetch('/api/suggestions-manage', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }, body: JSON.stringify({ action: 'mark-approved', suggestionIds: ids }) }).catch(() => {});
+        // Use unified /api/suggestions endpoint with POST action='mark-approved'
+        await fetch('/api/suggestions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          body: JSON.stringify({ action: 'mark-approved', suggestionIds: ids })
+        }).catch(() => {});
         sessionStorage.removeItem('pendingSuggestionIds');
       }
       setOriginalServices(JSON.parse(JSON.stringify(taxiServices)));
