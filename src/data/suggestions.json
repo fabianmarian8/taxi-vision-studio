@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:02:41.366Z",
+  "lastUpdated": "2025-11-12T11:04:48.731Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -520,6 +520,30 @@
       "status": "rejected",
       "timestamp": "2025-11-12T11:01:23.643Z",
       "rejectedAt": "2025-11-12T11:02:41.366Z"
+    },
+    {
+      "id": "bojnice-1762945488731-yibxqwnqm",
+      "citySlug": "bojnice",
+      "taxiService": {
+        "name": "Taxi Bojnice - Nonstop",
+        "phone": "+421918266886",
+        "website": "http://www.taxibojnice.sk",
+        "address": "Sládkovičova 176/1, 972 01 Bojnice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:04:48.731Z"
+    },
+    {
+      "id": "bojnice-1762945488731-izwm3fi0c",
+      "citySlug": "bojnice",
+      "taxiService": {
+        "name": "Kováč Peter, Ing. Extra taxi",
+        "phone": "+421948706656",
+        "website": null,
+        "address": "Lány 1396/10, 972 01 Bojnice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:04:48.731Z"
     }
   ]
 }
