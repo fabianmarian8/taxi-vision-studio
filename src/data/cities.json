@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:52:16.133Z",
+  "lastUpdated": "2025-11-12T10:57:20.041Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -63,11 +63,6 @@
           "website": "http://www.ecohybridtaxi.sk"
         },
         {
-          "name": "TAXI Banská Bystrica - inTAXI - taxiK sro - NONSTOP",
-          "phone": "+421948887988",
-          "website": "https://intaxi.sk"
-        },
-        {
           "name": "VIP Taxi s.r.o.",
           "phone": "+421908989000",
           "website": null
@@ -75,7 +70,7 @@
         {
           "name": "Fun Taxi",
           "phone": "+4214816777",
-          "website": null
+          "website": "https://www.instagram.com/fun_taxi_banska_bystrica/"
         },
         {
           "name": "inTAXI Banská Bystrica",
