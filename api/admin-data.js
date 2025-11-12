@@ -1,4 +1,33 @@
-// Vercel Serverless Function pre správu taxislužieb pomocou GitHub API
+import fs from 'fs';
+import path from 'path';
+
+// Cesta k staged changes súboru na Verceli
+const STAGED_CHANGES_FILE = path.join('/tmp', 'staged-changes.json');
+
+// Pomocná funkcia pre načítanie staged changes
+function loadStagedChanges() {
+  try {
+    if (fs.existsSync(STAGED_CHANGES_FILE)) {
+      const content = fs.readFileSync(STAGED_CHANGES_FILE, 'utf-8');
+      return JSON.parse(content);
+    }
+  } catch (error) {
+    console.error('Error loading staged changes:', error);
+  }
+  return { changes: [] };
+}
+
+// Pomocná funkcia pre uloženie staged changes
+function saveStagedChanges(stagedData) {
+  try {
+    fs.writeFileSync(STAGED_CHANGES_FILE, JSON.stringify(stagedData, null, 2), 'utf-8');
+  } catch (error) {
+    console.error('Error saving staged changes:', error);
+    throw error;
+  }
+}
+
+// Vercel Serverless Function pre správu taxislužieb
 export default async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -45,72 +74,58 @@ export default async function handler(req, res) {
       const content = Buffer.from(data.content, 'base64').toString('utf-8');
       const citiesData = JSON.parse(content);
 
+      // Načítanie staged changes a aplikovanie na dáta
+      const stagedData = loadStagedChanges();
+      
+      // Aplikuj staged changes na cities data
+      if (stagedData.changes && stagedData.changes.length > 0) {
+        for (const change of stagedData.changes) {
+          const cityIndex = citiesData.cities.findIndex(c => c.slug === change.citySlug);
+          if (cityIndex !== -1) {
+            citiesData.cities[cityIndex].taxiServices = change.taxiServices;
+          }
+        }
+      }
+
       return res.status(200).json(citiesData);
     }
 
     if (req.method === 'POST') {
-      // Aktualizácia dát cez GitHub API
+      // Uloženie zmien do staged-changes.json
       const { citySlug, taxiServices } = req.body;
 
       if (!citySlug || !taxiServices) {
         return res.status(400).json({ error: 'Missing required fields' });
       }
 
-      // Načítanie aktuálneho súboru
-      const fileResponse = await fetch(
-        `https://api.github.com/repos/${GITHUB_REPO}/contents/${FILE_PATH}`,
-        {
-          headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json',
-          },
-        }
-      );
+      // Načítaj aktuálne staged changes
+      const stagedData = loadStagedChanges();
 
-      if (!fileResponse.ok) {
-        throw new Error('Failed to fetch current file');
-      }
-
-      const fileData = await fileResponse.json();
-      const currentContent = Buffer.from(fileData.content, 'base64').toString('utf-8');
-      const citiesData = JSON.parse(currentContent);
-
-      // Nájdenie a aktualizácia mesta
-      const cityIndex = citiesData.cities.findIndex(c => c.slug === citySlug);
-      if (cityIndex === -1) {
-        return res.status(404).json({ error: 'City not found' });
-      }
-
-      citiesData.cities[cityIndex].taxiServices = taxiServices;
-      citiesData.lastUpdated = new Date().toISOString();
-
-      // Vytvorenie nového commitu
-      const newContent = Buffer.from(JSON.stringify(citiesData, null, 2)).toString('base64');
+      // Najdi existujúcu zmenu pre toto mesto alebo vytvor novú
+      const changeIndex = stagedData.changes.findIndex(c => c.citySlug === citySlug);
       
-      const updateResponse = await fetch(
-        `https://api.github.com/repos/${GITHUB_REPO}/contents/${FILE_PATH}`,
-        {
-          method: 'PUT',
-          headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            message: `Update taxi services for ${citySlug}`,
-            content: newContent,
-            sha: fileData.sha,
-            branch: 'main',
-          }),
-        }
-      );
+      const change = {
+        citySlug,
+        taxiServices,
+        timestamp: new Date().toISOString()
+      };
 
-      if (!updateResponse.ok) {
-        const errorData = await updateResponse.json();
-        throw new Error(`Failed to update file: ${JSON.stringify(errorData)}`);
+      if (changeIndex !== -1) {
+        // Aktualizuj existujúcu zmenu
+        stagedData.changes[changeIndex] = change;
+      } else {
+        // Pridaj novú zmenu
+        stagedData.changes.push(change);
       }
 
-      return res.status(200).json({ success: true, message: 'Data updated successfully' });
+      // Ulož staged changes
+      saveStagedChanges(stagedData);
+
+      return res.status(200).json({ 
+        success: true, 
+        message: 'Changes staged successfully. Click "Publish Changes" to commit to GitHub.',
+        stagedChanges: stagedData.changes.length
+      });
     }
 
     return res.status(405).json({ error: 'Method not allowed' });
