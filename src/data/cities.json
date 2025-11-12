@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:59:15.125Z",
+  "lastUpdated": "2025-11-12T10:59:23.932Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -119,6 +119,11 @@
           "name": "ROYAL-TAXI",
           "phone": "+421911082829",
           "website": "https://www.facebook.com"
+        },
+        {
+          "name": "LOŽEK PETER TAXI BANSKÁ ŠTIAVNICA",
+          "phone": "+421917984430",
+          "website": null
         }
       ],
       "latitude": 48.4583,
