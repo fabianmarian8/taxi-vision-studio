@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:28.823Z",
+  "lastUpdated": "2025-11-12T11:06:31.302Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -777,8 +777,9 @@
         "website": "https://www.brezno-taxi.eu",
         "address": "Stanovište taxislužby, 977 01 Brezno, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:06:11.274Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:06:11.274Z",
+      "approvedAt": "2025-11-12T11:06:31.302Z"
     }
   ]
 }
