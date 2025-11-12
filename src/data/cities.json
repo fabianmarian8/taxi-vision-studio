@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:18:30.176Z",
+  "lastUpdated": "2025-11-12T11:18:34.657Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -609,6 +609,11 @@
         {
           "name": "LS TAXI Dolný Kubín",
           "phone": "+421902885555",
+          "website": null
+        },
+        {
+          "name": "GOLDEN TAXI",
+          "phone": "+421910204204",
           "website": null
         }
       ],
