@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:29:50.521Z",
+  "lastUpdated": "2025-11-12T11:30:05.444Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1963,6 +1963,30 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:29:40.330Z",
       "approvedAt": "2025-11-12T11:29:50.521Z"
+    },
+    {
+      "id": "jelsava-1762947005444-5ls4a2lb8",
+      "citySlug": "jelsava",
+      "taxiService": {
+        "name": "TAXI REVUCA",
+        "phone": "+421911456999",
+        "website": "https://www.facebook.com",
+        "address": "Námestie slobody 5/5, 050 01 Revúca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:30:05.444Z"
+    },
+    {
+      "id": "jelsava-1762947005444-3cvrxidln",
+      "citySlug": "jelsava",
+      "taxiService": {
+        "name": "Marek Balag-trans",
+        "phone": "+421915812672",
+        "website": "http://marekbalag-trans.sk",
+        "address": "Svätého Quirina 1530/13, 050 01 Revúca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:30:05.444Z"
     }
   ]
 }
