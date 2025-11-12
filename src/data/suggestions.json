@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:29:15.782Z",
+  "lastUpdated": "2025-11-12T11:29:26.391Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1895,8 +1895,9 @@
         "website": "http://www.bravotaxi.sk",
         "address": "Konkolyho 6, 947 01 Hurbanovo, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:29:15.782Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:29:15.782Z",
+      "approvedAt": "2025-11-12T11:29:26.391Z"
     },
     {
       "id": "hurbanovo-1762946955782-d8nqzkezh",
@@ -1907,8 +1908,9 @@
         "website": "http://limcar.sk",
         "address": "Komárňanská 121, 947 01 Hurbanovo, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:29:15.782Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:29:15.782Z",
+      "approvedAt": "2025-11-12T11:29:26.391Z"
     },
     {
       "id": "hurbanovo-1762946955782-zjmn4hnsu",
@@ -1919,8 +1921,9 @@
         "website": null,
         "address": "25, Nejedlého 2364, 947 01 Hurbanovo, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:29:15.782Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:29:15.782Z",
+      "approvedAt": "2025-11-12T11:29:26.391Z"
     }
   ]
 }
