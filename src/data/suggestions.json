@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:01:55.830Z",
+  "lastUpdated": "2025-11-12T11:02:00.573Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -426,8 +426,9 @@
         "website": "https://www.mmtaxidrink.eu",
         "address": "Slovenská 1538/10, 085 01 Bardejov, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:01:23.643Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:01:23.643Z",
+      "approvedAt": "2025-11-12T11:02:00.573Z"
     },
     {
       "id": "bardejov-1762945283643-ko20gmu9m",
