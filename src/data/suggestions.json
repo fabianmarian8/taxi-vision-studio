@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:31:21.105Z",
+  "lastUpdated": "2025-11-12T11:33:57.916Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2080,6 +2080,42 @@
       "status": "rejected",
       "timestamp": "2025-11-12T11:30:36.702Z",
       "rejectedAt": "2025-11-12T11:31:07.411Z"
+    },
+    {
+      "id": "kolarovo-1762947237916-4sisxeza9",
+      "citySlug": "kolarovo",
+      "taxiService": {
+        "name": "Gúta Taxi Kolárovo",
+        "phone": "+421907120024",
+        "website": "https://facebook.com",
+        "address": "Staničná 714/62, 946 03 Kolárovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:33:57.916Z"
+    },
+    {
+      "id": "kolarovo-1762947237916-dprpg0mgn",
+      "citySlug": "kolarovo",
+      "taxiService": {
+        "name": "PT TAXI",
+        "phone": "+421948131131",
+        "website": null,
+        "address": "Kostolné námestie 5, 946 03 Kolárovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:33:57.916Z"
+    },
+    {
+      "id": "kolarovo-1762947237916-hp6gmr2mm",
+      "citySlug": "kolarovo",
+      "taxiService": {
+        "name": "TAXI NESVADY",
+        "phone": "+421908618620",
+        "website": null,
+        "address": "9, 946 03 Kolárovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:33:57.916Z"
     }
   ]
 }
