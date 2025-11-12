@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:00:30.259Z",
+  "lastUpdated": "2025-11-12T11:00:33.140Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -348,8 +348,9 @@
         "website": null,
         "address": "Trenčianska cesta, 957 01 Bánovce nad Bebravou-Dolné Ozorovce, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:00:03.895Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:00:03.895Z",
+      "approvedAt": "2025-11-12T11:00:33.140Z"
     },
     {
       "id": "banovce-nad-bebravou-1762945203895-tc3cbp70p",
