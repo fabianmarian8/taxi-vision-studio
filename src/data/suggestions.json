@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:02:06.187Z",
+  "lastUpdated": "2025-11-12T11:02:11.296Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -452,8 +452,9 @@
         "website": null,
         "address": "Tačevská, 085 01 Bardejov, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:01:23.643Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:01:23.643Z",
+      "approvedAt": "2025-11-12T11:02:11.296Z"
     },
     {
       "id": "bardejov-1762945283643-r9qv1y6vt",
