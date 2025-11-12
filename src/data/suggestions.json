@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T14:41:24.405Z",
+  "lastUpdated": "2025-11-12T20:09:29.132Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2478,6 +2478,138 @@
       },
       "status": "pending",
       "timestamp": "2025-11-12T14:33:08.397Z"
+    },
+    {
+      "id": "kremnica-1762959468370-mrzjeweil",
+      "citySlug": "kremnica",
+      "taxiService": {
+        "name": "EKO TAXI Kremnica",
+        "phone": "+421940606888",
+        "website": "https://www.ekotaxi.sk",
+        "address": "Námestie Slovenského národného povstania, 967 01 Kremnica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T14:57:48.370Z"
+    },
+    {
+      "id": "krupina-1762963357729-j3oi9pyo9",
+      "citySlug": "krupina",
+      "taxiService": {
+        "name": "AA - TAXI Krupina",
+        "phone": "+421907580858",
+        "website": "https://taxikrupina.szm.com",
+        "address": "Záhradná 680/2, 963 01 Krupina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T16:02:37.729Z"
+    },
+    {
+      "id": "krupina-1762963357730-i15rhloe6",
+      "citySlug": "krupina",
+      "taxiService": {
+        "name": "Express TAXI Krupina",
+        "phone": "+421904404900",
+        "website": "http://krupinskyexpresstaxi0.webnode.sk",
+        "address": "Slnečná 33, 963 01 Krupina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T16:02:37.729Z"
+    },
+    {
+      "id": "krupina-1762963357730-ewpx83el2",
+      "citySlug": "krupina",
+      "taxiService": {
+        "name": "Eco Hybrid Taxi Krupina",
+        "phone": "+421911444655",
+        "website": "http://autokavos.sk",
+        "address": "Osloboditeľov 926/12, 963 01 Krupina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T16:02:37.729Z"
+    },
+    {
+      "id": "krupina-1762963357730-gl789q86p",
+      "citySlug": "krupina",
+      "taxiService": {
+        "name": "ZDRAVOS - KRUPINČAN",
+        "phone": "+421944600638",
+        "website": "http://www.taxikrupina.com",
+        "address": "Fraňa Kráľa 14, 963 01 Krupina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T16:02:37.729Z"
+    },
+    {
+      "id": "krupina-1762963357730-pfdmd99fg",
+      "citySlug": "krupina",
+      "taxiService": {
+        "name": "Taxislužba - Ján Dado",
+        "phone": "+42145/5521037",
+        "website": null,
+        "address": "963 01 Krupina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T16:02:37.729Z"
+    },
+    {
+      "id": "levoca-1762966820131-2hzlgzcoo",
+      "citySlug": "levoca",
+      "taxiService": {
+        "name": "Ender taxi Levoča",
+        "phone": "+421944609409",
+        "website": "https://taxi-levoca.sk",
+        "address": "Námestie Majstra Pavla, 054 01 Levoča, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T17:00:20.131Z"
+    },
+    {
+      "id": "levoca-1762966820131-n59cnb0g5",
+      "citySlug": "levoca",
+      "taxiService": {
+        "name": "TaxiEuropa.sk preprava osôb AT,DE,CH",
+        "phone": "+421907817824",
+        "website": "https://www.taxieuropa.sk",
+        "address": "Dlhá 246/21, 054 01 Levoča, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T17:00:20.131Z"
+    },
+    {
+      "id": "levoca-1762966820131-5gx0r6ey5",
+      "citySlug": "levoca",
+      "taxiService": {
+        "name": "METRO Taxi Levoča",
+        "phone": "+421911430432",
+        "website": null,
+        "address": "Námestie Majstra Pavla, 054 01 Levoča, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T17:00:20.131Z"
+    },
+    {
+      "id": "levoca-1762966820131-kta8o1nr1",
+      "citySlug": "levoca",
+      "taxiService": {
+        "name": "Tara-Trans-Taxi - Radoslav Tarbaj",
+        "phone": "+421910650605",
+        "website": "http://www.tara-trans-taxi.sk",
+        "address": "Jána Francisciho 1677/15, 054 01 Levoča, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T17:00:20.131Z"
+    },
+    {
+      "id": "kremnica-1762968293992-jwkmonfl9",
+      "citySlug": "kremnica",
+      "taxiService": {
+        "name": "Bijan Taxi",
+        "phone": "+421948984898",
+        "website": "https://www.bijantaxi.sk",
+        "address": "Dolná 44/11, 967 01 Kremnica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T17:24:53.992Z"
     }
   ]
 }
