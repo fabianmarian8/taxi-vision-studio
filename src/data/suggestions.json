@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:16:21.647Z",
+  "lastUpdated": "2025-11-12T11:16:26.294Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1011,8 +1011,9 @@
         "website": null,
         "address": "Záhradná, 962 12 Detva, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:16:21.647Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:16:21.647Z",
+      "approvedAt": "2025-11-12T11:16:26.294Z"
     },
     {
       "id": "detva-1762946181648-hbwrvpa0w",
