@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:13:49.168Z",
+  "lastUpdated": "2025-11-12T11:13:52.845Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -868,8 +868,9 @@
         "website": "http://www.profitaxicadca.sk",
         "address": "Staničná, 022 01 Čadca, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:13:44.059Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:13:44.059Z",
+      "approvedAt": "2025-11-12T11:13:52.845Z"
     },
     {
       "id": "cadca-1762946024059-a3h3rnj9a",
