@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:23:02.385Z",
+  "lastUpdated": "2025-11-12T11:23:13.110Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1287,6 +1287,150 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:22:51.509Z",
       "approvedAt": "2025-11-12T11:23:02.385Z"
+    },
+    {
+      "id": "galanta-1762946593110-3qpyuuwqn",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "TAXI OTTI (OTTI s.r.o. )",
+        "phone": "+421915638595",
+        "website": "http://www.taxiotti.sk",
+        "address": "28, Revolučná štvrť 969, 924 01 Galanta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
+    },
+    {
+      "id": "galanta-1762946593110-7xfpe8by1",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "Ado Taxi Galanta",
+        "phone": "+421911807622",
+        "website": "http://www.adotaxi.sk",
+        "address": "Ružová 161/3, 924 01 Galanta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
+    },
+    {
+      "id": "galanta-1762946593110-zb50mph79",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "Dzino - taxi, s.r.o.",
+        "phone": "+421911200268",
+        "website": null,
+        "address": "Hody 1358, 924 01 Galanta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
+    },
+    {
+      "id": "galanta-1762946593110-kwymw7ioz",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "Lajos Taxi Galanta",
+        "phone": "+421902235262",
+        "website": "https://lajostaxi.mozellosite.com",
+        "address": "Revolučná štvrť 970/16, 924 01 Galanta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
+    },
+    {
+      "id": "galanta-1762946593110-0a3sggrij",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "IGOR TAXI GALANTA",
+        "phone": "+421915721188",
+        "website": "http://www.taxigalanta.sk",
+        "address": "Staničná 1, 924 01 Galanta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
+    },
+    {
+      "id": "galanta-1762946593110-bgyyt04w7",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "TAXI EMIL - taxislužba GALANTA",
+        "phone": "+421918650401",
+        "website": "https://emiltaxi.sk",
+        "address": "Staničná 1, 924 01 Galanta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
+    },
+    {
+      "id": "galanta-1762946593110-s7zft99fi",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "Taxi Galanta",
+        "phone": "+421907200270",
+        "website": null,
+        "address": "Zoltána Kodálya, 924 01 Galanta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
+    },
+    {
+      "id": "galanta-1762946593110-cjf302jxj",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "Forte Taxi Galanta",
+        "phone": "+421915704931",
+        "website": "https://fortetaxi.sk",
+        "address": "Vajanského, 924 01 Galanta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
+    },
+    {
+      "id": "galanta-1762946593110-zlcya91g6",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "Zize TAXI GALANTA",
+        "phone": "+421911515514",
+        "website": null,
+        "address": "Staničná, 924 01 Galanta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
+    },
+    {
+      "id": "galanta-1762946593110-ig5wuw8hd",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "G - Taxi",
+        "phone": "+421903716353",
+        "website": null,
+        "address": "44, Z. Kodálya 796, 924 01 Galanta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
+    },
+    {
+      "id": "galanta-1762946593110-higcjyz2e",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "Kicir Taxi",
+        "phone": "+421940789998",
+        "website": null,
+        "address": "Fučíkova 371, 925 21 Sládkovičovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
+    },
+    {
+      "id": "galanta-1762946593110-ixwsgo2nu",
+      "citySlug": "galanta",
+      "taxiService": {
+        "name": "Kaufland Galanta",
+        "phone": "+421800152835",
+        "website": "https://predajne.kaufland.sk",
+        "address": "Esterházyovcov 2381/26, 924 01 Galanta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:23:13.110Z"
     }
   ]
 }
