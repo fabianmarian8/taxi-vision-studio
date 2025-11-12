@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:03.419Z",
+  "lastUpdated": "2025-11-12T11:06:11.274Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -728,6 +728,54 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:05:06.455Z",
       "approvedAt": "2025-11-12T11:06:03.419Z"
+    },
+    {
+      "id": "brezno-1762945571274-rpysygz4a",
+      "citySlug": "brezno",
+      "taxiService": {
+        "name": "PVS Taxi - Brezno",
+        "phone": "+421905634444",
+        "website": "http://www.pvsa.sk",
+        "address": "Boženy Němcovej 1069/2, 977 01 Brezno, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:06:11.274Z"
+    },
+    {
+      "id": "brezno-1762945571274-zcz757xhs",
+      "citySlug": "brezno",
+      "taxiService": {
+        "name": "TD Taxi - Tomáš Demian",
+        "phone": "+421902493046",
+        "website": "http://www.tdtaxi.sk",
+        "address": "Boženy Němcovej 2, 977 01 Brezno, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:06:11.274Z"
+    },
+    {
+      "id": "brezno-1762945571274-zsg2wr18w",
+      "citySlug": "brezno",
+      "taxiService": {
+        "name": "R.S.T. Taxi & Ski Taxi 6+1 - Podbrezová - Brezno a okolie",
+        "phone": "+421904334971",
+        "website": "https://taxipodbrezova.sk",
+        "address": "Kolkáreň 17/22, 976 81 Podbrezová, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:06:11.274Z"
+    },
+    {
+      "id": "brezno-1762945571274-2z7d47swc",
+      "citySlug": "brezno",
+      "taxiService": {
+        "name": "BREZNO PK - TAXI a oklie",
+        "phone": "+421905704880",
+        "website": "https://www.brezno-taxi.eu",
+        "address": "Stanovište taxislužby, 977 01 Brezno, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:06:11.274Z"
     }
   ]
 }
