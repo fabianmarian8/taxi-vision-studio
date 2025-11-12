@@ -29,15 +29,21 @@ module.exports = async function handler(req, res) {
     }
     const staged = readStaged();
     // Normalizuj polia na jednotný tvar, aby UI nikdy nezobrazilo prázdne karty
-    const suggestions = (staged.suggestions || []).map((s) => ({
-      id: String(s.id ?? s._id ?? s.uid ?? ''),
-      citySlug: String(s.citySlug || s.city || ''),
-      name: s.name || s.title || s.company || '',
-      website: s.website || s.url || s.link || '',
-      phone: s.phone || s.phoneNumber || s.tel || '',
-      address: s.address || s.formatted_address || s.addr || '',
-      createdAt: s.createdAt || s.created_at || undefined,
-    })).filter(x => x.id && x.citySlug);
+    // FIX: Správne mapovanie vnorených polí z taxiService objektu
+    const suggestions = (staged.suggestions || []).map((s) => {
+      // Skús najprv taxiService objekt, potom fallback na root level
+      const taxiService = s.taxiService || {};
+      return {
+        id: String(s.id ?? s._id ?? s.uid ?? ''),
+        citySlug: String(s.citySlug || s.city || ''),
+        name: taxiService.name || s.name || s.title || s.company || '',
+        website: taxiService.website || s.website || s.url || s.link || '',
+        phone: taxiService.phone || s.phone || s.phoneNumber || s.tel || '',
+        address: taxiService.address || s.address || s.formatted_address || s.addr || '',
+        createdAt: s.createdAt || s.created_at || s.timestamp || undefined,
+        status: s.status || 'pending'
+      };
+    }).filter(x => x.id && x.citySlug);
 
     return res.status(200).json({ suggestions });
   } catch (e) {
