@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:10:52.771Z",
+  "lastUpdated": "2025-11-12T11:13:11.430Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -435,9 +435,19 @@
           "website": null
         },
         {
-          "name": "Ndg S.r.o.",
-          "phone": "+42141/5522094",
-          "website": null
+          "name": "Foxi taxi",
+          "website": "",
+          "phone": "+421 903 800 300"
+        },
+        {
+          "name": "Bytča Taxi",
+          "website": "",
+          "phone": "+421 910 109 333"
+        },
+        {
+          "name": "JP Taxi",
+          "website": "",
+          "phone": "+421 901 711 831"
         }
       ],
       "latitude": 49.2239,
