@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:10:53.208Z",
+  "lastUpdated": "2025-11-12T11:13:44.059Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -845,6 +845,150 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:09:33.820Z",
       "approvedAt": "2025-11-12T11:10:53.208Z"
+    },
+    {
+      "id": "cadca-1762946024059-lz7hxvr95",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "Tip Top Taxi Čadca",
+        "phone": "+421905566966",
+        "website": "http://www.tiptoptaxi.sk",
+        "address": "Horná, 022 01 Čadca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
+    },
+    {
+      "id": "cadca-1762946024059-k5iesrdqu",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "PROFI TAXI ČADCA",
+        "phone": "+421910100440",
+        "website": "http://www.profitaxicadca.sk",
+        "address": "Staničná, 022 01 Čadca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
+    },
+    {
+      "id": "cadca-1762946024059-a3h3rnj9a",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "DALLAS TAXI CADCA",
+        "phone": "+421950634424",
+        "website": "https://www.dallas-evl.sk",
+        "address": "Palárikova 1806/42, 022 01 Čadca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
+    },
+    {
+      "id": "cadca-1762946024059-wyu8v5exj",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "KUČO TAXI ČADCA",
+        "phone": "+421905385060",
+        "website": null,
+        "address": "Staničná 963, 022 01 Čadca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
+    },
+    {
+      "id": "cadca-1762946024059-4o7u756ee",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "TAXI AFTER DARK-ČADCA",
+        "phone": "+421903161616",
+        "website": null,
+        "address": "Horná, 022 01 Čadca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
+    },
+    {
+      "id": "cadca-1762946024059-m3d5h4aib",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "Relly Taxi",
+        "phone": "+421800101020",
+        "website": null,
+        "address": "Horná 022 01, 022 01 Čadca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
+    },
+    {
+      "id": "cadca-1762946024059-tcr8dj0e6",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "SPEED TAXI",
+        "phone": "+421910153143",
+        "website": null,
+        "address": "Horná, 022 01 Čadca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
+    },
+    {
+      "id": "cadca-1762946024059-mamlzm1ot",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "ABC Taxi",
+        "phone": "+42141/4334111",
+        "website": "https://abctaxi.eu",
+        "address": "5, Komenského 128, 022 04 Čadca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
+    },
+    {
+      "id": "cadca-1762946024059-buddgjqtf",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "Tip Top Taxi Turzovka",
+        "phone": "+421907567567",
+        "website": "http://www.tiptoptaxi.sk",
+        "address": "Nádražná, 023 54 Turzovka, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
+    },
+    {
+      "id": "cadca-1762946024059-osuxtayje",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "OK Taxi",
+        "phone": "+42141/4326666",
+        "website": null,
+        "address": "Slobody 43, 022 01 Čadca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
+    },
+    {
+      "id": "cadca-1762946024059-3yta5cb1v",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "M.T.Taxi Turzovka",
+        "phone": "+421948234444",
+        "website": "http://www.mttaxi.sk",
+        "address": "Nádražná 66, 023 54 Turzovka, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
+    },
+    {
+      "id": "cadca-1762946024059-445bhn9zr",
+      "citySlug": "cadca",
+      "taxiService": {
+        "name": "Taxi Express",
+        "phone": "+42141/4332111",
+        "website": null,
+        "address": "Horelica 10, 022 01 Čadca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:13:44.059Z"
     }
   ]
 }
