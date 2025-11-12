@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:16:41.673Z",
+  "lastUpdated": "2025-11-12T11:18:11.798Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1053,6 +1053,150 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:16:21.647Z",
       "approvedAt": "2025-11-12T11:16:41.673Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-sp1xlm81k",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "Drink Taxi",
+        "phone": "+421905618000",
+        "website": "http://www.autopozicovnaorava.sk",
+        "address": "Bysterecká 2971, Veľký Bysterec, 026 01 Dolný Kubín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-d1djo9na8",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "Fan-TAXI Dolný Kubín",
+        "phone": "+421904231231",
+        "website": null,
+        "address": "Andreja Halašu 740/33, Záskalie, 026 01 Dolný Kubín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-i89jaliml",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "LS TAXI Dolný Kubín",
+        "phone": "+421902885555",
+        "website": null,
+        "address": "Jasenová 150, 026 01 Jasenová, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-4465qi1l5",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "GOLDEN TAXI",
+        "phone": "+421910204204",
+        "website": null,
+        "address": "28, Rybárska 827, Záskalie, 026 01 Dolný Kubín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-vfa0vhirk",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "JTD Taxi Dolný Kubín",
+        "phone": "+421904232232",
+        "website": "https://www.taxikubin.sk",
+        "address": "Vyšnokubínska 231, 026 01 Vyšný Kubín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-1th9oayz8",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "JeKa -TAXI Dolný Kubín",
+        "phone": "+421907262000",
+        "website": null,
+        "address": "Dukelských hrdinov 2039/9, Brezovec, 026 01 Dolný Kubín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-tv3kwqp1v",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "FAKO TAXI Dolný Kubín",
+        "phone": "+421908878333",
+        "website": null,
+        "address": "Aleja Slobody Tesco, 026 01 Dolný Kubín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-7zqbcye2p",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "HaMi Taxi",
+        "phone": "+421915088022",
+        "website": null,
+        "address": "026 01 Dolný Kubín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-t0keasnc1",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "Jk-taxi Ján Kurjak",
+        "phone": "+421948262000",
+        "website": null,
+        "address": "47, Bysterecká 1255, Veľký Bysterec, 026 01 Dolný Kubín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-1hxpu5lur",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "2xRévai s.r.o.",
+        "phone": "+421901735735",
+        "website": null,
+        "address": "12, Chočská 1531, 026 01 Dolný Kubín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-v386trkw9",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "M-TAXI - Michal Flajs",
+        "phone": "+421908888822",
+        "website": "https://www.m-taxi.sk",
+        "address": "Matúškova 1643 20, 026 01 Dolný Kubín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
+    },
+    {
+      "id": "dolny-kubin-1762946291798-v4yrk0fwj",
+      "citySlug": "dolny-kubin",
+      "taxiService": {
+        "name": "PARIS TAXI",
+        "phone": "+421902801801",
+        "website": null,
+        "address": "J. Ťatliaka 1785/6, 026 01 Vyšný Kubín-Dolný Kubín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:18:11.798Z"
     }
   ]
 }
