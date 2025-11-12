@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:00:33.140Z",
+  "lastUpdated": "2025-11-12T11:01:14.144Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -361,8 +361,9 @@
         "website": "http://www.oktaxi.sk",
         "address": "Ozorovská hlavná 20, Dolné Ozorovce, 957 04 Bánovce nad Bebravou, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:00:03.895Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T11:00:03.895Z",
+      "rejectedAt": "2025-11-12T11:01:14.144Z"
     }
   ]
 }
