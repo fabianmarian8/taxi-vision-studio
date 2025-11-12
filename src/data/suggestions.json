@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:31.302Z",
+  "lastUpdated": "2025-11-12T11:06:39.595Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -780,6 +780,30 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:06:11.274Z",
       "approvedAt": "2025-11-12T11:06:31.302Z"
+    },
+    {
+      "id": "brezova-pod-bradlom-1762945599595-phz2wizoq",
+      "citySlug": "brezova-pod-bradlom",
+      "taxiService": {
+        "name": "Taxi Myjava",
+        "phone": "+421907277588",
+        "website": "http://www.taxi-myjava.sk",
+        "address": "Nám. M. R. Štefánika, 907 01 Myjava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:06:39.595Z"
+    },
+    {
+      "id": "brezova-pod-bradlom-1762945599595-tny9qts8g",
+      "citySlug": "brezova-pod-bradlom",
+      "taxiService": {
+        "name": "Taxi La Vita Myjava",
+        "phone": "+421940095050",
+        "website": "http://www.taxilavita.sk",
+        "address": "Pažického 416/14, 907 01 Myjava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:06:39.595Z"
     }
   ]
 }
