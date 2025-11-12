@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:18:30.722Z",
+  "lastUpdated": "2025-11-12T11:18:35.158Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1102,8 +1102,9 @@
         "website": null,
         "address": "28, Rybárska 827, Záskalie, 026 01 Dolný Kubín, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:18:11.798Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:18:11.798Z",
+      "approvedAt": "2025-11-12T11:18:35.158Z"
     },
     {
       "id": "dolny-kubin-1762946291798-vfa0vhirk",
