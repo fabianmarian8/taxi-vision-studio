@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:02:05.669Z",
+  "lastUpdated": "2025-11-12T11:02:10.881Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -198,6 +198,11 @@
           "name": "TAXI PIRÁTI",
           "phone": "+4215416666",
           "website": "https://www.facebook.com"
+        },
+        {
+          "name": "GoldenTAXI",
+          "phone": "+421948948888",
+          "website": null
         }
       ],
       "latitude": 49.2939,
