@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:20:29.454Z",
+  "lastUpdated": "2025-11-12T11:22:43.161Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -711,7 +711,23 @@
         "objednať taxi dudince",
         "taxi dudince kúpele"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Eco Hybrid Taxi Dudince",
+          "website": "",
+          "phone": "+421 944 771 888"
+        },
+        {
+          "name": " Taxi Dudince Fortuna",
+          "website": "",
+          "phone": "+421 911 332 470"
+        },
+        {
+          "name": "M Plus taxi",
+          "website": "",
+          "phone": "+421 903 678 717"
+        }
+      ],
       "latitude": 48.1667,
       "longitude": 18.8667
     },
