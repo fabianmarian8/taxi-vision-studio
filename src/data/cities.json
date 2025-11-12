@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:18:48.903Z",
+  "lastUpdated": "2025-11-12T11:18:52.097Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -629,6 +629,11 @@
         {
           "name": "FAKO TAXI Dolný Kubín",
           "phone": "+421908878333",
+          "website": null
+        },
+        {
+          "name": "HaMi Taxi",
+          "phone": "+421915088022",
           "website": null
         }
       ],
