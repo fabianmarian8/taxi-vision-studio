@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:28.349Z",
+  "lastUpdated": "2025-11-12T11:06:30.918Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -372,6 +372,11 @@
           "name": "R.S.T. Taxi & Ski Taxi 6+1 - Podbrezová - Brezno a okolie",
           "phone": "+421904334971",
           "website": "https://taxipodbrezova.sk"
+        },
+        {
+          "name": "BREZNO PK - TAXI a oklie",
+          "phone": "+421905704880",
+          "website": "https://www.brezno-taxi.eu"
         }
       ],
       "latitude": 48.8033,
