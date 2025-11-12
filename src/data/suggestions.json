@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:50:39.346Z",
+  "lastUpdated": "2025-11-12T10:50:50.245Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -74,8 +74,9 @@
         "website": null,
         "address": "2, Dolná Strieborná 368, 974 01 Banská Bystrica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "approvedAt": "2025-11-12T10:50:50.245Z"
     },
     {
       "id": "banska-bystrica-1762944164311-h9ebau3cq",
