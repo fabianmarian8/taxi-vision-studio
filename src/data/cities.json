@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:44:18.442Z",
+  "lastUpdated": "2025-11-12T10:44:25.831Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -36,6 +36,11 @@
           "name": "3 Taxi B. Bystrica",
           "phone": "+421903654303",
           "website": "https://www.3taxi.sk"
+        },
+        {
+          "name": "ONE TAXI | Banská Bystrica",
+          "phone": "+421905442544",
+          "website": "http://www.onetaxi.sk"
         }
       ],
       "latitude": 48.7361,
