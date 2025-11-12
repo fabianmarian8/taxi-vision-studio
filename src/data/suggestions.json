@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:53:40.302Z",
+  "lastUpdated": "2025-11-12T10:53:43.896Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -166,8 +166,9 @@
         "website": "http://www.taxibb.sk",
         "address": "Tatranská 6399/90, 974 11 Banská Bystrica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "rejectedAt": "2025-11-12T10:53:43.896Z"
     },
     {
       "id": "banska-bystrica-1762944164311-moa4w1mjt",
