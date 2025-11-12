@@ -1,4 +1,76 @@
 // Vercel Serverless Function pre správu návrhov taxislužieb
+// NOVÁ LOGIKA: Návrhy sa ukladajú do staged-suggestions.json a commitujú až pri publish
+
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_REPO = 'fabianmarian8/taxi-vision-studio';
+const SUGGESTIONS_FILE = 'src/data/suggestions.json';
+const STAGED_SUGGESTIONS_FILE = 'staged-suggestions.json';
+const CITIES_FILE = 'src/data/cities.json';
+
+// Pomocná funkcia pre načítanie staged suggestions z GitHub
+async function loadStagedSuggestions() {
+  try {
+    const response = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO}/contents/${STAGED_SUGGESTIONS_FILE}`,
+      {
+        headers: {
+          'Authorization': `Bearer ${GITHUB_TOKEN}`,
+          'Accept': 'application/vnd.github.v3+json',
+        },
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      const content = Buffer.from(data.content, 'base64').toString('utf-8');
+      return { data: JSON.parse(content), sha: data.sha };
+    }
+  } catch (error) {
+    console.log('No staged suggestions found:', error.message);
+  }
+  return { data: { suggestions: [] }, sha: null };
+}
+
+// Pomocná funkcia pre uloženie staged suggestions do GitHub
+async function saveStagedSuggestions(stagedData, sha) {
+  try {
+    const content = Buffer.from(JSON.stringify(stagedData, null, 2)).toString('base64');
+    
+    const body = {
+      message: 'Update staged suggestions',
+      content: content,
+      branch: 'main',
+    };
+
+    if (sha) {
+      body.sha = sha;
+    }
+
+    const response = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO}/contents/${STAGED_SUGGESTIONS_FILE}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${GITHUB_TOKEN}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(`Failed to save staged suggestions: ${JSON.stringify(errorData)}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error saving staged suggestions:', error);
+    throw error;
+  }
+}
+
 export default async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -20,13 +92,8 @@ export default async function handler(req, res) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
-  const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-  const GITHUB_REPO = 'fabianmarian8/taxi-vision-studio';
-  const SUGGESTIONS_FILE = 'src/data/suggestions.json';
-  const CITIES_FILE = 'src/data/cities.json';
-
   try {
-    // GET - Načítanie všetkých návrhov
+    // GET - Načítanie všetkých návrhov (vrátane staged)
     if (req.method === 'GET') {
       const response = await fetch(
         `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
@@ -46,37 +113,25 @@ export default async function handler(req, res) {
       const content = Buffer.from(data.content, 'base64').toString('utf-8');
       const suggestionsData = JSON.parse(content);
 
+      // Načítaj staged suggestions a pridaj ich
+      const { data: stagedData } = await loadStagedSuggestions();
+      if (stagedData.suggestions && stagedData.suggestions.length > 0) {
+        // Merge staged suggestions s existujúcimi
+        suggestionsData.suggestions = [...suggestionsData.suggestions, ...stagedData.suggestions];
+      }
+
       return res.status(200).json(suggestionsData);
     }
 
     // POST - Pridanie nových návrhov alebo schválenie návrhu
     if (req.method === 'POST') {
-      const { action, citySlug, suggestions, suggestionId } = req.body;
+      const { action, citySlug, suggestions, suggestionId, suggestionIds } = req.body;
 
       if (!action) {
         return res.status(400).json({ error: 'Action is required' });
       }
 
-      // Načítanie súčasných návrhov
-      const suggestionsResponse = await fetch(
-        `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
-        {
-          headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json',
-          },
-        }
-      );
-
-      if (!suggestionsResponse.ok) {
-        throw new Error('Failed to fetch suggestions file');
-      }
-
-      const suggestionsFileData = await suggestionsResponse.json();
-      const suggestionsContent = Buffer.from(suggestionsFileData.content, 'base64').toString('utf-8');
-      const suggestionsData = JSON.parse(suggestionsContent);
-
-      // Akcia: Pridať nové návrhy
+      // Akcia: Pridať nové návrhy DO STAGED SUGGESTIONS (BEZ COMMITU!)
       if (action === 'add') {
         if (!citySlug || !suggestions || !Array.isArray(suggestions)) {
           return res.status(400).json({ error: 'citySlug and suggestions array are required' });
@@ -109,6 +164,24 @@ export default async function handler(req, res) {
 
         const existingServices = city.taxiServices || [];
 
+        // Načítaj existujúce suggestions (committed)
+        const suggestionsResponse = await fetch(
+          `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
+          {
+            headers: {
+              'Authorization': `Bearer ${GITHUB_TOKEN}`,
+              'Accept': 'application/vnd.github.v3+json',
+            },
+          }
+        );
+
+        const suggestionsFileData = await suggestionsResponse.json();
+        const suggestionsContent = Buffer.from(suggestionsFileData.content, 'base64').toString('utf-8');
+        const existingSuggestionsData = JSON.parse(suggestionsContent);
+
+        // Načítaj staged suggestions
+        const { data: stagedData, sha: stagedSha } = await loadStagedSuggestions();
+
         // Normalizácia telefónneho čísla pre porovnanie
         const normalizePhone = (phone) => {
           if (!phone) return '';
@@ -119,17 +192,14 @@ export default async function handler(req, res) {
         const newSuggestions = suggestions.filter(suggestion => {
           // Kontrola duplicít s existujúcimi službami
           const isDuplicate = existingServices.some(service => {
-            // Porovnaj názov (case-insensitive)
             if (service.name.toLowerCase() === suggestion.name.toLowerCase()) {
               return true;
             }
-            // Porovnaj telefón
             if (suggestion.phone && service.phone) {
               if (normalizePhone(service.phone) === normalizePhone(suggestion.phone)) {
                 return true;
               }
             }
-            // Porovnaj website
             if (suggestion.website && service.website) {
               if (service.website.toLowerCase() === suggestion.website.toLowerCase()) {
                 return true;
@@ -138,10 +208,9 @@ export default async function handler(req, res) {
             return false;
           });
 
-          // Kontrola duplicít s existujúcimi návrhmi
-          const isDuplicateSuggestion = suggestionsData.suggestions.some(s => {
+          // Kontrola duplicít s existujúcimi návrhmi (committed)
+          const isDuplicateSuggestion = existingSuggestionsData.suggestions.some(s => {
             if (s.citySlug !== citySlug || s.status === 'rejected') return false;
-
             if (s.taxiService.name.toLowerCase() === suggestion.name.toLowerCase()) {
               return true;
             }
@@ -153,13 +222,27 @@ export default async function handler(req, res) {
             return false;
           });
 
-          return !isDuplicate && !isDuplicateSuggestion;
+          // Kontrola duplicít so staged suggestions
+          const isDuplicateStaged = stagedData.suggestions.some(s => {
+            if (s.citySlug !== citySlug || s.status === 'rejected') return false;
+            if (s.taxiService.name.toLowerCase() === suggestion.name.toLowerCase()) {
+              return true;
+            }
+            if (suggestion.phone && s.taxiService.phone) {
+              if (normalizePhone(s.taxiService.phone) === normalizePhone(suggestion.phone)) {
+                return true;
+              }
+            }
+            return false;
+          });
+
+          return !isDuplicate && !isDuplicateSuggestion && !isDuplicateStaged;
         });
 
-        // Pridaj nové návrhy
+        // Pridaj nové návrhy DO STAGED SUGGESTIONS
         const timestamp = new Date().toISOString();
         newSuggestions.forEach(suggestion => {
-          suggestionsData.suggestions.push({
+          stagedData.suggestions.push({
             id: `${citySlug}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
             citySlug,
             taxiService: {
@@ -173,306 +256,49 @@ export default async function handler(req, res) {
           });
         });
 
-        suggestionsData.lastUpdated = timestamp;
+        stagedData.lastUpdated = timestamp;
 
-        // Ulož aktualizované návrhy
-        const newContent = Buffer.from(JSON.stringify(suggestionsData, null, 2)).toString('base64');
-
-        const updateResponse = await fetch(
-          `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
-          {
-            method: 'PUT',
-            headers: {
-              'Authorization': `Bearer ${GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3+json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              message: `Add ${newSuggestions.length} new suggestions for ${citySlug}`,
-              content: newContent,
-              sha: suggestionsFileData.sha,
-              branch: 'main',
-            }),
-          }
-        );
-
-        if (!updateResponse.ok) {
-          const errorData = await updateResponse.json();
-          throw new Error(`Failed to update suggestions file: ${JSON.stringify(errorData)}`);
-        }
+        // Ulož do staged-suggestions.json (BEZ COMMITU DO suggestions.json!)
+        await saveStagedSuggestions(stagedData, stagedSha);
 
         return res.status(200).json({
           success: true,
-          message: `Added ${newSuggestions.length} new suggestions`,
+          message: `Added ${newSuggestions.length} new suggestions to staging area. Click "Publish Changes" to commit.`,
           added: newSuggestions.length,
           skipped: suggestions.length - newSuggestions.length
         });
       }
 
-      // Akcia: Schváliť návrh
-      if (action === 'approve') {
-        if (!suggestionId) {
-          return res.status(400).json({ error: 'suggestionId is required' });
-        }
-
-        // Nájdi návrh
-        const suggestion = suggestionsData.suggestions.find(s => s.id === suggestionId);
-        if (!suggestion) {
-          return res.status(404).json({ error: 'Suggestion not found' });
-        }
-
-        // Načítaj cities.json
-        const citiesResponse = await fetch(
-          `https://api.github.com/repos/${GITHUB_REPO}/contents/${CITIES_FILE}`,
-          {
-            headers: {
-              'Authorization': `Bearer ${GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3+json',
-            },
-          }
-        );
-
-        if (!citiesResponse.ok) {
-          throw new Error('Failed to fetch cities file');
-        }
-
-        const citiesFileData = await citiesResponse.json();
-        const citiesContent = Buffer.from(citiesFileData.content, 'base64').toString('utf-8');
-        const citiesData = JSON.parse(citiesContent);
-
-        // Nájdi mesto
-        const cityIndex = citiesData.cities.findIndex(c => c.slug === suggestion.citySlug);
-        if (cityIndex === -1) {
-          return res.status(404).json({ error: 'City not found' });
-        }
-
-        // Pridaj taxislužbu do mesta
-        if (!citiesData.cities[cityIndex].taxiServices) {
-          citiesData.cities[cityIndex].taxiServices = [];
-        }
-
-        citiesData.cities[cityIndex].taxiServices.push({
-          name: suggestion.taxiService.name,
-          phone: suggestion.taxiService.phone,
-          website: suggestion.taxiService.website
-        });
-
-        citiesData.lastUpdated = new Date().toISOString();
-
-        // Ulož cities.json
-        const citiesNewContent = Buffer.from(JSON.stringify(citiesData, null, 2)).toString('base64');
-
-        const citiesUpdateResponse = await fetch(
-          `https://api.github.com/repos/${GITHUB_REPO}/contents/${CITIES_FILE}`,
-          {
-            method: 'PUT',
-            headers: {
-              'Authorization': `Bearer ${GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3+json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              message: `Approve suggestion: ${suggestion.taxiService.name} for ${suggestion.citySlug}`,
-              content: citiesNewContent,
-              sha: citiesFileData.sha,
-              branch: 'main',
-            }),
-          }
-        );
-
-        if (!citiesUpdateResponse.ok) {
-          const errorData = await citiesUpdateResponse.json();
-          throw new Error(`Failed to update cities file: ${JSON.stringify(errorData)}`);
-        }
-
-        // Označ návrh ako schválený
-        suggestion.status = 'approved';
-        suggestion.approvedAt = new Date().toISOString();
-        suggestionsData.lastUpdated = new Date().toISOString();
-
-        // Znovu načítaj suggestions file (mohlo sa zmeniť SHA)
-        const refreshedSuggestionsResponse = await fetch(
-          `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
-          {
-            headers: {
-              'Authorization': `Bearer ${GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3+json',
-            },
-          }
-        );
-
-        const refreshedSuggestionsData = await refreshedSuggestionsResponse.json();
-
-        // Ulož aktualizované návrhy
-        const suggestionsNewContent = Buffer.from(JSON.stringify(suggestionsData, null, 2)).toString('base64');
-
-        const suggestionsUpdateResponse = await fetch(
-          `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
-          {
-            method: 'PUT',
-            headers: {
-              'Authorization': `Bearer ${GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3+json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              message: `Mark suggestion ${suggestionId} as approved`,
-              content: suggestionsNewContent,
-              sha: refreshedSuggestionsData.sha,
-              branch: 'main',
-            }),
-          }
-        );
-
-        if (!suggestionsUpdateResponse.ok) {
-          const errorData = await suggestionsUpdateResponse.json();
-          throw new Error(`Failed to update suggestions file: ${JSON.stringify(errorData)}`);
-        }
-
-        return res.status(200).json({
-          success: true,
-          message: 'Suggestion approved and added to city'
-        });
-      }
-
-      // Akcia: Bulk schválenie
-      if (action === 'approve-bulk') {
-        const { suggestionIds } = req.body;
-
+      // Akcia: Označiť ako approved (len update staged suggestions, bez commitu)
+      if (action === 'mark-approved') {
         if (!suggestionIds || !Array.isArray(suggestionIds)) {
           return res.status(400).json({ error: 'suggestionIds array is required' });
         }
 
-        // Načítaj cities.json
-        const citiesResponse = await fetch(
-          `https://api.github.com/repos/${GITHUB_REPO}/contents/${CITIES_FILE}`,
-          {
-            headers: {
-              'Authorization': `Bearer ${GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3+json',
-            },
+        const { data: stagedData, sha: stagedSha } = await loadStagedSuggestions();
+        
+        // Označ suggestions ako approved v staged
+        suggestionIds.forEach(id => {
+          const suggestion = stagedData.suggestions.find(s => s.id === id);
+          if (suggestion) {
+            suggestion.status = 'approved';
+            suggestion.approvedAt = new Date().toISOString();
           }
-        );
+        });
 
-        if (!citiesResponse.ok) {
-          throw new Error('Failed to fetch cities file');
-        }
-
-        const citiesFileData = await citiesResponse.json();
-        const citiesContent = Buffer.from(citiesFileData.content, 'base64').toString('utf-8');
-        const citiesData = JSON.parse(citiesContent);
-
-        let approvedCount = 0;
-
-        // Spracuj každý návrh
-        for (const suggestionId of suggestionIds) {
-          const suggestion = suggestionsData.suggestions.find(s => s.id === suggestionId);
-          if (!suggestion || suggestion.status !== 'pending') continue;
-
-          // Nájdi mesto
-          const cityIndex = citiesData.cities.findIndex(c => c.slug === suggestion.citySlug);
-          if (cityIndex === -1) continue;
-
-          // Pridaj taxislužbu
-          if (!citiesData.cities[cityIndex].taxiServices) {
-            citiesData.cities[cityIndex].taxiServices = [];
-          }
-
-          citiesData.cities[cityIndex].taxiServices.push({
-            name: suggestion.taxiService.name,
-            phone: suggestion.taxiService.phone,
-            website: suggestion.taxiService.website
-          });
-
-          // Označ ako schválený
-          suggestion.status = 'approved';
-          suggestion.approvedAt = new Date().toISOString();
-          approvedCount++;
-        }
-
-        if (approvedCount === 0) {
-          return res.status(400).json({ error: 'No valid suggestions to approve' });
-        }
-
-        citiesData.lastUpdated = new Date().toISOString();
-        suggestionsData.lastUpdated = new Date().toISOString();
-
-        // Ulož cities.json
-        const citiesNewContent = Buffer.from(JSON.stringify(citiesData, null, 2)).toString('base64');
-
-        const citiesUpdateResponse = await fetch(
-          `https://api.github.com/repos/${GITHUB_REPO}/contents/${CITIES_FILE}`,
-          {
-            method: 'PUT',
-            headers: {
-              'Authorization': `Bearer ${GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3+json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              message: `Bulk approve ${approvedCount} suggestions`,
-              content: citiesNewContent,
-              sha: citiesFileData.sha,
-              branch: 'main',
-            }),
-          }
-        );
-
-        if (!citiesUpdateResponse.ok) {
-          const errorData = await citiesUpdateResponse.json();
-          throw new Error(`Failed to update cities file: ${JSON.stringify(errorData)}`);
-        }
-
-        // Znovu načítaj suggestions file
-        const refreshedSuggestionsResponse = await fetch(
-          `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
-          {
-            headers: {
-              'Authorization': `Bearer ${GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3+json',
-            },
-          }
-        );
-
-        const refreshedSuggestionsData = await refreshedSuggestionsResponse.json();
-
-        // Ulož suggestions.json
-        const suggestionsNewContent = Buffer.from(JSON.stringify(suggestionsData, null, 2)).toString('base64');
-
-        const suggestionsUpdateResponse = await fetch(
-          `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
-          {
-            method: 'PUT',
-            headers: {
-              'Authorization': `Bearer ${GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3+json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              message: `Mark ${approvedCount} suggestions as approved`,
-              content: suggestionsNewContent,
-              sha: refreshedSuggestionsData.sha,
-              branch: 'main',
-            }),
-          }
-        );
-
-        if (!suggestionsUpdateResponse.ok) {
-          const errorData = await suggestionsUpdateResponse.json();
-          throw new Error(`Failed to update suggestions file: ${JSON.stringify(errorData)}`);
-        }
+        stagedData.lastUpdated = new Date().toISOString();
+        await saveStagedSuggestions(stagedData, stagedSha);
 
         return res.status(200).json({
           success: true,
-          message: `${approvedCount} suggestions approved`,
-          approvedCount
+          message: 'Suggestions marked as approved in staging'
         });
       }
 
       return res.status(400).json({ error: 'Invalid action' });
     }
 
-    // DELETE - Zamietnuť návrh
+    // DELETE - Zamietnuť návrh (tiež len v staged)
     if (req.method === 'DELETE') {
       const { suggestionId } = req.body;
 
@@ -480,62 +306,21 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'suggestionId is required' });
       }
 
-      // Načítaj suggestions
-      const response = await fetch(
-        `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
-        {
-          headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json',
-          },
-        }
-      );
+      const { data: stagedData, sha: stagedSha } = await loadStagedSuggestions();
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch suggestions');
-      }
-
-      const fileData = await response.json();
-      const content = Buffer.from(fileData.content, 'base64').toString('utf-8');
-      const suggestionsData = JSON.parse(content);
-
-      // Nájdi a označ návrh ako zamietnutý
-      const suggestion = suggestionsData.suggestions.find(s => s.id === suggestionId);
+      // Nájdi a označ návrh ako zamietnutý v staged
+      const suggestion = stagedData.suggestions.find(s => s.id === suggestionId);
       if (!suggestion) {
-        return res.status(404).json({ error: 'Suggestion not found' });
+        return res.status(404).json({ error: 'Suggestion not found in staging' });
       }
 
       suggestion.status = 'rejected';
       suggestion.rejectedAt = new Date().toISOString();
-      suggestionsData.lastUpdated = new Date().toISOString();
+      stagedData.lastUpdated = new Date().toISOString();
 
-      // Ulož
-      const newContent = Buffer.from(JSON.stringify(suggestionsData, null, 2)).toString('base64');
+      await saveStagedSuggestions(stagedData, stagedSha);
 
-      const updateResponse = await fetch(
-        `https://api.github.com/repos/${GITHUB_REPO}/contents/${SUGGESTIONS_FILE}`,
-        {
-          method: 'PUT',
-          headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            message: `Reject suggestion ${suggestionId}`,
-            content: newContent,
-            sha: fileData.sha,
-            branch: 'main',
-          }),
-        }
-      );
-
-      if (!updateResponse.ok) {
-        const errorData = await updateResponse.json();
-        throw new Error(`Failed to update file: ${JSON.stringify(errorData)}`);
-      }
-
-      return res.status(200).json({ success: true, message: 'Suggestion rejected' });
+      return res.status(200).json({ success: true, message: 'Suggestion rejected in staging' });
     }
 
     return res.status(405).json({ error: 'Method not allowed' });
