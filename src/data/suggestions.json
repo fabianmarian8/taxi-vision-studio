@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:59:15.787Z",
+  "lastUpdated": "2025-11-12T10:59:24.330Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -270,8 +270,9 @@
         "website": null,
         "address": "Štiavnické Bane 69, 969 01 Štiavnické Bane, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:57:46.707Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:57:46.707Z",
+      "approvedAt": "2025-11-12T10:59:24.330Z"
     },
     {
       "id": "banska-stiavnica-1762945066707-xz28i133q",
