@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:04:52.606Z",
+  "lastUpdated": "2025-11-12T11:04:56.149Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -246,6 +246,11 @@
           "name": "Taxi Bojnice - Nonstop",
           "phone": "+421918266886",
           "website": "http://www.taxibojnice.sk"
+        },
+        {
+          "name": "Kováč Peter, Ing. Extra taxi",
+          "phone": "+421948706656",
+          "website": null
         }
       ],
       "latitude": 48.7803,
