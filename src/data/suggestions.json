@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:42:44.310Z",
+  "lastUpdated": "2025-11-12T10:44:18.881Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -178,8 +178,9 @@
         "website": "https://www.3taxi.sk",
         "address": "Bernolákova 6032/11, 974 05 Banská Bystrica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "approvedAt": "2025-11-12T10:44:18.881Z"
     }
   ]
 }
