@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:04:56.149Z",
+  "lastUpdated": "2025-11-12T11:05:12.477Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -269,7 +269,13 @@
         "objednať taxi bratislava",
         "taxi bratislava ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi-Bratislava-City 🚕 Spoľahlivá taxi služba 24/7",
+          "phone": "+421903106943",
+          "website": "https://taxi-bratislava-city.sk"
+        }
+      ],
       "latitude": 48.1486,
       "longitude": 17.1077
     },
