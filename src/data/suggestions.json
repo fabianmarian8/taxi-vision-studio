@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:52:57.986Z",
+  "lastUpdated": "2025-11-12T10:53:40.302Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -178,8 +178,9 @@
         "website": null,
         "address": "Mládežnícka 3427/15, 974 04 Banská Bystrica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "rejectedAt": "2025-11-12T10:53:40.302Z"
     },
     {
       "id": "banska-bystrica-1762944164311-ov8z7g1aj",
