@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:09:33.820Z",
+  "lastUpdated": "2025-11-12T11:09:38.697Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -816,8 +816,9 @@
         "website": null,
         "address": "Bottova 1149/18, 014 01 Bytča, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:09:33.820Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:09:33.820Z",
+      "approvedAt": "2025-11-12T11:09:38.697Z"
     },
     {
       "id": "bytca-1762945773820-ztdvyglyj",
