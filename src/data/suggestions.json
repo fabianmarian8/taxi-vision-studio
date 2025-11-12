@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:30:19.634Z",
+  "lastUpdated": "2025-11-12T11:30:36.702Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1989,6 +1989,90 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:30:05.444Z",
       "approvedAt": "2025-11-12T11:30:19.634Z"
+    },
+    {
+      "id": "kezmarok-1762947036702-vtczrqsr0",
+      "citySlug": "kezmarok",
+      "taxiService": {
+        "name": "Express Taxi Kežmarok",
+        "phone": "+421910524555",
+        "website": "https://www.expresstaxi.sk",
+        "address": "Karola Kuzmányho 1, 060 01 Kežmarok, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:30:36.702Z"
+    },
+    {
+      "id": "kezmarok-1762947036702-uku2cujj7",
+      "citySlug": "kezmarok",
+      "taxiService": {
+        "name": "MM TAXI Kežmarok",
+        "phone": "+421944845707",
+        "website": "https://www.facebook.com",
+        "address": "Možiarska 3, 060 01 Kežmarok, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:30:36.702Z"
+    },
+    {
+      "id": "kezmarok-1762947036702-jtxsq6anf",
+      "citySlug": "kezmarok",
+      "taxiService": {
+        "name": "AB taxi Kežmarok",
+        "phone": "+421904206121",
+        "website": "https://www.facebook.com",
+        "address": "Starý trh 499/71, 060 01 Kežmarok, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:30:36.702Z"
+    },
+    {
+      "id": "kezmarok-1762947036702-ba1bpvnp5",
+      "citySlug": "kezmarok",
+      "taxiService": {
+        "name": "EuroTaxi Kežmarok",
+        "phone": "+421904931222",
+        "website": "https://www.facebook.com",
+        "address": "Lidl, Slavkovská 1, 060 01 Kežmarok, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:30:36.702Z"
+    },
+    {
+      "id": "kezmarok-1762947036702-zuuv3zkro",
+      "citySlug": "kezmarok",
+      "taxiService": {
+        "name": "City Taxi Kežmarok",
+        "phone": "+421911559222",
+        "website": "http://www.citytaxikk.sk",
+        "address": "Lanškrounská 15, 060 01 Kežmarok-Ľubica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:30:36.702Z"
+    },
+    {
+      "id": "kezmarok-1762947036702-odk0juhl3",
+      "citySlug": "kezmarok",
+      "taxiService": {
+        "name": "SilverTaxi",
+        "phone": "+421944482999",
+        "website": "https://www.facebook.com",
+        "address": "Michalská 691/21, 060 01 Kežmarok, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:30:36.702Z"
+    },
+    {
+      "id": "kezmarok-1762947036702-7axq7tzkf",
+      "citySlug": "kezmarok",
+      "taxiService": {
+        "name": "TRANSFERS s.r.o.",
+        "phone": "+421905650571",
+        "website": "http://transfers.sk",
+        "address": "Slavkovská 1897/32, 060 01 Kežmarok, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:30:36.702Z"
     }
   ]
 }
