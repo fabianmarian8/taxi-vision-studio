@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:24:03.518Z",
+  "lastUpdated": "2025-11-12T11:24:12.702Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1443,6 +1443,30 @@
       "status": "rejected",
       "timestamp": "2025-11-12T11:23:13.110Z",
       "rejectedAt": "2025-11-12T11:23:49.254Z"
+    },
+    {
+      "id": "gelnica-1762946652702-r781ekppg",
+      "citySlug": "gelnica",
+      "taxiService": {
+        "name": "GL TAXI",
+        "phone": "+421918307761",
+        "website": null,
+        "address": "Hlavná 118/29, 056 01 Gelnica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:24:12.702Z"
+    },
+    {
+      "id": "gelnica-1762946652702-nmjr9bbyd",
+      "citySlug": "gelnica",
+      "taxiService": {
+        "name": "GreentaxiGelnica",
+        "phone": "+421948180180",
+        "website": "http://www.greentaxigelnica.sk",
+        "address": "Slovenské Cechy 666/27, Slovenské Cechy - Turzov, 056 01 Gelnica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:24:12.702Z"
     }
   ]
 }
