@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:18:49.431Z",
+  "lastUpdated": "2025-11-12T11:18:52.571Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1154,8 +1154,9 @@
         "website": null,
         "address": "026 01 Dolný Kubín, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:18:11.798Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:18:11.798Z",
+      "approvedAt": "2025-11-12T11:18:52.571Z"
     },
     {
       "id": "dolny-kubin-1762946291798-t0keasnc1",
