@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:29:40.330Z",
+  "lastUpdated": "2025-11-12T11:29:50.521Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1934,8 +1934,9 @@
         "website": "https://www.facebook.com",
         "address": "8C, Ľ. Štúra 374, 019 01 Ilava, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:29:40.330Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:29:40.330Z",
+      "approvedAt": "2025-11-12T11:29:50.521Z"
     },
     {
       "id": "ilava-1762946980330-lphfprqoj",
@@ -1946,8 +1947,9 @@
         "website": "https://sluzby.sktaxi.sk",
         "address": "Ľ. Štúra 2000/79, 019 01 Ilava, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:29:40.330Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:29:40.330Z",
+      "approvedAt": "2025-11-12T11:29:50.521Z"
     },
     {
       "id": "ilava-1762946980330-3rcyhavxf",
@@ -1958,8 +1960,9 @@
         "website": "http://www.jtgroup.sk",
         "address": "Slovenského národného povstania, 019 01 Ilava, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:29:40.330Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:29:40.330Z",
+      "approvedAt": "2025-11-12T11:29:50.521Z"
     }
   ]
 }
