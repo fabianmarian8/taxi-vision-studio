@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:28:09.629Z",
+  "lastUpdated": "2025-11-12T11:28:35.739Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1846,8 +1846,9 @@
         "website": "http://www.taxi.jett.sk",
         "address": "Lackovce 33, 066 01 Lackovce, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "rejectedAt": "2025-11-12T11:28:35.739Z"
     },
     {
       "id": "humenne-1762946889629-x2bdj9jov",
