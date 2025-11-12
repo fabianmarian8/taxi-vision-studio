@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:06.455Z",
+  "lastUpdated": "2025-11-12T11:05:12.897Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -556,8 +556,9 @@
         "website": "https://taxi-bratislava-city.sk",
         "address": "Beniakova 3, 821 09 Bratislava-Karlova Ves, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:05:06.455Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:05:06.455Z",
+      "approvedAt": "2025-11-12T11:05:12.897Z"
     },
     {
       "id": "bratislava-1762945506455-y898wgspx",
