@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:24:49.463Z",
+  "lastUpdated": "2025-11-12T11:24:58.693Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1505,8 +1505,9 @@
         "website": "https://www.facebook.com",
         "address": "Jarmočná, 094 31 Hanušovce nad Topľou, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:24:49.463Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:24:49.463Z",
+      "approvedAt": "2025-11-12T11:24:58.693Z"
     },
     {
       "id": "hanusovce-nad-toplou-1762946689463-xes7wu3hs",
@@ -1517,8 +1518,9 @@
         "website": null,
         "address": "4, Kukorelliho 392, 094 31 Hanušovce nad Topľou, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:24:49.463Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:24:49.463Z",
+      "approvedAt": "2025-11-12T11:24:58.693Z"
     },
     {
       "id": "hanusovce-nad-toplou-1762946689463-4c8y2iamw",
@@ -1529,8 +1531,9 @@
         "website": "http://www.sadhe.sk",
         "address": "Jarmočná, 094 31 Hanušovce nad Topľou, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:24:49.463Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:24:49.463Z",
+      "approvedAt": "2025-11-12T11:24:58.693Z"
     }
   ]
 }
