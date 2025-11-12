@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:19:31.523Z",
+  "lastUpdated": "2025-11-12T11:19:35.704Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -678,6 +678,11 @@
           "name": "Taxi Omnia Dubnica nad Váhom",
           "phone": "+421911703888",
           "website": "https://omniataxi.sk"
+        },
+        {
+          "name": "RM TAXI Dubnica",
+          "phone": "+421949190158",
+          "website": "https://www.facebook.com"
         }
       ],
       "latitude": 48.9603,
