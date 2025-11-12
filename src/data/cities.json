@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:13:52.306Z",
+  "lastUpdated": "2025-11-12T11:13:58.280Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -476,6 +476,11 @@
           "name": "PROFI TAXI ČADCA",
           "phone": "+421910100440",
           "website": "http://www.profitaxicadca.sk"
+        },
+        {
+          "name": "DALLAS TAXI CADCA",
+          "phone": "+421950634424",
+          "website": "https://www.dallas-evl.sk"
         }
       ],
       "latitude": 49.435,
