@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:19:41.774Z",
+  "lastUpdated": "2025-11-12T11:19:45.227Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -688,6 +688,11 @@
           "name": "CITY TAXI",
           "phone": "+421948482727",
           "website": "https://www.facebook.com"
+        },
+        {
+          "name": "TAXI GO LETISKOVÉ TRANSFERY",
+          "phone": "+421948875999",
+          "website": "https://www.taxigo.sk"
         }
       ],
       "latitude": 48.9603,
