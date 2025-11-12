@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:17:46.373Z",
+  "lastUpdated": "2025-11-12T11:18:19.323Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -595,7 +595,13 @@
         "objednať taxi dolný kubín",
         "taxi orava"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Drink Taxi",
+          "phone": "+421905618000",
+          "website": "http://www.autopozicovnaorava.sk"
+        }
+      ],
       "latitude": 49.21,
       "longitude": 19.3
     },
