@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:18:23.235Z",
+  "lastUpdated": "2025-11-12T11:18:30.176Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -604,6 +604,11 @@
         {
           "name": "Fan-TAXI Dolný Kubín",
           "phone": "+421904231231",
+          "website": null
+        },
+        {
+          "name": "LS TAXI Dolný Kubín",
+          "phone": "+421902885555",
           "website": null
         }
       ],
