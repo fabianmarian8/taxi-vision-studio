@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:27:46.051Z",
+  "lastUpdated": "2025-11-12T11:27:57.946Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1700,8 +1700,9 @@
         "website": "https://www.facebook.com",
         "address": "Lúčky 1, 908 51 Holíč, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:27:46.051Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:27:46.051Z",
+      "approvedAt": "2025-11-12T11:27:57.946Z"
     },
     {
       "id": "holic-1762946866051-sacijygcj",
@@ -1712,8 +1713,9 @@
         "website": "https://zoznamtaxi.sktaxi.sk",
         "address": "Sasinkova 22, 908 51 Holíč, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:27:46.051Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:27:46.051Z",
+      "approvedAt": "2025-11-12T11:27:57.946Z"
     }
   ]
 }
