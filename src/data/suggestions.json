@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:09:38.697Z",
+  "lastUpdated": "2025-11-12T11:10:49.858Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -829,8 +829,9 @@
         "website": "http://www.zataxi.sk",
         "address": "Veľké Rovné 486, 013 62 Veľké Rovné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:09:33.820Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T11:09:33.820Z",
+      "rejectedAt": "2025-11-12T11:10:49.858Z"
     },
     {
       "id": "bytca-1762945773820-fkp33x4rg",
