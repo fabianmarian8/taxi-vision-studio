@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:59:23.932Z",
+  "lastUpdated": "2025-11-12T10:59:29.310Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -123,6 +123,11 @@
         {
           "name": "LOŽEK PETER TAXI BANSKÁ ŠTIAVNICA",
           "phone": "+421917984430",
+          "website": null
+        },
+        {
+          "name": "BeriTaxi",
+          "phone": "+421902345673",
           "website": null
         }
       ],
