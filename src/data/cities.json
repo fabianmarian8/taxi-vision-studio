@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:50:49.788Z",
+  "lastUpdated": "2025-11-12T10:50:57.257Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -70,6 +70,11 @@
         {
           "name": "VIP Taxi s.r.o.",
           "phone": "+421908989000",
+          "website": null
+        },
+        {
+          "name": "Fun Taxi",
+          "phone": "+4214816777",
           "website": null
         }
       ],
