@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:44:25.831Z",
+  "lastUpdated": "2025-11-12T10:45:45.071Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -41,6 +41,11 @@
           "name": "ONE TAXI | Banská Bystrica",
           "phone": "+421905442544",
           "website": "http://www.onetaxi.sk"
+        },
+        {
+          "name": "HALÓ Taxi BB s.r.o.",
+          "phone": "+421949453535",
+          "website": "http://www.halotaxibb.sk"
         }
       ],
       "latitude": 48.7361,
