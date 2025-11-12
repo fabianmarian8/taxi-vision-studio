@@ -1,4 +1,185 @@
 {
-  "lastUpdated": "2025-11-11T00:00:00.000Z",
-  "suggestions": []
+  "lastUpdated": "2025-11-12T10:42:44.310Z",
+  "suggestions": [
+    {
+      "id": "banska-bystrica-1762944164310-ccys8m13x",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "ONE TAXI | Banská Bystrica",
+        "phone": "+421905442544",
+        "website": "http://www.onetaxi.sk",
+        "address": "Dolná - Hušták 184/51 97404, 974 01 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-bdjel5hui",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "TAXI Banská Bystrica - inTAXI - taxiK sro - NONSTOP",
+        "phone": "+421948887988",
+        "website": "https://intaxi.sk",
+        "address": "29. augusta 37, 974 01 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-u7zyx8k7m",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "inTAXI Banská Bystrica",
+        "phone": "+421940777757",
+        "website": "http://www.intaxi.sk",
+        "address": "Kláry Jarunkovej 2, 974 01 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-m0icnkk4q",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "HALÓ Taxi BB s.r.o.",
+        "phone": "+421949453535",
+        "website": "http://www.halotaxibb.sk",
+        "address": "Cesta k Smrečine, 974 01 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-mm7k4xu5z",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "ECO Hybrid TAXI Banská Bystrica",
+        "phone": "+421909110110",
+        "website": "http://www.ecohybridtaxi.sk",
+        "address": "Alexandra Matušku 1, 974 01 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-7f72z4lyo",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "VIP Taxi s.r.o.",
+        "phone": "+421908989000",
+        "website": null,
+        "address": "2, Dolná Strieborná 368, 974 01 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-h9ebau3cq",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "EXPRES TAXI s.r.o.",
+        "phone": "+421902410041",
+        "website": "http://www.taxibb.sk",
+        "address": "16, Horná 69, 974 01 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-dcrdcqolm",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "Fun Taxi",
+        "phone": "+4214816777",
+        "website": null,
+        "address": "Jána Cikkera 5, 974 01 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-wxmhf7f2d",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "HALÓ BB s.r.o.",
+        "phone": "+421911453535",
+        "website": null,
+        "address": "Kyjevské námestie, 974 04 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-04qr2nro4",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "EKO TAXI - Banská Bystrica",
+        "phone": "+421949002000",
+        "website": "http://www.ekotaxi.sk",
+        "address": "Zvolenská cesta 1769/14, 974 05 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-mdac7bbxj",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "Synby Taxi - Július Páločný",
+        "phone": "+42148/4141111",
+        "website": null,
+        "address": "974 01 Banská Bystrica-Nádražie Čsad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-r1ahyntna",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "IMPULZ TAXI - Richard Hudák",
+        "phone": "+421911656545",
+        "website": null,
+        "address": "Slnečná 3801/7, 974 04 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-x6n76q525",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "Expres Taxi - Ivan Valuška",
+        "phone": "+421903718211",
+        "website": "http://www.taxibb.sk",
+        "address": "Tatranská 6399/90, 974 11 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-moa4w1mjt",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "Vaše taxi",
+        "phone": "+421940656545",
+        "website": null,
+        "address": "Mládežnícka 3427/15, 974 04 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    },
+    {
+      "id": "banska-bystrica-1762944164311-ov8z7g1aj",
+      "citySlug": "banska-bystrica",
+      "taxiService": {
+        "name": "3 Taxi B. Bystrica",
+        "phone": "+421903654303",
+        "website": "https://www.3taxi.sk",
+        "address": "Bernolákova 6032/11, 974 05 Banská Bystrica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T10:42:44.310Z"
+    }
+  ]
 }
