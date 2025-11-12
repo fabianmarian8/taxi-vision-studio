@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:21.148Z",
+  "lastUpdated": "2025-11-12T11:05:23.672Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -595,8 +595,9 @@
         "website": "http://www.taxi-bratislava.eu",
         "address": "Cintorínska 6, 811 08 Bratislava, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:05:06.455Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:05:06.455Z",
+      "approvedAt": "2025-11-12T11:05:23.672Z"
     },
     {
       "id": "bratislava-1762945506455-srswl6v0u",
