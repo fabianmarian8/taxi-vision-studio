@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T20:11:15.208Z",
+  "lastUpdated": "2025-11-12T20:11:46.353Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1448,6 +1448,36 @@
           "phone": "+421940640640",
           "website": "http://elittaxi.sk",
           "address": "101, Ľ. Kossutha 1270, 077 01 Kráľovský Chlmec, Slovensko"
+        },
+        {
+          "name": "Elitt Taxi",
+          "phone": "+421940640640",
+          "website": "http://elittaxi.sk",
+          "address": "101, Ľ. Kossutha 1270, 077 01 Kráľovský Chlmec, Slovensko"
+        },
+        {
+          "name": "Szabi Taxi - Taxislužba",
+          "phone": "+421919066191",
+          "website": "https://sites.google.com",
+          "address": "M. Helmecziho 19, 077 01 Kráľovský Chlmec, Slovensko"
+        },
+        {
+          "name": "Transem spol. s r.o.",
+          "phone": "+421901911937",
+          "website": "http://transem.sk",
+          "address": "Pri štadióne 535/75, 077 01 Kráľovský Chlmec, Slovensko"
+        },
+        {
+          "name": "BT-Taxi",
+          "phone": "+421947100777",
+          "website": null,
+          "address": "Kostolný rad 318/15, 077 01 Kráľovský Chlmec, Slovensko"
+        },
+        {
+          "name": "Tony taxi",
+          "phone": "+421910746104",
+          "website": null,
+          "address": "Pribenícka, 077 01 Kráľovský Chlmec, Slovensko"
         }
       ],
       "latitude": 48.4083,
