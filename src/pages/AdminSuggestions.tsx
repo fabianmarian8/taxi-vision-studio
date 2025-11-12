@@ -13,6 +13,7 @@ interface TaxiServiceSuggestion {
   phone?: string;
   address?: string;
   createdAt?: string;
+  status?: string;
 }
 
 export default function AdminSuggestions() {
@@ -65,6 +66,7 @@ export default function AdminSuggestions() {
       fromNested(raw, ['gbp', 'address']), fromNested(raw, ['place', 'vicinity']), fromNested(raw, ['place', 'formatted_address'])
     ) || undefined;
     const createdAt = take(raw?.createdAt, raw?.created_at, raw?.timestamp, fromNested(raw, ['gbp', 'createdAt'])) || undefined;
+    const status = take(raw?.status) || 'pending';
 
     if (!id || !citySlug) return null;
 
@@ -82,7 +84,7 @@ export default function AdminSuggestions() {
       if (!finalName) finalName = '—';
     }
 
-    return { id, citySlug, name: finalName, website, phone, address, createdAt };
+    return { id, citySlug, name: finalName, website, phone, address, createdAt, status };
   };
 
   const loadSuggestions = async () => {
@@ -94,7 +96,9 @@ export default function AdminSuggestions() {
       const data = await response.json();
       const items = Array.isArray(data?.suggestions) ? data.suggestions : Array.isArray(data) ? data : [];
       const normalized = items.map(normalize).filter((x): x is TaxiServiceSuggestion => Boolean(x));
-      setSuggestions(normalized);
+      // Filter only pending suggestions
+      const pending = normalized.filter(s => s.status === 'pending');
+      setSuggestions(pending);
     } catch {
       toast({ title: 'Chyba', description: 'Nepodarilo sa načítať návrhy', variant: 'destructive' });
       setSuggestions([]);
@@ -128,7 +132,7 @@ export default function AdminSuggestions() {
     const items = grouped[citySlug] || [];
     const suggestionIds = items.map(s => s.id).join(',');
     const payload = encodeURIComponent(JSON.stringify(items.map(({ name, website, phone }) => ({ name, website, phone }))));
-    navigate(`/admin/city/${citySlug}?suggestions=${payload}&suggestionIds=${suggestionIds}`);
+    navigate(`/admin/edit/${citySlug}?suggestions=${payload}&suggestionIds=${suggestionIds}`);
   };
 
   if (isLoading) {
@@ -172,7 +176,7 @@ export default function AdminSuggestions() {
                     </div>
                     <div className="flex gap-2">
                       <Button variant="outline" size="icon" onClick={() => approveCity(s.citySlug)} title="Schváliť a upraviť"><Check className="w-4 h-4" /></Button>
-                      <Button variant="outline" size="icon" onClick={() => navigate('/admin/city/' + s.citySlug)} title="Upraviť mesto"><Edit2 className="w-4 h-4" /></Button>
+                      <Button variant="outline" size="icon" onClick={() => navigate('/admin/edit/' + s.citySlug)} title="Upraviť mesto"><Edit2 className="w-4 h-4" /></Button>
                       <Button variant="destructive" size="icon" onClick={() => handleReject(s.id)} title="Zamietnuť"><X className="w-4 h-4" /></Button>
                     </div>
                   </div>
