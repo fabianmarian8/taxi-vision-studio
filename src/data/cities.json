@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:00.180Z",
+  "lastUpdated": "2025-11-12T11:06:02.986Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -334,6 +334,11 @@
           "name": "Lacné taxi Bratislava 02/16400",
           "phone": "+421216400",
           "website": "http://www.lacne-taxi-bratislava.sk"
+        },
+        {
+          "name": "Taxi Bratislava Schwechat",
+          "phone": "+421944457600",
+          "website": "https://www.taxi-bratislava-schwechat.sk"
         }
       ],
       "latitude": 48.1486,
