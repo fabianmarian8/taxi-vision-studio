@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:13:52.845Z",
+  "lastUpdated": "2025-11-12T11:13:58.694Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -881,8 +881,9 @@
         "website": "https://www.dallas-evl.sk",
         "address": "Palárikova 1806/42, 022 01 Čadca, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:13:44.059Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:13:44.059Z",
+      "approvedAt": "2025-11-12T11:13:58.694Z"
     },
     {
       "id": "cadca-1762946024059-wyu8v5exj",
