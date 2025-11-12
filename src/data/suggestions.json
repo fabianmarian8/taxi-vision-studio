@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:10:49.858Z",
+  "lastUpdated": "2025-11-12T11:10:53.208Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -842,8 +842,9 @@
         "website": null,
         "address": "014 01 Bytča, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:09:33.820Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:09:33.820Z",
+      "approvedAt": "2025-11-12T11:10:53.208Z"
     }
   ]
 }
