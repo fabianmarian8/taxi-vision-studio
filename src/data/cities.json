@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T20:11:46.353Z",
+  "lastUpdated": "2025-11-12T20:12:23.016Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1608,7 +1608,32 @@
         "objednať taxi levoča",
         "taxi levoča unesco"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Ender taxi Levoča",
+          "phone": "+421944609409",
+          "website": "https://taxi-levoca.sk",
+          "address": "Námestie Majstra Pavla, 054 01 Levoča, Slovensko"
+        },
+        {
+          "name": "TaxiEuropa.sk preprava osôb AT,DE,CH",
+          "phone": "+421907817824",
+          "website": "https://www.taxieuropa.sk",
+          "address": "Dlhá 246/21, 054 01 Levoča, Slovensko"
+        },
+        {
+          "name": "METRO Taxi Levoča",
+          "phone": "+421911430432",
+          "website": null,
+          "address": "Námestie Majstra Pavla, 054 01 Levoča, Slovensko"
+        },
+        {
+          "name": "Tara-Trans-Taxi - Radoslav Tarbaj",
+          "phone": "+421910650605",
+          "website": "http://www.tara-trans-taxi.sk",
+          "address": "Jána Francisciho 1677/15, 054 01 Levoča, Slovensko"
+        }
+      ],
       "latitude": 49.02,
       "longitude": 20.5867
     },
