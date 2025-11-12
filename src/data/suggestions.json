@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:52:45.752Z",
+  "lastUpdated": "2025-11-12T10:52:57.986Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -140,8 +140,9 @@
         "website": null,
         "address": "974 01 Banská Bystrica-Nádražie Čsad, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "rejectedAt": "2025-11-12T10:52:57.986Z"
     },
     {
       "id": "banska-bystrica-1762944164311-r1ahyntna",
