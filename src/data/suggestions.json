@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:01:14.144Z",
+  "lastUpdated": "2025-11-12T11:01:23.643Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -364,6 +364,150 @@
       "status": "rejected",
       "timestamp": "2025-11-12T11:00:03.895Z",
       "rejectedAt": "2025-11-12T11:01:14.144Z"
+    },
+    {
+      "id": "bardejov-1762945283643-mi0lo3ik6",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "Taxi Roman - NON-STOP taxislužba v Bardejove a preprava osôb na letiská, viac miestna doprava.",
+        "phone": "+421850221221",
+        "website": "https://taxiroman.sk",
+        "address": "Jána Švermu 8, 085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
+    },
+    {
+      "id": "bardejov-1762945283643-k6rw5a20x",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "PEPIS TAXI Bardejov- odvoz v meste Bardejov, širokom okolí a letiskový transfer. Možnosť platby kartou bezkontaktne 🙂",
+        "phone": "+421944450777",
+        "website": null,
+        "address": "Tačevská, 085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
+    },
+    {
+      "id": "bardejov-1762945283643-dq8swueh5",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "BOGY TAXI BARDEJOV - Spoľahlivo v Bardejove a okolí. Aj na letiská. Platba kartou možná.💳",
+        "phone": "+421940004002",
+        "website": null,
+        "address": "Andreja Svianteka 8, 085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
+    },
+    {
+      "id": "bardejov-1762945283643-ejycdvw3i",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "Taxi Andrea Bardejov",
+        "phone": "+421917333550",
+        "website": null,
+        "address": "085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
+    },
+    {
+      "id": "bardejov-1762945283643-ormso2hb5",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "MM taxi - VIPKA",
+        "phone": "+421949246565",
+        "website": "https://www.mmtaxidrink.eu",
+        "address": "Slovenská 1538/10, 085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
+    },
+    {
+      "id": "bardejov-1762945283643-ko20gmu9m",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "TAXI PIRÁTI",
+        "phone": "+4215416666",
+        "website": "https://www.facebook.com",
+        "address": "Kacvinského 2849, 085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
+    },
+    {
+      "id": "bardejov-1762945283643-ciu3hvk0m",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "GoldenTAXI",
+        "phone": "+421948948888",
+        "website": null,
+        "address": "Tačevská, 085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
+    },
+    {
+      "id": "bardejov-1762945283643-r9qv1y6vt",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "TAXI PETER BARDEJOV - BARDEJOVSKÉ KÚPELE",
+        "phone": "+421949570576",
+        "website": null,
+        "address": "Námestie armádneho generála Ludvíka Svobodu, 085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
+    },
+    {
+      "id": "bardejov-1762945283643-t2gsbera5",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "Taxi Stenďo PJ Bard, s.r.o.",
+        "phone": "+421908501101",
+        "website": null,
+        "address": "Slovenská, 085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
+    },
+    {
+      "id": "bardejov-1762945283643-05jkiin2r",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "Taxi Svam",
+        "phone": "+421949377399",
+        "website": null,
+        "address": "Komenského 25, 085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
+    },
+    {
+      "id": "bardejov-1762945283643-fsx0jvjfv",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "VIP TRANSFERY BARDEJOV, Preprava osôb a taxi na letiská: Košice, Kraków, Rzeszów, Budapešť, Viedeň a iné…",
+        "phone": "+421948787807",
+        "website": null,
+        "address": "Slovenská 3009/19, 085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
+    },
+    {
+      "id": "bardejov-1762945283643-hzrm9raa1",
+      "citySlug": "bardejov",
+      "taxiService": {
+        "name": "Fiat Taxi",
+        "phone": "+42154/4727272",
+        "website": null,
+        "address": "Partizánska 1255/11, 085 01 Bardejov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:01:23.643Z"
     }
   ]
 }
