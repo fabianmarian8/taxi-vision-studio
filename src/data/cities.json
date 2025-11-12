@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:16:33.368Z",
+  "lastUpdated": "2025-11-12T11:16:41.263Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -544,6 +544,11 @@
           "name": "RK TAXI – DETVA",
           "phone": "+421944384666",
           "website": "http://www.rktaxi.sk"
+        },
+        {
+          "name": "Taxi-Ali Detva",
+          "phone": "+421910364714",
+          "website": "https://taxi-ali9.webnode.sk"
         }
       ],
       "latitude": 48.5583,
