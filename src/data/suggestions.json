@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:25:09.596Z",
+  "lastUpdated": "2025-11-12T11:25:17.945Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1652,8 +1652,9 @@
         "website": null,
         "address": "Stanica, 920 41 Leopoldov, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:09.596Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T11:25:09.596Z",
+      "rejectedAt": "2025-11-12T11:25:17.945Z"
     },
     {
       "id": "hlohovec-1762946709597-c74wnptip",
