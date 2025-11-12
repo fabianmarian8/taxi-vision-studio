@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { ArrowLeft, Plus, Trash2, Search, Upload } from 'lucide-react';
+import { ArrowLeft, Plus, Trash2, Search } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
 interface TaxiService {
@@ -46,30 +46,30 @@ export default function AdminEditCity() {
   // Nový useEffect pre prijímanie suggestions z URL parametrov
   useEffect(() => {
     if (!city || taxiServices.length === 0) return;
-    
+
     const params = new URLSearchParams(window.location.search);
     const suggestionsParam = params.get('suggestions');
     const suggestionIdsParam = params.get('suggestionIds');
-    
+
     if (suggestionsParam) {
       try {
         const newServices: TaxiService[] = JSON.parse(decodeURIComponent(suggestionsParam));
-        
+
         // Pridaj nové služby k existujúcim
         const updated = [...taxiServices, ...newServices];
         setTaxiServices(updated);
         checkForChanges(updated);
-        
+
         // Ulož IDs pre neskoršie označenie ako approved
         if (suggestionIdsParam) {
           sessionStorage.setItem('pendingSuggestionIds', suggestionIdsParam);
         }
-        
+
         toast({
           title: '✅ Návrhy pridané lokálne',
           description: `Pridaných ${newServices.length} návrhov. Skontrolujte ich a kliknite na \"Uložiť zmeny\".`,
         });
-        
+
         // Odstráň parametre z URL aby sa nepridali znova pri refresh
         window.history.replaceState({}, '', window.location.pathname);
       } catch (error) {
@@ -105,10 +105,10 @@ export default function AdminEditCity() {
         },
       });
 
-      if (response.ok) {
+      if (response.status >= 200 && response.status < 300) {
         const data = await response.json();
         const foundCity = data.cities.find((c: CityData) => c.slug === citySlug);
-        
+
         if (foundCity) {
           setCity(foundCity);
           const services = foundCity.taxiServices || [];
@@ -158,7 +158,6 @@ export default function AdminEditCity() {
     checkForChanges(updated);
   };
 
-  // NOVÁ FUNKCIA: Uloží zmeny do staged-changes.json
   const handleSaveChanges = async () => {
     if (!hasUnsavedChanges) {
       toast({
@@ -167,118 +166,41 @@ export default function AdminEditCity() {
       });
       return;
     }
-
     setIsSaving(true);
-
-    try {
-      const token = localStorage.getItem('adminToken');
-      
-      // Ulož zmeny do staged-changes.json
-      const response = await fetch('/api/admin-data', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          citySlug,
-          taxiServices: taxiServices.filter(s => s.name.trim() !== ''),
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to save staged changes');
-      }
-
-      toast({
-        title: '💾 Zmeny uložené',
-        description: 'Zmeny boli stage-ované. Kliknite na "Publikovať zmeny" pre commit do GitHubu.',
-      });
-
-    } catch (error) {
-      toast({
-        title: 'Chyba',
-        description: 'Nepodarilo sa uložiť zmeny',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsSaving(false);
-    }
-  };
-
-  // OPRAVENÁ FUNKCIA: Publikuje stage-ované zmeny do GitHubu
-  const handlePublishChanges = async () => {
-    setIsSaving(true);
-
     try {
       const token = localStorage.getItem('adminToken');
 
-      // Najprv ulož aktuálne zmeny do staged-changes
-      const stageResponse = await fetch('/api/admin-data', {
+      const saveRes = await fetch('/api/admin-data', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          citySlug,
-          taxiServices: taxiServices.filter(s => s.name.trim() !== ''),
-        }),
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        body: JSON.stringify({ citySlug, taxiServices: taxiServices.filter(s => s.name.trim() !== '') }),
       });
+      if (!(saveRes.status >= 200 && saveRes.status < 300)) throw new Error('Nepodarilo sa uložiť zmeny');
 
-      if (!stageResponse.ok) {
-        throw new Error('Failed to stage changes');
+      const publishRes = await fetch('/api/publish', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+      });
+      if (!(publishRes.status >= 200 && publishRes.status < 300)) {
+        const errData = await publishRes.json().catch(() => ({}));
+        throw new Error(errData.message || 'Nepodarilo sa publikovať zmeny');
       }
 
-      // Teraz zavolaj /api/publish ktorý commitne staged changes
-      const publishResponse = await fetch('/api/publish', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-      });
-
-      if (!publishResponse.ok) {
-        const errorData = await publishResponse.json();
-        throw new Error(errorData.message || 'Failed to publish');
-      }
-
-      // Označ suggestions ako approved ak existujú
       const pendingIds = sessionStorage.getItem('pendingSuggestionIds');
       if (pendingIds) {
-        try {
-          await fetch('/api/suggestions', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token}`,
-            },
-            body: JSON.stringify({
-              action: 'mark-approved',
-              suggestionIds: pendingIds.split(','),
-            }),
-          });
-          sessionStorage.removeItem('pendingSuggestionIds');
-        } catch (err) {
-          console.error('Error marking suggestions as approved:', err);
-        }
+        await fetch('/api/suggestions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          body: JSON.stringify({ action: 'mark-approved', suggestionIds: pendingIds.split(',') }),
+        }).catch(() => {});
+        sessionStorage.removeItem('pendingSuggestionIds');
       }
 
       setOriginalServices(JSON.parse(JSON.stringify(taxiServices)));
       setHasUnsavedChanges(false);
-      
-      toast({
-        title: '✅ Publikované!',
-        description: 'Zmeny boli úspešne publikované na GitHub. Vercel deployment sa spustil.',
-      });
-
-    } catch (error) {
-      toast({
-        title: 'Chyba',
-        description: error instanceof Error ? error.message : 'Nepodarilo sa publikovať zmeny',
-        variant: 'destructive',
-      });
+      toast({ title: '✅ Uložené a publikované', description: 'Deployment prebehne automaticky.' });
+    } catch (e) {
+      toast({ title: 'Chyba', description: e instanceof Error ? e.message : 'Nepodarilo sa uložiť a publikovať', variant: 'destructive' });
     } finally {
       setIsSaving(false);
     }
@@ -290,10 +212,10 @@ export default function AdminEditCity() {
     if (confirm('Naozaj chcete zahodiť všetky neuložené zmeny?')) {
       setTaxiServices(JSON.parse(JSON.stringify(originalServices)));
       setHasUnsavedChanges(false);
-      
+
       // Vyčisti pending suggestions
       sessionStorage.removeItem('pendingSuggestionIds');
-      
+
       toast({
         title: 'Zmeny zahodené',
         description: 'Všetky neuložené zmeny boli zahodené',
@@ -322,7 +244,7 @@ export default function AdminEditCity() {
       const scraperData = await scraperResponse.json();
 
       // Kontrola API chyby s konkrétnou správou
-      if (!scraperResponse.ok) {
+      if (!(scraperResponse.status >= 200 && scraperResponse.status < 300)) {
         const errorMessage = scraperData.message || scraperData.error || 'Neznáma chyba API';
         toast({
           title: 'Chyba API',
@@ -357,7 +279,7 @@ export default function AdminEditCity() {
         }),
       });
 
-      if (!suggestionsResponse.ok) {
+      if (!(suggestionsResponse.status >= 200 && suggestionsResponse.status < 300)) {
         const suggestionsData = await suggestionsResponse.json();
         const errorMessage = suggestionsData.message || suggestionsData.error || 'Nepodarilo sa uložiť návrhy';
         toast({
@@ -434,24 +356,13 @@ export default function AdminEditCity() {
               </div>
             </div>
 
-            {/* Publikovanie zmien - vpravo v headeri */}
             {hasUnsavedChanges && (
               <div className="flex gap-2">
-                <Button
-                  onClick={handleDiscardChanges}
-                  variant="outline"
-                  size="sm"
-                >
+                <Button onClick={handleDiscardChanges} variant="outline" size="sm">
                   Zahodiť zmeny
                 </Button>
-                <Button
-                  onClick={handlePublishChanges}
-                  disabled={isSaving}
-                  className="bg-green-600 hover:bg-green-700"
-                  size="sm"
-                >
-                  <Upload className="w-4 h-4 mr-2" />
-                  {isSaving ? 'Publikujem...' : 'Publikovať zmeny'}
+                <Button onClick={handleSaveChanges} disabled={isSaving} className="bg-green-600 hover:bg-green-700" size="sm">
+                  {isSaving ? 'Ukladám...' : 'Uložiť zmeny'}
                 </Button>
               </div>
             )}
@@ -467,11 +378,7 @@ export default function AdminEditCity() {
               <div>
                 <strong>⚠️ Máte neuložené zmeny</strong>
                 <p className="text-sm text-gray-600 mt-1">
-                  Zmeny sú uložené len lokálne. Kliknite na \"Publikovať zmeny\" pre commit do GitHubu.
-                  <br />
-                  <span className="text-xs">
-                    💡 Môžete upraviť viacero taxislužieb naraz a publikovať všetko jedným commitom!
-                  </span>
+                  Kliknite na \"Uložiť zmeny\" pre uloženie a publikovanie do GitHubu.
                 </p>
               </div>
             </AlertDescription>
@@ -563,9 +470,8 @@ export default function AdminEditCity() {
               <ul className="text-sm text-blue-800 space-y-1">
                 <li>• Upravujte taxislužby lokálne vo vašom prehliadači</li>
                 <li>• Môžete upraviť viacero taxislužieb naraz</li>
-                <li>• Keď ste hotový, kliknite na \"Publikovať zmeny\"</li>
-                <li>• Všetky zmeny sa commitnú naraz jedným deploymentom</li>
-                <li>• Šetrí Vercel deployment limity! 🎉</li>
+                <li>• Keď ste hotový, kliknite na \"Uložiť zmeny\"</li>
+                <li>• Všetko sa uloží a publikuje jedným kliknutím</li>
               </ul>
             </div>
           </CardContent>
