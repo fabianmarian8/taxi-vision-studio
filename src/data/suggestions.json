@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:58:20.914Z",
+  "lastUpdated": "2025-11-12T10:58:26.297Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -244,8 +244,9 @@
         "website": null,
         "address": "Belianska 1453/2, 969 01 Banská Štiavnica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:57:46.707Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:57:46.707Z",
+      "approvedAt": "2025-11-12T10:58:26.297Z"
     },
     {
       "id": "banska-stiavnica-1762945066707-v9960op1v",
