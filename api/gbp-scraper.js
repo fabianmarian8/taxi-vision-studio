@@ -44,21 +44,35 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  // === KRITICKÁ VALIDÁCIA ENVIRONMENT VARIABLES ===
+  const GOOGLE_API_KEY = process.env.GOOGLE_PLACES_API_KEY;
+  
+  if (!GOOGLE_API_KEY) {
+    console.error('❌ KRITICKÁ CHYBA: GOOGLE_PLACES_API_KEY nie je nastavený!');
+    console.error('📋 Dostupné env variables:', Object.keys(process.env).filter(k => k.includes('GOOGLE')).join(', ') || 'žiadne');
+    
+    return res.status(500).json({
+      error: 'Missing GOOGLE_PLACES_API_KEY',
+      message: 'Google Places API kľúč nie je nakonfigurovaný.',
+      instructions: [
+        '1. Prejdite na Vercel Project Settings',
+        '2. Sekcia Environment Variables',
+        '3. Pridajte premennú: GOOGLE_PLACES_API_KEY',
+        '4. Hodnota: váš Google Places API kľúč',
+        '5. Environment: Production, Preview, Development (všetky tri!)',
+        '6. Kliknite Save a Re-deploy'
+      ],
+      availableEnvVars: Object.keys(process.env).filter(k => k.includes('GOOGLE'))
+    });
+  }
+
+  console.log('✅ GOOGLE_PLACES_API_KEY je nastavený');
+
   const { city, limit = 10 } = req.body;
 
   // Validácia
   if (!city || typeof city !== 'string') {
     return res.status(400).json({ error: 'City parameter is required' });
-  }
-
-  // Kontrola API key
-  const GOOGLE_API_KEY = process.env.GOOGLE_PLACES_API_KEY;
-  if (!GOOGLE_API_KEY) {
-    console.error('GOOGLE_PLACES_API_KEY is not set in environment variables');
-    return res.status(500).json({
-      error: 'API key not configured',
-      message: 'Google Places API kľúč nie je nakonfigurovaný. Prosím, skontrolujte nastavenia prostredia vo Vercel (GOOGLE_PLACES_API_KEY).'
-    });
   }
 
   const searchLimit = Math.min(Math.max(parseInt(limit) || 10, 1), 20);
@@ -80,12 +94,31 @@ export default async function handler(req, res) {
       console.error('Places API error:', searchResponse.data.status, searchResponse.data.error_message);
 
       let errorMessage = 'Chyba Google Places API';
+      let detailedInstructions = [];
+      
       if (searchResponse.data.status === 'REQUEST_DENIED') {
-        errorMessage = 'API kľúč je neplatný alebo nemá povolené používať Places API. Skontrolujte nastavenia API kľúča v Google Cloud Console.';
+        errorMessage = 'API kľúč je neplatný alebo nemá povolené používať Places API';
+        detailedInstructions = [
+          '1. Prejdite do Google Cloud Console: https://console.cloud.google.com',
+          '2. Vyberte svoj projekt',
+          '3. APIs & Services → Library',
+          '4. Vyhľadajte "Places API" a "Places API (New)"',
+          '5. Kliknite na obe a povoľte ich (Enable)',
+          '6. APIs & Services → Credentials',
+          '7. Vytvorte alebo upravte API kľúč',
+          '8. Application restrictions: None (alebo HTTP referrers s *.vercel.app)',
+          '9. API restrictions: Povoľte Places API a Places API (New)',
+          '10. Skopírujte API kľúč do Vercel Environment Variables'
+        ];
       } else if (searchResponse.data.status === 'OVER_QUERY_LIMIT') {
-        errorMessage = 'Prekročený limit požiadaviek na Google Places API. Skúste to neskôr.';
+        errorMessage = 'Prekročený limit požiadaviek na Google Places API';
+        detailedInstructions = [
+          '1. Skontrolujte kvótu: https://console.cloud.google.com/apis/api/places-backend.googleapis.com/quotas',
+          '2. Skontrolujte billing: https://console.cloud.google.com/billing',
+          '3. Zvážte zvýšenie limitu alebo počkajte do ďalšieho dňa'
+        ];
       } else if (searchResponse.data.status === 'INVALID_REQUEST') {
-        errorMessage = 'Neplatná požiadavka na Google Places API. Skontrolujte parametre vyhľadávania.';
+        errorMessage = 'Neplatná požiadavka na Google Places API';
       } else if (searchResponse.data.error_message) {
         errorMessage = `Google Places API: ${searchResponse.data.error_message}`;
       } else {
@@ -94,7 +127,9 @@ export default async function handler(req, res) {
 
       return res.status(500).json({
         error: 'Places API error',
-        message: errorMessage
+        message: errorMessage,
+        status: searchResponse.data.status,
+        instructions: detailedInstructions.length > 0 ? detailedInstructions : undefined
       });
     }
 
