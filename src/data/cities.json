@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:01:49.413Z",
+  "lastUpdated": "2025-11-12T11:01:55.458Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -182,6 +182,11 @@
         {
           "name": "BOGY TAXI BARDEJOV - Spoľahlivo v Bardejove a okolí. Aj na letiská. Platba kartou možná.💳",
           "phone": "+421940004002",
+          "website": null
+        },
+        {
+          "name": "Taxi Andrea Bardejov",
+          "phone": "+421917333550",
           "website": null
         }
       ],
