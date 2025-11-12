@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:08:44.263Z",
+  "lastUpdated": "2025-11-12T11:09:33.820Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -806,6 +806,42 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:06:39.595Z",
       "approvedAt": "2025-11-12T11:08:44.263Z"
+    },
+    {
+      "id": "bytca-1762945773820-1t3s8zzle",
+      "citySlug": "bytca",
+      "taxiService": {
+        "name": "Daniel Adamov - Dami",
+        "phone": "+421904860846",
+        "website": null,
+        "address": "Bottova 1149/18, 014 01 Bytča, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:09:33.820Z"
+    },
+    {
+      "id": "bytca-1762945773820-ztdvyglyj",
+      "citySlug": "bytca",
+      "taxiService": {
+        "name": "JP Taxi",
+        "phone": "+421901711831",
+        "website": "http://www.zataxi.sk",
+        "address": "Veľké Rovné 486, 013 62 Veľké Rovné, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:09:33.820Z"
+    },
+    {
+      "id": "bytca-1762945773820-fkp33x4rg",
+      "citySlug": "bytca",
+      "taxiService": {
+        "name": "Ndg S.r.o.",
+        "phone": "+42141/5522094",
+        "website": null,
+        "address": "014 01 Bytča, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:09:33.820Z"
     }
   ]
 }
