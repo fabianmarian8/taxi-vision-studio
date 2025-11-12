@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:29:26.391Z",
+  "lastUpdated": "2025-11-12T11:29:50.521Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1154,7 +1154,23 @@
         "objednať taxi ilava",
         "taxi ilava telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "PRIMA TAXI Ilava - Milan Pružinec",
+          "phone": "+421910931202",
+          "website": "https://www.facebook.com"
+        },
+        {
+          "name": "CITY TAXI",
+          "phone": "+421948482727",
+          "website": "https://sluzby.sktaxi.sk"
+        },
+        {
+          "name": "ROCAR Taxi",
+          "phone": "+421949424704",
+          "website": "http://www.jtgroup.sk"
+        }
+      ],
       "latitude": 49.005,
       "longitude": 18.2383
     },
