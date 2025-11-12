@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:24:38.964Z",
+  "lastUpdated": "2025-11-12T11:24:58.693Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -896,7 +896,23 @@
         "objednať taxi hanušovce",
         "taxi hanušovce telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "STARS TAXI",
+          "phone": "+421944744724",
+          "website": "https://www.facebook.com"
+        },
+        {
+          "name": "TAXI NISTRA",
+          "phone": "+421904995699",
+          "website": null
+        },
+        {
+          "name": "Hanušovce Nad Topľou,,AS",
+          "phone": null,
+          "website": "http://www.sadhe.sk"
+        }
+      ],
       "latitude": 48.9867,
       "longitude": 21.5067
     },
