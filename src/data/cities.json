@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:02:31.302Z",
+  "lastUpdated": "2025-11-12T11:02:35.638Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -217,6 +217,11 @@
         {
           "name": "Taxi Svam",
           "phone": "+421949377399",
+          "website": null
+        },
+        {
+          "name": "VIP TRANSFERY BARDEJOV, Preprava osôb a taxi na letiská: Košice, Kraków, Rzeszów, Budapešť, Viedeň a iné…",
+          "phone": "+421948787807",
           "website": null
         }
       ],
