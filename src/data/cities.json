@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:58:11.156Z",
+  "lastUpdated": "2025-11-12T10:58:20.526Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -104,6 +104,11 @@
           "name": "JOMA Taxi",
           "phone": "+421910180380",
           "website": "http://www.jomataxi.sk"
+        },
+        {
+          "name": "TOP TAXI Banská Štiavnica",
+          "phone": "+421950303530",
+          "website": null
         }
       ],
       "latitude": 48.4583,
