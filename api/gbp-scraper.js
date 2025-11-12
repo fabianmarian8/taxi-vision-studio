@@ -23,7 +23,31 @@ function normalizeUrl(url) {
   try {
     // Ak URL začína s http:// alebo https://, použij ho priamo
     const urlObj = new URL(url.startsWith('http') ? url : `https://${url}`);
-    return `${urlObj.protocol}//${urlObj.hostname}`;
+    
+    // Pre sociálne siete zachovaj celú URL (hostname + pathname)
+    const socialMediaDomains = [
+      'facebook.com',
+      'fb.com',
+      'instagram.com',
+      'twitter.com',
+      'linkedin.com',
+      'tiktok.com',
+      'youtube.com',
+      'youtu.be'
+    ];
+    
+    // Skontroluj či je to sociálna sieť
+    const isSocialMedia = socialMediaDomains.some(domain => 
+      urlObj.hostname.includes(domain)
+    );
+    
+    if (isSocialMedia) {
+      // Pre sociálne siete vráť celú URL (bez query parametrov a fragmentov)
+      return `${urlObj.protocol}//${urlObj.hostname}${urlObj.pathname}`.replace(/\/$/, '');
+    } else {
+      // Pre bežné weby len hostname (ako predtým)
+      return `${urlObj.protocol}//${urlObj.hostname}`;
+    }
   } catch (e) {
     return null;
   }
