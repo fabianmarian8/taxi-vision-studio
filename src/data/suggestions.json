@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:25:17.945Z",
+  "lastUpdated": "2025-11-12T11:25:37.566Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1665,8 +1665,9 @@
         "website": null,
         "address": "J. A. Gagarina 13, 920 01 Hlohovec, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:25:09.596Z"
+      "status": "rejected",
+      "timestamp": "2025-11-12T11:25:09.596Z",
+      "rejectedAt": "2025-11-12T11:25:37.566Z"
     }
   ]
 }
