@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:19:22.381Z",
+  "lastUpdated": "2025-11-12T11:19:32.017Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1219,8 +1219,9 @@
         "website": "https://omniataxi.sk",
         "address": "Námestie Matice Slovenskej 1/1, 018 41 Dubnica nad Váhom, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:19:22.381Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:19:22.381Z",
+      "approvedAt": "2025-11-12T11:19:32.017Z"
     },
     {
       "id": "dubnica-nad-vahom-1762946362381-zokc5cb1u",
