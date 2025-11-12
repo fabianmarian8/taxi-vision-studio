@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:59:29.722Z",
+  "lastUpdated": "2025-11-12T10:59:43.949Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -308,8 +308,9 @@
         "website": "https://www.ferotaxi.sk",
         "address": "7, Námestie svätej Trojice 11, 969 01 Banská Štiavnica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:57:46.707Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:57:46.707Z",
+      "approvedAt": "2025-11-12T10:59:43.949Z"
     }
   ]
 }
