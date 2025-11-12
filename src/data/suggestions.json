@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:20.201Z",
+  "lastUpdated": "2025-11-12T11:06:24.586Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -751,8 +751,9 @@
         "website": "http://www.tdtaxi.sk",
         "address": "Boženy Němcovej 2, 977 01 Brezno, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:06:11.274Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:06:11.274Z",
+      "approvedAt": "2025-11-12T11:06:24.586Z"
     },
     {
       "id": "brezno-1762945571274-zsg2wr18w",
