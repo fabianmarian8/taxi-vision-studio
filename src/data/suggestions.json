@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:24:33.965Z",
+  "lastUpdated": "2025-11-12T11:24:38.964Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1479,8 +1479,9 @@
         "website": null,
         "address": "Dukelská 33/37, 087 01 Giraltovce, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:24:33.965Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:24:33.965Z",
+      "approvedAt": "2025-11-12T11:24:38.964Z"
     },
     {
       "id": "giraltovce-1762946673966-n58a6ldoy",
@@ -1491,8 +1492,9 @@
         "website": "https://www.facebook.com",
         "address": "Dukelská, 087 01 Giraltovce, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:24:33.965Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:24:33.965Z",
+      "approvedAt": "2025-11-12T11:24:38.964Z"
     }
   ]
 }
