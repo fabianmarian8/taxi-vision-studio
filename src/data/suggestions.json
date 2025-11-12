@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:05:45.360Z",
+  "lastUpdated": "2025-11-12T11:05:48.667Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -686,8 +686,9 @@
         "website": "https://hoteltaxis.sk",
         "address": "Jaskový rad 9, 831 01 Bratislava-Nové Mesto, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:05:06.455Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:05:06.455Z",
+      "approvedAt": "2025-11-12T11:05:48.667Z"
     },
     {
       "id": "bratislava-1762945506455-dk9oproy4",
