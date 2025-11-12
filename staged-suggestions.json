@@ -119,7 +119,19 @@
       },
       "status": "pending",
       "timestamp": "2025-11-12T17:00:20.131Z"
+    },
+    {
+      "id": "kremnica-1762968293992-jwkmonfl9",
+      "citySlug": "kremnica",
+      "taxiService": {
+        "name": "Bijan Taxi",
+        "phone": "+421948984898",
+        "website": "https://www.bijantaxi.sk",
+        "address": "Dolná 44/11, 967 01 Kremnica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T17:24:53.992Z"
     }
   ],
-  "lastUpdated": "2025-11-12T17:24:38.806Z"
+  "lastUpdated": "2025-11-12T17:24:53.992Z"
 }
