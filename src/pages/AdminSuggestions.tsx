@@ -106,7 +106,7 @@ export default function AdminSuggestions() {
     navigate(`/admin/edit/${suggestion.citySlug}?suggestions=${suggestionParam}&suggestionIds=${suggestionId}`);
   };
 
-  const handleReject = async (suggestionId: string) {
+  const handleReject = async (suggestionId: string) => {
     setProcessingIds(prev => new Set(prev).add(suggestionId));
 
     try {
