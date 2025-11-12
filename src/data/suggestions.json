@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:00.606Z",
+  "lastUpdated": "2025-11-12T11:06:03.419Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -725,8 +725,9 @@
         "website": "https://www.taxi-bratislava-schwechat.sk",
         "address": "Mlynské nivy 4963/56, 821 05 Bratislava-Ružinov, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:05:06.455Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:05:06.455Z",
+      "approvedAt": "2025-11-12T11:06:03.419Z"
     }
   ]
 }
