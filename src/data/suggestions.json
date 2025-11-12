@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:46:00.112Z",
+  "lastUpdated": "2025-11-12T10:46:16.916Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -145,8 +145,9 @@
         "website": null,
         "address": "Slnečná 3801/7, 974 04 Banská Bystrica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "approvedAt": "2025-11-12T10:46:16.916Z"
     },
     {
       "id": "banska-bystrica-1762944164311-x6n76q525",
