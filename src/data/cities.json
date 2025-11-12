@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:24:03.518Z",
+  "lastUpdated": "2025-11-12T11:24:24.484Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -840,7 +840,18 @@
         "objednať taxi gelnica",
         "taxi gelnica telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "GL TAXI",
+          "phone": "+421918307761",
+          "website": null
+        },
+        {
+          "name": "GreentaxiGelnica",
+          "phone": "+421948180180",
+          "website": "http://www.greentaxigelnica.sk"
+        }
+      ],
       "latitude": 48.85,
       "longitude": 20.9333
     },
