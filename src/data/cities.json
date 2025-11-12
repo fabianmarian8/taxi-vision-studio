@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:59:43.530Z",
+  "lastUpdated": "2025-11-12T11:00:22.543Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -14,7 +14,13 @@
         "objednať taxi bánovce",
         "taxi bánovce telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Euro Taxi BN",
+          "phone": "+421902830000",
+          "website": "http://www.eurotaxi-bn.sk"
+        }
+      ],
       "latitude": 48.7192,
       "longitude": 18.2569
     },
