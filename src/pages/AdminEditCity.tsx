@@ -371,13 +371,25 @@ export default function AdminEditCity() {
 
       const result = await suggestionsResponse.json();
 
-      toast({
-        title: 'Úspech',
-        description: `Našlo sa ${scraperData.count} výsledkov. Pridaných ${result.added} nových návrhov (${result.skipped} duplicít preskočených).`,
-      });
+      // Debug info v konzole
+      console.log('Scraper result:', scraperData);
+      console.log('Suggestions API result:', result);
 
-      // Naviguj na stránku návrhov
-      navigate('/admin/suggestions');
+      if (result.added === 0) {
+        toast({
+          title: 'Informácia',
+          description: `Našlo sa ${scraperData.count} výsledkov, ale všetky sú už v databáze (${result.skipped} duplicít). ${result.debug ? `Existujúce služby: ${result.debug.existingServicesCount}, Návrhy: ${result.debug.existingSuggestionsCount + result.debug.stagedSuggestionsCount}` : ''}`,
+          variant: 'default',
+        });
+      } else {
+        toast({
+          title: 'Úspech',
+          description: `Našlo sa ${scraperData.count} výsledkov. Pridaných ${result.added} nových návrhov (${result.skipped} duplicít preskočených).`,
+        });
+
+        // Naviguj na stránku návrhov len ak boli pridané nové
+        navigate('/admin/suggestions');
+      }
     } catch (error) {
       console.error('Error in handleFindNewServices:', error);
       toast({

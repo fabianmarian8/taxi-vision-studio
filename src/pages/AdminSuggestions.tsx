@@ -47,6 +47,16 @@ export default function AdminSuggestions() {
 
       if (response.ok) {
         const data: SuggestionsData = await response.json();
+
+        // Debug logging
+        console.log('=== ADMIN SUGGESTIONS DEBUG ===');
+        console.log(`Total suggestions from API: ${data.suggestions.length}`);
+        console.log(`Pending suggestions: ${data.suggestions.filter(s => s.status === 'pending').length}`);
+        console.log('Suggestions by city:', data.suggestions.reduce((acc, s) => {
+          acc[s.citySlug] = (acc[s.citySlug] || 0) + 1;
+          return acc;
+        }, {} as Record<string, number>));
+
         setSuggestionsData(data);
 
         // Načítaj dáta miest pre zobrazenie názvov
@@ -76,6 +86,9 @@ export default function AdminSuggestions() {
                 grouped[suggestion.citySlug].suggestions.push(suggestion);
               }
             });
+
+          console.log('Grouped suggestions:', grouped);
+          console.log('Grouped cities count:', Object.keys(grouped).length);
 
           setGroupedSuggestions(grouped);
         }
