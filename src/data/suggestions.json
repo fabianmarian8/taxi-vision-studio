@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:02:00.573Z",
+  "lastUpdated": "2025-11-12T11:02:06.187Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -439,8 +439,9 @@
         "website": "https://www.facebook.com",
         "address": "Kacvinského 2849, 085 01 Bardejov, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:01:23.643Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:01:23.643Z",
+      "approvedAt": "2025-11-12T11:02:06.187Z"
     },
     {
       "id": "bardejov-1762945283643-ciu3hvk0m",
