@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:02:00.181Z",
+  "lastUpdated": "2025-11-12T11:02:05.669Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -193,6 +193,11 @@
           "name": "MM taxi - VIPKA",
           "phone": "+421949246565",
           "website": "https://www.mmtaxidrink.eu"
+        },
+        {
+          "name": "TAXI PIRÁTI",
+          "phone": "+4215416666",
+          "website": "https://www.facebook.com"
         }
       ],
       "latitude": 49.2939,
