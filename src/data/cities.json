@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:50:38.883Z",
+  "lastUpdated": "2025-11-12T10:50:49.788Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -66,6 +66,11 @@
           "name": "TAXI Banská Bystrica - inTAXI - taxiK sro - NONSTOP",
           "phone": "+421948887988",
           "website": "https://intaxi.sk"
+        },
+        {
+          "name": "VIP Taxi s.r.o.",
+          "phone": "+421908989000",
+          "website": null
         }
       ],
       "latitude": 48.7361,
