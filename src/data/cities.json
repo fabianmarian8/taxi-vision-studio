@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:06:24.167Z",
+  "lastUpdated": "2025-11-12T11:06:28.349Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -367,6 +367,11 @@
           "name": "TD Taxi - Tomáš Demian",
           "phone": "+421902493046",
           "website": "http://www.tdtaxi.sk"
+        },
+        {
+          "name": "R.S.T. Taxi & Ski Taxi 6+1 - Podbrezová - Brezno a okolie",
+          "phone": "+421904334971",
+          "website": "https://taxipodbrezova.sk"
         }
       ],
       "latitude": 48.8033,
