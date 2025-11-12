@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:31:21.105Z",
+  "lastUpdated": "2025-11-12T11:46:55.278Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1263,7 +1263,23 @@
         "objednať taxi kolárovo",
         "taxi kolárovo telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Gúta Taxi Kolárovo",
+          "phone": "+421907120024",
+          "website": "https://facebook.com"
+        },
+        {
+          "name": "PT TAXI",
+          "phone": "+421948131131",
+          "website": null
+        },
+        {
+          "name": "TAXI NESVADY",
+          "phone": "+421908618620",
+          "website": null
+        }
+      ],
       "latitude": 47.92,
       "longitude": 17.9933
     },
