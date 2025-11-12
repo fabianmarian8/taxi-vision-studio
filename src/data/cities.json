@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:18:52.097Z",
+  "lastUpdated": "2025-11-12T11:18:56.344Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -634,6 +634,11 @@
         {
           "name": "HaMi Taxi",
           "phone": "+421915088022",
+          "website": null
+        },
+        {
+          "name": "Jk-taxi Ján Kurjak",
+          "phone": "+421948262000",
           "website": null
         }
       ],
