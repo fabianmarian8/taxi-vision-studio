@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:30:19.634Z",
+  "lastUpdated": "2025-11-12T11:31:21.105Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1215,7 +1215,38 @@
         "objednať taxi kežmarok",
         "taxi kežmarok tatry"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Express Taxi Kežmarok",
+          "phone": "+421910524555",
+          "website": "https://www.expresstaxi.sk"
+        },
+        {
+          "name": "MM TAXI Kežmarok",
+          "phone": "+421944845707",
+          "website": "https://www.facebook.com"
+        },
+        {
+          "name": "AB taxi Kežmarok",
+          "phone": "+421904206121",
+          "website": "https://www.facebook.com"
+        },
+        {
+          "name": "EuroTaxi Kežmarok",
+          "phone": "+421904931222",
+          "website": "https://www.facebook.com"
+        },
+        {
+          "name": "City Taxi Kežmarok",
+          "phone": "+421911559222",
+          "website": "http://www.citytaxikk.sk"
+        },
+        {
+          "name": "SilverTaxi",
+          "phone": "+421944482999",
+          "website": "https://www.facebook.com"
+        }
+      ],
       "latitude": 49.1361,
       "longitude": 20.4333
     },
