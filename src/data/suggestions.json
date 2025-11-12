@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:29:02.578Z",
+  "lastUpdated": "2025-11-12T11:29:15.782Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1885,6 +1885,42 @@
       "status": "approved",
       "timestamp": "2025-11-12T11:28:09.629Z",
       "approvedAt": "2025-11-12T11:29:02.578Z"
+    },
+    {
+      "id": "hurbanovo-1762946955782-w788ku3s4",
+      "citySlug": "hurbanovo",
+      "taxiService": {
+        "name": "BRAVO Taxi s.r.o.",
+        "phone": "+421911152555",
+        "website": "http://www.bravotaxi.sk",
+        "address": "Konkolyho 6, 947 01 Hurbanovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:29:15.782Z"
+    },
+    {
+      "id": "hurbanovo-1762946955782-d8nqzkezh",
+      "citySlug": "hurbanovo",
+      "taxiService": {
+        "name": "Limcar TAXI Hurbanovo",
+        "phone": "+421949112020",
+        "website": "http://limcar.sk",
+        "address": "Komárňanská 121, 947 01 Hurbanovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:29:15.782Z"
+    },
+    {
+      "id": "hurbanovo-1762946955782-zjmn4hnsu",
+      "citySlug": "hurbanovo",
+      "taxiService": {
+        "name": "Gabriel Tóth - B.M.G. International",
+        "phone": "+421903577774",
+        "website": null,
+        "address": "25, Nejedlého 2364, 947 01 Hurbanovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-12T11:29:15.782Z"
     }
   ]
 }
