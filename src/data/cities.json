@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:22:43.161Z",
+  "lastUpdated": "2025-11-12T11:23:01.972Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -744,7 +744,13 @@
         "objednať taxi gabčíkovo",
         "taxi gabčíkovo telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Milan Zajac",
+          "phone": "+421918012888",
+          "website": "http://www.elektrotaxi.szm.sk"
+        }
+      ],
       "latitude": 47.8933,
       "longitude": 17.5817
     },
