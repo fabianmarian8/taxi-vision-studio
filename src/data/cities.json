@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:16:41.263Z",
+  "lastUpdated": "2025-11-12T11:17:46.373Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -567,7 +567,18 @@
         "objednať taxi dobšiná",
         "taxi dobšiná jaskyňa"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Ján Ambroz",
+          "website": "",
+          "phone": "058/788 55 95"
+        },
+        {
+          "name": "Dušan taxi Dobšiná",
+          "website": "",
+          "phone": "0951 610 248"
+        }
+      ],
       "latitude": 48.8233,
       "longitude": 20.3692
     },
