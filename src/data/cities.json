@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:46:55.278Z",
+  "lastUpdated": "2025-11-12T13:20:44.748Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1296,7 +1296,43 @@
         "objednať taxi komárno",
         "taxi komárno ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "City Taxi Komárno",
+          "phone": "+421910204080",
+          "website": "https://citytaxikomarno.sk"
+        },
+        {
+          "name": "W -TAXI KOMÁRNO",
+          "phone": "+421908080014",
+          "website": null
+        },
+        {
+          "name": "Tibor Bári - PT Taxi",
+          "phone": "+421908402020",
+          "website": null
+        },
+        {
+          "name": "Star Taxi",
+          "phone": "+421918076666",
+          "website": "https://www.facebook.com/share/19N47mRQjJ"
+        },
+        {
+          "name": "Premium Taxi - Hajósi János",
+          "phone": "+36708846722",
+          "website": "https://taxikomarom.com"
+        },
+        {
+          "name": "Zoli Taxi",
+          "phone": "+42135/7713143",
+          "website": "http://www.komarno-taxi.sk"
+        },
+        {
+          "name": "PT TAXI",
+          "phone": "+36204417713",
+          "website": null
+        }
+      ],
       "latitude": 47.7667,
       "longitude": 18.1167
     },
