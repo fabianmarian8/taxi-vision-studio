@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:46:16.916Z",
+  "lastUpdated": "2025-11-12T10:46:37.564Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -60,8 +60,9 @@
         "website": "http://www.ecohybridtaxi.sk",
         "address": "Alexandra Matušku 1, 974 01 Banská Bystrica, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T10:42:44.310Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T10:42:44.310Z",
+      "approvedAt": "2025-11-12T10:46:37.564Z"
     },
     {
       "id": "banska-bystrica-1762944164311-7f72z4lyo",
