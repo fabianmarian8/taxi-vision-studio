@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T10:50:57.257Z",
+  "lastUpdated": "2025-11-12T10:52:16.133Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -76,6 +76,11 @@
           "name": "Fun Taxi",
           "phone": "+4214816777",
           "website": null
+        },
+        {
+          "name": "inTAXI Banská Bystrica",
+          "phone": "+421940777757",
+          "website": "http://www.intaxi.sk"
         }
       ],
       "latitude": 48.7361,
