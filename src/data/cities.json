@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:01:36.727Z",
+  "lastUpdated": "2025-11-12T11:01:45.744Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -173,6 +173,11 @@
           "name": "Taxi Roman - NON-STOP taxislužba v Bardejove a preprava osôb na letiská, viac miestna doprava.",
           "phone": "+421850221221",
           "website": "https://taxiroman.sk"
+        },
+        {
+          "name": "PEPIS TAXI Bardejov- odvoz v meste Bardejov, širokom okolí a letiskový transfer. Možnosť platby kartou bezkontaktne 🙂",
+          "phone": "+421944450777",
+          "website": null
         }
       ],
       "latitude": 49.2939,
