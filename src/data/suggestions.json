@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:28:48.701Z",
+  "lastUpdated": "2025-11-12T11:29:02.578Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1726,8 +1726,9 @@
         "website": "http://www.blacktaxihe.sk",
         "address": "Námestie slobody 70, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "approvedAt": "2025-11-12T11:29:02.578Z"
     },
     {
       "id": "humenne-1762946889629-944zu0p7x",
@@ -1738,8 +1739,9 @@
         "website": "https://humenne.taxi",
         "address": "SNP 2508/16, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "approvedAt": "2025-11-12T11:29:02.578Z"
     },
     {
       "id": "humenne-1762946889629-8misg7fl5",
@@ -1750,8 +1752,9 @@
         "website": null,
         "address": "Laborecká 1, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "approvedAt": "2025-11-12T11:29:02.578Z"
     },
     {
       "id": "humenne-1762946889629-9emx1ldbt",
@@ -1762,8 +1765,9 @@
         "website": "https://www.ahojtaxihe.sk",
         "address": "Staničná 1482/1, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "approvedAt": "2025-11-12T11:29:02.578Z"
     },
     {
       "id": "humenne-1762946889629-7fkn6fh6h",
@@ -1774,8 +1778,9 @@
         "website": null,
         "address": "Dobrianskeho 1668, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "approvedAt": "2025-11-12T11:29:02.578Z"
     },
     {
       "id": "humenne-1762946889629-xq6g4bxh7",
@@ -1786,8 +1791,9 @@
         "website": null,
         "address": "Puškinova 1720/16, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "approvedAt": "2025-11-12T11:29:02.578Z"
     },
     {
       "id": "humenne-1762946889629-52vkbcui1",
@@ -1798,8 +1804,9 @@
         "website": null,
         "address": "Námestie slobody 70, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "approvedAt": "2025-11-12T11:29:02.578Z"
     },
     {
       "id": "humenne-1762946889629-u9h6jj3c6",
@@ -1810,8 +1817,9 @@
         "website": null,
         "address": "Laborecká 15, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "approvedAt": "2025-11-12T11:29:02.578Z"
     },
     {
       "id": "humenne-1762946889629-1kk72jic1",
@@ -1822,8 +1830,9 @@
         "website": null,
         "address": "Humenné, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "approvedAt": "2025-11-12T11:29:02.578Z"
     },
     {
       "id": "humenne-1762946889629-6dxwwgan4",
@@ -1834,8 +1843,9 @@
         "website": null,
         "address": "Košická 38, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "approvedAt": "2025-11-12T11:29:02.578Z"
     },
     {
       "id": "humenne-1762946889629-tqlj45bfc",
@@ -1872,8 +1882,9 @@
         "website": null,
         "address": "Laborecká 1845/1, 066 01 Humenné, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:28:09.629Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:28:09.629Z",
+      "approvedAt": "2025-11-12T11:29:02.578Z"
     }
   ]
 }
