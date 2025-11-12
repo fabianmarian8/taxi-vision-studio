@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T13:20:44.748Z",
+  "lastUpdated": "2025-11-12T14:16:41.607Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1349,7 +1349,83 @@
         "objednať taxi košice",
         "taxi košice ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Košice - KošiceTaxi24",
+          "phone": "+421940242717",
+          "website": "https://kosicetaxi24.sk"
+        },
+        {
+          "name": "Easy Taxi Košice",
+          "phone": "+421902122224",
+          "website": null
+        },
+        {
+          "name": "E-Taxi Košice",
+          "phone": "+421911606206",
+          "website": "https://www.e-taxike.sk"
+        },
+        {
+          "name": "Taxi Košice Mytaxi",
+          "phone": "+421910340770",
+          "website": "https://www.mytaxikosice.sk"
+        },
+        {
+          "name": "Yellow Taxi",
+          "phone": "+421917434343",
+          "website": "http://yellowtaxikosice.sk"
+        },
+        {
+          "name": "TAKE TAXI",
+          "phone": "+421948777777",
+          "website": "http://www.taketaxi.sk"
+        },
+        {
+          "name": "Taxi Plus",
+          "phone": "+421903998998",
+          "website": "http://www.taxi-plus.sk"
+        },
+        {
+          "name": "Student taxi",
+          "phone": "+421949070707",
+          "website": "http://www.student-taxi.sk"
+        },
+        {
+          "name": "CTC TAXI",
+          "phone": "+421905955955",
+          "website": "https://www.ctctaxi.sk"
+        },
+        {
+          "name": "Rádio Taxi Košice",
+          "phone": "+42155/6332525",
+          "website": null
+        },
+        {
+          "name": "Najpax taxi Košice , taxislužba Košice a okolie - Najpax s.r.o",
+          "phone": "+421902266004",
+          "website": "https://www.najpaxtaxikosice.sk"
+        },
+        {
+          "name": "American Taxi",
+          "phone": "+421908335333",
+          "website": "http://americantaxi.sk"
+        },
+        {
+          "name": "BENZE Transfer Košice",
+          "phone": "+421940645645",
+          "website": "http://www.benze.sk"
+        },
+        {
+          "name": "Airportdrivetaxi Košice",
+          "phone": null,
+          "website": "https://sites.google.com"
+        },
+        {
+          "name": "Hello Taxi: Tomáš Kurčinka",
+          "phone": "+421911434343",
+          "website": "http://www.hello-taxi.sk"
+        }
+      ],
       "latitude": 48.7164,
       "longitude": 21.2611
     },
