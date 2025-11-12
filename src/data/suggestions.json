@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:30:05.444Z",
+  "lastUpdated": "2025-11-12T11:30:19.634Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1973,8 +1973,9 @@
         "website": "https://www.facebook.com",
         "address": "Námestie slobody 5/5, 050 01 Revúca, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:30:05.444Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:30:05.444Z",
+      "approvedAt": "2025-11-12T11:30:19.634Z"
     },
     {
       "id": "jelsava-1762947005444-3cvrxidln",
@@ -1985,8 +1986,9 @@
         "website": "http://marekbalag-trans.sk",
         "address": "Svätého Quirina 1530/13, 050 01 Revúca, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:30:05.444Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:30:05.444Z",
+      "approvedAt": "2025-11-12T11:30:19.634Z"
     }
   ]
 }
