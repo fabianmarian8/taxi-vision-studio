@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:09:38.324Z",
+  "lastUpdated": "2025-11-12T11:10:52.771Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -432,6 +432,11 @@
         {
           "name": "Daniel Adamov - Dami",
           "phone": "+421904860846",
+          "website": null
+        },
+        {
+          "name": "Ndg S.r.o.",
+          "phone": "+42141/5522094",
           "website": null
         }
       ],
