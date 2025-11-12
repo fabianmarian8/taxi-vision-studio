@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T11:18:11.798Z",
+  "lastUpdated": "2025-11-12T11:18:19.753Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -1063,8 +1063,9 @@
         "website": "http://www.autopozicovnaorava.sk",
         "address": "Bysterecká 2971, Veľký Bysterec, 026 01 Dolný Kubín, Slovensko"
       },
-      "status": "pending",
-      "timestamp": "2025-11-12T11:18:11.798Z"
+      "status": "approved",
+      "timestamp": "2025-11-12T11:18:11.798Z",
+      "approvedAt": "2025-11-12T11:18:19.753Z"
     },
     {
       "id": "dolny-kubin-1762946291798-d1djo9na8",
