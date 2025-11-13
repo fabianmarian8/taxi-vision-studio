@@ -127,41 +127,6 @@ const TaxiServicePage = () => {
             </div>
           </Card>
 
-          {/* SEO Content */}
-          <Card className="perspective-1000">
-            <div className="card-3d shadow-3d-lg">
-              <CardContent className="py-8">
-                <div className="prose prose-lg mx-auto">
-                  <h2 className="text-2xl font-black mb-4 text-foreground">
-                    O taxislužbe {service.name}
-                  </h2>
-                  <div className="space-y-4 text-foreground/90 font-medium">
-                    <p>
-                      <strong>{service.name}</strong> je overená taxislužba pôsobiaca v meste{" "}
-                      <strong>{city.name}</strong> ({city.region}). Poskytuje spoľahlivé a kvalitné
-                      služby prepravy osôb pre obyvateľov aj návštevníkov mesta.
-                    </p>
-                    <p>
-                      Taxi službu môžete kontaktovať telefonicky alebo online. Profesionálni vodiči
-                      s miestnou znalosťou zabezpečia rýchlu a pohodlnú prepravu na vašu požadovanú
-                      adresu.
-                    </p>
-                    <p>
-                      <strong>Výhody taxislužby {service.name}:</strong>
-                    </p>
-                    <ul className="list-disc pl-6 space-y-2">
-                      <li>Rýchla dostupnosť v meste {city.name}</li>
-                      <li>Profesionálni a skúsení vodiči</li>
-                      <li>Moderné a čisté vozidlá</li>
-                      <li>Transparentné ceny</li>
-                      <li>Možnosť objednania vopred</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </div>
-          </Card>
-
           {/* Other Services in City */}
           {city.taxiServices.length > 1 && (
             <div className="mt-12">
