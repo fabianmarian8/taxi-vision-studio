@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:46:47.724Z",
+  "lastUpdated": "2025-11-13T09:46:49.338Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,42 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "vrable-1763027177531-m8rrmj2bp",
-      "citySlug": "vrable",
-      "taxiService": {
-        "name": "Eko Taxi Vráble",
-        "phone": "+421904006666",
-        "website": "http://www.ekotaxi.sk",
-        "address": "Obycká 29, 951 93 Machulince, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:46:17.531Z"
-    },
-    {
-      "id": "vrable-1763027177531-neybfmbf5",
-      "citySlug": "vrable",
-      "taxiService": {
-        "name": "Penzeš s.r.o.",
-        "phone": "+421905712578",
-        "website": "http://www.penzes.sk",
-        "address": "Družstevná 1994/5, 952 01 Vráble, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:46:17.531Z"
-    },
-    {
-      "id": "vrable-1763027177531-hjgqa6wns",
-      "citySlug": "vrable",
-      "taxiService": {
-        "name": "TAXI V Vrábľoch",
-        "phone": "+421915483656",
-        "website": "https://www.facebook.com/groups/1382440825293708",
-        "address": "1. mája, 952 01 Vráble, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:46:17.531Z"
     }
   ]
 }
