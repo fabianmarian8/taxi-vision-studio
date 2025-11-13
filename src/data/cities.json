@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:45:55.691Z",
+  "lastUpdated": "2025-11-13T08:46:58.276Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3905,7 +3905,21 @@
         "objednať taxi sobrance",
         "taxi sobrance telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Kurier TAXI",
+          "website": "",
+          "phone": "+421918201201"
+        },
+        {
+          "name": "ATTAXI",
+          "phone": "+421909113548"
+        },
+        {
+          "name": "L - TAXI, taxislužba",
+          "phone": "+421918217217"
+        }
+      ],
       "latitude": 48.745,
       "longitude": 22.1817
     },
