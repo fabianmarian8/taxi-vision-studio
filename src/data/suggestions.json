@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:37:39.869Z",
+  "lastUpdated": "2025-11-13T07:37:42.329Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,90 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "liptovsky-hradok-1763019440578-g2exiktwj",
-      "citySlug": "liptovsky-hradok",
-      "taxiService": {
-        "name": "Ivan Spilý",
-        "phone": "+421905931313",
-        "website": "http://www.taxilh.sk",
-        "address": "Hradná 345/28, 033 01 Liptovský Hrádok, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:37:20.578Z"
-    },
-    {
-      "id": "liptovsky-hradok-1763019440578-bgc0sjywc",
-      "citySlug": "liptovsky-hradok",
-      "taxiService": {
-        "name": "TAXI - Ján Vrabec",
-        "phone": "+421944287041",
-        "website": null,
-        "address": "033 01 Liptovský Hrádok, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:37:20.578Z"
-    },
-    {
-      "id": "liptovsky-hradok-1763019440578-hk6vke3jo",
-      "citySlug": "liptovsky-hradok",
-      "taxiService": {
-        "name": "M & M - TAXI Liptov",
-        "phone": "+421944445456",
-        "website": "http://www.taxiliptov.com",
-        "address": "Belanská, 033 01 Liptovský Hrádok, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:37:20.578Z"
-    },
-    {
-      "id": "liptovsky-hradok-1763019440578-opu1ljdfl",
-      "citySlug": "liptovsky-hradok",
-      "taxiService": {
-        "name": "Taxi Liptovský Mikuláš",
-        "phone": "+421907780780",
-        "website": "https://www.taxilm.sk",
-        "address": "Generála Milana Rastislava Štefánika 1, 031 01 Liptovský Mikuláš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:37:20.578Z"
-    },
-    {
-      "id": "liptovsky-hradok-1763019440578-jjwoshfms",
-      "citySlug": "liptovsky-hradok",
-      "taxiService": {
-        "name": "City Taxi Liptovský Mikuláš",
-        "phone": "+421910150150",
-        "website": "http://www.citytaxilm.com",
-        "address": "Belopotockého, 031 01 Liptovský Mikuláš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:37:20.578Z"
-    },
-    {
-      "id": "liptovsky-hradok-1763019440578-4s1ga3al9",
-      "citySlug": "liptovsky-hradok",
-      "taxiService": {
-        "name": "TAXI Liptov Liptovský Mikuláš",
-        "phone": "+421948906906",
-        "website": "https://www.fajnovetaxi.eu",
-        "address": "Juraja Janošku 2, 031 01 Liptovský Mikuláš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:37:20.578Z"
-    },
-    {
-      "id": "liptovsky-hradok-1763019440578-6j9wm12au",
-      "citySlug": "liptovsky-hradok",
-      "taxiService": {
-        "name": "TAXI MB",
-        "phone": "+421944446456",
-        "website": "http://www.taxiliptov.com",
-        "address": "Belanská, 033 01 Liptovský Hrádok, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:37:20.578Z"
     }
   ]
 }
