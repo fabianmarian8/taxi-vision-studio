@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,6 +12,14 @@ export default function AdminLogin() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
+
+  // Load saved password on mount
+  useEffect(() => {
+    const savedPassword = localStorage.getItem('adminPassword');
+    if (savedPassword) {
+      setPassword(savedPassword);
+    }
+  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,6 +38,8 @@ export default function AdminLogin() {
 
       if (response.ok && data.success) {
         localStorage.setItem('adminToken', data.token);
+        // Save password for future logins
+        localStorage.setItem('adminPassword', password);
         toast({
           title: 'Prihlásenie úspešné',
           description: 'Vitajte v admin paneli',
