@@ -1,0 +1,68 @@
+{
+  "changes": [
+    {
+      "citySlug": "liptovsky-mikulas",
+      "taxiServices": [
+        {
+          "name": "Taxi Liptovský Mikuláš",
+          "website": "https://www.taxilm.sk",
+          "phone": "+421907780780"
+        },
+        {
+          "name": "City Taxi Liptovský Mikuláš",
+          "website": "http://www.citytaxilm.com",
+          "phone": "+421910150150"
+        },
+        {
+          "name": "FUN TAXI Liptovský Mikuláš",
+          "phone": "+421908710710"
+        },
+        {
+          "name": "TAXI Liptov Liptovský Mikuláš",
+          "website": "https://www.fajnovetaxi.eu",
+          "phone": "+421948906906"
+        },
+        {
+          "name": "Taxi Jasná - Liptov",
+          "website": "http://www.taxijasnaliptov.sk",
+          "phone": "+421917965754"
+        },
+        {
+          "name": "VSM s.r.o.",
+          "website": "http://www.liptovtaxi.sk",
+          "phone": "+421944755588"
+        },
+        {
+          "name": "BrotherTaxi",
+          "phone": "+421940171918"
+        },
+        {
+          "name": "PP TAXI",
+          "website": "http://www.pptaxi.com",
+          "phone": "+421903526666"
+        },
+        {
+          "name": "Ladytaxi",
+          "phone": "+421915350087"
+        },
+        {
+          "name": "Taxi Liptovský Mikuláš-Poprad-Jasná",
+          "phone": "+421944601602"
+        },
+        {
+          "name": "Taxi služba Juraj Majerčík",
+          "phone": "+421950434609"
+        },
+        {
+          "name": "TAXI Liptov",
+          "phone": "+421905210008"
+        },
+        {
+          "name": "City taxi",
+          "website": "http://wew.citytaxilm.com"
+        }
+      ],
+      "timestamp": "2025-11-13T07:38:26.513Z"
+    }
+  ]
+}
