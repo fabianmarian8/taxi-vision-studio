@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { GeometricLines } from "@/components/GeometricLines";
 import { SEOHead, generateTaxiServiceSEO } from "@/components/SEOHead";
+import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { MapPin, Phone, Globe, ArrowLeft } from "lucide-react";
-import { getCityBySlug, type CityData, type TaxiService } from "@/data/cities";
+import { getCityBySlug, createRegionSlug, type CityData, type TaxiService } from "@/data/cities";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { truncateUrl } from "@/utils/urlUtils";
 
@@ -42,13 +43,24 @@ const TaxiServicePage = () => {
     service.website
   );
 
+  const regionSlug = createRegionSlug(city.region);
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead {...seoData} />
       <Header />
 
+      {/* Breadcrumbs */}
+      <SEOBreadcrumbs
+        items={[
+          { label: city.region, href: `/kraj/${regionSlug}` },
+          { label: city.name, href: `/taxi/${citySlug}` },
+          { label: service.name }
+        ]}
+      />
+
       {/* Taxi Service Detail Section */}
-      <section className="pt-24 py-24 px-8 relative">
+      <section className="pt-4 md:pt-6 py-12 md:py-20 lg:py-24 px-4 md:px-8 relative">
         <GeometricLines variant="subtle" count={6} />
 
         <div className="container mx-auto max-w-4xl relative z-10">

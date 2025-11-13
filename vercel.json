@@ -8,6 +8,14 @@
   "ignoreCommand": "bash ignored-build-step.sh",
   "rewrites": [
     {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap.xml.js"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/api/robots.txt.js"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

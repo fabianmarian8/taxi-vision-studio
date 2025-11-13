@@ -5,6 +5,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { GeometricLines } from "@/components/GeometricLines";
 import { SlovakCityCard } from "@/components/SlovakCityCard";
 import { SEOHead, generateRegionSEO } from "@/components/SEOHead";
+import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { getRegionBySlug, getCitiesByRegion, createRegionSlug } from "@/data/cities";
 
 const RegionPage = () => {
@@ -28,8 +29,11 @@ const RegionPage = () => {
       <SEOHead {...seoData} />
       <Header />
 
+      {/* Breadcrumbs */}
+      <SEOBreadcrumbs items={[{ label: regionName }]} />
+
       {/* Region Header Section */}
-      <section className="pt-16 md:pt-20 lg:pt-24 py-8 md:py-12 lg:py-16 px-4 md:px-8 relative">
+      <section className="pt-4 md:pt-6 py-8 md:py-12 lg:py-16 px-4 md:px-8 relative">
         <GeometricLines variant="hero" count={8} />
 
         <div className="container mx-auto max-w-6xl relative z-10">
