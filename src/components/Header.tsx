@@ -2,10 +2,13 @@ import { Plus } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-3d.jpg";
+import { ContactFormModal } from "./ContactFormModal";
+import { useState } from "react";
 
 export const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const handleNavClick = (sectionId: string) => (e: React.MouseEvent) => {
     e.preventDefault();
@@ -65,7 +68,10 @@ export const Header = () => {
             </a>
           </nav>
 
-          <Button className="rounded-full px-3 py-2 md:px-6 lg:px-8 md:py-3 lg:py-4 shadow-3d-sm hover:shadow-3d-md transition-all font-bold hover:scale-105">
+          <Button
+            onClick={() => setIsContactModalOpen(true)}
+            className="rounded-full px-3 py-2 md:px-6 lg:px-8 md:py-3 lg:py-4 shadow-3d-sm hover:shadow-3d-md transition-all font-bold hover:scale-105"
+          >
             <div className="flex items-center gap-1.5 md:gap-2 lg:gap-3">
               <Plus className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
               <div className="flex flex-col items-start">
@@ -76,6 +82,11 @@ export const Header = () => {
           </Button>
         </div>
       </div>
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </header>
   );
 };
