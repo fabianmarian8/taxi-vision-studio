@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:46:08.647Z",
+  "lastUpdated": "2025-11-13T07:46:11.904Z",
   "suggestions": [
     {
       "id": "modry-kamen-1763019878130-s0hva3bxc",
@@ -45,18 +45,6 @@
         "phone": "+421907616221",
         "website": "https://www.taxismile.sk",
         "address": "Boženy Němcovej 39, 990 01 Veľký Krtíš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
-    },
-    {
-      "id": "modry-kamen-1763019878131-2xaeveaow",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "Alena Kapitančíková - ADK TAXI",
-        "phone": "+421910929007",
-        "website": "http://adk-taxi.sk",
-        "address": "Hlavná 32, 053 42 Krompachy, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:44:38.130Z"
