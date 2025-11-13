@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:53:19.155Z",
+  "lastUpdated": "2025-11-13T07:53:22.011Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,30 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "nova-dubnica-1763020374441-vxwl3at5m",
-      "citySlug": "nova-dubnica",
-      "taxiService": {
-        "name": "CITY TAXI",
-        "phone": "+421948482727",
-        "website": "https://www.facebook.com/share/17VhxgLpe8",
-        "address": "SNP, 018 51 Nová Dubnica, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:52:54.441Z"
-    },
-    {
-      "id": "nova-dubnica-1763020374442-bbo9z4fol",
-      "citySlug": "nova-dubnica",
-      "taxiService": {
-        "name": "TAXI GO LETISKOVÉ TRANSFERY",
-        "phone": "+421903505999",
-        "website": "http://www.taxigo.sk",
-        "address": "SNP 35/57, 018 51 Nová Dubnica, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:52:54.441Z"
     }
   ]
 }
