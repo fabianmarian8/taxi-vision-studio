@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:04:55.305Z",
+  "lastUpdated": "2025-11-13T08:05:10.929Z",
   "suggestions": [
     {
       "id": "poltar-1763021084661-5amrm6je0",
@@ -33,18 +33,6 @@
         "phone": "+421909177000",
         "website": "https://mxa.sk",
         "address": "Továrenská 3526, 987 01 Poltár, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:04:44.661Z"
-    },
-    {
-      "id": "poltar-1763021084661-rx0hxqcw7",
-      "citySlug": "poltar",
-      "taxiService": {
-        "name": "Express Taxi",
-        "phone": "+421904111696",
-        "website": null,
-        "address": "Revolučná 115/25, Opatová, 984 01 Lučenec-Opatová pri Lučenci, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T08:04:44.661Z"
