@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:09:24.023Z",
+  "lastUpdated": "2025-11-13T09:09:25.496Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,54 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "svidnik-1763024888807-xntkf9cmu",
-      "citySlug": "svidnik",
-      "taxiService": {
-        "name": "TAXI VLADO",
-        "phone": "+421907100650",
-        "website": "https://www.azet.sk",
-        "address": "8. mája 490/1, 089 01 Svidník, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:08:08.807Z"
-    },
-    {
-      "id": "svidnik-1763024888807-0c88ec8kr",
-      "citySlug": "svidnik",
-      "taxiService": {
-        "name": "S&K taxi Svidník",
-        "phone": "+421949662992",
-        "website": "https://www.facebook.com/share/1BoZxbAt2o",
-        "address": "Pionierska 357, 089 01 Svidník, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:08:08.807Z"
-    },
-    {
-      "id": "svidnik-1763024888807-2c0j0686e",
-      "citySlug": "svidnik",
-      "taxiService": {
-        "name": "TAXI Svidník",
-        "phone": "+421944748686",
-        "website": null,
-        "address": "Mládeže 495/1, 089 01 Svidník, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:08:08.807Z"
-    },
-    {
-      "id": "svidnik-1763024888807-amimo8mgt",
-      "citySlug": "svidnik",
-      "taxiService": {
-        "name": "Taxi Svidnicky Express",
-        "phone": "+421952161061",
-        "website": null,
-        "address": "090 11 Nižný Orlík, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:08:08.807Z"
     }
   ]
 }
