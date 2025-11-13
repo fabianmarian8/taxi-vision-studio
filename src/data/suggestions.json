@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:47:45.054Z",
+  "lastUpdated": "2025-11-13T08:47:46.849Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,42 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "spisska-bela-1763023654098-breq2by5k",
-      "citySlug": "spisska-bela",
-      "taxiService": {
-        "name": "TAXI VM Spišská Belá",
-        "phone": "+421907385540",
-        "website": null,
-        "address": "Slnečná 16, Spišská Belá, 059 01 Spišská Belá, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:47:34.098Z"
-    },
-    {
-      "id": "spisska-bela-1763023654099-axjxcezc9",
-      "citySlug": "spisska-bela",
-      "taxiService": {
-        "name": "Taxi Maroš Spišská Belá",
-        "phone": "+421940992000",
-        "website": null,
-        "address": "Mierová 735/13, Spišská Belá, 059 01 Spišská Belá, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:47:34.098Z"
-    },
-    {
-      "id": "spisska-bela-1763023654099-d1xm61db3",
-      "citySlug": "spisska-bela",
-      "taxiService": {
-        "name": "BL Taxi-preprava",
-        "phone": "+421950271600",
-        "website": null,
-        "address": "Zimná 46, Spišská Belá, 059 01 Spišská Belá, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:47:34.098Z"
     }
   ]
 }
