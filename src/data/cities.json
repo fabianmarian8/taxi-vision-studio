@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:09:57.272Z",
+  "lastUpdated": "2025-11-13T09:10:27.777Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4402,7 +4402,16 @@
         "objednať taxi šahy",
         "taxi šahy telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Šahy TAXI Ipolyság",
+          "phone": "+421944091135"
+        },
+        {
+          "name": "Jozef Sýkora - City Taxi I.",
+          "phone": "+421911394480"
+        }
+      ],
       "latitude": 48.0783,
       "longitude": 18.9467
     },
