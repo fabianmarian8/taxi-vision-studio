@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:15:26.295Z",
+  "lastUpdated": "2025-11-13T08:16:13.550Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3335,7 +3335,18 @@
         "objednať taxi revúca",
         "taxi revúca ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI REVUCA",
+          "website": "https://www.facebook.com/profile.php",
+          "phone": "+421911456999"
+        },
+        {
+          "name": "Marek Balag-trans",
+          "website": "http://marekbalag-trans.sk",
+          "phone": "+421915812672"
+        }
+      ],
       "latitude": 48.6833,
       "longitude": 20.1167
     },
