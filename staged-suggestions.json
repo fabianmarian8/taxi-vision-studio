@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T07:44:47.013Z",
   "suggestions": [
     {
       "id": "modry-kamen-1763019878130-s0hva3bxc",
@@ -8,18 +9,6 @@
         "phone": "+421919287652",
         "website": "https://www.taxivk.sk",
         "address": "Dúbravská cesta 660/2, 990 01 Veľký Krtíš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
-    },
-    {
-      "id": "modry-kamen-1763019878131-1stadjmw3",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "Hrad Modrý Kameň",
-        "phone": "+42147/2454100",
-        "website": "http://hradmodrykamen.sk",
-        "address": "Zámocká 1, 992 01 Modrý Kameň, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:44:38.130Z"
@@ -168,6 +157,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T07:44:38.130Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T07:44:38.130Z"
+  ]
 }
