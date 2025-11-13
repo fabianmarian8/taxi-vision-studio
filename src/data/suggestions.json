@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:45:37.233Z",
+  "lastUpdated": "2025-11-13T09:46:01.823Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,30 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "vranov-nad-toplou-1763027148165-u23omfcjy",
+      "citySlug": "vranov-nad-toplou",
+      "taxiService": {
+        "name": "Gold Taxi Vranov nad Topľou",
+        "phone": "+421940636303",
+        "website": "https://goldtaxi.sk",
+        "address": "Budovateľská 2691/37A, 093 01 Vranov nad Topľou, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:45:48.165Z"
+    },
+    {
+      "id": "vranov-nad-toplou-1763027148165-1tg8p3wlw",
+      "citySlug": "vranov-nad-toplou",
+      "taxiService": {
+        "name": "Taxi Vranov Balint",
+        "phone": "+421948050843",
+        "website": null,
+        "address": "Sídlisko Juh, 093 01 Vranov nad Topľou, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:45:48.165Z"
     }
   ]
 }

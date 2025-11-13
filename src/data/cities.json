@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:45:35.568Z",
+  "lastUpdated": "2025-11-13T09:46:01.823Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -5287,7 +5287,17 @@
         "objednať taxi vranov",
         "taxi vranov telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Gold Taxi Vranov nad Topľou",
+          "website": "https://goldtaxi.sk",
+          "phone": "+421940636303"
+        },
+        {
+          "name": "Taxi Vranov Balint",
+          "phone": "+421948050843"
+        }
+      ],
       "latitude": 48.8917,
       "longitude": 21.6833
     },
