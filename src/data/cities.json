@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:46:01.823Z",
+  "lastUpdated": "2025-11-13T09:46:47.724Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -5314,7 +5314,23 @@
         "objednať taxi vráble",
         "taxi vráble ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Eko Taxi Vráble",
+          "website": "http://www.ekotaxi.sk",
+          "phone": "+421904006666"
+        },
+        {
+          "name": "Penzeš s.r.o.",
+          "website": "http://www.penzes.sk",
+          "phone": "+421905712578"
+        },
+        {
+          "name": "TAXI V Vrábľoch",
+          "website": "https://www.facebook.com/groups/1382440825293708",
+          "phone": "+421915483656"
+        }
+      ],
       "latitude": 48.2433,
       "longitude": 18.3067
     },
