@@ -1,17 +1,6 @@
 {
+  "lastUpdated": "2025-11-13T08:50:07.850Z",
   "suggestions": [
-    {
-      "id": "spisska-stara-ves-1763023799631-37c7qyzis",
-      "citySlug": "spisska-stara-ves",
-      "taxiService": {
-        "name": "City Taxi SNV",
-        "phone": "+421915759459",
-        "website": "https://www.citytaxisnv.sk",
-        "address": "Letecká 37, 052 01 Spišská Nová Ves-Tarča, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:49:59.631Z"
-    },
     {
       "id": "spisska-stara-ves-1763023799632-nqdr6qw97",
       "citySlug": "spisska-stara-ves",
@@ -48,6 +37,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T08:49:59.631Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:49:59.631Z"
+  ]
 }
