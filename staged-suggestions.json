@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:56:21.762Z",
+  "lastUpdated": "2025-11-13T08:56:29.761Z",
   "suggestions": [
     {
       "id": "stara-lubovna-1763024163367-7d7sw38o6",
@@ -69,18 +69,6 @@
         "phone": "+421910440006",
         "website": "http://lubovnataxi.sk",
         "address": "Poľská 688/5, 064 01 Stará Ľubovňa, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:56:03.367Z"
-    },
-    {
-      "id": "stara-lubovna-1763024163367-4e72t7ucc",
-      "citySlug": "stara-lubovna",
-      "taxiService": {
-        "name": "Auto-max Stará Ľubovňa s.r.o.",
-        "phone": "+421948162211",
-        "website": null,
-        "address": "Popradská 21, 064 01 Stará Ľubovňa, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T08:56:03.367Z"
