@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:45:45.428Z",
+  "lastUpdated": "2025-11-13T07:46:02.082Z",
   "suggestions": [
     {
       "id": "modry-kamen-1763019878130-s0hva3bxc",
@@ -57,18 +57,6 @@
         "phone": "+421910929007",
         "website": "http://adk-taxi.sk",
         "address": "Hlavná 32, 053 42 Krompachy, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
-    },
-    {
-      "id": "modry-kamen-1763019878131-r12j5l7d9",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "TAXI Limbach",
-        "phone": "+421904426242",
-        "website": null,
-        "address": "SNP 17/13, 900 91 Limbach, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:44:38.130Z"
