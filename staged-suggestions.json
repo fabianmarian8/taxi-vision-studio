@@ -1,0 +1,89 @@
+{
+  "suggestions": [
+    {
+      "id": "svidnik-1763024888807-xntkf9cmu",
+      "citySlug": "svidnik",
+      "taxiService": {
+        "name": "TAXI VLADO",
+        "phone": "+421907100650",
+        "website": "https://www.azet.sk",
+        "address": "8. mája 490/1, 089 01 Svidník, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:08:08.807Z"
+    },
+    {
+      "id": "svidnik-1763024888807-0c88ec8kr",
+      "citySlug": "svidnik",
+      "taxiService": {
+        "name": "S&K taxi Svidník",
+        "phone": "+421949662992",
+        "website": "https://www.facebook.com/share/1BoZxbAt2o",
+        "address": "Pionierska 357, 089 01 Svidník, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:08:08.807Z"
+    },
+    {
+      "id": "svidnik-1763024888807-2c0j0686e",
+      "citySlug": "svidnik",
+      "taxiService": {
+        "name": "TAXI Svidník",
+        "phone": "+421944748686",
+        "website": null,
+        "address": "Mládeže 495/1, 089 01 Svidník, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:08:08.807Z"
+    },
+    {
+      "id": "svidnik-1763024888807-yl3rduzg8",
+      "citySlug": "svidnik",
+      "taxiService": {
+        "name": "Adriána - Adriána Andrejková",
+        "phone": "+421903101073",
+        "website": null,
+        "address": "Centrálna 584/5, 089 01 Svidník, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:08:08.807Z"
+    },
+    {
+      "id": "svidnik-1763024888807-amimo8mgt",
+      "citySlug": "svidnik",
+      "taxiService": {
+        "name": "Taxi Svidnicky Express",
+        "phone": "+421952161061",
+        "website": null,
+        "address": "090 11 Nižný Orlík, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:08:08.807Z"
+    },
+    {
+      "id": "svidnik-1763024888807-wu7w5h8g7",
+      "citySlug": "svidnik",
+      "taxiService": {
+        "name": "Autobusová doprava SAD Humenné, a.s.",
+        "phone": "+42154/7881840",
+        "website": "http://www.sadhe.sk",
+        "address": "Centrálna 423, 089 01 Svidník, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:08:08.807Z"
+    },
+    {
+      "id": "svidnik-1763024888807-o88is8h04",
+      "citySlug": "svidnik",
+      "taxiService": {
+        "name": "Mgr. Martina Šimková - NAJ taxi",
+        "phone": "+421908629299",
+        "website": null,
+        "address": "Beňadikovce 41, 090 42 Beňadikovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:08:08.807Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T09:08:08.807Z"
+}
