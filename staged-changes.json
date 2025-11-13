@@ -1,0 +1,29 @@
+{
+  "changes": [
+    {
+      "citySlug": "medzev",
+      "taxiServices": [
+        {
+          "name": "TIBI TAXI",
+          "website": "http://www.tibitaxi.sk",
+          "phone": "+421907139053"
+        },
+        {
+          "name": "Sky Taxi Moldava nad Bodvou",
+          "phone": "+421940600048"
+        },
+        {
+          "name": "E-Taxi Košice",
+          "website": "https://www.e-taxike.sk",
+          "phone": "+421911606206"
+        },
+        {
+          "name": "BENZE Transfer Košice",
+          "website": "http://www.benze.sk",
+          "phone": "+421940645645"
+        }
+      ],
+      "timestamp": "2025-11-13T07:42:13.636Z"
+    }
+  ]
+}
