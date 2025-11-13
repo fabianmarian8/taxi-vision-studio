@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:17:45.015Z",
+  "lastUpdated": "2025-11-13T09:18:32.521Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4625,7 +4625,18 @@
         "objednať taxi šurany",
         "taxi šurany telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI TIGA Šurany",
+          "website": "http://www.taxisurany.eu",
+          "phone": "+421910146362"
+        },
+        {
+          "name": "alfataxi surany",
+          "website": "http://alfataxisurany.eu",
+          "phone": "+421949266288"
+        }
+      ],
       "latitude": 48.0833,
       "longitude": 18.1833
     },

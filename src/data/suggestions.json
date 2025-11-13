@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:17:46.851Z",
+  "lastUpdated": "2025-11-13T09:18:32.521Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,30 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "surany-1763025481501-7h7ewb5my",
+      "citySlug": "surany",
+      "taxiService": {
+        "name": "TAXI TIGA Šurany",
+        "phone": "+421910146362",
+        "website": "http://www.taxisurany.eu",
+        "address": "Richtárska 1233/7, 941 01 Bánov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:18:01.501Z"
+    },
+    {
+      "id": "surany-1763025481501-3syo1bpdo",
+      "citySlug": "surany",
+      "taxiService": {
+        "name": "alfataxi surany",
+        "phone": "+421949266288",
+        "website": "http://alfataxisurany.eu",
+        "address": "Šurianska 1156/35, 941 01 Bánov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:18:01.501Z"
     }
   ]
 }
