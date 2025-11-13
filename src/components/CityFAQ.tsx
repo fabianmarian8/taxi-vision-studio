@@ -21,7 +21,7 @@ export const CityFAQ = ({ cityName }: CityFAQProps) => {
   const faqItems: FAQItem[] = [
     {
       question: `Ako si objednám taxi v meste ${cityName}?`,
-      answer: `Taxi v meste ${cityName} si môžete objednať telefonicky, cez webovú stránku taxislužby alebo mobilnú aplikáciu. Na našej stránke nájdete kontaktné údaje na overené taxislužby.`
+      answer: `Taxi v meste ${cityName} si môžete objednať telefonicky, cez webovú stránku taxislužby alebo mobilnú aplikáciu. Na našej stránke nájdete kontaktné údaje na dostupné taxislužby v meste.`
     },
     {
       question: `Koľko stojí jazda taxíkom v meste ${cityName}?`,
@@ -37,7 +37,7 @@ export const CityFAQ = ({ cityName }: CityFAQProps) => {
     },
     {
       question: `Ako poznám, že ide o legálnu taxislužbu v meste ${cityName}?`,
-      answer: `Legálna taxislužba má označené vozidlo s logom, menovkou vodiča, taxametrom a cenníkom viditeľným v interiéri vozidla. Na našej stránke uvádzame overené a licencované taxislužby.`
+      answer: `Naša stránka je iba databáza kontaktov na taxislužby a nie poskytovateľ ani overovateľ týchto služieb. Odporúčame vám pred jazdou si overiť legitimitu taxislužby - legálne taxi má označené vozidlo s logom, menovkou vodiča a cenníkom viditeľným v interiéri vozidla.`
     },
     {
       question: `Môžem si vopred rezervovať taxi v meste ${cityName}?`,

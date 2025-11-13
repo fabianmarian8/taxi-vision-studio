@@ -114,9 +114,9 @@ const TermsOfUse = () => {
               5. Presnosť informácií
             </h2>
             <p className="text-foreground/80 leading-relaxed">
-              Vynakladáme maximálne úsilie na zabezpečenie presnosti a aktuálnosti informácií
-              o taxislužbách zobrazených na našej stránke. Informácie pravidelne aktualizujeme
-              a overujeme.
+              Vynakladáme úsilie na zabezpečenie presnosti a aktuálnosti kontaktných informácií
+              o taxislužbách zobrazených na našej stránke. Sme však iba databázou kontaktov
+              a neoverujeme legitimitu ani kvalitu poskytovaných služieb.
             </p>
             <p className="text-foreground/80 leading-relaxed">
               Napriek tomu nemôžeme zaručiť úplnú presnosť všetkých údajov, pretože informácie

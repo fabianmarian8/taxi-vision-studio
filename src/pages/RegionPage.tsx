@@ -42,7 +42,7 @@ const RegionPage = () => {
               Taxislužby v kraji {regionName}
             </h1>
             <p className="text-base md:text-xl text-foreground/90 font-bold px-4">
-              Vyberte si mesto a nájdite overené taxislužby
+              Vyberte si mesto a nájdite dostupné taxislužby
             </p>
           </div>
         </div>
