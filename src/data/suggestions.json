@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:43:20.738Z",
+  "lastUpdated": "2025-11-13T09:44:02.925Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,30 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "velky-meder-1763027030099-zaq98ie6w",
+      "citySlug": "velky-meder",
+      "taxiService": {
+        "name": "TAXI U ANJELA",
+        "phone": "+421915500633",
+        "website": null,
+        "address": "Promenádna 3356/23, 932 01 Veľký Meder, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:43:50.099Z"
+    },
+    {
+      "id": "velky-meder-1763027030100-76wbcqv0q",
+      "citySlug": "velky-meder",
+      "taxiService": {
+        "name": "VM-TAXI",
+        "phone": "+421911465475",
+        "website": "https://www.facebook.com/share/1DJhBFmFgz",
+        "address": "Sídlisko Mateja Corvina 1996/41, 932 01 Veľký Meder, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:43:50.099Z"
     }
   ]
 }
