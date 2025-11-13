@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:09:24.023Z",
+  "lastUpdated": "2025-11-13T09:09:57.272Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4381,7 +4381,13 @@
         "objednať taxi svit",
         "taxi svit tatry"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "taxi svit s.r.o.",
+          "website": "https://svittaxi.sk",
+          "phone": "+421905211311"
+        }
+      ]
     },
     {
       "name": "Šahy",
