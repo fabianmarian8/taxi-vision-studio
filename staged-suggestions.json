@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:56:29.761Z",
+  "lastUpdated": "2025-11-13T08:56:38.289Z",
   "suggestions": [
     {
       "id": "stara-lubovna-1763024163367-7d7sw38o6",
@@ -45,18 +45,6 @@
         "phone": "+421911793216",
         "website": "https://s-trans.sk",
         "address": "Za vodou, 064 01 Stará Ľubovňa, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:56:03.367Z"
-    },
-    {
-      "id": "stara-lubovna-1763024163367-cdqzp1jj9",
-      "citySlug": "stara-lubovna",
-      "taxiService": {
-        "name": "JOKO ARK COMPANY, spol. s.r.o. Stará Ľubovňa",
-        "phone": "+421903637924",
-        "website": null,
-        "address": "17. novembra 552/23, 064 01 Stará Ľubovňa, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T08:56:03.367Z"
