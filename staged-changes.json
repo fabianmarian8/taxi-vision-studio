@@ -1,0 +1,19 @@
+{
+  "changes": [
+    {
+      "citySlug": "vranov-nad-toplou",
+      "taxiServices": [
+        {
+          "name": "Gold Taxi Vranov nad Topľou",
+          "website": "https://goldtaxi.sk",
+          "phone": "+421940636303"
+        },
+        {
+          "name": "Taxi Vranov Balint",
+          "phone": "+421948050843"
+        }
+      ],
+      "timestamp": "2025-11-13T09:46:00.090Z"
+    }
+  ]
+}
