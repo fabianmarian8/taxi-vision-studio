@@ -1,0 +1,72 @@
+{
+  "changes": [
+    {
+      "citySlug": "nitra",
+      "taxiServices": [
+        {
+          "name": "Style taxi Nitra - Najlacnejšia taxislužba v Nitre",
+          "website": "http://www.styletaxi.sk",
+          "phone": "+421910512612"
+        },
+        {
+          "name": "VIA TAXI NITRA",
+          "website": "http://www.viataxi.webnode.sk",
+          "phone": "+421904442255"
+        },
+        {
+          "name": "Léďo taxi",
+          "phone": "+421911463463"
+        },
+        {
+          "name": "Zobor Taxi",
+          "website": "http://www.zobortaxi.sk",
+          "phone": "+421908929292"
+        },
+        {
+          "name": "SMILE Taxi Nitra",
+          "website": "https://www.facebook.com/smiletaxinitra",
+          "phone": "+421907363952"
+        },
+        {
+          "name": "Top Taxi",
+          "website": "http://toptaxinitra.sk",
+          "phone": "+421940550110"
+        },
+        {
+          "name": "HEY MOJE TAXI",
+          "website": "http://www.heytaxi.sk",
+          "phone": "+421903133233"
+        },
+        {
+          "name": "One Taxi Nitra",
+          "phone": "+421910550200"
+        },
+        {
+          "name": "Group Taxi Nitra",
+          "website": "http://grouptaxinitra.sk",
+          "phone": "+421904661142"
+        },
+        {
+          "name": "Profi Taxi",
+          "phone": "+421910796959"
+        },
+        {
+          "name": "VIP TAXI Nitra",
+          "website": "http://www.viptaxinitra.sk",
+          "phone": "+421948313131"
+        },
+        {
+          "name": "Regiotaxinitra, s.r.o.",
+          "website": "http://www.regiotaxinitra.sk",
+          "phone": "+421948037037"
+        },
+        {
+          "name": "Nitrava Taxi",
+          "website": "http://www.nitravataxi.webnode.sk",
+          "phone": "+421902400456"
+        }
+      ],
+      "timestamp": "2025-11-13T07:50:08.666Z"
+    }
+  ]
+}
