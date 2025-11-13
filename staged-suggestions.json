@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T09:18:17.715Z",
   "suggestions": [
     {
       "id": "surany-1763025481501-7h7ewb5my",
@@ -23,19 +24,6 @@
       },
       "status": "pending",
       "timestamp": "2025-11-13T09:18:01.501Z"
-    },
-    {
-      "id": "surany-1763025481501-yvzgh55qd",
-      "citySlug": "surany",
-      "taxiService": {
-        "name": "J&L s. r. o.",
-        "phone": "+421949102711",
-        "website": "https://finstat.sk",
-        "address": "MDŽ 1883/52, 942 01 Šurany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:18:01.501Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T09:18:01.501Z"
+  ]
 }
