@@ -1,0 +1,82 @@
+{
+  "changes": [
+    {
+      "citySlug": "poprad",
+      "taxiServices": [
+        {
+          "name": "ABA taxi Poprad",
+          "website": "http://www.abataxi.sk",
+          "phone": "+421911334773"
+        },
+        {
+          "name": "1 TAXI Poprad",
+          "website": "http://www.1taxipoprad.sk",
+          "phone": "+421911073555"
+        },
+        {
+          "name": "City taxi Poprad",
+          "website": "http://www.citytaxi-poprad.sk",
+          "phone": "+421903367800"
+        },
+        {
+          "name": "Lm taxi Poprad s.r.o.",
+          "phone": "+421940967827"
+        },
+        {
+          "name": "Okey Taxi Poprad",
+          "website": "http://okeytaxi.sk",
+          "phone": "+421 915 830 800"
+        },
+        {
+          "name": "City taxi Poprad s.r.o.",
+          "website": "http://www.citytaxi-poprad.sk",
+          "phone": "+421904801981"
+        },
+        {
+          "name": "Poprad Taxi Kočiš",
+          "website": "https://popradtaxikocis.sk",
+          "phone": "+421911900632"
+        },
+        {
+          "name": "Rádio Taxi Poprad",
+          "website": "http://www.radiotaxi-poprad.sk",
+          "phone": "+421905300700"
+        },
+        {
+          "name": "ABA Taxi s.r.o.",
+          "website": "http://www.abataxi.sk",
+          "phone": "+421948334773"
+        },
+        {
+          "name": "POPRAD TAXI - Milan Palubjak",
+          "website": "http://www.popradtaxi.sk",
+          "phone": "+421905751298"
+        },
+        {
+          "name": "Goldtaxi Poprad",
+          "phone": "+421911065065"
+        },
+        {
+          "name": "ALFA TAXI POPRAD",
+          "phone": "+421903723623"
+        },
+        {
+          "name": "Royal taxi Poprad",
+          "website": "http://www.royaltaxi.sk",
+          "phone": "+421907566966"
+        },
+        {
+          "name": "Okey Taxi Poprad a okolie",
+          "website": "https://okeytaxi.sk",
+          "phone": "+42152/7730030"
+        },
+        {
+          "name": "AAUTO TAXI POPRAD",
+          "website": "https://aautotaxi.sk",
+          "phone": "+421908390490"
+        }
+      ],
+      "timestamp": "2025-11-13T08:07:47.046Z"
+    }
+  ]
+}
