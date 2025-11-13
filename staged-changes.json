@@ -1,0 +1,15 @@
+{
+  "changes": [
+    {
+      "citySlug": "modra",
+      "taxiServices": [
+        {
+          "name": "TAXI MODRA",
+          "website": "http://www.taxi-modra.sk",
+          "phone": "+421905426242"
+        }
+      ],
+      "timestamp": "2025-11-13T07:44:22.834Z"
+    }
+  ]
+}
