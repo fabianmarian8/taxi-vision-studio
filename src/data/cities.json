@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:58:14.732Z",
+  "lastUpdated": "2025-11-13T08:59:02.180Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4222,7 +4222,16 @@
         "objednať taxi strážske",
         "taxi strážske telefón"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "Taxislužba GreDas Strážske",
+          "phone": "+421950280770"
+        },
+        {
+          "name": "TAXI LIENKA Strážske",
+          "phone": "+421911717492"
+        }
+      ]
     },
     {
       "name": "Stropkov",
