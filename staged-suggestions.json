@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T08:57:23.496Z",
   "suggestions": [
     {
       "id": "stara-tura-1763024231034-bbfweh6j7",
@@ -85,18 +86,6 @@
       "timestamp": "2025-11-13T08:57:11.034Z"
     },
     {
-      "id": "stara-tura-1763024231035-vbgefzd8n",
-      "citySlug": "stara-tura",
-      "taxiService": {
-        "name": "ALPHA TAXI ČACHTICE",
-        "phone": "+421940883353",
-        "website": "http://alphataxist.sk",
-        "address": "Malinovského, 916 21 Čachtice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:57:11.034Z"
-    },
-    {
       "id": "stara-tura-1763024231035-xfhdn9jtb",
       "citySlug": "stara-tura",
       "taxiService": {
@@ -120,6 +109,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T08:57:11.034Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:57:11.034Z"
+  ]
 }
