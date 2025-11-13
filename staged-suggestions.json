@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T07:51:33.697Z",
   "suggestions": [
     {
       "id": "nova-bana-1763020279026-1yk5e1m8k",
@@ -83,19 +84,6 @@
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:51:19.026Z"
-    },
-    {
-      "id": "nova-bana-1763020279026-mlnzq5vab",
-      "citySlug": "nova-bana",
-      "taxiService": {
-        "name": "Nová Baňa",
-        "phone": null,
-        "website": "http://www.novabana.sk",
-        "address": "968 01 Nová Baňa, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:51:19.026Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T07:51:19.026Z"
+  ]
 }
