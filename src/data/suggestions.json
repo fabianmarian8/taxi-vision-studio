@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:32:45.671Z",
+  "lastUpdated": "2025-11-13T07:32:48.371Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "kralovsky-chlmec-1762957988397-2hi34zve2",
-      "citySlug": "kralovsky-chlmec",
-      "taxiService": {
-        "name": "Transem spol. s r.o.",
-        "phone": "+421901911937",
-        "website": "http://transem.sk",
-        "address": "Pri štadióne 535/75, 077 01 Kráľovský Chlmec, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:33:08.397Z"
     },
     {
       "id": "kralovsky-chlmec-1762957988397-cf082nje4",
