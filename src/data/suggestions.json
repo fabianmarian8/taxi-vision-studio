@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:35:30.632Z",
+  "lastUpdated": "2025-11-13T07:35:32.620Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "levice-1762980652067-rgjbtwl8q",
-      "citySlug": "levice",
-      "taxiService": {
-        "name": "VIA TAXI LEVICE",
-        "phone": "+421948321111",
-        "website": "https://www.viataxilevice.sk",
-        "address": "Martina Kukučína 44, 934 01 Levice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T20:50:52.067Z"
     },
     {
       "id": "levice-1762980652067-cpmehkpsq",
