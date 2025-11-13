@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:51:58.857Z",
+  "lastUpdated": "2025-11-13T07:52:00.980Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,66 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "nova-bana-1763020279026-1yk5e1m8k",
-      "citySlug": "nova-bana",
-      "taxiService": {
-        "name": "Taxi Nová Baňa",
-        "phone": "+421915222199",
-        "website": "http://www.taxinovabana.sk",
-        "address": "Kalvárska 222/4, 968 01 Nová Baňa, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:51:19.026Z"
-    },
-    {
-      "id": "nova-bana-1763020279026-2zrrx2k3m",
-      "citySlug": "nova-bana",
-      "taxiService": {
-        "name": "TaxiCar.sk - Nová Baňa",
-        "phone": "+421911370444",
-        "website": "http://www.taxicar.sk",
-        "address": "Námestie slobody 2, 968 01 Nová Baňa, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:51:19.026Z"
-    },
-    {
-      "id": "nova-bana-1763020279026-bu9x5pyrc",
-      "citySlug": "nova-bana",
-      "taxiService": {
-        "name": "TAXI TERMINÁL - NOVÁ BAŇA",
-        "phone": "+421905583517",
-        "website": "http://www.taxinovabana.wbl.sk",
-        "address": "Námestie svätej Alžbety 1, 968 01 Nová Baňa, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:51:19.026Z"
-    },
-    {
-      "id": "nova-bana-1763020279026-djlokg5tw",
-      "citySlug": "nova-bana",
-      "taxiService": {
-        "name": "EKO TAXI - Nová Baňa",
-        "phone": "+421917100505",
-        "website": "http://www.ekotaxi.sk",
-        "address": "Námestie svätej Alžbety, 968 01 Nová Baňa, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:51:19.026Z"
-    },
-    {
-      "id": "nova-bana-1763020279026-grcnl6vzv",
-      "citySlug": "nova-bana",
-      "taxiService": {
-        "name": "Ataxi Taxislužba",
-        "phone": "+421904991633",
-        "website": "http://www.ataxi-nb.sk",
-        "address": "Pod sekvojou, 968 01 Nová Baňa, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:51:19.026Z"
     }
   ]
 }
