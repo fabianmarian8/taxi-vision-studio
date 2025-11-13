@@ -24,7 +24,8 @@ const CityPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {city && <SEOHead city={city} pageType="city" />}
+      {/* Temporarily disabled SEOHead - will fix and re-enable */}
+      {/* {city && <SEOHead city={city} pageType="city" />} */}
       <Header />
 
       {/* Taxi Services Section */}
