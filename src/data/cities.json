@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:38:29.211Z",
+  "lastUpdated": "2025-11-13T07:39:12.728Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1897,7 +1897,69 @@
         "objednať taxi lučenec",
         "taxi lučenec telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Hallo TAXI Lučenec nonstop",
+          "phone": "+421944242332"
+        },
+        {
+          "name": "CITY TAXI Lučenec",
+          "website": "https://taxilucenec.sk",
+          "phone": "+421949433222"
+        },
+        {
+          "name": "LC Taxi • NonStop",
+          "website": "https://www.facebook.com/share/1BdH7GyVM6",
+          "phone": "+421908309949"
+        },
+        {
+          "name": "GO TAXI Lučenec",
+          "website": "https://m.facebook.com/pages/category/Community/GO-taxi-Lučenec-0948-108-101-893756770815477",
+          "phone": "+421948108101"
+        },
+        {
+          "name": "Šuti TAXI- Lučenec",
+          "phone": "+421940074779"
+        },
+        {
+          "name": "Pico Taxi Lučenec",
+          "phone": "+421944222772"
+        },
+        {
+          "name": "OK Taxi Lučenec",
+          "phone": "+421917588888"
+        },
+        {
+          "name": "G.R.E.A.T Taxi Lučenec",
+          "website": "https://www.facebook.com/profile.php",
+          "phone": "+421948140023"
+        },
+        {
+          "name": "Nay taxi Lučenec",
+          "phone": "+421918011103"
+        },
+        {
+          "name": "A-SUPERB, s.r.o.",
+          "phone": "+421918553493"
+        },
+        {
+          "name": "GL Taxi Lučenec",
+          "website": "https://facebook.com/profile.php",
+          "phone": "+421917551962"
+        },
+        {
+          "name": "Express Taxi",
+          "phone": "+421904111696"
+        },
+        {
+          "name": "ML taxi Lučenec - NONSTOP",
+          "phone": "+421952076004"
+        },
+        {
+          "name": "Taxi Kora",
+          "phone": "+421904030586"
+        }
+      ],
       "latitude": 48.33,
       "longitude": 19.665
     },
