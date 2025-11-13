@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:07:49.685Z",
+  "lastUpdated": "2025-11-13T08:08:51.892Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3023,7 +3023,76 @@
         "objednať taxi bystrica",
         "taxi pb"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "PF Taxi",
+          "phone": "+421910305020"
+        },
+        {
+          "name": "LIŠIAK TAXI",
+          "website": "http://www.lisiak.taxi",
+          "phone": "+421909200900"
+        },
+        {
+          "name": "PX TAXI 🚖 Považská Bystrica",
+          "website": "https://www.facebook.com/profile.php",
+          "phone": "+421948101500"
+        },
+        {
+          "name": "Dada Taxi",
+          "website": "https://www.facebook.com/taxidadapb",
+          "phone": "+421904984846"
+        },
+        {
+          "name": "TAXI-RAPID",
+          "phone": "+421910535455"
+        },
+        {
+          "name": "FamilyTAXI",
+          "website": "http://www.familytaxi.sk",
+          "phone": "+421910355550"
+        },
+        {
+          "name": "GOLD TAXI",
+          "website": "https://www.goldtaxipb.sk",
+          "phone": "+421948272700"
+        },
+        {
+          "name": "TAXI KOSŤO 🚖",
+          "website": "https://www.facebook.com/people/Taxi-Kosťo/100057682898542",
+          "phone": "+421910205050"
+        },
+        {
+          "name": "Taxi Považská Bystrica",
+          "phone": "+421948535455"
+        },
+        {
+          "name": "Globtrans-PB taxi",
+          "website": "http://www.facebook.com/globtranspb",
+          "phone": "+421907070070"
+        },
+        {
+          "name": "BK TAXI",
+          "website": "http://www.fb.com/100063533464051",
+          "phone": "+421904405500"
+        },
+        {
+          "name": "TAXI PETER",
+          "phone": "+421908535455"
+        },
+        {
+          "name": "T - Taxi Líška Tomáš",
+          "phone": "+421902070010"
+        },
+        {
+          "name": "TAXI DANIELA",
+          "phone": "+421905535455"
+        },
+        {
+          "name": "TAXI POVAŽSKA BYSTRICA",
+          "phone": "+421908440077"
+        }
+      ],
       "latitude": 49.1217,
       "longitude": 18.4483
     },
