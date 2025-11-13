@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T08:39:22.341Z",
   "suggestions": [
     {
       "id": "sered-1763023146847-idxrpdr5z",
@@ -85,18 +86,6 @@
       "timestamp": "2025-11-13T08:39:06.847Z"
     },
     {
-      "id": "sered-1763023146848-6aourbfj8",
-      "citySlug": "sered",
-      "taxiService": {
-        "name": "TAXI OTTI (OTTI s.r.o. )",
-        "phone": "+421915638595",
-        "website": "http://www.taxiotti.sk",
-        "address": "28, Revolučná štvrť 969, 924 01 Galanta, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:39:06.847Z"
-    },
-    {
       "id": "sered-1763023146848-brupkg9w4",
       "citySlug": "sered",
       "taxiService": {
@@ -120,6 +109,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T08:39:06.847Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:39:06.847Z"
+  ]
 }
