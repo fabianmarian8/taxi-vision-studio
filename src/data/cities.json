@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:52:00.143Z",
+  "lastUpdated": "2025-11-13T07:53:20.685Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2559,7 +2559,18 @@
         "objednať taxi dubnica",
         "taxi nová dubnica telefón"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "CITY TAXI",
+          "website": "https://www.facebook.com/share/17VhxgLpe8",
+          "phone": "+421948482727"
+        },
+        {
+          "name": "TAXI GO LETISKOVÉ TRANSFERY",
+          "website": "http://www.taxigo.sk",
+          "phone": "+421903505999"
+        }
+      ]
     },
     {
       "name": "Nováky",
