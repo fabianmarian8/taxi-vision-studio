@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:41:17.871Z",
+  "lastUpdated": "2025-11-13T07:42:16.014Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2103,7 +2103,27 @@
         "objednať taxi medzev",
         "taxi medzev telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TIBI TAXI",
+          "website": "http://www.tibitaxi.sk",
+          "phone": "+421907139053"
+        },
+        {
+          "name": "Sky Taxi Moldava nad Bodvou",
+          "phone": "+421940600048"
+        },
+        {
+          "name": "E-Taxi Košice",
+          "website": "https://www.e-taxike.sk",
+          "phone": "+421911606206"
+        },
+        {
+          "name": "BENZE Transfer Košice",
+          "website": "http://www.benze.sk",
+          "phone": "+421940645645"
+        }
+      ],
       "latitude": 48.705,
       "longitude": 20.9
     },
