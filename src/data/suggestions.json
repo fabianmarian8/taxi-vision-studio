@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:15:49.014Z",
+  "lastUpdated": "2025-11-13T09:15:50.603Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,66 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "samorin-1763025326310-7ygkggyxl",
-      "citySlug": "samorin",
-      "taxiService": {
-        "name": "Taxi Šamorín",
-        "phone": "+421944065006",
-        "website": "https://taxi-samorin.sk",
-        "address": "Školská 7, 931 01 Šamorín, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:15:26.310Z"
-    },
-    {
-      "id": "samorin-1763025326310-bxgp4uzwo",
-      "citySlug": "samorin",
-      "taxiService": {
-        "name": "Taxi Plus Šamorín",
-        "phone": "+421944160016",
-        "website": "http://taxiplus-samorin.sk",
-        "address": "72, Pomlejská cesta 428, 931 01 Šamorín, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:15:26.310Z"
-    },
-    {
-      "id": "samorin-1763025326310-uysk9gwg4",
-      "citySlug": "samorin",
-      "taxiService": {
-        "name": "Taxi Šamorín - Autobusová stanica",
-        "phone": "+421902199822",
-        "website": null,
-        "address": "Šamorín, 93041, 931 01 Šamorín, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:15:26.310Z"
-    },
-    {
-      "id": "samorin-1763025326310-tq50ivqf3",
-      "citySlug": "samorin",
-      "taxiService": {
-        "name": "Taxi Horváth-Šamorín",
-        "phone": "+421902188222",
-        "website": null,
-        "address": "Šamorín, 93041, 931 01 Šamorín, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:15:26.310Z"
-    },
-    {
-      "id": "samorin-1763025326310-rlxceptij",
-      "citySlug": "samorin",
-      "taxiService": {
-        "name": "Vojtech Horváth Taxi",
-        "phone": "+421910551448",
-        "website": null,
-        "address": "Čilistovská 588/7, 931 01 Šamorín, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:15:26.310Z"
     }
   ]
 }
