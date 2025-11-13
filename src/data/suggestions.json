@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:35:23.817Z",
+  "lastUpdated": "2025-11-13T07:35:25.597Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "kysucke-nove-mesto-1762978644508-i89nzqrph",
-      "citySlug": "kysucke-nove-mesto",
-      "taxiService": {
-        "name": "OK Taxi KNM",
-        "phone": "+421903878003",
-        "website": null,
-        "address": "SNP 9, 024 01 Kysucké Nové Mesto, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T20:17:24.508Z"
     },
     {
       "id": "kysucke-nove-mesto-1762978644508-ywwvf390p",
