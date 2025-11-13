@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:35:25.597Z",
+  "lastUpdated": "2025-11-13T07:35:27.345Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "kysucke-nove-mesto-1762978644508-ywwvf390p",
-      "citySlug": "kysucke-nove-mesto",
-      "taxiService": {
-        "name": "TAXI - L&M servis, s.r.o.",
-        "phone": "+421915558585",
-        "website": null,
-        "address": "SNP, 024 01 Kysucké Nové Mesto, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T20:17:24.508Z"
     },
     {
       "id": "levice-1762980652067-s00ngjpkj",
