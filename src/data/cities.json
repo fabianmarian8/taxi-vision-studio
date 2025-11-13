@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:22:29.944Z",
+  "lastUpdated": "2025-11-13T08:23:27.489Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3590,7 +3590,65 @@
         "objednať taxi senec",
         "taxi senec jazerá"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI SENEC MATEJ",
+          "website": "https://www.taxisenecmatej.sk",
+          "phone": "+421903025400"
+        },
+        {
+          "name": "Vaše TAXI Senec",
+          "website": "http://www.taxi-senec.sk",
+          "phone": "+421949600626"
+        },
+        {
+          "name": "TAXI-7EVEN SENEC",
+          "website": "https://taxi7evensenec.sk",
+          "phone": "+421907288562"
+        },
+        {
+          "name": "Brano Taxi Senec",
+          "website": "https://www.branotaxisenec.sk",
+          "phone": "+421903582873"
+        },
+        {
+          "name": "Taxi Dodo Senec",
+          "website": "https://www.facebook.com/profile.php",
+          "phone": "+421940241255"
+        },
+        {
+          "name": "Mesut Taxi Senec",
+          "website": "https://senectaxi.online",
+          "phone": "+421940318002"
+        },
+        {
+          "name": "FLIP FLAP s. r. o., FLIP FLAP TAXI",
+          "website": "http://flipflap.sk",
+          "phone": "+421919310332"
+        },
+        {
+          "name": "TAXI SENEC MATEJ pri železničnej stanici",
+          "website": "http://www.taxisenecmatej.sk",
+          "phone": "+421940099123"
+        },
+        {
+          "name": "Jogy taxi",
+          "phone": "+421902167655"
+        },
+        {
+          "name": "TaxiTaxi 3",
+          "phone": "+421910168665"
+        },
+        {
+          "name": "Janka Taxi 🍀",
+          "phone": "+421905161600"
+        },
+        {
+          "name": "SC-Taxik",
+          "website": "http://www.sctaxik.sk",
+          "phone": "+421949575705"
+        }
+      ],
       "latitude": 48.22,
       "longitude": 17.4
     },
