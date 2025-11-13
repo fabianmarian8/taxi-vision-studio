@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:35:29.106Z",
+  "lastUpdated": "2025-11-13T07:35:30.632Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "levice-1762980652067-b32am2syp",
-      "citySlug": "levice",
-      "taxiService": {
-        "name": "ECO TAXI Levice",
-        "phone": "+421910333373",
-        "website": "http://www.eco-taxi.sk",
-        "address": "Kalvínske Námestie 126/2, 930 41 Levice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T20:50:52.067Z"
     },
     {
       "id": "levice-1762980652067-rgjbtwl8q",
