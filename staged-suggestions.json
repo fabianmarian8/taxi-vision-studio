@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T08:49:31.446Z",
   "suggestions": [
     {
       "id": "spisska-nova-ves-1763023680227-d0ppsl0kk",
@@ -133,18 +134,6 @@
       "timestamp": "2025-11-13T08:48:00.227Z"
     },
     {
-      "id": "spisska-nova-ves-1763023680227-30pz35e94",
-      "citySlug": "spisska-nova-ves",
-      "taxiService": {
-        "name": "Nákladné Taxi - Leskovjanský Jozef",
-        "phone": "+42153/4427511",
-        "website": null,
-        "address": "32, J. Wolkera 2414, Mier, 052 01 Spišská Nová Ves, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:48:00.227Z"
-    },
-    {
       "id": "spisska-nova-ves-1763023680227-4r0ilfriy",
       "citySlug": "spisska-nova-ves",
       "taxiService": {
@@ -168,6 +157,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T08:48:00.227Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:48:00.227Z"
+  ]
 }
