@@ -1,0 +1,20 @@
+{
+  "changes": [
+    {
+      "citySlug": "surany",
+      "taxiServices": [
+        {
+          "name": "TAXI TIGA Šurany",
+          "website": "http://www.taxisurany.eu",
+          "phone": "+421910146362"
+        },
+        {
+          "name": "alfataxi surany",
+          "website": "http://alfataxisurany.eu",
+          "phone": "+421949266288"
+        }
+      ],
+      "timestamp": "2025-11-13T09:18:31.007Z"
+    }
+  ]
+}
