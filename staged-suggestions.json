@@ -1,4 +1,185 @@
 {
-  "lastUpdated": "2025-11-13T08:05:30.892Z",
-  "suggestions": []
+  "lastUpdated": "2025-11-13T08:06:30.416Z",
+  "suggestions": [
+    {
+      "id": "poprad-1763021190416-bfyd8ry80",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "ABA taxi Poprad",
+        "phone": "+421911334773",
+        "website": "http://www.abataxi.sk",
+        "address": "Jiřího Wolkera, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-7p5lygrvm",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "1 TAXI Poprad",
+        "phone": "+421911073555",
+        "website": "http://www.1taxipoprad.sk",
+        "address": "Alžbetina 458 2, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-79qd8wx9q",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "City taxi Poprad",
+        "phone": "+421903367800",
+        "website": "http://www.citytaxi-poprad.sk",
+        "address": "Teplická 4, Veľká, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-hlbsnab28",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "Lm taxi Poprad s.r.o.",
+        "phone": "+421940967827",
+        "website": null,
+        "address": "Moyzesova 15, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-s1w0w3yki",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "Okey Taxi Poprad",
+        "phone": null,
+        "website": "http://okeytaxi.sk",
+        "address": "Dlhé Hony, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-531hhafua",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "City taxi Poprad s.r.o.",
+        "phone": "+421904801981",
+        "website": "http://www.citytaxi-poprad.sk",
+        "address": "34, Ul. mládeže 2355, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-1157o978q",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "Poprad Taxi Kočiš",
+        "phone": "+421911900632",
+        "website": "https://popradtaxikocis.sk",
+        "address": "Mlynská 937/22, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-cx70a63bc",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "Rádio Taxi Poprad",
+        "phone": "+421905300700",
+        "website": "http://www.radiotaxi-poprad.sk",
+        "address": "058 01 Poprad-Priemyselný obvod - západ, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-3aczvcogk",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "ABA Taxi s.r.o.",
+        "phone": "+421948334773",
+        "website": "http://www.abataxi.sk",
+        "address": "10, Bajkalská 2338, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-h4tcuwfvf",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "POPRAD TAXI - Milan Palubjak",
+        "phone": "+421905751298",
+        "website": "http://www.popradtaxi.sk",
+        "address": "29. augusta 166 / 39, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-ew6krbxza",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "Goldtaxi Poprad",
+        "phone": "+421911065065",
+        "website": null,
+        "address": "Záborského 2943/25, Juh 3, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-uj6pvashh",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "ALFA TAXI POPRAD",
+        "phone": "+421903723623",
+        "website": null,
+        "address": "Jiřího Wolkera, 058 01 Poprad-Priemyselný obvod - západ, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-pa6kfww28",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "Royal taxi Poprad",
+        "phone": "+421907566966",
+        "website": "http://www.royaltaxi.sk",
+        "address": "Mládeže 28, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-2oj2lfpgv",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "Okey Taxi Poprad a okolie",
+        "phone": "+42152/7730030",
+        "website": "https://okeytaxi.sk",
+        "address": "Bajkalská 2334/1, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    },
+    {
+      "id": "poprad-1763021190419-fen43gzs6",
+      "citySlug": "poprad",
+      "taxiService": {
+        "name": "AAUTO TAXI POPRAD",
+        "phone": "+421908390490",
+        "website": "https://aautotaxi.sk",
+        "address": "Jiřího Wolkera, 058 01 Poprad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:06:30.416Z"
+    }
+  ]
 }
