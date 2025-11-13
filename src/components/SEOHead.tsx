@@ -56,7 +56,7 @@ export const SEOHead = ({ city, pageType = 'city', serviceName }: SEOHeadProps) 
         existingScript.remove();
       }
     };
-  }, [city, pageType, serviceName]);
+  }, [city.slug, city.name, city.taxiServices, city.keywords, pageType, serviceName]);
   
   return null; // This component doesn't render anything
 };
