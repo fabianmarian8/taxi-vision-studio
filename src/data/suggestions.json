@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:33:07.167Z",
+  "lastUpdated": "2025-11-13T07:33:08.971Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "levoca-1762966820131-n59cnb0g5",
-      "citySlug": "levoca",
-      "taxiService": {
-        "name": "TaxiEuropa.sk preprava osôb AT,DE,CH",
-        "phone": "+421907817824",
-        "website": "https://www.taxieuropa.sk",
-        "address": "Dlhá 246/21, 054 01 Levoča, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T17:00:20.131Z"
     },
     {
       "id": "levoca-1762966820131-5gx0r6ey5",
