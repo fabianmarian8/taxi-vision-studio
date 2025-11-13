@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:08:51.892Z",
+  "lastUpdated": "2025-11-13T08:09:55.665Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3109,7 +3109,77 @@
         "objednať taxi prešov",
         "taxi prešov telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "AlfaTAXI Prešov",
+          "website": "http://www.alfataxipo.sk",
+          "phone": "+421940545556"
+        },
+        {
+          "name": "AB Taxi Prešov",
+          "website": "http://www.abtaxipresov.sk",
+          "phone": "+421915124141"
+        },
+        {
+          "name": "EuroCombi TAXI Prešov",
+          "website": "https://www.eurocombitaxi.sk",
+          "phone": "+42151/7710710"
+        },
+        {
+          "name": "Majo Taxi Prešov/AB Taxi Prešov",
+          "website": "http://abtaxipresov.sk",
+          "phone": "+421905210121"
+        },
+        {
+          "name": "EkoTaxi",
+          "website": "http://www.taxieko.sk",
+          "phone": "+421918055044"
+        },
+        {
+          "name": "Taxi Number One",
+          "website": "http://numberone.sk",
+          "phone": "+421949000292"
+        },
+        {
+          "name": "AIRPORT TAXI/SUPERB TAXI",
+          "website": "http://www.superbtaxipo.sk",
+          "phone": "+421948305136"
+        },
+        {
+          "name": "Jaroslav Kopilec -Letiskové transfery Prešov",
+          "phone": "+421905816166"
+        },
+        {
+          "name": "A-A DANIELA-TAXI",
+          "website": "http://www.danielataxi.sk",
+          "phone": "+421905313480"
+        },
+        {
+          "name": "TAXI PREŠOV / AB TAXI",
+          "website": "http://www.abtaxipresov.sk",
+          "phone": "+42151/7722733"
+        },
+        {
+          "name": "HALOtransfer s.r.o Letiskové transfery. Prešov-Košice-Budapešť ,Viedeň,Krakov.",
+          "website": "https://www.halotransfer.sk",
+          "phone": "+421915508666"
+        },
+        {
+          "name": "HALO TAXI Prešov",
+          "website": "https://www.halotaxi.sk",
+          "phone": "+421908303909"
+        },
+        {
+          "name": "Prešov Taxi",
+          "website": "https://taxipresov.webnode.sk",
+          "phone": "+421940109003"
+        },
+        {
+          "name": "Branislav Kekel , taxík, preprava osôb , donáška , letiskové transfery",
+          "website": "http://zoberma.sk",
+          "phone": "+421905893202"
+        }
+      ],
       "latitude": 48.9983,
       "longitude": 21.2392
     },
