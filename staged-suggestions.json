@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T09:34:17.386Z",
   "suggestions": [
     {
       "id": "turcianske-teplice-1763026416903-2cemu4txp",
@@ -49,18 +50,6 @@
       "timestamp": "2025-11-13T09:33:36.903Z"
     },
     {
-      "id": "turcianske-teplice-1763026416903-mdkkcl132",
-      "citySlug": "turcianske-teplice",
-      "taxiService": {
-        "name": "Bugo Taxi",
-        "phone": "+421907077077",
-        "website": "http://www.bugotaxi.sk",
-        "address": "14, Železničná 3228, 038 61 Vrútky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:33:36.903Z"
-    },
-    {
       "id": "turcianske-teplice-1763026416903-eb3z947mj",
       "citySlug": "turcianske-teplice",
       "taxiService": {
@@ -84,6 +73,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T09:33:36.903Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T09:33:36.903Z"
+  ]
 }
