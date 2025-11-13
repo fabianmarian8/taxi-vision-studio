@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:24:30.698Z",
+  "lastUpdated": "2025-11-13T09:29:16.715Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4920,7 +4920,64 @@
         "objednať taxi trnava",
         "taxi trnava ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Profi TAXI Trnava",
+          "website": "http://www.profitaxitrnava.sk",
+          "phone": "+4213316444"
+        },
+        {
+          "name": "TEAM TAXI TRNAVA",
+          "website": "http://www.teamtaxi.sk",
+          "phone": "+421940747474"
+        },
+        {
+          "name": "LUX Taxi Trnava",
+          "website": "https://taxi-trnava.sk",
+          "phone": "+421950711611"
+        },
+        {
+          "name": "Yellow Taxi Trnava",
+          "website": "http://www.taxisluzbatrnava.sk",
+          "phone": "+42133/3030303"
+        },
+        {
+          "name": "VIP Taxi Trnava",
+          "website": "https://www.viptaxitrnava.sk",
+          "phone": "+4213316111"
+        },
+        {
+          "name": "Alcatraz Taxi Trnava",
+          "website": "http://www.alcatraztaxi.sk",
+          "phone": "+421 918 444 484"
+        },
+        {
+          "name": "Tovar Taxi",
+          "website": "http://www.tovartaxi.sk",
+          "phone": "+421944514522"
+        },
+        {
+          "name": "Taxi v Trnave",
+          "phone": "+421944468905"
+        },
+        {
+          "name": "TAXI FORTE",
+          "phone": "+421915655882"
+        },
+        {
+          "name": "Airport taxi Trnava",
+          "phone": "+421905460907"
+        },
+        {
+          "name": "Trnava Taxi - Preprava na letisko",
+          "phone": "+421948689919"
+        },
+        {
+          "name": "Priamotrans",
+          "website": "http://www.priamotrans.eu",
+          "phone": "+421918232436"
+        }
+      ],
       "latitude": 48.3774,
       "longitude": 17.588
     },
