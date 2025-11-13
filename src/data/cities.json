@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:42:16.014Z",
+  "lastUpdated": "2025-11-13T07:42:42.887Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2140,7 +2140,12 @@
         "objednať taxi medzilaborce",
         "taxi medzilaborce ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Medzilaborce",
+          "phone": "+421915555765"
+        }
+      ],
       "latitude": 49.2717,
       "longitude": 21.9033
     },
