@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:46:31.931Z",
+  "lastUpdated": "2025-11-13T07:47:05.893Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,18 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "moldava-nad-bodvou-1763020013387-nled249yp",
+      "citySlug": "moldava-nad-bodvou",
+      "taxiService": {
+        "name": "Sky Taxi Moldava nad Bodvou",
+        "phone": "+421940600048",
+        "website": null,
+        "address": "Hviezdoslavova 211/35, 045 01 Moldava nad Bodvou, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:46:53.386Z"
     }
   ]
 }
