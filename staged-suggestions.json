@@ -1,0 +1,173 @@
+{
+  "suggestions": [
+    {
+      "id": "presov-1763021353837-xpq4vjx5d",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "AlfaTAXI Prešov",
+        "phone": "+421940545556",
+        "website": "http://www.alfataxipo.sk",
+        "address": "Kúpeľná 6, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-vi92ml8ow",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "AB Taxi Prešov",
+        "phone": "+421915124141",
+        "website": "http://www.abtaxipresov.sk",
+        "address": "Masarykova 11266/31, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-kixt92qqf",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "EuroCombi TAXI Prešov",
+        "phone": "+42151/7710710",
+        "website": "https://www.eurocombitaxi.sk",
+        "address": "Masarykova 2724/26, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-499qq6lnc",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "Majo Taxi Prešov/AB Taxi Prešov",
+        "phone": "+421905210121",
+        "website": "http://abtaxipresov.sk",
+        "address": "Hlavná 3014/144, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-gord5515g",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "EkoTaxi",
+        "phone": "+421918055044",
+        "website": "http://www.taxieko.sk",
+        "address": "Františkánske námestie 3, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-vnibk67by",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "Taxi Number One",
+        "phone": "+421949000292",
+        "website": "http://numberone.sk",
+        "address": "Námestie legionárov 21-15, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-0zus4fud0",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "AIRPORT TAXI/SUPERB TAXI",
+        "phone": "+421948305136",
+        "website": "http://www.superbtaxipo.sk",
+        "address": "Námestie legionárov 2728/2, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-s04xujwos",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "Jaroslav Kopilec -Letiskové transfery Prešov",
+        "phone": "+421905816166",
+        "website": null,
+        "address": "K Prameňu 28, Nižná Šebastová, 080 06 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-tgbgwt1nb",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "A-A DANIELA-TAXI",
+        "phone": "+421905313480",
+        "website": "http://www.danielataxi.sk",
+        "address": "Maybaumova 3649/50, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-9euyzkesy",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "TAXI PREŠOV / AB TAXI",
+        "phone": "+42151/7722733",
+        "website": "http://www.abtaxipresov.sk",
+        "address": "Železničná stanica, 08001 Prešov, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-lbv50h9ba",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "HALOtransfer s.r.o Letiskové transfery. Prešov-Košice-Budapešť ,Viedeň,Krakov.",
+        "phone": "+421915508666",
+        "website": "https://www.halotransfer.sk",
+        "address": "Budovateľská 50, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-3kqzyg9in",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "HALO TAXI Prešov",
+        "phone": "+421908303909",
+        "website": "https://www.halotaxi.sk",
+        "address": "Hlavná 50, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-noclqfxpv",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "Prešov Taxi",
+        "phone": "+421940109003",
+        "website": "https://taxipresov.webnode.sk",
+        "address": "Hurbanistov, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    },
+    {
+      "id": "presov-1763021353838-qzmz2z86k",
+      "citySlug": "presov",
+      "taxiService": {
+        "name": "Branislav Kekel , taxík, preprava osôb , donáška , letiskové transfery",
+        "phone": "+421905893202",
+        "website": "http://zoberma.sk",
+        "address": "Fučíkova 41, 080 01 Prešov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:09:13.837Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:09:13.837Z"
+}
