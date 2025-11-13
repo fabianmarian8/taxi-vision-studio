@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:35:42.728Z",
+  "lastUpdated": "2025-11-13T07:35:45.016Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "levice-1762980652067-9uo998nvo",
-      "citySlug": "levice",
-      "taxiService": {
-        "name": "Mpas s.r.o, taxiklevice",
-        "phone": "+421911112445",
-        "website": null,
-        "address": "Dopravná 5, 934 05 Levice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T20:50:52.067Z"
     }
   ]
 }
