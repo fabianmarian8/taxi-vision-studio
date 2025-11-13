@@ -1,0 +1,29 @@
+{
+  "suggestions": [
+    {
+      "id": "spisske-podhradie-1763023886654-7ho0butta",
+      "citySlug": "spisske-podhradie",
+      "taxiService": {
+        "name": "TAXIK JANIK",
+        "phone": "+421918224554",
+        "website": "http://www.taxikjanik.sk",
+        "address": "Kostolná 20, 053 61 Spišské Vlachy, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:51:26.654Z"
+    },
+    {
+      "id": "spisske-podhradie-1763023886654-7sxywmqlw",
+      "citySlug": "spisske-podhradie",
+      "taxiService": {
+        "name": "Center taxi",
+        "phone": "+421947901838",
+        "website": null,
+        "address": "Slovenská 23, 053 61 Spišské Vlachy, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:51:26.654Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:51:26.654Z"
+}
