@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:42:32.981Z",
+  "lastUpdated": "2025-11-13T09:43:19.219Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -5172,7 +5172,31 @@
         "objednať taxi krtíš",
         "taxi krtíš"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI VK",
+          "website": "https://www.taxivk.sk",
+          "phone": "+421919287652"
+        },
+        {
+          "name": "Taxi Smile Veľký Krtíš",
+          "website": "https://www.taxismile.sk",
+          "phone": "+421907616221"
+        },
+        {
+          "name": "Taxi Novohrad",
+          "phone": "+421949459846"
+        },
+        {
+          "name": "Doprava na letisko",
+          "website": "",
+          "phone": "+421950588820"
+        },
+        {
+          "name": "Rony - Tex S.r.o.",
+          "phone": "+42147/4831148"
+        }
+      ],
       "latitude": 48.2083,
       "longitude": 19.3467
     },
