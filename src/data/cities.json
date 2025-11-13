@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:40:33.171Z",
+  "lastUpdated": "2025-11-13T07:41:17.871Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2026,7 +2026,67 @@
         "objednať taxi martin",
         "taxi martin cenník"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "K2 TAXI Martin",
+          "website": "http://www.k2taxi.sk",
+          "phone": "+421903454820"
+        },
+        {
+          "name": "Bugo Taxi - Martin",
+          "website": "http://bugotaxi.sk",
+          "phone": "+421907077077"
+        },
+        {
+          "name": "MB TAXI Martin",
+          "website": "http://www.mbtaxi.eu",
+          "phone": "+421908108108"
+        },
+        {
+          "name": "M2 TAXI",
+          "website": "http://m2taxi.sk",
+          "phone": "+421948916917"
+        },
+        {
+          "name": "Hifo Taxi",
+          "website": "http://hifotaxi.sk",
+          "phone": "+421902740140"
+        },
+        {
+          "name": "Alpha Taxi",
+          "website": "https://www.alphataxi.sk",
+          "phone": "+421902345600"
+        },
+        {
+          "name": "Miro Taxi-MARTIN",
+          "website": "http://www.mirotaxi.sk",
+          "phone": "+421905108108"
+        },
+        {
+          "name": "Saja Taxi - Martin",
+          "website": "https://www.instagram.com/sajataxi",
+          "phone": "+421910123800"
+        },
+        {
+          "name": "Mamba Taxi",
+          "website": "http://www.mambataxi.sk",
+          "phone": "+421908229900"
+        },
+        {
+          "name": "CITY TAXI Martin",
+          "website": "http://www.taximartin.sk",
+          "phone": "+421905333233"
+        },
+        {
+          "name": "PH TAXI",
+          "website": "http://www.phtaxi.sk",
+          "phone": "+421905830730"
+        },
+        {
+          "name": "JERRY TAXI von Martin",
+          "phone": "+421917575073"
+        }
+      ],
       "latitude": 49.0639,
       "longitude": 18.9214
     },
