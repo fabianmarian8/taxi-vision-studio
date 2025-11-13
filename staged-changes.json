@@ -1,0 +1,44 @@
+{
+  "changes": [
+    {
+      "citySlug": "liptovsky-hradok",
+      "taxiServices": [
+        {
+          "name": "Ivan Spilý",
+          "website": "http://www.taxilh.sk",
+          "phone": "+421905931313"
+        },
+        {
+          "name": "TAXI - Ján Vrabec",
+          "phone": "+421944287041"
+        },
+        {
+          "name": "M & M - TAXI Liptov",
+          "website": "http://www.taxiliptov.com",
+          "phone": "+421944445456"
+        },
+        {
+          "name": "Taxi Liptovský Mikuláš",
+          "website": "https://www.taxilm.sk",
+          "phone": "+421907780780"
+        },
+        {
+          "name": "City Taxi Liptovský Mikuláš",
+          "website": "http://www.citytaxilm.com",
+          "phone": "+421910150150"
+        },
+        {
+          "name": "TAXI Liptov Liptovský Mikuláš",
+          "website": "https://www.fajnovetaxi.eu",
+          "phone": "+421948906906"
+        },
+        {
+          "name": "TAXI MB",
+          "website": "http://www.taxiliptov.com",
+          "phone": "+421944446456"
+        }
+      ],
+      "timestamp": "2025-11-13T07:37:38.833Z"
+    }
+  ]
+}
