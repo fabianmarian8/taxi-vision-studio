@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:46:02.082Z",
+  "lastUpdated": "2025-11-13T07:46:05.358Z",
   "suggestions": [
     {
       "id": "modry-kamen-1763019878130-s0hva3bxc",
@@ -57,18 +57,6 @@
         "phone": "+421910929007",
         "website": "http://adk-taxi.sk",
         "address": "Hlavná 32, 053 42 Krompachy, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
-    },
-    {
-      "id": "modry-kamen-1763019878131-7hovzpgt2",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "TAXI MACHÁČEK",
-        "phone": "+42133/6464646",
-        "website": "http://www.taxi-machacek.sk",
-        "address": "Modranská 99, 902 01 Vinosady-Pezinok, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:44:38.130Z"
