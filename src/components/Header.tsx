@@ -31,17 +31,17 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-background border-b-4 border-foreground backdrop-blur-sm bg-background/95">
-      <div className="container mx-auto px-8 py-4">
+      <div className="container mx-auto px-4 md:px-8 py-2 md:py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <Link to="/" className="cursor-pointer">
-              <img src={logo} alt="Taxi NearMe logo" className="h-12 w-auto rounded-lg shadow-3d-sm hover:shadow-3d-md transition-all hover:scale-105" />
+              <img src={logo} alt="Taxi NearMe logo" className="h-8 md:h-12 w-auto rounded-lg shadow-3d-sm hover:shadow-3d-md transition-all hover:scale-105" />
             </Link>
             <div className="flex flex-col -space-y-1">
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             <a
               href="#cities"
               onClick={handleNavClick('cities')}
@@ -65,12 +65,12 @@ export const Header = () => {
             </a>
           </nav>
 
-          <Button className="rounded-full px-8 py-4 shadow-3d-sm hover:shadow-3d-md transition-all font-bold hover:scale-105">
-            <div className="flex items-center gap-3">
-              <Plus className="h-5 w-5 flex-shrink-0" />
+          <Button className="rounded-full px-3 py-2 md:px-6 lg:px-8 md:py-3 lg:py-4 shadow-3d-sm hover:shadow-3d-md transition-all font-bold hover:scale-105">
+            <div className="flex items-center gap-1.5 md:gap-2 lg:gap-3">
+              <Plus className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
               <div className="flex flex-col items-start">
-                <span className="text-base font-bold leading-tight">Niečo tu chýba?</span>
-                <span className="text-xs font-normal leading-tight">+Pridanie, Oprava</span>
+                <span className="text-xs md:text-sm lg:text-base font-bold leading-tight">Niečo tu chýba?</span>
+                <span className="text-[10px] md:text-xs font-normal leading-tight">+Pridanie, Oprava</span>
               </div>
             </div>
           </Button>

@@ -225,11 +225,11 @@ export const SearchPanel = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-2xl mx-auto px-4">
       <div className="perspective-1000">
-        <div className="bg-card rounded-2xl shadow-3d-lg p-2 flex items-center gap-2 card-3d">
-          <div className="flex-1 flex items-center gap-3 px-4 relative" ref={dropdownRef}>
-            <Search className="h-5 w-5 text-foreground" />
+        <div className="bg-card rounded-xl md:rounded-2xl shadow-3d-lg p-1.5 md:p-2 flex items-center gap-1.5 md:gap-2 card-3d">
+          <div className="flex-1 flex items-center gap-2 md:gap-3 px-2 md:px-4 relative" ref={dropdownRef}>
+            <Search className="h-4 w-4 md:h-5 md:w-5 text-foreground flex-shrink-0" />
             <Input
               type="text"
               placeholder="Zadajte názov mesta..."
@@ -241,26 +241,26 @@ export const SearchPanel = () => {
                   setShowDropdown(true);
                 }
               }}
-              className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base placeholder:text-muted-foreground text-foreground font-medium"
+              className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-sm md:text-base placeholder:text-muted-foreground text-foreground font-medium"
             />
 
             {/* Autocomplete Dropdown */}
             {showDropdown && filteredCities.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-2 bg-card rounded-xl shadow-3d-lg border-2 border-foreground/10 max-h-80 overflow-y-auto z-50">
+              <div className="absolute top-full left-0 right-0 mt-2 bg-card rounded-lg md:rounded-xl shadow-3d-lg border-2 border-foreground/10 max-h-80 overflow-y-auto z-50">
                 {filteredCities.slice(0, 10).map((city, index) => (
                   <button
                     key={city.slug}
                     onClick={() => navigateToCity(city.name)}
-                    className={`w-full text-left px-6 py-3 hover:bg-foreground/5 transition-colors border-b border-foreground/5 last:border-b-0 ${
+                    className={`w-full text-left px-4 md:px-6 py-2 md:py-3 hover:bg-foreground/5 transition-colors border-b border-foreground/5 last:border-b-0 ${
                       index === selectedIndex ? "bg-foreground/10" : ""
                     }`}
                   >
-                    <div className="font-semibold text-foreground">{city.name}</div>
-                    <div className="text-sm text-foreground/60">{city.region}</div>
+                    <div className="font-semibold text-sm md:text-base text-foreground">{city.name}</div>
+                    <div className="text-xs md:text-sm text-foreground/60">{city.region}</div>
                   </button>
                 ))}
                 {filteredCities.length > 10 && (
-                  <div className="px-6 py-3 text-sm text-foreground/60 text-center border-t border-foreground/10">
+                  <div className="px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm text-foreground/60 text-center border-t border-foreground/10">
                     Zobrazených prvých 10 z {filteredCities.length} miest
                   </div>
                 )}
@@ -272,9 +272,9 @@ export const SearchPanel = () => {
             variant="default"
             size="icon"
             onClick={handleSearch}
-            className="rounded-full h-12 w-12 shadow-3d-sm hover:shadow-3d-md transition-shadow"
+            className="rounded-full h-10 w-10 md:h-12 md:w-12 shadow-3d-sm hover:shadow-3d-md transition-shadow flex-shrink-0"
           >
-            <ArrowRight className="h-5 w-5" />
+            <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
           </Button>
 
           <Button
@@ -282,18 +282,18 @@ export const SearchPanel = () => {
             size="icon"
             onClick={handleLocationClick}
             disabled={isLoadingLocation}
-            className="rounded-full h-12 w-12 shadow-3d-sm hover:shadow-3d-md transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
+            className="rounded-full h-10 w-10 md:h-12 md:w-12 shadow-3d-sm hover:shadow-3d-md transition-shadow disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
           >
             {isLoadingLocation ? (
-              <Loader2 className="h-5 w-5 animate-spin" />
+              <Loader2 className="h-4 w-4 md:h-5 md:w-5 animate-spin" />
             ) : (
-              <MapPin className="h-5 w-5" />
+              <MapPin className="h-4 w-4 md:h-5 md:w-5" />
             )}
           </Button>
         </div>
       </div>
 
-      <p className="text-center text-sm text-foreground font-bold mt-4">
+      <p className="text-center text-xs md:text-sm text-foreground font-bold mt-3 md:mt-4">
         Alebo použite svoju polohu pre okamžité vyhľadanie taxíkov v okolí
       </p>
     </div>
