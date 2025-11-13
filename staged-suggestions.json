@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:05:10.929Z",
+  "lastUpdated": "2025-11-13T08:05:15.719Z",
   "suggestions": [
     {
       "id": "poltar-1763021084661-5amrm6je0",
@@ -9,18 +9,6 @@
         "phone": "+421940884833",
         "website": "https://www.rs-taxi.sk",
         "address": "Malohontská 26, 979 01 Rimavská Sobota, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:04:44.661Z"
-    },
-    {
-      "id": "poltar-1763021084661-lm1nuhxdo",
-      "citySlug": "poltar",
-      "taxiService": {
-        "name": "GRAND TAXI",
-        "phone": "+421911600606",
-        "website": "http://www.grandtaxi.sk",
-        "address": "Pavla Dobšinského 42, Sobôtka, 979 01 Rimavská Sobota, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T08:04:44.661Z"
