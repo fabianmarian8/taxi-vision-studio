@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:15:50.603Z",
+  "lastUpdated": "2025-11-13T09:16:27.432Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,30 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "sastin-straze-1763025363038-sgi6sc9i3",
+      "citySlug": "sastin-straze",
+      "taxiService": {
+        "name": "Taxi Šaštin",
+        "phone": "+421905750702",
+        "website": "https://www.taxisastin.eu",
+        "address": "Slnečná 1104, Šaštín, 908 41 Šaštín-Stráže, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:16:03.038Z"
+    },
+    {
+      "id": "sastin-straze-1763025363038-mbqpg7kq7",
+      "citySlug": "sastin-straze",
+      "taxiService": {
+        "name": "Peter Černoch - TAXI",
+        "phone": "+421904530243",
+        "website": "https://taxisastin.sk",
+        "address": "Jesenského 1241, Šaštín, 908 41 Šaštín-Stráže, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:16:03.038Z"
     }
   ]
 }

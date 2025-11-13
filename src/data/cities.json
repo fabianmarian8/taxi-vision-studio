@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:15:49.015Z",
+  "lastUpdated": "2025-11-13T09:16:27.432Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4530,7 +4530,18 @@
         "objednať taxi šaštín",
         "taxi bazilika"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "Taxi Šaštin",
+          "website": "https://www.taxisastin.eu",
+          "phone": "+421905750702"
+        },
+        {
+          "name": "Peter Černoch - TAXI",
+          "website": "https://taxisastin.sk",
+          "phone": "+421904530243"
+        }
+      ]
     },
     {
       "name": "Štúrovo",
