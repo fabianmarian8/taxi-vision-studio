@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:51:03.174Z",
+  "lastUpdated": "2025-11-13T08:54:41.656Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4072,7 +4072,13 @@
         "objednať taxi podhradie",
         "taxi spiš"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Metro Taxi Spišské Podhradie ",
+          "website": "https://www.facebook.com/people/Metro-Taxi-Spi%C5%A1sk%C3%A9-Podhradie/100077417521708/?sk=about&locale=sk_SK",
+          "phone": "+421 911 530 432"
+        }
+      ],
       "latitude": 49.0017,
       "longitude": 20.75
     },
