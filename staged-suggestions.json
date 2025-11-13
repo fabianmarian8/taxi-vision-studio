@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:54:18.611Z",
+  "lastUpdated": "2025-11-13T07:54:31.628Z",
   "suggestions": [
     {
       "id": "nove-mesto-nad-vahom-1763020449141-9ghsucyny",
@@ -129,18 +129,6 @@
         "phone": "+421902666222",
         "website": null,
         "address": "Hviezdoslavova 1910/17, 915 01 Nové Mesto nad Váhom, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:54:09.141Z"
-    },
-    {
-      "id": "nove-mesto-nad-vahom-1763020449141-300qfyium",
-      "citySlug": "nove-mesto-nad-vahom",
-      "taxiService": {
-        "name": "ALPHA TAXI ČACHTICE",
-        "phone": "+421940883353",
-        "website": "http://alphataxist.sk",
-        "address": "Malinovského, 916 21 Čachtice, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:54:09.141Z"
