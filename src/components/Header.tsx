@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react";
+import { Plus } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-3d.jpg";
@@ -65,9 +65,14 @@ export const Header = () => {
             </a>
           </nav>
 
-          <Button className="rounded-full px-6 py-6 shadow-3d-sm hover:shadow-3d-md transition-all font-bold hover:scale-105">
-            <MapPin className="mr-2 h-4 w-4" />
-            Nájsť taxi
+          <Button className="rounded-full px-8 py-4 shadow-3d-sm hover:shadow-3d-md transition-all font-bold hover:scale-105">
+            <div className="flex items-center gap-3">
+              <Plus className="h-5 w-5 flex-shrink-0" />
+              <div className="flex flex-col items-start">
+                <span className="text-base font-bold leading-tight">Niečo tu chýba?</span>
+                <span className="text-xs font-normal leading-tight">+Pridanie, Oprava</span>
+              </div>
+            </div>
           </Button>
         </div>
       </div>
