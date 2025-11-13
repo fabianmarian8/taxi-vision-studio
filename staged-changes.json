@@ -1,0 +1,35 @@
+{
+  "changes": [
+    {
+      "citySlug": "puchov",
+      "taxiServices": [
+        {
+          "name": "SB Taxi - Púchov",
+          "website": "http://www.sbtaxi.sk",
+          "phone": "+421905706650"
+        },
+        {
+          "name": "Sebo Taxi Púchov - eSVe transport, s. r. o.",
+          "website": "https://www.isebo.sk",
+          "phone": "+421911611160"
+        },
+        {
+          "name": "JJ TAXI Púchov",
+          "website": "https://www.jjtaxi.sk",
+          "phone": "+421949476634"
+        },
+        {
+          "name": "JD Taxi Púchov",
+          "website": "https://www.facebook.com/profile.php",
+          "phone": "+421949409203"
+        },
+        {
+          "name": "ZM Taxi",
+          "website": "http://www.zmtaxi.sk",
+          "phone": "+421902255277"
+        }
+      ],
+      "timestamp": "2025-11-13T08:12:13.941Z"
+    }
+  ]
+}
