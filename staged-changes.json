@@ -1,0 +1,60 @@
+{
+  "changes": [
+    {
+      "citySlug": "rimavska-sobota",
+      "taxiServices": [
+        {
+          "name": "RS taxi",
+          "website": "https://www.rs-taxi.sk",
+          "phone": "+421940884833"
+        },
+        {
+          "name": "GRAND TAXI",
+          "website": "http://www.grandtaxi.sk",
+          "phone": "+421911600606"
+        },
+        {
+          "name": "Farkaš TAXI",
+          "phone": "+421915340406"
+        },
+        {
+          "name": "White Taxi s.r.o.",
+          "phone": "+421949362562"
+        },
+        {
+          "name": "Taxi Logan Rimavská Sobota",
+          "website": "https://logantaxi-8.webnode.sk",
+          "phone": "+421910709236"
+        },
+        {
+          "name": "Róbert Bodoky - Erma-taxi",
+          "phone": "+421903554524"
+        },
+        {
+          "name": "DRAGON Taxi",
+          "phone": "+421918063316"
+        },
+        {
+          "name": "PRIMA TAXI",
+          "phone": "+421952133239"
+        },
+        {
+          "name": "TripleX RS s.r.o",
+          "website": "http://www.triplexrs.sk",
+          "phone": "+421911532081"
+        },
+        {
+          "name": "City Taxi RS",
+          "website": "https://citytaxirs.sk",
+          "phone": "+421944218424"
+        },
+        {
+          "name": "Black Taxi Rimavská Sobota",
+          "website": "https://www.google.com",
+          "phone": "+421911937000"
+        }
+      ],
+      "timestamp": "2025-11-13T08:17:08.773Z"
+    }
+  ]
+}
