@@ -1,0 +1,53 @@
+{
+  "suggestions": [
+    {
+      "id": "spisske-vlachy-1763024098318-4y51lfi6h",
+      "citySlug": "spisske-vlachy",
+      "taxiService": {
+        "name": "TAXIK JANIK",
+        "phone": "+421918224554",
+        "website": "http://www.taxikjanik.sk",
+        "address": "Kostolná 20, 053 61 Spišské Vlachy, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:54:58.318Z"
+    },
+    {
+      "id": "spisske-vlachy-1763024098318-v9jm4zrtb",
+      "citySlug": "spisske-vlachy",
+      "taxiService": {
+        "name": "Center taxi",
+        "phone": "+421947901838",
+        "website": null,
+        "address": "Slovenská 23, 053 61 Spišské Vlachy, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:54:58.318Z"
+    },
+    {
+      "id": "spisske-vlachy-1763024098318-19f2kxsed",
+      "citySlug": "spisske-vlachy",
+      "taxiService": {
+        "name": "Alena Kapitančíková - ADK TAXI",
+        "phone": "+421910929007",
+        "website": "http://adk-taxi.sk",
+        "address": "Hlavná 32, 053 42 Krompachy, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:54:58.318Z"
+    },
+    {
+      "id": "spisske-vlachy-1763024098318-i60h238oy",
+      "citySlug": "spisske-vlachy",
+      "taxiService": {
+        "name": "SPV TAXI",
+        "phone": "+421950582528",
+        "website": null,
+        "address": "Komenského 21, 053 61 Spišské Vlachy, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:54:58.318Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:54:58.318Z"
+}
