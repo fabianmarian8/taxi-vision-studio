@@ -1,0 +1,35 @@
+{
+  "changes": [
+    {
+      "citySlug": "nova-bana",
+      "taxiServices": [
+        {
+          "name": "Taxi Nová Baňa",
+          "website": "http://www.taxinovabana.sk",
+          "phone": "+421915222199"
+        },
+        {
+          "name": "TaxiCar.sk - Nová Baňa",
+          "website": "http://www.taxicar.sk",
+          "phone": "+421911370444"
+        },
+        {
+          "name": "TAXI TERMINÁL - NOVÁ BAŇA",
+          "website": "http://www.taxinovabana.wbl.sk",
+          "phone": "+421905583517"
+        },
+        {
+          "name": "EKO TAXI - Nová Baňa",
+          "website": "http://www.ekotaxi.sk",
+          "phone": "+421917100505"
+        },
+        {
+          "name": "Ataxi Taxislužba",
+          "website": "http://www.ataxi-nb.sk",
+          "phone": "+421904991633"
+        }
+      ],
+      "timestamp": "2025-11-13T07:51:57.664Z"
+    }
+  ]
+}
