@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:35:36.012Z",
+  "lastUpdated": "2025-11-13T07:35:37.681Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "levice-1762980652067-e5jnl4vqq",
-      "citySlug": "levice",
-      "taxiService": {
-        "name": "City Taxi Levice",
-        "phone": "+421907295255",
-        "website": "https://citytaxilevice.wixsite.com",
-        "address": "Mlynská, 934 01 Levice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T20:50:52.067Z"
     },
     {
       "id": "levice-1762980652067-q2o6j2gfr",
