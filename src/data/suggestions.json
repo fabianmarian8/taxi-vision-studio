@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:42:16.829Z",
+  "lastUpdated": "2025-11-13T07:42:41.636Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,18 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "medzilaborce-1763019749106-xu5jhjnbp",
+      "citySlug": "medzilaborce",
+      "taxiService": {
+        "name": "Taxi Medzilaborce",
+        "phone": "+421915555765",
+        "website": null,
+        "address": "Duchnovičova 532, 068 01 Medzilaborce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:29.106Z"
     }
   ]
 }
