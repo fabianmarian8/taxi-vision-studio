@@ -1,0 +1,173 @@
+{
+  "suggestions": [
+    {
+      "id": "spisska-nova-ves-1763023680227-d0ppsl0kk",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "ABC TAXI SNV",
+        "phone": "+421948433333",
+        "website": "http://www.abctaxi.eu",
+        "address": "Drevárska 2, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-edg51rgd0",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "City Taxi SNV",
+        "phone": "+421915759459",
+        "website": "https://www.citytaxisnv.sk",
+        "address": "Letecká 37, 052 01 Spišská Nová Ves-Tarča, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-hjl5nxep0",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "AL TAXI Spišská Nová Ves",
+        "phone": "+42153/4499999",
+        "website": "http://www.altaxi.eu",
+        "address": "Banícka 18, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-m7finn0co",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "ACK TAXI",
+        "phone": "+421944570550",
+        "website": "http://www.ack-taxi.sk",
+        "address": "Slovenská 46/31, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-hbon6efsv",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "JEF TAXI SNV",
+        "phone": "+421948031023",
+        "website": "https://www.instagram.com/jef_taxi_snv",
+        "address": "Štefánikovo námestie, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-s1lll55nf",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "Okay Taxi",
+        "phone": "+421948321300",
+        "website": "https://www.okaytaxi.sk",
+        "address": "Duklianska 3336/19, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-1x84bt2xo",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "Albert Duriančik",
+        "phone": "+42153/4411111",
+        "website": null,
+        "address": "Zimná 178, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-hdlnsqldp",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "CITY TAXI Spišská Nová Ves",
+        "phone": "+421948759459",
+        "website": null,
+        "address": "J. Hanulu 841/51, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-qrhl456fy",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "Taxi Alex SNV",
+        "phone": "+421944837836",
+        "website": "https://www.google.com",
+        "address": "Štúrova 10, 053 11 Smižany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-xcsbuttfs",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "AAA-Taxislužba",
+        "phone": "+421951616693",
+        "website": "http://www.aaa-taxisluzba.eu",
+        "address": "Štefánikovo námestie, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-6bonigwb1",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "NF-TAXI SNV NF-KURIER SNV",
+        "phone": "+421911608224",
+        "website": null,
+        "address": "Brezová 2, 052 01 Spišská Nová Ves-Tarča, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-30pz35e94",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "Nákladné Taxi - Leskovjanský Jozef",
+        "phone": "+42153/4427511",
+        "website": null,
+        "address": "32, J. Wolkera 2414, Mier, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-4r0ilfriy",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "AUTOKRES SK s.r.o.",
+        "phone": "+42153/4414877",
+        "website": "http://www.autokres.sk",
+        "address": "Odorinská cesta 1, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    },
+    {
+      "id": "spisska-nova-ves-1763023680227-9zx674adq",
+      "citySlug": "spisska-nova-ves",
+      "taxiService": {
+        "name": "TaxiEuropa s.r.o.",
+        "phone": "+421907817824",
+        "website": "http://www.taxieuropa.sk",
+        "address": "Letecká, 052 01 Spišská Nová Ves-Tarča, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:48:00.227Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:48:00.227Z"
+}
