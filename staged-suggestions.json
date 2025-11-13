@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:01:34.075Z",
+  "lastUpdated": "2025-11-13T09:01:43.580Z",
   "suggestions": [
     {
       "id": "svaty-jur-1763024473143-7cvgodbun",
@@ -81,18 +81,6 @@
         "phone": "+421905454545",
         "website": null,
         "address": "Slnečná 308/32, 900 91 Limbach-Pezinok, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:01:13.143Z"
-    },
-    {
-      "id": "svaty-jur-1763024473143-19isppdhf",
-      "citySlug": "svaty-jur",
-      "taxiService": {
-        "name": "Biznis4taxi - Taxi na Schwechat",
-        "phone": "+421902245515",
-        "website": null,
-        "address": "Karpatské námestie 7770/10A, 831 06 Bratislava, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T09:01:13.143Z"
