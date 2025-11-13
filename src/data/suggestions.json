@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:54:32.846Z",
+  "lastUpdated": "2025-11-13T09:55:15.142Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,66 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "zarnovica-1763027688829-l83gsfieo",
+      "citySlug": "zarnovica",
+      "taxiService": {
+        "name": "STAR TAXI Žarnovica",
+        "phone": "+421940078807",
+        "website": "https://stzcweb.esol.cz",
+        "address": "Bystrická, 966 81 Žarnovica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:54:48.829Z"
+    },
+    {
+      "id": "zarnovica-1763027688829-nma60vwdc",
+      "citySlug": "zarnovica",
+      "taxiService": {
+        "name": "CITY TAXI ŽARNOVICA",
+        "phone": "+421918856824",
+        "website": "https://taxizc.eu",
+        "address": "Bystrická 106, 966 81 Žarnovica-Žarnovická Huta, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:54:48.829Z"
+    },
+    {
+      "id": "zarnovica-1763027688829-9p9c0ijdf",
+      "citySlug": "zarnovica",
+      "taxiService": {
+        "name": "EKO TAXI Žarnovica",
+        "phone": "+421917100404",
+        "website": "http://www.ekotaxi.sk",
+        "address": "Bystrická 559/37, 966 81 Žarnovica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:54:48.829Z"
+    },
+    {
+      "id": "zarnovica-1763027688829-xhkv8nfth",
+      "citySlug": "zarnovica",
+      "taxiService": {
+        "name": "Strela Taxi",
+        "phone": "+421910411000",
+        "website": "https://www.strelataxi.sk",
+        "address": "Na Gremenici, 966 81 Žarnovica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:54:48.829Z"
+    },
+    {
+      "id": "zarnovica-1763027688829-2xqh3s70b",
+      "citySlug": "zarnovica",
+      "taxiService": {
+        "name": "STAT TAXI",
+        "phone": "+421948228905",
+        "website": null,
+        "address": "Mierová, 966 81 Žarnovica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:54:48.829Z"
     }
   ]
 }
