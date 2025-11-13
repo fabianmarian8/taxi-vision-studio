@@ -1,0 +1,41 @@
+{
+  "suggestions": [
+    {
+      "id": "vrbove-1763027219963-u7xxyntth",
+      "citySlug": "vrbove",
+      "taxiService": {
+        "name": "A-Taxi Piešťany",
+        "phone": "+421915666600",
+        "website": "https://www.ataxi.sk",
+        "address": "Mojmírova 35, 921 01 Piešťany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:46:59.963Z"
+    },
+    {
+      "id": "vrbove-1763027219963-rrlivynus",
+      "citySlug": "vrbove",
+      "taxiService": {
+        "name": "ALPHA TAXI ČACHTICE",
+        "phone": "+421940883353",
+        "website": "http://alphataxist.sk",
+        "address": "Malinovského, 916 21 Čachtice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:46:59.963Z"
+    },
+    {
+      "id": "vrbove-1763027219963-9kit2edmu",
+      "citySlug": "vrbove",
+      "taxiService": {
+        "name": "Taxi Piešťany - Peter Baláž",
+        "phone": "+421915336649",
+        "website": "http://www.taxi-pn.sk",
+        "address": "Piešťany, 92101, 921 01 Piešťany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:46:59.963Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T09:46:59.963Z"
+}
