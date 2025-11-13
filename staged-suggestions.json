@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:01:23.152Z",
+  "lastUpdated": "2025-11-13T09:01:28.356Z",
   "suggestions": [
     {
       "id": "svaty-jur-1763024473143-7cvgodbun",
@@ -33,18 +33,6 @@
         "phone": "+42133/6464646",
         "website": "http://www.taxi-machacek.sk",
         "address": "Modranská 99, 902 01 Vinosady-Pezinok, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:01:13.143Z"
-    },
-    {
-      "id": "svaty-jur-1763024473143-599k50323",
-      "citySlug": "svaty-jur",
-      "taxiService": {
-        "name": "TAXI Limbach",
-        "phone": "+421904426242",
-        "website": null,
-        "address": "SNP 17/13, 900 91 Limbach, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T09:01:13.143Z"
