@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T07:39:38.868Z",
   "suggestions": [
     {
       "id": "malacky-1763019566505-e982pykmn",
@@ -61,18 +62,6 @@
       "timestamp": "2025-11-13T07:39:26.505Z"
     },
     {
-      "id": "malacky-1763019566505-dfm0znxhq",
-      "citySlug": "malacky",
-      "taxiService": {
-        "name": "TAXI Drink Malacky",
-        "phone": "+42134/7725555",
-        "website": null,
-        "address": "Zámocká 1, 901 01 Malacky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:39:26.505Z"
-    },
-    {
       "id": "malacky-1763019566505-6cywq6s6h",
       "citySlug": "malacky",
       "taxiService": {
@@ -108,6 +97,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T07:39:26.505Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T07:39:26.505Z"
+  ]
 }
