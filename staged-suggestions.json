@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T08:04:55.305Z",
   "suggestions": [
     {
       "id": "poltar-1763021084661-5amrm6je0",
@@ -49,18 +50,6 @@
       "timestamp": "2025-11-13T08:04:44.661Z"
     },
     {
-      "id": "poltar-1763021084661-lzfj4w41d",
-      "citySlug": "poltar",
-      "taxiService": {
-        "name": "RK TAXI – DETVA",
-        "phone": "+421944384666",
-        "website": "http://www.rktaxi.sk",
-        "address": "Novosady 921/6, 962 12 Detva, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:04:44.661Z"
-    },
-    {
       "id": "poltar-1763021084661-hnj2swk56",
       "citySlug": "poltar",
       "taxiService": {
@@ -72,6 +61,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T08:04:44.661Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:04:44.661Z"
+  ]
 }
