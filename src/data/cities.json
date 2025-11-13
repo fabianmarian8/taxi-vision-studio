@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:41:15.070Z",
+  "lastUpdated": "2025-11-13T08:42:56.955Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3841,7 +3841,13 @@
         "objednať taxi sliač",
         "taxi sliač letisko"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Sliač - rýchlo a lacno",
+          "website": "https://www.taxisliac.sk",
+          "phone": "+421948238626"
+        }
+      ],
       "latitude": 48.6417,
       "longitude": 19.145
     },
