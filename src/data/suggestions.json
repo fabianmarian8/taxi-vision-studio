@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:45:55.691Z",
+  "lastUpdated": "2025-11-13T08:45:57.227Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,66 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "snina-1763023541196-deth6tl5q",
-      "citySlug": "snina",
-      "taxiService": {
-        "name": "Taxi SNINA",
-        "phone": "+421905555333",
-        "website": null,
-        "address": "Generála Gladkova, 069 01 Snina, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:45:41.196Z"
-    },
-    {
-      "id": "snina-1763023541196-0mq8nlwhs",
-      "citySlug": "snina",
-      "taxiService": {
-        "name": "SNINA TAXI",
-        "phone": "+421908992128",
-        "website": "https://www.facebook.com/taxinoro",
-        "address": "Strojárska, 069 01 Snina, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:45:41.196Z"
-    },
-    {
-      "id": "snina-1763023541196-93sus11mh",
-      "citySlug": "snina",
-      "taxiService": {
-        "name": "Taxi BRAŇO SNINA",
-        "phone": "+421905909290",
-        "website": "https://m.facebook.com/groups/528535691898412",
-        "address": "Komenského, 069 01 Snina, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:45:41.196Z"
-    },
-    {
-      "id": "snina-1763023541196-pf18x3v9z",
-      "citySlug": "snina",
-      "taxiService": {
-        "name": "ZAFIRTAXI - taxi Snina",
-        "phone": "+421918567555",
-        "website": null,
-        "address": "Jesenského 2000/129, 069 01 Snina, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:45:41.196Z"
-    },
-    {
-      "id": "snina-1763023541196-jhhvp30y9",
-      "citySlug": "snina",
-      "taxiService": {
-        "name": "TAXI EDO SNINA",
-        "phone": "+421907900900",
-        "website": "https://www.facebook.com/TAXIEDOSNINA",
-        "address": "Vihorlatská 1414, 069 01 Snina, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:45:41.196Z"
     }
   ]
 }
