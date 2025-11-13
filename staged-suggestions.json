@@ -1,18 +1,6 @@
 {
-  "lastUpdated": "2025-11-13T08:50:12.435Z",
+  "lastUpdated": "2025-11-13T08:50:15.678Z",
   "suggestions": [
-    {
-      "id": "spisska-stara-ves-1763023799632-l82ahh5vi",
-      "citySlug": "spisska-stara-ves",
-      "taxiService": {
-        "name": "AL TAXI Spišská Nová Ves",
-        "phone": "+42153/4499999",
-        "website": "http://www.altaxi.eu",
-        "address": "Banícka 18, 052 01 Spišská Nová Ves, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:49:59.631Z"
-    },
     {
       "id": "spisska-stara-ves-1763023799632-l7ln3xy3g",
       "citySlug": "spisska-stara-ves",
