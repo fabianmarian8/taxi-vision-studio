@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:08:27.758Z",
+  "lastUpdated": "2025-11-13T09:09:08.969Z",
   "suggestions": [
     {
       "id": "svidnik-1763024888807-xntkf9cmu",
@@ -45,18 +45,6 @@
         "phone": "+421952161061",
         "website": null,
         "address": "090 11 Nižný Orlík, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:08:08.807Z"
-    },
-    {
-      "id": "svidnik-1763024888807-o88is8h04",
-      "citySlug": "svidnik",
-      "taxiService": {
-        "name": "Mgr. Martina Šimková - NAJ taxi",
-        "phone": "+421908629299",
-        "website": null,
-        "address": "Beňadikovce 41, 090 42 Beňadikovce, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T09:08:08.807Z"
