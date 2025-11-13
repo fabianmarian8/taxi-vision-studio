@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:18:32.521Z",
+  "lastUpdated": "2025-11-13T09:18:53.603Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4653,7 +4653,12 @@
         "objednať taxi tisovec",
         "taxi tisovec ceny"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "JŠ Šavel Taxi",
+          "phone": "+421902318870"
+        }
+      ]
     },
     {
       "name": "Tlmače",
