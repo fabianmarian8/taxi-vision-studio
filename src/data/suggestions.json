@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:19:24.977Z",
+  "lastUpdated": "2025-11-13T08:23:26.139Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,150 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "senec-1763022164490-v3ukt7q9y",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "TAXI SENEC MATEJ",
+        "phone": "+421903025400",
+        "website": "https://www.taxisenecmatej.sk",
+        "address": "TAXISENECMATEJ.SK TAXI SENEC MATEJ, Janka Jesenského 2059/2, 903 01 Senec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
+    },
+    {
+      "id": "senec-1763022164490-ejoel1asn",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "Vaše TAXI Senec",
+        "phone": "+421949600626",
+        "website": "http://www.taxi-senec.sk",
+        "address": "Svätoplukova 1562/37, 903 01 Senec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
+    },
+    {
+      "id": "senec-1763022164490-3x9stszsx",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "TAXI-7EVEN SENEC",
+        "phone": "+421907288562",
+        "website": "https://taxi7evensenec.sk",
+        "address": "Kysucká 6, 903 01 Senec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
+    },
+    {
+      "id": "senec-1763022164490-kofxrda1z",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "Brano Taxi Senec",
+        "phone": "+421903582873",
+        "website": "https://www.branotaxisenec.sk",
+        "address": "Jánošíkova 25, 903 01 Senec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
+    },
+    {
+      "id": "senec-1763022164490-41o9uo5ud",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "Taxi Dodo Senec",
+        "phone": "+421940241255",
+        "website": "https://www.facebook.com/profile.php",
+        "address": "Športová 4, 903 01 Senec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
+    },
+    {
+      "id": "senec-1763022164490-njvkeb3u7",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "Mesut Taxi Senec",
+        "phone": "+421940318002",
+        "website": "https://senectaxi.online",
+        "address": "Kostolná 733 36, 900 24 Veľký Biel, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
+    },
+    {
+      "id": "senec-1763022164490-rd4hogm2o",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "FLIP FLAP s. r. o., FLIP FLAP TAXI",
+        "phone": "+421919310332",
+        "website": "http://flipflap.sk",
+        "address": "Robotnícka 1459/26, 903 01 Senec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
+    },
+    {
+      "id": "senec-1763022164490-hffy6akqd",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "TAXI SENEC MATEJ pri železničnej stanici",
+        "phone": "+421940099123",
+        "website": "http://www.taxisenecmatej.sk",
+        "address": "Parkovisko Železničná stanica, 903 01 Senec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
+    },
+    {
+      "id": "senec-1763022164490-bm0wf8p93",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "Jogy taxi",
+        "phone": "+421902167655",
+        "website": null,
+        "address": "Námestie 1. mája, 903 01 Senec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
+    },
+    {
+      "id": "senec-1763022164490-wm34r9xvv",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "TaxiTaxi 3",
+        "phone": "+421910168665",
+        "website": null,
+        "address": "Kollárova 587/15, 903 01 Senec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
+    },
+    {
+      "id": "senec-1763022164490-9y9gh19ky",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "Janka Taxi 🍀",
+        "phone": "+421905161600",
+        "website": null,
+        "address": "Dlhá 4382/4, 903 01 Senec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
+    },
+    {
+      "id": "senec-1763022164490-uodfl8959",
+      "citySlug": "senec",
+      "taxiService": {
+        "name": "SC-Taxik",
+        "phone": "+421949575705",
+        "website": "http://www.sctaxik.sk",
+        "address": "Školská 544/59, 900 24 Veľký Biel, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:22:44.490Z"
     }
   ]
 }
