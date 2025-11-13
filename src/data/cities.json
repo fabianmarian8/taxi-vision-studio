@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:12:16.280Z",
+  "lastUpdated": "2025-11-13T08:15:26.295Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3307,7 +3307,18 @@
         "objednať taxi rajec",
         "taxi rajec telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI Pekáreň",
+          "website": "https://pizzapekaren.sk",
+          "phone": "+421948998080"
+        },
+        {
+          "name": "Sviťo Taxi",
+          "website": "",
+          "phone": "+421 911 234 091"
+        }
+      ],
       "latitude": 49.0817,
       "longitude": 18.6433
     },
