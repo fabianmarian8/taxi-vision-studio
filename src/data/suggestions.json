@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:39:58.015Z",
+  "lastUpdated": "2025-11-13T09:39:59.708Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,30 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "turzovka-1763026789420-9pe7ux6yo",
-      "citySlug": "turzovka",
-      "taxiService": {
-        "name": "Tip Top Taxi Turzovka",
-        "phone": "+421907567567",
-        "website": "http://www.tiptoptaxi.sk",
-        "address": "Nádražná, 023 54 Turzovka, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:39:49.420Z"
-    },
-    {
-      "id": "turzovka-1763026789420-r3s1zfll4",
-      "citySlug": "turzovka",
-      "taxiService": {
-        "name": "M.T.Taxi Turzovka",
-        "phone": "+421948234444",
-        "website": "http://www.mttaxi.sk",
-        "address": "Nádražná 66, 023 54 Turzovka, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:39:49.420Z"
     }
   ]
 }
