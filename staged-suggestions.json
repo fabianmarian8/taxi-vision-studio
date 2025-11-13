@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T08:41:43.393Z",
   "suggestions": [
     {
       "id": "sliac-1763023291777-09kplic8i",
@@ -8,18 +9,6 @@
         "phone": "+421948238626",
         "website": "https://www.taxisliac.sk",
         "address": "Medzinárodného dňa žien 3, 962 31 Sliač-Rybáre - stred, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:41:31.777Z"
-    },
-    {
-      "id": "sliac-1763023291778-3v7ta0ooi",
-      "citySlug": "sliac",
-      "taxiService": {
-        "name": "Letisko Sliač",
-        "phone": "+42145/5442590",
-        "website": null,
-        "address": "962 31 Sliač, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T08:41:31.777Z"
@@ -36,6 +25,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T08:41:31.777Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:41:31.777Z"
+  ]
 }
