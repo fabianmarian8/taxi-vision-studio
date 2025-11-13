@@ -1,0 +1,101 @@
+{
+  "suggestions": [
+    {
+      "id": "stara-lubovna-1763024163367-7d7sw38o6",
+      "citySlug": "stara-lubovna",
+      "taxiService": {
+        "name": "AAA TAXI Stará Ľubovňa",
+        "phone": "+421915972247",
+        "website": "http://www.aaataxi.sk",
+        "address": "Poľská 5, 064 01 Stará Ľubovňa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:56:03.367Z"
+    },
+    {
+      "id": "stara-lubovna-1763024163367-hiu0qu6hj",
+      "citySlug": "stara-lubovna",
+      "taxiService": {
+        "name": "Taxi Stara Lubovna - Marcn Trans",
+        "phone": "+421902035496",
+        "website": "http://www.dopravamarcntrans.sk",
+        "address": "Okružná 882/60, 064 01 Stará Ľubovňa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:56:03.367Z"
+    },
+    {
+      "id": "stara-lubovna-1763024163367-t0hgnpoai",
+      "citySlug": "stara-lubovna",
+      "taxiService": {
+        "name": "Taxi Lubovna Nonstop",
+        "phone": "+421940630939",
+        "website": "https://www.dopravamarcntrans.sk",
+        "address": "Okružná 60, 064 01 Stará Ľubovňa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:56:03.367Z"
+    },
+    {
+      "id": "stara-lubovna-1763024163367-6xfdap64q",
+      "citySlug": "stara-lubovna",
+      "taxiService": {
+        "name": "Taxi Stara Lubovna-Strans",
+        "phone": "+421911793216",
+        "website": "https://s-trans.sk",
+        "address": "Za vodou, 064 01 Stará Ľubovňa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:56:03.367Z"
+    },
+    {
+      "id": "stara-lubovna-1763024163367-cdqzp1jj9",
+      "citySlug": "stara-lubovna",
+      "taxiService": {
+        "name": "JOKO ARK COMPANY, spol. s.r.o. Stará Ľubovňa",
+        "phone": "+421903637924",
+        "website": null,
+        "address": "17. novembra 552/23, 064 01 Stará Ľubovňa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:56:03.367Z"
+    },
+    {
+      "id": "stara-lubovna-1763024163367-lyvwnhxey",
+      "citySlug": "stara-lubovna",
+      "taxiService": {
+        "name": "Ľubovňa Taxi",
+        "phone": "+421910440006",
+        "website": "http://lubovnataxi.sk",
+        "address": "Poľská 688/5, 064 01 Stará Ľubovňa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:56:03.367Z"
+    },
+    {
+      "id": "stara-lubovna-1763024163367-4e72t7ucc",
+      "citySlug": "stara-lubovna",
+      "taxiService": {
+        "name": "Auto-max Stará Ľubovňa s.r.o.",
+        "phone": "+421948162211",
+        "website": null,
+        "address": "Popradská 21, 064 01 Stará Ľubovňa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:56:03.367Z"
+    },
+    {
+      "id": "stara-lubovna-1763024163367-rtx7ldutd",
+      "citySlug": "stara-lubovna",
+      "taxiService": {
+        "name": "TEMA SK, s.r.o.",
+        "phone": "+42152/4322532",
+        "website": null,
+        "address": "71, Jarmočná 262, 064 01 Stará Ľubovňa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:56:03.367Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:56:03.367Z"
+}
