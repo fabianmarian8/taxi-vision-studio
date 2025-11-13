@@ -1,18 +1,6 @@
 {
-  "lastUpdated": "2025-11-13T08:50:07.850Z",
+  "lastUpdated": "2025-11-13T08:50:12.435Z",
   "suggestions": [
-    {
-      "id": "spisska-stara-ves-1763023799632-nqdr6qw97",
-      "citySlug": "spisska-stara-ves",
-      "taxiService": {
-        "name": "ABC TAXI SNV",
-        "phone": "+421948433333",
-        "website": "http://www.abctaxi.eu",
-        "address": "Drevárska 2, 052 01 Spišská Nová Ves, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:49:59.631Z"
-    },
     {
       "id": "spisska-stara-ves-1763023799632-l82ahh5vi",
       "citySlug": "spisska-stara-ves",
