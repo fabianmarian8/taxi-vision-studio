@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:01:43.580Z",
+  "lastUpdated": "2025-11-13T09:01:49.502Z",
   "suggestions": [
     {
       "id": "svaty-jur-1763024473143-7cvgodbun",
@@ -93,18 +93,6 @@
         "phone": "+421911880947",
         "website": null,
         "address": "Karpatské námestie 10/A, 831 06 Bratislava-Rača, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:01:13.143Z"
-    },
-    {
-      "id": "svaty-jur-1763024473143-mg3dtqpfq",
-      "citySlug": "svaty-jur",
-      "taxiService": {
-        "name": "Limocars",
-        "phone": "+421944908809",
-        "website": "http://limocars.sk",
-        "address": "Karpatské námestie 10A, 831 06 Bratislava, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T09:01:13.143Z"
