@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:51:33.697Z",
+  "lastUpdated": "2025-11-13T07:51:40.426Z",
   "suggestions": [
     {
       "id": "nova-bana-1763020279026-1yk5e1m8k",
@@ -69,18 +69,6 @@
         "phone": "+421949880111",
         "website": null,
         "address": "Chemikov 18/28, 972 71 Nováky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:51:19.026Z"
-    },
-    {
-      "id": "nova-bana-1763020279026-ejnzgj7cg",
-      "citySlug": "nova-bana",
-      "taxiService": {
-        "name": "CITY TAXI ŽARNOVICA",
-        "phone": "+421918856824",
-        "website": "https://taxizc.eu",
-        "address": "Bystrická 106, 966 81 Žarnovica-Žarnovická Huta, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:51:19.026Z"
