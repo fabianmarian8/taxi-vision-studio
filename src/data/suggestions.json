@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:59:02.180Z",
+  "lastUpdated": "2025-11-13T08:59:04.004Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,30 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "strazske-1763024327215-28iapaaml",
-      "citySlug": "strazske",
-      "taxiService": {
-        "name": "Taxislužba GreDas Strážske",
-        "phone": "+421950280770",
-        "website": null,
-        "address": "Krivošťany, 072 22 Strážske, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:58:47.215Z"
-    },
-    {
-      "id": "strazske-1763024327215-8f4kmmoa3",
-      "citySlug": "strazske",
-      "taxiService": {
-        "name": "TAXI LIENKA Strážske",
-        "phone": "+421911717492",
-        "website": null,
-        "address": "Okružná 446, 072 22 Strážske, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:58:47.215Z"
     }
   ]
 }
