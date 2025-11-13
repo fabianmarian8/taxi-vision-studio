@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T07:43:26.844Z",
   "suggestions": [
     {
       "id": "michalovce-1763019776821-w3ru58ilf",
@@ -145,18 +146,6 @@
       "timestamp": "2025-11-13T07:42:56.821Z"
     },
     {
-      "id": "michalovce-1763019776821-9styhwzxv",
-      "citySlug": "michalovce",
-      "taxiService": {
-        "name": "Taxi Miťkes Michalovce",
-        "phone": null,
-        "website": "https://www.taxitaxi.sk",
-        "address": "13, Farská 169, 071 01 Michalovce, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:42:56.821Z"
-    },
-    {
       "id": "michalovce-1763019776821-09avyin6y",
       "citySlug": "michalovce",
       "taxiService": {
@@ -168,6 +157,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T07:42:56.821Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T07:42:56.821Z"
+  ]
 }
