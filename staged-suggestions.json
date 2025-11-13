@@ -1,0 +1,53 @@
+{
+  "suggestions": [
+    {
+      "id": "nove-zamky-1763020605112-4lcd224sm",
+      "citySlug": "nove-zamky",
+      "taxiService": {
+        "name": "OK Taxi Nové Zámky",
+        "phone": "+421907333362",
+        "website": "https://oktaxinz.sk",
+        "address": "Nitrianska cesta 2681/68, 940 01 Nové Zámky, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:56:45.112Z"
+    },
+    {
+      "id": "nove-zamky-1763020605113-4wjdg1jjq",
+      "citySlug": "nove-zamky",
+      "taxiService": {
+        "name": "Taxi Patrik - Taxi Nové Zámky",
+        "phone": "+421950705712",
+        "website": null,
+        "address": "Nábrežná 61, 940 02 Nové Zámky, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:56:45.112Z"
+    },
+    {
+      "id": "nove-zamky-1763020605113-yd5c60jb0",
+      "citySlug": "nove-zamky",
+      "taxiService": {
+        "name": "FLY TAXI Nové Zámky",
+        "phone": "+421903377378",
+        "website": null,
+        "address": "Ľudovíta Štúra 32, 940 01 Nové Zámky, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:56:45.112Z"
+    },
+    {
+      "id": "nove-zamky-1763020605113-sxlrd3uqz",
+      "citySlug": "nove-zamky",
+      "taxiService": {
+        "name": "AB Taxi",
+        "phone": "+42135/6420142",
+        "website": null,
+        "address": "Svornosti 3753/16, 940 02 Nové Zámky, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:56:45.112Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T07:56:45.112Z"
+}
