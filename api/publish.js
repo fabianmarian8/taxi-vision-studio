@@ -69,13 +69,25 @@ async function createAtomicCommit(changes, message) {
   const baseTreeSha = commitData.tree.sha;
 
   // 3. Create a new tree with all changes
-  const tree = changes.map(change => ({
-    path: change.path,
-    mode: '100644',
-    type: 'blob',
-    content: change.content ? JSON.stringify(change.content, null, 2) : null,
-    sha: change.delete ? null : undefined
-  })).filter(item => item.content !== null || item.sha === null);
+  const tree = changes.map(change => {
+    if (change.delete) {
+      // For deletions, only include path and sha: null
+      return {
+        path: change.path,
+        mode: '100644',
+        type: 'blob',
+        sha: null
+      };
+    } else {
+      // For additions/updates, include content
+      return {
+        path: change.path,
+        mode: '100644',
+        type: 'blob',
+        content: JSON.stringify(change.content, null, 2)
+      };
+    }
+  });
 
   const treeResponse = await fetch(
     `https://api.github.com/repos/${GITHUB_REPO}/git/trees`,
