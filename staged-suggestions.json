@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:51:40.426Z",
+  "lastUpdated": "2025-11-13T07:51:50.658Z",
   "suggestions": [
     {
       "id": "nova-bana-1763020279026-1yk5e1m8k",
@@ -57,18 +57,6 @@
         "phone": "+421904991633",
         "website": "http://www.ataxi-nb.sk",
         "address": "Pod sekvojou, 968 01 Nová Baňa, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:51:19.026Z"
-    },
-    {
-      "id": "nova-bana-1763020279026-2gr753w3t",
-      "citySlug": "nova-bana",
-      "taxiService": {
-        "name": "Fajn Taxi Nováky",
-        "phone": "+421949880111",
-        "website": null,
-        "address": "Chemikov 18/28, 972 71 Nováky, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:51:19.026Z"
