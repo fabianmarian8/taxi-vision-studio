@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T08:10:38.478Z",
   "suggestions": [
     {
       "id": "prievidza-1763021411436-i8wjhlaak",
@@ -85,18 +86,6 @@
       "timestamp": "2025-11-13T08:10:11.436Z"
     },
     {
-      "id": "prievidza-1763021411436-fxvimgfdi",
-      "citySlug": "prievidza",
-      "taxiService": {
-        "name": "Taxi Bojnice - Nonstop",
-        "phone": "+421918266886",
-        "website": "http://www.taxibojnice.sk",
-        "address": "Sládkovičova 176/1, 972 01 Bojnice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:10:11.436Z"
-    },
-    {
       "id": "prievidza-1763021411436-nt6yqpdm4",
       "citySlug": "prievidza",
       "taxiService": {
@@ -144,6 +133,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T08:10:11.436Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:10:11.436Z"
+  ]
 }
