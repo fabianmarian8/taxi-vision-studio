@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:18:44.800Z",
+  "lastUpdated": "2025-11-13T08:19:24.127Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3497,7 +3497,55 @@
         "objednať taxi ružomberok",
         "taxi ružomberok ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI RUŽOMBEROK",
+          "website": "https://www.zlatestranky.sk",
+          "phone": "+421905331551"
+        },
+        {
+          "name": "super taxi RK",
+          "phone": "+421918260777"
+        },
+        {
+          "name": "TAXI Európa",
+          "phone": "+421905323528"
+        },
+        {
+          "name": "TAXI POHODA",
+          "phone": "+421905487781"
+        },
+        {
+          "name": "Taxi Lego - Nonstop",
+          "phone": "+421904274854"
+        },
+        {
+          "name": "TATRA TAXI",
+          "website": "http://www.facebook.com/taxitatra",
+          "phone": "+421908900800"
+        },
+        {
+          "name": "TAXI RK",
+          "website": "https://www.taxirk.sk",
+          "phone": "+421919032428"
+        },
+        {
+          "name": "TAXI RUŽOMBEROK EU",
+          "phone": "+421907522722"
+        },
+        {
+          "name": "RP TAXI,Proft Radovan",
+          "phone": "+421907843649"
+        },
+        {
+          "name": "Ruzomberok TAXI-OKEY",
+          "phone": "+421907873807"
+        },
+        {
+          "name": "Janco Taxi",
+          "phone": "+421908407107"
+        }
+      ],
       "latitude": 49.08,
       "longitude": 19.305
     },
