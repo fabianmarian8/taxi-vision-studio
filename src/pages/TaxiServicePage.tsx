@@ -5,6 +5,7 @@ import { GeometricLines } from "@/components/GeometricLines";
 import { MapPin, Phone, Globe, ArrowLeft } from "lucide-react";
 import { getCityBySlug, type CityData, type TaxiService } from "@/data/cities";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { truncateUrl } from "@/utils/urlUtils";
 
 const TaxiServicePage = () => {
   const { citySlug, serviceSlug } = useParams<{ citySlug: string; serviceSlug: string }>();
@@ -156,9 +157,9 @@ const TaxiServicePage = () => {
                           href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-lg text-foreground hover:text-foreground/70 transition-colors font-bold break-all"
+                          className="text-lg text-foreground hover:text-foreground/70 transition-colors font-bold"
                         >
-                          {service.website}
+                          {truncateUrl(service.website)}
                         </a>
                       </div>
                     </div>

@@ -6,6 +6,7 @@ import { GeometricLines } from "@/components/GeometricLines";
 import { MapPin, Phone, Globe } from "lucide-react";
 import { getCityBySlug, type CityData } from "@/data/cities";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { truncateUrl } from "@/utils/urlUtils";
 
 const CityPage = () => {
   const { citySlug } = useParams<{ citySlug: string }>();
@@ -140,9 +141,9 @@ const CityPage = () => {
                               </div>
                             )}
                             {service.website && (
-                              <div className="flex items-center gap-1 md:gap-1.5 text-foreground font-medium truncate">
+                              <div className="flex items-center gap-1 md:gap-1.5 text-foreground font-medium">
                                 <Globe className="h-2.5 w-2.5 md:h-3 md:w-3 flex-shrink-0" />
-                                <span className="truncate">{service.website}</span>
+                                <span>{truncateUrl(service.website)}</span>
                               </div>
                             )}
                           </div>
