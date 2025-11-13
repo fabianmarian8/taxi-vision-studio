@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:53:51.458Z",
+  "lastUpdated": "2025-11-13T07:53:53.941Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,54 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "novaky-1763020416142-sgpxk34ff",
-      "citySlug": "novaky",
-      "taxiService": {
-        "name": "Fajn Taxi Nováky",
-        "phone": "+421949880111",
-        "website": null,
-        "address": "Chemikov 18/28, 972 71 Nováky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:53:36.142Z"
-    },
-    {
-      "id": "novaky-1763020416142-aryx9vkjb",
-      "citySlug": "novaky",
-      "taxiService": {
-        "name": "ENY Taxi",
-        "phone": "+421911211811",
-        "website": null,
-        "address": "Pribinova 135/26, 972 71 Nováky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:53:36.142Z"
-    },
-    {
-      "id": "novaky-1763020416142-cr69rd83r",
-      "citySlug": "novaky",
-      "taxiService": {
-        "name": "EXCELLENT - jazyková škola/TAXI",
-        "phone": "+421918971133",
-        "website": null,
-        "address": "Lehotská 360/2, 972 71 Nováky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:53:36.142Z"
-    },
-    {
-      "id": "novaky-1763020416142-urbgcwdtd",
-      "citySlug": "novaky",
-      "taxiService": {
-        "name": "Zebra",
-        "phone": "+421918999116",
-        "website": null,
-        "address": "Námestie SNP, 972 71 Nováky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:53:36.142Z"
     }
   ]
 }
