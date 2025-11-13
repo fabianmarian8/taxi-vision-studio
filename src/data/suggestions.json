@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:39:49.466Z",
+  "lastUpdated": "2025-11-13T08:40:39.900Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,78 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "skalica-1763023213880-bjt2evf2n",
+      "citySlug": "skalica",
+      "taxiService": {
+        "name": "TAXI SKALICA",
+        "phone": "+421902715815",
+        "website": "http://www.taxiskalica.sk",
+        "address": "14, Sasinkova 217, Skalica, 909 01 Skalica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:40:13.880Z"
+    },
+    {
+      "id": "skalica-1763023213880-a58tbmv9p",
+      "citySlug": "skalica",
+      "taxiService": {
+        "name": "JOTAX s.r.o.",
+        "phone": "+421918099889",
+        "website": "http://www.taxijotax.sk",
+        "address": "Mallého 1086/4, Skalica, 909 01 Skalica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:40:13.880Z"
+    },
+    {
+      "id": "skalica-1763023213880-5b7njtqh9",
+      "citySlug": "skalica",
+      "taxiService": {
+        "name": "Happy taxi Skalica",
+        "phone": "+421944647787",
+        "website": "http://www.happytaxisi.sk",
+        "address": "SNP, Skalica, 909 01 Skalica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:40:13.880Z"
+    },
+    {
+      "id": "skalica-1763023213880-jtfgtdrv8",
+      "citySlug": "skalica",
+      "taxiService": {
+        "name": "Dinamo Taxi - Skalica",
+        "phone": "+421910107910",
+        "website": "https://www.dinamotaxi.sk",
+        "address": "Šebestova 1889/4, Skalica, 909 01 Skalica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:40:13.880Z"
+    },
+    {
+      "id": "skalica-1763023213880-dat1vnmmt",
+      "citySlug": "skalica",
+      "taxiService": {
+        "name": "Taxi EXPRESS",
+        "phone": "+421911408566",
+        "website": null,
+        "address": "Námestie slobody 18, Skalica, 909 01 Skalica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:40:13.880Z"
+    },
+    {
+      "id": "skalica-1763023213880-9gr77ed5r",
+      "citySlug": "skalica",
+      "taxiService": {
+        "name": "TAXI DUMA",
+        "phone": "+421911111579",
+        "website": null,
+        "address": "SNP 1452/14, Skalica, 909 01 Skalica, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:40:13.880Z"
     }
   ]
 }
