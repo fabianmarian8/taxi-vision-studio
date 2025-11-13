@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T09:33:09.370Z",
   "suggestions": [
     {
       "id": "turany-1763026295976-al9pnd40u",
@@ -83,19 +84,6 @@
       },
       "status": "pending",
       "timestamp": "2025-11-13T09:31:35.976Z"
-    },
-    {
-      "id": "turany-1763026295976-cqevobuq3",
-      "citySlug": "turany",
-      "taxiService": {
-        "name": "taxi Varín",
-        "phone": "+421910777890",
-        "website": null,
-        "address": "M. R. Štefánika 2/8, 013 03 Varín, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:31:35.976Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T09:31:35.976Z"
+  ]
 }
