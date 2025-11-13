@@ -1,0 +1,28 @@
+{
+  "changes": [
+    {
+      "citySlug": "svidnik",
+      "taxiServices": [
+        {
+          "name": "TAXI VLADO",
+          "website": "",
+          "phone": "+421907100650"
+        },
+        {
+          "name": "S&K taxi Svidník",
+          "website": "https://www.facebook.com/share/1BoZxbAt2o",
+          "phone": "+421949662992"
+        },
+        {
+          "name": "TAXI Svidník",
+          "phone": "+421944748686"
+        },
+        {
+          "name": "Taxi Svidnicky Express",
+          "phone": "+421952161061"
+        }
+      ],
+      "timestamp": "2025-11-13T09:09:22.542Z"
+    }
+  ]
+}
