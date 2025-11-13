@@ -1,0 +1,19 @@
+{
+  "changes": [
+    {
+      "citySlug": "velky-meder",
+      "taxiServices": [
+        {
+          "name": "TAXI U ANJELA",
+          "phone": "+421915500633"
+        },
+        {
+          "name": "VM-TAXI",
+          "website": "https://www.facebook.com/share/1DJhBFmFgz",
+          "phone": "+421911465475"
+        }
+      ],
+      "timestamp": "2025-11-13T09:44:01.487Z"
+    }
+  ]
+}
