@@ -4,7 +4,8 @@ import { Header } from "@/components/Header";
 import { HowItWorks } from "@/components/HowItWorks";
 import { GeometricLines } from "@/components/GeometricLines";
 import { SlovakCityCard } from "@/components/SlovakCityCard";
-import { getRegionBySlug, getCitiesByRegion } from "@/data/cities";
+import { SEOHead, generateRegionSEO } from "@/components/SEOHead";
+import { getRegionBySlug, getCitiesByRegion, createRegionSlug } from "@/data/cities";
 
 const RegionPage = () => {
   const { regionSlug } = useParams<{ regionSlug: string }>();
@@ -14,48 +15,17 @@ const RegionPage = () => {
   useEffect(() => {
     // Scroll to top when page opens
     window.scrollTo({ top: 0, behavior: 'instant' });
-
-    if (regionName) {
-      // Dynamické nastavenie meta tagov pre SEO
-      document.title = `Taxislužby v kraji ${regionName} | Taxi NearMe`;
-
-      // Meta description
-      let metaDescription = document.querySelector('meta[name="description"]');
-      if (!metaDescription) {
-        metaDescription = document.createElement('meta');
-        metaDescription.setAttribute('name', 'description');
-        document.head.appendChild(metaDescription);
-      }
-      metaDescription.setAttribute(
-        'content',
-        `Nájdite spoľahlivé taxislužby v kraji ${regionName}. Prehľad všetkých miest s dostupnými taxi službami.`
-      );
-
-      // Meta keywords
-      let metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (!metaKeywords) {
-        metaKeywords = document.createElement('meta');
-        metaKeywords.setAttribute('name', 'keywords');
-        document.head.appendChild(metaKeywords);
-      }
-      metaKeywords.setAttribute(
-        'content',
-        `taxi ${regionName}, taxislužby ${regionName}, taxi služby ${regionName}`
-      );
-    }
-
-    // Cleanup funkcia pre návrat na pôvodnú stránku
-    return () => {
-      document.title = "Taxi NearMe - Find Taxis in Every City";
-    };
-  }, [regionName]);
+  }, []);
 
   if (!regionName) {
     return <Navigate to="/404" replace />;
   }
 
+  const seoData = generateRegionSEO(regionName, regionSlug || '', cities.length);
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead {...seoData} />
       <Header />
 
       {/* Region Header Section */}
