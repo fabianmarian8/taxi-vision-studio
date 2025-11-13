@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T08:17:59.411Z",
   "suggestions": [
     {
       "id": "roznava-1763021862128-g3quno7ci",
@@ -133,18 +134,6 @@
       "timestamp": "2025-11-13T08:17:42.128Z"
     },
     {
-      "id": "roznava-1763021862128-xyc970fn",
-      "citySlug": "roznava",
-      "taxiService": {
-        "name": "TAXI Kiss Róbert",
-        "phone": "+42158/7331313",
-        "website": null,
-        "address": "3, Edelényska 2027, 048 01 Rožňava, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:17:42.128Z"
-    },
-    {
       "id": "roznava-1763021862128-9crx42hx7",
       "citySlug": "roznava",
       "taxiService": {
@@ -156,6 +145,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T08:17:42.128Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:17:42.128Z"
+  ]
 }
