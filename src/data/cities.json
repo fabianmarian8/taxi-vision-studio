@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:34:35.046Z",
+  "lastUpdated": "2025-11-13T09:39:58.015Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -5110,7 +5110,18 @@
         "objednať taxi turzovka",
         "taxi kysuce"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "Tip Top Taxi Turzovka",
+          "website": "http://www.tiptoptaxi.sk",
+          "phone": "+421907567567"
+        },
+        {
+          "name": "M.T.Taxi Turzovka",
+          "website": "http://www.mttaxi.sk",
+          "phone": "+421948234444"
+        }
+      ]
     },
     {
       "name": "Veľké Kapušany",
