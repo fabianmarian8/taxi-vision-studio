@@ -1,0 +1,29 @@
+{
+  "suggestions": [
+    {
+      "id": "rajec-1763021549219-m8yr53p9j",
+      "citySlug": "rajec",
+      "taxiService": {
+        "name": "Pizza Pekáreň Rajec / TAXI Pekáreň",
+        "phone": "+421948998080",
+        "website": "https://pizzapekaren.sk",
+        "address": "M. R. Štefánika, 015 01 Rajec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:12:29.219Z"
+    },
+    {
+      "id": "rajec-1763021549219-mfubazno1",
+      "citySlug": "rajec",
+      "taxiService": {
+        "name": "Taxi Ria Žilina",
+        "phone": "+421948075030",
+        "website": null,
+        "address": "Dolná, 013 13 Kunerad, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:12:29.219Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:12:29.219Z"
+}
