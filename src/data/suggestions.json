@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:32:53.184Z",
+  "lastUpdated": "2025-11-13T07:32:55.369Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "kremnica-1762959468370-mrzjeweil",
-      "citySlug": "kremnica",
-      "taxiService": {
-        "name": "EKO TAXI Kremnica",
-        "phone": "+421940606888",
-        "website": "https://www.ekotaxi.sk",
-        "address": "Námestie Slovenského národného povstania, 967 01 Kremnica, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:57:48.370Z"
     },
     {
       "id": "krupina-1762963357729-j3oi9pyo9",
