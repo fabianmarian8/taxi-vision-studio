@@ -1,4 +1,4 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -7,7 +7,6 @@ import { MapPin, Phone, Globe } from "lucide-react";
 import { getCityBySlug, type CityData } from "@/data/cities";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { truncateUrl } from "@/utils/urlUtils";
-import { SEOHead } from "@/components/SEOHead";
 
 const CityPage = () => {
   const { citySlug } = useParams<{ citySlug: string }>();
@@ -16,7 +15,79 @@ const CityPage = () => {
   useEffect(() => {
     // Scroll to top when page opens
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, []);
+
+    if (city) {
+      // Dynamické nastavenie meta tagov pre SEO
+      document.title = `TAXI - ${city.name} | Taxi NearMe`;
+
+      // Meta description
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.setAttribute('name', 'description');
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.setAttribute('content', city.metaDescription);
+
+      // Meta keywords
+      let metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (!metaKeywords) {
+        metaKeywords = document.createElement('meta');
+        metaKeywords.setAttribute('name', 'keywords');
+        document.head.appendChild(metaKeywords);
+      }
+      metaKeywords.setAttribute('content', city.keywords.join(', '));
+
+      // Open Graph tags
+      let ogTitle = document.querySelector('meta[property="og:title"]');
+      if (!ogTitle) {
+        ogTitle = document.createElement('meta');
+        ogTitle.setAttribute('property', 'og:title');
+        document.head.appendChild(ogTitle);
+      }
+      ogTitle.setAttribute('content', `TAXI - ${city.name}`);
+
+      let ogDescription = document.querySelector('meta[property="og:description"]');
+      if (!ogDescription) {
+        ogDescription = document.createElement('meta');
+        ogDescription.setAttribute('property', 'og:description');
+        document.head.appendChild(ogDescription);
+      }
+      ogDescription.setAttribute('content', city.metaDescription);
+
+      // Structured data (JSON-LD) pre lepšie SEO
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": `Taxi služby ${city.name}`,
+        "description": city.description,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": city.name,
+          "addressRegion": city.region,
+          "addressCountry": "SK"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": city.name
+        },
+        "serviceType": "Taxi služby"
+      };
+
+      let script = document.querySelector('script[type="application/ld+json"]');
+      if (!script) {
+        script = document.createElement('script');
+        script.setAttribute('type', 'application/ld+json');
+        document.head.appendChild(script);
+      }
+      script.textContent = JSON.stringify(structuredData);
+    }
+
+    // Cleanup funkcia pre návrat na pôvodnú stránku
+    return () => {
+      document.title = "Taxi NearMe - Find Taxis in Every City";
+    };
+  }, [city]);
 
   if (!city) {
     return <Navigate to="/404" replace />;
@@ -24,8 +95,6 @@ const CityPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Temporarily disabled SEOHead - will fix and re-enable */}
-      {/* {city && <SEOHead city={city} pageType="city" />} */}
       <Header />
 
       {/* Taxi Services Section */}
