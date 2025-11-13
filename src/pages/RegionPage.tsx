@@ -103,42 +103,6 @@ const RegionPage = () => {
       {/* How It Works */}
       <HowItWorks />
 
-      {/* SEO Content Section */}
-      <section className="py-24 px-8 relative bg-card/30">
-        <GeometricLines variant="section" count={8} />
-
-        <div className="container mx-auto max-w-4xl relative z-10">
-          <div className="prose prose-lg mx-auto">
-            <div className="bg-card rounded-3xl p-8 shadow-3d-lg">
-              <h2 className="text-4xl font-black mb-6 text-foreground">
-                Prečo si vybrať taxi v kraji {regionName}?
-              </h2>
-              <div className="space-y-4 text-foreground/90 font-medium">
-                <p>
-                  <strong>{regionName}</strong> ponúka široký výber kvalitných
-                  taxislužieb vo všetkých mestách regiónu. Či už potrebujete odvoz na letisko,
-                  prepravu po meste, alebo dlhšiu cestu, nájdete tu overené a spoľahlivé taxi služby.
-                </p>
-                <p>
-                  Naša platforma vám pomáha jednoducho nájsť a porovnať taxislužby v mestách kraja {regionName}.
-                  Všetky uvedené služby sú overené a poskytujú kvalitné služby za férové ceny.
-                </p>
-                <p>
-                  <strong>Výhody objednania taxi v kraji {regionName}:</strong>
-                </p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Rýchla dostupnosť taxíkov vo všetkých mestách regiónu</li>
-                  <li>Profesionálni vodiči s miestnou znalosťou</li>
-                  <li>Transparentné ceny bez skrytých poplatkov</li>
-                  <li>Možnosť online objednávky</li>
-                  <li>Moderné a čisté vozidlá</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer with 3D Border */}
       <footer className="border-t-4 border-foreground py-12 px-8 relative">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-foreground/20 to-transparent"></div>
