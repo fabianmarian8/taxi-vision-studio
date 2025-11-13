@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:19:24.127Z",
+  "lastUpdated": "2025-11-13T08:22:29.944Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3562,7 +3562,18 @@
         "objednať taxi sabinov",
         "taxi sabinov telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": " TAXI PALUS Sabinov",
+          "website": "https://taxipalus.com/",
+          "phone": "+421 951 071 272"
+        },
+        {
+          "name": " LM TAXI",
+          "website": "",
+          "phone": "+421 915 083 080"
+        }
+      ],
       "latitude": 49.1017,
       "longitude": 21.0983
     },
