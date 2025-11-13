@@ -1,14 +1,15 @@
 // Vercel Serverless Function pre správu návrhov (delete, mark-approved)
-// Používa GitHub API namiesto lokálneho súborového systému
+// Používa GitHub API a dokáže odstrániť návrhy zo staged aj committed suggestions
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = 'fabianmarian8/taxi-vision-studio';
 const STAGED_SUGGESTIONS_FILE = 'staged-suggestions.json';
+const SUGGESTIONS_FILE = 'src/data/suggestions.json';
 
-async function loadStagedSuggestions() {
+async function loadFile(filePath) {
   try {
     const response = await fetch(
-      `https://api.github.com/repos/${GITHUB_REPO}/contents/${STAGED_SUGGESTIONS_FILE}`,
+      `https://api.github.com/repos/${GITHUB_REPO}/contents/${filePath}`,
       {
         headers: {
           'Authorization': `Bearer ${GITHUB_TOKEN}`,
@@ -33,18 +34,21 @@ async function loadStagedSuggestions() {
       sha: data.sha
     };
   } catch (error) {
-    console.error('Error loading staged suggestions:', error);
+    console.error(`Error loading ${filePath}:`, error);
     return { suggestions: [], sha: null };
   }
 }
 
-async function saveStagedSuggestions(suggestions, sha) {
+async function saveFile(filePath, suggestions, sha) {
   try {
-    const content = JSON.stringify({ suggestions }, null, 2);
+    const content = JSON.stringify({ 
+      lastUpdated: new Date().toISOString(),
+      suggestions 
+    }, null, 2);
     const encodedContent = Buffer.from(content).toString('base64');
 
     const body = {
-      message: 'Update staged suggestions via API',
+      message: `Update ${filePath} via API`,
       content: encodedContent,
       branch: 'main',
     };
@@ -54,7 +58,7 @@ async function saveStagedSuggestions(suggestions, sha) {
     }
 
     const response = await fetch(
-      `https://api.github.com/repos/${GITHUB_REPO}/contents/${STAGED_SUGGESTIONS_FILE}`,
+      `https://api.github.com/repos/${GITHUB_REPO}/contents/${filePath}`,
       {
         method: 'PUT',
         headers: {
@@ -73,7 +77,7 @@ async function saveStagedSuggestions(suggestions, sha) {
 
     return true;
   } catch (error) {
-    console.error('Error saving staged suggestions:', error);
+    console.error(`Error saving ${filePath}:`, error);
     throw error;
   }
 }
@@ -95,13 +99,28 @@ export default async function handler(req, res) {
         return res.status(400).json({ message: 'Missing suggestionId' });
       }
 
-      const { suggestions, sha } = await loadStagedSuggestions();
-      const before = suggestions.length;
-      const filtered = suggestions.filter((s) => String(s.id) !== String(suggestionId));
-      const removed = before - filtered.length;
+      let removed = 0;
 
-      if (removed > 0) {
-        await saveStagedSuggestions(filtered, sha);
+      // Try to remove from staged suggestions first
+      const staged = await loadFile(STAGED_SUGGESTIONS_FILE);
+      if (staged.suggestions.length > 0) {
+        const before = staged.suggestions.length;
+        const filtered = staged.suggestions.filter((s) => String(s.id) !== String(suggestionId));
+        if (filtered.length < before) {
+          await saveFile(STAGED_SUGGESTIONS_FILE, filtered, staged.sha);
+          removed = before - filtered.length;
+        }
+      }
+
+      // If not found in staged, try committed suggestions
+      if (removed === 0) {
+        const committed = await loadFile(SUGGESTIONS_FILE);
+        const before = committed.suggestions.length;
+        const filtered = committed.suggestions.filter((s) => String(s.id) !== String(suggestionId));
+        if (filtered.length < before) {
+          await saveFile(SUGGESTIONS_FILE, filtered, committed.sha);
+          removed = before - filtered.length;
+        }
       }
 
       return res.status(200).json({ removed, success: true });
@@ -114,13 +133,26 @@ export default async function handler(req, res) {
       }
 
       const set = new Set(suggestionIds.map(String));
-      const { suggestions, sha } = await loadStagedSuggestions();
-      const before = suggestions.length;
-      const filtered = suggestions.filter((s) => !set.has(String(s.id)));
-      const removed = before - filtered.length;
+      let removed = 0;
 
-      if (removed > 0) {
-        await saveStagedSuggestions(filtered, sha);
+      // Try to remove from staged suggestions first
+      const staged = await loadFile(STAGED_SUGGESTIONS_FILE);
+      if (staged.suggestions.length > 0) {
+        const before = staged.suggestions.length;
+        const filtered = staged.suggestions.filter((s) => !set.has(String(s.id)));
+        if (filtered.length < before) {
+          await saveFile(STAGED_SUGGESTIONS_FILE, filtered, staged.sha);
+          removed += before - filtered.length;
+        }
+      }
+
+      // Also check committed suggestions
+      const committed = await loadFile(SUGGESTIONS_FILE);
+      const before = committed.suggestions.length;
+      const filtered = committed.suggestions.filter((s) => !set.has(String(s.id)));
+      if (filtered.length < before) {
+        await saveFile(SUGGESTIONS_FILE, filtered, committed.sha);
+        removed += before - filtered.length;
       }
 
       return res.status(200).json({ removed, success: true });
