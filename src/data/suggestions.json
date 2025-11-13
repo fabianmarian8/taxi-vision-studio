@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:43:52.821Z",
+  "lastUpdated": "2025-11-13T07:44:24.064Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,18 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "modra-1763019846093-klzaght49",
+      "citySlug": "modra",
+      "taxiService": {
+        "name": "TAXI MODRA",
+        "phone": "+421905426242",
+        "website": "http://www.taxi-modra.sk",
+        "address": "Komenského 847/2, 92101 Modra, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:44:06.093Z"
     }
   ]
 }
