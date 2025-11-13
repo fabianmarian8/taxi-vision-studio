@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:59:29.556Z",
+  "lastUpdated": "2025-11-13T09:00:51.053Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,66 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "stupava-1763024389493-7xsm1d10p",
+      "citySlug": "stupava",
+      "taxiService": {
+        "name": "TAXI Stupava",
+        "phone": "+421918404040",
+        "website": null,
+        "address": "Hlavná 33, 900 31 Stupava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:59:49.493Z"
+    },
+    {
+      "id": "stupava-1763024389494-s1pl1vwnz",
+      "citySlug": "stupava",
+      "taxiService": {
+        "name": "Rychle Taxi Stupava",
+        "phone": "+421905373737",
+        "website": "http://www.rychletaxi.sk",
+        "address": "Hlavná 574/17, 900 31 Stupava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:59:49.493Z"
+    },
+    {
+      "id": "stupava-1763024389494-k29mnbegj",
+      "citySlug": "stupava",
+      "taxiService": {
+        "name": "LACI TAXI STUPAVA",
+        "phone": null,
+        "website": "http://lacitaxistupava.sk",
+        "address": "Jilemnického 12, 900 31 Stupava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:59:49.493Z"
+    },
+    {
+      "id": "stupava-1763024389494-e0gsfc4h8",
+      "citySlug": "stupava",
+      "taxiService": {
+        "name": "StupavaTaxi.sk",
+        "phone": "+421948655988",
+        "website": "http://www.stupavataxi.sk",
+        "address": "Záhumenská 837/70, 900 31 Stupava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:59:49.493Z"
+    },
+    {
+      "id": "stupava-1763024389494-wmoh2ekkb",
+      "citySlug": "stupava",
+      "taxiService": {
+        "name": "AeroTaxi Stupava",
+        "phone": "+421911114499",
+        "website": "http://aero-taxi.sk",
+        "address": "Dlhá 1780/6A, 900 31 Stupava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:59:49.493Z"
     }
   ]
 }

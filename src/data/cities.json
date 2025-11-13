@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:59:27.813Z",
+  "lastUpdated": "2025-11-13T09:00:51.053Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4266,7 +4266,32 @@
         "objednať taxi stupava",
         "taxi stupava telefón"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "TAXI Stupava",
+          "phone": "+421918404040"
+        },
+        {
+          "name": "Rychle Taxi Stupava",
+          "website": "http://www.rychletaxi.sk",
+          "phone": "+421905373737"
+        },
+        {
+          "name": "LACI TAXI STUPAVA",
+          "website": "http://lacitaxistupava.sk",
+          "phone": "+421 911 777 565"
+        },
+        {
+          "name": "StupavaTaxi.sk",
+          "website": "http://www.stupavataxi.sk",
+          "phone": "+421948655988"
+        },
+        {
+          "name": "AeroTaxi Stupava",
+          "website": "http://aero-taxi.sk",
+          "phone": "+421911114499"
+        }
+      ]
     },
     {
       "name": "Svätý Jur",
