@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:16:14.480Z",
+  "lastUpdated": "2025-11-13T08:17:09.590Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,138 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "rimavska-sobota-1763021792193-mtsgh3uod",
+      "citySlug": "rimavska-sobota",
+      "taxiService": {
+        "name": "RS taxi",
+        "phone": "+421940884833",
+        "website": "https://www.rs-taxi.sk",
+        "address": "Malohontská 26, 979 01 Rimavská Sobota, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:16:32.193Z"
+    },
+    {
+      "id": "rimavska-sobota-1763021792193-y2s04yhi6",
+      "citySlug": "rimavska-sobota",
+      "taxiService": {
+        "name": "GRAND TAXI",
+        "phone": "+421911600606",
+        "website": "http://www.grandtaxi.sk",
+        "address": "Pavla Dobšinského 42, Sobôtka, 979 01 Rimavská Sobota, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:16:32.193Z"
+    },
+    {
+      "id": "rimavska-sobota-1763021792193-kls316sky",
+      "citySlug": "rimavska-sobota",
+      "taxiService": {
+        "name": "Farkaš TAXI",
+        "phone": "+421915340406",
+        "website": null,
+        "address": "Tomašovská 23, Sobôtka, 979 01 Rimavská Sobota, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:16:32.193Z"
+    },
+    {
+      "id": "rimavska-sobota-1763021792193-3i6r594zf",
+      "citySlug": "rimavska-sobota",
+      "taxiService": {
+        "name": "White Taxi s.r.o.",
+        "phone": "+421949362562",
+        "website": null,
+        "address": "19, Tomášikova 405, 979 01 Rimavská Sobota, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:16:32.193Z"
+    },
+    {
+      "id": "rimavska-sobota-1763021792193-o391wty7c",
+      "citySlug": "rimavska-sobota",
+      "taxiService": {
+        "name": "Taxi Logan Rimavská Sobota",
+        "phone": "+421910709236",
+        "website": "https://logantaxi-8.webnode.sk",
+        "address": "Cukrovarská, 979 01 Rimavská Sobota, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:16:32.193Z"
+    },
+    {
+      "id": "rimavska-sobota-1763021792193-azc8oems9",
+      "citySlug": "rimavska-sobota",
+      "taxiService": {
+        "name": "Róbert Bodoky - Erma-taxi",
+        "phone": "+421903554524",
+        "website": null,
+        "address": "18, Malohontská 1075, 979 01 Rimavská Sobota, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:16:32.193Z"
+    },
+    {
+      "id": "rimavska-sobota-1763021792193-ueelkkva6",
+      "citySlug": "rimavska-sobota",
+      "taxiService": {
+        "name": "DRAGON Taxi",
+        "phone": "+421918063316",
+        "website": null,
+        "address": "Sedliacka 13, Sobôtka, 979 01 Rimavská Sobota, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:16:32.193Z"
+    },
+    {
+      "id": "rimavska-sobota-1763021792193-tnkud4590",
+      "citySlug": "rimavska-sobota",
+      "taxiService": {
+        "name": "PRIMA TAXI",
+        "phone": "+421952133239",
+        "website": null,
+        "address": "979 01 Rimavská Sobota, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:16:32.193Z"
+    },
+    {
+      "id": "rimavska-sobota-1763021792193-xkz6dh5qu",
+      "citySlug": "rimavska-sobota",
+      "taxiService": {
+        "name": "TripleX RS s.r.o",
+        "phone": "+421911532081",
+        "website": "http://www.triplexrs.sk",
+        "address": "Petra Hostinského 32, Sobôtka, 979 01 Rimavská Sobota, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:16:32.193Z"
+    },
+    {
+      "id": "rimavska-sobota-1763021792193-yt6frkyvc",
+      "citySlug": "rimavska-sobota",
+      "taxiService": {
+        "name": "City Taxi RS",
+        "phone": "+421944218424",
+        "website": "https://citytaxirs.sk",
+        "address": "Bátka 242, 980 21 Bátka, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:16:32.193Z"
+    },
+    {
+      "id": "rimavska-sobota-1763021792193-riir8rvxj",
+      "citySlug": "rimavska-sobota",
+      "taxiService": {
+        "name": "Black Taxi Rimavská Sobota",
+        "phone": "+421911937000",
+        "website": "https://www.google.com",
+        "address": "Slobody 211/22, 980 22 Veľký Blh, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:16:32.193Z"
     }
   ]
 }
