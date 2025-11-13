@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T07:49:54.489Z",
   "suggestions": [
     {
       "id": "nitra-1763020175294-cf75gqo06",
@@ -109,18 +110,6 @@
       "timestamp": "2025-11-13T07:49:35.293Z"
     },
     {
-      "id": "nitra-1763020175294-svjrqzyob",
-      "citySlug": "nitra",
-      "taxiService": {
-        "name": "Blaži - Taxi Nonstop",
-        "phone": "+42137/7722121",
-        "website": null,
-        "address": "11, Mostná 205, 949 01 Nitra, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:49:35.293Z"
-    },
-    {
       "id": "nitra-1763020175294-ke9ytiqpr",
       "citySlug": "nitra",
       "taxiService": {
@@ -168,6 +157,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T07:49:35.293Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T07:49:35.293Z"
+  ]
 }
