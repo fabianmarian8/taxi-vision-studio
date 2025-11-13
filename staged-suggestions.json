@@ -1,17 +1,4 @@
 {
-  "lastUpdated": "2025-11-13T08:05:23.080Z",
-  "suggestions": [
-    {
-      "id": "poltar-1763021084661-hnj2swk56",
-      "citySlug": "poltar",
-      "taxiService": {
-        "name": "Poltár",
-        "phone": null,
-        "website": "http://www.poltar.sk",
-        "address": "987 01 Poltár, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:04:44.661Z"
-    }
-  ]
+  "lastUpdated": "2025-11-13T08:05:30.892Z",
+  "suggestions": []
 }
