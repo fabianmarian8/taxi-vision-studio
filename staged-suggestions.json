@@ -1,0 +1,137 @@
+{
+  "suggestions": [
+    {
+      "id": "sturovo-1763025436216-6x8x15gtk",
+      "citySlug": "sturovo",
+      "taxiService": {
+        "name": "Taxi Lux Štúrovo",
+        "phone": "+421904559520",
+        "website": "https://www.facebook.com/lux.nonstop.1",
+        "address": "Petöfiho 936/98, 943 01 Štúrovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:17:16.216Z"
+    },
+    {
+      "id": "sturovo-1763025436217-dg2asrmz5",
+      "citySlug": "sturovo",
+      "taxiService": {
+        "name": "City TAXI Štúrovo",
+        "phone": null,
+        "website": "http://www.citytaxisturovo.estranky.sk",
+        "address": "Janka Kráľa 20, Železničný rad, 943 01 Štúrovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:17:16.216Z"
+    },
+    {
+      "id": "sturovo-1763025436217-m785fx218",
+      "citySlug": "sturovo",
+      "taxiService": {
+        "name": "Quick Taxi - Štúrovo - Tamás Benyó",
+        "phone": "+421908759166",
+        "website": "http://www.quicktaxi.sk",
+        "address": "Bartókova 1614/36, 943 01 Štúrovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:17:16.216Z"
+    },
+    {
+      "id": "sturovo-1763025436217-0xvio56i5",
+      "citySlug": "sturovo",
+      "taxiService": {
+        "name": "Taxi 8 Štúrovo taxislužba non stop najlepšia voĺba",
+        "phone": "+421915322199",
+        "website": null,
+        "address": "Madáchova 107, 943 01 Štúrovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:17:16.216Z"
+    },
+    {
+      "id": "sturovo-1763025436217-w8hu0zzfc",
+      "citySlug": "sturovo",
+      "taxiService": {
+        "name": "Taxi Štúrovo - EPPI TAXI",
+        "phone": "+421940995584",
+        "website": "https://www.facebook.com/profile.php",
+        "address": "Železničný rad 5, Železničný rad, 943 01 Štúrovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:17:16.216Z"
+    },
+    {
+      "id": "sturovo-1763025436217-i90jgcrns",
+      "citySlug": "sturovo",
+      "taxiService": {
+        "name": "Taxi ŠTÚROVO - aj 7 miestne vozidlá / Štúrovo/",
+        "phone": "+421907222181",
+        "website": null,
+        "address": "943 01 Štúrovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:17:16.216Z"
+    },
+    {
+      "id": "sturovo-1763025436217-rl0zgmpbz",
+      "citySlug": "sturovo",
+      "taxiService": {
+        "name": "L-Team Taxi Štúrovo",
+        "phone": "+421908700000",
+        "website": null,
+        "address": "10, Jozefa Bema 570, 943 01 Štúrovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:17:16.216Z"
+    },
+    {
+      "id": "sturovo-1763025436217-5td1prw0x",
+      "citySlug": "sturovo",
+      "taxiService": {
+        "name": "A Z Taxi Štúrovo",
+        "phone": "+421950521855",
+        "website": "https://www.facebook.com/profile.php",
+        "address": "Balassiho 678/16, 943 01 Štúrovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:17:16.216Z"
+    },
+    {
+      "id": "sturovo-1763025436217-za5xnk77d",
+      "citySlug": "sturovo",
+      "taxiService": {
+        "name": "AB Taxi - Štúrovo",
+        "phone": "+421908600132",
+        "website": "http://www.abtaxisturovo.weblahko.sk",
+        "address": "28, Bartókova 1612, 943 01 Štúrovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:17:16.216Z"
+    },
+    {
+      "id": "sturovo-1763025436217-rs5gd7wm8",
+      "citySlug": "sturovo",
+      "taxiService": {
+        "name": "Taxi Plus Štúrovo",
+        "phone": "+421908468006",
+        "website": "http://taxiplus.sk",
+        "address": "Školská 2713/31, 943 60 Nána, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:17:16.216Z"
+    },
+    {
+      "id": "sturovo-1763025436217-0s2s3549o",
+      "citySlug": "sturovo",
+      "taxiService": {
+        "name": "Vyhliadková loď Balu a River Taxi",
+        "phone": "+421915709030",
+        "website": "https://vyletnalod.sk",
+        "address": "Námestie slobody 14, 943 01 Štúrovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:17:16.216Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T09:17:16.216Z"
+}
