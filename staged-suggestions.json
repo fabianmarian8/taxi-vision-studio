@@ -1,0 +1,41 @@
+{
+  "suggestions": [
+    {
+      "id": "sliac-1763023291777-09kplic8i",
+      "citySlug": "sliac",
+      "taxiService": {
+        "name": "Taxi Sliač - rýchlo a lacno",
+        "phone": "+421948238626",
+        "website": "https://www.taxisliac.sk",
+        "address": "Medzinárodného dňa žien 3, 962 31 Sliač-Rybáre - stred, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:41:31.777Z"
+    },
+    {
+      "id": "sliac-1763023291778-3v7ta0ooi",
+      "citySlug": "sliac",
+      "taxiService": {
+        "name": "Letisko Sliač",
+        "phone": "+42145/5442590",
+        "website": null,
+        "address": "962 31 Sliač, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:41:31.777Z"
+    },
+    {
+      "id": "sliac-1763023291778-svfg4qlnl",
+      "citySlug": "sliac",
+      "taxiService": {
+        "name": "Air expres,taxi Sliac",
+        "phone": "+421940910111",
+        "website": null,
+        "address": "4, Kukučínova 797, Pod kúpeľmi, 962 31 Sliač, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:41:31.777Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:41:31.777Z"
+}
