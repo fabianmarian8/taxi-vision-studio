@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:47:55.487Z",
+  "lastUpdated": "2025-11-13T07:47:58.171Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,42 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "myjava-1763020039265-p89r5ow5e",
-      "citySlug": "myjava",
-      "taxiService": {
-        "name": "Taxi Myjava",
-        "phone": "+421907277588",
-        "website": "http://www.taxi-myjava.sk",
-        "address": "Nám. M. R. Štefánika, 907 01 Myjava, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:47:19.265Z"
-    },
-    {
-      "id": "myjava-1763020039265-ee6rynawq",
-      "citySlug": "myjava",
-      "taxiService": {
-        "name": "Taxi La Vita Myjava",
-        "phone": "+421940095050",
-        "website": "http://www.taxilavita.sk",
-        "address": "Pažického 416/14, 907 01 Myjava, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:47:19.265Z"
-    },
-    {
-      "id": "myjava-1763020039265-zrmh6vkt6",
-      "citySlug": "myjava",
-      "taxiService": {
-        "name": "Marián Smyčka MY-TAXI",
-        "phone": "+421902311911",
-        "website": null,
-        "address": "5, Hurbanova 933, 907 01 Myjava, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:47:19.265Z"
     }
   ]
 }
