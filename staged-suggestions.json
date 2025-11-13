@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T08:03:40.443Z",
   "suggestions": [
     {
       "id": "piestany-1763020998348-t5enye10q",
@@ -121,18 +122,6 @@
       "timestamp": "2025-11-13T08:03:18.348Z"
     },
     {
-      "id": "piestany-1763020998348-5jetgsaui",
-      "citySlug": "piestany",
-      "taxiService": {
-        "name": "Eko Park Piešťany",
-        "phone": null,
-        "website": "http://www.ekoparkpiestany.sk",
-        "address": "Bratislavská 7110/151, 921 01 Piešťany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:03:18.348Z"
-    },
-    {
       "id": "piestany-1763020998348-sb0l5zdwy",
       "citySlug": "piestany",
       "taxiService": {
@@ -168,6 +157,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T08:03:18.348Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:03:18.348Z"
+  ]
 }
