@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:54:43.403Z",
+  "lastUpdated": "2025-11-13T08:55:52.960Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,42 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "spisske-vlachy-1763024098318-4y51lfi6h",
+      "citySlug": "spisske-vlachy",
+      "taxiService": {
+        "name": "TAXIK JANIK",
+        "phone": "+421918224554",
+        "website": "http://www.taxikjanik.sk",
+        "address": "Kostolná 20, 053 61 Spišské Vlachy, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:54:58.318Z"
+    },
+    {
+      "id": "spisske-vlachy-1763024098318-v9jm4zrtb",
+      "citySlug": "spisske-vlachy",
+      "taxiService": {
+        "name": "Center taxi",
+        "phone": "+421947901838",
+        "website": null,
+        "address": "Slovenská 23, 053 61 Spišské Vlachy, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:54:58.318Z"
+    },
+    {
+      "id": "spisske-vlachy-1763024098318-i60h238oy",
+      "citySlug": "spisske-vlachy",
+      "taxiService": {
+        "name": "SPV TAXI",
+        "phone": "+421950582528",
+        "website": null,
+        "address": "Komenského 21, 053 61 Spišské Vlachy, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:54:58.318Z"
     }
   ]
 }

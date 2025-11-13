@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:54:41.656Z",
+  "lastUpdated": "2025-11-13T08:55:52.960Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4095,7 +4095,21 @@
         "objednať taxi vlachy",
         "taxi spiš"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "TAXIK JANIK",
+          "website": "http://www.taxikjanik.sk",
+          "phone": "+421918224554"
+        },
+        {
+          "name": "Center taxi",
+          "phone": "+421947901838"
+        },
+        {
+          "name": "SPV TAXI",
+          "phone": "+421950582528"
+        }
+      ]
     },
     {
       "name": "Stará Ľubovňa",
