@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:53:52.796Z",
+  "lastUpdated": "2025-11-13T07:55:09.293Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2617,7 +2617,66 @@
         "objednať taxi nové mesto",
         "taxi nmn"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi ENJOY – Nové Mesto nad Váhom",
+          "website": "https://www.facebook.com/taxienjoy.sk",
+          "phone": "+421908120222"
+        },
+        {
+          "name": "Taxi Nona",
+          "phone": "+421905443666"
+        },
+        {
+          "name": "AIR TAXI Možnosť platby kartou.",
+          "website": "https://www.facebook.com/share/1D73Qfa2rJ",
+          "phone": "+421940893052"
+        },
+        {
+          "name": "Drive Taxi",
+          "phone": "+421910299229"
+        },
+        {
+          "name": "TopSPEED s.r.o. - taxislužba",
+          "website": "http://www.taxitopspeed.sk",
+          "phone": "+421902441044"
+        },
+        {
+          "name": "ADIS TAXI",
+          "website": "http://taxi.adistravel.sk",
+          "phone": "+421947919091"
+        },
+        {
+          "name": "Dendo-Taxi",
+          "phone": "+421914108110"
+        },
+        {
+          "name": "MR-TAXI",
+          "phone": "+421948177900"
+        },
+        {
+          "name": "DE-TAXI - Nové Mesto nad Váhom - taxislužba",
+          "phone": "+421910116117"
+        },
+        {
+          "name": "Blue Taxi - Nové Mesto nad Váhom",
+          "website": "https://bluetaxi.sk",
+          "phone": "+421908505404"
+        },
+        {
+          "name": "Rudolf Heldes - R-TAXI",
+          "phone": "+421902666222"
+        },
+        {
+          "name": "AA-TAXI NM-PLATBA KARTOU MOŽNÁ",
+          "website": "https://www.facebook.com/share/1MbM2DhoHm",
+          "phone": "+421910914135"
+        },
+        {
+          "name": "Roman Kusenda Taxi Abu",
+          "phone": "+421905716688"
+        }
+      ],
       "latitude": 48.7583,
       "longitude": 17.8317
     },
