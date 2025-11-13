@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T10:02:56.386Z",
+  "lastUpdated": "2025-11-13T10:02:58.048Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,90 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "vysoke-tatry-1763027948519-dllybj4xi",
-      "citySlug": "vysoke-tatry",
-      "taxiService": {
-        "name": "FH TAXI - Ferdinand Horváth",
-        "phone": "+421903262262",
-        "website": "https://fhtaxi.sk",
-        "address": "Tatranská Lomnica 297, 059 60 Vysoké Tatry, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:59:08.519Z"
-    },
-    {
-      "id": "vysoke-tatry-1763027948519-2b8ssge04",
-      "citySlug": "vysoke-tatry",
-      "taxiService": {
-        "name": "Peter Antal Taxi",
-        "phone": "+421911902842",
-        "website": "http://taxi-peter-antal-vysoke-tatry-stary-smokovec.webnode.sk",
-        "address": "Starý Smokovec, 062 01 Vysoké Tatry, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:59:08.519Z"
-    },
-    {
-      "id": "vysoke-tatry-1763027948519-1rkithsjz",
-      "citySlug": "vysoke-tatry",
-      "taxiService": {
-        "name": "Cent Taxi Štrba, Štrbské pleso, Vysoké tatry",
-        "phone": "+421917149437",
-        "website": "http://www.taxisvit.sk",
-        "address": "Štrbské Pleso, 059 85 Vysoké Tatry, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:59:08.519Z"
-    },
-    {
-      "id": "vysoke-tatry-1763027948519-sf9dwao9h",
-      "citySlug": "vysoke-tatry",
-      "taxiService": {
-        "name": "Transfer | Vysoké Tatry - Transfer service | Taxi",
-        "phone": "+421905609326",
-        "website": "http://www.tatryubytovanie.sk",
-        "address": "Tatranská Lomnica 151, 059 60 Vysoké Tatry, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:59:08.519Z"
-    },
-    {
-      "id": "vysoke-tatry-1763027948519-hr3biue5x",
-      "citySlug": "vysoke-tatry",
-      "taxiService": {
-        "name": "Osobná doprava Taxislužba Vysoké Tatry Starý Smokovec Tatranská Lomnica",
-        "phone": "+421905700330",
-        "website": "http://www.vktaxi.szm.sk",
-        "address": "Starý Smokovec, 062 01 Vysoké Tatry, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:59:08.519Z"
-    },
-    {
-      "id": "vysoke-tatry-1763027948519-01hpbkl03",
-      "citySlug": "vysoke-tatry",
-      "taxiService": {
-        "name": "Taxi Vladimír Hric",
-        "phone": "+421908088555",
-        "website": null,
-        "address": "Tatranská Lomnica 262, 062 01 Vysoké Tatry, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:59:08.519Z"
-    },
-    {
-      "id": "vysoke-tatry-1763027948519-7h5h33l93",
-      "citySlug": "vysoke-tatry",
-      "taxiService": {
-        "name": "Vyšné Hágy",
-        "phone": null,
-        "website": "https://www.zssk.sk",
-        "address": "Vyšné Hágy, 059 84 Vysoké Tatry, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:59:08.519Z"
     }
   ]
 }
