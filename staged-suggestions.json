@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:39:38.868Z",
+  "lastUpdated": "2025-11-13T07:40:19.134Z",
   "suggestions": [
     {
       "id": "malacky-1763019566505-e982pykmn",
@@ -57,18 +57,6 @@
         "phone": "+421949814687",
         "website": "https://www.dinamotaxi.sk",
         "address": "Námestie u severínka 7/9, 901 01 Malacky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:39:26.505Z"
-    },
-    {
-      "id": "malacky-1763019566505-6cywq6s6h",
-      "citySlug": "malacky",
-      "taxiService": {
-        "name": "Taxiss L.b.d., S.r.o.",
-        "phone": "+42134/7722205",
-        "website": "http://taxiss.sk",
-        "address": "18, Malé námestie 2873, 901 01 Malacky, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:39:26.505Z"
