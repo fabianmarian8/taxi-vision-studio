@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:32:55.369Z",
+  "lastUpdated": "2025-11-13T07:32:57.326Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "krupina-1762963357729-j3oi9pyo9",
-      "citySlug": "krupina",
-      "taxiService": {
-        "name": "AA - TAXI Krupina",
-        "phone": "+421907580858",
-        "website": "https://taxikrupina.szm.com",
-        "address": "Záhradná 680/2, 963 01 Krupina, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T16:02:37.729Z"
     },
     {
       "id": "krupina-1762963357730-i15rhloe6",
