@@ -1,0 +1,46 @@
+{
+  "changes": [
+    {
+      "citySlug": "svaty-jur",
+      "taxiServices": [
+        {
+          "name": "TAXI PEZINOK",
+          "website": "http://www.taxi-pezinok.sk",
+          "phone": "+421905426242"
+        },
+        {
+          "name": "Taxi Pezinok - Peter Tahotný",
+          "website": "http://www.taxisluzbapezinok.sk",
+          "phone": "+421907181718"
+        },
+        {
+          "name": "TAXI MACHÁČEK",
+          "website": "http://www.taxi-machacek.sk",
+          "phone": "+42133/6464646"
+        },
+        {
+          "name": "Ján Hulák JENDO - TAXI",
+          "phone": "+421902616615"
+        },
+        {
+          "name": "Taxi Pezinok - Campo s.r.o.",
+          "website": "http://www.pktaxi.sk",
+          "phone": "+421902541561"
+        },
+        {
+          "name": "VIP TAXI 19",
+          "phone": "+421910191919"
+        },
+        {
+          "name": "Taxi Macháček - Emil Ježík",
+          "phone": "+421905454545"
+        },
+        {
+          "name": "PK TAXI PEZINOK",
+          "phone": "+421948777977"
+        }
+      ],
+      "timestamp": "2025-11-13T09:02:08.812Z"
+    }
+  ]
+}
