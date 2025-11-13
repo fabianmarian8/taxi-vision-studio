@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:44:47.013Z",
+  "lastUpdated": "2025-11-13T07:45:04.518Z",
   "suggestions": [
     {
       "id": "modry-kamen-1763019878130-s0hva3bxc",
@@ -33,18 +33,6 @@
         "phone": "+421950588820",
         "website": "https://www.facebook.com/profile.php",
         "address": "Venevská 775/42, 990 01 Veľký Krtíš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
-    },
-    {
-      "id": "modry-kamen-1763019878131-srf0e6jiy",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "Modra TAXI – taxislužba v Modre a okolí",
-        "phone": "+421910799666",
-        "website": "https://www.modrataxi.sk",
-        "address": "Komenského 10, 900 01 Modra, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:44:38.130Z"
