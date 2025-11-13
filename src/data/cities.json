@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:09:55.665Z",
+  "lastUpdated": "2025-11-13T08:11:10.281Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3196,7 +3196,58 @@
         "objednať taxi prievidza",
         "taxi prievidza telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "STAR Taxi Prievidza",
+          "website": "http://www.startaxipd.sk",
+          "phone": "+421910330555"
+        },
+        {
+          "name": "A TAXI Prievidza",
+          "website": "https://www.facebook.com/a.taxi.prievidza",
+          "phone": "+421948321320"
+        },
+        {
+          "name": "MK TAXI Prievidza",
+          "website": "https://www.facebook.com/mktaxiprievidza",
+          "phone": "+421950457475"
+        },
+        {
+          "name": "TaxiTaxi red cars",
+          "website": "https://play.google.com",
+          "phone": "+421908302010"
+        },
+        {
+          "name": "MOJA TAXI",
+          "phone": "+421908556101"
+        },
+        {
+          "name": "Silver Taxi Prievidza",
+          "website": "https://silvertaxipd.sk",
+          "phone": "+421947950950"
+        },
+        {
+          "name": "PD Taxi železničná stanica",
+          "phone": "+421918707766"
+        },
+        {
+          "name": "Rádio Taxi",
+          "phone": "+421908833111"
+        },
+        {
+          "name": "EXPRESTAXI.EU - Najlepšia a najlacnejšia taxislužba v meste Prievidza",
+          "phone": "+421905202021"
+        },
+        {
+          "name": "Airport Taxi Prievidza odvoz na letiská",
+          "website": "http://www.facebook.com/airporttaxipd",
+          "phone": "+421902630620"
+        },
+        {
+          "name": "Naj Taxi Prievidza",
+          "phone": "+421918828808"
+        }
+      ],
       "latitude": 48.7742,
       "longitude": 18.6267
     },
