@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:23:27.489Z",
+  "lastUpdated": "2025-11-13T08:36:59.292Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3665,7 +3665,28 @@
         "objednať taxi senica",
         "taxi senica ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI SEN",
+          "website": "http://www.taxisenica.sk",
+          "phone": "+421919202240"
+        },
+        {
+          "name": "Taxi Andy Senica",
+          "website": "http://www.taxiandysenica.sk",
+          "phone": "+421908993663"
+        },
+        {
+          "name": "Taxi Rudyn Senica",
+          "website": "https://www.taxirudynsenica.sk",
+          "phone": "+421908081081"
+        },
+        {
+          "name": "Taxi Albi Senica",
+          "website": "https://www.facebook.com/taxi.albi",
+          "phone": "+421908646662"
+        }
+      ],
       "latitude": 48.68,
       "longitude": 17.3667
     },
