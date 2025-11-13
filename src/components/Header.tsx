@@ -59,13 +59,12 @@ export const Header = () => {
             >
               Ako to funguje
             </a>
-            <a
-              href="#contact"
-              onClick={handleNavClick('contact')}
-              className="text-sm font-bold hover:text-foreground/70 transition-colors cursor-pointer"
+            <Link
+              to="/kontakt"
+              className="text-sm font-bold hover:text-foreground/70 transition-colors"
             >
               Kontakt
-            </a>
+            </Link>
           </nav>
 
           <Button

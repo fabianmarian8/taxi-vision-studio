@@ -15,6 +15,7 @@ import AdminEditCity from "./pages/AdminEditCity";
 import AdminSuggestions from "./pages/AdminSuggestions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           {/* Legal pages */}
           <Route path="/ochrana-sukromia" element={<PrivacyPolicy />} />
           <Route path="/podmienky-pouzivania" element={<TermsOfUse />} />
+          <Route path="/kontakt" element={<Contact />} />
           {/* Admin routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />

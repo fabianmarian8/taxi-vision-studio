@@ -134,9 +134,9 @@ const Index = () => {
               <Link to="/podmienky-pouzivania" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
                 Podmienky používania
               </Link>
-              <a href="#" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
+              <Link to="/kontakt" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
                 Kontakt
-              </a>
+              </Link>
             </div>
           </div>
         </div>
