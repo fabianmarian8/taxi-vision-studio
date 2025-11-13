@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:35:34.348Z",
+  "lastUpdated": "2025-11-13T07:35:36.012Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "levice-1762980652067-wek2ou2pw",
-      "citySlug": "levice",
-      "taxiService": {
-        "name": "AB Joto Taxi Levice",
-        "phone": "+421905714858",
-        "website": "http://www.levice-taxi.sk",
-        "address": "Mládežnícka 1471/25, 934 05 Levice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T20:50:52.067Z"
     },
     {
       "id": "levice-1762980652067-e5jnl4vqq",
