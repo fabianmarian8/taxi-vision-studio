@@ -1,0 +1,41 @@
+{
+  "suggestions": [
+    {
+      "id": "sobrance-1763023580710-ldpj68mgz",
+      "citySlug": "sobrance",
+      "taxiService": {
+        "name": "Kurier TAXI",
+        "phone": "+421918201201",
+        "website": "http://www.vasnakup.sk",
+        "address": "Michalovská 6, 073 01 Sobrance, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:46:20.710Z"
+    },
+    {
+      "id": "sobrance-1763023580711-q69l3xcdp",
+      "citySlug": "sobrance",
+      "taxiService": {
+        "name": "ATTAXI",
+        "phone": "+421909113548",
+        "website": null,
+        "address": "Námestie Slobody, 073 01 Sobrance, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:46:20.710Z"
+    },
+    {
+      "id": "sobrance-1763023580711-mgn2ymkuf",
+      "citySlug": "sobrance",
+      "taxiService": {
+        "name": "L - TAXI, taxislužba",
+        "phone": "+421918217217",
+        "website": null,
+        "address": "Sobrance 32, 073 01 Sobrance, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:46:20.710Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:46:20.710Z"
+}
