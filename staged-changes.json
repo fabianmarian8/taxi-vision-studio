@@ -1,0 +1,68 @@
+{
+  "changes": [
+    {
+      "citySlug": "tlmace",
+      "taxiServices": [
+        {
+          "name": "Taxi Levice",
+          "website": "http://www.taxilevice.eu",
+          "phone": "+421915415522"
+        },
+        {
+          "name": "RB GOLDEN TAXI Levice",
+          "phone": "+421902917792"
+        },
+        {
+          "name": "Jozef Nichta - CAR TAXI s. r. o.",
+          "website": "http://www.taxilevice.sk",
+          "phone": "+421905501111"
+        },
+        {
+          "name": "VIA TAXI LEVICE",
+          "website": "https://www.viataxilevice.sk",
+          "phone": "+421948321111"
+        },
+        {
+          "name": "ECO TAXI Levice",
+          "website": "http://www.eco-taxi.sk",
+          "phone": "+421910333373"
+        },
+        {
+          "name": "City Taxi Levice",
+          "website": "https://citytaxilevice.wixsite.com",
+          "phone": "+421907295255"
+        },
+        {
+          "name": "AB Joto Taxi Levice",
+          "website": "http://www.levice-taxi.sk",
+          "phone": "+421905714858"
+        },
+        {
+          "name": "EKO TAXI",
+          "website": "http://www.ekotaxi.sk",
+          "phone": "+421904003333"
+        },
+        {
+          "name": "R TAXI",
+          "website": "https://www.r-taxi.sk",
+          "phone": "+421903021442"
+        },
+        {
+          "name": "Letiskové transfery Levice",
+          "website": "https://www.letiskovetransferylevice.sk",
+          "phone": "+421907561990"
+        },
+        {
+          "name": "ALVE TAXI",
+          "phone": "+421911370252"
+        },
+        {
+          "name": "Rm Taxi Levice",
+          "website": "https://www.rm-taxi.sk",
+          "phone": "+421907043322"
+        }
+      ],
+      "timestamp": "2025-11-13T09:20:24.893Z"
+    }
+  ]
+}
