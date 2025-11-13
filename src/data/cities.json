@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:43:51.888Z",
+  "lastUpdated": "2025-11-13T07:44:25.327Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2238,7 +2238,13 @@
         "objednať taxi modra",
         "taxi modra víno"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI MODRA",
+          "website": "http://www.taxi-modra.sk",
+          "phone": "+421905426242"
+        }
+      ],
       "latitude": 48.335,
       "longitude": 17.3067
     },
