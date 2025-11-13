@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:55:15.142Z",
+  "lastUpdated": "2025-11-13T09:57:25.457Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -5591,7 +5591,23 @@
         "objednať taxi želiezovce",
         "taxi želiezovce ceny"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "RIO Taxi",
+          "website": "",
+          "phone": "+421 940 644 885"
+        },
+        {
+          "name": "Eco Taxi Želiezovce",
+          "website": "",
+          "phone": "+421 950 333 555"
+        },
+        {
+          "name": "City taxi",
+          "website": "",
+          "phone": "+421948664777"
+        }
+      ]
     },
     {
       "name": "Žiar nad Hronom",
