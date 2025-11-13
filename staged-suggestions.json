@@ -1,0 +1,113 @@
+{
+  "suggestions": [
+    {
+      "id": "partizanske-1763020688213-h3a8mn93r",
+      "citySlug": "partizanske",
+      "taxiService": {
+        "name": "Joker Taxi Partizánske",
+        "phone": "+421911866792",
+        "website": "https://www.jokertaxipe.sk",
+        "address": "958 03 Partizánske, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:58:08.213Z"
+    },
+    {
+      "id": "partizanske-1763020688213-q4zz3gotc",
+      "citySlug": "partizanske",
+      "taxiService": {
+        "name": "PE TAXI Partizánske",
+        "phone": "+421908080908",
+        "website": "http://www.petaxi.sk",
+        "address": "Hrnčírikova 650/2, 958 01 Partizánske, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:58:08.213Z"
+    },
+    {
+      "id": "partizanske-1763020688213-vlp6msvuc",
+      "citySlug": "partizanske",
+      "taxiService": {
+        "name": "S-TAXI Partizanske",
+        "phone": "+421905300230",
+        "website": "http://s-taxi.sk",
+        "address": "Nádražná 647/17, 958 01 Partizánske, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:58:08.213Z"
+    },
+    {
+      "id": "partizanske-1763020688213-qgn42zt6r",
+      "citySlug": "partizanske",
+      "taxiService": {
+        "name": "M Taxi Partizánske",
+        "phone": "+421940337888",
+        "website": null,
+        "address": "Hrnčírikova 650/2, 958 01 Partizánske, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:58:08.213Z"
+    },
+    {
+      "id": "partizanske-1763020688213-4ej36ip17",
+      "citySlug": "partizanske",
+      "taxiService": {
+        "name": "Euro-Taxi PARTIZÁNSKE",
+        "phone": "+421907224449",
+        "website": "http://www.euro-taxi.sk",
+        "address": "Malinovského, 958 01 Partizánske, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:58:08.213Z"
+    },
+    {
+      "id": "partizanske-1763020688213-sv4r0j7be",
+      "citySlug": "partizanske",
+      "taxiService": {
+        "name": "ELE Taxi",
+        "phone": "+421940630033",
+        "website": null,
+        "address": "Generála Svobodu 721/20, 958 01 Partizánske, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:58:08.213Z"
+    },
+    {
+      "id": "partizanske-1763020688213-hto12tqve",
+      "citySlug": "partizanske",
+      "taxiService": {
+        "name": "TAXI7",
+        "phone": "+421907717271",
+        "website": null,
+        "address": "Skleníková 86/10, Malé Bielice, 958 04 Partizánske, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:58:08.213Z"
+    },
+    {
+      "id": "partizanske-1763020688213-hw351gkkz",
+      "citySlug": "partizanske",
+      "taxiService": {
+        "name": "Andrej Michnik NONSTOP TAXI",
+        "phone": "+421948888048",
+        "website": null,
+        "address": "52, Malá okružná 927, 958 01 Partizánske, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:58:08.213Z"
+    },
+    {
+      "id": "partizanske-1763020688213-eu24j4kb1",
+      "citySlug": "partizanske",
+      "taxiService": {
+        "name": "Moricconi - Edy Racing S.r.o.",
+        "phone": "+42138/7494103",
+        "website": null,
+        "address": "Za riekou Nitrou 1492, 958 01 Partizánske-Salaš, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:58:08.213Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T07:58:08.213Z"
+}
