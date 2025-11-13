@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:49:42.754Z",
+  "lastUpdated": "2025-11-13T08:51:03.174Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,18 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "spisska-stara-ves-1763023799632-l7ln3xy3g",
+      "citySlug": "spisska-stara-ves",
+      "taxiService": {
+        "name": "Pašo TAXI",
+        "phone": "+421940501696",
+        "website": "https://paso-taxi.com",
+        "address": "Štúrová 260/26, 061 01 Spišská Stará Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:49:59.631Z"
     }
   ]
 }

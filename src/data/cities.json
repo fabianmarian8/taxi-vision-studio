@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:49:41.196Z",
+  "lastUpdated": "2025-11-13T08:51:03.174Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4046,7 +4046,18 @@
         "objednať taxi ssv",
         "taxi spiš"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "Pašo TAXI",
+          "website": "https://paso-taxi.com",
+          "phone": "+421940501696"
+        },
+        {
+          "name": "NOCED Taxik Nonstop",
+          "website": "",
+          "phone": "+421 917 538 143"
+        }
+      ]
     },
     {
       "name": "Spišské Podhradie",
