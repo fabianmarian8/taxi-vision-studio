@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:32:57.326Z",
+  "lastUpdated": "2025-11-13T07:32:59.291Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "krupina-1762963357730-i15rhloe6",
-      "citySlug": "krupina",
-      "taxiService": {
-        "name": "Express TAXI Krupina",
-        "phone": "+421904404900",
-        "website": "http://krupinskyexpresstaxi0.webnode.sk",
-        "address": "Slnečná 33, 963 01 Krupina, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T16:02:37.729Z"
     },
     {
       "id": "krupina-1762963357730-ewpx83el2",
