@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T07:54:18.611Z",
   "suggestions": [
     {
       "id": "nove-mesto-nad-vahom-1763020449141-9ghsucyny",
@@ -44,18 +45,6 @@
         "phone": "+421910299229",
         "website": null,
         "address": "Ctiborova, 915 01 Nové Mesto nad Váhom, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:54:09.141Z"
-    },
-    {
-      "id": "nove-mesto-nad-vahom-1763020449141-p6mufbacz",
-      "citySlug": "nove-mesto-nad-vahom",
-      "taxiService": {
-        "name": "Taxi",
-        "phone": "+42132/7714444",
-        "website": null,
-        "address": "Ctiborova 4444, 915 01 Nové Mesto nad Váhom, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:54:09.141Z"
@@ -180,6 +169,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T07:54:09.141Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T07:54:09.141Z"
+  ]
 }
