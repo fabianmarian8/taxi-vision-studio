@@ -1,0 +1,173 @@
+{
+  "suggestions": [
+    {
+      "id": "zilina-1763027893800-m7ytzfzvq",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "Taxi Taxi Žilina NONSTOP",
+        "phone": "+421902100200",
+        "website": "http://www.taxitaxizilina.sk",
+        "address": "1, Slovenských dobrovoľníkov 119, Budatín, 010 03 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-3xwwzwtrm",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "Taxi Fantasia",
+        "phone": "+421905800600",
+        "website": "http://www.taxifantasia.sk",
+        "address": "Dlhá 1230/49B, Bytčica, 010 09 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-wlt9virt6",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "Mima Taxi Žilina",
+        "phone": "+421940600222",
+        "website": "https://www.mimataxizilina.sk",
+        "address": "Prešovská 2947/4, P. O. Hviezdoslava 16, 010 08 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-cuvcilxax",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "TAXI ŽILINA",
+        "phone": "+421907777787",
+        "website": null,
+        "address": "010 01 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-f0zg51on3",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "Taxi Laura Žilina",
+        "phone": "+421905202020",
+        "website": "http://www.taxilaura.sk",
+        "address": "Sad SNP 8, 010 01 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-fh9385jh3",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "TABBI TAXI",
+        "phone": "+421910150250",
+        "website": "http://tabbitaxi.sk",
+        "address": "Lichardova 2802/11, 010 01 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-bj401o0cg",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "Tvoj TAXI",
+        "phone": "+421911427427",
+        "website": "http://www.tvojtaxi.sk",
+        "address": "Čajakova 2174/9, 010 01 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-alczxqz8h",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "GOLD TAXI Žilina",
+        "phone": "+421910595995",
+        "website": "http://www.zilina.taxi",
+        "address": "Daniela Dlabača 28, 010 01 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-hm4xtfj3g",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "Žilinský taxi Non-stop",
+        "phone": "+421904554666",
+        "website": null,
+        "address": "12, Vojtecha Tvrdého 777, 010 01 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-bqctul1uf",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "TAXI DUBEŇ | Žilina",
+        "phone": "+421951870704",
+        "website": "http://taxiduben.sk",
+        "address": "Stanovište taxíkov, Romualda Zaymusa, 010 01 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-pawk0natt",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "MJ Taxi Žilina",
+        "phone": "+421914272829",
+        "website": "https://mjtaxizilina.sk",
+        "address": "Veľká Okružná 59A, 010 01 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-3w74xep45",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "LION TAXI ŽILINA",
+        "phone": "+421940142212",
+        "website": "https://liontaxi.sk",
+        "address": "Andreja Kmeťa 307/34, 010 01 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-3q66283px",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "Euro-taxi Žilina",
+        "phone": "+421902300400",
+        "website": "http://www.eurotaxi.sk",
+        "address": "Dlabacova,autobusove Nastupiste, 010 01 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    },
+    {
+      "id": "zilina-1763027893800-hw6awo44m",
+      "citySlug": "zilina",
+      "taxiService": {
+        "name": "KERAM TAXI Žilina",
+        "phone": "+421948235235",
+        "website": "http://www.keramtaxi.sk",
+        "address": "M. R. Štefánika 849/71, 010 01 Žilina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:58:13.800Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T09:58:13.800Z"
+}
