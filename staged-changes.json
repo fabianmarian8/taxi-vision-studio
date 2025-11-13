@@ -1,0 +1,35 @@
+{
+  "changes": [
+    {
+      "citySlug": "svaty-jur",
+      "taxiServices": [
+        {
+          "name": "Purple taxi Svätý Jur",
+          "website": "",
+          "phone": "+421 903 106 943"
+        },
+        {
+          "name": "VANTAXI ",
+          "website": "https://vantaxi.sk/lokalita/taxi-svaty-jur/",
+          "phone": "+421 903 351 122"
+        },
+        {
+          "name": "Taxi Bernolákovo",
+          "website": "https://www.taxibernolakovo.sk/",
+          "phone": "+421 910 275 078"
+        },
+        {
+          "name": "Jendo taxi",
+          "website": "",
+          "phone": "+421902616615"
+        },
+        {
+          "name": "Taxi Majo",
+          "website": "",
+          "phone": "+421902399404"
+        }
+      ],
+      "timestamp": "2025-11-13T09:07:27.752Z"
+    }
+  ]
+}
