@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:07:29.170Z",
+  "lastUpdated": "2025-11-13T09:09:24.023Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4347,7 +4347,26 @@
         "objednať taxi svidník",
         "taxi svidník ceny"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "TAXI VLADO",
+          "website": "",
+          "phone": "+421907100650"
+        },
+        {
+          "name": "S&K taxi Svidník",
+          "website": "https://www.facebook.com/share/1BoZxbAt2o",
+          "phone": "+421949662992"
+        },
+        {
+          "name": "TAXI Svidník",
+          "phone": "+421944748686"
+        },
+        {
+          "name": "Taxi Svidnicky Express",
+          "phone": "+421952161061"
+        }
+      ]
     },
     {
       "name": "Svit",
