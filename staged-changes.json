@@ -1,0 +1,41 @@
+{
+  "changes": [
+    {
+      "citySlug": "velky-saris",
+      "taxiServices": [
+        {
+          "name": "NOVA TAXI",
+          "phone": "+42151/7722733"
+        },
+        {
+          "name": "VIP TAXI PO",
+          "phone": "+421800500712"
+        },
+        {
+          "name": "AlfaTAXI Prešov",
+          "website": "http://www.alfataxipo.sk",
+          "phone": "+421940545556"
+        },
+        {
+          "name": "Majo Taxi Prešov/AB Taxi Prešov",
+          "website": "http://abtaxipresov.sk",
+          "phone": "+421905210121"
+        },
+        {
+          "name": "A-a-taxi Prešov",
+          "phone": "+42151/7715155"
+        },
+        {
+          "name": "EuroCombi TAXI Prešov",
+          "website": "https://www.eurocombitaxi.sk",
+          "phone": "+42151/7710710"
+        },
+        {
+          "name": "A-A VikyTaxi",
+          "phone": "+421910141777"
+        }
+      ],
+      "timestamp": "2025-11-13T09:45:34.252Z"
+    }
+  ]
+}
