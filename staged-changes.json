@@ -1,0 +1,14 @@
+{
+  "changes": [
+    {
+      "citySlug": "leopoldov",
+      "taxiServices": [
+        {
+          "name": "Leopoldov Taxi",
+          "phone": "+421904563000"
+        }
+      ],
+      "timestamp": "2025-11-13T07:36:44.941Z"
+    }
+  ]
+}
