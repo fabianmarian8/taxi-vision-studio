@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T22:40:47.199Z",
+  "lastUpdated": "2025-11-13T07:36:47.562Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1640,7 +1640,12 @@
         "objednať taxi leopoldov",
         "taxi leopoldov telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Leopoldov Taxi",
+          "phone": "+421904563000"
+        }
+      ],
       "latitude": 48.4433,
       "longitude": 17.7633
     },
