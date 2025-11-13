@@ -1,0 +1,77 @@
+{
+  "suggestions": [
+    {
+      "id": "poltar-1763021084661-5amrm6je0",
+      "citySlug": "poltar",
+      "taxiService": {
+        "name": "RS taxi",
+        "phone": "+421940884833",
+        "website": "https://www.rs-taxi.sk",
+        "address": "Malohontská 26, 979 01 Rimavská Sobota, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:04:44.661Z"
+    },
+    {
+      "id": "poltar-1763021084661-lm1nuhxdo",
+      "citySlug": "poltar",
+      "taxiService": {
+        "name": "GRAND TAXI",
+        "phone": "+421911600606",
+        "website": "http://www.grandtaxi.sk",
+        "address": "Pavla Dobšinského 42, Sobôtka, 979 01 Rimavská Sobota, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:04:44.661Z"
+    },
+    {
+      "id": "poltar-1763021084661-81aq6g5gr",
+      "citySlug": "poltar",
+      "taxiService": {
+        "name": "MxA Slovakia - Stanica technickej kontroly",
+        "phone": "+421909177000",
+        "website": "https://mxa.sk",
+        "address": "Továrenská 3526, 987 01 Poltár, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:04:44.661Z"
+    },
+    {
+      "id": "poltar-1763021084661-rx0hxqcw7",
+      "citySlug": "poltar",
+      "taxiService": {
+        "name": "Express Taxi",
+        "phone": "+421904111696",
+        "website": null,
+        "address": "Revolučná 115/25, Opatová, 984 01 Lučenec-Opatová pri Lučenci, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:04:44.661Z"
+    },
+    {
+      "id": "poltar-1763021084661-lzfj4w41d",
+      "citySlug": "poltar",
+      "taxiService": {
+        "name": "RK TAXI – DETVA",
+        "phone": "+421944384666",
+        "website": "http://www.rktaxi.sk",
+        "address": "Novosady 921/6, 962 12 Detva, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:04:44.661Z"
+    },
+    {
+      "id": "poltar-1763021084661-hnj2swk56",
+      "citySlug": "poltar",
+      "taxiService": {
+        "name": "Poltár",
+        "phone": null,
+        "website": "http://www.poltar.sk",
+        "address": "987 01 Poltár, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:04:44.661Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:04:44.661Z"
+}
