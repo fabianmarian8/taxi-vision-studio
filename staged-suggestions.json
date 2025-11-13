@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T07:41:58.319Z",
   "suggestions": [
     {
       "id": "medzev-1763019700086-odf01dq7c",
@@ -8,18 +9,6 @@
         "phone": "+421907139053",
         "website": "http://www.tibitaxi.sk",
         "address": "Školská, 044 02 Turňa nad Bodvou, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:41:40.086Z"
-    },
-    {
-      "id": "medzev-1763019700087-sigzco0dl",
-      "citySlug": "medzev",
-      "taxiService": {
-        "name": "Medzev",
-        "phone": null,
-        "website": "http://www.medzev.sk",
-        "address": "044 25 Medzev, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:41:40.086Z"
@@ -60,6 +49,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T07:41:40.086Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T07:41:40.086Z"
+  ]
 }
