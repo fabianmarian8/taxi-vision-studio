@@ -1,18 +1,6 @@
 {
-  "lastUpdated": "2025-11-13T08:05:15.719Z",
+  "lastUpdated": "2025-11-13T08:05:18.633Z",
   "suggestions": [
-    {
-      "id": "poltar-1763021084661-5amrm6je0",
-      "citySlug": "poltar",
-      "taxiService": {
-        "name": "RS taxi",
-        "phone": "+421940884833",
-        "website": "https://www.rs-taxi.sk",
-        "address": "Malohontská 26, 979 01 Rimavská Sobota, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:04:44.661Z"
-    },
     {
       "id": "poltar-1763021084661-81aq6g5gr",
       "citySlug": "poltar",
