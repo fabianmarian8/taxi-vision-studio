@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:47:56.962Z",
+  "lastUpdated": "2025-11-13T07:48:49.162Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2352,7 +2352,54 @@
         "objednať taxi námestovo",
         "taxi orava"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Nonstop Taxi v Námestove -TaxiTM",
+          "website": "https://tmtaxinamestovo.sk",
+          "phone": "+421915774664"
+        },
+        {
+          "name": "SOVA TAXI NAMESTOVO",
+          "website": "http://www.taxinamestovo.sk",
+          "phone": "+421903029039"
+        },
+        {
+          "name": "NONSTOP TAXI Námestovo",
+          "phone": "+421904096363"
+        },
+        {
+          "name": "LS Taxi Námestovo",
+          "phone": "+421910232232"
+        },
+        {
+          "name": "Taxi Online Námestovo",
+          "website": "http://www.taxino.sk",
+          "phone": "+421903117140"
+        },
+        {
+          "name": "ISO TAXI - Námestovo",
+          "website": "https://www.namestovotaxi.sk",
+          "phone": "+421903465174"
+        },
+        {
+          "name": "Taxi namestovo",
+          "phone": "+421910181151"
+        },
+        {
+          "name": "Tany Taxi Námestovo",
+          "website": "https://www.facebook.com/Tanytaxinamestovo",
+          "phone": "+421903888700"
+        },
+        {
+          "name": "Kami Taxi",
+          "website": "https://kamitaxi.orava.sk",
+          "phone": "+421910667668"
+        },
+        {
+          "name": "ZAFIR TAXI NÁMESTOVO",
+          "phone": "+421904818135"
+        }
+      ],
       "latitude": 49.405,
       "longitude": 19.48
     },
