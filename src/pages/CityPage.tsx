@@ -50,7 +50,7 @@ const CityPage = () => {
               Taxislužby v meste {city.name}
             </h2>
             <p className="text-base md:text-xl text-foreground/90 font-bold px-4">
-              Kompletný zoznam overených taxislužieb
+              Kompletný zoznam dostupných taxislužieb
             </p>
           </div>
 

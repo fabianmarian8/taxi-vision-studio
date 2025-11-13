@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
             <p className="text-foreground/80 leading-relaxed">
               Naša služba funguje ako informatívny portál pre vyhľadávanie taxislužieb na Slovensku.
               Nezabezpečujeme priamo taxislužby, ale poskytujeme Vám prehľad a kontaktné informácie
-              na overené prepravné služby vo vašom meste.
+              na dostupné prepravné služby vo vašom meste.
             </p>
           </section>
 
