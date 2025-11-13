@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:45:04.518Z",
+  "lastUpdated": "2025-11-13T07:45:09.594Z",
   "suggestions": [
     {
       "id": "modry-kamen-1763019878130-s0hva3bxc",
@@ -45,18 +45,6 @@
         "phone": "+421907616221",
         "website": "https://www.taxismile.sk",
         "address": "Boženy Němcovej 39, 990 01 Veľký Krtíš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
-    },
-    {
-      "id": "modry-kamen-1763019878131-vwybjs99a",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "TAXI MODRA",
-        "phone": "+421905426242",
-        "website": "http://www.taxi-modra.sk",
-        "address": "Komenského 847/2, 92101 Modra, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:44:38.130Z"
