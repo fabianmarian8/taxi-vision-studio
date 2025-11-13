@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:47:07.118Z",
+  "lastUpdated": "2025-11-13T07:47:56.962Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2320,7 +2320,22 @@
         "objednať taxi myjava",
         "taxi myjava ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Myjava",
+          "website": "http://www.taxi-myjava.sk",
+          "phone": "+421907277588"
+        },
+        {
+          "name": "Taxi La Vita Myjava",
+          "website": "http://www.taxilavita.sk",
+          "phone": "+421940095050"
+        },
+        {
+          "name": "Marián Smyčka MY-TAXI",
+          "phone": "+421902311911"
+        }
+      ],
       "latitude": 48.7583,
       "longitude": 17.565
     },
