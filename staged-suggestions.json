@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T09:20:06.126Z",
   "suggestions": [
     {
       "id": "tlmace-1763025568750-jdvhowz0o",
@@ -109,18 +110,6 @@
       "timestamp": "2025-11-13T09:19:28.750Z"
     },
     {
-      "id": "tlmace-1763025568751-2aa75ype6",
-      "citySlug": "tlmace",
-      "taxiService": {
-        "name": "Slovmatic - ADMIRAL - Herňa",
-        "phone": "+421907343458",
-        "website": "https://slovmatic.sk",
-        "address": "Námestie Slovenského národného povstania 267/9, 935 21 Tlmače, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:19:28.750Z"
-    },
-    {
       "id": "tlmace-1763025568751-s97wih0bn",
       "citySlug": "tlmace",
       "taxiService": {
@@ -156,6 +145,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T09:19:28.750Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T09:19:28.750Z"
+  ]
 }
