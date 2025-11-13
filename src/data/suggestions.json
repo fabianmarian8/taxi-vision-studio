@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:46:29.752Z",
+  "lastUpdated": "2025-11-13T07:46:31.931Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,54 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "modry-kamen-1763019878130-s0hva3bxc",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "TAXI VK",
-        "phone": "+421919287652",
-        "website": "https://www.taxivk.sk",
-        "address": "Dúbravská cesta 660/2, 990 01 Veľký Krtíš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
-    },
-    {
-      "id": "modry-kamen-1763019878131-7gmigfmbs",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "Taxi Novohrad",
-        "phone": "+421949459846",
-        "website": null,
-        "address": "Nemocničná 7, 990 01 Veľký Krtíš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
-    },
-    {
-      "id": "modry-kamen-1763019878131-ij2sty4yg",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "Doprava na letisko",
-        "phone": "+421950588820",
-        "website": "https://www.facebook.com/profile.php",
-        "address": "Venevská 775/42, 990 01 Veľký Krtíš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
-    },
-    {
-      "id": "modry-kamen-1763019878131-cxpwyzy2g",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "Taxi Smile Veľký Krtíš",
-        "phone": "+421907616221",
-        "website": "https://www.taxismile.sk",
-        "address": "Boženy Němcovej 39, 990 01 Veľký Krtíš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
     }
   ]
 }
