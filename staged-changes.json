@@ -1,0 +1,68 @@
+{
+  "changes": [
+    {
+      "citySlug": "michalovce",
+      "taxiServices": [
+        {
+          "name": "Gold Taxi",
+          "website": "https://goldtaxi.sk",
+          "phone": "+421944103777"
+        },
+        {
+          "name": "Taxi Šírava MB DIVERSO, s.r.o.",
+          "website": "http://www.taxisirava.sk",
+          "phone": "+421908841359"
+        },
+        {
+          "name": "LuKa TAXI Michalovce",
+          "phone": "+421948635513"
+        },
+        {
+          "name": "Enjoy Taxi Michalovce",
+          "website": "https://enjoytaximi.webnode.sk",
+          "phone": "+421918121313"
+        },
+        {
+          "name": "M Taxi & Airport Transfer Michalovce",
+          "phone": "+421944133821"
+        },
+        {
+          "name": "TIBI TAXI MICHALOVCE",
+          "phone": "+421947130805"
+        },
+        {
+          "name": "TAXI Michalovce",
+          "phone": "+421948765000"
+        },
+        {
+          "name": "Taxi Modrý Anjel",
+          "website": "http://taximodryanjel.sk",
+          "phone": "+421917171717"
+        },
+        {
+          "name": "Eurotaxi, s.r.o. , Taxi Michalovce Šírava Zemplín",
+          "website": "http://www.eurotaximi.sk",
+          "phone": "+421907082700"
+        },
+        {
+          "name": "G-Taxi",
+          "phone": "+421902307207"
+        },
+        {
+          "name": "Daniela TAXI",
+          "phone": "+421908980203"
+        },
+        {
+          "name": "Taxi Yaxi",
+          "phone": "+421915414915"
+        },
+        {
+          "name": "Eurotravel- VICORP s. r. o. - Preprava osôb, Prenájom mikrobusov",
+          "website": "https://www.eurotravel.sk",
+          "phone": "+421944808404"
+        }
+      ],
+      "timestamp": "2025-11-13T07:43:49.768Z"
+    }
+  ]
+}
