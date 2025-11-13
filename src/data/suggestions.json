@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:12:17.292Z",
+  "lastUpdated": "2025-11-13T08:15:25.016Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,18 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "rajec-1763021549219-m8yr53p9j",
+      "citySlug": "rajec",
+      "taxiService": {
+        "name": "Pizza Pekáreň Rajec / TAXI Pekáreň",
+        "phone": "+421948998080",
+        "website": "https://pizzapekaren.sk",
+        "address": "M. R. Štefánika, 015 01 Rajec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:12:29.219Z"
     }
   ]
 }
