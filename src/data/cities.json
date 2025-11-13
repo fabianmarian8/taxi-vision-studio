@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:15:06.550Z",
+  "lastUpdated": "2025-11-13T09:15:49.015Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4492,7 +4492,30 @@
         "objednať taxi šamorín",
         "taxi šamorín telefón"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "Taxi Šamorín",
+          "website": "https://taxi-samorin.sk",
+          "phone": "+421944065006"
+        },
+        {
+          "name": "Taxi Plus Šamorín",
+          "website": "http://taxiplus-samorin.sk",
+          "phone": "+421944160016"
+        },
+        {
+          "name": "Taxi Šamorín - Autobusová stanica",
+          "phone": "+421902199822"
+        },
+        {
+          "name": "Taxi Horváth-Šamorín",
+          "phone": "+421902188222"
+        },
+        {
+          "name": "Vojtech Horváth Taxi",
+          "phone": "+421910551448"
+        }
+      ]
     },
     {
       "name": "Šaštín-Stráže",
