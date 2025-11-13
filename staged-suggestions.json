@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:16:57.533Z",
+  "lastUpdated": "2025-11-13T08:17:03.578Z",
   "suggestions": [
     {
       "id": "rimavska-sobota-1763021792193-mtsgh3uod",
@@ -129,18 +129,6 @@
         "phone": "+421911937000",
         "website": "https://www.google.com",
         "address": "Slobody 211/22, 980 22 Veľký Blh, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:16:32.193Z"
-    },
-    {
-      "id": "rimavska-sobota-1763021792193-tu0amdcp1",
-      "citySlug": "rimavska-sobota",
-      "taxiService": {
-        "name": "Kaufland Rimavska Sobota",
-        "phone": "+421800152835",
-        "website": "https://predajne.kaufland.sk",
-        "address": "Námestie Š. M. Daxnera 4162, 979 01 Rimavská Sobota, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T08:16:32.193Z"
