@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T08:41:00.670Z",
   "suggestions": [
     {
       "id": "sladkovicovo-1763023251780-vgpbgfj04",
@@ -47,19 +48,6 @@
       },
       "status": "pending",
       "timestamp": "2025-11-13T08:40:51.780Z"
-    },
-    {
-      "id": "sladkovicovo-1763023251780-z7t2dswj2",
-      "citySlug": "sladkovicovo",
-      "taxiService": {
-        "name": "TAXI OTTI (OTTI s.r.o. )",
-        "phone": "+421915638595",
-        "website": "http://www.taxiotti.sk",
-        "address": "28, Revolučná štvrť 969, 924 01 Galanta, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:40:51.780Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:40:51.780Z"
+  ]
 }
