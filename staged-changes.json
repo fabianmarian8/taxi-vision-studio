@@ -1,0 +1,28 @@
+{
+  "changes": [
+    {
+      "citySlug": "velke-kapusany",
+      "taxiServices": [
+        {
+          "name": "Juraj Varga",
+          "phone": "+421918022222"
+        },
+        {
+          "name": "Štefi taxi",
+          "phone": "+421907122023"
+        },
+        {
+          "name": "Elite Taxi Veľké Kapušany ",
+          "website": "https://www.facebook.com/tel.0940640940/",
+          "phone": "0940 640 940"
+        },
+        {
+          "name": "Taxi Király ",
+          "website": "",
+          "phone": "+421 918 015 000"
+        }
+      ],
+      "timestamp": "2025-11-13T09:42:31.728Z"
+    }
+  ]
+}
