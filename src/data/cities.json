@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:46:31.087Z",
+  "lastUpdated": "2025-11-13T07:47:07.118Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2298,7 +2298,12 @@
         "objednať taxi moldava",
         "taxi moldava telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Sky Taxi Moldava nad Bodvou",
+          "phone": "+421940600048"
+        }
+      ],
       "latitude": 48.6133,
       "longitude": 20.9967
     },
