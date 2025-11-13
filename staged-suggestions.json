@@ -1,0 +1,29 @@
+{
+  "suggestions": [
+    {
+      "id": "revuca-1763021740569-d7so5nu6w",
+      "citySlug": "revuca",
+      "taxiService": {
+        "name": "TAXI REVUCA",
+        "phone": "+421911456999",
+        "website": "https://www.facebook.com/profile.php",
+        "address": "Námestie slobody 5/5, 050 01 Revúca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:15:40.569Z"
+    },
+    {
+      "id": "revuca-1763021740569-sn6lbfa9g",
+      "citySlug": "revuca",
+      "taxiService": {
+        "name": "Marek Balag-trans",
+        "phone": "+421915812672",
+        "website": "http://marekbalag-trans.sk",
+        "address": "Svätého Quirina 1530/13, 050 01 Revúca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:15:40.569Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:15:40.569Z"
+}
