@@ -1,0 +1,101 @@
+{
+  "suggestions": [
+    {
+      "id": "turany-1763026295976-al9pnd40u",
+      "citySlug": "turany",
+      "taxiService": {
+        "name": "Bugo Taxi",
+        "phone": "+421907077077",
+        "website": "http://www.bugotaxi.sk",
+        "address": "14, Železničná 3228, 038 61 Vrútky, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:31:35.976Z"
+    },
+    {
+      "id": "turany-1763026295976-kha7gtxcm",
+      "citySlug": "turany",
+      "taxiService": {
+        "name": "TAXI-FANY Bauer Ján",
+        "phone": "+421905500911",
+        "website": null,
+        "address": "K. Kalocsaya 3207/4, 038 61 Vrútky, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:31:35.976Z"
+    },
+    {
+      "id": "turany-1763026295976-hisxe5x9v",
+      "citySlug": "turany",
+      "taxiService": {
+        "name": "M2 TAXI",
+        "phone": "+421948916917",
+        "website": "http://m2taxi.sk",
+        "address": "Dušana Makovického, Záturčie, 036 01 Martin, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:31:35.976Z"
+    },
+    {
+      "id": "turany-1763026295976-yr1sijz9c",
+      "citySlug": "turany",
+      "taxiService": {
+        "name": "MB TAXI Martin",
+        "phone": "+421908108108",
+        "website": "http://www.mbtaxi.eu",
+        "address": "Andreja Kmeťa 2, Martin, 036 01 Martin, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:31:35.976Z"
+    },
+    {
+      "id": "turany-1763026295976-36iwizf1a",
+      "citySlug": "turany",
+      "taxiService": {
+        "name": "PH taxi",
+        "phone": "+421905830730",
+        "website": "http://phtaxi.sk",
+        "address": "Železničná 038 61, 038 61 Vrútky, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:31:35.976Z"
+    },
+    {
+      "id": "turany-1763026295976-7wyq3zua3",
+      "citySlug": "turany",
+      "taxiService": {
+        "name": "K2 TAXI Martin",
+        "phone": "+421903454820",
+        "website": "http://www.k2taxi.sk",
+        "address": "Novákova 4716, Martin, 036 01 Martin, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:31:35.976Z"
+    },
+    {
+      "id": "turany-1763026295976-dw6s75zxr",
+      "citySlug": "turany",
+      "taxiService": {
+        "name": "Hifo Taxi",
+        "phone": "+421902740140",
+        "website": "http://hifotaxi.sk",
+        "address": "Námestie SNP 2, Martin, 036 01 Martin, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:31:35.976Z"
+    },
+    {
+      "id": "turany-1763026295976-cqevobuq3",
+      "citySlug": "turany",
+      "taxiService": {
+        "name": "taxi Varín",
+        "phone": "+421910777890",
+        "website": null,
+        "address": "M. R. Štefánika 2/8, 013 03 Varín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:31:35.976Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T09:31:35.976Z"
+}
