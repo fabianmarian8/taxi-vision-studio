@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:42:56.955Z",
+  "lastUpdated": "2025-11-13T08:42:58.438Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "sliac-1763023291777-09kplic8i",
-      "citySlug": "sliac",
-      "taxiService": {
-        "name": "Taxi Sliač - rýchlo a lacno",
-        "phone": "+421948238626",
-        "website": "https://www.taxisliac.sk",
-        "address": "Medzinárodného dňa žien 3, 962 31 Sliač-Rybáre - stred, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:41:31.777Z"
     }
   ]
 }
