@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:45:09.594Z",
+  "lastUpdated": "2025-11-13T07:45:33.568Z",
   "suggestions": [
     {
       "id": "modry-kamen-1763019878130-s0hva3bxc",
@@ -117,18 +117,6 @@
         "phone": "+421940883353",
         "website": "http://alphataxist.sk",
         "address": "Malinovského, 916 21 Čachtice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
-    },
-    {
-      "id": "modry-kamen-1763019878131-vd8hywmdu",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "Taxi do Viedne",
-        "phone": "+421911888801",
-        "website": "http://www.taxidoviedne.sk",
-        "address": "Karpatské námestie 10A, 831 06 Bratislava-Rača, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:44:38.130Z"
