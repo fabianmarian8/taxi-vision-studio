@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:48:49.162Z",
+  "lastUpdated": "2025-11-13T07:49:17.701Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2416,7 +2416,12 @@
         "objednať taxi nesvady",
         "taxi nesvady telefón"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "TAXI NESVADY",
+          "phone": "+421908618620"
+        }
+      ]
     },
     {
       "name": "Nitra",
