@@ -1,0 +1,53 @@
+{
+  "suggestions": [
+    {
+      "id": "spisska-stara-ves-1763023799631-37c7qyzis",
+      "citySlug": "spisska-stara-ves",
+      "taxiService": {
+        "name": "City Taxi SNV",
+        "phone": "+421915759459",
+        "website": "https://www.citytaxisnv.sk",
+        "address": "Letecká 37, 052 01 Spišská Nová Ves-Tarča, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:49:59.631Z"
+    },
+    {
+      "id": "spisska-stara-ves-1763023799632-nqdr6qw97",
+      "citySlug": "spisska-stara-ves",
+      "taxiService": {
+        "name": "ABC TAXI SNV",
+        "phone": "+421948433333",
+        "website": "http://www.abctaxi.eu",
+        "address": "Drevárska 2, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:49:59.631Z"
+    },
+    {
+      "id": "spisska-stara-ves-1763023799632-l82ahh5vi",
+      "citySlug": "spisska-stara-ves",
+      "taxiService": {
+        "name": "AL TAXI Spišská Nová Ves",
+        "phone": "+42153/4499999",
+        "website": "http://www.altaxi.eu",
+        "address": "Banícka 18, 052 01 Spišská Nová Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:49:59.631Z"
+    },
+    {
+      "id": "spisska-stara-ves-1763023799632-l7ln3xy3g",
+      "citySlug": "spisska-stara-ves",
+      "taxiService": {
+        "name": "Pašo TAXI",
+        "phone": "+421940501696",
+        "website": "https://paso-taxi.com",
+        "address": "Štúrová 260/26, 061 01 Spišská Stará Ves, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:49:59.631Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:49:59.631Z"
+}
