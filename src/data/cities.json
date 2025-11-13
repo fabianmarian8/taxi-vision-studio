@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:31:26.196Z",
+  "lastUpdated": "2025-11-13T09:33:19.285Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -5020,7 +5020,42 @@
         "objednať taxi turany",
         "taxi letisko turany"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "Bugo Taxi",
+          "website": "http://www.bugotaxi.sk",
+          "phone": "+421907077077"
+        },
+        {
+          "name": "TAXI-FANY Bauer Ján",
+          "phone": "+421905500911"
+        },
+        {
+          "name": "M2 TAXI",
+          "website": "http://m2taxi.sk",
+          "phone": "+421948916917"
+        },
+        {
+          "name": "MB TAXI Martin",
+          "website": "http://www.mbtaxi.eu",
+          "phone": "+421908108108"
+        },
+        {
+          "name": "PH taxi",
+          "website": "http://phtaxi.sk",
+          "phone": "+421905830730"
+        },
+        {
+          "name": "K2 TAXI Martin",
+          "website": "http://www.k2taxi.sk",
+          "phone": "+421903454820"
+        },
+        {
+          "name": "Hifo Taxi",
+          "website": "http://hifotaxi.sk",
+          "phone": "+421902740140"
+        }
+      ]
     },
     {
       "name": "Turčianske Teplice",
