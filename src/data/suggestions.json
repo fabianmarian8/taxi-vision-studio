@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:58:00.873Z",
+  "lastUpdated": "2025-11-13T09:58:02.953Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,66 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "ziar-nad-hronom-1763027858714-qqd8im4l3",
-      "citySlug": "ziar-nad-hronom",
-      "taxiService": {
-        "name": "ANO TAXI ZH",
-        "phone": "+421910333366",
-        "website": null,
-        "address": "Slovenského národného povstania 528/121, 965 01 Žiar nad Hronom, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:57:38.713Z"
-    },
-    {
-      "id": "ziar-nad-hronom-1763027858714-2npns1leh",
-      "citySlug": "ziar-nad-hronom",
-      "taxiService": {
-        "name": "Taxi Toki Žiar nad Hronom",
-        "phone": "+421907250316",
-        "website": null,
-        "address": "Slovenského národného povstania, 965 01 Žiar nad Hronom, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:57:38.713Z"
-    },
-    {
-      "id": "ziar-nad-hronom-1763027858714-znkkp2rry",
-      "citySlug": "ziar-nad-hronom",
-      "taxiService": {
-        "name": "Eko Taxi",
-        "phone": "+421917100303",
-        "website": "http://www.ekotaxi.sk",
-        "address": "Sládkovičova, 965 01 Žiar nad Hronom, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:57:38.713Z"
-    },
-    {
-      "id": "ziar-nad-hronom-1763027858714-11yi9l8dz",
-      "citySlug": "ziar-nad-hronom",
-      "taxiService": {
-        "name": "Bunco Taxi S.R.O",
-        "phone": "+421910110599",
-        "website": null,
-        "address": "Šášovské Podhradie 133, 965 01 Žiar nad Hronom, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:57:38.713Z"
-    },
-    {
-      "id": "ziar-nad-hronom-1763027858714-ils954oyg",
-      "citySlug": "ziar-nad-hronom",
-      "taxiService": {
-        "name": "MNK TAXI",
-        "phone": "+421948122554",
-        "website": null,
-        "address": "J. Hollého 6, 965 01 Žiar nad Hronom, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:57:38.713Z"
     }
   ]
 }
