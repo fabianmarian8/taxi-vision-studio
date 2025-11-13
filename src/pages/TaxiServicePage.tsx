@@ -2,6 +2,7 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { GeometricLines } from "@/components/GeometricLines";
+import { SEOHead, generateTaxiServiceSEO } from "@/components/SEOHead";
 import { MapPin, Phone, Globe, ArrowLeft } from "lucide-react";
 import { getCityBySlug, type CityData, type TaxiService } from "@/data/cities";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -25,80 +26,25 @@ const TaxiServicePage = () => {
   useEffect(() => {
     // Scroll to top when page opens
     window.scrollTo({ top: 0, behavior: 'instant' });
-
-    if (city && service) {
-      // Dynamické nastavenie meta tagov pre SEO
-      document.title = `${service.name} - Taxi ${city.name} | Taxi NearMe`;
-
-      // Meta description
-      let metaDescription = document.querySelector('meta[name="description"]');
-      if (!metaDescription) {
-        metaDescription = document.createElement('meta');
-        metaDescription.setAttribute('name', 'description');
-        document.head.appendChild(metaDescription);
-      }
-      metaDescription.setAttribute('content', `${service.name} - Spoľahlivá taxislužba v meste ${city.name}. ${service.phone ? `Tel: ${service.phone}` : ''}`);
-
-      // Meta keywords
-      let metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (!metaKeywords) {
-        metaKeywords = document.createElement('meta');
-        metaKeywords.setAttribute('name', 'keywords');
-        document.head.appendChild(metaKeywords);
-      }
-      metaKeywords.setAttribute('content', `${service.name}, taxi ${city.name}, taxislužba ${city.name}, ${service.name} ${city.name}`);
-
-      // Open Graph tags
-      let ogTitle = document.querySelector('meta[property="og:title"]');
-      if (!ogTitle) {
-        ogTitle = document.createElement('meta');
-        ogTitle.setAttribute('property', 'og:title');
-        document.head.appendChild(ogTitle);
-      }
-      ogTitle.setAttribute('content', `${service.name} - Taxi ${city.name}`);
-
-      // Structured data (JSON-LD)
-      const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": service.name,
-        "description": `Taxislužba ${service.name} v meste ${city.name}`,
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": city.name,
-          "addressRegion": city.region,
-          "addressCountry": "SK"
-        },
-        "telephone": service.phone,
-        "url": service.website,
-        "areaServed": {
-          "@type": "City",
-          "name": city.name
-        },
-        "serviceType": "Taxi služby"
-      };
-
-      let script = document.querySelector('script[type="application/ld+json"]');
-      if (!script) {
-        script = document.createElement('script');
-        script.setAttribute('type', 'application/ld+json');
-        document.head.appendChild(script);
-      }
-      script.textContent = JSON.stringify(structuredData);
-    }
-
-    // Cleanup funkcia
-    return () => {
-      document.title = "Taxi NearMe - Find Taxis in Every City";
-    };
-  }, [city, service]);
+  }, []);
 
   if (!city || !service) {
     return <Navigate to="/404" replace />;
   }
 
+  const seoData = generateTaxiServiceSEO(
+    service.name,
+    city.name,
+    city.slug,
+    serviceSlug || '',
+    city.region,
+    service.phone,
+    service.website
+  );
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead {...seoData} />
       <Header />
 
       {/* Taxi Service Detail Section */}

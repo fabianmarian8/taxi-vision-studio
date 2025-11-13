@@ -3,6 +3,7 @@ import { SearchPanel } from "@/components/SearchPanel";
 import { RegionCard } from "@/components/RegionCard";
 import { HowItWorks } from "@/components/HowItWorks";
 import { GeometricLines } from "@/components/GeometricLines";
+import { SEOHead, generateHomeSEO } from "@/components/SEOHead";
 import { MapPin } from "lucide-react";
 import { getRegionsData } from "@/data/cities";
 import { Link } from "react-router-dom";
@@ -10,9 +11,11 @@ import taxiLogo from "@/assets/taxi-nearme-logo.png";
 
 const Index = () => {
   const regions = getRegionsData();
+  const seoData = generateHomeSEO();
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead {...seoData} />
       <Header />
       
       {/* Hero Section with 3D Effects */}
