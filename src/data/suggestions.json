@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:40:31.751Z",
+  "lastUpdated": "2025-11-13T07:40:34.599Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,90 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "malacky-1763019566505-e982pykmn",
-      "citySlug": "malacky",
-      "taxiService": {
-        "name": "Taxi Malacky-Taxik",
-        "phone": "+421918402545",
-        "website": "http://taxikmalacky.sk",
-        "address": "Ferdiša Kostku 16, 901 01 Malacky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:39:26.505Z"
-    },
-    {
-      "id": "malacky-1763019566505-v8tv87vg7",
-      "citySlug": "malacky",
-      "taxiService": {
-        "name": "M.R. TAXI, s.r.o.",
-        "phone": "+421910908910",
-        "website": null,
-        "address": "Malé námestie 5000, 901 01 Malacky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:39:26.505Z"
-    },
-    {
-      "id": "malacky-1763019566505-n23weu7kq",
-      "citySlug": "malacky",
-      "taxiService": {
-        "name": "TAXI Capone",
-        "phone": "+421948727545",
-        "website": null,
-        "address": "Zámocká 65/1, 901 01 Malacky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:39:26.505Z"
-    },
-    {
-      "id": "malacky-1763019566505-f3z8d7f9r",
-      "citySlug": "malacky",
-      "taxiService": {
-        "name": "Taxi Malacky",
-        "phone": "+421903266227",
-        "website": "https://www.taximalacky.sk",
-        "address": "Záhorácka, 901 01 Malacky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:39:26.505Z"
-    },
-    {
-      "id": "malacky-1763019566505-d1iv15tmw",
-      "citySlug": "malacky",
-      "taxiService": {
-        "name": "Dinamo Taxi - Malacky",
-        "phone": "+421949814687",
-        "website": "https://www.dinamotaxi.sk",
-        "address": "Námestie u severínka 7/9, 901 01 Malacky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:39:26.505Z"
-    },
-    {
-      "id": "malacky-1763019566505-znkb4tq10",
-      "citySlug": "malacky",
-      "taxiService": {
-        "name": "Para taxi",
-        "phone": "+421902250982",
-        "website": null,
-        "address": "31, Martina Rázusa 2781, 901 01 Malacky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:39:26.505Z"
-    },
-    {
-      "id": "malacky-1763019566505-upc13uixh",
-      "citySlug": "malacky",
-      "taxiService": {
-        "name": "MP TAXI | Taxi služba Malacky",
-        "phone": "+421911342742",
-        "website": "https://www.mp-taxi.sk",
-        "address": "Ľudovíta Fullu 2, 901 01 Malacky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:39:26.505Z"
     }
   ]
 }
