@@ -1,0 +1,20 @@
+{
+  "changes": [
+    {
+      "citySlug": "sabinov",
+      "taxiServices": [
+        {
+          "name": " TAXI PALUS Sabinov",
+          "website": "https://taxipalus.com/",
+          "phone": "+421 951 071 272"
+        },
+        {
+          "name": " LM TAXI",
+          "website": "",
+          "phone": "+421 915 083 080"
+        }
+      ],
+      "timestamp": "2025-11-13T08:22:28.609Z"
+    }
+  ]
+}
