@@ -1,0 +1,77 @@
+{
+  "suggestions": [
+    {
+      "id": "puchov-1763021486121-nqe7ht5m1",
+      "citySlug": "puchov",
+      "taxiService": {
+        "name": "SB Taxi - Púchov",
+        "phone": "+421905706650",
+        "website": "http://www.sbtaxi.sk",
+        "address": "Pribinova 1639, 020 01 Púchov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:11:26.121Z"
+    },
+    {
+      "id": "puchov-1763021486121-9ds5lhkr2",
+      "citySlug": "puchov",
+      "taxiService": {
+        "name": "Sebo Taxi Púchov - eSVe transport, s. r. o.",
+        "phone": "+421911611160",
+        "website": "https://www.isebo.sk",
+        "address": "Royova 772/1, 020 01 Púchov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:11:26.121Z"
+    },
+    {
+      "id": "puchov-1763021486121-6i6o2gt6t",
+      "citySlug": "puchov",
+      "taxiService": {
+        "name": "JJ TAXI Púchov",
+        "phone": "+421949476634",
+        "website": "https://www.jjtaxi.sk",
+        "address": "Novonosická 322/73, Horné Kočkovce, 020 01 Púchov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:11:26.121Z"
+    },
+    {
+      "id": "puchov-1763021486121-06z0vm16q",
+      "citySlug": "puchov",
+      "taxiService": {
+        "name": "JD Taxi Púchov",
+        "phone": "+421949409203",
+        "website": "https://www.facebook.com/profile.php",
+        "address": "Nosice 100, 020 01 Púchov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:11:26.121Z"
+    },
+    {
+      "id": "puchov-1763021486121-fjs5wfrhm",
+      "citySlug": "puchov",
+      "taxiService": {
+        "name": "ZM Taxi",
+        "phone": "+421902255277",
+        "website": "http://www.zmtaxi.sk",
+        "address": "a okolie, 020 01 Púchov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:11:26.121Z"
+    },
+    {
+      "id": "puchov-1763021486121-ayg503smu",
+      "citySlug": "puchov",
+      "taxiService": {
+        "name": "Nonstop Taxi Púchov",
+        "phone": "+42142/4635326",
+        "website": null,
+        "address": "12, Požiarna 1644, 020 01 Púchov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:11:26.121Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T08:11:26.121Z"
+}
