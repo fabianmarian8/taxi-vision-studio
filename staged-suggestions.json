@@ -1,0 +1,65 @@
+{
+  "suggestions": [
+    {
+      "id": "trencianske-teplice-1763025761592-lhxgjvlkj",
+      "citySlug": "trencianske-teplice",
+      "taxiService": {
+        "name": "Taxi Trenčianske Teplice - Marek Jašo Taxi",
+        "phone": "+421905185780",
+        "website": null,
+        "address": "Sady pod Dedovcom 35/A, 914 51 Trenčianske Teplice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:22:41.592Z"
+    },
+    {
+      "id": "trencianske-teplice-1763025761592-23ey8bdis",
+      "citySlug": "trencianske-teplice",
+      "taxiService": {
+        "name": "MAXI TAXI",
+        "phone": "+421903169813",
+        "website": null,
+        "address": "Štvrť SNP 681/82, 914 51 Trenčianske Teplice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:22:41.592Z"
+    },
+    {
+      "id": "trencianske-teplice-1763025761592-jqsi7dxe4",
+      "citySlug": "trencianske-teplice",
+      "taxiService": {
+        "name": "JoMi CAR - prenájom autobusov, odvoz na letisko a nákladná doprava",
+        "phone": "+421905941338",
+        "website": "https://jomicar.sk",
+        "address": "Generála Milana Rastislava Štefánika 614/5, 914 51 Trenčianske Teplice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:22:41.592Z"
+    },
+    {
+      "id": "trencianske-teplice-1763025761592-080lf4ucn",
+      "citySlug": "trencianske-teplice",
+      "taxiService": {
+        "name": "JAM TAXI",
+        "phone": "+421910116999",
+        "website": "http://taxiteplice.sk",
+        "address": "Štvrť SNP 136/36, 914 51 Trenčianske Teplice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:22:41.592Z"
+    },
+    {
+      "id": "trencianske-teplice-1763025761592-v9i08o81s",
+      "citySlug": "trencianske-teplice",
+      "taxiService": {
+        "name": "Ridéky Bohumil",
+        "phone": "+42132/6553247",
+        "website": null,
+        "address": "914 51 Trenčianske Teplice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:22:41.592Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T09:22:41.592Z"
+}
