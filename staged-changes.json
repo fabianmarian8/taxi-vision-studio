@@ -1,0 +1,27 @@
+{
+  "changes": [
+    {
+      "citySlug": "sladkovicovo",
+      "taxiServices": [
+        {
+          "name": "Taxi Nikis",
+          "phone": "+421904681176"
+        },
+        {
+          "name": "Baláž Taxi - Sládkovičovo/Veľké Úľany",
+          "phone": "+421940356012"
+        },
+        {
+          "name": "Kicir Taxi",
+          "phone": "+421940789998"
+        },
+        {
+          "name": "TAXI Roman Horvath",
+          "website": "https://www.facebook.com/roman.horvath.7330",
+          "phone": "+421910581848"
+        }
+      ],
+      "timestamp": "2025-11-13T08:41:13.436Z"
+    }
+  ]
+}
