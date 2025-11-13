@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:45:39.524Z",
+  "lastUpdated": "2025-11-13T07:45:45.428Z",
   "suggestions": [
     {
       "id": "modry-kamen-1763019878130-s0hva3bxc",
@@ -45,18 +45,6 @@
         "phone": "+421907616221",
         "website": "https://www.taxismile.sk",
         "address": "Boženy Němcovej 39, 990 01 Veľký Krtíš, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T07:44:38.130Z"
-    },
-    {
-      "id": "modry-kamen-1763019878131-4mgnfygu8",
-      "citySlug": "modry-kamen",
-      "taxiService": {
-        "name": "Taxi Modrý Anjel",
-        "phone": "+421917171717",
-        "website": "http://taximodryanjel.sk",
-        "address": "Kapušianska 560 66, Vrbovec, 071 01 Michalovce, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T07:44:38.130Z"
