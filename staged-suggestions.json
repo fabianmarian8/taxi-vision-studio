@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T08:56:21.762Z",
   "suggestions": [
     {
       "id": "stara-lubovna-1763024163367-7d7sw38o6",
@@ -83,19 +84,6 @@
       },
       "status": "pending",
       "timestamp": "2025-11-13T08:56:03.367Z"
-    },
-    {
-      "id": "stara-lubovna-1763024163367-rtx7ldutd",
-      "citySlug": "stara-lubovna",
-      "taxiService": {
-        "name": "TEMA SK, s.r.o.",
-        "phone": "+42152/4322532",
-        "website": null,
-        "address": "71, Jarmočná 262, 064 01 Stará Ľubovňa, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:56:03.367Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:56:03.367Z"
+  ]
 }
