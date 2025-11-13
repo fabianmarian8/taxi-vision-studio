@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:42:44.057Z",
+  "lastUpdated": "2025-11-13T07:43:50.680Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,162 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "michalovce-1763019776821-w3ru58ilf",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "Gold Taxi",
+        "phone": "+421944103777",
+        "website": "https://goldtaxi.sk",
+        "address": "Obchodná 2928/2, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-12b8kxdad",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "Taxi Šírava MB DIVERSO, s.r.o.",
+        "phone": "+421908841359",
+        "website": "http://www.taxisirava.sk",
+        "address": "Námestie osloboditeľov 981/67, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-wsybn3b3f",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "LuKa TAXI Michalovce",
+        "phone": "+421948635513",
+        "website": null,
+        "address": "Ružová 7, Stráňany, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-jak8cbfob",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "Enjoy Taxi Michalovce",
+        "phone": "+421918121313",
+        "website": "https://enjoytaximi.webnode.sk",
+        "address": "Ukrajinská, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-c1eokeeht",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "M Taxi & Airport Transfer Michalovce",
+        "phone": "+421944133821",
+        "website": null,
+        "address": "Mirka Nešpora 4A, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-gbr1gprji",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "TIBI TAXI MICHALOVCE",
+        "phone": "+421947130805",
+        "website": null,
+        "address": "Nad Laborcom 8, Stráňany, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-iawauu9fk",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "TAXI Michalovce",
+        "phone": "+421948765000",
+        "website": null,
+        "address": "Staničná 10, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-1gdtrnyiv",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "Taxi Modrý Anjel",
+        "phone": "+421917171717",
+        "website": "http://taximodryanjel.sk",
+        "address": "Kapušianska 560 66, Vrbovec, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-l9xkly93q",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "Eurotaxi, s.r.o. , Taxi Michalovce Šírava Zemplín",
+        "phone": "+421907082700",
+        "website": "http://www.eurotaximi.sk",
+        "address": "Kyjevská 3469/5, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-vs13yk2tu",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "G-Taxi",
+        "phone": "+421902307207",
+        "website": null,
+        "address": "Staničná, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-1plq55tlc",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "Daniela TAXI",
+        "phone": "+421908980203",
+        "website": null,
+        "address": "Okružná 92A, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-jfnkdwi1k",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "Taxi Yaxi",
+        "phone": "+421915414915",
+        "website": null,
+        "address": "Kapušianska 560/66, Vrbovec, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
+    },
+    {
+      "id": "michalovce-1763019776821-09avyin6y",
+      "citySlug": "michalovce",
+      "taxiService": {
+        "name": "Eurotravel- VICORP s. r. o. - Preprava osôb, Prenájom mikrobusov",
+        "phone": "+421944808404",
+        "website": "https://www.eurotravel.sk",
+        "address": "Námestie osloboditeľov 1, 071 01 Michalovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:42:56.821Z"
     }
   ]
 }
