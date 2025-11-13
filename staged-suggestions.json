@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:01:28.356Z",
+  "lastUpdated": "2025-11-13T09:01:34.075Z",
   "suggestions": [
     {
       "id": "svaty-jur-1763024473143-7cvgodbun",
@@ -57,18 +57,6 @@
         "phone": "+421902541561",
         "website": "http://www.pktaxi.sk",
         "address": "Sládkovičova 4, 902 01 Pezinok, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:01:13.143Z"
-    },
-    {
-      "id": "svaty-jur-1763024473143-ovhgc49rf",
-      "citySlug": "svaty-jur",
-      "taxiService": {
-        "name": "CABLAB - Taxi & Transfer",
-        "phone": "+421904473573",
-        "website": "https://www.cablab.sk",
-        "address": "Karpatské námestie 7770/10A, 831 06 Bratislava, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T09:01:13.143Z"
