@@ -1,0 +1,56 @@
+{
+  "changes": [
+    {
+      "citySlug": "sala",
+      "taxiServices": [
+        {
+          "name": "IP TAXI ŠAĽA",
+          "website": "https://www.iptaxisala.eu",
+          "phone": "+421915330550"
+        },
+        {
+          "name": "K - Taxi Šaľa",
+          "website": "http://www.k-taxi.sk",
+          "phone": "+421905605836"
+        },
+        {
+          "name": "VIVA TAXI",
+          "website": "http://www.vivataxi.sk",
+          "phone": "+421944196195"
+        },
+        {
+          "name": "LADISLAV BUJKO LLB-TAXI",
+          "website": "https://www.llbtaxi.sk",
+          "phone": "+421948067985"
+        },
+        {
+          "name": "APK TAXI",
+          "website": "https://apktaxi.sk"
+        },
+        {
+          "name": "WORLD TAXI ŠAĽA",
+          "phone": "+421919451763"
+        },
+        {
+          "name": "STIV - TAXI Šaľa",
+          "phone": "+421910405010"
+        },
+        {
+          "name": "Exclusive TAXI /Šaľa/",
+          "website": "http://www.exclusivetaxi-sala.webjet.sk",
+          "phone": "+421904825456"
+        },
+        {
+          "name": "SB Taxi",
+          "phone": "+421940577277"
+        },
+        {
+          "name": "A.P.K. Taxi Šaľa",
+          "website": "https://apktaxi.sk",
+          "phone": "+421 948 051 999"
+        }
+      ],
+      "timestamp": "2025-11-13T09:11:38.525Z"
+    }
+  ]
+}
