@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:39:12.728Z",
+  "lastUpdated": "2025-11-13T07:40:33.171Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1976,7 +1976,40 @@
         "objednať taxi malacky",
         "taxi malacky ceny"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Malacky-Taxik",
+          "website": "http://taxikmalacky.sk",
+          "phone": "+421918402545"
+        },
+        {
+          "name": "M.R. TAXI, s.r.o.",
+          "phone": "+421910908910"
+        },
+        {
+          "name": "TAXI Capone",
+          "phone": "+421948727545"
+        },
+        {
+          "name": "Taxi Malacky",
+          "website": "https://www.taximalacky.sk",
+          "phone": "+421903266227"
+        },
+        {
+          "name": "Dinamo Taxi - Malacky",
+          "website": "https://www.dinamotaxi.sk",
+          "phone": "+421949814687"
+        },
+        {
+          "name": "Para taxi",
+          "phone": "+421902250982"
+        },
+        {
+          "name": "MP TAXI | Taxi služba Malacky",
+          "website": "https://www.mp-taxi.sk",
+          "phone": "+421911342742"
+        }
+      ],
       "latitude": 48.435,
       "longitude": 17.0217
     },
