@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:33:40.603Z",
+  "lastUpdated": "2025-11-13T07:33:42.971Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "kysucke-nove-mesto-1762978644508-srw5ak9la",
-      "citySlug": "kysucke-nove-mesto",
-      "taxiService": {
-        "name": "TAXI EXPRESS - KNM",
-        "phone": "+421907708080",
-        "website": "http://www.expresstaxi-knm.sk",
-        "address": "SNP, 024 01 Kysucké Nové Mesto, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T20:17:24.508Z"
     },
     {
       "id": "kysucke-nove-mesto-1762978644508-4n1xrud8j",
