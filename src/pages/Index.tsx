@@ -85,7 +85,7 @@ const Index = () => {
               Dostupné všade
             </h2>
             <p className="text-xl text-foreground/90 font-bold">
-              Každý mesiac expandujeme do nových miest
+              Napíšte nám ak tu chýba Vaša lokalita
             </p>
           </div>
 
@@ -107,7 +107,7 @@ const Index = () => {
               
               <div className="relative z-10 text-center">
                 <MapPin className="h-24 w-24 text-foreground mx-auto mb-6" strokeWidth={2.5} />
-                <h3 className="text-3xl font-black mb-4 text-foreground">Čoskoro vo vašom meste</h3>
+                <h3 className="text-3xl font-black mb-4 text-foreground">Databáza taxislužieb z celého Slovenska</h3>
                 <p className="text-foreground/70 text-lg font-medium">
                   Pridajte sa k tisíckam užívateľov, ktorí jednoducho nachádzajú taxíky
                 </p>
