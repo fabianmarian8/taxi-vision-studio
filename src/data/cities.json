@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:58:00.873Z",
+  "lastUpdated": "2025-11-13T09:58:39.908Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -5661,7 +5661,76 @@
         "objednať taxi žilina",
         "taxi žilina cenník"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Taxi Žilina NONSTOP",
+          "website": "http://www.taxitaxizilina.sk",
+          "phone": "+421902100200"
+        },
+        {
+          "name": "Taxi Fantasia",
+          "website": "http://www.taxifantasia.sk",
+          "phone": "+421905800600"
+        },
+        {
+          "name": "Mima Taxi Žilina",
+          "website": "https://www.mimataxizilina.sk",
+          "phone": "+421940600222"
+        },
+        {
+          "name": "TAXI ŽILINA",
+          "phone": "+421907777787"
+        },
+        {
+          "name": "Taxi Laura Žilina",
+          "website": "http://www.taxilaura.sk",
+          "phone": "+421905202020"
+        },
+        {
+          "name": "TABBI TAXI",
+          "website": "http://tabbitaxi.sk",
+          "phone": "+421910150250"
+        },
+        {
+          "name": "Tvoj TAXI",
+          "website": "http://www.tvojtaxi.sk",
+          "phone": "+421911427427"
+        },
+        {
+          "name": "GOLD TAXI Žilina",
+          "website": "http://www.zilina.taxi",
+          "phone": "+421910595995"
+        },
+        {
+          "name": "Žilinský taxi Non-stop",
+          "phone": "+421904554666"
+        },
+        {
+          "name": "TAXI DUBEŇ | Žilina",
+          "website": "http://taxiduben.sk",
+          "phone": "+421951870704"
+        },
+        {
+          "name": "MJ Taxi Žilina",
+          "website": "https://mjtaxizilina.sk",
+          "phone": "+421914272829"
+        },
+        {
+          "name": "LION TAXI ŽILINA",
+          "website": "https://liontaxi.sk",
+          "phone": "+421940142212"
+        },
+        {
+          "name": "Euro-taxi Žilina",
+          "website": "http://www.eurotaxi.sk",
+          "phone": "+421902300400"
+        },
+        {
+          "name": "KERAM TAXI Žilina",
+          "website": "http://www.keramtaxi.sk",
+          "phone": "+421948235235"
+        }
+      ],
       "latitude": 49.2203,
       "longitude": 18.7392
     }
