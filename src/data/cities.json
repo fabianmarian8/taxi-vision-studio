@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:40:39.900Z",
+  "lastUpdated": "2025-11-13T08:41:15.070Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3806,7 +3806,25 @@
         "objednať taxi sládkovičovo",
         "taxi sládkovičovo telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Nikis",
+          "phone": "+421904681176"
+        },
+        {
+          "name": "Baláž Taxi - Sládkovičovo/Veľké Úľany",
+          "phone": "+421940356012"
+        },
+        {
+          "name": "Kicir Taxi",
+          "phone": "+421940789998"
+        },
+        {
+          "name": "TAXI Roman Horvath",
+          "website": "https://www.facebook.com/roman.horvath.7330",
+          "phone": "+421910581848"
+        }
+      ],
       "latitude": 48.2,
       "longitude": 17.6333
     },

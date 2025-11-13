@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:40:41.792Z",
+  "lastUpdated": "2025-11-13T08:41:15.070Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,54 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "sladkovicovo-1763023251780-vgpbgfj04",
+      "citySlug": "sladkovicovo",
+      "taxiService": {
+        "name": "Taxi Nikis",
+        "phone": "+421904681176",
+        "website": null,
+        "address": "J. Dalloša 1351/31, 925 21 Sládkovičovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:40:51.780Z"
+    },
+    {
+      "id": "sladkovicovo-1763023251780-s2p6u8fgu",
+      "citySlug": "sladkovicovo",
+      "taxiService": {
+        "name": "Baláž Taxi - Sládkovičovo/Veľké Úľany",
+        "phone": "+421940356012",
+        "website": null,
+        "address": "Fučíkova 354, 925 21 Sládkovičovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:40:51.780Z"
+    },
+    {
+      "id": "sladkovicovo-1763023251780-ulj7ozu63",
+      "citySlug": "sladkovicovo",
+      "taxiService": {
+        "name": "Kicir Taxi",
+        "phone": "+421940789998",
+        "website": null,
+        "address": "Fučíkova 371, 925 21 Sládkovičovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:40:51.780Z"
+    },
+    {
+      "id": "sladkovicovo-1763023251780-tvuecmh04",
+      "citySlug": "sladkovicovo",
+      "taxiService": {
+        "name": "TAXI Roman Horvath",
+        "phone": "+421910581848",
+        "website": "https://www.facebook.com/roman.horvath.7330",
+        "address": "Fučíkova 2/2, 925 21 Sládkovičovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T08:40:51.780Z"
     }
   ]
 }
