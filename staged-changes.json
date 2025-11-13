@@ -1,0 +1,34 @@
+{
+  "changes": [
+    {
+      "citySlug": "zarnovica",
+      "taxiServices": [
+        {
+          "name": "STAR TAXI Žarnovica",
+          "website": "https://stzcweb.esol.cz",
+          "phone": "+421940078807"
+        },
+        {
+          "name": "CITY TAXI ŽARNOVICA",
+          "website": "https://taxizc.eu",
+          "phone": "+421918856824"
+        },
+        {
+          "name": "EKO TAXI Žarnovica",
+          "website": "http://www.ekotaxi.sk",
+          "phone": "+421917100404"
+        },
+        {
+          "name": "Strela Taxi",
+          "website": "https://www.strelataxi.sk",
+          "phone": "+421910411000"
+        },
+        {
+          "name": "STAT TAXI",
+          "phone": "+421948228905"
+        }
+      ],
+      "timestamp": "2025-11-13T09:55:13.837Z"
+    }
+  ]
+}
