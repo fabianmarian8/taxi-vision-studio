@@ -1,0 +1,33 @@
+{
+  "changes": [
+    {
+      "citySlug": "velky-krtis",
+      "taxiServices": [
+        {
+          "name": "TAXI VK",
+          "website": "https://www.taxivk.sk",
+          "phone": "+421919287652"
+        },
+        {
+          "name": "Taxi Smile Veľký Krtíš",
+          "website": "https://www.taxismile.sk",
+          "phone": "+421907616221"
+        },
+        {
+          "name": "Taxi Novohrad",
+          "phone": "+421949459846"
+        },
+        {
+          "name": "Doprava na letisko",
+          "website": "",
+          "phone": "+421950588820"
+        },
+        {
+          "name": "Rony - Tex S.r.o.",
+          "phone": "+42147/4831148"
+        }
+      ],
+      "timestamp": "2025-11-13T09:43:17.673Z"
+    }
+  ]
+}
