@@ -1,0 +1,32 @@
+{
+  "changes": [
+    {
+      "citySlug": "samorin",
+      "taxiServices": [
+        {
+          "name": "Taxi Šamorín",
+          "website": "https://taxi-samorin.sk",
+          "phone": "+421944065006"
+        },
+        {
+          "name": "Taxi Plus Šamorín",
+          "website": "http://taxiplus-samorin.sk",
+          "phone": "+421944160016"
+        },
+        {
+          "name": "Taxi Šamorín - Autobusová stanica",
+          "phone": "+421902199822"
+        },
+        {
+          "name": "Taxi Horváth-Šamorín",
+          "phone": "+421902188222"
+        },
+        {
+          "name": "Vojtech Horváth Taxi",
+          "phone": "+421910551448"
+        }
+      ],
+      "timestamp": "2025-11-13T09:15:47.306Z"
+    }
+  ]
+}
