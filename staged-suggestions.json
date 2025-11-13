@@ -1,0 +1,65 @@
+{
+  "suggestions": [
+    {
+      "id": "zlate-moravce-1763027640773-4v338ft75",
+      "citySlug": "zlate-moravce",
+      "taxiService": {
+        "name": "PROFI TAXI Zlaté Moravce",
+        "phone": "+421911188228",
+        "website": "http://profitaxizm.sk",
+        "address": "Jána Smreka 3948/10, 953 01 Zlaté Moravce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:54:00.773Z"
+    },
+    {
+      "id": "zlate-moravce-1763027640773-5b2ed3gnv",
+      "citySlug": "zlate-moravce",
+      "taxiService": {
+        "name": "EKO TAXI",
+        "phone": "+421904003333",
+        "website": "http://www.ekotaxi.sk",
+        "address": "BILLA, 953 01 Zlaté Moravce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:54:00.773Z"
+    },
+    {
+      "id": "zlate-moravce-1763027640773-8jlm9woyl",
+      "citySlug": "zlate-moravce",
+      "taxiService": {
+        "name": "BoRa TAXI Zlaté Moravce",
+        "phone": "+421915750725",
+        "website": null,
+        "address": "Hviezdoslavova 41, 953 01 Zlaté Moravce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:54:00.773Z"
+    },
+    {
+      "id": "zlate-moravce-1763027640773-39d3kcljn",
+      "citySlug": "zlate-moravce",
+      "taxiService": {
+        "name": "ID Taxi Zlaté Moravce",
+        "phone": "+421908760214",
+        "website": "http://www.idtaxi.sk",
+        "address": "Duklianska 1570/4, 953 01 Zlaté Moravce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:54:00.773Z"
+    },
+    {
+      "id": "zlate-moravce-1763027640773-efh0zlmr3",
+      "citySlug": "zlate-moravce",
+      "taxiService": {
+        "name": "SUPER TAXI Zlaté Moravce",
+        "phone": "+421904555325",
+        "website": null,
+        "address": "Dlhá 1920/18, 953 01 Zlaté Moravce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T09:54:00.773Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T09:54:00.773Z"
+}
