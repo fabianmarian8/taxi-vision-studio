@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:29:16.715Z",
+  "lastUpdated": "2025-11-13T09:31:26.196Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4994,7 +4994,18 @@
         "objednať taxi trstená",
         "taxi orava"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "Taxi Ján Kupčík",
+          "website": "https://www.taxitrstena.sk/",
+          "phone": " +421911439795"
+        },
+        {
+          "name": "Expres taxi",
+          "website": "",
+          "phone": "+421 918 171 718"
+        }
+      ]
     },
     {
       "name": "Turany",
