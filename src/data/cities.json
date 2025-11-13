@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:16:27.432Z",
+  "lastUpdated": "2025-11-13T09:17:45.015Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4556,7 +4556,59 @@
         "objednať taxi štúrovo",
         "taxi štúrovo dunaj"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Lux Štúrovo",
+          "website": "https://www.facebook.com/lux.nonstop.1",
+          "phone": "+421904559520"
+        },
+        {
+          "name": "City TAXI Štúrovo",
+          "website": "http://www.citytaxisturovo.estranky.sk"
+        },
+        {
+          "name": "Quick Taxi - Štúrovo - Tamás Benyó",
+          "website": "http://www.quicktaxi.sk",
+          "phone": "+421908759166"
+        },
+        {
+          "name": "Taxi 8 Štúrovo taxislužba non stop najlepšia voĺba",
+          "phone": "+421915322199"
+        },
+        {
+          "name": "Taxi Štúrovo - EPPI TAXI",
+          "website": "https://www.facebook.com/profile.php",
+          "phone": "+421940995584"
+        },
+        {
+          "name": "Taxi ŠTÚROVO - aj 7 miestne vozidlá / Štúrovo/",
+          "phone": "+421907222181"
+        },
+        {
+          "name": "L-Team Taxi Štúrovo",
+          "phone": "+421908700000"
+        },
+        {
+          "name": "A Z Taxi Štúrovo",
+          "website": "https://www.facebook.com/profile.php",
+          "phone": "+421950521855"
+        },
+        {
+          "name": "AB Taxi - Štúrovo",
+          "website": "http://www.abtaxisturovo.weblahko.sk",
+          "phone": "+421908600132"
+        },
+        {
+          "name": "Taxi Plus Štúrovo",
+          "website": "http://taxiplus.sk",
+          "phone": "+421908468006"
+        },
+        {
+          "name": "Vyhliadková loď Balu a River Taxi",
+          "website": "https://vyletnalod.sk",
+          "phone": "+421915709030"
+        }
+      ],
       "latitude": 47.795,
       "longitude": 18.7167
     },
