@@ -1,0 +1,20 @@
+{
+  "changes": [
+    {
+      "citySlug": "rajec",
+      "taxiServices": [
+        {
+          "name": "TAXI Pekáreň",
+          "website": "https://pizzapekaren.sk",
+          "phone": "+421948998080"
+        },
+        {
+          "name": "Sviťo Taxi",
+          "website": "",
+          "phone": "+421 911 234 091"
+        }
+      ],
+      "timestamp": "2025-11-13T08:15:24.123Z"
+    }
+  ]
+}
