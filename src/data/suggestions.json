@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-12T22:40:45.891Z",
+  "lastUpdated": "2025-11-13T07:31:45.874Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "kralovsky-chlmec-1762957988397-je0fglbba",
-      "citySlug": "kralovsky-chlmec",
-      "taxiService": {
-        "name": "Elitt Taxi",
-        "phone": "+421940640640",
-        "website": "http://elittaxi.sk",
-        "address": "101, Ľ. Kossutha 1270, 077 01 Kráľovský Chlmec, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T14:33:08.397Z"
     },
     {
       "id": "kralovsky-chlmec-1762957988397-32ebl2ute",
