@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:46:58.276Z",
+  "lastUpdated": "2025-11-13T08:47:45.054Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -3936,7 +3936,20 @@
         "objednať taxi belá",
         "taxi spiš"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "TAXI VM Spišská Belá",
+          "phone": "+421907385540"
+        },
+        {
+          "name": "Taxi Maroš Spišská Belá",
+          "phone": "+421940992000"
+        },
+        {
+          "name": "BL Taxi-preprava",
+          "phone": "+421950271600"
+        }
+      ],
       "latitude": 49.1833,
       "longitude": 20.4667
     },
