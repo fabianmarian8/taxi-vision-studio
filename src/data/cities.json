@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:02:53.323Z",
+  "lastUpdated": "2025-11-13T08:04:29.957Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2836,7 +2836,64 @@
         "objednať taxi piešťany",
         "taxi piešťany kúpele"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Piešťany",
+          "website": "http://www.taxi-pn.sk",
+          "phone": "+421944274744"
+        },
+        {
+          "name": "A-Taxi Piešťany",
+          "website": "https://www.ataxi.sk",
+          "phone": "+421915666600"
+        },
+        {
+          "name": "ETAXI Piešťany",
+          "website": "http://etaxipiestany.sk",
+          "phone": "+421944123456"
+        },
+        {
+          "name": "Dino Taxi Piešťany",
+          "website": "https://www.taxi-piestany.sk",
+          "phone": "+421903343100"
+        },
+        {
+          "name": "Taxi PN Piešťany",
+          "website": "http://www.taxi-pn.sk",
+          "phone": "+421940757563"
+        },
+        {
+          "name": "Taxi Piešťany - Peter Baláž",
+          "website": "http://www.taxi-pn.sk",
+          "phone": "+421915336649"
+        },
+        {
+          "name": "Taxi Piešťany - Mário Taxi",
+          "phone": "+421903229334"
+        },
+        {
+          "name": "Vašo Taxi s.r.o",
+          "website": "http://www.taxipiestany.sk",
+          "phone": "+421949552202"
+        },
+        {
+          "name": "DODO TAXI",
+          "phone": "+421907554433"
+        },
+        {
+          "name": "Luxdop, s.r.o.",
+          "website": "http://www.luxdop.sk",
+          "phone": "+421905420550"
+        },
+        {
+          "name": "Ready Taxi, M & A Centrum - Peter Antala",
+          "phone": "+42133/7744477"
+        },
+        {
+          "name": "Taxi Služba - Jaroslav Klčo",
+          "phone": "+421905560785"
+        }
+      ],
       "latitude": 48.5917,
       "longitude": 17.8258
     },
