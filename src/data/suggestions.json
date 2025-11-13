@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:37:42.329Z",
+  "lastUpdated": "2025-11-13T07:38:27.853Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,162 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-gxw1ptypj",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "Taxi Liptovský Mikuláš",
+        "phone": "+421907780780",
+        "website": "https://www.taxilm.sk",
+        "address": "Generála Milana Rastislava Štefánika 1, 031 01 Liptovský Mikuláš, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-x3b3pinp6",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "City Taxi Liptovský Mikuláš",
+        "phone": "+421910150150",
+        "website": "http://www.citytaxilm.com",
+        "address": "Belopotockého, 031 01 Liptovský Mikuláš, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-l6zrhrnqw",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "FUN TAXI Liptovský Mikuláš",
+        "phone": "+421908710710",
+        "website": null,
+        "address": "Vansovej 031 01, 031 01 Liptovský Mikuláš, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-lwckbyfm7",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "TAXI Liptov Liptovský Mikuláš",
+        "phone": "+421948906906",
+        "website": "https://www.fajnovetaxi.eu",
+        "address": "Juraja Janošku 2, 031 01 Liptovský Mikuláš, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-c6wiffqiw",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "Taxi Jasná - Liptov",
+        "phone": "+421917965754",
+        "website": "http://www.taxijasnaliptov.sk",
+        "address": "16, Mlynská 156, Palúdzka, 031 01 Liptovský Mikuláš, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-4bybbrbua",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "VSM s.r.o.",
+        "phone": "+421944755588",
+        "website": "http://www.liptovtaxi.sk",
+        "address": "Jabloňová 518, 031 04 Liptovský Mikuláš-Podbreziny, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-njqeqqy5s",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "BrotherTaxi",
+        "phone": "+421940171918",
+        "website": null,
+        "address": "Riečna 330/18, Okoličné, 031 04 Liptovský Mikuláš, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-othyuzf7w",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "PP TAXI",
+        "phone": "+421903526666",
+        "website": "http://www.pptaxi.com",
+        "address": "21, Jesenského 729, 031 01 Liptovský Mikuláš, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-j0v2e9njy",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "Ladytaxi",
+        "phone": "+421915350087",
+        "website": null,
+        "address": "Kemi 627/1, 031 04 Liptovský Mikuláš-Podbreziny, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-xz3oecau3",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "Taxi Liptovský Mikuláš-Poprad-Jasná",
+        "phone": "+421944601602",
+        "website": null,
+        "address": "Demänovská Dolina 96, 031 01 Demänovská Dolina, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-v2br80kuc",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "Taxi služba Juraj Majerčík",
+        "phone": "+421950434609",
+        "website": null,
+        "address": "Stodolova 1877/3, 031 01 Liptovský Mikuláš-Stare Mesto, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-5vnidsbtn",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "TAXI Liptov",
+        "phone": "+421905210008",
+        "website": null,
+        "address": "Stodolova 1877, 031 01 Liptovský Mikuláš, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
+    },
+    {
+      "id": "liptovsky-mikulas-1763019484843-qpf4zqake",
+      "citySlug": "liptovsky-mikulas",
+      "taxiService": {
+        "name": "City taxi",
+        "phone": null,
+        "website": "http://wew.citytaxilm.com",
+        "address": "031, Milana Rastislava Štefánika 01/1, 031 01 Liptovský Mikuláš, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:38:04.843Z"
     }
   ]
 }
