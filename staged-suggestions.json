@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:08:22.081Z",
+  "lastUpdated": "2025-11-13T09:08:27.758Z",
   "suggestions": [
     {
       "id": "svidnik-1763024888807-xntkf9cmu",
@@ -45,18 +45,6 @@
         "phone": "+421952161061",
         "website": null,
         "address": "090 11 Nižný Orlík, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:08:08.807Z"
-    },
-    {
-      "id": "svidnik-1763024888807-wu7w5h8g7",
-      "citySlug": "svidnik",
-      "taxiService": {
-        "name": "Autobusová doprava SAD Humenné, a.s.",
-        "phone": "+42154/7881840",
-        "website": "http://www.sadhe.sk",
-        "address": "Centrálna 423, 089 01 Svidník, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T09:08:08.807Z"
