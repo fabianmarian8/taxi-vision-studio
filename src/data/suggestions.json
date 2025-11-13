@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:35:32.620Z",
+  "lastUpdated": "2025-11-13T07:35:34.348Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,18 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "levice-1762980652067-cpmehkpsq",
-      "citySlug": "levice",
-      "taxiService": {
-        "name": "Jozef Nichta - CAR TAXI s. r. o.",
-        "phone": "+421905501111",
-        "website": "http://www.taxilevice.sk",
-        "address": "Saratovská 37, 934 05 Levice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-12T20:50:52.067Z"
     },
     {
       "id": "levice-1762980652067-wek2ou2pw",
