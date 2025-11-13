@@ -1,0 +1,20 @@
+{
+  "changes": [
+    {
+      "citySlug": "revuca",
+      "taxiServices": [
+        {
+          "name": "TAXI REVUCA",
+          "website": "https://www.facebook.com/profile.php",
+          "phone": "+421911456999"
+        },
+        {
+          "name": "Marek Balag-trans",
+          "website": "http://marekbalag-trans.sk",
+          "phone": "+421915812672"
+        }
+      ],
+      "timestamp": "2025-11-13T08:16:10.945Z"
+    }
+  ]
+}
