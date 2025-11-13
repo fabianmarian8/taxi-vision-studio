@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T08:55:43.477Z",
   "suggestions": [
     {
       "id": "spisske-vlachy-1763024098318-4y51lfi6h",
@@ -25,18 +26,6 @@
       "timestamp": "2025-11-13T08:54:58.318Z"
     },
     {
-      "id": "spisske-vlachy-1763024098318-19f2kxsed",
-      "citySlug": "spisske-vlachy",
-      "taxiService": {
-        "name": "Alena Kapitančíková - ADK TAXI",
-        "phone": "+421910929007",
-        "website": "http://adk-taxi.sk",
-        "address": "Hlavná 32, 053 42 Krompachy, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:54:58.318Z"
-    },
-    {
       "id": "spisske-vlachy-1763024098318-i60h238oy",
       "citySlug": "spisske-vlachy",
       "taxiService": {
@@ -48,6 +37,5 @@
       "status": "pending",
       "timestamp": "2025-11-13T08:54:58.318Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T08:54:58.318Z"
+  ]
 }
