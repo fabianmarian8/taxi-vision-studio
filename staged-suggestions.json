@@ -1,0 +1,65 @@
+{
+  "suggestions": [
+    {
+      "id": "medzev-1763019700086-odf01dq7c",
+      "citySlug": "medzev",
+      "taxiService": {
+        "name": "TIBI TAXI",
+        "phone": "+421907139053",
+        "website": "http://www.tibitaxi.sk",
+        "address": "Školská, 044 02 Turňa nad Bodvou, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:41:40.086Z"
+    },
+    {
+      "id": "medzev-1763019700087-sigzco0dl",
+      "citySlug": "medzev",
+      "taxiService": {
+        "name": "Medzev",
+        "phone": null,
+        "website": "http://www.medzev.sk",
+        "address": "044 25 Medzev, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:41:40.086Z"
+    },
+    {
+      "id": "medzev-1763019700087-7b5zjkj1w",
+      "citySlug": "medzev",
+      "taxiService": {
+        "name": "Sky Taxi Moldava nad Bodvou",
+        "phone": "+421940600048",
+        "website": null,
+        "address": "Hviezdoslavova 211/35, 045 01 Moldava nad Bodvou, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:41:40.086Z"
+    },
+    {
+      "id": "medzev-1763019700087-gq78d6zfj",
+      "citySlug": "medzev",
+      "taxiService": {
+        "name": "E-Taxi Košice",
+        "phone": "+421911606206",
+        "website": "https://www.e-taxike.sk",
+        "address": "Južná trieda 4a, 040 01 Košice-IV, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:41:40.086Z"
+    },
+    {
+      "id": "medzev-1763019700087-ooyuev4rp",
+      "citySlug": "medzev",
+      "taxiService": {
+        "name": "BENZE Transfer Košice",
+        "phone": "+421940645645",
+        "website": "http://www.benze.sk",
+        "address": "Medzinárodné letisko Košice - Kosice International Airport (KSC), 041 75 Košice-Barca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-13T07:41:40.086Z"
+    }
+  ],
+  "lastUpdated": "2025-11-13T07:41:40.086Z"
+}
