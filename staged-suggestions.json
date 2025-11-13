@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-13T09:24:07.980Z",
   "suggestions": [
     {
       "id": "trencianske-teplice-1763025761592-lhxgjvlkj",
@@ -47,19 +48,6 @@
       },
       "status": "pending",
       "timestamp": "2025-11-13T09:22:41.592Z"
-    },
-    {
-      "id": "trencianske-teplice-1763025761592-v9i08o81s",
-      "citySlug": "trencianske-teplice",
-      "taxiService": {
-        "name": "Ridéky Bohumil",
-        "phone": "+42132/6553247",
-        "website": null,
-        "address": "914 51 Trenčianske Teplice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:22:41.592Z"
     }
-  ],
-  "lastUpdated": "2025-11-13T09:22:41.592Z"
+  ]
 }
