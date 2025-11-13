@@ -1,0 +1,20 @@
+{
+  "changes": [
+    {
+      "citySlug": "trstena",
+      "taxiServices": [
+        {
+          "name": "Taxi Ján Kupčík",
+          "website": "https://www.taxitrstena.sk/",
+          "phone": " +421911439795"
+        },
+        {
+          "name": "Expres taxi",
+          "website": "",
+          "phone": "+421 918 171 718"
+        }
+      ],
+      "timestamp": "2025-11-13T09:31:24.597Z"
+    }
+  ]
+}
