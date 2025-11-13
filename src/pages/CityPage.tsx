@@ -3,9 +3,11 @@ import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { HowItWorks } from "@/components/HowItWorks";
 import { GeometricLines } from "@/components/GeometricLines";
+import { CityFAQ } from "@/components/CityFAQ";
 import { SEOHead, generateCitySEO } from "@/components/SEOHead";
+import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { MapPin, Phone, Globe } from "lucide-react";
-import { getCityBySlug, type CityData } from "@/data/cities";
+import { getCityBySlug, createRegionSlug, type CityData } from "@/data/cities";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { truncateUrl } from "@/utils/urlUtils";
 
@@ -23,14 +25,23 @@ const CityPage = () => {
   }
 
   const seoData = generateCitySEO(city.name, city.slug, city.region, city.metaDescription, city.keywords);
+  const regionSlug = createRegionSlug(city.region);
 
   return (
     <div className="min-h-screen bg-background">
       <SEOHead {...seoData} />
       <Header />
 
+      {/* Breadcrumbs */}
+      <SEOBreadcrumbs
+        items={[
+          { label: city.region, href: `/kraj/${regionSlug}` },
+          { label: city.name }
+        ]}
+      />
+
       {/* Taxi Services Section */}
-      <section className="pt-16 md:pt-20 lg:pt-24 py-12 md:py-20 lg:py-24 px-4 md:px-8 relative">
+      <section className="pt-4 md:pt-6 py-12 md:py-20 lg:py-24 px-4 md:px-8 relative">
         <GeometricLines variant="subtle" count={6} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
@@ -105,6 +116,9 @@ const CityPage = () => {
           )}
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <CityFAQ cityName={city.name} />
 
       {/* How It Works */}
       <HowItWorks />
