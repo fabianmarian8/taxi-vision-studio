@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:56:55.700Z",
+  "lastUpdated": "2025-11-13T08:58:14.732Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4165,7 +4165,49 @@
         "objednať taxi stará turá",
         "taxi turá"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "A-Taxi Stará Turá",
+          "website": "",
+          "phone": "+421910666966"
+        },
+        {
+          "name": "FAJN TAXÍK Stará Turá",
+          "phone": "+421911541919"
+        },
+        {
+          "name": "Taxi La Vita Stará Turá",
+          "website": "https://www.taxilavita.sk",
+          "phone": "+421903806904"
+        },
+        {
+          "name": "Váš Taxík",
+          "website": "http://www.vastaxik.com",
+          "phone": "+421907090966"
+        },
+        {
+          "name": "Taxi Líška Miroslav",
+          "phone": "+421908082222"
+        },
+        {
+          "name": "Taxi Paso Stará Turá",
+          "phone": "+421905645978"
+        },
+        {
+          "name": "Letiskovetransfery",
+          "website": "http://www.letiskovetransfery.eu",
+          "phone": "+421905847586"
+        },
+        {
+          "name": "Taxi La Vita Myjava",
+          "website": "http://www.taxilavita.sk",
+          "phone": "+421940095050"
+        },
+        {
+          "name": "Róbert Hornáček",
+          "phone": "+421905363876"
+        }
+      ]
     },
     {
       "name": "Strážske",
