@@ -1,0 +1,15 @@
+{
+  "changes": [
+    {
+      "citySlug": "svit",
+      "taxiServices": [
+        {
+          "name": "taxi svit s.r.o.",
+          "website": "https://svittaxi.sk",
+          "phone": "+421905211311"
+        }
+      ],
+      "timestamp": "2025-11-13T09:09:55.794Z"
+    }
+  ]
+}
