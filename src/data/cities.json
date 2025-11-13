@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:55:09.293Z",
+  "lastUpdated": "2025-11-13T07:57:55.111Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2693,7 +2693,25 @@
         "objednať taxi nové zámky",
         "taxi nz"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "OK Taxi Nové Zámky",
+          "website": "https://oktaxinz.sk",
+          "phone": "+421907333362"
+        },
+        {
+          "name": "Taxi Patrik - Taxi Nové Zámky",
+          "phone": "+421950705712"
+        },
+        {
+          "name": "FLY TAXI Nové Zámky",
+          "phone": "+421903377378"
+        },
+        {
+          "name": "AB Taxi",
+          "phone": "+421 904 311 800"
+        }
+      ],
       "latitude": 47.9867,
       "longitude": 18.1617
     },
