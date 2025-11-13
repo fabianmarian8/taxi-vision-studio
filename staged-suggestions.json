@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T09:01:49.502Z",
+  "lastUpdated": "2025-11-13T09:01:53.864Z",
   "suggestions": [
     {
       "id": "svaty-jur-1763024473143-7cvgodbun",
@@ -81,18 +81,6 @@
         "phone": "+421905454545",
         "website": null,
         "address": "Slnečná 308/32, 900 91 Limbach-Pezinok, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T09:01:13.143Z"
-    },
-    {
-      "id": "svaty-jur-1763024473143-lhavn5f8k",
-      "citySlug": "svaty-jur",
-      "taxiService": {
-        "name": "Robino taxi",
-        "phone": "+421911880947",
-        "website": null,
-        "address": "Karpatské námestie 10/A, 831 06 Bratislava-Rača, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T09:01:13.143Z"
