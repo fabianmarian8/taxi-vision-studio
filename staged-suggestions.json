@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T08:17:59.411Z",
+  "lastUpdated": "2025-11-13T08:18:36.639Z",
   "suggestions": [
     {
       "id": "roznava-1763021862128-g3quno7ci",
@@ -129,18 +129,6 @@
         "phone": "+421905150444",
         "website": null,
         "address": "Jána Amosa Komenského 2086/25, 048 01 Rožňava, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-13T08:17:42.128Z"
-    },
-    {
-      "id": "roznava-1763021862128-9crx42hx7",
-      "citySlug": "roznava",
-      "taxiService": {
-        "name": "I.F. TAXI",
-        "phone": "+421951592133",
-        "website": null,
-        "address": "Rakovnica 27, 049 31 Rakovnica, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-13T08:17:42.128Z"
