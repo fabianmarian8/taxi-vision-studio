@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-13T07:53:20.685Z",
+  "lastUpdated": "2025-11-13T07:53:52.796Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2585,7 +2585,24 @@
         "objednať taxi nováky",
         "taxi nováky ceny"
       ],
-      "taxiServices": []
+      "taxiServices": [
+        {
+          "name": "Fajn Taxi Nováky",
+          "phone": "+421949880111"
+        },
+        {
+          "name": "ENY Taxi",
+          "phone": "+421911211811"
+        },
+        {
+          "name": "EXCELLENT - jazyková škola/TAXI",
+          "phone": "+421918971133"
+        },
+        {
+          "name": "Zebra",
+          "phone": "+421918999116"
+        }
+      ]
     },
     {
       "name": "Nové Mesto nad Váhom",
