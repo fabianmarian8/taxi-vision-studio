@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T19:52:59.304Z",
+  "lastUpdated": "2025-11-14T19:56:18.340Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -406,7 +406,12 @@
         "objednať taxi biel",
         "taxi biel telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Juraj Varga",
+          "phone": "+421 918 022 222"
+        }
+      ],
       "latitude": 49.4167,
       "longitude": 18.9833
     },
