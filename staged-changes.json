@@ -1,0 +1,24 @@
+{
+  "changes": [
+    {
+      "citySlug": "boleraz",
+      "taxiServices": [
+        {
+          "name": "Profi TAXI Trnava",
+          "website": "http://www.profitaxitrnava.sk",
+          "phone": "+4213316444"
+        },
+        {
+          "name": "TEAM TAXI TRNAVA",
+          "website": "http://www.teamtaxi.sk",
+          "phone": "+421940747474"
+        },
+        {
+          "name": "TAXI FORTE",
+          "phone": "+421915655882"
+        }
+      ],
+      "timestamp": "2025-11-14T20:06:47.284Z"
+    }
+  ]
+}
