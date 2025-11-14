@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:04:36.020Z",
+  "lastUpdated": "2025-11-14T20:04:40.294Z",
   "suggestions": [
     {
       "id": "boleraz-1763150620563-xr1w4atkn",
@@ -21,18 +21,6 @@
         "phone": "+421904006666",
         "website": "http://www.ekotaxi.sk",
         "address": "Obycká 29, 951 93 Machulince, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:03:40.562Z"
-    },
-    {
-      "id": "boleraz-1763150620563-ujln9l3xo",
-      "citySlug": "boleraz",
-      "taxiService": {
-        "name": "TAXI FORTE",
-        "phone": "+421915655882",
-        "website": null,
-        "address": "2, Jána Bottu 5944, 917 01 Trnava, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:03:40.562Z"
