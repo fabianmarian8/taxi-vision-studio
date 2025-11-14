@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:17:38.049Z",
+  "lastUpdated": "2025-11-14T20:18:29.253Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1227,7 +1227,25 @@
         "objednať taxi fiľakovo",
         "taxi fiľakovo telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Cheap-Taxi Fiľakovo",
+          "website": "https://www.facebook.com/share/19KSr9x4yv",
+          "phone": "+421940033880"
+        },
+        {
+          "name": "DANI TAXI FIĽAKOVO",
+          "phone": "+421952020030"
+        },
+        {
+          "name": "FŐNIX TAXI FIĽAKOVO",
+          "phone": "+421952020050"
+        },
+        {
+          "name": "Igor taxi filakovo",
+          "phone": "+421940958001"
+        }
+      ],
       "latitude": 48.2667,
       "longitude": 19.8333
     },

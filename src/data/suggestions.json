@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:17:39.674Z",
+  "lastUpdated": "2025-11-14T20:18:29.253Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,54 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "filakovo-1763151477791-46i3pqq6b",
+      "citySlug": "filakovo",
+      "taxiService": {
+        "name": "Cheap-Taxi Fiľakovo",
+        "phone": "+421940033880",
+        "website": "https://www.facebook.com/share/19KSr9x4yv",
+        "address": "Mocsáryho 783, 986 01 Fiľakovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:17:57.791Z"
+    },
+    {
+      "id": "filakovo-1763151477792-j5m6z63t1",
+      "citySlug": "filakovo",
+      "taxiService": {
+        "name": "DANI TAXI FIĽAKOVO",
+        "phone": "+421952020030",
+        "website": null,
+        "address": "986 01 Fiľakovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:17:57.791Z"
+    },
+    {
+      "id": "filakovo-1763151477792-426qlcwpk",
+      "citySlug": "filakovo",
+      "taxiService": {
+        "name": "FŐNIX TAXI FIĽAKOVO",
+        "phone": "+421952020050",
+        "website": null,
+        "address": "Železničná 1199/11, 986 01 Fiľakovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:17:57.791Z"
+    },
+    {
+      "id": "filakovo-1763151477792-f7mhvfvqe",
+      "citySlug": "filakovo",
+      "taxiService": {
+        "name": "Igor taxi filakovo",
+        "phone": "+421940958001",
+        "website": null,
+        "address": "Farská lúka 1714/30, 986 01 Fiľakovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:17:57.791Z"
     }
   ]
 }
