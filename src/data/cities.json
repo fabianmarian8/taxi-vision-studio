@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T19:50:34.451Z",
+  "lastUpdated": "2025-11-14T19:52:59.304Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -384,7 +384,12 @@
         "objednať taxi betlanovce",
         "taxi betlanovce telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Albert Duriančik - Albert Taxi",
+          "phone": "+42153/4411111"
+        }
+      ],
       "latitude": 48.8667,
       "longitude": 20.5667
     },

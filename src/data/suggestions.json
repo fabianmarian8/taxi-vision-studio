@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T19:50:35.928Z",
+  "lastUpdated": "2025-11-14T19:52:59.304Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,18 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "betlanovce-1763149845847-f5oll2aw7",
+      "citySlug": "betlanovce",
+      "taxiService": {
+        "name": "Albert Duriančik - Albert Taxi",
+        "phone": "+42153/4411111",
+        "website": null,
+        "address": "2, Levočská 161, 053 01 Harichovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:50:45.847Z"
     }
   ]
 }
