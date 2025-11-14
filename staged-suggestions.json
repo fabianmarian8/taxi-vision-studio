@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:21:23.815Z",
+  "lastUpdated": "2025-11-14T20:21:29.684Z",
   "suggestions": [
     {
       "id": "horna-streda-1763151561942-txagaq2x3",
@@ -45,18 +45,6 @@
         "phone": "+421915336649",
         "website": "http://www.taxi-pn.sk",
         "address": "Piešťany, 92101, 921 01 Piešťany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:19:21.942Z"
-    },
-    {
-      "id": "horna-streda-1763151561942-viym6q0tt",
-      "citySlug": "horna-streda",
-      "taxiService": {
-        "name": "Taxi Nona",
-        "phone": "+421905443666",
-        "website": null,
-        "address": "Piešťanská, 915 01 Nové Mesto nad Váhom, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:19:21.942Z"
