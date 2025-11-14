@@ -1,5 +1,5 @@
 export default function handler(req, res) {
-  const baseUrl = 'https://taxinearme.sk';
+  const baseUrl = 'https://www.taxinearme.sk';
 
   const robotsTxt = `# Robots.txt pre taxinearme.sk
 # Generované dynamicky pre optimálne SEO

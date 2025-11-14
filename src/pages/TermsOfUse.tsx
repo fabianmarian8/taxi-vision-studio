@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { reopenCookieSettings } from "@/components/cookie-banner/cookieManager";
 
 const TermsOfUse = () => {
   return (
@@ -307,6 +308,13 @@ const TermsOfUse = () => {
               <Link to="/kontakt" className="hover:underline">
                 Kontakt
               </Link>
+              <span>|</span>
+              <button
+                onClick={reopenCookieSettings}
+                className="hover:underline cursor-pointer"
+              >
+                Nastavenia cookies
+              </button>
             </nav>
           </div>
           <div className="text-center text-sm text-foreground/80">

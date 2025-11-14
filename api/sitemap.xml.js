@@ -1,7 +1,7 @@
 import citiesData from '../src/data/cities.json' assert { type: 'json' };
 
 export default function handler(req, res) {
-  const baseUrl = 'https://taxinearme.sk';
+  const baseUrl = 'https://www.taxinearme.sk';
   const currentDate = new Date().toISOString();
 
   // Helper funkcia pre vytvorenie slug z názvu kraja
@@ -75,6 +75,7 @@ export default function handler(req, res) {
   // Právne stránky
   const legalPages = [
     { path: '/ochrana-sukromia', priority: '0.3' },
+    { path: '/cookies', priority: '0.3' },
     { path: '/podmienky-pouzivania', priority: '0.3' },
     { path: '/kontakt', priority: '0.5' }
   ];

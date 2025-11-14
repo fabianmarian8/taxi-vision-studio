@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import { reopenCookieSettings } from "@/components/cookie-banner/cookieManager";
 
 const Contact = () => {
   return (
@@ -67,12 +68,21 @@ const Contact = () => {
               <Link to="/ochrana-sukromia" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors">
                 Ochrana súkromia
               </Link>
+              <Link to="/cookies" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors">
+                Cookies
+              </Link>
               <Link to="/podmienky-pouzivania" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors">
                 Podmienky používania
               </Link>
               <Link to="/kontakt" className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors">
                 Kontakt
               </Link>
+              <button
+                onClick={reopenCookieSettings}
+                className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors cursor-pointer"
+              >
+                Nastavenia cookies
+              </button>
             </div>
           </div>
         </div>

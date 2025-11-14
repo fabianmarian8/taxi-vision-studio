@@ -23,7 +23,7 @@ export const SEOHead = ({
   noindex = false,
 }: SEOProps) => {
   const location = useLocation();
-  const baseUrl = 'https://taxinearme.sk';
+  const baseUrl = 'https://www.taxinearme.sk';
   const fullUrl = canonicalUrl || `${baseUrl}${location.pathname}`;
 
   useEffect(() => {
@@ -120,7 +120,7 @@ export const generateCitySEO = (cityName: string, citySlug: string, region: stri
     title: `Taxi ${cityName} - Taxislužby v Meste ${cityName} | Taxi NearMe`,
     description: metaDescription,
     keywords: keywords,
-    canonicalUrl: `https://taxinearme.sk/taxi/${citySlug}`,
+    canonicalUrl: `https://www.taxinearme.sk/taxi/${citySlug}`,
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
@@ -163,7 +163,7 @@ export const generateTaxiServiceSEO = (
       `taxi ${cityName} telefón`,
       `objednať taxi ${cityName}`,
     ],
-    canonicalUrl: `https://taxinearme.sk/taxi/${citySlug}/${serviceSlug}`,
+    canonicalUrl: `https://www.taxinearme.sk/taxi/${citySlug}/${serviceSlug}`,
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
@@ -198,7 +198,7 @@ export const generateRegionSEO = (regionName: string, regionSlug: string, cities
       `taxi služby ${regionName}`,
       `objednať taxi ${regionName}`,
     ],
-    canonicalUrl: `https://taxinearme.sk/kraj/${regionSlug}`,
+    canonicalUrl: `https://www.taxinearme.sk/kraj/${regionSlug}`,
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
@@ -224,16 +224,16 @@ export const generateHomeSEO = (): SEOProps => {
       'taxislužby slovensko',
       'nájsť taxi',
     ],
-    canonicalUrl: 'https://taxinearme.sk/',
+    canonicalUrl: 'https://www.taxinearme.sk/',
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'Taxi NearMe',
       description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku',
-      url: 'https://taxinearme.sk',
+      url: 'https://www.taxinearme.sk',
       potentialAction: {
         '@type': 'SearchAction',
-        target: 'https://taxinearme.sk/?q={search_term_string}',
+        target: 'https://www.taxinearme.sk/?q={search_term_string}',
         'query-input': 'required name=search_term_string',
       },
     },

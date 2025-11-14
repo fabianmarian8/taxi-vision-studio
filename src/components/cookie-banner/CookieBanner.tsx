@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import { X, Cookie, Shield, BarChart3 } from 'lucide-react';
-
-interface CookiePreferences {
-  necessary: boolean;
-  functional: boolean;
-  analytics: boolean;
-  marketing: boolean;
-}
+import {
+  CookiePreferences,
+  hasValidConsent,
+  saveCookieConsent
+} from './cookieManager';
 
 export const CookieBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,11 +18,21 @@ export const CookieBanner = () => {
 
   useEffect(() => {
     // Kontrola či už užívateľ dal súhlas
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
+    if (!hasValidConsent()) {
       // Zobraz banner po 1 sekunde (aby to nebolo hneď agresívne)
       setTimeout(() => setIsVisible(true), 1000);
     }
+
+    // Listener pre znovu otvorenie nastavení
+    const handleReopenSettings = () => {
+      setIsVisible(true);
+      setShowDetails(false);
+    };
+
+    window.addEventListener('cookieSettingsRequested', handleReopenSettings);
+    return () => {
+      window.removeEventListener('cookieSettingsRequested', handleReopenSettings);
+    };
   }, []);
 
   const handleAcceptAll = () => {
@@ -52,21 +60,8 @@ export const CookieBanner = () => {
   };
 
   const savePreferences = (prefs: CookiePreferences) => {
-    localStorage.setItem('cookieConsent', JSON.stringify({
-      preferences: prefs,
-      timestamp: new Date().toISOString(),
-    }));
+    saveCookieConsent(prefs); // Používame cookieManager funkciu
     setIsVisible(false);
-
-    // Tu môžeš pridať logiku na aktiváciu/deaktiváciu cookies
-    // Napríklad Google Analytics:
-    if (prefs.analytics) {
-      // Aktivuj analytics
-      console.log('Analytics enabled');
-    } else {
-      // Deaktivuj analytics
-      console.log('Analytics disabled');
-    }
   };
 
   const togglePreference = (key: keyof CookiePreferences) => {

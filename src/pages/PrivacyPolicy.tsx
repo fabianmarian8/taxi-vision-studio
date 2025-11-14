@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { reopenCookieSettings } from "@/components/cookie-banner/cookieManager";
 
 const PrivacyPolicy = () => {
   return (
@@ -296,7 +297,7 @@ const PrivacyPolicy = () => {
               <li className="leading-relaxed">
                 <strong>právo podať sťažnosť</strong> na Úrad na ochranu osobných údajov SR
                 (Hraničná 12, 820 07 Bratislava 27,{" "}
-                <a href="http://www.dataprotection.gov.sk" target="_blank" rel="noopener noreferrer" className="underline">
+                <a href="https://www.dataprotection.gov.sk" target="_blank" rel="noopener noreferrer" className="underline">
                   www.dataprotection.gov.sk
                 </a>
                 )
@@ -389,6 +390,13 @@ const PrivacyPolicy = () => {
               <Link to="/kontakt" className="hover:underline">
                 Kontakt
               </Link>
+              <span>|</span>
+              <button
+                onClick={reopenCookieSettings}
+                className="hover:underline cursor-pointer"
+              >
+                Nastavenia cookies
+              </button>
             </nav>
           </div>
           <div className="text-center text-sm text-foreground/80">
