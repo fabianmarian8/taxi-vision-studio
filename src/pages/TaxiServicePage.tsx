@@ -134,7 +134,8 @@ const TaxiServicePage = () => {
                 Ďalšie taxislužby v meste {city.name}
               </h2>
               <div className="grid gap-3">
-                {city.taxiServices
+                {[...city.taxiServices]
+                  .sort((a, b) => a.name.localeCompare(b.name, 'sk'))
                   .filter(s => s.name !== service.name)
                   .slice(0, 5)
                   .map((otherService, index) => {

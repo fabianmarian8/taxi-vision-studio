@@ -57,7 +57,7 @@ const CityPage = () => {
 
           {city.taxiServices.length > 0 ? (
             <div className="grid gap-2">
-              {city.taxiServices.map((service, index) => {
+              {[...city.taxiServices].sort((a, b) => a.name.localeCompare(b.name, 'sk')).map((service, index) => {
                 // Generate slug for the taxi service
                 const serviceSlug = service.name
                   .toLowerCase()
