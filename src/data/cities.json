@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:03:29.244Z",
+  "lastUpdated": "2025-11-14T20:06:48.998Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -515,7 +515,22 @@
         "objednať taxi boleráz",
         "taxi boleráz telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Profi TAXI Trnava",
+          "website": "http://www.profitaxitrnava.sk",
+          "phone": "+4213316444"
+        },
+        {
+          "name": "TEAM TAXI TRNAVA",
+          "website": "http://www.teamtaxi.sk",
+          "phone": "+421940747474"
+        },
+        {
+          "name": "TAXI FORTE",
+          "phone": "+421915655882"
+        }
+      ],
       "latitude": 48.2667,
       "longitude": 17.55
     },
