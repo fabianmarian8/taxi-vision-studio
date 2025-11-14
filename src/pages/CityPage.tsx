@@ -24,7 +24,7 @@ const CityPage = () => {
     return <Navigate to="/404" replace />;
   }
 
-  const seoData = generateCitySEO(city.name, city.slug, city.region, city.metaDescription, city.keywords);
+  const seoData = generateCitySEO(city.name, city.slug, city.region, city.metaDescription, city.keywords, city.taxiServices);
   const regionSlug = createRegionSlug(city.region);
 
   return (

@@ -115,29 +115,83 @@ export const SEOHead = ({
 };
 
 // Helper funkcie pre generovanie SEO dát
-export const generateCitySEO = (cityName: string, citySlug: string, region: string, metaDescription: string, keywords: string[]): SEOProps => {
+export const generateCitySEO = (cityName: string, citySlug: string, region: string, metaDescription: string, keywords: string[], taxiServices?: Array<{name: string, phone?: string, website?: string}>): SEOProps => {
+  const regionSlug = region
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, '-');
+
+  // Create structured data with BreadcrumbList and ItemList
+  const structuredData: any = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      // BreadcrumbList
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Domov',
+            'item': 'https://www.taxinearme.sk'
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': region,
+            'item': `https://www.taxinearme.sk/kraj/${regionSlug}`
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'name': cityName
+          }
+        ]
+      },
+      // CollectionPage
+      {
+        '@type': 'CollectionPage',
+        'name': `Taxislužby v meste ${cityName}`,
+        'description': metaDescription,
+        'url': `https://www.taxinearme.sk/taxi/${citySlug}`
+      }
+    ]
+  };
+
+  // Add ItemList if taxi services are provided
+  if (taxiServices && taxiServices.length > 0) {
+    structuredData['@graph'].push({
+      '@type': 'ItemList',
+      'name': `Zoznam taxislužieb v meste ${cityName}`,
+      'numberOfItems': taxiServices.length,
+      'itemListElement': taxiServices.map((service, index) => ({
+        '@type': 'LocalBusiness',
+        'position': index + 1,
+        'name': service.name,
+        'telephone': service.phone,
+        'url': service.website,
+        'address': {
+          '@type': 'PostalAddress',
+          'addressLocality': cityName,
+          'addressRegion': region,
+          'addressCountry': 'SK'
+        },
+        'areaServed': {
+          '@type': 'City',
+          'name': cityName
+        },
+        'serviceType': 'Taxislužba'
+      }))
+    });
+  }
+
   return {
     title: `Taxi ${cityName} - Taxislužby v Meste ${cityName} | Taxi NearMe`,
     description: metaDescription,
     keywords: keywords,
     canonicalUrl: `https://www.taxinearme.sk/taxi/${citySlug}`,
-    structuredData: {
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      name: `Taxislužby ${cityName}`,
-      description: metaDescription,
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: cityName,
-        addressRegion: region,
-        addressCountry: 'SK',
-      },
-      areaServed: {
-        '@type': 'City',
-        name: cityName,
-      },
-      serviceType: 'Taxislužby',
-    },
+    structuredData: structuredData,
   };
 };
 

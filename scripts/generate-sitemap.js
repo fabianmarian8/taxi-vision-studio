@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 const citiesDataPath = join(__dirname, '../src/data/cities.json');
 const citiesData = JSON.parse(readFileSync(citiesDataPath, 'utf-8'));
 
-const baseUrl = 'https://taxinearme.sk';
+const baseUrl = 'https://www.taxinearme.sk';
 const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 
 // Helper funkcia pre vytvorenie slug z názvu kraja
