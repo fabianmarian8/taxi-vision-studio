@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T19:49:48.106Z",
+  "lastUpdated": "2025-11-14T19:50:34.451Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -357,7 +357,17 @@
         "objednať taxi bernolákovo",
         "taxi bernolákovo telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Bernolakovo",
+          "website": "https://massivetaxi.sk",
+          "phone": "+421910275078"
+        },
+        {
+          "name": "Taxi Rado",
+          "phone": "+421944300402"
+        }
+      ],
       "latitude": 48.2014,
       "longitude": 17.2936
     },
