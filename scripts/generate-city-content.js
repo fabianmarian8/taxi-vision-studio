@@ -21,7 +21,7 @@ const generateCityContent = (city) => {
 
   return `## O Taxislužbách v Meste ${name}
 
-${name}, ${getCityDescription(city, region, taxiCount)}, ponúka ${getTaxiAvailabilityText(taxiCount)} taxislužieb pre obyvateľov aj návštevníkov. Či už potrebujete odvoz do práce, na nákupy, k lekárovi, alebo na iné miesta, taxi v meste ${name} je dostupnou a pohodlnou voľbou. V našom zozname nájdete ${taxiCount} ${getTaxiServicesWord(taxiCount)}, ktoré ${getTaxiServicesPlural(taxiCount)} pokrývajú celé územie mesta a okolia. ${getWaitTimeText(taxiCount)}
+${name}, ${getCityDescription(city, region, taxiCount)}, ponúka ${getTaxiAvailabilityText(taxiCount)} taxislužby pre obyvateľov aj návštevníkov. Či už potrebujete odvoz do práce, na nákupy, k lekárovi, alebo na iné miesta, taxi v meste ${name} je dostupnou a pohodlnou voľbou. Taxislužby pokrývajú celé územie mesta a okolia. ${getWaitTimeText(taxiCount)}
 
 ## Ako Objednať Taxi v Meste ${name}
 
@@ -33,7 +33,7 @@ Ceny za taxi služby v meste ${name} sa môžu líšiť v závislosti od konkré
 
 ## Taxislužby v Meste ${name} - Zoznam
 
-Nižšie nájdete kompletný zoznam ${taxiCount} ${getTaxiServicesWord(taxiCount)} pôsobiacich v meste ${name}. Každý záznam obsahuje názov spoločnosti, telefónne číslo a odkaz na webovú stránku (pokiaľ je k dispozícii), kde nájdete ďalšie informácie. Vyberte si službu, ktorá najlepšie vyhovuje vašim potrebám a kontaktujte ju priamo pre objednanie jazdy.
+Nižšie nájdete zoznam taxislužieb pôsobiacich v meste ${name}. Každý záznam obsahuje názov spoločnosti, telefónne číslo a odkaz na webovú stránku (pokiaľ je k dispozícii), kde nájdete ďalšie informácie. Vyberte si službu, ktorá najlepšie vyhovuje vašim potrebám a kontaktujte ju priamo pre objednanie jazdy.
 
 ## Tipy Pre Cestujúcich v Meste ${name}
 

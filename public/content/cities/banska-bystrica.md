@@ -1,6 +1,6 @@
 ## O Taxislužbách v Meste Banská Bystrica
 
-Banská Bystrica, mesto v Banskobystrickom kraji, ponúka dobrú ponuku taxislužieb pre obyvateľov aj návštevníkov. Či už potrebujete odvoz do práce, na nákupy, k lekárovi, alebo na iné miesta, taxi v meste Banská Bystrica je dostupnou a pohodlnou voľbou. V našom zozname nájdete 9 taxislužieb, ktoré pokrývajú pokrývajú celé územie mesta a okolia. Čakacia doba na taxi je v meste krátka, zvyčajne do 10 minút.
+Banská Bystrica, mesto v Banskobystrickom kraji, ponúka dobrú ponuku taxislužby pre obyvateľov aj návštevníkov. Či už potrebujete odvoz do práce, na nákupy, k lekárovi, alebo na iné miesta, taxi v meste Banská Bystrica je dostupnou a pohodlnou voľbou. Taxislužby pokrývajú celé územie mesta a okolia. Čakacia doba na taxi je v meste krátka, zvyčajne do 10 minút.
 
 ## Ako Objednať Taxi v Meste Banská Bystrica
 
@@ -12,7 +12,7 @@ Ceny za taxi služby v meste Banská Bystrica sa môžu líšiť v závislosti o
 
 ## Taxislužby v Meste Banská Bystrica - Zoznam
 
-Nižšie nájdete kompletný zoznam 9 taxislužieb pôsobiacich v meste Banská Bystrica. Každý záznam obsahuje názov spoločnosti, telefónne číslo a odkaz na webovú stránku (pokiaľ je k dispozícii), kde nájdete ďalšie informácie. Vyberte si službu, ktorá najlepšie vyhovuje vašim potrebám a kontaktujte ju priamo pre objednanie jazdy.
+Nižšie nájdete zoznam taxislužieb pôsobiacich v meste Banská Bystrica. Každý záznam obsahuje názov spoločnosti, telefónne číslo a odkaz na webovú stránku (pokiaľ je k dispozícii), kde nájdete ďalšie informácie. Vyberte si službu, ktorá najlepšie vyhovuje vašim potrebám a kontaktujte ju priamo pre objednanie jazdy.
 
 ## Tipy Pre Cestujúcich v Meste Banská Bystrica
 

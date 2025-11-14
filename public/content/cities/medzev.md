@@ -1,6 +1,6 @@
 ## O Taxislužbách v Meste Medzev
 
-Medzev, mesto vo východnej časti Slovenska, ponúka niekoľko kvalitných taxislužieb pre obyvateľov aj návštevníkov. Či už potrebujete odvoz do práce, na nákupy, k lekárovi, alebo na iné miesta, taxi v meste Medzev je dostupnou a pohodlnou voľbou. V našom zozname nájdete 4 taxislužby, ktoré pokrývajú pokrývajú celé územie mesta a okolia. Odporúčame si taxi objednať vopred, najmä v čase dopravnej špičky.
+Medzev, mesto vo východnej časti Slovenska, ponúka niekoľko kvalitných taxislužby pre obyvateľov aj návštevníkov. Či už potrebujete odvoz do práce, na nákupy, k lekárovi, alebo na iné miesta, taxi v meste Medzev je dostupnou a pohodlnou voľbou. Taxislužby pokrývajú celé územie mesta a okolia. Odporúčame si taxi objednať vopred, najmä v čase dopravnej špičky.
 
 ## Ako Objednať Taxi v Meste Medzev
 
@@ -12,7 +12,7 @@ Ceny za taxi služby v meste Medzev sa môžu líšiť v závislosti od konkrét
 
 ## Taxislužby v Meste Medzev - Zoznam
 
-Nižšie nájdete kompletný zoznam 4 taxislužby pôsobiacich v meste Medzev. Každý záznam obsahuje názov spoločnosti, telefónne číslo a odkaz na webovú stránku (pokiaľ je k dispozícii), kde nájdete ďalšie informácie. Vyberte si službu, ktorá najlepšie vyhovuje vašim potrebám a kontaktujte ju priamo pre objednanie jazdy.
+Nižšie nájdete zoznam taxislužieb pôsobiacich v meste Medzev. Každý záznam obsahuje názov spoločnosti, telefónne číslo a odkaz na webovú stránku (pokiaľ je k dispozícii), kde nájdete ďalšie informácie. Vyberte si službu, ktorá najlepšie vyhovuje vašim potrebám a kontaktujte ju priamo pre objednanie jazdy.
 
 ## Tipy Pre Cestujúcich v Meste Medzev
 
