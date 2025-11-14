@@ -1,0 +1,185 @@
+{
+  "suggestions": [
+    {
+      "id": "horna-streda-1763151561942-6z0nhsa9m",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "Tina Taxi DS",
+        "phone": "+421944003888",
+        "website": null,
+        "address": "Železničná 456, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-e0a04mmic",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "AT-TAXI s.r.o.",
+        "phone": "+421917155411",
+        "website": null,
+        "address": "6698, Letištná 64, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-egts5dk5d",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "Taxi Zsán Dunajská streda",
+        "phone": "+421949407909",
+        "website": null,
+        "address": "Kukučínova, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-lnwujm06q",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "City TAXI DS",
+        "phone": "+421948626626",
+        "website": "http://www.taxidunajskastreda.sk",
+        "address": "Železničná 5228, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-qapp3eo1r",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "Boomerang Taxi",
+        "phone": "+421918808589",
+        "website": "http://www.boomerangtaxi.biz",
+        "address": "Trhovisko 10, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-txagaq2x3",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "Blue Taxi - Nové Mesto nad Váhom",
+        "phone": "+421908505404",
+        "website": "https://bluetaxi.sk",
+        "address": "Modrovka 83, 915 01 Modrovka, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-j6p8ljgc1",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "TAXI DS",
+        "phone": "+421907266212",
+        "website": "http://www.taxids.sk",
+        "address": "Alžbetínske námestie, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-j2rbfc23q",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "CITY TAXI Dun.Streda & Airport transfer",
+        "phone": "+421907106104",
+        "website": null,
+        "address": "Sládkovičova, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-818c7yfu1",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "Taxi Piešťany",
+        "phone": "+421944274744",
+        "website": "http://www.taxi-pn.sk",
+        "address": "Dopravná 2341/1, 921 01 Piešťany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-dcn4qsinn",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "A-Taxi Piešťany",
+        "phone": "+421915666600",
+        "website": "https://www.ataxi.sk",
+        "address": "Mojmírova 35, 921 01 Piešťany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-1zedukv9j",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "FAJN TAXÍK Stará Turá",
+        "phone": "+421911541919",
+        "website": null,
+        "address": "Hviezdoslavova 630/37, 916 01 Stará Turá, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-r4r5nu6ps",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "Taxi Piešťany - Peter Baláž",
+        "phone": "+421915336649",
+        "website": "http://www.taxi-pn.sk",
+        "address": "Piešťany, 92101, 921 01 Piešťany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-mcs9n1dy6",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "Monika Taxi - František Hrušovský",
+        "phone": "+421904419551",
+        "website": null,
+        "address": "Ul. Biskupa Kondého 5138/30, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-ljc6w1m1o",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "Váš Taxík",
+        "phone": "+421907090966",
+        "website": "http://www.vastaxik.com",
+        "address": "Hlubockého 1, 916 01 Stará Turá, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    },
+    {
+      "id": "horna-streda-1763151561942-viym6q0tt",
+      "citySlug": "horna-streda",
+      "taxiService": {
+        "name": "Taxi Nona",
+        "phone": "+421905443666",
+        "website": null,
+        "address": "Piešťanská, 915 01 Nové Mesto nad Váhom, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:19:21.942Z"
+    }
+  ],
+  "lastUpdated": "2025-11-14T20:19:21.942Z"
+}
