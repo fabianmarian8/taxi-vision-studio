@@ -1,6 +1,6 @@
 ## O Taxislužbách v Meste Leopoldov
 
-Leopoldov, mesto v Trnavskom kraji, ponúka dostupné taxislužieb pre obyvateľov aj návštevníkov. Či už potrebujete odvoz do práce, na nákupy, k lekárovi, alebo na iné miesta, taxi v meste Leopoldov je dostupnou a pohodlnou voľbou. V našom zozname nájdete 1 taxislužbu, ktoré pokryje pokrývajú celé územie mesta a okolia. Odporúčame si taxi objednať vopred, najmä v čase dopravnej špičky.
+Leopoldov, mesto v Trnavskom kraji, ponúka dostupné taxislužby pre obyvateľov aj návštevníkov. Či už potrebujete odvoz do práce, na nákupy, k lekárovi, alebo na iné miesta, taxi v meste Leopoldov je dostupnou a pohodlnou voľbou. Taxislužby pokrývajú celé územie mesta a okolia. Odporúčame si taxi objednať vopred, najmä v čase dopravnej špičky.
 
 ## Ako Objednať Taxi v Meste Leopoldov
 
@@ -12,7 +12,7 @@ Ceny za taxi služby v meste Leopoldov sa môžu líšiť v závislosti od konkr
 
 ## Taxislužby v Meste Leopoldov - Zoznam
 
-Nižšie nájdete kompletný zoznam 1 taxislužbu pôsobiacich v meste Leopoldov. Každý záznam obsahuje názov spoločnosti, telefónne číslo a odkaz na webovú stránku (pokiaľ je k dispozícii), kde nájdete ďalšie informácie. Vyberte si službu, ktorá najlepšie vyhovuje vašim potrebám a kontaktujte ju priamo pre objednanie jazdy.
+Nižšie nájdete zoznam taxislužieb pôsobiacich v meste Leopoldov. Každý záznam obsahuje názov spoločnosti, telefónne číslo a odkaz na webovú stránku (pokiaľ je k dispozícii), kde nájdete ďalšie informácie. Vyberte si službu, ktorá najlepšie vyhovuje vašim potrebám a kontaktujte ju priamo pre objednanie jazdy.
 
 ## Tipy Pre Cestujúcich v Meste Leopoldov
 
