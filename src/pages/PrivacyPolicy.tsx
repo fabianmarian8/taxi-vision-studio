@@ -17,261 +17,330 @@ const PrivacyPolicy = () => {
         </Link>
 
         <h1 className="text-5xl md:text-6xl font-black mb-8 text-foreground">
-          Ochrana súkromia
+          Zásady ochrany osobných údajov – TaxiNearMe.sk
         </h1>
 
         <div className="prose prose-lg max-w-none space-y-8">
           <p className="text-lg text-foreground/90 leading-relaxed">
-            Posledná aktualizácia: {new Date().toLocaleDateString('sk-SK')}
+            Dátum účinnosti: 14. 11. 2025
           </p>
 
+          {/* 1. Prevádzkovateľ */}
           <section className="space-y-4">
             <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              1. Úvod
+              1. Prevádzkovateľ
             </h2>
             <p className="text-foreground/80 leading-relaxed">
-              Vážime si Vašu dôveru a záleží nám na ochrane Vášho súkromia. Tento dokument opisuje,
-              aké informácie zhromažďujeme pri používaní našej webovej stránky Taxi NearMe, ako ich
-              používame a aké máte práva v súvislosti s ich spracovaním.
+              Prevádzkovateľom webovej stránky{" "}
+              <a href="https://www.taxinearme.sk" className="underline">
+                www.taxinearme.sk
+              </a>{" "}
+              je:
             </p>
+            <div className="bg-card p-6 rounded-lg border-2 border-foreground/10">
+              <p className="text-foreground/80 leading-relaxed">
+                <strong>Marián Fabian</strong>
+                <br />
+                IČO: 47 340 860
+                <br />
+                DIČ: 1086305902
+                <br />
+                Sídlo: Gorkého 769/8, 962 31 Sliač, Slovenská republika
+                <br />
+                Email:{" "}
+                <a href="mailto:info@taxinearme.sk" className="underline">
+                  info@taxinearme.sk
+                </a>
+              </p>
+            </div>
             <p className="text-foreground/80 leading-relaxed">
-              Naša služba funguje ako informatívny portál pre vyhľadávanie taxislužieb na Slovensku.
-              Nezabezpečujeme priamo taxislužby, ale poskytujeme Vám prehľad a kontaktné informácie
-              na dostupné prepravné služby vo vašom meste.
+              Prevádzkovateľ spracúva osobné údaje v súlade s Nariadením (EÚ) 2016/679 (GDPR)
+              a zákonom č. 18/2018 Z. z. o ochrane osobných údajov.
             </p>
           </section>
 
+          {/* 2. Aké osobné údaje spracúvame */}
           <section className="space-y-4">
             <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              2. Správca osobných údajov
+              2. Aké osobné údaje spracúvame
             </h2>
             <p className="text-foreground/80 leading-relaxed">
-              Správcom Vašich osobných údajov je prevádzkovateľ služby Taxi NearMe. V prípade
-              akýchkoľvek otázok týkajúcich sa spracovania Vašich osobných údajov nás môžete
-              kontaktovať prostredníctvom kontaktného formulára na našej webovej stránke.
+              Pri používaní webu môžeme spracúvať najmä tieto kategórie údajov:
             </p>
+
+            <div className="space-y-4 ml-4">
+              <div className="bg-card p-4 rounded-lg border-l-4 border-foreground">
+                <h3 className="font-bold text-foreground mb-2">1. Údaje o používaní webu</h3>
+                <ul className="list-disc pl-6 space-y-1 text-foreground/80 text-sm">
+                  <li>IP adresa, typ zariadenia, typ a verzia prehliadača, operačný systém</li>
+                  <li>dátum a čas prístupu, zdroj návštevy, prekliky a správanie na stránke</li>
+                </ul>
+              </div>
+
+              <div className="bg-card p-4 rounded-lg border-l-4 border-foreground">
+                <h3 className="font-bold text-foreground mb-2">2. Údaje z cookies a podobných technológií</h3>
+                <ul className="list-disc pl-6 space-y-1 text-foreground/80 text-sm">
+                  <li>technické cookies potrebné na zobrazenie webu</li>
+                  <li>štatistické cookies (napr. Google Analytics, Microsoft Clarity)</li>
+                  <li>marketingové cookies (napr. Google AdSense, Google Ads)</li>
+                </ul>
+              </div>
+
+              <div className="bg-card p-4 rounded-lg border-l-4 border-foreground">
+                <h3 className="font-bold text-foreground mb-2">3. Údaje z kontaktného formulára</h3>
+                <ul className="list-disc pl-6 space-y-1 text-foreground/80 text-sm">
+                  <li>meno</li>
+                  <li>email</li>
+                  <li>telefónne číslo</li>
+                  <li>webstránka</li>
+                  <li>adresa (ak ju používateľ uvedie)</li>
+                  <li>obsah správy</li>
+                </ul>
+              </div>
+
+              <div className="bg-card p-4 rounded-lg border-l-4 border-foreground">
+                <h3 className="font-bold text-foreground mb-2">4. Údaje o taxi firmách zverejnených v katalógu</h3>
+                <ul className="list-disc pl-6 space-y-1 text-foreground/80 text-sm">
+                  <li>názov firmy</li>
+                  <li>webová stránka</li>
+                  <li>telefónne číslo</li>
+                </ul>
+                <p className="text-foreground/70 text-xs mt-2 italic">
+                  Tieto údaje sa týkajú podnikateľských subjektov a obvykle nepredstavujú osobné údaje
+                  fyzických osôb, pokiaľ nie je údaj zároveň prepojený na konkrétnu fyzickú osobu.
+                </p>
+              </div>
+            </div>
           </section>
 
+          {/* 3. Účely a právne základy spracúvania */}
           <section className="space-y-4">
             <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              3. Aké údaje zhromažďujeme
+              3. Účely a právne základy spracúvania
+            </h2>
+
+            <div className="space-y-4">
+              <div className="bg-card p-5 rounded-lg">
+                <h3 className="font-bold text-foreground mb-2">a) Prevádzka a bezpečnosť webu</h3>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Účel:</strong> technické fungovanie, zabezpečenie, odhalenie zneužívania
+                </p>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Právny základ:</strong> oprávnený záujem prevádzkovateľa (čl. 6 ods. 1 písm. f GDPR)
+                </p>
+                <p className="text-foreground/80 text-sm">
+                  <strong>Údaje:</strong> IP adresa, technické logy, nevyhnutné cookies
+                </p>
+              </div>
+
+              <div className="bg-card p-5 rounded-lg">
+                <h3 className="font-bold text-foreground mb-2">b) Štatistika a zlepšovanie služby</h3>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Účel:</strong> analýza návštevnosti a používania webu, zlepšovanie obsahu a funkcií
+                </p>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Právny základ:</strong> súhlas používateľa (čl. 6 ods. 1 písm. a GDPR)
+                </p>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Nástroje:</strong> Google Analytics, Microsoft Clarity
+                </p>
+                <p className="text-foreground/80 text-sm">
+                  <strong>Údaje:</strong> údaje o správaní na webe, anonymizované alebo pseudonymizované identifikátory
+                </p>
+              </div>
+
+              <div className="bg-card p-5 rounded-lg">
+                <h3 className="font-bold text-foreground mb-2">c) Zobrazovanie reklamy</h3>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Účel:</strong> zobrazovanie kontextovej a personalizovanej reklamy
+                </p>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Právny základ:</strong> súhlas používateľa (čl. 6 ods. 1 písm. a GDPR)
+                </p>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Nástroj:</strong> Google AdSense a súvisiace služby spoločnosti Google
+                </p>
+                <p className="text-foreground/80 text-sm">
+                  <strong>Údaje:</strong> cookies, online identifikátory, informácie o správaní na webe
+                </p>
+              </div>
+
+              <div className="bg-card p-5 rounded-lg">
+                <h3 className="font-bold text-foreground mb-2">d) Komunikácia cez kontaktný formulár</h3>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Účel:</strong> vybavenie dopytu, spätná väzba, doplnenie alebo úprava údajov o taxi firme
+                </p>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Právny základ:</strong>
+                </p>
+                <ul className="list-disc pl-6 space-y-1 text-foreground/80 text-sm mb-2">
+                  <li>predzmluvné vzťahy a plnenie zmluvy (čl. 6 ods. 1 písm. b GDPR), ak ide o žiadosť o zaradenie/úpravu záznamu</li>
+                  <li>oprávnený záujem (čl. 6 ods. 1 písm. f GDPR), ak ide o bežnú komunikáciu</li>
+                </ul>
+                <p className="text-foreground/80 text-sm">
+                  <strong>Údaje:</strong> meno, email, telefón, webstránka, adresa, obsah správy
+                </p>
+              </div>
+
+              <div className="bg-card p-5 rounded-lg">
+                <h3 className="font-bold text-foreground mb-2">e) Účtovníctvo a právne povinnosti</h3>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Účel:</strong> splnenie zákonných povinností v oblasti daní a účtovníctva
+                </p>
+                <p className="text-foreground/80 text-sm mb-2">
+                  <strong>Právny základ:</strong> zákonná povinnosť (čl. 6 ods. 1 písm. c GDPR)
+                </p>
+                <p className="text-foreground/80 text-sm">
+                  <strong>Údaje:</strong> údaje uvedené na daňových dokladoch, ak v budúcnosti dôjde k úplatným službám
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* 4. Ako dlho údaje uchovávame */}
+          <section className="space-y-4">
+            <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
+              4. Ako dlho údaje uchovávame
+            </h2>
+            <ul className="list-disc pl-8 space-y-2 text-foreground/80">
+              <li className="leading-relaxed">
+                <strong>technické logy:</strong> spravidla max. 1 rok, pokiaľ nie je potrebné dlhšie uchovanie (napr. pri bezpečnostnom incidente)
+              </li>
+              <li className="leading-relaxed">
+                <strong>analytické údaje:</strong> podľa nastavení nástrojov (typicky 14–26 mesiacov)
+              </li>
+              <li className="leading-relaxed">
+                <strong>marketingové cookies:</strong> podľa nastavení príslušnej služby (zvyčajne niekoľko mesiacov až 2 roky)
+              </li>
+              <li className="leading-relaxed">
+                <strong>údaje z kontaktného formulára:</strong> po dobu riešenia dopytu a následne max. 3 roky pre prípad obrany právnych nárokov
+              </li>
+              <li className="leading-relaxed">
+                <strong>účtovné doklady:</strong> 10 rokov od konca účtovného obdobia
+              </li>
+            </ul>
+          </section>
+
+          {/* 5. Príjemcovia osobných údajov */}
+          <section className="space-y-4">
+            <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
+              5. Príjemcovia osobných údajov
             </h2>
             <p className="text-foreground/80 leading-relaxed">
-              Pri prezeraní našej webovej stránky môžeme zhromažďovať nasledujúce kategórie údajov:
+              Vaše údaje môžu byť spracúvané aj týmito kategóriami príjemcov:
             </p>
             <ul className="list-disc pl-8 space-y-2 text-foreground/80">
               <li className="leading-relaxed">
-                <strong>Technické údaje:</strong> IP adresa, typ prehliadača, operačný systém,
-                čas návštevy a navštívené podstránky
+                poskytovatelia hostingu a infraštruktúry (GitHub, Vercel, prípadne ďalší poskytovatelia serverov)
               </li>
               <li className="leading-relaxed">
-                <strong>Vyhľadávacie dotazy:</strong> Mestá a služby, ktoré vyhľadávate na našom portáli
+                poskytovateľ domény a DNS (napr. Websupport, Cloudflare)
               </li>
               <li className="leading-relaxed">
-                <strong>Súbory cookies:</strong> Informácie uložené vo Vašom prehliadači pre zlepšenie
-                používateľskej skúsenosti
+                poskytovatelia analytických a reklamných služieb (Google Ireland Limited, Google LLC, Microsoft)
+              </li>
+              <li className="leading-relaxed">
+                poskytovateľ emailovej služby na doručovanie správ z formulárov
+              </li>
+              <li className="leading-relaxed">
+                účtovník/účtovnícka kancelária (pri fakturácii a účtovníctve)
+              </li>
+              <li className="leading-relaxed">
+                orgány verejnej moci, ak to vyžaduje právny predpis
               </li>
             </ul>
-            <p className="text-foreground/80 leading-relaxed mt-4">
-              Nezhromažďujeme citlivé osobné údaje ako sú údaje o zdravotnom stave, náboženstve,
-              politických názoroch alebo údaje o trestných činoch.
+          </section>
+
+          {/* 6. Prenos do tretích krajín */}
+          <section className="space-y-4">
+            <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
+              6. Prenos do tretích krajín
+            </h2>
+            <p className="text-foreground/80 leading-relaxed">
+              V rámci používania služieb Google (Analytics, AdSense) a Microsoft Clarity môže dochádzať
+              k prenosu údajov do tretích krajín, najmä do USA. Prenos prebieha na základe štandardných
+              zmluvných doložiek EÚ alebo iného vhodného mechanizmu podľa GDPR.
             </p>
           </section>
 
+          {/* 7. Práva dotknutých osôb */}
           <section className="space-y-4">
             <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              4. Účel spracovania údajov
+              7. Práva dotknutých osôb
             </h2>
             <p className="text-foreground/80 leading-relaxed">
-              Vaše údaje spracovávame na nasledujúce účely:
+              Máte najmä tieto práva:
             </p>
             <ul className="list-disc pl-8 space-y-2 text-foreground/80">
               <li className="leading-relaxed">
-                Poskytovanie a zlepšovanie našich služieb vyhľadávania taxislužieb
+                <strong>právo na prístup</strong> k svojim osobným údajom
               </li>
               <li className="leading-relaxed">
-                Analýza návštevnosti a správania návštevníkov za účelom optimalizácie používateľskej skúsenosti
+                <strong>právo na opravu</strong> nepresných alebo neúplných údajov
               </li>
               <li className="leading-relaxed">
-                Zabezpečenie bezpečnosti a ochrany našej webovej stránky
+                <strong>právo na vymazanie</strong> („právo na zabudnutie") v prípadoch podľa GDPR
               </li>
               <li className="leading-relaxed">
-                Plnenie zákonných povinností
+                <strong>právo na obmedzenie spracúvania</strong>
+              </li>
+              <li className="leading-relaxed">
+                <strong>právo namietať</strong> proti spracúvaniu založenému na oprávnenom záujme
+              </li>
+              <li className="leading-relaxed">
+                <strong>právo na prenosnosť údajov</strong> (ak je spracúvanie založené na súhlase alebo zmluve a prebieha automatizovane)
+              </li>
+              <li className="leading-relaxed">
+                <strong>právo kedykoľvek odvolať súhlas</strong> so spracúvaním, ak je spracúvanie založené na súhlase; odvolanie sa nedotýka zákonnosti spracúvania pred jeho odvolaním
+              </li>
+              <li className="leading-relaxed">
+                <strong>právo podať sťažnosť</strong> na Úrad na ochranu osobných údajov SR
+                (Hraničná 12, 820 07 Bratislava 27,{" "}
+                <a href="http://www.dataprotection.gov.sk" target="_blank" rel="noopener noreferrer" className="underline">
+                  www.dataprotection.gov.sk
+                </a>
+                )
               </li>
             </ul>
           </section>
 
+          {/* 8. Uplatnenie práv */}
           <section className="space-y-4">
             <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              5. Právny základ spracovania
+              8. Uplatnenie práv
             </h2>
             <p className="text-foreground/80 leading-relaxed">
-              Vaše osobné údaje spracovávame na základe:
+              Svoje práva môžete uplatniť zaslaním emailu na:{" "}
+              <a href="mailto:info@taxinearme.sk" className="font-bold underline">
+                info@taxinearme.sk
+              </a>
             </p>
-            <ul className="list-disc pl-8 space-y-2 text-foreground/80">
-              <li className="leading-relaxed">
-                <strong>Oprávneného zájmu</strong> – prevádzkovanie a zlepšovanie našej webovej stránky
-              </li>
-              <li className="leading-relaxed">
-                <strong>Vášho súhlasu</strong> – pri používaní analytických cookies
-              </li>
-              <li className="leading-relaxed">
-                <strong>Zákonnej povinnosti</strong> – pri plnení právnych požiadaviek
-              </li>
-            </ul>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              6. Zdieľanie údajov s tretími stranami
-            </h2>
             <p className="text-foreground/80 leading-relaxed">
-              Vaše osobné údaje nezverejňujeme, nepredávame ani inak nesprístupňujeme tretím stranám
-              bez Vášho výslovného súhlasu, s výnimkou nasledujúcich prípadov:
-            </p>
-            <ul className="list-disc pl-8 space-y-2 text-foreground/80">
-              <li className="leading-relaxed">
-                <strong>Poskytovatelia služieb:</strong> Analytické nástroje (napr. Google Analytics)
-                pre sledovanie návštevnosti webu
-              </li>
-              <li className="leading-relaxed">
-                <strong>Právne požiadavky:</strong> Ak to vyžaduje zákon alebo oprávnený orgán
-              </li>
-            </ul>
-            <p className="text-foreground/80 leading-relaxed mt-4">
-              Všetci naši partneri sú zaviazaní dodržiavať prísne normy ochrany osobných údajov
-              v súlade s nariadením GDPR.
+              Žiadosti vybavujeme spravidla do 1 mesiaca od doručenia, vo výnimočných prípadoch
+              môže byť lehota predĺžená v súlade s GDPR.
             </p>
           </section>
 
+          {/* 9. Bezpečnosť osobných údajov */}
           <section className="space-y-4">
             <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              7. Doba uchovávania údajov
+              9. Bezpečnosť osobných údajov
             </h2>
             <p className="text-foreground/80 leading-relaxed">
-              Vaše osobné údaje uchováme len po dobu nevyhnutnú na splnenie účelov, na ktoré boli
-              zhromaždené:
-            </p>
-            <ul className="list-disc pl-8 space-y-2 text-foreground/80">
-              <li className="leading-relaxed">
-                Technické údaje a analytické informácie: maximálne 26 mesiacov
-              </li>
-              <li className="leading-relaxed">
-                Údaje potrebné na splnenie zákonných povinností: po dobu stanovenú príslušnými právnymi predpismi
-              </li>
-            </ul>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              8. Vaše práva
-            </h2>
-            <p className="text-foreground/80 leading-relaxed">
-              Podľa nariadenia GDPR máte nasledujúce práva:
-            </p>
-            <ul className="list-disc pl-8 space-y-2 text-foreground/80">
-              <li className="leading-relaxed">
-                <strong>Právo na prístup:</strong> Máte právo získať informácie o tom, aké Vaše osobné
-                údaje spracovávame
-              </li>
-              <li className="leading-relaxed">
-                <strong>Právo na opravu:</strong> Môžete požiadať o opravu nesprávnych alebo neúplných údajov
-              </li>
-              <li className="leading-relaxed">
-                <strong>Právo na vymazanie:</strong> Za určitých okolností môžete požiadať o vymazanie
-                Vašich osobných údajov
-              </li>
-              <li className="leading-relaxed">
-                <strong>Právo na obmedzenie spracovania:</strong> Môžete požiadať o obmedzenie spracovania
-                Vašich údajov
-              </li>
-              <li className="leading-relaxed">
-                <strong>Právo na prenosnosť:</strong> Máte právo získať Vaše údaje v štruktúrovanom,
-                bežne používanom formáte
-              </li>
-              <li className="leading-relaxed">
-                <strong>Právo namietať:</strong> Môžete namietať proti spracovaniu Vašich údajov
-              </li>
-              <li className="leading-relaxed">
-                <strong>Právo odvolať súhlas:</strong> Ak spracovanie prebíha na základe súhlasu,
-                môžete ho kedykoľvek odvolať
-              </li>
-            </ul>
-            <p className="text-foreground/80 leading-relaxed mt-4">
-              Pre uplatnenie Vašich práv nás prosím kontaktujte. Máte tiež právo podať sťažnosť
-              na Úrad na ochranu osobných údajov Slovenskej republiky.
+              Prevádzkovateľ prijíma primerané technické a organizačné opatrenia na ochranu osobných
+              údajov pred stratou, zneužitím alebo neoprávneným prístupom. Prístup k údajom majú len
+              osoby, ktoré ho nevyhnutne potrebujú a sú viazané mlčanlivosťou.
             </p>
           </section>
 
+          {/* 10. Zmeny zásad */}
           <section className="space-y-4">
             <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              9. Cookies
+              10. Zmeny zásad
             </h2>
             <p className="text-foreground/80 leading-relaxed">
-              Naša webová stránka používa súbory cookies, ktoré zlepšujú Vašu používateľskú skúsenosť.
-              Cookies sú malé textové súbory uložené vo Vašom zariadení. Používame:
-            </p>
-            <ul className="list-disc pl-8 space-y-2 text-foreground/80">
-              <li className="leading-relaxed">
-                <strong>Nevyhnutné cookies:</strong> Potrebné pre správne fungovanie webu
-              </li>
-              <li className="leading-relaxed">
-                <strong>Analytické cookies:</strong> Pomáhajú nám pochopiť, ako návštevníci využívajú našu stránku
-              </li>
-              <li className="leading-relaxed">
-                <strong>Funkčné cookies:</strong> Umožňujú pokročilé funkcie a personalizáciu
-              </li>
-            </ul>
-            <p className="text-foreground/80 leading-relaxed mt-4">
-              Používanie cookies môžete upraviť v nastaveniach Vášho prehliadača. Upozorňujeme však,
-              že deaktivácia cookies môže obmedziť funkčnosť našej webovej stránky.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              10. Bezpečnosť údajov
-            </h2>
-            <p className="text-foreground/80 leading-relaxed">
-              Dbáme na bezpečnosť Vašich osobných údajov a prijímame primerané technické a organizačné
-              opatrenia na ich ochranu pred neoprávneným prístupom, stratou, zneužitím alebo zmenou.
-              Naše bezpečnostné opatrenia zahŕňajú šifrovanie dát, bezpečné servery a pravidelné
-              bezpečnostné audity.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              11. Odkazy na iné webové stránky
-            </h2>
-            <p className="text-foreground/80 leading-relaxed">
-              Naša webová stránka môže obsahovať odkazy na webové stránky tretích strán (napr. webové
-              stránky jednotlivých taxislužieb). Nie sme zodpovední za postupy ochrany súkromia týchto
-              externých stránok. Odporúčame Vám prečítať si podmienky ochrany súkromia každej webovej
-              stránky, ktorú navštívite.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              12. Zmeny v zásadách ochrany súkromia
-            </h2>
-            <p className="text-foreground/80 leading-relaxed">
-              Vyhradzujeme si právo kedykoľvek aktualizovať tieto zásady ochrany súkromia. O významných
-              zmenách Vás budeme informovať prostredníctvom oznámenia na našej webovej stránke.
-              Odporúčame Vám pravidelne kontrolovať túto stránku, aby ste boli informovaní o tom,
-              ako chránime Vaše údaje.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-3xl font-bold text-foreground mt-12 mb-4">
-              13. Kontakt
-            </h2>
-            <p className="text-foreground/80 leading-relaxed">
-              Ak máte akékoľvek otázky ohľadom týchto zásad ochrany súkromia alebo spracovania Vašich
-              osobných údajov, neváhajte nás kontaktovať. Sme tu, aby sme Vám pomohli a odpovede na
-              Vaše otázky.
+              Tieto zásady môžu byť aktualizované, napríklad pri zmene právnych predpisov alebo našich
+              služieb. Aktuálna verzia je vždy zverejnená na tejto stránke.
             </p>
           </section>
 
@@ -295,6 +364,33 @@ const PrivacyPolicy = () => {
       {/* Footer */}
       <footer className="border-t-4 border-foreground py-12 px-8">
         <div className="container mx-auto max-w-6xl">
+          <div className="mb-6 text-center">
+            <p className="text-foreground/80 text-sm mb-4">
+              Prevádzkovateľ: Marián Fabian, IČO: 47 340 860, Gorkého 769/8, 962 31 Sliač
+              <br />
+              Email:{" "}
+              <a href="mailto:info@taxinearme.sk" className="underline">
+                info@taxinearme.sk
+              </a>
+            </p>
+            <nav className="flex flex-wrap justify-center gap-4 text-sm">
+              <Link to="/ochrana-sukromia" className="hover:underline">
+                Ochrana súkromia
+              </Link>
+              <span>|</span>
+              <Link to="/cookies" className="hover:underline">
+                Cookies
+              </Link>
+              <span>|</span>
+              <Link to="/podmienky-pouzivania" className="hover:underline">
+                Podmienky používania
+              </Link>
+              <span>|</span>
+              <Link to="/kontakt" className="hover:underline">
+                Kontakt
+              </Link>
+            </nav>
+          </div>
           <div className="text-center text-sm text-foreground/80">
             © 2024 Taxi NearMe. Všetky práva vyhradené.
           </div>
