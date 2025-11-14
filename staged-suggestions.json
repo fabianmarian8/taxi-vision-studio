@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:20:46.765Z",
+  "lastUpdated": "2025-11-14T20:20:50.349Z",
   "suggestions": [
     {
       "id": "horna-streda-1763151561942-txagaq2x3",
@@ -9,18 +9,6 @@
         "phone": "+421908505404",
         "website": "https://bluetaxi.sk",
         "address": "Modrovka 83, 915 01 Modrovka, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:19:21.942Z"
-    },
-    {
-      "id": "horna-streda-1763151561942-j6p8ljgc1",
-      "citySlug": "horna-streda",
-      "taxiService": {
-        "name": "TAXI DS",
-        "phone": "+421907266212",
-        "website": "http://www.taxids.sk",
-        "address": "Alžbetínske námestie, 929 01 Dunajská Streda, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:19:21.942Z"
