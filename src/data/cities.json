@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:06:48.998Z",
+  "lastUpdated": "2025-11-14T20:07:55.472Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -744,7 +744,12 @@
         "objednať taxi cinobaňa",
         "taxi cinobaňa telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "PAPI TAXI - LUČENEC",
+          "phone": "+421940551044"
+        }
+      ],
       "latitude": 48.4667,
       "longitude": 19.6333
     },
