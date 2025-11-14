@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:10:01.376Z",
+  "lastUpdated": "2025-11-14T20:17:38.049Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1154,7 +1154,63 @@
         "objednať taxi dvory nad žitavou",
         "taxi dvory nad žitavou telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Marek Šalgo Xxx",
+          "phone": "+42135/6404657"
+        },
+        {
+          "name": "alfataxi surany",
+          "website": "http://alfataxisurany.eu",
+          "phone": "+421949266288"
+        },
+        {
+          "name": "Taxi Patrik - Taxi Nové Zámky",
+          "phone": "+421950705712"
+        },
+        {
+          "name": "AB Taxi",
+          "phone": "+42135/6420142"
+        },
+        {
+          "name": "Trafico Preprava osôb",
+          "website": "http://www.trafico.sk",
+          "phone": "+421910394910"
+        },
+        {
+          "name": "eXpress Drive & Services s.r.o.",
+          "website": "http://edtaxinz.webnode.sk",
+          "phone": "+421949272212"
+        },
+        {
+          "name": "FLY TAXI Nové Zámky",
+          "phone": "+421903377378"
+        },
+        {
+          "name": "Gondola Express",
+          "website": "http://www.gondolanz.sk",
+          "phone": "+421910202020"
+        },
+        {
+          "name": "S.O.S. taxi",
+          "website": "http://sos-taxi.sk",
+          "phone": "+421907790095"
+        },
+        {
+          "name": "Elpo - Elemír Pócs",
+          "phone": "+42135/6402222"
+        },
+        {
+          "name": "Profi Taxi",
+          "website": "http://profitaxi.sk",
+          "phone": "+42135/6420494"
+        },
+        {
+          "name": "Dvory Taxi",
+          "website": "",
+          "phone": "+421 951 211 800"
+        }
+      ],
       "latitude": 48.0833,
       "longitude": 18.2667
     },
