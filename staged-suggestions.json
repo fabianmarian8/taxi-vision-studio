@@ -1,18 +1,6 @@
 {
-  "lastUpdated": "2025-11-14T20:20:27.914Z",
+  "lastUpdated": "2025-11-14T20:20:30.125Z",
   "suggestions": [
-    {
-      "id": "horna-streda-1763151561942-qapp3eo1r",
-      "citySlug": "horna-streda",
-      "taxiService": {
-        "name": "Boomerang Taxi",
-        "phone": "+421918808589",
-        "website": "http://www.boomerangtaxi.biz",
-        "address": "Trhovisko 10, 929 01 Dunajská Streda, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:19:21.942Z"
-    },
     {
       "id": "horna-streda-1763151561942-txagaq2x3",
       "citySlug": "horna-streda",
