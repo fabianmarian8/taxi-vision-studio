@@ -91,17 +91,19 @@ const applyConsent = (preferences: CookiePreferences): void => {
   // Google Analytics
   if (preferences.analytics) {
     enableGoogleAnalytics();
+    enableMicrosoftClarity();
   } else {
     disableGoogleAnalytics();
+    disableMicrosoftClarity();
   }
-  
+
   // Facebook Pixel
   if (preferences.marketing) {
     enableFacebookPixel();
   } else {
     disableFacebookPixel();
   }
-  
+
   // Ďalšie služby...
 };
 
@@ -147,6 +149,41 @@ const disableFacebookPixel = (): void => {
   if (typeof window !== 'undefined' && (window as any).fbq) {
     (window as any).fbq('consent', 'revoke');
     console.log('❌ Facebook Pixel disabled');
+  }
+};
+
+/**
+ * Microsoft Clarity aktivácia
+ */
+const enableMicrosoftClarity = (): void => {
+  if (typeof window === 'undefined') return;
+
+  // Načítaj Clarity len ak ešte nie je
+  if (!(window as any).clarity) {
+    (function(c: any, l: any, a: string, r: string, i: string, t: any, y: any) {
+      c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "u5uwq9jn6t");
+    console.log('✅ Microsoft Clarity enabled');
+  }
+};
+
+/**
+ * Microsoft Clarity deaktivácia
+ */
+const disableMicrosoftClarity = (): void => {
+  if (typeof window !== 'undefined' && (window as any).clarity) {
+    // Clarity nemá štandardnú disable metódu, takže zastavíme tracking
+    try {
+      (window as any).clarity('stop');
+      console.log('❌ Microsoft Clarity disabled');
+    } catch (e) {
+      console.log('⚠️ Microsoft Clarity could not be disabled properly');
+    }
   }
 };
 
