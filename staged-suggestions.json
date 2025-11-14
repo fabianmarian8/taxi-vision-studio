@@ -1,0 +1,53 @@
+{
+  "suggestions": [
+    {
+      "id": "betlanovce-1763149845847-f5oll2aw7",
+      "citySlug": "betlanovce",
+      "taxiService": {
+        "name": "Albert Duriančik - Albert Taxi",
+        "phone": "+42153/4411111",
+        "website": null,
+        "address": "2, Levočská 161, 053 01 Harichovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:50:45.847Z"
+    },
+    {
+      "id": "betlanovce-1763149845848-qb7v5aeo8",
+      "citySlug": "betlanovce",
+      "taxiService": {
+        "name": "ALPHA TAXI ČACHTICE",
+        "phone": "+421940883353",
+        "website": "http://alphataxist.sk",
+        "address": "Malinovského, 916 21 Čachtice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:50:45.847Z"
+    },
+    {
+      "id": "betlanovce-1763149845848-vn5wl57a7",
+      "citySlug": "betlanovce",
+      "taxiService": {
+        "name": "Taxi Podhájska",
+        "phone": "+421903958030",
+        "website": "http://www.podhajska.taxi",
+        "address": "Hlboká 728/1, 941 48 Podhájska, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:50:45.847Z"
+    },
+    {
+      "id": "betlanovce-1763149845848-y170mt3dn",
+      "citySlug": "betlanovce",
+      "taxiService": {
+        "name": "TAXI REVUCA",
+        "phone": "+421911456999",
+        "website": "https://www.facebook.com/profile.php",
+        "address": "Námestie slobody 5/5, 050 01 Revúca, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:50:45.847Z"
+    }
+  ],
+  "lastUpdated": "2025-11-14T19:50:45.847Z"
+}
