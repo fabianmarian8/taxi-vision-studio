@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:01:53.139Z",
+  "lastUpdated": "2025-11-14T20:01:55.414Z",
   "suggestions": [
     {
       "id": "blatnica-1763150470283-bl5esu55u",
@@ -9,18 +9,6 @@
         "phone": "+421903596490",
         "website": null,
         "address": "Horné Rakovce 1412/27, 039 01 Turčianske Teplice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:01:10.283Z"
-    },
-    {
-      "id": "blatnica-1763150470283-wrifrel6p",
-      "citySlug": "blatnica",
-      "taxiService": {
-        "name": "Taxi Turčianske Teplice - Ivan",
-        "phone": "+421918299653",
-        "website": null,
-        "address": "Somolického, 039 01 Turčianske Teplice, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:01:10.283Z"
