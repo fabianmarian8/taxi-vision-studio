@@ -1,17 +1,6 @@
 {
+  "lastUpdated": "2025-11-14T20:01:29.963Z",
   "suggestions": [
-    {
-      "id": "blatnica-1763150470283-82bi2uj2q",
-      "citySlug": "blatnica",
-      "taxiService": {
-        "name": "Bugo Taxi - Martin",
-        "phone": "+421907077077",
-        "website": "http://bugotaxi.sk",
-        "address": "1, M. R. Štefánika 997, Martin, 036 01 Martin, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:01:10.283Z"
-    },
     {
       "id": "blatnica-1763150470283-bl5esu55u",
       "citySlug": "blatnica",
@@ -72,6 +61,5 @@
       "status": "pending",
       "timestamp": "2025-11-14T20:01:10.283Z"
     }
-  ],
-  "lastUpdated": "2025-11-14T20:01:10.283Z"
+  ]
 }
