@@ -1,18 +1,6 @@
 {
-  "lastUpdated": "2025-11-14T20:20:25.809Z",
+  "lastUpdated": "2025-11-14T20:20:27.914Z",
   "suggestions": [
-    {
-      "id": "horna-streda-1763151561942-lnwujm06q",
-      "citySlug": "horna-streda",
-      "taxiService": {
-        "name": "City TAXI DS",
-        "phone": "+421948626626",
-        "website": "http://www.taxidunajskastreda.sk",
-        "address": "Železničná 5228, 929 01 Dunajská Streda, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:19:21.942Z"
-    },
     {
       "id": "horna-streda-1763151561942-qapp3eo1r",
       "citySlug": "horna-streda",
