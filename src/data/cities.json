@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:18:29.253Z",
+  "lastUpdated": "2025-11-14T20:19:03.750Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1414,7 +1414,17 @@
         "objednať taxi handlová",
         "taxi handlová telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "RG TAXI",
+          "website": "https://www.facebook.com/RGTAXIHandlova",
+          "phone": "+421944433553"
+        },
+        {
+          "name": "MK Taxi",
+          "phone": "+421948484485"
+        }
+      ],
       "latitude": 48.7272,
       "longitude": 18.7619
     },

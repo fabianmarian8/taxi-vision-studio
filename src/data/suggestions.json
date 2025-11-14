@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:18:31.053Z",
+  "lastUpdated": "2025-11-14T20:19:03.750Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,30 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "handlova-1763151530365-rq3cly2zq",
+      "citySlug": "handlova",
+      "taxiService": {
+        "name": "RG TAXI",
+        "phone": "+421944433553",
+        "website": "https://www.facebook.com/RGTAXIHandlova",
+        "address": "Márie Kršákovej 2, 972 51 Handlová, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:18:50.365Z"
+    },
+    {
+      "id": "handlova-1763151530365-14sovs46a",
+      "citySlug": "handlova",
+      "taxiService": {
+        "name": "MK Taxi",
+        "phone": "+421948484485",
+        "website": null,
+        "address": "1. mája 295/17, 972 51 Handlová, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:18:50.365Z"
     }
   ]
 }
