@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:01:29.963Z",
+  "lastUpdated": "2025-11-14T20:01:34.974Z",
   "suggestions": [
     {
       "id": "blatnica-1763150470283-bl5esu55u",
@@ -21,18 +21,6 @@
         "phone": "+421917044444",
         "website": "http://www.taxi-turciansketeplice.sk",
         "address": "Kollárova, 039 01 Turčianske Teplice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:01:10.283Z"
-    },
-    {
-      "id": "blatnica-1763150470283-sy3fykbux",
-      "citySlug": "blatnica",
-      "taxiService": {
-        "name": "M2 TAXI",
-        "phone": "+421948916917",
-        "website": "http://m2taxi.sk",
-        "address": "Dušana Makovického, Záturčie, 036 01 Martin, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:01:10.283Z"
