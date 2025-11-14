@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:04:40.294Z",
+  "lastUpdated": "2025-11-14T20:04:44.572Z",
   "suggestions": [
     {
       "id": "boleraz-1763150620563-xr1w4atkn",
@@ -21,18 +21,6 @@
         "phone": "+421904006666",
         "website": "http://www.ekotaxi.sk",
         "address": "Obycká 29, 951 93 Machulince, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:03:40.562Z"
-    },
-    {
-      "id": "boleraz-1763150620563-71fg56lx8",
-      "citySlug": "boleraz",
-      "taxiService": {
-        "name": "EKO TAXI",
-        "phone": "+421904003333",
-        "website": "http://www.ekotaxi.sk",
-        "address": "BILLA, 953 01 Zlaté Moravce, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:03:40.562Z"
