@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:07:55.472Z",
+  "lastUpdated": "2025-11-14T20:08:48.585Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -829,7 +829,18 @@
         "objednať taxi čierna nad tisou",
         "taxi čierna nad tisou telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Elitt Taxi",
+          "website": "http://elittaxi.sk",
+          "phone": "+421940640640"
+        },
+        {
+          "name": "Szabi Taxi - Taxislužba",
+          "website": "",
+          "phone": "+421919066191"
+        }
+      ],
       "latitude": 48.4167,
       "longitude": 22.1333
     },

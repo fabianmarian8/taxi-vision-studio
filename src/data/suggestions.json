@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:07:57.407Z",
+  "lastUpdated": "2025-11-14T20:08:48.585Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,30 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "cierna-nad-tisou-1763150894417-5e5ugi6nj",
+      "citySlug": "cierna-nad-tisou",
+      "taxiService": {
+        "name": "Elitt Taxi",
+        "phone": "+421940640640",
+        "website": "http://elittaxi.sk",
+        "address": "101, Ľ. Kossutha 1270, 077 01 Kráľovský Chlmec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:08:14.417Z"
+    },
+    {
+      "id": "cierna-nad-tisou-1763150894417-80ikmausw",
+      "citySlug": "cierna-nad-tisou",
+      "taxiService": {
+        "name": "Szabi Taxi - Taxislužba",
+        "phone": "+421919066191",
+        "website": "https://sites.google.com",
+        "address": "M. Helmecziho 19, 077 01 Kráľovský Chlmec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:08:14.417Z"
     }
   ]
 }
