@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:08:50.526Z",
+  "lastUpdated": "2025-11-14T20:10:01.376Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,186 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-loycl217s",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "City TAXI DS",
+        "phone": "+421948626626",
+        "website": "http://www.taxidunajskastreda.sk",
+        "address": "Železničná 5228, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-v8hs8gydp",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "Boomerang Taxi",
+        "phone": "+421918808589",
+        "website": "http://www.boomerangtaxi.biz",
+        "address": "Trhovisko 10, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-7lshhx442",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "Taxi Zsán Dunajská streda",
+        "phone": "+421949407909",
+        "website": null,
+        "address": "Kukučínova, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-d8zrks5wf",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "Taxi Donau - Taxislužba Dunajská Streda",
+        "phone": "+421949789566",
+        "website": null,
+        "address": "Kvetná 10, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-w7u22nvqo",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "AT-TAXI s.r.o.",
+        "phone": "+421917155411",
+        "website": null,
+        "address": "6698, Letištná 64, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-1b3izf2w5",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "TAXI DS",
+        "phone": "+421907266212",
+        "website": "http://www.taxids.sk",
+        "address": "Alžbetínske námestie, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-dwhq3fg4v",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "Tina Taxi DS",
+        "phone": "+421944003888",
+        "website": null,
+        "address": "Železničná 456, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-xfkcl93kp",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "Taxi King",
+        "phone": "+421910531113",
+        "website": null,
+        "address": "Boriny, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-pebtcgvcn",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "CITY TAXI Dun.Streda & Airport transfer",
+        "phone": "+421907106104",
+        "website": null,
+        "address": "Sládkovičova, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-6faj6eneb",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "JIT s. r. o. Taxi DS",
+        "phone": "+421910526525",
+        "website": null,
+        "address": "Boriny 1364/23, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-mlzkh37zx",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "Monika Taxi - František Hrušovský",
+        "phone": "+421904419551",
+        "website": null,
+        "address": "Ul. Biskupa Kondého 5138/30, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-q0k71fem7",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "Best taxi",
+        "phone": "+421940941007",
+        "website": null,
+        "address": "Alžbetínske námestie, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-h2rrpdgr0",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "Scarabeus Group s.r.o.",
+        "phone": "+421904212521",
+        "website": "http://www.taxids.sk",
+        "address": "Alžbetínske námestie 1203, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-emjhe4xpc",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "M-TAXI",
+        "phone": "+421944273564",
+        "website": null,
+        "address": "Letištná, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
+    },
+    {
+      "id": "dunajska-streda-1763150957206-kozpvlwhz",
+      "citySlug": "dunajska-streda",
+      "taxiService": {
+        "name": "F TAXI",
+        "phone": "+421905680970",
+        "website": null,
+        "address": "Komenského 486/22, 929 01 Dunajská Streda, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:09:17.206Z"
     }
   ]
 }

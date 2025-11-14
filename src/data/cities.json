@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:08:48.585Z",
+  "lastUpdated": "2025-11-14T20:10:01.376Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1072,7 +1072,72 @@
         "objednať taxi dunajská streda",
         "taxi dunajská streda telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "City TAXI DS",
+          "website": "http://www.taxidunajskastreda.sk",
+          "phone": "+421948626626"
+        },
+        {
+          "name": "Boomerang Taxi",
+          "website": "http://www.boomerangtaxi.biz",
+          "phone": "+421918808589"
+        },
+        {
+          "name": "Taxi Zsán Dunajská streda",
+          "phone": "+421949407909"
+        },
+        {
+          "name": "Taxi Donau - Taxislužba Dunajská Streda",
+          "phone": "+421949789566"
+        },
+        {
+          "name": "AT-TAXI s.r.o.",
+          "phone": "+421917155411"
+        },
+        {
+          "name": "TAXI DS",
+          "website": "http://www.taxids.sk",
+          "phone": "+421907266212"
+        },
+        {
+          "name": "Tina Taxi DS",
+          "phone": "+421944003888"
+        },
+        {
+          "name": "Taxi King",
+          "phone": "+421910531113"
+        },
+        {
+          "name": "CITY TAXI Dun.Streda & Airport transfer",
+          "phone": "+421907106104"
+        },
+        {
+          "name": "JIT s. r. o. Taxi DS",
+          "phone": "+421910526525"
+        },
+        {
+          "name": "Monika Taxi - František Hrušovský",
+          "phone": "+421904419551"
+        },
+        {
+          "name": "Best taxi",
+          "phone": "+421940941007"
+        },
+        {
+          "name": "Scarabeus Group s.r.o.",
+          "website": "http://www.taxids.sk",
+          "phone": "+421904212521"
+        },
+        {
+          "name": "M-TAXI",
+          "phone": "+421944273564"
+        },
+        {
+          "name": "F TAXI",
+          "phone": "+421905680970"
+        }
+      ],
       "latitude": 47.9936,
       "longitude": 17.6197
     },
