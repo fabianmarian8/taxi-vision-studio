@@ -1,0 +1,41 @@
+{
+  "suggestions": [
+    {
+      "id": "tornala-1763148524677-7oolamcyt",
+      "citySlug": "tornala",
+      "taxiService": {
+        "name": "FAMILY TAXI Tornaľa",
+        "phone": "+421902750931",
+        "website": "https://www.facebook.com/Family-taxi-Torna%C4%BEa-108102755085358",
+        "address": "1. mája 8, 982 01 Tornaľa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:28:44.676Z"
+    },
+    {
+      "id": "tornala-1763148524677-xboumt895",
+      "citySlug": "tornala",
+      "taxiService": {
+        "name": "Taxi7 Tornaľa",
+        "phone": "+421949584344",
+        "website": "http://taxi7.sk",
+        "address": "Družby 982 01, Starňa, 982 01 Tornaľa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:28:44.676Z"
+    },
+    {
+      "id": "tornala-1763148524677-oo7g0b6ye",
+      "citySlug": "tornala",
+      "taxiService": {
+        "name": "Ján Puškáš",
+        "phone": "+421940541288",
+        "website": "https://www.jptaxitornala.sk",
+        "address": "3, Kostolné námestie 1159, 982 01 Tornaľa, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:28:44.676Z"
+    }
+  ],
+  "lastUpdated": "2025-11-14T19:28:44.676Z"
+}
