@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:00:53.672Z",
+  "lastUpdated": "2025-11-14T20:03:29.244Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -460,7 +460,17 @@
         "objednať taxi blatnica",
         "taxi blatnica telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Tempo Taxi",
+          "phone": "+421 56 632 1211"
+        },
+        {
+          "name": "Elite Taxi",
+          "website": "",
+          "phone": "+421 948 96 96 95"
+        }
+      ],
       "latitude": 49.0667,
       "longitude": 19.1
     },

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:00:55.081Z",
+  "lastUpdated": "2025-11-14T20:03:29.243Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,18 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "blatnica-1763150470283-bl5esu55u",
+      "citySlug": "blatnica",
+      "taxiService": {
+        "name": "Taxi Tempus",
+        "phone": "+421903596490",
+        "website": null,
+        "address": "Horné Rakovce 1412/27, 039 01 Turčianske Teplice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:01:10.283Z"
     }
   ]
 }
