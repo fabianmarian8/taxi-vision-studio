@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:23:47.234Z",
+  "lastUpdated": "2025-11-14T20:23:51.558Z",
   "suggestions": [
     {
       "id": "horne-oresany-1763151711195-wpt8eb3cz",
@@ -45,18 +45,6 @@
         "phone": "+421944786989",
         "website": null,
         "address": "Martina Rázusa 6, 955 01 Topoľčany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:21:51.194Z"
-    },
-    {
-      "id": "horne-oresany-1763151711195-m5ssranf8",
-      "citySlug": "horne-oresany",
-      "taxiService": {
-        "name": "ETAXI Piešťany",
-        "phone": "+421944123456",
-        "website": "http://etaxipiestany.sk",
-        "address": "Mojmírova 4439/35, 921 01 Piešťany, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:21:51.194Z"
