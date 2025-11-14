@@ -1,18 +1,6 @@
 {
-  "lastUpdated": "2025-11-14T20:06:19.048Z",
+  "lastUpdated": "2025-11-14T20:06:23.299Z",
   "suggestions": [
-    {
-      "id": "boleraz-1763150620563-kvikend2g",
-      "citySlug": "boleraz",
-      "taxiService": {
-        "name": "Eko Taxi Vráble",
-        "phone": "+421904006666",
-        "website": "http://www.ekotaxi.sk",
-        "address": "Obycká 29, 951 93 Machulince, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:03:40.562Z"
-    },
     {
       "id": "boleraz-1763150620563-acwo7sppx",
       "citySlug": "boleraz",
