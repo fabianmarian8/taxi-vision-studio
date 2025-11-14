@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:06:32.499Z",
+  "lastUpdated": "2025-11-14T20:06:37.468Z",
   "suggestions": [
     {
       "id": "boleraz-1763150779048-jgblfwm8y",
@@ -21,18 +21,6 @@
         "phone": "+421940747474",
         "website": "http://www.teamtaxi.sk",
         "address": "17, Andreja Kubinu 6937, 917 01 Trnava, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:06:19.048Z"
-    },
-    {
-      "id": "boleraz-1763150779048-ajxoqvym5",
-      "citySlug": "boleraz",
-      "taxiService": {
-        "name": "TAXI Limbach",
-        "phone": "+421904426242",
-        "website": null,
-        "address": "SNP 17/13, 900 91 Limbach, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:06:19.048Z"
