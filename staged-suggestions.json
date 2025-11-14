@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:16:08.661Z",
+  "lastUpdated": "2025-11-14T20:16:14.874Z",
   "suggestions": [
     {
       "id": "dvory-nad-zitavou-1763151020962-f47z38orv",
@@ -117,18 +117,6 @@
         "phone": "+42135/6402222",
         "website": null,
         "address": "1, Piesočná 3114, Pri Bani, 940 67 Nové Zámky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:10:20.961Z"
-    },
-    {
-      "id": "dvory-nad-zitavou-1763151020962-mrph2qyz8",
-      "citySlug": "dvory-nad-zitavou",
-      "taxiService": {
-        "name": "Jozef Nichta - CAR TAXI s. r. o.",
-        "phone": "+421905501111",
-        "website": "http://www.taxilevice.sk",
-        "address": "Saratovská 37, 934 05 Levice, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:10:20.961Z"
