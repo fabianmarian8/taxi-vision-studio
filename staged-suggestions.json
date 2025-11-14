@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:01:34.974Z",
+  "lastUpdated": "2025-11-14T20:01:49.376Z",
   "suggestions": [
     {
       "id": "blatnica-1763150470283-bl5esu55u",
@@ -9,18 +9,6 @@
         "phone": "+421903596490",
         "website": null,
         "address": "Horné Rakovce 1412/27, 039 01 Turčianske Teplice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:01:10.283Z"
-    },
-    {
-      "id": "blatnica-1763150470283-vl1tyvf0z",
-      "citySlug": "blatnica",
-      "taxiService": {
-        "name": "Nonstop Taxi Turčianske Teplice - Berco TAXI parking",
-        "phone": "+421917044444",
-        "website": "http://www.taxi-turciansketeplice.sk",
-        "address": "Kollárova, 039 01 Turčianske Teplice, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:01:10.283Z"
