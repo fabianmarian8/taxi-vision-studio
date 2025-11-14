@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T19:47:42.361Z",
+  "lastUpdated": "2025-11-14T19:48:54.483Z",
   "suggestions": [
     {
       "id": "batovce-1763149591663-8g0irky6u",
@@ -81,18 +81,6 @@
         "phone": "+421907561990",
         "website": "https://www.letiskovetransferylevice.sk",
         "address": "Milana Rastislava Štefánika, 934 01 Levice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:46:31.663Z"
-    },
-    {
-      "id": "batovce-1763149591664-hkewr18qa",
-      "citySlug": "batovce",
-      "taxiService": {
-        "name": "Euro Taxi BN",
-        "phone": "+421902830000",
-        "website": "http://www.eurotaxi-bn.sk",
-        "address": "Hviezdoslavova 1602, 957 01 Bánovce nad Bebravou, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T19:46:31.663Z"
