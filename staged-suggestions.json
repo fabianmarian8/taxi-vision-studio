@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:23:43.521Z",
+  "lastUpdated": "2025-11-14T20:23:47.234Z",
   "suggestions": [
     {
       "id": "horne-oresany-1763151711195-wpt8eb3cz",
@@ -21,18 +21,6 @@
         "phone": "+421907181718",
         "website": "http://www.taxisluzbapezinok.sk",
         "address": "Radničné námestie 1, 902 01 Pezinok, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:21:51.194Z"
-    },
-    {
-      "id": "horne-oresany-1763151711195-in1ucw1ut",
-      "citySlug": "horne-oresany",
-      "taxiService": {
-        "name": "Taxi Piešťany",
-        "phone": "+421944274744",
-        "website": "http://www.taxi-pn.sk",
-        "address": "Dopravná 2341/1, 921 01 Piešťany, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:21:51.194Z"
