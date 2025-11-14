@@ -7,7 +7,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
   'banovce-nad-bebravou': [
     {
       question: 'Ako si objednám taxi v meste Bánovce nad Bebravou?',
-      answer: 'V meste Bánovce nad Bebravou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Bánovce nad Bebravou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Bánovce nad Bebravou?',
@@ -27,13 +27,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Bánovce nad Bebravou?',
-      answer: 'Áno, všetky taxislužby v meste Bánovce nad Bebravou ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Bánovce nad Bebravou ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'banska-bystrica': [
     {
       question: 'Ako si objednám taxi v meste Banská Bystrica?',
-      answer: 'V meste Banská Bystrica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 9 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Banská Bystrica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Banská Bystrica?',
@@ -41,7 +41,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Banská Bystrica dostupné nonstop?',
-      answer: 'Väčšina z 9 taxislužieb v meste Banská Bystrica poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Banská Bystrica poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Banská Bystrica?',
@@ -53,13 +53,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Banská Bystrica?',
-      answer: 'Áno, všetky taxislužby v meste Banská Bystrica ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Banská Bystrica ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'banska-stiavnica': [
     {
       question: 'Ako si objednám taxi v meste Banská Štiavnica?',
-      answer: 'V meste Banská Štiavnica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 8 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Banská Štiavnica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Banská Štiavnica?',
@@ -67,7 +67,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Banská Štiavnica dostupné nonstop?',
-      answer: 'Väčšina z 8 taxislužieb v meste Banská Štiavnica poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Banská Štiavnica poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Banská Štiavnica?',
@@ -79,13 +79,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Banská Štiavnica?',
-      answer: 'Áno, všetky taxislužby v meste Banská Štiavnica ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Banská Štiavnica ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'bansky-studenec': [
     {
       question: 'Ako si objednám taxi v meste Banský Studenec?',
-      answer: 'V meste Banský Studenec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Banský Studenec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Banský Studenec?',
@@ -105,13 +105,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Banský Studenec?',
-      answer: 'Áno, všetky taxislužby v meste Banský Studenec ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Banský Studenec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'bardejov': [
     {
       question: 'Ako si objednám taxi v meste Bardejov?',
-      answer: 'V meste Bardejov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 11 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Bardejov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Bardejov?',
@@ -119,11 +119,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Bardejov dostupné nonstop?',
-      answer: 'Áno, väčšina z 11 taxislužieb v meste Bardejov poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Bardejov poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Bardejov?',
-      answer: 'Väčšina moderných taxislužieb v meste Bardejov akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Bardejov akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Bardejov?',
@@ -131,13 +131,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Bardejov?',
-      answer: 'Áno, všetky taxislužby v meste Bardejov ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Bardejov ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'batovce': [
     {
       question: 'Ako si objednám taxi v meste Bátovce?',
-      answer: 'V meste Bátovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Bátovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Bátovce?',
@@ -157,13 +157,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Bátovce?',
-      answer: 'Áno, všetky taxislužby v meste Bátovce ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Bátovce ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'bernolakovo': [
     {
       question: 'Ako si objednám taxi v meste Bernolákovo?',
-      answer: 'V meste Bernolákovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Bernolákovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Bernolákovo?',
@@ -183,13 +183,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Bernolákovo?',
-      answer: 'Áno, všetky taxislužby v meste Bernolákovo ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Bernolákovo ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'betlanovce': [
     {
       question: 'Ako si objednám taxi v meste Betlanovce?',
-      answer: 'V meste Betlanovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Betlanovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Betlanovce?',
@@ -209,13 +209,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Betlanovce?',
-      answer: 'Áno, všetky taxislužby v meste Betlanovce ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Betlanovce ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'biel': [
     {
       question: 'Ako si objednám taxi v meste Biel?',
-      answer: 'V meste Biel si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Biel si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Biel?',
@@ -235,13 +235,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Biel?',
-      answer: 'Áno, všetky taxislužby v meste Biel ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Biel ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'bielovce': [
     {
       question: 'Ako si objednám taxi v meste Bielovce?',
-      answer: 'V meste Bielovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Bielovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Bielovce?',
@@ -261,13 +261,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Bielovce?',
-      answer: 'Áno, všetky taxislužby v meste Bielovce ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Bielovce ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'blatnica': [
     {
       question: 'Ako si objednám taxi v meste Blatnica?',
-      answer: 'V meste Blatnica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Blatnica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Blatnica?',
@@ -287,13 +287,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Blatnica?',
-      answer: 'Áno, všetky taxislužby v meste Blatnica ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Blatnica ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'bojnice': [
     {
       question: 'Ako si objednám taxi v meste Bojnice?',
-      answer: 'V meste Bojnice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Bojnice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Bojnice?',
@@ -313,13 +313,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Bojnice?',
-      answer: 'Áno, všetky taxislužby v meste Bojnice ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Bojnice ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'boleraz': [
     {
       question: 'Ako si objednám taxi v meste Boleráz?',
-      answer: 'V meste Boleráz si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Boleráz si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Boleráz?',
@@ -339,13 +339,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Boleráz?',
-      answer: 'Áno, všetky taxislužby v meste Boleráz ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Boleráz ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'bratislava': [
     {
       question: 'Ako si objednám taxi v meste Bratislava?',
-      answer: 'V meste Bratislava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 14 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Bratislava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Bratislava?',
@@ -353,11 +353,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Bratislava dostupné nonstop?',
-      answer: 'Áno, väčšina z 14 taxislužieb v meste Bratislava poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Bratislava poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Bratislava?',
-      answer: 'Väčšina moderných taxislužieb v meste Bratislava akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Bratislava akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Bratislava?',
@@ -365,13 +365,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Bratislava?',
-      answer: 'Áno, všetky taxislužby v meste Bratislava ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Bratislava ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'brezno': [
     {
       question: 'Ako si objednám taxi v meste Brezno?',
-      answer: 'V meste Brezno si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Brezno si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Brezno?',
@@ -391,13 +391,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Brezno?',
-      answer: 'Áno, všetky taxislužby v meste Brezno ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Brezno ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'brezova-pod-bradlom': [
     {
       question: 'Ako si objednám taxi v meste Brezová pod Bradlom?',
-      answer: 'V meste Brezová pod Bradlom si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Brezová pod Bradlom si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Brezová pod Bradlom?',
@@ -417,13 +417,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Brezová pod Bradlom?',
-      answer: 'Áno, všetky taxislužby v meste Brezová pod Bradlom ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Brezová pod Bradlom ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'bytca': [
     {
       question: 'Ako si objednám taxi v meste Bytča?',
-      answer: 'V meste Bytča si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Bytča si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Bytča?',
@@ -443,13 +443,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Bytča?',
-      answer: 'Áno, všetky taxislužby v meste Bytča ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Bytča ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'cinobana': [
     {
       question: 'Ako si objednám taxi v meste Cinobaňa?',
-      answer: 'V meste Cinobaňa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Cinobaňa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Cinobaňa?',
@@ -469,13 +469,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Cinobaňa?',
-      answer: 'Áno, všetky taxislužby v meste Cinobaňa ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Cinobaňa ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'cadca': [
     {
       question: 'Ako si objednám taxi v meste Čadca?',
-      answer: 'V meste Čadca si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 9 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Čadca si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Čadca?',
@@ -483,7 +483,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Čadca dostupné nonstop?',
-      answer: 'Väčšina z 9 taxislužieb v meste Čadca poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Čadca poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Čadca?',
@@ -495,13 +495,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Čadca?',
-      answer: 'Áno, všetky taxislužby v meste Čadca ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Čadca ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'cierna-nad-tisou': [
     {
       question: 'Ako si objednám taxi v meste Čierna nad Tisou?',
-      answer: 'V meste Čierna nad Tisou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Čierna nad Tisou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Čierna nad Tisou?',
@@ -521,13 +521,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Čierna nad Tisou?',
-      answer: 'Áno, všetky taxislužby v meste Čierna nad Tisou ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Čierna nad Tisou ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'detva': [
     {
       question: 'Ako si objednám taxi v meste Detva?',
-      answer: 'V meste Detva si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Detva si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Detva?',
@@ -547,13 +547,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Detva?',
-      answer: 'Áno, všetky taxislužby v meste Detva ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Detva ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'dobsina': [
     {
       question: 'Ako si objednám taxi v meste Dobšiná?',
-      answer: 'V meste Dobšiná si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Dobšiná si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Dobšiná?',
@@ -573,13 +573,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Dobšiná?',
-      answer: 'Áno, všetky taxislužby v meste Dobšiná ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Dobšiná ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'dolny-kubin': [
     {
       question: 'Ako si objednám taxi v meste Dolný Kubín?',
-      answer: 'V meste Dolný Kubín si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 12 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Dolný Kubín si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Dolný Kubín?',
@@ -587,11 +587,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Dolný Kubín dostupné nonstop?',
-      answer: 'Áno, väčšina z 12 taxislužieb v meste Dolný Kubín poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Dolný Kubín poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Dolný Kubín?',
-      answer: 'Väčšina moderných taxislužieb v meste Dolný Kubín akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Dolný Kubín akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Dolný Kubín?',
@@ -599,13 +599,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Dolný Kubín?',
-      answer: 'Áno, všetky taxislužby v meste Dolný Kubín ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Dolný Kubín ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'dubnica-nad-vahom': [
     {
       question: 'Ako si objednám taxi v meste Dubnica nad Váhom?',
-      answer: 'V meste Dubnica nad Váhom si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Dubnica nad Váhom si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Dubnica nad Váhom?',
@@ -625,13 +625,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Dubnica nad Váhom?',
-      answer: 'Áno, všetky taxislužby v meste Dubnica nad Váhom ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Dubnica nad Váhom ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'dudince': [
     {
       question: 'Ako si objednám taxi v meste Dudince?',
-      answer: 'V meste Dudince si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Dudince si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Dudince?',
@@ -651,13 +651,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Dudince?',
-      answer: 'Áno, všetky taxislužby v meste Dudince ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Dudince ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'dunajska-streda': [
     {
       question: 'Ako si objednám taxi v meste Dunajská Streda?',
-      answer: 'V meste Dunajská Streda si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Dunajská Streda si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Dunajská Streda?',
@@ -677,13 +677,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Dunajská Streda?',
-      answer: 'Áno, všetky taxislužby v meste Dunajská Streda ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Dunajská Streda ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'dvory-nad-zitavou': [
     {
       question: 'Ako si objednám taxi v meste Dvory nad Žitavou?',
-      answer: 'V meste Dvory nad Žitavou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Dvory nad Žitavou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Dvory nad Žitavou?',
@@ -703,13 +703,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Dvory nad Žitavou?',
-      answer: 'Áno, všetky taxislužby v meste Dvory nad Žitavou ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Dvory nad Žitavou ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'filakovo': [
     {
       question: 'Ako si objednám taxi v meste Fiľakovo?',
-      answer: 'V meste Fiľakovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Fiľakovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Fiľakovo?',
@@ -729,13 +729,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Fiľakovo?',
-      answer: 'Áno, všetky taxislužby v meste Fiľakovo ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Fiľakovo ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'gabcikovo': [
     {
       question: 'Ako si objednám taxi v meste Gabčíkovo?',
-      answer: 'V meste Gabčíkovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Gabčíkovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Gabčíkovo?',
@@ -755,13 +755,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Gabčíkovo?',
-      answer: 'Áno, všetky taxislužby v meste Gabčíkovo ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Gabčíkovo ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'galanta': [
     {
       question: 'Ako si objednám taxi v meste Galanta?',
-      answer: 'V meste Galanta si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 11 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Galanta si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Galanta?',
@@ -769,11 +769,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Galanta dostupné nonstop?',
-      answer: 'Áno, väčšina z 11 taxislužieb v meste Galanta poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Galanta poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Galanta?',
-      answer: 'Väčšina moderných taxislužieb v meste Galanta akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Galanta akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Galanta?',
@@ -781,13 +781,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Galanta?',
-      answer: 'Áno, všetky taxislužby v meste Galanta ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Galanta ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'gelnica': [
     {
       question: 'Ako si objednám taxi v meste Gelnica?',
-      answer: 'V meste Gelnica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Gelnica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Gelnica?',
@@ -807,13 +807,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Gelnica?',
-      answer: 'Áno, všetky taxislužby v meste Gelnica ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Gelnica ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'giraltovce': [
     {
       question: 'Ako si objednám taxi v meste Giraltovce?',
-      answer: 'V meste Giraltovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Giraltovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Giraltovce?',
@@ -833,13 +833,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Giraltovce?',
-      answer: 'Áno, všetky taxislužby v meste Giraltovce ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Giraltovce ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'handlova': [
     {
       question: 'Ako si objednám taxi v meste Handlová?',
-      answer: 'V meste Handlová si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Handlová si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Handlová?',
@@ -859,13 +859,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Handlová?',
-      answer: 'Áno, všetky taxislužby v meste Handlová ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Handlová ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'hanusovce-nad-toplou': [
     {
       question: 'Ako si objednám taxi v meste Hanušovce nad Topľou?',
-      answer: 'V meste Hanušovce nad Topľou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Hanušovce nad Topľou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Hanušovce nad Topľou?',
@@ -885,13 +885,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Hanušovce nad Topľou?',
-      answer: 'Áno, všetky taxislužby v meste Hanušovce nad Topľou ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Hanušovce nad Topľou ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'hlohovec': [
     {
       question: 'Ako si objednám taxi v meste Hlohovec?',
-      answer: 'V meste Hlohovec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 9 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Hlohovec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Hlohovec?',
@@ -899,7 +899,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Hlohovec dostupné nonstop?',
-      answer: 'Väčšina z 9 taxislužieb v meste Hlohovec poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Hlohovec poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Hlohovec?',
@@ -911,13 +911,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Hlohovec?',
-      answer: 'Áno, všetky taxislužby v meste Hlohovec ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Hlohovec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'hnusta': [
     {
       question: 'Ako si objednám taxi v meste Hnúšťa?',
-      answer: 'V meste Hnúšťa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Hnúšťa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Hnúšťa?',
@@ -937,13 +937,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Hnúšťa?',
-      answer: 'Áno, všetky taxislužby v meste Hnúšťa ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Hnúšťa ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'holic': [
     {
       question: 'Ako si objednám taxi v meste Holíč?',
-      answer: 'V meste Holíč si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Holíč si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Holíč?',
@@ -963,13 +963,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Holíč?',
-      answer: 'Áno, všetky taxislužby v meste Holíč ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Holíč ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'horna-streda': [
     {
       question: 'Ako si objednám taxi v meste Horná Streda?',
-      answer: 'V meste Horná Streda si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Horná Streda si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Horná Streda?',
@@ -989,13 +989,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Horná Streda?',
-      answer: 'Áno, všetky taxislužby v meste Horná Streda ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Horná Streda ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'horne-oresany': [
     {
       question: 'Ako si objednám taxi v meste Horné Orešany?',
-      answer: 'V meste Horné Orešany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Horné Orešany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Horné Orešany?',
@@ -1015,13 +1015,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Horné Orešany?',
-      answer: 'Áno, všetky taxislužby v meste Horné Orešany ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Horné Orešany ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'hostovce': [
     {
       question: 'Ako si objednám taxi v meste Hostovce?',
-      answer: 'V meste Hostovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Hostovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Hostovce?',
@@ -1041,13 +1041,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Hostovce?',
-      answer: 'Áno, všetky taxislužby v meste Hostovce ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Hostovce ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'hrinova': [
     {
       question: 'Ako si objednám taxi v meste Hriňová?',
-      answer: 'V meste Hriňová si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Hriňová si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Hriňová?',
@@ -1067,13 +1067,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Hriňová?',
-      answer: 'Áno, všetky taxislužby v meste Hriňová ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Hriňová ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'humenne': [
     {
       question: 'Ako si objednám taxi v meste Humenné?',
-      answer: 'V meste Humenné si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 11 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Humenné si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Humenné?',
@@ -1081,11 +1081,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Humenné dostupné nonstop?',
-      answer: 'Áno, väčšina z 11 taxislužieb v meste Humenné poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Humenné poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Humenné?',
-      answer: 'Väčšina moderných taxislužieb v meste Humenné akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Humenné akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Humenné?',
@@ -1093,13 +1093,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Humenné?',
-      answer: 'Áno, všetky taxislužby v meste Humenné ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Humenné ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'hurbanovo': [
     {
       question: 'Ako si objednám taxi v meste Hurbanovo?',
-      answer: 'V meste Hurbanovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Hurbanovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Hurbanovo?',
@@ -1119,13 +1119,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Hurbanovo?',
-      answer: 'Áno, všetky taxislužby v meste Hurbanovo ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Hurbanovo ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'chlmec': [
     {
       question: 'Ako si objednám taxi v meste Chlmec?',
-      answer: 'V meste Chlmec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Chlmec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Chlmec?',
@@ -1145,13 +1145,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Chlmec?',
-      answer: 'Áno, všetky taxislužby v meste Chlmec ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Chlmec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'chynorany': [
     {
       question: 'Ako si objednám taxi v meste Chynorany?',
-      answer: 'V meste Chynorany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Chynorany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Chynorany?',
@@ -1171,13 +1171,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Chynorany?',
-      answer: 'Áno, všetky taxislužby v meste Chynorany ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Chynorany ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'ilava': [
     {
       question: 'Ako si objednám taxi v meste Ilava?',
-      answer: 'V meste Ilava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Ilava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Ilava?',
@@ -1197,13 +1197,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Ilava?',
-      answer: 'Áno, všetky taxislužby v meste Ilava ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Ilava ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'ivanka-pri-dunaji': [
     {
       question: 'Ako si objednám taxi v meste Ivanka pri Dunaji?',
-      answer: 'V meste Ivanka pri Dunaji si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Ivanka pri Dunaji si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Ivanka pri Dunaji?',
@@ -1223,13 +1223,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Ivanka pri Dunaji?',
-      answer: 'Áno, všetky taxislužby v meste Ivanka pri Dunaji ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Ivanka pri Dunaji ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'jelsava': [
     {
       question: 'Ako si objednám taxi v meste Jelšava?',
-      answer: 'V meste Jelšava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Jelšava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Jelšava?',
@@ -1249,13 +1249,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Jelšava?',
-      answer: 'Áno, všetky taxislužby v meste Jelšava ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Jelšava ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'kezmarok': [
     {
       question: 'Ako si objednám taxi v meste Kežmarok?',
-      answer: 'V meste Kežmarok si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 6 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Kežmarok si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Kežmarok?',
@@ -1263,7 +1263,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Kežmarok dostupné nonstop?',
-      answer: 'Väčšina z 6 taxislužieb v meste Kežmarok poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Kežmarok poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Kežmarok?',
@@ -1275,13 +1275,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Kežmarok?',
-      answer: 'Áno, všetky taxislužby v meste Kežmarok ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Kežmarok ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'kolarovo': [
     {
       question: 'Ako si objednám taxi v meste Kolárovo?',
-      answer: 'V meste Kolárovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Kolárovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Kolárovo?',
@@ -1301,13 +1301,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Kolárovo?',
-      answer: 'Áno, všetky taxislužby v meste Kolárovo ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Kolárovo ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'komarno': [
     {
       question: 'Ako si objednám taxi v meste Komárno?',
-      answer: 'V meste Komárno si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 7 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Komárno si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Komárno?',
@@ -1315,7 +1315,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Komárno dostupné nonstop?',
-      answer: 'Väčšina z 7 taxislužieb v meste Komárno poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Komárno poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Komárno?',
@@ -1327,13 +1327,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Komárno?',
-      answer: 'Áno, všetky taxislužby v meste Komárno ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Komárno ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'kosice': [
     {
       question: 'Ako si objednám taxi v meste Košice?',
-      answer: 'V meste Košice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 15 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Košice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Košice?',
@@ -1341,11 +1341,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Košice dostupné nonstop?',
-      answer: 'Áno, väčšina z 15 taxislužieb v meste Košice poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Košice poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Košice?',
-      answer: 'Väčšina moderných taxislužieb v meste Košice akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Košice akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Košice?',
@@ -1353,13 +1353,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Košice?',
-      answer: 'Áno, všetky taxislužby v meste Košice ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Košice ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'kralovsky-chlmec': [
     {
       question: 'Ako si objednám taxi v meste Kráľovský Chlmec?',
-      answer: 'V meste Kráľovský Chlmec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 6 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Kráľovský Chlmec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Kráľovský Chlmec?',
@@ -1367,7 +1367,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Kráľovský Chlmec dostupné nonstop?',
-      answer: 'Väčšina z 6 taxislužieb v meste Kráľovský Chlmec poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Kráľovský Chlmec poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Kráľovský Chlmec?',
@@ -1379,13 +1379,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Kráľovský Chlmec?',
-      answer: 'Áno, všetky taxislužby v meste Kráľovský Chlmec ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Kráľovský Chlmec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'kremnica': [
     {
       question: 'Ako si objednám taxi v meste Kremnica?',
-      answer: 'V meste Kremnica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Kremnica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Kremnica?',
@@ -1405,13 +1405,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Kremnica?',
-      answer: 'Áno, všetky taxislužby v meste Kremnica ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Kremnica ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'krompachy': [
     {
       question: 'Ako si objednám taxi v meste Krompachy?',
-      answer: 'V meste Krompachy si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Krompachy si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Krompachy?',
@@ -1431,13 +1431,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Krompachy?',
-      answer: 'Áno, všetky taxislužby v meste Krompachy ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Krompachy ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'krupina': [
     {
       question: 'Ako si objednám taxi v meste Krupina?',
-      answer: 'V meste Krupina si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Krupina si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Krupina?',
@@ -1445,7 +1445,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Krupina dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Krupina poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Krupina poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Krupina?',
@@ -1457,13 +1457,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Krupina?',
-      answer: 'Áno, všetky taxislužby v meste Krupina ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Krupina ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'kysucke-nove-mesto': [
     {
       question: 'Ako si objednám taxi v meste Kysucké Nové Mesto?',
-      answer: 'V meste Kysucké Nové Mesto si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 8 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Kysucké Nové Mesto si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Kysucké Nové Mesto?',
@@ -1471,7 +1471,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Kysucké Nové Mesto dostupné nonstop?',
-      answer: 'Väčšina z 8 taxislužieb v meste Kysucké Nové Mesto poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Kysucké Nové Mesto poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Kysucké Nové Mesto?',
@@ -1483,13 +1483,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Kysucké Nové Mesto?',
-      answer: 'Áno, všetky taxislužby v meste Kysucké Nové Mesto ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Kysucké Nové Mesto ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'leopoldov': [
     {
       question: 'Ako si objednám taxi v meste Leopoldov?',
-      answer: 'V meste Leopoldov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Leopoldov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Leopoldov?',
@@ -1509,13 +1509,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Leopoldov?',
-      answer: 'Áno, všetky taxislužby v meste Leopoldov ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Leopoldov ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'levice': [
     {
       question: 'Ako si objednám taxi v meste Levice?',
-      answer: 'V meste Levice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 10 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Levice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Levice?',
@@ -1523,11 +1523,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Levice dostupné nonstop?',
-      answer: 'Áno, väčšina z 10 taxislužieb v meste Levice poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Levice poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Levice?',
-      answer: 'Väčšina moderných taxislužieb v meste Levice akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Levice akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Levice?',
@@ -1535,13 +1535,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Levice?',
-      answer: 'Áno, všetky taxislužby v meste Levice ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Levice ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'levoca': [
     {
       question: 'Ako si objednám taxi v meste Levoča?',
-      answer: 'V meste Levoča si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Levoča si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Levoča?',
@@ -1561,13 +1561,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Levoča?',
-      answer: 'Áno, všetky taxislužby v meste Levoča ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Levoča ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'lipany': [
     {
       question: 'Ako si objednám taxi v meste Lipany?',
-      answer: 'V meste Lipany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Lipany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Lipany?',
@@ -1587,13 +1587,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Lipany?',
-      answer: 'Áno, všetky taxislužby v meste Lipany ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Lipany ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'liptovsky-hradok': [
     {
       question: 'Ako si objednám taxi v meste Liptovský Hrádok?',
-      answer: 'V meste Liptovský Hrádok si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 7 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Liptovský Hrádok si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Liptovský Hrádok?',
@@ -1601,7 +1601,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Liptovský Hrádok dostupné nonstop?',
-      answer: 'Väčšina z 7 taxislužieb v meste Liptovský Hrádok poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Liptovský Hrádok poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Liptovský Hrádok?',
@@ -1613,13 +1613,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Liptovský Hrádok?',
-      answer: 'Áno, všetky taxislužby v meste Liptovský Hrádok ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Liptovský Hrádok ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'liptovsky-mikulas': [
     {
       question: 'Ako si objednám taxi v meste Liptovský Mikuláš?',
-      answer: 'V meste Liptovský Mikuláš si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 13 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Liptovský Mikuláš si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Liptovský Mikuláš?',
@@ -1627,11 +1627,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Liptovský Mikuláš dostupné nonstop?',
-      answer: 'Áno, väčšina z 13 taxislužieb v meste Liptovský Mikuláš poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Liptovský Mikuláš poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Liptovský Mikuláš?',
-      answer: 'Väčšina moderných taxislužieb v meste Liptovský Mikuláš akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Liptovský Mikuláš akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Liptovský Mikuláš?',
@@ -1639,13 +1639,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Liptovský Mikuláš?',
-      answer: 'Áno, všetky taxislužby v meste Liptovský Mikuláš ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Liptovský Mikuláš ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'lucenec': [
     {
       question: 'Ako si objednám taxi v meste Lučenec?',
-      answer: 'V meste Lučenec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 14 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Lučenec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Lučenec?',
@@ -1653,11 +1653,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Lučenec dostupné nonstop?',
-      answer: 'Áno, väčšina z 14 taxislužieb v meste Lučenec poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Lučenec poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Lučenec?',
-      answer: 'Väčšina moderných taxislužieb v meste Lučenec akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Lučenec akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Lučenec?',
@@ -1665,13 +1665,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Lučenec?',
-      answer: 'Áno, všetky taxislužby v meste Lučenec ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Lučenec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'malacky': [
     {
       question: 'Ako si objednám taxi v meste Malacky?',
-      answer: 'V meste Malacky si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 7 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Malacky si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Malacky?',
@@ -1679,7 +1679,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Malacky dostupné nonstop?',
-      answer: 'Väčšina z 7 taxislužieb v meste Malacky poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Malacky poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Malacky?',
@@ -1691,13 +1691,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Malacky?',
-      answer: 'Áno, všetky taxislužby v meste Malacky ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Malacky ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'martin': [
     {
       question: 'Ako si objednám taxi v meste Martin?',
-      answer: 'V meste Martin si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 12 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Martin si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Martin?',
@@ -1705,11 +1705,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Martin dostupné nonstop?',
-      answer: 'Áno, väčšina z 12 taxislužieb v meste Martin poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Martin poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Martin?',
-      answer: 'Väčšina moderných taxislužieb v meste Martin akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Martin akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Martin?',
@@ -1717,13 +1717,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Martin?',
-      answer: 'Áno, všetky taxislužby v meste Martin ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Martin ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'medzev': [
     {
       question: 'Ako si objednám taxi v meste Medzev?',
-      answer: 'V meste Medzev si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Medzev si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Medzev?',
@@ -1743,13 +1743,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Medzev?',
-      answer: 'Áno, všetky taxislužby v meste Medzev ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Medzev ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'medzilaborce': [
     {
       question: 'Ako si objednám taxi v meste Medzilaborce?',
-      answer: 'V meste Medzilaborce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Medzilaborce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Medzilaborce?',
@@ -1769,13 +1769,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Medzilaborce?',
-      answer: 'Áno, všetky taxislužby v meste Medzilaborce ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Medzilaborce ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'michalovce': [
     {
       question: 'Ako si objednám taxi v meste Michalovce?',
-      answer: 'V meste Michalovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 13 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Michalovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Michalovce?',
@@ -1783,11 +1783,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Michalovce dostupné nonstop?',
-      answer: 'Áno, väčšina z 13 taxislužieb v meste Michalovce poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Michalovce poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Michalovce?',
-      answer: 'Väčšina moderných taxislužieb v meste Michalovce akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Michalovce akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Michalovce?',
@@ -1795,13 +1795,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Michalovce?',
-      answer: 'Áno, všetky taxislužby v meste Michalovce ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Michalovce ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'modra': [
     {
       question: 'Ako si objednám taxi v meste Modra?',
-      answer: 'V meste Modra si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Modra si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Modra?',
@@ -1821,13 +1821,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Modra?',
-      answer: 'Áno, všetky taxislužby v meste Modra ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Modra ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'modry-kamen': [
     {
       question: 'Ako si objednám taxi v meste Modrý Kameň?',
-      answer: 'V meste Modrý Kameň si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Modrý Kameň si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Modrý Kameň?',
@@ -1847,13 +1847,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Modrý Kameň?',
-      answer: 'Áno, všetky taxislužby v meste Modrý Kameň ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Modrý Kameň ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'moldava-nad-bodvou': [
     {
       question: 'Ako si objednám taxi v meste Moldava nad Bodvou?',
-      answer: 'V meste Moldava nad Bodvou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Moldava nad Bodvou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Moldava nad Bodvou?',
@@ -1873,13 +1873,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Moldava nad Bodvou?',
-      answer: 'Áno, všetky taxislužby v meste Moldava nad Bodvou ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Moldava nad Bodvou ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'myjava': [
     {
       question: 'Ako si objednám taxi v meste Myjava?',
-      answer: 'V meste Myjava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Myjava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Myjava?',
@@ -1899,13 +1899,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Myjava?',
-      answer: 'Áno, všetky taxislužby v meste Myjava ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Myjava ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'namestovo': [
     {
       question: 'Ako si objednám taxi v meste Námestovo?',
-      answer: 'V meste Námestovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 10 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Námestovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Námestovo?',
@@ -1913,11 +1913,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Námestovo dostupné nonstop?',
-      answer: 'Áno, väčšina z 10 taxislužieb v meste Námestovo poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Námestovo poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Námestovo?',
-      answer: 'Väčšina moderných taxislužieb v meste Námestovo akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Námestovo akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Námestovo?',
@@ -1925,13 +1925,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Námestovo?',
-      answer: 'Áno, všetky taxislužby v meste Námestovo ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Námestovo ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'nemsova': [
     {
       question: 'Ako si objednám taxi v meste Nemšová?',
-      answer: 'V meste Nemšová si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Nemšová si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Nemšová?',
@@ -1951,13 +1951,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Nemšová?',
-      answer: 'Áno, všetky taxislužby v meste Nemšová ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Nemšová ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'nesvady': [
     {
       question: 'Ako si objednám taxi v meste Nesvady?',
-      answer: 'V meste Nesvady si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Nesvady si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Nesvady?',
@@ -1977,13 +1977,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Nesvady?',
-      answer: 'Áno, všetky taxislužby v meste Nesvady ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Nesvady ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'nitra': [
     {
       question: 'Ako si objednám taxi v meste Nitra?',
-      answer: 'V meste Nitra si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 13 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Nitra si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Nitra?',
@@ -1991,11 +1991,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Nitra dostupné nonstop?',
-      answer: 'Áno, väčšina z 13 taxislužieb v meste Nitra poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Nitra poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Nitra?',
-      answer: 'Väčšina moderných taxislužieb v meste Nitra akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Nitra akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Nitra?',
@@ -2003,13 +2003,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Nitra?',
-      answer: 'Áno, všetky taxislužby v meste Nitra ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Nitra ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'nova-bana': [
     {
       question: 'Ako si objednám taxi v meste Nová Baňa?',
-      answer: 'V meste Nová Baňa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Nová Baňa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Nová Baňa?',
@@ -2017,7 +2017,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Nová Baňa dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Nová Baňa poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Nová Baňa poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Nová Baňa?',
@@ -2029,13 +2029,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Nová Baňa?',
-      answer: 'Áno, všetky taxislužby v meste Nová Baňa ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Nová Baňa ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'nova-dubnica': [
     {
       question: 'Ako si objednám taxi v meste Nová Dubnica?',
-      answer: 'V meste Nová Dubnica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Nová Dubnica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Nová Dubnica?',
@@ -2055,13 +2055,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Nová Dubnica?',
-      answer: 'Áno, všetky taxislužby v meste Nová Dubnica ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Nová Dubnica ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'novaky': [
     {
       question: 'Ako si objednám taxi v meste Nováky?',
-      answer: 'V meste Nováky si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Nováky si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Nováky?',
@@ -2081,13 +2081,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Nováky?',
-      answer: 'Áno, všetky taxislužby v meste Nováky ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Nováky ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'nove-mesto-nad-vahom': [
     {
       question: 'Ako si objednám taxi v meste Nové Mesto nad Váhom?',
-      answer: 'V meste Nové Mesto nad Váhom si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 13 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Nové Mesto nad Váhom si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Nové Mesto nad Váhom?',
@@ -2095,11 +2095,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Nové Mesto nad Váhom dostupné nonstop?',
-      answer: 'Áno, väčšina z 13 taxislužieb v meste Nové Mesto nad Váhom poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Nové Mesto nad Váhom poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Nové Mesto nad Váhom?',
-      answer: 'Väčšina moderných taxislužieb v meste Nové Mesto nad Váhom akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Nové Mesto nad Váhom akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Nové Mesto nad Váhom?',
@@ -2107,13 +2107,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Nové Mesto nad Váhom?',
-      answer: 'Áno, všetky taxislužby v meste Nové Mesto nad Váhom ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Nové Mesto nad Váhom ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'nove-zamky': [
     {
       question: 'Ako si objednám taxi v meste Nové Zámky?',
-      answer: 'V meste Nové Zámky si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Nové Zámky si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Nové Zámky?',
@@ -2133,13 +2133,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Nové Zámky?',
-      answer: 'Áno, všetky taxislužby v meste Nové Zámky ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Nové Zámky ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'novy-ruskov': [
     {
       question: 'Ako si objednám taxi v meste Nový Ruskov?',
-      answer: 'V meste Nový Ruskov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Nový Ruskov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Nový Ruskov?',
@@ -2159,13 +2159,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Nový Ruskov?',
-      answer: 'Áno, všetky taxislužby v meste Nový Ruskov ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Nový Ruskov ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'novy-smokovec': [
     {
       question: 'Ako si objednám taxi v meste Nový Smokovec?',
-      answer: 'V meste Nový Smokovec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Nový Smokovec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Nový Smokovec?',
@@ -2185,13 +2185,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Nový Smokovec?',
-      answer: 'Áno, všetky taxislužby v meste Nový Smokovec ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Nový Smokovec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'odrava': [
     {
       question: 'Ako si objednám taxi v meste Odrava?',
-      answer: 'V meste Odrava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Odrava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Odrava?',
@@ -2211,13 +2211,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Odrava?',
-      answer: 'Áno, všetky taxislužby v meste Odrava ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Odrava ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'odstepny-zavod': [
     {
       question: 'Ako si objednám taxi v meste Odštepný závod?',
-      answer: 'V meste Odštepný závod si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Odštepný závod si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Odštepný závod?',
@@ -2237,13 +2237,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Odštepný závod?',
-      answer: 'Áno, všetky taxislužby v meste Odštepný závod ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Odštepný závod ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'partizanske': [
     {
       question: 'Ako si objednám taxi v meste Partizánske?',
-      answer: 'V meste Partizánske si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 8 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Partizánske si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Partizánske?',
@@ -2251,7 +2251,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Partizánske dostupné nonstop?',
-      answer: 'Väčšina z 8 taxislužieb v meste Partizánske poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Partizánske poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Partizánske?',
@@ -2263,13 +2263,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Partizánske?',
-      answer: 'Áno, všetky taxislužby v meste Partizánske ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Partizánske ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'pezinok': [
     {
       question: 'Ako si objednám taxi v meste Pezinok?',
-      answer: 'V meste Pezinok si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 8 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Pezinok si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Pezinok?',
@@ -2277,7 +2277,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Pezinok dostupné nonstop?',
-      answer: 'Väčšina z 8 taxislužieb v meste Pezinok poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Pezinok poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Pezinok?',
@@ -2289,13 +2289,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Pezinok?',
-      answer: 'Áno, všetky taxislužby v meste Pezinok ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Pezinok ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'piestany': [
     {
       question: 'Ako si objednám taxi v meste Piešťany?',
-      answer: 'V meste Piešťany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 12 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Piešťany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Piešťany?',
@@ -2303,11 +2303,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Piešťany dostupné nonstop?',
-      answer: 'Áno, väčšina z 12 taxislužieb v meste Piešťany poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Piešťany poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Piešťany?',
-      answer: 'Väčšina moderných taxislužieb v meste Piešťany akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Piešťany akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Piešťany?',
@@ -2315,13 +2315,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Piešťany?',
-      answer: 'Áno, všetky taxislužby v meste Piešťany ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Piešťany ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'podolinec': [
     {
       question: 'Ako si objednám taxi v meste Podolínec?',
-      answer: 'V meste Podolínec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Podolínec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Podolínec?',
@@ -2341,13 +2341,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Podolínec?',
-      answer: 'Áno, všetky taxislužby v meste Podolínec ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Podolínec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'poltar': [
     {
       question: 'Ako si objednám taxi v meste Poltár?',
-      answer: 'V meste Poltár si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Poltár si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Poltár?',
@@ -2367,13 +2367,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Poltár?',
-      answer: 'Áno, všetky taxislužby v meste Poltár ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Poltár ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'poprad': [
     {
       question: 'Ako si objednám taxi v meste Poprad?',
-      answer: 'V meste Poprad si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 15 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Poprad si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Poprad?',
@@ -2381,11 +2381,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Poprad dostupné nonstop?',
-      answer: 'Áno, väčšina z 15 taxislužieb v meste Poprad poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Poprad poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Poprad?',
-      answer: 'Väčšina moderných taxislužieb v meste Poprad akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Poprad akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Poprad?',
@@ -2393,13 +2393,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Poprad?',
-      answer: 'Áno, všetky taxislužby v meste Poprad ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Poprad ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'povazska-bystrica': [
     {
       question: 'Ako si objednám taxi v meste Považská Bystrica?',
-      answer: 'V meste Považská Bystrica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 15 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Považská Bystrica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Považská Bystrica?',
@@ -2407,11 +2407,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Považská Bystrica dostupné nonstop?',
-      answer: 'Áno, väčšina z 15 taxislužieb v meste Považská Bystrica poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Považská Bystrica poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Považská Bystrica?',
-      answer: 'Väčšina moderných taxislužieb v meste Považská Bystrica akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Považská Bystrica akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Považská Bystrica?',
@@ -2419,13 +2419,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Považská Bystrica?',
-      answer: 'Áno, všetky taxislužby v meste Považská Bystrica ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Považská Bystrica ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'presov': [
     {
       question: 'Ako si objednám taxi v meste Prešov?',
-      answer: 'V meste Prešov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 14 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Prešov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Prešov?',
@@ -2433,11 +2433,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Prešov dostupné nonstop?',
-      answer: 'Áno, väčšina z 14 taxislužieb v meste Prešov poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Prešov poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Prešov?',
-      answer: 'Väčšina moderných taxislužieb v meste Prešov akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Prešov akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Prešov?',
@@ -2445,13 +2445,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Prešov?',
-      answer: 'Áno, všetky taxislužby v meste Prešov ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Prešov ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'prievidza': [
     {
       question: 'Ako si objednám taxi v meste Prievidza?',
-      answer: 'V meste Prievidza si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 11 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Prievidza si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Prievidza?',
@@ -2459,11 +2459,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Prievidza dostupné nonstop?',
-      answer: 'Áno, väčšina z 11 taxislužieb v meste Prievidza poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Prievidza poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Prievidza?',
-      answer: 'Väčšina moderných taxislužieb v meste Prievidza akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Prievidza akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Prievidza?',
@@ -2471,13 +2471,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Prievidza?',
-      answer: 'Áno, všetky taxislužby v meste Prievidza ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Prievidza ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'puchov': [
     {
       question: 'Ako si objednám taxi v meste Púchov?',
-      answer: 'V meste Púchov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Púchov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Púchov?',
@@ -2485,7 +2485,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Púchov dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Púchov poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Púchov poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Púchov?',
@@ -2497,13 +2497,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Púchov?',
-      answer: 'Áno, všetky taxislužby v meste Púchov ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Púchov ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'rajec': [
     {
       question: 'Ako si objednám taxi v meste Rajec?',
-      answer: 'V meste Rajec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Rajec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Rajec?',
@@ -2523,13 +2523,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Rajec?',
-      answer: 'Áno, všetky taxislužby v meste Rajec ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Rajec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'rajecke-teplice': [
     {
       question: 'Ako si objednám taxi v meste Rajecké Teplice?',
-      answer: 'V meste Rajecké Teplice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Rajecké Teplice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Rajecké Teplice?',
@@ -2549,13 +2549,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Rajecké Teplice?',
-      answer: 'Áno, všetky taxislužby v meste Rajecké Teplice ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Rajecké Teplice ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'revuca': [
     {
       question: 'Ako si objednám taxi v meste Revúca?',
-      answer: 'V meste Revúca si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Revúca si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Revúca?',
@@ -2575,13 +2575,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Revúca?',
-      answer: 'Áno, všetky taxislužby v meste Revúca ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Revúca ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'rimavska-sobota': [
     {
       question: 'Ako si objednám taxi v meste Rimavská Sobota?',
-      answer: 'V meste Rimavská Sobota si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 11 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Rimavská Sobota si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Rimavská Sobota?',
@@ -2589,11 +2589,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Rimavská Sobota dostupné nonstop?',
-      answer: 'Áno, väčšina z 11 taxislužieb v meste Rimavská Sobota poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Rimavská Sobota poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Rimavská Sobota?',
-      answer: 'Väčšina moderných taxislužieb v meste Rimavská Sobota akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Rimavská Sobota akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Rimavská Sobota?',
@@ -2601,13 +2601,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Rimavská Sobota?',
-      answer: 'Áno, všetky taxislužby v meste Rimavská Sobota ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Rimavská Sobota ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'roznava': [
     {
       question: 'Ako si objednám taxi v meste Rožňava?',
-      answer: 'V meste Rožňava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 11 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Rožňava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Rožňava?',
@@ -2615,11 +2615,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Rožňava dostupné nonstop?',
-      answer: 'Áno, väčšina z 11 taxislužieb v meste Rožňava poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Rožňava poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Rožňava?',
-      answer: 'Väčšina moderných taxislužieb v meste Rožňava akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Rožňava akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Rožňava?',
@@ -2627,13 +2627,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Rožňava?',
-      answer: 'Áno, všetky taxislužby v meste Rožňava ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Rožňava ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'ruzomberok': [
     {
       question: 'Ako si objednám taxi v meste Ružomberok?',
-      answer: 'V meste Ružomberok si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 11 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Ružomberok si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Ružomberok?',
@@ -2641,11 +2641,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Ružomberok dostupné nonstop?',
-      answer: 'Áno, väčšina z 11 taxislužieb v meste Ružomberok poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Ružomberok poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Ružomberok?',
-      answer: 'Väčšina moderných taxislužieb v meste Ružomberok akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Ružomberok akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Ružomberok?',
@@ -2653,13 +2653,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Ružomberok?',
-      answer: 'Áno, všetky taxislužby v meste Ružomberok ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Ružomberok ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'sabinov': [
     {
       question: 'Ako si objednám taxi v meste Sabinov?',
-      answer: 'V meste Sabinov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Sabinov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Sabinov?',
@@ -2679,13 +2679,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Sabinov?',
-      answer: 'Áno, všetky taxislužby v meste Sabinov ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Sabinov ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'senec': [
     {
       question: 'Ako si objednám taxi v meste Senec?',
-      answer: 'V meste Senec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 12 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Senec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Senec?',
@@ -2693,11 +2693,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Senec dostupné nonstop?',
-      answer: 'Áno, väčšina z 12 taxislužieb v meste Senec poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Senec poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Senec?',
-      answer: 'Väčšina moderných taxislužieb v meste Senec akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Senec akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Senec?',
@@ -2705,13 +2705,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Senec?',
-      answer: 'Áno, všetky taxislužby v meste Senec ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Senec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'senica': [
     {
       question: 'Ako si objednám taxi v meste Senica?',
-      answer: 'V meste Senica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Senica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Senica?',
@@ -2731,13 +2731,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Senica?',
-      answer: 'Áno, všetky taxislužby v meste Senica ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Senica ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'sered': [
     {
       question: 'Ako si objednám taxi v meste Sereď?',
-      answer: 'V meste Sereď si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 9 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Sereď si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Sereď?',
@@ -2745,7 +2745,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Sereď dostupné nonstop?',
-      answer: 'Väčšina z 9 taxislužieb v meste Sereď poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Sereď poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Sereď?',
@@ -2757,13 +2757,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Sereď?',
-      answer: 'Áno, všetky taxislužby v meste Sereď ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Sereď ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'skalica': [
     {
       question: 'Ako si objednám taxi v meste Skalica?',
-      answer: 'V meste Skalica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 6 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Skalica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Skalica?',
@@ -2771,7 +2771,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Skalica dostupné nonstop?',
-      answer: 'Väčšina z 6 taxislužieb v meste Skalica poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Skalica poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Skalica?',
@@ -2783,13 +2783,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Skalica?',
-      answer: 'Áno, všetky taxislužby v meste Skalica ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Skalica ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'sladkovicovo': [
     {
       question: 'Ako si objednám taxi v meste Sládkovičovo?',
-      answer: 'V meste Sládkovičovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Sládkovičovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Sládkovičovo?',
@@ -2809,13 +2809,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Sládkovičovo?',
-      answer: 'Áno, všetky taxislužby v meste Sládkovičovo ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Sládkovičovo ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'sliac': [
     {
       question: 'Ako si objednám taxi v meste Sliač?',
-      answer: 'V meste Sliač si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Sliač si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Sliač?',
@@ -2835,13 +2835,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Sliač?',
-      answer: 'Áno, všetky taxislužby v meste Sliač ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Sliač ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'snina': [
     {
       question: 'Ako si objednám taxi v meste Snina?',
-      answer: 'V meste Snina si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Snina si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Snina?',
@@ -2849,7 +2849,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Snina dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Snina poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Snina poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Snina?',
@@ -2861,13 +2861,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Snina?',
-      answer: 'Áno, všetky taxislužby v meste Snina ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Snina ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'sobrance': [
     {
       question: 'Ako si objednám taxi v meste Sobrance?',
-      answer: 'V meste Sobrance si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Sobrance si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Sobrance?',
@@ -2887,13 +2887,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Sobrance?',
-      answer: 'Áno, všetky taxislužby v meste Sobrance ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Sobrance ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'spisska-bela': [
     {
       question: 'Ako si objednám taxi v meste Spišská Belá?',
-      answer: 'V meste Spišská Belá si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Spišská Belá si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Spišská Belá?',
@@ -2913,13 +2913,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Spišská Belá?',
-      answer: 'Áno, všetky taxislužby v meste Spišská Belá ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Spišská Belá ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'spisska-nova-ves': [
     {
       question: 'Ako si objednám taxi v meste Spišská Nová Ves?',
-      answer: 'V meste Spišská Nová Ves si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 13 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Spišská Nová Ves si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Spišská Nová Ves?',
@@ -2927,11 +2927,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Spišská Nová Ves dostupné nonstop?',
-      answer: 'Áno, väčšina z 13 taxislužieb v meste Spišská Nová Ves poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Spišská Nová Ves poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Spišská Nová Ves?',
-      answer: 'Väčšina moderných taxislužieb v meste Spišská Nová Ves akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Spišská Nová Ves akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Spišská Nová Ves?',
@@ -2939,13 +2939,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Spišská Nová Ves?',
-      answer: 'Áno, všetky taxislužby v meste Spišská Nová Ves ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Spišská Nová Ves ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'spisska-stara-ves': [
     {
       question: 'Ako si objednám taxi v meste Spišská Stará Ves?',
-      answer: 'V meste Spišská Stará Ves si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Spišská Stará Ves si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Spišská Stará Ves?',
@@ -2965,13 +2965,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Spišská Stará Ves?',
-      answer: 'Áno, všetky taxislužby v meste Spišská Stará Ves ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Spišská Stará Ves ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'spisske-podhradie': [
     {
       question: 'Ako si objednám taxi v meste Spišské Podhradie?',
-      answer: 'V meste Spišské Podhradie si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Spišské Podhradie si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Spišské Podhradie?',
@@ -2991,13 +2991,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Spišské Podhradie?',
-      answer: 'Áno, všetky taxislužby v meste Spišské Podhradie ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Spišské Podhradie ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'spisske-vlachy': [
     {
       question: 'Ako si objednám taxi v meste Spišské Vlachy?',
-      answer: 'V meste Spišské Vlachy si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Spišské Vlachy si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Spišské Vlachy?',
@@ -3017,13 +3017,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Spišské Vlachy?',
-      answer: 'Áno, všetky taxislužby v meste Spišské Vlachy ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Spišské Vlachy ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'stara-lubovna': [
     {
       question: 'Ako si objednám taxi v meste Stará Ľubovňa?',
-      answer: 'V meste Stará Ľubovňa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Stará Ľubovňa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Stará Ľubovňa?',
@@ -3031,7 +3031,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Stará Ľubovňa dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Stará Ľubovňa poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Stará Ľubovňa poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Stará Ľubovňa?',
@@ -3043,13 +3043,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Stará Ľubovňa?',
-      answer: 'Áno, všetky taxislužby v meste Stará Ľubovňa ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Stará Ľubovňa ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'stara-tura': [
     {
       question: 'Ako si objednám taxi v meste Stará Turá?',
-      answer: 'V meste Stará Turá si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 9 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Stará Turá si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Stará Turá?',
@@ -3057,7 +3057,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Stará Turá dostupné nonstop?',
-      answer: 'Väčšina z 9 taxislužieb v meste Stará Turá poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Stará Turá poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Stará Turá?',
@@ -3069,13 +3069,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Stará Turá?',
-      answer: 'Áno, všetky taxislužby v meste Stará Turá ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Stará Turá ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'strazske': [
     {
       question: 'Ako si objednám taxi v meste Strážske?',
-      answer: 'V meste Strážske si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Strážske si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Strážske?',
@@ -3095,13 +3095,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Strážske?',
-      answer: 'Áno, všetky taxislužby v meste Strážske ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Strážske ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'stropkov': [
     {
       question: 'Ako si objednám taxi v meste Stropkov?',
-      answer: 'V meste Stropkov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Stropkov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Stropkov?',
@@ -3121,13 +3121,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Stropkov?',
-      answer: 'Áno, všetky taxislužby v meste Stropkov ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Stropkov ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'stupava': [
     {
       question: 'Ako si objednám taxi v meste Stupava?',
-      answer: 'V meste Stupava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Stupava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Stupava?',
@@ -3135,7 +3135,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Stupava dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Stupava poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Stupava poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Stupava?',
@@ -3147,13 +3147,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Stupava?',
-      answer: 'Áno, všetky taxislužby v meste Stupava ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Stupava ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'svaty-jur': [
     {
       question: 'Ako si objednám taxi v meste Svätý Jur?',
-      answer: 'V meste Svätý Jur si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Svätý Jur si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Svätý Jur?',
@@ -3161,7 +3161,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Svätý Jur dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Svätý Jur poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Svätý Jur poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Svätý Jur?',
@@ -3173,13 +3173,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Svätý Jur?',
-      answer: 'Áno, všetky taxislužby v meste Svätý Jur ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Svätý Jur ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'svidnik': [
     {
       question: 'Ako si objednám taxi v meste Svidník?',
-      answer: 'V meste Svidník si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Svidník si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Svidník?',
@@ -3199,13 +3199,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Svidník?',
-      answer: 'Áno, všetky taxislužby v meste Svidník ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Svidník ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'svit': [
     {
       question: 'Ako si objednám taxi v meste Svit?',
-      answer: 'V meste Svit si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Svit si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Svit?',
@@ -3225,13 +3225,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Svit?',
-      answer: 'Áno, všetky taxislužby v meste Svit ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Svit ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'sahy': [
     {
       question: 'Ako si objednám taxi v meste Šahy?',
-      answer: 'V meste Šahy si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Šahy si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Šahy?',
@@ -3251,13 +3251,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Šahy?',
-      answer: 'Áno, všetky taxislužby v meste Šahy ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Šahy ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'sala': [
     {
       question: 'Ako si objednám taxi v meste Šaľa?',
-      answer: 'V meste Šaľa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 10 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Šaľa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Šaľa?',
@@ -3265,11 +3265,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Šaľa dostupné nonstop?',
-      answer: 'Áno, väčšina z 10 taxislužieb v meste Šaľa poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Šaľa poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Šaľa?',
-      answer: 'Väčšina moderných taxislužieb v meste Šaľa akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Šaľa akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Šaľa?',
@@ -3277,13 +3277,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Šaľa?',
-      answer: 'Áno, všetky taxislužby v meste Šaľa ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Šaľa ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'samorin': [
     {
       question: 'Ako si objednám taxi v meste Šamorín?',
-      answer: 'V meste Šamorín si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Šamorín si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Šamorín?',
@@ -3291,7 +3291,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Šamorín dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Šamorín poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Šamorín poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Šamorín?',
@@ -3303,13 +3303,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Šamorín?',
-      answer: 'Áno, všetky taxislužby v meste Šamorín ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Šamorín ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'sastin-straze': [
     {
       question: 'Ako si objednám taxi v meste Šaštín-Stráže?',
-      answer: 'V meste Šaštín-Stráže si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Šaštín-Stráže si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Šaštín-Stráže?',
@@ -3329,13 +3329,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Šaštín-Stráže?',
-      answer: 'Áno, všetky taxislužby v meste Šaštín-Stráže ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Šaštín-Stráže ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'sturovo': [
     {
       question: 'Ako si objednám taxi v meste Štúrovo?',
-      answer: 'V meste Štúrovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 11 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Štúrovo si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Štúrovo?',
@@ -3343,11 +3343,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Štúrovo dostupné nonstop?',
-      answer: 'Áno, väčšina z 11 taxislužieb v meste Štúrovo poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Štúrovo poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Štúrovo?',
-      answer: 'Väčšina moderných taxislužieb v meste Štúrovo akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Štúrovo akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Štúrovo?',
@@ -3355,13 +3355,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Štúrovo?',
-      answer: 'Áno, všetky taxislužby v meste Štúrovo ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Štúrovo ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'surany': [
     {
       question: 'Ako si objednám taxi v meste Šurany?',
-      answer: 'V meste Šurany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Šurany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Šurany?',
@@ -3381,13 +3381,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Šurany?',
-      answer: 'Áno, všetky taxislužby v meste Šurany ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Šurany ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'tisovec': [
     {
       question: 'Ako si objednám taxi v meste Tisovec?',
-      answer: 'V meste Tisovec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 1 taxislužby). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Tisovec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Tisovec?',
@@ -3407,13 +3407,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Tisovec?',
-      answer: 'Áno, všetky taxislužby v meste Tisovec ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Tisovec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'tlmace': [
     {
       question: 'Ako si objednám taxi v meste Tlmače?',
-      answer: 'V meste Tlmače si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 12 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Tlmače si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Tlmače?',
@@ -3421,11 +3421,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Tlmače dostupné nonstop?',
-      answer: 'Áno, väčšina z 12 taxislužieb v meste Tlmače poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Tlmače poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Tlmače?',
-      answer: 'Väčšina moderných taxislužieb v meste Tlmače akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Tlmače akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Tlmače?',
@@ -3433,13 +3433,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Tlmače?',
-      answer: 'Áno, všetky taxislužby v meste Tlmače ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Tlmače ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'topolcany': [
     {
       question: 'Ako si objednám taxi v meste Topoľčany?',
-      answer: 'V meste Topoľčany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Topoľčany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Topoľčany?',
@@ -3459,13 +3459,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Topoľčany?',
-      answer: 'Áno, všetky taxislužby v meste Topoľčany ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Topoľčany ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'tornala': [
     {
       question: 'Ako si objednám taxi v meste Tornaľa?',
-      answer: 'V meste Tornaľa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Tornaľa si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Tornaľa?',
@@ -3485,13 +3485,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Tornaľa?',
-      answer: 'Áno, všetky taxislužby v meste Tornaľa ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Tornaľa ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'trebisov': [
     {
       question: 'Ako si objednám taxi v meste Trebišov?',
-      answer: 'V meste Trebišov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 7 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Trebišov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Trebišov?',
@@ -3499,7 +3499,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Trebišov dostupné nonstop?',
-      answer: 'Väčšina z 7 taxislužieb v meste Trebišov poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Trebišov poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Trebišov?',
@@ -3511,13 +3511,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Trebišov?',
-      answer: 'Áno, všetky taxislužby v meste Trebišov ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Trebišov ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'trencianske-teplice': [
     {
       question: 'Ako si objednám taxi v meste Trenčianske Teplice?',
-      answer: 'V meste Trenčianske Teplice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Trenčianske Teplice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Trenčianske Teplice?',
@@ -3537,13 +3537,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Trenčianske Teplice?',
-      answer: 'Áno, všetky taxislužby v meste Trenčianske Teplice ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Trenčianske Teplice ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'trencin': [
     {
       question: 'Ako si objednám taxi v meste Trenčín?',
-      answer: 'V meste Trenčín si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 15 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Trenčín si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Trenčín?',
@@ -3551,11 +3551,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Trenčín dostupné nonstop?',
-      answer: 'Áno, väčšina z 15 taxislužieb v meste Trenčín poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Trenčín poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Trenčín?',
-      answer: 'Väčšina moderných taxislužieb v meste Trenčín akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Trenčín akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Trenčín?',
@@ -3563,13 +3563,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Trenčín?',
-      answer: 'Áno, všetky taxislužby v meste Trenčín ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Trenčín ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'trnava': [
     {
       question: 'Ako si objednám taxi v meste Trnava?',
-      answer: 'V meste Trnava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 12 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Trnava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Trnava?',
@@ -3577,11 +3577,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Trnava dostupné nonstop?',
-      answer: 'Áno, väčšina z 12 taxislužieb v meste Trnava poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Trnava poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Trnava?',
-      answer: 'Väčšina moderných taxislužieb v meste Trnava akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Trnava akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Trnava?',
@@ -3589,13 +3589,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Trnava?',
-      answer: 'Áno, všetky taxislužby v meste Trnava ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Trnava ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'trstena': [
     {
       question: 'Ako si objednám taxi v meste Trstená?',
-      answer: 'V meste Trstená si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Trstená si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Trstená?',
@@ -3615,13 +3615,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Trstená?',
-      answer: 'Áno, všetky taxislužby v meste Trstená ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Trstená ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'turany': [
     {
       question: 'Ako si objednám taxi v meste Turany?',
-      answer: 'V meste Turany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 7 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Turany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Turany?',
@@ -3629,7 +3629,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Turany dostupné nonstop?',
-      answer: 'Väčšina z 7 taxislužieb v meste Turany poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Turany poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Turany?',
@@ -3641,13 +3641,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Turany?',
-      answer: 'Áno, všetky taxislužby v meste Turany ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Turany ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'turcianske-teplice': [
     {
       question: 'Ako si objednám taxi v meste Turčianske Teplice?',
-      answer: 'V meste Turčianske Teplice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Turčianske Teplice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Turčianske Teplice?',
@@ -3655,7 +3655,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Turčianske Teplice dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Turčianske Teplice poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Turčianske Teplice poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Turčianske Teplice?',
@@ -3667,13 +3667,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Turčianske Teplice?',
-      answer: 'Áno, všetky taxislužby v meste Turčianske Teplice ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Turčianske Teplice ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'turzovka': [
     {
       question: 'Ako si objednám taxi v meste Turzovka?',
-      answer: 'V meste Turzovka si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Turzovka si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Turzovka?',
@@ -3693,13 +3693,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Turzovka?',
-      answer: 'Áno, všetky taxislužby v meste Turzovka ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Turzovka ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'tvrdosin': [
     {
       question: 'Ako si objednám taxi v meste Tvrdošín?',
-      answer: 'V meste Tvrdošín si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 0 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Tvrdošín si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Tvrdošín?',
@@ -3719,13 +3719,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Tvrdošín?',
-      answer: 'Áno, všetky taxislužby v meste Tvrdošín ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Tvrdošín ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'velke-kapusany': [
     {
       question: 'Ako si objednám taxi v meste Veľké Kapušany?',
-      answer: 'V meste Veľké Kapušany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 4 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Veľké Kapušany si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Veľké Kapušany?',
@@ -3745,13 +3745,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Veľké Kapušany?',
-      answer: 'Áno, všetky taxislužby v meste Veľké Kapušany ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Veľké Kapušany ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'velky-krtis': [
     {
       question: 'Ako si objednám taxi v meste Veľký Krtíš?',
-      answer: 'V meste Veľký Krtíš si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Veľký Krtíš si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Veľký Krtíš?',
@@ -3759,7 +3759,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Veľký Krtíš dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Veľký Krtíš poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Veľký Krtíš poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Veľký Krtíš?',
@@ -3771,13 +3771,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Veľký Krtíš?',
-      answer: 'Áno, všetky taxislužby v meste Veľký Krtíš ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Veľký Krtíš ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'velky-meder': [
     {
       question: 'Ako si objednám taxi v meste Veľký Meder?',
-      answer: 'V meste Veľký Meder si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Veľký Meder si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Veľký Meder?',
@@ -3797,13 +3797,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Veľký Meder?',
-      answer: 'Áno, všetky taxislužby v meste Veľký Meder ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Veľký Meder ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'velky-saris': [
     {
       question: 'Ako si objednám taxi v meste Veľký Šariš?',
-      answer: 'V meste Veľký Šariš si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 7 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Veľký Šariš si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Veľký Šariš?',
@@ -3811,7 +3811,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Veľký Šariš dostupné nonstop?',
-      answer: 'Väčšina z 7 taxislužieb v meste Veľký Šariš poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Veľký Šariš poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Veľký Šariš?',
@@ -3823,13 +3823,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Veľký Šariš?',
-      answer: 'Áno, všetky taxislužby v meste Veľký Šariš ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Veľký Šariš ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'vrable': [
     {
       question: 'Ako si objednám taxi v meste Vráble?',
-      answer: 'V meste Vráble si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Vráble si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Vráble?',
@@ -3849,13 +3849,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Vráble?',
-      answer: 'Áno, všetky taxislužby v meste Vráble ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Vráble ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'vranov-nad-toplou': [
     {
       question: 'Ako si objednám taxi v meste Vranov nad Topľou?',
-      answer: 'V meste Vranov nad Topľou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 2 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Vranov nad Topľou si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Vranov nad Topľou?',
@@ -3875,13 +3875,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Vranov nad Topľou?',
-      answer: 'Áno, všetky taxislužby v meste Vranov nad Topľou ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Vranov nad Topľou ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'vrbove': [
     {
       question: 'Ako si objednám taxi v meste Vrbové?',
-      answer: 'V meste Vrbové si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Vrbové si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Vrbové?',
@@ -3901,13 +3901,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Vrbové?',
-      answer: 'Áno, všetky taxislužby v meste Vrbové ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Vrbové ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'vrutky': [
     {
       question: 'Ako si objednám taxi v meste Vrútky?',
-      answer: 'V meste Vrútky si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 6 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Vrútky si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Vrútky?',
@@ -3915,7 +3915,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Vrútky dostupné nonstop?',
-      answer: 'Väčšina z 6 taxislužieb v meste Vrútky poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Vrútky poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Vrútky?',
@@ -3927,13 +3927,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Vrútky?',
-      answer: 'Áno, všetky taxislužby v meste Vrútky ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Vrútky ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'vysoke-tatry': [
     {
       question: 'Ako si objednám taxi v meste Vysoké Tatry?',
-      answer: 'V meste Vysoké Tatry si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 7 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Vysoké Tatry si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Vysoké Tatry?',
@@ -3941,7 +3941,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Vysoké Tatry dostupné nonstop?',
-      answer: 'Väčšina z 7 taxislužieb v meste Vysoké Tatry poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Vysoké Tatry poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Vysoké Tatry?',
@@ -3953,13 +3953,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Vysoké Tatry?',
-      answer: 'Áno, všetky taxislužby v meste Vysoké Tatry ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Vysoké Tatry ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'zlate-moravce': [
     {
       question: 'Ako si objednám taxi v meste Zlaté Moravce?',
-      answer: 'V meste Zlaté Moravce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Zlaté Moravce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Zlaté Moravce?',
@@ -3967,7 +3967,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Zlaté Moravce dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Zlaté Moravce poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Zlaté Moravce poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Zlaté Moravce?',
@@ -3979,13 +3979,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Zlaté Moravce?',
-      answer: 'Áno, všetky taxislužby v meste Zlaté Moravce ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Zlaté Moravce ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'zvolen': [
     {
       question: 'Ako si objednám taxi v meste Zvolen?',
-      answer: 'V meste Zvolen si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 10 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Zvolen si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Zvolen?',
@@ -3993,11 +3993,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Zvolen dostupné nonstop?',
-      answer: 'Áno, väčšina z 10 taxislužieb v meste Zvolen poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Zvolen poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Zvolen?',
-      answer: 'Väčšina moderných taxislužieb v meste Zvolen akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Zvolen akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Zvolen?',
@@ -4005,13 +4005,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Zvolen?',
-      answer: 'Áno, všetky taxislužby v meste Zvolen ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Zvolen ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'zarnovica': [
     {
       question: 'Ako si objednám taxi v meste Žarnovica?',
-      answer: 'V meste Žarnovica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Žarnovica si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Žarnovica?',
@@ -4019,7 +4019,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Žarnovica dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Žarnovica poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Žarnovica poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Žarnovica?',
@@ -4031,13 +4031,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Žarnovica?',
-      answer: 'Áno, všetky taxislužby v meste Žarnovica ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Žarnovica ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'zeliezovce': [
     {
       question: 'Ako si objednám taxi v meste Želiezovce?',
-      answer: 'V meste Želiezovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 3 taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
+      answer: 'V meste Želiezovce si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Želiezovce?',
@@ -4057,13 +4057,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Želiezovce?',
-      answer: 'Áno, všetky taxislužby v meste Želiezovce ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Želiezovce ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'ziar-nad-hronom': [
     {
       question: 'Ako si objednám taxi v meste Žiar nad Hronom?',
-      answer: 'V meste Žiar nad Hronom si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 5 taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.'
+      answer: 'V meste Žiar nad Hronom si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Žiar nad Hronom?',
@@ -4071,7 +4071,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Žiar nad Hronom dostupné nonstop?',
-      answer: 'Väčšina z 5 taxislužieb v meste Žiar nad Hronom poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.'
+      answer: 'Väčšina taxislužieb v meste Žiar nad Hronom poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Žiar nad Hronom?',
@@ -4083,13 +4083,13 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Žiar nad Hronom?',
-      answer: 'Áno, všetky taxislužby v meste Žiar nad Hronom ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Žiar nad Hronom ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'zilina': [
     {
       question: 'Ako si objednám taxi v meste Žilina?',
-      answer: 'V meste Žilina si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname 14 taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.'
+      answer: 'V meste Žilina si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
     },
     {
       question: 'Koľko stojí jazda taxíkom v meste Žilina?',
@@ -4097,11 +4097,11 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Sú taxislužby v meste Žilina dostupné nonstop?',
-      answer: 'Áno, väčšina z 14 taxislužieb v meste Žilina poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.'
+      answer: 'Väčšina taxislužieb v meste Žilina poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
     },
     {
       question: 'Môžem platiť kartou v taxi v meste Žilina?',
-      answer: 'Väčšina moderných taxislužieb v meste Žilina akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.'
+      answer: 'Niektoré taxislužby v meste Žilina akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
     },
     {
       question: 'Ako poznám, že ide o legálnu taxislužbu v meste Žilina?',
@@ -4109,7 +4109,7 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: 'Môžem si vopred rezervovať taxi v meste Žilina?',
-      answer: 'Áno, všetky taxislužby v meste Žilina ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.'
+      answer: 'Väčšina taxislužieb v meste Žilina ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ]
 };

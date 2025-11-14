@@ -45,15 +45,7 @@ const generateCityFAQs = (city) => {
 };
 
 const generateOrderAnswer = (cityName, taxiCount, hasMany) => {
-  const base = `V meste ${cityName} si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname`;
-
-  if (hasMany) {
-    return `${base} ${taxiCount} taxislužieb), cez mobilné aplikácie moderných taxislužieb, online formuláre na webových stránkach, alebo na stanovištiach taxi na frekventovaných miestach v meste. Objednávanie je rýchle a jednoduché.`;
-  } else if (taxiCount >= 5) {
-    return `${base} ${taxiCount} taxislužieb), cez mobilné aplikácie niektorých taxislužieb, alebo na stanovištiach taxi v centre mesta. Priemerná čakacia doba je krátka.`;
-  } else {
-    return `${base} ${taxiCount} ${taxiCount === 1 ? 'taxislužby' : 'taxislužieb'}). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.`;
-  }
+  return `V meste ${cityName} si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.`;
 };
 
 const generatePriceAnswer = (cityName) => {
@@ -61,21 +53,11 @@ const generatePriceAnswer = (cityName) => {
 };
 
 const generateAvailabilityAnswer = (cityName, taxiCount) => {
-  if (taxiCount >= 10) {
-    return `Áno, väčšina z ${taxiCount} taxislužieb v meste ${cityName} poskytuje služby 24 hodín denne, 7 dní v týždni. Vďaka širokej ponuke je taxi dostupné prakticky kedykoľvek.`;
-  } else if (taxiCount >= 5) {
-    return `Väčšina z ${taxiCount} taxislužieb v meste ${cityName} poskytuje služby 24 hodín denne, 7 dní v týždni. Pre istotu si overte dostupnosť priamo u vybranej taxislužby.`;
-  } else {
-    return `Väčšina taxislužieb v meste ${cityName} poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.`;
-  }
+  return `Väčšina taxislužieb v meste ${cityName} poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.`;
 };
 
 const generatePaymentAnswer = (cityName, hasMany) => {
-  if (hasMany) {
-    return `Väčšina moderných taxislužieb v meste ${cityName} akceptuje platby kartou. Mnohé ponúkajú aj platbu cez mobilné aplikácie. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.`;
-  } else {
-    return `Niektoré taxislužby v meste ${cityName} akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.`;
-  }
+  return `Niektoré taxislužby v meste ${cityName} akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.`;
 };
 
 const generateLegalityAnswer = (cityName) => {
@@ -83,7 +65,7 @@ const generateLegalityAnswer = (cityName) => {
 };
 
 const generateReservationAnswer = (cityName) => {
-  return `Áno, všetky taxislužby v meste ${cityName} ponúkajú možnosť vopred si rezervovať taxi na konkrétny čas. To je obzvlášť užitočné pri dôležitých cestách. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez ich webovú stránku či aplikáciu.`;
+  return `Väčšina taxislužieb v meste ${cityName} ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.`;
 };
 
 // Generate TypeScript file content
