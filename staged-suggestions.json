@@ -1,17 +1,6 @@
 {
+  "lastUpdated": "2025-11-14T20:22:52.058Z",
   "suggestions": [
-    {
-      "id": "horne-oresany-1763151711194-x49r6ol9b",
-      "citySlug": "horne-oresany",
-      "taxiService": {
-        "name": "Taxi Bošany",
-        "phone": "+421944220766",
-        "website": "https://taxi-bosany.webnode.sk",
-        "address": "Staničná 15/15, Pri stanici, 956 18 Bošany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:21:51.194Z"
-    },
     {
       "id": "horne-oresany-1763151711195-cib58dniv",
       "citySlug": "horne-oresany",
@@ -180,6 +169,5 @@
       "status": "pending",
       "timestamp": "2025-11-14T20:21:51.194Z"
     }
-  ],
-  "lastUpdated": "2025-11-14T20:21:51.194Z"
+  ]
 }
