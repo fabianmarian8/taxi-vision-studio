@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:19:03.750Z",
+  "lastUpdated": "2025-11-14T20:21:35.443Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1593,7 +1593,28 @@
         "objednať taxi horná streda",
         "taxi horná streda telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Blue Taxi - Nové Mesto nad Váhom",
+          "website": "https://bluetaxi.sk",
+          "phone": "+421908505404"
+        },
+        {
+          "name": "Taxi Piešťany",
+          "website": "http://www.taxi-pn.sk",
+          "phone": "+421944274744"
+        },
+        {
+          "name": "A-Taxi Piešťany",
+          "website": "https://www.ataxi.sk",
+          "phone": "+421915666600"
+        },
+        {
+          "name": "Taxi Piešťany - Peter Baláž",
+          "website": "http://www.taxi-pn.sk",
+          "phone": "+421915336649"
+        }
+      ],
       "latitude": 48.2167,
       "longitude": 17.4833
     },
