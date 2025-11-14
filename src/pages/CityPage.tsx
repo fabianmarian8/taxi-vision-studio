@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { HowItWorks } from "@/components/HowItWorks";
 import { GeometricLines } from "@/components/GeometricLines";
 import { CityFAQ } from "@/components/CityFAQ";
+import { CityContent } from "@/components/CityContent";
 import { SEOHead, generateCitySEO } from "@/components/SEOHead";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { MapPin, Phone, Globe } from "lucide-react";
@@ -117,8 +118,11 @@ const CityPage = () => {
         </div>
       </section>
 
+      {/* City Content Section */}
+      <CityContent citySlug={city.slug} cityName={city.name} />
+
       {/* FAQ Section */}
-      <CityFAQ cityName={city.name} />
+      <CityFAQ cityName={city.name} citySlug={city.slug} />
 
       {/* How It Works */}
       <HowItWorks />

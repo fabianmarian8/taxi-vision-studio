@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T14:12:46.994Z",
+  "lastUpdated": "2025-11-14T15:46:20.682966Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -95,7 +95,9 @@
         }
       ],
       "latitude": 48.7361,
-      "longitude": 19.1475
+      "longitude": 19.1475,
+      "hasContent": true,
+      "contentSummary": "Sprievodca taxislužbami v Banskej Bystrici, centre stredného Slovenska, s praktickými tipmi."
     },
     {
       "name": "Banská Štiavnica",
@@ -342,7 +344,9 @@
         }
       ],
       "latitude": 48.1486,
-      "longitude": 17.1077
+      "longitude": 17.1077,
+      "hasContent": true,
+      "contentSummary": "Komplexný sprievodca taxislužbami v Bratislave vrátane informácií o objednávaní, cenách a tipov pre cestujúcich."
     },
     {
       "name": "Brezno",
@@ -1427,7 +1431,9 @@
         }
       ],
       "latitude": 48.7164,
-      "longitude": 21.2611
+      "longitude": 21.2611,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v Košiciach, metropole východného Slovenska, vrátane praktických rád."
     },
     {
       "name": "Kráľovský Chlmec",
@@ -3181,7 +3187,9 @@
         }
       ],
       "latitude": 48.9983,
-      "longitude": 21.2392
+      "longitude": 21.2392,
+      "hasContent": true,
+      "contentSummary": "Užitočný sprievodca taxislužbami v Prešove s informáciami o dostupnosti a cenách."
     },
     {
       "name": "Prievidza",
@@ -5766,7 +5774,9 @@
         }
       ],
       "latitude": 49.2203,
-      "longitude": 18.7392
+      "longitude": 18.7392,
+      "hasContent": true,
+      "contentSummary": "Kompletné informácie o taxislužbách v Žiline, dôležitom dopravnom centre severného Slovenska."
     }
   ]
 }
