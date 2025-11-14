@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:24:03.885Z",
+  "lastUpdated": "2025-11-14T20:24:10.205Z",
   "suggestions": [
     {
       "id": "horne-oresany-1763151711195-wpt8eb3cz",
@@ -21,18 +21,6 @@
         "phone": "+421907181718",
         "website": "http://www.taxisluzbapezinok.sk",
         "address": "Radničné námestie 1, 902 01 Pezinok, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:21:51.194Z"
-    },
-    {
-      "id": "horne-oresany-1763151711195-mk26fk48o",
-      "citySlug": "horne-oresany",
-      "taxiService": {
-        "name": "Základná škola s materskou školou Horné Orešany",
-        "phone": "+42133/5588111",
-        "website": "http://zshoresany.edupage.org",
-        "address": "Horné Orešany 31, 919 03 Horné Orešany, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:21:51.194Z"
