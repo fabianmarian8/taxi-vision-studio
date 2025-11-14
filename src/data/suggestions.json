@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T19:50:34.451Z",
+  "lastUpdated": "2025-11-14T19:50:35.928Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,30 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "bernolakovo-1763149804572-rhvzles6r",
-      "citySlug": "bernolakovo",
-      "taxiService": {
-        "name": "Taxi Bernolakovo",
-        "phone": "+421910275078",
-        "website": "https://massivetaxi.sk",
-        "address": "Poštová 4, 900 27 Bernolákovo, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:50:04.572Z"
-    },
-    {
-      "id": "bernolakovo-1763149804572-b26x6icn2",
-      "citySlug": "bernolakovo",
-      "taxiService": {
-        "name": "Taxi Rado",
-        "phone": "+421944300402",
-        "website": null,
-        "address": "Staničná 10, 900 27 Bernolákovo, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:50:04.572Z"
     }
   ]
 }
