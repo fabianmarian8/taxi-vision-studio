@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:21:36.884Z",
+  "lastUpdated": "2025-11-14T20:28:03.404Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,18 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "horne-oresany-1763151711195-s9we2u7xh",
+      "citySlug": "horne-oresany",
+      "taxiService": {
+        "name": "Taxi Topoľčany",
+        "phone": "+421944786989",
+        "website": null,
+        "address": "Martina Rázusa 6, 955 01 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:21:51.194Z"
     }
   ]
 }

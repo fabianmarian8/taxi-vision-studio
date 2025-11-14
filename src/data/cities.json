@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:21:35.443Z",
+  "lastUpdated": "2025-11-14T20:28:03.404Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1631,7 +1631,27 @@
         "objednať taxi horné orešany",
         "taxi horné orešany telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Team taxi",
+          "phone": "+421 940 747 474"
+        },
+        {
+          "name": "Yellow Taxi",
+          "website": "",
+          "phone": "+421 907 030 303"
+        },
+        {
+          "name": "VIP taxi Trnava",
+          "website": "",
+          "phone": "+421 33 16 111"
+        },
+        {
+          "name": " Profi TAXI Trnava",
+          "website": "https://www.profitaxitrnava.sk/",
+          "phone": "+421 33 16 444"
+        }
+      ],
       "latitude": 48.4333,
       "longitude": 17.4667
     },
