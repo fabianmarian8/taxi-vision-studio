@@ -1,0 +1,27 @@
+{
+  "changes": [
+    {
+      "citySlug": "filakovo",
+      "taxiServices": [
+        {
+          "name": "Cheap-Taxi Fiľakovo",
+          "website": "https://www.facebook.com/share/19KSr9x4yv",
+          "phone": "+421940033880"
+        },
+        {
+          "name": "DANI TAXI FIĽAKOVO",
+          "phone": "+421952020030"
+        },
+        {
+          "name": "FŐNIX TAXI FIĽAKOVO",
+          "phone": "+421952020050"
+        },
+        {
+          "name": "Igor taxi filakovo",
+          "phone": "+421940958001"
+        }
+      ],
+      "timestamp": "2025-11-14T20:18:27.856Z"
+    }
+  ]
+}
