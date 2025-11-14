@@ -1,0 +1,41 @@
+{
+  "suggestions": [
+    {
+      "id": "bernolakovo-1763149804572-rhvzles6r",
+      "citySlug": "bernolakovo",
+      "taxiService": {
+        "name": "Taxi Bernolakovo",
+        "phone": "+421910275078",
+        "website": "https://massivetaxi.sk",
+        "address": "Poštová 4, 900 27 Bernolákovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:50:04.572Z"
+    },
+    {
+      "id": "bernolakovo-1763149804572-b26x6icn2",
+      "citySlug": "bernolakovo",
+      "taxiService": {
+        "name": "Taxi Rado",
+        "phone": "+421944300402",
+        "website": null,
+        "address": "Staničná 10, 900 27 Bernolákovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:50:04.572Z"
+    },
+    {
+      "id": "bernolakovo-1763149804572-hisxup8fk",
+      "citySlug": "bernolakovo",
+      "taxiService": {
+        "name": "ARAYA - Autodoprava/nákladné TAXI - Sťahovanie/Vypratávanie - Montáž/Demontáž nábytku - Kosenie/Klčovanie pozemkov",
+        "phone": "+421905324007",
+        "website": "http://www.stahovanie-autodoprava-araya.sk",
+        "address": "Železničná 87, 900 27 Bernolákovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:50:04.572Z"
+    }
+  ],
+  "lastUpdated": "2025-11-14T19:50:04.572Z"
+}
