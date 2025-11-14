@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T19:56:18.340Z",
+  "lastUpdated": "2025-11-14T20:00:53.672Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -428,7 +428,22 @@
         "objednať taxi bielovce",
         "taxi bielovce telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": " Šahy TAXI Ipolyság",
+          "phone": "+421 944 091 135"
+        },
+        {
+          "name": "Jozef Sýkora - City Taxi I.",
+          "website": "",
+          "phone": "1421 911 394 480"
+        },
+        {
+          "name": "Eco Hybrid Taxi Šahy ",
+          "website": "",
+          "phone": "+421 909 105 105"
+        }
+      ],
       "latitude": 48.2833,
       "longitude": 18.1333
     },
