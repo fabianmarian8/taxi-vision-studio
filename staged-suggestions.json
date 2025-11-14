@@ -1,17 +1,6 @@
 {
+  "lastUpdated": "2025-11-14T20:04:12.199Z",
   "suggestions": [
-    {
-      "id": "boleraz-1763150620562-1iywlyvqz",
-      "citySlug": "boleraz",
-      "taxiService": {
-        "name": "Profi TAXI Trnava",
-        "phone": "+4213316444",
-        "website": "http://www.profitaxitrnava.sk",
-        "address": "Jánošíkova 1, 917 01 Trnava, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:03:40.562Z"
-    },
     {
       "id": "boleraz-1763150620563-uv6yvbl2b",
       "citySlug": "boleraz",
@@ -96,6 +85,5 @@
       "status": "pending",
       "timestamp": "2025-11-14T20:03:40.562Z"
     }
-  ],
-  "lastUpdated": "2025-11-14T20:03:40.562Z"
+  ]
 }
