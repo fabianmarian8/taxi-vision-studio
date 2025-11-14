@@ -1,18 +1,6 @@
 {
-  "lastUpdated": "2025-11-14T20:06:23.299Z",
+  "lastUpdated": "2025-11-14T20:06:25.883Z",
   "suggestions": [
-    {
-      "id": "boleraz-1763150620563-acwo7sppx",
-      "citySlug": "boleraz",
-      "taxiService": {
-        "name": "TAXI PEZINOK",
-        "phone": "+421905426242",
-        "website": "http://www.taxi-pezinok.sk",
-        "address": "Radničné námestie 1, 902 01 Pezinok, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:03:40.562Z"
-    },
     {
       "id": "boleraz-1763150779048-jgblfwm8y",
       "citySlug": "boleraz",
