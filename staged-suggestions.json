@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:23:51.558Z",
+  "lastUpdated": "2025-11-14T20:24:01.417Z",
   "suggestions": [
     {
       "id": "horne-oresany-1763151711195-wpt8eb3cz",
@@ -69,18 +69,6 @@
         "phone": "+421905063204",
         "website": "https://www.protaxi.sk",
         "address": "Gagarinova 1573/1, 955 01 Topoľčany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:21:51.194Z"
-    },
-    {
-      "id": "horne-oresany-1763151711195-p1sw70ohu",
-      "citySlug": "horne-oresany",
-      "taxiService": {
-        "name": "Taxi Piešťany - Peter Baláž",
-        "phone": "+421915336649",
-        "website": "http://www.taxi-pn.sk",
-        "address": "Piešťany, 92101, 921 01 Piešťany, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:21:51.194Z"
