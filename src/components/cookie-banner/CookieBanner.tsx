@@ -267,7 +267,7 @@ export const CookieBanner = () => {
           {/* Footer info */}
           <p className="mt-4 md:mt-6 text-black/60 text-xs md:text-sm text-center">
             Viac informácií o cookies nájdeš v našich{' '}
-            <a href="/privacy-policy" className="underline hover:text-black">
+            <a href="/ochrana-sukromia" className="underline hover:text-black">
               zásadách ochrany osobných údajov
             </a>
           </p>

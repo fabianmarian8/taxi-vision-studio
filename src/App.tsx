@@ -15,6 +15,7 @@ import AdminEditCity from "./pages/AdminEditCity";
 import AdminSuggestions from "./pages/AdminSuggestions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import Cookies from "./pages/Cookies";
 import Contact from "./pages/Contact";
 import { CookieBanner } from "./components/cookie-banner";
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/scraper" element={<TaxiScraperTool />} />
           {/* Legal pages */}
           <Route path="/ochrana-sukromia" element={<PrivacyPolicy />} />
+          <Route path="/cookies" element={<Cookies />} />
           <Route path="/podmienky-pouzivania" element={<TermsOfUse />} />
           <Route path="/kontakt" element={<Contact />} />
           {/* Admin routes */}
