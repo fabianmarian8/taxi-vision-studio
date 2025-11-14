@@ -1,0 +1,20 @@
+{
+  "changes": [
+    {
+      "citySlug": "cierna-nad-tisou",
+      "taxiServices": [
+        {
+          "name": "Elitt Taxi",
+          "website": "http://elittaxi.sk",
+          "phone": "+421940640640"
+        },
+        {
+          "name": "Szabi Taxi - Taxislužba",
+          "website": "",
+          "phone": "+421919066191"
+        }
+      ],
+      "timestamp": "2025-11-14T20:08:46.962Z"
+    }
+  ]
+}
