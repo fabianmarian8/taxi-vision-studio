@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T14:12:46.994Z",
+  "lastUpdated": "2025-11-14T18:15:35.082Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -156,6 +156,23 @@
       "longitude": 18.8917
     },
     {
+      "name": "Banský Studenec",
+      "slug": "bansky-studenec",
+      "region": "Žilinský kraj",
+      "description": "Objavte taxi služby v meste Banský Studenec. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Banský Studenec - Nájdite taxislužby v meste Banský Studenec. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi banský studenec",
+        "taxislužba banský studenec",
+        "taxi v banský studenec",
+        "objednať taxi banský studenec",
+        "taxi banský studenec telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 49.1667,
+      "longitude": 19.6167
+    },
+    {
       "name": "Bardejov",
       "slug": "bardejov",
       "region": "Prešovský kraj",
@@ -229,6 +246,108 @@
       "longitude": 21.2739
     },
     {
+      "name": "Bátovce",
+      "slug": "batovce",
+      "region": "Trnavský kraj",
+      "description": "Objavte taxi služby v meste Bátovce. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Bátovce - Nájdite taxislužby v meste Bátovce. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi bátovce",
+        "taxislužba bátovce",
+        "taxi v bátovce",
+        "objednať taxi bátovce",
+        "taxi bátovce telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.1667,
+      "longitude": 17.7833
+    },
+    {
+      "name": "Bernolákovo",
+      "slug": "bernolakovo",
+      "region": "Bratislavský kraj",
+      "description": "Objavte taxi služby v meste Bernolákovo. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Bernolákovo - Nájdite taxislužby v meste Bernolákovo. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi bernolákovo",
+        "taxislužba bernolákovo",
+        "taxi v bernolákovo",
+        "objednať taxi bernolákovo",
+        "taxi bernolákovo telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.2014,
+      "longitude": 17.2936
+    },
+    {
+      "name": "Betlanovce",
+      "slug": "betlanovce",
+      "region": "Košický kraj",
+      "description": "Objavte taxi služby v meste Betlanovce. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Betlanovce - Nájdite taxislužby v meste Betlanovce. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi betlanovce",
+        "taxislužba betlanovce",
+        "taxi v betlanovce",
+        "objednať taxi betlanovce",
+        "taxi betlanovce telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.8667,
+      "longitude": 20.5667
+    },
+    {
+      "name": "Biel",
+      "slug": "biel",
+      "region": "Žilinský kraj",
+      "description": "Objavte taxi služby v meste Biel. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Biel - Nájdite taxislužby v meste Biel. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi biel",
+        "taxislužba biel",
+        "taxi v biel",
+        "objednať taxi biel",
+        "taxi biel telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 49.4167,
+      "longitude": 18.9833
+    },
+    {
+      "name": "Bielovce",
+      "slug": "bielovce",
+      "region": "Nitriansky kraj",
+      "description": "Objavte taxi služby v meste Bielovce. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Bielovce - Nájdite taxislužby v meste Bielovce. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi bielovce",
+        "taxislužba bielovce",
+        "taxi v bielovce",
+        "objednať taxi bielovce",
+        "taxi bielovce telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.2833,
+      "longitude": 18.1333
+    },
+    {
+      "name": "Blatnica",
+      "slug": "blatnica",
+      "region": "Žilinský kraj",
+      "description": "Objavte taxi služby v meste Blatnica. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Blatnica - Nájdite taxislužby v meste Blatnica. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi blatnica",
+        "taxislužba blatnica",
+        "taxi v blatnica",
+        "objednať taxi blatnica",
+        "taxi blatnica telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 49.0667,
+      "longitude": 19.1
+    },
+    {
       "name": "Bojnice",
       "slug": "bojnice",
       "region": "Trenčiansky kraj",
@@ -255,6 +374,23 @@
       ],
       "latitude": 48.7803,
       "longitude": 18.5775
+    },
+    {
+      "name": "Boleráz",
+      "slug": "boleraz",
+      "region": "Trnavský kraj",
+      "description": "Objavte taxi služby v meste Boleráz. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Boleráz - Nájdite taxislužby v meste Boleráz. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi boleráz",
+        "taxislužba boleráz",
+        "taxi v boleráz",
+        "objednať taxi boleráz",
+        "taxi boleráz telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.2667,
+      "longitude": 17.55
     },
     {
       "name": "Bratislava",
@@ -454,6 +590,23 @@
       "longitude": 18.5583
     },
     {
+      "name": "Cinobaňa",
+      "slug": "cinobana",
+      "region": "Banskobystrický kraj",
+      "description": "Objavte taxi služby v meste Cinobaňa. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Cinobaňa - Nájdite taxislužby v meste Cinobaňa. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi cinobaňa",
+        "taxislužba cinobaňa",
+        "taxi v cinobaňa",
+        "objednať taxi cinobaňa",
+        "taxi cinobaňa telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.4667,
+      "longitude": 19.6333
+    },
+    {
       "name": "Čadca",
       "slug": "cadca",
       "region": "Žilinský kraj",
@@ -515,6 +668,23 @@
       ],
       "latitude": 49.435,
       "longitude": 18.7889
+    },
+    {
+      "name": "Čierna nad Tisou",
+      "slug": "cierna-nad-tisou",
+      "region": "Košický kraj",
+      "description": "Objavte taxi služby v meste Čierna nad Tisou. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Čierna nad Tisou - Nájdite taxislužby v meste Čierna nad Tisou. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi čierna nad tisou",
+        "taxislužba čierna nad tisou",
+        "taxi v čierna nad tisou",
+        "objednať taxi čierna nad tisou",
+        "taxi čierna nad tisou telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.4167,
+      "longitude": 22.1333
     },
     {
       "name": "Detva",
@@ -732,6 +902,57 @@
       "longitude": 18.8667
     },
     {
+      "name": "Dunajská Streda",
+      "slug": "dunajska-streda",
+      "region": "Trnavský kraj",
+      "description": "Objavte taxi služby v meste Dunajská Streda. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Dunajská Streda - Nájdite taxislužby v meste Dunajská Streda. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi dunajská streda",
+        "taxislužba dunajská streda",
+        "taxi v dunajská streda",
+        "objednať taxi dunajská streda",
+        "taxi dunajská streda telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 47.9936,
+      "longitude": 17.6197
+    },
+    {
+      "name": "Dvory nad Žitavou",
+      "slug": "dvory-nad-zitavou",
+      "region": "Nitriansky kraj",
+      "description": "Objavte taxi služby v meste Dvory nad Žitavou. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Dvory nad Žitavou - Nájdite taxislužby v meste Dvory nad Žitavou. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi dvory nad žitavou",
+        "taxislužba dvory nad žitavou",
+        "taxi v dvory nad žitavou",
+        "objednať taxi dvory nad žitavou",
+        "taxi dvory nad žitavou telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.0833,
+      "longitude": 18.2667
+    },
+    {
+      "name": "Fiľakovo",
+      "slug": "filakovo",
+      "region": "Banskobystrický kraj",
+      "description": "Objavte taxi služby v meste Fiľakovo. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Fiľakovo - Nájdite taxislužby v meste Fiľakovo. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi fiľakovo",
+        "taxislužba fiľakovo",
+        "taxi v fiľakovo",
+        "objednať taxi fiľakovo",
+        "taxi fiľakovo telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.2667,
+      "longitude": 19.8333
+    },
+    {
       "name": "Gabčíkovo",
       "slug": "gabcikovo",
       "region": "Trnavský kraj",
@@ -882,6 +1103,23 @@
       ],
       "latitude": 49.0992,
       "longitude": 21.5033
+    },
+    {
+      "name": "Handlová",
+      "slug": "handlova",
+      "region": "Trenčiansky kraj",
+      "description": "Objavte taxi služby v meste Handlová. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Handlová - Nájdite taxislužby v meste Handlová. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi handlová",
+        "taxislužba handlová",
+        "taxi v handlová",
+        "objednať taxi handlová",
+        "taxi handlová telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.7272,
+      "longitude": 18.7619
     },
     {
       "name": "Hanušovce nad Topľou",
@@ -1036,6 +1274,74 @@
       "longitude": 17.1597
     },
     {
+      "name": "Horná Streda",
+      "slug": "horna-streda",
+      "region": "Trnavský kraj",
+      "description": "Objavte taxi služby v meste Horná Streda. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Horná Streda - Nájdite taxislužby v meste Horná Streda. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi horná streda",
+        "taxislužba horná streda",
+        "taxi v horná streda",
+        "objednať taxi horná streda",
+        "taxi horná streda telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.2167,
+      "longitude": 17.4833
+    },
+    {
+      "name": "Horné Orešany",
+      "slug": "horne-oresany",
+      "region": "Trnavský kraj",
+      "description": "Objavte taxi služby v meste Horné Orešany. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Horné Orešany - Nájdite taxislužby v meste Horné Orešany. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi horné orešany",
+        "taxislužba horné orešany",
+        "taxi v horné orešany",
+        "objednať taxi horné orešany",
+        "taxi horné orešany telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.4333,
+      "longitude": 17.4667
+    },
+    {
+      "name": "Hostovce",
+      "slug": "hostovce",
+      "region": "Košický kraj",
+      "description": "Objavte taxi služby v meste Hostovce. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Hostovce - Nájdite taxislužby v meste Hostovce. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi hostovce",
+        "taxislužba hostovce",
+        "taxi v hostovce",
+        "objednať taxi hostovce",
+        "taxi hostovce telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.8667,
+      "longitude": 21.2667
+    },
+    {
+      "name": "Hriňová",
+      "slug": "hrinova",
+      "region": "Banskobystrický kraj",
+      "description": "Objavte taxi služby v meste Hriňová. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Hriňová - Nájdite taxislužby v meste Hriňová. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi hriňová",
+        "taxislužba hriňová",
+        "taxi v hriňová",
+        "objednať taxi hriňová",
+        "taxi hriňová telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.6333,
+      "longitude": 19.5167
+    },
+    {
       "name": "Humenné",
       "slug": "humenne",
       "region": "Prešovský kraj",
@@ -1142,6 +1448,40 @@
       "longitude": 18.1917
     },
     {
+      "name": "Chlmec",
+      "slug": "chlmec",
+      "region": "Košický kraj",
+      "description": "Objavte taxi služby v meste Chlmec. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Chlmec - Nájdite taxislužby v meste Chlmec. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi chlmec",
+        "taxislužba chlmec",
+        "taxi v chlmec",
+        "objednať taxi chlmec",
+        "taxi chlmec telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.5833,
+      "longitude": 21.9833
+    },
+    {
+      "name": "Chynorany",
+      "slug": "chynorany",
+      "region": "Trenčiansky kraj",
+      "description": "Objavte taxi služby v meste Chynorany. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Chynorany - Nájdite taxislužby v meste Chynorany. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi chynorany",
+        "taxislužba chynorany",
+        "taxi v chynorany",
+        "objednať taxi chynorany",
+        "taxi chynorany telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.5833,
+      "longitude": 18.2167
+    },
+    {
       "name": "Ilava",
       "slug": "ilava",
       "region": "Trenčiansky kraj",
@@ -1173,6 +1513,23 @@
       ],
       "latitude": 49.005,
       "longitude": 18.2383
+    },
+    {
+      "name": "Ivanka pri Dunaji",
+      "slug": "ivanka-pri-dunaji",
+      "region": "Bratislavský kraj",
+      "description": "Objavte taxi služby v meste Ivanka pri Dunaji. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Ivanka pri Dunaji - Nájdite taxislužby v meste Ivanka pri Dunaji. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi ivanka pri dunaji",
+        "taxislužba ivanka pri dunaji",
+        "taxi v ivanka pri dunaji",
+        "objednať taxi ivanka pri dunaji",
+        "taxi ivanka pri dunaji telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.2167,
+      "longitude": 17.2667
     },
     {
       "name": "Jelšava",
@@ -1514,6 +1871,23 @@
       "longitude": 18.9183
     },
     {
+      "name": "Krompachy",
+      "slug": "krompachy",
+      "region": "Košický kraj",
+      "description": "Objavte taxi služby v meste Krompachy. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Krompachy - Nájdite taxislužby v meste Krompachy. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi krompachy",
+        "taxislužba krompachy",
+        "taxi v krompachy",
+        "objednať taxi krompachy",
+        "taxi krompachy telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.9167,
+      "longitude": 20.8833
+    },
+    {
       "name": "Krupina",
       "slug": "krupina",
       "region": "Banskobystrický kraj",
@@ -1650,48 +2024,6 @@
       "longitude": 17.7633
     },
     {
-      "name": "Levoča",
-      "slug": "levoca",
-      "region": "Prešovský kraj",
-      "description": "Historické spiššké mesto zapísané v UNESCO. Nájdite taxi v Levoči.",
-      "metaDescription": "Nájdite taxi v meste Levoča. 4 taxislužby s telefónnymi číslami a webovými stránkami: Ender taxi Levoča , TaxiEuropa.sk preprava osôb AT,DE,CH, METRO Taxi Levoča a ďalšie. Kontaktujte priamo.",
-      "keywords": [
-        "taxi levoča",
-        "taxislužba levoča",
-        "taxi v levoči",
-        "objednať taxi levoča",
-        "taxi levoča unesco"
-      ],
-      "taxiServices": [
-        {
-          "name": "Ender taxi Levoča ",
-          "phone": "+421944609409",
-          "website": "https://taxi-levoca.sk",
-          "address": "Námestie Majstra Pavla, 054 01 Levoča, Slovensko"
-        },
-        {
-          "name": "TaxiEuropa.sk preprava osôb AT,DE,CH",
-          "phone": "+421907817824",
-          "website": "https://www.taxieuropa.sk",
-          "address": "Dlhá 246/21, 054 01 Levoča, Slovensko"
-        },
-        {
-          "name": "METRO Taxi Levoča",
-          "phone": "+421911430432",
-          "website": null,
-          "address": "Námestie Majstra Pavla, 054 01 Levoča, Slovensko"
-        },
-        {
-          "name": "Tara-Trans-Taxi - Radoslav Tarbaj",
-          "phone": "+421910650605",
-          "website": "http://www.tara-trans-taxi.sk",
-          "address": "Jána Francisciho 1677/15, 054 01 Levoča, Slovensko"
-        }
-      ],
-      "latitude": 49.02,
-      "longitude": 20.5867
-    },
-    {
       "name": "Levice",
       "slug": "levice",
       "region": "Nitriansky kraj",
@@ -1755,6 +2087,65 @@
       ],
       "latitude": 48.2167,
       "longitude": 18.6
+    },
+    {
+      "name": "Levoča",
+      "slug": "levoca",
+      "region": "Prešovský kraj",
+      "description": "Historické spiššké mesto zapísané v UNESCO. Nájdite taxi v Levoči.",
+      "metaDescription": "Nájdite taxi v meste Levoča. 4 taxislužby s telefónnymi číslami a webovými stránkami: Ender taxi Levoča , TaxiEuropa.sk preprava osôb AT,DE,CH, METRO Taxi Levoča a ďalšie. Kontaktujte priamo.",
+      "keywords": [
+        "taxi levoča",
+        "taxislužba levoča",
+        "taxi v levoči",
+        "objednať taxi levoča",
+        "taxi levoča unesco"
+      ],
+      "taxiServices": [
+        {
+          "name": "Ender taxi Levoča ",
+          "phone": "+421944609409",
+          "website": "https://taxi-levoca.sk",
+          "address": "Námestie Majstra Pavla, 054 01 Levoča, Slovensko"
+        },
+        {
+          "name": "TaxiEuropa.sk preprava osôb AT,DE,CH",
+          "phone": "+421907817824",
+          "website": "https://www.taxieuropa.sk",
+          "address": "Dlhá 246/21, 054 01 Levoča, Slovensko"
+        },
+        {
+          "name": "METRO Taxi Levoča",
+          "phone": "+421911430432",
+          "website": null,
+          "address": "Námestie Majstra Pavla, 054 01 Levoča, Slovensko"
+        },
+        {
+          "name": "Tara-Trans-Taxi - Radoslav Tarbaj",
+          "phone": "+421910650605",
+          "website": "http://www.tara-trans-taxi.sk",
+          "address": "Jána Francisciho 1677/15, 054 01 Levoča, Slovensko"
+        }
+      ],
+      "latitude": 49.02,
+      "longitude": 20.5867
+    },
+    {
+      "name": "Lipany",
+      "slug": "lipany",
+      "region": "Prešovský kraj",
+      "description": "Objavte taxi služby v meste Lipany. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Lipany - Nájdite taxislužby v meste Lipany. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi lipany",
+        "taxislužba lipany",
+        "taxi v lipany",
+        "objednať taxi lipany",
+        "taxi lipany telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 49.1667,
+      "longitude": 20.9667
     },
     {
       "name": "Liptovský Hrádok",
@@ -2404,6 +2795,23 @@
       "longitude": 19.48
     },
     {
+      "name": "Nemšová",
+      "slug": "nemsova",
+      "region": "Trenčiansky kraj",
+      "description": "Objavte taxi služby v meste Nemšová. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Nemšová - Nájdite taxislužby v meste Nemšová. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi nemšová",
+        "taxislužba nemšová",
+        "taxi v nemšová",
+        "objednať taxi nemšová",
+        "taxi nemšová telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.9564,
+      "longitude": 18.1189
+    },
+    {
       "name": "Nesvady",
       "slug": "nesvady",
       "region": "Nitriansky kraj",
@@ -2716,6 +3124,74 @@
       "longitude": 18.1617
     },
     {
+      "name": "Nový Ruskov",
+      "slug": "novy-ruskov",
+      "region": "Košický kraj",
+      "description": "Objavte taxi služby v meste Nový Ruskov. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Nový Ruskov - Nájdite taxislužby v meste Nový Ruskov. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi nový ruskov",
+        "taxislužba nový ruskov",
+        "taxi v nový ruskov",
+        "objednať taxi nový ruskov",
+        "taxi nový ruskov telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.7833,
+      "longitude": 22.2833
+    },
+    {
+      "name": "Nový Smokovec",
+      "slug": "novy-smokovec",
+      "region": "Prešovský kraj",
+      "description": "Objavte taxi služby v meste Nový Smokovec. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Nový Smokovec - Nájdite taxislužby v meste Nový Smokovec. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi nový smokovec",
+        "taxislužba nový smokovec",
+        "taxi v nový smokovec",
+        "objednať taxi nový smokovec",
+        "taxi nový smokovec telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 49.1561,
+      "longitude": 20.2211
+    },
+    {
+      "name": "Odrava",
+      "slug": "odrava",
+      "region": "Žilinský kraj",
+      "description": "Objavte taxi služby v meste Odrava. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Odrava - Nájdite taxislužby v meste Odrava. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi odrava",
+        "taxislužba odrava",
+        "taxi v odrava",
+        "objednať taxi odrava",
+        "taxi odrava telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 49.3167,
+      "longitude": 18.7833
+    },
+    {
+      "name": "Odštepný závod",
+      "slug": "odstepny-zavod",
+      "region": "Trenčiansky kraj",
+      "description": "Objavte taxi služby v meste Odštepný závod. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Odštepný závod - Nájdite taxislužby v meste Odštepný závod. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi odštepný závod",
+        "taxislužba odštepný závod",
+        "taxi v odštepný závod",
+        "objednať taxi odštepný závod",
+        "taxi odštepný závod telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.9167,
+      "longitude": 18.4
+    },
+    {
       "name": "Partizánske",
       "slug": "partizanske",
       "region": "Trenčiansky kraj",
@@ -2896,6 +3372,23 @@
       ],
       "latitude": 48.5917,
       "longitude": 17.8258
+    },
+    {
+      "name": "Podolínec",
+      "slug": "podolinec",
+      "region": "Prešovský kraj",
+      "description": "Objavte taxi služby v meste Podolínec. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Podolínec - Nájdite taxislužby v meste Podolínec. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi podolínec",
+        "taxislužba podolínec",
+        "taxi v podolínec",
+        "objednať taxi podolínec",
+        "taxi podolínec telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 49.2583,
+      "longitude": 20.5333
     },
     {
       "name": "Poltár",
@@ -3321,6 +3814,23 @@
       ],
       "latitude": 49.0817,
       "longitude": 18.6433
+    },
+    {
+      "name": "Rajecké Teplice",
+      "slug": "rajecke-teplice",
+      "region": "Žilinský kraj",
+      "description": "Objavte taxi služby v meste Rajecké Teplice. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Rajecké Teplice - Nájdite taxislužby v meste Rajecké Teplice. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi rajecké teplice",
+        "taxislužba rajecké teplice",
+        "taxi v rajecké teplice",
+        "objednať taxi rajecké teplice",
+        "taxi rajecké teplice telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 49.0889,
+      "longitude": 18.8708
     },
     {
       "name": "Revúca",
@@ -4735,6 +5245,40 @@
       ]
     },
     {
+      "name": "Topoľčany",
+      "slug": "topolcany",
+      "region": "Nitriansky kraj",
+      "description": "Objavte taxi služby v meste Topoľčany. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Topoľčany - Nájdite taxislužby v meste Topoľčany. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi topoľčany",
+        "taxislužba topoľčany",
+        "taxi v topoľčany",
+        "objednať taxi topoľčany",
+        "taxi topoľčany telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.5578,
+      "longitude": 18.1803
+    },
+    {
+      "name": "Tornaľa",
+      "slug": "tornala",
+      "region": "Banskobystrický kraj",
+      "description": "Objavte taxi služby v meste Tornaľa. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Tornaľa - Nájdite taxislužby v meste Tornaľa. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi tornaľa",
+        "taxislužba tornaľa",
+        "taxi v tornaľa",
+        "objednať taxi tornaľa",
+        "taxi tornaľa telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 48.3833,
+      "longitude": 20.2333
+    },
+    {
       "name": "Trebišov",
       "slug": "trebisov",
       "region": "Košický kraj",
@@ -4782,6 +5326,42 @@
       ],
       "latitude": 48.6283,
       "longitude": 21.72
+    },
+    {
+      "name": "Trenčianske Teplice",
+      "slug": "trencianske-teplice",
+      "region": "Trenčiansky kraj",
+      "description": "Kúpeľné mesto v Trenčianskom kraji. Nájdite taxi v Trenčianskych Tepliciach.",
+      "metaDescription": "Nájdite taxi v meste Trenčianske Teplice. 4 taxislužby s telefónnymi číslami a webovými stránkami: Taxi Trenčianske Teplice - Marek Jašo Taxi, MAXI TAXI, JoMi CAR - prenájom autobusov, odvoz na letisko a nákladná doprava a ďalšie. Kontaktujte priamo.",
+      "keywords": [
+        "taxi trenčianske teplice",
+        "taxislužba trenčianske teplice",
+        "taxi v trenčianskych tepliciach",
+        "objednať taxi teplice",
+        "taxi kúpele"
+      ],
+      "taxiServices": [
+        {
+          "name": "Taxi Trenčianske Teplice - Marek Jašo Taxi",
+          "phone": "+421905185780"
+        },
+        {
+          "name": "MAXI TAXI",
+          "phone": "+421903169813"
+        },
+        {
+          "name": "JoMi CAR - prenájom autobusov, odvoz na letisko a nákladná doprava",
+          "website": "https://jomicar.sk",
+          "phone": "+421905941338"
+        },
+        {
+          "name": "JAM TAXI",
+          "website": "http://taxiteplice.sk",
+          "phone": "+421910116999"
+        }
+      ],
+      "latitude": 48.9117,
+      "longitude": 18.1717
     },
     {
       "name": "Trenčín",
@@ -4870,42 +5450,6 @@
       ],
       "latitude": 48.895,
       "longitude": 18.0444
-    },
-    {
-      "name": "Trenčianske Teplice",
-      "slug": "trencianske-teplice",
-      "region": "Trenčiansky kraj",
-      "description": "Kúpeľné mesto v Trenčianskom kraji. Nájdite taxi v Trenčianskych Tepliciach.",
-      "metaDescription": "Nájdite taxi v meste Trenčianske Teplice. 4 taxislužby s telefónnymi číslami a webovými stránkami: Taxi Trenčianske Teplice - Marek Jašo Taxi, MAXI TAXI, JoMi CAR - prenájom autobusov, odvoz na letisko a nákladná doprava a ďalšie. Kontaktujte priamo.",
-      "keywords": [
-        "taxi trenčianske teplice",
-        "taxislužba trenčianske teplice",
-        "taxi v trenčianskych tepliciach",
-        "objednať taxi teplice",
-        "taxi kúpele"
-      ],
-      "taxiServices": [
-        {
-          "name": "Taxi Trenčianske Teplice - Marek Jašo Taxi",
-          "phone": "+421905185780"
-        },
-        {
-          "name": "MAXI TAXI",
-          "phone": "+421903169813"
-        },
-        {
-          "name": "JoMi CAR - prenájom autobusov, odvoz na letisko a nákladná doprava",
-          "website": "https://jomicar.sk",
-          "phone": "+421905941338"
-        },
-        {
-          "name": "JAM TAXI",
-          "website": "http://taxiteplice.sk",
-          "phone": "+421910116999"
-        }
-      ],
-      "latitude": 48.9117,
-      "longitude": 18.1717
     },
     {
       "name": "Trnava",
@@ -5124,6 +5668,23 @@
       ]
     },
     {
+      "name": "Tvrdošín",
+      "slug": "tvrdosin",
+      "region": "Žilinský kraj",
+      "description": "Objavte taxi služby v meste Tvrdošín. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
+      "metaDescription": "Taxi Tvrdošín - Nájdite taxislužby v meste Tvrdošín. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
+      "keywords": [
+        "taxi tvrdošín",
+        "taxislužba tvrdošín",
+        "taxi v tvrdošín",
+        "objednať taxi tvrdošín",
+        "taxi tvrdošín telefón"
+      ],
+      "taxiServices": [],
+      "latitude": 49.3361,
+      "longitude": 19.5592
+    },
+    {
       "name": "Veľké Kapušany",
       "slug": "velke-kapusany",
       "region": "Košický kraj",
@@ -5275,33 +5836,6 @@
       ]
     },
     {
-      "name": "Vranov nad Topľou",
-      "slug": "vranov-nad-toplou",
-      "region": "Prešovský kraj",
-      "description": "Okresné mesto v Prešovskom kraji. Objednajte si taxi vo Vranove nad Topľou.",
-      "metaDescription": "Nájdite taxi v meste Vranov nad Topľou. 2 taxislužby s telefónnymi číslami a webovými stránkami: Gold Taxi Vranov nad Topľou, Taxi Vranov Balint. Kontaktujte priamo.",
-      "keywords": [
-        "taxi vranov nad topľou",
-        "taxislužba vranov",
-        "taxi vo vranove",
-        "objednať taxi vranov",
-        "taxi vranov telefón"
-      ],
-      "taxiServices": [
-        {
-          "name": "Gold Taxi Vranov nad Topľou",
-          "website": "https://goldtaxi.sk",
-          "phone": "+421940636303"
-        },
-        {
-          "name": "Taxi Vranov Balint",
-          "phone": "+421948050843"
-        }
-      ],
-      "latitude": 48.8917,
-      "longitude": 21.6833
-    },
-    {
       "name": "Vráble",
       "slug": "vrable",
       "region": "Nitriansky kraj",
@@ -5333,6 +5867,33 @@
       ],
       "latitude": 48.2433,
       "longitude": 18.3067
+    },
+    {
+      "name": "Vranov nad Topľou",
+      "slug": "vranov-nad-toplou",
+      "region": "Prešovský kraj",
+      "description": "Okresné mesto v Prešovskom kraji. Objednajte si taxi vo Vranove nad Topľou.",
+      "metaDescription": "Nájdite taxi v meste Vranov nad Topľou. 2 taxislužby s telefónnymi číslami a webovými stránkami: Gold Taxi Vranov nad Topľou, Taxi Vranov Balint. Kontaktujte priamo.",
+      "keywords": [
+        "taxi vranov nad topľou",
+        "taxislužba vranov",
+        "taxi vo vranove",
+        "objednať taxi vranov",
+        "taxi vranov telefón"
+      ],
+      "taxiServices": [
+        {
+          "name": "Gold Taxi Vranov nad Topľou",
+          "website": "https://goldtaxi.sk",
+          "phone": "+421940636303"
+        },
+        {
+          "name": "Taxi Vranov Balint",
+          "phone": "+421948050843"
+        }
+      ],
+      "latitude": 48.8917,
+      "longitude": 21.6833
     },
     {
       "name": "Vrbové",
