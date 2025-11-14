@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T18:15:35.082Z",
+  "lastUpdated": "2025-11-14T19:29:04.815Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -5274,7 +5274,23 @@
         "objednať taxi tornaľa",
         "taxi tornaľa telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "FAMILY TAXI Tornaľa",
+          "website": "https://www.facebook.com/Family-taxi-Tornaľa-108102755085358",
+          "phone": "+421902750931"
+        },
+        {
+          "name": "Taxi7 Tornaľa",
+          "website": "http://taxi7.sk",
+          "phone": "+421949584344"
+        },
+        {
+          "name": "Ján Puškáš",
+          "website": "https://www.jptaxitornala.sk",
+          "phone": "+421940541288"
+        }
+      ],
       "latitude": 48.3833,
       "longitude": 20.2333
     },
