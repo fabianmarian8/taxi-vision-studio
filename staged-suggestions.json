@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:24:29.606Z",
+  "lastUpdated": "2025-11-14T20:24:32.016Z",
   "suggestions": [
     {
       "id": "horne-oresany-1763151711195-wpt8eb3cz",
@@ -9,18 +9,6 @@
         "phone": "+421911188228",
         "website": "http://profitaxizm.sk",
         "address": "Jána Smreka 3948/10, 953 01 Zlaté Moravce, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:21:51.194Z"
-    },
-    {
-      "id": "horne-oresany-1763151711195-8la2oadqs",
-      "citySlug": "horne-oresany",
-      "taxiService": {
-        "name": "Taxi Pezinok - Peter Tahotný",
-        "phone": "+421907181718",
-        "website": "http://www.taxisluzbapezinok.sk",
-        "address": "Radničné námestie 1, 902 01 Pezinok, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:21:51.194Z"
