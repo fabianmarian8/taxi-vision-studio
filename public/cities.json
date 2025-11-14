@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T15:46:20.682966Z",
+  "lastUpdated": "2025-11-14T15:57:52.831Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -32,7 +32,9 @@
         }
       ],
       "latitude": 48.7192,
-      "longitude": 18.2569
+      "longitude": 18.2569,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Bánovce nad Bebravou, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Banská Bystrica",
@@ -97,7 +99,7 @@
       "latitude": 48.7361,
       "longitude": 19.1475,
       "hasContent": true,
-      "contentSummary": "Sprievodca taxislužbami v Banskej Bystrici, centre stredného Slovenska, s praktickými tipmi."
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Banská Bystrica, vrátane 9 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Banská Štiavnica",
@@ -155,7 +157,9 @@
         }
       ],
       "latitude": 48.4583,
-      "longitude": 18.8917
+      "longitude": 18.8917,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Banská Štiavnica, vrátane 8 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Bardejov",
@@ -228,7 +232,9 @@
         }
       ],
       "latitude": 49.2939,
-      "longitude": 21.2739
+      "longitude": 21.2739,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Bardejov, vrátane 11 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Bojnice",
@@ -256,7 +262,9 @@
         }
       ],
       "latitude": 48.7803,
-      "longitude": 18.5775
+      "longitude": 18.5775,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Bojnice, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Bratislava",
@@ -346,7 +354,7 @@
       "latitude": 48.1486,
       "longitude": 17.1077,
       "hasContent": true,
-      "contentSummary": "Komplexný sprievodca taxislužbami v Bratislave vrátane informácií o objednávaní, cenách a tipov pre cestujúcich."
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Bratislava, vrátane 14 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Brezno",
@@ -384,7 +392,9 @@
         }
       ],
       "latitude": 48.8033,
-      "longitude": 19.6367
+      "longitude": 19.6367,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Brezno, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Brezová pod Bradlom",
@@ -417,7 +427,9 @@
         }
       ],
       "latitude": 48.6667,
-      "longitude": 17.5167
+      "longitude": 17.5167,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Brezová pod Bradlom, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Bytča",
@@ -455,7 +467,9 @@
         }
       ],
       "latitude": 49.2239,
-      "longitude": 18.5583
+      "longitude": 18.5583,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Bytča, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Čadca",
@@ -518,7 +532,9 @@
         }
       ],
       "latitude": 49.435,
-      "longitude": 18.7889
+      "longitude": 18.7889,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Čadca, vrátane 9 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Detva",
@@ -556,7 +572,9 @@
         }
       ],
       "latitude": 48.5583,
-      "longitude": 19.4192
+      "longitude": 19.4192,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Detva, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Dobšiná",
@@ -584,7 +602,9 @@
         }
       ],
       "latitude": 48.8233,
-      "longitude": 20.3692
+      "longitude": 20.3692,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Dobšiná, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Dolný Kubín",
@@ -662,7 +682,9 @@
         }
       ],
       "latitude": 49.21,
-      "longitude": 19.3
+      "longitude": 19.3,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Dolný Kubín, vrátane 12 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Dubnica nad Váhom",
@@ -700,7 +722,9 @@
         }
       ],
       "latitude": 48.9603,
-      "longitude": 18.1714
+      "longitude": 18.1714,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Dubnica nad Váhom, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Dudince",
@@ -733,7 +757,9 @@
         }
       ],
       "latitude": 48.1667,
-      "longitude": 18.8667
+      "longitude": 18.8667,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Dudince, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Gabčíkovo",
@@ -756,7 +782,9 @@
         }
       ],
       "latitude": 47.8933,
-      "longitude": 17.5817
+      "longitude": 17.5817,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Gabčíkovo, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Galanta",
@@ -829,7 +857,9 @@
         }
       ],
       "latitude": 48.19,
-      "longitude": 17.7267
+      "longitude": 17.7267,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Galanta, vrátane 11 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Gelnica",
@@ -857,7 +887,9 @@
         }
       ],
       "latitude": 48.85,
-      "longitude": 20.9333
+      "longitude": 20.9333,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Gelnica, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Giraltovce",
@@ -885,7 +917,9 @@
         }
       ],
       "latitude": 49.0992,
-      "longitude": 21.5033
+      "longitude": 21.5033,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Giraltovce, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Hanušovce nad Topľou",
@@ -918,7 +952,9 @@
         }
       ],
       "latitude": 48.9867,
-      "longitude": 21.5067
+      "longitude": 21.5067,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Hanušovce nad Topľou, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Hlohovec",
@@ -981,7 +1017,9 @@
         }
       ],
       "latitude": 48.43,
-      "longitude": 17.805
+      "longitude": 17.805,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Hlohovec, vrátane 9 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Hnúšťa",
@@ -1009,7 +1047,9 @@
         }
       ],
       "latitude": 48.6233,
-      "longitude": 19.9467
+      "longitude": 19.9467,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Hnúšťa, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Holíč",
@@ -1037,7 +1077,9 @@
         }
       ],
       "latitude": 48.8117,
-      "longitude": 17.1597
+      "longitude": 17.1597,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Holíč, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Humenné",
@@ -1110,7 +1152,9 @@
         }
       ],
       "latitude": 48.935,
-      "longitude": 21.9117
+      "longitude": 21.9117,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Humenné, vrátane 11 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Hurbanovo",
@@ -1143,7 +1187,9 @@
         }
       ],
       "latitude": 47.8733,
-      "longitude": 18.1917
+      "longitude": 18.1917,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Hurbanovo, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Ilava",
@@ -1176,7 +1222,9 @@
         }
       ],
       "latitude": 49.005,
-      "longitude": 18.2383
+      "longitude": 18.2383,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Ilava, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Jelšava",
@@ -1204,7 +1252,9 @@
         }
       ],
       "latitude": 48.6317,
-      "longitude": 20.2417
+      "longitude": 20.2417,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Jelšava, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Kežmarok",
@@ -1252,7 +1302,9 @@
         }
       ],
       "latitude": 49.1361,
-      "longitude": 20.4333
+      "longitude": 20.4333,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Kežmarok, vrátane 6 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Kolárovo",
@@ -1285,7 +1337,9 @@
         }
       ],
       "latitude": 47.92,
-      "longitude": 17.9933
+      "longitude": 17.9933,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Kolárovo, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Komárno",
@@ -1338,7 +1392,9 @@
         }
       ],
       "latitude": 47.7667,
-      "longitude": 18.1167
+      "longitude": 18.1167,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Komárno, vrátane 7 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Košice",
@@ -1433,7 +1489,7 @@
       "latitude": 48.7164,
       "longitude": 21.2611,
       "hasContent": true,
-      "contentSummary": "Podrobné informácie o taxislužbách v Košiciach, metropole východného Slovenska, vrátane praktických rád."
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Košice, vrátane 15 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Kráľovský Chlmec",
@@ -1487,7 +1543,9 @@
         }
       ],
       "latitude": 48.4083,
-      "longitude": 21.9817
+      "longitude": 21.9817,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Kráľovský Chlmec, vrátane 6 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Kremnica",
@@ -1517,7 +1575,9 @@
         }
       ],
       "latitude": 48.705,
-      "longitude": 18.9183
+      "longitude": 18.9183,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Kremnica, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Krupina",
@@ -1565,7 +1625,9 @@
         }
       ],
       "latitude": 48.3567,
-      "longitude": 19.0633
+      "longitude": 19.0633,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Krupina, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Kysucké Nové Mesto",
@@ -1631,7 +1693,9 @@
         }
       ],
       "latitude": 49.3,
-      "longitude": 18.7833
+      "longitude": 18.7833,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Kysucké Nové Mesto, vrátane 8 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Leopoldov",
@@ -1653,7 +1717,9 @@
         }
       ],
       "latitude": 48.4433,
-      "longitude": 17.7633
+      "longitude": 17.7633,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Leopoldov, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Levoča",
@@ -1695,7 +1761,9 @@
         }
       ],
       "latitude": 49.02,
-      "longitude": 20.5867
+      "longitude": 20.5867,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Levoča, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Levice",
@@ -1760,7 +1828,9 @@
         }
       ],
       "latitude": 48.2167,
-      "longitude": 18.6
+      "longitude": 18.6,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Levice, vrátane 10 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Liptovský Hrádok",
@@ -1812,7 +1882,9 @@
         }
       ],
       "latitude": 49.0392,
-      "longitude": 19.7281
+      "longitude": 19.7281,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Liptovský Hrádok, vrátane 7 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Liptovský Mikuláš",
@@ -1888,7 +1960,9 @@
         }
       ],
       "latitude": 49.08,
-      "longitude": 19.6167
+      "longitude": 19.6167,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Liptovský Mikuláš, vrátane 13 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Lučenec",
@@ -1967,7 +2041,9 @@
         }
       ],
       "latitude": 48.33,
-      "longitude": 19.665
+      "longitude": 19.665,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Lučenec, vrátane 14 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Malacky",
@@ -2017,7 +2093,9 @@
         }
       ],
       "latitude": 48.435,
-      "longitude": 17.0217
+      "longitude": 17.0217,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Malacky, vrátane 7 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Martin",
@@ -2094,7 +2172,9 @@
         }
       ],
       "latitude": 49.0639,
-      "longitude": 18.9214
+      "longitude": 18.9214,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Martin, vrátane 12 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Medzev",
@@ -2131,7 +2211,9 @@
         }
       ],
       "latitude": 48.705,
-      "longitude": 20.9
+      "longitude": 20.9,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Medzev, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Medzilaborce",
@@ -2153,7 +2235,9 @@
         }
       ],
       "latitude": 49.2717,
-      "longitude": 21.9033
+      "longitude": 21.9033,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Medzilaborce, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Michalovce",
@@ -2229,7 +2313,9 @@
         }
       ],
       "latitude": 48.755,
-      "longitude": 21.92
+      "longitude": 21.92,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Michalovce, vrátane 13 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Modra",
@@ -2252,7 +2338,9 @@
         }
       ],
       "latitude": 48.335,
-      "longitude": 17.3067
+      "longitude": 17.3067,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Modra, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Modrý Kameň",
@@ -2289,7 +2377,9 @@
         }
       ],
       "latitude": 48.3767,
-      "longitude": 19.2117
+      "longitude": 19.2117,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Modrý Kameň, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Moldava nad Bodvou",
@@ -2311,7 +2401,9 @@
         }
       ],
       "latitude": 48.6133,
-      "longitude": 20.9967
+      "longitude": 20.9967,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Moldava nad Bodvou, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Myjava",
@@ -2343,7 +2435,9 @@
         }
       ],
       "latitude": 48.7583,
-      "longitude": 17.565
+      "longitude": 17.565,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Myjava, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Námestovo",
@@ -2407,7 +2501,9 @@
         }
       ],
       "latitude": 49.405,
-      "longitude": 19.48
+      "longitude": 19.48,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Námestovo, vrátane 10 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Nesvady",
@@ -2427,7 +2523,9 @@
           "name": "TAXI NESVADY",
           "phone": "+421908618620"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Nesvady, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Nitra",
@@ -2507,7 +2605,9 @@
         }
       ],
       "latitude": 48.3069,
-      "longitude": 18.0872
+      "longitude": 18.0872,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Nitra, vrátane 13 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Nová Baňa",
@@ -2550,7 +2650,9 @@
         }
       ],
       "latitude": 48.4217,
-      "longitude": 18.635
+      "longitude": 18.635,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Nová Baňa, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Nová Dubnica",
@@ -2576,7 +2678,9 @@
           "website": "http://www.taxigo.sk",
           "phone": "+421903505999"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Nová Dubnica, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Nováky",
@@ -2608,7 +2712,9 @@
           "name": "Zebra",
           "phone": "+421918999116"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Nováky, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Nové Mesto nad Váhom",
@@ -2684,7 +2790,9 @@
         }
       ],
       "latitude": 48.7583,
-      "longitude": 17.8317
+      "longitude": 17.8317,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Nové Mesto nad Váhom, vrátane 13 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Nové Zámky",
@@ -2719,7 +2827,9 @@
         }
       ],
       "latitude": 47.9867,
-      "longitude": 18.1617
+      "longitude": 18.1617,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Nové Zámky, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Partizánske",
@@ -2773,7 +2883,9 @@
         }
       ],
       "latitude": 48.6283,
-      "longitude": 18.3767
+      "longitude": 18.3767,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Partizánske, vrátane 8 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Pezinok",
@@ -2827,7 +2939,9 @@
         }
       ],
       "latitude": 48.29,
-      "longitude": 17.2667
+      "longitude": 17.2667,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Pezinok, vrátane 8 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Piešťany",
@@ -2901,7 +3015,9 @@
         }
       ],
       "latitude": 48.5917,
-      "longitude": 17.8258
+      "longitude": 17.8258,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Piešťany, vrátane 12 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Poltár",
@@ -2924,7 +3040,9 @@
         }
       ],
       "latitude": 48.4267,
-      "longitude": 19.7967
+      "longitude": 19.7967,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Poltár, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Poprad",
@@ -3014,7 +3132,9 @@
         }
       ],
       "latitude": 49.0611,
-      "longitude": 20.2975
+      "longitude": 20.2975,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Poprad, vrátane 15 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Považská Bystrica",
@@ -3100,7 +3220,9 @@
         }
       ],
       "latitude": 49.1217,
-      "longitude": 18.4483
+      "longitude": 18.4483,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Považská Bystrica, vrátane 15 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Prešov",
@@ -3189,7 +3311,7 @@
       "latitude": 48.9983,
       "longitude": 21.2392,
       "hasContent": true,
-      "contentSummary": "Užitočný sprievodca taxislužbami v Prešove s informáciami o dostupnosti a cenách."
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Prešov, vrátane 14 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Prievidza",
@@ -3257,7 +3379,9 @@
         }
       ],
       "latitude": 48.7742,
-      "longitude": 18.6267
+      "longitude": 18.6267,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Prievidza, vrátane 11 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Púchov",
@@ -3300,7 +3424,9 @@
         }
       ],
       "latitude": 49.1217,
-      "longitude": 18.3267
+      "longitude": 18.3267,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Púchov, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Rajec",
@@ -3328,7 +3454,9 @@
         }
       ],
       "latitude": 49.0817,
-      "longitude": 18.6433
+      "longitude": 18.6433,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Rajec, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Revúca",
@@ -3356,7 +3484,9 @@
         }
       ],
       "latitude": 48.6833,
-      "longitude": 20.1167
+      "longitude": 20.1167,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Revúca, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Rimavská Sobota",
@@ -3424,7 +3554,9 @@
         }
       ],
       "latitude": 48.3833,
-      "longitude": 20.0167
+      "longitude": 20.0167,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Rimavská Sobota, vrátane 11 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Rožňava",
@@ -3490,7 +3622,9 @@
         }
       ],
       "latitude": 48.66,
-      "longitude": 20.5317
+      "longitude": 20.5317,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Rožňava, vrátane 11 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Ružomberok",
@@ -3555,7 +3689,9 @@
         }
       ],
       "latitude": 49.08,
-      "longitude": 19.305
+      "longitude": 19.305,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Ružomberok, vrátane 11 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Sabinov",
@@ -3583,7 +3719,9 @@
         }
       ],
       "latitude": 49.1017,
-      "longitude": 21.0983
+      "longitude": 21.0983,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Sabinov, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Senec",
@@ -3658,7 +3796,9 @@
         }
       ],
       "latitude": 48.22,
-      "longitude": 17.4
+      "longitude": 17.4,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Senec, vrátane 12 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Senica",
@@ -3696,7 +3836,9 @@
         }
       ],
       "latitude": 48.68,
-      "longitude": 17.3667
+      "longitude": 17.3667,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Senica, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Sereď",
@@ -3753,7 +3895,9 @@
           "name": "In Time NONSTOP TAXI SEREĎ",
           "phone": "+421915161937"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Sereď, vrátane 9 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Skalica",
@@ -3799,7 +3943,9 @@
         }
       ],
       "latitude": 48.845,
-      "longitude": 17.2283
+      "longitude": 17.2283,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Skalica, vrátane 6 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Sládkovičovo",
@@ -3834,7 +3980,9 @@
         }
       ],
       "latitude": 48.2,
-      "longitude": 17.6333
+      "longitude": 17.6333,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Sládkovičovo, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Sliač",
@@ -3857,7 +4005,9 @@
         }
       ],
       "latitude": 48.6417,
-      "longitude": 19.145
+      "longitude": 19.145,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Sliač, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Snina",
@@ -3898,7 +4048,9 @@
         }
       ],
       "latitude": 48.99,
-      "longitude": 22.15
+      "longitude": 22.15,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Snina, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Sobrance",
@@ -3929,7 +4081,9 @@
         }
       ],
       "latitude": 48.745,
-      "longitude": 22.1817
+      "longitude": 22.1817,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Sobrance, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Spišská Belá",
@@ -3959,7 +4113,9 @@
         }
       ],
       "latitude": 49.1833,
-      "longitude": 20.4667
+      "longitude": 20.4667,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Spišská Belá, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Spišská Nová Ves",
@@ -4039,7 +4195,9 @@
         }
       ],
       "latitude": 48.945,
-      "longitude": 20.5683
+      "longitude": 20.5683,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Spišská Nová Ves, vrátane 13 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Spišská Stará Ves",
@@ -4065,7 +4223,9 @@
           "website": "",
           "phone": "+421 917 538 143"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Spišská Stará Ves, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Spišské Podhradie",
@@ -4088,7 +4248,9 @@
         }
       ],
       "latitude": 49.0017,
-      "longitude": 20.75
+      "longitude": 20.75,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Spišské Podhradie, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Spišské Vlachy",
@@ -4117,7 +4279,9 @@
           "name": "SPV TAXI",
           "phone": "+421950582528"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Spišské Vlachy, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Stará Ľubovňa",
@@ -4158,7 +4322,9 @@
           "website": "http://lubovnataxi.sk",
           "phone": "+421910440006"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Stará Ľubovňa, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Stará Turá",
@@ -4215,7 +4381,9 @@
           "name": "Róbert Hornáček",
           "phone": "+421905363876"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Stará Turá, vrátane 9 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Strážske",
@@ -4239,7 +4407,9 @@
           "name": "TAXI LIENKA Strážske",
           "phone": "+421911717492"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Strážske, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Stropkov",
@@ -4259,7 +4429,9 @@
           "name": "TAXI Stropkov - Mišo",
           "phone": "+421940191151"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Stropkov, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Stupava",
@@ -4299,7 +4471,9 @@
           "website": "http://aero-taxi.sk",
           "phone": "+421911114499"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Stupava, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Svätý Jur",
@@ -4340,7 +4514,9 @@
           "website": "",
           "phone": "+421902399404"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Svätý Jur, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Svidník",
@@ -4374,7 +4550,9 @@
           "name": "Taxi Svidnicky Express",
           "phone": "+421952161061"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Svidník, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Svit",
@@ -4395,7 +4573,9 @@
           "website": "https://svittaxi.sk",
           "phone": "+421905211311"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Svit, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Šahy",
@@ -4421,7 +4601,9 @@
         }
       ],
       "latitude": 48.0783,
-      "longitude": 18.9467
+      "longitude": 18.9467,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Šahy, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Šaľa",
@@ -4485,7 +4667,9 @@
         }
       ],
       "latitude": 48.1517,
-      "longitude": 17.8817
+      "longitude": 17.8817,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Šaľa, vrátane 10 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Šamorín",
@@ -4523,7 +4707,9 @@
           "name": "Vojtech Horváth Taxi",
           "phone": "+421910551448"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Šamorín, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Šaštín-Stráže",
@@ -4549,7 +4735,9 @@
           "website": "https://taxisastin.sk",
           "phone": "+421904530243"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Šaštín-Stráže, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Štúrovo",
@@ -4618,7 +4806,9 @@
         }
       ],
       "latitude": 47.795,
-      "longitude": 18.7167
+      "longitude": 18.7167,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Štúrovo, vrátane 11 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Šurany",
@@ -4646,7 +4836,9 @@
         }
       ],
       "latitude": 48.0833,
-      "longitude": 18.1833
+      "longitude": 18.1833,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Šurany, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Tisovec",
@@ -4666,7 +4858,9 @@
           "name": "JŠ Šavel Taxi",
           "phone": "+421902318870"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Tisovec, vrátane 1 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Tlmače",
@@ -4740,7 +4934,9 @@
           "website": "https://www.rm-taxi.sk",
           "phone": "+421907043322"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Tlmače, vrátane 12 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Trebišov",
@@ -4789,7 +4985,9 @@
         }
       ],
       "latitude": 48.6283,
-      "longitude": 21.72
+      "longitude": 21.72,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Trebišov, vrátane 7 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Trenčín",
@@ -4877,7 +5075,9 @@
         }
       ],
       "latitude": 48.895,
-      "longitude": 18.0444
+      "longitude": 18.0444,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Trenčín, vrátane 15 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Trenčianske Teplice",
@@ -4913,7 +5113,9 @@
         }
       ],
       "latitude": 48.9117,
-      "longitude": 18.1717
+      "longitude": 18.1717,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Trenčianske Teplice, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Trnava",
@@ -4987,7 +5189,9 @@
         }
       ],
       "latitude": 48.3774,
-      "longitude": 17.588
+      "longitude": 17.588,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Trnava, vrátane 12 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Trstená",
@@ -5013,7 +5217,9 @@
           "website": "",
           "phone": "+421 918 171 718"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Trstená, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Turany",
@@ -5063,7 +5269,9 @@
           "website": "http://hifotaxi.sk",
           "phone": "+421902740140"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Turany, vrátane 7 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Turčianske Teplice",
@@ -5103,7 +5311,9 @@
         }
       ],
       "latitude": 48.8617,
-      "longitude": 18.8633
+      "longitude": 18.8633,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Turčianske Teplice, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Turzovka",
@@ -5129,7 +5339,9 @@
           "website": "http://www.mttaxi.sk",
           "phone": "+421948234444"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Turzovka, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Veľké Kapušany",
@@ -5165,7 +5377,9 @@
         }
       ],
       "latitude": 48.5467,
-      "longitude": 22.0833
+      "longitude": 22.0833,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Veľké Kapušany, vrátane 4 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Veľký Krtíš",
@@ -5206,7 +5420,9 @@
         }
       ],
       "latitude": 48.2083,
-      "longitude": 19.3467
+      "longitude": 19.3467,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Veľký Krtíš, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Veľký Meder",
@@ -5233,7 +5449,9 @@
         }
       ],
       "latitude": 47.8617,
-      "longitude": 17.7667
+      "longitude": 17.7667,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Veľký Meder, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Veľký Šariš",
@@ -5280,7 +5498,9 @@
           "name": "A-A VikyTaxi",
           "phone": "+421910141777"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Veľký Šariš, vrátane 7 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Vranov nad Topľou",
@@ -5307,7 +5527,9 @@
         }
       ],
       "latitude": 48.8917,
-      "longitude": 21.6833
+      "longitude": 21.6833,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Vranov nad Topľou, vrátane 2 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Vráble",
@@ -5340,7 +5562,9 @@
         }
       ],
       "latitude": 48.2433,
-      "longitude": 18.3067
+      "longitude": 18.3067,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Vráble, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Vrbové",
@@ -5371,7 +5595,9 @@
           "website": "http://www.taxi-pn.sk",
           "phone": "+421915336649"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Vrbové, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Vrútky",
@@ -5416,7 +5642,9 @@
           "website": "http://m2taxi.sk",
           "phone": "+421948916917"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Vrútky, vrátane 6 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Vysoké Tatry",
@@ -5467,7 +5695,9 @@
         }
       ],
       "latitude": 49.1819,
-      "longitude": 20.2181
+      "longitude": 20.2181,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Vysoké Tatry, vrátane 7 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Zlaté Moravce",
@@ -5508,7 +5738,9 @@
         }
       ],
       "latitude": 48.385,
-      "longitude": 18.4
+      "longitude": 18.4,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Zlaté Moravce, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Zvolen",
@@ -5576,7 +5808,9 @@
         }
       ],
       "latitude": 48.575,
-      "longitude": 19.12
+      "longitude": 19.12,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Zvolen, vrátane 10 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Žarnovica",
@@ -5618,7 +5852,9 @@
         }
       ],
       "latitude": 48.4767,
-      "longitude": 18.7167
+      "longitude": 18.7167,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Žarnovica, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Želiezovce",
@@ -5649,7 +5885,9 @@
           "website": "",
           "phone": "+421948664777"
         }
-      ]
+      ],
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Želiezovce, vrátane 3 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Žiar nad Hronom",
@@ -5688,7 +5926,9 @@
         }
       ],
       "latitude": 48.59,
-      "longitude": 18.855
+      "longitude": 18.855,
+      "hasContent": true,
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Žiar nad Hronom, vrátane 5 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     },
     {
       "name": "Žilina",
@@ -5776,7 +6016,7 @@
       "latitude": 49.2203,
       "longitude": 18.7392,
       "hasContent": true,
-      "contentSummary": "Kompletné informácie o taxislužbách v Žiline, dôležitom dopravnom centre severného Slovenska."
+      "contentSummary": "Podrobné informácie o taxislužbách v meste Žilina, vrátane 14 taxislužieb, cien, tipov pre cestujúcich a často kladených otázok."
     }
   ]
 }
