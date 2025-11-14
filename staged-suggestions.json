@@ -1,0 +1,77 @@
+{
+  "suggestions": [
+    {
+      "id": "blatnica-1763150470283-82bi2uj2q",
+      "citySlug": "blatnica",
+      "taxiService": {
+        "name": "Bugo Taxi - Martin",
+        "phone": "+421907077077",
+        "website": "http://bugotaxi.sk",
+        "address": "1, M. R. Štefánika 997, Martin, 036 01 Martin, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:01:10.283Z"
+    },
+    {
+      "id": "blatnica-1763150470283-bl5esu55u",
+      "citySlug": "blatnica",
+      "taxiService": {
+        "name": "Taxi Tempus",
+        "phone": "+421903596490",
+        "website": null,
+        "address": "Horné Rakovce 1412/27, 039 01 Turčianske Teplice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:01:10.283Z"
+    },
+    {
+      "id": "blatnica-1763150470283-vl1tyvf0z",
+      "citySlug": "blatnica",
+      "taxiService": {
+        "name": "Nonstop Taxi Turčianske Teplice - Berco TAXI parking",
+        "phone": "+421917044444",
+        "website": "http://www.taxi-turciansketeplice.sk",
+        "address": "Kollárova, 039 01 Turčianske Teplice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:01:10.283Z"
+    },
+    {
+      "id": "blatnica-1763150470283-sy3fykbux",
+      "citySlug": "blatnica",
+      "taxiService": {
+        "name": "M2 TAXI",
+        "phone": "+421948916917",
+        "website": "http://m2taxi.sk",
+        "address": "Dušana Makovického, Záturčie, 036 01 Martin, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:01:10.283Z"
+    },
+    {
+      "id": "blatnica-1763150470283-1d32z8f92",
+      "citySlug": "blatnica",
+      "taxiService": {
+        "name": "A class Taxi Turčianske Teplice",
+        "phone": "+421907555585",
+        "website": null,
+        "address": "039 01 Turčianske Teplice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:01:10.283Z"
+    },
+    {
+      "id": "blatnica-1763150470283-wrifrel6p",
+      "citySlug": "blatnica",
+      "taxiService": {
+        "name": "Taxi Turčianske Teplice - Ivan",
+        "phone": "+421918299653",
+        "website": null,
+        "address": "Somolického, 039 01 Turčianske Teplice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:01:10.283Z"
+    }
+  ],
+  "lastUpdated": "2025-11-14T20:01:10.283Z"
+}
