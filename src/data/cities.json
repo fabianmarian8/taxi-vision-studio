@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T19:29:04.815Z",
+  "lastUpdated": "2025-11-14T19:49:01.531Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -258,7 +258,47 @@
         "objednať taxi bátovce",
         "taxi bátovce telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Levice",
+          "website": "http://www.taxilevice.eu",
+          "phone": "+421915415522"
+        },
+        {
+          "name": "RB GOLDEN TAXI Levice",
+          "phone": "+421902917792"
+        },
+        {
+          "name": "AB Joto Taxi Levice",
+          "website": "http://www.levice-taxi.sk",
+          "phone": "+421905714858"
+        },
+        {
+          "name": "ECO TAXI Levice",
+          "website": "http://www.eco-taxi.sk",
+          "phone": "+421910333373"
+        },
+        {
+          "name": "VIA TAXI LEVICE",
+          "website": "https://www.viataxilevice.sk",
+          "phone": "+421948321111"
+        },
+        {
+          "name": "R TAXI",
+          "website": "https://www.r-taxi.sk",
+          "phone": "+421903021442"
+        },
+        {
+          "name": "Letiskové transfery Levice",
+          "website": "https://www.letiskovetransferylevice.sk",
+          "phone": "+421907561990"
+        },
+        {
+          "name": "Rm Taxi Levice",
+          "website": "https://www.rm-taxi.sk",
+          "phone": "+421907043322"
+        }
+      ],
       "latitude": 48.1667,
       "longitude": 17.7833
     },

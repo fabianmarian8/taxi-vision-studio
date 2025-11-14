@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T19:29:06.342Z",
+  "lastUpdated": "2025-11-14T19:49:01.531Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,102 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "batovce-1763149591663-8g0irky6u",
+      "citySlug": "batovce",
+      "taxiService": {
+        "name": "Taxi Levice",
+        "phone": "+421915415522",
+        "website": "http://www.taxilevice.eu",
+        "address": "Orgovánová 2927/13, 934 01 Levice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:46:31.663Z"
+    },
+    {
+      "id": "batovce-1763149591664-t2xhvc0ck",
+      "citySlug": "batovce",
+      "taxiService": {
+        "name": "RB GOLDEN TAXI Levice",
+        "phone": "+421902917792",
+        "website": null,
+        "address": "Kozárovce 66 Kozárovce, 935 22 Kozárovce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:46:31.663Z"
+    },
+    {
+      "id": "batovce-1763149591664-xa1afd1im",
+      "citySlug": "batovce",
+      "taxiService": {
+        "name": "AB Joto Taxi Levice",
+        "phone": "+421905714858",
+        "website": "http://www.levice-taxi.sk",
+        "address": "Mládežnícka 1471/25, 934 05 Levice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:46:31.663Z"
+    },
+    {
+      "id": "batovce-1763149591664-g8nn2m571",
+      "citySlug": "batovce",
+      "taxiService": {
+        "name": "ECO TAXI Levice",
+        "phone": "+421910333373",
+        "website": "http://www.eco-taxi.sk",
+        "address": "Kalvínske Námestie 126/2, 930 41 Levice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:46:31.663Z"
+    },
+    {
+      "id": "batovce-1763149591664-ku0t4zj7a",
+      "citySlug": "batovce",
+      "taxiService": {
+        "name": "VIA TAXI LEVICE",
+        "phone": "+421948321111",
+        "website": "https://www.viataxilevice.sk",
+        "address": "Martina Kukučína 44, 934 01 Levice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:46:31.663Z"
+    },
+    {
+      "id": "batovce-1763149591664-3s01zu0gq",
+      "citySlug": "batovce",
+      "taxiService": {
+        "name": "R TAXI",
+        "phone": "+421903021442",
+        "website": "https://www.r-taxi.sk",
+        "address": "Podhradie 17, 934 01 Levice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:46:31.663Z"
+    },
+    {
+      "id": "batovce-1763149591664-uq4at0qbn",
+      "citySlug": "batovce",
+      "taxiService": {
+        "name": "Letiskové transfery Levice",
+        "phone": "+421907561990",
+        "website": "https://www.letiskovetransferylevice.sk",
+        "address": "Milana Rastislava Štefánika, 934 01 Levice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:46:31.663Z"
+    },
+    {
+      "id": "batovce-1763149591664-jg7zrp66a",
+      "citySlug": "batovce",
+      "taxiService": {
+        "name": "Rm Taxi Levice",
+        "phone": "+421907043322",
+        "website": "https://www.rm-taxi.sk",
+        "address": "Andreja Sládkoviča 2687/5, 934 05 Levice, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T19:46:31.663Z"
     }
   ]
 }
