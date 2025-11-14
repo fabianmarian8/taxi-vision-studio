@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:05:17.104Z",
+  "lastUpdated": "2025-11-14T20:06:19.048Z",
   "suggestions": [
     {
       "id": "boleraz-1763150620563-kvikend2g",
@@ -24,6 +24,78 @@
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:03:40.562Z"
+    },
+    {
+      "id": "boleraz-1763150779048-jgblfwm8y",
+      "citySlug": "boleraz",
+      "taxiService": {
+        "name": "Profi TAXI Trnava",
+        "phone": "+4213316444",
+        "website": "http://www.profitaxitrnava.sk",
+        "address": "Jánošíkova 1, 917 01 Trnava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:06:19.048Z"
+    },
+    {
+      "id": "boleraz-1763150779048-zl7cqr81u",
+      "citySlug": "boleraz",
+      "taxiService": {
+        "name": "TEAM TAXI TRNAVA",
+        "phone": "+421940747474",
+        "website": "http://www.teamtaxi.sk",
+        "address": "17, Andreja Kubinu 6937, 917 01 Trnava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:06:19.048Z"
+    },
+    {
+      "id": "boleraz-1763150779048-d5xke6jdq",
+      "citySlug": "boleraz",
+      "taxiService": {
+        "name": "Modra TAXI – taxislužba v Modre a okolí",
+        "phone": "+421910799666",
+        "website": "https://www.modrataxi.sk",
+        "address": "Komenského 10, 900 01 Modra, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:06:19.048Z"
+    },
+    {
+      "id": "boleraz-1763150779048-ajxoqvym5",
+      "citySlug": "boleraz",
+      "taxiService": {
+        "name": "TAXI Limbach",
+        "phone": "+421904426242",
+        "website": null,
+        "address": "SNP 17/13, 900 91 Limbach, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:06:19.048Z"
+    },
+    {
+      "id": "boleraz-1763150779048-hr6064i6e",
+      "citySlug": "boleraz",
+      "taxiService": {
+        "name": "TAXI FORTE",
+        "phone": "+421915655882",
+        "website": null,
+        "address": "2, Jána Bottu 5944, 917 01 Trnava, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:06:19.048Z"
+    },
+    {
+      "id": "boleraz-1763150779048-1ivkv5dyn",
+      "citySlug": "boleraz",
+      "taxiService": {
+        "name": "EKO TAXI",
+        "phone": "+421904003333",
+        "website": "http://www.ekotaxi.sk",
+        "address": "BILLA, 953 01 Zlaté Moravce, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-14T20:06:19.048Z"
     }
   ]
 }
