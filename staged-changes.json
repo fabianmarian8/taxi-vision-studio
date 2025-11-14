@@ -1,0 +1,51 @@
+{
+  "changes": [
+    {
+      "citySlug": "bansky-studenec",
+      "taxiServices": [
+        {
+          "name": "CORTO TAXI NONSTOP Banská Štiavnica",
+          "website": "http://www.cortotaxi.sk",
+          "phone": "+421910714660"
+        },
+        {
+          "name": "Taxi Banská Štiavnica - Ján Molek",
+          "website": "http://www.taxibs.sk",
+          "phone": "+421919345765"
+        },
+        {
+          "name": "JOMA Taxi",
+          "website": "http://www.jomataxi.sk",
+          "phone": "+421910180380"
+        },
+        {
+          "name": "TOP TAXI Banská Štiavnica",
+          "phone": "+421950303530"
+        },
+        {
+          "name": "Taxi - Ivanič",
+          "phone": "+42145/6921900"
+        },
+        {
+          "name": "BeriTaxi",
+          "phone": "+421902345673"
+        },
+        {
+          "name": "ROYAL-TAXI",
+          "website": "https://www.facebook.com/Royal-Taxi-110672581548279",
+          "phone": "+421911082829"
+        },
+        {
+          "name": "LOŽEK PETER TAXI BANSKÁ ŠTIAVNICA",
+          "phone": "+421917984430"
+        },
+        {
+          "name": "Taxi Fero",
+          "website": "https://www.ferotaxi.sk",
+          "phone": "+421905949671"
+        }
+      ],
+      "timestamp": "2025-11-14T19:49:46.853Z"
+    }
+  ]
+}
