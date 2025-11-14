@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:20:50.349Z",
+  "lastUpdated": "2025-11-14T20:20:59.131Z",
   "suggestions": [
     {
       "id": "horna-streda-1763151561942-txagaq2x3",
@@ -57,18 +57,6 @@
         "phone": "+421915336649",
         "website": "http://www.taxi-pn.sk",
         "address": "Piešťany, 92101, 921 01 Piešťany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:19:21.942Z"
-    },
-    {
-      "id": "horna-streda-1763151561942-mcs9n1dy6",
-      "citySlug": "horna-streda",
-      "taxiService": {
-        "name": "Monika Taxi - František Hrušovský",
-        "phone": "+421904419551",
-        "website": null,
-        "address": "Ul. Biskupa Kondého 5138/30, 929 01 Dunajská Streda, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:19:21.942Z"
