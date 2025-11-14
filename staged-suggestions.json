@@ -1,17 +1,6 @@
 {
+  "lastUpdated": "2025-11-14T19:58:23.293Z",
   "suggestions": [
-    {
-      "id": "bielovce-1763150197810-yg1tpdeng",
-      "citySlug": "bielovce",
-      "taxiService": {
-        "name": "Taxi Levice",
-        "phone": "+421915415522",
-        "website": "http://www.taxilevice.eu",
-        "address": "Orgovánová 2927/13, 934 01 Levice, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:56:37.810Z"
-    },
     {
       "id": "bielovce-1763150197810-iei5r32ih",
       "citySlug": "bielovce",
@@ -156,6 +145,5 @@
       "status": "pending",
       "timestamp": "2025-11-14T19:56:37.810Z"
     }
-  ],
-  "lastUpdated": "2025-11-14T19:56:37.810Z"
+  ]
 }
