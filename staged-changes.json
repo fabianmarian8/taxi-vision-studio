@@ -1,0 +1,14 @@
+{
+  "changes": [
+    {
+      "citySlug": "biel",
+      "taxiServices": [
+        {
+          "name": "Juraj Varga",
+          "phone": "+421 918 022 222"
+        }
+      ],
+      "timestamp": "2025-11-14T19:56:16.920Z"
+    }
+  ]
+}
