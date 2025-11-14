@@ -1,0 +1,14 @@
+{
+  "changes": [
+    {
+      "citySlug": "betlanovce",
+      "taxiServices": [
+        {
+          "name": "Albert Duriančik - Albert Taxi",
+          "phone": "+42153/4411111"
+        }
+      ],
+      "timestamp": "2025-11-14T19:52:57.953Z"
+    }
+  ]
+}
