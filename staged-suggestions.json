@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:24:52.015Z",
+  "lastUpdated": "2025-11-14T20:25:05.862Z",
   "suggestions": [
     {
       "id": "horne-oresany-1763151711195-s9we2u7xh",
@@ -9,18 +9,6 @@
         "phone": "+421944786989",
         "website": null,
         "address": "Martina Rázusa 6, 955 01 Topoľčany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:21:51.194Z"
-    },
-    {
-      "id": "horne-oresany-1763151711195-t92b4k2zk",
-      "citySlug": "horne-oresany",
-      "taxiService": {
-        "name": "Protaxi Taxi Topoľčany",
-        "phone": "+421905063204",
-        "website": "https://www.protaxi.sk",
-        "address": "Gagarinova 1573/1, 955 01 Topoľčany, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:21:51.194Z"
