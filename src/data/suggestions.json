@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T19:49:48.106Z",
+  "lastUpdated": "2025-11-14T19:49:49.893Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,114 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "bansky-studenec-1763149758924-3pqqa3603",
-      "citySlug": "bansky-studenec",
-      "taxiService": {
-        "name": "CORTO TAXI NONSTOP Banská Štiavnica",
-        "phone": "+421910714660",
-        "website": "http://www.cortotaxi.sk",
-        "address": "Križovatka, 969 01 Banská Štiavnica, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:49:18.924Z"
-    },
-    {
-      "id": "bansky-studenec-1763149758924-88qths2mc",
-      "citySlug": "bansky-studenec",
-      "taxiService": {
-        "name": "Taxi Banská Štiavnica - Ján Molek",
-        "phone": "+421919345765",
-        "website": "http://www.taxibs.sk",
-        "address": "969 01 Banská Štiavnica, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:49:18.924Z"
-    },
-    {
-      "id": "bansky-studenec-1763149758924-m8mi1mvk2",
-      "citySlug": "bansky-studenec",
-      "taxiService": {
-        "name": "JOMA Taxi",
-        "phone": "+421910180380",
-        "website": "http://www.jomataxi.sk",
-        "address": "Banská Štiavnica, 96901, 969 01 Banská Štiavnica, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:49:18.924Z"
-    },
-    {
-      "id": "bansky-studenec-1763149758924-kumkunde3",
-      "citySlug": "bansky-studenec",
-      "taxiService": {
-        "name": "TOP TAXI Banská Štiavnica",
-        "phone": "+421950303530",
-        "website": null,
-        "address": "Križovatka, 969 01 Banská Štiavnica, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:49:18.924Z"
-    },
-    {
-      "id": "bansky-studenec-1763149758924-qspvp5353",
-      "citySlug": "bansky-studenec",
-      "taxiService": {
-        "name": "Taxi - Ivanič",
-        "phone": "+42145/6921900",
-        "website": null,
-        "address": "15, J. Straku 1537, 969 01 Banská Štiavnica, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:49:18.924Z"
-    },
-    {
-      "id": "bansky-studenec-1763149758924-0fha25z1m",
-      "citySlug": "bansky-studenec",
-      "taxiService": {
-        "name": "BeriTaxi",
-        "phone": "+421902345673",
-        "website": null,
-        "address": "Banská Belá 316, 966 15 Banská Belá, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:49:18.924Z"
-    },
-    {
-      "id": "bansky-studenec-1763149758924-3pld7icws",
-      "citySlug": "bansky-studenec",
-      "taxiService": {
-        "name": "ROYAL-TAXI",
-        "phone": "+421911082829",
-        "website": "https://www.facebook.com/Royal-Taxi-110672581548279",
-        "address": "Križovatka 1, 969 01 Banská Štiavnica, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:49:18.924Z"
-    },
-    {
-      "id": "bansky-studenec-1763149758924-nkbh5si5z",
-      "citySlug": "bansky-studenec",
-      "taxiService": {
-        "name": "LOŽEK PETER TAXI BANSKÁ ŠTIAVNICA",
-        "phone": "+421917984430",
-        "website": null,
-        "address": "Štiavnické Bane 69, 969 01 Štiavnické Bane, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:49:18.924Z"
-    },
-    {
-      "id": "bansky-studenec-1763149758924-ktgujupn6",
-      "citySlug": "bansky-studenec",
-      "taxiService": {
-        "name": "Taxi Fero",
-        "phone": "+421905949671",
-        "website": "https://www.ferotaxi.sk",
-        "address": "7, Námestie svätej Trojice 11, 969 01 Banská Štiavnica, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:49:18.924Z"
     }
   ]
 }
