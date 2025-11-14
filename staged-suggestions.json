@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:20:30.125Z",
+  "lastUpdated": "2025-11-14T20:20:46.765Z",
   "suggestions": [
     {
       "id": "horna-streda-1763151561942-txagaq2x3",
@@ -21,18 +21,6 @@
         "phone": "+421907266212",
         "website": "http://www.taxids.sk",
         "address": "Alžbetínske námestie, 929 01 Dunajská Streda, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:19:21.942Z"
-    },
-    {
-      "id": "horna-streda-1763151561942-j2rbfc23q",
-      "citySlug": "horna-streda",
-      "taxiService": {
-        "name": "CITY TAXI Dun.Streda & Airport transfer",
-        "phone": "+421907106104",
-        "website": null,
-        "address": "Sládkovičova, 929 01 Dunajská Streda, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:19:21.942Z"
