@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:21:18.912Z",
+  "lastUpdated": "2025-11-14T20:21:23.815Z",
   "suggestions": [
     {
       "id": "horna-streda-1763151561942-txagaq2x3",
@@ -45,18 +45,6 @@
         "phone": "+421915336649",
         "website": "http://www.taxi-pn.sk",
         "address": "Piešťany, 92101, 921 01 Piešťany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:19:21.942Z"
-    },
-    {
-      "id": "horna-streda-1763151561942-ljc6w1m1o",
-      "citySlug": "horna-streda",
-      "taxiService": {
-        "name": "Váš Taxík",
-        "phone": "+421907090966",
-        "website": "http://www.vastaxik.com",
-        "address": "Hlubockého 1, 916 01 Stará Turá, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:19:21.942Z"
