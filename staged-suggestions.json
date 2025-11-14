@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-14T19:50:21.931Z",
   "suggestions": [
     {
       "id": "bernolakovo-1763149804572-rhvzles6r",
@@ -23,19 +24,6 @@
       },
       "status": "pending",
       "timestamp": "2025-11-14T19:50:04.572Z"
-    },
-    {
-      "id": "bernolakovo-1763149804572-hisxup8fk",
-      "citySlug": "bernolakovo",
-      "taxiService": {
-        "name": "ARAYA - Autodoprava/nákladné TAXI - Sťahovanie/Vypratávanie - Montáž/Demontáž nábytku - Kosenie/Klčovanie pozemkov",
-        "phone": "+421905324007",
-        "website": "http://www.stahovanie-autodoprava-araya.sk",
-        "address": "Železničná 87, 900 27 Bernolákovo, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:50:04.572Z"
     }
-  ],
-  "lastUpdated": "2025-11-14T19:50:04.572Z"
+  ]
 }
