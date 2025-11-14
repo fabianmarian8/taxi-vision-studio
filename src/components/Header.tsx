@@ -73,9 +73,9 @@ export const Header = () => {
           >
             <div className="flex items-center gap-1.5 md:gap-2 lg:gap-3">
               <Plus className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
-              <div className="flex flex-col items-start">
-                <span className="text-xs md:text-sm lg:text-base font-bold leading-tight">Niečo tu chýba?</span>
-                <span className="text-[10px] md:text-xs font-normal leading-tight">+Pridanie, Oprava</span>
+              <div className="flex flex-col items-start -space-y-0.5">
+                <span className="text-xs md:text-sm lg:text-base font-bold leading-none">Niečo tu chýba?</span>
+                <span className="text-[10px] md:text-xs font-normal leading-none">+Pridanie, Oprava</span>
               </div>
             </div>
           </Button>

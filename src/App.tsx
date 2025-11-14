@@ -18,6 +18,7 @@ import TermsOfUse from "./pages/TermsOfUse";
 import Cookies from "./pages/Cookies";
 import Contact from "./pages/Contact";
 import { CookieBanner } from "./components/cookie-banner";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/scraper" element={<TaxiScraperTool />} />
