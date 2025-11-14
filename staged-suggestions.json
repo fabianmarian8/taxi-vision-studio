@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:06:29.114Z",
+  "lastUpdated": "2025-11-14T20:06:32.499Z",
   "suggestions": [
     {
       "id": "boleraz-1763150779048-jgblfwm8y",
@@ -45,18 +45,6 @@
         "phone": "+421915655882",
         "website": null,
         "address": "2, Jána Bottu 5944, 917 01 Trnava, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:06:19.048Z"
-    },
-    {
-      "id": "boleraz-1763150779048-1ivkv5dyn",
-      "citySlug": "boleraz",
-      "taxiService": {
-        "name": "EKO TAXI",
-        "phone": "+421904003333",
-        "website": "http://www.ekotaxi.sk",
-        "address": "BILLA, 953 01 Zlaté Moravce, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:06:19.048Z"
