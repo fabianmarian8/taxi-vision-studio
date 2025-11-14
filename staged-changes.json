@@ -1,0 +1,29 @@
+{
+  "changes": [
+    {
+      "citySlug": "horne-oresany",
+      "taxiServices": [
+        {
+          "name": "Team taxi",
+          "phone": "+421 940 747 474"
+        },
+        {
+          "name": "Yellow Taxi",
+          "website": "",
+          "phone": "+421 907 030 303"
+        },
+        {
+          "name": "VIP taxi Trnava",
+          "website": "",
+          "phone": "+421 33 16 111"
+        },
+        {
+          "name": " Profi TAXI Trnava",
+          "website": "https://www.profitaxitrnava.sk/",
+          "phone": "+421 33 16 444"
+        }
+      ],
+      "timestamp": "2025-11-14T20:28:02.121Z"
+    }
+  ]
+}
