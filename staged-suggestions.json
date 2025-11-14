@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T19:52:12.440Z",
+  "lastUpdated": "2025-11-14T19:52:51.890Z",
   "suggestions": [
     {
       "id": "betlanovce-1763149845847-f5oll2aw7",
@@ -9,18 +9,6 @@
         "phone": "+42153/4411111",
         "website": null,
         "address": "2, Levočská 161, 053 01 Harichovce, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:50:45.847Z"
-    },
-    {
-      "id": "betlanovce-1763149845848-y170mt3dn",
-      "citySlug": "betlanovce",
-      "taxiService": {
-        "name": "TAXI REVUCA",
-        "phone": "+421911456999",
-        "website": "https://www.facebook.com/profile.php",
-        "address": "Námestie slobody 5/5, 050 01 Revúca, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T19:50:45.847Z"
