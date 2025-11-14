@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:16:03.091Z",
+  "lastUpdated": "2025-11-14T20:16:08.661Z",
   "suggestions": [
     {
       "id": "dvory-nad-zitavou-1763151020962-f47z38orv",
@@ -57,18 +57,6 @@
         "phone": "+421910394910",
         "website": "http://www.trafico.sk",
         "address": "Hlavné námestie, 940 02 Nové Zámky, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:10:20.961Z"
-    },
-    {
-      "id": "dvory-nad-zitavou-1763151020962-1k4ntga18",
-      "citySlug": "dvory-nad-zitavou",
-      "taxiService": {
-        "name": "AB Joto Taxi Levice",
-        "phone": "+421905714858",
-        "website": "http://www.levice-taxi.sk",
-        "address": "Mládežnícka 1471/25, 934 05 Levice, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:10:20.961Z"
