@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-14T19:47:42.361Z",
   "suggestions": [
     {
       "id": "batovce-1763149591663-8g0irky6u",
@@ -73,18 +74,6 @@
       "timestamp": "2025-11-14T19:46:31.663Z"
     },
     {
-      "id": "batovce-1763149591664-1p4quz3kt",
-      "citySlug": "batovce",
-      "taxiService": {
-        "name": "Bn Taxi",
-        "phone": "+421904109080",
-        "website": null,
-        "address": "Trenčianska cesta, 957 01 Bánovce nad Bebravou-Dolné Ozorovce, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T19:46:31.663Z"
-    },
-    {
       "id": "batovce-1763149591664-uq4at0qbn",
       "citySlug": "batovce",
       "taxiService": {
@@ -120,6 +109,5 @@
       "status": "pending",
       "timestamp": "2025-11-14T19:46:31.663Z"
     }
-  ],
-  "lastUpdated": "2025-11-14T19:46:31.663Z"
+  ]
 }
