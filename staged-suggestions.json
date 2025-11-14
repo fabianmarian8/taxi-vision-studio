@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-14T20:24:10.205Z",
+  "lastUpdated": "2025-11-14T20:24:29.606Z",
   "suggestions": [
     {
       "id": "horne-oresany-1763151711195-wpt8eb3cz",
@@ -33,18 +33,6 @@
         "phone": "+421944786989",
         "website": null,
         "address": "Martina Rázusa 6, 955 01 Topoľčany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:21:51.194Z"
-    },
-    {
-      "id": "horne-oresany-1763151711195-ekgjggk15",
-      "citySlug": "horne-oresany",
-      "taxiService": {
-        "name": "TAXI MACHÁČEK",
-        "phone": "+42133/6464646",
-        "website": "http://www.taxi-machacek.sk",
-        "address": "Modranská 99, 902 01 Vinosady-Pezinok, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-14T20:21:51.194Z"
