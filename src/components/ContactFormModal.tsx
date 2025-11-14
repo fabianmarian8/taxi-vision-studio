@@ -61,13 +61,13 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-black">Niečo tu chýba?</DialogTitle>
-          <DialogDescription className="text-base">
+          <DialogTitle className="text-xl sm:text-2xl font-black pr-6">Niečo tu chýba?</DialogTitle>
+          <DialogDescription className="text-sm sm:text-base">
             Pomôžte nám zlepšiť našu databázu. Pošlite nám informácie o chýbajúcej taxislužbe alebo opravte existujúce údaje.
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+        <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-4 mt-3 sm:mt-4">
           {/* Skryté polia pre FormSubmit.co konfiguráciu */}
           <input type="hidden" name="_subject" value="Nový príspevok z Taxi NearMe - Niečo tu chýba" />
           <input type="hidden" name="_captcha" value="false" />
@@ -144,31 +144,31 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
           </div>
 
           {submitStatus === "success" && (
-            <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg font-medium">
+            <div className="bg-green-50 border border-green-200 text-green-800 px-3 py-2 sm:px-4 sm:py-3 rounded-lg font-medium text-sm sm:text-base">
               ✓ Ďakujeme! Váš príspevok bol úspešne odoslaný.
             </div>
           )}
 
           {submitStatus === "error" && (
-            <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg font-medium">
+            <div className="bg-red-50 border border-red-200 text-red-800 px-3 py-2 sm:px-4 sm:py-3 rounded-lg font-medium text-sm sm:text-base">
               ✗ Nastala chyba pri odosielaní. Skúste to prosím znova.
             </div>
           )}
 
-          <div className="flex gap-3 pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 pt-2 sm:pt-4">
             <Button
               type="button"
               variant="outline"
               onClick={onClose}
               disabled={isSubmitting}
-              className="flex-1 font-bold"
+              className="w-full sm:flex-1 font-bold h-11 sm:h-10"
             >
               Zrušiť
             </Button>
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 font-bold shadow-3d-sm hover:shadow-3d-md transition-all"
+              className="w-full sm:flex-1 font-bold shadow-3d-sm hover:shadow-3d-md transition-all h-11 sm:h-10"
             >
               {isSubmitting ? (
                 <>

@@ -246,21 +246,21 @@ export const SearchPanel = () => {
 
             {/* Autocomplete Dropdown */}
             {showDropdown && filteredCities.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-2 bg-card rounded-lg md:rounded-xl shadow-3d-lg border-2 border-foreground/10 max-h-80 overflow-y-auto z-50">
+              <div className="absolute top-full left-0 right-0 mt-2 bg-card rounded-lg md:rounded-xl shadow-3d-lg border-2 border-foreground/10 max-h-[60vh] sm:max-h-80 overflow-y-auto z-50">
                 {filteredCities.slice(0, 10).map((city, index) => (
                   <button
                     key={city.slug}
                     onClick={() => navigateToCity(city.name)}
-                    className={`w-full text-left px-4 md:px-6 py-2 md:py-3 hover:bg-foreground/5 transition-colors border-b border-foreground/5 last:border-b-0 ${
+                    className={`w-full text-left px-4 sm:px-5 md:px-6 py-3 sm:py-2.5 md:py-3 hover:bg-foreground/5 active:bg-foreground/10 transition-colors border-b border-foreground/5 last:border-b-0 ${
                       index === selectedIndex ? "bg-foreground/10" : ""
                     }`}
                   >
-                    <div className="font-semibold text-sm md:text-base text-foreground">{city.name}</div>
-                    <div className="text-xs md:text-sm text-foreground/60">{city.region}</div>
+                    <div className="font-semibold text-base sm:text-sm md:text-base text-foreground">{city.name}</div>
+                    <div className="text-sm sm:text-xs md:text-sm text-foreground/60 mt-0.5">{city.region}</div>
                   </button>
                 ))}
                 {filteredCities.length > 10 && (
-                  <div className="px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm text-foreground/60 text-center border-t border-foreground/10">
+                  <div className="px-4 md:px-6 py-3 sm:py-2 md:py-3 text-sm sm:text-xs md:text-sm text-foreground/60 text-center border-t border-foreground/10">
                     Zobrazených prvých 10 z {filteredCities.length} miest
                   </div>
                 )}
