@@ -1,17 +1,6 @@
 {
+  "lastUpdated": "2025-11-14T20:20:20.144Z",
   "suggestions": [
-    {
-      "id": "horna-streda-1763151561942-6z0nhsa9m",
-      "citySlug": "horna-streda",
-      "taxiService": {
-        "name": "Tina Taxi DS",
-        "phone": "+421944003888",
-        "website": null,
-        "address": "Železničná 456, 929 01 Dunajská Streda, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-14T20:19:21.942Z"
-    },
     {
       "id": "horna-streda-1763151561942-e0a04mmic",
       "citySlug": "horna-streda",
@@ -180,6 +169,5 @@
       "status": "pending",
       "timestamp": "2025-11-14T20:19:21.942Z"
     }
-  ],
-  "lastUpdated": "2025-11-14T20:19:21.942Z"
+  ]
 }
