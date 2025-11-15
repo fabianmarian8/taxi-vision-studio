@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { SEOHead, generateArticleSEO } from "@/components/SEOHead";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
+import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 
 const CoMusiZniestVodicPage = () => {
   const seoData = generateArticleSEO(
@@ -14,7 +15,7 @@ const CoMusiZniestVodicPage = () => {
     '/co-musi-zniest-vodic',
     '2025-01-15',
     '2025-01-15',
-    undefined,
+    'https://www.taxinearme.sk/taxi-nearme-logo.png',
     ['práca taxikára', 'realita taxi', 'stres vodič', 'výzvy taxislužby', 'život taxikára']
   );
   const handleShare = async () => {
@@ -33,6 +34,9 @@ const CoMusiZniestVodicPage = () => {
     <div className="min-h-screen bg-background">
       <SEOHead {...seoData} />
       <Header />
+      <SEOBreadcrumbs items={[
+        { label: 'Čo musí zniesť vodič' }
+      ]} />
 
       <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
         <GeometricLines variant="hero" count={12} />
