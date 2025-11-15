@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:37:27.759Z",
+  "lastUpdated": "2025-11-15T12:37:29.027Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,42 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "hrinova-1763210197851-twmmfcn8q",
-      "citySlug": "hrinova",
-      "taxiService": {
-        "name": "RK TAXI – DETVA",
-        "phone": "+421944384666",
-        "website": "http://www.rktaxi.sk",
-        "address": "Novosady 921/6, 962 12 Detva, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:36:37.851Z"
-    },
-    {
-      "id": "hrinova-1763210197852-8fuqnl334",
-      "citySlug": "hrinova",
-      "taxiService": {
-        "name": "GOLD TAXI DETVA",
-        "phone": "+421949474323",
-        "website": null,
-        "address": "Obrancov mieru 2, 962 12 Detva, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:36:37.851Z"
-    },
-    {
-      "id": "hrinova-1763210197852-t55smalze",
-      "citySlug": "hrinova",
-      "taxiService": {
-        "name": "Express TAXI Detva",
-        "phone": "+421910888250",
-        "website": null,
-        "address": "Záhradná, 962 12 Detva, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:36:37.851Z"
     }
   ]
 }
