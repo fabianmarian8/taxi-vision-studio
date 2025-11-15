@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:37:09.488Z",
+  "lastUpdated": "2025-11-15T12:37:15.152Z",
   "suggestions": [
     {
       "id": "hrinova-1763210197851-twmmfcn8q",
@@ -33,18 +33,6 @@
         "phone": "+421910888250",
         "website": null,
         "address": "Záhradná, 962 12 Detva, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:36:37.851Z"
-    },
-    {
-      "id": "hrinova-1763210197852-ux02bp4d9",
-      "citySlug": "hrinova",
-      "taxiService": {
-        "name": "R.S.T. Taxi & Ski Taxi 6+1 - Podbrezová - Brezno a okolie",
-        "phone": "+421904334971",
-        "website": "https://taxipodbrezova.sk",
-        "address": "Kolkáreň 17/22, 976 81 Podbrezová, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-15T12:36:37.851Z"
