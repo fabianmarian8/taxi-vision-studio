@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-15T13:10:11.337Z",
   "suggestions": [
     {
       "id": "topolcany-1763212196589-yz6snd213",
@@ -109,18 +110,6 @@
       "timestamp": "2025-11-15T13:09:56.589Z"
     },
     {
-      "id": "topolcany-1763212196589-jtbzxoxwb",
-      "citySlug": "topolcany",
-      "taxiService": {
-        "name": "Taxi Bošany",
-        "phone": "+421944220766",
-        "website": "https://taxi-bosany.webnode.sk",
-        "address": "Staničná 15/15, Pri stanici, 956 18 Bošany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T13:09:56.589Z"
-    },
-    {
       "id": "topolcany-1763212196589-nuylazq5t",
       "citySlug": "topolcany",
       "taxiService": {
@@ -144,6 +133,5 @@
       "status": "pending",
       "timestamp": "2025-11-15T13:09:56.589Z"
     }
-  ],
-  "lastUpdated": "2025-11-15T13:09:56.589Z"
+  ]
 }
