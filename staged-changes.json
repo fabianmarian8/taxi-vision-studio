@@ -1,0 +1,23 @@
+{
+  "changes": [
+    {
+      "citySlug": "hrinova",
+      "taxiServices": [
+        {
+          "name": "RK TAXI – DETVA",
+          "website": "http://www.rktaxi.sk",
+          "phone": "+421944384666"
+        },
+        {
+          "name": "GOLD TAXI DETVA",
+          "phone": "+421949474323"
+        },
+        {
+          "name": "Express TAXI Detva",
+          "phone": "+421910888250"
+        }
+      ],
+      "timestamp": "2025-11-15T12:37:26.509Z"
+    }
+  ]
+}
