@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:37:29.027Z",
+  "lastUpdated": "2025-11-15T13:10:21.942Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,138 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "topolcany-1763212196589-yz6snd213",
+      "citySlug": "topolcany",
+      "taxiService": {
+        "name": "Taxi Topoľčany",
+        "phone": "+421944786989",
+        "website": null,
+        "address": "Martina Rázusa 6, 955 01 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:09:56.589Z"
+    },
+    {
+      "id": "topolcany-1763212196589-qvl6sso5c",
+      "citySlug": "topolcany",
+      "taxiService": {
+        "name": "Protaxi Taxi Topoľčany",
+        "phone": "+421905063204",
+        "website": "https://www.protaxi.sk",
+        "address": "Gagarinova 1573/1, 955 01 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:09:56.589Z"
+    },
+    {
+      "id": "topolcany-1763212196589-795f0s6hu",
+      "citySlug": "topolcany",
+      "taxiService": {
+        "name": "TAXI Plus Topoľčany",
+        "phone": "+421947111900",
+        "website": null,
+        "address": "Povstania 1633/34, 955 01 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:09:56.589Z"
+    },
+    {
+      "id": "topolcany-1763212196589-42u7jwfjo",
+      "citySlug": "topolcany",
+      "taxiService": {
+        "name": "WEE TAXI Topoľčany",
+        "phone": "+421910111333",
+        "website": "http://www.taxitopolcany.sk",
+        "address": "Albína Grznára 4084/25, 955 01 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:09:56.589Z"
+    },
+    {
+      "id": "topolcany-1763212196589-7ad8qei2l",
+      "citySlug": "topolcany",
+      "taxiService": {
+        "name": "Taxi PEPE MB, s.r.o.",
+        "phone": "+421905201333",
+        "website": null,
+        "address": "17. novembra 20, 955 01 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:09:56.589Z"
+    },
+    {
+      "id": "topolcany-1763212196589-hul45dyyt",
+      "citySlug": "topolcany",
+      "taxiService": {
+        "name": "Taxi Vinco Topoľčany",
+        "phone": "+421905400411",
+        "website": "https://www.taxi-vinco.sk",
+        "address": "Martina Rázusa, 955 01 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:09:56.589Z"
+    },
+    {
+      "id": "topolcany-1763212196589-0g4gfgr2p",
+      "citySlug": "topolcany",
+      "taxiService": {
+        "name": "Ľubomír Martoš Top - Taxi",
+        "phone": "+421905320666",
+        "website": "http://www.taxitopolcany.sk",
+        "address": "Fialková 2710/27, 955 01 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:09:56.589Z"
+    },
+    {
+      "id": "topolcany-1763212196589-7s1z80eme",
+      "citySlug": "topolcany",
+      "taxiService": {
+        "name": "TopTaxi",
+        "phone": "+421903536839",
+        "website": null,
+        "address": "M.Benku, 955 03 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:09:56.589Z"
+    },
+    {
+      "id": "topolcany-1763212196589-kyy8gjb39",
+      "citySlug": "topolcany",
+      "taxiService": {
+        "name": "TAXI MAREK - TOPOĽČANY",
+        "phone": "+421903727741",
+        "website": null,
+        "address": "Martina Rázusa 4214/17, 955 01 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:09:56.589Z"
+    },
+    {
+      "id": "topolcany-1763212196589-nuylazq5t",
+      "citySlug": "topolcany",
+      "taxiService": {
+        "name": "TO TAXI -Emília Tomašovičová",
+        "phone": "+42138/5324772",
+        "website": null,
+        "address": "1, Janka Jesenského 2296, 955 01 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:09:56.589Z"
+    },
+    {
+      "id": "topolcany-1763212196589-atepw4qfp",
+      "citySlug": "topolcany",
+      "taxiService": {
+        "name": "TRIP TAXI Topoľčany",
+        "phone": "+421949470444",
+        "website": null,
+        "address": "M.Benku 2341, 955 03 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:09:56.589Z"
     }
   ]
 }
