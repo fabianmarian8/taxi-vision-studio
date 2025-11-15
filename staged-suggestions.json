@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-15T12:27:04.562Z",
   "suggestions": [
     {
       "id": "chynorany-1763209597642-yc623i6kf",
@@ -61,18 +62,6 @@
       "timestamp": "2025-11-15T12:26:37.642Z"
     },
     {
-      "id": "chynorany-1763209597642-ujmbqxfpg",
-      "citySlug": "chynorany",
-      "taxiService": {
-        "name": "Protaxi Taxi Topoľčany",
-        "phone": "+421905063204",
-        "website": "https://www.protaxi.sk",
-        "address": "Gagarinova 1573/1, 955 01 Topoľčany, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:26:37.642Z"
-    },
-    {
       "id": "chynorany-1763209597642-m86iwrspc",
       "citySlug": "chynorany",
       "taxiService": {
@@ -108,6 +97,5 @@
       "status": "pending",
       "timestamp": "2025-11-15T12:26:37.642Z"
     }
-  ],
-  "lastUpdated": "2025-11-15T12:26:37.642Z"
+  ]
 }
