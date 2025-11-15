@@ -1,0 +1,41 @@
+{
+  "suggestions": [
+    {
+      "id": "chlmec-1763209436333-6i19e6wti",
+      "citySlug": "chlmec",
+      "taxiService": {
+        "name": "Szabi Taxi - Taxislužba",
+        "phone": "+421919066191",
+        "website": "https://sites.google.com",
+        "address": "M. Helmecziho 19, 077 01 Kráľovský Chlmec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:23:56.333Z"
+    },
+    {
+      "id": "chlmec-1763209436333-6ufkwpd18",
+      "citySlug": "chlmec",
+      "taxiService": {
+        "name": "Elitt Taxi",
+        "phone": "+421940640640",
+        "website": "http://elittaxi.sk",
+        "address": "101, Ľ. Kossutha 1270, 077 01 Kráľovský Chlmec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:23:56.333Z"
+    },
+    {
+      "id": "chlmec-1763209436333-0a6x4ca77",
+      "citySlug": "chlmec",
+      "taxiService": {
+        "name": "Stravka Jan Taxi",
+        "phone": "+421918885458",
+        "website": null,
+        "address": "Chlmec 178, 067 41 Chlmec, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:23:56.333Z"
+    }
+  ],
+  "lastUpdated": "2025-11-15T12:23:56.333Z"
+}
