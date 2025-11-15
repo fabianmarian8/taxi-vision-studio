@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:31:42.559Z",
+  "lastUpdated": "2025-11-15T12:37:27.759Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1701,7 +1701,21 @@
         "objednať taxi hriňová",
         "taxi hriňová telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "RK TAXI – DETVA",
+          "website": "http://www.rktaxi.sk",
+          "phone": "+421944384666"
+        },
+        {
+          "name": "GOLD TAXI DETVA",
+          "phone": "+421949474323"
+        },
+        {
+          "name": "Express TAXI Detva",
+          "phone": "+421910888250"
+        }
+      ],
       "latitude": 48.6333,
       "longitude": 19.5167
     },
