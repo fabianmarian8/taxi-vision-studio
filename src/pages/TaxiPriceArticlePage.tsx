@@ -4,8 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Share2, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { SEOHead, generateArticleSEO } from "@/components/SEOHead";
+import { ArticleFAQ } from "@/components/ArticleFAQ";
 
 const TaxiPriceArticlePage = () => {
+  const seoData = generateArticleSEO(
+    'Porovnanie cien taxislužieb v slovenských mestách',
+    'Nástupné sadzby od 0,5€ do 3,5€, kilometrové tarify od 0,8€ do 1,5€. Detailný prehľad cien taxi na Slovensku.',
+    '/porovnanie-cien-taxi-2024-2025',
+    '2025-01-15',
+    '2025-01-15',
+    undefined,
+    ['taxi ceny', 'taxi slovensko', 'porovnanie cien', 'taxislužby', 'taxi tarify', 'nástupné taxi', 'kilometrový tarif']
+  );
   const handleShare = async () => {
     try {
       await navigator.share({
@@ -20,6 +31,7 @@ const TaxiPriceArticlePage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead {...seoData} />
       <Header />
       
       {/* Hero Section */}
@@ -195,6 +207,12 @@ const TaxiPriceArticlePage = () => {
               <strong>Poznámka:</strong> Všetky uvedené ceny sú orientačné a môžu sa líšiť v závislosti od konkrétnej taxislužby, dennej doby, dňa v týždni a ďalších faktorov. Pred objednaním odporúčame overiť aktuálne ceny priamo u vybranej služby.
             </p>
           </article>
+
+          {/* FAQ Section */}
+          <ArticleFAQ
+            articleSlug="porovnanie-cien-taxi-2024-2025"
+            articleTitle="Často kladené otázky o cenách taxi"
+          />
 
           {/* CTA Section */}
           <div className="mt-12 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl shadow-lg text-center">
