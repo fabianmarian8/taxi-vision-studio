@@ -1,3 +1,6 @@
+# Content signal for search engines and AI crawlers
+Content-signal: search=yes, ai-train=no
+
 # Block AI training crawlers
 User-agent: Amazonbot
 Disallow: /
