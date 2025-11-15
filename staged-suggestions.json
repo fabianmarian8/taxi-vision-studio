@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-15T12:22:43.872Z",
   "suggestions": [
     {
       "id": "hostovce-1763209340473-4r2emn4qk",
@@ -35,19 +36,6 @@
       },
       "status": "pending",
       "timestamp": "2025-11-15T12:22:20.473Z"
-    },
-    {
-      "id": "hostovce-1763209340473-j77r7ejme",
-      "citySlug": "hostovce",
-      "taxiService": {
-        "name": "Eko Taxi Vráble",
-        "phone": "+421904006666",
-        "website": "http://www.ekotaxi.sk",
-        "address": "Obycká 29, 951 93 Machulince, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:22:20.473Z"
     }
-  ],
-  "lastUpdated": "2025-11-15T12:22:20.473Z"
+  ]
 }
