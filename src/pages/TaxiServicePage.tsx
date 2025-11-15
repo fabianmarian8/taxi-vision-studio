@@ -127,6 +127,88 @@ const TaxiServicePage = () => {
             </div>
           </Card>
 
+          {/* SEO Content Section */}
+          <div className="mt-8 prose prose-sm md:prose-base max-w-none">
+            <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
+              O taxislužbách {service.name} v meste {city.name}
+            </h2>
+            <p className="text-foreground/80 mb-4 leading-relaxed">
+              {service.name} patrí medzi taxislužby pôsobiace v meste {city.name} a jeho okolí.
+              Podľa dostupných informácií zabezpečuje prepravu osôb v rámci mesta aj do
+              priľahlých obcí a okolitých častí regiónu {city.region}. Služby tohto poskytovateľa
+              môžu využiť obyvatelia, návštevníci mesta, ako aj cestujúci smerujúci na letiská,
+              vlakové a autobusové stanice či iné dôležité dopravné uzly.
+            </p>
+
+            <p className="text-foreground/80 mb-4 leading-relaxed">
+              Informácie o taxislužbe {service.name} na tejto stránke vychádzajú z verejne dostupných
+              zdrojov alebo z údajov deklarovaných samotným poskytovateľom služby. Stránka funguje
+              ako nezávislá databáza taxislužieb a neprevádzkuje taxi dopravu. Z tohto dôvodu
+              nemôžeme priamo garantovať dostupnosť vozidiel, kvalitu služieb, profesionalitu
+              vodičov ani presnosť všetkých uvádzaných údajov. Údaje sa môžu v čase meniť, preto
+              odporúčame dôležité informácie (napríklad ceny, dostupnosť alebo otváracie hodiny)
+              vždy overiť priamo u poskytovateľa.
+            </p>
+
+            <h3 className="text-xl md:text-2xl font-black mb-3 text-foreground mt-6">
+              Prečo môže byť {service.name} vhodnou voľbou?
+            </h3>
+            <p className="text-foreground/80 mb-4 leading-relaxed">
+              V prípade, že hľadáte taxi v meste {city.name}, taxislužba {service.name} môže byť
+              jednou z možností, ktoré stojí za zváženie. Nižšie uvádzame všeobecné výhody, ktoré
+              môžu byť pre cestujúcich pri výbere taxislužby dôležité. Nejde o hodnotenie zo strany
+              tejto stránky, ale o prehľad kritérií, ktoré si môžete overiť priamo u poskytovateľa:
+            </p>
+            <ul className="list-disc list-inside space-y-2 mb-4 text-foreground/80">
+              <li className="leading-relaxed">
+                Preprava v rámci mesta {city.name} aj do okolitých častí regiónu {city.region},
+                čo môže byť praktické pri dochádzaní za prácou, nákupmi alebo službami.
+              </li>
+              <li className="leading-relaxed">
+                Podľa vlastných údajov taxislužby môžu mať vodiči dobrú znalosť miestnych ulíc,
+                dopravnej situácie a frekventovaných cieľov v meste.
+              </li>
+              <li className="leading-relaxed">
+                Poskytovateľ môže deklarovať rozšírenú dostupnosť počas dňa, prípadne aj v nočných
+                hodinách; odporúčame však aktuálne informácie o prevádzkovej dobe overiť pri objednávke.
+              </li>
+              <li className="leading-relaxed">
+                Taxislužby často uvádzajú dôraz na férové a prehľadné ceny; konkrétne sadzby,
+                príplatky či paušálne ceny za jazdu na letisko si vždy vyžiadajte priamo u {service.name}.
+              </li>
+            </ul>
+
+            {service.phone && (
+              <>
+                <h3 className="text-xl md:text-2xl font-black mb-3 text-foreground mt-6">
+                  Ako objednať taxi v meste {city.name}?
+                </h3>
+                <p className="text-foreground/80 mb-4 leading-relaxed">
+                  Taxislužbu {service.name} môžete podľa dostupných údajov kontaktovať telefonicky na čísle{" "}
+                  <a
+                    href={`tel:${service.phone}`}
+                    className="font-bold text-foreground hover:text-foreground/70 transition-colors underline"
+                  >
+                    {service.phone}
+                  </a>
+                  . Pri volaní odporúčame overiť si aktuálnu dostupnosť vozidiel, orientačnú
+                  cenu jazdy, prípadné príplatky (napríklad za batožinu alebo nočnú prevádzku) a odhadovaný
+                  čas pristavenia vozidla. Niektoré taxislužby môžu ponúkať aj online formulár alebo
+                  mobilnú aplikáciu na objednanie, dostupnosť týchto možností je však potrebné overiť
+                  priamo u poskytovateľa.
+                </p>
+              </>
+            )}
+
+            <p className="text-foreground/80 mb-4 leading-relaxed">
+              Táto stránka má za cieľ uľahčiť vám orientáciu v ponuke taxislužieb v meste {city.name}
+              tým, že na jednom mieste zobrazuje základné kontaktné informácie a doplnkové údaje o
+              službách, ako sú oblasti pôsobenia či zameranie prepravy. Konečný výber taxislužby
+              je však vždy na vás ako zákazníkovi. Pred objednaním odporúčame porovnať viac možností,
+              overiť si podmienky priamo u poskytovateľa a riadiť sa vlastnou skúsenosťou.
+            </p>
+          </div>
+
           {/* Other Services in City */}
           {city.taxiServices.length > 1 && (
             <div className="mt-12">
