@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:22:55.863Z",
+  "lastUpdated": "2025-11-15T12:22:57.158Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,42 +2418,6 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
-    },
-    {
-      "id": "hostovce-1763209340473-4r2emn4qk",
-      "citySlug": "hostovce",
-      "taxiService": {
-        "name": "PROFI TAXI Zlaté Moravce",
-        "phone": "+421911188228",
-        "website": "http://profitaxizm.sk",
-        "address": "Jána Smreka 3948/10, 953 01 Zlaté Moravce, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:22:20.473Z"
-    },
-    {
-      "id": "hostovce-1763209340473-33qef526b",
-      "citySlug": "hostovce",
-      "taxiService": {
-        "name": "ID Taxi Zlaté Moravce",
-        "phone": "+421908760214",
-        "website": "http://www.idtaxi.sk",
-        "address": "Duklianska 1570/4, 953 01 Zlaté Moravce, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:22:20.473Z"
-    },
-    {
-      "id": "hostovce-1763209340473-os4dquk33",
-      "citySlug": "hostovce",
-      "taxiService": {
-        "name": "EKO TAXI",
-        "phone": "+421904002222",
-        "website": "http://www.ekotaxi.sk",
-        "address": "BILLA, 953 01 Zlaté Moravce, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:22:20.473Z"
     }
   ]
 }
