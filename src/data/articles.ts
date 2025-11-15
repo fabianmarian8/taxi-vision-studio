@@ -1,4 +1,4 @@
-import { BarChart3, TrendingUp, DollarSign, MapPin, Clock, Users, FileText, Star, AlertCircle, BookOpen } from "lucide-react";
+import { BarChart3, TrendingUp, DollarSign, MapPin, Clock, Users, FileText, Star, AlertCircle, BookOpen, MessageCircle, Zap, Brain, Navigation, AlertTriangle } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface Article {
@@ -61,6 +61,66 @@ export const articles: Article[] = [
     icon: BookOpen,
     date: '2025-01-15',
     category: 'Sprievodca',
+    featured: true
+  },
+  {
+    id: 'komunikacia-taxikar-zakaznik',
+    title: 'Ako vyzerá dobrá komunikácia medzi taxikárom a zákazníkom',
+    excerpt: 'Jasné pravidlá, slušnosť a hranice, ktoré by mali poznať obe strany.',
+    slug: '/komunikacia-taxikar-zakaznik',
+    icon: MessageCircle,
+    date: '2025-01-15',
+    category: 'Komunikácia',
+    featured: true
+  },
+  {
+    id: 'elektrifikacia-taxi',
+    title: 'Elektrifikácia taxislužby na Slovensku',
+    excerpt: 'Budúcnosť taxi je elektrická. Analýza trendu a výhod elektromobilov v taxislužbách.',
+    slug: '/elektrifikacia-taxi',
+    icon: Zap,
+    date: '2025-01-15',
+    category: 'Elektrifikácia',
+    featured: true
+  },
+  {
+    id: 'psychologia-zakaznikov',
+    title: 'Psychológia zákazníkov v taxi',
+    excerpt: 'Ako rozumieť správaniu zákazníkov a zlepšiť kvalitu služby.',
+    slug: '/psychologia-zakaznikov',
+    icon: Brain,
+    date: '2025-01-15',
+    category: 'Psychológia',
+    featured: true
+  },
+  {
+    id: 'taxi-navigacia',
+    title: 'Taxi navigácia: Ako nájsť najlepšiu trasu',
+    excerpt: 'Moderné nástroje a tipy pre efektívnu navigáciu v meste.',
+    slug: '/taxi-navigacia',
+    icon: Navigation,
+    date: '2025-01-15',
+    category: 'Navigácia',
+    featured: true
+  },
+  {
+    id: 'co-musi-zniest-vodic',
+    title: 'Čo všetko musí zniesť vodič taxi',
+    excerpt: 'Realita práce taxikára - výzvy, stres a každodenné situácie.',
+    slug: '/co-musi-zniest-vodic',
+    icon: AlertTriangle,
+    date: '2025-01-15',
+    category: 'Realita',
+    featured: true
+  },
+  {
+    id: 'temna-strana-bolt-uber',
+    title: 'Temná stránka Boltu a Uberu',
+    excerpt: 'Nižšia kvalita služieb a sklamanie vodičov - realita rideshare platforiem.',
+    slug: '/temna-strana-bolt-uber',
+    icon: AlertCircle,
+    date: '2025-01-15',
+    category: 'Analýza',
     featured: true
   }
 ];

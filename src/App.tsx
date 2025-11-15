@@ -13,6 +13,12 @@ import TaxiPriceArticlePage from "./pages/TaxiPriceArticlePage";
 import HodnotenieVodicovPage from "./pages/HodnotenieVodicovPage";
 import AlkoholNocnyZivotPage from "./pages/AlkoholNocnyZivotPage";
 import KomplexnySprievodcaPage from "./pages/KomplexnySprievodcaPage";
+import KomunikaciaPage from "./pages/KomunikaciaPage";
+import ElektrifikaciaPage from "./pages/ElektrifikaciaPage";
+import PsychologiaZakaznikovPage from "./pages/PsychologiaZakaznikovPage";
+import NavigaciaPage from "./pages/NavigaciaPage";
+import CoMusiZniestVodicPage from "./pages/CoMusiZniestVodicPage";
+import TemnaBoltUberPage from "./pages/TemnaBoltUberPage";
 import NotFound from "./pages/NotFound";
 import TaxiScraperTool from "./components/TaxiScraperTool";
 import AdminLogin from "./pages/AdminLogin";
@@ -58,6 +64,12 @@ const App = () => {
             <Route path="/hodnotenie-vodicov" element={<HodnotenieVodicovPage />} />
             <Route path="/alkohol-nocny-zivot" element={<AlkoholNocnyZivotPage />} />
             <Route path="/komplexny-sprievodca-taxi" element={<KomplexnySprievodcaPage />} />
+            <Route path="/komunikacia-taxikar-zakaznik" element={<KomunikaciaPage />} />
+            <Route path="/elektrifikacia-taxi" element={<ElektrifikaciaPage />} />
+            <Route path="/psychologia-zakaznikov" element={<PsychologiaZakaznikovPage />} />
+            <Route path="/taxi-navigacia" element={<NavigaciaPage />} />
+            <Route path="/co-musi-zniest-vodic" element={<CoMusiZniestVodicPage />} />
+            <Route path="/temna-strana-bolt-uber" element={<TemnaBoltUberPage />} />
             {/* Legal pages */}
             <Route path="/ochrana-sukromia" element={<PrivacyPolicy />} />
             <Route path="/cookies" element={<Cookies />} />
