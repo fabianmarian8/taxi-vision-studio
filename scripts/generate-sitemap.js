@@ -80,6 +80,30 @@ citiesData.cities.forEach(city => {
   }
 });
 
+// Blog články - VYSOKÁ PRIORITA PRE SEO
+const blogArticles = [
+  { path: '/prieskum-cien-taxisluzieb-slovensko-2025', priority: '0.8', date: '2025-01-15' },
+  { path: '/porovnanie-cien-taxi-2024-2025', priority: '0.8', date: '2025-01-15' },
+  { path: '/hodnotenie-vodicov', priority: '0.8', date: '2025-01-15' },
+  { path: '/alkohol-nocny-zivot', priority: '0.8', date: '2025-01-15' },
+  { path: '/komplexny-sprievodca-taxi', priority: '0.8', date: '2025-01-15' },
+  { path: '/komunikacia-taxikar-zakaznik', priority: '0.8', date: '2025-01-15' },
+  { path: '/elektrifikacia-taxi', priority: '0.8', date: '2025-01-15' },
+  { path: '/psychologia-zakaznikov', priority: '0.8', date: '2025-01-15' },
+  { path: '/taxi-navigacia', priority: '0.8', date: '2025-01-15' },
+  { path: '/co-musi-zniest-vodic', priority: '0.8', date: '2025-01-15' },
+  { path: '/temna-strana-bolt-uber', priority: '0.8', date: '2025-01-15' }
+];
+
+blogArticles.forEach(article => {
+  xml += '  <url>\n';
+  xml += `    <loc>${baseUrl}${article.path}</loc>\n`;
+  xml += `    <lastmod>${article.date}</lastmod>\n`;
+  xml += '    <changefreq>monthly</changefreq>\n';
+  xml += `    <priority>${article.priority}</priority>\n`;
+  xml += '  </url>\n';
+});
+
 // Právne stránky
 const legalPages = [
   { path: '/ochrana-sukromia', priority: '0.3' },
@@ -102,11 +126,15 @@ xml += '</urlset>\n';
 const outputPath = join(__dirname, '../public/sitemap.xml');
 writeFileSync(outputPath, xml, 'utf-8');
 
+const totalTaxiServices = citiesData.cities.reduce((sum, city) => sum + (city.taxiServices?.length || 0), 0);
+const totalUrls = 1 + regions.length + citiesData.cities.length + totalTaxiServices + blogArticles.length + legalPages.length;
+
 console.log('✅ Sitemap úspešne vygenerovaný!');
-console.log(`📊 Celkový počet URL: ${citiesData.cities.length + regions.length + legalPages.length + 1 + citiesData.cities.reduce((sum, city) => sum + (city.taxiServices?.length || 0), 0)}`);
+console.log(`📊 Celkový počet URL: ${totalUrls}`);
 console.log(`   - Homepage: 1`);
 console.log(`   - Kraje: ${regions.length}`);
 console.log(`   - Mestá: ${citiesData.cities.length}`);
-console.log(`   - Taxislužby: ${citiesData.cities.reduce((sum, city) => sum + (city.taxiServices?.length || 0), 0)}`);
+console.log(`   - Taxislužby: ${totalTaxiServices}`);
+console.log(`   - Blog články: ${blogArticles.length} ⭐ NOVÉ!`);
 console.log(`   - Právne stránky: ${legalPages.length}`);
 console.log(`📝 Uložené do: ${outputPath}`);
