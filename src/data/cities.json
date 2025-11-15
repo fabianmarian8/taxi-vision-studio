@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T13:10:21.942Z",
+  "lastUpdated": "2025-11-15T13:11:14.692Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -6169,7 +6169,21 @@
         "objednať taxi tvrdošín",
         "taxi tvrdošín telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "YooGi ORAVA TAXI",
+          "phone": "+421948177228"
+        },
+        {
+          "name": "Taxi Tvrdošín - Mário Jarina",
+          "phone": "+421902600900"
+        },
+        {
+          "name": "Milan Papík - Taxislužba Tvrdošín",
+          "website": "https://www.taxipapik.orava.sk",
+          "phone": "+421903508588"
+        }
+      ],
       "latitude": 49.3361,
       "longitude": 19.5592
     },
