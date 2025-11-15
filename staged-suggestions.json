@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:36:47.329Z",
+  "lastUpdated": "2025-11-15T12:36:53.412Z",
   "suggestions": [
     {
       "id": "hrinova-1763210197851-twmmfcn8q",
@@ -45,18 +45,6 @@
         "phone": "+421919300111",
         "website": "https://www.facebook.com/pizzavelvet",
         "address": "Jarmočná 1424/17, 962 05 Hriňová, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:36:37.851Z"
-    },
-    {
-      "id": "hrinova-1763210197852-udk99byda",
-      "citySlug": "hrinova",
-      "taxiService": {
-        "name": "Air taxi Slovakia",
-        "phone": "+421944008111",
-        "website": null,
-        "address": "Klokoč 58, 962 25 Klokoč, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-15T12:36:37.851Z"
