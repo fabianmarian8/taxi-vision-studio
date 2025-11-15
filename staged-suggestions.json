@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:36:53.412Z",
+  "lastUpdated": "2025-11-15T12:36:59.032Z",
   "suggestions": [
     {
       "id": "hrinova-1763210197851-twmmfcn8q",
@@ -33,18 +33,6 @@
         "phone": "+421910888250",
         "website": null,
         "address": "Záhradná, 962 12 Detva, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:36:37.851Z"
-    },
-    {
-      "id": "hrinova-1763210197852-3pzvukk2u",
-      "citySlug": "hrinova",
-      "taxiService": {
-        "name": "Velvet",
-        "phone": "+421919300111",
-        "website": "https://www.facebook.com/pizzavelvet",
-        "address": "Jarmočná 1424/17, 962 05 Hriňová, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-15T12:36:37.851Z"
