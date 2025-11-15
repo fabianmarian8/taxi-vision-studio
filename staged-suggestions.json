@@ -1,4 +1,5 @@
 {
+  "lastUpdated": "2025-11-15T12:36:47.329Z",
   "suggestions": [
     {
       "id": "hrinova-1763210197851-twmmfcn8q",
@@ -44,18 +45,6 @@
         "phone": "+421919300111",
         "website": "https://www.facebook.com/pizzavelvet",
         "address": "Jarmočná 1424/17, 962 05 Hriňová, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:36:37.851Z"
-    },
-    {
-      "id": "hrinova-1763210197852-2tgdnf6ah",
-      "citySlug": "hrinova",
-      "taxiService": {
-        "name": "Hriňová",
-        "phone": null,
-        "website": "http://www.hrinova.sk",
-        "address": "962 05 Hriňová, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-15T12:36:37.851Z"
@@ -108,6 +97,5 @@
       "status": "pending",
       "timestamp": "2025-11-15T12:36:37.851Z"
     }
-  ],
-  "lastUpdated": "2025-11-15T12:36:37.851Z"
+  ]
 }
