@@ -1,17 +1,6 @@
 {
+  "lastUpdated": "2025-11-15T12:26:02.502Z",
   "suggestions": [
-    {
-      "id": "chlmec-1763209436333-6i19e6wti",
-      "citySlug": "chlmec",
-      "taxiService": {
-        "name": "Szabi Taxi - Taxislužba",
-        "phone": "+421919066191",
-        "website": "https://sites.google.com",
-        "address": "M. Helmecziho 19, 077 01 Kráľovský Chlmec, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:23:56.333Z"
-    },
     {
       "id": "chlmec-1763209436333-6ufkwpd18",
       "citySlug": "chlmec",
@@ -36,6 +25,5 @@
       "status": "pending",
       "timestamp": "2025-11-15T12:23:56.333Z"
     }
-  ],
-  "lastUpdated": "2025-11-15T12:23:56.333Z"
+  ]
 }
