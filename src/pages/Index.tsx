@@ -4,8 +4,10 @@ import { RegionCard } from "@/components/RegionCard";
 import { HowItWorks } from "@/components/HowItWorks";
 import { GeometricLines } from "@/components/GeometricLines";
 import { SEOHead, generateHomeSEO } from "@/components/SEOHead";
+import { ArticleBanner } from "@/components/ArticleBanner";
 import { MapPin } from "lucide-react";
 import { getRegionsData } from "@/data/cities";
+import { articles } from "@/data/articles";
 import { Link } from "react-router-dom";
 import taxiLogo from "@/assets/taxi-nearme-logo.png";
 
@@ -43,7 +45,16 @@ const Index = () => {
 
             <div className="pt-4 md:pt-6">
               <SearchPanel />
+              
+              {/* Article Banner */}
+              <div className="mt-6 md:mt-8">
+                <ArticleBanner articles={articles} />
+              </div>
             </div>
+            
+            <p className="text-center text-xs md:text-sm text-foreground font-bold mt-3 md:mt-4">
+              Alebo použite svoju polohu pre okamžité vyhľadanie taxíkov v okolí
+            </p>
           </div>
         </div>
       </section>

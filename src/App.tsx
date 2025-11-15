@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import RegionPage from "./pages/RegionPage";
 import CityPage from "./pages/CityPage";
 import TaxiServicePage from "./pages/TaxiServicePage";
+import PriceComparisonPage from "./pages/PriceComparisonPage";
 import NotFound from "./pages/NotFound";
 import TaxiScraperTool from "./components/TaxiScraperTool";
 import AdminLogin from "./pages/AdminLogin";
@@ -46,6 +47,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/scraper" element={<TaxiScraperTool />} />
+            {/* Price comparison page */}
+            <Route path="/prieskum-cien-taxisluzieb-slovensko-2025" element={<PriceComparisonPage />} />
             {/* Legal pages */}
             <Route path="/ochrana-sukromia" element={<PrivacyPolicy />} />
             <Route path="/cookies" element={<Cookies />} />
