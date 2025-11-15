@@ -1,0 +1,23 @@
+{
+  "changes": [
+    {
+      "citySlug": "tvrdosin",
+      "taxiServices": [
+        {
+          "name": "YooGi ORAVA TAXI",
+          "phone": "+421948177228"
+        },
+        {
+          "name": "Taxi Tvrdošín - Mário Jarina",
+          "phone": "+421902600900"
+        },
+        {
+          "name": "Milan Papík - Taxislužba Tvrdošín",
+          "website": "https://www.taxipapik.orava.sk",
+          "phone": "+421903508588"
+        }
+      ],
+      "timestamp": "2025-11-15T13:11:13.279Z"
+    }
+  ]
+}
