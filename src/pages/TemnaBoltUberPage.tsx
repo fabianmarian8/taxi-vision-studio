@@ -70,7 +70,7 @@ const TemnaBoltUberPage = () => {
 
             <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-8">
               <p className="text-lg font-semibold text-gray-900">
-                Bolt a Uber revolúciou zmenili taxislužby. Slibovali flexibilitu, férové ceny a jednoduchosť. Realita? Vykorisťovanie vodičov, nespravodlivé algoritmy a systém postavený na maximalizácii zisku na úkor ľudí.
+                Bolt a Uber revolúciou zmenili taxislužby. Sľubovali flexibilitu, férové ceny a jednoduchosť. Realita? Vykorisťovanie vodičov, nespravodlivé algoritmy a systém postavený na maximalizácii zisku na úkor ľudí.
               </p>
             </div>
 
