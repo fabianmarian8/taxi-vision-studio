@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:26:12.401Z",
+  "lastUpdated": "2025-11-15T12:28:09.503Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,66 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "chynorany-1763209597642-yc623i6kf",
+      "citySlug": "chynorany",
+      "taxiService": {
+        "name": "Taxi Bošany",
+        "phone": "+421944220766",
+        "website": "https://taxi-bosany.webnode.sk",
+        "address": "Staničná 15/15, Pri stanici, 956 18 Bošany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:26:37.642Z"
+    },
+    {
+      "id": "chynorany-1763209597642-0eax3k9c7",
+      "citySlug": "chynorany",
+      "taxiService": {
+        "name": "Joker Taxi Partizánske",
+        "phone": "+421911866792",
+        "website": "https://www.jokertaxipe.sk",
+        "address": "958 03 Partizánske, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:26:37.642Z"
+    },
+    {
+      "id": "chynorany-1763209597642-10bnhfm31",
+      "citySlug": "chynorany",
+      "taxiService": {
+        "name": "Taxi Topoľčany",
+        "phone": "+421944786989",
+        "website": null,
+        "address": "Martina Rázusa 6, 955 01 Topoľčany, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:26:37.642Z"
+    },
+    {
+      "id": "chynorany-1763209597642-ssh1llhw8",
+      "citySlug": "chynorany",
+      "taxiService": {
+        "name": "S-TAXI Partizanske",
+        "phone": "+421905300230",
+        "website": "http://s-taxi.sk",
+        "address": "Nádražná 647/17, 958 01 Partizánske, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:26:37.642Z"
+    },
+    {
+      "id": "chynorany-1763209597642-38hf1fw4m",
+      "citySlug": "chynorany",
+      "taxiService": {
+        "name": "PE TAXI Partizánske",
+        "phone": "+421908080908",
+        "website": "http://www.petaxi.sk",
+        "address": "Hrnčírikova 650/2, 958 01 Partizánske, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:26:37.642Z"
     }
   ]
 }

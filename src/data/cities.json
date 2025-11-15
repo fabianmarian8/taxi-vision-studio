@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:26:11.052Z",
+  "lastUpdated": "2025-11-15T12:28:09.503Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1846,7 +1846,32 @@
         "objednať taxi chynorany",
         "taxi chynorany telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Bošany",
+          "website": "https://taxi-bosany.webnode.sk",
+          "phone": "+421944220766"
+        },
+        {
+          "name": "Joker Taxi Partizánske",
+          "website": "https://www.jokertaxipe.sk",
+          "phone": "+421911866792"
+        },
+        {
+          "name": "Taxi Topoľčany",
+          "phone": "+421944786989"
+        },
+        {
+          "name": "S-TAXI Partizanske",
+          "website": "http://s-taxi.sk",
+          "phone": "+421905300230"
+        },
+        {
+          "name": "PE TAXI Partizánske",
+          "website": "http://www.petaxi.sk",
+          "phone": "+421908080908"
+        }
+      ],
       "latitude": 48.5833,
       "longitude": 18.2167
     },
