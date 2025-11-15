@@ -88,6 +88,76 @@ const injectMetaTags = (html, title, description, canonicalUrl, keywords = []) =
   return modifiedHtml;
 };
 
+// Helper funkcia na vloženie SEO obsahu pre taxi service stránky
+const injectTaxiServiceSEOContent = (html, serviceName, cityName, cityRegion, phone) => {
+  const seoContent = `
+    <!-- Pre-rendered SEO Content -->
+    <noscript>
+      <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">${serviceName}</h1>
+        <p style="margin-bottom: 1rem;">Taxislužba v meste ${cityName}</p>
+
+        <h2 style="font-size: 1.5rem; font-weight: bold; margin: 2rem 0 1rem;">O taxislužbách ${serviceName} v meste ${cityName}</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          ${serviceName} patrí medzi taxislužby pôsobiace v meste ${cityName} a jeho okolí.
+          Podľa dostupných informácií zabezpečuje prepravu osôb v rámci mesta aj do
+          priľahlých obcí a okolitých častí regiónu ${cityRegion}. Služby tohto poskytovateľa
+          môžu využiť obyvatelia, návštevníci mesta, ako aj cestujúci smerujúci na letiská,
+          vlakové a autobusové stanice či iné dôležité dopravné uzly.
+        </p>
+
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Informácie o taxislužbe ${serviceName} na tejto stránke vychádzajú z verejne dostupných
+          zdrojov alebo z údajov deklarovaných samotným poskytovateľom služby. Stránka funguje
+          ako nezávislá databáza taxislužieb a neprevádzkuje taxi dopravu. Z tohto dôvodu
+          nemôžeme priamo garantovať dostupnosť vozidiel, kvalitu služieb, profesionalitu
+          vodičov ani presnosť všetkých uvádzaných údajov. Údaje sa môžu v čase meniť, preto
+          odporúčame dôležité informácie (napríklad ceny, dostupnosť alebo otváracie hodiny)
+          vždy overiť priamo u poskytovateľa.
+        </p>
+
+        <h3 style="font-size: 1.25rem; font-weight: bold; margin: 1.5rem 0 1rem;">Prečo môže byť ${serviceName} vhodnou voľbou?</h3>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          V prípade, že hľadáte taxi v meste ${cityName}, taxislužba ${serviceName} môže byť
+          jednou z možností, ktoré stojí za zváženie. Nižšie uvádzame všeobecné výhody, ktoré
+          môžu byť pre cestujúcich pri výbere taxislužby dôležité. Nejde o hodnotenie zo strany
+          tejto stránky, ale o prehľad kritérií, ktoré si môžete overiť priamo u poskytovateľa:
+        </p>
+        <ul style="margin: 1rem 0 1rem 2rem; line-height: 1.8;">
+          <li>Preprava v rámci mesta ${cityName} aj do okolitých častí regiónu ${cityRegion}, čo môže byť praktické pri dochádzaní za prácou, nákupmi alebo službami.</li>
+          <li>Podľa vlastných údajov taxislužby môžu mať vodiči dobrú znalosť miestnych ulíc, dopravnej situácie a frekventovaných cieľov v meste.</li>
+          <li>Poskytovateľ môže deklarovať rozšírenú dostupnosť počas dňa, prípadne aj v nočných hodinách; odporúčame však aktuálne informácie o prevádzkovej dobe overiť pri objednávke.</li>
+          <li>Taxislužby často uvádzajú dôraz na férové a prehľadné ceny; konkrétne sadzby, príplatky či paušálne ceny za jazdu na letisko si vždy vyžiadajte priamo u ${serviceName}.</li>
+        </ul>
+        ${phone ? `
+        <h3 style="font-size: 1.25rem; font-weight: bold; margin: 1.5rem 0 1rem;">Ako objednať taxi v meste ${cityName}?</h3>
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Taxislužbu ${serviceName} môžete podľa dostupných údajov kontaktovať telefonicky na čísle <strong>${phone}</strong>.
+          Pri volaní odporúčame overiť si aktuálnu dostupnosť vozidiel, orientačnú
+          cenu jazdy, prípadné príplatky (napríklad za batožinu alebo nočnú prevádzku) a odhadovaný
+          čas pristavenia vozidla. Niektoré taxislužby môžu ponúkať aj online formulár alebo
+          mobilnú aplikáciu na objednanie, dostupnosť týchto možností je však potrebné overiť
+          priamo u poskytovateľa.
+        </p>
+        ` : ''}
+        <p style="margin-bottom: 1rem; line-height: 1.6;">
+          Táto stránka má za cieľ uľahčiť vám orientáciu v ponuke taxislužieb v meste ${cityName}
+          tým, že na jednom mieste zobrazuje základné kontaktné informácie a doplnkové údaje o
+          službách, ako sú oblasti pôsobenia či zameranie prepravy. Konečný výber taxislužby
+          je však vždy na vás ako zákazníkovi. Pred objednaním odporúčame porovnať viac možností,
+          overiť si podmienky priamo u poskytovateľa a riadiť sa vlastnou skúsenosťou.
+        </p>
+      </div>
+    </noscript>
+  `;
+
+  // Vloží SEO content do <body> pred <div id="root">
+  return html.replace(
+    /<div id="root"><\/div>/,
+    `${seoContent}\n    <div id="root"></div>`
+  );
+};
+
 // Generovanie pre-renderovaných stránok
 let generatedPages = 0;
 
@@ -168,13 +238,23 @@ citiesData.cities.forEach(city => {
         `objednať taxi ${city.name}`
       ];
 
-      const serviceHtml = injectMetaTags(
+      let serviceHtml = injectMetaTags(
         originalBaseHtml,
         serviceTitle,
         serviceDescription,
         serviceCanonicalUrl,
         serviceKeywords
       );
+
+      // Vloží SEO obsah pre taxi service stránky
+      serviceHtml = injectTaxiServiceSEOContent(
+        serviceHtml,
+        service.name,
+        city.name,
+        city.region,
+        service.phone
+      );
+
       writeFileSync(join(servicePath, 'index.html'), serviceHtml, 'utf-8');
       generatedPages++;
     });

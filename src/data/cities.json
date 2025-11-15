@@ -2231,12 +2231,6 @@
           "address": "101, Ľ. Kossutha 1270, 077 01 Kráľovský Chlmec, Slovensko"
         },
         {
-          "name": "Elitt Taxi",
-          "phone": "+421940640640",
-          "website": "http://elittaxi.sk",
-          "address": "101, Ľ. Kossutha 1270, 077 01 Kráľovský Chlmec, Slovensko"
-        },
-        {
           "name": "Szabi Taxi - Taxislužba",
           "phone": "+421919066191",
           "website": "https://sites.google.com",
@@ -3919,10 +3913,6 @@
         {
           "name": "TAXI DANIELA",
           "phone": "+421905535455"
-        },
-        {
-          "name": "TAXI POVAŽSKA BYSTRICA",
-          "phone": "+421908440077"
         }
       ],
       "latitude": 49.1217,
