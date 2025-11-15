@@ -239,7 +239,7 @@ const PsychologiaZakaznikovPage = () => {
 
               <p className="font-semibold mb-3 mt-4">Ako sa správať:</p>
               <p className="bg-red-50 p-3 rounded">
-                ✓ Nereaguj emočne. Kľud, profesionalita. Ak prekročí hranicu (nadávky, vyhrážky) → ZASTAV a vypusť ho. Tvoja bezpečnosť > jedna jazda. Nahláš incident platforme.
+                ✓ Nereaguj emočne. Kľud, profesionalita. Ak prekročí hranicu (nadávky, vyhrážky) → ZASTAV a vypusť ho. Tvoja bezpečnosť &gt; jedna jazda. Nahláš incident platforme.
               </p>
             </div>
 
