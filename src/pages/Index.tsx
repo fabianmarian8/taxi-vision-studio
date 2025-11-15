@@ -51,10 +51,6 @@ const Index = () => {
                 <ArticleBanner articles={articles} />
               </div>
             </div>
-            
-            <p className="text-center text-xs md:text-sm text-foreground font-bold mt-3 md:mt-4">
-              Alebo použite svoju polohu pre okamžité vyhľadanie taxíkov v okolí
-            </p>
           </div>
         </div>
       </section>
