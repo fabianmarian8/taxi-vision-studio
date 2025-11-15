@@ -4,8 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Share2, Calendar, MessageCircle, AlertTriangle, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { SEOHead, generateArticleSEO } from "@/components/SEOHead";
+import { ArticleFAQ } from "@/components/ArticleFAQ";
 
 const KomunikaciaPage = () => {
+  const seoData = generateArticleSEO(
+    'Ako vyzerá dobrá komunikácia medzi taxikárom a zákazníkom',
+    'Jasné pravidlá, slušnosť a hranice, ktoré by mali poznať obe strany.',
+    '/komunikacia-taxikar-zakaznik',
+    '2025-01-15',
+    '2025-01-15',
+    undefined,
+    ['komunikácia taxi', 'správanie v taxi', 'taxikár zákazník', 'slušnosť', 'taxislužby', 'pravidlá taxi']
+  );
   const handleShare = async () => {
     try {
       await navigator.share({
@@ -20,6 +31,7 @@ const KomunikaciaPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead {...seoData} />
       <Header />
 
       <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
@@ -343,6 +355,12 @@ const KomunikaciaPage = () => {
             </div>
 
           </article>
+
+          {/* FAQ Section */}
+          <ArticleFAQ
+            articleSlug="komunikacia-taxikar-zakaznik"
+            articleTitle="Často kladené otázky o komunikácii"
+          />
 
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
             <h3 className="text-2xl font-bold mb-4 text-center">Chcete vidieť komplexný sprievodca?</h3>

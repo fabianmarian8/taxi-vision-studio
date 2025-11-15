@@ -4,8 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Share2, Calendar, Navigation, Map, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { SEOHead, generateArticleSEO } from "@/components/SEOHead";
+import { ArticleFAQ } from "@/components/ArticleFAQ";
 
 const NavigaciaPage = () => {
+  const seoData = generateArticleSEO(
+    'Taxi navigácia: Ako nájsť najlepšiu trasu',
+    'Moderné nástroje a tipy pre efektívnu navigáciu v meste.',
+    '/taxi-navigacia',
+    '2025-01-15',
+    '2025-01-15',
+    undefined,
+    ['taxi navigácia', 'najlepšia trasa', 'gps taxi', 'navigácia slovensko', 'waze taxi', 'google maps taxi']
+  );
   const handleShare = async () => {
     try {
       await navigator.share({
@@ -20,6 +31,7 @@ const NavigaciaPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead {...seoData} />
       <Header />
 
       <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
@@ -352,6 +364,12 @@ const NavigaciaPage = () => {
             </div>
 
           </article>
+
+          {/* FAQ Section */}
+          <ArticleFAQ
+            articleSlug="taxi-navigacia"
+            articleTitle="Často kladené otázky o taxi navigácii"
+          />
 
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
             <h3 className="text-2xl font-bold mb-4 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>

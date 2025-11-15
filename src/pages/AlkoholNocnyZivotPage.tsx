@@ -4,8 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Share2, Calendar, AlertCircle, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { SEOHead, generateArticleSEO } from "@/components/SEOHead";
+import { ArticleFAQ } from "@/components/ArticleFAQ";
 
 const AlkoholNocnyZivotPage = () => {
+  const seoData = generateArticleSEO(
+    'Alkohol, nočný život a taxík',
+    'Hranica medzi službou a záchrannou misiou. Kedy môže vodič odmietnuť jazdu a ako sa správať v noci.',
+    '/alkohol-nocny-zivot',
+    '2025-01-15',
+    '2025-01-15',
+    undefined,
+    ['taxi bezpečnosť', 'alkohol taxi', 'nočný život', 'opitý zákazník', 'taxislužby', 'správanie v taxi']
+  );
   const handleShare = async () => {
     try {
       await navigator.share({
@@ -20,6 +31,7 @@ const AlkoholNocnyZivotPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead {...seoData} />
       <Header />
       
       <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
@@ -213,6 +225,12 @@ const AlkoholNocnyZivotPage = () => {
             </div>
 
           </article>
+
+          {/* FAQ Section */}
+          <ArticleFAQ
+            articleSlug="alkohol-nocny-zivot"
+            articleTitle="Často kladené otázky o nočnom živote a taxi"
+          />
 
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
             <h3 className="text-2xl font-bold mb-4 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>

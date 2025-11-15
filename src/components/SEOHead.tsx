@@ -293,3 +293,49 @@ export const generateHomeSEO = (): SEOProps => {
     },
   };
 };
+
+export const generateArticleSEO = (
+  title: string,
+  description: string,
+  slug: string,
+  datePublished: string,
+  dateModified?: string,
+  imageUrl?: string,
+  keywords?: string[]
+): SEOProps => {
+  return {
+    title: `${title} | Taxi NearMe`,
+    description: description,
+    keywords: keywords || [],
+    canonicalUrl: `https://www.taxinearme.sk${slug}`,
+    ogType: 'article',
+    ogImage: imageUrl,
+    structuredData: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description: description,
+      image: imageUrl,
+      datePublished: datePublished,
+      dateModified: dateModified || datePublished,
+      author: {
+        '@type': 'Organization',
+        name: 'Taxi NearMe',
+        url: 'https://www.taxinearme.sk'
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Taxi NearMe',
+        url: 'https://www.taxinearme.sk',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.taxinearme.sk/logo.png'
+        }
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `https://www.taxinearme.sk${slug}`
+      }
+    },
+  };
+};

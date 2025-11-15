@@ -4,8 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Share2, Calendar, Star, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { SEOHead, generateArticleSEO } from "@/components/SEOHead";
+import { ArticleFAQ } from "@/components/ArticleFAQ";
 
 const HodnotenieVodicovPage = () => {
+  const seoData = generateArticleSEO(
+    'Ako funguje hodnotenie vodičov v taxi aplikáciách',
+    'Prečo môžeš jedným klikom zničiť niekomu prácu. 4★ nie je dobré hodnotenie - je to penalizácia.',
+    '/hodnotenie-vodicov',
+    '2025-01-15',
+    '2025-01-15',
+    undefined,
+    ['hodnotenie vodičov', 'taxi aplikácie', 'uber rating', 'bolt hodnotenie', 'taxislužby', 'recenzie taxi']
+  );
   const handleShare = async () => {
     try {
       await navigator.share({
@@ -20,6 +31,7 @@ const HodnotenieVodicovPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead {...seoData} />
       <Header />
       
       {/* Hero Section */}
@@ -238,6 +250,12 @@ const HodnotenieVodicovPage = () => {
             </p>
 
           </article>
+
+          {/* FAQ Section */}
+          <ArticleFAQ
+            articleSlug="hodnotenie-vodicov"
+            articleTitle="Často kladené otázky o hodnotení vodičov"
+          />
 
           {/* CTA Section */}
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">

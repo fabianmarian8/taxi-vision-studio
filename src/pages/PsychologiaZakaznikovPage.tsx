@@ -4,8 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Share2, Calendar, Brain, Users, MessageCircle, Volume2, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { SEOHead, generateArticleSEO } from "@/components/SEOHead";
+import { ArticleFAQ } from "@/components/ArticleFAQ";
 
 const PsychologiaZakaznikovPage = () => {
+  const seoData = generateArticleSEO(
+    'Psychológia zákazníkov v taxi',
+    'Ako rozumieť správaniu zákazníkov a zlepšiť kvalitu služby.',
+    '/psychologia-zakaznikov',
+    '2025-01-15',
+    '2025-01-15',
+    undefined,
+    ['psychológia zákazníkov', 'správanie pasažierov', 'typológia zákazníkov', 'taxislužby', 'customer service taxi']
+  );
   const handleShare = async () => {
     try {
       await navigator.share({
@@ -20,6 +31,7 @@ const PsychologiaZakaznikovPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead {...seoData} />
       <Header />
 
       <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
@@ -356,6 +368,12 @@ const PsychologiaZakaznikovPage = () => {
             </p>
 
           </article>
+
+          {/* FAQ Section */}
+          <ArticleFAQ
+            articleSlug="psychologia-zakaznikov"
+            articleTitle="Často kladené otázky o psychológii zákazníkov"
+          />
 
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
             <h3 className="text-2xl font-bold mb-4 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>

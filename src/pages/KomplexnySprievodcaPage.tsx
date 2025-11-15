@@ -4,8 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Share2, Calendar, BookOpen, MapPin, CreditCard, Star, Shield, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { SEOHead, generateArticleSEO } from "@/components/SEOHead";
+import { ArticleFAQ } from "@/components/ArticleFAQ";
 
 const KomplexnySprievodcaPage = () => {
+  const seoData = generateArticleSEO(
+    'Komplexný sprievodca taxislužbami na Slovensku',
+    'Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva.',
+    '/komplexny-sprievodca-taxi',
+    '2025-01-15',
+    '2025-01-15',
+    undefined,
+    ['taxi sprievodca', 'taxislužby slovensko', 'ako si vybrať taxi', 'práva zákazníkov', 'taxi aplikácie', 'objednať taxi']
+  );
   const handleShare = async () => {
     try {
       await navigator.share({
@@ -20,6 +31,7 @@ const KomplexnySprievodcaPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead {...seoData} />
       <Header />
       
       {/* Hero Section */}
@@ -424,6 +436,12 @@ const KomplexnySprievodcaPage = () => {
               </div>
             </div>
           </article>
+
+          {/* FAQ Section */}
+          <ArticleFAQ
+            articleSlug="komplexny-sprievodca-taxi"
+            articleTitle="Často kladené otázky o taxislužbách"
+          />
 
           {/* CTA Section */}
           <div className="mt-12 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl shadow-lg text-center">
