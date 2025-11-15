@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:37:06.153Z",
+  "lastUpdated": "2025-11-15T12:37:09.488Z",
   "suggestions": [
     {
       "id": "hrinova-1763210197851-twmmfcn8q",
@@ -45,18 +45,6 @@
         "phone": "+421904334971",
         "website": "https://taxipodbrezova.sk",
         "address": "Kolkáreň 17/22, 976 81 Podbrezová, Slovensko"
-      },
-      "status": "pending",
-      "timestamp": "2025-11-15T12:36:37.851Z"
-    },
-    {
-      "id": "hrinova-1763210197852-b3ygomxkm",
-      "citySlug": "hrinova",
-      "taxiService": {
-        "name": "Galtrans Austria - Medzinárodná preprava osôb",
-        "phone": "+421915888843",
-        "website": null,
-        "address": "976 52 Čierny Balog, Slovensko"
       },
       "status": "pending",
       "timestamp": "2025-11-15T12:36:37.851Z"
