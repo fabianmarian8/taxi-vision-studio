@@ -1,0 +1,113 @@
+{
+  "suggestions": [
+    {
+      "id": "hrinova-1763210197851-twmmfcn8q",
+      "citySlug": "hrinova",
+      "taxiService": {
+        "name": "RK TAXI – DETVA",
+        "phone": "+421944384666",
+        "website": "http://www.rktaxi.sk",
+        "address": "Novosady 921/6, 962 12 Detva, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:36:37.851Z"
+    },
+    {
+      "id": "hrinova-1763210197852-8fuqnl334",
+      "citySlug": "hrinova",
+      "taxiService": {
+        "name": "GOLD TAXI DETVA",
+        "phone": "+421949474323",
+        "website": null,
+        "address": "Obrancov mieru 2, 962 12 Detva, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:36:37.851Z"
+    },
+    {
+      "id": "hrinova-1763210197852-t55smalze",
+      "citySlug": "hrinova",
+      "taxiService": {
+        "name": "Express TAXI Detva",
+        "phone": "+421910888250",
+        "website": null,
+        "address": "Záhradná, 962 12 Detva, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:36:37.851Z"
+    },
+    {
+      "id": "hrinova-1763210197852-3pzvukk2u",
+      "citySlug": "hrinova",
+      "taxiService": {
+        "name": "Velvet",
+        "phone": "+421919300111",
+        "website": "https://www.facebook.com/pizzavelvet",
+        "address": "Jarmočná 1424/17, 962 05 Hriňová, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:36:37.851Z"
+    },
+    {
+      "id": "hrinova-1763210197852-2tgdnf6ah",
+      "citySlug": "hrinova",
+      "taxiService": {
+        "name": "Hriňová",
+        "phone": null,
+        "website": "http://www.hrinova.sk",
+        "address": "962 05 Hriňová, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:36:37.851Z"
+    },
+    {
+      "id": "hrinova-1763210197852-udk99byda",
+      "citySlug": "hrinova",
+      "taxiService": {
+        "name": "Air taxi Slovakia",
+        "phone": "+421944008111",
+        "website": null,
+        "address": "Klokoč 58, 962 25 Klokoč, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:36:37.851Z"
+    },
+    {
+      "id": "hrinova-1763210197852-ux02bp4d9",
+      "citySlug": "hrinova",
+      "taxiService": {
+        "name": "R.S.T. Taxi & Ski Taxi 6+1 - Podbrezová - Brezno a okolie",
+        "phone": "+421904334971",
+        "website": "https://taxipodbrezova.sk",
+        "address": "Kolkáreň 17/22, 976 81 Podbrezová, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:36:37.851Z"
+    },
+    {
+      "id": "hrinova-1763210197852-tkbdayt7f",
+      "citySlug": "hrinova",
+      "taxiService": {
+        "name": "LASSAK TRANSPORT s.r.o.",
+        "phone": "+421918129306",
+        "website": null,
+        "address": "Krivec I 126, Sídlisko Bystrô, 962 05 Hriňová, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:36:37.851Z"
+    },
+    {
+      "id": "hrinova-1763210197852-b3ygomxkm",
+      "citySlug": "hrinova",
+      "taxiService": {
+        "name": "Galtrans Austria - Medzinárodná preprava osôb",
+        "phone": "+421915888843",
+        "website": null,
+        "address": "976 52 Čierny Balog, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:36:37.851Z"
+    }
+  ],
+  "lastUpdated": "2025-11-15T12:36:37.851Z"
+}
