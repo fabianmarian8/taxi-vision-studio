@@ -1,5 +1,5 @@
 # Content signal for search engines and AI crawlers
-Content-signal: search=yes, ai-train=no
+Content-signal: search=yes, ai-train=yes
 
 # Block AI training crawlers
 User-agent: Amazonbot
