@@ -2136,110 +2136,6 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
       answer: 'Väčšina taxislužieb v meste Nové Zámky ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
-  'novy-ruskov': [
-    {
-      question: 'Ako si objednám taxi v meste Nový Ruskov?',
-      answer: 'V meste Nový Ruskov si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
-    },
-    {
-      question: 'Koľko stojí jazda taxíkom v meste Nový Ruskov?',
-      answer: 'Ceny taxi v meste Nový Ruskov sa líšia podľa spoločnosti. Každá taxislužba má vlastný cenník, ktorý zohľadňuje nástupnú sadzbu a cenu za kilometer. Niektoré služby majú odlišné ceny pre denné a nočné jazdy alebo počas víkendov. Odporúčame sa o cene informovať vopred priamo u dispečingu vybranej taxislužby.'
-    },
-    {
-      question: 'Sú taxislužby v meste Nový Ruskov dostupné nonstop?',
-      answer: 'Väčšina taxislužieb v meste Nový Ruskov poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
-    },
-    {
-      question: 'Môžem platiť kartou v taxi v meste Nový Ruskov?',
-      answer: 'Niektoré taxislužby v meste Nový Ruskov akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
-    },
-    {
-      question: 'Ako poznám, že ide o legálnu taxislužbu v meste Nový Ruskov?',
-      answer: 'Legálne taxi v meste Nový Ruskov má riadne označené vozidlo s logom taxislužby, menovku vodiča viditeľnú v interiéri a cenník. Vždy sa uistite, že nastupujete do riadne označeného vozidla. Využívajte služby overených spoločností z nášho zoznamu.'
-    },
-    {
-      question: 'Môžem si vopred rezervovať taxi v meste Nový Ruskov?',
-      answer: 'Väčšina taxislužieb v meste Nový Ruskov ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
-    }
-  ],
-  'novy-smokovec': [
-    {
-      question: 'Ako si objednám taxi v meste Nový Smokovec?',
-      answer: 'V meste Nový Smokovec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
-    },
-    {
-      question: 'Koľko stojí jazda taxíkom v meste Nový Smokovec?',
-      answer: 'Ceny taxi v meste Nový Smokovec sa líšia podľa spoločnosti. Každá taxislužba má vlastný cenník, ktorý zohľadňuje nástupnú sadzbu a cenu za kilometer. Niektoré služby majú odlišné ceny pre denné a nočné jazdy alebo počas víkendov. Odporúčame sa o cene informovať vopred priamo u dispečingu vybranej taxislužby.'
-    },
-    {
-      question: 'Sú taxislužby v meste Nový Smokovec dostupné nonstop?',
-      answer: 'Väčšina taxislužieb v meste Nový Smokovec poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
-    },
-    {
-      question: 'Môžem platiť kartou v taxi v meste Nový Smokovec?',
-      answer: 'Niektoré taxislužby v meste Nový Smokovec akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
-    },
-    {
-      question: 'Ako poznám, že ide o legálnu taxislužbu v meste Nový Smokovec?',
-      answer: 'Legálne taxi v meste Nový Smokovec má riadne označené vozidlo s logom taxislužby, menovku vodiča viditeľnú v interiéri a cenník. Vždy sa uistite, že nastupujete do riadne označeného vozidla. Využívajte služby overených spoločností z nášho zoznamu.'
-    },
-    {
-      question: 'Môžem si vopred rezervovať taxi v meste Nový Smokovec?',
-      answer: 'Väčšina taxislužieb v meste Nový Smokovec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
-    }
-  ],
-  'odrava': [
-    {
-      question: 'Ako si objednám taxi v meste Odrava?',
-      answer: 'V meste Odrava si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
-    },
-    {
-      question: 'Koľko stojí jazda taxíkom v meste Odrava?',
-      answer: 'Ceny taxi v meste Odrava sa líšia podľa spoločnosti. Každá taxislužba má vlastný cenník, ktorý zohľadňuje nástupnú sadzbu a cenu za kilometer. Niektoré služby majú odlišné ceny pre denné a nočné jazdy alebo počas víkendov. Odporúčame sa o cene informovať vopred priamo u dispečingu vybranej taxislužby.'
-    },
-    {
-      question: 'Sú taxislužby v meste Odrava dostupné nonstop?',
-      answer: 'Väčšina taxislužieb v meste Odrava poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
-    },
-    {
-      question: 'Môžem platiť kartou v taxi v meste Odrava?',
-      answer: 'Niektoré taxislužby v meste Odrava akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
-    },
-    {
-      question: 'Ako poznám, že ide o legálnu taxislužbu v meste Odrava?',
-      answer: 'Legálne taxi v meste Odrava má riadne označené vozidlo s logom taxislužby, menovku vodiča viditeľnú v interiéri a cenník. Vždy sa uistite, že nastupujete do riadne označeného vozidla. Využívajte služby overených spoločností z nášho zoznamu.'
-    },
-    {
-      question: 'Môžem si vopred rezervovať taxi v meste Odrava?',
-      answer: 'Väčšina taxislužieb v meste Odrava ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
-    }
-  ],
-  'odstepny-zavod': [
-    {
-      question: 'Ako si objednám taxi v meste Odštepný závod?',
-      answer: 'V meste Odštepný závod si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
-    },
-    {
-      question: 'Koľko stojí jazda taxíkom v meste Odštepný závod?',
-      answer: 'Ceny taxi v meste Odštepný závod sa líšia podľa spoločnosti. Každá taxislužba má vlastný cenník, ktorý zohľadňuje nástupnú sadzbu a cenu za kilometer. Niektoré služby majú odlišné ceny pre denné a nočné jazdy alebo počas víkendov. Odporúčame sa o cene informovať vopred priamo u dispečingu vybranej taxislužby.'
-    },
-    {
-      question: 'Sú taxislužby v meste Odštepný závod dostupné nonstop?',
-      answer: 'Väčšina taxislužieb v meste Odštepný závod poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
-    },
-    {
-      question: 'Môžem platiť kartou v taxi v meste Odštepný závod?',
-      answer: 'Niektoré taxislužby v meste Odštepný závod akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
-    },
-    {
-      question: 'Ako poznám, že ide o legálnu taxislužbu v meste Odštepný závod?',
-      answer: 'Legálne taxi v meste Odštepný závod má riadne označené vozidlo s logom taxislužby, menovku vodiča viditeľnú v interiéri a cenník. Vždy sa uistite, že nastupujete do riadne označeného vozidla. Využívajte služby overených spoločností z nášho zoznamu.'
-    },
-    {
-      question: 'Môžem si vopred rezervovať taxi v meste Odštepný závod?',
-      answer: 'Väčšina taxislužieb v meste Odštepný závod ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
-    }
-  ],
   'partizanske': [
     {
       question: 'Ako si objednám taxi v meste Partizánske?',
@@ -2316,32 +2212,6 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     {
       question: 'Môžem si vopred rezervovať taxi v meste Piešťany?',
       answer: 'Väčšina taxislužieb v meste Piešťany ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
-    }
-  ],
-  'podolinec': [
-    {
-      question: 'Ako si objednám taxi v meste Podolínec?',
-      answer: 'V meste Podolínec si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
-    },
-    {
-      question: 'Koľko stojí jazda taxíkom v meste Podolínec?',
-      answer: 'Ceny taxi v meste Podolínec sa líšia podľa spoločnosti. Každá taxislužba má vlastný cenník, ktorý zohľadňuje nástupnú sadzbu a cenu za kilometer. Niektoré služby majú odlišné ceny pre denné a nočné jazdy alebo počas víkendov. Odporúčame sa o cene informovať vopred priamo u dispečingu vybranej taxislužby.'
-    },
-    {
-      question: 'Sú taxislužby v meste Podolínec dostupné nonstop?',
-      answer: 'Väčšina taxislužieb v meste Podolínec poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
-    },
-    {
-      question: 'Môžem platiť kartou v taxi v meste Podolínec?',
-      answer: 'Niektoré taxislužby v meste Podolínec akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
-    },
-    {
-      question: 'Ako poznám, že ide o legálnu taxislužbu v meste Podolínec?',
-      answer: 'Legálne taxi v meste Podolínec má riadne označené vozidlo s logom taxislužby, menovku vodiča viditeľnú v interiéri a cenník. Vždy sa uistite, že nastupujete do riadne označeného vozidla. Využívajte služby overených spoločností z nášho zoznamu.'
-    },
-    {
-      question: 'Môžem si vopred rezervovať taxi v meste Podolínec?',
-      answer: 'Väčšina taxislužieb v meste Podolínec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'poltar': [
@@ -2524,32 +2394,6 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
     {
       question: 'Môžem si vopred rezervovať taxi v meste Rajec?',
       answer: 'Väčšina taxislužieb v meste Rajec ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
-    }
-  ],
-  'rajecke-teplice': [
-    {
-      question: 'Ako si objednám taxi v meste Rajecké Teplice?',
-      answer: 'V meste Rajecké Teplice si môžete objednať taxi telefonicky (telefónne čísla nájdete v našom zozname taxislužieb). Niektoré služby môžu ponúkať aj možnosť objednania cez webovú stránku alebo mobilnú aplikáciu.'
-    },
-    {
-      question: 'Koľko stojí jazda taxíkom v meste Rajecké Teplice?',
-      answer: 'Ceny taxi v meste Rajecké Teplice sa líšia podľa spoločnosti. Každá taxislužba má vlastný cenník, ktorý zohľadňuje nástupnú sadzbu a cenu za kilometer. Niektoré služby majú odlišné ceny pre denné a nočné jazdy alebo počas víkendov. Odporúčame sa o cene informovať vopred priamo u dispečingu vybranej taxislužby.'
-    },
-    {
-      question: 'Sú taxislužby v meste Rajecké Teplice dostupné nonstop?',
-      answer: 'Väčšina taxislužieb v meste Rajecké Teplice poskytuje služby počas celého dňa. Niektoré môžu mať obmedzený prevádzkový čas, preto si dostupnosť overte priamo u vybranej taxislužby.'
-    },
-    {
-      question: 'Môžem platiť kartou v taxi v meste Rajecké Teplice?',
-      answer: 'Niektoré taxislužby v meste Rajecké Teplice akceptujú platby kartou alebo cez mobilné aplikácie. Odporúčame si formu platby overiť pri objednávaní taxi.'
-    },
-    {
-      question: 'Ako poznám, že ide o legálnu taxislužbu v meste Rajecké Teplice?',
-      answer: 'Legálne taxi v meste Rajecké Teplice má riadne označené vozidlo s logom taxislužby, menovku vodiča viditeľnú v interiéri a cenník. Vždy sa uistite, že nastupujete do riadne označeného vozidla. Využívajte služby overených spoločností z nášho zoznamu.'
-    },
-    {
-      question: 'Môžem si vopred rezervovať taxi v meste Rajecké Teplice?',
-      answer: 'Väčšina taxislužieb v meste Rajecké Teplice ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Odporúčame si túto možnosť overiť priamo u vybranej taxislužby telefonicky alebo cez ich webovú stránku či aplikáciu.'
     }
   ],
   'revuca': [

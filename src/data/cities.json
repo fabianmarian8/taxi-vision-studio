@@ -3548,74 +3548,6 @@
       "longitude": 18.1617
     },
     {
-      "name": "Nový Ruskov",
-      "slug": "novy-ruskov",
-      "region": "Košický kraj",
-      "description": "Objavte taxi služby v meste Nový Ruskov. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
-      "metaDescription": "Taxi Nový Ruskov - Nájdite taxislužby v meste Nový Ruskov. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
-      "keywords": [
-        "taxi nový ruskov",
-        "taxislužba nový ruskov",
-        "taxi v nový ruskov",
-        "objednať taxi nový ruskov",
-        "taxi nový ruskov telefón"
-      ],
-      "taxiServices": [],
-      "latitude": 48.7833,
-      "longitude": 22.2833
-    },
-    {
-      "name": "Nový Smokovec",
-      "slug": "novy-smokovec",
-      "region": "Prešovský kraj",
-      "description": "Objavte taxi služby v meste Nový Smokovec. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
-      "metaDescription": "Taxi Nový Smokovec - Nájdite taxislužby v meste Nový Smokovec. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
-      "keywords": [
-        "taxi nový smokovec",
-        "taxislužba nový smokovec",
-        "taxi v nový smokovec",
-        "objednať taxi nový smokovec",
-        "taxi nový smokovec telefón"
-      ],
-      "taxiServices": [],
-      "latitude": 49.1561,
-      "longitude": 20.2211
-    },
-    {
-      "name": "Odrava",
-      "slug": "odrava",
-      "region": "Žilinský kraj",
-      "description": "Objavte taxi služby v meste Odrava. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
-      "metaDescription": "Taxi Odrava - Nájdite taxislužby v meste Odrava. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
-      "keywords": [
-        "taxi odrava",
-        "taxislužba odrava",
-        "taxi v odrava",
-        "objednať taxi odrava",
-        "taxi odrava telefón"
-      ],
-      "taxiServices": [],
-      "latitude": 49.3167,
-      "longitude": 18.7833
-    },
-    {
-      "name": "Odštepný závod",
-      "slug": "odstepny-zavod",
-      "region": "Trenčiansky kraj",
-      "description": "Objavte taxi služby v meste Odštepný závod. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
-      "metaDescription": "Taxi Odštepný závod - Nájdite taxislužby v meste Odštepný závod. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
-      "keywords": [
-        "taxi odštepný závod",
-        "taxislužba odštepný závod",
-        "taxi v odštepný závod",
-        "objednať taxi odštepný závod",
-        "taxi odštepný závod telefón"
-      ],
-      "taxiServices": [],
-      "latitude": 48.9167,
-      "longitude": 18.4
-    },
-    {
       "name": "Partizánske",
       "slug": "partizanske",
       "region": "Trenčiansky kraj",
@@ -3796,23 +3728,6 @@
       ],
       "latitude": 48.5917,
       "longitude": 17.8258
-    },
-    {
-      "name": "Podolínec",
-      "slug": "podolinec",
-      "region": "Prešovský kraj",
-      "description": "Objavte taxi služby v meste Podolínec. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
-      "metaDescription": "Taxi Podolínec - Nájdite taxislužby v meste Podolínec. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
-      "keywords": [
-        "taxi podolínec",
-        "taxislužba podolínec",
-        "taxi v podolínec",
-        "objednať taxi podolínec",
-        "taxi podolínec telefón"
-      ],
-      "taxiServices": [],
-      "latitude": 49.2583,
-      "longitude": 20.5333
     },
     {
       "name": "Poltár",
@@ -4238,23 +4153,6 @@
       ],
       "latitude": 49.0817,
       "longitude": 18.6433
-    },
-    {
-      "name": "Rajecké Teplice",
-      "slug": "rajecke-teplice",
-      "region": "Žilinský kraj",
-      "description": "Objavte taxi služby v meste Rajecké Teplice. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
-      "metaDescription": "Taxi Rajecké Teplice - Nájdite taxislužby v meste Rajecké Teplice. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
-      "keywords": [
-        "taxi rajecké teplice",
-        "taxislužba rajecké teplice",
-        "taxi v rajecké teplice",
-        "objednať taxi rajecké teplice",
-        "taxi rajecké teplice telefón"
-      ],
-      "taxiServices": [],
-      "latitude": 49.0889,
-      "longitude": 18.8708
     },
     {
       "name": "Revúca",
