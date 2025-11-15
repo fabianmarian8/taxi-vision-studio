@@ -7,6 +7,7 @@ import { PriceRankings } from "@/components/PriceRankings";
 import { PriceInsights } from "@/components/PriceInsights";
 import { PriceCharts } from "@/components/PriceCharts";
 import { SlovakiaMap } from "@/components/SlovakiaMap";
+import { CityLinksSection } from "@/components/CityLinksSection";
 import { Button } from "@/components/ui/button";
 import { Download, Share2, FileText } from "lucide-react";
 import { toast } from "sonner";
@@ -306,6 +307,9 @@ const PriceComparisonPage = () => {
           </div>
         </div>
       </section>
+
+      {/* City Links Section */}
+      <CityLinksSection />
 
       {/* CTA Section */}
       <section className="py-12 md:py-16 px-4 md:px-8 relative hero-3d-bg">

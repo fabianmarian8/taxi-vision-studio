@@ -16,58 +16,14 @@ export const articles: Article[] = [
   {
     id: 'index-cien-2025',
     title: 'Index cien taxislužieb na Slovensku 2025',
-    excerpt: 'Porovnanie cien taxi v 10 najväčších mestách. Kde je najlacnejšie a najdrahšie?',
+    excerpt: 'Bratislava je najdrahšie mesto (11.70€ za 5km), Poprad najlacnejšie (5.00€). Kompletné porovnanie cien v 10 mestách.',
     slug: '/prieskum-cien-taxisluzieb-slovensko-2025',
     icon: BarChart3,
     date: '2025-01-15',
     category: 'Prieskum',
     featured: true
-  },
-  {
-    id: 'ako-usetrit-na-taxi',
-    title: 'Ako ušetriť na taxi: 7 overených tipov',
-    excerpt: 'Praktické rady ako znížiť náklady na taxislužby bez straty kvality.',
-    slug: '/ako-usetrit-na-taxi',
-    icon: DollarSign,
-    date: '2025-01-10',
-    category: 'Tipy'
-  },
-  {
-    id: 'najlepsie-taxi-aplikacie',
-    title: 'Najlepšie taxi aplikácie na Slovensku',
-    excerpt: 'Porovnanie funkcií a cien najpopulárnejších taxi aplikácií.',
-    slug: '/najlepsie-taxi-aplikacie',
-    icon: MapPin,
-    date: '2025-01-05',
-    category: 'Technológie'
-  },
-  {
-    id: 'taxi-vs-uber-bolt',
-    title: 'Klasické taxi vs. Uber a Bolt',
-    excerpt: 'Ktorá možnosť je výhodnejšia? Porovnanie cien, dostupnosti a kvality.',
-    slug: '/taxi-vs-uber-bolt',
-    icon: TrendingUp,
-    date: '2024-12-20',
-    category: 'Porovnanie'
-  },
-  {
-    id: 'nocne-taxi-sluzby',
-    title: 'Nočné taxi služby: Čo potrebujete vedieť',
-    excerpt: 'Príplatky, dostupnosť a bezpečnosť pri nočných jazdách taxíkom.',
-    slug: '/nocne-taxi-sluzby',
-    icon: Clock,
-    date: '2024-12-15',
-    category: 'Sprievodca'
-  },
-  {
-    id: 'taxi-pre-turistov',
-    title: 'Sprievodca taxi pre turistov na Slovensku',
-    excerpt: 'Všetko čo turista potrebuje vedieť o taxislužbách na Slovensku.',
-    slug: '/taxi-pre-turistov',
-    icon: Users,
-    date: '2024-12-10',
-    category: 'Sprievodca'
   }
+  // Ďalšie články budú pridané postupne
 ];
 
 export const getFeaturedArticles = (): Article[] => {
