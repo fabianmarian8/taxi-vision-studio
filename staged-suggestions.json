@@ -1,0 +1,41 @@
+{
+  "suggestions": [
+    {
+      "id": "tvrdosin-1763212263963-2uo2re6dn",
+      "citySlug": "tvrdosin",
+      "taxiService": {
+        "name": "YooGi ORAVA TAXI",
+        "phone": "+421948177228",
+        "website": null,
+        "address": "Konopná 198, 027 44 Tvrdošín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:11:03.963Z"
+    },
+    {
+      "id": "tvrdosin-1763212263963-fwsdknk5v",
+      "citySlug": "tvrdosin",
+      "taxiService": {
+        "name": "Taxi Tvrdošín - Mário Jarina",
+        "phone": "+421902600900",
+        "website": null,
+        "address": "Oravské nábrežie, 027 44 Tvrdošín, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:11:03.963Z"
+    },
+    {
+      "id": "tvrdosin-1763212263963-gdnb48oeb",
+      "citySlug": "tvrdosin",
+      "taxiService": {
+        "name": "Milan Papík - Taxislužba Tvrdošín",
+        "phone": "+421903508588",
+        "website": "https://www.taxipapik.orava.sk",
+        "address": "Kukučínova, 027 43 Nižná, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T13:11:03.963Z"
+    }
+  ],
+  "lastUpdated": "2025-11-15T13:11:03.963Z"
+}
