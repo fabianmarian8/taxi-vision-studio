@@ -1,4 +1,4 @@
-import { BarChart3, TrendingUp, DollarSign, MapPin, Clock, Users } from "lucide-react";
+import { BarChart3, TrendingUp, DollarSign, MapPin, Clock, Users, FileText } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface Article {
@@ -21,6 +21,16 @@ export const articles: Article[] = [
     icon: BarChart3,
     date: '2025-01-15',
     category: 'Prieskum',
+    featured: true
+  },
+  {
+    id: 'porovnanie-cien-taxi-2024-2025',
+    title: 'Porovnanie cien taxislužieb v slovenských mestách',
+    excerpt: 'Nástupné sadzby od 0,5€ do 3,5€, kilometrové tarify od 0,8€ do 1,5€. Detailný prehľad cien taxi na Slovensku.',
+    slug: '/porovnanie-cien-taxi-2024-2025',
+    icon: FileText,
+    date: '2025-01-15',
+    category: 'Blog',
     featured: true
   }
   // Ďalšie články budú pridané postupne
