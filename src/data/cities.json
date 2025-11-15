@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:22:55.863Z",
+  "lastUpdated": "2025-11-15T12:26:11.052Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1824,7 +1824,12 @@
         "objednať taxi chlmec",
         "taxi chlmec telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Stravka Jan Taxi",
+          "phone": "+421918885458"
+        }
+      ],
       "latitude": 48.5833,
       "longitude": 21.9833
     },
