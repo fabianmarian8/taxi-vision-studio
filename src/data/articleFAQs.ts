@@ -168,7 +168,7 @@ export const articleFAQs: Record<string, FAQItem[]> = {
 
   'psychologia-zakaznikov': [
     {
-      question: 'Prečo niektorí zákazníci mlčia a iní sú veľmi hovorní?',
+      question: 'Prečo niektorí zákazníci mlčia a iní sú veľmi ukecaní?',
       answer: 'Je to kombinácia osobnosti, nálady a situácie. Introverti preferujú ticho, extroverti radi komunikujú. Ranné jazdy = menej reči, večer po akcii = viac. Ako vodič, rešpektujte signály zákazníka.'
     },
     {
@@ -180,7 +180,7 @@ export const articleFAQs: Record<string, FAQItem[]> = {
       answer: 'Nie je to vždy neslušnosť. Môžu byť zaneprázdnení (pracovný hovor), unavení, stresovaní alebo jednoducho preferujú ticho. Kultúrne rozdiely tiež hrajú rolu. Nebrať to osobne.'
     },
     {
-      question: 'Sú biznismeníčinší než ostatní zákazníci?',
+      question: 'Sú biznismeni viac než ostatní zákazníci?',
       answer: 'Nie nevyhnutne. Biznis zákazníci často riešia pracovné veci počas jazdy (hovory, maily), preto potrebujú sústrediť sa. To neznamená aroganciu, ale prioritizáciu času. Očakávajú profesionalitu a efektivitu.'
     },
     {
