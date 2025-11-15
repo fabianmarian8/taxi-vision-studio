@@ -281,15 +281,42 @@ export const generateHomeSEO = (): SEOProps => {
     canonicalUrl: 'https://www.taxinearme.sk/',
     structuredData: {
       '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: 'Taxi NearMe',
-      description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku',
-      url: 'https://www.taxinearme.sk',
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: 'https://www.taxinearme.sk/?q={search_term_string}',
-        'query-input': 'required name=search_term_string',
-      },
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': 'https://www.taxinearme.sk/#organization',
+          name: 'Taxi NearMe',
+          url: 'https://www.taxinearme.sk',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
+            width: 600,
+            height: 600
+          },
+          description: 'Komplexný portál pre vyhľadávanie taxislužieb na Slovensku',
+          foundingDate: '2024',
+          slogan: 'Taxi v každom meste - rýchlo, jednoducho a vždy nablízku',
+          sameAs: [
+            'https://www.facebook.com/taxinearme',
+            'https://www.instagram.com/taxinearme'
+          ]
+        },
+        {
+          '@type': 'WebSite',
+          '@id': 'https://www.taxinearme.sk/#website',
+          name: 'Taxi NearMe',
+          description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku',
+          url: 'https://www.taxinearme.sk',
+          publisher: {
+            '@id': 'https://www.taxinearme.sk/#organization'
+          },
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: 'https://www.taxinearme.sk/?q={search_term_string}',
+            'query-input': 'required name=search_term_string',
+          },
+        }
+      ]
     },
   };
 };
