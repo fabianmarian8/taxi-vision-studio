@@ -10,9 +10,9 @@ import CityPage from "./pages/CityPage";
 import TaxiServicePage from "./pages/TaxiServicePage";
 import PriceComparisonPage from "./pages/PriceComparisonPage";
 import TaxiPriceArticlePage from "./pages/TaxiPriceArticlePage";
-// import HodnotenieVodicovPage from "./pages/HodnotenieVodicovPage";
-// import AlkoholNocnyZivotPage from "./pages/AlkoholNocnyZivotPage";
-// import KomplexnySprievodcaPage from "./pages/KomplexnySprievodcaPage";
+import HodnotenieVodicovPage from "./pages/HodnotenieVodicovPage";
+import AlkoholNocnyZivotPage from "./pages/AlkoholNocnyZivotPage";
+import KomplexnySprievodcaPage from "./pages/KomplexnySprievodcaPage";
 import NotFound from "./pages/NotFound";
 import TaxiScraperTool from "./components/TaxiScraperTool";
 import AdminLogin from "./pages/AdminLogin";
@@ -55,9 +55,9 @@ const App = () => {
             <Route path="/prieskum-cien-taxisluzieb-slovensko-2025" element={<PriceComparisonPage />} />
             {/* Blog article pages */}
             <Route path="/porovnanie-cien-taxi-2024-2025" element={<TaxiPriceArticlePage />} />
-            {/* <Route path="/hodnotenie-vodicov" element={<HodnotenieVodicovPage />} /> */}
-            {/* <Route path="/alkohol-nocny-zivot" element={<AlkoholNocnyZivotPage />} /> */}
-            {/* <Route path="/komplexny-sprievodca-taxi" element={<KomplexnySprievodcaPage />} /> */}
+            <Route path="/hodnotenie-vodicov" element={<HodnotenieVodicovPage />} />
+            <Route path="/alkohol-nocny-zivot" element={<AlkoholNocnyZivotPage />} />
+            <Route path="/komplexny-sprievodca-taxi" element={<KomplexnySprievodcaPage />} />
             {/* Legal pages */}
             <Route path="/ochrana-sukromia" element={<PrivacyPolicy />} />
             <Route path="/cookies" element={<Cookies />} />

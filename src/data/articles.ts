@@ -1,4 +1,4 @@
-import { BarChart3, TrendingUp, DollarSign, MapPin, Clock, Users, FileText } from "lucide-react";
+import { BarChart3, TrendingUp, DollarSign, MapPin, Clock, Users, FileText, Star, AlertCircle, BookOpen } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface Article {
@@ -32,8 +32,37 @@ export const articles: Article[] = [
     date: '2025-01-15',
     category: 'Blog',
     featured: true
+  },
+  {
+    id: 'hodnotenie-vodicov',
+    title: 'Ako funguje hodnotenie vodičov v taxi aplikáciách',
+    excerpt: 'Prečo môžeš jedným klikom zničiť niekomu prácu. 4★ nie je dobré hodnotenie - je to penalizácia.',
+    slug: '/hodnotenie-vodicov',
+    icon: Star,
+    date: '2025-01-15',
+    category: 'Hodnotenie',
+    featured: true
+  },
+  {
+    id: 'alkohol-nocny-zivot',
+    title: 'Alkohol, nočný život a taxík',
+    excerpt: 'Hranica medzi službou a záchrannou misiou. Kedy môže vodič odmietnuť jazdu a ako sa správať v noci.',
+    slug: '/alkohol-nocny-zivot',
+    icon: AlertCircle,
+    date: '2025-01-15',
+    category: 'Bezpečnosť',
+    featured: true
+  },
+  {
+    id: 'komplexny-sprievodca-taxi',
+    title: 'Komplexný sprievodca taxislužbami na Slovensku',
+    excerpt: 'Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva.',
+    slug: '/komplexny-sprievodca-taxi',
+    icon: BookOpen,
+    date: '2025-01-15',
+    category: 'Sprievodca',
+    featured: true
   }
-  // Ďalšie články budú pridané postupne
 ];
 
 export const getFeaturedArticles = (): Article[] => {
