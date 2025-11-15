@@ -126,7 +126,7 @@ const CoMusiZniestVodicPage = () => {
                 <p className="text-sm text-gray-700">Chronické problémy s chrbtom a bedrovým kĺbom</p>
               </div>
               <div className="bg-red-50 p-4 rounded-lg">
-                <p className="font-bold mb-2">Zlé krvný obeh</p>
+                <p className="font-bold mb-2">Zlý krvný obeh</p>
                 <p className="text-sm text-gray-700">Žilová nedostatočnosť, opuchy nôh</p>
               </div>
               <div className="bg-red-50 p-4 rounded-lg">
