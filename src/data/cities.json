@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:28:09.503Z",
+  "lastUpdated": "2025-11-15T12:31:42.559Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -1921,7 +1921,23 @@
         "objednať taxi ivanka pri dunaji",
         "taxi ivanka pri dunaji telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Ivanka pri Dunaji Nonstop - preprava na letiská",
+          "website": "https://bratislava-taxi.sk/taxi-ivanka-pri-dunaji/",
+          "phone": "+421 911 030 399"
+        },
+        {
+          "name": "Massive Taxi Ivanka pri Dunaji",
+          "website": "",
+          "phone": "+421 950 862 806"
+        },
+        {
+          "name": "Purple taxi Ivanka pri Dunaji",
+          "website": "https://purpletaxibratislava.sk/taxi-ivanka-pri-dunaji/",
+          "phone": "+421 903 106 943"
+        }
+      ],
       "latitude": 48.2167,
       "longitude": 17.2667
     },

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-15T12:28:10.716Z",
+  "lastUpdated": "2025-11-15T12:31:42.559Z",
   "suggestions": [
     {
       "id": "banska-bystrica-1762944164310-ccys8m13x",
@@ -2418,6 +2418,42 @@
       "status": "approved",
       "timestamp": "2025-11-12T14:15:35.924Z",
       "approvedAt": "2025-11-12T14:16:41.607Z"
+    },
+    {
+      "id": "ivanka-pri-dunaji-1763209711383-lcdhrn7vf",
+      "citySlug": "ivanka-pri-dunaji",
+      "taxiService": {
+        "name": "Taxi Bernolakovo",
+        "phone": "+421910275078",
+        "website": "https://massivetaxi.sk",
+        "address": "Poštová 4, 900 27 Bernolákovo, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:28:31.383Z"
+    },
+    {
+      "id": "ivanka-pri-dunaji-1763209711384-nhenhqhed",
+      "citySlug": "ivanka-pri-dunaji",
+      "taxiService": {
+        "name": "VANTAXI Bratislava",
+        "phone": "+421903351122",
+        "website": "https://vantaxi.sk",
+        "address": "Most pri Bratislave 239, 900 46 Most pri Bratislave, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:28:31.383Z"
+    },
+    {
+      "id": "ivanka-pri-dunaji-1763209711384-6jekisrxe",
+      "citySlug": "ivanka-pri-dunaji",
+      "taxiService": {
+        "name": "Bratislava Taxi - Drink Taxi",
+        "phone": "+421911030399",
+        "website": "https://bratislava-taxi.sk",
+        "address": "Seberíniho 1765/9, 821 04 Bratislava-Ružinov, Slovensko"
+      },
+      "status": "pending",
+      "timestamp": "2025-11-15T12:28:31.383Z"
     }
   ]
 }
