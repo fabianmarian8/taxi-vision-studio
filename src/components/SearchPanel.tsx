@@ -1,8 +1,10 @@
+'use client';
+
 import { Search, MapPin, Loader2, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { findNearestCity } from "@/lib/locationUtils";
 import { slovakCities } from "@/data/cities";
@@ -14,7 +16,7 @@ export const SearchPanel = () => {
   const [filteredCities, setFilteredCities] = useState(slovakCities);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // Filter cities based on search input
   useEffect(() => {
@@ -49,7 +51,7 @@ export const SearchPanel = () => {
     );
 
     if (city) {
-      navigate(`/taxi/${city.slug}`);
+      router.push(`/taxi/${city.slug}`);
       setShowDropdown(false);
       setSearchValue("");
     } else {
@@ -159,7 +161,7 @@ export const SearchPanel = () => {
           if (cityInDatabase && hasTaxiServices) {
             // City found in database with taxi services, navigate to it directly
             toast.success(`Poloha nájdená: ${cityInDatabase.name}`);
-            navigate(`/taxi/${cityInDatabase.slug}`);
+            router.push(`/taxi/${cityInDatabase.slug}`);
           } else {
             // City not in database or has no taxi services, find nearest city from our list
             if (cityInDatabase && !hasTaxiServices) {
@@ -186,7 +188,7 @@ export const SearchPanel = () => {
                     ? `Najbližšie mesto: ${nearestCity} (ste v: ${detectedCity})`
                     : `Najbližšie mesto nájdené: ${nearestCity}`
                 );
-                navigate(`/taxi/${nearestCityData.slug}`);
+                router.push(`/taxi/${nearestCityData.slug}`);
               }
             } else {
               toast.error("Nepodarilo sa nájsť najbližšie mesto z nášho zoznamu");

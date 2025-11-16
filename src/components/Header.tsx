@@ -1,19 +1,22 @@
+'use client';
+
 import { Plus } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import logo from "@/assets/logo-3d.jpg";
 import { ContactFormModal } from "./ContactFormModal";
 import { useState } from "react";
 
 export const Header = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const handleNavClick = (sectionId: string) => (e: React.MouseEvent) => {
     e.preventDefault();
 
-    if (location.pathname === '/') {
+    if (pathname === '/') {
       // If we're on homepage, just scroll to section
       const element = document.getElementById(sectionId);
       if (element) {
@@ -21,7 +24,7 @@ export const Header = () => {
       }
     } else {
       // If we're on another page, navigate to homepage then scroll
-      navigate('/');
+      router.push('/');
       // Wait for navigation to complete before scrolling
       setTimeout(() => {
         const element = document.getElementById(sectionId);
@@ -37,7 +40,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 md:px-8 py-2 md:py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3">
-            <Link to="/" className="cursor-pointer">
+            <Link href="/" className="cursor-pointer">
               <img src={logo} alt="Taxi NearMe logo" className="h-8 md:h-12 w-auto rounded-lg shadow-3d-sm hover:shadow-3d-md transition-all hover:scale-105" />
             </Link>
             <div className="flex flex-col -space-y-1">
@@ -60,7 +63,7 @@ export const Header = () => {
               Ako to funguje
             </a>
             <Link
-              to="/kontakt"
+              href="/kontakt"
               className="text-sm font-bold hover:text-foreground/70 transition-colors"
             >
               Kontakt

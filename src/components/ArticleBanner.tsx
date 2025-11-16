@@ -1,7 +1,9 @@
+'use client';
+
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight, Newspaper } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import type { Article } from "@/data/articles";
 
 interface ArticleBannerProps {
@@ -134,7 +136,7 @@ export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
           return (
             <Link
               key={article.id}
-              to={article.slug}
+              href={article.slug}
               className="article-card flex-shrink-0 w-[280px] md:w-[320px] snap-start"
             >
               <div className="bg-background border-2 border-foreground/10 hover:border-primary rounded-xl p-4 md:p-5 h-full transition-all duration-300 hover:shadow-3d-md hover:scale-105 group">
