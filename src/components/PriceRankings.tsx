@@ -1,4 +1,4 @@
-import { TrendingDown, TrendingUp, DollarSign } from "lucide-react";
+import { TrendingDown, TrendingUp, DollarSign, type LucideIcon } from "lucide-react";
 
 interface Ranking {
   mesto: string;
@@ -19,16 +19,16 @@ interface PriceRankingsProps {
 }
 
 export const PriceRankings = ({ rankings }: PriceRankingsProps) => {
-  const RankingCard = ({ 
-    title, 
-    data, 
-    icon: Icon, 
-    type 
-  }: { 
-    title: string; 
-    data: Ranking[]; 
-    icon: any; 
-    type: 'cheap' | 'expensive' 
+  const RankingCard = ({
+    title,
+    data,
+    icon: Icon,
+    type
+  }: {
+    title: string;
+    data: Ranking[];
+    icon: LucideIcon;
+    type: 'cheap' | 'expensive'
   }) => {
     const bgColor = type === 'cheap' ? 'bg-green-500/10' : 'bg-red-500/10';
     const borderColor = type === 'cheap' ? 'border-green-500/20' : 'border-red-500/20';

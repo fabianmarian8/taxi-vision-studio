@@ -78,11 +78,12 @@ export default function TaxiScraperTool() {
           description: `Našlo sa ${data.count} taxislužieb v meste ${city}`,
         });
       }
-    } catch (err: any) {
-      setError(err.message || 'Nepodarilo sa vyhľadať taxislužby');
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Nepodarilo sa vyhľadať taxislužby';
+      setError(errorMessage);
       toast({
         title: 'Chyba',
-        description: err.message || 'Nepodarilo sa vyhľadať taxislužby',
+        description: errorMessage,
         variant: 'destructive',
       });
     } finally {

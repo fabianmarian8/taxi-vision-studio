@@ -123,7 +123,7 @@ export const generateCitySEO = (cityName: string, citySlug: string, region: stri
     .replace(/\s+/g, '-');
 
   // Create structured data with BreadcrumbList and ItemList
-  const structuredData: any = {
+  const structuredData: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@graph': [
       // BreadcrumbList

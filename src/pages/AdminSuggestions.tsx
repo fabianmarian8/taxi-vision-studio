@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -23,24 +23,18 @@ export default function AdminSuggestions() {
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  useEffect(() => {
-    const token = localStorage.getItem('adminToken');
-    if (!token) { navigate('/admin/login'); return; }
-    loadSuggestions();
-  }, [navigate]);
-
-  const take = (...vals: any[]) => {
+  const take = useCallback((...vals: unknown[]) => {
     for (const v of vals) { if (v !== undefined && v !== null && String(v).trim() !== '') return String(v).trim(); }
     return '';
-  };
+  }, []);
 
-  const fromNested = (obj: any, keys: string[]): any => {
-    let cur = obj;
-    for (const k of keys) { if (!cur) return undefined; cur = cur[k]; }
+  const fromNested = useCallback((obj: unknown, keys: string[]): unknown => {
+    let cur: Record<string, unknown> = obj as Record<string, unknown>;
+    for (const k of keys) { if (!cur) return undefined; cur = cur[k] as Record<string, unknown>; }
     return cur;
-  };
+  }, []);
 
-  const normalize = (raw: any): TaxiServiceSuggestion | null => {
+  const normalize = useCallback((raw: Record<string, unknown>): TaxiServiceSuggestion | null => {
     const id = take(raw?.id, raw?._id, raw?.uid, fromNested(raw, ['gbp', 'id']), fromNested(raw, ['place', 'place_id']));
     const citySlug = take(raw?.citySlug, raw?.city, fromNested(raw, ['gbp', 'citySlug']), fromNested(raw, ['place', 'citySlug']));
     // názov – skús veľa aliasov aj vnorené polia z Places/GBP/taxiService
@@ -85,9 +79,9 @@ export default function AdminSuggestions() {
     }
 
     return { id, citySlug, name: finalName, website, phone, address, createdAt, status };
-  };
+  }, [take, fromNested]);
 
-  const loadSuggestions = async () => {
+  const loadSuggestions = useCallback(async () => {
     setIsLoading(true);
     try {
       const token = localStorage.getItem('adminToken');
@@ -103,7 +97,13 @@ export default function AdminSuggestions() {
       toast({ title: 'Chyba', description: 'Nepodarilo sa načítať návrhy', variant: 'destructive' });
       setSuggestions([]);
     } finally { setIsLoading(false); }
-  };
+  }, [toast, normalize]);
+
+  useEffect(() => {
+    const token = localStorage.getItem('adminToken');
+    if (!token) { navigate('/admin/login'); return; }
+    loadSuggestions();
+  }, [navigate, loadSuggestions]);
 
   const handleReject = async (suggestionId: string) => {
     try {

@@ -1,6 +1,28 @@
 // Cookie Management Utility
 // GDPR compliant cookie management system
 
+// Type definitions for external services
+interface GtagFunction {
+  (command: string, action: string, params: Record<string, string>): void;
+}
+
+interface FbqFunction {
+  (command: string, action: string): void;
+}
+
+interface ClarityFunction {
+  (...args: unknown[]): void;
+  q?: unknown[];
+}
+
+declare global {
+  interface Window {
+    gtag?: GtagFunction;
+    fbq?: FbqFunction;
+    clarity?: ClarityFunction;
+  }
+}
+
 export interface CookiePreferences {
   necessary: boolean;
   functional: boolean;
@@ -112,8 +134,8 @@ const applyConsent = (preferences: CookiePreferences): void => {
  */
 const enableGoogleAnalytics = (): void => {
   // Príklad integrácie s Google Analytics 4
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('consent', 'update', {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('consent', 'update', {
       analytics_storage: 'granted'
     });
     console.log('✅ Google Analytics enabled');
@@ -124,8 +146,8 @@ const enableGoogleAnalytics = (): void => {
  * Google Analytics deaktivácia
  */
 const disableGoogleAnalytics = (): void => {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('consent', 'update', {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('consent', 'update', {
       analytics_storage: 'denied'
     });
     console.log('❌ Google Analytics disabled');
@@ -136,8 +158,8 @@ const disableGoogleAnalytics = (): void => {
  * Facebook Pixel aktivácia
  */
 const enableFacebookPixel = (): void => {
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('consent', 'grant');
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('consent', 'grant');
     console.log('✅ Facebook Pixel enabled');
   }
 };
@@ -146,8 +168,8 @@ const enableFacebookPixel = (): void => {
  * Facebook Pixel deaktivácia
  */
 const disableFacebookPixel = (): void => {
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('consent', 'revoke');
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('consent', 'revoke');
     console.log('❌ Facebook Pixel disabled');
   }
 };
@@ -159,15 +181,17 @@ const enableMicrosoftClarity = (): void => {
   if (typeof window === 'undefined') return;
 
   // Načítaj Clarity len ak ešte nie je
-  if (!(window as any).clarity) {
-    (function(c: any, l: any, a: string, r: string, i: string, t: any, y: any) {
-      c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments); };
-      t = l.createElement(r);
-      t.async = 1;
+  if (!window.clarity) {
+    (function(c: Window, l: Document, a: string, r: string, i: string, t: HTMLScriptElement, y: Element | null) {
+      c[a as keyof Window] = c[a as keyof Window] || function(...args: unknown[]) {
+        ((c[a as keyof Window] as ClarityFunction).q = (c[a as keyof Window] as ClarityFunction).q || []).push(args);
+      };
+      t = l.createElement(r) as HTMLScriptElement;
+      t.async = true;
       t.src = "https://www.clarity.ms/tag/" + i;
       y = l.getElementsByTagName(r)[0];
-      y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "u5uwq9jn6t");
+      y?.parentNode?.insertBefore(t, y);
+    })(window, document, "clarity", "script", "u5uwq9jn6t", document.createElement('script'), null);
     console.log('✅ Microsoft Clarity enabled');
   }
 };
@@ -176,10 +200,10 @@ const enableMicrosoftClarity = (): void => {
  * Microsoft Clarity deaktivácia
  */
 const disableMicrosoftClarity = (): void => {
-  if (typeof window !== 'undefined' && (window as any).clarity) {
+  if (typeof window !== 'undefined' && window.clarity) {
     // Clarity nemá štandardnú disable metódu, takže zastavíme tracking
     try {
-      (window as any).clarity('stop');
+      window.clarity('stop');
       console.log('❌ Microsoft Clarity disabled');
     } catch (e) {
       console.log('⚠️ Microsoft Clarity could not be disabled properly');

@@ -1,15 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { LogOut, MapPin, Edit, Bell } from 'lucide-react';
 
+interface TaxiService {
+  name: string;
+  phone?: string;
+  website?: string;
+}
+
 interface CityData {
   name: string;
   slug: string;
   region: string;
-  taxiServices: any[];
+  taxiServices: TaxiService[];
 }
 
 export default function AdminDashboard() {
@@ -19,17 +25,7 @@ export default function AdminDashboard() {
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  useEffect(() => {
-    const token = localStorage.getItem('adminToken');
-    if (!token) {
-      navigate('/admin/login');
-      return;
-    }
-
-    loadCities();
-  }, [navigate]);
-
-  const loadCities = async () => {
+  const loadCities = useCallback(async () => {
     try {
       const token = localStorage.getItem('adminToken');
       const response = await fetch('/api/admin-data', {
@@ -56,7 +52,7 @@ export default function AdminDashboard() {
         if (suggestionsResponse.ok) {
           const suggestionsData = await suggestionsResponse.json();
           const pendingCount = suggestionsData.suggestions.filter(
-            (s: any) => s.status === 'pending'
+            (s: { status?: string }) => s.status === 'pending'
           ).length;
           setPendingSuggestionsCount(pendingCount);
         }
@@ -72,7 +68,17 @@ export default function AdminDashboard() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [toast]);
+
+  useEffect(() => {
+    const token = localStorage.getItem('adminToken');
+    if (!token) {
+      navigate('/admin/login');
+      return;
+    }
+
+    loadCities();
+  }, [navigate, loadCities]);
 
   const handleLogout = () => {
     localStorage.removeItem('adminToken');
