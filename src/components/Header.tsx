@@ -41,7 +41,7 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3">
             <Link href="/" className="cursor-pointer">
-              <img src={logo} alt="Taxi NearMe logo" className="h-8 md:h-12 w-auto rounded-lg shadow-3d-sm hover:shadow-3d-md transition-all hover:scale-105" />
+              <img src={logo.src} alt="Taxi NearMe logo" className="h-8 md:h-12 w-auto rounded-lg shadow-3d-sm hover:shadow-3d-md transition-all hover:scale-105" />
             </Link>
             <div className="flex flex-col -space-y-1">
             </div>

@@ -8,9 +8,11 @@
  * - Link z react-router-dom → next/link
  * - taxiLogo import upravený pre Next.js static assets
  * - Všetky komponenty ostali rovnaké (Header, SearchPanel, RegionCard, ...)
+ * - Client Component kvôli Lucide ikonám v articles
  */
 
-import type { Metadata } from 'next';
+'use client';
+
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
 import { Header } from '@/components/Header';
@@ -23,32 +25,8 @@ import { getRegionsData } from '@/data/cities';
 import { articles } from '@/data/articles';
 import taxiLogo from '@/assets/taxi-nearme-logo.png';
 
-// Metadata - nahradenie SEOHead komponentu (z src/vite-pages/Index.tsx line 16)
-export const metadata: Metadata = {
-  title: 'Taxi NearMe - Nájdite Taxi v Každom Meste na Slovensku',
-  description:
-    'Nájdite spoľahlivé taxislužby v každom meste na Slovensku. Bratislava, Košice, Prešov, Žilina a ďalších 8 miest. Rýchlo, jednoducho a vždy nablízku.',
-  keywords: [
-    'taxi',
-    'taxislužby',
-    'taxi slovensko',
-    'taxi bratislava',
-    'taxi košice',
-    'objednať taxi',
-    'taxi online',
-  ],
-  openGraph: {
-    title: 'Taxi NearMe - Nájdite Taxi v Každom Meste na Slovensku',
-    description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku. Kompletný zoznam taxi služieb.',
-    type: 'website',
-    locale: 'sk_SK',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Taxi NearMe - Nájdite Taxi v Každom Meste na Slovensku',
-    description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku.',
-  },
-};
+// Note: Metadata je definovaná v app/layout.tsx (Server Component)
+// Client Components nemôžu exportovať metadata
 
 export default function HomePage() {
   const regions = getRegionsData();
