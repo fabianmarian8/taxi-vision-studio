@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { MapPin, ExternalLink } from "lucide-react";
 import { slovakCities } from "@/data/cities";
 
@@ -41,7 +41,7 @@ export const CityLinksSection = () => {
                 {cities.map((city) => (
                   <Link
                     key={city.slug}
-                    to={`/taxi/${city.slug}`}
+                    href={`/taxi/${city.slug}`}
                     className="block text-sm text-foreground/80 hover:text-primary hover:translate-x-1 transition-all duration-200 flex items-center gap-2 group"
                   >
                     <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />

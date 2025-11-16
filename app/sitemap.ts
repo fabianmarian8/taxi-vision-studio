@@ -1,0 +1,124 @@
+/**
+ * Sitemap - Next.js App Router
+ *
+ * Migrované z: api/sitemap.xml.js
+ *
+ * Next.js automaticky generuje /sitemap.xml z tohto súboru
+ */
+
+import { MetadataRoute } from 'next';
+import citiesData from '@/data/cities.json';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://taxinearme.sk';
+  const currentDate = new Date();
+
+  // Helper funkcia pre vytvorenie slug z názvu kraja
+  const createRegionSlug = (regionName: string): string => {
+    return regionName
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/\s+/g, '-');
+  };
+
+  // Helper funkcia pre vytvorenie slug z názvu taxislužby
+  const createServiceSlug = (serviceName: string): string => {
+    return serviceName
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+  };
+
+  // Získanie unikátnych regiónov
+  const regions = [...new Set(citiesData.cities.map((city) => city.region))].sort();
+
+  const sitemap: MetadataRoute.Sitemap = [];
+
+  // Homepage
+  sitemap.push({
+    url: baseUrl,
+    lastModified: currentDate,
+    changeFrequency: 'daily',
+    priority: 1.0,
+  });
+
+  // Stránky krajov
+  regions.forEach((region) => {
+    const regionSlug = createRegionSlug(region);
+    sitemap.push({
+      url: `${baseUrl}/kraj/${regionSlug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    });
+  });
+
+  // Stránky miest
+  citiesData.cities.forEach((city) => {
+    sitemap.push({
+      url: `${baseUrl}/taxi/${city.slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    });
+
+    // Stránky jednotlivých taxislužieb
+    if (city.taxiServices && city.taxiServices.length > 0) {
+      city.taxiServices.forEach((service) => {
+        const serviceSlug = createServiceSlug(service.name);
+        sitemap.push({
+          url: `${baseUrl}/taxi/${city.slug}/${serviceSlug}`,
+          lastModified: currentDate,
+          changeFrequency: 'monthly',
+          priority: 0.7,
+        });
+      });
+    }
+  });
+
+  // Právne stránky
+  const legalPages = [
+    { path: '/ochrana-sukromia', priority: 0.3 },
+    { path: '/cookies', priority: 0.3 },
+    { path: '/podmienky-pouzivania', priority: 0.3 },
+    { path: '/kontakt', priority: 0.5 },
+  ];
+
+  legalPages.forEach((page) => {
+    sitemap.push({
+      url: `${baseUrl}${page.path}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: page.priority,
+    });
+  });
+
+  // Blog články
+  const blogArticles = [
+    '/hodnotenie-vodicov',
+    '/alkohol-nocny-zivot',
+    '/co-musi-zniest-vodic',
+    '/elektrifikacia-taxi',
+    '/komunikacia-taxikar-zakaznik',
+    '/navigacia',
+    '/psychologia-zakaznikov',
+    '/taxi-ceny',
+    '/komplexny-sprievodca-taxi',
+    '/temna-strana-bolt-uber',
+    '/porovnanie-cien-taxi-2024-2025',
+  ];
+
+  blogArticles.forEach((article) => {
+    sitemap.push({
+      url: `${baseUrl}${article}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    });
+  });
+
+  return sitemap;
+}
