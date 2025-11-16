@@ -182,9 +182,10 @@ const enableMicrosoftClarity = (): void => {
 
   // Načítaj Clarity len ak ešte nie je
   if (!window.clarity) {
-    (function(c: Window, l: Document, a: string, r: string, i: string, t: HTMLScriptElement, y: Element | null) {
-      c[a as keyof Window] = c[a as keyof Window] || function(...args: unknown[]) {
-        ((c[a as keyof Window] as ClarityFunction).q = (c[a as keyof Window] as ClarityFunction).q || []).push(args);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (function(c: any, l: Document, a: string, r: string, i: string, t: HTMLScriptElement, y: Element | null) {
+      c[a] = c[a] || function(...args: unknown[]) {
+        ((c[a] as ClarityFunction).q = (c[a] as ClarityFunction).q || []).push(args);
       };
       t = l.createElement(r) as HTMLScriptElement;
       t.async = true;

@@ -13,17 +13,7 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // TypeScript strict mode
-  typescript: {
-    // Počas buildu skontrolovať TypeScript errors
-    ignoreBuildErrors: true, // Temporarily disabled to debug build issue
-  },
-
-  // ESLint počas buildu
-  eslint: {
-    // Počas buildu spustiť ESLint
-    ignoreDuringBuilds: false,
-  },
+  // TypeScript a ESLint sa spustia počas buildu bez výnimiek
 
   // Image optimization
   images: {
@@ -40,6 +30,9 @@ const nextConfig: NextConfig = {
 
   // Security Headers (migrované z vercel.json lines 9-38)
   async headers() {
+    // V development mode vypni CSP, aby Next.js fungoval správne
+    const isDev = process.env.NODE_ENV === 'development';
+
     return [
       {
         // Aplikuj headers na všetky routes
@@ -49,11 +42,11 @@ const nextConfig: NextConfig = {
             key: 'Strict-Transport-Security',
             value: 'max-age=31536000; includeSubDomains',
           },
-          {
+          ...(!isDev ? [{
             key: 'Content-Security-Policy',
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.clarity.ms https://www.google-analytics.com https://nominatim.openstreetmap.org; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;",
-          },
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.clarity.ms https://www.google-analytics.com https://nominatim.openstreetmap.org; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;",
+          }] : []),
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
