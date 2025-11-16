@@ -5,6 +5,10 @@ import type { CityData } from '@/data/cities';
 import fs from 'fs/promises';
 import path from 'path';
 
+// Force dynamic rendering (disable static optimization)
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 // GET - načítanie mesta
 export async function GET(
   request: NextRequest,
