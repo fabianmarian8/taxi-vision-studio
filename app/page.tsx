@@ -51,11 +51,11 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight text-foreground drop-shadow-lg">
-              Taxi v každom meste
+              Taxi NearMe - Nájdite taxi v každom meste
             </h1>
 
             <p className="text-base md:text-xl lg:text-2xl text-foreground/90 max-w-2xl mx-auto font-bold px-4">
-              Nájdite spoľahlivé taxislužby kdekoľvek ste. Rýchlo, jednoducho a vždy nablízku.
+              Kompletný katalóg taxislužieb na Slovensku. Nájdite spoľahlivé taxi kdekoľvek ste - rýchlo, jednoducho a vždy nablízku.
             </p>
 
             <div className="pt-4 md:pt-6">
