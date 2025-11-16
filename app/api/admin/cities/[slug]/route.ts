@@ -25,7 +25,19 @@ export async function GET(
   if (!city) {
     console.log('[API] Available cities:', slovakCities.length);
     console.log('[API] First 5 slugs:', slovakCities.slice(0, 5).map(c => c.slug));
-    return NextResponse.json({ error: 'City not found' }, { status: 404 });
+
+    // Return detailed debug info in response
+    return NextResponse.json({
+      error: 'City not found',
+      debug: {
+        requestedSlug: slug,
+        totalCities: slovakCities.length,
+        sampleSlugs: slovakCities.slice(0, 10).map(c => c.slug),
+        possibleMatches: slovakCities
+          .filter(c => c.slug.includes(slug.substring(0, 5)))
+          .map(c => ({ name: c.name, slug: c.slug }))
+      }
+    }, { status: 404 });
   }
 
   return NextResponse.json(city);

@@ -39,13 +39,23 @@ export default function AdminCityDetailPage() {
       })
       .then(data => {
         if (data) {
-          console.log('City data loaded:', data);
-          setCity(data);
+          // Check if it's an error response with debug info
+          if (data.error) {
+            console.error('❌ City not found');
+            if (data.debug) {
+              console.error('🔍 Debug info:', data.debug);
+              console.table(data.debug.sampleSlugs);
+            }
+            setCity(null);
+          } else {
+            console.log('✅ City data loaded:', data);
+            setCity(data);
+          }
         }
         setLoading(false);
       })
       .catch(err => {
-        console.error('Failed to load city:', err);
+        console.error('❌ Failed to load city:', err);
         setLoading(false);
       });
   }, [slug, router]);
