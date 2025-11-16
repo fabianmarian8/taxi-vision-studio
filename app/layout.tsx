@@ -63,6 +63,16 @@ export const metadata: Metadata = {
     description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku. Kompletný zoznam taxi služieb.',
     type: 'website',
     locale: 'sk_SK',
+    url: 'https://taxinearme.sk',
+    siteName: 'Taxi NearMe',
+    images: [
+      {
+        url: 'https://taxinearme.sk/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Taxi NearMe - Nájdite taxi v každom meste na Slovensku',
+      },
+    ],
   },
 
   // Twitter Card metadata (z index.html lines 38-40)
@@ -70,6 +80,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Taxi NearMe - Taxi v Každom Meste na Slovensku',
     description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku.',
+    images: ['https://taxinearme.sk/og-image.png'],
   },
 
   // Ostatné meta tagy
@@ -95,6 +106,46 @@ export default function RootLayout({
       <head>
         {/* Sitemap link (z index.html line 43) */}
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+        {/* Schema.org Organization and WebSite structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://taxinearme.sk/#organization',
+                  name: 'Taxi NearMe',
+                  url: 'https://taxinearme.sk',
+                  logo: {
+                    '@type': 'ImageObject',
+                    url: 'https://taxinearme.sk/taxi-nearme-logo.png',
+                    width: 512,
+                    height: 512,
+                  },
+                  description: 'Kompletný katalóg taxislužieb na Slovensku',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressCountry: 'SK',
+                  },
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': 'https://taxinearme.sk/#website',
+                  url: 'https://taxinearme.sk',
+                  name: 'Taxi NearMe',
+                  description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku',
+                  publisher: {
+                    '@id': 'https://taxinearme.sk/#organization',
+                  },
+                  inLanguage: 'sk',
+                },
+              ],
+            }),
+          }}
+        />
 
         {/*
           Google Consent Mode v2 - Default Denied State

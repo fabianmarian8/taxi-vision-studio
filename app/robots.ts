@@ -16,7 +16,8 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/admin/', '/scraper', '/api/'],
+        // Blokujeme len admin panel a API routes (nie verejný obsah)
+        disallow: ['/admin/', '/api/'],
         crawlDelay: 1,
       },
       {
