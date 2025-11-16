@@ -29,9 +29,10 @@ import { truncateUrl } from '@/utils/urlUtils';
 export async function generateMetadata({
   params,
 }: {
-  params: { citySlug: string };
+  params: Promise<{ citySlug: string }>;
 }): Promise<Metadata> {
-  const city = getCityBySlug(params.citySlug);
+  const { citySlug } = await params;
+  const city = getCityBySlug(citySlug);
 
   if (!city) {
     return {
@@ -42,7 +43,7 @@ export async function generateMetadata({
 
   const siteName = 'Taxi NearMe';
   const baseUrl = 'https://taxinearme.sk';
-  const currentUrl = `${baseUrl}/taxi/${params.citySlug}`;
+  const currentUrl = `${baseUrl}/taxi/${citySlug}`;
 
   // Vytvoriť zoznam taxislužieb pre description
   const taxiServicesList = city.taxiServices
@@ -83,8 +84,9 @@ export async function generateMetadata({
   };
 }
 
-export default function CityPage({ params }: { params: { citySlug: string } }) {
-  const city = getCityBySlug(params.citySlug);
+export default async function CityPage({ params }: { params: Promise<{ citySlug: string }> }) {
+  const { citySlug } = await params;
+  const city = getCityBySlug(citySlug);
 
   // 404 handling - Next.js way
   if (!city) {
@@ -134,7 +136,7 @@ export default function CityPage({ params }: { params: { citySlug: string } }) {
 
                   return (
                     <Card key={index} className="perspective-1000">
-                      <Link href={`/taxi/${params.citySlug}/${serviceSlug}`}>
+                      <Link href={`/taxi/${citySlug}/${serviceSlug}`}>
                         <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all cursor-pointer">
                           <CardHeader className="pb-1 pt-2.5 md:pt-3 px-3 md:px-4">
                             <CardTitle className="text-sm md:text-base font-bold flex items-center gap-1.5 md:gap-2">

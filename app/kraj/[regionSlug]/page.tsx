@@ -25,9 +25,10 @@ import { getRegionBySlug, getCitiesByRegion } from '@/data/cities';
 export async function generateMetadata({
   params,
 }: {
-  params: { regionSlug: string };
+  params: Promise<{ regionSlug: string }>;
 }): Promise<Metadata> {
-  const regionName = getRegionBySlug(params.regionSlug);
+  const { regionSlug } = await params;
+  const regionName = getRegionBySlug(regionSlug);
 
   if (!regionName) {
     return {
@@ -39,7 +40,7 @@ export async function generateMetadata({
   const cities = getCitiesByRegion(regionName);
   const siteName = 'Taxi NearMe';
   const baseUrl = 'https://taxinearme.sk';
-  const currentUrl = `${baseUrl}/kraj/${params.regionSlug}`;
+  const currentUrl = `${baseUrl}/kraj/${regionSlug}`;
   const description = `Nájdite spoľahlivé taxislužby v kraji ${regionName}. Prehľad ${cities.length} miest s dostupnými taxi službami. Rýchlo, jednoducho a vždy nablízku.`;
 
   return {
@@ -70,8 +71,9 @@ export async function generateMetadata({
   };
 }
 
-export default function RegionPage({ params }: { params: { regionSlug: string } }) {
-  const regionName = getRegionBySlug(params.regionSlug);
+export default async function RegionPage({ params }: { params: Promise<{ regionSlug: string }> }) {
+  const { regionSlug } = await params;
+  const regionName = getRegionBySlug(regionSlug);
   const cities = regionName ? getCitiesByRegion(regionName) : [];
 
   // 404 handling - Next.js way

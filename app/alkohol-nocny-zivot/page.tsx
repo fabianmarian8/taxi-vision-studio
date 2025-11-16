@@ -80,7 +80,6 @@ export default function AlkoholNocnyZivotPage() {
 
           <ShareButton
             title="Alkohol, nočný život a taxík"
-            text="Hranica medzi službou a záchrannou misiou. Kedy môže vodič odmietnuť jazdu a ako sa správať v noci."
           />
         </div>
       </section>

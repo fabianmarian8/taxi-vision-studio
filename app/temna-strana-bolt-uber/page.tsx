@@ -80,7 +80,6 @@ export default function TemnaBoltUberPage() {
 
           <ShareButton
             title="Temná stránka Boltu a Uberu - problémy rideshare platforiem"
-            text="Nízke provízie, neférové hodnotenie, surge pricing a problémy, o ktorých sa nehovorí. Realita rideshare platforiem."
           />
         </div>
       </section>

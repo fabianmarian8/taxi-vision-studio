@@ -80,7 +80,6 @@ export default function KomunikaciaPage() {
 
           <ShareButton
             title="Komunikácia medzi taxikárom a zákazníkom"
-            text="Jasné pravidlá, slušnosť a hranice, ktoré by mali poznať obe strany."
           />
         </div>
       </section>

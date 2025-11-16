@@ -80,7 +80,6 @@ export default function NavigaciaPage() {
 
           <ShareButton
             title="Navigácia vs. lokálna znalosť: prečo sa stále riešia najlepšie trasy"
-            text="Keď GPS klame, keď zákazník vie lepšie, a ako riešiť spory o trasu bez hádok"
           />
         </div>
       </section>

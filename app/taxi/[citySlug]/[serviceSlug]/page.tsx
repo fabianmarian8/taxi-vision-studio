@@ -26,9 +26,10 @@ import { truncateUrl } from '@/utils/urlUtils';
 export async function generateMetadata({
   params,
 }: {
-  params: { citySlug: string; serviceSlug: string };
+  params: Promise<{ citySlug: string; serviceSlug: string }>;
 }): Promise<Metadata> {
-  const city = getCityBySlug(params.citySlug);
+  const { citySlug, serviceSlug } = await params;
+  const city = getCityBySlug(citySlug);
 
   // Find the taxi service by matching the slug
   const service = city?.taxiServices.find((s) => {
@@ -38,7 +39,7 @@ export async function generateMetadata({
       .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)/g, '');
-    return slug === params.serviceSlug;
+    return slug === serviceSlug;
   });
 
   if (!city || !service) {
@@ -50,7 +51,7 @@ export async function generateMetadata({
 
   const siteName = 'Taxi NearMe';
   const baseUrl = 'https://taxinearme.sk';
-  const currentUrl = `${baseUrl}/taxi/${params.citySlug}/${params.serviceSlug}`;
+  const currentUrl = `${baseUrl}/taxi/${citySlug}/${serviceSlug}`;
   const description = `${service.name} - Spoľahlivá taxislužba v meste ${city.name}. ${service.phone ? `Telefonický kontakt: ${service.phone}.` : ''} Rýchla a pohodlná preprava osôb.`;
 
   return {
@@ -83,12 +84,13 @@ export async function generateMetadata({
   };
 }
 
-export default function TaxiServicePage({
+export default async function TaxiServicePage({
   params,
 }: {
-  params: { citySlug: string; serviceSlug: string };
+  params: Promise<{ citySlug: string; serviceSlug: string }>;
 }) {
-  const city = getCityBySlug(params.citySlug);
+  const { citySlug, serviceSlug } = await params;
+  const city = getCityBySlug(citySlug);
 
   // Find the taxi service by matching the slug
   const service = city?.taxiServices.find((s) => {
@@ -98,7 +100,7 @@ export default function TaxiServicePage({
       .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)/g, '');
-    return slug === params.serviceSlug;
+    return slug === serviceSlug;
   });
 
   // 404 handling - Next.js way
@@ -116,7 +118,7 @@ export default function TaxiServicePage({
       <SEOBreadcrumbs
         items={[
           { label: city.region, href: `/kraj/${regionSlug}` },
-          { label: city.name, href: `/taxi/${params.citySlug}` },
+          { label: city.name, href: `/taxi/${citySlug}` },
           { label: service.name },
         ]}
       />
@@ -128,7 +130,7 @@ export default function TaxiServicePage({
         <div className="container mx-auto max-w-4xl relative z-10">
           {/* Back Button */}
           <Link
-            href={`/taxi/${params.citySlug}`}
+            href={`/taxi/${citySlug}`}
             className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -304,7 +306,7 @@ export default function TaxiServicePage({
                       .replace(/(^-|-$)/g, '');
                     return (
                       <Card key={index} className="perspective-1000">
-                        <Link href={`/taxi/${params.citySlug}/${otherSlug}`}>
+                        <Link href={`/taxi/${citySlug}/${otherSlug}`}>
                           <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all p-4">
                             <div className="flex items-center gap-2">
                               <MapPin className="h-4 w-4 text-foreground flex-shrink-0" />

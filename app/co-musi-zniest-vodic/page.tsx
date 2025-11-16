@@ -80,7 +80,6 @@ export default function CoMusiZniestVodicPage() {
 
           <ShareButton
             title="Čo všetko musí zniesť vodič taxi - peklo analýza"
-            text="Dlhé hodiny, toxickí zákazníci, neférové hodnotenia a neustály stres. Realita, o ktorej sa veľa nehovorí."
           />
         </div>
       </section>

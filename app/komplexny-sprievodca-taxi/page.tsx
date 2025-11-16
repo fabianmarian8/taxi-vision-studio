@@ -81,7 +81,6 @@ export default function KomplexnySprievodcaPage() {
 
           <ShareButton
             title="Komplexný sprievodca taxislužbami na Slovensku (2025)"
-            text="Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva."
           />
         </div>
       </section>

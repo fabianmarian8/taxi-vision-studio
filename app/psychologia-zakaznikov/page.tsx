@@ -80,7 +80,6 @@ export default function PsychologiaZakaznikovPage() {
 
           <ShareButton
             title="Psychológia zákazníkov v taxi - typológia pasažierov"
-            text="Od tichého profesionála po toxického pasažiera. Ako rozpoznať typy zákazníkov a prispôsobiť im svoju komunikáciu."
           />
         </div>
       </section>

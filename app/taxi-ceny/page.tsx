@@ -76,7 +76,6 @@ export default function TaxiPriceArticlePage() {
 
           <ShareButton
             title="Porovnanie cien taxislužieb v slovenských mestách (2024/2025)"
-            text="Nástupné sadzby od 0,5€ do 3,5€, kilometrové tarify od 0,8€ do 1,5€. Detailný prehľad cien taxi na Slovensku."
           />
         </div>
       </section>

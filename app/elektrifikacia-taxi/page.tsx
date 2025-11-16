@@ -80,7 +80,6 @@ export default function ElektrifikaciaPage() {
 
           <ShareButton
             title="Budúcnosť taxislužby na Slovensku: elektrické autá, zdieľanie, autonómne vozidlá"
-            text="Budúcnosť taxi je elektrická. Analýza trendu a výhod elektromobilov v taxislužbách na Slovensku."
           />
         </div>
       </section>
