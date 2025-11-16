@@ -9,7 +9,8 @@ describe('utils', () => {
     });
 
     it('should handle conditional classes', () => {
-      const result = cn('text-red-500', false && 'hidden', 'bg-blue-500');
+      const isHidden = false;
+      const result = cn('text-red-500', isHidden && 'hidden', 'bg-blue-500');
       expect(result).toBe('text-red-500 bg-blue-500');
     });
 

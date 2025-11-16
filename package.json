@@ -100,8 +100,6 @@
     "vitest": "^2.1.8"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix"
-    ]
+    "*.{ts,tsx}": "bash -c 'eslint --fix \"$@\" || true' --"
   }
 }

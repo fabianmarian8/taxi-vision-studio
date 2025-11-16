@@ -34,15 +34,17 @@ Projekt používa Husky pre automatické kontroly pred commitom a pushom:
 
 ### Pre-commit Hook
 - **Spúšťa sa**: Pri každom `git commit`
-- **Vykonáva**: Automatický linting zmenených súborov (lint-staged)
-- **Účel**: Zabezpečiť, že do repozitára sa dostaví len kvalitný kód bez linting chýb
+- **Vykonáva**: Automatický linting a oprava zmenených súborov (lint-staged)
+- **Správanie**: Automaticky opraví čo sa dá (--fix), ale neblokovať commit
+- **Účel**: Udržiavať kód čistý a formátovaný
 
 ### Pre-push Hook
 - **Spúšťa sa**: Pri každom `git push`
 - **Vykonáva**: Všetky unit testy
+- **Správanie**: **Blokuje push** ak testy zlyhajú
 - **Účel**: Zabezpečiť, že nepushnete kód s nefunkčnými testami
 
-**Ak hook zlyháva**, commit alebo push sa neprevede. Opravte chyby a skúste znova.
+**Poznámka**: Pre-commit hook opravuje linting, ale neblokovať commit. Pre-push hook **blokuje push** ak testy zlyhajú. GitHub Actions CI kontroluje všetko pred deployom.
 
 ## Build
 
