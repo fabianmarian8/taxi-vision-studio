@@ -6,17 +6,27 @@ const SECRET_KEY = new TextEncoder().encode(
 );
 
 export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
   // Protect /admin routes (except /admin/login)
-  if (request.nextUrl.pathname.startsWith('/admin')) {
-    if (request.nextUrl.pathname === '/admin/login') {
+  if (pathname.startsWith('/admin')) {
+    if (pathname === '/admin/login') {
       // Allow access to login page
       return NextResponse.next();
     }
 
     const session = request.cookies.get('session')?.value;
+    const isApiRoute = pathname.startsWith('/api/admin');
 
     if (!session) {
-      // Redirect to login if no session
+      // For API routes, return JSON 401 instead of redirect
+      if (isApiRoute) {
+        return NextResponse.json(
+          { error: 'Unauthorized' },
+          { status: 401 }
+        );
+      }
+      // For pages, redirect to login
       return NextResponse.redirect(new URL('/admin/login', request.url));
     }
 
@@ -26,7 +36,14 @@ export async function middleware(request: NextRequest) {
       return NextResponse.next();
     } catch (error) {
       console.error('Session verification failed in middleware:', error);
-      // Redirect to login if session is invalid
+      // For API routes, return JSON 401 instead of redirect
+      if (isApiRoute) {
+        return NextResponse.json(
+          { error: 'Unauthorized' },
+          { status: 401 }
+        );
+      }
+      // For pages, redirect to login
       return NextResponse.redirect(new URL('/admin/login', request.url));
     }
   }
