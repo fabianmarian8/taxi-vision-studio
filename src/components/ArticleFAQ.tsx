@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import {
   Accordion,
   AccordionContent,
@@ -16,15 +16,14 @@ interface ArticleFAQProps {
 
 export const ArticleFAQ = ({ articleSlug, articleTitle }: ArticleFAQProps) => {
   // Get article-specific FAQs
-  const faqItems: FAQItem[] = articleFAQs[articleSlug] || [];
-
-  // Don't render if no FAQs available
-  if (faqItems.length === 0) {
-    return null;
-  }
+  const faqItems: FAQItem[] = useMemo(() => articleFAQs[articleSlug] || [], [articleSlug]);
 
   // Pridanie FAQ Schema.org Structured Data
   useEffect(() => {
+    // Only add schema if we have FAQ items
+    if (faqItems.length === 0) {
+      return;
+    }
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -56,6 +55,11 @@ export const ArticleFAQ = ({ articleSlug, articleTitle }: ArticleFAQProps) => {
       }
     };
   }, [faqItems]);
+
+  // Don't render if no FAQs available
+  if (faqItems.length === 0) {
+    return null;
+  }
 
   return (
     <section className="py-12 md:py-20 px-4 md:px-8 relative bg-background">

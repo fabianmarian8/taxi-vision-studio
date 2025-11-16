@@ -1,4 +1,4 @@
-import citiesData from '../src/data/cities.json' assert { type: 'json' };
+import citiesData from '../src/data/cities.json' with { type: 'json' };
 
 export default function handler(req, res) {
   const baseUrl = 'https://www.taxinearme.sk';

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -33,11 +33,34 @@ export default function AdminEditCity() {
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  const checkForChanges = useCallback((services: TaxiService[]) => {
+    const changed = JSON.stringify(services) !== JSON.stringify(originalServices);
+    setHasUnsavedChanges(changed);
+  }, [originalServices]);
+
+  const loadCityData = useCallback(async () => {
+    try {
+      const token = localStorage.getItem('adminToken');
+      const response = await fetch('/api/admin-data', { headers: { 'Authorization': `Bearer ${token}` } });
+      if (response.status >= 200 && response.status < 300) {
+        const data = await response.json();
+        const foundCity = data.cities.find((c: CityData) => c.slug === citySlug);
+        if (!foundCity) { toast({ title: 'Chyba', description: 'Mesto nebolo nájdené', variant: 'destructive' }); navigate('/admin/dashboard'); return; }
+        setCity(foundCity);
+        const services = foundCity.taxiServices || [];
+        setTaxiServices(services);
+        setOriginalServices(JSON.parse(JSON.stringify(services)));
+      } else { throw new Error('Nepodarilo sa načítať dáta'); }
+    } catch {
+      toast({ title: 'Chyba', description: 'Nepodarilo sa načítať dáta', variant: 'destructive' });
+    } finally { setIsLoading(false); }
+  }, [citySlug, navigate, toast]);
+
   useEffect(() => {
     const token = localStorage.getItem('adminToken');
     if (!token) { navigate('/admin/login'); return; }
     loadCityData();
-  }, [citySlug, navigate]);
+  }, [navigate, loadCityData]);
 
   useEffect(() => {
     if (!city) return;
@@ -57,36 +80,13 @@ export default function AdminEditCity() {
         toast({ title: 'Chyba', description: 'Nepodarilo sa načítať návrhy z URL', variant: 'destructive' });
       }
     }
-  }, [city, taxiServices.length]);
+  }, [city, taxiServices, checkForChanges, toast]);
 
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => { if (hasUnsavedChanges) { e.preventDefault(); e.returnValue = ''; } };
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [hasUnsavedChanges]);
-
-  const loadCityData = async () => {
-    try {
-      const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/admin-data', { headers: { 'Authorization': `Bearer ${token}` } });
-      if (response.status >= 200 && response.status < 300) {
-        const data = await response.json();
-        const foundCity = data.cities.find((c: CityData) => c.slug === citySlug);
-        if (!foundCity) { toast({ title: 'Chyba', description: 'Mesto nebolo nájdené', variant: 'destructive' }); navigate('/admin/dashboard'); return; }
-        setCity(foundCity);
-        const services = foundCity.taxiServices || [];
-        setTaxiServices(services);
-        setOriginalServices(JSON.parse(JSON.stringify(services)));
-      } else { throw new Error('Nepodarilo sa načítať dáta'); }
-    } catch {
-      toast({ title: 'Chyba', description: 'Nepodarilo sa načítať dáta', variant: 'destructive' });
-    } finally { setIsLoading(false); }
-  };
-
-  const checkForChanges = (services: TaxiService[]) => {
-    const changed = JSON.stringify(services) !== JSON.stringify(originalServices);
-    setHasUnsavedChanges(changed);
-  };
 
   const handleAddService = () => {
     const updated = [...taxiServices, { name: '', website: '', phone: '' }];
@@ -115,7 +115,7 @@ export default function AdminEditCity() {
       const saveRes = await fetch('/api/admin-data', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }, body: JSON.stringify({ citySlug, taxiServices: taxiServices.filter(s => s.name.trim() !== '') }) });
       if (!(saveRes.status >= 200 && saveRes.status < 300)) throw new Error('Nepodarilo sa uložiť zmeny');
       const publishRes = await fetch('/api/publish', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` } });
-      if (!(publishRes.status >= 200 && publishRes.status < 300)) { const errData = await publishRes.json().catch(() => ({})); throw new Error((errData as any).message || 'Nepodarilo sa publikovať zmeny'); }
+      if (!(publishRes.status >= 200 && publishRes.status < 300)) { const errData = await publishRes.json().catch(() => ({})); throw new Error((errData as { message?: string }).message || 'Nepodarilo sa publikovať zmeny'); }
       const pendingIds = sessionStorage.getItem('pendingSuggestionIds');
       if (pendingIds) {
         const ids = pendingIds.split(',').filter(Boolean);
@@ -146,11 +146,11 @@ export default function AdminEditCity() {
     try {
       const scraperResponse = await fetch('/api/gbp-scraper', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ city: city.name, limit: 15 }) });
       const scraperData = await scraperResponse.json();
-      if (!(scraperResponse.status >= 200 && scraperResponse.status < 300)) { const errorMessage = scraperData.message || scraperData.error || 'Neznáma chyba API'; toast({ title: 'Chyba API', description: errorMessage, variant: 'destructive' }); setIsScrapingInProgress(false); return; }
+      if (!(scraperResponse.status >= 200 && scraperResponse.status < 300)) { const errorMessage = (scraperData as { message?: string; error?: string }).message || (scraperData as { message?: string; error?: string }).error || 'Neznáma chyba API'; toast({ title: 'Chyba API', description: errorMessage, variant: 'destructive' }); setIsScrapingInProgress(false); return; }
       if (!scraperData.success || scraperData.count === 0) { toast({ title: 'Informácia', description: 'Nenašli sa žiadne nové taxislužby' }); setIsScrapingInProgress(false); return; }
       const token = localStorage.getItem('adminToken');
       const suggestionsResponse = await fetch('/api/suggestions', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }, body: JSON.stringify({ action: 'add', citySlug, suggestions: scraperData.results }) });
-      if (!(suggestionsResponse.status >= 200 && suggestionsResponse.status < 300)) { const suggestionsData = await suggestionsResponse.json().catch(() => ({})); const errorMessage = (suggestionsData as any).message || (suggestionsData as any).error || 'Nepodarilo sa uložiť návrhy'; toast({ title: 'Chyba', description: errorMessage, variant: 'destructive' }); setIsScrapingInProgress(false); return; }
+      if (!(suggestionsResponse.status >= 200 && suggestionsResponse.status < 300)) { const suggestionsData = await suggestionsResponse.json().catch(() => ({})); const errorMessage = (suggestionsData as { message?: string; error?: string }).message || (suggestionsData as { message?: string; error?: string }).error || 'Nepodarilo sa uložiť návrhy'; toast({ title: 'Chyba', description: errorMessage, variant: 'destructive' }); setIsScrapingInProgress(false); return; }
       const result = await suggestionsResponse.json();
       if (result.added === 0) { toast({ title: 'Informácia', description: `Našlo sa ${scraperData.count} výsledkov, ale všetky sú už v databáze (${result.skipped} duplicít).` }); }
       else { toast({ title: 'Úspech', description: `Našlo sa ${scraperData.count} výsledkov. Pridaných ${result.added} nových návrhov (${result.skipped} duplicít preskočených).` }); navigate('/admin/suggestions'); }

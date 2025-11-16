@@ -1,4 +1,4 @@
-import { TrendingUp, TrendingDown, DollarSign, BarChart3 } from "lucide-react";
+import { TrendingUp, TrendingDown, DollarSign, BarChart3, type LucideIcon } from "lucide-react";
 
 interface Insight {
   title: string;
@@ -10,7 +10,7 @@ interface PriceInsightsProps {
   insights: Insight[];
 }
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, LucideIcon> = {
   TrendingUp,
   TrendingDown,
   DollarSign,

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight, Newspaper } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
@@ -13,18 +13,7 @@ export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll every 5 seconds
-  useEffect(() => {
-    if (isHovered) return;
-
-    const interval = setInterval(() => {
-      scrollToNext();
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [currentIndex, isHovered, articles.length]);
-
-  const scrollToNext = () => {
+  const scrollToNext = useCallback(() => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
       const cardWidth = container.querySelector('.article-card')?.clientWidth || 0;
@@ -36,7 +25,18 @@ export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
       // Update index
       setCurrentIndex((prev) => (prev + 1) % articles.length);
     }
-  };
+  }, [articles.length]);
+
+  // Auto-scroll every 5 seconds
+  useEffect(() => {
+    if (isHovered) return;
+
+    const interval = setInterval(() => {
+      scrollToNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex, isHovered, scrollToNext]);
 
   const scrollToPrev = () => {
     if (scrollContainerRef.current) {
