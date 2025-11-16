@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSession } from '@/lib/auth';
-import { getCityBySlug } from '@/data/cities';
+import { getCityBySlug, slovakCities } from '@/data/cities';
 import type { CityData } from '@/data/cities';
 import fs from 'fs/promises';
 import path from 'path';
@@ -12,13 +12,19 @@ export async function GET(
 ) {
   const session = await getSession();
   if (!session) {
+    console.log('[API] No session found');
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   const { slug } = await params;
+  console.log('[API] Looking for city with slug:', slug);
+
   const city = getCityBySlug(slug);
+  console.log('[API] City found:', city ? 'YES' : 'NO');
 
   if (!city) {
+    console.log('[API] Available cities:', slovakCities.length);
+    console.log('[API] First 5 slugs:', slovakCities.slice(0, 5).map(c => c.slug));
     return NextResponse.json({ error: 'City not found' }, { status: 404 });
   }
 
