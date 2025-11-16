@@ -54,15 +54,46 @@ export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
 
   return (
     <div
-      className="bg-card rounded-xl md:rounded-2xl shadow-3d-lg p-4 md:p-6 relative"
+      className="rounded-xl md:rounded-2xl shadow-3d-lg p-4 md:p-6 relative overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      style={{
+        background: `
+          linear-gradient(135deg,
+            rgba(45, 45, 48, 0.95) 0%,
+            rgba(30, 30, 35, 0.95) 50%,
+            rgba(45, 45, 48, 0.95) 100%
+          ),
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 48px,
+            rgba(250, 204, 21, 0.15) 48px,
+            rgba(250, 204, 21, 0.15) 52px,
+            transparent 52px,
+            transparent 100px
+          ),
+          repeating-linear-gradient(
+            0deg,
+            rgba(60, 60, 65, 0.8) 0px,
+            rgba(50, 50, 55, 0.8) 2px,
+            rgba(40, 40, 45, 0.8) 4px
+          )
+        `,
+      }}
     >
+      {/* Decorative road markings */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"></div>
+
+      {/* Taxi light effect */}
+      <div className="absolute -top-20 -right-20 w-40 h-40 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
+
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-4 relative z-10">
         <div className="flex items-center gap-2">
-          <Newspaper className="h-5 w-5 text-primary" />
-          <h2 className="text-lg md:text-xl font-bold text-foreground">
+          <Newspaper className="h-5 w-5 text-yellow-400" />
+          <h2 className="text-lg md:text-xl font-bold text-white">
             Aktuálne z blogu
           </h2>
         </div>
@@ -91,7 +122,7 @@ export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
       {/* Articles container */}
       <div
         ref={scrollContainerRef}
-        className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar"
+        className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar relative z-10"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
