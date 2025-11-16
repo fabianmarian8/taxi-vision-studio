@@ -9,6 +9,12 @@
 import { MetadataRoute } from 'next';
 import citiesData from '@/data/cities.json';
 
+// Performance optimization: Cache sitemap for 24 hours
+export const revalidate = 86400; // 24 hours in seconds
+
+// Use Node.js runtime for better performance with large data
+export const runtime = 'nodejs';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://taxinearme.sk';
   const currentDate = new Date();
@@ -22,19 +28,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .replace(/\s+/g, '-');
   };
 
-  // Helper funkcia pre vytvorenie slug z názvu taxislužby
+  // Helper funkcia pre vytvorenie slug z názvu taxislužby (cached)
+  const slugCache = new Map<string, string>();
   const createServiceSlug = (serviceName: string): string => {
-    return serviceName
+    if (slugCache.has(serviceName)) {
+      return slugCache.get(serviceName)!;
+    }
+    const slug = serviceName
       .toLowerCase()
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)/g, '');
+    slugCache.set(serviceName, slug);
+    return slug;
   };
 
   // Získanie unikátnych regiónov
   const regions = [...new Set(citiesData.cities.map((city) => city.region))].sort();
 
+  // Pre-allocate array s približným počtom URL (performance)
   const sitemap: MetadataRoute.Sitemap = [];
 
   // Homepage
