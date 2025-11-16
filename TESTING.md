@@ -61,13 +61,15 @@ npm run build:dev
 Projekt používa GitHub Actions pre CI/CD:
 
 - **CI Pipeline** (`.github/workflows/ci.yml`): Spúšťa sa pri každom pushu a PR
-  - Linting (ESLint)
-  - Unit testy (Vitest)
-  - Build
+  - **Linting (ESLint)**: Reportuje chyby, ale neblokuje pipeline (continue-on-error)
+  - **Unit testy (Vitest)**: Musia prejsť, inak CI zlyhá
+  - **Build**: Musí uspieť, inak CI zlyhá
 
 - **Deploy Pipeline** (`.github/workflows/deploy.yml`): Spúšťa sa len pri pushu do main vetvy
   - Najprv beží celý CI pipeline
   - Po úspešnom CI sa vykoná deploy na GitHub Pages
+
+**Poznámka o lintingu**: V CI/CD je linting nastavený na `continue-on-error: true`, čo znamená, že len reportuje chyby ale neblokuje deploy. Testy a build musia vždy prejsť.
 
 ## Štruktúra testov
 
