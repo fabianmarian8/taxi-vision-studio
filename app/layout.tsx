@@ -11,20 +11,19 @@
  */
 
 import type { Metadata, Viewport } from 'next';
-// import { Manrope } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import { CookieBanner } from '@/components/cookie-banner';
 
 // Google Font optimalizácia (Next.js automaticky hostuješ fonty)
-// TEMPORARY: Disabled due to network issues in sandbox
-// const manrope = Manrope({
-//   subsets: ['latin'],
-//   weight: ['400', '500', '600', '700', '800'],
-//   display: 'swap', // Lepší performance
-//   variable: '--font-manrope',
-// });
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap', // Lepší performance
+  variable: '--font-manrope',
+});
 
 // Metadata API - SEO optimalizácia (migrované z index.html lines 3-43)
 export const metadata: Metadata = {
@@ -138,7 +137,7 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body className="font-sans">
+      <body className={manrope.className}>
         {/*
           Providers wrapper - Client Component
           Obsahuje: QueryClient, TooltipProvider, Toasters, Cookie Consent logic
