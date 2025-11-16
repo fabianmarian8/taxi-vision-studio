@@ -7,13 +7,5 @@
       "main": true
     }
   },
-  "ignoreCommand": "bash ignored-build-step.sh",
-  "functions": {
-    "api/taxi-scraper.js": {
-      "maxDuration": 30
-    },
-    "api/gbp-scraper.js": {
-      "maxDuration": 30
-    }
-  }
+  "ignoreCommand": "bash ignored-build-step.sh"
 }
