@@ -22,16 +22,33 @@ export default function AdminCityDetailPage() {
   useEffect(() => {
     // Načítaj mesto z API
     fetch(`/api/admin/cities/${slug}`)
-      .then(res => res.json())
+      .then(res => {
+        if (res.status === 401) {
+          // Unauthorized - redirect to login
+          router.push('/admin/login');
+          return;
+        }
+        if (!res.ok) {
+          console.error('API Error:', res.status, res.statusText);
+          return res.json().then(err => {
+            console.error('Error details:', err);
+            throw new Error(err.error || 'Failed to fetch city');
+          });
+        }
+        return res.json();
+      })
       .then(data => {
-        setCity(data);
+        if (data) {
+          console.log('City data loaded:', data);
+          setCity(data);
+        }
         setLoading(false);
       })
       .catch(err => {
-        console.error(err);
+        console.error('Failed to load city:', err);
         setLoading(false);
       });
-  }, [slug]);
+  }, [slug, router]);
 
   const handleSave = async () => {
     if (!city) return;
