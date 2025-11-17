@@ -77,8 +77,10 @@ const nextConfig: NextConfig = {
     },
   },
 
-  // Output (pre GitHub Pages static deployment)
-  output: 'export', // Static HTML export pre GitHub Pages
+  // Output configuration:
+  // - Vercel: 'standalone' (supports API routes, server components)
+  // - GitHub Pages: 'export' (static HTML only, no API routes)
+  output: process.env.VERCEL ? 'standalone' : 'export',
 
   // Redirects (ak potrebné)
   // async redirects() {
