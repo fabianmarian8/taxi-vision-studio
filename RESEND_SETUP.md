@@ -29,18 +29,24 @@ Resend je profesionálna emailová API služba, ktorú používame pre kontaktn�
 6. **DÔLEŽITÉ:** Skopíruj API kľúč okamžite! Začína `re_...`
 7. Ulož ho niekde bezpečne (napr. do password managera)
 
-### 3. Pridanie verifikovanej emailovej adresy (DÔLEŽITÉ pre Free Tier)
+### 3. Obmedzenia Free Tier (DÔLEŽITÉ!)
 
-**V Free Tier Resend môžeš posielať emaily iba na verifikované adresy!**
+**AKTUÁLNY STAV:**
+V Free Tier Resend môžeš posielať emaily **iba na vlastnú verifikovanú emailovú adresu** (adresu, s ktorou si vytvoril Resend účet).
 
-1. Choď na [Resend Audience](https://resend.com/audiences)
-2. Klikni **"Add Email"**
-3. Zadaj `info@taxinearme.sk`
-4. Resend pošle verifikačný email na túto adresu
-5. Otvor email a klikni na verifikačný link
-6. Po verifikácii bude možné na túto adresu posielať emaily
+**Preto momentálne:**
+- Kontaktné formuláre posielajú emaily na `fabianmarian8@gmail.com`
+- Toto je dočasné riešenie, kým neverifikujeme doménu
 
-**Poznámka:** Ak neverifikuješ `info@taxinearme.sk`, formulár bude vracať chybu "Unable to fetch data".
+**Ako to funguje:**
+1. Resend automaticky verifikuje emailovú adresu, s ktorou si vytvoril účet
+2. V našom prípade to je `fabianmarian8@gmail.com`
+3. Všetky emaily z formulára prídu na túto adresu
+4. V emaili je uvedený `replyTo` s adresou odosielateľa, takže môžeš jednoducho odpovedať
+
+**Ak chceš posielať na info@taxinearme.sk:**
+- Musíš verifikovať doménu `taxinearme.sk` (pozri sekciu "Nastavenie vlastnej domény" nižšie)
+- Po verifikácii domény môžeš posielať na ľubovoľné adresy na tejto doméne
 
 ### 4. Konfigurácia vo Vercel
 
@@ -69,31 +75,78 @@ Po pridaní environment variable je potrebné projekt znova nasadiť:
 
 1. Choď na [taxinearme.sk](https://taxinearme.sk)
 2. Klikni na tlačidlo **"Niečo tu chýba?"**
-3. Vyplň formulár
+3. Vyplň formulár:
+   - Zadaj svoje meno
+   - Zadaj svoj email (tento bude v `replyTo`, aby si mohol odpovedať)
+   - Zadaj mesto a názov taxislužby
+   - Napíš správu
 4. Odošli
-5. Skontroluj, či email prišiel na `info@taxinearme.sk`
+5. **Skontroluj email:**
+   - **Momentálne:** Email príde na `fabianmarian8@gmail.com`
+   - **Po verifikácii domény:** Email príde na `info@taxinearme.sk`
+6. Overenie funkčnosti:
+   - V emaili by mali byť všetky údaje z formulára
+   - `replyTo` hlavička obsahuje email odosielateľa
+   - Môžeš kliknúť "Reply" a odpovedať priamo odosielateľovi
 
 ## Pokročilé nastavenie (voliteľné)
 
-### Nastavenie vlastnej domény
+### Nastavenie vlastnej domény (POVINNÉ pre info@taxinearme.sk)
 
-Momentálne emaily chodia z adresy `noreply@taxinearme.sk`, ale používajú Resend infraštruktúru.
+**DÔLEŽITÉ:** Aby si mohol posielať emaily na `info@taxinearme.sk`, musíš najprv verifikovať doménu `taxinearme.sk` v Resend.
 
-Pre profesionálnejší prístup môžeš nastaviť vlastnú doménu:
+**Kroky:**
 
-1. V Resend Dashboard choď na [Domains](https://resend.com/domains)
-2. Klikni **"Add Domain"**
-3. Zadaj `taxinearme.sk`
-4. Resend ti poskytne DNS záznamy (SPF, DKIM, DMARC)
-5. Pridaj tieto záznamy do DNS nastavení domény (napr. na Namecheap, GoDaddy, Cloudflare)
-6. Počkaj na verifikáciu (zvyčajne pár minút až hodín)
-7. Po verifikácii emaily budú chodiť z plne verifikovanej domény
+1. **Pridaj doménu v Resend:**
+   - Choď na [Resend Domains](https://resend.com/domains)
+   - Klikni **"Add Domain"**
+   - Zadaj `taxinearme.sk`
+   - Klikni **"Add"**
 
-**Výhody vlastnej domény:**
+2. **Získaj DNS záznamy:**
+   - Resend ti poskytne 3 typy DNS záznamov:
+     - **SPF** (TXT záznam) - overuje, že máš právo posielať emaily
+     - **DKIM** (TXT záznam) - kryptografický podpis emailov
+     - **DMARC** (TXT záznam) - politika autentifikácie
+
+3. **Pridaj DNS záznamy:**
+   - Choď do DNS nastavení svojej domény (napr. Namecheap, GoDaddy, Cloudflare)
+   - Pridaj všetky 3 záznamy presne tak, ako ich Resend poskytol
+   - **Príklad pre Cloudflare:**
+     ```
+     Type: TXT
+     Name: @ (alebo taxinearme.sk)
+     Value: v=spf1 include:resend.com ~all
+     ```
+
+4. **Počkaj na verifikáciu:**
+   - DNS zmeny môžu trvať 15 minút až 48 hodín
+   - Zvyčajne to trvá 15-30 minút
+   - Resend automaticky kontroluje verifikáciu
+   - Dostaneš email potvrdenie
+
+5. **Aktualizuj API route:**
+   ```typescript
+   // V app/api/contact/route.ts zmeň:
+   from: 'Taxi NearMe <onboarding@resend.dev>',
+   // NA:
+   from: 'Taxi NearMe <noreply@taxinearme.sk>',
+   ```
+
+6. **Nastav CONTACT_EMAIL vo Vercel:**
+   - Choď do Vercel Dashboard → Settings → Environment Variables
+   - Pridaj:
+     - **Key:** `CONTACT_EMAIL`
+     - **Value:** `info@taxinearme.sk`
+     - **Environments:** Production, Preview, Development
+   - Redeploy projekt
+
+**Po verifikácii domény:**
+- ✅ Môžeš posielať na `info@taxinearme.sk` a ľubovoľné iné adresy
+- ✅ Emaily budú chodiť z `noreply@taxinearme.sk`
 - ✅ Lepšia doručiteľnosť (menšia šanca skončiť v spame)
 - ✅ Profesionálnejší vzhľad
 - ✅ Možnosť sledovať reputáciu domény
-- ✅ Kontrola nad DMARC políciami
 
 ### Monitorovanie emailov
 
