@@ -10,6 +10,28 @@ import { FooterLegal } from "@/components/FooterLegal";
 export const metadata: Metadata = {
   title: 'Zásady ochrany osobných údajov – TaxiNearMe.sk',
   description: 'Informácie o tom, ako spracúvame a chránime vaše osobné údaje v súlade s GDPR. Zistite viac o vašich právach a našich záväzkoch.',
+  openGraph: {
+    title: 'Zásady ochrany osobných údajov – TaxiNearMe.sk',
+    description: 'Informácie o tom, ako spracúvame a chránime vaše osobné údaje v súlade s GDPR. Zistite viac o vašich právach a našich záväzkoch.',
+    type: 'website',
+    locale: 'sk_SK',
+    url: 'https://taxinearme.sk/ochrana-sukromia',
+    siteName: 'Taxi NearMe',
+    images: [
+      {
+        url: 'https://taxinearme.sk/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Ochrana súkromia - Taxi NearMe',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zásady ochrany osobných údajov – TaxiNearMe.sk',
+    description: 'Informácie o tom, ako spracúvame a chránime vaše osobné údaje v súlade s GDPR.',
+    images: ['https://taxinearme.sk/og-image.png'],
+  },
   alternates: {
     canonical: 'https://taxinearme.sk/ochrana-sukromia',
     languages: {

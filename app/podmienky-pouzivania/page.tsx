@@ -10,6 +10,28 @@ import { FooterLegal } from "@/components/FooterLegal";
 export const metadata: Metadata = {
   title: 'Podmienky používania – TaxiNearMe.sk',
   description: 'Podmienky používania webovej stránky TaxiNearMe.sk. Prečítajte si pravidlá a zodpovednosť pri používaní našej platformy.',
+  openGraph: {
+    title: 'Podmienky používania – TaxiNearMe.sk',
+    description: 'Podmienky používania webovej stránky TaxiNearMe.sk. Prečítajte si pravidlá a zodpovednosť pri používaní našej platformy.',
+    type: 'website',
+    locale: 'sk_SK',
+    url: 'https://taxinearme.sk/podmienky-pouzivania',
+    siteName: 'Taxi NearMe',
+    images: [
+      {
+        url: 'https://taxinearme.sk/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Podmienky používania - Taxi NearMe',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Podmienky používania – TaxiNearMe.sk',
+    description: 'Podmienky používania webovej stránky TaxiNearMe.sk.',
+    images: ['https://taxinearme.sk/og-image.png'],
+  },
   alternates: {
     canonical: 'https://taxinearme.sk/podmienky-pouzivania',
     languages: {

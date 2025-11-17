@@ -129,11 +129,20 @@ export async function generateMetadata({
       locale: 'sk_SK',
       url: currentUrl,
       siteName,
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: `${service.name} - Taxi ${city.name}`,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${service.name} - Taxi ${city.name}`,
       description,
+      images: [`${baseUrl}/og-image.png`],
     },
     alternates: {
       canonical: currentUrl,
