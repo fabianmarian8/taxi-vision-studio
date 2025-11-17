@@ -78,9 +78,9 @@ const nextConfig: NextConfig = {
   },
 
   // Output configuration:
-  // - Vercel: 'standalone' (supports API routes, server components)
-  // - GitHub Pages: 'export' (static HTML only, no API routes)
-  output: process.env.VERCEL ? 'standalone' : 'export',
+  // Using default (no static export) to support API routes
+  // API routes vyžadujú server-side rendering, ktoré je default v Next.js
+  // Pre Vercel je toto optimálne nastavenie
 
   // Redirects (ak potrebné)
   // async redirects() {

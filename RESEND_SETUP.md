@@ -29,7 +29,20 @@ Resend je profesionálna emailová API služba, ktorú používame pre kontaktn�
 6. **DÔLEŽITÉ:** Skopíruj API kľúč okamžite! Začína `re_...`
 7. Ulož ho niekde bezpečne (napr. do password managera)
 
-### 3. Konfigurácia vo Vercel
+### 3. Pridanie verifikovanej emailovej adresy (DÔLEŽITÉ pre Free Tier)
+
+**V Free Tier Resend môžeš posielať emaily iba na verifikované adresy!**
+
+1. Choď na [Resend Audience](https://resend.com/audiences)
+2. Klikni **"Add Email"**
+3. Zadaj `info@taxinearme.sk`
+4. Resend pošle verifikačný email na túto adresu
+5. Otvor email a klikni na verifikačný link
+6. Po verifikácii bude možné na túto adresu posielať emaily
+
+**Poznámka:** Ak neverifikuješ `info@taxinearme.sk`, formulár bude vracať chybu "Unable to fetch data".
+
+### 4. Konfigurácia vo Vercel
 
 1. Choď do Vercel Dashboard
 2. Vyber projekt `taxi-vision-studio`
@@ -43,7 +56,7 @@ Resend je profesionálna emailová API služba, ktorú používame pre kontaktn�
      - ✅ Development
 5. Klikni **"Save"**
 
-### 4. Opätovné nasadenie (Redeploy)
+### 5. Opätovné nasadenie (Redeploy)
 
 Po pridaní environment variable je potrebné projekt znova nasadiť:
 
@@ -52,7 +65,7 @@ Po pridaní environment variable je potrebné projekt znova nasadiť:
 3. Klikni na tri bodky (⋯) → **"Redeploy"**
 4. Potvrď akciou **"Redeploy"**
 
-### 5. Testovanie
+### 6. Testovanie
 
 1. Choď na [taxinearme.sk](https://taxinearme.sk)
 2. Klikni na tlačidlo **"Niečo tu chýba?"**
