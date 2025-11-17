@@ -198,6 +198,7 @@ export default async function TaxiServicePage({
           <Link
             href={`/taxi/${citySlug}`}
             className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold mb-8"
+            title={`Späť na zoznam taxislužieb v meste ${city.name}`}
           >
             <ArrowLeft className="h-4 w-4" />
             Späť na zoznam taxislužieb v meste {city.name}
@@ -232,6 +233,7 @@ export default async function TaxiServicePage({
                         <a
                           href={`tel:${service.phone}`}
                           className="text-lg text-foreground hover:text-foreground/70 transition-colors font-bold"
+                          title={`Zavolať ${service.name}`}
                         >
                           {service.phone}
                         </a>
@@ -254,6 +256,7 @@ export default async function TaxiServicePage({
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-lg text-foreground hover:text-foreground/70 transition-colors font-bold"
+                          title={`Navštíviť webovú stránku ${service.name}`}
                         >
                           {truncateUrl(service.website)}
                         </a>

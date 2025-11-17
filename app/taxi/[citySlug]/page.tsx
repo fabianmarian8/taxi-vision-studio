@@ -136,7 +136,7 @@ export default async function CityPage({ params }: { params: Promise<{ citySlug:
 
                   return (
                     <Card key={index} className="perspective-1000">
-                      <Link href={`/taxi/${citySlug}/${serviceSlug}`}>
+                      <Link href={`/taxi/${citySlug}/${serviceSlug}`} title={`${service.name} - Detailné informácie a kontakt`}>
                         <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all cursor-pointer">
                           <CardHeader className="pb-1 pt-2.5 md:pt-3 px-3 md:px-4">
                             <CardTitle className="text-sm md:text-base font-bold flex items-center gap-1.5 md:gap-2">
