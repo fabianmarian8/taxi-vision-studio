@@ -81,22 +81,45 @@ const ContactFormEmail = ({
 
 export async function POST(request: NextRequest) {
   try {
+    console.log('[Contact API] Received POST request');
+
     // Kontrola API kľúča
     if (!process.env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY is not configured');
+      console.error('[Contact API] RESEND_API_KEY is not configured');
       return NextResponse.json(
         { error: 'Email service is not configured' },
         { status: 500 }
       );
     }
 
+    console.log('[Contact API] RESEND_API_KEY is configured');
+
     // Parsovanie form data
-    const formData = await request.formData();
+    let formData;
+    try {
+      formData = await request.formData();
+      console.log('[Contact API] FormData parsed successfully');
+    } catch (parseError) {
+      console.error('[Contact API] Failed to parse FormData:', parseError);
+      return NextResponse.json(
+        { error: 'Invalid form data' },
+        { status: 400 }
+      );
+    }
+
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
     const city = formData.get('city') as string;
     const taxiName = formData.get('taxiName') as string;
     const message = formData.get('message') as string;
+
+    console.log('[Contact API] Form fields extracted:', {
+      hasName: !!name,
+      hasEmail: !!email,
+      hasCity: !!city,
+      hasTaxiName: !!taxiName,
+      hasMessage: !!message,
+    });
 
     // Validácia povinných polí
     if (!name || !email || !city || !taxiName || !message) {
@@ -116,10 +139,12 @@ export async function POST(request: NextRequest) {
     }
 
     // Odoslanie emailu cez Resend
+    console.log('[Contact API] Initializing Resend client...');
     const resend = getResendClient();
 
     // V free tier Resend môžeš posielať emaily iba na verifikované adresy
     // Skontroluj, či info@taxinearme.sk je pridaná v Resend Dashboard ako verified recipient
+    console.log('[Contact API] Sending email via Resend...');
     const { data, error: resendError } = await resend.emails.send({
       // Používame Resend testovaciu doménu (resend.dev) pre free tier
       // Pre vlastnú doménu (taxinearme.sk) je potrebné najprv verifikovať doménu v Resend
@@ -128,6 +153,11 @@ export async function POST(request: NextRequest) {
       replyTo: email, // Umožní priamu odpoveď na email odosielateľa
       subject: `Nový príspevok z Taxi NearMe - ${city} - ${taxiName}`,
       html: ContactFormEmail({ name, email, city, taxiName, message }),
+    });
+
+    console.log('[Contact API] Resend response received:', {
+      hasData: !!data,
+      hasError: !!resendError,
     });
 
     // Kontrola chyby od Resend
@@ -161,7 +191,12 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     // Error handling a logovanie
-    console.error('Error sending email:', error);
+    console.error('[Contact API] Unexpected error:', error);
+    console.error('[Contact API] Error type:', typeof error);
+    console.error('[Contact API] Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown',
+      stack: error instanceof Error ? error.stack : undefined,
+    });
 
     // Detailnejšie error handling pre Resend errors
     if (error instanceof Error) {
