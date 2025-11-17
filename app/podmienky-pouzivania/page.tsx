@@ -10,6 +10,13 @@ import { FooterLegal } from "@/components/FooterLegal";
 export const metadata: Metadata = {
   title: 'Podmienky používania – TaxiNearMe.sk',
   description: 'Podmienky používania webovej stránky TaxiNearMe.sk. Prečítajte si pravidlá a zodpovednosť pri používaní našej platformy.',
+  alternates: {
+    canonical: 'https://taxinearme.sk/podmienky-pouzivania',
+    languages: {
+      'sk': 'https://taxinearme.sk/podmienky-pouzivania',
+      'x-default': 'https://taxinearme.sk/podmienky-pouzivania',
+    },
+  },
 };
 
 const TermsOfUse = () => {

@@ -35,7 +35,11 @@ export const metadata: Metadata = {
     images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
   },
   alternates: {
-    canonical: 'https://www.taxinearme.sk/co-musi-zniest-vodic'
+    canonical: 'https://www.taxinearme.sk/co-musi-zniest-vodic',
+    languages: {
+      'sk': 'https://www.taxinearme.sk/co-musi-zniest-vodic',
+      'x-default': 'https://www.taxinearme.sk/co-musi-zniest-vodic',
+    },
   }
 };
 

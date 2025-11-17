@@ -80,6 +80,10 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: currentUrl,
+      languages: {
+        'sk': currentUrl,
+        'x-default': currentUrl,
+      },
     },
   };
 }

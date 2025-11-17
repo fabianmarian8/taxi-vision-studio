@@ -35,7 +35,11 @@ export const metadata: Metadata = {
     images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
   },
   alternates: {
-    canonical: 'https://www.taxinearme.sk/psychologia-zakaznikov'
+    canonical: 'https://www.taxinearme.sk/psychologia-zakaznikov',
+    languages: {
+      'sk': 'https://www.taxinearme.sk/psychologia-zakaznikov',
+      'x-default': 'https://www.taxinearme.sk/psychologia-zakaznikov',
+    },
   }
 };
 

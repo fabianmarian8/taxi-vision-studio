@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   description: 'Kontaktujte nás cez email info@taxinearme.sk',
   alternates: {
     canonical: 'https://taxinearme.sk/kontakt',
+    languages: {
+      'sk': 'https://taxinearme.sk/kontakt',
+      'x-default': 'https://taxinearme.sk/kontakt',
+    },
   },
 };
 
