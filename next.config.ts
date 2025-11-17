@@ -77,8 +77,10 @@ const nextConfig: NextConfig = {
     },
   },
 
-  // Output (pre Vercel deployment)
-  output: 'standalone', // Optimalizovaný pre Vercel
+  // Output configuration:
+  // - Vercel: 'standalone' (supports API routes, server components)
+  // - GitHub Pages: 'export' (static HTML only, no API routes)
+  output: process.env.VERCEL ? 'standalone' : 'export',
 
   // Redirects (ak potrebné)
   // async redirects() {

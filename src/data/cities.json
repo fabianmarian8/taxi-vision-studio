@@ -3247,7 +3247,9 @@
           "name": "TAXI NESVADY",
           "phone": "+421908618620"
         }
-      ]
+      ],
+      "latitude": 48.3456,
+      "longitude": 18.1937
     },
     {
       "name": "Nitra",
@@ -3396,7 +3398,9 @@
           "website": "http://www.taxigo.sk",
           "phone": "+421903505999"
         }
-      ]
+      ],
+      "latitude": 48.9297,
+      "longitude": 18.1453
     },
     {
       "name": "Nováky",
@@ -3428,7 +3432,9 @@
           "name": "Zebra",
           "phone": "+421918999116"
         }
-      ]
+      ],
+      "latitude": 48.7191,
+      "longitude": 18.5421
     },
     {
       "name": "Nové Mesto nad Váhom",
@@ -4567,7 +4573,9 @@
           "name": "In Time NONSTOP TAXI SEREĎ",
           "phone": "+421915161937"
         }
-      ]
+      ],
+      "latitude": 48.2851,
+      "longitude": 17.7338
     },
     {
       "name": "Skalica",
@@ -4879,7 +4887,9 @@
           "website": "",
           "phone": "+421 917 538 143"
         }
-      ]
+      ],
+      "latitude": 49.0069,
+      "longitude": 20.3956
     },
     {
       "name": "Spišské Podhradie",
@@ -4931,7 +4941,9 @@
           "name": "SPV TAXI",
           "phone": "+421950582528"
         }
-      ]
+      ],
+      "latitude": 48.9194,
+      "longitude": 20.6444
     },
     {
       "name": "Stará Ľubovňa",
@@ -4972,7 +4984,9 @@
           "website": "http://lubovnataxi.sk",
           "phone": "+421910440006"
         }
-      ]
+      ],
+      "latitude": 49.2983,
+      "longitude": 20.6889
     },
     {
       "name": "Stará Turá",
@@ -5029,7 +5043,9 @@
           "name": "Róbert Hornáček",
           "phone": "+421905363876"
         }
-      ]
+      ],
+      "latitude": 48.7809,
+      "longitude": 17.6874
     },
     {
       "name": "Strážske",
@@ -5053,7 +5069,9 @@
           "name": "TAXI LIENKA Strážske",
           "phone": "+421911717492"
         }
-      ]
+      ],
+      "latitude": 48.8739,
+      "longitude": 21.8292
     },
     {
       "name": "Stropkov",
@@ -5073,7 +5091,9 @@
           "name": "TAXI Stropkov - Mišo",
           "phone": "+421940191151"
         }
-      ]
+      ],
+      "latitude": 49.2031,
+      "longitude": 21.6522
     },
     {
       "name": "Stupava",
@@ -5113,7 +5133,9 @@
           "website": "http://aero-taxi.sk",
           "phone": "+421911114499"
         }
-      ]
+      ],
+      "latitude": 48.28,
+      "longitude": 17.03
     },
     {
       "name": "Svätý Jur",
@@ -5154,7 +5176,9 @@
           "website": "",
           "phone": "+421902399404"
         }
-      ]
+      ],
+      "latitude": 48.2521,
+      "longitude": 17.2154
     },
     {
       "name": "Svidník",
@@ -5188,7 +5212,9 @@
           "name": "Taxi Svidnicky Express",
           "phone": "+421952161061"
         }
-      ]
+      ],
+      "latitude": 49.303,
+      "longitude": 21.5692
     },
     {
       "name": "Svit",
@@ -5209,7 +5235,9 @@
           "website": "https://svittaxi.sk",
           "phone": "+421905211311"
         }
-      ]
+      ],
+      "latitude": 49.0597,
+      "longitude": 20.2089
     },
     {
       "name": "Šahy",
@@ -5337,7 +5365,9 @@
           "name": "Vojtech Horváth Taxi",
           "phone": "+421910551448"
         }
-      ]
+      ],
+      "latitude": 48.028,
+      "longitude": 17.3138
     },
     {
       "name": "Šaštín-Stráže",
@@ -5363,7 +5393,9 @@
           "website": "https://taxisastin.sk",
           "phone": "+421904530243"
         }
-      ]
+      ],
+      "latitude": 48.6561,
+      "longitude": 17.1761
     },
     {
       "name": "Štúrovo",
@@ -5480,7 +5512,9 @@
           "name": "JŠ Šavel Taxi",
           "phone": "+421902318870"
         }
-      ]
+      ],
+      "latitude": 48.6717,
+      "longitude": 19.9458
     },
     {
       "name": "Tlmače",
@@ -5554,7 +5588,9 @@
           "website": "https://www.rm-taxi.sk",
           "phone": "+421907043322"
         }
-      ]
+      ],
+      "latitude": 48.3456,
+      "longitude": 18.5272
     },
     {
       "name": "Topoľčany",
@@ -5926,7 +5962,9 @@
           "website": "",
           "phone": "+421 918 171 718"
         }
-      ]
+      ],
+      "latitude": 49.3625,
+      "longitude": 19.6194
     },
     {
       "name": "Turany",
@@ -5976,7 +6014,9 @@
           "website": "http://hifotaxi.sk",
           "phone": "+421902740140"
         }
-      ]
+      ],
+      "latitude": 49.0814,
+      "longitude": 19.5244
     },
     {
       "name": "Turčianske Teplice",
@@ -6042,7 +6082,9 @@
           "website": "http://www.mttaxi.sk",
           "phone": "+421948234444"
         }
-      ]
+      ],
+      "latitude": 49.4169,
+      "longitude": 18.6194
     },
     {
       "name": "Tvrdošín",
@@ -6224,7 +6266,9 @@
           "name": "A-A VikyTaxi",
           "phone": "+421910141777"
         }
-      ]
+      ],
+      "latitude": 48.9967,
+      "longitude": 21.1814
     },
     {
       "name": "Vráble",
@@ -6315,7 +6359,9 @@
           "website": "http://www.taxi-pn.sk",
           "phone": "+421915336649"
         }
-      ]
+      ],
+      "latitude": 48.6189,
+      "longitude": 17.7211
     },
     {
       "name": "Vrútky",
@@ -6360,7 +6406,9 @@
           "website": "http://m2taxi.sk",
           "phone": "+421948916917"
         }
-      ]
+      ],
+      "latitude": 49.1125,
+      "longitude": 18.9089
     },
     {
       "name": "Vysoké Tatry",
@@ -6593,7 +6641,9 @@
           "website": "",
           "phone": "+421948664777"
         }
-      ]
+      ],
+      "latitude": 48.0517,
+      "longitude": 18.6678
     },
     {
       "name": "Žiar nad Hronom",
