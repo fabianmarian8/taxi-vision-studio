@@ -204,18 +204,21 @@ export const SearchPanel = () => {
       (error) => {
         setIsLoadingLocation(false);
 
+        // GeolocationPositionError codes:
+        // PERMISSION_DENIED = 1, POSITION_UNAVAILABLE = 2, TIMEOUT = 3
         switch (error.code) {
-          case error.PERMISSION_DENIED:
+          case 1: // PERMISSION_DENIED
             toast.error("Prístup k polohe bol zamietnutý. Prosím, povoľte prístup v nastaveniach prehliadača.");
             break;
-          case error.POSITION_UNAVAILABLE:
+          case 2: // POSITION_UNAVAILABLE
             toast.error("Informácie o polohe nie sú dostupné");
             break;
-          case error.TIMEOUT:
+          case 3: // TIMEOUT
             toast.error("Čas na získanie polohy vypršal");
             break;
           default:
-            toast.error("Neznáma chyba pri získavaní polohy");
+            toast.error(`Chyba pri získavaní polohy (kód: ${error.code})`);
+            console.error("Geolocation error:", error);
         }
       },
       {
