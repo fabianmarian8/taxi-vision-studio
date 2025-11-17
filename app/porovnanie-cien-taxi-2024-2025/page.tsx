@@ -28,7 +28,11 @@ export const metadata: Metadata = {
     images: ['https://www.taxinearme.sk/og-price-comparison.png']
   },
   alternates: {
-    canonical: 'https://www.taxinearme.sk/porovnanie-cien-taxi-2024-2025'
+    canonical: 'https://www.taxinearme.sk/porovnanie-cien-taxi-2024-2025',
+    languages: {
+      'sk': 'https://www.taxinearme.sk/porovnanie-cien-taxi-2024-2025',
+      'x-default': 'https://www.taxinearme.sk/porovnanie-cien-taxi-2024-2025',
+    },
   }
 };
 

@@ -57,6 +57,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://taxinearme.sk/hodnotenie-vodicov',
+    languages: {
+      'sk': 'https://taxinearme.sk/hodnotenie-vodicov',
+      'x-default': 'https://taxinearme.sk/hodnotenie-vodicov',
+    },
   },
 };
 

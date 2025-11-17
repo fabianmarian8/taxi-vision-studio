@@ -87,6 +87,15 @@ export const metadata: Metadata = {
   other: {
     'google-site-verification': '', // Ak máš Google Search Console
   },
+
+  // Hreflang a canonical URL pre SEO
+  alternates: {
+    canonical: 'https://taxinearme.sk',
+    languages: {
+      'sk': 'https://taxinearme.sk',
+      'x-default': 'https://taxinearme.sk',
+    },
+  },
 };
 
 // Viewport konfigurácia (z index.html line 31)

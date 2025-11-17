@@ -10,6 +10,13 @@ import { FooterLegal } from "@/components/FooterLegal";
 export const metadata: Metadata = {
   title: 'Zásady používania súborov cookies – TaxiNearMe.sk',
   description: 'Informácie o tom, ako používame cookies na našej webovej stránke TaxiNearMe.sk. Zistite viac o typoch cookies a ako spravovať svoje preferencie.',
+  alternates: {
+    canonical: 'https://taxinearme.sk/cookies',
+    languages: {
+      'sk': 'https://taxinearme.sk/cookies',
+      'x-default': 'https://taxinearme.sk/cookies',
+    },
+  },
 };
 
 const Cookies = () => {

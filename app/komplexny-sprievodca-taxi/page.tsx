@@ -35,7 +35,11 @@ export const metadata: Metadata = {
     images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
   },
   alternates: {
-    canonical: 'https://www.taxinearme.sk/komplexny-sprievodca-taxi'
+    canonical: 'https://www.taxinearme.sk/komplexny-sprievodca-taxi',
+    languages: {
+      'sk': 'https://www.taxinearme.sk/komplexny-sprievodca-taxi',
+      'x-default': 'https://www.taxinearme.sk/komplexny-sprievodca-taxi',
+    },
   }
 };
 

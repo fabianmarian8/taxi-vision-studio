@@ -35,7 +35,11 @@ export const metadata: Metadata = {
     images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
   },
   alternates: {
-    canonical: 'https://www.taxinearme.sk/alkohol-nocny-zivot'
+    canonical: 'https://www.taxinearme.sk/alkohol-nocny-zivot',
+    languages: {
+      'sk': 'https://www.taxinearme.sk/alkohol-nocny-zivot',
+      'x-default': 'https://www.taxinearme.sk/alkohol-nocny-zivot',
+    },
   }
 };
 
