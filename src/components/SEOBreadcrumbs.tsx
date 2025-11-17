@@ -70,7 +70,7 @@ export const SEOBreadcrumbs = ({ items }: SEOBreadcrumbsProps) => {
         <BreadcrumbList className="text-xs md:text-sm">
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link href="/" className="flex items-center gap-1 hover:text-foreground/70 transition-colors font-bold">
+              <Link href="/" className="flex items-center gap-1 hover:text-foreground/70 transition-colors font-bold" title="Domovská stránka Taxi NearMe">
                 <Home className="h-3 w-3 md:h-4 md:w-4" />
                 <span className="hidden sm:inline">Domov</span>
               </Link>
@@ -83,7 +83,7 @@ export const SEOBreadcrumbs = ({ items }: SEOBreadcrumbsProps) => {
               <BreadcrumbItem>
                 {item.href ? (
                   <BreadcrumbLink asChild>
-                    <Link href={item.href} className="hover:text-foreground/70 transition-colors font-bold">
+                    <Link href={item.href} className="hover:text-foreground/70 transition-colors font-bold" title={item.label}>
                       {item.label}
                     </Link>
                   </BreadcrumbLink>

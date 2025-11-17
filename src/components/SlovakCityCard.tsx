@@ -10,7 +10,7 @@ interface SlovakCityCardProps {
 export const SlovakCityCard = ({ name, region, slug }: SlovakCityCardProps) => {
   return (
     <div className="perspective-1000">
-      <Link href={`/taxi/${slug}`} className="block">
+      <Link href={`/taxi/${slug}`} className="block" title={`Taxi ${name} - telefónne čísla a informácie`}>
         <div className="group relative bg-card rounded-xl md:rounded-2xl p-4 md:p-6 shadow-3d-md hover:shadow-3d-lg card-3d cursor-pointer overflow-hidden transition-all duration-300">
           {/* 3D Decorative Element */}
           <div className="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-foreground/5 to-transparent rounded-full -mr-12 -mt-12 md:-mr-16 md:-mt-16 group-hover:scale-110 transition-transform duration-300"></div>

@@ -40,7 +40,7 @@ export const Header = () => {
       <div className="container mx-auto px-4 md:px-8 py-2 md:py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3">
-            <Link href="/" className="cursor-pointer">
+            <Link href="/" className="cursor-pointer" title="Domovská stránka Taxi NearMe">
               <img src={logo.src} alt="Taxi NearMe logo" className="h-8 md:h-12 w-auto rounded-lg shadow-3d-sm hover:shadow-3d-md transition-all hover:scale-105" />
             </Link>
             <div className="flex flex-col -space-y-1">
@@ -52,6 +52,7 @@ export const Header = () => {
               href="#cities"
               onClick={handleNavClick('cities')}
               className="text-sm font-bold hover:text-foreground/70 transition-colors cursor-pointer"
+              title="Prejsť na zoznam miest"
             >
               Mestá
             </a>
@@ -59,12 +60,14 @@ export const Header = () => {
               href="#how-it-works"
               onClick={handleNavClick('how-it-works')}
               className="text-sm font-bold hover:text-foreground/70 transition-colors cursor-pointer"
+              title="Ako funguje Taxi NearMe"
             >
               Ako to funguje
             </a>
             <Link
               href="/kontakt"
               className="text-sm font-bold hover:text-foreground/70 transition-colors"
+              title="Kontaktujte nás"
             >
               Kontakt
             </Link>

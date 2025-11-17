@@ -161,18 +161,21 @@ export default function HomePage() {
               <Link
                 href="/ochrana-sukromia"
                 className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                title="Ochrana súkromia a GDPR"
               >
                 Ochrana súkromia
               </Link>
               <Link
                 href="/podmienky-pouzivania"
                 className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                title="Podmienky používania služby"
               >
                 Podmienky používania
               </Link>
               <Link
                 href="/kontakt"
                 className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                title="Kontaktný formulár"
               >
                 Kontakt
               </Link>

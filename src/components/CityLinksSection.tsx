@@ -43,6 +43,7 @@ export const CityLinksSection = () => {
                     key={city.slug}
                     href={`/taxi/${city.slug}`}
                     className="block text-sm text-foreground/80 hover:text-primary hover:translate-x-1 transition-all duration-200 flex items-center gap-2 group"
+                    title={`Taxi ${city.name} - telefónne čísla a informácie`}
                   >
                     <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {city.name}

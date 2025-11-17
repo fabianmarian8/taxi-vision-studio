@@ -16,24 +16,28 @@ export const FooterLegal = () => {
             <Link
               href="/ochrana-sukromia"
               className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors"
+              title="Ochrana súkromia a GDPR"
             >
               Ochrana súkromia
             </Link>
             <Link
               href="/cookies"
               className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors"
+              title="Informácie o cookies"
             >
               Cookies
             </Link>
             <Link
               href="/podmienky-pouzivania"
               className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors"
+              title="Podmienky používania služby"
             >
               Podmienky používania
             </Link>
             <Link
               href="/kontakt"
               className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors"
+              title="Kontaktný formulár"
             >
               Kontakt
             </Link>
