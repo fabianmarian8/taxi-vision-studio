@@ -13,14 +13,71 @@
 
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { GeometricLines } from '@/components/GeometricLines';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { MapPin, Phone, Globe, ArrowLeft } from 'lucide-react';
-import { getCityBySlug, createRegionSlug } from '@/data/cities';
+import { getCityBySlug, createRegionSlug, type CityData, type TaxiService } from '@/data/cities';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { truncateUrl } from '@/utils/urlUtils';
+
+/**
+ * Helper function to generate JSON-LD structured data for TaxiService
+ * Uses Schema.org TaxiService type for better local SEO and "near me" searches
+ */
+function getTaxiServiceJsonLd(
+  service: TaxiService,
+  city: CityData,
+  citySlug: string,
+  serviceSlug: string
+) {
+  const baseUrl = 'https://taxinearme.sk';
+  const serviceUrl = `${baseUrl}/taxi/${citySlug}/${serviceSlug}`;
+
+  // Base schema object
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'TaxiService',
+    'name': service.name,
+    'url': serviceUrl,
+    'areaServed': {
+      '@type': 'City',
+      'name': city.name,
+    },
+    'address': {
+      '@type': 'PostalAddress',
+      'addressLocality': city.name,
+      'addressRegion': city.region,
+      'addressCountry': 'SK',
+    },
+  };
+
+  // Add phone if available
+  if (service.phone) {
+    schema.telephone = service.phone;
+  }
+
+  // Add website if available
+  if (service.website) {
+    schema.sameAs = service.website;
+  }
+
+  // Add geo coordinates if available (using city's GPS coordinates)
+  if (city.latitude && city.longitude) {
+    schema.geo = {
+      '@type': 'GeoCoordinates',
+      'latitude': city.latitude,
+      'longitude': city.longitude,
+    };
+  }
+
+  // Add priceRange (generic estimate for taxi services in Slovakia)
+  schema.priceRange = '€€';
+
+  return schema;
+}
 
 // Generate metadata for SEO
 export async function generateMetadata({
@@ -110,9 +167,18 @@ export default async function TaxiServicePage({
 
   const regionSlug = createRegionSlug(city.region);
 
+  // Generate JSON-LD structured data for SEO
+  const taxiServiceJsonLd = getTaxiServiceJsonLd(service, city, citySlug, serviceSlug);
+
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <>
+      {/* TaxiService JSON-LD for local SEO and rich snippets */}
+      <Script id="taxi-service-jsonld" type="application/ld+json">
+        {JSON.stringify(taxiServiceJsonLd)}
+      </Script>
+
+      <div className="min-h-screen bg-background">
+        <Header />
 
       {/* Breadcrumbs */}
       <SEOBreadcrumbs
@@ -358,6 +424,7 @@ export default async function TaxiServicePage({
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }
