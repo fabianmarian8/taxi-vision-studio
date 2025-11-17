@@ -120,7 +120,6 @@ export const SearchPanel = () => {
       toast.error("Váš prehliadač nepodporuje geolokáciu");
       return;
     }
-
     setIsLoadingLocation(true);
 
     // Request user's location

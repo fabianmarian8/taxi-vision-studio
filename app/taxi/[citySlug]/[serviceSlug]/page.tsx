@@ -190,7 +190,7 @@ export default async function TaxiServicePage({
         {JSON.stringify(taxiServiceJsonLd)}
       </Script>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-white">
         <Header />
 
       {/* Breadcrumbs */}

@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 const TermsOfUse = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
 
       <div className="container mx-auto max-w-4xl px-8 py-24">
@@ -83,11 +83,33 @@ const TermsOfUse = () => {
                 <br />
                 DIČ: 1086305902
                 <br />
-                Sídlo: Gorkého 769/8, 962 31 Sliač, Slovenská republika
+                Miesto podnikania / sídlo: Gorkého 769/8, 962 31 Sliač, Slovenská republika
                 <br />
-                Email:{" "}
+                E-mail:{" "}
                 <a href="mailto:info@taxinearme.sk" className="underline">
                   info@taxinearme.sk
+                </a>
+                <br />
+                <br />
+                Zapísaný v živnostenskom registri: Okresný úrad Banská Bystrica
+                <br />
+                <br />
+                <strong>Orgán dozoru:</strong>
+                <br />
+                Slovenská obchodná inšpekcia (SOI)
+                <br />
+                Inšpektorát SOI pre Banskobystrický kraj
+                <br />
+                Dolná 46, 974 00 Banská Bystrica 1
+                <br />
+                E-mail:{" "}
+                <a href="mailto:bb@soi.sk" className="underline">
+                  bb@soi.sk
+                </a>
+                <br />
+                Web:{" "}
+                <a href="https://www.soi.sk" target="_blank" rel="noopener noreferrer" className="underline">
+                  www.soi.sk
                 </a>
               </p>
             </div>

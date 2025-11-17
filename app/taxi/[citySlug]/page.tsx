@@ -109,7 +109,7 @@ export default async function CityPage({ params }: { params: Promise<{ citySlug:
   const regionSlug = createRegionSlug(city.region);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
 
       {/* Breadcrumbs */}

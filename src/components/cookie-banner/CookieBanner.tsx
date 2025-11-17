@@ -77,15 +77,15 @@ export const CookieBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center p-4 pointer-events-none">
+    <div className="fixed inset-0 z-50 flex items-end justify-center p-3 pointer-events-none">
       {/* Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm pointer-events-auto"
         onClick={() => !showDetails && setIsVisible(false)}
       />
-      
+
       {/* Cookie Banner */}
-      <div className="relative w-full max-w-4xl bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden pointer-events-auto animate-slide-up border-2 md:border-4 border-black/20">
+      <div className="relative w-full max-w-2xl bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 rounded-xl md:rounded-2xl shadow-2xl overflow-hidden pointer-events-auto animate-slide-up border md:border-2 border-black/20">
         
         {/* Čierne kockované pozadie (taxameter style) */}
         <div className="absolute inset-0 opacity-5">
@@ -103,18 +103,18 @@ export const CookieBanner = () => {
         {/* Close button */}
         <button
           onClick={handleRejectAll}
-          className="absolute top-2 right-2 md:top-4 md:right-4 p-1.5 md:p-2 hover:bg-black/10 rounded-full transition-colors z-10"
+          className="absolute top-1.5 right-1.5 md:top-2.5 md:right-2.5 p-1 md:p-1.5 hover:bg-black/10 rounded-full transition-colors z-10"
           aria-label="Zavrieť"
         >
-          <X className="w-5 h-5 md:w-6 md:h-6 text-black" />
+          <X className="w-3 h-3 md:w-4 md:h-4 text-black" />
         </button>
 
-        <div className="relative p-4 md:p-8">
+        <div className="relative p-3 md:p-5">
           {/* Header s Cookie postavičkou */}
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-4 md:mb-6">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4 mb-3 md:mb-4">
             {/* Cookie Character - použije sa prvý obrázok */}
             <div className="flex-shrink-0">
-              <div className="w-20 h-20 md:w-32 md:h-32 relative animate-bounce-slow">
+              <div className="w-12 h-12 md:w-20 md:h-20 relative animate-bounce-slow">
                 <img
                   src="/cookie-character-1.png"
                   alt="Cookie maskot"
@@ -124,14 +124,14 @@ export const CookieBanner = () => {
             </div>
 
             <div className="flex-1 text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-2 md:gap-3 mb-2 md:mb-3">
-                <Cookie className="w-5 h-5 md:w-8 md:h-8 text-black" />
-                <h2 className="text-xl md:text-3xl font-bold text-black">
+              <div className="flex items-center justify-center md:justify-start gap-1.5 md:gap-2 mb-1.5 md:mb-2">
+                <Cookie className="w-3 h-3 md:w-5 md:h-5 text-black" />
+                <h2 className="text-sm md:text-xl font-bold text-black">
                   Ahoj! 🍪 Potrebujeme Tvoj Súhlas
                 </h2>
               </div>
 
-              <p className="text-black/80 text-sm md:text-lg leading-relaxed">
+              <p className="text-black/80 text-xs md:text-sm leading-relaxed">
                 Používame cookies aby sme ti mohli poskytnúť najlepšiu možnú skúsenosť na našom webe.
                 Pomáhajú nám pochopiť ako používaš náš web a zlepšovať naše služby.
               </p>
@@ -140,23 +140,23 @@ export const CookieBanner = () => {
 
           {/* Detailné nastavenia */}
           {showDetails && (
-            <div className="space-y-3 md:space-y-4 mb-4 md:mb-6 bg-black/10 rounded-xl md:rounded-2xl p-4 md:p-6 backdrop-blur-sm">
-              <h3 className="font-bold text-black text-lg md:text-xl mb-3 md:mb-4 flex items-center gap-2">
-                <Shield className="w-5 h-5 md:w-6 md:h-6" />
+            <div className="space-y-2 md:space-y-2.5 mb-3 md:mb-4 bg-black/10 rounded-lg md:rounded-xl p-2.5 md:p-4 backdrop-blur-sm">
+              <h3 className="font-bold text-black text-sm md:text-base mb-2 md:mb-2.5 flex items-center gap-1.5">
+                <Shield className="w-3 h-3 md:w-4 md:h-4" />
                 Nastavenia Cookies
               </h3>
 
               {/* Nevyhnutné cookies */}
-              <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-white/30 rounded-lg md:rounded-xl">
+              <div className="flex items-start gap-2 md:gap-2.5 p-2 md:p-2.5 bg-white/30 rounded-md md:rounded-lg">
                 <input
                   type="checkbox"
                   checked={preferences.necessary}
                   disabled
-                  className="mt-0.5 md:mt-1 w-4 h-4 md:w-5 md:h-5 accent-black"
+                  className="mt-0.5 w-3 h-3 md:w-3.5 md:h-3.5 accent-black"
                 />
                 <div className="flex-1">
-                  <h4 className="font-bold text-black text-sm md:text-base mb-1">Nevyhnutné Cookies (Vždy aktívne)</h4>
-                  <p className="text-black/70 text-xs md:text-sm">
+                  <h4 className="font-bold text-black text-xs md:text-sm mb-0.5">Nevyhnutné Cookies (Vždy aktívne)</h4>
+                  <p className="text-black/70 text-[10px] md:text-xs">
                     Tieto cookies sú nevyhnutné pre základné funkcie webu.
                     Bez nich by web nefungoval správne.
                   </p>
@@ -164,16 +164,16 @@ export const CookieBanner = () => {
               </div>
 
               {/* Funkčné cookies */}
-              <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-white/20 rounded-lg md:rounded-xl hover:bg-white/30 transition-colors">
+              <div className="flex items-start gap-2 md:gap-2.5 p-2 md:p-2.5 bg-white/20 rounded-md md:rounded-lg hover:bg-white/30 transition-colors">
                 <input
                   type="checkbox"
                   checked={preferences.functional}
                   onChange={() => togglePreference('functional')}
-                  className="mt-0.5 md:mt-1 w-4 h-4 md:w-5 md:h-5 accent-black cursor-pointer"
+                  className="mt-0.5 w-3 h-3 md:w-3.5 md:h-3.5 accent-black cursor-pointer"
                 />
                 <div className="flex-1">
-                  <h4 className="font-bold text-black text-sm md:text-base mb-1">Funkčné Cookies</h4>
-                  <p className="text-black/70 text-xs md:text-sm">
+                  <h4 className="font-bold text-black text-xs md:text-sm mb-0.5">Funkčné Cookies</h4>
+                  <p className="text-black/70 text-[10px] md:text-xs">
                     Umožňujú pokročilé funkcie ako je zapamätanie si tvojich preferencií
                     a nastavení.
                   </p>
@@ -181,20 +181,20 @@ export const CookieBanner = () => {
               </div>
 
               {/* Analytické cookies */}
-              <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-white/20 rounded-lg md:rounded-xl hover:bg-white/30 transition-colors">
+              <div className="flex items-start gap-2 md:gap-2.5 p-2 md:p-2.5 bg-white/20 rounded-md md:rounded-lg hover:bg-white/30 transition-colors">
                 <input
                   type="checkbox"
                   checked={preferences.analytics}
                   onChange={() => togglePreference('analytics')}
-                  className="mt-0.5 md:mt-1 w-4 h-4 md:w-5 md:h-5 accent-black cursor-pointer"
+                  className="mt-0.5 w-3 h-3 md:w-3.5 md:h-3.5 accent-black cursor-pointer"
                 />
-                <div className="flex-1 flex items-start gap-2">
+                <div className="flex-1 flex items-start gap-1.5">
                   <div className="flex-1">
-                    <h4 className="font-bold text-black text-sm md:text-base mb-1 flex items-center gap-2">
+                    <h4 className="font-bold text-black text-xs md:text-sm mb-0.5 flex items-center gap-1.5">
                       Analytické Cookies
-                      <BarChart3 className="w-3 h-3 md:w-4 md:h-4" />
+                      <BarChart3 className="w-2.5 h-2.5 md:w-3 md:h-3" />
                     </h4>
-                    <p className="text-black/70 text-xs md:text-sm">
+                    <p className="text-black/70 text-[10px] md:text-xs">
                       Pomáhajú nám pochopiť ako návštevníci používajú web.
                       Zbierame anonymné štatistiky.
                     </p>
@@ -203,16 +203,16 @@ export const CookieBanner = () => {
               </div>
 
               {/* Marketingové cookies */}
-              <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-white/20 rounded-lg md:rounded-xl hover:bg-white/30 transition-colors">
+              <div className="flex items-start gap-2 md:gap-2.5 p-2 md:p-2.5 bg-white/20 rounded-md md:rounded-lg hover:bg-white/30 transition-colors">
                 <input
                   type="checkbox"
                   checked={preferences.marketing}
                   onChange={() => togglePreference('marketing')}
-                  className="mt-0.5 md:mt-1 w-4 h-4 md:w-5 md:h-5 accent-black cursor-pointer"
+                  className="mt-0.5 w-3 h-3 md:w-3.5 md:h-3.5 accent-black cursor-pointer"
                 />
                 <div className="flex-1">
-                  <h4 className="font-bold text-black text-sm md:text-base mb-1">Marketingové Cookies</h4>
-                  <p className="text-black/70 text-xs md:text-sm">
+                  <h4 className="font-bold text-black text-xs md:text-sm mb-0.5">Marketingové Cookies</h4>
+                  <p className="text-black/70 text-[10px] md:text-xs">
                     Používajú sa na zobrazovanie relevantných reklám a meranie
                     efektivity reklamných kampaní.
                   </p>
@@ -222,12 +222,12 @@ export const CookieBanner = () => {
           )}
 
           {/* Action buttons */}
-          <div className="flex flex-wrap gap-2 md:gap-3">
+          <div className="flex flex-wrap gap-1.5 md:gap-2">
             <button
               onClick={handleAcceptAll}
-              className="flex-1 min-w-[140px] md:min-w-[200px] px-4 md:px-6 py-3 md:py-4 bg-black text-yellow-400 font-bold rounded-lg md:rounded-xl
+              className="flex-1 min-w-[90px] md:min-w-[130px] px-2.5 md:px-4 py-2 md:py-2.5 bg-black text-yellow-400 font-bold rounded-md md:rounded-lg
                        hover:bg-black/90 transition-all shadow-lg hover:shadow-xl
-                       hover:scale-105 active:scale-95 text-sm md:text-lg"
+                       hover:scale-105 active:scale-95 text-xs md:text-sm"
             >
               ✅ Prijať Všetko
             </button>
@@ -235,18 +235,18 @@ export const CookieBanner = () => {
             {showDetails ? (
               <button
                 onClick={handleAcceptSelected}
-                className="flex-1 min-w-[140px] md:min-w-[200px] px-4 md:px-6 py-3 md:py-4 bg-white/90 text-black font-bold rounded-lg md:rounded-xl
+                className="flex-1 min-w-[90px] md:min-w-[130px] px-2.5 md:px-4 py-2 md:py-2.5 bg-white/90 text-black font-bold rounded-md md:rounded-lg
                          hover:bg-white transition-all shadow-lg hover:shadow-xl
-                         hover:scale-105 active:scale-95 text-sm md:text-lg"
+                         hover:scale-105 active:scale-95 text-xs md:text-sm"
               >
                 💾 Uložiť Výber
               </button>
             ) : (
               <button
                 onClick={() => setShowDetails(true)}
-                className="flex-1 min-w-[140px] md:min-w-[200px] px-4 md:px-6 py-3 md:py-4 bg-white/90 text-black font-bold rounded-lg md:rounded-xl
+                className="flex-1 min-w-[90px] md:min-w-[130px] px-2.5 md:px-4 py-2 md:py-2.5 bg-white/90 text-black font-bold rounded-md md:rounded-lg
                          hover:bg-white transition-all shadow-lg hover:shadow-xl
-                         hover:scale-105 active:scale-95 text-sm md:text-lg"
+                         hover:scale-105 active:scale-95 text-xs md:text-sm"
               >
                 ⚙️ Prispôsobiť
               </button>
@@ -254,15 +254,15 @@ export const CookieBanner = () => {
 
             <button
               onClick={handleRejectAll}
-              className="w-full md:w-auto px-4 md:px-6 py-2 md:py-4 text-black font-semibold hover:text-black/70
-                       transition-colors underline text-sm md:text-lg"
+              className="w-full md:w-auto px-2.5 md:px-4 py-1.5 md:py-2.5 text-black font-semibold hover:text-black/70
+                       transition-colors underline text-xs md:text-sm"
             >
               Odmietnuť Všetko
             </button>
           </div>
 
           {/* Footer info */}
-          <p className="mt-4 md:mt-6 text-black/60 text-xs md:text-sm text-center">
+          <p className="mt-2.5 md:mt-4 text-black/60 text-[10px] md:text-xs text-center">
             Viac informácií o cookies nájdeš v našich{' '}
             <a href="/ochrana-sukromia" className="underline hover:text-black">
               zásadách ochrany osobných údajov

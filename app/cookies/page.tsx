@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 const Cookies = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
 
       <div className="container mx-auto max-w-4xl px-8 py-24">
@@ -89,13 +89,39 @@ const Cookies = () => {
             </p>
             <div className="bg-card p-6 rounded-lg border-2 border-foreground/10">
               <p className="text-foreground/80 leading-relaxed">
-                <strong>Marián Fabian</strong>, IČO: 47 340 860
+                <strong>Marián Fabian</strong>
                 <br />
-                Sídlo: Gorkého 769/8, 962 31 Sliač
+                IČO: 47 340 860
                 <br />
-                Email:{" "}
+                DIČ: 1086305902
+                <br />
+                Miesto podnikania / sídlo: Gorkého 769/8, 962 31 Sliač, Slovenská republika
+                <br />
+                E-mail:{" "}
                 <a href="mailto:info@taxinearme.sk" className="underline">
                   info@taxinearme.sk
+                </a>
+                <br />
+                <br />
+                Zapísaný v živnostenskom registri: Okresný úrad Banská Bystrica
+                <br />
+                <br />
+                <strong>Orgán dozoru:</strong>
+                <br />
+                Slovenská obchodná inšpekcia (SOI)
+                <br />
+                Inšpektorát SOI pre Banskobystrický kraj
+                <br />
+                Dolná 46, 974 00 Banská Bystrica 1
+                <br />
+                E-mail:{" "}
+                <a href="mailto:bb@soi.sk" className="underline">
+                  bb@soi.sk
+                </a>
+                <br />
+                Web:{" "}
+                <a href="https://www.soi.sk" target="_blank" rel="noopener noreferrer" className="underline">
+                  www.soi.sk
                 </a>
               </p>
             </div>
