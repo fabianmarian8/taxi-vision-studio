@@ -143,13 +143,18 @@ export async function POST(request: NextRequest) {
     const resend = getResendClient();
 
     // V free tier Resend môžeš posielať emaily iba na verifikované adresy
-    // Skontroluj, či info@taxinearme.sk je pridaná v Resend Dashboard ako verified recipient
+    // Používame fabianmarian8@gmail.com, ktorý je automaticky verifikovaný
+    // Pre info@taxinearme.sk by bolo potrebné verifikovať doménu taxinearme.sk
     console.log('[Contact API] Sending email via Resend...');
+
+    // Určíme cieľový email - v produkcii použijeme verifikovaný email
+    const recipientEmail = process.env.CONTACT_EMAIL || 'fabianmarian8@gmail.com';
+
     const { data, error: resendError } = await resend.emails.send({
       // Používame Resend testovaciu doménu (resend.dev) pre free tier
       // Pre vlastnú doménu (taxinearme.sk) je potrebné najprv verifikovať doménu v Resend
       from: 'Taxi NearMe <onboarding@resend.dev>',
-      to: ['info@taxinearme.sk'],
+      to: [recipientEmail],
       replyTo: email, // Umožní priamu odpoveď na email odosielateľa
       subject: `Nový príspevok z Taxi NearMe - ${city} - ${taxiName}`,
       html: ContactFormEmail({ name, email, city, taxiName, message }),
