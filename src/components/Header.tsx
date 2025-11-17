@@ -75,11 +75,11 @@ export const Header = () => {
 
           <Button
             onClick={() => setIsContactModalOpen(true)}
-            className="rounded-full px-3 py-2 md:px-6 lg:px-8 md:py-3 lg:py-4 shadow-3d-sm hover:shadow-3d-md transition-all font-bold hover:scale-105"
+            className="rounded-full px-2 py-2 md:px-4 lg:px-5 md:py-3 lg:py-4 shadow-3d-sm hover:shadow-3d-md transition-all font-bold hover:scale-105"
           >
             <div className="flex items-center gap-1.5 md:gap-2 lg:gap-3">
               <Plus className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
-              <div className="flex flex-col items-start -space-y-0.5">
+              <div className="flex flex-col items-start -space-y-1.5">
                 <span className="text-xs md:text-sm lg:text-base font-bold leading-none">Niečo tu chýba?</span>
                 <span className="text-[10px] md:text-xs font-normal leading-none">+Pridanie, Oprava</span>
               </div>

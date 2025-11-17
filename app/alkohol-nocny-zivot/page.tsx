@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { GeometricLines } from "@/components/GeometricLines";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, AlertCircle, Shield } from "lucide-react";
+import { Calendar, AlertCircle, Shield, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
@@ -45,40 +45,33 @@ export const metadata: Metadata = {
 
 export default function AlkoholNocnyZivotPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
       <SEOBreadcrumbs items={[
         { label: 'Alkohol a nočný život' }
       ]} />
 
-      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
+      <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative hero-3d-bg overflow-hidden">
         <GeometricLines variant="hero" count={12} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Späť na hlavnú stránku
-          </Link>
 
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-              <AlertCircle className="h-4 w-4 inline mr-1" />
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-1.5 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-semibold">
+              <AlertCircle className="h-2.5 w-2.5 inline mr-1" />
               Bezpečnosť
             </span>
-            <div className="flex items-center gap-2 text-sm text-foreground/60">
-              <Calendar className="h-4 w-4" />
+            <div className="flex items-center gap-1 text-[10px] text-foreground/60">
+              <Calendar className="h-2.5 w-2.5" />
               15. január 2025
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-foreground leading-tight">
             Alkohol, nočný život a taxík
           </h1>
 
-          <p className="text-xl text-foreground/80 mb-6">
+          <p className="text-xl text-foreground/80 mb-3">
             Hranica medzi službou a záchrannou misiou. Kedy môže vodič odmietnuť jazdu a ako sa správať v noci.
           </p>
 
@@ -88,9 +81,9 @@ export default function AlkoholNocnyZivotPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 px-4 md:px-8 bg-white">
+      <section className="py-6 md:py-8 px-3 md:px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
-          <article className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
+          <article className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
 
             <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-8">
               <p className="text-lg font-semibold text-gray-900">
@@ -98,23 +91,23 @@ export default function AlkoholNocnyZivotPage() {
               </p>
             </div>
 
-            <p className="text-lg leading-relaxed">
+            <p className="text-sm leading-relaxed">
               Odvoz opitých zákazníkov je súčasť práce, ale kde končí služba a začína osobné riziko? Vodič taxi nie je sanitka ani psychológ. Predsa sa často nachádza v situáciách, ktoré vyžadujú rozhodnutie: Vziať problémového zákazníka, alebo radšej odmietnuť?
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <Shield className="h-8 w-8 inline mr-2 text-primary" />
               Čísla, ktoré hovoria jasnou rečou
             </h2>
 
-            <div className="bg-gray-900 text-white p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-6">Globálne štatistiky</h3>
+            <div className="bg-gray-900 text-white p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Globálne štatistiky</h3>
 
-              <p className="mb-4">
+              <p className="mb-3">
                 Práca taxikára patrí medzi najnebezpečnejšie povolania. V USA sú vodiči taxi 30-60× viac ohrození násilím a vraždou než priemer pracujúcich.
               </p>
 
-              <div className="grid md:grid-cols-2 gap-4 my-6">
+              <div className="grid md:grid-cols-2 gap-4 my-4">
                 <div className="bg-red-900/50 p-4 rounded-lg">
                   <p className="text-3xl font-bold mb-2">82%</p>
                   <p className="text-sm">fatálnych útokov sa stáva v noci</p>
@@ -134,18 +127,18 @@ export default function AlkoholNocnyZivotPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Právny rámec: Kedy môže vodič odmietnuť jazdu?</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Právny rámec: Kedy môže vodič odmietnuť jazdu?</h2>
 
-            <div className="bg-blue-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-4">Slovenský kontext</h3>
+            <div className="bg-blue-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Slovenský kontext</h3>
               <p>
                 Na Slovensku platí pre vodičov úplná nulová tolerancia alkoholu (0,0% BAC), pričom profesionálni vodiči vrátane taxikárov musia dodržiavať tento limit.
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Kedy je odmietnutie jazdy LEGITÍMNE</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Kedy je odmietnutie jazdy LEGITÍMNE</h3>
 
-            <div className="space-y-6 my-8">
+            <div className="space-y-6 my-4">
               <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="font-bold text-lg mb-3">1. Bezpečnostné dôvody</h4>
                 <ul className="space-y-1">
@@ -168,14 +161,14 @@ export default function AlkoholNocnyZivotPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Praktické scenáre: Kedy povedať NIE</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Praktické scenáre: Kedy povedať NIE</h2>
 
-            <div className="space-y-8 my-8">
+            <div className="space-y-8 my-4">
               <div className="border-l-4 border-yellow-400 pl-6">
                 <h3 className="text-xl font-bold mb-3">Scenár 1: Viditeľne opitý pasažier</h3>
 
                 <p className="font-semibold mb-2">Signály:</p>
-                <ul className="space-y-1 mb-4">
+                <ul className="space-y-1 mb-3">
                   <li>• Nezrozumiteľná reč</li>
                   <li>• Neistá chôdza</li>
                   <li>• Hlasnosť</li>
@@ -194,7 +187,7 @@ export default function AlkoholNocnyZivotPage() {
               <div className="border-l-4 border-orange-400 pl-6">
                 <h3 className="text-xl font-bold mb-3">Scenár 2: Skupina mladých opitých pasažierov</h3>
 
-                <p className="bg-red-100 p-3 rounded mb-4">
+                <p className="bg-red-100 p-3 rounded mb-3">
                   <strong>Riziko:</strong> 80% útokov prichádza zo sedadla priamo za vodičom.
                 </p>
 
@@ -209,12 +202,12 @@ export default function AlkoholNocnyZivotPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Bezpečnostné tipy pre vodičov</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Bezpečnostné tipy pre vodičov</h2>
 
-            <div className="bg-blue-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-6">Pred jazdou</h3>
+            <div className="bg-blue-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Pred jazdou</h3>
 
-              <p className="mb-4">
+              <p className="mb-3">
                 <strong>Nadviazanie očného kontaktu je kľúčové.</strong> Ukáž pasažierovi: "Vidím ťa, ty vidíš mňa, dokážem ťa identifikovať."
               </p>
 
@@ -227,10 +220,10 @@ export default function AlkoholNocnyZivotPage() {
               </ul>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Záver: Tvoja bezpečnosť má prednosť</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Záver: Tvoja bezpečnosť má prednosť</h2>
 
-            <div className="bg-gray-900 text-white p-8 rounded-lg my-8">
-              <p className="text-xl font-bold mb-4">Červená čiara</p>
+            <div className="bg-gray-900 text-white p-8 rounded-lg my-4">
+              <p className="text-xl font-bold mb-3">Červená čiara</p>
               <p className="text-lg">
                 Tvoja bezpečnosť má VŽDY prednosť pred povinnosťou starostlivosti.
               </p>
@@ -245,15 +238,15 @@ export default function AlkoholNocnyZivotPage() {
           />
 
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>
-            <p className="text-center text-gray-700 mb-6">
+            <h3 className="text-2xl font-bold mb-3 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>
+            <p className="text-center text-gray-700 mb-3">
               Prečítajte si všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025.
             </p>
             <div className="flex justify-center">
               <Link href="/komplexny-sprievodca-taxi">
                 <Button size="lg" className="gap-2">
                   Zobraziť sprievodcu
-                  <ArrowLeft className="h-4 w-4 rotate-180" />
+                  <ArrowLeft className="h-2.5 w-2.5 rotate-180" />
                 </Button>
               </Link>
             </div>

@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { GeometricLines } from "@/components/GeometricLines";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, BookOpen, MapPin, CreditCard, Star, Shield, Smartphone } from "lucide-react";
+import { Calendar, BookOpen, MapPin, CreditCard, Star, Shield, Smartphone , ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
@@ -45,41 +45,34 @@ export const metadata: Metadata = {
 
 export default function KomplexnySprievodcaPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
       <SEOBreadcrumbs items={[
         { label: 'Komplexný sprievodca taxi' }
       ]} />
 
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
+      <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative hero-3d-bg overflow-hidden">
         <GeometricLines variant="hero" count={12} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Späť na hlavnú stránku
-          </Link>
 
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-              <BookOpen className="h-4 w-4 inline mr-1" />
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-1.5 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-semibold">
+              <BookOpen className="h-2.5 w-2.5 inline mr-1" />
               Sprievodca
             </span>
-            <div className="flex items-center gap-2 text-sm text-foreground/60">
-              <Calendar className="h-4 w-4" />
+            <div className="flex items-center gap-1 text-[10px] text-foreground/60">
+              <Calendar className="h-2.5 w-2.5" />
               15. január 2025
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-foreground leading-tight">
             Komplexný sprievodca taxislužbami na Slovensku
           </h1>
 
-          <p className="text-xl text-foreground/80 mb-6">
+          <p className="text-xl text-foreground/80 mb-3">
             Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025
           </p>
 
@@ -90,9 +83,9 @@ export default function KomplexnySprievodcaPage() {
       </section>
 
       {/* Article Content with WHITE BACKGROUND */}
-      <section className="py-12 md:py-16 px-4 md:px-8 bg-white">
+      <section className="py-6 md:py-8 px-3 md:px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
-          <article className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
+          <article className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
 
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
               <p className="text-lg font-semibold text-gray-900">
@@ -100,17 +93,17 @@ export default function KomplexnySprievodcaPage() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <MapPin className="h-8 w-8 inline mr-2 text-primary" />
               1. Ako vybrať správnu taxislužbu
             </h2>
 
-            <p className="text-lg leading-relaxed">
+            <p className="text-sm leading-relaxed">
               Na Slovensku pôsobí viac ako <strong>1 200 taxislužieb</strong> vo <strong>viac ako 150 mestách</strong>. Výber správnej služby môže byť náročný, preto sme pripravili praktický návod.
             </p>
 
-            <div className="bg-green-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-4">Kľúčové kritériá pri výbere</h3>
+            <div className="bg-green-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Kľúčové kritériá pri výbere</h3>
 
               <div className="space-y-6">
                 <div>
@@ -140,7 +133,7 @@ export default function KomplexnySprievodcaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <CreditCard className="h-8 w-8 inline mr-2 text-primary" />
               2. Ceny taxislužieb na Slovensku
             </h2>
@@ -149,7 +142,7 @@ export default function KomplexnySprievodcaPage() {
               Ceny taxi sa na Slovensku líšia podľa mesta a konkrétnej služby. Pripravili sme pre vás <strong>komplexný cenový prieskum</strong>, ktorý porovnáva ceny v 30 slovenských mestách.
             </p>
 
-            <div className="bg-yellow-50 p-6 rounded-lg my-6">
+            <div className="bg-yellow-50 p-6 rounded-lg my-4">
               <h3 className="text-xl font-bold mb-3">Priemerné ceny (2025)</h3>
               <ul className="space-y-2">
                 <li><strong>Nástupná sadzba:</strong> 2,00 € - 3,50 €</li>
@@ -165,12 +158,12 @@ export default function KomplexnySprievodcaPage() {
               </Link>
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <Smartphone className="h-8 w-8 inline mr-2 text-primary" />
               3. Ako objednať taxi
             </h2>
 
-            <div className="space-y-6 my-8">
+            <div className="space-y-6 my-4">
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold mb-3">Telefonicky</h3>
                 <p>Najrýchlejší spôsob. Zavolajte na dispečing, uveďte adresu vyzdvihnutia a cieľ. Dispečer vám potvrdí čas príchodu.</p>
@@ -193,13 +186,13 @@ export default function KomplexnySprievodcaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <Shield className="h-8 w-8 inline mr-2 text-primary" />
               4. Vaše práva ako zákazníka
             </h2>
 
-            <div className="bg-blue-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-4">Máte právo na:</h3>
+            <div className="bg-blue-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Máte právo na:</h3>
 
               <ul className="space-y-3">
                 <li><strong>✓ Bezpečnú prepravu</strong> - Vodič musí dodržiavať dopravné predpisy</li>
@@ -210,8 +203,8 @@ export default function KomplexnySprievodcaPage() {
               </ul>
             </div>
 
-            <div className="bg-red-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-4">Vodič môže odmietnuť jazdu, ak:</h3>
+            <div className="bg-red-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Vodič môže odmietnuť jazdu, ak:</h3>
 
               <ul className="space-y-3">
                 <li>• Ste agresívny alebo pod vplyvom alkoholu/drog</li>
@@ -227,7 +220,7 @@ export default function KomplexnySprievodcaPage() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <Star className="h-8 w-8 inline mr-2 text-primary" />
               5. Ako hodnotiť taxislužbu
             </h2>
@@ -236,7 +229,7 @@ export default function KomplexnySprievodcaPage() {
               Hodnotenia sú dôležité pre ostatných zákazníkov, ale aj pre vodičov. <strong>Férové hodnotenie</strong> pomáha zlepšovať kvalitu služieb.
             </p>
 
-            <div className="bg-yellow-50 p-6 rounded-lg my-6">
+            <div className="bg-yellow-50 p-6 rounded-lg my-4">
               <h3 className="text-xl font-bold mb-3">Kedy dať nízke hodnotenie?</h3>
               <ul className="space-y-2">
                 <li>• Agresívna jazda, porušovanie predpisov</li>
@@ -247,7 +240,7 @@ export default function KomplexnySprievodcaPage() {
               </ul>
             </div>
 
-            <div className="bg-green-50 p-6 rounded-lg my-6">
+            <div className="bg-green-50 p-6 rounded-lg my-4">
               <h3 className="text-xl font-bold mb-3">Kedy dať vysoké hodnotenie?</h3>
               <ul className="space-y-2">
                 <li>• Bezpečná, plynulá jazda</li>
@@ -264,9 +257,9 @@ export default function KomplexnySprievodcaPage() {
               </Link>
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">6. Špecializované služby</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">6. Špecializované služby</h2>
 
-            <div className="grid md:grid-cols-2 gap-6 my-8">
+            <div className="grid md:grid-cols-2 gap-6 my-4">
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-bold mb-3">Letiskové transfery</h3>
                 <p>Mnohé taxislužby ponúkajú špeciálne ceny na letisko. Výhodné pri rezervácii vopred.</p>
@@ -298,10 +291,10 @@ export default function KomplexnySprievodcaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">7. Bezpečnostné tipy</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">7. Bezpečnostné tipy</h2>
 
-            <div className="bg-red-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-4">Pre zákazníkov</h3>
+            <div className="bg-red-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Pre zákazníkov</h3>
 
               <ul className="space-y-3">
                 <li><strong>✓ Overujte identitu vodiča</strong> - Skontrolujte poznávaciu značku a meno vodiča</li>
@@ -312,8 +305,8 @@ export default function KomplexnySprievodcaPage() {
               </ul>
             </div>
 
-            <div className="bg-blue-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-4">Pre vodičov</h3>
+            <div className="bg-blue-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Pre vodičov</h3>
 
               <ul className="space-y-3">
                 <li><strong>✓ Nadviažte očný kontakt</strong> - Identifikujte pasažiera</li>
@@ -329,14 +322,14 @@ export default function KomplexnySprievodcaPage() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">8. Taxislužby podľa miest</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">8. Taxislužby podľa miest</h2>
 
             <p>
               Na Slovensku pôsobí viac ako 1 200 taxislužieb. Pripravili sme pre vás detailné prehľady pre každé mesto s overenými kontaktmi a cenníkmi.
             </p>
 
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-8 my-8">
-              <h3 className="text-2xl font-bold mb-6 text-center">Najväčšie mestá</h3>
+            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-8 my-4">
+              <h3 className="text-2xl font-bold mb-3 text-center">Najväčšie mestá</h3>
 
               <div className="grid md:grid-cols-3 gap-4">
                 <Link href="/taxi/bratislava" className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow">
@@ -385,9 +378,9 @@ export default function KomplexnySprievodcaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">9. Často kladené otázky</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">9. Často kladené otázky</h2>
 
-            <div className="space-y-6 my-8">
+            <div className="space-y-6 my-4">
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="font-bold text-lg mb-2">Koľko stojí taxi na Slovensku?</h3>
                 <p>Priemerná 5km jazda stojí 6-9,50 €. Ceny sa líšia podľa mesta a konkrétnej služby. <Link href="/prieskum-cien-taxisluzieb-slovensko-2025" className="text-primary hover:underline">Pozrite si detailný cenový prieskum</Link>.</p>
@@ -419,16 +412,16 @@ export default function KomplexnySprievodcaPage() {
               </div>
             </div>
 
-            <hr className="my-12 border-gray-300" />
+            <hr className="my-6 border-gray-300" />
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Záver</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Záver</h2>
 
             <p className="text-lg">
               Taxislužby na Slovensku prechádzajú modernizáciou. Stále viac služieb ponúka aplikácie, bezhotovostné platby a ekologické vozidlá. <strong>Informovaný zákazník</strong> je spokojný zákazník - preto sme vytvorili tento komplexný sprievodca.
             </p>
 
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl shadow-lg p-8 my-12 text-center">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Súvisiace články</h3>
+            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl shadow-lg p-8 my-6 text-center">
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Súvisiace články</h3>
               <div className="grid md:grid-cols-3 gap-4 mt-6">
                 <Link href="/prieskum-cien-taxisluzieb-slovensko-2025">
                   <Button variant="outline" className="w-full">
@@ -457,17 +450,17 @@ export default function KomplexnySprievodcaPage() {
 
           {/* CTA Section */}
           <div className="mt-12 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl shadow-lg text-center">
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">
+            <h3 className="text-2xl font-bold mb-3 text-gray-900">
               <MapPin className="h-6 w-6 inline mr-2" />
               Nájdite taxi vo vašom meste
             </h3>
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 mb-3">
               Viac ako 1 200 overených taxislužieb vo viac ako 150 slovenských mestách.
             </p>
             <Link href="/">
               <Button size="lg" className="gap-2">
                 Vyhľadať taxi
-                <ArrowLeft className="h-4 w-4 rotate-180" />
+                <ArrowLeft className="h-2.5 w-2.5 rotate-180" />
               </Button>
             </Link>
           </div>

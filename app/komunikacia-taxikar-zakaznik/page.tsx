@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { GeometricLines } from "@/components/GeometricLines";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, MessageCircle, AlertTriangle, CheckCircle } from "lucide-react";
+import { Calendar, MessageCircle, AlertTriangle, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
@@ -45,40 +45,33 @@ export const metadata: Metadata = {
 
 export default function KomunikaciaPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
       <SEOBreadcrumbs items={[
         { label: 'Komunikácia v taxi' }
       ]} />
 
-      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
+      <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative hero-3d-bg overflow-hidden">
         <GeometricLines variant="hero" count={12} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Späť na hlavnú stránku
-          </Link>
 
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-              <MessageCircle className="h-4 w-4 inline mr-1" />
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-1.5 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-semibold">
+              <MessageCircle className="h-2.5 w-2.5 inline mr-1" />
               Komunikácia
             </span>
-            <div className="flex items-center gap-2 text-sm text-foreground/60">
-              <Calendar className="h-4 w-4" />
+            <div className="flex items-center gap-1 text-[10px] text-foreground/60">
+              <Calendar className="h-2.5 w-2.5" />
               15. január 2025
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-foreground leading-tight">
             Ako vyzerá dobrá komunikácia medzi taxikárom a zákazníkom (a ako vyzerá peklo)
           </h1>
 
-          <p className="text-xl text-foreground/80 mb-6">
+          <p className="text-xl text-foreground/80 mb-3">
             Jasné pravidlá, slušnosť a hranice, ktoré by mali poznať obe strany.
           </p>
 
@@ -88,9 +81,9 @@ export default function KomunikaciaPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 px-4 md:px-8 bg-white">
+      <section className="py-6 md:py-8 px-3 md:px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
-          <article className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
+          <article className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
 
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
               <p className="text-lg font-semibold text-gray-900 mb-0">
@@ -98,21 +91,21 @@ export default function KomunikaciaPage() {
               </p>
             </div>
 
-            <p className="text-lg leading-relaxed">
+            <p className="text-sm leading-relaxed">
               Dobrá komunikácia medzi vodičom a zákazníkom môže premeniť obyčajnú jazdu na profesionálny zážitok, zatiaľ čo zlá komunikácia dokáže spojiť 10-minútovú cestu na nekonečnú tortúru. V tomto článku rozoberieme zlaté pravidlá, červené vlajky a právny rámec, ktorý by mal poznať každý, kto sadne do taxíka – či už za volant, alebo na zadné sedadlo.
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Zlaté pravidlá dobrej komunikácie</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Zlaté pravidlá dobrej komunikácie</h2>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Čo funguje: 5 pilierov úspešnej jazdy</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Čo funguje: 5 pilierov úspešnej jazdy</h3>
 
-            <div className="bg-green-50 p-8 rounded-lg my-8">
-              <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <div className="bg-green-50 p-8 rounded-lg my-4">
+              <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-green-600" />
                 1. Jasné zadanie od začiatku
               </h4>
 
-              <p className="mb-4">
+              <p className="mb-3">
                 <strong>Zákazník:</strong> Hneď po nastúpení jasne povedz cieľ. Ak máš preferovanú trasu, spomeň to ihneď, nie po 5 minútach jazdy. Podľa britského etiketu inštitútu Debrett's by si mal cieľ oznámiť ešte pred nastúpením do vozidla.
               </p>
 
@@ -121,13 +114,13 @@ export default function KomunikaciaPage() {
               </p>
             </div>
 
-            <div className="bg-purple-50 p-8 rounded-lg my-8">
-              <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <div className="bg-purple-50 p-8 rounded-lg my-4">
+              <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-purple-600" />
                 2. Rešpekt voči priestoru druhého
               </h4>
 
-              <p className="mb-4">
+              <p className="mb-3">
                 Kvalitné taxislužby trénujú vodičov rozpoznávať signály – ak pasažier je zahľadený do telefónu alebo pozerá von oknom, je to jasný odkaz pre ticho.
               </p>
 
@@ -136,13 +129,13 @@ export default function KomunikaciaPage() {
               </p>
             </div>
 
-            <div className="bg-yellow-50 p-8 rounded-lg my-8">
-              <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <div className="bg-yellow-50 p-8 rounded-lg my-4">
+              <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-yellow-600" />
                 3. Profesionalita = peniaze
               </h4>
 
-              <p className="mb-4">
+              <p className="mb-3">
                 Vodič zo Slovenska pracujúci pre Bolt to vyjadruje jasne: "Človek, ktorý robí pre ľudí, si musí uvedomiť, že jeho správanie závisí od toho, či dostane tringelt, dobré hodnotenie a či bude mať aj naďalej zákazníkov".
               </p>
 
@@ -151,8 +144,8 @@ export default function KomunikaciaPage() {
               </p>
             </div>
 
-            <div className="bg-red-50 p-8 rounded-lg my-8">
-              <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <div className="bg-red-50 p-8 rounded-lg my-4">
+              <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-red-600" />
                 4. Bezpečnosť na prvom mieste
               </h4>
@@ -162,8 +155,8 @@ export default function KomunikaciaPage() {
               </p>
             </div>
 
-            <div className="bg-blue-50 p-8 rounded-lg my-8">
-              <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+            <div className="bg-blue-50 p-8 rounded-lg my-4">
+              <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-blue-600" />
                 5. Transparentnosť a férová hra
               </h4>
@@ -173,14 +166,14 @@ export default function KomunikaciaPage() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6 flex items-center gap-3">
+            <h2 className="text-3xl font-bold mt-12 mb-3 flex items-center gap-3">
               <AlertTriangle className="h-8 w-8 text-red-600" />
               Červené vlajky: Kedy to ide do pekla
             </h2>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Neakceptovateľné správanie ZÁKAZNÍKA</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Neakceptovateľné správanie ZÁKAZNÍKA</h3>
 
-            <div className="bg-red-100 border-l-4 border-red-600 p-6 mb-6">
+            <div className="bg-red-100 border-l-4 border-red-600 p-6 mb-3">
               <h4 className="text-lg font-bold mb-3">Tvrdá hranica (vodič má právo ukončiť jazdu):</h4>
 
               <p className="mb-3">Podľa slovenského zákona o cestnej doprave môže vodič odmietnuť prepravu alebo ju ukončiť, ak:</p>
@@ -192,7 +185,7 @@ export default function KomunikaciaPage() {
               </ul>
             </div>
 
-            <div className="bg-orange-50 p-6 rounded-lg my-6">
+            <div className="bg-orange-50 p-6 rounded-lg my-4">
               <h4 className="text-lg font-bold mb-3">Reálne problémy z praxe:</h4>
 
               <p className="mb-3">
@@ -205,9 +198,9 @@ export default function KomunikaciaPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Neakceptovateľné správanie VODIČA</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Neakceptovateľné správanie VODIČA</h3>
 
-            <div className="bg-red-100 border-l-4 border-red-600 p-6 mb-6">
+            <div className="bg-red-100 border-l-4 border-red-600 p-6 mb-3">
               <h4 className="text-lg font-bold mb-3">Okamžité dôvody na sťažnosť:</h4>
 
               <ul className="list-disc pl-6 space-y-2">
@@ -218,7 +211,7 @@ export default function KomunikaciaPage() {
               </ul>
             </div>
 
-            <div className="bg-yellow-50 p-6 rounded-lg my-6">
+            <div className="bg-yellow-50 p-6 rounded-lg my-4">
               <h4 className="text-lg font-bold mb-3">Varovné signály podľa expertov:</h4>
 
               <p className="mb-0">
@@ -226,11 +219,11 @@ export default function KomunikaciaPage() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Slovenský právny rámec: Čo musíš vedieť</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Slovenský právny rámec: Čo musíš vedieť</h2>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Práva a povinnosti na Slovensku</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Práva a povinnosti na Slovensku</h3>
 
-            <div className="grid md:grid-cols-2 gap-6 my-8">
+            <div className="grid md:grid-cols-2 gap-6 my-4">
               <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-lg font-bold mb-3 text-green-800">Vodič má povinnosť:</h4>
                 <ul className="list-disc pl-6 space-y-2 text-sm">
@@ -250,7 +243,7 @@ export default function KomunikaciaPage() {
               </div>
             </div>
 
-            <div className="bg-purple-50 p-6 rounded-lg my-6">
+            <div className="bg-purple-50 p-6 rounded-lg my-4">
               <h4 className="text-lg font-bold mb-3">Zákazník má právo:</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Vedieť cenu vopred (od roku 2019 nie je taxameter povinný, ak je cena dohodnutá cez aplikáciu)</li>
@@ -259,16 +252,16 @@ export default function KomunikaciaPage() {
               </ul>
             </div>
 
-            <p className="text-sm text-gray-600 italic my-6">
+            <p className="text-sm text-gray-600 italic my-4">
               Právny základ: Zákon č. 56/2012 Z.z. o cestnej doprave (vrátane noviel 2019)
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Ako zvládnuť konflikt</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Ako zvládnuť konflikt</h2>
 
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-4">Pre vodičov:</h3>
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Pre vodičov:</h3>
 
-              <p className="mb-4">
+              <p className="mb-3">
                 Aktívne počúvanie a empatia sú kľúčom. Použite frázy ako <strong>"Rozumiem vašej frustrácii"</strong> na uznanie emócií pasažiera. Ak je cestujúci agresívny, zostať profesionálny, pripomenúť pravidlá (napr. "zákaz fajčenia") a vysvetliť, že vás operátor radí toto správanie netolorovať.
               </p>
 
@@ -284,10 +277,10 @@ export default function KomunikaciaPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-50 to-yellow-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-4">Pre zákazníkov:</h3>
+            <div className="bg-gradient-to-br from-orange-50 to-yellow-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Pre zákazníkov:</h3>
 
-              <p className="mb-4">
+              <p className="mb-3">
                 Ak vodič začne rozhovor na tému, s ktorou nesúhlasíš, použi potlačujúcu frázu: <strong>"Obávam sa, že s vami tam nesúhlasím, tak tú tému radšej nechajme"</strong>. Potom sa sústreď na telefón.
               </p>
 
@@ -302,9 +295,9 @@ export default function KomunikaciaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Záver: Základná rovnica</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Záver: Základná rovnica</h2>
 
-            <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-8 rounded-xl my-8">
+            <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-8 rounded-xl my-4">
               <div className="space-y-4">
                 <p className="text-lg">
                   <strong className="text-primary">Taxikár:</strong> Tvoje správanie = tvoje hodnotenie = tvoj príjem. Skúsení vodiči stavajú na tom, že vedia rýchlo prečítať pasažiera a prispôsobiť sa.
@@ -320,7 +313,7 @@ export default function KomunikaciaPage() {
               </div>
             </div>
 
-            <div className="bg-gray-100 p-6 rounded-lg my-8 border-l-4 border-gray-400">
+            <div className="bg-gray-100 p-6 rounded-lg my-4 border-l-4 border-gray-400">
               <p className="text-lg font-semibold mb-2">
                 Hranice sú jednoduché: vzájomný rešpekt, bezpečnosť a transparentnosť.
               </p>
@@ -329,7 +322,7 @@ export default function KomunikaciaPage() {
               </p>
             </div>
 
-            <div className="bg-blue-50 p-6 rounded-lg my-8">
+            <div className="bg-blue-50 p-6 rounded-lg my-4">
               <h3 className="text-xl font-bold mb-3">Zdroje a fakty</h3>
 
               <p className="text-sm text-gray-700 mb-3">Tento článok čerpal z:</p>
@@ -375,8 +368,8 @@ export default function KomunikaciaPage() {
           />
 
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4 text-center">Chcete vidieť komplexný sprievodca?</h3>
-            <p className="text-center text-gray-700 mb-6">
+            <h3 className="text-2xl font-bold mb-3 text-center">Chcete vidieť komplexný sprievodca?</h3>
+            <p className="text-center text-gray-700 mb-3">
               Zistite viac o všetkých aspektoch taxislužieb na Slovensku
             </p>
             <div className="flex justify-center">

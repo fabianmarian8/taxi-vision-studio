@@ -206,6 +206,7 @@
   .hero-3d-bg {
     position: relative;
     overflow: hidden;
+    background-color: #f3f4f6; /* Light gray background */
   }
 
   .hero-3d-bg::before {

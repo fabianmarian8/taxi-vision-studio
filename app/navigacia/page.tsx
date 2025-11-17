@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { GeometricLines } from "@/components/GeometricLines";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Navigation, Map, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { Calendar, Navigation, Map, AlertTriangle, CheckCircle2 , ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
@@ -45,40 +45,33 @@ export const metadata: Metadata = {
 
 export default function NavigaciaPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
       <SEOBreadcrumbs items={[
         { label: 'Taxi navigácia' }
       ]} />
 
-      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
+      <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative hero-3d-bg overflow-hidden">
         <GeometricLines variant="hero" count={12} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Späť na hlavnú stránku
-          </Link>
 
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-              <Navigation className="h-4 w-4 inline mr-1" />
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-1.5 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-semibold">
+              <Navigation className="h-2.5 w-2.5 inline mr-1" />
               Navigácia
             </span>
-            <div className="flex items-center gap-2 text-sm text-foreground/60">
-              <Calendar className="h-4 w-4" />
+            <div className="flex items-center gap-1 text-[10px] text-foreground/60">
+              <Calendar className="h-2.5 w-2.5" />
               15. január 2025
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-foreground leading-tight">
             Navigácia vs. lokálna znalosť: prečo sa stále riešia "najlepšie trasy"
           </h1>
 
-          <p className="text-xl text-foreground/80 mb-6">
+          <p className="text-xl text-foreground/80 mb-3">
             Keď GPS klame, keď zákazník "vie lepšie", a ako riešiť spory o trasu bez hádok
           </p>
 
@@ -88,39 +81,39 @@ export default function NavigaciaPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 px-4 md:px-8 bg-white">
+      <section className="py-6 md:py-8 px-3 md:px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
-          <article className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
+          <article className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <Map className="h-8 w-8 inline mr-2 text-primary" />
               Realita: GPS nie je všemocný
             </h2>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Kedy GPS zlyhá</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Kedy GPS zlyhá</h3>
 
-            <div className="bg-red-50 p-8 rounded-lg my-8">
-              <h4 className="font-bold text-lg mb-4">Signálové problémy</h4>
+            <div className="bg-red-50 p-8 rounded-lg my-4">
+              <h4 className="font-bold text-lg mb-3">Signálové problémy</h4>
               <p>
                 GPS potrebuje signál minimálne 3-4 satelitov pre základné určenie polohy, ideálne 7-8 pre presnosť okolo 10 metrov. V mestských kaňonoch medzi výškovými budovami, v tuneloch alebo pri hustej zástavbe signál slabne alebo úplne mizne.
               </p>
             </div>
 
-            <div className="bg-yellow-50 p-6 rounded-lg my-6">
+            <div className="bg-yellow-50 p-6 rounded-lg my-4">
               <h4 className="font-bold text-lg mb-3">Multipath chyby</h4>
               <p>
                 Keď sa signály odrážajú od budov, GPS prijímač sa môže pomýliť o desiatky metrov. Náhle skoky v pozícii - to nie je vodič, čo blúdi, to je technológia, ktorá nevie, kde ste.
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg my-6">
+            <div className="bg-gray-50 p-6 rounded-lg my-4">
               <h4 className="font-bold text-lg mb-3">Zastaralé mapy</h4>
               <p>
                 Stavby, dopravné uzávery, jednosmerky - všetko sa mení rýchlejšie, ako sa aktualizujú mapy. Stačí nová stavba a GPS ťa posiela cez bariéry.
               </p>
             </div>
 
-            <div className="bg-red-100 border-l-4 border-red-400 p-6 my-8">
+            <div className="bg-red-100 border-l-4 border-red-400 p-6 my-4">
               <p className="font-semibold text-gray-900 mb-3">Reálny prípad z Arizony:</p>
               <p className="mb-2">Štúdia o rideshare nehodách ukázala, že vodiči slepo nasledujúci GPS:</p>
               <ul className="space-y-1 mt-3">
@@ -131,33 +124,33 @@ export default function NavigaciaPage() {
               </ul>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Londýnske "The Knowledge" vs. GPS</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Londýnske "The Knowledge" vs. GPS</h2>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Čo dokáže ľudský mozog</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Čo dokáže ľudský mozog</h3>
 
             <p>
               Londýnski taxikári musia stráviť <strong>3-4 roky</strong> učením sa každej ulice, každej uličky a každého skratu v Londýne. 320 trás v "Blue Book" musia vedieť naspamäť.
             </p>
 
-            <div className="bg-green-50 p-8 rounded-lg my-8">
-              <h4 className="font-bold text-xl mb-4">Prečo to ešte má zmysel:</h4>
-              <p className="mb-4">Podľa vedeckej štúdie z bioRxiv (2021) londýnski taxikári dokážu:</p>
+            <div className="bg-green-50 p-8 rounded-lg my-4">
+              <h4 className="font-bold text-xl mb-3">Prečo to ešte má zmysel:</h4>
+              <p className="mb-3">Podľa vedeckej štúdie z bioRxiv (2021) londýnski taxikári dokážu:</p>
               <ul className="space-y-2">
                 <li><CheckCircle2 className="h-5 w-5 inline mr-2 text-green-600" />Okamžite reagovať na dopravné kolóny a uzávery</li>
                 <li><CheckCircle2 className="h-5 w-5 inline mr-2 text-green-600" />Vyhnúť sa chybám typu: zákazník si mýli "King's Road" v Chelsea s "King Street" vo Westminsteri</li>
                 <li><CheckCircle2 className="h-5 w-5 inline mr-2 text-green-600" />Navigovať aj v sekundárnej sieti uličiek, kde GPS má problém</li>
               </ul>
 
-              <p className="mt-6 p-4 bg-white rounded">
+              <p className="mt-4 p-3 bg-white rounded">
                 <strong>GPS alternatíva:</strong> Uber vodiči v rovnakom meste často "zamŕzajú" keď sa cesta zablokuje - nemajú alternatívny plán v hlave. Londýnski taxikári prepínajú trasy intuitívne.
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Slovenský zákonný rámec: Jasné pravidlá</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Slovenský zákonný rámec: Jasné pravidlá</h2>
 
-            <div className="bg-blue-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-6">Čo hovorí zákon</h3>
-              <p className="mb-4">Podľa <strong>zákona č. 56/2012 Z.z. o cestnej doprave:</strong></p>
+            <div className="bg-blue-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Čo hovorí zákon</h3>
+              <p className="mb-3">Podľa <strong>zákona č. 56/2012 Z.z. o cestnej doprave:</strong></p>
 
               <div className="space-y-6">
                 <div>
@@ -187,22 +180,22 @@ export default function NavigaciaPage() {
               </div>
             </div>
 
-            <div className="bg-yellow-50 p-6 rounded-lg my-6">
+            <div className="bg-yellow-50 p-6 rounded-lg my-4">
               <h4 className="font-bold text-lg mb-3">Praktická aplikácia:</h4>
               <p className="italic">
                 Ak GPS navrhne dlhšiu trasu cez diaľnicu (+ mýto), vodič má povinnosť informovať zákazníka: <strong>"Diaľnica je rýchlejšia, ale pridáva 3 € mýto. Môžeme ísť aj mestom, bude to o 10 minút dlhšie. Čo si prajete?"</strong>
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Hybridný systém: Najlepšie z oboch svetov</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Hybridný systém: Najlepšie z oboch svetov</h2>
 
             <p>
               Prieskum z UK Taxi Industry (2024) ukázal, že vodiči používajú GPS ako <strong>podporný nástroj</strong>, nie ako pána:
             </p>
 
-            <div className="grid md:grid-cols-2 gap-6 my-8">
+            <div className="grid md:grid-cols-2 gap-6 my-4">
               <div className="bg-blue-50 p-6 rounded-lg">
-                <h4 className="font-bold text-lg mb-4">📱 GPS na:</h4>
+                <h4 className="font-bold text-lg mb-3">📱 GPS na:</h4>
                 <ul className="space-y-2">
                   <li>• Presné adresy (čísla domov)</li>
                   <li>• Sledovanie dopravy v reálnom čase</li>
@@ -212,7 +205,7 @@ export default function NavigaciaPage() {
               </div>
 
               <div className="bg-green-50 p-6 rounded-lg">
-                <h4 className="font-bold text-lg mb-4">🧠 Lokálna znalosť na:</h4>
+                <h4 className="font-bold text-lg mb-3">🧠 Lokálna znalosť na:</h4>
                 <ul className="space-y-2">
                   <li>• Voľba optimálnej trasy podľa dennej doby</li>
                   <li>• Obídenie známych problémových úsekov</li>
@@ -222,20 +215,20 @@ export default function NavigaciaPage() {
               </div>
             </div>
 
-            <div className="bg-gray-900 text-white p-6 rounded-lg my-8">
+            <div className="bg-gray-900 text-white p-6 rounded-lg my-4">
               <p className="text-xl font-bold text-center">
                 Zlaté pravidlo: Profesionálny vodič vie, kedy ignorovať GPS. Začiatočník slepne sleduje mapu.
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <AlertTriangle className="h-8 w-8 inline mr-2 text-yellow-600" />
               Ako riešiť spor o trasu BEZ hádky
             </h2>
 
-            <div className="space-y-8 my-8">
+            <div className="space-y-8 my-4">
               <div className="border-l-4 border-blue-400 pl-6">
-                <h3 className="text-xl font-bold mb-4">Pre vodičov:</h3>
+                <h3 className="text-xl font-bold mb-3">Pre vodičov:</h3>
 
                 <div className="space-y-6">
                   <div>
@@ -271,7 +264,7 @@ export default function NavigaciaPage() {
               </div>
 
               <div className="border-l-4 border-green-400 pl-6">
-                <h3 className="text-xl font-bold mb-4">Pre zákazníkov:</h3>
+                <h3 className="text-xl font-bold mb-3">Pre zákazníkov:</h3>
 
                 <div className="space-y-4">
                   <div>
@@ -310,11 +303,11 @@ export default function NavigaciaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Technológia vs. človek: Fakty</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Technológia vs. človek: Fakty</h2>
 
-            <div className="grid md:grid-cols-2 gap-6 my-8">
+            <div className="grid md:grid-cols-2 gap-6 my-4">
               <div className="bg-blue-50 p-6 rounded-lg">
-                <h4 className="font-bold text-lg mb-4">Prečo GPS vyhrá:</h4>
+                <h4 className="font-bold text-lg mb-3">Prečo GPS vyhrá:</h4>
                 <ul className="space-y-2">
                   <li>✓ Prístup k reálnym dopravným dátam</li>
                   <li>✓ Objektívna vzdialenosť a čas</li>
@@ -324,7 +317,7 @@ export default function NavigaciaPage() {
               </div>
 
               <div className="bg-green-50 p-6 rounded-lg">
-                <h4 className="font-bold text-lg mb-4">Prečo človek vyhrá:</h4>
+                <h4 className="font-bold text-lg mb-3">Prečo človek vyhrá:</h4>
                 <ul className="space-y-2">
                   <li>✓ Kontextové chápanie (uzávery, eventy)</li>
                   <li>✓ Flexibilná adaptácia</li>
@@ -334,8 +327,8 @@ export default function NavigaciaPage() {
               </div>
             </div>
 
-            <div className="bg-primary/10 p-8 rounded-lg my-8">
-              <p className="text-2xl font-bold text-center mb-4">Výsledok:</p>
+            <div className="bg-primary/10 p-8 rounded-lg my-4">
+              <p className="text-2xl font-bold text-center mb-3">Výsledok:</p>
               <p className="text-xl text-center">
                 <strong>Hybridný prístup = winner.</strong>
               </p>
@@ -344,7 +337,7 @@ export default function NavigaciaPage() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Záver: Pravidlá jasnej hry</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Záver: Pravidlá jasnej hry</h2>
 
             <div className="space-y-6">
               <div className="bg-gray-50 p-6 rounded-lg">
@@ -368,8 +361,8 @@ export default function NavigaciaPage() {
               </div>
             </div>
 
-            <div className="bg-gray-900 text-white p-8 rounded-lg my-8">
-              <p className="text-xl font-bold mb-4">Bottom line:</p>
+            <div className="bg-gray-900 text-white p-8 rounded-lg my-4">
+              <p className="text-xl font-bold mb-3">Bottom line:</p>
               <p className="text-lg">
                 Dobrý vodič používa GPS ako nástroj, nie ako náhradu za mozog. Dobrý zákazník komunikuje jasne a sleduje, kam ide. Spory sa riešia mapou, nie krikom.
               </p>
@@ -384,15 +377,15 @@ export default function NavigaciaPage() {
           />
 
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>
-            <p className="text-center text-gray-700 mb-6">
+            <h3 className="text-2xl font-bold mb-3 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>
+            <p className="text-center text-gray-700 mb-3">
               Prečítajte si všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025.
             </p>
             <div className="flex justify-center">
               <Link href="/komplexny-sprievodca-taxi">
                 <Button size="lg" className="gap-2">
                   Zobraziť sprievodcu
-                  <ArrowLeft className="h-4 w-4 rotate-180" />
+                  <ArrowLeft className="h-2.5 w-2.5 rotate-180" />
                 </Button>
               </Link>
             </div>

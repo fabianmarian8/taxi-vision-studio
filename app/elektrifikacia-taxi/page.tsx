@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { GeometricLines } from "@/components/GeometricLines";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Zap, TrendingUp, Leaf, DollarSign } from "lucide-react";
+import { Calendar, Zap, TrendingUp, Leaf, DollarSign , ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
@@ -45,40 +45,33 @@ export const metadata: Metadata = {
 
 export default function ElektrifikaciaPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
       <SEOBreadcrumbs items={[
         { label: 'Elektrifikácia taxi' }
       ]} />
 
-      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
+      <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative hero-3d-bg overflow-hidden">
         <GeometricLines variant="hero" count={12} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Späť na hlavnú stránku
-          </Link>
 
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-              <Zap className="h-4 w-4 inline mr-1" />
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-1.5 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-semibold">
+              <Zap className="h-2.5 w-2.5 inline mr-1" />
               Elektrifikácia
             </span>
-            <div className="flex items-center gap-2 text-sm text-foreground/60">
-              <Calendar className="h-4 w-4" />
+            <div className="flex items-center gap-1 text-[10px] text-foreground/60">
+              <Calendar className="h-2.5 w-2.5" />
               15. január 2025
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-foreground leading-tight">
             Budúcnosť taxislužby na Slovensku: elektrické autá
           </h1>
 
-          <p className="text-xl text-foreground/80 mb-6">
+          <p className="text-xl text-foreground/80 mb-3">
             Budúcnosť taxi je elektrická. Analýza trendu a výhod elektromobilov v taxislužbách na Slovensku.
           </p>
 
@@ -88,9 +81,9 @@ export default function ElektrifikaciaPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 px-4 md:px-8 bg-white">
+      <section className="py-6 md:py-8 px-3 md:px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
-          <article className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
+          <article className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
 
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
               <p className="text-lg font-semibold text-gray-900">
@@ -98,20 +91,20 @@ export default function ElektrifikaciaPage() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <Zap className="h-8 w-8 inline mr-2 text-primary" />
               Elektrifikácia: z výnimky na štandard
             </h2>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Situácia na Slovensku</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Situácia na Slovensku</h3>
 
             <p>
               Elektrické taxíky už nie sú sci-fi ani na Slovensku. V Bratislave jazdí niekoľko Tesla vozidiel, v Martine funguje taxislužba s elektromobilmi.
             </p>
 
-            <div className="bg-green-50 p-8 rounded-lg my-8">
-              <h4 className="text-xl font-bold mb-4">Nabíjacia infraštruktúra rastie</h4>
-              <p className="mb-4">
+            <div className="bg-green-50 p-8 rounded-lg my-4">
+              <h4 className="text-xl font-bold mb-3">Nabíjacia infraštruktúra rastie</h4>
+              <p className="mb-3">
                 Podľa údajov z portálu MojElektromobil.sk sa na Slovensku k 31. decembru 2024 nachádza:
               </p>
               <div className="grid md:grid-cols-2 gap-4">
@@ -126,7 +119,7 @@ export default function ElektrifikaciaPage() {
               </div>
             </div>
 
-            <div className="bg-yellow-50 p-6 rounded-lg my-6">
+            <div className="bg-yellow-50 p-6 rounded-lg my-4">
               <h4 className="font-bold text-lg mb-3">Reálne čísla z Česka</h4>
               <p>
                 <strong>Tesla Model 3</strong> používaná ako taxi dosiahla prevádzkové náklady <strong>6,93 Kč/km</strong> oproti <strong>12,6 Kč/km</strong> u Škody Superb 2.0 TSI so spaľovacím motorom.
@@ -136,9 +129,9 @@ export default function ElektrifikaciaPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Viedeň ako príklad blízkej budúcnosti</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Viedeň ako príklad blízkej budúcnosti</h3>
 
-            <div className="bg-red-50 border-l-4 border-red-400 p-6 my-6">
+            <div className="bg-red-50 border-l-4 border-red-400 p-6 my-4">
               <p className="font-semibold mb-3">Od januára 2025 platí vo Viedni radikálne pravidlo:</p>
               <p className="text-lg">
                 <strong>Všetky nové taxíky musia byť elektrické.</strong>
@@ -148,18 +141,18 @@ export default function ElektrifikaciaPage() {
               </p>
             </div>
 
-            <p className="text-lg leading-relaxed">
+            <p className="text-sm leading-relaxed">
               Pre Slovensko je tento príklad relevantný – sme susedná krajina s podobnými podmienkami. Ak Viedeň dokáže prejsť na elektromobilitu v taxislužbách, slovenské mestá môžu nasledovať.
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <DollarSign className="h-8 w-8 inline mr-2 text-primary" />
               Ekonomika elektrických taxíkov
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6 my-8">
+            <div className="grid md:grid-cols-2 gap-6 my-4">
               <div className="bg-green-50 p-6 rounded-lg">
-                <h4 className="font-bold text-lg mb-4 text-green-700">✓ Výhody</h4>
+                <h4 className="font-bold text-lg mb-3 text-green-700">✓ Výhody</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-green-600 font-bold">•</span>
@@ -181,7 +174,7 @@ export default function ElektrifikaciaPage() {
               </div>
 
               <div className="bg-red-50 p-6 rounded-lg">
-                <h4 className="font-bold text-lg mb-4 text-red-700">⚠ Výzvy</h4>
+                <h4 className="font-bold text-lg mb-3 text-red-700">⚠ Výzvy</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-red-600 font-bold">•</span>
@@ -203,15 +196,15 @@ export default function ElektrifikaciaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <TrendingUp className="h-8 w-8 inline mr-2 text-primary" />
               Zdieľanie jázd: efektívnejšie využitie vozidiel
             </h2>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Ride-hailing vs. klasické taxi</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Ride-hailing vs. klasické taxi</h3>
 
-            <div className="bg-gray-900 text-white p-8 rounded-lg my-8">
-              <p className="mb-4">
+            <div className="bg-gray-900 text-white p-8 rounded-lg my-4">
+              <p className="mb-3">
                 Európsky trh zdieľania jázd (ride-hailing) bol v roku 2024 hodnote <strong>32,1 mld. USD</strong> a očakáva sa rast o <strong>5,2% ročne</strong> do 2034.
               </p>
               <p>
@@ -219,7 +212,7 @@ export default function ElektrifikaciaPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Carpooling – nedoceňovaný segment</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Carpooling – nedoceňovaný segment</h3>
 
             <p>
               BlaBlaCar v Európe dosahuje <strong>253 mil. €</strong> ročne na 80 miliónov rezervácií. Medzimestské zdieľanie jázd rastie o <strong>17,9% ročne</strong> – rýchlejšie ako mestské taxi.
@@ -229,16 +222,16 @@ export default function ElektrifikaciaPage() {
               Pre Slovensko s relatívne malými vzdialenosťami medzi mestami je to zaujímavý model.
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Autonómne vozidlá: revolúcia, ktorá prichádza</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Autonómne vozidlá: revolúcia, ktorá prichádza</h2>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Waymo – líder robotaxi</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Waymo – líder robotaxi</h3>
 
-            <div className="bg-blue-50 p-8 rounded-lg my-8">
-              <p className="mb-4">
+            <div className="bg-blue-50 p-8 rounded-lg my-4">
+              <p className="mb-3">
                 Waymo (dcérska spoločnosť Alphabetu/Google) prevádzkuje v roku 2025 komerčné robotaxi služby v <strong>6 amerických mestách</strong>: Phoenix, San Francisco, Los Angeles, Austin, Atlanta a Silicon Valley.
               </p>
 
-              <div className="grid md:grid-cols-2 gap-4 my-6">
+              <div className="grid md:grid-cols-2 gap-4 my-4">
                 <div className="bg-white p-4 rounded-lg">
                   <p className="text-3xl font-bold text-blue-600 mb-2">200 000</p>
                   <p className="text-sm">platených jázd týždenne</p>
@@ -266,7 +259,7 @@ export default function ElektrifikaciaPage() {
               </ul>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Tesla a iní hráči</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Tesla a iní hráči</h3>
 
             <p>
               Tesla ohlásila <strong>Cybercab</strong> – robotaxi bez volantu a pedálov, ktoré má byť dostupné do roku 2027 za cenu pod <strong>30 000 USD</strong>. V júni 2025 spustila testovaciu službu v Austine.
@@ -276,9 +269,9 @@ export default function ElektrifikaciaPage() {
               Čínske firmy ako Baidu Apollo Go prevádzkujú <strong>400 robotaxi</strong> vo Wuhane s cenou iba <strong>4 CNY (0,55 USD)</strong> za základnú jazdu – oproti 18 CNY za klasické taxi.
             </p>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Realita pre Slovensko</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Realita pre Slovensko</h3>
 
-            <div className="bg-red-50 p-6 rounded-lg my-6">
+            <div className="bg-red-50 p-6 rounded-lg my-4">
               <p className="font-semibold mb-3">Autonómne taxíky na Slovensku neprídu skôr ako za <strong>5-10 rokov</strong>. Dôvody:</p>
               <ul className="space-y-2">
                 <li>• Potreba HD máp – Waymo a iní najprv mapujú každú ulicu</li>
@@ -291,14 +284,14 @@ export default function ElektrifikaciaPage() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <Leaf className="h-8 w-8 inline mr-2 text-green-600" />
               Dopad na komfort a environmentálny след
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6 my-8">
+            <div className="grid md:grid-cols-2 gap-6 my-4">
               <div className="bg-green-50 p-6 rounded-lg">
-                <h4 className="font-bold text-lg mb-4">Komfort pre cestujúcich</h4>
+                <h4 className="font-bold text-lg mb-3">Komfort pre cestujúcich</h4>
                 <ul className="space-y-2">
                   <li>✓ Tichá jazda – žiadne vibrácie motora</li>
                   <li>✓ Plynulé zrýchlenie</li>
@@ -308,7 +301,7 @@ export default function ElektrifikaciaPage() {
               </div>
 
               <div className="bg-blue-50 p-6 rounded-lg">
-                <h4 className="font-bold text-lg mb-4">Environmentálny dopad</h4>
+                <h4 className="font-bold text-lg mb-3">Environmentálny dopad</h4>
                 <ul className="space-y-2">
                   <li>✓ Tesla Model 3 ušetrí podľa odhadov 10 mil. libier CO2 pri 4 mil. elektrických míľ</li>
                   <li>✓ Žiadne emisie výfukových plynov v mestách</li>
@@ -318,9 +311,9 @@ export default function ElektrifikaciaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Slovenský kontext: čo môžeme čakať?</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Slovenský kontext: čo môžeme čakať?</h2>
 
-            <div className="space-y-8 my-8">
+            <div className="space-y-8 my-4">
               <div className="border-l-4 border-blue-400 pl-6">
                 <h3 className="text-xl font-bold mb-3">Krátkodobá perspektíva (2025-2027)</h3>
                 <ul className="space-y-2">
@@ -351,14 +344,14 @@ export default function ElektrifikaciaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Záver</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Záver</h2>
 
-            <div className="bg-gray-900 text-white p-8 rounded-lg my-8">
-              <p className="text-xl font-bold mb-4">
+            <div className="bg-gray-900 text-white p-8 rounded-lg my-4">
+              <p className="text-xl font-bold mb-3">
                 Budúcnosť taxislužieb je elektrická, zdieľaná a čiastočne autonómna.
               </p>
 
-              <p className="mb-4">Pre slovenských prevádzkovateľov je teraz čas:</p>
+              <p className="mb-3">Pre slovenských prevádzkovateľov je teraz čas:</p>
               <ol className="space-y-2 pl-6">
                 <li><strong>1.</strong> Investovať do elektromobilov – ekonomika funguje, infraštruktúra sa zlepšuje</li>
                 <li><strong>2.</strong> Zvážiť digitálne kanály – mobilné aplikácie rozšíria zákaznícku základňu</li>
@@ -385,15 +378,15 @@ export default function ElektrifikaciaPage() {
           />
 
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>
-            <p className="text-center text-gray-700 mb-6">
+            <h3 className="text-2xl font-bold mb-3 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>
+            <p className="text-center text-gray-700 mb-3">
               Prečítajte si všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025.
             </p>
             <div className="flex justify-center">
               <Link href="/komplexny-sprievodca-taxi">
                 <Button size="lg" className="gap-2">
                   Zobraziť sprievodcu
-                  <ArrowLeft className="h-4 w-4 rotate-180" />
+                  <ArrowLeft className="h-2.5 w-2.5 rotate-180" />
                 </Button>
               </Link>
             </div>

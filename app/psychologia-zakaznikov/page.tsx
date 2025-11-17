@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { GeometricLines } from "@/components/GeometricLines";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Brain, Users, MessageCircle } from "lucide-react";
+import { Calendar, Brain, Users, MessageCircle , ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
@@ -45,40 +45,33 @@ export const metadata: Metadata = {
 
 export default function PsychologiaZakaznikovPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
       <SEOBreadcrumbs items={[
         { label: 'Psychológia zákazníkov' }
       ]} />
 
-      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
+      <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative hero-3d-bg overflow-hidden">
         <GeometricLines variant="hero" count={12} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Späť na hlavnú stránku
-          </Link>
 
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-              <Brain className="h-4 w-4 inline mr-1" />
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-1.5 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-semibold">
+              <Brain className="h-2.5 w-2.5 inline mr-1" />
               Psychológia
             </span>
-            <div className="flex items-center gap-2 text-sm text-foreground/60">
-              <Calendar className="h-4 w-4" />
+            <div className="flex items-center gap-1 text-[10px] text-foreground/60">
+              <Calendar className="h-2.5 w-2.5" />
               15. január 2025
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-foreground leading-tight">
             Psychológia zákazníkov v taxi: Typológia pasažierov
           </h1>
 
-          <p className="text-xl text-foreground/80 mb-6">
+          <p className="text-xl text-foreground/80 mb-3">
             Od tichého profesionála po toxického pasažiera. Ako rozpoznať typy zákazníkov a prispôsobiť im svoju komunikáciu.
           </p>
 
@@ -88,9 +81,9 @@ export default function PsychologiaZakaznikovPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 px-4 md:px-8 bg-white">
+      <section className="py-6 md:py-8 px-3 md:px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
-          <article className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
+          <article className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
 
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
               <p className="text-lg font-semibold text-gray-900">
@@ -98,18 +91,18 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <p className="text-lg leading-relaxed">
+            <p className="text-sm leading-relaxed">
               Taxi nie je len o preprave z bodu A do bodu B. Je to psychologická hra – čítanie nálad, pochopenie potrieb a prispôsobenie sa rôznym typom osobností. Niektorí chcú ticho, iní konverzáciu. Niektorí dôverujú GPS, iní chcú navigovať sami.
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <Users className="h-8 w-8 inline mr-2 text-primary" />
               Typológia zákazníkov: 10 hlavných typov
             </h2>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">1. Tichý profesionál</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">1. Tichý profesionál</h3>
 
-            <div className="bg-gray-50 p-6 rounded-lg my-6">
+            <div className="bg-gray-50 p-6 rounded-lg my-4">
               <p className="font-semibold mb-3">Charakteristika:</p>
               <ul className="space-y-1">
                 <li>• Nastúpi, povie adresu, sadne si dozadu</li>
@@ -127,9 +120,9 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">2. Unavený</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">2. Unavený</h3>
 
-            <div className="bg-gray-50 p-6 rounded-lg my-6">
+            <div className="bg-gray-50 p-6 rounded-lg my-4">
               <p className="font-semibold mb-3">Charakteristika:</p>
               <ul className="space-y-1">
                 <li>• Viditeľne vyčerpaný – z práce, z nočnej, z letiska</li>
@@ -147,9 +140,9 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">3. Príjemný konverzačník</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">3. Príjemný konverzačník</h3>
 
-            <div className="bg-gray-50 p-6 rounded-lg my-6">
+            <div className="bg-gray-50 p-6 rounded-lg my-4">
               <p className="font-semibold mb-3">Charakteristika:</p>
               <ul className="space-y-1">
                 <li>• Nastúpi s úsmevom, pozdraví</li>
@@ -167,9 +160,9 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">4. Small talk mania</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">4. Small talk mania</h3>
 
-            <div className="bg-yellow-50 p-6 rounded-lg my-6">
+            <div className="bg-yellow-50 p-6 rounded-lg my-4">
               <p className="font-semibold mb-3">Charakteristika:</p>
               <ul className="space-y-1">
                 <li>• Nastúpi a okamžite začne mluvený vodopád</li>
@@ -187,9 +180,9 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">5. GPS odborník</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">5. GPS odborník</h3>
 
-            <div className="bg-orange-50 p-6 rounded-lg my-6">
+            <div className="bg-orange-50 p-6 rounded-lg my-4">
               <p className="font-semibold mb-3">Charakteristika:</p>
               <ul className="space-y-1">
                 <li>• Hneď po nastúpení: "Choďte cez..."</li>
@@ -207,9 +200,9 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">6. Kontrolórka</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">6. Kontrolórka</h3>
 
-            <div className="bg-red-50 p-6 rounded-lg my-6">
+            <div className="bg-red-50 p-6 rounded-lg my-4">
               <p className="font-semibold mb-3">Charakteristika:</p>
               <ul className="space-y-1">
                 <li>• Okamžite kontroluje: klimatizáciu, pás, cenu</li>
@@ -227,9 +220,9 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">7. Opitý pasažier (zvládnuteľný)</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">7. Opitý pasažier (zvládnuteľný)</h3>
 
-            <div className="bg-purple-50 p-6 rounded-lg my-6">
+            <div className="bg-purple-50 p-6 rounded-lg my-4">
               <p className="font-semibold mb-3">Charakteristika:</p>
               <ul className="space-y-1">
                 <li>• Viditeľne pod vplyvom alkoholu</li>
@@ -247,9 +240,9 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">8. Toxický pasažier</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">8. Toxický pasažier</h3>
 
-            <div className="bg-red-100 p-6 rounded-lg my-6">
+            <div className="bg-red-100 p-6 rounded-lg my-4">
               <p className="font-semibold mb-3">Charakteristika:</p>
               <ul className="space-y-1">
                 <li>• Agresívny tón hneď od nástupu</li>
@@ -267,9 +260,9 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">9. Rodina s deťmi</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">9. Rodina s deťmi</h3>
 
-            <div className="bg-green-50 p-6 rounded-lg my-6">
+            <div className="bg-green-50 p-6 rounded-lg my-4">
               <p className="font-semibold mb-3">Charakteristika:</p>
               <ul className="space-y-1">
                 <li>• Rodičia s malými deťmi</li>
@@ -287,9 +280,9 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">10. Senior / Staršia osoba</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">10. Senior / Staršia osoba</h3>
 
-            <div className="bg-blue-50 p-6 rounded-lg my-6">
+            <div className="bg-blue-50 p-6 rounded-lg my-4">
               <p className="font-semibold mb-3">Charakteristika:</p>
               <ul className="space-y-1">
                 <li>• Pomalší nástup/výstup</li>
@@ -307,15 +300,15 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               <MessageCircle className="h-8 w-8 inline mr-2 text-primary" />
               Psychologické triky pre lepšiu interakciu
             </h2>
 
-            <div className="bg-blue-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-6">1. Prvých 10 sekúnd rozhoduje</h3>
+            <div className="bg-blue-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">1. Prvých 10 sekúnd rozhoduje</h3>
 
-              <p className="mb-4">
+              <p className="mb-3">
                 Zákazník ťa hodnotí okamžite – už keď nastupuje. Očný kontakt, úsmev, pozdrav – to sú signály profesionality.
               </p>
 
@@ -327,11 +320,11 @@ export default function PsychologiaZakaznikovPage() {
               </ul>
             </div>
 
-            <div className="bg-green-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-6">2. Čítaj signály – kedy hovoriť, kedy mlčať</h3>
+            <div className="bg-green-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">2. Čítaj signály – kedy hovoriť, kedy mlčať</h3>
 
               <p className="font-semibold mb-3">Signály pre TICHO:</p>
-              <ul className="space-y-1 mb-4">
+              <ul className="space-y-1 mb-3">
                 <li>• Slúchadlá v ušiach</li>
                 <li>• Pozerá do mobilu celý čas</li>
                 <li>• Jednostručné odpovede: "Áno", "Nie"</li>
@@ -346,10 +339,10 @@ export default function PsychologiaZakaznikovPage() {
               </ul>
             </div>
 
-            <div className="bg-yellow-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-6">3. Vyhýbaj sa kontroverziám</h3>
+            <div className="bg-yellow-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">3. Vyhýbaj sa kontroverziám</h3>
 
-              <p className="mb-4">Témy, ktoré nikdy neotvárať prvý:</p>
+              <p className="mb-3">Témy, ktoré nikdy neotvárať prvý:</p>
               <ul className="space-y-2">
                 <li>❌ Politika</li>
                 <li>❌ Náboženstvo</li>
@@ -363,10 +356,10 @@ export default function PsychologiaZakaznikovPage() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">Záver: Taxi je psychologická profesia</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">Záver: Taxi je psychologická profesia</h2>
 
-            <div className="bg-gray-900 text-white p-8 rounded-lg my-8">
-              <p className="text-xl font-bold mb-4">Nie si len vodič. Si:</p>
+            <div className="bg-gray-900 text-white p-8 rounded-lg my-4">
+              <p className="text-xl font-bold mb-3">Nie si len vodič. Si:</p>
               <ul className="space-y-2 text-lg">
                 <li>✓ Psychológ (čítaš ľudí)</li>
                 <li>✓ Mediátor (upokojuješ konflikty)</li>
@@ -388,15 +381,15 @@ export default function PsychologiaZakaznikovPage() {
           />
 
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>
-            <p className="text-center text-gray-700 mb-6">
+            <h3 className="text-2xl font-bold mb-3 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>
+            <p className="text-center text-gray-700 mb-3">
               Prečítajte si všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025.
             </p>
             <div className="flex justify-center">
               <Link href="/komplexny-sprievodca-taxi">
                 <Button size="lg" className="gap-2">
                   Zobraziť sprievodcu
-                  <ArrowLeft className="h-4 w-4 rotate-180" />
+                  <ArrowLeft className="h-2.5 w-2.5 rotate-180" />
                 </Button>
               </Link>
             </div>

@@ -10,6 +10,7 @@ export interface Article {
   date: string;
   category: string;
   featured?: boolean;
+  image?: string;
 }
 
 export const articles: Article[] = [
@@ -17,21 +18,23 @@ export const articles: Article[] = [
     id: 'index-cien-2025',
     title: 'Index cien taxislužieb na Slovensku 2025',
     excerpt: 'Bratislava je najdrahšie mesto (11.70€ za 5km), Poprad najlacnejšie (5.00€). Kompletné porovnanie cien v 10 mestách.',
-    slug: '/taxi-ceny',
+    slug: '/porovnanie-cien-taxi-2024-2025',
     icon: BarChart3,
     date: '2025-01-15',
     category: 'Prieskum',
-    featured: true
+    featured: true,
+    image: '/blog-images/index-cien.webp'
   },
   {
     id: 'porovnanie-cien-taxi-2024-2025',
     title: 'Porovnanie cien taxislužieb v slovenských mestách',
     excerpt: 'Nástupné sadzby od 0,5€ do 3,5€, kilometrové tarify od 0,8€ do 1,5€. Detailný prehľad cien taxi na Slovensku.',
-    slug: '/porovnanie-cien-taxi-2024-2025',
+    slug: '/taxi-ceny',
     icon: FileText,
     date: '2025-01-15',
     category: 'Blog',
-    featured: true
+    featured: true,
+    image: '/blog-images/porovnanie-cien.webp'
   },
   {
     id: 'hodnotenie-vodicov',
@@ -41,7 +44,8 @@ export const articles: Article[] = [
     icon: Star,
     date: '2025-01-15',
     category: 'Hodnotenie',
-    featured: true
+    featured: true,
+    image: '/blog-images/hodnotenie.webp'
   },
   {
     id: 'alkohol-nocny-zivot',
@@ -51,7 +55,8 @@ export const articles: Article[] = [
     icon: AlertCircle,
     date: '2025-01-15',
     category: 'Bezpečnosť',
-    featured: true
+    featured: true,
+    image: '/blog-images/alkohol.webp'
   },
   {
     id: 'komplexny-sprievodca-taxi',
@@ -61,7 +66,8 @@ export const articles: Article[] = [
     icon: BookOpen,
     date: '2025-01-15',
     category: 'Sprievodca',
-    featured: true
+    featured: true,
+    image: '/blog-images/sprievodca.webp'
   },
   {
     id: 'komunikacia-taxikar-zakaznik',
@@ -71,7 +77,8 @@ export const articles: Article[] = [
     icon: MessageCircle,
     date: '2025-01-15',
     category: 'Komunikácia',
-    featured: true
+    featured: true,
+    image: '/blog-images/komunikacia.webp'
   },
   {
     id: 'elektrifikacia-taxi',
@@ -81,7 +88,8 @@ export const articles: Article[] = [
     icon: Zap,
     date: '2025-01-15',
     category: 'Elektrifikácia',
-    featured: true
+    featured: true,
+    image: '/blog-images/elektricke-auta.webp'
   },
   {
     id: 'psychologia-zakaznikov',
@@ -91,7 +99,8 @@ export const articles: Article[] = [
     icon: Brain,
     date: '2025-01-15',
     category: 'Psychológia',
-    featured: true
+    featured: true,
+    image: '/blog-images/psycholog.webp'
   },
   {
     id: 'taxi-navigacia',
@@ -101,7 +110,8 @@ export const articles: Article[] = [
     icon: Navigation,
     date: '2025-01-15',
     category: 'Navigácia',
-    featured: true
+    featured: true,
+    image: '/blog-images/navigacia.webp'
   },
   {
     id: 'co-musi-zniest-vodic',
@@ -111,7 +121,8 @@ export const articles: Article[] = [
     icon: AlertTriangle,
     date: '2025-01-15',
     category: 'Realita',
-    featured: true
+    featured: true,
+    image: '/blog-images/vodic.webp'
   },
   {
     id: 'temna-strana-bolt-uber',
@@ -121,7 +132,8 @@ export const articles: Article[] = [
     icon: AlertCircle,
     date: '2025-01-15',
     category: 'Analýza',
-    featured: true
+    featured: true,
+    image: '/blog-images/temna-strana.webp'
   }
 ];
 

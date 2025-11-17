@@ -14,7 +14,7 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { GeometricLines } from '@/components/GeometricLines';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Calendar, Star, AlertTriangle } from 'lucide-react';
+import { Calendar, Star, AlertTriangle, ArrowLeft } from 'lucide-react';
 import { ArticleFAQ } from '@/components/ArticleFAQ';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { ShareButton } from '@/components/ShareButton';
@@ -66,39 +66,32 @@ export const metadata: Metadata = {
 
 export default function HodnotenieVodicovPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header />
       <SEOBreadcrumbs items={[{ label: 'Hodnotenie vodičov' }]} />
 
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg overflow-hidden">
+      <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative hero-3d-bg overflow-hidden">
         <GeometricLines variant="hero" count={12} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-6"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Späť na hlavnú stránku
-          </Link>
 
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-              <Star className="h-4 w-4 inline mr-1" />
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-1.5 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-semibold">
+              <Star className="h-2.5 w-2.5 inline mr-1" />
               Hodnotenie
             </span>
-            <div className="flex items-center gap-2 text-sm text-foreground/60">
-              <Calendar className="h-4 w-4" />
+            <div className="flex items-center gap-1 text-[10px] text-foreground/60">
+              <Calendar className="h-2.5 w-2.5" />
               15. január 2025
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-foreground leading-tight">
             Ako funguje hodnotenie vodičov v taxi aplikáciách
           </h1>
 
-          <p className="text-xl text-foreground/80 mb-6">
+          <p className="text-xl text-foreground/80 mb-3">
             Prečo môžeš jedným klikom zničiť niekomu prácu. 4★ nie je dobré hodnotenie - je to
             penalizácia.
           </p>
@@ -108,9 +101,9 @@ export default function HodnotenieVodicovPage() {
       </section>
 
       {/* Article Content with WHITE BACKGROUND */}
-      <section className="py-12 md:py-16 px-4 md:px-8 bg-white">
+      <section className="py-6 md:py-8 px-3 md:px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
-          <article className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
+          <article className="prose prose-sm max-w-none prose-headings:text-gray-900 prose-p:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800">
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
               <p className="text-lg font-semibold text-gray-900 mb-2">
                 <AlertTriangle className="h-5 w-5 inline mr-2 text-yellow-600" />
@@ -123,16 +116,16 @@ export default function HodnotenieVodicovPage() {
               </p>
             </div>
 
-            <p className="text-lg leading-relaxed">
+            <p className="text-sm leading-relaxed">
               Vodič taxi nie je sanitka ani psychológ. Predsa sa často nachádza v situáciách,
               ktoré vyžadujú rozhodnutie: Vziať problémového zákazníka, alebo radšej odmietnuť?
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               1. 4★ nie je &quot;dobré hodnotenie&quot;. Je to penalizácia.
             </h2>
 
-            <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-6">
+            <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-3">
               <p className="font-semibold text-gray-900">Bežná veta zákazníka:</p>
               <p className="italic text-gray-700">&quot;Nič extra, tak 4★.&quot;</p>
               <p className="mt-3 text-gray-800">
@@ -151,13 +144,13 @@ export default function HodnotenieVodicovPage() {
               je trest, nie hodnotenie.
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               2. Väčšina nízkych hodnotení trestá niečo, za čo vodič nemôže
             </h2>
 
             <p>Ľudia dávajú zlé hodnotenia za veci mimo kontroly vodiča:</p>
 
-            <div className="grid md:grid-cols-2 gap-4 my-6">
+            <div className="grid md:grid-cols-2 gap-4 my-4">
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="font-bold mb-2">❌ Zápcha</p>
                 <p className="text-sm text-gray-700">
@@ -178,9 +171,9 @@ export default function HodnotenieVodicovPage() {
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold mt-8 mb-4">Typické scenáre:</h3>
+            <h3 className="text-lg font-bold mt-4 mb-2">Typické scenáre:</h3>
 
-            <div className="space-y-4 my-6">
+            <div className="space-y-4 my-4">
               <div className="bg-red-50 p-4 rounded-lg">
                 <p className="font-semibold">&quot;Drahé, dám 3★&quot;</p>
                 <p className="text-sm text-gray-700">→ Tarifu nastavuje systém, nie vodič</p>
@@ -206,20 +199,20 @@ export default function HodnotenieVodicovPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               3. Najšpinavšia časť: krivé obvinenia a blokácie bez dôkazov
             </h2>
 
             <p>Téma o ktorej sa veľmi nehovorí, ale v systéme existuje:</p>
 
-            <ul className="space-y-2 my-6">
+            <ul className="space-y-2 my-4">
               <li>Obvinenia z &quot;nevhodného správania&quot;</li>
               <li>Obťažovanie</li>
               <li>Pocit &quot;cítila som sa nepríjemne&quot;</li>
             </ul>
 
-            <div className="bg-gray-900 text-white p-6 rounded-lg my-8">
-              <h3 className="text-xl font-bold mb-4">Ako to funguje:</h3>
+            <div className="bg-gray-900 text-white p-6 rounded-lg my-4">
+              <h3 className="text-xl font-bold mb-3">Ako to funguje:</h3>
               <ol className="space-y-3">
                 <li>
                   <strong>1.</strong> Zákazník napíše: &quot;Vodič sa správal nevhodne / obťažoval
@@ -236,12 +229,12 @@ export default function HodnotenieVodicovPage() {
               </ol>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               4. Ako by mal vyzerať férový systém hodnotenia
             </h2>
 
-            <div className="bg-green-50 p-8 rounded-lg my-8">
-              <h3 className="text-2xl font-bold mb-6">Tri veci:</h3>
+            <div className="bg-green-50 p-8 rounded-lg my-4">
+              <h3 className="text-2xl font-bold mb-3">Tri veci:</h3>
 
               <div className="space-y-6">
                 <div>
@@ -265,12 +258,12 @@ export default function HodnotenieVodicovPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">
+            <h2 className="text-3xl font-bold mt-12 mb-3">
               5. Návod pre zákazníkov: ako hodnotiť férovo
             </h2>
 
-            <div className="bg-red-50 p-6 rounded-lg my-6">
-              <h3 className="text-xl font-bold mb-4">✓ Hodnoť vodiča za to, čo ovplyvní:</h3>
+            <div className="bg-red-50 p-6 rounded-lg my-4">
+              <h3 className="text-xl font-bold mb-3">✓ Hodnoť vodiča za to, čo ovplyvní:</h3>
               <ul className="space-y-2">
                 <li>• Jazdil agresívne, riskoval</li>
                 <li>• Bol arogantný, hrubý, nerešpektoval ťa</li>
@@ -280,8 +273,8 @@ export default function HodnotenieVodicovPage() {
               </ul>
             </div>
 
-            <div className="bg-blue-50 p-6 rounded-lg my-6">
-              <h3 className="text-xl font-bold mb-4">✗ Toto NIE JE dôvod na 1-3★:</h3>
+            <div className="bg-blue-50 p-6 rounded-lg my-4">
+              <h3 className="text-xl font-bold mb-3">✗ Toto NIE JE dôvod na 1-3★:</h3>
               <ul className="space-y-2">
                 <li>• Cena (vypočítala aplikácia)</li>
                 <li>• Zápchy, nehody, uzávierky</li>
@@ -293,19 +286,19 @@ export default function HodnotenieVodicovPage() {
               </ul>
             </div>
 
-            <p className="text-xl font-bold text-center my-8 p-6 bg-gray-100 rounded-lg">
+            <p className="text-xl font-bold text-center my-4 p-6 bg-gray-100 rounded-lg">
               Jednoduché pravidlo: &quot;Hodnotím vodiča len za to, čo reálne držal v
               rukách.&quot;
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6">6. Záver: Hviezdičky sú zbraň</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-3">6. Záver: Hviezdičky sú zbraň</h2>
 
             <p className="text-lg">
               Nechceme od teba, aby si bol &quot;dobráčik&quot; a rozdával 5★ stále. Chceme iba:{' '}
               <strong>férové hodnotenie za to, čo vodič reálne ovplyvnil.</strong>
             </p>
 
-            <div className="bg-yellow-50 p-6 rounded-lg my-8">
+            <div className="bg-yellow-50 p-6 rounded-lg my-4">
               <p className="font-semibold text-lg mb-3">Dôsledok nespravodlivého hodnotenia:</p>
               <ul className="space-y-2">
                 <li>
@@ -321,7 +314,7 @@ export default function HodnotenieVodicovPage() {
               </ul>
             </div>
 
-            <p className="text-xl font-bold text-center my-8">Rozmýšľaj, kam mieris.</p>
+            <p className="text-xl font-bold text-center my-4">Rozmýšľaj, kam mieris.</p>
           </article>
 
           {/* FAQ Section */}
@@ -332,17 +325,17 @@ export default function HodnotenieVodicovPage() {
 
           {/* CTA Section */}
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4 text-center">
+            <h3 className="text-2xl font-bold mb-3 text-center">
               Chcete vidieť komplexný sprievodca taxislužbami?
             </h3>
-            <p className="text-center text-gray-700 mb-6">
+            <p className="text-center text-gray-700 mb-3">
               Prečítajte si všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025.
             </p>
             <div className="flex justify-center">
               <Link href="/komplexny-sprievodca-taxi">
                 <Button size="lg" className="gap-2">
                   Zobraziť sprievodcu
-                  <ArrowLeft className="h-4 w-4 rotate-180" />
+                  <ArrowLeft className="h-2.5 w-2.5 rotate-180" />
                 </Button>
               </Link>
             </div>

@@ -11,18 +11,18 @@
  */
 
 import type { Metadata, Viewport } from 'next';
-import { Manrope } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import { CookieBanner } from '@/components/cookie-banner';
 
 // Google Font optimalizácia (Next.js automaticky hostuješ fonty)
-const manrope = Manrope({
+const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '700', '900'],
   display: 'swap', // Lepší performance
-  variable: '--font-manrope',
+  variable: '--font-roboto',
 });
 
 // Metadata API - SEO optimalizácia (migrované z index.html lines 3-43)
@@ -197,7 +197,7 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body className={manrope.className}>
+      <body className={roboto.className}>
         {/*
           Providers wrapper - Client Component
           Obsahuje: QueryClient, TooltipProvider, Toasters, Cookie Consent logic
