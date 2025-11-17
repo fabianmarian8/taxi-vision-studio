@@ -30,13 +30,10 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
     const formData = new FormData(form);
 
     try {
-      // Použitie FormSubmit.co služby - email sa odošle na info@taxinearme.sk
-      const response = await fetch("https://formsubmit.co/info@taxinearme.sk", {
+      // Použitie našej vlastnej API route s Resend službou
+      const response = await fetch("/api/contact", {
         method: "POST",
         body: formData,
-        headers: {
-          Accept: "application/json",
-        },
       });
 
       if (response.ok) {
@@ -47,6 +44,8 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
           setSubmitStatus("idle");
         }, 2000);
       } else {
+        const errorData = await response.json();
+        console.error("Error sending email:", errorData);
         setSubmitStatus("error");
       }
     } catch (error) {
@@ -68,11 +67,6 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-4 mt-3 sm:mt-4">
-          {/* Skryté polia pre FormSubmit.co konfiguráciu */}
-          <input type="hidden" name="_subject" value="Nový príspevok z Taxi NearMe - Niečo tu chýba" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-
           <div className="space-y-2">
             <Label htmlFor="name" className="font-bold">
               Vaše meno
