@@ -59,11 +59,20 @@ export async function generateMetadata({
       locale: 'sk_SK',
       url: currentUrl,
       siteName,
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: `Taxislužby v Kraji ${regionName}`,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: `Taxislužby v Kraji ${regionName}`,
       description,
+      images: [`${baseUrl}/og-image.png`],
     },
     alternates: {
       canonical: currentUrl,
