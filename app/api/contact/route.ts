@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Inicializácia Resend klienta
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Funkcia pre lazy inicializáciu Resend klienta
+// (inicializuje sa až pri použití, nie pri importe)
+function getResendClient() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
 
 // Email template komponenta
 const ContactFormEmail = ({
@@ -113,6 +116,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Odoslanie emailu cez Resend
+    const resend = getResendClient();
     const { data, error: resendError } = await resend.emails.send({
       from: 'Taxi NearMe <noreply@taxinearme.sk>', // Toto bude potrebné zmeniť po nastavení vlastnej domény v Resend
       to: ['info@taxinearme.sk'],
