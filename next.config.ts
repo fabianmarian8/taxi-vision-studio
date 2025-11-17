@@ -77,8 +77,8 @@ const nextConfig: NextConfig = {
     },
   },
 
-  // Output (pre Vercel deployment)
-  output: 'standalone', // Optimalizovaný pre Vercel
+  // Output (pre GitHub Pages static deployment)
+  output: 'export', // Static HTML export pre GitHub Pages
 
   // Redirects (ak potrebné)
   // async redirects() {
