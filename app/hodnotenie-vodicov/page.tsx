@@ -70,10 +70,12 @@ export default function HodnotenieVodicovPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <SEOBreadcrumbs items={[{ label: 'Hodnotenie vodičov' }]} />
 
-      {/* Hero Section */}
-      <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative hero-3d-bg overflow-hidden">
+      <div className="hero-3d-bg">
+        <SEOBreadcrumbs items={[{ label: 'Hodnotenie vodičov' }]} />
+
+        {/* Hero Section */}
+        <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative overflow-hidden">
         <GeometricLines variant="hero" count={12} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
@@ -101,6 +103,7 @@ export default function HodnotenieVodicovPage() {
           <ShareButton title="Ako funguje hodnotenie vodičov v taxi aplikáciách" />
         </div>
       </section>
+      </div>
 
       {/* Article Content with WHITE BACKGROUND */}
       <section className="py-6 md:py-8 px-3 md:px-6 bg-white">

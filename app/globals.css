@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    /* Exact yellow from logo */
-    --background: 41 84% 55%;
+    /* Softened yellow from logo */
+    --background: 41 75% 68%;
     --foreground: 0 0% 6%;
 
     --card: 0 0% 100%;
@@ -16,13 +16,13 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 6%;
 
-    --primary: 41 84% 55%;
+    --primary: 41 75% 68%;
     --primary-foreground: 0 0% 6%;
 
-    --secondary: 43 88% 60%;
+    --secondary: 43 70% 72%;
     --secondary-foreground: 0 0% 6%;
 
-    --muted: 44 90% 65%;
+    --muted: 44 65% 75%;
     --muted-foreground: 0 0% 20%;
 
     --accent: 0 0% 6%;
@@ -38,10 +38,48 @@
     --radius: 1rem;
 
     /* Custom 3D Design Tokens */
-    --taxi-yellow: 41 84% 55%;
+    --taxi-yellow: 41 75% 68%;
     --taxi-dark: 0 0% 6%;
     --taxi-white: 0 0% 100%;
     --taxi-shadow: 0 0% 0%;
+
+    /* Extended Color Palette - Based on Design System */
+    /* Primary Yellow - #F5A623 */
+    --primary-yellow: 36 96% 55%;
+    --primary-yellow-light: 36 96% 85%;
+    --primary-yellow-dark: 36 96% 45%;
+
+    /* Secondary Orange - #FF8C42 */
+    --secondary-orange: 23 100% 63%;
+    --secondary-orange-light: 23 100% 85%;
+
+    /* Neutral Grays */
+    --neutral-bg: 220 14% 96%; /* #F3F4F6 for section backgrounds */
+    --neutral-text: 220 9% 46%; /* #4B5563 for secondary text */
+    --neutral-50: 0 0% 98%;
+    --neutral-100: 220 14% 96%;
+    --neutral-200: 0 0% 90%;
+    --neutral-300: 0 0% 83%;
+    --neutral-400: 0 0% 64%;
+    --neutral-500: 220 9% 46%;
+    --neutral-600: 0 0% 32%;
+    --neutral-700: 0 0% 25%;
+    --neutral-800: 0 0% 15%;
+    --neutral-900: 0 0% 9%;
+
+    /* Region Colors - Geographic System */
+    --region-west: 200 80% 55%; /* Modrá - Západ */
+    --region-east: 330 70% 55%; /* Ružová - Východ */
+    --region-central: 150 60% 50%; /* Zelená - Stred */
+    --region-north: 270 60% 55%; /* Fialová - Sever */
+
+    /* Semantic Colors */
+    --success: 142 71% 45%;
+    --success-light: 142 71% 92%;
+    --info: 199 89% 48%;
+    --info-light: 199 89% 92%;
+    --warning: 38 92% 50%;
+    --warning-light: 38 92% 92%;
 
     /* 3D Shadow System */
     --shadow-3d-sm:
@@ -206,15 +244,19 @@
   .hero-3d-bg {
     position: relative;
     overflow: hidden;
-    background-color: #f3f4f6; /* Light gray background */
+    background: linear-gradient(180deg,
+      hsl(41, 84%, 65%) 0%,
+      hsl(41, 80%, 75%) 50%,
+      hsl(41, 75%, 85%) 100%
+    );
   }
 
   .hero-3d-bg::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 50%,
-      rgba(255, 255, 255, 0.1) 0%,
+    background: radial-gradient(circle at 50% 30%,
+      rgba(255, 255, 255, 0.3) 0%,
       transparent 70%
     );
     pointer-events: none;
@@ -234,4 +276,54 @@
   [data-radix-accordion-trigger]:hover {
     opacity: 0.8;
   }
+}
+
+/* Extended Color Utilities */
+@layer utilities {
+  /* Primary Yellow */
+  .bg-primary-yellow { background-color: hsl(var(--primary-yellow)); }
+  .bg-primary-yellow-light { background-color: hsl(var(--primary-yellow-light)); }
+  .bg-primary-yellow-dark { background-color: hsl(var(--primary-yellow-dark)); }
+  .text-primary-yellow { color: hsl(var(--primary-yellow)); }
+  .text-primary-yellow-dark { color: hsl(var(--primary-yellow-dark)); }
+  .border-primary-yellow { border-color: hsl(var(--primary-yellow)); }
+
+  /* Secondary Orange */
+  .bg-secondary-orange { background-color: hsl(var(--secondary-orange)); }
+  .bg-secondary-orange-light { background-color: hsl(var(--secondary-orange-light)); }
+  .text-secondary-orange { color: hsl(var(--secondary-orange)); }
+  .border-secondary-orange { border-color: hsl(var(--secondary-orange)); }
+
+  /* Neutral colors */
+  .bg-neutral-bg { background-color: hsl(var(--neutral-bg)); }
+  .text-neutral-text { color: hsl(var(--neutral-text)); }
+  .bg-neutral-50 { background-color: hsl(var(--neutral-50)); }
+  .bg-neutral-100 { background-color: hsl(var(--neutral-100)); }
+  .bg-neutral-200 { background-color: hsl(var(--neutral-200)); }
+  .text-neutral-500 { color: hsl(var(--neutral-500)); }
+  .text-neutral-600 { color: hsl(var(--neutral-600)); }
+  .text-neutral-700 { color: hsl(var(--neutral-700)); }
+  .border-neutral-200 { border-color: hsl(var(--neutral-200)); }
+  .border-neutral-300 { border-color: hsl(var(--neutral-300)); }
+
+  /* Region colors */
+  .bg-region-west { background-color: hsl(var(--region-west)); }
+  .bg-region-east { background-color: hsl(var(--region-east)); }
+  .bg-region-central { background-color: hsl(var(--region-central)); }
+  .bg-region-north { background-color: hsl(var(--region-north)); }
+  .border-region-west { border-color: hsl(var(--region-west)); }
+  .border-region-east { border-color: hsl(var(--region-east)); }
+  .border-region-central { border-color: hsl(var(--region-central)); }
+  .border-region-north { border-color: hsl(var(--region-north)); }
+
+  /* Semantic colors */
+  .bg-success { background-color: hsl(var(--success)); }
+  .bg-success-light { background-color: hsl(var(--success-light)); }
+  .text-success { color: hsl(var(--success)); }
+  .bg-info { background-color: hsl(var(--info)); }
+  .bg-info-light { background-color: hsl(var(--info-light)); }
+  .text-info { color: hsl(var(--info)); }
+  .bg-warning { background-color: hsl(var(--warning)); }
+  .bg-warning-light { background-color: hsl(var(--warning-light)); }
+  .text-warning { color: hsl(var(--warning)); }
 }

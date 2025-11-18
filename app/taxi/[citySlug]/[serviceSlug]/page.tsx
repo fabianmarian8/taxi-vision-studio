@@ -206,34 +206,45 @@ export default async function TaxiServicePage({
       />
 
       {/* Taxi Service Detail Section */}
-      <section className="pt-4 md:pt-6 py-12 md:py-20 lg:py-24 px-4 md:px-8 relative">
+      <section className="pt-4 md:pt-6 pb-8 md:pb-12 px-4 md:px-8 relative bg-white">
         <GeometricLines variant="subtle" count={6} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
           {/* Back Button */}
           <Link
             href={`/taxi/${citySlug}`}
-            className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold mb-8"
+            className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold mb-6"
             title={`Späť na zoznam taxislužieb v meste ${city.name}`}
           >
             <ArrowLeft className="h-4 w-4" />
             Späť na zoznam taxislužieb v meste {city.name}
           </Link>
 
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-black mb-4 text-foreground drop-shadow-md">
-              {service.name}
-            </h1>
-            <p className="text-xl text-foreground/90 font-bold">
-              Taxislužba v meste {city.name}
-            </p>
+          {/* Hero Box with Yellow Gradient */}
+          <div className="text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12">
+            <div className="absolute inset-0 hero-3d-bg" />
+
+            <div className="relative z-10">
+              <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-foreground drop-shadow-md">
+                {service.name}
+              </h1>
+              <p className="text-xl text-foreground/90 font-semibold">
+                Taxislužba v meste {city.name}
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Information Section */}
+      <section className="py-12 md:py-16 px-4 md:px-8 relative bg-white">
+        <div className="container mx-auto max-w-4xl relative z-10">
 
           <Card className="perspective-1000 mb-8">
             <div className="card-3d shadow-3d-lg">
               <CardHeader>
-                <CardTitle className="text-2xl font-black flex items-center gap-3">
-                  <MapPin className="h-6 w-6 text-foreground" />
+                <CardTitle className="text-2xl font-bold flex items-center gap-3">
+                  <MapPin className="h-6 w-6 text-success" />
                   Kontaktné informácie
                 </CardTitle>
               </CardHeader>
@@ -241,9 +252,11 @@ export default async function TaxiServicePage({
                 <div className="flex flex-col gap-4">
                   {service.phone && (
                     <div className="flex items-start gap-3">
-                      <Phone className="h-5 w-5 text-foreground mt-1 flex-shrink-0" />
+                      <div className="flex-shrink-0 w-10 h-10 bg-primary-yellow-light rounded-lg flex items-center justify-center">
+                        <Phone className="h-5 w-5 text-primary-yellow-dark mt-0" />
+                      </div>
                       <div>
-                        <p className="text-sm text-foreground/70 font-medium mb-1">
+                        <p className="text-sm text-neutral-text font-medium mb-1">
                           Telefónne číslo
                         </p>
                         <a
@@ -258,9 +271,11 @@ export default async function TaxiServicePage({
                   )}
                   {service.website && (
                     <div className="flex items-start gap-3">
-                      <Globe className="h-5 w-5 text-foreground mt-1 flex-shrink-0" />
+                      <div className="flex-shrink-0 w-10 h-10 bg-info-light rounded-lg flex items-center justify-center">
+                        <Globe className="h-5 w-5 text-info mt-0" />
+                      </div>
                       <div>
-                        <p className="text-sm text-foreground/70 font-medium mb-1">
+                        <p className="text-sm text-neutral-text font-medium mb-1">
                           Webová stránka
                         </p>
                         <a

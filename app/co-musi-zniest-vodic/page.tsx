@@ -49,11 +49,13 @@ export default function CoMusiZniestVodicPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <SEOBreadcrumbs items={[
-        { label: 'Čo musí zniesť vodič' }
-      ]} />
 
-      <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative hero-3d-bg overflow-hidden">
+      <div className="hero-3d-bg">
+        <SEOBreadcrumbs items={[
+          { label: 'Čo musí zniesť vodič' }
+        ]} />
+
+        <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative overflow-hidden">
         <GeometricLines variant="hero" count={12} />
 
         <div className="container mx-auto max-w-4xl relative z-10">
@@ -82,6 +84,7 @@ export default function CoMusiZniestVodicPage() {
           />
         </div>
       </section>
+      </div>
 
       <section className="py-6 md:py-8 px-3 md:px-6 bg-white">
         <div className="container mx-auto max-w-4xl">

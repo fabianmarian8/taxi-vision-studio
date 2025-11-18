@@ -36,7 +36,7 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section with 3D Effects */}
-      <section className="pt-4 pb-6 md:pt-8 md:pb-8 px-4 md:px-8 relative hero-3d-bg bg-background">
+      <section className="pt-4 pb-6 md:pt-8 md:pb-8 px-4 md:px-8 relative hero-3d-bg">
         <GeometricLines variant="hero" count={10} />
 
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -85,7 +85,7 @@ export default function HomePage() {
 
           <div className="container mx-auto max-w-7xl relative z-10">
             <div className="text-center mb-5 md:mb-7 lg:mb-10">
-              <h2 className="text-xl md:text-3xl lg:text-4xl font-black mb-2 md:mb-4 text-foreground drop-shadow-md">
+              <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 text-foreground drop-shadow-md">
                 Taxislužby na Slovensku
               </h2>
               <p className="text-xs md:text-base text-foreground/90 font-bold px-2">
@@ -115,7 +115,7 @@ export default function HomePage() {
 
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-5 md:mb-7 lg:mb-10">
-              <h2 className="text-xl md:text-3xl lg:text-4xl font-black mb-2 md:mb-4 text-foreground drop-shadow-md">
+              <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 text-foreground drop-shadow-md">
                 Dostupné všade
               </h2>
               <p className="text-xs md:text-sm text-foreground/90 font-bold px-2">
@@ -144,7 +144,7 @@ export default function HomePage() {
                     className="h-10 md:h-12 lg:h-14 w-10 md:w-12 lg:w-14 text-foreground mx-auto mb-2 md:mb-4"
                     strokeWidth={2.5}
                   />
-                  <h3 className="text-sm md:text-base lg:text-lg font-black mb-2 md:mb-2 text-foreground">
+                  <h3 className="text-sm md:text-base lg:text-lg font-semibold mb-2 md:mb-2 text-foreground">
                     Databáza taxislužieb z celého Slovenska
                   </h3>
                   <p className="text-foreground/70 text-xs md:text-sm lg:text-base font-medium">

@@ -16,6 +16,7 @@ export interface CityData {
   taxiServices: TaxiService[];
   latitude?: number;
   longitude?: number;
+  heroImage?: string;
 }
 
 // Načítanie dát z JSON súboru

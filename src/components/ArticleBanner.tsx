@@ -116,10 +116,10 @@ export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
               className="article-card flex-shrink-0 w-[168px] md:w-[192px] snap-start"
               title={article.title}
             >
-              <div className="bg-gray-100 border border-foreground/10 hover:border-primary rounded-lg overflow-hidden h-full transition-all duration-300 hover:shadow-3d-md hover:scale-105 group">
+              <div className="bg-gray-100 border border-foreground/10 hover:border-primary rounded-lg overflow-hidden h-full transition-all duration-300 hover:shadow-3d-md hover:scale-105 group flex flex-col">
                 {/* Article Image */}
                 {article.image && (
-                  <div className="w-full h-24 md:h-28 overflow-hidden">
+                  <div className="w-full h-24 md:h-28 overflow-hidden flex-shrink-0">
                     <img
                       src={article.image}
                       alt={article.title}
@@ -128,7 +128,7 @@ export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
                   </div>
                 )}
 
-                <div className="p-2 md:p-3">
+                <div className="p-2 md:p-3 flex flex-col flex-grow">
                   {/* Icon & Category */}
                   <div className="flex items-center justify-between mb-1 md:mb-2">
                     <div className="p-1 bg-primary/10 rounded-md group-hover:bg-primary/20 transition-colors">
@@ -156,7 +156,7 @@ export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
                   </div>
 
                   {/* Date */}
-                  <div className="mt-2 pt-2 border-t border-foreground/10">
+                  <div className="mt-auto pt-2 border-t border-foreground/10">
                     <p className="text-[10px] md:text-xs text-foreground/50">
                       {new Date(article.date).toLocaleDateString('sk-SK', {
                         year: 'numeric',
