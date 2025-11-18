@@ -31,7 +31,7 @@ export const articles: Article[] = [
     excerpt: 'Nástupné sadzby od 0,5€ do 3,5€, kilometrové tarify od 0,8€ do 1,5€. Detailný prehľad cien taxi na Slovensku.',
     slug: '/taxi-ceny',
     icon: FileText,
-    date: '2025-10-18',
+    date: '2025-10-15',
     category: 'Blog',
     featured: true,
     image: '/blog-images/porovnanie-cien.webp'
@@ -42,7 +42,7 @@ export const articles: Article[] = [
     excerpt: 'Prečo môžeš jedným klikom zničiť niekomu prácu. 4★ nie je dobré hodnotenie - je to penalizácia.',
     slug: '/hodnotenie-vodicov',
     icon: Star,
-    date: '2025-09-18',
+    date: '2025-09-22',
     category: 'Hodnotenie',
     featured: true,
     image: '/blog-images/hodnotenie.webp'
@@ -53,7 +53,7 @@ export const articles: Article[] = [
     excerpt: 'Hranica medzi službou a záchrannou misiou. Kedy môže vodič odmietnuť jazdu a ako sa správať v noci.',
     slug: '/alkohol-nocny-zivot',
     icon: AlertCircle,
-    date: '2025-08-18',
+    date: '2025-08-07',
     category: 'Bezpečnosť',
     featured: true,
     image: '/blog-images/alkohol.webp'
@@ -64,7 +64,7 @@ export const articles: Article[] = [
     excerpt: 'Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva.',
     slug: '/komplexny-sprievodca-taxi',
     icon: BookOpen,
-    date: '2025-07-18',
+    date: '2025-07-12',
     category: 'Sprievodca',
     featured: true,
     image: '/blog-images/sprievodca.webp'
@@ -75,7 +75,7 @@ export const articles: Article[] = [
     excerpt: 'Jasné pravidlá, slušnosť a hranice, ktoré by mali poznať obe strany.',
     slug: '/komunikacia-taxikar-zakaznik',
     icon: MessageCircle,
-    date: '2025-06-18',
+    date: '2025-06-25',
     category: 'Komunikácia',
     featured: true,
     image: '/blog-images/komunikacia.webp'
@@ -86,7 +86,7 @@ export const articles: Article[] = [
     excerpt: 'Budúcnosť taxi je elektrická. Analýza trendu a výhod elektromobilov v taxislužbách.',
     slug: '/elektrifikacia-taxi',
     icon: Zap,
-    date: '2025-05-18',
+    date: '2025-05-09',
     category: 'Elektrifikácia',
     featured: true,
     image: '/blog-images/elektricke-auta.webp'
@@ -97,7 +97,7 @@ export const articles: Article[] = [
     excerpt: 'Ako rozumieť správaniu zákazníkov a zlepšiť kvalitu služby.',
     slug: '/psychologia-zakaznikov',
     icon: Brain,
-    date: '2025-04-18',
+    date: '2025-04-14',
     category: 'Psychológia',
     featured: true,
     image: '/blog-images/psycholog.webp'
@@ -108,7 +108,7 @@ export const articles: Article[] = [
     excerpt: 'Moderné nástroje a tipy pre efektívnu navigáciu v meste.',
     slug: '/navigacia',
     icon: Navigation,
-    date: '2025-03-18',
+    date: '2025-03-28',
     category: 'Navigácia',
     featured: true,
     image: '/blog-images/navigacia.webp'
@@ -119,7 +119,7 @@ export const articles: Article[] = [
     excerpt: 'Realita práce taxikára - výzvy, stres a každodenné situácie.',
     slug: '/co-musi-zniest-vodic',
     icon: AlertTriangle,
-    date: '2025-02-18',
+    date: '2025-02-11',
     category: 'Realita',
     featured: true,
     image: '/blog-images/vodic.webp'
@@ -130,7 +130,7 @@ export const articles: Article[] = [
     excerpt: 'Nižšia kvalita služieb a sklamanie vodičov - realita rideshare platforiem.',
     slug: '/temna-strana-bolt-uber',
     icon: AlertCircle,
-    date: '2025-01-18',
+    date: '2025-01-20',
     category: 'Analýza',
     featured: true,
     image: '/blog-images/temna-strana.webp'
