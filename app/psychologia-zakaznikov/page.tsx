@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
   title: 'Psychológia zákazníkov v taxi | TaxiNearMe.sk',
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
     title: 'Psychológia zákazníkov v taxi - typológia pasažierov',
     description: 'Od tichého profesionála po toxického pasažiera. Ako rozpoznať typy zákazníkov a prispôsobiť im svoju komunikáciu.',
     images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']

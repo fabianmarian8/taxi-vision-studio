@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
   title: 'Komplexný sprievodca taxislužbami na Slovensku | TaxiNearMe.sk',
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
     title: 'Komplexný sprievodca taxislužbami na Slovensku (2025)',
     description: 'Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva.',
     images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']

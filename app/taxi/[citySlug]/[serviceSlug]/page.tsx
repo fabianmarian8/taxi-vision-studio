@@ -22,6 +22,7 @@ import { MapPin, Phone, Globe, ArrowLeft } from 'lucide-react';
 import { getCityBySlug, createRegionSlug, type CityData, type TaxiService } from '@/data/cities';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { truncateUrl } from '@/utils/urlUtils';
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 /**
  * Helper function to generate JSON-LD structured data for TaxiService
@@ -109,7 +110,8 @@ export async function generateMetadata({
   const siteName = 'Taxi NearMe';
   const baseUrl = 'https://taxinearme.sk';
   const currentUrl = `${baseUrl}/taxi/${citySlug}/${serviceSlug}`;
-  const description = `${service.name} - Spoľahlivá taxislužba v meste ${city.name}. ${service.phone ? `Telefonický kontakt: ${service.phone}.` : ''} Rýchla a pohodlná preprava osôb.`;
+  // Skrátený popis pre SEO (max 160 znakov)
+  const description = `${service.name} v meste ${city.name}. ${service.phone ? `Tel: ${service.phone}.` : ''} Rýchla preprava.`;
 
   return {
     title: `${service.name} - Taxi ${city.name} | ${siteName}`,
@@ -140,6 +142,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
+      site: SEO_CONSTANTS.twitterSite,
       title: `${service.name} - Taxi ${city.name}`,
       description,
       images: [`${baseUrl}/og-image.png`],

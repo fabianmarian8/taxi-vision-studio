@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
   title: 'Taxi navigácia: Ako nájsť najlepšiu trasu | TaxiNearMe.sk',
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
     title: 'Taxi navigácia: Ako nájsť najlepšiu trasu',
     description: 'Moderné nástroje a tipy pre efektívnu navigáciu v meste.',
     images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']

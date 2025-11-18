@@ -9,9 +9,10 @@ import Link from "next/link";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
-  title: 'Ako vyzerá dobrá komunikácia medzi taxikárom a zákazníkom | TaxiNearMe.sk',
+  title: 'Komunikácia medzi taxikárom a zákazníkom | TaxiNearMe.sk',
   description: 'Jasné pravidlá, slušnosť a hranice, ktoré by mali poznať obe strany.',
   keywords: ['komunikácia taxi', 'správanie v taxi', 'taxikár zákazník', 'slušnosť', 'taxislužby', 'pravidlá taxi'],
   openGraph: {
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
     title: 'Komunikácia medzi taxikárom a zákazníkom',
     description: 'Jasné pravidlá, slušnosť a hranice, ktoré by mali poznať obe strany.',
     images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']

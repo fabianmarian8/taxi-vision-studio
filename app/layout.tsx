@@ -16,6 +16,7 @@ import Script from 'next/script';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import { CookieBanner } from '@/components/cookie-banner';
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 // Google Font optimalizácia (Next.js automaticky hostuješ fonty)
 const roboto = Roboto({
@@ -78,6 +79,7 @@ export const metadata: Metadata = {
   // Twitter Card metadata (z index.html lines 38-40)
   twitter: {
     card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
     title: 'Taxi NearMe - Taxi v Každom Meste na Slovensku',
     description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku.',
     images: ['https://taxinearme.sk/og-image.png'],
