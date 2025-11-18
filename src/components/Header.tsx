@@ -3,6 +3,7 @@
 import { Plus, Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import logo from "@/assets/logo-3d.jpg";
 import { ContactFormModal } from "./ContactFormModal";
@@ -43,7 +44,14 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3">
             <Link href="/" className="cursor-pointer" title="Domovská stránka Taxi NearMe">
-              <img src={logo.src} alt="Taxi NearMe logo" className="h-8 md:h-12 w-auto rounded-lg shadow-3d-sm hover:shadow-3d-md transition-all hover:scale-105" />
+              <Image
+                src={logo}
+                alt="Taxi NearMe logo"
+                className="h-8 md:h-12 w-auto rounded-lg shadow-3d-sm hover:shadow-3d-md transition-all hover:scale-105"
+                width={48}
+                height={48}
+                priority
+              />
             </Link>
             <div className="flex flex-col -space-y-1">
             </div>

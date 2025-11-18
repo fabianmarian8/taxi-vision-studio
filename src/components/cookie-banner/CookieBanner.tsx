@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { X, Cookie, Shield, BarChart3 } from 'lucide-react';
 import {
   CookiePreferences,
@@ -115,10 +116,12 @@ export const CookieBanner = () => {
             {/* Cookie Character - použije sa prvý obrázok */}
             <div className="flex-shrink-0">
               <div className="w-12 h-12 md:w-20 md:h-20 relative animate-bounce-slow">
-                <img
+                <Image
                   src="/cookie-character-1.png"
                   alt="Cookie maskot"
-                  className="w-full h-full object-contain drop-shadow-2xl"
+                  className="object-contain drop-shadow-2xl"
+                  fill
+                  sizes="(max-width: 768px) 48px, 80px"
                 />
               </div>
             </div>

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight, Newspaper } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import type { Article } from "@/data/articles";
 
 interface ArticleBannerProps {
@@ -119,11 +120,13 @@ export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
               <div className="bg-gray-100 border border-foreground/10 hover:border-primary rounded-lg overflow-hidden h-full transition-all duration-300 hover:shadow-3d-md hover:scale-105 group flex flex-col">
                 {/* Article Image */}
                 {article.image && (
-                  <div className="w-full h-24 md:h-28 overflow-hidden flex-shrink-0">
-                    <img
+                  <div className="w-full h-24 md:h-28 overflow-hidden flex-shrink-0 relative">
+                    <Image
                       src={article.image}
                       alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      sizes="(max-width: 768px) 168px, 192px"
                     />
                   </div>
                 )}

@@ -1,6 +1,7 @@
 /** Migrované z: src/vite-pages/TaxiPriceArticlePage.tsx */
 
 import { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/Header";
 import { GeometricLines } from "@/components/GeometricLines";
 import { Button } from "@/components/ui/button";
@@ -90,10 +91,12 @@ export default function TaxiPriceArticlePage() {
             <h2 className="text-xl font-bold mt-4 mb-2">Nástupné sadzby: najvyššie v Bratislave, najnižšie v menších mestách</h2>
 
             <div className="my-4">
-              <img
+              <Image
                 src="/images/article/001.webp"
                 alt="Porovnanie nástupných sadzieb taxislužieb v rôznych mestách Slovenska"
                 className="w-full rounded-lg shadow-lg"
+                width={1200}
+                height={600}
               />
               <p className="text-sm text-gray-600 italic mt-2 text-center">
                 Porovnanie nástupných sadzieb taxislužieb v rôznych mestách Slovenska (v €).
@@ -111,10 +114,12 @@ export default function TaxiPriceArticlePage() {
             <h2 className="text-xl font-bold mt-4 mb-2">Cena za kilometer: vyššia v hlavnom meste, inde často okolo 1 €/km</h2>
 
             <div className="my-4">
-              <img
+              <Image
                 src="/images/article/002.webp"
                 alt="Porovnanie tarifnej ceny za kilometer jazdy v rôznych mestách"
                 className="w-full rounded-lg shadow-lg"
+                width={1200}
+                height={600}
               />
               <p className="text-sm text-gray-600 italic mt-2 text-center">
                 Porovnanie tarifnej ceny za kilometer jazdy v rôznych mestách.
@@ -142,10 +147,12 @@ export default function TaxiPriceArticlePage() {
             <h2 className="text-xl font-bold mt-4 mb-2">Odhad ceny typických jázd: mestská trasa vs. letisko</h2>
 
             <div className="my-4">
-              <img
+              <Image
                 src="/images/article/004.webp"
                 alt="Odhad ceny 5 km jazdy (s 2 min čakaním)"
                 className="w-full rounded-lg shadow-lg"
+                width={1200}
+                height={600}
               />
               <p className="text-sm text-gray-600 italic mt-2 text-center">
                 Odhadovaná cena 5 km jazdy v rôznych mestách (zahŕňa približne 5 km trasy a 2 minúty čakania, v €).

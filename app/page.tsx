@@ -14,6 +14,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { SearchPanel } from '@/components/SearchPanel';
@@ -43,10 +44,13 @@ export default function HomePage() {
           <div className="text-center space-y-2 md:space-y-3">
             {/* Taxi Logo */}
             <div className="mb-0">
-              <img
-                src={taxiLogo.src}
+              <Image
+                src={taxiLogo}
                 alt="Taxi NearMe Logo"
                 className="h-20 md:h-32 lg:h-40 xl:h-48 w-auto mx-auto drop-shadow-lg"
+                width={192}
+                height={192}
+                priority
               />
             </div>
 
