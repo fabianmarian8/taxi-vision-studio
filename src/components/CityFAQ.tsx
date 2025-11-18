@@ -69,8 +69,8 @@ export const CityFAQ = ({ cityName, citySlug }: CityFAQProps) => {
           </p>
         </div>
 
-        <Card className="perspective-1000">
-          <div className="card-3d shadow-3d-lg">
+        <Card>
+          <div className="shadow-3d-lg">
             <CardHeader>
               <CardTitle className="text-xl md:text-2xl font-black text-foreground">
                 Odpovede na vaše otázky
