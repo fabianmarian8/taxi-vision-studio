@@ -45,14 +45,14 @@ export const HowItWorks = () => {
                 </div>
               </div>
 
-              <div className="space-y-0.5 md:space-y-1">
-                <div className="text-[10px] md:text-xs font-black text-foreground mb-0.5 md:mb-1">
+              <div className="space-y-1 md:space-y-1.5">
+                <div className="text-[11px] md:text-xs font-black text-foreground mb-1 md:mb-1.5">
                   Krok {index + 1}
                 </div>
-                <h3 className="text-sm md:text-base lg:text-lg font-black mb-1 md:mb-2 text-foreground">
+                <h3 className="text-sm md:text-base lg:text-lg font-black mb-1.5 md:mb-2 text-foreground">
                   {step.title}
                 </h3>
-                <p className="text-xs md:text-sm text-foreground/70 font-medium px-1 md:px-0">
+                <p className="text-xs md:text-sm text-foreground/70 font-medium px-2 md:px-0">
                   {step.description}
                 </p>
               </div>

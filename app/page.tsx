@@ -162,28 +162,28 @@ export default function HomePage() {
 
           <div className="container mx-auto max-w-6xl">
             <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
-              <div className="text-[10px] md:text-xs text-foreground font-bold text-center md:text-left">
+              <div className="text-xs md:text-sm text-foreground font-bold text-center md:text-left">
                 © 2024 Taxi NearMe. Všetky práva vyhradené.
               </div>
 
-              <div className="flex flex-wrap justify-center gap-2 md:gap-5">
+              <div className="flex flex-wrap justify-center gap-3 md:gap-5">
                 <Link
                   href="/ochrana-sukromia"
-                  className="text-[10px] md:text-xs text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                  className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
                   title="Ochrana súkromia a GDPR"
                 >
                   Ochrana súkromia
                 </Link>
                 <Link
                   href="/podmienky-pouzivania"
-                  className="text-[10px] md:text-xs text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                  className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
                   title="Podmienky používania služby"
                 >
                   Podmienky používania
                 </Link>
                 <Link
                   href="/kontakt"
-                  className="text-[10px] md:text-xs text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                  className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
                   title="Kontaktný formulár"
                 >
                   Kontakt
