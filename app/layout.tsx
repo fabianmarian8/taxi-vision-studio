@@ -180,6 +180,17 @@ export default function RootLayout({
         </Script>
 
         {/*
+          Google AdSense
+          Auto ads script - musí byť v <head> na každej stránke
+        */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1462378482513953"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+
+        {/*
           Google Analytics (gtag.js)
           Z index.html lines 63-71
         */}
