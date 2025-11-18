@@ -10,6 +10,7 @@ import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Mail } from 'lucide-react';
 import { FooterLegal } from '@/components/FooterLegal';
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
   title: 'Kontakt | Taxi NearMe',
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
     title: 'Kontakt | Taxi NearMe',
     description: 'Kontaktujte nás cez email info@taxinearme.sk',
     images: ['https://taxinearme.sk/og-image.png'],
@@ -68,6 +70,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex-1 space-y-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Kontaktujte nás</h2>
                 <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
                   Ak máte otázky, podnety, sťažnosti, požiadavky na zmenu alebo návrhy na
                   spoluprácu, napíšte nám na

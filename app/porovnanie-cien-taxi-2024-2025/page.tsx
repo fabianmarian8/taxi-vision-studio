@@ -2,6 +2,7 @@
 
 import { Metadata } from "next";
 import { PriceComparisonContent } from "@/components/PriceComparisonContent";
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
   title: 'Index cien taxislužieb na Slovensku 2025 | TaxiNearMe.sk',
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
     title: 'Index cien taxislužieb na Slovensku 2025',
     description: 'Komplexné porovnanie cien taxi v slovenských mestách. Zistite, kde je najlacnejšie a najdrahšie cestovať taxíkom.',
     images: ['https://www.taxinearme.sk/og-price-comparison.png']

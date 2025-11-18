@@ -9,6 +9,7 @@ import Link from "next/link";
 import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
   title: 'Alkohol, nočný život a taxík | TaxiNearMe.sk',
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
     title: 'Alkohol, nočný život a taxík',
     description: 'Hranica medzi službou a záchrannou misiou. Kedy môže vodič odmietnuť jazdu a ako sa správať v noci.',
     images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']

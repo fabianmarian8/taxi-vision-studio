@@ -18,6 +18,7 @@ import { Calendar, Star, AlertTriangle, ArrowLeft } from 'lucide-react';
 import { ArticleFAQ } from '@/components/ArticleFAQ';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { ShareButton } from '@/components/ShareButton';
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
   title: 'Ako funguje hodnotenie vodičov v taxi aplikáciách | Taxi NearMe',
@@ -51,6 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
     title: 'Ako funguje hodnotenie vodičov v taxi aplikáciách',
     description:
       'Prečo môžeš jedným klikom zničiť niekomu prácu. 4★ nie je dobré hodnotenie - je to penalizácia.',

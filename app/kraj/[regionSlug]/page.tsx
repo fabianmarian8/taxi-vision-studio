@@ -20,6 +20,7 @@ import { GeometricLines } from '@/components/GeometricLines';
 import { SlovakCityCard } from '@/components/SlovakCityCard';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { getRegionBySlug, getCitiesByRegion } from '@/data/cities';
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 // Generate metadata for SEO
 export async function generateMetadata({
@@ -41,7 +42,8 @@ export async function generateMetadata({
   const siteName = 'Taxi NearMe';
   const baseUrl = 'https://taxinearme.sk';
   const currentUrl = `${baseUrl}/kraj/${regionSlug}`;
-  const description = `Nájdite spoľahlivé taxislužby v kraji ${regionName}. Prehľad ${cities.length} miest s dostupnými taxi službami. Rýchlo, jednoducho a vždy nablízku.`;
+  // Skrátený popis pre SEO (max 160 znakov)
+  const description = `Taxislužby v ${regionName}. Prehľad ${cities.length} miest s taxi službami. Nájdite spoľahlivé taxi rýchlo a jednoducho.`;
 
   return {
     title: `Taxislužby v Kraji ${regionName} | ${siteName}`,
@@ -70,6 +72,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
+      site: SEO_CONSTANTS.twitterSite,
       title: `Taxislužby v Kraji ${regionName}`,
       description,
       images: [`${baseUrl}/og-image.png`],

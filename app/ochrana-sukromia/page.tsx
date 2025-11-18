@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { FooterLegal } from "@/components/FooterLegal";
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
   title: 'Zásady ochrany osobných údajov – TaxiNearMe.sk',
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
     title: 'Zásady ochrany osobných údajov – TaxiNearMe.sk',
     description: 'Informácie o tom, ako spracúvame a chránime vaše osobné údaje v súlade s GDPR.',
     images: ['https://taxinearme.sk/og-image.png'],

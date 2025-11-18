@@ -24,6 +24,7 @@ import { MapPin, Phone, Globe } from 'lucide-react';
 import { getCityBySlug, createRegionSlug } from '@/data/cities';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { truncateUrl } from '@/utils/urlUtils';
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 // Generate metadata for SEO
 export async function generateMetadata({
@@ -51,9 +52,10 @@ export async function generateMetadata({
     .map((service) => service.name)
     .join(', ');
 
+  // Skrátený popis pre SEO (max 160 znakov)
   const description =
     city.metaDescription ||
-    `Taxi služby v meste ${city.name} - Kompletný zoznam taxislužieb, kontakty a recenzie. ${taxiServicesList ? `Taxislužby: ${taxiServicesList}.` : ''} Nájdite spoľahlivé taxi v ${city.name}.`;
+    `Taxi v meste ${city.name} - Kontakty na taxislužby. ${taxiServicesList ? `${taxiServicesList} a ďalšie.` : ''} Nájdite spoľahlivé taxi.`;
 
   return {
     title: `Taxi ${city.name} - Taxislužby a Kontakty | ${siteName}`,
@@ -83,6 +85,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
+      site: SEO_CONSTANTS.twitterSite,
       title: `Taxi ${city.name} - Spoľahlivé taxislužby`,
       description,
       images: [`${baseUrl}/og-image.png`],
