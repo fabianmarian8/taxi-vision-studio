@@ -113,6 +113,9 @@ export default function RootLayout({
   return (
     <html lang="sk" suppressHydrationWarning>
       <head>
+        {/* Google AdSense verification meta tag */}
+        <meta name="google-adsense-account" content="ca-pub-1462378482513953" />
+
         {/* Sitemap link (z index.html line 43) */}
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
