@@ -134,7 +134,7 @@ export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
                     <div className="p-1 bg-primary/10 rounded-md group-hover:bg-primary/20 transition-colors">
                       <Icon className="h-3 w-3 text-primary" />
                     </div>
-                    <span className="text-[10px] font-semibold text-primary px-1.5 py-0.5 bg-primary/10 rounded-full">
+                    <span className="text-[11px] font-semibold text-primary px-1.5 py-0.5 bg-primary/10 rounded-full">
                       {article.category}
                     </span>
                   </div>
@@ -145,19 +145,19 @@ export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
                   </h3>
 
                   {/* Excerpt */}
-                  <p className="text-[10px] md:text-xs text-foreground/70 mb-2 line-clamp-2">
+                  <p className="text-[11px] md:text-xs text-foreground/70 mb-2 line-clamp-2">
                     {article.excerpt}
                   </p>
 
                   {/* CTA */}
-                  <div className="flex items-center gap-1 text-[10px] md:text-xs font-semibold text-primary group-hover:gap-2 transition-all">
+                  <div className="flex items-center gap-1 text-[11px] md:text-xs font-semibold text-primary group-hover:gap-2 transition-all">
                     Čítať viac
-                    <ArrowRight className="h-2 w-2 md:h-3 md:w-3" />
+                    <ArrowRight className="h-2.5 w-2.5 md:h-3 md:w-3" />
                   </div>
 
                   {/* Date */}
                   <div className="mt-2 pt-2 border-t border-foreground/10">
-                    <p className="text-[9px] md:text-[10px] text-foreground/50">
+                    <p className="text-[10px] md:text-xs text-foreground/50">
                       {new Date(article.date).toLocaleDateString('sk-SK', {
                         year: 'numeric',
                         month: 'long',

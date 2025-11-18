@@ -151,23 +151,23 @@ export default async function CityPage({ params }: { params: Promise<{ citySlug:
                     <Card key={index} className="perspective-1000">
                       <Link href={`/taxi/${citySlug}/${serviceSlug}`} title={`${service.name} - Detailné informácie a kontakt`}>
                         <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all cursor-pointer">
-                          <CardHeader className="pb-1 pt-2.5 md:pt-3 px-3 md:px-4">
+                          <CardHeader className="pb-1 pt-3 md:pt-3.5 px-3 md:px-4">
                             <CardTitle className="text-sm md:text-base font-bold flex items-center gap-1.5 md:gap-2">
-                              <MapPin className="h-3 w-3 md:h-3.5 md:w-3.5 text-foreground flex-shrink-0" />
+                              <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 text-foreground flex-shrink-0" />
                               {service.name}
                             </CardTitle>
                           </CardHeader>
-                          <CardContent className="pt-0 pb-2.5 md:pb-3 px-3 md:px-4">
-                            <div className="flex flex-col gap-0.5 md:gap-1 text-[11px] md:text-xs">
+                          <CardContent className="pt-0 pb-3 md:pb-3.5 px-3 md:px-4">
+                            <div className="flex flex-col gap-1 md:gap-1.5 text-xs md:text-sm">
                               {service.phone && (
-                                <div className="flex items-center gap-1 md:gap-1.5 text-foreground font-medium">
-                                  <Phone className="h-2.5 w-2.5 md:h-3 md:w-3 flex-shrink-0" />
+                                <div className="flex items-center gap-1.5 md:gap-2 text-foreground font-medium">
+                                  <Phone className="h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0" />
                                   {service.phone}
                                 </div>
                               )}
                               {service.website && (
-                                <div className="flex items-center gap-1 md:gap-1.5 text-foreground font-medium">
-                                  <Globe className="h-2.5 w-2.5 md:h-3 md:w-3 flex-shrink-0" />
+                                <div className="flex items-center gap-1.5 md:gap-2 text-foreground font-medium">
+                                  <Globe className="h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0" />
                                   <span>{truncateUrl(service.website)}</span>
                                 </div>
                               )}

@@ -24,7 +24,7 @@ export const RegionCard = ({ name, slug, citiesCount }: RegionCardProps) => {
               <h3 className="text-xs md:text-sm lg:text-base font-black text-foreground mb-1 group-hover:translate-x-1 transition-transform duration-300">
                 {name}
               </h3>
-              <p className="text-[10px] md:text-xs text-foreground/70 font-bold">
+              <p className="text-[11px] md:text-xs text-foreground/70 font-bold">
                 {citiesCount} {citiesCount === 1 ? 'mesto' : citiesCount < 5 ? 'mestá' : 'miest'}
               </p>
             </div>
