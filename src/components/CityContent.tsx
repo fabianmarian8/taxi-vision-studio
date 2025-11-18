@@ -55,8 +55,8 @@ export const CityContent = ({ citySlug, cityName }: CityContentProps) => {
           </p>
         </div>
 
-        <Card className="perspective-1000">
-          <div className="card-3d shadow-3d-lg">
+        <Card>
+          <div className="shadow-3d-lg">
             <CardContent className="py-6 md:py-8 px-4 md:px-6">
               <div className="prose prose-sm md:prose-base max-w-none">
                 {sections.map((section, index) => {

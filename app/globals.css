@@ -224,15 +224,7 @@
 /* Radix UI Accordion Fix */
 @layer components {
   [data-radix-accordion-content] {
-    overflow: hidden;
-  }
-
-  [data-radix-accordion-content][data-state="open"] {
-    animation: accordion-down 0.2s ease-out;
-  }
-
-  [data-radix-accordion-content][data-state="closed"] {
-    animation: accordion-up 0.2s ease-out;
+    overflow: visible;
   }
 
   [data-radix-accordion-trigger] {
