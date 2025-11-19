@@ -367,7 +367,7 @@ export default async function TaxiServicePage({
           {/* SEO Content Section */}
           <div className="mt-8 prose prose-sm md:prose-base max-w-none">
             <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
-              O taxislužbách {service.name} v meste {city.name}
+              O taxislužbe {service.name} v meste {city.name}
             </h2>
             <p className="text-foreground/80 mb-4 leading-relaxed">
               {content.intro}

@@ -97,7 +97,7 @@ const injectTaxiServiceSEOContent = (html, serviceName, cityName, cityRegion, ph
         <h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">${serviceName}</h1>
         <p style="margin-bottom: 1rem;">Taxislužba v meste ${cityName}</p>
 
-        <h2 style="font-size: 1.5rem; font-weight: bold; margin: 2rem 0 1rem;">O taxislužbách ${serviceName} v meste ${cityName}</h2>
+        <h2 style="font-size: 1.5rem; font-weight: bold; margin: 2rem 0 1rem;">O taxislužbe ${serviceName} v meste ${cityName}</h2>
         <p style="margin-bottom: 1rem; line-height: 1.6;">
           ${serviceName} patrí medzi taxislužby pôsobiace v meste ${cityName} a jeho okolí.
           Podľa dostupných informácií zabezpečuje prepravu osôb v rámci mesta aj do
