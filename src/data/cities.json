@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-19T12:37:02.944Z",
+  "lastUpdated": "2025-11-19T12:38:08.417Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -6604,7 +6604,8 @@
         {
           "name": "TaxiGO Zvolen",
           "phone": "+421 902 048 583",
-          "website": "https://zvolen-taxi.sk/"
+          "website": "https://zvolen-taxi.sk/",
+          "isPremium": true
         },
         {
           "name": "Lest Slavia Taxi Zvolen",
