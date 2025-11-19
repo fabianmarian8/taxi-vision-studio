@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSession } from '@/lib/auth';
-import { getCityBySlug, slovakCities } from '@/data/cities';
 import type { CityData } from '@/data/cities';
 import fs from 'fs/promises';
 import path from 'path';
@@ -25,23 +24,30 @@ export async function GET(
 
     const { slug } = await params;
     console.log('[API] Looking for city with slug:', slug);
-    console.log('[API] Total cities available:', slovakCities.length);
 
-    const city = getCityBySlug(slug);
+    // Dynamicky načítaj dáta z JSON súboru namiesto statického importu
+    const citiesPath = path.join(process.cwd(), 'src/data/cities.json');
+    const fileContent = await fs.readFile(citiesPath, 'utf-8');
+    const data = JSON.parse(fileContent);
+    const cities = data.cities as CityData[];
+
+    console.log('[API] Total cities available:', cities.length);
+
+    const city = cities.find(c => c.slug === slug);
     console.log('[API] City found:', city ? 'YES' : 'NO');
 
     if (!city) {
       console.log('[API] City not found - returning 404');
-      console.log('[API] First 5 slugs:', slovakCities.slice(0, 5).map(c => c.slug));
+      console.log('[API] First 5 slugs:', cities.slice(0, 5).map(c => c.slug));
 
       // Return detailed debug info in response
       return NextResponse.json({
         error: 'City not found',
         debug: {
           requestedSlug: slug,
-          totalCities: slovakCities.length,
-          sampleSlugs: slovakCities.slice(0, 10).map(c => c.slug),
-          possibleMatches: slovakCities
+          totalCities: cities.length,
+          sampleSlugs: cities.slice(0, 10).map(c => c.slug),
+          possibleMatches: cities
             .filter(c => c.slug.includes(slug.substring(0, 5)))
             .map(c => ({ name: c.name, slug: c.slug }))
         }
