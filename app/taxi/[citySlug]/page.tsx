@@ -43,7 +43,7 @@ export async function generateMetadata({
   }
 
   const siteName = 'Taxi NearMe';
-  const baseUrl = 'https://taxinearme.sk';
+  const baseUrl = 'https://www.taxinearme.sk';
   const currentUrl = `${baseUrl}/taxi/${citySlug}`;
 
   // Vytvoriť zoznam taxislužieb pre description

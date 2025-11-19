@@ -63,11 +63,11 @@ export const metadata: Metadata = {
     description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku. Kompletný zoznam taxi služieb.',
     type: 'website',
     locale: 'sk_SK',
-    url: 'https://taxinearme.sk',
+    url: 'https://www.taxinearme.sk',
     siteName: 'Taxi NearMe',
     images: [
       {
-        url: 'https://taxinearme.sk/og-image.png',
+        url: 'https://www.taxinearme.sk/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Taxi NearMe - Nájdite taxi v každom meste na Slovensku',
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Taxi NearMe - Taxi v Každom Meste na Slovensku',
     description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku.',
-    images: ['https://taxinearme.sk/og-image.png'],
+    images: ['https://www.taxinearme.sk/og-image.png'],
   },
 
   // Ostatné meta tagy
@@ -91,10 +91,10 @@ export const metadata: Metadata = {
 
   // Hreflang a canonical URL pre SEO
   alternates: {
-    canonical: 'https://taxinearme.sk',
+    canonical: 'https://www.taxinearme.sk',
     languages: {
-      'sk': 'https://taxinearme.sk',
-      'x-default': 'https://taxinearme.sk',
+      'sk': 'https://www.taxinearme.sk',
+      'x-default': 'https://www.taxinearme.sk',
     },
   },
 };
@@ -129,12 +129,12 @@ export default function RootLayout({
               '@graph': [
                 {
                   '@type': 'Organization',
-                  '@id': 'https://taxinearme.sk/#organization',
+                  '@id': 'https://www.taxinearme.sk/#organization',
                   name: 'Taxi NearMe',
-                  url: 'https://taxinearme.sk',
+                  url: 'https://www.taxinearme.sk',
                   logo: {
                     '@type': 'ImageObject',
-                    url: 'https://taxinearme.sk/taxi-nearme-logo.png',
+                    url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
                     width: 512,
                     height: 512,
                   },
@@ -146,12 +146,12 @@ export default function RootLayout({
                 },
                 {
                   '@type': 'WebSite',
-                  '@id': 'https://taxinearme.sk/#website',
-                  url: 'https://taxinearme.sk',
+                  '@id': 'https://www.taxinearme.sk/#website',
+                  url: 'https://www.taxinearme.sk',
                   name: 'Taxi NearMe',
                   description: 'Nájdite spoľahlivé taxislužby v každom meste na Slovensku',
                   publisher: {
-                    '@id': 'https://taxinearme.sk/#organization',
+                    '@id': 'https://www.taxinearme.sk/#organization',
                   },
                   inLanguage: 'sk',
                 },
