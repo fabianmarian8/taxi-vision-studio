@@ -4,6 +4,7 @@ export interface TaxiService {
   name: string;
   website?: string;
   phone?: string;
+  isPremium?: boolean;
 }
 
 export interface CityData {

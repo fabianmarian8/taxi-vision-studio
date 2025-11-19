@@ -18,7 +18,7 @@ import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { GeometricLines } from '@/components/GeometricLines';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
-import { MapPin, Phone, Globe, ArrowLeft } from 'lucide-react';
+import { MapPin, Phone, Globe, ArrowLeft, Crown } from 'lucide-react';
 import { getCityBySlug, createRegionSlug, type CityData, type TaxiService } from '@/data/cities';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { truncateUrl } from '@/utils/urlUtils';
@@ -229,15 +229,35 @@ export default async function TaxiServicePage({
             Späť na zoznam taxislužieb v meste {city.name}
           </Link>
 
-          {/* Hero Box with Yellow Gradient */}
-          <div className="text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12">
-            <div className="absolute inset-0 hero-3d-bg" />
+          {/* Hero Box with Yellow/Purple Gradient */}
+          <div className={`text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12 ${service.isPremium ? 'ring-4 ring-yellow-400' : ''}`}>
+            <div
+              className="absolute inset-0"
+              style={{
+                background: service.isPremium
+                  ? 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)'
+                  : undefined
+              }}
+            />
+            {!service.isPremium && <div className="absolute inset-0 hero-3d-bg" />}
+
+            {service.isPremium && (
+              <>
+                {/* Premium Badge */}
+                <div className="absolute top-4 right-4 bg-yellow-400 text-purple-900 text-xs md:text-sm font-black px-3 py-1 rounded-full z-20">
+                  PREMIUM
+                </div>
+                {/* Golden Crowns */}
+                <Crown className="absolute left-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-yellow-400 opacity-80 z-10" />
+                <Crown className="absolute right-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-yellow-400 opacity-80 z-10" />
+              </>
+            )}
 
             <div className="relative z-10">
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-foreground drop-shadow-md">
+              <h1 className={`text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-md ${service.isPremium ? 'text-white' : 'text-foreground'}`}>
                 {service.name}
               </h1>
-              <p className="text-xl text-foreground/90 font-semibold">
+              <p className={`text-xl font-semibold ${service.isPremium ? 'text-white/95' : 'text-foreground/90'}`}>
                 Taxislužba v meste {city.name}
               </p>
             </div>
@@ -249,11 +269,24 @@ export default async function TaxiServicePage({
       <section className="py-12 md:py-16 px-4 md:px-8 relative bg-white">
         <div className="container mx-auto max-w-4xl relative z-10">
 
-          <Card className="perspective-1000 mb-8">
-            <div className="card-3d shadow-3d-lg">
+          <Card className={`perspective-1000 mb-8 ${service.isPremium ? 'ring-2 ring-yellow-400' : ''}`}>
+            <div
+              className="card-3d shadow-3d-lg relative"
+              style={{
+                background: service.isPremium
+                  ? 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)'
+                  : undefined
+              }}
+            >
+              {service.isPremium && (
+                <>
+                  <Crown className="absolute left-2 top-1/2 -translate-y-1/2 h-6 w-6 text-yellow-400 opacity-60" />
+                  <Crown className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 text-yellow-400 opacity-60" />
+                </>
+              )}
               <CardHeader>
-                <CardTitle className="text-2xl font-bold flex items-center gap-3">
-                  <MapPin className="h-6 w-6 text-success" />
+                <CardTitle className={`text-2xl font-bold flex items-center gap-3 ${service.isPremium ? 'text-white' : ''}`}>
+                  <MapPin className={`h-6 w-6 ${service.isPremium ? 'text-yellow-300' : 'text-success'}`} />
                   Kontaktné informácie
                 </CardTitle>
               </CardHeader>
@@ -261,16 +294,16 @@ export default async function TaxiServicePage({
                 <div className="flex flex-col gap-4">
                   {service.phone && (
                     <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-primary-yellow-light rounded-lg flex items-center justify-center">
-                        <Phone className="h-5 w-5 text-primary-yellow-dark mt-0" />
+                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${service.isPremium ? 'bg-yellow-400' : 'bg-primary-yellow-light'}`}>
+                        <Phone className={`h-5 w-5 mt-0 ${service.isPremium ? 'text-purple-900' : 'text-primary-yellow-dark'}`} />
                       </div>
                       <div>
-                        <p className="text-sm text-neutral-text font-medium mb-1">
+                        <p className={`text-sm font-medium mb-1 ${service.isPremium ? 'text-white/80' : 'text-neutral-text'}`}>
                           Telefónne číslo
                         </p>
                         <a
                           href={`tel:${service.phone}`}
-                          className="text-lg text-foreground hover:text-foreground/70 transition-colors font-bold"
+                          className={`text-lg transition-colors font-bold ${service.isPremium ? 'text-white hover:text-white/80' : 'text-foreground hover:text-foreground/70'}`}
                           title={`Zavolať ${service.name}`}
                         >
                           {service.phone}
@@ -280,11 +313,11 @@ export default async function TaxiServicePage({
                   )}
                   {service.website && (
                     <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-info-light rounded-lg flex items-center justify-center">
-                        <Globe className="h-5 w-5 text-info mt-0" />
+                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${service.isPremium ? 'bg-yellow-400' : 'bg-info-light'}`}>
+                        <Globe className={`h-5 w-5 mt-0 ${service.isPremium ? 'text-purple-900' : 'text-info'}`} />
                       </div>
                       <div>
-                        <p className="text-sm text-neutral-text font-medium mb-1">
+                        <p className={`text-sm font-medium mb-1 ${service.isPremium ? 'text-white/80' : 'text-neutral-text'}`}>
                           Webová stránka
                         </p>
                         <a
@@ -295,7 +328,7 @@ export default async function TaxiServicePage({
                           }
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-lg text-foreground hover:text-foreground/70 transition-colors font-bold"
+                          className={`text-lg transition-colors font-bold ${service.isPremium ? 'text-white hover:text-white/80' : 'text-foreground hover:text-foreground/70'}`}
                           title={`Navštíviť webovú stránku ${service.name}`}
                         >
                           {truncateUrl(service.website)}

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import type { CityData, TaxiService } from '@/data/cities';
 
@@ -88,7 +89,7 @@ export default function AdminCityDetailPage() {
     if (!city) return;
     setCity({
       ...city,
-      taxiServices: [...city.taxiServices, { name: '', phone: '', website: '' }],
+      taxiServices: [...city.taxiServices, { name: '', phone: '', website: '', isPremium: false }],
     });
   };
 
@@ -100,7 +101,7 @@ export default function AdminCityDetailPage() {
     });
   };
 
-  const updateTaxiService = (index: number, field: keyof TaxiService, value: string) => {
+  const updateTaxiService = (index: number, field: keyof TaxiService, value: string | boolean) => {
     if (!city) return;
     const updated = [...city.taxiServices];
     updated[index] = { ...updated[index], [field]: value };
@@ -266,6 +267,22 @@ export default function AdminCityDetailPage() {
                             onChange={(e) => updateTaxiService(index, 'website', e.target.value)}
                             placeholder="https://www.example.com"
                           />
+                        </div>
+
+                        <div className="flex items-center space-x-2 pt-2">
+                          <Checkbox
+                            id={`premium-${index}`}
+                            checked={service.isPremium || false}
+                            onCheckedChange={(checked) =>
+                              updateTaxiService(index, 'isPremium', checked === true)
+                            }
+                          />
+                          <Label
+                            htmlFor={`premium-${index}`}
+                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                          >
+                            Prémiové zvýraznenie (fialové pozadie so zlatými korunkami)
+                          </Label>
                         </div>
                       </div>
                     </CardContent>
