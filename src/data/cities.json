@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-19T12:04:34.298Z",
+  "lastUpdated": "2025-11-19T12:05:49.248Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -6517,7 +6517,7 @@
       ],
       "taxiServices": [
         {
-          "name": "Lešť Taxi (vojenský obvod).",
+          "name": "Lešť Taxi (vojenský obvod)",
           "website": "www.lesttaxi.com",
           "phone": "+421 902 048 583"
         },
@@ -6565,6 +6565,11 @@
           "name": "TOP TAXI Zvolen",
           "website": "https://toptaxizvolen.sk/",
           "phone": "+421 950 600 700"
+        },
+        {
+          "name": "TaxiGO Zvolen",
+          "phone": "+421 902 048 583",
+          "website": "https://zvolen-taxi.sk/"
         }
       ],
       "latitude": 48.575,
