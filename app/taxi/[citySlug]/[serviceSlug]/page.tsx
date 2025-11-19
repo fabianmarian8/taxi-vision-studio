@@ -19,11 +19,34 @@ import { Header } from '@/components/Header';
 import { GeometricLines } from '@/components/GeometricLines';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { MapPin, Phone, Globe, ArrowLeft, Crown } from 'lucide-react';
-import { getCityBySlug, createRegionSlug, type CityData, type TaxiService } from '@/data/cities';
+import { getCityBySlug, createRegionSlug, slovakCities, type CityData, type TaxiService } from '@/data/cities';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { truncateUrl } from '@/utils/urlUtils';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { generateUniqueServiceContent, generateUniqueMetaDescription } from '@/utils/contentVariations';
+
+// Generate static params for all taxi services at build time
+export async function generateStaticParams() {
+  const params: { citySlug: string; serviceSlug: string }[] = [];
+  
+  slovakCities.forEach((city) => {
+    city.taxiServices.forEach((service) => {
+      const serviceSlug = service.name
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+      
+      params.push({
+        citySlug: city.slug,
+        serviceSlug,
+      });
+    });
+  });
+  
+  return params;
+}
 
 /**
  * Helper function to generate JSON-LD structured data for TaxiService
