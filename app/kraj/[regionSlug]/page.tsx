@@ -19,8 +19,16 @@ import { HowItWorks } from '@/components/HowItWorks';
 import { GeometricLines } from '@/components/GeometricLines';
 import { SlovakCityCard } from '@/components/SlovakCityCard';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
-import { getRegionBySlug, getCitiesByRegion } from '@/data/cities';
+import { getRegionBySlug, getCitiesByRegion, getRegionsData } from '@/data/cities';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+
+// Generate static params for all regions at build time
+export async function generateStaticParams() {
+  const regions = getRegionsData();
+  return regions.map((region) => ({
+    regionSlug: region.slug,
+  }));
+}
 
 // Generate metadata for SEO
 export async function generateMetadata({

@@ -9,6 +9,16 @@
  */
 
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '404 - Stránka nenájdená | Taxi NearMe',
+  description: 'Stránka, ktorú hľadáte, neexistuje. Vráťte sa na hlavnú stránku a nájdite taxi vo vašom meste.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function NotFound() {
   return (

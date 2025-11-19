@@ -21,10 +21,17 @@ import { CityFAQ } from '@/components/CityFAQ';
 import { CityContent } from '@/components/CityContent';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { MapPin, Phone, Globe, Crown } from 'lucide-react';
-import { getCityBySlug, createRegionSlug } from '@/data/cities';
+import { getCityBySlug, createRegionSlug, slovakCities } from '@/data/cities';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { truncateUrl } from '@/utils/urlUtils';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+
+// Generate static params for all cities at build time
+export async function generateStaticParams() {
+  return slovakCities.map((city) => ({
+    citySlug: city.slug,
+  }));
+}
 
 // Generate metadata for SEO
 export async function generateMetadata({
