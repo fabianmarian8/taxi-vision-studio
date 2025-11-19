@@ -11,26 +11,31 @@ export const runtime = 'nodejs';
 
 const CITIES_FILE_PATH = 'src/data/cities.json';
 
+interface CitiesJsonData {
+  lastUpdated: string;
+  cities: CityData[];
+}
+
 /**
  * Read cities data from either GitHub (production) or local file system (development)
  */
-async function readCitiesData(): Promise<any> {
+async function readCitiesData(): Promise<CitiesJsonData> {
   if (isGitHubConfigured()) {
     console.log('[API] Reading cities from GitHub');
     const content = await readFileFromGitHub(CITIES_FILE_PATH);
-    return JSON.parse(content);
+    return JSON.parse(content) as CitiesJsonData;
   } else {
     console.log('[API] Reading cities from local file system');
     const citiesPath = path.join(process.cwd(), CITIES_FILE_PATH);
     const fileContent = await fs.readFile(citiesPath, 'utf-8');
-    return JSON.parse(fileContent);
+    return JSON.parse(fileContent) as CitiesJsonData;
   }
 }
 
 /**
  * Write cities data to either GitHub (production) or local file system (development)
  */
-async function writeCitiesData(data: any, commitMessage: string): Promise<void> {
+async function writeCitiesData(data: CitiesJsonData, commitMessage: string): Promise<void> {
   const content = JSON.stringify(data, null, 2);
 
   if (isGitHubConfigured()) {
