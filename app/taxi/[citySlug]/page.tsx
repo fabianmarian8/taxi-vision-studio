@@ -27,7 +27,7 @@ import { truncateUrl } from '@/utils/urlUtils';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 // Generate static params for all cities at build time
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return slovakCities.map((city) => ({
     citySlug: city.slug,
   }));

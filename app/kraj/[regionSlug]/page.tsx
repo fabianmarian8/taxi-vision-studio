@@ -23,7 +23,7 @@ import { getRegionBySlug, getCitiesByRegion, getRegionsData } from '@/data/citie
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 // Generate static params for all regions at build time
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const regions = getRegionsData();
   return regions.map((region) => ({
     regionSlug: region.slug,

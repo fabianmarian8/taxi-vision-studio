@@ -26,7 +26,7 @@ import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { generateUniqueServiceContent, generateUniqueMetaDescription } from '@/utils/contentVariations';
 
 // Generate static params for all taxi services at build time
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const params: { citySlug: string; serviceSlug: string }[] = [];
   
   slovakCities.forEach((city) => {
