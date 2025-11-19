@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-19T12:09:15.018Z",
+  "lastUpdated": "2025-11-19T12:37:02.944Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -617,6 +617,41 @@
           "name": "Taxi Bratislava Schwechat",
           "phone": "+421944457600",
           "website": "https://www.taxi-bratislava-schwechat.sk"
+        },
+        {
+          "name": "Transport Schwechat",
+          "phone": "+421 918 163 610",
+          "website": "https://www.transportschwechat.sk/"
+        },
+        {
+          "name": "MassiveTaxi",
+          "phone": "+421 950 862 806",
+          "website": "https://massivetaxi.sk/"
+        },
+        {
+          "name": "Taxi Bratislava ",
+          "phone": "0907 930 300",
+          "website": "https://www.taxibratislava.taxi/"
+        },
+        {
+          "name": "Bratislavská Mestská Taxislužba",
+          "phone": "+421 911721602",
+          "website": "https://taxisluzba.eu/"
+        },
+        {
+          "name": "Taxitax Bratislava",
+          "phone": "+421 915 678 456",
+          "website": "https://taxitax.sk/"
+        },
+        {
+          "name": "Yellow Taxi Bratislava",
+          "phone": "+421 911 212 224",
+          "website": "https://www.yellowtaxibratislava.sk/"
+        },
+        {
+          "name": "Transfer Schwechat",
+          "phone": "+421918561282",
+          "website": "https://transferschwechat.sk/"
         }
       ],
       "latitude": 48.1486,
