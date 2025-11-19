@@ -154,9 +154,9 @@ export default async function CityPage({ params }: { params: Promise<{ citySlug:
             )}
 
             <div className="relative z-10">
-              <h2 className={`text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6 drop-shadow-lg ${city.heroImage ? 'text-white' : 'text-foreground'}`}>
+              <h1 className={`text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6 drop-shadow-lg ${city.heroImage ? 'text-white' : 'text-foreground'}`}>
                 Taxislužby v meste {city.name}
-              </h2>
+              </h1>
               <p className={`text-base md:text-xl font-semibold px-4 ${city.heroImage ? 'text-white/95' : 'text-foreground/90'}`}>
                 Kompletný zoznam dostupných taxislužieb
               </p>
