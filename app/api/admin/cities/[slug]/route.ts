@@ -1,12 +1,47 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSession } from '@/lib/auth';
 import type { CityData } from '@/data/cities';
+import { readFileFromGitHub, writeFileToGitHub, isGitHubConfigured } from '@/lib/github';
 import fs from 'fs/promises';
 import path from 'path';
 
 // Force dynamic rendering (disable static optimization)
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
+
+const CITIES_FILE_PATH = 'src/data/cities.json';
+
+/**
+ * Read cities data from either GitHub (production) or local file system (development)
+ */
+async function readCitiesData(): Promise<any> {
+  if (isGitHubConfigured()) {
+    console.log('[API] Reading cities from GitHub');
+    const content = await readFileFromGitHub(CITIES_FILE_PATH);
+    return JSON.parse(content);
+  } else {
+    console.log('[API] Reading cities from local file system');
+    const citiesPath = path.join(process.cwd(), CITIES_FILE_PATH);
+    const fileContent = await fs.readFile(citiesPath, 'utf-8');
+    return JSON.parse(fileContent);
+  }
+}
+
+/**
+ * Write cities data to either GitHub (production) or local file system (development)
+ */
+async function writeCitiesData(data: any, commitMessage: string): Promise<void> {
+  const content = JSON.stringify(data, null, 2);
+
+  if (isGitHubConfigured()) {
+    console.log('[API] Writing cities to GitHub');
+    await writeFileToGitHub(CITIES_FILE_PATH, content, commitMessage);
+  } else {
+    console.log('[API] Writing cities to local file system');
+    const citiesPath = path.join(process.cwd(), CITIES_FILE_PATH);
+    await fs.writeFile(citiesPath, content, 'utf-8');
+  }
+}
 
 // GET - načítanie mesta
 export async function GET(
@@ -25,10 +60,8 @@ export async function GET(
     const { slug } = await params;
     console.log('[API] Looking for city with slug:', slug);
 
-    // Dynamicky načítaj dáta z JSON súboru namiesto statického importu
-    const citiesPath = path.join(process.cwd(), 'src/data/cities.json');
-    const fileContent = await fs.readFile(citiesPath, 'utf-8');
-    const data = JSON.parse(fileContent);
+    // Read cities data from GitHub or local file system
+    const data = await readCitiesData();
     const cities = data.cities as CityData[];
 
     console.log('[API] Total cities available:', cities.length);
@@ -84,10 +117,8 @@ export async function PUT(
 
     const updatedCity: CityData = await request.json();
 
-    // Načítaj cities.json
-    const citiesPath = path.join(process.cwd(), 'src/data/cities.json');
-    const fileContent = await fs.readFile(citiesPath, 'utf-8');
-    const data = JSON.parse(fileContent);
+    // Read current cities data
+    const data = await readCitiesData();
 
     // Nájdi a aktualizuj mesto
     const cityIndex = data.cities.findIndex((c: CityData) => c.slug === slug);
@@ -100,8 +131,9 @@ export async function PUT(
     data.cities[cityIndex] = updatedCity;
     data.lastUpdated = new Date().toISOString();
 
-    // Ulož späť do súboru
-    await fs.writeFile(citiesPath, JSON.stringify(data, null, 2), 'utf-8');
+    // Write updated data to GitHub or local file system
+    const commitMessage = `Update city: ${updatedCity.name} (${slug})`;
+    await writeCitiesData(data, commitMessage);
 
     console.log('[API] City updated successfully:', slug);
     return NextResponse.json({ success: true, city: updatedCity });
@@ -133,10 +165,8 @@ export async function DELETE(
     const { slug } = await params;
     console.log('[API] Deleting city:', slug);
 
-    // Načítaj cities.json
-    const citiesPath = path.join(process.cwd(), 'src/data/cities.json');
-    const fileContent = await fs.readFile(citiesPath, 'utf-8');
-    const data = JSON.parse(fileContent);
+    // Read current cities data
+    const data = await readCitiesData();
 
     // Odstráň mesto
     const cityIndex = data.cities.findIndex((c: CityData) => c.slug === slug);
@@ -146,11 +176,13 @@ export async function DELETE(
       return NextResponse.json({ error: 'City not found' }, { status: 404 });
     }
 
+    const cityName = data.cities[cityIndex].name;
     data.cities.splice(cityIndex, 1);
     data.lastUpdated = new Date().toISOString();
 
-    // Ulož späť do súboru
-    await fs.writeFile(citiesPath, JSON.stringify(data, null, 2), 'utf-8');
+    // Write updated data to GitHub or local file system
+    const commitMessage = `Delete city: ${cityName} (${slug})`;
+    await writeCitiesData(data, commitMessage);
 
     console.log('[API] City deleted successfully:', slug);
     return NextResponse.json({ success: true });
