@@ -11,7 +11,7 @@ export async function GET() {
 # Authorized Digital Sellers deklarácia
 
 # Google AdSense
-google.com, pub-XXXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-1462378482513953, DIRECT, f08c47fec0942fa0
 
 # Ak nemáte momentálne žiadnych autorizovaných predajcov,
 # môžete tento súbor nechať prázdny alebo obsahujúci len komentáre
