@@ -11,20 +11,19 @@
  */
 
 import type { Metadata, Viewport } from 'next';
-import { Roboto } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import { CookieBanner } from '@/components/cookie-banner';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
-// Google Font optimalizácia (Next.js automaticky hostuješ fonty)
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '500', '700', '900'],
-  display: 'swap', // Lepší performance
-  variable: '--font-roboto',
-});
+// Dočasne vypnuté Google Fonts kvôli build problémom - používame system font
+// const roboto = Roboto({
+//   subsets: ['latin'],
+//   weight: ['400', '500', '700', '900'],
+//   display: 'swap',
+//   variable: '--font-roboto',
+// });
 
 // Metadata API - SEO optimalizácia (migrované z index.html lines 3-43)
 export const metadata: Metadata = {
@@ -213,7 +212,7 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body className={roboto.className}>
+      <body className="font-sans">
         {/*
           Providers wrapper - Client Component
           Obsahuje: QueryClient, TooltipProvider, Toasters, Cookie Consent logic
