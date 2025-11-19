@@ -20,7 +20,7 @@ import { GeometricLines } from '@/components/GeometricLines';
 import { CityFAQ } from '@/components/CityFAQ';
 import { CityContent } from '@/components/CityContent';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
-import { MapPin, Phone, Globe } from 'lucide-react';
+import { MapPin, Phone, Globe, Crown } from 'lucide-react';
 import { getCityBySlug, createRegionSlug } from '@/data/cities';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { truncateUrl } from '@/utils/urlUtils';
@@ -165,7 +165,13 @@ export default async function CityPage({ params }: { params: Promise<{ citySlug:
           {city.taxiServices.length > 0 ? (
             <div className="grid gap-2">
               {[...city.taxiServices]
-                .sort((a, b) => a.name.localeCompare(b.name, 'sk'))
+                .sort((a, b) => {
+                  // Premium services first
+                  if (a.isPremium && !b.isPremium) return -1;
+                  if (!a.isPremium && b.isPremium) return 1;
+                  // Then alphabetically
+                  return a.name.localeCompare(b.name, 'sk');
+                })
                 .map((service, index) => {
                   // Generate slug for the taxi service
                   const serviceSlug = service.name
@@ -176,31 +182,44 @@ export default async function CityPage({ params }: { params: Promise<{ citySlug:
                     .replace(/(^-|-$)/g, '');
 
                   return (
-                    <Card key={index} className="perspective-1000">
+                    <Card key={index} className={`perspective-1000 ${service.isPremium ? 'ring-2 ring-yellow-400' : ''}`}>
                       <Link href={`/taxi/${citySlug}/${serviceSlug}`} title={`${service.name} - Detailné informácie a kontakt`}>
                         <div
-                          className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all cursor-pointer"
+                          className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all cursor-pointer relative"
                           style={{
-                            background: 'linear-gradient(135deg, hsl(41, 65%, 95%) 0%, hsl(41, 60%, 97%) 100%)'
+                            background: service.isPremium
+                              ? 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)'
+                              : 'linear-gradient(135deg, hsl(41, 65%, 95%) 0%, hsl(41, 60%, 97%) 100%)'
                           }}
                         >
+                          {service.isPremium && (
+                            <>
+                              {/* Premium Badge */}
+                              <div className="absolute top-2 right-2 bg-yellow-400 text-purple-900 text-[10px] md:text-xs font-black px-2 py-0.5 rounded-full">
+                                PREMIUM
+                              </div>
+                              {/* Golden Crowns */}
+                              <Crown className="absolute left-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-yellow-400 opacity-80" />
+                              <Crown className="absolute right-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-yellow-400 opacity-80" />
+                            </>
+                          )}
                           <CardHeader className="pb-1 pt-3 md:pt-3.5 px-3 md:px-4">
-                            <CardTitle className="text-sm md:text-base font-semibold flex items-center gap-1.5 md:gap-2">
-                              <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 text-success flex-shrink-0" />
+                            <CardTitle className={`text-sm md:text-base font-semibold flex items-center gap-1.5 md:gap-2 ${service.isPremium ? 'text-white' : ''}`}>
+                              <MapPin className={`h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 ${service.isPremium ? 'text-yellow-300' : 'text-success'}`} />
                               {service.name}
                             </CardTitle>
                           </CardHeader>
                           <CardContent className="pt-0 pb-3 md:pb-3.5 px-3 md:px-4">
                             <div className="flex flex-col gap-1 md:gap-1.5 text-xs md:text-sm">
                               {service.phone && (
-                                <div className="flex items-center gap-1.5 md:gap-2 text-foreground font-medium">
-                                  <Phone className="h-3 w-3 md:h-3.5 md:w-3.5 text-primary-yellow flex-shrink-0" />
+                                <div className={`flex items-center gap-1.5 md:gap-2 font-medium ${service.isPremium ? 'text-white' : 'text-foreground'}`}>
+                                  <Phone className={`h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0 ${service.isPremium ? 'text-yellow-300' : 'text-primary-yellow'}`} />
                                   {service.phone}
                                 </div>
                               )}
                               {service.website && (
-                                <div className="flex items-center gap-1.5 md:gap-2 text-foreground font-medium">
-                                  <Globe className="h-3 w-3 md:h-3.5 md:w-3.5 text-info flex-shrink-0" />
+                                <div className={`flex items-center gap-1.5 md:gap-2 font-medium ${service.isPremium ? 'text-white' : 'text-foreground'}`}>
+                                  <Globe className={`h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0 ${service.isPremium ? 'text-yellow-300' : 'text-info'}`} />
                                   <span>{truncateUrl(service.website)}</span>
                                 </div>
                               )}
