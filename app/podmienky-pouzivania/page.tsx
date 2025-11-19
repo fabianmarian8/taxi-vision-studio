@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     description: 'Podmienky používania webovej stránky TaxiNearMe.sk. Prečítajte si pravidlá a zodpovednosť pri používaní našej platformy.',
     type: 'website',
     locale: 'sk_SK',
-    url: 'https://taxinearme.sk/podmienky-pouzivania',
+    url: 'https://www.taxinearme.sk/podmienky-pouzivania',
     siteName: 'Taxi NearMe',
     images: [
       {
-        url: 'https://taxinearme.sk/og-image.png',
+        url: 'https://www.taxinearme.sk/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Podmienky používania - Taxi NearMe',
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Podmienky používania – TaxiNearMe.sk',
     description: 'Podmienky používania webovej stránky TaxiNearMe.sk.',
-    images: ['https://taxinearme.sk/og-image.png'],
+    images: ['https://www.taxinearme.sk/og-image.png'],
   },
   alternates: {
-    canonical: 'https://taxinearme.sk/podmienky-pouzivania',
+    canonical: 'https://www.taxinearme.sk/podmienky-pouzivania',
     languages: {
-      'sk': 'https://taxinearme.sk/podmienky-pouzivania',
-      'x-default': 'https://taxinearme.sk/podmienky-pouzivania',
+      'sk': 'https://www.taxinearme.sk/podmienky-pouzivania',
+      'x-default': 'https://www.taxinearme.sk/podmienky-pouzivania',
     },
   },
 };

@@ -6,9 +6,9 @@
 
 export const SEO_CONSTANTS = {
   siteName: 'Taxi NearMe',
-  siteUrl: 'https://taxinearme.sk',
+  siteUrl: 'https://www.taxinearme.sk',
   twitterSite: '@taxinearme',
-  defaultImage: 'https://taxinearme.sk/og-image.png',
+  defaultImage: 'https://www.taxinearme.sk/og-image.png',
   defaultImageWidth: 1200,
   defaultImageHeight: 630,
   locale: 'sk_SK' as const,

@@ -9,7 +9,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://taxinearme.sk';
+  const baseUrl = 'https://www.taxinearme.sk';
 
   return {
     rules: [

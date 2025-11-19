@@ -16,7 +16,7 @@ export const revalidate = 86400; // 24 hours in seconds
 export const runtime = 'nodejs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://taxinearme.sk';
+  const baseUrl = 'https://www.taxinearme.sk';
   const currentDate = new Date();
 
   // Helper funkcia pre vytvorenie slug z názvu kraja

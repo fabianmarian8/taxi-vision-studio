@@ -22,7 +22,7 @@ interface SEOBreadcrumbsProps {
 }
 
 export const SEOBreadcrumbs = ({ items }: SEOBreadcrumbsProps) => {
-  const baseUrl = 'https://taxinearme.sk';
+  const baseUrl = 'https://www.taxinearme.sk';
 
   useEffect(() => {
     // Vytvorenie BreadcrumbList Schema.org Structured Data

@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     description: 'Kontaktujte nás cez email info@taxinearme.sk',
     type: 'website',
     locale: 'sk_SK',
-    url: 'https://taxinearme.sk/kontakt',
+    url: 'https://www.taxinearme.sk/kontakt',
     siteName: 'Taxi NearMe',
     images: [
       {
-        url: 'https://taxinearme.sk/og-image.png',
+        url: 'https://www.taxinearme.sk/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Kontakt - Taxi NearMe',
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Kontakt | Taxi NearMe',
     description: 'Kontaktujte nás cez email info@taxinearme.sk',
-    images: ['https://taxinearme.sk/og-image.png'],
+    images: ['https://www.taxinearme.sk/og-image.png'],
   },
   alternates: {
-    canonical: 'https://taxinearme.sk/kontakt',
+    canonical: 'https://www.taxinearme.sk/kontakt',
     languages: {
-      'sk': 'https://taxinearme.sk/kontakt',
-      'x-default': 'https://taxinearme.sk/kontakt',
+      'sk': 'https://www.taxinearme.sk/kontakt',
+      'x-default': 'https://www.taxinearme.sk/kontakt',
     },
   },
 };

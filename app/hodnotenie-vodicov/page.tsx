@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     publishedTime: '2025-01-15',
     modifiedTime: '2025-01-15',
     locale: 'sk_SK',
-    url: 'https://taxinearme.sk/hodnotenie-vodicov',
+    url: 'https://www.taxinearme.sk/hodnotenie-vodicov',
     images: [
       {
         url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
@@ -58,10 +58,10 @@ export const metadata: Metadata = {
       'Prečo môžeš jedným klikom zničiť niekomu prácu. 4★ nie je dobré hodnotenie - je to penalizácia.',
   },
   alternates: {
-    canonical: 'https://taxinearme.sk/hodnotenie-vodicov',
+    canonical: 'https://www.taxinearme.sk/hodnotenie-vodicov',
     languages: {
-      'sk': 'https://taxinearme.sk/hodnotenie-vodicov',
-      'x-default': 'https://taxinearme.sk/hodnotenie-vodicov',
+      'sk': 'https://www.taxinearme.sk/hodnotenie-vodicov',
+      'x-default': 'https://www.taxinearme.sk/hodnotenie-vodicov',
     },
   },
 };

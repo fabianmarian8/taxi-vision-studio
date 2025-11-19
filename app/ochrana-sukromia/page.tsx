@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     description: 'Informácie o tom, ako spracúvame a chránime vaše osobné údaje v súlade s GDPR. Zistite viac o vašich právach a našich záväzkoch.',
     type: 'website',
     locale: 'sk_SK',
-    url: 'https://taxinearme.sk/ochrana-sukromia',
+    url: 'https://www.taxinearme.sk/ochrana-sukromia',
     siteName: 'Taxi NearMe',
     images: [
       {
-        url: 'https://taxinearme.sk/og-image.png',
+        url: 'https://www.taxinearme.sk/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Ochrana súkromia - Taxi NearMe',
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Zásady ochrany osobných údajov – TaxiNearMe.sk',
     description: 'Informácie o tom, ako spracúvame a chránime vaše osobné údaje v súlade s GDPR.',
-    images: ['https://taxinearme.sk/og-image.png'],
+    images: ['https://www.taxinearme.sk/og-image.png'],
   },
   alternates: {
-    canonical: 'https://taxinearme.sk/ochrana-sukromia',
+    canonical: 'https://www.taxinearme.sk/ochrana-sukromia',
     languages: {
-      'sk': 'https://taxinearme.sk/ochrana-sukromia',
-      'x-default': 'https://taxinearme.sk/ochrana-sukromia',
+      'sk': 'https://www.taxinearme.sk/ochrana-sukromia',
+      'x-default': 'https://www.taxinearme.sk/ochrana-sukromia',
     },
   },
 };

@@ -40,7 +40,7 @@ export async function generateMetadata({
 
   const cities = getCitiesByRegion(regionName);
   const siteName = 'Taxi NearMe';
-  const baseUrl = 'https://taxinearme.sk';
+  const baseUrl = 'https://www.taxinearme.sk';
   const currentUrl = `${baseUrl}/kraj/${regionSlug}`;
   // Skrátený popis pre SEO (max 160 znakov)
   const description = `Taxislužby v ${regionName}. Prehľad ${cities.length} miest s taxi službami. Nájdite spoľahlivé taxi rýchlo a jednoducho.`;

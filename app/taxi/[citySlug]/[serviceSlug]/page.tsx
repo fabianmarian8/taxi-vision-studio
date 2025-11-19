@@ -35,7 +35,7 @@ function getTaxiServiceJsonLd(
   citySlug: string,
   serviceSlug: string
 ) {
-  const baseUrl = 'https://taxinearme.sk';
+  const baseUrl = 'https://www.taxinearme.sk';
   const serviceUrl = `${baseUrl}/taxi/${citySlug}/${serviceSlug}`;
 
   // Base schema object
@@ -109,7 +109,7 @@ export async function generateMetadata({
   }
 
   const siteName = 'Taxi NearMe';
-  const baseUrl = 'https://taxinearme.sk';
+  const baseUrl = 'https://www.taxinearme.sk';
   const currentUrl = `${baseUrl}/taxi/${citySlug}/${serviceSlug}`;
   // Generovanie unikátnej meta description pre každú službu
   const description = generateUniqueMetaDescription(service.name, city.name, service.phone || '');

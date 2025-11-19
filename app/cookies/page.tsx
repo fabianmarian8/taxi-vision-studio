@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     description: 'Informácie o tom, ako používame cookies na našej webovej stránke TaxiNearMe.sk. Zistite viac o typoch cookies a ako spravovať svoje preferencie.',
     type: 'website',
     locale: 'sk_SK',
-    url: 'https://taxinearme.sk/cookies',
+    url: 'https://www.taxinearme.sk/cookies',
     siteName: 'Taxi NearMe',
     images: [
       {
-        url: 'https://taxinearme.sk/og-image.png',
+        url: 'https://www.taxinearme.sk/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Zásady cookies - Taxi NearMe',
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Zásady používania súborov cookies – TaxiNearMe.sk',
     description: 'Informácie o tom, ako používame cookies na našej webovej stránke.',
-    images: ['https://taxinearme.sk/og-image.png'],
+    images: ['https://www.taxinearme.sk/og-image.png'],
   },
   alternates: {
-    canonical: 'https://taxinearme.sk/cookies',
+    canonical: 'https://www.taxinearme.sk/cookies',
     languages: {
-      'sk': 'https://taxinearme.sk/cookies',
-      'x-default': 'https://taxinearme.sk/cookies',
+      'sk': 'https://www.taxinearme.sk/cookies',
+      'x-default': 'https://www.taxinearme.sk/cookies',
     },
   },
 };
