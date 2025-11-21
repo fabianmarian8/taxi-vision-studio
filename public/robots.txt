@@ -32,4 +32,4 @@ Disallow: /scraper
 Disallow: /admin
 
 # Sitemap
-Sitemap: https://taxinearme.sk/sitemap.xml
+Sitemap: https://www.taxinearme.sk/sitemap.xml
