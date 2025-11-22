@@ -8,14 +8,12 @@
  * - Link z react-router-dom → next/link
  * - taxiLogo import upravený pre Next.js static assets
  * - Všetky komponenty ostali rovnaké (Header, SearchPanel, RegionCard, ...)
- * - Client Component kvôli Lucide ikonám v articles
+ * - Server Component s vnoreným Client Components pre optimálne SEO
  */
-
-'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin } from 'lucide-react';
+import { MapPinIcon } from '@/components/icons/MapPinIcon';
 import { Header } from '@/components/Header';
 import { SearchPanel } from '@/components/SearchPanel';
 import { RegionCard } from '@/components/RegionCard';
@@ -23,11 +21,10 @@ import { HowItWorks } from '@/components/HowItWorks';
 import { GeometricLines } from '@/components/GeometricLines';
 import { ArticleBanner } from '@/components/ArticleBanner';
 import { getRegionsData } from '@/data/cities';
-import { articles } from '@/data/articles';
 import taxiLogo from '@/assets/taxi-nearme-logo.png';
 
-// Note: Metadata je definovaná v app/layout.tsx (Server Component)
-// Client Components nemôžu exportovať metadata
+// Note: Globálna metadata je definovaná v app/layout.tsx
+// HomePage je Server Component, ktorý obsahuje vnorené Client Components (Header, SearchPanel, ArticleBanner)
 
 export default function HomePage() {
   const regions = getRegionsData();
@@ -78,7 +75,7 @@ export default function HomePage() {
 
               {/* Article Banner */}
               <div className="mt-6 md:mt-8">
-                <ArticleBanner articles={articles} />
+                <ArticleBanner />
               </div>
             </div>
           </div>
@@ -144,7 +141,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="relative z-10 text-center px-2">
-                  <MapPin
+                  <MapPinIcon
                     className="h-10 md:h-12 lg:h-14 w-10 md:w-12 lg:w-14 text-foreground mx-auto mb-2 md:mb-4"
                     strokeWidth={2.5}
                   />
