@@ -109,7 +109,7 @@ export const clearCookieConsent = (): void => {
 /**
  * Aplikuje consent nastavenia na externe služby
  */
-const applyConsent = (preferences: CookiePreferences): void => {
+export const applyConsent = (preferences: CookiePreferences): void => {
   // Google Analytics
   if (preferences.analytics) {
     enableGoogleAnalytics();
@@ -127,6 +127,18 @@ const applyConsent = (preferences: CookiePreferences): void => {
   }
 
   // Ďalšie služby...
+};
+
+/**
+ * Aplikuje existujúci consent pri načítaní stránky
+ * Zavolaj túto funkciu v useEffect pri prvom načítaní
+ */
+export const applyExistingConsent = (): void => {
+  const consent = getCookieConsent();
+  if (consent && hasValidConsent()) {
+    console.log('📋 Applying existing cookie consent from previous session');
+    applyConsent(consent.preferences);
+  }
 };
 
 /**
@@ -176,23 +188,34 @@ const disableFacebookPixel = (): void => {
 
 /**
  * Microsoft Clarity aktivácia
- * Clarity script je načítaný v <head>, tu len povolíme tracking
+ * Dynamicky načíta Clarity script len po udelení súhlasu
  */
 const enableMicrosoftClarity = (): void => {
   if (typeof window === 'undefined') return;
 
-  // Clarity sa načíta automaticky z <head>, len spustíme tracking
+  // Ak už Clarity beží, nemusíme ho načítavať znova
   if (window.clarity) {
-    // Clarity nemá oficiálny consent mode, ale ak bol predtým zastavený, spustíme ho
-    try {
-      // Clarity automaticky zbiera data po načítaní
-      console.log('✅ Microsoft Clarity enabled (tracking active)');
-    } catch (e) {
-      console.log('⚠️ Microsoft Clarity already running');
-    }
-  } else {
-    // Script sa ešte nenačítal, počkáme
-    console.log('⏳ Microsoft Clarity script loading...');
+    console.log('✅ Microsoft Clarity already running');
+    return;
+  }
+
+  // Dynamicky načítame Clarity script
+  try {
+    (function(c: Window, l: Document, a: string, r: string, i: string, t: HTMLScriptElement, y: Element | null) {
+      // @ts-expect-error - Clarity API setup
+      c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r) as HTMLScriptElement;
+      t.async = true;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      if (y && y.parentNode) {
+        y.parentNode.insertBefore(t, y);
+      }
+    })(window, document, "clarity", "script", "u5uwq9jn6t");
+
+    console.log('✅ Microsoft Clarity script loaded and tracking started');
+  } catch (e) {
+    console.error('❌ Failed to load Microsoft Clarity:', e);
   }
 };
 
