@@ -6,8 +6,7 @@ import { X, Cookie, Shield, BarChart3 } from 'lucide-react';
 import {
   CookiePreferences,
   hasValidConsent,
-  saveCookieConsent,
-  applyExistingConsent
+  saveCookieConsent
 } from './cookieManager';
 
 export const CookieBanner = () => {
@@ -21,9 +20,6 @@ export const CookieBanner = () => {
   });
 
   useEffect(() => {
-    // Aplikuj existujúci consent z predchádzajúcej session
-    applyExistingConsent();
-
     // Kontrola či už užívateľ dal súhlas
     if (!hasValidConsent()) {
       // Zobraz banner po 1 sekunde (aby to nebolo hneď agresívne)

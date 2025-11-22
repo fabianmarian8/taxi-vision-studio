@@ -109,14 +109,12 @@ export const clearCookieConsent = (): void => {
 /**
  * Aplikuje consent nastavenia na externe služby
  */
-export const applyConsent = (preferences: CookiePreferences): void => {
+const applyConsent = (preferences: CookiePreferences): void => {
   // Google Analytics
   if (preferences.analytics) {
     enableGoogleAnalytics();
-    enableMicrosoftClarity();
   } else {
     disableGoogleAnalytics();
-    disableMicrosoftClarity();
   }
 
   // Facebook Pixel
@@ -126,19 +124,10 @@ export const applyConsent = (preferences: CookiePreferences): void => {
     disableFacebookPixel();
   }
 
-  // Ďalšie služby...
-};
+  // Microsoft Clarity beží vždy (ignoruje consent)
+  enableMicrosoftClarity();
 
-/**
- * Aplikuje existujúci consent pri načítaní stránky
- * Zavolaj túto funkciu v useEffect pri prvom načítaní
- */
-export const applyExistingConsent = (): void => {
-  const consent = getCookieConsent();
-  if (consent && hasValidConsent()) {
-    console.log('📋 Applying existing cookie consent from previous session');
-    applyConsent(consent.preferences);
-  }
+  // Ďalšie služby...
 };
 
 /**
@@ -188,50 +177,22 @@ const disableFacebookPixel = (): void => {
 
 /**
  * Microsoft Clarity aktivácia
- * Dynamicky načíta Clarity script len po udelení súhlasu
+ * POZNÁMKA: Clarity je načítaný v layout.tsx a beží vždy (ignoruje cookie consent)
  */
 const enableMicrosoftClarity = (): void => {
-  if (typeof window === 'undefined') return;
-
-  // Ak už Clarity beží, nemusíme ho načítavať znova
-  if (window.clarity) {
-    console.log('✅ Microsoft Clarity already running');
-    return;
-  }
-
-  // Dynamicky načítame Clarity script
-  try {
-    (function(c: Window, l: Document, a: string, r: string, i: string, t: HTMLScriptElement, y: Element | null) {
-      // @ts-expect-error - Clarity API setup
-      c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments); };
-      t = l.createElement(r) as HTMLScriptElement;
-      t.async = true;
-      t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0];
-      if (y && y.parentNode) {
-        y.parentNode.insertBefore(t, y);
-      }
-    })(window, document, "clarity", "script", "u5uwq9jn6t");
-
-    console.log('✅ Microsoft Clarity script loaded and tracking started');
-  } catch (e) {
-    console.error('❌ Failed to load Microsoft Clarity:', e);
+  // Clarity beží vždy z layout.tsx - táto funkcia nerobí nič
+  if (typeof window !== 'undefined' && window.clarity) {
+    console.log('✅ Microsoft Clarity is running (always-on tracking)');
   }
 };
 
 /**
  * Microsoft Clarity deaktivácia
+ * POZNÁMKA: Clarity beží vždy - táto funkcia je deaktivovaná
  */
 const disableMicrosoftClarity = (): void => {
-  if (typeof window !== 'undefined' && window.clarity) {
-    // Clarity nemá štandardnú disable metódu, takže zastavíme tracking
-    try {
-      window.clarity('stop');
-      console.log('❌ Microsoft Clarity disabled');
-    } catch (e) {
-      console.log('⚠️ Microsoft Clarity could not be disabled properly');
-    }
-  }
+  // Clarity má bežať vždy - nedeaktivujeme ho
+  console.log('⚠️ Microsoft Clarity deactivation skipped (always-on tracking)');
 };
 
 /**
