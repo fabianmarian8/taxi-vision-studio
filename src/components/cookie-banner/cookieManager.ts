@@ -113,10 +113,8 @@ const applyConsent = (preferences: CookiePreferences): void => {
   // Google Analytics
   if (preferences.analytics) {
     enableGoogleAnalytics();
-    enableMicrosoftClarity();
   } else {
     disableGoogleAnalytics();
-    disableMicrosoftClarity();
   }
 
   // Facebook Pixel
@@ -125,6 +123,9 @@ const applyConsent = (preferences: CookiePreferences): void => {
   } else {
     disableFacebookPixel();
   }
+
+  // Microsoft Clarity beží vždy (ignoruje consent)
+  enableMicrosoftClarity();
 
   // Ďalšie služby...
 };
@@ -176,39 +177,22 @@ const disableFacebookPixel = (): void => {
 
 /**
  * Microsoft Clarity aktivácia
- * Clarity script je načítaný v <head>, tu len povolíme tracking
+ * POZNÁMKA: Clarity je načítaný v layout.tsx a beží vždy (ignoruje cookie consent)
  */
 const enableMicrosoftClarity = (): void => {
-  if (typeof window === 'undefined') return;
-
-  // Clarity sa načíta automaticky z <head>, len spustíme tracking
-  if (window.clarity) {
-    // Clarity nemá oficiálny consent mode, ale ak bol predtým zastavený, spustíme ho
-    try {
-      // Clarity automaticky zbiera data po načítaní
-      console.log('✅ Microsoft Clarity enabled (tracking active)');
-    } catch (e) {
-      console.log('⚠️ Microsoft Clarity already running');
-    }
-  } else {
-    // Script sa ešte nenačítal, počkáme
-    console.log('⏳ Microsoft Clarity script loading...');
+  // Clarity beží vždy z layout.tsx - táto funkcia nerobí nič
+  if (typeof window !== 'undefined' && window.clarity) {
+    console.log('✅ Microsoft Clarity is running (always-on tracking)');
   }
 };
 
 /**
  * Microsoft Clarity deaktivácia
+ * POZNÁMKA: Clarity beží vždy - táto funkcia je deaktivovaná
  */
 const disableMicrosoftClarity = (): void => {
-  if (typeof window !== 'undefined' && window.clarity) {
-    // Clarity nemá štandardnú disable metódu, takže zastavíme tracking
-    try {
-      window.clarity('stop');
-      console.log('❌ Microsoft Clarity disabled');
-    } catch (e) {
-      console.log('⚠️ Microsoft Clarity could not be disabled properly');
-    }
-  }
+  // Clarity má bežať vždy - nedeaktivujeme ho
+  console.log('⚠️ Microsoft Clarity deactivation skipped (always-on tracking)');
 };
 
 /**

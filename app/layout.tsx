@@ -213,7 +213,7 @@ export default function RootLayout({
 
         {/*
           Microsoft Clarity
-          Tracking script - načíta sa vždy, ale zbiera data len po udelení súhlasu
+          Tracking script - načíta sa vždy, trackuje všetkých používateľov
         */}
         <Script id="microsoft-clarity" strategy="afterInteractive">
           {`
