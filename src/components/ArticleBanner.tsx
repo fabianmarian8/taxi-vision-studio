@@ -5,13 +5,9 @@ import { ChevronLeft, ChevronRight, ArrowRight, Newspaper } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import type { Article } from "@/data/articles";
+import { articles } from "@/data/articles";
 
-interface ArticleBannerProps {
-  articles: Article[];
-}
-
-export const ArticleBanner = ({ articles }: ArticleBannerProps) => {
+export const ArticleBanner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
