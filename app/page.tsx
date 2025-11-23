@@ -20,6 +20,7 @@ import { RegionCard } from '@/components/RegionCard';
 import { HowItWorks } from '@/components/HowItWorks';
 import { GeometricLines } from '@/components/GeometricLines';
 import { ArticleBanner } from '@/components/ArticleBanner';
+import { AlphabeticalCityList } from '@/components/AlphabeticalCityList';
 import { getRegionsData } from '@/data/cities';
 import taxiLogo from '@/assets/taxi-nearme-logo.png';
 
@@ -104,6 +105,27 @@ export default function HomePage() {
                 />
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Alphabetical City/Municipality List */}
+        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-gradient-to-b from-white to-foreground/5">
+          <GeometricLines variant="subtle" count={6} />
+
+          <div className="container mx-auto max-w-7xl relative z-10">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-foreground drop-shadow-md">
+                Všetky mestá a obce na Slovensku
+              </h2>
+              <p className="text-sm md:text-base text-foreground/90 font-bold px-4">
+                Vyberte si písmeno a nájdite taxi vo vašom meste alebo obci
+              </p>
+              <p className="text-xs md:text-sm text-foreground/70 font-semibold mt-2">
+                140 miest s taxislužbami + 2 897 obcí s odkazmi na najbližšie taxi
+              </p>
+            </div>
+
+            <AlphabeticalCityList />
           </div>
         </section>
 
