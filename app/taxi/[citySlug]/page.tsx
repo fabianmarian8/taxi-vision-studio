@@ -27,6 +27,7 @@ import { getMunicipalityBySlug, findNearestCitiesWithTaxis } from '@/data/munici
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { truncateUrl } from '@/utils/urlUtils';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { RouteMapWrapper } from '@/components/RouteMapWrapper';
 
 // ISR: Revalidate once per week (604800 seconds = 7 days)
 export const revalidate = 604800;
@@ -193,6 +194,31 @@ function renderMunicipalityPage(municipality: { name: string; region: string; di
         </div>
       </section>
 
+      {/* Interactive Route Map Section */}
+      {nearestCities.length > 0 && nearestCities[0].city.latitude && nearestCities[0].city.longitude && (
+        <section className="py-8 md:py-12 px-4 md:px-8 bg-gradient-to-b from-white to-foreground/5">
+          <div className="container mx-auto max-w-4xl">
+            <div className="mb-6 text-center">
+              <h2 className="text-2xl md:text-3xl font-black mb-3 text-foreground">
+                Trasa do najbližšieho mesta
+              </h2>
+              <p className="text-sm md:text-base text-foreground/70 font-semibold">
+                {municipality.name} → {nearestCities[0].city.name} ({nearestCities[0].distance} km)
+              </p>
+            </div>
+            <RouteMapWrapper
+              fromLat={municipality.latitude}
+              fromLng={municipality.longitude}
+              fromName={municipality.name}
+              toLat={nearestCities[0].city.latitude}
+              toLng={nearestCities[0].city.longitude}
+              toName={nearestCities[0].city.name}
+              distance={nearestCities[0].distance}
+            />
+          </div>
+        </section>
+      )}
+
       {/* Nearest Taxi Services Section */}
       <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-white">
         <div className="container mx-auto max-w-4xl relative z-10">
@@ -205,8 +231,7 @@ function renderMunicipalityPage(municipality: { name: string; region: string; di
             </p>
           </div>
 
-          {/* Render nearest cities with taxis - we'll create this component next */}
-          {/* Placeholder for now */}
+          {/* Render nearest cities with taxis */}
           <div className="space-y-6">
             {nearestCities.map(({ city, distance }) => (
               <Card key={city.slug} className="perspective-1000">

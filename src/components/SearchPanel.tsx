@@ -8,27 +8,38 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { findNearestCity } from "@/lib/locationUtils";
 import { slovakCities } from "@/data/cities";
+import { allMunicipalities } from "@/data/municipalities";
 
 export const SearchPanel = () => {
   const [searchValue, setSearchValue] = useState("");
   const [isLoadingLocation, setIsLoadingLocation] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [filteredCities, setFilteredCities] = useState(slovakCities);
+  const [filteredResults, setFilteredResults] = useState<Array<{ name: string; region: string; slug: string; type: 'city' | 'municipality' }>>([]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  // Filter cities based on search input
+  // Filter cities AND municipalities based on search input
   useEffect(() => {
     if (searchValue.trim()) {
-      const filtered = slovakCities.filter((city) =>
-        city.name.toLowerCase().includes(searchValue.toLowerCase())
-      );
-      setFilteredCities(filtered);
-      setShowDropdown(filtered.length > 0);
+      // Search in cities (with taxi services)
+      const filteredCities = slovakCities
+        .filter((city) => city.name.toLowerCase().includes(searchValue.toLowerCase()))
+        .map((city) => ({ name: city.name, region: city.region, slug: city.slug, type: 'city' as const }));
+
+      // Search in municipalities (without taxi services in our DB)
+      const filteredMunicipalities = allMunicipalities
+        .filter((mun) => mun.name.toLowerCase().includes(searchValue.toLowerCase()))
+        .filter((mun) => !slovakCities.some(city => city.slug === mun.slug)) // Exclude duplicates
+        .map((mun) => ({ name: mun.name, region: mun.region, slug: mun.slug, type: 'municipality' as const }));
+
+      // Combine: cities first, then municipalities
+      const combined = [...filteredCities, ...filteredMunicipalities];
+      setFilteredResults(combined);
+      setShowDropdown(combined.length > 0);
       setSelectedIndex(-1);
     } else {
-      setFilteredCities(slovakCities);
+      setFilteredResults([]);
       setShowDropdown(false);
     }
   }, [searchValue]);
@@ -45,38 +56,44 @@ export const SearchPanel = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const navigateToCity = (cityName: string) => {
-    const city = slovakCities.find(
-      (c) => c.name.toLowerCase() === cityName.toLowerCase()
-    );
-
-    if (city) {
-      router.push(`/taxi/${city.slug}`);
-      setShowDropdown(false);
-      setSearchValue("");
-    } else {
-      toast.error(`Mesto "${cityName}" nebolo nájdené v našom zozname`);
-    }
+  const navigateToLocation = (slug: string, name: string) => {
+    router.push(`/taxi/${slug}`);
+    setShowDropdown(false);
+    setSearchValue("");
+    toast.success(`Navigácia na ${name}`);
   };
 
   const handleSearch = () => {
     if (!searchValue.trim()) {
-      toast.error("Zadajte názov mesta");
+      toast.error("Zadajte názov mesta alebo obce");
       return;
     }
 
-    // Try exact match first
-    const exactMatch = slovakCities.find(
+    // Try exact match first in cities
+    const exactCityMatch = slovakCities.find(
       (city) => city.name.toLowerCase() === searchValue.toLowerCase()
     );
 
-    if (exactMatch) {
-      navigateToCity(exactMatch.name);
-    } else if (filteredCities.length > 0) {
-      // Use first filtered result
-      navigateToCity(filteredCities[0].name);
+    if (exactCityMatch) {
+      navigateToLocation(exactCityMatch.slug, exactCityMatch.name);
+      return;
+    }
+
+    // Try exact match in municipalities
+    const exactMunMatch = allMunicipalities.find(
+      (mun) => mun.name.toLowerCase() === searchValue.toLowerCase()
+    );
+
+    if (exactMunMatch) {
+      navigateToLocation(exactMunMatch.slug, exactMunMatch.name);
+      return;
+    }
+
+    // Use first filtered result
+    if (filteredResults.length > 0) {
+      navigateToLocation(filteredResults[0].slug, filteredResults[0].name);
     } else {
-      toast.error("Mesto nebolo nájdené. Skúste iný názov.");
+      toast.error("Mesto/obec neboli nájdené. Skúste iný názov.");
     }
   };
 
@@ -92,7 +109,7 @@ export const SearchPanel = () => {
       case "ArrowDown":
         e.preventDefault();
         setSelectedIndex((prev) =>
-          prev < filteredCities.length - 1 ? prev + 1 : prev
+          prev < filteredResults.length - 1 ? prev + 1 : prev
         );
         break;
       case "ArrowUp":
@@ -101,8 +118,9 @@ export const SearchPanel = () => {
         break;
       case "Enter":
         e.preventDefault();
-        if (selectedIndex >= 0 && selectedIndex < filteredCities.length) {
-          navigateToCity(filteredCities[selectedIndex].name);
+        if (selectedIndex >= 0 && selectedIndex < filteredResults.length) {
+          const selected = filteredResults[selectedIndex];
+          navigateToLocation(selected.slug, selected.name);
         } else {
           handleSearch();
         }
@@ -236,12 +254,12 @@ export const SearchPanel = () => {
             <Search className="h-4 w-4 md:h-5 md:w-5 text-foreground flex-shrink-0" />
             <Input
               type="text"
-              placeholder="Zadajte názov mesta..."
+              placeholder="Zadajte názov mesta alebo obce..."
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               onKeyDown={handleKeyDown}
               onFocus={() => {
-                if (searchValue.trim() && filteredCities.length > 0) {
+                if (searchValue.trim() && filteredResults.length > 0) {
                   setShowDropdown(true);
                 }
               }}
@@ -249,23 +267,28 @@ export const SearchPanel = () => {
             />
 
             {/* Autocomplete Dropdown */}
-            {showDropdown && filteredCities.length > 0 && (
+            {showDropdown && filteredResults.length > 0 && (
               <div className="absolute top-full left-0 right-0 mt-2 bg-card rounded-lg md:rounded-xl shadow-3d-lg border-2 border-foreground/10 max-h-80 overflow-y-auto z-50">
-                {filteredCities.slice(0, 10).map((city, index) => (
+                {filteredResults.slice(0, 10).map((result, index) => (
                   <button
-                    key={city.slug}
-                    onClick={() => navigateToCity(city.name)}
+                    key={result.slug}
+                    onClick={() => navigateToLocation(result.slug, result.name)}
                     className={`w-full text-left px-4 md:px-6 py-2.5 md:py-3 hover:bg-foreground/5 active:bg-foreground/10 transition-colors border-b border-foreground/5 last:border-b-0 ${
                       index === selectedIndex ? "bg-foreground/10" : ""
                     }`}
                   >
-                    <div className="font-semibold text-sm md:text-base text-foreground">{city.name}</div>
-                    <div className="text-xs md:text-sm text-foreground/60 mt-0.5">{city.region}</div>
+                    <div className="flex items-center gap-2">
+                      <div className="font-semibold text-sm md:text-base text-foreground">{result.name}</div>
+                      {result.type === 'municipality' && (
+                        <span className="text-xs bg-foreground/10 px-1.5 py-0.5 rounded text-foreground/70">obec</span>
+                      )}
+                    </div>
+                    <div className="text-xs md:text-sm text-foreground/60 mt-0.5">{result.region}</div>
                   </button>
                 ))}
-                {filteredCities.length > 10 && (
+                {filteredResults.length > 10 && (
                   <div className="px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm text-foreground/60 text-center border-t border-foreground/10">
-                    Zobrazených prvých 10 z {filteredCities.length} miest
+                    Zobrazených prvých 10 z {filteredResults.length} výsledkov
                   </div>
                 )}
               </div>
