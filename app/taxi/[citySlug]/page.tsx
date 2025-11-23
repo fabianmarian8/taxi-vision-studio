@@ -23,16 +23,23 @@ import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { LocalBusinessSchema } from '@/components/schema/LocalBusinessSchema';
 import { MapPin, Phone, Globe, Crown } from 'lucide-react';
 import { getCityBySlug, createRegionSlug, slovakCities } from '@/data/cities';
+import { getMunicipalityBySlug, findNearestCitiesWithTaxis } from '@/data/municipalities';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { truncateUrl } from '@/utils/urlUtils';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
-// Generate static params for all cities at build time
+// ISR: Revalidate once per week (604800 seconds = 7 days)
+export const revalidate = 604800;
+
+// Generate static params for main cities only (SSG)
 export function generateStaticParams() {
   return slovakCities.map((city) => ({
     citySlug: city.slug,
   }));
 }
+
+// Enable dynamic params for municipalities (ISR)
+export const dynamicParams = true;
 
 // Generate metadata for SEO
 export async function generateMetadata({
@@ -43,7 +50,44 @@ export async function generateMetadata({
   const { citySlug } = await params;
   const city = getCityBySlug(citySlug);
 
+  // If not a main city, check if it's a municipality
   if (!city) {
+    const municipality = getMunicipalityBySlug(citySlug);
+
+    if (municipality) {
+      const nearestCities = findNearestCitiesWithTaxis(municipality, 1);
+      const nearestCity = nearestCities[0];
+
+      const siteName = 'Taxi NearMe';
+      const baseUrl = 'https://www.taxinearme.sk';
+      const currentUrl = `${baseUrl}/taxi/${citySlug}`;
+
+      const description = `Taxi v obci ${municipality.name} - Najbližšie taxislužby sú v meste ${nearestCity.city.name} (${nearestCity.distance} km). Nájdite spoľahlivé taxi služby v okolí.`;
+
+      return {
+        title: `Taxi ${municipality.name} - Taxislužby v okolí | ${siteName}`,
+        description,
+        keywords: [
+          `taxi ${municipality.name}`,
+          `taxislužby ${municipality.name}`,
+          `taxi ${municipality.district}`,
+          `taxi ${municipality.region}`,
+          'objednať taxi',
+        ],
+        openGraph: {
+          title: `Taxi ${municipality.name} - Taxislužby v okolí`,
+          description,
+          type: 'website',
+          locale: 'sk_SK',
+          url: currentUrl,
+          siteName,
+        },
+        alternates: {
+          canonical: currentUrl,
+        },
+      };
+    }
+
     return {
       title: 'Mesto nenájdené',
       description: 'Stránka mesta nebola nájdená',
@@ -108,12 +152,159 @@ export async function generateMetadata({
   };
 }
 
+/**
+ * Render page for municipalities without taxi services
+ */
+function renderMunicipalityPage(municipality: any, citySlug: string) {
+  const nearestCities = findNearestCitiesWithTaxis(municipality, 3);
+  const regionSlug = createRegionSlug(municipality.region);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+
+      {/* Breadcrumbs */}
+      <SEOBreadcrumbs
+        items={[
+          { label: municipality.region, href: `/kraj/${regionSlug}` },
+          { label: municipality.name },
+        ]}
+      />
+
+      {/* Hero Section */}
+      <section className="pt-4 md:pt-6 pb-8 md:pb-12 px-4 md:px-8 relative bg-white">
+        <GeometricLines variant="subtle" count={6} />
+
+        <div className="container mx-auto max-w-4xl relative z-10">
+          <div
+            className="text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12"
+          >
+            <div className="absolute inset-0 hero-3d-bg" />
+
+            <div className="relative z-10">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6 drop-shadow-lg text-foreground">
+                Taxi {municipality.name}
+              </h1>
+              <p className="text-base md:text-xl font-semibold px-4 text-foreground/90">
+                Taxislužby v okolí obce {municipality.name}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nearest Taxi Services Section */}
+      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-white">
+        <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="mb-8 text-center">
+            <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
+              Najbližšie taxislužby
+            </h2>
+            <p className="text-base md:text-lg text-foreground/80 font-semibold">
+              V obci {municipality.name} momentálne neevidujeme taxislužby. Nižšie nájdete najbližšie dostupné taxi služby z okolitých miest.
+            </p>
+          </div>
+
+          {/* Render nearest cities with taxis - we'll create this component next */}
+          {/* Placeholder for now */}
+          <div className="space-y-6">
+            {nearestCities.map(({ city, distance }) => (
+              <Card key={city.slug} className="perspective-1000">
+                <div className="card-3d shadow-3d-sm">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-xl md:text-2xl font-black flex items-center gap-2">
+                      <MapPin className="h-5 w-5 text-success" />
+                      {city.name} ({distance} km)
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm md:text-base text-foreground/70 mb-4">
+                      Vzdialenosť: <strong>{distance} km</strong> | Orientačná cena: <strong>cca {Math.ceil(distance * 1.2 + 2)}€ - {Math.ceil(distance * 1.3 + 3)}€</strong>
+                    </p>
+                    <div className="grid gap-2">
+                      {city.taxiServices.slice(0, 3).map((service, idx) => (
+                        <Link key={idx} href={`/taxi/${city.slug}`} className="block">
+                          <Card className="hover:shadow-md transition-shadow">
+                            <CardContent className="py-2 px-3">
+                              <div className="flex items-center justify-between">
+                                <span className="font-semibold text-sm">{service.name}</span>
+                                {service.phone && (
+                                  <span className="text-xs text-foreground/70">{service.phone}</span>
+                                )}
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </Link>
+                      ))}
+                    </div>
+                    <Link
+                      href={`/taxi/${city.slug}`}
+                      className="mt-3 inline-block text-sm font-bold text-primary-yellow hover:underline"
+                    >
+                      Zobraziť všetky taxislužby v meste {city.name} →
+                    </Link>
+                  </CardContent>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <HowItWorks />
+
+      {/* Footer */}
+      <footer className="border-t-4 border-foreground py-8 md:py-12 px-4 md:px-8 relative">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-foreground/20 to-transparent"></div>
+
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
+            <div className="text-xs md:text-sm text-foreground font-bold text-center md:text-left">
+              © 2024 Taxi NearMe. Všetky práva vyhradené.
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+              <Link
+                href="/ochrana-sukromia"
+                className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+              >
+                Ochrana súkromia
+              </Link>
+              <Link
+                href="/podmienky-pouzivania"
+                className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+              >
+                Podmienky používania
+              </Link>
+              <Link
+                href="/"
+                className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+              >
+                Kontakt
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
 export default async function CityPage({ params }: { params: Promise<{ citySlug: string }> }) {
   const { citySlug } = await params;
   const city = getCityBySlug(citySlug);
 
-  // 404 handling - Next.js way
+  // If not a main city, check if it's a municipality
   if (!city) {
+    const municipality = getMunicipalityBySlug(citySlug);
+
+    if (municipality) {
+      // Render municipality page (obce without taxi services)
+      return renderMunicipalityPage(municipality, citySlug);
+    }
+
+    // 404 if neither city nor municipality
     notFound();
   }
 
