@@ -1,0 +1,142 @@
+'use client';
+
+import { useState, useMemo } from 'react';
+import Link from 'next/link';
+import { MapPin } from 'lucide-react';
+import { slovakCities } from '@/data/cities';
+import { allMunicipalities } from '@/data/municipalities';
+
+interface LocationItem {
+  name: string;
+  slug: string;
+  region: string;
+  type: 'city' | 'municipality';
+  taxiCount?: number;
+}
+
+export function AlphabeticalCityList() {
+  const [selectedLetter, setSelectedLetter] = useState<string>('A');
+
+  // Combine cities and municipalities
+  const allLocations: LocationItem[] = useMemo(() => {
+    const cities = slovakCities.map((city) => ({
+      name: city.name,
+      slug: city.slug,
+      region: city.region,
+      type: 'city' as const,
+      taxiCount: city.taxiServices?.length || 0,
+    }));
+
+    const municipalities = allMunicipalities.map((mun) => ({
+      name: mun.name,
+      slug: mun.slug,
+      region: mun.region,
+      type: 'municipality' as const,
+    }));
+
+    return [...cities, ...municipalities].sort((a, b) =>
+      a.name.localeCompare(b.name, 'sk')
+    );
+  }, []);
+
+  // Get unique first letters
+  const alphabet = useMemo(() => {
+    const letters = new Set<string>();
+    allLocations.forEach((loc) => {
+      const firstLetter = loc.name.charAt(0).toUpperCase();
+      letters.add(firstLetter);
+    });
+    return Array.from(letters).sort((a, b) => a.localeCompare(b, 'sk'));
+  }, [allLocations]);
+
+  // Filter locations by selected letter
+  const filteredLocations = useMemo(() => {
+    return allLocations.filter(
+      (loc) => loc.name.charAt(0).toUpperCase() === selectedLetter
+    );
+  }, [allLocations, selectedLetter]);
+
+  return (
+    <div className="w-full">
+      {/* Alphabet Filter */}
+      <div className="mb-6 md:mb-8">
+        <div className="flex flex-wrap justify-center gap-1 md:gap-2">
+          {alphabet.map((letter) => (
+            <button
+              key={letter}
+              onClick={() => setSelectedLetter(letter)}
+              className={`
+                w-8 h-8 md:w-10 md:h-10 rounded-lg font-black text-xs md:text-sm
+                transition-all duration-200 shadow-3d-sm hover:shadow-3d-md
+                ${
+                  selectedLetter === letter
+                    ? 'bg-primary-yellow text-foreground scale-110'
+                    : 'bg-card text-foreground/70 hover:bg-foreground/5'
+                }
+              `}
+            >
+              {letter}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Results count */}
+      <div className="text-center mb-4 md:mb-6">
+        <p className="text-sm md:text-base text-foreground/70 font-semibold">
+          Zobrazených <strong>{filteredLocations.length}</strong> miest/obcí
+          začínajúcich na písmeno <strong>{selectedLetter}</strong>
+        </p>
+      </div>
+
+      {/* Locations Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-3">
+        {filteredLocations.map((location) => (
+          <Link
+            key={location.slug}
+            href={`/taxi/${location.slug}`}
+            className="perspective-1000 group"
+          >
+            <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all bg-card rounded-lg p-3 md:p-4 h-full">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <MapPin
+                      className={`h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 ${
+                        location.type === 'city'
+                          ? 'text-success'
+                          : 'text-foreground/40'
+                      }`}
+                    />
+                    <h3 className="font-bold text-sm md:text-base text-foreground truncate">
+                      {location.name}
+                    </h3>
+                  </div>
+                  <p className="text-xs md:text-sm text-foreground/60 truncate">
+                    {location.region}
+                  </p>
+                  {location.type === 'city' && location.taxiCount! > 0 && (
+                    <p className="text-xs text-success font-semibold mt-1">
+                      {location.taxiCount} {location.taxiCount === 1 ? 'taxi' : 'taxíkov'}
+                    </p>
+                  )}
+                </div>
+                {location.type === 'municipality' && (
+                  <span className="text-[10px] md:text-xs bg-foreground/10 px-1.5 py-0.5 rounded text-foreground/70 font-medium flex-shrink-0">
+                    obec
+                  </span>
+                )}
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {filteredLocations.length === 0 && (
+        <div className="text-center py-12 text-foreground/60">
+          <p>Žiadne mestá alebo obce na písmeno {selectedLetter}</p>
+        </div>
+      )}
+    </div>
+  );
+}
