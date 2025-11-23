@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-20T06:41:17.556Z",
+  "lastUpdated": "2025-11-23T13:59:54.097Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -31,8 +31,8 @@
           "website": null
         }
       ],
-      "latitude": 48.7192,
-      "longitude": 18.2569
+      "latitude": 48.721667,
+      "longitude": 18.259826
     },
     {
       "name": "Banská Bystrica",
@@ -94,8 +94,8 @@
           "website": "http://www.intaxi.sk"
         }
       ],
-      "latitude": 48.7361,
-      "longitude": 19.1475
+      "latitude": 48.738403,
+      "longitude": 19.157349
     },
     {
       "name": "Banská Štiavnica",
@@ -152,8 +152,8 @@
           "website": "https://www.ferotaxi.sk"
         }
       ],
-      "latitude": 48.4583,
-      "longitude": 18.8917
+      "latitude": 48.458093,
+      "longitude": 18.898841
     },
     {
       "name": "Banský Studenec",
@@ -211,8 +211,8 @@
           "phone": "+421905949671"
         }
       ],
-      "latitude": 49.1667,
-      "longitude": 19.6167
+      "latitude": 48.44721,
+      "longitude": 18.970979
     },
     {
       "name": "Bardejov",
@@ -284,8 +284,8 @@
           "website": null
         }
       ],
-      "latitude": 49.2939,
-      "longitude": 21.2739
+      "latitude": 49.292687,
+      "longitude": 21.275603
     },
     {
       "name": "Bátovce",
@@ -341,8 +341,8 @@
           "phone": "+421907043322"
         }
       ],
-      "latitude": 48.1667,
-      "longitude": 17.7833
+      "latitude": 48.291142,
+      "longitude": 18.744436
     },
     {
       "name": "Bernolákovo",
@@ -368,8 +368,8 @@
           "phone": "+421944300402"
         }
       ],
-      "latitude": 48.2014,
-      "longitude": 17.2936
+      "latitude": 48.198971,
+      "longitude": 17.300859
     },
     {
       "name": "Betlanovce",
@@ -390,8 +390,8 @@
           "phone": "+42153/4411111"
         }
       ],
-      "latitude": 48.8667,
-      "longitude": 20.5667
+      "latitude": 48.979631,
+      "longitude": 20.392215
     },
     {
       "name": "Biel",
@@ -412,8 +412,8 @@
           "phone": "+421 918 022 222"
         }
       ],
-      "latitude": 49.4167,
-      "longitude": 18.9833
+      "latitude": 48.408549,
+      "longitude": 22.056386
     },
     {
       "name": "Bielovce",
@@ -444,8 +444,8 @@
           "phone": "+421 909 105 105"
         }
       ],
-      "latitude": 48.2833,
-      "longitude": 18.1333
+      "latitude": 47.995691,
+      "longitude": 18.774597
     },
     {
       "name": "Blatnica",
@@ -471,8 +471,8 @@
           "phone": "+421 948 96 96 95"
         }
       ],
-      "latitude": 49.0667,
-      "longitude": 19.1
+      "latitude": 48.938528,
+      "longitude": 18.926049
     },
     {
       "name": "Bojnice",
@@ -499,8 +499,8 @@
           "website": null
         }
       ],
-      "latitude": 48.7803,
-      "longitude": 18.5775
+      "latitude": 48.779959,
+      "longitude": 18.582199
     },
     {
       "name": "Boleráz",
@@ -531,8 +531,8 @@
           "phone": "+421915655882"
         }
       ],
-      "latitude": 48.2667,
-      "longitude": 17.55
+      "latitude": 48.464531,
+      "longitude": 17.492736
     },
     {
       "name": "Bratislava",
@@ -654,8 +654,8 @@
           "website": "https://transferschwechat.sk/"
         }
       ],
-      "latitude": 48.1486,
-      "longitude": 17.1077
+      "latitude": 48.151699,
+      "longitude": 17.109306
     },
     {
       "name": "Brezno",
@@ -692,8 +692,8 @@
           "website": "https://www.brezno-taxi.eu"
         }
       ],
-      "latitude": 48.8033,
-      "longitude": 19.6367
+      "latitude": 48.805335,
+      "longitude": 19.640961
     },
     {
       "name": "Brezová pod Bradlom",
@@ -725,8 +725,8 @@
           "phone": "+421 948 333 338"
         }
       ],
-      "latitude": 48.6667,
-      "longitude": 17.5167
+      "latitude": 48.661644,
+      "longitude": 17.53703
     },
     {
       "name": "Bytča",
@@ -763,8 +763,8 @@
           "phone": "+421 901 711 831"
         }
       ],
-      "latitude": 49.2239,
-      "longitude": 18.5583
+      "latitude": 49.223575,
+      "longitude": 18.558683
     },
     {
       "name": "Cinobaňa",
@@ -785,8 +785,8 @@
           "phone": "+421940551044"
         }
       ],
-      "latitude": 48.4667,
-      "longitude": 19.6333
+      "latitude": 48.447124,
+      "longitude": 19.650623
     },
     {
       "name": "Čadca",
@@ -848,8 +848,8 @@
           "website": null
         }
       ],
-      "latitude": 49.435,
-      "longitude": 18.7889
+      "latitude": 49.437515,
+      "longitude": 18.789604
     },
     {
       "name": "Čierna nad Tisou",
@@ -876,8 +876,8 @@
           "phone": "+421919066191"
         }
       ],
-      "latitude": 48.4167,
-      "longitude": 22.1333
+      "latitude": 48.416641,
+      "longitude": 22.088737
     },
     {
       "name": "Detva",
@@ -914,8 +914,8 @@
           "website": "https://taxi-ali9.webnode.sk"
         }
       ],
-      "latitude": 48.5583,
-      "longitude": 19.4192
+      "latitude": 48.544922,
+      "longitude": 19.415248
     },
     {
       "name": "Dobšiná",
@@ -942,8 +942,8 @@
           "phone": "0951 610 248"
         }
       ],
-      "latitude": 48.8233,
-      "longitude": 20.3692
+      "latitude": 48.821136,
+      "longitude": 20.364912
     },
     {
       "name": "Dolný Kubín",
@@ -1020,8 +1020,8 @@
           "website": null
         }
       ],
-      "latitude": 49.21,
-      "longitude": 19.3
+      "latitude": 49.214524,
+      "longitude": 19.295317
     },
     {
       "name": "Dubnica nad Váhom",
@@ -1058,8 +1058,8 @@
           "website": "https://www.taxigo.sk"
         }
       ],
-      "latitude": 48.9603,
-      "longitude": 18.1714
+      "latitude": 48.957405,
+      "longitude": 18.166297
     },
     {
       "name": "Dudince",
@@ -1091,8 +1091,8 @@
           "phone": "+421 903 678 717"
         }
       ],
-      "latitude": 48.1667,
-      "longitude": 18.8667
+      "latitude": 48.16919,
+      "longitude": 18.882316
     },
     {
       "name": "Dunajská Streda",
@@ -1173,8 +1173,8 @@
           "phone": "+421905680970"
         }
       ],
-      "latitude": 47.9936,
-      "longitude": 17.6197
+      "latitude": 47.989375,
+      "longitude": 17.62026
     },
     {
       "name": "Dvory nad Žitavou",
@@ -1246,8 +1246,8 @@
           "phone": "+421 951 211 800"
         }
       ],
-      "latitude": 48.0833,
-      "longitude": 18.2667
+      "latitude": 47.993745,
+      "longitude": 18.265206
     },
     {
       "name": "Fiľakovo",
@@ -1281,8 +1281,8 @@
           "phone": "+421940958001"
         }
       ],
-      "latitude": 48.2667,
-      "longitude": 19.8333
+      "latitude": 48.270164,
+      "longitude": 19.822294
     },
     {
       "name": "Gabčíkovo",
@@ -1304,8 +1304,8 @@
           "website": "http://www.elektrotaxi.szm.sk"
         }
       ],
-      "latitude": 47.8933,
-      "longitude": 17.5817
+      "latitude": 47.895106,
+      "longitude": 17.578125
     },
     {
       "name": "Galanta",
@@ -1377,8 +1377,8 @@
           "website": null
         }
       ],
-      "latitude": 48.19,
-      "longitude": 17.7267
+      "latitude": 48.19105,
+      "longitude": 17.727063
     },
     {
       "name": "Gelnica",
@@ -1405,8 +1405,8 @@
           "website": "http://www.greentaxigelnica.sk"
         }
       ],
-      "latitude": 48.85,
-      "longitude": 20.9333
+      "latitude": 48.853205,
+      "longitude": 20.936916
     },
     {
       "name": "Giraltovce",
@@ -1433,8 +1433,8 @@
           "website": "https://www.facebook.com"
         }
       ],
-      "latitude": 49.0992,
-      "longitude": 21.5033
+      "latitude": 49.113527,
+      "longitude": 21.516659
     },
     {
       "name": "Handlová",
@@ -1460,8 +1460,8 @@
           "phone": "+421948484485"
         }
       ],
-      "latitude": 48.7272,
-      "longitude": 18.7619
+      "latitude": 48.731432,
+      "longitude": 18.762694
     },
     {
       "name": "Hanušovce nad Topľou",
@@ -1493,8 +1493,8 @@
           "website": "http://www.sadhe.sk"
         }
       ],
-      "latitude": 48.9867,
-      "longitude": 21.5067
+      "latitude": 49.026879,
+      "longitude": 21.502247
     },
     {
       "name": "Hlohovec",
@@ -1556,8 +1556,8 @@
           "website": "https://zako-taxi.webnode.sk"
         }
       ],
-      "latitude": 48.43,
-      "longitude": 17.805
+      "latitude": 48.427884,
+      "longitude": 17.798782
     },
     {
       "name": "Hnúšťa",
@@ -1584,8 +1584,8 @@
           "phone": "+421 915051659"
         }
       ],
-      "latitude": 48.6233,
-      "longitude": 19.9467
+      "latitude": 48.578704,
+      "longitude": 19.953189
     },
     {
       "name": "Holíč",
@@ -1612,8 +1612,8 @@
           "website": "https://zoznamtaxi.sktaxi.sk"
         }
       ],
-      "latitude": 48.8117,
-      "longitude": 17.1597
+      "latitude": 48.808256,
+      "longitude": 17.162816
     },
     {
       "name": "Horná Streda",
@@ -1650,8 +1650,8 @@
           "phone": "+421915336649"
         }
       ],
-      "latitude": 48.2167,
-      "longitude": 17.4833
+      "latitude": 48.65642,
+      "longitude": 17.844348
     },
     {
       "name": "Horné Orešany",
@@ -1687,8 +1687,8 @@
           "phone": "+421 33 16 444"
         }
       ],
-      "latitude": 48.4333,
-      "longitude": 17.4667
+      "latitude": 48.465727,
+      "longitude": 17.440411
     },
     {
       "name": "Hostovce",
@@ -1751,8 +1751,8 @@
           "phone": "+421910888250"
         }
       ],
-      "latitude": 48.6333,
-      "longitude": 19.5167
+      "latitude": 48.57646,
+      "longitude": 19.525865
     },
     {
       "name": "Humenné",
@@ -1824,8 +1824,8 @@
           "website": null
         }
       ],
-      "latitude": 48.935,
-      "longitude": 21.9117
+      "latitude": 48.935003,
+      "longitude": 21.902027
     },
     {
       "name": "Hurbanovo",
@@ -1857,8 +1857,8 @@
           "website": null
         }
       ],
-      "latitude": 47.8733,
-      "longitude": 18.1917
+      "latitude": 47.876123,
+      "longitude": 18.198313
     },
     {
       "name": "Chlmec",
@@ -1879,8 +1879,8 @@
           "phone": "+421918885458"
         }
       ],
-      "latitude": 48.5833,
-      "longitude": 21.9833
+      "latitude": 48.886396,
+      "longitude": 21.939373
     },
     {
       "name": "Chynorany",
@@ -1921,8 +1921,8 @@
           "phone": "+421908080908"
         }
       ],
-      "latitude": 48.5833,
-      "longitude": 18.2167
+      "latitude": 48.609821,
+      "longitude": 18.27348
     },
     {
       "name": "Ilava",
@@ -1954,8 +1954,8 @@
           "website": "http://www.jtgroup.sk"
         }
       ],
-      "latitude": 49.005,
-      "longitude": 18.2383
+      "latitude": 48.998567,
+      "longitude": 18.23076
     },
     {
       "name": "Ivanka pri Dunaji",
@@ -1987,8 +1987,8 @@
           "phone": "+421 903 106 943"
         }
       ],
-      "latitude": 48.2167,
-      "longitude": 17.2667
+      "latitude": 48.188593,
+      "longitude": 17.257804
     },
     {
       "name": "Jelšava",
@@ -2015,8 +2015,8 @@
           "website": "http://marekbalag-trans.sk"
         }
       ],
-      "latitude": 48.6317,
-      "longitude": 20.2417
+      "latitude": 48.627958,
+      "longitude": 20.240298
     },
     {
       "name": "Kežmarok",
@@ -2063,8 +2063,8 @@
           "website": "https://www.facebook.com"
         }
       ],
-      "latitude": 49.1361,
-      "longitude": 20.4333
+      "latitude": 49.136209,
+      "longitude": 20.43087
     },
     {
       "name": "Kolárovo",
@@ -2096,8 +2096,8 @@
           "website": null
         }
       ],
-      "latitude": 47.92,
-      "longitude": 17.9933
+      "latitude": 47.918235,
+      "longitude": 17.996659
     },
     {
       "name": "Komárno",
@@ -2149,8 +2149,8 @@
           "website": null
         }
       ],
-      "latitude": 47.7667,
-      "longitude": 18.1167
+      "latitude": 47.757408,
+      "longitude": 18.129825
     },
     {
       "name": "Košice",
@@ -2242,8 +2242,8 @@
           "website": "http://www.hello-taxi.sk"
         }
       ],
-      "latitude": 48.7164,
-      "longitude": 21.2611
+      "latitude": 48.717227,
+      "longitude": 21.249677
     },
     {
       "name": "Kráľovský Chlmec",
@@ -2290,8 +2290,8 @@
           "address": "Pribenícka, 077 01 Kráľovský Chlmec, Slovensko"
         }
       ],
-      "latitude": 48.4083,
-      "longitude": 21.9817
+      "latitude": 48.422362,
+      "longitude": 21.980478
     },
     {
       "name": "Kremnica",
@@ -2320,8 +2320,8 @@
           "address": "Dolná 44/11, 967 01 Kremnica, Slovensko"
         }
       ],
-      "latitude": 48.705,
-      "longitude": 18.9183
+      "latitude": 48.706577,
+      "longitude": 18.916597
     },
     {
       "name": "Krompachy",
@@ -2337,8 +2337,8 @@
         "taxi krompachy telefón"
       ],
       "taxiServices": [],
-      "latitude": 48.9167,
-      "longitude": 20.8833
+      "latitude": 48.914412,
+      "longitude": 20.875498
     },
     {
       "name": "Krupina",
@@ -2385,8 +2385,8 @@
           "address": "963 01 Krupina, Slovensko"
         }
       ],
-      "latitude": 48.3567,
-      "longitude": 19.0633
+      "latitude": 48.352729,
+      "longitude": 19.069182
     },
     {
       "name": "Kysucké Nové Mesto",
@@ -2451,8 +2451,8 @@
           "address": "SNP, 024 01 Kysucké Nové Mesto, Slovensko"
         }
       ],
-      "latitude": 49.3,
-      "longitude": 18.7833
+      "latitude": 49.299918,
+      "longitude": 18.786508
     },
     {
       "name": "Leopoldov",
@@ -2473,8 +2473,8 @@
           "phone": "+421904563000"
         }
       ],
-      "latitude": 48.4433,
-      "longitude": 17.7633
+      "latitude": 48.444178,
+      "longitude": 17.765443
     },
     {
       "name": "Levice",
@@ -2538,8 +2538,8 @@
           "phone": "+421911112445"
         }
       ],
-      "latitude": 48.2167,
-      "longitude": 18.6
+      "latitude": 48.216319,
+      "longitude": 18.600087
     },
     {
       "name": "Levoča",
@@ -2580,8 +2580,8 @@
           "address": "Jána Francisciho 1677/15, 054 01 Levoča, Slovensko"
         }
       ],
-      "latitude": 49.02,
-      "longitude": 20.5867
+      "latitude": 49.025112,
+      "longitude": 20.587999
     },
     {
       "name": "Lipany",
@@ -2597,8 +2597,8 @@
         "taxi lipany telefón"
       ],
       "taxiServices": [],
-      "latitude": 49.1667,
-      "longitude": 20.9667
+      "latitude": 49.152599,
+      "longitude": 20.9631
     },
     {
       "name": "Liptovský Hrádok",
@@ -2649,8 +2649,8 @@
           "phone": "+421944446456"
         }
       ],
-      "latitude": 49.0392,
-      "longitude": 19.7281
+      "latitude": 49.037179,
+      "longitude": 19.721733
     },
     {
       "name": "Liptovský Mikuláš",
@@ -2725,8 +2725,8 @@
           "website": "http://wew.citytaxilm.com"
         }
       ],
-      "latitude": 49.08,
-      "longitude": 19.6167
+      "latitude": 49.083248,
+      "longitude": 19.616497
     },
     {
       "name": "Lučenec",
@@ -2804,8 +2804,8 @@
           "phone": "+421904030586"
         }
       ],
-      "latitude": 48.33,
-      "longitude": 19.665
+      "latitude": 48.330077,
+      "longitude": 19.663744
     },
     {
       "name": "Malacky",
@@ -2854,8 +2854,8 @@
           "phone": "+421911342742"
         }
       ],
-      "latitude": 48.435,
-      "longitude": 17.0217
+      "latitude": 48.43475,
+      "longitude": 17.020348
     },
     {
       "name": "Martin",
@@ -2931,8 +2931,8 @@
           "phone": "+421917575073"
         }
       ],
-      "latitude": 49.0639,
-      "longitude": 18.9214
+      "latitude": 49.072492,
+      "longitude": 18.929193
     },
     {
       "name": "Medzev",
@@ -2968,8 +2968,8 @@
           "phone": "+421940645645"
         }
       ],
-      "latitude": 48.705,
-      "longitude": 20.9
+      "latitude": 48.700326,
+      "longitude": 20.892266
     },
     {
       "name": "Medzilaborce",
@@ -2990,8 +2990,8 @@
           "phone": "+421915555765"
         }
       ],
-      "latitude": 49.2717,
-      "longitude": 21.9033
+      "latitude": 49.271132,
+      "longitude": 21.903965
     },
     {
       "name": "Michalovce",
@@ -3066,8 +3066,8 @@
           "phone": "+421944808404"
         }
       ],
-      "latitude": 48.755,
-      "longitude": 21.92
+      "latitude": 48.751438,
+      "longitude": 21.921195
     },
     {
       "name": "Modra",
@@ -3089,8 +3089,8 @@
           "phone": "+421905426242"
         }
       ],
-      "latitude": 48.335,
-      "longitude": 17.3067
+      "latitude": 48.335726,
+      "longitude": 17.308786
     },
     {
       "name": "Modrý Kameň",
@@ -3126,8 +3126,8 @@
           "phone": "+421907616221"
         }
       ],
-      "latitude": 48.3767,
-      "longitude": 19.2117
+      "latitude": 48.240922,
+      "longitude": 19.334171
     },
     {
       "name": "Moldava nad Bodvou",
@@ -3148,8 +3148,8 @@
           "phone": "+421940600048"
         }
       ],
-      "latitude": 48.6133,
-      "longitude": 20.9967
+      "latitude": 48.614142,
+      "longitude": 20.997331
     },
     {
       "name": "Myjava",
@@ -3180,8 +3180,8 @@
           "phone": "+421902311911"
         }
       ],
-      "latitude": 48.7583,
-      "longitude": 17.565
+      "latitude": 48.754035,
+      "longitude": 17.565022
     },
     {
       "name": "Námestovo",
@@ -3244,8 +3244,8 @@
           "phone": "+421904818135"
         }
       ],
-      "latitude": 49.405,
-      "longitude": 19.48
+      "latitude": 49.409512,
+      "longitude": 19.480783
     },
     {
       "name": "Nemšová",
@@ -3261,8 +3261,8 @@
         "taxi nemšová telefón"
       ],
       "taxiServices": [],
-      "latitude": 48.9564,
-      "longitude": 18.1189
+      "latitude": 48.964615,
+      "longitude": 18.117571
     },
     {
       "name": "Nesvady",
@@ -3283,8 +3283,8 @@
           "phone": "+421908618620"
         }
       ],
-      "latitude": 48.3456,
-      "longitude": 18.1937
+      "latitude": 47.92852,
+      "longitude": 18.128553
     },
     {
       "name": "Nitra",
@@ -3363,8 +3363,8 @@
           "phone": "+421902400456"
         }
       ],
-      "latitude": 48.3069,
-      "longitude": 18.0872
+      "latitude": 48.31295,
+      "longitude": 18.089459
     },
     {
       "name": "Nová Baňa",
@@ -3406,8 +3406,8 @@
           "phone": "+421904991633"
         }
       ],
-      "latitude": 48.4217,
-      "longitude": 18.635
+      "latitude": 48.424599,
+      "longitude": 18.641365
     },
     {
       "name": "Nová Dubnica",
@@ -3434,8 +3434,8 @@
           "phone": "+421903505999"
         }
       ],
-      "latitude": 48.9297,
-      "longitude": 18.1453
+      "latitude": 48.935874,
+      "longitude": 18.145735
     },
     {
       "name": "Nováky",
@@ -3468,8 +3468,8 @@
           "phone": "+421918999116"
         }
       ],
-      "latitude": 48.7191,
-      "longitude": 18.5421
+      "latitude": 48.716447,
+      "longitude": 18.54083
     },
     {
       "name": "Nové Mesto nad Váhom",
@@ -3544,8 +3544,8 @@
           "phone": "+421905716688"
         }
       ],
-      "latitude": 48.7583,
-      "longitude": 17.8317
+      "latitude": 48.763325,
+      "longitude": 17.830386
     },
     {
       "name": "Nové Zámky",
@@ -3579,8 +3579,8 @@
           "phone": "+421 904 311 800"
         }
       ],
-      "latitude": 47.9867,
-      "longitude": 18.1617
+      "latitude": 47.986184,
+      "longitude": 18.163142
     },
     {
       "name": "Partizánske",
@@ -3633,8 +3633,8 @@
           "phone": "+421948888048"
         }
       ],
-      "latitude": 48.6283,
-      "longitude": 18.3767
+      "latitude": 48.626409,
+      "longitude": 18.373007
     },
     {
       "name": "Pezinok",
@@ -3687,8 +3687,8 @@
           "phone": "+421911938164"
         }
       ],
-      "latitude": 48.29,
-      "longitude": 17.2667
+      "latitude": 48.285454,
+      "longitude": 17.270194
     },
     {
       "name": "Piešťany",
@@ -3761,8 +3761,8 @@
           "phone": "+421905560785"
         }
       ],
-      "latitude": 48.5917,
-      "longitude": 17.8258
+      "latitude": 48.589525,
+      "longitude": 17.821385
     },
     {
       "name": "Poltár",
@@ -3784,8 +3784,8 @@
           "phone": "+421 904 707 202"
         }
       ],
-      "latitude": 48.4267,
-      "longitude": 19.7967
+      "latitude": 48.430829,
+      "longitude": 19.792392
     },
     {
       "name": "Poprad",
@@ -3874,8 +3874,8 @@
           "phone": "+421908390490"
         }
       ],
-      "latitude": 49.0611,
-      "longitude": 20.2975
+      "latitude": 49.054152,
+      "longitude": 20.29764
     },
     {
       "name": "Považská Bystrica",
@@ -3956,8 +3956,8 @@
           "phone": "+421905535455"
         }
       ],
-      "latitude": 49.1217,
-      "longitude": 18.4483
+      "latitude": 49.115932,
+      "longitude": 18.446994
     },
     {
       "name": "Prešov",
@@ -4043,8 +4043,8 @@
           "phone": "+421905893202"
         }
       ],
-      "latitude": 48.9983,
-      "longitude": 21.2392
+      "latitude": 48.997631,
+      "longitude": 21.240187
     },
     {
       "name": "Prievidza",
@@ -4111,8 +4111,8 @@
           "phone": "+421918828808"
         }
       ],
-      "latitude": 48.7742,
-      "longitude": 18.6267
+      "latitude": 48.771836,
+      "longitude": 18.623492
     },
     {
       "name": "Púchov",
@@ -4154,8 +4154,8 @@
           "phone": "+421902255277"
         }
       ],
-      "latitude": 49.1217,
-      "longitude": 18.3267
+      "latitude": 49.123928,
+      "longitude": 18.323956
     },
     {
       "name": "Rajec",
@@ -4182,8 +4182,8 @@
           "phone": "+421 911 234 091"
         }
       ],
-      "latitude": 49.0817,
-      "longitude": 18.6433
+      "latitude": 49.088626,
+      "longitude": 18.635221
     },
     {
       "name": "Revúca",
@@ -4210,8 +4210,8 @@
           "phone": "+421915812672"
         }
       ],
-      "latitude": 48.6833,
-      "longitude": 20.1167
+      "latitude": 48.683333,
+      "longitude": 20.116667
     },
     {
       "name": "Rimavská Sobota",
@@ -4278,8 +4278,8 @@
           "phone": "+421911937000"
         }
       ],
-      "latitude": 48.3833,
-      "longitude": 20.0167
+      "latitude": 48.38336,
+      "longitude": 20.018058
     },
     {
       "name": "Rožňava",
@@ -4344,8 +4344,8 @@
           "phone": "+421905150444"
         }
       ],
-      "latitude": 48.66,
-      "longitude": 20.5317
+      "latitude": 48.662018,
+      "longitude": 20.532826
     },
     {
       "name": "Ružomberok",
@@ -4409,8 +4409,8 @@
           "phone": "+421908407107"
         }
       ],
-      "latitude": 49.08,
-      "longitude": 19.305
+      "latitude": 49.081572,
+      "longitude": 19.303417
     },
     {
       "name": "Sabinov",
@@ -4437,8 +4437,8 @@
           "phone": "+421 915 083 080"
         }
       ],
-      "latitude": 49.1017,
-      "longitude": 21.0983
+      "latitude": 49.102674,
+      "longitude": 21.097334
     },
     {
       "name": "Senec",
@@ -4512,8 +4512,8 @@
           "phone": "+421949575705"
         }
       ],
-      "latitude": 48.22,
-      "longitude": 17.4
+      "latitude": 48.219947,
+      "longitude": 17.39699
     },
     {
       "name": "Senica",
@@ -4550,8 +4550,8 @@
           "phone": "+421908646662"
         }
       ],
-      "latitude": 48.68,
-      "longitude": 17.3667
+      "latitude": 48.678756,
+      "longitude": 17.366153
     },
     {
       "name": "Sereď",
@@ -4609,8 +4609,8 @@
           "phone": "+421915161937"
         }
       ],
-      "latitude": 48.2851,
-      "longitude": 17.7338
+      "latitude": 48.288903,
+      "longitude": 17.730881
     },
     {
       "name": "Skalica",
@@ -4655,8 +4655,8 @@
           "phone": "+421911111579"
         }
       ],
-      "latitude": 48.845,
-      "longitude": 17.2283
+      "latitude": 48.845208,
+      "longitude": 17.227913
     },
     {
       "name": "Sládkovičovo",
@@ -4690,8 +4690,8 @@
           "phone": "+421910581848"
         }
       ],
-      "latitude": 48.2,
-      "longitude": 17.6333
+      "latitude": 48.205354,
+      "longitude": 17.644104
     },
     {
       "name": "Sliač",
@@ -4713,8 +4713,8 @@
           "phone": "+421948238626"
         }
       ],
-      "latitude": 48.6417,
-      "longitude": 19.145
+      "latitude": 48.613181,
+      "longitude": 19.142366
     },
     {
       "name": "Snina",
@@ -4754,8 +4754,8 @@
           "phone": "+421907900900"
         }
       ],
-      "latitude": 48.99,
-      "longitude": 22.15
+      "latitude": 48.990062,
+      "longitude": 22.155625
     },
     {
       "name": "Sobrance",
@@ -4785,8 +4785,8 @@
           "phone": "+421918217217"
         }
       ],
-      "latitude": 48.745,
-      "longitude": 22.1817
+      "latitude": 48.74465,
+      "longitude": 22.180663
     },
     {
       "name": "Spišská Belá",
@@ -4815,8 +4815,8 @@
           "phone": "+421950271600"
         }
       ],
-      "latitude": 49.1833,
-      "longitude": 20.4667
+      "latitude": 49.190005,
+      "longitude": 20.455325
     },
     {
       "name": "Spišská Nová Ves",
@@ -4895,8 +4895,8 @@
           "phone": "+421907817824"
         }
       ],
-      "latitude": 48.945,
-      "longitude": 20.5683
+      "latitude": 48.943534,
+      "longitude": 20.562964
     },
     {
       "name": "Spišská Stará Ves",
@@ -4923,8 +4923,8 @@
           "phone": "+421 917 538 143"
         }
       ],
-      "latitude": 49.0069,
-      "longitude": 20.3956
+      "latitude": 49.383146,
+      "longitude": 20.359814
     },
     {
       "name": "Spišské Podhradie",
@@ -4946,8 +4946,8 @@
           "phone": "+421 911 530 432"
         }
       ],
-      "latitude": 49.0017,
-      "longitude": 20.75
+      "latitude": 49.000035,
+      "longitude": 20.751072
     },
     {
       "name": "Spišské Vlachy",
@@ -4977,8 +4977,8 @@
           "phone": "+421950582528"
         }
       ],
-      "latitude": 48.9194,
-      "longitude": 20.6444
+      "latitude": 48.946648,
+      "longitude": 20.797408
     },
     {
       "name": "Stará Ľubovňa",
@@ -5020,8 +5020,8 @@
           "phone": "+421910440006"
         }
       ],
-      "latitude": 49.2983,
-      "longitude": 20.6889
+      "latitude": 49.300153,
+      "longitude": 20.688923
     },
     {
       "name": "Stará Turá",
@@ -5079,8 +5079,8 @@
           "phone": "+421905363876"
         }
       ],
-      "latitude": 48.7809,
-      "longitude": 17.6874
+      "latitude": 48.779248,
+      "longitude": 17.694118
     },
     {
       "name": "Strážske",
@@ -5105,8 +5105,8 @@
           "phone": "+421911717492"
         }
       ],
-      "latitude": 48.8739,
-      "longitude": 21.8292
+      "latitude": 48.87466,
+      "longitude": 21.833769
     },
     {
       "name": "Stropkov",
@@ -5127,8 +5127,8 @@
           "phone": "+421940191151"
         }
       ],
-      "latitude": 49.2031,
-      "longitude": 21.6522
+      "latitude": 49.202009,
+      "longitude": 21.652134
     },
     {
       "name": "Stupava",
@@ -5169,8 +5169,8 @@
           "phone": "+421911114499"
         }
       ],
-      "latitude": 48.28,
-      "longitude": 17.03
+      "latitude": 48.273132,
+      "longitude": 17.032746
     },
     {
       "name": "Svätý Jur",
@@ -5212,8 +5212,8 @@
           "phone": "+421902399404"
         }
       ],
-      "latitude": 48.2521,
-      "longitude": 17.2154
+      "latitude": 48.254782,
+      "longitude": 17.212801
     },
     {
       "name": "Svidník",
@@ -5248,8 +5248,8 @@
           "phone": "+421952161061"
         }
       ],
-      "latitude": 49.303,
-      "longitude": 21.5692
+      "latitude": 49.308508,
+      "longitude": 21.573351
     },
     {
       "name": "Svit",
@@ -5271,8 +5271,8 @@
           "phone": "+421905211311"
         }
       ],
-      "latitude": 49.0597,
-      "longitude": 20.2089
+      "latitude": 49.058236,
+      "longitude": 20.196529
     },
     {
       "name": "Šahy",
@@ -5297,8 +5297,8 @@
           "phone": "+421911394480"
         }
       ],
-      "latitude": 48.0783,
-      "longitude": 18.9467
+      "latitude": 48.069456,
+      "longitude": 18.949338
     },
     {
       "name": "Šaľa",
@@ -5361,8 +5361,8 @@
           "phone": "+421 948 051 999"
         }
       ],
-      "latitude": 48.1517,
-      "longitude": 17.8817
+      "latitude": 48.151379,
+      "longitude": 17.874859
     },
     {
       "name": "Šamorín",
@@ -5401,8 +5401,8 @@
           "phone": "+421910551448"
         }
       ],
-      "latitude": 48.028,
-      "longitude": 17.3138
+      "latitude": 48.027583,
+      "longitude": 17.311571
     },
     {
       "name": "Šaštín-Stráže",
@@ -5429,8 +5429,8 @@
           "phone": "+421904530243"
         }
       ],
-      "latitude": 48.6561,
-      "longitude": 17.1761
+      "latitude": 48.636992,
+      "longitude": 17.148493
     },
     {
       "name": "Štúrovo",
@@ -5498,8 +5498,8 @@
           "phone": "+421915709030"
         }
       ],
-      "latitude": 47.795,
-      "longitude": 18.7167
+      "latitude": 47.7978,
+      "longitude": 18.715879
     },
     {
       "name": "Šurany",
@@ -5526,8 +5526,8 @@
           "phone": "+421949266288"
         }
       ],
-      "latitude": 48.0833,
-      "longitude": 18.1833
+      "latitude": 48.086106,
+      "longitude": 18.186834
     },
     {
       "name": "Tisovec",
@@ -5548,8 +5548,8 @@
           "phone": "+421902318870"
         }
       ],
-      "latitude": 48.6717,
-      "longitude": 19.9458
+      "latitude": 48.681276,
+      "longitude": 19.942063
     },
     {
       "name": "Tlmače",
@@ -5624,8 +5624,8 @@
           "phone": "+421907043322"
         }
       ],
-      "latitude": 48.3456,
-      "longitude": 18.5272
+      "latitude": 48.288778,
+      "longitude": 18.531855
     },
     {
       "name": "Topoľčany",
@@ -5690,8 +5690,8 @@
           "phone": "+421949470444"
         }
       ],
-      "latitude": 48.5578,
-      "longitude": 18.1803
+      "latitude": 48.559435,
+      "longitude": 18.175439
     },
     {
       "name": "Tornaľa",
@@ -5723,8 +5723,8 @@
           "phone": "+421940541288"
         }
       ],
-      "latitude": 48.3833,
-      "longitude": 20.2333
+      "latitude": 48.42216,
+      "longitude": 20.323251
     },
     {
       "name": "Trebišov",
@@ -5772,8 +5772,8 @@
           "phone": "+421915628286"
         }
       ],
-      "latitude": 48.6283,
-      "longitude": 21.72
+      "latitude": 48.628622,
+      "longitude": 21.720171
     },
     {
       "name": "Trenčianske Teplice",
@@ -5808,8 +5808,8 @@
           "phone": "+421910116999"
         }
       ],
-      "latitude": 48.9117,
-      "longitude": 18.1717
+      "latitude": 48.909445,
+      "longitude": 18.170298
     },
     {
       "name": "Trenčín",
@@ -5896,8 +5896,8 @@
           "phone": "+421944264948"
         }
       ],
-      "latitude": 48.895,
-      "longitude": 18.0444
+      "latitude": 48.892358,
+      "longitude": 18.039372
     },
     {
       "name": "Trnava",
@@ -5970,8 +5970,8 @@
           "phone": "+421918232436"
         }
       ],
-      "latitude": 48.3774,
-      "longitude": 17.588
+      "latitude": 48.376765,
+      "longitude": 17.585818
     },
     {
       "name": "Trstená",
@@ -5998,8 +5998,8 @@
           "phone": "+421 918 171 718"
         }
       ],
-      "latitude": 49.3625,
-      "longitude": 19.6194
+      "latitude": 49.35932,
+      "longitude": 19.607809
     },
     {
       "name": "Turany",
@@ -6050,8 +6050,8 @@
           "phone": "+421902740140"
         }
       ],
-      "latitude": 49.0814,
-      "longitude": 19.5244
+      "latitude": 49.116398,
+      "longitude": 19.039154
     },
     {
       "name": "Turčianske Teplice",
@@ -6090,8 +6090,8 @@
           "phone": "+421905522275"
         }
       ],
-      "latitude": 48.8617,
-      "longitude": 18.8633
+      "latitude": 48.861408,
+      "longitude": 18.860812
     },
     {
       "name": "Turzovka",
@@ -6118,8 +6118,8 @@
           "phone": "+421948234444"
         }
       ],
-      "latitude": 49.4169,
-      "longitude": 18.6194
+      "latitude": 49.405158,
+      "longitude": 18.625981
     },
     {
       "name": "Tvrdošín",
@@ -6149,8 +6149,8 @@
           "phone": "+421903508588"
         }
       ],
-      "latitude": 49.3361,
-      "longitude": 19.5592
+      "latitude": 49.336574,
+      "longitude": 19.554188
     },
     {
       "name": "Veľké Kapušany",
@@ -6185,8 +6185,8 @@
           "phone": "+421 918 015 000"
         }
       ],
-      "latitude": 48.5467,
-      "longitude": 22.0833
+      "latitude": 48.553881,
+      "longitude": 22.077372
     },
     {
       "name": "Veľký Krtíš",
@@ -6226,8 +6226,8 @@
           "phone": "+42147/4831148"
         }
       ],
-      "latitude": 48.2083,
-      "longitude": 19.3467
+      "latitude": 48.209343,
+      "longitude": 19.349037
     },
     {
       "name": "Veľký Meder",
@@ -6253,8 +6253,8 @@
           "phone": "+421911465475"
         }
       ],
-      "latitude": 47.8617,
-      "longitude": 17.7667
+      "latitude": 47.855781,
+      "longitude": 17.769367
     },
     {
       "name": "Veľký Šariš",
@@ -6302,8 +6302,8 @@
           "phone": "+421910141777"
         }
       ],
-      "latitude": 48.9967,
-      "longitude": 21.1814
+      "latitude": 49.05,
+      "longitude": 21.2
     },
     {
       "name": "Vráble",
@@ -6335,8 +6335,8 @@
           "phone": "+421915483656"
         }
       ],
-      "latitude": 48.2433,
-      "longitude": 18.3067
+      "latitude": 48.244285,
+      "longitude": 18.306115
     },
     {
       "name": "Vranov nad Topľou",
@@ -6362,8 +6362,8 @@
           "phone": "+421948050843"
         }
       ],
-      "latitude": 48.8917,
-      "longitude": 21.6833
+      "latitude": 48.889151,
+      "longitude": 21.682232
     },
     {
       "name": "Vrbové",
@@ -6395,8 +6395,8 @@
           "phone": "+421915336649"
         }
       ],
-      "latitude": 48.6189,
-      "longitude": 17.7211
+      "latitude": 48.619531,
+      "longitude": 17.723876
     },
     {
       "name": "Vrútky",
@@ -6442,8 +6442,8 @@
           "phone": "+421948916917"
         }
       ],
-      "latitude": 49.1125,
-      "longitude": 18.9089
+      "latitude": 49.10886,
+      "longitude": 18.92507
     },
     {
       "name": "Vysoké Tatry",
@@ -6493,8 +6493,8 @@
           "website": "https://www.zssk.sk"
         }
       ],
-      "latitude": 49.1819,
-      "longitude": 20.2181
+      "latitude": 49.13859,
+      "longitude": 20.220797
     },
     {
       "name": "Zlaté Moravce",
@@ -6534,7 +6534,7 @@
           "phone": "+421904555325"
         }
       ],
-      "latitude": 48.385,
+      "latitude": 48.383333,
       "longitude": 18.4
     },
     {
@@ -6613,8 +6613,8 @@
           "website": "https://lest-slavia-taxi.com/"
         }
       ],
-      "latitude": 48.575,
-      "longitude": 19.12
+      "latitude": 48.578252,
+      "longitude": 19.124714
     },
     {
       "name": "Žarnovica",
@@ -6655,8 +6655,8 @@
           "phone": "+421948228905"
         }
       ],
-      "latitude": 48.4767,
-      "longitude": 18.7167
+      "latitude": 48.483398,
+      "longitude": 18.72155
     },
     {
       "name": "Želiezovce",
@@ -6688,8 +6688,8 @@
           "phone": "+421948664777"
         }
       ],
-      "latitude": 48.0517,
-      "longitude": 18.6678
+      "latitude": 48.049226,
+      "longitude": 18.658355
     },
     {
       "name": "Žiar nad Hronom",
@@ -6727,8 +6727,8 @@
           "phone": "+421948122554"
         }
       ],
-      "latitude": 48.59,
-      "longitude": 18.855
+      "latitude": 48.591018,
+      "longitude": 18.850089
     },
     {
       "name": "Žilina",
@@ -6813,8 +6813,8 @@
           "phone": "+421948235235"
         }
       ],
-      "latitude": 49.2203,
-      "longitude": 18.7392
+      "latitude": 49.223467,
+      "longitude": 18.739314
     }
   ]
 }
