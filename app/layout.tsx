@@ -12,18 +12,18 @@
 
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import { CookieBanner } from '@/components/cookie-banner';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
-// Dočasne vypnuté Google Fonts kvôli build problémom - používame system font
-// const roboto = Roboto({
-//   subsets: ['latin'],
-//   weight: ['400', '500', '700', '900'],
-//   display: 'swap',
-//   variable: '--font-roboto',
-// });
+// Optimalizovaný Inter font cez next/font/google
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 // Metadata API - SEO optimalizácia (migrované z index.html lines 3-43)
 export const metadata: Metadata = {
@@ -112,7 +112,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sk" suppressHydrationWarning>
+    <html lang="sk" suppressHydrationWarning className={inter.variable}>
       <head>
         {/* Google AdSense verification meta tag */}
         <meta name="google-adsense-account" content="ca-pub-1462378482513953" />
@@ -226,7 +226,7 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body className="font-sans">
+      <body className="font-sans antialiased">
         {/*
           Providers wrapper - Client Component
           Obsahuje: QueryClient, TooltipProvider, Toasters, Cookie Consent logic
