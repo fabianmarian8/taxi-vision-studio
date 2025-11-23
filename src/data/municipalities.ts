@@ -12,7 +12,7 @@ export interface Municipality {
 }
 
 // Transform obce.json format (x,y) to our format (latitude, longitude)
-const allMunicipalities: Municipality[] = municipalitiesData.map((item: any) => {
+const allMunicipalities: Municipality[] = municipalitiesData.map((item: { name: string; district: string; region: string; x: number; y: number }) => {
   const slug = item.name
     .toLowerCase()
     .normalize('NFD')

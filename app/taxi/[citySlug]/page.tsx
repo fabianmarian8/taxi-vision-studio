@@ -155,7 +155,7 @@ export async function generateMetadata({
 /**
  * Render page for municipalities without taxi services
  */
-function renderMunicipalityPage(municipality: any, citySlug: string) {
+function renderMunicipalityPage(municipality: { name: string; region: string; district: string; latitude: number; longitude: number; slug: string }, citySlug: string) {
   const nearestCities = findNearestCitiesWithTaxis(municipality, 3);
   const regionSlug = createRegionSlug(municipality.region);
 
@@ -219,7 +219,7 @@ function renderMunicipalityPage(municipality: any, citySlug: string) {
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm md:text-base text-foreground/70 mb-4">
-                      Vzdialenosť: <strong>{distance} km</strong> | Orientačná cena: <strong>cca {Math.ceil(distance * 1.2 + 2)}€ - {Math.ceil(distance * 1.3 + 3)}€</strong>
+                      Vzdialenosť: <strong>{distance} km</strong> | Orientačná cena: <strong>cca {Math.ceil(distance * 0.9)}€ - {Math.ceil(distance * 1.1)}€</strong>
                     </p>
                     <div className="grid gap-2">
                       {city.taxiServices.slice(0, 3).map((service, idx) => (

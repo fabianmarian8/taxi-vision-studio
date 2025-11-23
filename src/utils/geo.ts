@@ -42,15 +42,14 @@ function toRadians(degrees: number): number {
 
 /**
  * Estimate taxi price based on distance
- * Formula: distance * 1.20€ + boarding fee (2€)
+ * Formula: distance * 1€ (no boarding fee)
  * @param distanceKm Distance in kilometers
  * @returns Estimated price range {min, max}
  */
 export function estimateTaxiPrice(distanceKm: number): { min: number; max: number } {
-  const pricePerKm = 1.2;
-  const boardingFee = 2;
+  const pricePerKm = 1.0;
 
-  const basePrice = distanceKm * pricePerKm + boardingFee;
+  const basePrice = distanceKm * pricePerKm;
 
   // Add ±10% variance for min/max
   const min = Math.ceil(basePrice * 0.9);
