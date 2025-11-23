@@ -20,6 +20,7 @@ import { GeometricLines } from '@/components/GeometricLines';
 import { CityFAQ } from '@/components/CityFAQ';
 import { CityContent } from '@/components/CityContent';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
+import { LocalBusinessSchema } from '@/components/schema/LocalBusinessSchema';
 import { MapPin, Phone, Globe, Crown } from 'lucide-react';
 import { getCityBySlug, createRegionSlug, slovakCities } from '@/data/cities';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -120,6 +121,9 @@ export default async function CityPage({ params }: { params: Promise<{ citySlug:
 
   return (
     <div className="min-h-screen bg-white">
+      {/* LocalBusiness Schema for SEO */}
+      <LocalBusinessSchema city={city} />
+
       <Header />
 
       {/* Breadcrumbs */}
