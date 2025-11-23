@@ -221,7 +221,7 @@ export default async function TaxiServicePage({
             )}
 
             <div className="relative z-10">
-              <h1 className={`text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-md ${service.isPremium ? 'text-white' : 'text-foreground'}`}>
+              <h1 className={`text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-none md:drop-shadow-md ${service.isPremium ? 'text-white' : 'text-foreground'}`}>
                 {service.name}
               </h1>
               <p className={`text-xl font-semibold ${service.isPremium ? 'text-white/95' : 'text-foreground/90'}`}>
