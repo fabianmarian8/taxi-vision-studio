@@ -365,3 +365,55 @@
     min-width: 0;
   }
 }
+
+/* ============================================================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   ============================================================================
+   Tieto pravidlá dramaticky znižujú výpočtovú náročnosť na slabých mobilných
+   zariadeniach. Google Lighthouse simuluje 4G sieť a slabý procesor, takže
+   vypnutie náročných 3D efektov môže zdvihnúť skóre z 50 na 90.
+   ========================================================================= */
+
+@media (max-width: 640px) {
+  /* Vypnutie náročných 3D transformácií a tieňov na mobile */
+  .hero-3d-bg,
+  .card-3d,
+  .shadow-3d-lg,
+  .shadow-3d-xl {
+    /* Odstránenie 3D transformácií - šetrí procesor */
+    transform: none !important;
+    /* Zjednodušený tieň namiesto multi-layer 3D tieňa */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    /* Vypnutie animácií - ďalšia úspora */
+    transition: none !important;
+  }
+
+  /* Zjednodušenie gradientov na mobile - čistá farba je oveľa rýchlejšia */
+  .hero-3d-bg {
+    /* Jednoduchá žltá farba namiesto komplexného gradientu */
+    background: hsl(41, 75%, 68%) !important;
+  }
+
+  .hero-3d-bg::before {
+    /* Vypnutie overlay gradientu */
+    display: none;
+  }
+
+  /* Vypnutie hover efektov na mobile - nemajú význam na dotykových zariadeniach */
+  .rotate-3d-hover:hover,
+  .card-3d:hover {
+    transform: none !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Vypnutie animácií na mobile */
+  .float-3d {
+    animation: none;
+  }
+
+  /* Zjednodušenie geometrických línií */
+  .geometric-line {
+    /* Jednoduchý background namiesto gradientu */
+    background: rgba(15, 15, 15, 0.06) !important;
+  }
+}

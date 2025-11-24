@@ -185,24 +185,24 @@ export default function RootLayout({
 
         {/*
           Google AdSense
-          Auto ads script - musí byť v <head> na každej stránke
+          Auto ads script - načíta sa až keď je stránka hotová (lazyOnload pre lepší performance na mobile)
         */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1462378482513953"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         {/*
           Google Analytics (gtag.js)
-          Z index.html lines 63-71
+          Načíta sa až keď je stránka hotová (lazyOnload pre lepší performance na mobile)
         */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XM0ES676GB"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -213,9 +213,9 @@ export default function RootLayout({
 
         {/*
           Microsoft Clarity
-          Tracking script - načíta sa vždy, trackuje všetkých používateľov
+          Tracking script - načíta sa až keď je stránka hotová (lazyOnload pre lepší performance na mobile)
         */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">
+        <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
