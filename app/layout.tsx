@@ -185,13 +185,16 @@ export default function RootLayout({
 
         {/*
           Google AdSense
-          Auto ads script - načíta sa až keď je stránka hotová (lazyOnload pre lepší performance na mobile)
+          HYBRID STRATÉGIA: afterInteractive (nie lazyOnload)
+          Dôvod: lazyOnload spôsoboval CLS (Cumulative Layout Shift) na desktope.
+          Reklamy musia rezervovať miesto skôr, aby sa obsah neposúval.
+          afterInteractive = načíta sa hneď po HTML, ale nič neblokuje.
         */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1462378482513953"
           crossOrigin="anonymous"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
 
         {/*
