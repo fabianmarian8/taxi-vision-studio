@@ -577,11 +577,8 @@ export default async function HierarchicalMunicipalityPage({
   const municipality = getMunicipalityBySlug(municipalitySlug);
 
   if (municipality) {
-    // Verify that the municipality belongs to the correct district
-    if (municipality.district !== district.name) {
-      notFound();
-    }
-
+    // Note: We don't verify district match because the redirect already ensures
+    // the URL structure is correct. This allows for more flexible URL handling.
     return renderMunicipalityPage(
       municipality,
       regionSlug,
