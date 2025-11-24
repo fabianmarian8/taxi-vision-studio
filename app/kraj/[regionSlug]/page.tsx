@@ -19,7 +19,10 @@ import { HowItWorks } from '@/components/HowItWorks';
 import { GeometricLines } from '@/components/GeometricLines';
 import { SlovakCityCard } from '@/components/SlovakCityCard';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
+import { Card, CardContent } from '@/components/ui/card';
+import { MapPin } from 'lucide-react';
 import { getRegionBySlug, getCitiesByRegion, getRegionsData } from '@/data/cities';
+import { getDistrictsByRegion } from '@/data/districts';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 // Generate static params for all regions at build time
@@ -98,6 +101,7 @@ export async function generateMetadata({
 export default async function RegionPage({ params }: { params: Promise<{ regionSlug: string }> }) {
   const { regionSlug } = await params;
   const regionName = getRegionBySlug(regionSlug);
+  const districts = regionName ? getDistrictsByRegion(regionName) : [];
   const cities = regionName ? getCitiesByRegion(regionName) : [];
 
   // 404 handling - Next.js way
@@ -122,32 +126,78 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
               Taxislužby v kraji {regionName}
             </h1>
             <p className="text-base md:text-xl text-foreground/90 font-bold px-4">
-              Vyberte si mesto a nájdite dostupné taxislužby
+              Vyberte si okres a prehliadajte obce s taxislužbami
             </p>
           </div>
         </div>
       </section>
 
-      {/* Cities Grid Section */}
+      {/* Districts Grid Section */}
       <section className="py-8 md:py-12 px-4 md:px-8 relative">
         <GeometricLines variant="subtle" count={6} />
 
         <div className="container mx-auto max-w-7xl relative z-10">
-          {cities.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-              {cities.map((city) => (
-                <SlovakCityCard
-                  key={city.slug}
-                  name={city.name}
-                  region={city.region}
-                  slug={city.slug}
-                />
-              ))}
+          {/* Districts Section */}
+          {districts.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl md:text-3xl font-black mb-6 text-foreground">
+                Okresy v kraji {regionName}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {districts.map((district) => (
+                  <Link
+                    key={district.slug}
+                    href={`/taxi/${regionSlug}/${district.slug}`}
+                    className="block group"
+                  >
+                    <Card className="perspective-1000 h-full transition-all hover:shadow-lg">
+                      <div className="card-3d shadow-3d-sm hover:shadow-3d-md">
+                        <CardContent className="p-5">
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2 mb-2">
+                                <MapPin className="h-5 w-5 text-success flex-shrink-0" />
+                                <h3 className="font-bold text-base md:text-lg text-foreground group-hover:text-primary-yellow transition-colors">
+                                  Okres {district.name}
+                                </h3>
+                              </div>
+                              <p className="text-sm text-foreground/70">
+                                {district.municipalitiesCount} obcí
+                              </p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </div>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
             </div>
-          ) : (
+          )}
+
+          {/* Cities Section - Main cities with taxi services */}
+          {cities.length > 0 && (
+            <div>
+              <h2 className="text-2xl md:text-3xl font-black mb-6 text-foreground">
+                Hlavné mestá s taxislužbami
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+                {cities.map((city) => (
+                  <SlovakCityCard
+                    key={city.slug}
+                    name={city.name}
+                    region={city.region}
+                    slug={city.slug}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {districts.length === 0 && cities.length === 0 && (
             <div className="text-center py-8 md:py-12">
               <p className="text-base md:text-xl text-foreground/70 font-bold px-4">
-                V tomto kraji zatiaľ nemáme žiadne mestá.
+                V tomto kraji zatiaľ nemáme žiadne údaje.
               </p>
             </div>
           )}
