@@ -13,10 +13,16 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
+import dynamic from 'next/dynamic';
 import './globals.css';
 import { Providers } from '@/components/providers';
-import { CookieBanner } from '@/components/cookie-banner';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+
+// Dynamický import Cookie Bannera (zmenší počiatočný bundle)
+// CookieBanner má 'use client' direktívu, takže sa automaticky hydratuje len na klientovi
+const CookieBanner = dynamic(
+  () => import('@/components/cookie-banner').then((mod) => mod.CookieBanner)
+);
 
 // Optimalizovaný Inter font cez next/font/google
 const inter = Inter({
@@ -162,9 +168,9 @@ export default function RootLayout({
 
         {/*
           Google Consent Mode v2 - Default Denied State
-          Musí byť pred Google Analytics (z index.html lines 45-61)
+          Posúvame na afterInteractive, aby neblokoval render
         */}
-        <Script id="google-consent-mode" strategy="beforeInteractive">
+        <Script id="google-consent-mode" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -185,16 +191,15 @@ export default function RootLayout({
 
         {/*
           Google AdSense
-          HYBRID STRATÉGIA: afterInteractive (nie lazyOnload)
-          Dôvod: lazyOnload spôsoboval CLS (Cumulative Layout Shift) na desktope.
-          Reklamy musia rezervovať miesto skôr, aby sa obsah neposúval.
-          afterInteractive = načíta sa hneď po HTML, ale nič neblokuje.
+          MUSÍ BYŤ lazyOnload pre mobilné skóre.
+          Toto je jediná cesta k 90+ bodov na mobile s AdSense.
+          Pre desktop CLS: používame CSS rezerváciu miesta (.google-auto-placed).
         */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1462378482513953"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         {/*

@@ -417,3 +417,17 @@
     background: rgba(15, 15, 15, 0.06) !important;
   }
 }
+
+/* ============================================================================
+   ADSENSE CLS FIX - REZERVÁCIA MIESTA PRE REKLAMY
+   ============================================================================
+   Keď používame lazyOnload stratégiu pre AdSense, reklamy sa načítavajú neskôr.
+   Táto CSS trieda rezervuje miesto pre Auto Ads, aby sa obsah neposúval (CLS).
+   ========================================================================= */
+
+/* Rezervácia miesta pre Google Auto Ads */
+.google-auto-placed {
+  min-height: 280px; /* Typická výška reklamy */
+  contain: content;
+  display: block;
+}
