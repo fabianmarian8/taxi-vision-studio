@@ -13,7 +13,14 @@
 import { notFound, redirect } from 'next/navigation';
 import { getCityBySlug, createRegionSlug, slovakCities } from '@/data/cities';
 import { getMunicipalityBySlug } from '@/data/municipalities';
-import { getDistrictForMunicipality } from '@/data/districts';
+import { getDistrictForMunicipality, createDistrictSlug } from '@/data/districts';
+
+// Manual mapping for cities missing from obce.json
+const MANUAL_DISTRICT_MAPPING: Record<string, { district: string; region: string }> = {
+  bratislava: { district: 'Bratislava', region: 'Bratislavský kraj' },
+  kosice: { district: 'Košice', region: 'Košický kraj' },
+  hostovce: { district: 'Snina', region: 'Prešovský kraj' }, // Actually "Hostovice" in obce.json
+};
 
 // ISR: Revalidate once per week
 export const revalidate = 604800;
@@ -35,6 +42,14 @@ export default async function LegacyCityPage({
 }) {
   const { citySlug } = await params;
 
+  // Check manual mapping first (for cities missing from obce.json)
+  const manualMapping = MANUAL_DISTRICT_MAPPING[citySlug];
+  if (manualMapping) {
+    const regionSlug = createRegionSlug(manualMapping.region);
+    const districtSlug = createDistrictSlug(manualMapping.district);
+    redirect(`/taxi/${regionSlug}/${districtSlug}/${citySlug}`);
+  }
+
   // Try to find as main city first
   const city = getCityBySlug(citySlug);
 
@@ -50,6 +65,10 @@ export default async function LegacyCityPage({
         redirect(`/taxi/${regionSlug}/${district.slug}/${citySlug}`);
       }
     }
+
+    // Fallback: if city exists but no district found, still show 404
+    // This shouldn't happen for properly configured cities
+    notFound();
   }
 
   // Try to find as municipality
@@ -63,6 +82,9 @@ export default async function LegacyCityPage({
       // Permanent redirect (308) to new hierarchical URL
       redirect(`/taxi/${regionSlug}/${district.slug}/${citySlug}`);
     }
+
+    // Fallback: if municipality exists but no district, show 404
+    notFound();
   }
 
   // 404 if neither city nor municipality found
