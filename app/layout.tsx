@@ -18,10 +18,10 @@ import './globals.css';
 import { Providers } from '@/components/providers';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
-// Dynamický import Cookie Bannera (vypne SSR pre banner = menšie počiatočné HTML)
+// Dynamický import Cookie Bannera (zmenší počiatočný bundle)
+// CookieBanner má 'use client' direktívu, takže sa automaticky hydratuje len na klientovi
 const CookieBanner = dynamic(
-  () => import('@/components/cookie-banner').then((mod) => mod.CookieBanner),
-  { ssr: false }
+  () => import('@/components/cookie-banner').then((mod) => mod.CookieBanner)
 );
 
 // Optimalizovaný Inter font cez next/font/google
