@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { MapPin, ExternalLink } from "lucide-react";
-import { slovakCities, createRegionSlug } from "@/data/cities";
-import { getMunicipalityBySlug } from "@/data/municipalities";
-import { getDistrictForMunicipality } from "@/data/districts";
+import { slovakCities } from "@/data/cities";
 
 export const CityLinksSection = () => {
   // Group cities by region
@@ -27,7 +25,7 @@ export const CityLinksSection = () => {
             Pozrite si detailné taxi možnosti vo vašom meste
           </h2>
           <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
-            Máme informácie o taxislužbách vo všetkých slovenských mestách. 
+            Máme informácie o taxislužbách vo všetkých slovenských mestách.
             Kliknite na vaše mesto pre telefónne čísla, webové stránky a recenzie.
           </p>
         </div>
@@ -40,29 +38,17 @@ export const CityLinksSection = () => {
                 {region}
               </h3>
               <div className="space-y-2 max-h-96 overflow-y-auto">
-                {cities.map((city) => {
-                  // Get hierarchical URL structure
-                  const regionSlug = createRegionSlug(city.region);
-                  const municipality = getMunicipalityBySlug(city.slug);
-                  const district = municipality ? getDistrictForMunicipality(municipality) : null;
-
-                  // Fallback to old URL if district not found (backward compatibility)
-                  const href = district
-                    ? `/taxi/${regionSlug}/${district.slug}/${city.slug}`
-                    : `/taxi/${city.slug}`;
-
-                  return (
-                    <Link
-                      key={city.slug}
-                      href={href}
-                      className="block text-sm text-foreground/80 hover:text-primary hover:translate-x-1 transition-all duration-200 flex items-center gap-2 group"
-                      title={`Taxi ${city.name} - telefónne čísla a informácie`}
-                    >
-                      <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {city.name}
-                    </Link>
-                  );
-                })}
+                {cities.map((city) => (
+                  <Link
+                    key={city.slug}
+                    href={`/taxi/${city.slug}`}
+                    className="block text-sm text-foreground/80 hover:text-primary hover:translate-x-1 transition-all duration-200 flex items-center gap-2 group"
+                    title={`Taxi ${city.name} - telefónne čísla a informácie`}
+                  >
+                    <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {city.name}
+                  </Link>
+                ))}
               </div>
             </div>
           ))}
