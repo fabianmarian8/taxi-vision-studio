@@ -8,6 +8,7 @@
 
 import { MetadataRoute } from 'next';
 import citiesData from '@/data/cities.json';
+import allMunicipalities from '../slovenske-obce-main/obce.json';
 
 // Performance optimization: Cache sitemap for 24 hours
 export const revalidate = 86400; // 24 hours in seconds
@@ -132,6 +133,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     });
+  });
+
+  // Pridanie všetkých slovenských obcí (~2900)
+  // Filtrujeme duplicity - obce, ktoré už sú v Tier 1 mestách
+  const existingSlugs = new Set(citiesData.cities.map((c) => c.slug));
+
+  allMunicipalities.forEach((obec) => {
+    // Vytvorenie slug z názvu obce
+    const slug = obec.name
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+
+    // Pridať iba ak už nie je pokryté v hlavnom zozname miest
+    if (!existingSlugs.has(slug)) {
+      sitemap.push({
+        url: `${baseUrl}/taxi/${slug}`,
+        lastModified: currentDate,
+        changeFrequency: 'monthly',
+        priority: 0.5,
+      });
+    }
   });
 
   return sitemap;
