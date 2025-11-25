@@ -285,10 +285,22 @@ export async function generateMetadata({
 
     case 'hierarchical': {
       const { municipality, district, regionSlug } = routeType;
-      const nearestCities = findNearestCitiesWithTaxis(municipality, 1);
-      const nearestCity = nearestCities[0];
       const currentUrl = `${baseUrl}/taxi/${regionSlug}/${district.slug}/${municipality.slug}`;
-      const description = `Taxi v obci ${municipality.name}, okres ${district.name} - Najbližšie taxislužby sú v meste ${nearestCity?.city.name} (${nearestCity?.distance} km).`;
+
+      // Check if this municipality is actually a city with taxi services
+      const cityWithTaxi = getCityBySlug(municipality.slug);
+      const hasTaxiServices = cityWithTaxi && cityWithTaxi.taxiServices.length > 0;
+
+      let description: string;
+      if (hasTaxiServices) {
+        description = `Taxi v meste ${municipality.name}, okres ${district.name} - ${cityWithTaxi.taxiServices.length} taxislužieb s kontaktmi a cenami.`;
+      } else {
+        const nearestCities = findNearestCitiesWithTaxis(municipality, 1);
+        const nearestCity = nearestCities[0];
+        description = nearestCity
+          ? `Taxi v obci ${municipality.name}, okres ${district.name} - Najbližšie taxislužby sú v meste ${nearestCity.city.name} (${nearestCity.distance} km).`
+          : `Taxi v obci ${municipality.name}, okres ${district.name} - Nájdite najbližšie taxislužby.`;
+      }
 
       return {
         title: `Taxi ${municipality.name} - okres ${district.name} | ${siteName}`,
@@ -490,9 +502,11 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
                 Taxi {municipality.name}
               </h1>
               <p className="text-base md:text-xl font-semibold px-4 text-foreground/90">
-                {isHierarchical && actualDistrict
-                  ? `Taxislužby v okolí obce ${municipality.name}, okres ${actualDistrict.name}`
-                  : `Taxislužby v okolí obce ${municipality.name}`
+                {hasTaxiServices
+                  ? `Kompletný zoznam dostupných taxislužieb`
+                  : isHierarchical && actualDistrict
+                    ? `Najbližšie taxislužby v okolí, okres ${actualDistrict.name}`
+                    : `Najbližšie taxislužby v okolí`
                 }
               </p>
             </div>
