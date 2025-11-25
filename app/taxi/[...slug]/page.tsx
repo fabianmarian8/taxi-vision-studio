@@ -538,12 +538,12 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
                   <CardHeader className="pb-3">
                     <CardTitle className="text-xl md:text-2xl font-black flex items-center gap-2">
                       <MapPin className="h-5 w-5 text-success" />
-                      {city.name} ({distance} km)
+                      {city.name} (~{Math.round(distance * 1.3)} km)
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm md:text-base text-foreground/70 mb-4">
-                      Vzdialenosť: <strong>{distance} km</strong> | Orientačná cena: <strong>cca {Math.ceil(distance * 0.9)}€ - {Math.ceil(distance * 1.1)}€</strong>
+                      Vzdialenosť: <strong>~{Math.round(distance * 1.3)} km</strong> | Orientačná cena: <strong>cca {Math.ceil(2 + distance * 1.3 * 0.85)}€ - {Math.ceil(2 + distance * 1.3 * 1.15)}€</strong>
                     </p>
                     <div className="grid gap-2">
                       {city.taxiServices.slice(0, 3).map((service, idx) => (
