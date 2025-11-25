@@ -19,7 +19,10 @@ import { HowItWorks } from '@/components/HowItWorks';
 import { GeometricLines } from '@/components/GeometricLines';
 import { SlovakCityCard } from '@/components/SlovakCityCard';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
+import { Card, CardContent } from '@/components/ui/card';
+import { MapPin } from 'lucide-react';
 import { getRegionBySlug, getCitiesByRegion, getRegionsData } from '@/data/cities';
+import { getDistrictsByRegionSlug } from '@/data/districts';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 // Generate static params for all regions at build time
@@ -99,6 +102,7 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
   const { regionSlug } = await params;
   const regionName = getRegionBySlug(regionSlug);
   const cities = regionName ? getCitiesByRegion(regionName) : [];
+  const districts = getDistrictsByRegionSlug(regionSlug);
 
   // 404 handling - Next.js way
   if (!regionName) {
@@ -122,17 +126,57 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
               Taxislužby v kraji {regionName}
             </h1>
             <p className="text-base md:text-xl text-foreground/90 font-bold px-4">
-              Vyberte si mesto a nájdite dostupné taxislužby
+              {districts.length} okresov • {cities.length} miest s taxi službami
             </p>
           </div>
         </div>
       </section>
+
+      {/* Districts Section - NEW */}
+      {districts.length > 0 && (
+        <section className="py-8 md:py-12 px-4 md:px-8 bg-foreground/5">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-black mb-6 text-foreground text-center">
+              Okresy v kraji {regionName}
+            </h2>
+            <p className="text-center text-foreground/70 mb-8">
+              Kliknite na okres pre zobrazenie všetkých obcí
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
+              {districts.map((district) => (
+                <Link
+                  key={district.slug}
+                  href={`/taxi/${regionSlug}/${district.slug}`}
+                  className="perspective-1000 group"
+                >
+                  <Card className="h-full hover:shadow-lg transition-all">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <MapPin className="h-4 w-4 text-foreground/40 group-hover:text-success transition-colors flex-shrink-0" />
+                        <span className="font-bold text-sm md:text-base text-foreground truncate">
+                          {district.name}
+                        </span>
+                      </div>
+                      <p className="text-xs text-foreground/60">
+                        {district.municipalitiesCount} obcí
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Cities Grid Section */}
       <section className="py-8 md:py-12 px-4 md:px-8 relative">
         <GeometricLines variant="subtle" count={6} />
 
         <div className="container mx-auto max-w-7xl relative z-10">
+          <h2 className="text-2xl md:text-3xl font-black mb-6 text-foreground text-center">
+            Mestá s taxislužbami
+          </h2>
           {cities.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
               {cities.map((city) => (
