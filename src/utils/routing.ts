@@ -1,17 +1,19 @@
 /**
- * OSRM Routing Service
- * Uses Open Source Routing Machine for real road distances and routes
- * Public demo server: router.project-osrm.org
+ * Routing Service Client
+ * Calls /api/route endpoint which uses OpenRouteService (accurate) or OSRM (fallback)
  */
 
 export interface RouteResult {
   distance: number; // in kilometers
   duration: number; // in minutes
   geometry: [number, number][]; // Array of [lat, lng] coordinates for the route
+  source?: 'openrouteservice' | 'osrm' | 'estimate';
 }
 
 /**
- * Get driving route between two points using OSRM
+ * Get driving route between two points
+ * Uses server-side API that tries OpenRouteService first, then OSRM, then estimate
+ *
  * @param fromLat Starting latitude
  * @param fromLng Starting longitude
  * @param toLat Destination latitude
@@ -25,41 +27,25 @@ export async function getRoute(
   toLng: number
 ): Promise<RouteResult | null> {
   try {
-    // OSRM expects coordinates as lng,lat (not lat,lng!)
-    const url = `https://router.project-osrm.org/route/v1/driving/${fromLng},${fromLat};${toLng},${toLat}?overview=full&geometries=geojson`;
-
-    const response = await fetch(url, {
-      headers: {
-        'Accept': 'application/json',
-      },
-    });
+    const response = await fetch(
+      `/api/route?from=${fromLat},${fromLng}&to=${toLat},${toLng}`
+    );
 
     if (!response.ok) {
-      console.error('OSRM API error:', response.status);
+      console.error('Route API error:', response.status);
       return null;
     }
 
     const data = await response.json();
 
-    if (data.code !== 'Ok' || !data.routes || data.routes.length === 0) {
-      console.error('OSRM returned no routes:', data.code);
-      return null;
-    }
-
-    const route = data.routes[0];
-
-    // Convert GeoJSON coordinates [lng, lat] to [lat, lng] for Leaflet
-    const geometry: [number, number][] = route.geometry.coordinates.map(
-      (coord: [number, number]) => [coord[1], coord[0]] as [number, number]
-    );
-
     return {
-      distance: Math.round(route.distance / 100) / 10, // Convert meters to km, 1 decimal
-      duration: Math.round(route.duration / 60), // Convert seconds to minutes
-      geometry,
+      distance: data.distance,
+      duration: data.duration,
+      geometry: data.geometry,
+      source: data.source,
     };
   } catch (error) {
-    console.error('Failed to fetch route from OSRM:', error);
+    console.error('Failed to fetch route:', error);
     return null;
   }
 }
@@ -70,7 +56,7 @@ export async function getRoute(
  * @returns Estimated price range {min, max}
  */
 export function estimateRoadTaxiPrice(distanceKm: number): { min: number; max: number } {
-  // Base fare + per km rate
+  // Base fare + per km rate (Slovak taxi average)
   const baseFare = 2; // €2 nástupné
   const pricePerKm = 1.0; // €1 per km
 
