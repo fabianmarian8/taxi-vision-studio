@@ -69,29 +69,24 @@ async function getRouteFromORS(
   }
 
   try {
-    // Use POST request with radiuses parameter for better snapping
-    // This helps with coordinates in remote areas (military, forests, etc.)
     const url = 'https://api.openrouteservice.org/v2/directions/driving-car';
 
-    const body = {
-      coordinates: [
-        [fromLng, fromLat], // ORS uses [lng, lat] order
-        [toLng, toLat]
-      ],
-      // Increase radius to 5000m (5km) to find routable points in remote areas
-      radiuses: [5000, 5000],
-      geometry: true,
-      instructions: false,
-    };
+    // Determine if it's a JWT key (Basic Key from dashboard starts with 'ey')
+    const authHeader = apiKey.startsWith('ey') ? `Bearer ${apiKey}` : apiKey;
 
     const response = await fetch(url, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        'Authorization': authHeader,
         'Content-Type': 'application/json',
-        'Accept': 'application/json, application/geo+json',
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify({
+        coordinates: [
+          [fromLng, fromLat], // ORS uses [lng, lat] order
+          [toLng, toLat]
+        ],
+        radiuses: [5000, 5000], // Search within 5km for remote areas
+      }),
     });
 
     if (!response.ok) {
@@ -102,7 +97,7 @@ async function getRouteFromORS(
 
     const data = await response.json();
 
-    // POST response format (different from GET)
+    // POST response format
     if (!data.routes || data.routes.length === 0) {
       console.error('ORS returned no routes');
       return null;
