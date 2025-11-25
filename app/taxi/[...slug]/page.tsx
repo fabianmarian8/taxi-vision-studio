@@ -455,7 +455,11 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
   isHierarchical?: boolean;
   district?: District;
 }) {
-  const nearestCities = findNearestCitiesWithTaxis(municipality, 3);
+  // Check if this municipality is actually a city with taxi services
+  const cityWithTaxi = getCityBySlug(municipality.slug);
+  const hasTaxiServices = cityWithTaxi && cityWithTaxi.taxiServices.length > 0;
+
+  const nearestCities = hasTaxiServices ? [] : findNearestCitiesWithTaxis(municipality, 3);
   const regionSlug = createRegionSlug(municipality.region);
   const actualDistrict = district || getDistrictForMunicipality(municipality);
 
@@ -496,7 +500,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
         </div>
       </section>
 
-      {nearestCities.length > 0 && nearestCities[0].city.latitude && nearestCities[0].city.longitude && (
+      {!hasTaxiServices && nearestCities.length > 0 && nearestCities[0].city.latitude && nearestCities[0].city.longitude && (
         <section className="py-8 md:py-12 px-4 md:px-8 bg-gradient-to-b from-white to-foreground/5">
           <div className="container mx-auto max-w-4xl">
             <div className="mb-6 text-center">
@@ -520,60 +524,105 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
         </section>
       )}
 
-      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-white">
-        <div className="container mx-auto max-w-4xl relative z-10">
-          <div className="mb-8 text-center">
-            <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
-              Najbližšie taxislužby
-            </h2>
-            <p className="text-base md:text-lg text-foreground/80 font-semibold">
-              V obci {municipality.name} momentálne neevidujeme taxislužby. Nižšie nájdete najbližšie dostupné taxi služby z okolitých miest.
-            </p>
-          </div>
+      {!hasTaxiServices && nearestCities.length > 0 && (
+        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-white">
+          <div className="container mx-auto max-w-4xl relative z-10">
+            <div className="mb-8 text-center">
+              <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
+                Najbližšie taxislužby
+              </h2>
+              <p className="text-base md:text-lg text-foreground/80 font-semibold">
+                V obci {municipality.name} momentálne neevidujeme taxislužby. Nižšie nájdete najbližšie dostupné taxi služby z okolitých miest.
+              </p>
+            </div>
 
-          <div className="space-y-6">
-            {nearestCities.map(({ city, roadDistance, duration }) => (
-              <Card key={city.slug} className="perspective-1000">
-                <div className="card-3d shadow-3d-sm">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-xl md:text-2xl font-black flex items-center gap-2">
-                      <MapPin className="h-5 w-5 text-success" />
-                      {city.name} ({roadDistance} km)
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm md:text-base text-foreground/70 mb-4">
-                      Vzdialenosť: <strong>{roadDistance} km</strong> ({duration} min) | Orientačná cena: <strong>cca {Math.ceil(2 + roadDistance * 0.85)}€ - {Math.ceil(2 + roadDistance * 1.15)}€</strong>
-                    </p>
-                    <div className="grid gap-2">
-                      {city.taxiServices.slice(0, 3).map((service, idx) => (
-                        <Link key={idx} href={`/taxi/${city.slug}`} className="block">
-                          <Card className="hover:shadow-md transition-shadow">
-                            <CardContent className="py-2 px-3">
-                              <div className="flex items-center justify-between">
-                                <span className="font-semibold text-sm">{service.name}</span>
-                                {service.phone && (
-                                  <span className="text-xs text-foreground/70">{service.phone}</span>
-                                )}
-                              </div>
-                            </CardContent>
-                          </Card>
-                        </Link>
-                      ))}
-                    </div>
-                    <Link
-                      href={`/taxi/${city.slug}`}
-                      className="mt-3 inline-block text-sm font-bold text-primary-yellow hover:underline"
-                    >
-                      Zobraziť všetky taxislužby v meste {city.name} →
-                    </Link>
-                  </CardContent>
-                </div>
-              </Card>
-            ))}
+            <div className="space-y-6">
+              {nearestCities.map(({ city, roadDistance, duration }) => (
+                <Card key={city.slug} className="perspective-1000">
+                  <div className="card-3d shadow-3d-sm">
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-xl md:text-2xl font-black flex items-center gap-2">
+                        <MapPin className="h-5 w-5 text-success" />
+                        {city.name} ({roadDistance} km)
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm md:text-base text-foreground/70 mb-4">
+                        Vzdialenosť: <strong>{roadDistance} km</strong> ({duration} min) | Orientačná cena: <strong>cca {Math.ceil(2 + roadDistance * 0.85)}€ - {Math.ceil(2 + roadDistance * 1.15)}€</strong>
+                      </p>
+                      <div className="grid gap-2">
+                        {city.taxiServices.slice(0, 3).map((service, idx) => (
+                          <Link key={idx} href={`/taxi/${city.slug}`} className="block">
+                            <Card className="hover:shadow-md transition-shadow">
+                              <CardContent className="py-2 px-3">
+                                <div className="flex items-center justify-between">
+                                  <span className="font-semibold text-sm">{service.name}</span>
+                                  {service.phone && (
+                                    <span className="text-xs text-foreground/70">{service.phone}</span>
+                                  )}
+                                </div>
+                              </CardContent>
+                            </Card>
+                          </Link>
+                        ))}
+                      </div>
+                      <Link
+                        href={`/taxi/${city.slug}`}
+                        className="mt-3 inline-block text-sm font-bold text-primary-yellow hover:underline"
+                      >
+                        Zobraziť všetky taxislužby v meste {city.name} →
+                      </Link>
+                    </CardContent>
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {hasTaxiServices && cityWithTaxi && (
+        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-white">
+          <div className="container mx-auto max-w-4xl relative z-10">
+            <div className="mb-8 text-center">
+              <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
+                Taxislužby v meste {municipality.name}
+              </h2>
+            </div>
+
+            <div className="grid gap-2">
+              {cityWithTaxi.taxiServices.map((service, index) => (
+                <Card key={index} className="perspective-1000">
+                  <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all">
+                    <CardHeader className="pb-1 pt-3 md:pt-3.5 px-3 md:px-4">
+                      <CardTitle className="text-sm md:text-base font-semibold flex items-center gap-1.5 md:gap-2">
+                        <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-success" />
+                        {service.name}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0 pb-3 md:pb-3.5 px-3 md:px-4">
+                      <div className="flex flex-col gap-1 md:gap-1.5 text-xs md:text-sm">
+                        {service.phone && (
+                          <div className="flex items-center gap-1.5 md:gap-2 font-medium text-foreground">
+                            <Phone className="h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0 text-primary-yellow" />
+                            {service.phone}
+                          </div>
+                        )}
+                        {service.website && (
+                          <div className="flex items-center gap-1.5 md:gap-2 font-medium text-foreground">
+                            <Globe className="h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0 text-info" />
+                            <span>{truncateUrl(service.website)}</span>
+                          </div>
+                        )}
+                      </div>
+                    </CardContent>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <HowItWorks />
       <Footer />

@@ -27,12 +27,25 @@ export function AlphabeticalCityList() {
       taxiCount: city.taxiServices?.length || 0,
     }));
 
-    const municipalities = allMunicipalities.map((mun) => ({
-      name: mun.name,
-      slug: mun.slug,
-      region: mun.region,
-      type: 'municipality' as const,
-    }));
+    // Get city slugs to avoid duplicates
+    const citySlugs = new Set(cities.map((c) => c.slug));
+
+    // Filter out municipalities that have same slug as cities and remove duplicates
+    const seenSlugs = new Set<string>();
+    const municipalities = allMunicipalities
+      .filter((mun) => {
+        if (citySlugs.has(mun.slug) || seenSlugs.has(mun.slug)) {
+          return false;
+        }
+        seenSlugs.add(mun.slug);
+        return true;
+      })
+      .map((mun) => ({
+        name: mun.name,
+        slug: mun.slug,
+        region: mun.region,
+        type: 'municipality' as const,
+      }));
 
     return [...cities, ...municipalities].sort((a, b) =>
       a.name.localeCompare(b.name, 'sk')
