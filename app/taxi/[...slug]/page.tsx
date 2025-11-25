@@ -645,8 +645,20 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
 }
 
 function DistrictPage({ district, regionSlug }: { district: District; regionSlug: string }) {
-  const municipalities = getMunicipalitiesByDistrictSlug(district.slug);
+  const allMunicipalitiesInDistrict = getMunicipalitiesByDistrictSlug(district.slug);
   const regionName = getRegionBySlug(regionSlug);
+
+  // Filter out cities with taxi services - they have their own pages
+  // Only show villages (municipalities without taxi services)
+  const municipalities = allMunicipalitiesInDistrict.filter((mun) => {
+    const cityWithTaxi = getCityBySlug(mun.slug);
+    return !(cityWithTaxi && cityWithTaxi.taxiServices.length > 0);
+  });
+
+  // Get cities with taxi services in this district for separate section
+  const citiesWithTaxi = allMunicipalitiesInDistrict
+    .map((mun) => getCityBySlug(mun.slug))
+    .filter((city): city is CityData => city !== undefined && city.taxiServices.length > 0);
 
   return (
     <div className="min-h-screen bg-white">
@@ -676,35 +688,74 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
         </div>
       </section>
 
-      <section className="py-8 md:py-12 px-4 md:px-8">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-2xl md:text-3xl font-black mb-6 text-foreground text-center">
-            Všetky obce v okrese {district.name}
-          </h2>
-          <p className="text-center text-foreground/70 mb-8">
-            Kliknite na obec pre zobrazenie najbližších taxislužieb
-          </p>
+      {/* Cities with taxi services section */}
+      {citiesWithTaxi.length > 0 && (
+        <section className="py-8 md:py-12 px-4 md:px-8 bg-success/5">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-black mb-6 text-foreground text-center">
+              Mestá s taxislužbami v okrese {district.name}
+            </h2>
+            <p className="text-center text-foreground/70 mb-8">
+              Kliknite na mesto pre zobrazenie dostupných taxislužieb
+            </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3">
-            {municipalities.map((municipality) => (
-              <Link
-                key={municipality.slug}
-                href={`/taxi/${regionSlug}/${district.slug}/${municipality.slug}`}
-                className="perspective-1000 group"
-              >
-                <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all bg-card rounded-lg p-3 md:p-4 h-full">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-foreground/40 group-hover:text-success transition-colors" />
-                    <span className="font-semibold text-sm md:text-base text-foreground truncate">
-                      {municipality.name}
-                    </span>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3">
+              {citiesWithTaxi.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/taxi/${city.slug}`}
+                  className="perspective-1000 group"
+                >
+                  <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all bg-card rounded-lg p-3 md:p-4 h-full border-2 border-success/30">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-success" />
+                      <span className="font-semibold text-sm md:text-base text-foreground truncate">
+                        {city.name}
+                      </span>
+                    </div>
+                    <p className="text-xs text-success font-semibold mt-1 ml-5">
+                      {city.taxiServices.length} {city.taxiServices.length === 1 ? 'taxislužba' : city.taxiServices.length < 5 ? 'taxislužby' : 'taxislužieb'}
+                    </p>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* Villages without taxi services section */}
+      {municipalities.length > 0 && (
+        <section className="py-8 md:py-12 px-4 md:px-8">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-black mb-6 text-foreground text-center">
+              Obce v okrese {district.name}
+            </h2>
+            <p className="text-center text-foreground/70 mb-8">
+              Kliknite na obec pre zobrazenie najbližších taxislužieb
+            </p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3">
+              {municipalities.map((municipality) => (
+                <Link
+                  key={municipality.slug}
+                  href={`/taxi/${regionSlug}/${district.slug}/${municipality.slug}`}
+                  className="perspective-1000 group"
+                >
+                  <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all bg-card rounded-lg p-3 md:p-4 h-full">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-foreground/40 group-hover:text-success transition-colors" />
+                      <span className="font-semibold text-sm md:text-base text-foreground truncate">
+                        {municipality.name}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-8 md:py-12 px-4 md:px-8 bg-foreground/5">
         <div className="container mx-auto max-w-4xl text-center">
