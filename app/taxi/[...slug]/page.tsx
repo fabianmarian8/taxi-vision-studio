@@ -941,6 +941,8 @@ export default async function TaxiCatchAllPage({
 
     case 'redirect':
       redirect(routeType.to);
+      // redirect() throws, but we need return for ESLint no-fallthrough rule
+      return null;
 
     case 'notFound':
     default:
