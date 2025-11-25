@@ -225,7 +225,7 @@ async function main() {
   for (let i = 0; i < municipalities.length; i++) {
     const municipality = municipalities[i];
 
-    // Find 3 nearest cities by air distance
+    // Find 10 nearest cities by air distance (to account for road vs air differences)
     const nearestCities = citiesWithTaxis
       .map(city => ({
         city,
@@ -235,7 +235,7 @@ async function main() {
         ),
       }))
       .sort((a, b) => a.airDistance - b.airDistance)
-      .slice(0, 3);
+      .slice(0, 10);
 
     for (const { city, airDistance } of nearestCities) {
       const pairKey = `${municipality.slug}:${city.slug}`;
