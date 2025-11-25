@@ -54,6 +54,7 @@ function decodePolyline(encoded: string): [number, number][] {
 }
 
 // OpenRouteService API (primary - most accurate for Europe)
+// Uses POST request with larger radius to handle remote/military areas
 async function getRouteFromORS(
   fromLat: number,
   fromLng: number,
@@ -68,14 +69,29 @@ async function getRouteFromORS(
   }
 
   try {
-    // Use GET request with query parameters (more reliable)
-    const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${apiKey}&start=${fromLng},${fromLat}&end=${toLng},${toLat}`;
+    // Use POST request with radiuses parameter for better snapping
+    // This helps with coordinates in remote areas (military, forests, etc.)
+    const url = 'https://api.openrouteservice.org/v2/directions/driving-car';
+
+    const body = {
+      coordinates: [
+        [fromLng, fromLat], // ORS uses [lng, lat] order
+        [toLng, toLat]
+      ],
+      // Increase radius to 5000m (5km) to find routable points in remote areas
+      radiuses: [5000, 5000],
+      geometry: true,
+      instructions: false,
+    };
 
     const response = await fetch(url, {
-      method: 'GET',
+      method: 'POST',
       headers: {
+        'Authorization': apiKey,
+        'Content-Type': 'application/json',
         'Accept': 'application/json, application/geo+json',
       },
+      body: JSON.stringify(body),
     });
 
     if (!response.ok) {
@@ -86,24 +102,21 @@ async function getRouteFromORS(
 
     const data = await response.json();
 
-    // GeoJSON response format
-    if (!data.features || data.features.length === 0) {
-      console.error('ORS returned no features');
+    // POST response format (different from GET)
+    if (!data.routes || data.routes.length === 0) {
+      console.error('ORS returned no routes');
       return null;
     }
 
-    const feature = data.features[0];
-    const properties = feature.properties;
-    const coordinates = feature.geometry.coordinates;
+    const route = data.routes[0];
+    const summary = route.summary;
 
-    // Convert [lng, lat] to [lat, lng] for Leaflet
-    const geometry: [number, number][] = coordinates.map(
-      (coord: [number, number]) => [coord[1], coord[0]] as [number, number]
-    );
+    // Decode polyline geometry
+    const geometry = decodePolyline(route.geometry);
 
     return {
-      distance: Math.round(properties.summary.distance / 100) / 10, // meters to km
-      duration: Math.round(properties.summary.duration / 60), // seconds to minutes
+      distance: Math.round(summary.distance / 100) / 10, // meters to km
+      duration: Math.round(summary.duration / 60), // seconds to minutes
       geometry,
       source: 'openrouteservice',
     };
