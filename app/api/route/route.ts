@@ -68,34 +68,42 @@ async function getRouteFromORS(
   }
 
   try {
-    const response = await fetch('https://api.openrouteservice.org/v2/directions/driving-car', {
-      method: 'POST',
+    // Use GET request with query parameters (more reliable)
+    const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${apiKey}&start=${fromLng},${fromLat}&end=${toLng},${toLat}`;
+
+    const response = await fetch(url, {
+      method: 'GET',
       headers: {
-        'Authorization': apiKey,
-        'Content-Type': 'application/json',
+        'Accept': 'application/json, application/geo+json',
       },
-      body: JSON.stringify({
-        coordinates: [[fromLng, fromLat], [toLng, toLat]],
-      }),
     });
 
     if (!response.ok) {
-      console.error('ORS API error:', response.status, await response.text());
+      const errorText = await response.text();
+      console.error('ORS API error:', response.status, errorText);
       return null;
     }
 
     const data = await response.json();
 
-    if (!data.routes || data.routes.length === 0) {
+    // GeoJSON response format
+    if (!data.features || data.features.length === 0) {
+      console.error('ORS returned no features');
       return null;
     }
 
-    const route = data.routes[0];
-    const geometry = decodePolyline(route.geometry);
+    const feature = data.features[0];
+    const properties = feature.properties;
+    const coordinates = feature.geometry.coordinates;
+
+    // Convert [lng, lat] to [lat, lng] for Leaflet
+    const geometry: [number, number][] = coordinates.map(
+      (coord: [number, number]) => [coord[1], coord[0]] as [number, number]
+    );
 
     return {
-      distance: Math.round(route.summary.distance / 100) / 10, // meters to km, 1 decimal
-      duration: Math.round(route.summary.duration / 60), // seconds to minutes
+      distance: Math.round(properties.summary.distance / 100) / 10, // meters to km
+      duration: Math.round(properties.summary.duration / 60), // seconds to minutes
       geometry,
       source: 'openrouteservice',
     };
