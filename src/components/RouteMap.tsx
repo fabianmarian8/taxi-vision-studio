@@ -92,8 +92,8 @@ export function RouteMap({
     };
   }, [fromLat, fromLng, toLat, toLng]);
 
-  // Use route distance or fallback to air distance * 1.3 (rough estimate)
-  const roadDistance = route?.distance ?? Math.round(airDistance * 1.3 * 10) / 10;
+  // Use route distance or fallback to air distance * 2.0 (rough estimate for mountainous Slovak roads)
+  const roadDistance = route?.distance ?? Math.round(airDistance * 2.0 * 10) / 10;
   const duration = route?.duration ?? Math.round(roadDistance * 1.5); // Rough estimate: 40 km/h average
   const price = estimateRoadTaxiPrice(roadDistance);
 

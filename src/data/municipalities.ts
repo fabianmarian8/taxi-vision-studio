@@ -1,6 +1,7 @@
 import municipalitiesData from '../../slovenske-obce-main/obce.json';
 import { slovakCities, CityData } from './cities';
 import { calculateDistance } from '@/utils/geo';
+import precomputedDistancesData from './precomputed-distances.json';
 
 export interface Municipality {
   name: string;
@@ -10,6 +11,20 @@ export interface Municipality {
   longitude: number;
   slug: string;
 }
+
+interface PrecomputedDistance {
+  municipalitySlug: string;
+  citySlug: string;
+  airDistance: number;
+  roadDistance: number;
+  duration: number;
+}
+
+// Build lookup map for precomputed distances: "municipalitySlug:citySlug" -> distance data
+const precomputedDistanceMap = new Map<string, PrecomputedDistance>();
+(precomputedDistancesData.distances as PrecomputedDistance[]).forEach((d) => {
+  precomputedDistanceMap.set(`${d.municipalitySlug}:${d.citySlug}`, d);
+});
 
 // Transform obce.json format (x,y) to our format (latitude, longitude)
 const allMunicipalities: Municipality[] = municipalitiesData.map((item: { name: string; district: string; region: string; x: number; y: number }) => {
@@ -38,31 +53,63 @@ export function getMunicipalityBySlug(slug: string): Municipality | undefined {
 }
 
 /**
- * Find nearest city with taxi services
+ * Get precomputed road distance between municipality and city
+ * Returns null if not found in precomputed data
+ */
+export function getPrecomputedDistance(
+  municipalitySlug: string,
+  citySlug: string
+): PrecomputedDistance | null {
+  return precomputedDistanceMap.get(`${municipalitySlug}:${citySlug}`) || null;
+}
+
+/**
+ * Find nearest cities with taxi services using precomputed road distances
  * @param municipality The municipality to search from
  * @param limit How many nearest cities to return
- * @returns Array of cities sorted by distance
+ * @returns Array of cities sorted by road distance
  */
 export function findNearestCitiesWithTaxis(
   municipality: Municipality,
   limit: number = 3
-): Array<{ city: CityData; distance: number }> {
+): Array<{ city: CityData; distance: number; roadDistance: number; duration: number }> {
   // Only consider cities that have taxi services
   const citiesWithTaxis = slovakCities.filter(
     (city) => city.taxiServices && city.taxiServices.length > 0 && city.latitude && city.longitude
   );
 
-  // Calculate distances
-  const citiesWithDistances = citiesWithTaxis.map((city) => ({
-    city,
-    distance: calculateDistance(
+  // Calculate distances - prefer precomputed road distances
+  const citiesWithDistances = citiesWithTaxis.map((city) => {
+    const precomputed = getPrecomputedDistance(municipality.slug, city.slug);
+    const airDistance = calculateDistance(
       { latitude: municipality.latitude, longitude: municipality.longitude },
       { latitude: city.latitude!, longitude: city.longitude! }
-    ),
-  }));
+    );
 
-  // Sort by distance and return top N
-  return citiesWithDistances.sort((a, b) => a.distance - b.distance).slice(0, limit);
+    if (precomputed && precomputed.roadDistance > 0) {
+      return {
+        city,
+        distance: precomputed.airDistance, // Keep air distance for compatibility
+        roadDistance: precomputed.roadDistance,
+        duration: precomputed.duration,
+      };
+    }
+
+    // Fallback to estimate if no precomputed data or same city (0km)
+    const estimatedRoadDistance = Math.round(airDistance * 2.0 * 10) / 10;
+    return {
+      city,
+      distance: airDistance,
+      roadDistance: estimatedRoadDistance,
+      duration: Math.round(estimatedRoadDistance * 1.5),
+    };
+  });
+
+  // Sort by road distance and filter out 0km (same city)
+  return citiesWithDistances
+    .filter((c) => c.roadDistance > 0)
+    .sort((a, b) => a.roadDistance - b.roadDistance)
+    .slice(0, limit);
 }
 
 /**
