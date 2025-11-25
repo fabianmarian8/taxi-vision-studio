@@ -532,18 +532,18 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
           </div>
 
           <div className="space-y-6">
-            {nearestCities.map(({ city, distance }) => (
+            {nearestCities.map(({ city, roadDistance, duration }) => (
               <Card key={city.slug} className="perspective-1000">
                 <div className="card-3d shadow-3d-sm">
                   <CardHeader className="pb-3">
                     <CardTitle className="text-xl md:text-2xl font-black flex items-center gap-2">
                       <MapPin className="h-5 w-5 text-success" />
-                      {city.name} (~{Math.round(distance * 2.0)} km)
+                      {city.name} ({roadDistance} km)
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm md:text-base text-foreground/70 mb-4">
-                      Vzdialenosť: <strong>~{Math.round(distance * 2.0)} km</strong> | Orientačná cena: <strong>cca {Math.ceil(2 + distance * 2.0 * 0.85)}€ - {Math.ceil(2 + distance * 2.0 * 1.15)}€</strong>
+                      Vzdialenosť: <strong>{roadDistance} km</strong> ({duration} min) | Orientačná cena: <strong>cca {Math.ceil(2 + roadDistance * 0.85)}€ - {Math.ceil(2 + roadDistance * 1.15)}€</strong>
                     </p>
                     <div className="grid gap-2">
                       {city.taxiServices.slice(0, 3).map((service, idx) => (
