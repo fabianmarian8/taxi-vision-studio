@@ -16,6 +16,8 @@ export interface TaxiService {
   phone?: string;
   isPremium?: boolean;
   isPartner?: boolean;
+  isPromotional?: boolean; // Flag pre marketingové promo premium (neplatia)
+  premiumExpiresAt?: string; // ISO date string pre expiráciu
   partnerData?: PartnerData;
 }
 
