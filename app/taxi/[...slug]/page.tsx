@@ -651,6 +651,9 @@ async function CityPage({ city }: { city: CityData }) {
                       <span className="text-foreground/60 font-medium"> / mesiac</span>
                     </div>
                     <p className="text-xs text-yellow-600 font-medium mt-1">Pre prvých 100 taxislužieb</p>
+                    <p className="text-sm text-foreground/70 font-semibold mt-2">
+                      Stačí vám získať <strong className="text-foreground">JEDNÉHO zákazníka</strong> mesačne a investícia sa vám vráti.
+                    </p>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -717,6 +720,9 @@ async function CityPage({ city }: { city: CityData }) {
                       <span className="text-foreground/60 font-medium"> / mesiac</span>
                     </div>
                     <p className="text-xs text-purple-600 font-medium mt-1">Pre prvých 100 taxislužieb</p>
+                    <p className="text-sm text-foreground/70 font-semibold mt-2">
+                      Za cenu <strong className="text-foreground">dvoch káv</strong> vám ponúkame vlastnú personalizovanú stránku.
+                    </p>
                   </div>
                 </CardHeader>
                 <CardContent>
