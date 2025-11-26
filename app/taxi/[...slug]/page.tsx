@@ -395,15 +395,27 @@ async function CityPage({ city }: { city: CityData }) {
         <div className="container mx-auto max-w-4xl relative z-10">
           {city.taxiServices.length > 0 ? (
             <div className="grid gap-3">
-              {[...city.taxiServices]
-                .sort((a, b) => {
-                  // Partner first, then Premium, then alphabetically
-                  if (a.isPartner && !b.isPartner) return -1;
-                  if (!a.isPartner && b.isPartner) return 1;
-                  if (a.isPremium && !b.isPremium) return -1;
-                  if (!a.isPremium && b.isPremium) return 1;
-                  return a.name.localeCompare(b.name, 'sk');
-                })
+              {(() => {
+                // Separate services by tier
+                const partners = city.taxiServices.filter(s => s.isPartner);
+                const premiums = city.taxiServices.filter(s => s.isPremium && !s.isPartner);
+                const standard = city.taxiServices.filter(s => !s.isPremium && !s.isPartner);
+
+                // Shuffle Premium services using deterministic daily seed
+                // This ensures fair rotation - each day different order
+                const dailySeed = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+                const shuffledPremiums = [...premiums].sort((a, b) => {
+                  const hashA = `${dailySeed}-${a.name}`.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+                  const hashB = `${dailySeed}-${b.name}`.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+                  return hashA - hashB;
+                });
+
+                // Sort standard alphabetically
+                const sortedStandard = [...standard].sort((a, b) => a.name.localeCompare(b.name, 'sk'));
+
+                // Combine: Partners first, then shuffled Premium, then alphabetical standard
+                return [...partners, ...shuffledPremiums, ...sortedStandard];
+              })()
                 .map((service, index) => {
                   const serviceSlug = createServiceSlug(service.name);
                   const isPartner = service.isPartner;
@@ -633,7 +645,7 @@ async function CityPage({ city }: { city: CityData }) {
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                       <span className="text-foreground/80">
-                        <strong>Pozícia na vrchu</strong> - vaša taxislužba sa zobrazí pred nezvýraznenými
+                        <strong>Pozícia na vrchu</strong> - vaša taxislužba sa zobrazí pred nezvýraznenými (Premium sa denne striedajú)
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -717,7 +729,7 @@ async function CityPage({ city }: { city: CityData }) {
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
                       <span className="text-foreground/80">
-                        <strong>Recenzie zákazníkov</strong> - zobrazenie recenzií z vášho GBP
+                        <strong>Recenzie zákazníkov</strong> - zobrazenie recenzií z Google Máp
                       </span>
                     </li>
                   </ul>
