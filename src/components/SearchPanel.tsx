@@ -298,7 +298,7 @@ export const SearchPanel = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4">
+    <div className="w-full max-w-2xl mx-auto px-4 relative z-50">
       <div>
         <div className="bg-card rounded-xl md:rounded-2xl border-2 border-foreground/20 p-1.5 md:p-2 flex items-center gap-1.5 md:gap-2">
           <div className="flex-1 flex items-center gap-2 md:gap-3 px-2 md:px-4 relative" ref={dropdownRef}>
