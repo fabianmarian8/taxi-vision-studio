@@ -136,16 +136,29 @@ function detectRouteType(slugArray: string[]): RouteType {
       return { type: 'notFound' };
     }
 
-    // Find municipality - first try by slug
-    const municipality = getMunicipalityBySlug(munSlug);
-    if (municipality) {
-      return { type: 'hierarchical', municipality, district, regionSlug };
+    // IMPORTANT: Check if it's a main city with taxi services FIRST
+    // If so, redirect to the primary URL to avoid duplicate content
+    const cityWithTaxi = getCityBySlug(munSlug);
+    if (cityWithTaxi && cityWithTaxi.taxiServices.length > 0) {
+      return {
+        type: 'redirect',
+        to: `/taxi/${cityWithTaxi.slug}`
+      };
     }
 
-    // Also check if it's a main city at this hierarchical URL
-    const city = getCityBySlug(munSlug);
-    if (city) {
-      return { type: 'city', city };
+    // Find municipality (village without taxi in our DB)
+    const municipality = getMunicipalityBySlug(munSlug);
+    if (municipality) {
+      // Also check if this municipality is actually a city with taxi services
+      // (in case it exists in both lists)
+      const cityCheck = getCityBySlug(municipality.slug);
+      if (cityCheck && cityCheck.taxiServices.length > 0) {
+        return {
+          type: 'redirect',
+          to: `/taxi/${cityCheck.slug}`
+        };
+      }
+      return { type: 'hierarchical', municipality, district, regionSlug };
     }
 
     return { type: 'notFound' };
@@ -946,7 +959,22 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
 
 function DistrictPage({ district, regionSlug }: { district: District; regionSlug: string }) {
   const municipalities = getMunicipalitiesByDistrictSlug(district.slug);
-  const regionName = getRegionBySlug(regionSlug);
+
+  // Helper function to get correct URL for municipality/city
+  // Cities with taxi services get primary URL, others get hierarchical URL
+  const getMunicipalityUrl = (mun: Municipality): string => {
+    const cityWithTaxi = getCityBySlug(mun.slug);
+    if (cityWithTaxi && cityWithTaxi.taxiServices.length > 0) {
+      return `/taxi/${cityWithTaxi.slug}`;
+    }
+    return `/taxi/${regionSlug}/${district.slug}/${mun.slug}`;
+  };
+
+  // Check if municipality has taxi services (for visual indicator)
+  const hasTaxiServices = (mun: Municipality): boolean => {
+    const city = getCityBySlug(mun.slug);
+    return !!(city && city.taxiServices.length > 0);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -986,22 +1014,28 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3">
-            {municipalities.map((municipality) => (
-              <Link
-                key={municipality.slug}
-                href={`/taxi/${regionSlug}/${district.slug}/${municipality.slug}`}
-                className="perspective-1000 group"
-              >
-                <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all bg-card rounded-lg p-3 md:p-4 h-full">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-foreground/40 group-hover:text-success transition-colors" />
-                    <span className="font-semibold text-sm md:text-base text-foreground truncate">
-                      {municipality.name}
-                    </span>
+            {municipalities.map((municipality) => {
+              const hasTaxi = hasTaxiServices(municipality);
+              return (
+                <Link
+                  key={municipality.slug}
+                  href={getMunicipalityUrl(municipality)}
+                  className="perspective-1000 group"
+                >
+                  <div className={`card-3d shadow-3d-sm hover:shadow-3d-md transition-all rounded-lg p-3 md:p-4 h-full ${hasTaxi ? 'bg-yellow-50 ring-1 ring-yellow-300' : 'bg-card'}`}>
+                    <div className="flex items-center gap-2">
+                      <MapPin className={`h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 transition-colors ${hasTaxi ? 'text-yellow-600' : 'text-foreground/40 group-hover:text-success'}`} />
+                      <span className="font-semibold text-sm md:text-base text-foreground truncate">
+                        {municipality.name}
+                      </span>
+                      {hasTaxi && (
+                        <span className="text-[10px] bg-yellow-400 text-yellow-900 px-1 py-0.5 rounded font-bold ml-auto flex-shrink-0">TAXI</span>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
