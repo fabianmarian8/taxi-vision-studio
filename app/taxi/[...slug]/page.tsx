@@ -1078,7 +1078,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 { label: city.name, href: `/taxi/${city.slug}` },
                 { label: service.name },
               ]}
-              variant="light"
             />
           </div>
 
