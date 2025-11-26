@@ -1,5 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { z } from 'zod';
+
+// Helper pre podmienené logovanie (iba v development)
+const isDev = process.env.NODE_ENV === 'development';
+const devLog = (message: string, data?: Record<string, unknown>) => {
+  if (isDev) {
+    console.log(message, data ?? '');
+  }
+};
+
+// Zod schéma pre validáciu kontaktného formulára
+const contactSchema = z.object({
+  name: z.string().min(1, 'Meno je povinné').max(100, 'Meno je príliš dlhé'),
+  email: z.string().email('Neplatný formát emailu'),
+  city: z.string().min(1, 'Mesto je povinné').max(100, 'Názov mesta je príliš dlhý'),
+  taxiName: z.string().min(1, 'Názov taxislužby je povinný').max(200, 'Názov taxislužby je príliš dlhý'),
+  message: z.string().min(1, 'Správa je povinná').max(5000, 'Správa je príliš dlhá'),
+});
 
 // Funkcia pre lazy inicializáciu Resend klienta
 // (inicializuje sa až pri použití, nie pri importe)
@@ -81,7 +99,7 @@ const ContactFormEmail = ({
 
 export async function POST(request: NextRequest) {
   try {
-    console.log('[Contact API] Received POST request');
+    devLog('[Contact API] Received POST request');
 
     // Kontrola API kľúča
     if (!process.env.RESEND_API_KEY) {
@@ -92,98 +110,94 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log('[Contact API] RESEND_API_KEY is configured');
+    devLog('[Contact API] RESEND_API_KEY is configured');
 
     // Parsovanie form data
     let formData;
     try {
       formData = await request.formData();
-      console.log('[Contact API] FormData parsed successfully');
-    } catch (parseError) {
-      console.error('[Contact API] Failed to parse FormData:', parseError);
+      devLog('[Contact API] FormData parsed successfully');
+    } catch {
+      console.error('[Contact API] Failed to parse FormData');
       return NextResponse.json(
         { error: 'Invalid form data' },
         { status: 400 }
       );
     }
 
-    const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
-    const city = formData.get('city') as string;
-    const taxiName = formData.get('taxiName') as string;
-    const message = formData.get('message') as string;
+    // Extrahovanie dát z formulára
+    const rawData = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      city: formData.get('city'),
+      taxiName: formData.get('taxiName'),
+      message: formData.get('message'),
+    };
 
-    console.log('[Contact API] Form fields extracted:', {
-      hasName: !!name,
-      hasEmail: !!email,
-      hasCity: !!city,
-      hasTaxiName: !!taxiName,
-      hasMessage: !!message,
+    devLog('[Contact API] Form fields extracted:', {
+      hasName: !!rawData.name,
+      hasEmail: !!rawData.email,
+      hasCity: !!rawData.city,
+      hasTaxiName: !!rawData.taxiName,
+      hasMessage: !!rawData.message,
     });
 
-    // Validácia povinných polí
-    if (!name || !email || !city || !taxiName || !message) {
+    // Validácia pomocou Zod schémy
+    const validationResult = contactSchema.safeParse(rawData);
+
+    if (!validationResult.success) {
+      const firstError = validationResult.error.errors[0];
       return NextResponse.json(
-        { error: 'All fields are required' },
+        {
+          error: firstError?.message || 'Validation failed',
+          field: firstError?.path[0],
+        },
         { status: 400 }
       );
     }
 
-    // Validácia email formátu
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'Invalid email format' },
-        { status: 400 }
-      );
-    }
+    const { name, email, city, taxiName, message } = validationResult.data;
 
     // Odoslanie emailu cez Resend
-    console.log('[Contact API] Initializing Resend client...');
+    devLog('[Contact API] Initializing Resend client...');
     const resend = getResendClient();
-
-    // Používame verifikovanú doménu taxinearme.sk
-    console.log('[Contact API] Sending email via Resend...');
 
     // Určíme cieľový email a odosielateľskú adresu
     const recipientEmail = process.env.CONTACT_EMAIL || 'info@taxinearme.sk';
     const fromEmail = process.env.FROM_EMAIL || 'noreply@taxinearme.sk';
 
-    console.log('[Contact API] Email config:', {
+    devLog('[Contact API] Email config:', {
       recipient: recipientEmail,
       from: fromEmail,
     });
 
     const { data, error: resendError } = await resend.emails.send({
-      // Používame verifikovanú doménu taxinearme.sk
       from: `Taxi NearMe <${fromEmail}>`,
       to: [recipientEmail],
-      replyTo: email, // Umožní priamu odpoveď na email odosielateľa
+      replyTo: email,
       subject: `Nový príspevok z Taxi NearMe - ${city} - ${taxiName}`,
       html: ContactFormEmail({ name, email, city, taxiName, message }),
     });
 
-    console.log('[Contact API] Resend response received:', {
+    devLog('[Contact API] Resend response received:', {
       hasData: !!data,
       hasError: !!resendError,
     });
 
     // Kontrola chyby od Resend
     if (resendError) {
-      console.error('Resend API error:', resendError);
+      console.error('[Contact API] Resend API error:', resendError.message);
       return NextResponse.json(
         {
           error: 'Failed to send email',
-          details: process.env.NODE_ENV === 'development' ? resendError.message : undefined,
+          details: isDev ? resendError.message : undefined,
         },
         { status: 500 }
       );
     }
 
-    // Logovanie úspechu
-    console.log('Email sent successfully:', {
+    devLog('[Contact API] Email sent successfully:', {
       id: data?.id,
-      from: email,
       city,
       taxiName,
       timestamp: new Date().toISOString(),
@@ -198,27 +212,14 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    // Error handling a logovanie
-    console.error('[Contact API] Unexpected error:', error);
-    console.error('[Contact API] Error type:', typeof error);
-    console.error('[Contact API] Error details:', {
-      message: error instanceof Error ? error.message : 'Unknown',
-      stack: error instanceof Error ? error.stack : undefined,
-    });
-
-    // Detailnejšie error handling pre Resend errors
-    if (error instanceof Error) {
-      return NextResponse.json(
-        {
-          error: 'Failed to send email',
-          details: process.env.NODE_ENV === 'development' ? error.message : undefined,
-        },
-        { status: 500 }
-      );
-    }
+    // Error handling - iba minimálne logovanie v produkcii
+    console.error('[Contact API] Unexpected error:', error instanceof Error ? error.message : 'Unknown');
 
     return NextResponse.json(
-      { error: 'An unexpected error occurred' },
+      {
+        error: 'An unexpected error occurred',
+        details: isDev && error instanceof Error ? error.message : undefined,
+      },
       { status: 500 }
     );
   }
