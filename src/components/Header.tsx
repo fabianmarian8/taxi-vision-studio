@@ -93,13 +93,13 @@ export const Header = () => {
 
           <Button
             onClick={() => setIsContactModalOpen(true)}
-            className="rounded-full min-h-[44px] min-w-[44px] px-3 py-2 md:px-4 lg:px-5 md:py-3 lg:py-4 transition-all font-bold"
+            className="rounded-full min-h-[44px] min-w-[44px] px-2.5 py-2 sm:px-3 md:px-4 lg:px-5 md:py-3 lg:py-4 transition-all font-bold flex-shrink-0 max-w-[140px] sm:max-w-none"
           >
-            <div className="flex items-center gap-1.5 md:gap-2 lg:gap-3">
+            <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 lg:gap-3">
               <Plus className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
-              <div className="flex flex-col items-start -space-y-0.5 md:-space-y-1">
-                <span className="text-[11px] md:text-sm lg:text-base font-bold leading-tight whitespace-nowrap">Niečo tu chýba?</span>
-                <span className="text-[9px] md:text-xs font-normal leading-tight whitespace-nowrap">+Pridanie, Oprava</span>
+              <div className="flex flex-col items-start -space-y-0.5 md:-space-y-1 overflow-hidden">
+                <span className="text-[10px] sm:text-[11px] md:text-sm lg:text-base font-bold leading-tight truncate">Chýba?</span>
+                <span className="text-[8px] sm:text-[9px] md:text-xs font-normal leading-tight truncate">+Pridať</span>
               </div>
             </div>
           </Button>
