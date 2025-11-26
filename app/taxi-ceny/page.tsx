@@ -94,7 +94,7 @@ export default function TaxiPriceArticlePage() {
               <Image
                 src="/images/article/001.webp"
                 alt="Porovnanie nástupných sadzieb taxislužieb v rôznych mestách Slovenska"
-                className="w-full rounded-lg shadow-lg"
+                className="w-full rounded-lg"
                 width={1200}
                 height={600}
               />
@@ -117,7 +117,7 @@ export default function TaxiPriceArticlePage() {
               <Image
                 src="/images/article/002.webp"
                 alt="Porovnanie tarifnej ceny za kilometer jazdy v rôznych mestách"
-                className="w-full rounded-lg shadow-lg"
+                className="w-full rounded-lg"
                 width={1200}
                 height={600}
               />
@@ -150,7 +150,7 @@ export default function TaxiPriceArticlePage() {
               <Image
                 src="/images/article/004.webp"
                 alt="Odhad ceny 5 km jazdy (s 2 min čakaním)"
-                className="w-full rounded-lg shadow-lg"
+                className="w-full rounded-lg"
                 width={1200}
                 height={600}
               />

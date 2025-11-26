@@ -53,7 +53,7 @@ export const ArticleBanner = () => {
 
   return (
     <div
-      className="rounded-lg md:rounded-xl shadow-3d-lg p-2 md:p-3 relative overflow-hidden bg-white border border-black/20"
+      className="rounded-lg md:rounded-xl p-2 md:p-3 relative overflow-hidden bg-white border border-black/20"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -62,7 +62,7 @@ export const ArticleBanner = () => {
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"></div>
 
       {/* Taxi light effect */}
-      <div className="absolute -top-20 -right-20 w-40 h-40 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute -top-20 -right-20 w-40 h-40 bg-yellow-400/10 rounded-full blur-3xl"></div>
 
       {/* Header */}
       <div className="flex items-center justify-between mb-2 md:mb-3 relative z-10">
@@ -113,7 +113,7 @@ export const ArticleBanner = () => {
               className="article-card flex-shrink-0 w-[168px] md:w-[192px] snap-start"
               title={article.title}
             >
-              <div className="bg-gray-100 border border-foreground/10 hover:border-primary rounded-lg overflow-hidden h-full transition-all duration-300 hover:shadow-3d-md hover:scale-105 group flex flex-col">
+              <div className="bg-gray-100 border border-foreground/10 hover:border-primary rounded-lg overflow-hidden h-full transition-colors duration-300 group flex flex-col">
                 {/* Article Image */}
                 {article.image && (
                   <div className="w-full h-24 md:h-28 overflow-hidden flex-shrink-0 relative">
@@ -121,7 +121,7 @@ export const ArticleBanner = () => {
                       src={article.image}
                       alt={article.title}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="object-cover"
                       sizes="(max-width: 768px) 168px, 192px"
                     />
                   </div>

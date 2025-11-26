@@ -30,7 +30,7 @@ export const PriceCharts = ({ cities }: PriceChartsProps) => {
     const maxValue = Math.max(...data.map(city => city.prices[valueKey]));
 
     return (
-      <div className="bg-card rounded-xl p-6 shadow-3d-lg">
+      <div className="bg-card rounded-xl p-6">
         <h3 className="text-xl font-bold text-foreground mb-6">{title}</h3>
         <div className="space-y-4">
           {data.map((city, index) => {

@@ -93,7 +93,7 @@ export const Header = () => {
 
           <Button
             onClick={() => setIsContactModalOpen(true)}
-            className="rounded-full min-h-[44px] min-w-[44px] px-3 py-2 md:px-4 lg:px-5 md:py-3 lg:py-4 shadow-3d-sm hover:shadow-3d-md transition-all font-bold hover:scale-105"
+            className="rounded-full min-h-[44px] min-w-[44px] px-3 py-2 md:px-4 lg:px-5 md:py-3 lg:py-4 transition-all font-bold"
           >
             <div className="flex items-center gap-1.5 md:gap-2 lg:gap-3">
               <Plus className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />

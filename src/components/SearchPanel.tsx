@@ -299,8 +299,8 @@ export const SearchPanel = () => {
 
   return (
     <div className="w-full max-w-2xl mx-auto px-4">
-      <div className="perspective-1000">
-        <div className="bg-card rounded-xl md:rounded-2xl shadow-3d-lg p-1.5 md:p-2 flex items-center gap-1.5 md:gap-2 card-3d">
+      <div>
+        <div className="bg-card rounded-xl md:rounded-2xl border-2 border-foreground/20 p-1.5 md:p-2 flex items-center gap-1.5 md:gap-2">
           <div className="flex-1 flex items-center gap-2 md:gap-3 px-2 md:px-4 relative" ref={dropdownRef}>
             <Search className="h-4 w-4 md:h-5 md:w-5 text-foreground flex-shrink-0" />
             <Input
@@ -319,7 +319,7 @@ export const SearchPanel = () => {
 
             {/* Autocomplete Dropdown */}
             {showDropdown && filteredResults.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-2 bg-card rounded-lg md:rounded-xl shadow-3d-lg border-2 border-foreground/10 max-h-80 overflow-y-auto z-50">
+              <div className="absolute top-full left-0 right-0 mt-2 bg-card rounded-lg md:rounded-xl border-2 border-foreground/20 max-h-80 overflow-y-auto z-50">
                 {filteredResults.slice(0, 10).map((result, index) => (
                   <button
                     key={result.slug}
@@ -350,7 +350,7 @@ export const SearchPanel = () => {
             variant="default"
             size="icon"
             onClick={handleSearch}
-            className="rounded-full h-10 w-10 md:h-12 md:w-12 shadow-3d-sm hover:shadow-3d-md transition-shadow flex-shrink-0"
+            className="rounded-full h-10 w-10 md:h-12 md:w-12 flex-shrink-0"
           >
             <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
           </Button>
@@ -360,7 +360,7 @@ export const SearchPanel = () => {
             size="icon"
             onClick={handleLocationClick}
             disabled={isLoadingLocation}
-            className="rounded-full h-10 w-10 md:h-12 md:w-12 shadow-3d-sm hover:shadow-3d-md transition-shadow disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+            className="rounded-full h-10 w-10 md:h-12 md:w-12 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
           >
             {isLoadingLocation ? (
               <Loader2 className="h-4 w-4 md:h-5 md:w-5 animate-spin" />

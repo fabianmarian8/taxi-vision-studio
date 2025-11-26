@@ -26,7 +26,7 @@ export const PriceInsights = ({ insights }: PriceInsightsProps) => {
         return (
           <div
             key={index}
-            className="bg-card rounded-xl p-6 shadow-3d-lg hover:shadow-3d-xl transition-shadow card-3d"
+            className="bg-card rounded-xl p-6 card-3d"
           >
             <div className="flex items-start gap-4">
               <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">

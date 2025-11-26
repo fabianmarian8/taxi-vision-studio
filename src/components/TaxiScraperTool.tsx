@@ -185,7 +185,7 @@ export default function TaxiScraperTool() {
                 <Loader2 className="h-4 w-4 animate-spin" />
               </div>
               <div className="w-full bg-secondary h-2 rounded-full overflow-hidden">
-                <div className="h-full bg-primary animate-pulse" style={{ width: '60%' }} />
+                <div className="h-full bg-primary" style={{ width: '60%' }} />
               </div>
             </div>
           )}

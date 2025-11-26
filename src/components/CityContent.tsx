@@ -47,7 +47,7 @@ export const CityContent = ({ citySlug, cityName }: CityContentProps) => {
           <div className="flex justify-center mb-4">
             <FileText className="h-12 w-12 md:h-16 md:w-16 text-foreground" />
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-6 text-foreground drop-shadow-md">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-6 text-foreground">
             Informácie o Taxi v Meste {cityName}
           </h2>
           <p className="text-base md:text-xl text-foreground/90 font-bold px-4">
@@ -56,7 +56,7 @@ export const CityContent = ({ citySlug, cityName }: CityContentProps) => {
         </div>
 
         <Card>
-          <div className="shadow-3d-lg">
+          <div>
             <CardContent className="py-6 md:py-8 px-4 md:px-6">
               <div className="prose prose-sm md:prose-base max-w-none">
                 {sections.map((section, index) => {

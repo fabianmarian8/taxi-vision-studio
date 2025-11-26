@@ -156,6 +156,9 @@ export default function PreTaxikyPage() {
                     <span className="text-foreground/60 font-medium"> / mesiac</span>
                   </div>
                   <p className="text-xs text-yellow-600 font-medium mt-1">Pre prvých 100 taxislužieb</p>
+                  <p className="text-sm text-foreground/70 font-semibold mt-2">
+                    Stačí vám získať <strong className="text-foreground">JEDNÉHO zákazníka</strong> mesačne a investícia sa vám vráti.
+                  </p>
                 </div>
               </CardHeader>
               <CardContent>
@@ -229,6 +232,9 @@ export default function PreTaxikyPage() {
                     <span className="text-foreground/60 font-medium"> / mesiac</span>
                   </div>
                   <p className="text-xs text-purple-600 font-medium mt-1">Pre prvých 100 taxislužieb</p>
+                  <p className="text-sm text-foreground/70 font-semibold mt-2">
+                    Za cenu <strong className="text-foreground">dvoch káv</strong> vám ponúkame vlastnú personalizovanú stránku.
+                  </p>
                 </div>
               </CardHeader>
               <CardContent>
@@ -295,7 +301,7 @@ export default function PreTaxikyPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="perspective-1000">
-              <div className="card-3d shadow-3d-sm h-full">
+              <div className="card-3d h-full">
                 <CardContent className="pt-6">
                   <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center mb-4">
                     <MapPin className="h-6 w-6 text-purple-600" />
@@ -310,7 +316,7 @@ export default function PreTaxikyPage() {
             </Card>
 
             <Card className="perspective-1000">
-              <div className="card-3d shadow-3d-sm h-full">
+              <div className="card-3d h-full">
                 <CardContent className="pt-6">
                   <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-4">
                     <Search className="h-6 w-6 text-green-600" />
@@ -325,7 +331,7 @@ export default function PreTaxikyPage() {
             </Card>
 
             <Card className="perspective-1000">
-              <div className="card-3d shadow-3d-sm h-full">
+              <div className="card-3d h-full">
                 <CardContent className="pt-6">
                   <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
                     <Users className="h-6 w-6 text-blue-600" />
@@ -340,7 +346,7 @@ export default function PreTaxikyPage() {
             </Card>
 
             <Card className="perspective-1000">
-              <div className="card-3d shadow-3d-sm h-full">
+              <div className="card-3d h-full">
                 <CardContent className="pt-6">
                   <div className="w-12 h-12 rounded-xl bg-yellow-100 flex items-center justify-center mb-4">
                     <Zap className="h-6 w-6 text-yellow-600" />
@@ -354,7 +360,7 @@ export default function PreTaxikyPage() {
             </Card>
 
             <Card className="perspective-1000">
-              <div className="card-3d shadow-3d-sm h-full">
+              <div className="card-3d h-full">
                 <CardContent className="pt-6">
                   <div className="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center mb-4">
                     <BarChart3 className="h-6 w-6 text-red-600" />
@@ -368,7 +374,7 @@ export default function PreTaxikyPage() {
             </Card>
 
             <Card className="perspective-1000">
-              <div className="card-3d shadow-3d-sm h-full">
+              <div className="card-3d h-full">
                 <CardContent className="pt-6">
                   <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center mb-4">
                     <Award className="h-6 w-6 text-indigo-600" />
@@ -393,7 +399,7 @@ export default function PreTaxikyPage() {
           </h2>
           <a
             href="mailto:info@taxinearme.sk"
-            className="inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-purple-900 font-bold px-8 py-4 rounded-lg transition-all hover:scale-105 shadow-lg text-lg"
+            className="inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-purple-900 font-bold px-8 py-4 rounded-lg transition-colors text-lg"
           >
             <Globe className="h-5 w-5" />
             info@taxinearme.sk

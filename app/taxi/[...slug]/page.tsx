@@ -393,7 +393,7 @@ async function CityPage({ city }: { city: CityData }) {
               <div className="absolute inset-0 hero-3d-bg" />
             )}
             <div className="relative z-10">
-              <h1 className={`text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6 drop-shadow-lg ${city.heroImage ? 'text-white' : 'text-foreground'}`}>
+              <h1 className={`text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6  ${city.heroImage ? 'text-white' : 'text-foreground'}`}>
                 Taxislužby v meste {city.name}
               </h1>
               <p className={`text-base md:text-xl font-semibold px-4 ${city.heroImage ? 'text-white/95' : 'text-foreground/90'}`}>
@@ -438,7 +438,7 @@ async function CityPage({ city }: { city: CityData }) {
                   if (isPartner) {
                     const ratingData = partnerRatings.get(service.name);
                     return (
-                      <Card key={index} className="ring-2 ring-purple-300 shadow-xl overflow-hidden">
+                      <Card key={index} className="ring-2 ring-purple-300  overflow-hidden">
                         <Link href={`/taxi/${city.slug}/${serviceSlug}`} title={`${service.name} - Partner taxislužba`}>
                           <div
                             className="transition-all cursor-pointer relative"
@@ -451,11 +451,11 @@ async function CityPage({ city }: { city: CityData }) {
 
                             {/* Badges */}
                             <div className="absolute top-3 right-3 flex gap-2">
-                              <div className="bg-green-500 text-white text-[10px] md:text-xs font-black px-2 py-1 rounded-full flex items-center gap-1 shadow-lg">
+                              <div className="bg-green-500 text-white text-[10px] md:text-xs font-black px-2 py-1 rounded-full flex items-center gap-1 ">
                                 <BadgeCheck className="h-3 w-3" />
                                 OVERENÉ
                               </div>
-                              <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-[10px] md:text-xs font-black px-2.5 py-1 rounded-full flex items-center gap-1 shadow-lg">
+                              <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-[10px] md:text-xs font-black px-2.5 py-1 rounded-full flex items-center gap-1 ">
                                 <Star className="h-3 w-3" />
                                 PARTNER
                               </div>
@@ -471,7 +471,7 @@ async function CityPage({ city }: { city: CityData }) {
                                 </div>
                                 {/* Google Rating Badge - inline */}
                                 {ratingData && (
-                                  <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm text-foreground px-1.5 py-0.5 rounded-full shadow-sm mr-1">
+                                  <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm text-foreground px-1.5 py-0.5 rounded-full  mr-1">
                                     <Star className="h-3 w-3 text-yellow-500 fill-yellow-500" />
                                     <span className="font-bold text-xs">{ratingData.rating.toFixed(1)}</span>
                                   </div>
@@ -509,7 +509,7 @@ async function CityPage({ city }: { city: CityData }) {
                   // Premium card - zlatá
                   if (isPremium) {
                     return (
-                      <Card key={index} className="ring-2 ring-amber-300 shadow-lg overflow-hidden">
+                      <Card key={index} className="ring-2 ring-amber-300  overflow-hidden">
                         <Link href={`/taxi/${city.slug}/${serviceSlug}`} title={`${service.name} - Premium taxislužba`}>
                           <div
                             className="transition-all cursor-pointer relative"
@@ -597,7 +597,7 @@ async function CityPage({ city }: { city: CityData }) {
             </div>
           ) : (
             <Card className="perspective-1000">
-              <div className="card-3d shadow-3d-lg">
+              <div className="card-3d ">
                 <CardContent className="py-8 md:py-12 px-4">
                   <div className="text-center space-y-3 md:space-y-4">
                     <MapPin className="h-12 w-12 md:h-16 md:w-16 text-foreground/50 mx-auto" />
@@ -813,7 +813,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
           <div className="text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12">
             <div className="absolute inset-0 hero-3d-bg" />
             <div className="relative z-10">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6 drop-shadow-lg text-foreground">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6  text-foreground">
                 Taxi {municipality.name}
               </h1>
               <p className="text-base md:text-xl font-semibold px-4 text-foreground/90">
@@ -842,9 +842,11 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
               fromLat={municipality.latitude}
               fromLng={municipality.longitude}
               fromName={municipality.name}
+              fromSlug={municipality.slug}
               toLat={nearestCities[0].city.latitude}
               toLng={nearestCities[0].city.longitude}
               toName={nearestCities[0].city.name}
+              toSlug={nearestCities[0].city.slug}
               distance={nearestCities[0].distance}
             />
           </div>
@@ -866,7 +868,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
             <div className="space-y-6">
               {nearestCities.map(({ city, roadDistance, duration }) => (
                 <Card key={city.slug} className="perspective-1000">
-                  <div className="card-3d shadow-3d-sm">
+                  <div className="card-3d ">
                     <CardHeader className="pb-3">
                       <CardTitle className="text-xl md:text-2xl font-black flex items-center gap-2">
                         <MapPin className="h-5 w-5 text-success" />
@@ -880,7 +882,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
                       <div className="grid gap-2">
                         {city.taxiServices.slice(0, 3).map((service, idx) => (
                           <Link key={idx} href={`/taxi/${city.slug}`} className="block">
-                            <Card className="hover:shadow-md transition-shadow">
+                            <Card className="hover: transition-shadow">
                               <CardContent className="py-2 px-3">
                                 <div className="flex items-center justify-between">
                                   <span className="font-semibold text-sm">{service.name}</span>
@@ -920,7 +922,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
             <div className="grid gap-2">
               {cityWithTaxi.taxiServices.map((service, index) => (
                 <Card key={index} className="perspective-1000">
-                  <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all">
+                  <div className="card-3d  transition-all">
                     <CardHeader className="pb-1 pt-3 md:pt-3.5 px-3 md:px-4">
                       <CardTitle className="text-sm md:text-base font-semibold flex items-center gap-1.5 md:gap-2">
                         <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-success" />
@@ -993,7 +995,7 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
           <div className="text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12">
             <div className="absolute inset-0 hero-3d-bg" />
             <div className="relative z-10">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6 drop-shadow-lg text-foreground">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6  text-foreground">
                 Taxi okres {district.name}
               </h1>
               <p className="text-base md:text-xl font-semibold px-4 text-foreground/90">
@@ -1022,7 +1024,7 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
                   href={getMunicipalityUrl(municipality)}
                   className="perspective-1000 group"
                 >
-                  <div className={`card-3d shadow-3d-sm hover:shadow-3d-md transition-all rounded-lg p-3 md:p-4 h-full ${hasTaxi ? 'bg-yellow-50 ring-1 ring-yellow-300' : 'bg-card'}`}>
+                  <div className={`card-3d  transition-all rounded-lg p-3 md:p-4 h-full ${hasTaxi ? 'bg-yellow-50 ring-1 ring-yellow-300' : 'bg-card'}`}>
                     <div className="flex items-center gap-2">
                       <MapPin className={`h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 transition-colors ${hasTaxi ? 'text-yellow-600' : 'text-foreground/40 group-hover:text-success'}`} />
                       <span className="font-semibold text-sm md:text-base text-foreground truncate">
@@ -1139,17 +1141,17 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             <div className="text-center py-8 md:py-12">
               {/* Badges */}
               <div className="flex justify-center gap-2 mb-6">
-                <div className="bg-green-500 text-white text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                <div className="bg-green-500 text-white text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5 ">
                   <BadgeCheck className="h-4 w-4" />
                   OVERENÉ
                 </div>
-                <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5 ">
                   <Star className="h-4 w-4" />
                   PARTNER
                 </div>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 drop-shadow-lg">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 ">
                 {service.name}
               </h1>
               <p className="text-xl text-white/90 mb-8">
@@ -1161,7 +1163,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 {service.phone && (
                   <a
                     href={`tel:${service.phone}`}
-                    className="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-300 text-purple-900 font-black text-xl md:text-2xl px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-105"
+                    className="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-300 text-purple-900 font-black text-xl md:text-2xl px-8 py-4 rounded-xl transition-colors "
                   >
                     <Phone className="h-6 w-6" />
                     {service.phone}
@@ -1236,7 +1238,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             {service.phone && (
               <a
                 href={`tel:${service.phone}`}
-                className="inline-flex items-center gap-3 bg-purple-900 text-white font-black text-2xl px-8 py-4 rounded-xl hover:bg-purple-800 transition-all shadow-lg"
+                className="inline-flex items-center gap-3 bg-purple-900 text-white font-black text-2xl px-8 py-4 rounded-xl hover:bg-purple-800 transition-all "
               >
                 <Phone className="h-7 w-7" />
                 {service.phone}
@@ -1261,7 +1263,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                     return (
                       <Card key={index} className="perspective-1000">
                         <Link href={`/taxi/${city.slug}/${otherSlug}`}>
-                          <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all p-4">
+                          <div className="card-3d  transition-all p-4">
                             <div className="flex items-center gap-2">
                               <MapPin className="h-4 w-4 text-foreground flex-shrink-0" />
                               <span className="font-bold text-foreground">{otherService.name}</span>
@@ -1340,7 +1342,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             )}
 
             <div className="relative z-10">
-              <h1 className={`text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-none md:drop-shadow-md ${isPremium ? 'text-black' : 'text-foreground'}`}>
+              <h1 className={`text-4xl md:text-5xl font-extrabold mb-4  ${isPremium ? 'text-black' : 'text-foreground'}`}>
                 {service.name}
               </h1>
               <p className={`text-xl font-semibold ${isPremium ? 'text-black/80' : 'text-foreground/90'}`}>
@@ -1493,7 +1495,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                     return (
                       <Card key={index} className="perspective-1000">
                         <Link href={`/taxi/${city.slug}/${otherSlug}`}>
-                          <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all p-4">
+                          <div className="card-3d  transition-all p-4">
                             <div className="flex items-center gap-2">
                               <MapPin className="h-4 w-4 text-foreground flex-shrink-0" />
                               <span className="font-bold text-foreground">{otherService.name}</span>
@@ -1524,13 +1526,13 @@ function Footer() {
             © 2024 Taxi NearMe. Všetky práva vyhradené.
           </div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-            <Link href="/ochrana-sukromia" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
+            <Link href="/ochrana-sukromia" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200">
               Ochrana súkromia
             </Link>
-            <Link href="/podmienky-pouzivania" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
+            <Link href="/podmienky-pouzivania" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200">
               Podmienky používania
             </Link>
-            <Link href="/" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200">
+            <Link href="/" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200">
               Kontakt
             </Link>
           </div>

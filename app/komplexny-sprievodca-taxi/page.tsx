@@ -337,37 +337,37 @@ export default function KomplexnySprievodcaPage() {
               <h3 className="text-2xl font-bold mb-3 text-center">Najväčšie mestá</h3>
 
               <div className="grid md:grid-cols-3 gap-4">
-                <Link href="/taxi/bratislava" className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow">
+                <Link href="/taxi/bratislava" className="bg-white p-4 rounded-lg border border-foreground/10">
                   <h4 className="font-bold text-lg mb-2">Bratislava</h4>
                   <p className="text-sm text-gray-600">14 taxislužieb</p>
                   <p className="text-sm text-primary mt-2">Zobraziť →</p>
                 </Link>
 
-                <Link href="/taxi/kosice" className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow">
+                <Link href="/taxi/kosice" className="bg-white p-4 rounded-lg border border-foreground/10">
                   <h4 className="font-bold text-lg mb-2">Košice</h4>
                   <p className="text-sm text-gray-600">14 taxislužieb</p>
                   <p className="text-sm text-primary mt-2">Zobraziť →</p>
                 </Link>
 
-                <Link href="/taxi/presov" className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow">
+                <Link href="/taxi/presov" className="bg-white p-4 rounded-lg border border-foreground/10">
                   <h4 className="font-bold text-lg mb-2">Prešov</h4>
                   <p className="text-sm text-gray-600">15 taxislužieb</p>
                   <p className="text-sm text-primary mt-2">Zobraziť →</p>
                 </Link>
 
-                <Link href="/taxi/zilina" className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow">
+                <Link href="/taxi/zilina" className="bg-white p-4 rounded-lg border border-foreground/10">
                   <h4 className="font-bold text-lg mb-2">Žilina</h4>
                   <p className="text-sm text-gray-600">15 taxislužieb</p>
                   <p className="text-sm text-primary mt-2">Zobraziť →</p>
                 </Link>
 
-                <Link href="/taxi/nitra" className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow">
+                <Link href="/taxi/nitra" className="bg-white p-4 rounded-lg border border-foreground/10">
                   <h4 className="font-bold text-lg mb-2">Nitra</h4>
                   <p className="text-sm text-gray-600">13 taxislužieb</p>
                   <p className="text-sm text-primary mt-2">Zobraziť →</p>
                 </Link>
 
-                <Link href="/taxi/banska-bystrica" className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow">
+                <Link href="/taxi/banska-bystrica" className="bg-white p-4 rounded-lg border border-foreground/10">
                   <h4 className="font-bold text-lg mb-2">Banská Bystrica</h4>
                   <p className="text-sm text-gray-600">15 taxislužieb</p>
                   <p className="text-sm text-primary mt-2">Zobraziť →</p>
@@ -425,7 +425,7 @@ export default function KomplexnySprievodcaPage() {
               Taxislužby na Slovensku prechádzajú modernizáciou. Stále viac služieb ponúka aplikácie, bezhotovostné platby a ekologické vozidlá. <strong>Informovaný zákazník</strong> je spokojný zákazník - preto sme vytvorili tento komplexný sprievodca.
             </p>
 
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl shadow-lg p-8 my-6 text-center">
+            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl  p-8 my-6 text-center">
               <h3 className="text-2xl font-bold mb-3 text-gray-900">Súvisiace články</h3>
               <div className="grid md:grid-cols-3 gap-4 mt-6">
                 <Link href="/prieskum-cien-taxisluzieb-slovensko-2025">
@@ -454,7 +454,7 @@ export default function KomplexnySprievodcaPage() {
           />
 
           {/* CTA Section */}
-          <div className="mt-12 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl shadow-lg text-center">
+          <div className="mt-12 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl  text-center">
             <h3 className="text-2xl font-bold mb-3 text-gray-900">
               <MapPin className="h-6 w-6 inline mr-2" />
               Nájdite taxi vo vašom meste

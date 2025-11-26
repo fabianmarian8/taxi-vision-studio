@@ -35,7 +35,7 @@ export const PriceRankings = ({ rankings }: PriceRankingsProps) => {
     const iconColor = type === 'cheap' ? 'text-green-600' : 'text-red-600';
 
     return (
-      <div className={`${bgColor} border-2 ${borderColor} rounded-xl p-6 shadow-3d-sm`}>
+      <div className={`${bgColor} border-2 ${borderColor} rounded-xl p-6`}>
         <div className="flex items-center gap-3 mb-6">
           <div className={`${iconColor} p-2 bg-background rounded-lg`}>
             <Icon className="h-6 w-6" />
@@ -47,7 +47,7 @@ export const PriceRankings = ({ rankings }: PriceRankingsProps) => {
           {data.map((item, index) => (
             <div
               key={index}
-              className="flex items-center justify-between bg-background rounded-lg p-3 hover:shadow-md transition-shadow"
+              className="flex items-center justify-between bg-background rounded-lg p-3"
             >
               <div className="flex items-center gap-3">
                 <div className={`

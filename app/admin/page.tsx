@@ -35,7 +35,7 @@ export default async function AdminDashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Taxislužby Card */}
           <Link href="/admin/services">
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card className="cursor-pointer">
               <CardHeader>
                 <CardTitle>Taxislužby</CardTitle>
                 <CardDescription>
@@ -50,7 +50,7 @@ export default async function AdminDashboard() {
 
           {/* Mestá Card */}
           <Link href="/admin/cities">
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card className="cursor-pointer">
               <CardHeader>
                 <CardTitle>Mestá</CardTitle>
                 <CardDescription>
@@ -65,7 +65,7 @@ export default async function AdminDashboard() {
 
           {/* Regióny Card */}
           <Link href="/admin/regions">
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Card className="cursor-pointer">
               <CardHeader>
                 <CardTitle>Regióny</CardTitle>
                 <CardDescription>

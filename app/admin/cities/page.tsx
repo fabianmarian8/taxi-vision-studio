@@ -67,7 +67,7 @@ export default async function AdminCitiesPage() {
                           href={`/admin/cities/${city.slug}`}
                           className="block"
                         >
-                          <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                          <Card className="cursor-pointer">
                             <CardHeader>
                               <CardTitle className="text-base">{city.name}</CardTitle>
                               <CardDescription className="text-xs">

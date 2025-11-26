@@ -45,7 +45,7 @@ export default function HomePage() {
               <Image
                 src={taxiLogo}
                 alt="Taxi NearMe - Slovenský zoznam taxislužieb"
-                className="h-24 md:h-36 lg:h-44 xl:h-52 w-auto mx-auto drop-shadow-lg rounded-2xl"
+                className="h-24 md:h-36 lg:h-44 xl:h-52 w-auto mx-auto  rounded-2xl"
                 width={600}
                 height={300}
                 priority
@@ -67,16 +67,11 @@ export default function HomePage() {
 
       {/* White background wrapper for everything below the line */}
       <div className="bg-white">
-        {/* Search and Articles Section */}
+        {/* Search Section */}
         <section className="pt-6 pb-12 md:pt-8 md:pb-16 px-4 md:px-8 relative">
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center">
               <SearchPanel />
-
-              {/* Article Banner */}
-              <div className="mt-6 md:mt-8">
-                <ArticleBanner />
-              </div>
             </div>
           </div>
         </section>
@@ -86,7 +81,7 @@ export default function HomePage() {
 
           <div className="container mx-auto max-w-7xl relative z-10">
             <div className="text-center mb-5 md:mb-7 lg:mb-10">
-              <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 text-foreground drop-shadow-md">
+              <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 text-foreground ">
                 Taxislužby na Slovensku
               </h2>
               <p className="text-xs md:text-base text-foreground/90 font-bold px-2">
@@ -113,7 +108,7 @@ export default function HomePage() {
 
           <div className="container mx-auto max-w-7xl relative z-10">
             <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-foreground drop-shadow-md">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-foreground ">
                 Všetky mestá a obce na Slovensku
               </h2>
               <p className="text-sm md:text-base text-foreground/90 font-bold px-4">
@@ -128,6 +123,15 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Article Banner / Blog */}
+        <section className="py-8 md:py-12 px-4 md:px-8 relative bg-white">
+          <div className="container mx-auto max-w-6xl relative z-10">
+            <div className="text-center">
+              <ArticleBanner />
+            </div>
+          </div>
+        </section>
+
         {/* How It Works */}
         <HowItWorks />
 
@@ -137,7 +141,7 @@ export default function HomePage() {
 
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-5 md:mb-7 lg:mb-10">
-              <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 text-foreground drop-shadow-md">
+              <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 text-foreground ">
                 Dostupné všade
               </h2>
               <p className="text-xs md:text-sm text-foreground/90 font-bold px-2">
@@ -146,16 +150,15 @@ export default function HomePage() {
             </div>
 
             <div className="perspective-1000">
-              <div className="relative bg-card rounded-xl md:rounded-2xl p-5 md:p-7 lg:p-10 shadow-3d-lg card-3d min-h-[180px] md:min-h-[240px] flex items-center justify-center overflow-hidden">
+              <div className="relative bg-card rounded-xl md:rounded-2xl p-5 md:p-7 lg:p-10  card-3d min-h-[180px] md:min-h-[240px] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
                   {[...Array(20)].map((_, i) => (
                     <div
                       key={i}
-                      className="absolute w-2 h-2 bg-foreground rounded-full animate-pulse"
+                      className="absolute w-2 h-2 bg-foreground rounded-full"
                       style={{
                         left: `${Math.random() * 100}%`,
                         top: `${Math.random() * 100}%`,
-                        animationDelay: `${Math.random() * 2}s`,
                       }}
                     />
                   ))}
@@ -191,21 +194,21 @@ export default function HomePage() {
               <div className="flex flex-wrap justify-center gap-3 md:gap-5">
                 <Link
                   href="/ochrana-sukromia"
-                  className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                  className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200"
                   title="Ochrana súkromia a GDPR"
                 >
                   Ochrana súkromia
                 </Link>
                 <Link
                   href="/podmienky-pouzivania"
-                  className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                  className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200"
                   title="Podmienky používania služby"
                 >
                   Podmienky používania
                 </Link>
                 <Link
                   href="/kontakt"
-                  className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                  className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200"
                   title="Kontaktný formulár"
                 >
                   Kontakt

@@ -61,7 +61,7 @@ export const CityFAQ = ({ cityName, citySlug }: CityFAQProps) => {
           <div className="flex justify-center mb-4">
             <HelpCircle className="h-12 w-12 md:h-16 md:w-16 text-foreground" />
           </div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-6 text-foreground drop-shadow-md">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-6 text-foreground">
             Často Kladené Otázky
           </h2>
           <p className="text-base md:text-xl text-foreground/90 font-bold px-4">
@@ -70,7 +70,7 @@ export const CityFAQ = ({ cityName, citySlug }: CityFAQProps) => {
         </div>
 
         <Card>
-          <div className="shadow-3d-lg">
+          <div>
             <CardHeader>
               <CardTitle className="text-xl md:text-2xl font-black text-foreground">
                 Odpovede na vaše otázky

@@ -172,7 +172,7 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full sm:flex-1 font-bold shadow-3d-sm hover:shadow-3d-md transition-all h-11 sm:h-10"
+              className="w-full sm:flex-1 font-bold transition-all h-11 sm:h-10"
             >
               {isSubmitting ? (
                 <>

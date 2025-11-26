@@ -86,7 +86,7 @@ export const CookieBanner = () => {
       />
 
       {/* Cookie Banner */}
-      <div className="relative w-full max-w-2xl bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 rounded-xl md:rounded-2xl shadow-2xl overflow-hidden pointer-events-auto animate-slide-up border md:border-2 border-black/20">
+      <div className="relative w-full max-w-2xl bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 rounded-xl md:rounded-2xl overflow-hidden pointer-events-auto border md:border-2 border-black/20">
         
         {/* Čierne kockované pozadie (taxameter style) */}
         <div className="absolute inset-0 opacity-5">
@@ -115,11 +115,11 @@ export const CookieBanner = () => {
           <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4 mb-3 md:mb-4">
             {/* Cookie Character - použije sa prvý obrázok */}
             <div className="flex-shrink-0">
-              <div className="w-12 h-12 md:w-20 md:h-20 relative animate-bounce-slow">
+              <div className="w-12 h-12 md:w-20 md:h-20 relative">
                 <Image
                   src="/cookie-character-1.png"
                   alt="Cookie maskot"
-                  className="object-contain drop-shadow-2xl"
+                  className="object-contain"
                   fill
                   sizes="(max-width: 768px) 48px, 80px"
                 />
@@ -229,8 +229,7 @@ export const CookieBanner = () => {
             <button
               onClick={handleAcceptAll}
               className="flex-1 min-w-[90px] md:min-w-[130px] px-2.5 md:px-4 py-2 md:py-2.5 bg-black text-yellow-400 font-bold rounded-md md:rounded-lg
-                       hover:bg-black/90 transition-all shadow-lg hover:shadow-xl
-                       hover:scale-105 active:scale-95 text-xs md:text-sm"
+                       hover:bg-black/90 transition-colors text-xs md:text-sm"
             >
               ✅ Prijať Všetko
             </button>
@@ -239,8 +238,7 @@ export const CookieBanner = () => {
               <button
                 onClick={handleAcceptSelected}
                 className="flex-1 min-w-[90px] md:min-w-[130px] px-2.5 md:px-4 py-2 md:py-2.5 bg-white/90 text-black font-bold rounded-md md:rounded-lg
-                         hover:bg-white transition-all shadow-lg hover:shadow-xl
-                         hover:scale-105 active:scale-95 text-xs md:text-sm"
+                         hover:bg-white transition-colors text-xs md:text-sm"
               >
                 💾 Uložiť Výber
               </button>
@@ -248,8 +246,7 @@ export const CookieBanner = () => {
               <button
                 onClick={() => setShowDetails(true)}
                 className="flex-1 min-w-[90px] md:min-w-[130px] px-2.5 md:px-4 py-2 md:py-2.5 bg-white/90 text-black font-bold rounded-md md:rounded-lg
-                         hover:bg-white transition-all shadow-lg hover:shadow-xl
-                         hover:scale-105 active:scale-95 text-xs md:text-sm"
+                         hover:bg-white transition-colors text-xs md:text-sm"
               >
                 ⚙️ Prispôsobiť
               </button>
@@ -274,35 +271,6 @@ export const CookieBanner = () => {
         </div>
       </div>
 
-      {/* Inline animations */}
-      <style>{`
-        @keyframes slide-up {
-          from {
-            transform: translateY(100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-
-        @keyframes bounce-slow {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-
-        .animate-slide-up {
-          animation: slide-up 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        .animate-bounce-slow {
-          animation: bounce-slow 3s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   );
 };

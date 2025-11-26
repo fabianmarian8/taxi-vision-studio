@@ -154,24 +154,15 @@
   }
 
   .rotate-3d-hover {
-    transition: transform 0.3s ease-in-out;
+    /* Hover transform disabled */
   }
 
   .rotate-3d-hover:hover {
-    transform: perspective(1000px) rotateY(5deg) rotateX(2deg);
+    /* Hover transform disabled */
   }
 
   .float-3d {
-    animation: float-3d 3s ease-in-out infinite;
-  }
-
-  @keyframes float-3d {
-    0%, 100% {
-      transform: translateY(0px) translateZ(0px);
-    }
-    50% {
-      transform: translateY(-10px) translateZ(10px);
-    }
+    /* Animation disabled */
   }
 
   .line-3d {
@@ -180,15 +171,13 @@
   }
 
   .card-3d {
-    transform-style: preserve-3d;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border-radius: var(--radius);
     overflow: hidden;
+    /* Hover transform disabled */
   }
 
   .card-3d:hover {
-    transform: perspective(1000px) translateY(-8px) rotateX(5deg);
-    box-shadow: var(--shadow-3d-xl);
+    /* Hover transform disabled */
   }
 }
 

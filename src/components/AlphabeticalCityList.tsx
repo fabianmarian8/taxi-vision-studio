@@ -80,7 +80,7 @@ export function AlphabeticalCityList() {
               onClick={() => setSelectedLetter(letter)}
               className={`
                 w-8 h-8 md:w-10 md:h-10 rounded-lg font-black text-xs md:text-sm
-                transition-all duration-200 shadow-3d-sm hover:shadow-3d-md
+                transition-colors duration-200
                 ${
                   selectedLetter === letter
                     ? 'bg-primary-yellow text-foreground scale-110'
@@ -110,7 +110,7 @@ export function AlphabeticalCityList() {
             href={`/taxi/${location.slug}`}
             className="perspective-1000 group"
           >
-            <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all bg-card rounded-lg p-3 md:p-4 h-full">
+            <div className="card-3d transition-colors bg-card rounded-lg p-3 md:p-4 h-full">
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">

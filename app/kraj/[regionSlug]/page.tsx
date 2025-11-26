@@ -122,7 +122,7 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
 
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-6 md:mb-8">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-6 text-foreground drop-shadow-md">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-6 text-foreground ">
               Taxislužby v kraji {regionName}
             </h1>
             <p className="text-base md:text-xl text-foreground/90 font-bold px-4">
@@ -149,7 +149,7 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
                   href={`/taxi/${regionSlug}/${district.slug}`}
                   className="perspective-1000 group"
                 >
-                  <Card className="h-full hover:shadow-lg transition-all">
+                  <Card className="h-full  transition-all">
                     <CardContent className="p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <MapPin className="h-4 w-4 text-foreground/40 group-hover:text-success transition-colors flex-shrink-0" />
@@ -214,19 +214,19 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
             <div className="flex flex-wrap justify-center gap-4 md:gap-8">
               <Link
                 href="/ochrana-sukromia"
-                className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200"
               >
                 Ochrana súkromia
               </Link>
               <Link
                 href="/podmienky-pouzivania"
-                className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200"
               >
                 Podmienky používania
               </Link>
               <Link
                 href="/"
-                className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors hover:scale-105 transform duration-200"
+                className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200"
               >
                 Kontakt
               </Link>

@@ -149,7 +149,7 @@ export function PriceComparisonContent() {
               📊 Prieskum 2024/2025
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-foreground drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-foreground">
               Index cien taxislužieb<br />na Slovensku 2025
             </h1>
 
@@ -272,7 +272,7 @@ export function PriceComparisonContent() {
       {/* Methodology */}
       <section className="py-12 md:py-16 px-4 md:px-8 relative">
         <div className="container mx-auto max-w-4xl">
-          <div className="bg-card rounded-2xl p-8 md:p-12 shadow-3d-lg">
+          <div className="bg-card rounded-2xl p-8 md:p-12">
             <h2 className="text-2xl md:text-3xl font-black mb-6 text-foreground">
               Metodológia prieskumu
             </h2>

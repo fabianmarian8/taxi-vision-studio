@@ -86,7 +86,7 @@ export const PriceCalculator = ({ cities }: PriceCalculatorProps) => {
   // Kontrola pre prázdne mestá
   if (!cities || cities.length === 0) {
     return (
-      <div className="bg-card rounded-2xl p-6 md:p-8 shadow-3d-lg">
+      <div className="bg-card rounded-2xl p-6 md:p-8">
         <div className="text-center text-foreground/60">
           <MapPin className="h-12 w-12 mx-auto mb-4 opacity-50" />
           <p>Kalkulačka nie je momentálne dostupná.</p>
@@ -97,7 +97,7 @@ export const PriceCalculator = ({ cities }: PriceCalculatorProps) => {
   }
 
   return (
-    <div className="bg-card rounded-2xl p-6 md:p-8 shadow-3d-lg">
+    <div className="bg-card rounded-2xl p-6 md:p-8">
       <div className="space-y-6">
         {/* City Selection */}
         <div className="space-y-2">
@@ -197,7 +197,7 @@ export const PriceCalculator = ({ cities }: PriceCalculatorProps) => {
 
         {/* Result */}
         {calculatedPrice !== null && (
-          <div className="bg-primary/10 border-2 border-primary rounded-xl p-6 text-center animate-in fade-in slide-in-from-bottom-4 duration-300">
+          <div className="bg-primary/10 border-2 border-primary rounded-xl p-6 text-center">
             <p className="text-sm text-foreground/70 mb-2">Odhadovaná cena jazdy:</p>
             <p className="text-4xl md:text-5xl font-black text-primary mb-2">
               {calculatedPrice.toFixed(2)} €

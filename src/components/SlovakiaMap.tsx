@@ -48,7 +48,7 @@ export const SlovakiaMap = ({ cities, selectedCity, onCitySelect }: SlovakiaMapP
   const hoveredCityData = cities.find(c => c.id === hoveredCity);
 
   return (
-    <div className="bg-card rounded-2xl p-6 md:p-8 shadow-3d-lg">
+    <div className="bg-card rounded-2xl p-6 md:p-8">
       <div className="relative">
         {/* SVG Map */}
         <svg
@@ -133,7 +133,7 @@ export const SlovakiaMap = ({ cities, selectedCity, onCitySelect }: SlovakiaMapP
 
         {/* City details card */}
         {selectedCityData && (
-          <div className="mt-6 bg-primary/10 border-2 border-primary rounded-xl p-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
+          <div className="mt-6 bg-primary/10 border-2 border-primary rounded-xl p-6">
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-3">
                 <MapPin className="h-6 w-6 text-primary" />
@@ -182,7 +182,7 @@ export const SlovakiaMap = ({ cities, selectedCity, onCitySelect }: SlovakiaMapP
 
         {/* Hover tooltip */}
         {hoveredCityData && !selectedCity && (
-          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-foreground text-background px-4 py-2 rounded-lg shadow-lg text-sm font-semibold whitespace-nowrap z-10 pointer-events-none">
+          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-foreground text-background px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap z-10 pointer-events-none">
             {hoveredCityData.name}: {hoveredCityData.prices.odhad5km.toFixed(2)} € (5km)
           </div>
         )}

@@ -18,9 +18,11 @@ interface RouteMapWrapperProps {
   fromLat: number;
   fromLng: number;
   fromName: string;
+  fromSlug: string;
   toLat: number;
   toLng: number;
   toName: string;
+  toSlug: string;
   distance: number;
 }
 

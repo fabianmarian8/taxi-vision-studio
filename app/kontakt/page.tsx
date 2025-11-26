@@ -63,9 +63,9 @@ export default function ContactPage() {
         <h1 className="text-5xl md:text-6xl font-black mb-12 text-foreground">Kontakt</h1>
 
         <div className="space-y-8">
-          <div className="bg-card rounded-2xl p-8 md:p-12 shadow-3d-lg border-2 border-foreground/10">
+          <div className="bg-card rounded-2xl p-8 md:p-12 border-2 border-foreground/10">
             <div className="flex items-start gap-6">
-              <div className="bg-foreground text-background rounded-full p-4 shadow-3d-sm">
+              <div className="bg-foreground text-background rounded-full p-4">
                 <Mail className="h-8 w-8" />
               </div>
 

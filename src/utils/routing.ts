@@ -1,7 +1,41 @@
 /**
  * Routing Service Client
- * Calls /api/route endpoint which uses OpenRouteService (accurate) or OSRM (fallback)
+ * Uses precomputed distances for municipalities, API fallback for other routes
  */
+
+import precomputedData from '@/data/precomputed-distances.json';
+
+interface PrecomputedDistance {
+  municipalitySlug: string;
+  citySlug: string;
+  airDistance: number;
+  roadDistance: number;
+  duration: number;
+}
+
+const precomputedDistances: PrecomputedDistance[] = precomputedData.distances;
+
+/**
+ * Get precomputed distance between municipality and city
+ * @returns Precomputed data or null if not found
+ */
+export function getPrecomputedDistance(
+  municipalitySlug: string,
+  citySlug: string
+): { roadDistance: number; duration: number } | null {
+  const found = precomputedDistances.find(
+    (d) => d.municipalitySlug === municipalitySlug && d.citySlug === citySlug
+  );
+
+  if (found) {
+    return {
+      roadDistance: found.roadDistance,
+      duration: found.duration,
+    };
+  }
+
+  return null;
+}
 
 export interface RouteResult {
   distance: number; // in kilometers
