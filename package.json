@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "prepare": "husky",
-    "precompute-distances": "node --loader ts-node/esm scripts/precompute-distances.ts"
+    "precompute-distances": "node --loader ts-node/esm scripts/precompute-distances.ts",
+    "seed-premium": "node scripts/seed-marketing-premium.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
