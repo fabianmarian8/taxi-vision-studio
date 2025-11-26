@@ -438,12 +438,12 @@ async function CityPage({ city }: { city: CityData }) {
                   if (isPartner) {
                     const ratingData = partnerRatings.get(service.name);
                     return (
-                      <Card key={index} className="perspective-1000 ring-2 ring-purple-500 shadow-xl">
+                      <Card key={index} className="ring-2 ring-purple-300 shadow-xl overflow-hidden">
                         <Link href={`/taxi/${city.slug}/${serviceSlug}`} title={`${service.name} - Partner taxislužba`}>
                           <div
-                            className="card-3d shadow-3d-md hover:shadow-3d-lg transition-all cursor-pointer relative overflow-hidden"
+                            className="transition-all cursor-pointer relative"
                             style={{
-                              background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #5b21b6 100%)'
+                              background: 'linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #8b5cf6 100%)'
                             }}
                           >
                             {/* Decorative elements */}
@@ -509,12 +509,12 @@ async function CityPage({ city }: { city: CityData }) {
                   // Premium card - zlatá
                   if (isPremium) {
                     return (
-                      <Card key={index} className="perspective-1000 ring-2 ring-yellow-500 shadow-lg">
+                      <Card key={index} className="ring-2 ring-amber-300 shadow-lg overflow-hidden">
                         <Link href={`/taxi/${city.slug}/${serviceSlug}`} title={`${service.name} - Premium taxislužba`}>
                           <div
-                            className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all cursor-pointer relative overflow-hidden"
+                            className="transition-all cursor-pointer relative"
                             style={{
-                              background: 'linear-gradient(135deg, #b8860b 0%, #daa520 30%, #ffd700 50%, #daa520 70%, #b8860b 100%)'
+                              background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%)'
                             }}
                           >
                             <div className="absolute top-2 right-2 flex gap-1.5">
@@ -559,10 +559,10 @@ async function CityPage({ city }: { city: CityData }) {
 
                   // Standard card
                   return (
-                    <Card key={index} className="perspective-1000">
+                    <Card key={index} className="overflow-hidden">
                       <Link href={`/taxi/${city.slug}/${serviceSlug}`} title={`${service.name} - Detailné informácie a kontakt`}>
                         <div
-                          className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all cursor-pointer"
+                          className="transition-all cursor-pointer"
                           style={{
                             background: 'linear-gradient(135deg, hsl(41, 65%, 95%) 0%, hsl(41, 60%, 97%) 100%)'
                           }}
@@ -1311,12 +1311,12 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             Späť na zoznam taxislužieb v meste {city.name}
           </Link>
 
-          <div className={`text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12 ${isPremium ? 'ring-4 ring-yellow-500' : ''}`}>
+          <div className={`text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12 ${isPremium ? 'ring-4 ring-amber-300' : ''}`}>
             <div
               className="absolute inset-0"
               style={{
                 background: isPremium
-                  ? 'linear-gradient(135deg, #b8860b 0%, #daa520 30%, #ffd700 50%, #daa520 70%, #b8860b 100%)'
+                  ? 'linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%)'
                   : undefined
               }}
             />
@@ -1329,13 +1329,13 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                     <BadgeCheck className="h-4 w-4" />
                     OVERENÉ
                   </div>
-                  <div className="bg-amber-900 text-yellow-300 text-xs md:text-sm font-black px-3 py-1 rounded-full flex items-center gap-1">
+                  <div className="bg-amber-600 text-white text-xs md:text-sm font-black px-3 py-1 rounded-full flex items-center gap-1">
                     <Crown className="h-4 w-4" />
                     PREMIUM
                   </div>
                 </div>
-                <Crown className="absolute left-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-amber-900/40 z-10" />
-                <Crown className="absolute right-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-amber-900/40 z-10" />
+                <Crown className="absolute left-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-amber-400/30 z-10" />
+                <Crown className="absolute right-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-amber-400/30 z-10" />
               </>
             )}
 
@@ -1353,19 +1353,19 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
       <section className="py-12 md:py-16 px-4 md:px-8 relative bg-white">
         <div className="container mx-auto max-w-4xl relative z-10">
-          <Card className={`perspective-1000 mb-8 ${isPremium ? 'ring-2 ring-yellow-500' : ''}`}>
+          <Card className={`mb-8 overflow-hidden ${isPremium ? 'ring-2 ring-amber-300' : ''}`}>
             <div
-              className="card-3d shadow-3d-lg relative"
+              className="relative"
               style={{
                 background: isPremium
-                  ? 'linear-gradient(135deg, #b8860b 0%, #daa520 30%, #ffd700 50%, #daa520 70%, #b8860b 100%)'
+                  ? 'linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%)'
                   : undefined
               }}
             >
               {isPremium && (
                 <>
-                  <Crown className="absolute left-2 top-1/2 -translate-y-1/2 h-6 w-6 text-amber-900/40" />
-                  <Crown className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 text-amber-900/40" />
+                  <Crown className="absolute left-2 top-1/2 -translate-y-1/2 h-6 w-6 text-amber-400/30" />
+                  <Crown className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 text-amber-400/30" />
                 </>
               )}
               <CardHeader>
@@ -1378,8 +1378,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 <div className="flex flex-col gap-4">
                   {service.phone && (
                     <div className="flex items-start gap-3">
-                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${isPremium ? 'bg-amber-900' : 'bg-primary-yellow-light'}`}>
-                        <Phone className={`h-5 w-5 mt-0 ${isPremium ? 'text-yellow-300' : 'text-primary-yellow-dark'}`} />
+                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${isPremium ? 'bg-amber-500' : 'bg-primary-yellow-light'}`}>
+                        <Phone className={`h-5 w-5 mt-0 ${isPremium ? 'text-white' : 'text-primary-yellow-dark'}`} />
                       </div>
                       <div>
                         <p className={`text-sm font-medium mb-1 ${isPremium ? 'text-black/70' : 'text-neutral-text'}`}>

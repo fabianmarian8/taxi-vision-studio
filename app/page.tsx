@@ -22,7 +22,7 @@ import { GeometricLines } from '@/components/GeometricLines';
 import { ArticleBanner } from '@/components/ArticleBanner';
 import { AlphabeticalCityList } from '@/components/AlphabeticalCityList';
 import { getRegionsData } from '@/data/cities';
-import taxiLogo from '@/assets/taxi-nearme-logo.png';
+import taxiLogo from '@/assets/taxi-nearme-logo.webp';
 
 // Note: Globálna metadata je definovaná v app/layout.tsx
 // HomePage je Server Component, ktorý obsahuje vnorené Client Components (Header, SearchPanel, ArticleBanner)
@@ -35,7 +35,7 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section with 3D Effects */}
-      <section className="pt-4 pb-6 md:pt-8 md:pb-8 px-4 md:px-8 relative hero-3d-bg">
+      <section className="pt-4 pb-6 md:pt-8 md:pb-8 px-4 md:px-8 relative bg-white">
         <GeometricLines variant="hero" count={10} />
 
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -44,20 +44,19 @@ export default function HomePage() {
             <div className="mb-0">
               <Image
                 src={taxiLogo}
-                alt="Taxi NearMe Logo"
-                className="h-20 md:h-32 lg:h-40 xl:h-48 w-auto mx-auto drop-shadow-lg"
-                width={192}
-                height={192}
+                alt="Taxi NearMe - Slovenský zoznam taxislužieb"
+                className="h-24 md:h-36 lg:h-44 xl:h-52 w-auto mx-auto drop-shadow-lg rounded-2xl"
+                width={600}
+                height={300}
                 priority
               />
             </div>
 
-            <h1 className="text-sm md:text-xl lg:text-2xl xl:text-3xl font-black tracking-tight text-foreground drop-shadow-lg">
-              Nájdite taxi v každom meste
+            <h1 className="text-sm md:text-lg lg:text-xl text-foreground max-w-2xl mx-auto font-black px-4">
+              Kompletný katalóg taxislužieb na Slovensku
             </h1>
-
-            <p className="text-xs md:text-sm lg:text-base text-foreground/90 max-w-2xl mx-auto font-bold px-4">
-              Kompletný katalóg taxislužieb na Slovensku. Nájdite spoľahlivé taxi kdekoľvek ste - rýchlo, jednoducho a vždy nablízku.
+            <p className="text-xs md:text-sm lg:text-base text-foreground/80 max-w-2xl mx-auto font-medium px-4">
+              Nájdite spoľahlivé taxi kdekoľvek ste - rýchlo, jednoducho a vždy nablízku.
             </p>
           </div>
         </div>

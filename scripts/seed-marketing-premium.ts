@@ -8,9 +8,14 @@ import path from 'path';
  * aby vytvoril FOMO (Fear Of Missing Out) efekt pre ostatne taxisluzby.
  *
  * Ked taxisluzba uvidi, ze konkurencia ma "zlaty odznak", bude ho chciet tiez.
+ *
+ * Spúšťa sa automaticky každý týždeň cez GitHub Actions.
  */
 
 const CITIES_PATH = path.join(process.cwd(), 'src', 'data', 'cities.json');
+
+// Mestá ktoré sa preskakujú (majú permanentné nastavenie)
+const EXCLUDED_CITIES = ['zvolen'];
 
 interface TaxiService {
   name: string;
@@ -60,9 +65,9 @@ function seedPremiumTaxis() {
   let citiesWithPaidPremium = 0;
   let citiesSkippedNoTaxis = 0;
 
-  // Expiracny datum - 1 mesiac od dnes
+  // Expiracny datum - 1 týždeň od dnes
   const expirationDate = new Date();
-  expirationDate.setMonth(expirationDate.getMonth() + 1);
+  expirationDate.setDate(expirationDate.getDate() + 7);
   const premiumExpiresAt = expirationDate.toISOString();
 
   // Iteracia cez mesta
@@ -74,6 +79,12 @@ function seedPremiumTaxis() {
     }
 
     citiesWithTaxis++;
+
+    // Preskočiť vylúčené mestá (napr. Zvolen - má permanentné nastavenie)
+    if (EXCLUDED_CITIES.includes(city.slug)) {
+      console.log(`[SKIP] ${city.name} - vylúčené mesto (permanentné nastavenie)`);
+      return city;
+    }
 
     // Skontrolujeme, ci uz mesto ma nejake platene Premium alebo Partner
     const hasExistingPaidPremium = city.taxiServices.some(

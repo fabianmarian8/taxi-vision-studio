@@ -182,12 +182,85 @@
   .card-3d {
     transform-style: preserve-3d;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: var(--radius);
+    overflow: hidden;
   }
 
   .card-3d:hover {
     transform: perspective(1000px) translateY(-8px) rotateX(5deg);
     box-shadow: var(--shadow-3d-xl);
   }
+}
+
+/* Home Button */
+.home-button {
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 30px;
+  border: 4px solid #e50000;
+  display: inline-block;
+  overflow: hidden;
+  background: red;
+  box-shadow:
+    inset 6px 6px 10px rgba(255, 255, 255, 0.6),
+    inset -6px -6px 10px rgba(0, 0, 0, 0.3),
+    2px 2px 10px rgba(0, 0, 0, 0.3),
+    -2px -2px 10px rgba(255, 255, 255, 0.5);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.1s ease;
+}
+
+.home-button span {
+  font-weight: 900;
+  font-size: 18px;
+  color: #db0000;
+  text-shadow:
+    1px 1px 1px rgba(255, 255, 255, 0.4),
+    -1px -1px 1px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease-out;
+  z-index: 1;
+  padding: 0px 2px;
+}
+
+.home-button span:nth-child(1)::before {
+  transition-delay: 0ms;
+}
+.home-button span:nth-child(2)::before {
+  transition-delay: 100ms;
+}
+.home-button span:nth-child(3)::before {
+  transition-delay: 200ms;
+}
+.home-button span:nth-child(4)::before {
+  transition-delay: 300ms;
+}
+.home-button span:nth-child(5)::before {
+  transition-delay: 400ms;
+}
+
+.home-button:hover span {
+  color: #d30000;
+}
+
+.home-button:active span {
+  color: #f30000;
+  text-shadow:
+    1px 1px 1px rgba(255, 255, 255, 0.5),
+    -1px -1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.home-button span:hover {
+  transform: translateY(-5px);
+}
+
+.home-button:active {
+  box-shadow:
+    inset 2px 2px 1px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 1px rgba(255, 255, 255, 0.5);
+  transform: scale(0.98);
 }
 
 /* Custom 3D Components */

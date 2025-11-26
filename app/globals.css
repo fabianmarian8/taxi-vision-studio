@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* Softened yellow from logo */
-    --background: 41 75% 68%;
+    --background: 41 65% 73%;
     --foreground: 0 0% 6%;
 
     --card: 0 0% 100%;
@@ -16,13 +16,13 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 6%;
 
-    --primary: 41 75% 68%;
+    --primary: 41 65% 73%;
     --primary-foreground: 0 0% 6%;
 
-    --secondary: 43 70% 72%;
+    --secondary: 43 60% 77%;
     --secondary-foreground: 0 0% 6%;
 
-    --muted: 44 65% 75%;
+    --muted: 44 55% 80%;
     --muted-foreground: 0 0% 20%;
 
     --accent: 0 0% 6%;
@@ -38,7 +38,7 @@
     --radius: 1rem;
 
     /* Custom 3D Design Tokens */
-    --taxi-yellow: 41 75% 68%;
+    --taxi-yellow: 41 65% 73%;
     --taxi-dark: 0 0% 6%;
     --taxi-white: 0 0% 100%;
     --taxi-shadow: 0 0% 0%;
@@ -271,9 +271,9 @@
     position: relative;
     overflow: hidden;
     background: linear-gradient(180deg,
-      hsl(41, 84%, 65%) 0%,
-      hsl(41, 80%, 75%) 50%,
-      hsl(41, 75%, 85%) 100%
+      hsl(41, 65%, 73%) 0%,
+      hsl(41, 60%, 78%) 50%,
+      hsl(41, 55%, 83%) 100%
     );
   }
 
@@ -391,7 +391,7 @@
   /* Zjednodušenie gradientov na mobile - čistá farba je oveľa rýchlejšia */
   .hero-3d-bg {
     /* Jednoduchá žltá farba namiesto komplexného gradientu */
-    background: hsl(41, 75%, 68%) !important;
+    background: hsl(41, 65%, 73%) !important;
   }
 
   .hero-3d-bg::before {
@@ -430,4 +430,36 @@
   min-height: 280px; /* Typická výška reklamy */
   contain: content;
   display: block;
+}
+
+/* ============================================================================
+   HOME BUTTON - Animované tlačidlo Domov
+   ========================================================================= */
+
+.home-button {
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 2px solid #1a1a1a;
+  display: inline-flex;
+  background: #ffffff;
+  text-decoration: none;
+}
+
+.home-button span {
+  font-weight: 900;
+  font-size: 13px;
+  color: #1a1a1a;
+  padding: 0;
+  letter-spacing: -0.3px;
+}
+
+@media (min-width: 768px) {
+  .home-button {
+    padding: 8px 14px;
+  }
+
+  .home-button span {
+    font-size: 15px;
+  }
 }
