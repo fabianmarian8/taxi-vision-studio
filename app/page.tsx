@@ -68,8 +68,8 @@ export default function HomePage() {
       {/* White background wrapper for everything below the line */}
       <div className="bg-white">
         {/* Search Section */}
-        <section className="pt-6 pb-12 md:pt-8 md:pb-16 px-4 md:px-8 relative">
-          <div className="container mx-auto max-w-6xl relative z-10">
+        <section className="pt-6 pb-12 md:pt-8 md:pb-16 px-4 md:px-8 relative z-20">
+          <div className="container mx-auto max-w-6xl relative">
             <div className="text-center">
               <SearchPanel />
             </div>
