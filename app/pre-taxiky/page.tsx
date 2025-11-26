@@ -163,7 +163,7 @@ export default function PreTaxikyPage() {
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">
-                      <strong>Pozícia na vrchu</strong> - vaša taxislužba sa zobrazí pred nezvýraznenými
+                      <strong>Pozícia na vrchu</strong> - vaša taxislužba sa zobrazí pred nezvýraznenými (Premium sa denne striedajú)
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -261,7 +261,7 @@ export default function PreTaxikyPage() {
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">
-                      <strong>Recenzie zákazníkov</strong> - zobrazenie recenzií z vášho GBP
+                      <strong>Recenzie zákazníkov</strong> - zobrazenie recenzií z Google Máp
                     </span>
                   </li>
                 </ul>
