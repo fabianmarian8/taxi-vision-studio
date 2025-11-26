@@ -151,11 +151,11 @@
     box-sizing: border-box;
   }
 
-  html,
-  body {
+  html {
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
+    max-width: 100dvw;
   }
 
   body {
@@ -164,6 +164,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    max-width: 100dvw;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -178,12 +184,21 @@
     height: auto;
   }
 
-  /* Responzívne kontajnery */
+  /* Responzívne kontajnery - silnejšia ochrana */
   #__next,
-  main {
+  main,
+  section,
+  header,
+  footer,
+  article {
     overflow-x: hidden;
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
+  }
+
+  /* Container default overflow control */
+  .container {
+    max-width: 100%;
   }
 }
 

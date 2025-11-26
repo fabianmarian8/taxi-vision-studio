@@ -364,7 +364,7 @@ async function CityPage({ city }: { city: CityData }) {
   const partnerRatings = await getPartnerRatings(city.taxiServices);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <LocalBusinessSchema city={city} />
       <Header />
 
@@ -446,23 +446,23 @@ async function CityPage({ city }: { city: CityData }) {
                               background: 'linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #8b5cf6 100%)'
                             }}
                           >
-                            {/* Decorative elements */}
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+                            {/* Decorative elements - hidden on mobile to prevent overflow */}
+                            <div className="hidden md:block absolute top-0 right-0 w-32 h-32 bg-yellow-400/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
 
                             {/* Badges */}
-                            <div className="absolute top-3 right-3 flex gap-2">
-                              <div className="bg-green-500 text-white text-[10px] md:text-xs font-black px-2 py-1 rounded-full flex items-center gap-1 ">
-                                <BadgeCheck className="h-3 w-3" />
-                                OVERENÉ
+                            <div className="absolute top-2 right-2 md:top-3 md:right-3 flex gap-1 md:gap-2 flex-wrap justify-end max-w-[60%]">
+                              <div className="bg-green-500 text-white text-[9px] md:text-xs font-black px-1.5 md:px-2 py-0.5 md:py-1 rounded-full flex items-center gap-0.5 md:gap-1">
+                                <BadgeCheck className="h-2.5 w-2.5 md:h-3 md:w-3" />
+                                <span className="hidden sm:inline">OVERENÉ</span>
                               </div>
-                              <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-[10px] md:text-xs font-black px-2.5 py-1 rounded-full flex items-center gap-1 ">
-                                <Star className="h-3 w-3" />
+                              <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-[9px] md:text-xs font-black px-1.5 md:px-2.5 py-0.5 md:py-1 rounded-full flex items-center gap-0.5 md:gap-1">
+                                <Star className="h-2.5 w-2.5 md:h-3 md:w-3" />
                                 PARTNER
                               </div>
                             </div>
 
-                            <Crown className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 text-yellow-400/30" />
-                            <Crown className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 text-yellow-400/30" />
+                            <Crown className="hidden md:block absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 text-yellow-400/30" />
+                            <Crown className="hidden md:block absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 text-yellow-400/30" />
 
                             <CardHeader className="pb-2 pt-5 md:pt-6 px-4 md:px-5 relative z-10">
                               <CardTitle className="text-lg md:text-xl font-black flex items-center gap-2 text-white">
@@ -517,18 +517,18 @@ async function CityPage({ city }: { city: CityData }) {
                               background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%)'
                             }}
                           >
-                            <div className="absolute top-2 right-2 flex gap-1.5">
-                              <div className="bg-green-500 text-white text-[10px] md:text-xs font-black px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
-                                <BadgeCheck className="h-3 w-3" />
-                                OVERENÉ
+                            <div className="absolute top-2 right-2 flex gap-1 md:gap-1.5 flex-wrap justify-end max-w-[55%]">
+                              <div className="bg-green-500 text-white text-[9px] md:text-xs font-black px-1.5 md:px-2 py-0.5 rounded-full flex items-center gap-0.5 md:gap-1 shadow">
+                                <BadgeCheck className="h-2.5 w-2.5 md:h-3 md:w-3" />
+                                <span className="hidden sm:inline">OVERENÉ</span>
                               </div>
-                              <div className="bg-amber-900 text-yellow-300 text-[10px] md:text-xs font-black px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
-                                <Crown className="h-3 w-3" />
-                                PREMIUM
+                              <div className="bg-amber-900 text-yellow-300 text-[9px] md:text-xs font-black px-1.5 md:px-2 py-0.5 rounded-full flex items-center gap-0.5 md:gap-1 shadow">
+                                <Crown className="h-2.5 w-2.5 md:h-3 md:w-3" />
+                                <span className="hidden sm:inline">PREMIUM</span>
                               </div>
                             </div>
-                            <Crown className="absolute left-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-amber-900/40" />
-                            <Crown className="absolute right-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-amber-900/40" />
+                            <Crown className="hidden sm:block absolute left-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-amber-900/40" />
+                            <Crown className="hidden sm:block absolute right-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-amber-900/40" />
                             <CardHeader className="pb-1 pt-3 md:pt-3.5 px-3 md:px-4">
                               <CardTitle className="text-sm md:text-base font-bold flex items-center gap-1.5 md:gap-2 text-black">
                                 <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-black" />
@@ -614,7 +614,7 @@ async function CityPage({ city }: { city: CityData }) {
           )}
 
           {/* Partner & Premium info banner */}
-          <div className="mt-12 py-10 px-6 rounded-2xl bg-gradient-to-br from-purple-50 via-white to-yellow-50 border border-foreground/10">
+          <div className="mt-8 md:mt-12 py-6 md:py-10 px-4 md:px-6 rounded-xl md:rounded-2xl bg-gradient-to-br from-purple-50 via-white to-yellow-50 border border-foreground/10 overflow-hidden">
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-800 px-4 py-2 rounded-full mb-4">
                 <Crown className="h-5 w-5" />
@@ -808,7 +808,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
       ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
 
       <SEOBreadcrumbs items={breadcrumbItems} />
@@ -819,10 +819,10 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
           <div className="text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12">
             <div className="absolute inset-0 hero-3d-bg" />
             <div className="relative z-10">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6  text-foreground">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6 text-foreground">
                 Taxi {municipality.name}
               </h1>
-              <p className="text-base md:text-xl font-semibold px-4 text-foreground/90">
+              <p className="text-sm sm:text-base md:text-xl font-semibold px-2 sm:px-4 text-foreground/90">
                 {isHierarchical && actualDistrict
                   ? `Taxislužby v okolí obce ${municipality.name}, okres ${actualDistrict.name}`
                   : `Taxislužby v okolí obce ${municipality.name}`
@@ -985,7 +985,7 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
 
       <SEOBreadcrumbs
@@ -1001,10 +1001,10 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
           <div className="text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12">
             <div className="absolute inset-0 hero-3d-bg" />
             <div className="relative z-10">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6  text-foreground">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6 text-foreground">
                 Taxi okres {district.name}
               </h1>
-              <p className="text-base md:text-xl font-semibold px-4 text-foreground/90">
+              <p className="text-sm sm:text-base md:text-xl font-semibold px-2 sm:px-4 text-foreground/90">
                 {district.municipalitiesCount} obcí a miest v okrese {district.name}
               </p>
             </div>
@@ -1090,7 +1090,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
     const heroImage = partnerData?.heroImage;
 
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white overflow-x-hidden">
         <TaxiServiceSchema
           service={service}
           city={city}
@@ -1100,7 +1100,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         <Header />
 
         {/* Hero Section - Partner */}
-        <section className="pt-0 pb-12 md:pb-16 px-4 md:px-8 relative overflow-hidden min-h-[500px] md:min-h-[600px]">
+        <section className="pt-0 pb-8 md:pb-12 lg:pb-16 px-4 md:px-8 relative overflow-hidden min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
           {/* Background - Image or Gradient */}
           {heroImage ? (
             <>
@@ -1117,12 +1117,13 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           ) : (
             <>
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800" />
-              <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+              {/* Decorative elements - hidden on mobile to prevent overflow */}
+              <div className="hidden md:block absolute top-0 right-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="hidden md:block absolute bottom-0 left-0 w-64 h-64 bg-purple-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
             </>
           )}
-          <Crown className="absolute left-8 top-32 h-16 w-16 text-yellow-400/20 hidden md:block" />
-          <Crown className="absolute right-8 bottom-32 h-16 w-16 text-yellow-400/20 hidden md:block" />
+          <Crown className="absolute left-8 top-32 h-16 w-16 text-yellow-400/20 hidden lg:block" />
+          <Crown className="absolute right-8 bottom-32 h-16 w-16 text-yellow-400/20 hidden lg:block" />
 
           {/* Breadcrumbs inside hero */}
           <div className="relative z-10">
@@ -1290,7 +1291,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <TaxiServiceSchema
         service={service}
         city={city}
@@ -1312,14 +1313,14 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         <div className="container mx-auto max-w-4xl relative z-10">
           <Link
             href={`/taxi/${city.slug}`}
-            className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold mb-6"
+            className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold mb-6 text-sm md:text-base"
             title={`Späť na zoznam taxislužieb v meste ${city.name}`}
           >
-            <ArrowLeft className="h-4 w-4" />
-            Späť na zoznam taxislužieb v meste {city.name}
+            <ArrowLeft className="h-4 w-4 flex-shrink-0" />
+            <span className="truncate">Späť na taxislužby v {city.name}</span>
           </Link>
 
-          <div className={`text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12 ${isPremium ? 'ring-4 ring-amber-300' : ''}`}>
+          <div className={`text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-4 sm:p-6 md:p-10 lg:p-12 ${isPremium ? 'ring-2 md:ring-4 ring-amber-300' : ''}`}>
             <div
               className="absolute inset-0"
               style={{
@@ -1332,26 +1333,26 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
             {isPremium && (
               <>
-                <div className="absolute top-4 right-4 flex gap-2 z-20">
-                  <div className="bg-green-500 text-white text-xs md:text-sm font-black px-3 py-1 rounded-full flex items-center gap-1">
-                    <BadgeCheck className="h-4 w-4" />
-                    OVERENÉ
+                <div className="absolute top-2 right-2 md:top-4 md:right-4 flex gap-1 md:gap-2 z-20 flex-wrap justify-end max-w-[60%]">
+                  <div className="bg-green-500 text-white text-[9px] md:text-sm font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-0.5 md:gap-1">
+                    <BadgeCheck className="h-3 w-3 md:h-4 md:w-4" />
+                    <span className="hidden sm:inline">OVERENÉ</span>
                   </div>
-                  <div className="bg-amber-600 text-white text-xs md:text-sm font-black px-3 py-1 rounded-full flex items-center gap-1">
-                    <Crown className="h-4 w-4" />
-                    PREMIUM
+                  <div className="bg-amber-600 text-white text-[9px] md:text-sm font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-0.5 md:gap-1">
+                    <Crown className="h-3 w-3 md:h-4 md:w-4" />
+                    <span className="hidden sm:inline">PREMIUM</span>
                   </div>
                 </div>
-                <Crown className="absolute left-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-amber-400/30 z-10" />
-                <Crown className="absolute right-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-amber-400/30 z-10" />
+                <Crown className="hidden sm:block absolute left-2 md:left-4 top-1/2 -translate-y-1/2 h-6 w-6 md:h-12 md:w-12 text-amber-400/30 z-10" />
+                <Crown className="hidden sm:block absolute right-2 md:right-4 top-1/2 -translate-y-1/2 h-6 w-6 md:h-12 md:w-12 text-amber-400/30 z-10" />
               </>
             )}
 
             <div className="relative z-10">
-              <h1 className={`text-4xl md:text-5xl font-extrabold mb-4  ${isPremium ? 'text-black' : 'text-foreground'}`}>
+              <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 md:mb-4 ${isPremium ? 'text-black' : 'text-foreground'}`}>
                 {service.name}
               </h1>
-              <p className={`text-xl font-semibold ${isPremium ? 'text-black/80' : 'text-foreground/90'}`}>
+              <p className={`text-sm sm:text-base md:text-xl font-semibold ${isPremium ? 'text-black/80' : 'text-foreground/90'}`}>
                 Taxislužba v meste {city.name}
               </p>
             </div>

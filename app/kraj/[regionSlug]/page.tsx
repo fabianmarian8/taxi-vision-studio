@@ -110,7 +110,7 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
 
       {/* Breadcrumbs */}
@@ -122,10 +122,10 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
 
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-6 md:mb-8">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-6 text-foreground ">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-6 text-foreground">
               Taxislužby v kraji {regionName}
             </h1>
-            <p className="text-base md:text-xl text-foreground/90 font-bold px-4">
+            <p className="text-sm sm:text-base md:text-xl text-foreground/90 font-bold px-2 sm:px-4">
               {districts.length} okresov • {cities.length} miest s taxi službami
             </p>
           </div>

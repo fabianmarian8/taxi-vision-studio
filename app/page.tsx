@@ -31,7 +31,7 @@ export default function HomePage() {
   const regions = getRegionsData();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
 
       {/* Hero Section with 3D Effects */}
