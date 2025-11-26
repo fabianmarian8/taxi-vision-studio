@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { findNearestCity } from "@/lib/locationUtils";
 import { slovakCities } from "@/data/cities";
 import { allMunicipalities } from "@/data/municipalities";
+import { looksLikePostalCode, findByPostalCode, normalizePostalCode } from "@/data/postal-codes";
 
 /**
  * Normalizuje text - odstráni diakritiku a prevedie na malé písmená
@@ -30,10 +31,30 @@ export const SearchPanel = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  // Filter cities AND municipalities based on search input
+  // Filter cities AND municipalities based on search input (supports PSČ)
   useEffect(() => {
     if (searchValue.trim()) {
-      const normalizedSearch = normalizeText(searchValue);
+      const trimmedSearch = searchValue.trim();
+
+      // Check if searching by postal code (PSČ)
+      if (looksLikePostalCode(trimmedSearch)) {
+        const pscResult = findByPostalCode(trimmedSearch);
+        if (pscResult) {
+          // Found city by PSČ
+          const normalizedPsc = normalizePostalCode(trimmedSearch) || trimmedSearch;
+          setFilteredResults([{
+            name: pscResult.name,
+            region: `PSČ ${normalizedPsc}${pscResult.district ? ` (${pscResult.district})` : ''}`,
+            slug: pscResult.slug,
+            type: 'city' as const
+          }]);
+          setShowDropdown(true);
+          setSelectedIndex(-1);
+          return;
+        }
+      }
+
+      const normalizedSearch = normalizeText(trimmedSearch);
 
       // Search in cities (with taxi services) - supports search without diacritics
       const filteredCities = slovakCities
@@ -78,11 +99,26 @@ export const SearchPanel = () => {
 
   const handleSearch = () => {
     if (!searchValue.trim()) {
-      toast.error("Zadajte názov mesta alebo obce");
+      toast.error("Zadajte názov mesta, obce alebo PSČ");
       return;
     }
 
-    const normalizedSearch = normalizeText(searchValue);
+    const trimmedSearch = searchValue.trim();
+
+    // Check if searching by postal code (PSČ)
+    if (looksLikePostalCode(trimmedSearch)) {
+      const pscResult = findByPostalCode(trimmedSearch);
+      if (pscResult) {
+        navigateToLocation(pscResult.slug, pscResult.name);
+        toast.success(`Nájdené podľa PSČ: ${pscResult.name}`);
+        return;
+      } else {
+        toast.error("PSČ nebolo nájdené v databáze. Skúste zadať názov mesta.");
+        return;
+      }
+    }
+
+    const normalizedSearch = normalizeText(trimmedSearch);
 
     // Try exact match first in cities (supports search without diacritics)
     const exactCityMatch = slovakCities.find(
@@ -108,7 +144,7 @@ export const SearchPanel = () => {
     if (filteredResults.length > 0) {
       navigateToLocation(filteredResults[0].slug, filteredResults[0].name);
     } else {
-      toast.error("Mesto/obec neboli nájdené. Skúste iný názov.");
+      toast.error("Mesto/obec neboli nájdené. Skúste iný názov alebo PSČ.");
     }
   };
 
@@ -269,7 +305,7 @@ export const SearchPanel = () => {
             <Search className="h-4 w-4 md:h-5 md:w-5 text-foreground flex-shrink-0" />
             <Input
               type="text"
-              placeholder="Zadajte názov mesta alebo obce..."
+              placeholder="Názov mesta, obce alebo PSČ..."
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               onKeyDown={handleKeyDown}
