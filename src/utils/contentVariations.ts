@@ -246,7 +246,7 @@ export function generateUniqueServiceContent(options: ServiceContentOptions) {
     intro: intro(serviceName, cityName, regionName),
     disclaimer: disclaimer(serviceName, cityName),
     benefits: benefits(serviceName, cityName, regionName),
-    ordering: ordering ? ordering(serviceName, phone, cityName) : null,
+    ordering: ordering && phone ? ordering(serviceName, phone, cityName) : null,
     conclusion: conclusion(cityName),
   };
 }

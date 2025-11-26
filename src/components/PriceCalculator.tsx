@@ -42,12 +42,18 @@ export const PriceCalculator = ({ cities }: PriceCalculatorProps) => {
     const distanceNum = parseFloat(distance);
     const waitTimeNum = parseFloat(waitTime) || 0;
 
-    const price = 
-      city.prices.nastupne + 
-      (city.prices.cenaZaKm * distanceNum) + 
+    // Validácia - záporné hodnoty nie sú povolené
+    if (distanceNum < 0 || waitTimeNum < 0) {
+      return;
+    }
+
+    const price =
+      city.prices.nastupne +
+      (city.prices.cenaZaKm * distanceNum) +
       (city.prices.cakanie * waitTimeNum);
 
-    setCalculatedPrice(price);
+    // Zaistíme, že cena nie je záporná
+    setCalculatedPrice(Math.max(0, price));
   };
 
   const resetCalculator = () => {
@@ -58,6 +64,37 @@ export const PriceCalculator = ({ cities }: PriceCalculatorProps) => {
   };
 
   const selectedCityData = cities.find(c => c.id === selectedCity);
+
+  // Handler pre vzdialenosť - sanitizuje vstup
+  const handleDistanceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Povolíme iba kladné čísla a prázdny string
+    if (value === '' || (parseFloat(value) >= 0)) {
+      setDistance(value);
+    }
+  };
+
+  // Handler pre čakanie - sanitizuje vstup
+  const handleWaitTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Povolíme iba kladné čísla a prázdny string
+    if (value === '' || (parseFloat(value) >= 0)) {
+      setWaitTime(value);
+    }
+  };
+
+  // Kontrola pre prázdne mestá
+  if (!cities || cities.length === 0) {
+    return (
+      <div className="bg-card rounded-2xl p-6 md:p-8 shadow-3d-lg">
+        <div className="text-center text-foreground/60">
+          <MapPin className="h-12 w-12 mx-auto mb-4 opacity-50" />
+          <p>Kalkulačka nie je momentálne dostupná.</p>
+          <p className="text-sm mt-2">Nenašli sa žiadne mestá s cenovými údajmi.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-card rounded-2xl p-6 md:p-8 shadow-3d-lg">
@@ -95,7 +132,7 @@ export const PriceCalculator = ({ cities }: PriceCalculatorProps) => {
             step="0.1"
             placeholder="Napr. 5.5"
             value={distance}
-            onChange={(e) => setDistance(e.target.value)}
+            onChange={handleDistanceChange}
             className="w-full"
           />
         </div>
@@ -112,7 +149,7 @@ export const PriceCalculator = ({ cities }: PriceCalculatorProps) => {
             step="1"
             placeholder="0"
             value={waitTime}
-            onChange={(e) => setWaitTime(e.target.value)}
+            onChange={handleWaitTimeChange}
             className="w-full"
           />
         </div>
