@@ -1,10 +1,22 @@
 import citiesDataJson from './cities.json';
 
+export interface PartnerData {
+  heroImage?: string;
+  shortDescription?: string;
+  description?: string;
+  services?: string[];
+  workingHours?: string;
+  googlePlaceId?: string;
+  googleMapsUrl?: string;
+}
+
 export interface TaxiService {
   name: string;
   website?: string;
   phone?: string;
   isPremium?: boolean;
+  isPartner?: boolean;
+  partnerData?: PartnerData;
 }
 
 export interface CityData {

@@ -35,6 +35,13 @@ export const FooterLegal = () => {
               Podmienky používania
             </Link>
             <Link
+              href="/obchodne-podmienky"
+              className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors"
+              title="Obchodné podmienky pre PREMIUM a PARTNER služby"
+            >
+              Obchodné podmienky
+            </Link>
+            <Link
               href="/kontakt"
               className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors"
               title="Kontaktný formulár"

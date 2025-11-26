@@ -1,13 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from 'react-leaflet';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { getRoute, estimateRoadTaxiPrice, type RouteResult } from '@/utils/routing';
 import { Car, Clock, Navigation } from 'lucide-react';
 
-// Fix for default marker icons in React Leaflet
+// Fix for default marker icons
 const startIcon = L.icon({
   iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -27,17 +26,6 @@ const endIcon = L.icon({
   popupAnchor: [1, -34],
   shadowSize: [41, 41],
 });
-
-// Custom component to fit bounds
-function FitBounds({ bounds }: { bounds: L.LatLngBoundsExpression }) {
-  const map = useMap();
-
-  useEffect(() => {
-    map.fitBounds(bounds, { padding: [50, 50] });
-  }, [map, bounds]);
-
-  return null;
-}
 
 interface RouteMapProps {
   fromLat: number;
@@ -61,9 +49,11 @@ export function RouteMap({
   const [route, setRoute] = useState<RouteResult | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+  const mapInstanceRef = useRef<L.Map | null>(null);
 
-  const fromPosition: [number, number] = [fromLat, fromLng];
-  const toPosition: [number, number] = [toLat, toLng];
+  const fromPosition: L.LatLngExpression = [fromLat, fromLng];
+  const toPosition: L.LatLngExpression = [toLat, toLng];
 
   // Fetch route on mount
   useEffect(() => {
@@ -92,27 +82,91 @@ export function RouteMap({
     };
   }, [fromLat, fromLng, toLat, toLng]);
 
+  // Initialize map
+  const initMap = useCallback(() => {
+    if (!mapContainerRef.current || mapInstanceRef.current) return;
+
+    // Create map
+    const map = L.map(mapContainerRef.current, {
+      scrollWheelZoom: false,
+    }).setView(fromPosition, 10);
+
+    // Add tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+
+    // Add start marker
+    L.marker(fromPosition, { icon: startIcon })
+      .addTo(map)
+      .bindPopup(`<div class="font-bold">${fromName}</div><div class="text-sm">Začiatok trasy</div>`);
+
+    // Add end marker
+    L.marker(toPosition, { icon: endIcon })
+      .addTo(map)
+      .bindPopup(`<div class="font-bold">${toName}</div><div class="text-sm">Taxislužby</div>`);
+
+    // Fit bounds
+    const bounds = L.latLngBounds([fromPosition, toPosition]);
+    map.fitBounds(bounds, { padding: [50, 50] });
+
+    mapInstanceRef.current = map;
+  }, [fromLat, fromLng, toLat, toLng, fromName, toName]);
+
+  // Update route line when route data is available
+  useEffect(() => {
+    if (!mapInstanceRef.current) return;
+
+    const map = mapInstanceRef.current;
+
+    // Remove existing polylines
+    map.eachLayer((layer) => {
+      if (layer instanceof L.Polyline && !(layer instanceof L.Marker)) {
+        map.removeLayer(layer);
+      }
+    });
+
+    if (route?.geometry) {
+      // Add real route
+      const polyline = L.polyline(route.geometry as L.LatLngExpression[], {
+        color: '#f59e0b',
+        weight: 4,
+        opacity: 0.9,
+      }).addTo(map);
+
+      // Fit to route bounds
+      map.fitBounds(polyline.getBounds(), { padding: [50, 50] });
+    } else {
+      // Add straight line fallback
+      L.polyline([fromPosition, toPosition], {
+        color: '#fbbf24',
+        weight: 3,
+        opacity: 0.7,
+        dashArray: '10, 10',
+      }).addTo(map);
+    }
+  }, [route, fromLat, fromLng, toLat, toLng]);
+
+  // Initialize and cleanup map
+  useEffect(() => {
+    // Small delay to ensure container is ready
+    const timer = setTimeout(() => {
+      initMap();
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
+      }
+    };
+  }, [initMap]);
+
   // Use route distance or fallback to air distance * 2.0 (rough estimate for mountainous Slovak roads)
   const roadDistance = route?.distance ?? Math.round(airDistance * 2.0 * 10) / 10;
   const duration = route?.duration ?? Math.round(roadDistance * 1.5); // Rough estimate: 40 km/h average
   const price = estimateRoadTaxiPrice(roadDistance);
-
-  // Calculate bounds
-  const bounds: [[number, number], [number, number]] = route?.geometry
-    ? [
-        [
-          Math.min(...route.geometry.map(p => p[0])),
-          Math.min(...route.geometry.map(p => p[1])),
-        ],
-        [
-          Math.max(...route.geometry.map(p => p[0])),
-          Math.max(...route.geometry.map(p => p[1])),
-        ],
-      ]
-    : [
-        [Math.min(fromLat, toLat), Math.min(fromLng, toLng)],
-        [Math.max(fromLat, toLat), Math.max(fromLng, toLng)],
-      ];
 
   return (
     <div className="space-y-4">
@@ -161,58 +215,11 @@ export function RouteMap({
             </div>
           </div>
         )}
-
-        <MapContainer
-          center={fromPosition}
-          zoom={10}
-          scrollWheelZoom={false}
+        <div
+          ref={mapContainerRef}
           className="h-full w-full"
           style={{ height: '100%', width: '100%' }}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-
-          {/* Fit map to show entire route */}
-          <FitBounds bounds={bounds} />
-
-          {/* Start marker (municipality) */}
-          <Marker position={fromPosition} icon={startIcon}>
-            <Popup>
-              <div className="font-bold text-foreground">{fromName}</div>
-              <div className="text-sm text-foreground/70">Začiatok trasy</div>
-            </Popup>
-          </Marker>
-
-          {/* End marker (city with taxis) */}
-          <Marker position={toPosition} icon={endIcon}>
-            <Popup>
-              <div className="font-bold text-foreground">{toName}</div>
-              <div className="text-sm text-foreground/70">
-                Taxislužby • {roadDistance} km
-              </div>
-            </Popup>
-          </Marker>
-
-          {/* Route line - real road route or fallback to straight line */}
-          {route?.geometry ? (
-            <Polyline
-              positions={route.geometry}
-              color="#f59e0b"
-              weight={4}
-              opacity={0.9}
-            />
-          ) : (
-            <Polyline
-              positions={[fromPosition, toPosition]}
-              color="#fbbf24"
-              weight={3}
-              opacity={0.7}
-              dashArray="10, 10"
-            />
-          )}
-        </MapContainer>
+        />
       </div>
     </div>
   );

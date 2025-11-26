@@ -22,7 +22,7 @@ import { CityContent } from '@/components/CityContent';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { LocalBusinessSchema } from '@/components/schema/LocalBusinessSchema';
 import { TaxiServiceSchema } from '@/components/schema/TaxiServiceSchema';
-import { MapPin, Phone, Globe, Crown, ArrowLeft } from 'lucide-react';
+import { MapPin, Phone, Globe, Crown, ArrowLeft, Star, BadgeCheck, CheckCircle2, ArrowRight, Clock, Award, Car } from 'lucide-react';
 import { getCityBySlug, createRegionSlug, slovakCities, getRegionBySlug, type CityData, type TaxiService } from '@/data/cities';
 import { getMunicipalityBySlug, findNearestCitiesWithTaxis, allMunicipalities, type Municipality } from '@/data/municipalities';
 import {
@@ -41,6 +41,8 @@ import { truncateUrl } from '@/utils/urlUtils';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { RouteMapWrapper } from '@/components/RouteMapWrapper';
 import { generateUniqueServiceContent, generateUniqueMetaDescription } from '@/utils/contentVariations';
+import { GoogleReviewsSection } from '@/components/GoogleReviewsSection';
+import { fetchGoogleReviews } from '@/lib/google-reviews';
 
 // ISR: Revalidate once per week
 export const revalidate = 604800;
@@ -285,22 +287,10 @@ export async function generateMetadata({
 
     case 'hierarchical': {
       const { municipality, district, regionSlug } = routeType;
+      const nearestCities = findNearestCitiesWithTaxis(municipality, 1);
+      const nearestCity = nearestCities[0];
       const currentUrl = `${baseUrl}/taxi/${regionSlug}/${district.slug}/${municipality.slug}`;
-
-      // Check if this municipality is actually a city with taxi services
-      const cityWithTaxi = getCityBySlug(municipality.slug);
-      const hasTaxiServices = cityWithTaxi && cityWithTaxi.taxiServices.length > 0;
-
-      let description: string;
-      if (hasTaxiServices) {
-        description = `Taxi v meste ${municipality.name}, okres ${district.name} - ${cityWithTaxi.taxiServices.length} taxislužieb s kontaktmi a cenami.`;
-      } else {
-        const nearestCities = findNearestCitiesWithTaxis(municipality, 1);
-        const nearestCity = nearestCities[0];
-        description = nearestCity
-          ? `Taxi v obci ${municipality.name}, okres ${district.name} - Najbližšie taxislužby sú v meste ${nearestCity.city.name} (${nearestCity.distance} km).`
-          : `Taxi v obci ${municipality.name}, okres ${district.name} - Nájdite najbližšie taxislužby.`;
-      }
+      const description = `Taxi v obci ${municipality.name}, okres ${district.name} - Najbližšie taxislužby sú v meste ${nearestCity?.city.name} (${nearestCity?.distance} km).`;
 
       return {
         title: `Taxi ${municipality.name} - okres ${district.name} | ${siteName}`,
@@ -330,8 +320,35 @@ export async function generateMetadata({
 // PAGE COMPONENTS
 // ============================================================================
 
-function CityPage({ city }: { city: CityData }) {
+// Helper to fetch ratings for partner services
+async function getPartnerRatings(services: TaxiService[]): Promise<Map<string, { rating: number; count: number }>> {
+  const ratings = new Map<string, { rating: number; count: number }>();
+
+  const partnerServices = services.filter(s => s.isPartner && s.partnerData?.googlePlaceId);
+
+  await Promise.all(
+    partnerServices.map(async (service) => {
+      const placeId = service.partnerData?.googlePlaceId;
+      if (placeId) {
+        const result = await fetchGoogleReviews(placeId);
+        if (result.success && result.data) {
+          ratings.set(service.name, {
+            rating: result.data.rating,
+            count: result.data.user_ratings_total
+          });
+        }
+      }
+    })
+  );
+
+  return ratings;
+}
+
+async function CityPage({ city }: { city: CityData }) {
   const regionSlug = createRegionSlug(city.region);
+
+  // Fetch ratings for partner services
+  const partnerRatings = await getPartnerRatings(city.taxiServices);
 
   return (
     <div className="min-h-screen bg-white">
@@ -374,55 +391,174 @@ function CityPage({ city }: { city: CityData }) {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-white">
+      <section className="py-8 md:py-10 lg:py-14 px-4 md:px-8 relative bg-white">
         <div className="container mx-auto max-w-4xl relative z-10">
           {city.taxiServices.length > 0 ? (
-            <div className="grid gap-2">
+            <div className="grid gap-3">
               {[...city.taxiServices]
                 .sort((a, b) => {
+                  // Partner first, then Premium, then alphabetically
+                  if (a.isPartner && !b.isPartner) return -1;
+                  if (!a.isPartner && b.isPartner) return 1;
                   if (a.isPremium && !b.isPremium) return -1;
                   if (!a.isPremium && b.isPremium) return 1;
                   return a.name.localeCompare(b.name, 'sk');
                 })
                 .map((service, index) => {
                   const serviceSlug = createServiceSlug(service.name);
-                  return (
-                    <Card key={index} className={`perspective-1000 ${service.isPremium ? 'ring-2 ring-yellow-400' : ''}`}>
-                      <Link href={`/taxi/${city.slug}/${serviceSlug}`} title={`${service.name} - Detailné informácie a kontakt`}>
-                        <div
-                          className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all cursor-pointer relative"
-                          style={{
-                            background: service.isPremium
-                              ? 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)'
-                              : 'linear-gradient(135deg, hsl(41, 65%, 95%) 0%, hsl(41, 60%, 97%) 100%)'
-                          }}
-                        >
-                          {service.isPremium && (
-                            <>
-                              <div className="absolute top-2 right-2 bg-yellow-400 text-purple-900 text-[10px] md:text-xs font-black px-2 py-0.5 rounded-full">
+                  const isPartner = service.isPartner;
+                  const isPremium = service.isPremium;
+
+                  // Partner card - fialová, väčšia, s badges
+                  if (isPartner) {
+                    const ratingData = partnerRatings.get(service.name);
+                    return (
+                      <Card key={index} className="perspective-1000 ring-2 ring-purple-500 shadow-xl">
+                        <Link href={`/taxi/${city.slug}/${serviceSlug}`} title={`${service.name} - Partner taxislužba`}>
+                          <div
+                            className="card-3d shadow-3d-md hover:shadow-3d-lg transition-all cursor-pointer relative overflow-hidden"
+                            style={{
+                              background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9 50%, #5b21b6 100%)'
+                            }}
+                          >
+                            {/* Decorative elements */}
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+
+                            {/* Badges */}
+                            <div className="absolute top-3 right-3 flex gap-2">
+                              <div className="bg-green-500 text-white text-[10px] md:text-xs font-black px-2 py-1 rounded-full flex items-center gap-1 shadow-lg">
+                                <BadgeCheck className="h-3 w-3" />
+                                OVERENÉ
+                              </div>
+                              <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-[10px] md:text-xs font-black px-2.5 py-1 rounded-full flex items-center gap-1 shadow-lg">
+                                <Star className="h-3 w-3" />
+                                PARTNER
+                              </div>
+                            </div>
+
+                            <Crown className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 text-yellow-400/30" />
+                            <Crown className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 text-yellow-400/30" />
+
+                            <CardHeader className="pb-2 pt-5 md:pt-6 px-4 md:px-5 relative z-10">
+                              <CardTitle className="text-lg md:text-xl font-black flex items-center gap-2 text-white">
+                                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                                  <MapPin className="h-4 w-4 md:h-5 md:w-5 text-purple-900" />
+                                </div>
+                                {/* Google Rating Badge - inline */}
+                                {ratingData && (
+                                  <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm text-foreground px-1.5 py-0.5 rounded-full shadow-sm mr-1">
+                                    <Star className="h-3 w-3 text-yellow-500 fill-yellow-500" />
+                                    <span className="font-bold text-xs">{ratingData.rating.toFixed(1)}</span>
+                                  </div>
+                                )}
+                                {service.name}
+                              </CardTitle>
+                              {service.partnerData?.shortDescription && (
+                                <p className="text-white/80 text-sm mt-2 ml-10 md:ml-12">
+                                  {service.partnerData.shortDescription}
+                                </p>
+                              )}
+                            </CardHeader>
+                            <CardContent className="pt-0 pb-5 md:pb-6 px-4 md:px-5 relative z-10">
+                              <div className="flex flex-wrap gap-3 text-sm">
+                                {service.phone && (
+                                  <div className="flex items-center gap-2 bg-yellow-400 text-purple-900 font-bold rounded-lg px-3 py-2">
+                                    <Phone className="h-4 w-4" />
+                                    {service.phone}
+                                  </div>
+                                )}
+                                {service.website && (
+                                  <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white font-medium rounded-lg px-3 py-2">
+                                    <Globe className="h-4 w-4 text-yellow-300" />
+                                    {truncateUrl(service.website)}
+                                  </div>
+                                )}
+                              </div>
+                            </CardContent>
+                          </div>
+                        </Link>
+                      </Card>
+                    );
+                  }
+
+                  // Premium card - zlatá
+                  if (isPremium) {
+                    return (
+                      <Card key={index} className="perspective-1000 ring-2 ring-yellow-500 shadow-lg">
+                        <Link href={`/taxi/${city.slug}/${serviceSlug}`} title={`${service.name} - Premium taxislužba`}>
+                          <div
+                            className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all cursor-pointer relative overflow-hidden"
+                            style={{
+                              background: 'linear-gradient(135deg, #b8860b 0%, #daa520 30%, #ffd700 50%, #daa520 70%, #b8860b 100%)'
+                            }}
+                          >
+                            <div className="absolute top-2 right-2 flex gap-1.5">
+                              <div className="bg-green-500 text-white text-[10px] md:text-xs font-black px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+                                <BadgeCheck className="h-3 w-3" />
+                                OVERENÉ
+                              </div>
+                              <div className="bg-amber-900 text-yellow-300 text-[10px] md:text-xs font-black px-2 py-0.5 rounded-full flex items-center gap-1 shadow">
+                                <Crown className="h-3 w-3" />
                                 PREMIUM
                               </div>
-                              <Crown className="absolute left-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-yellow-400 opacity-80" />
-                              <Crown className="absolute right-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-yellow-400 opacity-80" />
-                            </>
-                          )}
+                            </div>
+                            <Crown className="absolute left-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-amber-900/40" />
+                            <Crown className="absolute right-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-amber-900/40" />
+                            <CardHeader className="pb-1 pt-3 md:pt-3.5 px-3 md:px-4">
+                              <CardTitle className="text-sm md:text-base font-bold flex items-center gap-1.5 md:gap-2 text-black">
+                                <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-black" />
+                                {service.name}
+                              </CardTitle>
+                            </CardHeader>
+                            <CardContent className="pt-0 pb-3 md:pb-3.5 px-3 md:px-4">
+                              <div className="flex flex-col gap-1 md:gap-1.5 text-xs md:text-sm">
+                                {service.phone && (
+                                  <div className="flex items-center gap-1.5 md:gap-2 font-bold text-black">
+                                    <Phone className="h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0 text-black" />
+                                    {service.phone}
+                                  </div>
+                                )}
+                                {service.website && (
+                                  <div className="flex items-center gap-1.5 md:gap-2 font-medium text-black/80">
+                                    <Globe className="h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0 text-black" />
+                                    <span>{truncateUrl(service.website)}</span>
+                                  </div>
+                                )}
+                              </div>
+                            </CardContent>
+                          </div>
+                        </Link>
+                      </Card>
+                    );
+                  }
+
+                  // Standard card
+                  return (
+                    <Card key={index} className="perspective-1000">
+                      <Link href={`/taxi/${city.slug}/${serviceSlug}`} title={`${service.name} - Detailné informácie a kontakt`}>
+                        <div
+                          className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all cursor-pointer"
+                          style={{
+                            background: 'linear-gradient(135deg, hsl(41, 65%, 95%) 0%, hsl(41, 60%, 97%) 100%)'
+                          }}
+                        >
                           <CardHeader className="pb-1 pt-3 md:pt-3.5 px-3 md:px-4">
-                            <CardTitle className={`text-sm md:text-base font-semibold flex items-center gap-1.5 md:gap-2 ${service.isPremium ? 'text-white' : ''}`}>
-                              <MapPin className={`h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 ${service.isPremium ? 'text-yellow-300' : 'text-success'}`} />
+                            <CardTitle className="text-sm md:text-base font-semibold flex items-center gap-1.5 md:gap-2">
+                              <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-success" />
                               {service.name}
                             </CardTitle>
                           </CardHeader>
                           <CardContent className="pt-0 pb-3 md:pb-3.5 px-3 md:px-4">
                             <div className="flex flex-col gap-1 md:gap-1.5 text-xs md:text-sm">
                               {service.phone && (
-                                <div className={`flex items-center gap-1.5 md:gap-2 font-medium ${service.isPremium ? 'text-white' : 'text-foreground'}`}>
-                                  <Phone className={`h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0 ${service.isPremium ? 'text-yellow-300' : 'text-primary-yellow'}`} />
+                                <div className="flex items-center gap-1.5 md:gap-2 font-medium text-foreground">
+                                  <Phone className="h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0 text-primary-yellow" />
                                   {service.phone}
                                 </div>
                               )}
                               {service.website && (
-                                <div className={`flex items-center gap-1.5 md:gap-2 font-medium ${service.isPremium ? 'text-white' : 'text-foreground'}`}>
-                                  <Globe className={`h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0 ${service.isPremium ? 'text-yellow-300' : 'text-info'}`} />
+                                <div className="flex items-center gap-1.5 md:gap-2 font-medium text-foreground">
+                                  <Globe className="h-3 w-3 md:h-3.5 md:w-3.5 flex-shrink-0 text-info" />
                                   <span>{truncateUrl(service.website)}</span>
                                 </div>
                               )}
@@ -451,6 +587,160 @@ function CityPage({ city }: { city: CityData }) {
               </div>
             </Card>
           )}
+
+          {/* Partner & Premium info banner */}
+          <div className="mt-12 py-10 px-6 rounded-2xl bg-gradient-to-br from-purple-50 via-white to-yellow-50 border border-foreground/10">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-800 px-4 py-2 rounded-full mb-4">
+                <Crown className="h-5 w-5" />
+                <span className="font-bold text-sm">Pre profesionálne taxislužby</span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black text-foreground mb-2">
+                Ste taxislužba v meste {city.name}?
+              </h3>
+              <p className="text-base md:text-lg text-foreground/70 font-medium">
+                Získajte viac zákazníkov s TaxiNearMe
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Premium Card */}
+              <Card className="relative overflow-hidden border-2 border-yellow-400 bg-gradient-to-br from-yellow-50 to-white hover:border-yellow-500 transition-colors">
+                <div className="absolute top-0 right-0 bg-gradient-to-r from-yellow-400 to-yellow-500 text-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
+                  OBĽÚBENÉ
+                </div>
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                      <Crown className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl font-black text-foreground">PREMIUM</CardTitle>
+                      <p className="text-sm text-foreground/60">Zvýraznenie v zozname</p>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-lg text-foreground/40 line-through">5,99€</span>
+                      <span className="text-4xl font-black text-foreground">3,99€</span>
+                      <span className="text-foreground/60 font-medium"> / mesiac</span>
+                    </div>
+                    <p className="text-xs text-yellow-600 font-medium mt-1">Pre prvých 100 taxislužieb</p>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">
+                        <strong>Pozícia na vrchu</strong> - vaša taxislužba sa zobrazí pred nezvýraznenými
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">
+                        <strong>Zlaté zvýraznenie</strong> - exkluzívny dizajn ktorý púta pozornosť
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">
+                        <strong>Badge "OVERENÉ"</strong> - zvýšená dôveryhodnosť u zákazníkov
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">
+                        <strong>Väčšie telefónne číslo</strong> - jednoduchšie kontaktovanie
+                      </span>
+                    </li>
+                  </ul>
+                  <a
+                    href="https://buy.stripe.com/8x26oH7CK8SU5G94NX7Re00"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-foreground font-bold px-6 py-3 rounded-lg transition-all"
+                  >
+                    Mám záujem o PREMIUM
+                    <ArrowRight className="h-5 w-5" />
+                  </a>
+                  <Link href="/pre-taxiky" className="block text-center text-sm text-yellow-600 hover:text-yellow-700 mt-3 underline underline-offset-2">
+                    Viac informácií tu
+                  </Link>
+                </CardContent>
+              </Card>
+
+              {/* Partner Card */}
+              <Card className="relative overflow-hidden border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white hover:border-purple-400 transition-colors">
+                <div className="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                  NAJLEPŠIA HODNOTA
+                </div>
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                      <Star className="h-6 w-6 text-yellow-400" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl font-black text-foreground">PARTNER</CardTitle>
+                      <p className="text-sm text-foreground/60">Personalizovaná stránka + všetko z PREMIUM</p>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-lg text-foreground/40 line-through">12,99€</span>
+                      <span className="text-4xl font-black text-foreground">8,99€</span>
+                      <span className="text-foreground/60 font-medium"> / mesiac</span>
+                    </div>
+                    <p className="text-xs text-purple-600 font-medium mt-1">Pre prvých 100 taxislužieb</p>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">
+                        <strong>Všetko z PREMIUM</strong> - zvýraznenie, pozícia na vrchu, badge
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">
+                        <strong>Personalizovaná stránka</strong> - profesionálna prezentácia
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">
+                        <strong>Galéria a cenník</strong> - ukážte vozidlá a služby
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">
+                        <strong>Recenzie zákazníkov</strong> - zobrazenie recenzií z vášho GBP
+                      </span>
+                    </li>
+                  </ul>
+                  <a
+                    href="https://buy.stripe.com/7sYeVd0ai9WYc4x94d7Re01"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3 rounded-lg transition-all"
+                  >
+                    Mám záujem o PARTNER
+                    <ArrowRight className="h-5 w-5" />
+                  </a>
+                  <Link href="/pre-taxiky" className="block text-center text-sm text-purple-600 hover:text-purple-700 mt-3 underline underline-offset-2">
+                    Viac informácií tu
+                  </Link>
+                </CardContent>
+              </Card>
+            </div>
+
+            <p className="text-center text-sm text-foreground/50 mt-6">
+              Transparentné ceny, žiadne skryté poplatky. PREMIUM aktivácia do 24 hodín, PARTNER do 48 hodín od dodania podkladov.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -502,11 +792,9 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
                 Taxi {municipality.name}
               </h1>
               <p className="text-base md:text-xl font-semibold px-4 text-foreground/90">
-                {hasTaxiServices
-                  ? `Kompletný zoznam dostupných taxislužieb`
-                  : isHierarchical && actualDistrict
-                    ? `Najbližšie taxislužby v okolí, okres ${actualDistrict.name}`
-                    : `Najbližšie taxislužby v okolí`
+                {isHierarchical && actualDistrict
+                  ? `Taxislužby v okolí obce ${municipality.name}, okres ${actualDistrict.name}`
+                  : `Taxislužby v okolí obce ${municipality.name}`
                 }
               </p>
             </div>
@@ -645,20 +933,8 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
 }
 
 function DistrictPage({ district, regionSlug }: { district: District; regionSlug: string }) {
-  const allMunicipalitiesInDistrict = getMunicipalitiesByDistrictSlug(district.slug);
+  const municipalities = getMunicipalitiesByDistrictSlug(district.slug);
   const regionName = getRegionBySlug(regionSlug);
-
-  // Filter out cities with taxi services - they have their own pages
-  // Only show villages (municipalities without taxi services)
-  const municipalities = allMunicipalitiesInDistrict.filter((mun) => {
-    const cityWithTaxi = getCityBySlug(mun.slug);
-    return !(cityWithTaxi && cityWithTaxi.taxiServices.length > 0);
-  });
-
-  // Get cities with taxi services in this district for separate section
-  const citiesWithTaxi = allMunicipalitiesInDistrict
-    .map((mun) => getCityBySlug(mun.slug))
-    .filter((city): city is CityData => city !== undefined && city.taxiServices.length > 0);
 
   return (
     <div className="min-h-screen bg-white">
@@ -688,74 +964,35 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
         </div>
       </section>
 
-      {/* Cities with taxi services section */}
-      {citiesWithTaxi.length > 0 && (
-        <section className="py-8 md:py-12 px-4 md:px-8 bg-success/5">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-2xl md:text-3xl font-black mb-6 text-foreground text-center">
-              Mestá s taxislužbami v okrese {district.name}
-            </h2>
-            <p className="text-center text-foreground/70 mb-8">
-              Kliknite na mesto pre zobrazenie dostupných taxislužieb
-            </p>
+      <section className="py-8 md:py-12 px-4 md:px-8">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-2xl md:text-3xl font-black mb-6 text-foreground text-center">
+            Všetky obce v okrese {district.name}
+          </h2>
+          <p className="text-center text-foreground/70 mb-8">
+            Kliknite na obec pre zobrazenie najbližších taxislužieb
+          </p>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3">
-              {citiesWithTaxi.map((city) => (
-                <Link
-                  key={city.slug}
-                  href={`/taxi/${city.slug}`}
-                  className="perspective-1000 group"
-                >
-                  <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all bg-card rounded-lg p-3 md:p-4 h-full border-2 border-success/30">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-success" />
-                      <span className="font-semibold text-sm md:text-base text-foreground truncate">
-                        {city.name}
-                      </span>
-                    </div>
-                    <p className="text-xs text-success font-semibold mt-1 ml-5">
-                      {city.taxiServices.length} {city.taxiServices.length === 1 ? 'taxislužba' : city.taxiServices.length < 5 ? 'taxislužby' : 'taxislužieb'}
-                    </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3">
+            {municipalities.map((municipality) => (
+              <Link
+                key={municipality.slug}
+                href={`/taxi/${regionSlug}/${district.slug}/${municipality.slug}`}
+                className="perspective-1000 group"
+              >
+                <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all bg-card rounded-lg p-3 md:p-4 h-full">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-foreground/40 group-hover:text-success transition-colors" />
+                    <span className="font-semibold text-sm md:text-base text-foreground truncate">
+                      {municipality.name}
+                    </span>
                   </div>
-                </Link>
-              ))}
-            </div>
+                </div>
+              </Link>
+            ))}
           </div>
-        </section>
-      )}
-
-      {/* Villages without taxi services section */}
-      {municipalities.length > 0 && (
-        <section className="py-8 md:py-12 px-4 md:px-8">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-2xl md:text-3xl font-black mb-6 text-foreground text-center">
-              Obce v okrese {district.name}
-            </h2>
-            <p className="text-center text-foreground/70 mb-8">
-              Kliknite na obec pre zobrazenie najbližších taxislužieb
-            </p>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3">
-              {municipalities.map((municipality) => (
-                <Link
-                  key={municipality.slug}
-                  href={`/taxi/${regionSlug}/${district.slug}/${municipality.slug}`}
-                  className="perspective-1000 group"
-                >
-                  <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all bg-card rounded-lg p-3 md:p-4 h-full">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-foreground/40 group-hover:text-success transition-colors" />
-                      <span className="font-semibold text-sm md:text-base text-foreground truncate">
-                        {municipality.name}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       <section className="py-8 md:py-12 px-4 md:px-8 bg-foreground/5">
         <div className="container mx-auto max-w-4xl text-center">
@@ -781,7 +1018,7 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
   );
 }
 
-function ServicePage({ city, service, serviceSlug }: { city: CityData; service: TaxiService; serviceSlug: string }) {
+async function ServicePage({ city, service, serviceSlug }: { city: CityData; service: TaxiService; serviceSlug: string }) {
   const regionSlug = createRegionSlug(city.region);
   const content = generateUniqueServiceContent({
     serviceName: service.name,
@@ -789,6 +1026,215 @@ function ServicePage({ city, service, serviceSlug }: { city: CityData; service: 
     regionName: city.region,
     phone: service.phone,
   });
+
+  const isPartner = service.isPartner;
+  const isPremium = service.isPremium;
+
+  // Partner page - full branded page
+  if (isPartner) {
+    const partnerData = service.partnerData;
+    const heroImage = partnerData?.heroImage;
+
+    return (
+      <div className="min-h-screen bg-white">
+        <TaxiServiceSchema
+          service={service}
+          city={city}
+          citySlug={city.slug}
+          serviceSlug={serviceSlug}
+        />
+        <Header />
+
+        {/* Hero Section - Partner */}
+        <section className="pt-0 pb-12 md:pb-16 px-4 md:px-8 relative overflow-hidden min-h-[500px] md:min-h-[600px]">
+          {/* Background - Image or Gradient */}
+          {heroImage ? (
+            <>
+              <div
+                className="absolute inset-0 bg-no-repeat"
+                style={{
+                  backgroundImage: `url(${heroImage})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover'
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+            </>
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800" />
+              <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+            </>
+          )}
+          <Crown className="absolute left-8 top-32 h-16 w-16 text-yellow-400/20 hidden md:block" />
+          <Crown className="absolute right-8 bottom-32 h-16 w-16 text-yellow-400/20 hidden md:block" />
+
+          {/* Breadcrumbs inside hero */}
+          <div className="relative z-10">
+            <SEOBreadcrumbs
+              items={[
+                { label: city.region, href: `/kraj/${regionSlug}` },
+                { label: city.name, href: `/taxi/${city.slug}` },
+                { label: service.name },
+              ]}
+              variant="light"
+            />
+          </div>
+
+          <div className="container mx-auto max-w-4xl relative z-10">
+            <Link
+              href={`/taxi/${city.slug}`}
+              className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-bold mb-6"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Späť na zoznam taxislužieb
+            </Link>
+
+            <div className="text-center py-8 md:py-12">
+              {/* Badges */}
+              <div className="flex justify-center gap-2 mb-6">
+                <div className="bg-green-500 text-white text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                  <BadgeCheck className="h-4 w-4" />
+                  OVERENÉ
+                </div>
+                <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                  <Star className="h-4 w-4" />
+                  PARTNER
+                </div>
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 drop-shadow-lg">
+                {service.name}
+              </h1>
+              <p className="text-xl text-white/90 mb-8">
+                Profesionálna taxislužba v meste {city.name}
+              </p>
+
+              {/* Contact buttons */}
+              <div className="flex flex-wrap justify-center gap-4">
+                {service.phone && (
+                  <a
+                    href={`tel:${service.phone}`}
+                    className="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-300 text-purple-900 font-black text-xl md:text-2xl px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-105"
+                  >
+                    <Phone className="h-6 w-6" />
+                    {service.phone}
+                  </a>
+                )}
+                {service.website && (
+                  <a
+                    href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold px-6 py-4 rounded-xl transition-all"
+                  >
+                    <Globe className="h-5 w-5" />
+                    Navštíviť web
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-12 md:py-16 px-4 md:px-8 bg-white">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-2xl md:text-3xl font-black text-foreground mb-8 text-center">
+              Prečo si vybrať {service.name}?
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center p-6 bg-purple-50 rounded-xl">
+                <div className="w-16 h-16 rounded-full bg-purple-600 flex items-center justify-center mx-auto mb-4">
+                  <BadgeCheck className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-bold text-lg text-foreground mb-2">Overená taxislužba</h3>
+                <p className="text-foreground/70">Partner program zaručuje kvalitu a spoľahlivosť služieb.</p>
+              </div>
+              <div className="text-center p-6 bg-purple-50 rounded-xl">
+                <div className="w-16 h-16 rounded-full bg-purple-600 flex items-center justify-center mx-auto mb-4">
+                  <Phone className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-bold text-lg text-foreground mb-2">Rýchly kontakt</h3>
+                <p className="text-foreground/70">Jednoduché objednanie taxi telefonicky alebo cez web.</p>
+              </div>
+              <div className="text-center p-6 bg-purple-50 rounded-xl">
+                <div className="w-16 h-16 rounded-full bg-purple-600 flex items-center justify-center mx-auto mb-4">
+                  <Star className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-bold text-lg text-foreground mb-2">Profesionálny prístup</h3>
+                <p className="text-foreground/70">Skúsení vodiči a kvalitné vozidlá pre váš komfort.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Google Reviews Section - Dynamic */}
+        {partnerData?.googlePlaceId && (
+          <GoogleReviewsSection
+            placeId={partnerData.googlePlaceId}
+            serviceName={service.name}
+            googleMapsUrl={partnerData.googleMapsUrl}
+          />
+        )}
+
+        {/* CTA Section */}
+        <section className="py-12 md:py-16 px-4 md:px-8 bg-gradient-to-r from-yellow-400 to-yellow-500">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-2xl md:text-3xl font-black text-purple-900 mb-4">
+              Potrebujete taxi v meste {city.name}?
+            </h2>
+            <p className="text-purple-900/70 mb-6 text-lg">
+              Zavolajte nám a odvezieme vás kam potrebujete.
+            </p>
+            {service.phone && (
+              <a
+                href={`tel:${service.phone}`}
+                className="inline-flex items-center gap-3 bg-purple-900 text-white font-black text-2xl px-8 py-4 rounded-xl hover:bg-purple-800 transition-all shadow-lg"
+              >
+                <Phone className="h-7 w-7" />
+                {service.phone}
+              </a>
+            )}
+          </div>
+        </section>
+
+        {/* Other services */}
+        {city.taxiServices.length > 1 && (
+          <section className="py-12 md:py-16 px-4 md:px-8 bg-foreground/5">
+            <div className="container mx-auto max-w-4xl">
+              <h2 className="text-2xl font-black mb-6 text-foreground text-center">
+                Ďalšie taxislužby v meste {city.name}
+              </h2>
+              <div className="grid gap-3">
+                {[...city.taxiServices]
+                  .filter((s) => s.name !== service.name)
+                  .slice(0, 5)
+                  .map((otherService, index) => {
+                    const otherSlug = createServiceSlug(otherService.name);
+                    return (
+                      <Card key={index} className="perspective-1000">
+                        <Link href={`/taxi/${city.slug}/${otherSlug}`}>
+                          <div className="card-3d shadow-3d-sm hover:shadow-3d-md transition-all p-4">
+                            <div className="flex items-center gap-2">
+                              <MapPin className="h-4 w-4 text-foreground flex-shrink-0" />
+                              <span className="font-bold text-foreground">{otherService.name}</span>
+                            </div>
+                          </div>
+                        </Link>
+                      </Card>
+                    );
+                  })}
+              </div>
+            </div>
+          </section>
+        )}
+
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -820,32 +1266,39 @@ function ServicePage({ city, service, serviceSlug }: { city: CityData; service: 
             Späť na zoznam taxislužieb v meste {city.name}
           </Link>
 
-          <div className={`text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12 ${service.isPremium ? 'ring-4 ring-yellow-400' : ''}`}>
+          <div className={`text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12 ${isPremium ? 'ring-4 ring-yellow-500' : ''}`}>
             <div
               className="absolute inset-0"
               style={{
-                background: service.isPremium
-                  ? 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)'
+                background: isPremium
+                  ? 'linear-gradient(135deg, #b8860b 0%, #daa520 30%, #ffd700 50%, #daa520 70%, #b8860b 100%)'
                   : undefined
               }}
             />
-            {!service.isPremium && <div className="absolute inset-0 hero-3d-bg" />}
+            {!isPremium && <div className="absolute inset-0 hero-3d-bg" />}
 
-            {service.isPremium && (
+            {isPremium && (
               <>
-                <div className="absolute top-4 right-4 bg-yellow-400 text-purple-900 text-xs md:text-sm font-black px-3 py-1 rounded-full z-20">
-                  PREMIUM
+                <div className="absolute top-4 right-4 flex gap-2 z-20">
+                  <div className="bg-green-500 text-white text-xs md:text-sm font-black px-3 py-1 rounded-full flex items-center gap-1">
+                    <BadgeCheck className="h-4 w-4" />
+                    OVERENÉ
+                  </div>
+                  <div className="bg-amber-900 text-yellow-300 text-xs md:text-sm font-black px-3 py-1 rounded-full flex items-center gap-1">
+                    <Crown className="h-4 w-4" />
+                    PREMIUM
+                  </div>
                 </div>
-                <Crown className="absolute left-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-yellow-400 opacity-80 z-10" />
-                <Crown className="absolute right-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-yellow-400 opacity-80 z-10" />
+                <Crown className="absolute left-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-amber-900/40 z-10" />
+                <Crown className="absolute right-4 top-1/2 -translate-y-1/2 h-8 w-8 md:h-12 md:w-12 text-amber-900/40 z-10" />
               </>
             )}
 
             <div className="relative z-10">
-              <h1 className={`text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-none md:drop-shadow-md ${service.isPremium ? 'text-white' : 'text-foreground'}`}>
+              <h1 className={`text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-none md:drop-shadow-md ${isPremium ? 'text-black' : 'text-foreground'}`}>
                 {service.name}
               </h1>
-              <p className={`text-xl font-semibold ${service.isPremium ? 'text-white/95' : 'text-foreground/90'}`}>
+              <p className={`text-xl font-semibold ${isPremium ? 'text-black/80' : 'text-foreground/90'}`}>
                 Taxislužba v meste {city.name}
               </p>
             </div>
@@ -855,24 +1308,24 @@ function ServicePage({ city, service, serviceSlug }: { city: CityData; service: 
 
       <section className="py-12 md:py-16 px-4 md:px-8 relative bg-white">
         <div className="container mx-auto max-w-4xl relative z-10">
-          <Card className={`perspective-1000 mb-8 ${service.isPremium ? 'ring-2 ring-yellow-400' : ''}`}>
+          <Card className={`perspective-1000 mb-8 ${isPremium ? 'ring-2 ring-yellow-500' : ''}`}>
             <div
               className="card-3d shadow-3d-lg relative"
               style={{
-                background: service.isPremium
-                  ? 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)'
+                background: isPremium
+                  ? 'linear-gradient(135deg, #b8860b 0%, #daa520 30%, #ffd700 50%, #daa520 70%, #b8860b 100%)'
                   : undefined
               }}
             >
-              {service.isPremium && (
+              {isPremium && (
                 <>
-                  <Crown className="absolute left-2 top-1/2 -translate-y-1/2 h-6 w-6 text-yellow-400 opacity-60" />
-                  <Crown className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 text-yellow-400 opacity-60" />
+                  <Crown className="absolute left-2 top-1/2 -translate-y-1/2 h-6 w-6 text-amber-900/40" />
+                  <Crown className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 text-amber-900/40" />
                 </>
               )}
               <CardHeader>
-                <CardTitle className={`text-2xl font-bold flex items-center gap-3 ${service.isPremium ? 'text-white' : ''}`}>
-                  <MapPin className={`h-6 w-6 ${service.isPremium ? 'text-yellow-300' : 'text-success'}`} />
+                <CardTitle className={`text-2xl font-bold flex items-center gap-3 ${isPremium ? 'text-black' : ''}`}>
+                  <MapPin className={`h-6 w-6 ${isPremium ? 'text-black' : 'text-success'}`} />
                   Kontaktné informácie
                 </CardTitle>
               </CardHeader>
@@ -880,16 +1333,16 @@ function ServicePage({ city, service, serviceSlug }: { city: CityData; service: 
                 <div className="flex flex-col gap-4">
                   {service.phone && (
                     <div className="flex items-start gap-3">
-                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${service.isPremium ? 'bg-yellow-400' : 'bg-primary-yellow-light'}`}>
-                        <Phone className={`h-5 w-5 mt-0 ${service.isPremium ? 'text-purple-900' : 'text-primary-yellow-dark'}`} />
+                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${isPremium ? 'bg-amber-900' : 'bg-primary-yellow-light'}`}>
+                        <Phone className={`h-5 w-5 mt-0 ${isPremium ? 'text-yellow-300' : 'text-primary-yellow-dark'}`} />
                       </div>
                       <div>
-                        <p className={`text-sm font-medium mb-1 ${service.isPremium ? 'text-white/80' : 'text-neutral-text'}`}>
+                        <p className={`text-sm font-medium mb-1 ${isPremium ? 'text-black/70' : 'text-neutral-text'}`}>
                           Telefónne číslo
                         </p>
                         <a
                           href={`tel:${service.phone}`}
-                          className={`text-lg transition-colors font-bold ${service.isPremium ? 'text-white hover:text-white/80' : 'text-foreground hover:text-foreground/70'}`}
+                          className={`text-lg transition-colors font-bold ${isPremium ? 'text-black hover:text-black/80' : 'text-foreground hover:text-foreground/70'}`}
                           title={`Zavolať ${service.name}`}
                         >
                           {service.phone}
@@ -899,18 +1352,18 @@ function ServicePage({ city, service, serviceSlug }: { city: CityData; service: 
                   )}
                   {service.website && (
                     <div className="flex items-start gap-3">
-                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${service.isPremium ? 'bg-yellow-400' : 'bg-info-light'}`}>
-                        <Globe className={`h-5 w-5 mt-0 ${service.isPremium ? 'text-purple-900' : 'text-info'}`} />
+                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${isPremium ? 'bg-amber-900' : 'bg-info-light'}`}>
+                        <Globe className={`h-5 w-5 mt-0 ${isPremium ? 'text-yellow-300' : 'text-info'}`} />
                       </div>
                       <div>
-                        <p className={`text-sm font-medium mb-1 ${service.isPremium ? 'text-white/80' : 'text-neutral-text'}`}>
+                        <p className={`text-sm font-medium mb-1 ${isPremium ? 'text-black/70' : 'text-neutral-text'}`}>
                           Webová stránka
                         </p>
                         <a
                           href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`text-lg transition-colors font-bold ${service.isPremium ? 'text-white hover:text-white/80' : 'text-foreground hover:text-foreground/70'}`}
+                          className={`text-lg transition-colors font-bold ${isPremium ? 'text-black hover:text-black/80' : 'text-foreground hover:text-foreground/70'}`}
                           title={`Navštíviť webovú stránku ${service.name}`}
                         >
                           {truncateUrl(service.website)}
@@ -954,6 +1407,27 @@ function ServicePage({ city, service, serviceSlug }: { city: CityData; service: 
                   })}
                 </p>
               </>
+            )}
+
+            {/* Promo banner for non-Premium/Partner services */}
+            {!isPremium && !isPartner && (
+              <div className="my-6 p-4 bg-gradient-to-r from-purple-50 to-yellow-50 rounded-xl border border-foreground/10">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-600 to-yellow-500 flex items-center justify-center flex-shrink-0">
+                      <Star className="h-4 w-4 text-white" />
+                    </div>
+                    <p className="font-bold text-foreground text-sm">Ste majiteľom? <span className="font-normal text-foreground/70">Získajte lepšiu pozíciu</span></p>
+                  </div>
+                  <Link
+                    href="/pre-taxiky"
+                    className="inline-flex items-center gap-1.5 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all"
+                  >
+                    Zistiť viac
+                    <ArrowLeft className="h-3 w-3 rotate-180" />
+                  </Link>
+                </div>
+              </div>
             )}
 
             <p className="text-foreground/80 mb-4 leading-relaxed">{content.conclusion}</p>

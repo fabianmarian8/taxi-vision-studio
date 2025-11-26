@@ -89,7 +89,7 @@ export default function AdminCityDetailPage() {
     if (!city) return;
     setCity({
       ...city,
-      taxiServices: [...city.taxiServices, { name: '', phone: '', website: '', isPremium: false }],
+      taxiServices: [...city.taxiServices, { name: '', phone: '', website: '', isPremium: false, isPartner: false }],
     });
   };
 
@@ -269,19 +269,51 @@ export default function AdminCityDetailPage() {
                           />
                         </div>
 
+                        {/* PREMIUM checkbox - yellow/gold */}
                         <div className="flex items-center space-x-2 pt-2">
                           <Checkbox
                             id={`premium-${index}`}
                             checked={service.isPremium || false}
-                            onCheckedChange={(checked) =>
-                              updateTaxiService(index, 'isPremium', checked === true)
-                            }
+                            onCheckedChange={(checked) => {
+                              updateTaxiService(index, 'isPremium', checked === true);
+                              // Ak zapneme PREMIUM, vypneme PARTNER (vzájomne sa vylučujú)
+                              if (checked) {
+                                updateTaxiService(index, 'isPartner', false);
+                              }
+                            }}
                           />
                           <Label
                             htmlFor={`premium-${index}`}
-                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                            className="text-sm font-medium leading-none cursor-pointer"
                           >
-                            Prémiové zvýraznenie (fialové pozadie so zlatými korunkami)
+                            <span className="inline-flex items-center gap-2">
+                              <span className="px-2 py-0.5 bg-yellow-400 text-black rounded text-xs font-bold">PREMIUM</span>
+                              Zlaté zvýraznenie s TOP pozíciou (3,99€/mes)
+                            </span>
+                          </Label>
+                        </div>
+
+                        {/* PARTNER checkbox - purple */}
+                        <div className="flex items-center space-x-2 pt-2">
+                          <Checkbox
+                            id={`partner-${index}`}
+                            checked={service.isPartner || false}
+                            onCheckedChange={(checked) => {
+                              updateTaxiService(index, 'isPartner', checked === true);
+                              // Ak zapneme PARTNER, vypneme PREMIUM (vzájomne sa vylučujú)
+                              if (checked) {
+                                updateTaxiService(index, 'isPremium', false);
+                              }
+                            }}
+                          />
+                          <Label
+                            htmlFor={`partner-${index}`}
+                            className="text-sm font-medium leading-none cursor-pointer"
+                          >
+                            <span className="inline-flex items-center gap-2">
+                              <span className="px-2 py-0.5 bg-purple-600 text-white rounded text-xs font-bold">PARTNER</span>
+                              Fialové zvýraznenie s overením (8,99€/mes)
+                            </span>
                           </Label>
                         </div>
                       </div>

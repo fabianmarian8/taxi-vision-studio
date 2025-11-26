@@ -6569,7 +6569,8 @@
         {
           "name": "AIR TAXI ZVOLEN",
           "website": "https://airtaxizvolen.sk/",
-          "phone": "+421 905 891 958"
+          "phone": "+421 905 891 958",
+          "isPremium": true
         },
         {
           "name": "Taxi Zvolen",
@@ -6602,15 +6603,30 @@
           "phone": "+421 950 600 700"
         },
         {
-          "name": "Taxi Zvolen",
-          "phone": "+421 902 048 583",
-          "website": "https://zvolen-taxi.sk/",
-          "isPremium": true
-        },
-        {
           "name": "Lest Slavia Taxi Zvolen",
           "phone": "+421 902 048 583",
           "website": "https://lest-slavia-taxi.com/"
+        },
+        {
+          "name": "Fast Taxi Zvolen",
+          "phone": "+421 902 048 583",
+          "website": "https://zvolen-taxi.sk/",
+          "isPartner": true,
+          "partnerData": {
+            "heroImage": "/images/partners/fast-taxi-zvolen-hero.webp",
+            "shortDescription": "Spoľahlivá taxislužba vo Zvolene. Nonstop služby 24/7, letiskové transfery a firemná preprava.",
+            "description": "Fast Taxi Zvolen je profesionálna taxislužba s dlhoročnými skúsenosťami v oblasti osobnej prepravy. Ponúkame spoľahlivé služby 24 hodín denne, 7 dní v týždni. Naša flotila moderných vozidiel zabezpečí váš komfort a bezpečnosť na každej ceste.",
+            "services": [
+              "Nonstop služby 24/7",
+              "Letiskové transfery",
+              "Firemná preprava",
+              "Preprava na svadby",
+              "Diaľkové jazdy"
+            ],
+            "workingHours": "Nonstop 24/7",
+            "googlePlaceId": "ChIJe9x_Mpk3FUcRx7LLqAwRdYo",
+            "googleMapsUrl": "https://maps.app.goo.gl/i2jYFNbQaBq9odse7"
+          }
         }
       ],
       "latitude": 48.578252,
