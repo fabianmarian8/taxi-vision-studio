@@ -10,6 +10,17 @@ import { findNearestCity } from "@/lib/locationUtils";
 import { slovakCities } from "@/data/cities";
 import { allMunicipalities } from "@/data/municipalities";
 
+/**
+ * Normalizuje text - odstráni diakritiku a prevedie na malé písmená
+ * Napr. "Košice" -> "kosice", "Žilina" -> "zilina"
+ */
+const normalizeText = (text: string): string => {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+};
+
 export const SearchPanel = () => {
   const [searchValue, setSearchValue] = useState("");
   const [isLoadingLocation, setIsLoadingLocation] = useState(false);
@@ -22,14 +33,16 @@ export const SearchPanel = () => {
   // Filter cities AND municipalities based on search input
   useEffect(() => {
     if (searchValue.trim()) {
-      // Search in cities (with taxi services)
+      const normalizedSearch = normalizeText(searchValue);
+
+      // Search in cities (with taxi services) - supports search without diacritics
       const filteredCities = slovakCities
-        .filter((city) => city.name.toLowerCase().includes(searchValue.toLowerCase()))
+        .filter((city) => normalizeText(city.name).includes(normalizedSearch))
         .map((city) => ({ name: city.name, region: city.region, slug: city.slug, type: 'city' as const }));
 
       // Search in municipalities (without taxi services in our DB)
       const filteredMunicipalities = allMunicipalities
-        .filter((mun) => mun.name.toLowerCase().includes(searchValue.toLowerCase()))
+        .filter((mun) => normalizeText(mun.name).includes(normalizedSearch))
         .filter((mun) => !slovakCities.some(city => city.slug === mun.slug)) // Exclude duplicates
         .map((mun) => ({ name: mun.name, region: mun.region, slug: mun.slug, type: 'municipality' as const }));
 
@@ -69,9 +82,11 @@ export const SearchPanel = () => {
       return;
     }
 
-    // Try exact match first in cities
+    const normalizedSearch = normalizeText(searchValue);
+
+    // Try exact match first in cities (supports search without diacritics)
     const exactCityMatch = slovakCities.find(
-      (city) => city.name.toLowerCase() === searchValue.toLowerCase()
+      (city) => normalizeText(city.name) === normalizedSearch
     );
 
     if (exactCityMatch) {
@@ -81,7 +96,7 @@ export const SearchPanel = () => {
 
     // Try exact match in municipalities
     const exactMunMatch = allMunicipalities.find(
-      (mun) => mun.name.toLowerCase() === searchValue.toLowerCase()
+      (mun) => normalizeText(mun.name) === normalizedSearch
     );
 
     if (exactMunMatch) {
