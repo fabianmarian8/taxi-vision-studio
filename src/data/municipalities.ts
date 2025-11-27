@@ -26,14 +26,31 @@ const precomputedDistanceMap = new Map<string, PrecomputedDistance>();
   precomputedDistanceMap.set(`${d.municipalitySlug}:${d.citySlug}`, d);
 });
 
-// Transform obce.json format (x,y) to our format (latitude, longitude)
-const allMunicipalities: Municipality[] = municipalitiesData.map((item: { name: string; district: string; region: string; x: number; y: number }) => {
-  const slug = item.name
+// Helper function to generate slug from text
+const toSlug = (text: string): string => {
+  return text
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '');
+};
+
+// First pass: count occurrences of each name to detect duplicates
+const nameCount = new Map<string, number>();
+municipalitiesData.forEach((item: { name: string }) => {
+  nameCount.set(item.name, (nameCount.get(item.name) || 0) + 1);
+});
+
+// Transform obce.json format (x,y) to our format (latitude, longitude)
+// For duplicate names, include district in slug to make it unique
+const allMunicipalities: Municipality[] = municipalitiesData.map((item: { name: string; district: string; region: string; x: number; y: number }) => {
+  const isDuplicate = (nameCount.get(item.name) || 0) > 1;
+
+  // For duplicate names, create slug with district (e.g., "bohunice-ilava")
+  const slug = isDuplicate
+    ? toSlug(`${item.name}-${item.district}`)
+    : toSlug(item.name);
 
   return {
     name: item.name,
