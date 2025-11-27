@@ -8,7 +8,9 @@
 
 import { MetadataRoute } from 'next';
 import citiesData from '@/data/cities.json';
-import allMunicipalities from '../slovenske-obce-main/obce.json';
+import { allMunicipalities } from '@/data/municipalities';
+import { getDistrictForMunicipality } from '@/data/districts';
+import { createRegionSlug } from '@/data/cities';
 
 // Performance optimization: Cache sitemap for 24 hours
 export const revalidate = 86400; // 24 hours in seconds
@@ -19,15 +21,6 @@ export const runtime = 'nodejs';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.taxinearme.sk';
   const currentDate = new Date();
-
-  // Helper funkcia pre vytvorenie slug z názvu kraja
-  const createRegionSlug = (regionName: string): string => {
-    return regionName
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/\s+/g, '-');
-  };
 
   // Helper funkcia pre vytvorenie slug z názvu taxislužby (cached)
   const slugCache = new Map<string, string>();
@@ -135,27 +128,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // Pridanie všetkých slovenských obcí (~2900)
+  // Pridanie všetkých slovenských obcí (~2900) v hierarchickom formáte
+  // /taxi/[kraj]/[okres]/[obec]
   // Filtrujeme duplicity - obce, ktoré už sú v Tier 1 mestách
   const existingSlugs = new Set(citiesData.cities.map((c) => c.slug));
 
   allMunicipalities.forEach((obec) => {
-    // Vytvorenie slug z názvu obce
-    const slug = obec.name
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)/g, '');
-
     // Pridať iba ak už nie je pokryté v hlavnom zozname miest
-    if (!existingSlugs.has(slug)) {
-      sitemap.push({
-        url: `${baseUrl}/taxi/${slug}`,
-        lastModified: currentDate,
-        changeFrequency: 'monthly',
-        priority: 0.5,
-      });
+    if (!existingSlugs.has(obec.slug)) {
+      // Získať district pre správny hierarchický URL formát
+      const district = getDistrictForMunicipality(obec);
+
+      if (district) {
+        // Hierarchický formát: /taxi/[regionSlug]/[districtSlug]/[municipalitySlug]
+        sitemap.push({
+          url: `${baseUrl}/taxi/${district.regionSlug}/${district.slug}/${obec.slug}`,
+          lastModified: currentDate,
+          changeFrequency: 'monthly',
+          priority: 0.5,
+        });
+      }
     }
   });
 
