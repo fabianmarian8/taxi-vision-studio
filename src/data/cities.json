@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-27T11:13:01.887Z",
+  "lastUpdated": "2025-11-27T11:15:16.269Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -7317,6 +7317,13 @@
           "isPremium": true,
           "isPromotional": true,
           "premiumExpiresAt": "2025-12-03T20:14:09.941Z"
+        },
+        {
+          "name": "Peter Antal taxislužba",
+          "phone": "+421516588045",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 49.13859,
