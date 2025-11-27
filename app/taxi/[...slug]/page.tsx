@@ -908,7 +908,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
                         href={`/taxi/${city.slug}`}
                         className="mt-3 inline-block text-sm font-bold text-primary-yellow hover:underline"
                       >
-                        Zobraziť všetky taxislužby {locationText} {city.name} →
+                        Zobraziť všetky taxislužby v meste {city.name} →
                       </Link>
                     </CardContent>
                   </div>
