@@ -13,6 +13,32 @@ interface AzetService {
   azet_id: string;
 }
 
+// Azet.sk reklamné/sprostredkovateľské čísla - IGNOROVAŤ
+const AZET_BLACKLISTED_PHONES = [
+  '516588045',  // Azet call centrum
+  '421516588045',
+  '+421516588045',
+];
+
+// Kontrola či je číslo mobilné (09xx prefix)
+function isMobilePhone(phone: string): boolean {
+  const cleaned = phone.replace(/[^0-9]/g, '');
+  // Slovenské mobilné čísla: 09xx xxx xxx alebo +421 9xx xxx xxx
+  if (cleaned.startsWith('09') && cleaned.length === 10) return true;
+  if (cleaned.startsWith('4219') && cleaned.length === 12) return true;
+  if (cleaned.startsWith('9') && cleaned.length === 9) return true;
+  return false;
+}
+
+// Kontrola či je číslo na blackliste
+function isBlacklistedPhone(phone: string): boolean {
+  const cleaned = phone.replace(/[^0-9]/g, '');
+  return AZET_BLACKLISTED_PHONES.some(bp => {
+    const bpCleaned = bp.replace(/[^0-9]/g, '');
+    return cleaned.includes(bpCleaned) || bpCleaned.includes(cleaned);
+  });
+}
+
 // Simple fetch using native https
 function fetchUrl(url: string): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -70,12 +96,34 @@ function extractCompanyDetails(html: string, url: string): AzetService | null {
 
   if (!name) return null;
 
-  const phoneMatch = html.match(/href="tel:([^"]+)"/);
-  let phone = phoneMatch ? phoneMatch[1] : null;
+  // Nájdi VŠETKY telefónne čísla na stránke
+  const allPhones: string[] = [];
 
-  if (!phone) {
-    const phoneMatch2 = html.match(/(\+421|0)\s*\d{3}\s*\d{3}\s*\d{3}/);
-    phone = phoneMatch2 ? phoneMatch2[0].replace(/\s/g, '') : null;
+  // 1. Čísla z href="tel:..."
+  const telMatches = html.matchAll(/href="tel:([^"]+)"/g);
+  for (const match of telMatches) {
+    allPhones.push(match[1]);
+  }
+
+  // 2. Čísla v texte (slovenský formát)
+  const textMatches = html.matchAll(/(\+421|0)\s*\d{3}\s*\d{3}\s*\d{3}/g);
+  for (const match of textMatches) {
+    allPhones.push(match[0].replace(/\s/g, ''));
+  }
+
+  // Odstráň blacklistované čísla
+  const validPhones = allPhones.filter(p => !isBlacklistedPhone(p));
+
+  // Uprednostni mobilné čísla
+  const mobilePhones = validPhones.filter(p => isMobilePhone(p));
+  const landlinePhones = validPhones.filter(p => !isMobilePhone(p));
+
+  // Vyber najlepšie číslo: mobilné > pevná linka > null
+  let phone: string | null = null;
+  if (mobilePhones.length > 0) {
+    phone = mobilePhones[0];
+  } else if (landlinePhones.length > 0) {
+    phone = landlinePhones[0];
   }
 
   const streetMatch = html.match(/itemprop="streetAddress">([^<]+)</);
