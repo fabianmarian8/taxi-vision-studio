@@ -314,12 +314,12 @@ export const SearchPanel = () => {
                   setShowDropdown(true);
                 }
               }}
-              className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-sm md:text-base placeholder:text-muted-foreground text-foreground font-medium"
+              className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base placeholder:text-muted-foreground text-foreground font-medium"
             />
 
             {/* Autocomplete Dropdown */}
             {showDropdown && filteredResults.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-2 bg-card rounded-lg md:rounded-xl border-2 border-foreground/20 max-h-80 overflow-y-auto z-50">
+              <div className="absolute top-full left-0 right-0 mt-2 bg-card rounded-lg md:rounded-xl border-2 border-foreground/20 max-h-80 overflow-y-auto z-[9999] shadow-lg">
                 {filteredResults.slice(0, 10).map((result, index) => (
                   <button
                     key={result.slug}
