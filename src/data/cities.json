@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-27T11:16:04.988Z",
+  "lastUpdated": "2025-11-27T11:19:23.259Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -7696,6 +7696,20 @@
           "name": "KERAM TAXI Žilina",
           "website": "http://www.keramtaxi.sk",
           "phone": "+421948235235"
+        },
+        {
+          "name": "TAXI LACI Žilina",
+          "phone": "+421940244233",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "Branislav Hrabovský AA - CITY TAXI, autobusové nástupište",
+          "phone": "+421415625555",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 49.223467,
