@@ -23,6 +23,8 @@ const buttonVariants = cva(
         warning: "bg-[#ffe08a] text-foreground hover:bg-[#ffd970] active:bg-[#ffd257]",
         // Danger - červená
         danger: "bg-[#f14668] text-white hover:bg-[#ef3a5d] active:bg-[#ee2d52]",
+        // Destructive - alias pre danger (kompatibilita s shadcn/ui)
+        destructive: "bg-[#f14668] text-white hover:bg-[#ef3a5d] active:bg-[#ee2d52]",
         // Outline varianta
         outline: "bg-transparent border-foreground/30 text-foreground hover:bg-foreground/5 active:bg-foreground/10",
         // Ghost - bez pozadia
