@@ -35,8 +35,8 @@ export default function HomePage() {
       {/* Header má z-50 (definované v komponente) - sticky navrchu */}
       <Header />
 
-      {/* Hero Section - z-10 */}
-      <section className="pt-4 pb-6 md:pt-8 md:pb-8 px-4 md:px-8 relative bg-white z-10">
+      {/* Hero Section */}
+      <section className="pt-4 pb-6 md:pt-8 md:pb-8 px-4 md:px-8 relative hero-3d-bg z-10">
         <GeometricLines variant="hero" count={10} />
         <div className="container mx-auto max-w-6xl relative">
           <div className="text-center space-y-2 md:space-y-3">

@@ -37,7 +37,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-background border-b-4 border-foreground backdrop-blur-sm bg-background/95">
+    <header className="sticky top-0 z-50 bg-[#f5a623] border-b-4 border-foreground backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-8 py-1.5 md:py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3">
@@ -91,18 +91,18 @@ export const Header = () => {
             )}
           </button>
 
-          <Button
+          <button
             onClick={() => setIsContactModalOpen(true)}
-            className="rounded-full min-h-[44px] min-w-[44px] px-2.5 py-2 sm:px-3 md:px-4 lg:px-5 md:py-3 lg:py-4 transition-all font-bold flex-shrink-0 max-w-[140px] sm:max-w-none"
+            className="home-button"
           >
-            <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 lg:gap-3">
-              <Plus className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
-              <div className="flex flex-col items-start -space-y-0.5 md:-space-y-1 overflow-hidden">
-                <span className="text-[10px] sm:text-[11px] md:text-sm lg:text-base font-bold leading-tight truncate">Niečo tu chýba?</span>
-                <span className="text-[8px] sm:text-[9px] md:text-xs font-normal leading-tight truncate">+pridanie/oprava</span>
-              </div>
-            </div>
-          </Button>
+            <span>+</span>
+            <span>p</span>
+            <span>r</span>
+            <span>i</span>
+            <span>d</span>
+            <span>a</span>
+            <span>ť</span>
+          </button>
         </div>
       </div>
 

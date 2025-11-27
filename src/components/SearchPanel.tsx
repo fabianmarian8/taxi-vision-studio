@@ -332,7 +332,7 @@ export const SearchPanel = () => {
       {/* Search Input Container - toto je reference element pre Floating UI */}
       <div
         ref={refs.setReference}
-        className="bg-card rounded-xl md:rounded-2xl border-2 border-foreground/20 p-1.5 md:p-2 flex items-center gap-1.5 md:gap-2"
+        className="bg-card rounded-[4px] border border-foreground/20 p-1.5 md:p-2 flex items-center gap-1.5 md:gap-2"
       >
         <div className="flex-1 flex items-center gap-2 md:gap-3 px-2 md:px-4">
           <Search className="h-4 w-4 md:h-5 md:w-5 text-foreground flex-shrink-0" />
@@ -352,20 +352,20 @@ export const SearchPanel = () => {
         </div>
 
         <Button
-          variant="default"
+          variant="secondary"
           size="icon"
           onClick={handleSearch}
-          className="rounded-full h-10 w-10 md:h-12 md:w-12 flex-shrink-0"
+          className="rounded-[4px] h-10 w-10 md:h-12 md:w-12 flex-shrink-0"
         >
           <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
         </Button>
 
         <Button
-          variant="default"
+          variant="secondary"
           size="icon"
           onClick={handleLocationClick}
           disabled={isLoadingLocation}
-          className="rounded-full h-10 w-10 md:h-12 md:w-12 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+          className="rounded-[4px] h-10 w-10 md:h-12 md:w-12 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
         >
           {isLoadingLocation ? (
             <Loader2 className="h-4 w-4 md:h-5 md:w-5 animate-spin" />
@@ -385,7 +385,7 @@ export const SearchPanel = () => {
               zIndex: 9999,
               width: refs.reference.current?.getBoundingClientRect().width || 'auto',
             }}
-            className="bg-card rounded-lg md:rounded-xl border-2 border-foreground/20 overflow-y-auto shadow-xl"
+            className="bg-card rounded-[4px] border border-foreground/20 overflow-y-auto shadow-lg"
           >
             {filteredResults.slice(0, 10).map((result, index) => (
               <button
