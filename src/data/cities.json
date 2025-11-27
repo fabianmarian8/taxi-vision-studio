@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-27T11:39:56.558Z",
+  "lastUpdated": "2025-11-27T11:42:24.890Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4080,6 +4080,13 @@
         {
           "name": "AB Taxi",
           "phone": "+421 904 311 800"
+        },
+        {
+          "name": "Elpo Taxi s.r.o.",
+          "phone": "+421905156650",
+          "website": "https://www.elpotaxi.sk",
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 47.986184,
