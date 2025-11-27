@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-27T11:05:21.925Z",
+  "lastUpdated": "2025-11-27T11:11:54.119Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -754,6 +754,48 @@
           "name": "Transfer Schwechat",
           "phone": "+421918561282",
           "website": "https://transferschwechat.sk/"
+        },
+        {
+          "name": "Miroslav Mrafko  -  RADIO - TAXI",
+          "phone": "+421216303",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "Delta TAXI, s.r.o.",
+          "phone": "+421253411873",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "TAXI BRATISLAVA spol. s r.o.",
+          "phone": "+421516588045",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "OTTO TAXI, družstvo",
+          "phone": "+421263453748",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "Dopravný záchranný systém Prima-Taxi, s.r.o.",
+          "phone": "+421216661",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "TAXI Bratislava PROFI a.s.",
+          "phone": "+421216222",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.151699,
