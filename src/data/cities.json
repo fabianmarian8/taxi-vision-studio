@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-27T11:42:24.890Z",
+  "lastUpdated": "2025-11-27T11:43:54.452Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4997,6 +4997,13 @@
         {
           "name": "Janco Taxi",
           "phone": "+421908407107"
+        },
+        {
+          "name": "Peter Stano - Taxi služba",
+          "phone": "+421905331661",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 49.081572,
