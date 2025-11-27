@@ -11,6 +11,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 interface AzetService {
   name: string;
   phone: string | null;
+  website: string | null;
   address: string | null;
   city: string | null;
   postalCode: string | null;
@@ -144,7 +145,7 @@ export default function AzetScraperPage() {
       const newServices = selectedServices.map(s => ({
         name: s.name,
         phone: s.phone || '',
-        website: null,
+        website: s.website || null,
         isPremium: false,
         isPromotional: false
       }));
@@ -298,6 +299,11 @@ export default function AzetScraperPage() {
                           <div className="text-sm text-muted-foreground space-y-1 mt-1">
                             {service.phone && (
                               <div>Tel: {service.phone}</div>
+                            )}
+                            {service.website && (
+                              <div>
+                                Web: <a href={service.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{service.website}</a>
+                              </div>
                             )}
                             {service.address && (
                               <div>Adresa: {service.address}, {service.postalCode} {service.city}</div>

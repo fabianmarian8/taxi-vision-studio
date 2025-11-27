@@ -5,6 +5,7 @@ import * as https from 'https';
 interface AzetService {
   name: string;
   phone: string | null;
+  website: string | null;
   address: string | null;
   city: string | null;
   postalCode: string | null;
@@ -137,7 +138,42 @@ function extractCompanyDetails(html: string, url: string): AzetService | null {
   const descMatch = html.match(/itemprop="description"[^>]*>([^<]+)</);
   const description = descMatch ? descMatch[1].trim() : null;
 
-  return { name, phone, address, city, postalCode, description, azet_url: url, azet_id };
+  // Nájdi webovú stránku firmy
+  let website: string | null = null;
+
+  // 1. Hľadaj itemprop="url" (štandardný spôsob)
+  const urlMatch = html.match(/itemprop="url"[^>]*href="(https?:\/\/[^"]+)"/);
+  if (urlMatch && !urlMatch[1].includes('azet.sk')) {
+    website = urlMatch[1];
+  }
+
+  // 2. Hľadaj v sekcii "Web" alebo externé linky
+  if (!website) {
+    const webLinkMatch = html.match(/class="[^"]*web[^"]*"[^>]*href="(https?:\/\/[^"]+)"/i);
+    if (webLinkMatch && !webLinkMatch[1].includes('azet.sk')) {
+      website = webLinkMatch[1];
+    }
+  }
+
+  // 3. Hľadaj akýkoľvek externý http link (nie azet.sk, facebook, google)
+  if (!website) {
+    const externalLinks = html.matchAll(/href="(https?:\/\/(?!www\.azet\.sk|www\.facebook\.com|www\.google\.com|maps\.google)[^"]+)"/g);
+    for (const match of externalLinks) {
+      const link = match[1];
+      // Filtruj len reálne firemné stránky
+      if (!link.includes('azet.sk') &&
+          !link.includes('facebook.com') &&
+          !link.includes('google.com') &&
+          !link.includes('instagram.com') &&
+          !link.includes('twitter.com') &&
+          !link.includes('youtube.com')) {
+        website = link;
+        break;
+      }
+    }
+  }
+
+  return { name, phone, website, address, city, postalCode, description, azet_url: url, azet_id };
 }
 
 // Normalize phone for comparison
