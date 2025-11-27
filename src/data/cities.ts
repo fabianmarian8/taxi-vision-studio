@@ -32,6 +32,7 @@ export interface CityData {
   latitude?: number;
   longitude?: number;
   heroImage?: string;
+  isVillage?: boolean; // true pre obce, ktoré majú taxi ale nie sú mestá
 }
 
 // Načítanie dát z JSON súboru
@@ -56,11 +57,11 @@ export const createRegionSlug = (regionName: string): string => {
     .replace(/\s+/g, '-'); // Nahradenie medzier pomlčkami
 };
 
-// Získanie miest v danom kraji
+// Získanie miest v danom kraji (vylúči obce s isVillage: true)
 export const getCitiesByRegion = (regionName: string): CityData[] => {
-  return slovakCities.filter(city => city.region === regionName).sort((a, b) =>
-    a.name.localeCompare(b.name, 'sk')
-  );
+  return slovakCities
+    .filter(city => city.region === regionName && !city.isVillage)
+    .sort((a, b) => a.name.localeCompare(b.name, 'sk'));
 };
 
 // Získanie kraja podľa slug

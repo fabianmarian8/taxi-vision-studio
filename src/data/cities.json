@@ -7651,7 +7651,8 @@
         }
       ],
       "latitude": 49.388036,
-      "longitude": 19.294605
+      "longitude": 19.294605,
+      "isVillage": true
     },
     {
       "name": "Žilina",
