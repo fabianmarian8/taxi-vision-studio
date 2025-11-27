@@ -13,7 +13,9 @@
     "test:ui": "vitest --ui",
     "prepare": "husky",
     "precompute-distances": "node --loader ts-node/esm scripts/precompute-distances.ts",
-    "seed-premium": "node scripts/seed-marketing-premium.js"
+    "seed-premium": "node scripts/seed-marketing-premium.js",
+    "scrape-azet": "node --loader ts-node/esm scripts/scrape-azet-taxi.ts",
+    "import-azet": "node --loader ts-node/esm scripts/import-azet-data.ts"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.16",

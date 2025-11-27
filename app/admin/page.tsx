@@ -77,6 +77,21 @@ export default async function AdminDashboard() {
               </CardContent>
             </Card>
           </Link>
+
+          {/* Azet Scraper Card */}
+          <Link href="/admin/azet-scraper">
+            <Card className="cursor-pointer border-yellow-200 bg-yellow-50/50">
+              <CardHeader>
+                <CardTitle>Azet.sk Scraper</CardTitle>
+                <CardDescription>
+                  Vyhľadať a importovať nové taxislužby z Azet.sk katalógu
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full" variant="outline">Otvoriť</Button>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
 
         {/* Instructions */}

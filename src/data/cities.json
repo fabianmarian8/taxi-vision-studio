@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-26T20:14:09.943Z",
+  "lastUpdated": "2025-11-27T11:05:21.925Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -106,6 +106,34 @@
           "name": "inTAXI Banská Bystrica",
           "phone": "+421940777757",
           "website": "http://www.intaxi.sk"
+        },
+        {
+          "name": "Vladimír Vierg  - BB-TAXI",
+          "phone": "+421484115757",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "TAXI JAROSLAV KEJMAR s.r.o.",
+          "phone": "+421516588045",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "City Taxi Banská Bystrica",
+          "phone": "+421484125551",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "SYNBY TAXI",
+          "phone": "+421484141111",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.738403,

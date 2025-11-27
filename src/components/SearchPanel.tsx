@@ -108,17 +108,26 @@ export const SearchPanel = () => {
     }
   }, [searchValue]);
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside (but not on floating dropdown)
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setShowDropdown(false);
+      const target = event.target as Node;
+      const floatingElement = refs.floating.current;
+
+      // Don't close if clicking inside container or floating dropdown
+      if (containerRef.current && containerRef.current.contains(target)) {
+        return;
       }
+      if (floatingElement && floatingElement.contains(target)) {
+        return;
+      }
+
+      setShowDropdown(false);
     };
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [refs.floating]);
 
   const navigateToLocation = (slug: string, name: string) => {
     router.push(`/taxi/${slug}`);
