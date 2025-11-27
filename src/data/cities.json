@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-27T11:43:54.452Z",
+  "lastUpdated": "2025-11-27T11:48:38.406Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -754,20 +754,6 @@
           "name": "Transfer Schwechat",
           "phone": "+421918561282",
           "website": "https://transferschwechat.sk/"
-        },
-        {
-          "name": "Miroslav Mrafko  -  RADIO - TAXI",
-          "phone": "+421216303",
-          "website": null,
-          "isPremium": false,
-          "isPromotional": false
-        },
-        {
-          "name": "Delta TAXI, s.r.o.",
-          "phone": "+421253411873",
-          "website": null,
-          "isPremium": false,
-          "isPromotional": false
         },
         {
           "name": "TAXI BRATISLAVA ",
