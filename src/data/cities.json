@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-27T11:19:23.259Z",
+  "lastUpdated": "2025-11-27T11:39:56.558Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -787,6 +787,27 @@
           "name": "TAXI Bratislava PROFI a.s.",
           "phone": "+421216222",
           "website": null,
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "Miroslav Mrafko  -  RADIO - TAXI",
+          "phone": "+421911987303",
+          "website": "https://www.radio-taxi.sk",
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "Delta TAXI, s.r.o.",
+          "phone": "+421903276111",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "Taxi do Viedne",
+          "phone": "+421948997878",
+          "website": "https://www.taxidoviedne.sk",
           "isPremium": false,
           "isPromotional": false
         }
