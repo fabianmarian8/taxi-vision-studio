@@ -10,6 +10,15 @@ import { findNearestCity } from "@/lib/locationUtils";
 import { slovakCities } from "@/data/cities";
 import { allMunicipalities } from "@/data/municipalities";
 import { looksLikePostalCode, findByPostalCode, normalizePostalCode } from "@/data/postal-codes";
+import {
+  useFloating,
+  autoUpdate,
+  offset,
+  flip,
+  shift,
+  size,
+  FloatingPortal,
+} from "@floating-ui/react";
 
 /**
  * Normalizuje text - odstráni diakritiku a prevedie na malé písmená
@@ -28,8 +37,29 @@ export const SearchPanel = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [filteredResults, setFilteredResults] = useState<Array<{ name: string; region: string; slug: string; type: 'city' | 'municipality' }>>([]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+
+  // Floating UI setup - automaticky drží dropdown pripojený k input kontajneru
+  const { refs, floatingStyles } = useFloating({
+    open: showDropdown && filteredResults.length > 0,
+    placement: 'bottom-start',
+    middleware: [
+      offset(8), // 8px medzera pod inputom
+      flip({ fallbackPlacements: ['top-start'] }), // ak niet miesta dole, ukáž hore
+      shift({ padding: 16 }), // 16px od okrajov viewportu
+      size({
+        apply({ availableHeight, elements }) {
+          // Nastav max výšku podľa dostupného priestoru
+          Object.assign(elements.floating.style, {
+            maxHeight: `${Math.min(availableHeight - 16, 320)}px`,
+          });
+        },
+        padding: 16,
+      }),
+    ],
+    whileElementsMounted: autoUpdate, // automaticky aktualizuje pozíciu pri scroll/resize
+  });
 
   // Filter cities AND municipalities based on search input (supports PSČ)
   useEffect(() => {
@@ -81,7 +111,7 @@ export const SearchPanel = () => {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
         setShowDropdown(false);
       }
     };
@@ -298,8 +328,12 @@ export const SearchPanel = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4 relative" ref={dropdownRef}>
-      <div className="bg-card rounded-xl md:rounded-2xl border-2 border-foreground/20 p-1.5 md:p-2 flex items-center gap-1.5 md:gap-2">
+    <div className="w-full max-w-2xl mx-auto px-4" ref={containerRef}>
+      {/* Search Input Container - toto je reference element pre Floating UI */}
+      <div
+        ref={refs.setReference}
+        className="bg-card rounded-xl md:rounded-2xl border-2 border-foreground/20 p-1.5 md:p-2 flex items-center gap-1.5 md:gap-2"
+      >
         <div className="flex-1 flex items-center gap-2 md:gap-3 px-2 md:px-4">
           <Search className="h-4 w-4 md:h-5 md:w-5 text-foreground flex-shrink-0" />
           <Input
@@ -341,35 +375,42 @@ export const SearchPanel = () => {
         </Button>
       </div>
 
-      {/* Autocomplete Dropdown - priamo pod search barom, v rovnakom relative kontajneri */}
+      {/* Autocomplete Dropdown - renderované cez FloatingPortal mimo DOM hierarchie */}
       {showDropdown && filteredResults.length > 0 && (
-        <div
-          className="absolute left-0 right-0 mt-2 mx-4 bg-card rounded-lg md:rounded-xl border-2 border-foreground/20 max-h-[50vh] md:max-h-80 overflow-y-auto shadow-xl"
-          style={{ zIndex: 9999 }}
-        >
-          {filteredResults.slice(0, 10).map((result, index) => (
-            <button
-              key={result.slug}
-              onClick={() => navigateToLocation(result.slug, result.name)}
-              className={`w-full text-left px-4 md:px-6 py-2.5 md:py-3 hover:bg-foreground/5 active:bg-foreground/10 transition-colors border-b border-foreground/5 last:border-b-0 ${
-                index === selectedIndex ? "bg-foreground/10" : ""
-              }`}
-            >
-              <div className="flex items-center gap-2">
-                <div className="font-semibold text-sm md:text-base text-foreground">{result.name}</div>
-                {result.type === 'municipality' && (
-                  <span className="text-xs bg-foreground/10 px-1.5 py-0.5 rounded text-foreground/70">obec</span>
-                )}
+        <FloatingPortal>
+          <div
+            ref={refs.setFloating}
+            style={{
+              ...floatingStyles,
+              zIndex: 9999,
+              width: refs.reference.current?.getBoundingClientRect().width || 'auto',
+            }}
+            className="bg-card rounded-lg md:rounded-xl border-2 border-foreground/20 overflow-y-auto shadow-xl"
+          >
+            {filteredResults.slice(0, 10).map((result, index) => (
+              <button
+                key={result.slug}
+                onClick={() => navigateToLocation(result.slug, result.name)}
+                className={`w-full text-left px-4 md:px-6 py-2.5 md:py-3 hover:bg-foreground/5 active:bg-foreground/10 transition-colors border-b border-foreground/5 last:border-b-0 ${
+                  index === selectedIndex ? "bg-foreground/10" : ""
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  <div className="font-semibold text-sm md:text-base text-foreground">{result.name}</div>
+                  {result.type === 'municipality' && (
+                    <span className="text-xs bg-foreground/10 px-1.5 py-0.5 rounded text-foreground/70">obec</span>
+                  )}
+                </div>
+                <div className="text-xs md:text-sm text-foreground/60 mt-0.5">{result.region}</div>
+              </button>
+            ))}
+            {filteredResults.length > 10 && (
+              <div className="px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm text-foreground/60 text-center border-t border-foreground/10">
+                Zobrazených prvých 10 z {filteredResults.length} výsledkov
               </div>
-              <div className="text-xs md:text-sm text-foreground/60 mt-0.5">{result.region}</div>
-            </button>
-          ))}
-          {filteredResults.length > 10 && (
-            <div className="px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm text-foreground/60 text-center border-t border-foreground/10">
-              Zobrazených prvých 10 z {filteredResults.length} výsledkov
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        </FloatingPortal>
       )}
 
       <p className="text-center text-xs md:text-sm text-foreground font-bold mt-3 md:mt-4">

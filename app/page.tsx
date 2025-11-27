@@ -70,8 +70,8 @@ export default function HomePage() {
          Aplikujeme bg-white na každú sekciu zvlášť.
       */}
 
-      {/* SEARCH SECTION: z-40 nad ostatnými sekciami */}
-      <section className="pt-6 pb-12 md:pt-8 md:pb-16 px-4 md:px-8 relative bg-white z-40">
+      {/* SEARCH SECTION */}
+      <section className="pt-6 pb-12 md:pt-8 md:pb-16 px-4 md:px-8 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
             <SearchPanel />
@@ -79,9 +79,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* REGIONS GRID: z-0
-         Explicitne nižší index, aby bol pod Search dropdownom.
-      */}
+      {/* REGIONS GRID */}
       <section id="cities" className="py-7 md:py-12 lg:py-14 px-2 md:px-5 bg-white relative">
         <GeometricLines variant="subtle" count={6} />
         <div className="container mx-auto max-w-7xl relative">
