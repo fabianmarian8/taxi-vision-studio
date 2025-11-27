@@ -98,8 +98,8 @@ export const Header = () => {
             <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 lg:gap-3">
               <Plus className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
               <div className="flex flex-col items-start -space-y-0.5 md:-space-y-1 overflow-hidden">
-                <span className="text-[10px] sm:text-[11px] md:text-sm lg:text-base font-bold leading-tight truncate">Chýba/Chyba?</span>
-                <span className="text-[8px] sm:text-[9px] md:text-xs font-normal leading-tight truncate">+Pridať/Opraviť</span>
+                <span className="text-[10px] sm:text-[11px] md:text-sm lg:text-base font-bold leading-tight truncate">Niečo tu chýba?</span>
+                <span className="text-[8px] sm:text-[9px] md:text-xs font-normal leading-tight truncate">+pridanie/oprava</span>
               </div>
             </div>
           </Button>
