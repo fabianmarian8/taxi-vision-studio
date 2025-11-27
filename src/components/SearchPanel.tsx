@@ -4,7 +4,6 @@ import { Search, MapPin, Loader2, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useState, useEffect, useRef } from "react";
-import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { findNearestCity } from "@/lib/locationUtils";
@@ -29,41 +28,8 @@ export const SearchPanel = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [filteredResults, setFilteredResults] = useState<Array<{ name: string; region: string; slug: string; type: 'city' | 'municipality' }>>([]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0, width: 0 });
-  const [isMounted, setIsMounted] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const inputContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-
-  // Mount check for portal
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  // Update dropdown position when showing and on scroll/resize
-  useEffect(() => {
-    const updatePosition = () => {
-      if (showDropdown && inputContainerRef.current) {
-        const rect = inputContainerRef.current.getBoundingClientRect();
-        setDropdownPosition({
-          top: rect.bottom + 8, // fixed position uses viewport coordinates
-          left: rect.left,
-          width: rect.width
-        });
-      }
-    };
-
-    updatePosition();
-
-    if (showDropdown) {
-      window.addEventListener('scroll', updatePosition, true);
-      window.addEventListener('resize', updatePosition);
-      return () => {
-        window.removeEventListener('scroll', updatePosition, true);
-        window.removeEventListener('resize', updatePosition);
-      };
-    }
-  }, [showDropdown, searchValue]);
 
   // Filter cities AND municipalities based on search input (supports PSČ)
   useEffect(() => {
@@ -331,98 +297,84 @@ export const SearchPanel = () => {
     );
   };
 
-  // Dropdown content component
-  const dropdownContent = showDropdown && filteredResults.length > 0 && isMounted ? (
-    <div
-      ref={dropdownRef}
-      className="fixed bg-card rounded-lg md:rounded-xl border-2 border-foreground/20 max-h-80 overflow-y-auto shadow-xl"
-      style={{
-        top: dropdownPosition.top,
-        left: dropdownPosition.left,
-        width: dropdownPosition.width,
-        zIndex: 99999,
-      }}
-    >
-      {filteredResults.slice(0, 10).map((result, index) => (
-        <button
-          key={result.slug}
-          onClick={() => navigateToLocation(result.slug, result.name)}
-          className={`w-full text-left px-4 md:px-6 py-2.5 md:py-3 hover:bg-foreground/5 active:bg-foreground/10 transition-colors border-b border-foreground/5 last:border-b-0 ${
-            index === selectedIndex ? "bg-foreground/10" : ""
-          }`}
+  return (
+    <div className="w-full max-w-2xl mx-auto px-4 relative" ref={dropdownRef}>
+      <div className="bg-card rounded-xl md:rounded-2xl border-2 border-foreground/20 p-1.5 md:p-2 flex items-center gap-1.5 md:gap-2">
+        <div className="flex-1 flex items-center gap-2 md:gap-3 px-2 md:px-4">
+          <Search className="h-4 w-4 md:h-5 md:w-5 text-foreground flex-shrink-0" />
+          <Input
+            type="text"
+            placeholder="Názov mesta, obce alebo PSČ..."
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+            onKeyDown={handleKeyDown}
+            onFocus={() => {
+              if (searchValue.trim() && filteredResults.length > 0) {
+                setShowDropdown(true);
+              }
+            }}
+            className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base placeholder:text-muted-foreground text-foreground font-medium"
+          />
+        </div>
+
+        <Button
+          variant="default"
+          size="icon"
+          onClick={handleSearch}
+          className="rounded-full h-10 w-10 md:h-12 md:w-12 flex-shrink-0"
         >
-          <div className="flex items-center gap-2">
-            <div className="font-semibold text-sm md:text-base text-foreground">{result.name}</div>
-            {result.type === 'municipality' && (
-              <span className="text-xs bg-foreground/10 px-1.5 py-0.5 rounded text-foreground/70">obec</span>
-            )}
-          </div>
-          <div className="text-xs md:text-sm text-foreground/60 mt-0.5">{result.region}</div>
-        </button>
-      ))}
-      {filteredResults.length > 10 && (
-        <div className="px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm text-foreground/60 text-center border-t border-foreground/10">
-          Zobrazených prvých 10 z {filteredResults.length} výsledkov
+          <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
+        </Button>
+
+        <Button
+          variant="default"
+          size="icon"
+          onClick={handleLocationClick}
+          disabled={isLoadingLocation}
+          className="rounded-full h-10 w-10 md:h-12 md:w-12 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+        >
+          {isLoadingLocation ? (
+            <Loader2 className="h-4 w-4 md:h-5 md:w-5 animate-spin" />
+          ) : (
+            <MapPin className="h-4 w-4 md:h-5 md:w-5" />
+          )}
+        </Button>
+      </div>
+
+      {/* Autocomplete Dropdown - priamo pod search barom, v rovnakom relative kontajneri */}
+      {showDropdown && filteredResults.length > 0 && (
+        <div
+          className="absolute left-0 right-0 mt-2 mx-4 bg-card rounded-lg md:rounded-xl border-2 border-foreground/20 max-h-[50vh] md:max-h-80 overflow-y-auto shadow-xl"
+          style={{ zIndex: 9999 }}
+        >
+          {filteredResults.slice(0, 10).map((result, index) => (
+            <button
+              key={result.slug}
+              onClick={() => navigateToLocation(result.slug, result.name)}
+              className={`w-full text-left px-4 md:px-6 py-2.5 md:py-3 hover:bg-foreground/5 active:bg-foreground/10 transition-colors border-b border-foreground/5 last:border-b-0 ${
+                index === selectedIndex ? "bg-foreground/10" : ""
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <div className="font-semibold text-sm md:text-base text-foreground">{result.name}</div>
+                {result.type === 'municipality' && (
+                  <span className="text-xs bg-foreground/10 px-1.5 py-0.5 rounded text-foreground/70">obec</span>
+                )}
+              </div>
+              <div className="text-xs md:text-sm text-foreground/60 mt-0.5">{result.region}</div>
+            </button>
+          ))}
+          {filteredResults.length > 10 && (
+            <div className="px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-sm text-foreground/60 text-center border-t border-foreground/10">
+              Zobrazených prvých 10 z {filteredResults.length} výsledkov
+            </div>
+          )}
         </div>
       )}
-    </div>
-  ) : null;
-
-  return (
-    <div className="w-full max-w-2xl mx-auto px-4 relative">
-      <div>
-        <div
-          ref={inputContainerRef}
-          className="bg-card rounded-xl md:rounded-2xl border-2 border-foreground/20 p-1.5 md:p-2 flex items-center gap-1.5 md:gap-2"
-        >
-          <div className="flex-1 flex items-center gap-2 md:gap-3 px-2 md:px-4">
-            <Search className="h-4 w-4 md:h-5 md:w-5 text-foreground flex-shrink-0" />
-            <Input
-              type="text"
-              placeholder="Názov mesta, obce alebo PSČ..."
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
-              onKeyDown={handleKeyDown}
-              onFocus={() => {
-                if (searchValue.trim() && filteredResults.length > 0) {
-                  setShowDropdown(true);
-                }
-              }}
-              className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base placeholder:text-muted-foreground text-foreground font-medium"
-            />
-          </div>
-
-          <Button
-            variant="default"
-            size="icon"
-            onClick={handleSearch}
-            className="rounded-full h-10 w-10 md:h-12 md:w-12 flex-shrink-0"
-          >
-            <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
-          </Button>
-
-          <Button
-            variant="default"
-            size="icon"
-            onClick={handleLocationClick}
-            disabled={isLoadingLocation}
-            className="rounded-full h-10 w-10 md:h-12 md:w-12 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
-          >
-            {isLoadingLocation ? (
-              <Loader2 className="h-4 w-4 md:h-5 md:w-5 animate-spin" />
-            ) : (
-              <MapPin className="h-4 w-4 md:h-5 md:w-5" />
-            )}
-          </Button>
-        </div>
-      </div>
 
       <p className="text-center text-xs md:text-sm text-foreground font-bold mt-3 md:mt-4">
         Alebo použite svoju polohu pre okamžité vyhľadanie taxíkov v okolí
       </p>
-
-      {/* Render dropdown in portal to escape stacking context */}
-      {isMounted && dropdownContent && createPortal(dropdownContent, document.body)}
     </div>
   );
 };
