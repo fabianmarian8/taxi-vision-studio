@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-27T11:15:16.269Z",
+  "lastUpdated": "2025-11-27T11:16:04.988Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -7514,6 +7514,13 @@
         {
           "name": "STAT TAXI",
           "phone": "+421948228905"
+        },
+        {
+          "name": "Vladimír Nikodém - CITY TAXI ŽARNOVICA",
+          "phone": "+421516588045",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.483398,
