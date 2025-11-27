@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-27T11:48:38.406Z",
+  "lastUpdated": "2025-11-27T19:00:00.000Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -7628,6 +7628,30 @@
       ],
       "latitude": 48.591018,
       "longitude": 18.850089
+    },
+    {
+      "name": "Zákamenné",
+      "slug": "zakamenne",
+      "region": "Žilinský kraj",
+      "description": "Obec v okrese Námestovo v Žilinskom kraji. Nájdite taxi v Zákamennom.",
+      "metaDescription": "Nájdite taxi v obci Zákamenné. Taxislužba Taxi Marek Mrekaj s telefónnym číslom. Kontaktujte priamo.",
+      "keywords": [
+        "taxi zákamenné",
+        "taxislužba zákamenné",
+        "taxi v zákamennom",
+        "objednať taxi zákamenné",
+        "taxi námestovo"
+      ],
+      "taxiServices": [
+        {
+          "name": "Taxi Marek Mrekaj",
+          "phone": "+421911504333",
+          "isPremium": false,
+          "isPromotional": false
+        }
+      ],
+      "latitude": 49.388036,
+      "longitude": 19.294605
     },
     {
       "name": "Žilina",
