@@ -214,8 +214,9 @@ export async function generateMetadata({
       const { city } = routeType;
       const currentUrl = `${baseUrl}/taxi/${city.slug}`;
       const taxiServicesList = city.taxiServices.slice(0, 3).map(s => s.name).join(', ');
+      const locationText = city.isVillage ? 'v obci' : 'v meste';
       const description = city.metaDescription ||
-        `Taxi v meste ${city.name} - Kontakty na taxislužby. ${taxiServicesList ? `${taxiServicesList} a ďalšie.` : ''} Nájdite spoľahlivé taxi.`;
+        `Taxi ${locationText} ${city.name} - Kontakty na taxislužby. ${taxiServicesList ? `${taxiServicesList} a ďalšie.` : ''} Nájdite spoľahlivé taxi.`;
 
       return {
         title: `Taxi ${city.name} - Taxislužby a Kontakty | ${siteName}`,
@@ -359,6 +360,8 @@ async function getPartnerRatings(services: TaxiService[]): Promise<Map<string, {
 
 async function CityPage({ city }: { city: CityData }) {
   const regionSlug = createRegionSlug(city.region);
+  // Pre obce s isVillage: true používame "v obci", inak "v meste"
+  const locationText = city.isVillage ? 'v obci' : 'v meste';
 
   // Fetch ratings for partner services
   const partnerRatings = await getPartnerRatings(city.taxiServices);
@@ -394,7 +397,7 @@ async function CityPage({ city }: { city: CityData }) {
             )}
             <div className="relative z-10">
               <h1 className={`text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6  ${city.heroImage ? 'text-white' : 'text-foreground'}`}>
-                Taxislužby v meste {city.name}
+                Taxislužby {locationText} {city.name}
               </h1>
               <p className={`text-base md:text-xl font-semibold px-4 ${city.heroImage ? 'text-white/95' : 'text-foreground/90'}`}>
                 Kompletný zoznam dostupných taxislužieb
@@ -605,7 +608,7 @@ async function CityPage({ city }: { city: CityData }) {
                       Zoznam taxislužieb sa pripravuje
                     </h3>
                     <p className="text-sm md:text-base text-foreground/70 font-bold px-4">
-                      Čoskoro tu nájdete kompletný prehľad všetkých taxislužieb v meste {city.name}
+                      Čoskoro tu nájdete kompletný prehľad všetkých taxislužieb {locationText} {city.name}
                     </p>
                   </div>
                 </CardContent>
@@ -621,7 +624,7 @@ async function CityPage({ city }: { city: CityData }) {
                 <span className="font-bold text-sm">Pre profesionálne taxislužby</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-black text-foreground mb-2">
-                Ste taxislužba v meste {city.name}?
+                Ste taxislužba {locationText} {city.name}?
               </h3>
               <p className="text-base md:text-lg text-foreground/70 font-medium">
                 Získajte viac zákazníkov s TaxiNearMe
@@ -905,7 +908,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
                         href={`/taxi/${city.slug}`}
                         className="mt-3 inline-block text-sm font-bold text-primary-yellow hover:underline"
                       >
-                        Zobraziť všetky taxislužby v meste {city.name} →
+                        Zobraziť všetky taxislužby {locationText} {city.name} →
                       </Link>
                     </CardContent>
                   </div>
@@ -921,7 +924,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
           <div className="container mx-auto max-w-4xl relative z-10">
             <div className="mb-8 text-center">
               <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
-                Taxislužby v meste {municipality.name}
+                Taxislužby {cityWithTaxi.isVillage ? 'v obci' : 'v meste'} {municipality.name}
               </h2>
             </div>
 
@@ -1074,6 +1077,8 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
 
 async function ServicePage({ city, service, serviceSlug }: { city: CityData; service: TaxiService; serviceSlug: string }) {
   const regionSlug = createRegionSlug(city.region);
+  // Pre obce s isVillage: true používame "v obci", inak "v meste"
+  const locationText = city.isVillage ? 'v obci' : 'v meste';
   const content = generateUniqueServiceContent({
     serviceName: service.name,
     cityName: city.name,
@@ -1162,7 +1167,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 {service.name}
               </h1>
               <p className="text-xl text-white/90 mb-8">
-                Profesionálna taxislužba v meste {city.name}
+                Profesionálna taxislužba {locationText} {city.name}
               </p>
 
               {/* Contact buttons */}
@@ -1237,7 +1242,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         <section className="py-12 md:py-16 px-4 md:px-8 bg-gradient-to-r from-yellow-400 to-yellow-500">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-2xl md:text-3xl font-black text-purple-900 mb-4">
-              Potrebujete taxi v meste {city.name}?
+              Potrebujete taxi {locationText} {city.name}?
             </h2>
             <p className="text-purple-900/70 mb-6 text-lg">
               Zavolajte nám a odvezieme vás kam potrebujete.
@@ -1259,7 +1264,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           <section className="py-12 md:py-16 px-4 md:px-8 bg-foreground/5">
             <div className="container mx-auto max-w-4xl">
               <h2 className="text-2xl font-black mb-6 text-foreground text-center">
-                Ďalšie taxislužby v meste {city.name}
+                Ďalšie taxislužby {locationText} {city.name}
               </h2>
               <div className="grid gap-3">
                 {[...city.taxiServices]
@@ -1314,10 +1319,10 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           <Link
             href={`/taxi/${city.slug}`}
             className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold mb-6 text-sm md:text-base"
-            title={`Späť na zoznam taxislužieb v meste ${city.name}`}
+            title={`Späť na zoznam taxislužieb ${locationText} ${city.name}`}
           >
             <ArrowLeft className="h-4 w-4 flex-shrink-0" />
-            <span className="truncate">Späť na taxislužby v {city.name}</span>
+            <span className="truncate">Späť na taxislužby {locationText} {city.name}</span>
           </Link>
 
           <div className={`text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-4 sm:p-6 md:p-10 lg:p-12 ${isPremium ? 'ring-2 md:ring-4 ring-amber-300' : ''}`}>
@@ -1353,7 +1358,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 {service.name}
               </h1>
               <p className={`text-sm sm:text-base md:text-xl font-semibold ${isPremium ? 'text-black/80' : 'text-foreground/90'}`}>
-                Taxislužba v meste {city.name}
+                Taxislužba {locationText} {city.name}
               </p>
             </div>
           </div>
@@ -1432,7 +1437,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
           <div className="mt-8 prose prose-sm md:prose-base max-w-none">
             <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
-              O taxislužbe {service.name} v meste {city.name}
+              O taxislužbe {service.name} {locationText} {city.name}
             </h2>
             <p className="text-foreground/80 mb-4 leading-relaxed">{content.intro}</p>
             <p className="text-foreground/80 mb-4 leading-relaxed">{content.disclaimer}</p>
@@ -1445,7 +1450,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             {service.phone && content.ordering && (
               <>
                 <h3 className="text-xl md:text-2xl font-black mb-3 text-foreground mt-6">
-                  Ako objednať taxi v meste {city.name}?
+                  Ako objednať taxi {locationText} {city.name}?
                 </h3>
                 <p className="text-foreground/80 mb-4 leading-relaxed">
                   {content.ordering.split(service.phone).map((part, index, arr) => {
@@ -1490,7 +1495,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           {city.taxiServices.length > 1 && (
             <div className="mt-12">
               <h2 className="text-2xl font-black mb-6 text-foreground">
-                Ďalšie taxislužby v meste {city.name}
+                Ďalšie taxislužby {locationText} {city.name}
               </h2>
               <div className="grid gap-3">
                 {[...city.taxiServices]
