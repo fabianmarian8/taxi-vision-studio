@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-27T11:11:54.119Z",
+  "lastUpdated": "2025-11-27T11:13:01.887Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -770,22 +770,15 @@
           "isPromotional": false
         },
         {
-          "name": "TAXI BRATISLAVA spol. s r.o.",
+          "name": "TAXI BRATISLAVA ",
           "phone": "+421516588045",
           "website": null,
           "isPremium": false,
           "isPromotional": false
         },
         {
-          "name": "OTTO TAXI, družstvo",
+          "name": "OTTO TAXI",
           "phone": "+421263453748",
-          "website": null,
-          "isPremium": false,
-          "isPromotional": false
-        },
-        {
-          "name": "Dopravný záchranný systém Prima-Taxi, s.r.o.",
-          "phone": "+421216661",
           "website": null,
           "isPremium": false,
           "isPromotional": false
