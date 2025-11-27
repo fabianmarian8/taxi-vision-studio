@@ -141,35 +141,24 @@ function extractCompanyDetails(html: string, url: string): AzetService | null {
   // Nájdi webovú stránku firmy
   let website: string | null = null;
 
-  // 1. Hľadaj itemprop="url" (štandardný spôsob)
-  const urlMatch = html.match(/itemprop="url"[^>]*href="(https?:\/\/[^"]+)"/);
-  if (urlMatch && !urlMatch[1].includes('azet.sk')) {
-    website = urlMatch[1];
-  }
-
-  // 2. Hľadaj v sekcii "Web" alebo externé linky
-  if (!website) {
-    const webLinkMatch = html.match(/class="[^"]*web[^"]*"[^>]*href="(https?:\/\/[^"]+)"/i);
-    if (webLinkMatch && !webLinkMatch[1].includes('azet.sk')) {
-      website = webLinkMatch[1];
+  // Hľadaj mainLink - hlavný odkaz na web firmy na Azet.sk
+  // Formát: <a class="mainLink" rel="nofollow" href="http://www.radio-taxi.sk?utm_source=...">
+  const mainLinkMatch = html.match(/class="mainLink"[^>]*href="(https?:\/\/[^"?]+)/);
+  if (mainLinkMatch) {
+    // Odstráň UTM parametre a získaj čistú URL
+    let cleanUrl = mainLinkMatch[1];
+    // Uprav na https ak je http
+    if (cleanUrl.startsWith('http://')) {
+      cleanUrl = cleanUrl.replace('http://', 'https://');
     }
+    website = cleanUrl;
   }
 
-  // 3. Hľadaj akýkoľvek externý http link (nie azet.sk, facebook, google)
+  // Záloha: hľadaj itemprop="url"
   if (!website) {
-    const externalLinks = html.matchAll(/href="(https?:\/\/(?!www\.azet\.sk|www\.facebook\.com|www\.google\.com|maps\.google)[^"]+)"/g);
-    for (const match of externalLinks) {
-      const link = match[1];
-      // Filtruj len reálne firemné stránky
-      if (!link.includes('azet.sk') &&
-          !link.includes('facebook.com') &&
-          !link.includes('google.com') &&
-          !link.includes('instagram.com') &&
-          !link.includes('twitter.com') &&
-          !link.includes('youtube.com')) {
-        website = link;
-        break;
-      }
+    const urlMatch = html.match(/itemprop="url"[^>]*href="(https?:\/\/[^"?]+)/);
+    if (urlMatch && !urlMatch[1].includes('azet.sk') && !urlMatch[1].includes('aimg.sk')) {
+      website = urlMatch[1];
     }
   }
 
