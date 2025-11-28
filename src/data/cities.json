@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-28T20:09:24.666Z",
+  "lastUpdated": "2025-11-28T20:13:51.130Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4272,11 +4272,6 @@
           "isPromotional": false
         },
         {
-          "name": "TAXI MACHÁČEK",
-          "website": "http://www.taxi-machacek.sk",
-          "phone": "+42133/6464646"
-        },
-        {
           "name": "PK TAXI PEZINOK",
           "phone": "+421948777977",
           "isPremium": false,
@@ -4291,7 +4286,8 @@
           "phone": "+421905454545",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-03T20:14:09.941Z"
+          "premiumExpiresAt": "2025-12-03T20:14:09.941Z",
+          "website": "http://www.taxi-machacek.sk"
         },
         {
           "name": "TAXI MI-KA ",
