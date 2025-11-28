@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-28T17:51:34.377Z",
+  "lastUpdated": "2025-11-28T20:09:24.666Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -4294,8 +4294,15 @@
           "premiumExpiresAt": "2025-12-03T20:14:09.941Z"
         },
         {
-          "name": "TAXI MI-KA Milan Močol Pezinok",
+          "name": "TAXI MI-KA ",
           "phone": "+421911938164"
+        },
+        {
+          "name": "Rýchla Šupa",
+          "phone": "+421919905090",
+          "website": "",
+          "isPremium": false,
+          "isPartner": false
         }
       ],
       "latitude": 48.285454,
