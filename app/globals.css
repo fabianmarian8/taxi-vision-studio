@@ -511,3 +511,606 @@
     zoom: 1 !important;
   }
 }
+
+/* ============================================================================
+   RESPONSIVE HERO IMAGES - Mobile optimized
+   ============================================================================
+   Na mobiloch načítavame menšie verzie hero obrázkov pre rýchlejšie načítanie.
+   Desktop: /images/[city]-hero.webp (1280px, ~100KB)
+   Mobile: /images/mobile/[city]-hero-mobile.webp (640px, ~30KB)
+   ========================================================================= */
+
+/* Responzívne hero obrázky pre jednotlivé mestá */
+.hero-bernolakovo {
+  background-image: url('/images/bernolakovo-hero.webp');
+}
+.hero-bratislava {
+  background-image: url('/images/bratislava-hero.webp');
+}
+.hero-ivanka-pri-dunaji {
+  background-image: url('/images/ivanka-pri-dunaji-hero.webp');
+}
+.hero-malacky {
+  background-image: url('/images/malacky-hero.webp');
+}
+.hero-modra {
+  background-image: url('/images/modra-hero.webp');
+}
+.hero-pezinok {
+  background-image: url('/images/pezinok-hero.webp');
+}
+.hero-senec {
+  background-image: url('/images/senec-hero.webp');
+}
+.hero-stupava {
+  background-image: url('/images/stupava-hero.webp');
+}
+.hero-svaty-jur {
+  background-image: url('/images/svaty-jur-hero.webp');
+}
+
+/* Mobilné verzie - menšie obrázky pre rýchlejšie načítanie */
+@media (max-width: 767px) {
+  .hero-bernolakovo {
+    background-image: url('/images/mobile/bernolakovo-hero-mobile.webp');
+  }
+  .hero-bratislava {
+    background-image: url('/images/mobile/bratislava-hero-mobile.webp');
+  }
+  .hero-ivanka-pri-dunaji {
+    background-image: url('/images/mobile/ivanka-pri-dunaji-hero-mobile.webp');
+  }
+  .hero-malacky {
+    background-image: url('/images/mobile/malacky-hero-mobile.webp');
+  }
+  .hero-modra {
+    background-image: url('/images/mobile/modra-hero-mobile.webp');
+  }
+  .hero-pezinok {
+    background-image: url('/images/mobile/pezinok-hero-mobile.webp');
+  }
+  .hero-senec {
+    background-image: url('/images/mobile/senec-hero-mobile.webp');
+  }
+  .hero-stupava {
+    background-image: url('/images/mobile/stupava-hero-mobile.webp');
+  }
+  .hero-svaty-jur {
+    background-image: url('/images/mobile/svaty-jur-hero-mobile.webp');
+  }
+}
+
+/* Banskobystrický kraj - hero obrázky */
+.hero-banska-bystrica {
+  background-image: url('/images/banska-bystrica-hero.webp');
+}
+.hero-zvolen {
+  background-image: url('/images/zvolen-hero.webp');
+}
+.hero-lucenec {
+  background-image: url('/images/lucenec-hero.webp');
+}
+.hero-banska-stiavnica {
+  background-image: url('/images/banska-stiavnica-hero.webp');
+}
+.hero-brezno {
+  background-image: url('/images/brezno-hero.webp');
+}
+.hero-cinobana {
+  background-image: url('/images/cinobana-hero.webp');
+}
+.hero-detva {
+  background-image: url('/images/detva-hero.webp');
+}
+.hero-dudince {
+  background-image: url('/images/dudince-hero.webp');
+}
+.hero-filakovo {
+  background-image: url('/images/filakovo-hero.webp');
+}
+.hero-hnusta {
+  background-image: url('/images/hnusta-hero.webp');
+}
+.hero-hrinova {
+  background-image: url('/images/hrinova-hero.webp');
+}
+.hero-jelsava {
+  background-image: url('/images/jelsava-hero.webp');
+}
+.hero-kremnica {
+  background-image: url('/images/kremnica-hero.webp');
+}
+.hero-krupina {
+  background-image: url('/images/krupina-hero.webp');
+}
+.hero-modry-kamen {
+  background-image: url('/images/modry-kamen-hero.webp');
+}
+.hero-nova-bana {
+  background-image: url('/images/nova-bana-hero.webp');
+}
+.hero-poltar {
+  background-image: url('/images/poltar-hero.webp');
+}
+.hero-revuca {
+  background-image: url('/images/revuca-hero.webp');
+}
+.hero-rimavska-sobota {
+  background-image: url('/images/rimavska-sobota-hero.webp');
+}
+.hero-sliac {
+  background-image: url('/images/sliac-hero.webp');
+}
+.hero-tisovec {
+  background-image: url('/images/tisovec-hero.webp');
+}
+.hero-tornala {
+  background-image: url('/images/tornala-hero.webp');
+}
+.hero-velky-krtis {
+  background-image: url('/images/velky-krtis-hero.webp');
+}
+.hero-zarnovica {
+  background-image: url('/images/zarnovica-hero.webp');
+}
+.hero-ziar-nad-hronom {
+  background-image: url('/images/ziar-hero.webp');
+}
+
+/* Mobilné verzie - Banskobystrický kraj */
+@media (max-width: 767px) {
+  .hero-banska-bystrica {
+    background-image: url('/images/mobile/banska-bystrica-hero-mobile.webp');
+  }
+  .hero-zvolen {
+    background-image: url('/images/mobile/zvolen-hero-mobile.webp');
+  }
+  .hero-lucenec {
+    background-image: url('/images/mobile/lucenec-hero-mobile.webp');
+  }
+  .hero-banska-stiavnica {
+    background-image: url('/images/mobile/banska-stiavnica-hero-mobile.webp');
+  }
+  .hero-brezno {
+    background-image: url('/images/mobile/brezno-hero-mobile.webp');
+  }
+  .hero-cinobana {
+    background-image: url('/images/mobile/cinobana-hero-mobile.webp');
+  }
+  .hero-detva {
+    background-image: url('/images/mobile/detva-hero-mobile.webp');
+  }
+  .hero-dudince {
+    background-image: url('/images/mobile/dudince-hero-mobile.webp');
+  }
+  .hero-filakovo {
+    background-image: url('/images/mobile/filakovo-hero-mobile.webp');
+  }
+  .hero-hnusta {
+    background-image: url('/images/mobile/hnusta-hero-mobile.webp');
+  }
+  .hero-hrinova {
+    background-image: url('/images/mobile/hrinova-hero-mobile.webp');
+  }
+  .hero-jelsava {
+    background-image: url('/images/mobile/jelsava-hero-mobile.webp');
+  }
+  .hero-kremnica {
+    background-image: url('/images/mobile/kremnica-hero-mobile.webp');
+  }
+  .hero-krupina {
+    background-image: url('/images/mobile/krupina-hero-mobile.webp');
+  }
+  .hero-modry-kamen {
+    background-image: url('/images/mobile/modry-kamen-hero-mobile.webp');
+  }
+  .hero-nova-bana {
+    background-image: url('/images/mobile/nova-bana-hero-mobile.webp');
+  }
+  .hero-poltar {
+    background-image: url('/images/mobile/poltar-hero-mobile.webp');
+  }
+  .hero-revuca {
+    background-image: url('/images/mobile/revuca-hero-mobile.webp');
+  }
+  .hero-rimavska-sobota {
+    background-image: url('/images/mobile/rimavska-sobota-hero-mobile.webp');
+  }
+  .hero-sliac {
+    background-image: url('/images/mobile/sliac-hero-mobile.webp');
+  }
+  .hero-tisovec {
+    background-image: url('/images/mobile/tisovec-hero-mobile.webp');
+  }
+  .hero-tornala {
+    background-image: url('/images/mobile/tornala-hero-mobile.webp');
+  }
+  .hero-velky-krtis {
+    background-image: url('/images/mobile/velky-krtis-hero-mobile.webp');
+  }
+  .hero-zarnovica {
+    background-image: url('/images/mobile/zarnovica-hero-mobile.webp');
+  }
+  .hero-ziar-nad-hronom {
+    background-image: url('/images/mobile/ziar-hero-mobile.webp');
+  }
+}
+
+/* Košický kraj - hero obrázky */
+.hero-betlanovce {
+  background-image: url('/images/betlanovce-hero.webp');
+}
+.hero-cierna-nad-tisou {
+  background-image: url('/images/cierna-nad-tisou-hero.webp');
+}
+.hero-dobsina {
+  background-image: url('/images/dobsina-hero.webp');
+}
+.hero-gelnica {
+  background-image: url('/images/gelnica-hero.webp');
+}
+.hero-hostovce {
+  background-image: url('/images/hostovce-hero.webp');
+}
+.hero-chlmec {
+  background-image: url('/images/chlmec-hero.webp');
+}
+.hero-kosice {
+  background-image: url('/images/kosice-hero.webp');
+}
+.hero-kralovsky-chlmec {
+  background-image: url('/images/kralovsky-chlmec-hero.webp');
+}
+.hero-krompachy {
+  background-image: url('/images/krompachy-hero.webp');
+}
+.hero-medzev {
+  background-image: url('/images/medzev-hero.webp');
+}
+.hero-michalovce {
+  background-image: url('/images/michalovce-hero.webp');
+}
+.hero-moldava-nad-bodvou {
+  background-image: url('/images/moldava-nad-bodvou-hero.webp');
+}
+.hero-roznava {
+  background-image: url('/images/roznava-hero.webp');
+}
+.hero-sobrance {
+  background-image: url('/images/sobrance-hero.webp');
+}
+.hero-spisska-nova-ves {
+  background-image: url('/images/spisska-nova-ves-hero.webp');
+}
+.hero-spisske-vlachy {
+  background-image: url('/images/spisske-vlachy-hero.webp');
+}
+.hero-strazske {
+  background-image: url('/images/strazske-hero.webp');
+}
+.hero-trebisov {
+  background-image: url('/images/trebisov-hero.webp');
+}
+.hero-velke-kapusany {
+  background-image: url('/images/velke-kapusany-hero.webp');
+}
+
+/* Mobilné verzie - Košický kraj */
+@media (max-width: 767px) {
+  .hero-betlanovce {
+    background-image: url('/images/mobile/betlanovce-hero-mobile.webp');
+  }
+  .hero-cierna-nad-tisou {
+    background-image: url('/images/mobile/cierna-nad-tisou-hero-mobile.webp');
+  }
+  .hero-dobsina {
+    background-image: url('/images/mobile/dobsina-hero-mobile.webp');
+  }
+  .hero-gelnica {
+    background-image: url('/images/mobile/gelnica-hero-mobile.webp');
+  }
+  .hero-hostovce {
+    background-image: url('/images/mobile/hostovce-hero-mobile.webp');
+  }
+  .hero-chlmec {
+    background-image: url('/images/mobile/chlmec-hero-mobile.webp');
+  }
+  .hero-kosice {
+    background-image: url('/images/mobile/kosice-hero-mobile.webp');
+  }
+  .hero-kralovsky-chlmec {
+    background-image: url('/images/mobile/kralovsky-chlmec-hero-mobile.webp');
+  }
+  .hero-krompachy {
+    background-image: url('/images/mobile/krompachy-hero-mobile.webp');
+  }
+  .hero-medzev {
+    background-image: url('/images/mobile/medzev-hero-mobile.webp');
+  }
+  .hero-michalovce {
+    background-image: url('/images/mobile/michalovce-hero-mobile.webp');
+  }
+  .hero-moldava-nad-bodvou {
+    background-image: url('/images/mobile/moldava-nad-bodvou-hero-mobile.webp');
+  }
+  .hero-roznava {
+    background-image: url('/images/mobile/roznava-hero-mobile.webp');
+  }
+  .hero-sobrance {
+    background-image: url('/images/mobile/sobrance-hero-mobile.webp');
+  }
+  .hero-spisska-nova-ves {
+    background-image: url('/images/mobile/spisska-nova-ves-hero-mobile.webp');
+  }
+  .hero-spisske-vlachy {
+    background-image: url('/images/mobile/spisske-vlachy-hero-mobile.webp');
+  }
+  .hero-strazske {
+    background-image: url('/images/mobile/strazske-hero-mobile.webp');
+  }
+  .hero-trebisov {
+    background-image: url('/images/mobile/trebisov-hero-mobile.webp');
+  }
+  .hero-velke-kapusany {
+    background-image: url('/images/mobile/velke-kapusany-hero-mobile.webp');
+  }
+}
+
+/* Žilinský kraj - hero obrázky */
+.hero-bansky-studenec {
+  background-image: url('/images/bansky-studenec-hero.webp');
+}
+.hero-biel {
+  background-image: url('/images/biel-hero.webp');
+}
+.hero-blatnica {
+  background-image: url('/images/blatnica-hero.webp');
+}
+.hero-bytca {
+  background-image: url('/images/bytca-hero.webp');
+}
+.hero-cadca {
+  background-image: url('/images/cadca-hero.webp');
+}
+.hero-dolny-kubin {
+  background-image: url('/images/dolny-kubin-hero.webp');
+}
+.hero-kysucke-nove-mesto {
+  background-image: url('/images/kysucke-nove-mesto-hero.webp');
+}
+.hero-liptovsky-hradok {
+  background-image: url('/images/liptovsky-hradok-hero.webp');
+}
+.hero-liptovsky-mikulas {
+  background-image: url('/images/liptovsky-mikulas-hero.webp');
+}
+.hero-martin {
+  background-image: url('/images/martin-hero.webp');
+}
+.hero-namestovo {
+  background-image: url('/images/namestovo-hero.webp');
+}
+.hero-rajec {
+  background-image: url('/images/rajec-hero.webp');
+}
+.hero-ruzomberok {
+  background-image: url('/images/ruzomberok-hero.webp');
+}
+.hero-trstena {
+  background-image: url('/images/trstena-hero.webp');
+}
+.hero-turany {
+  background-image: url('/images/turany-hero.webp');
+}
+.hero-turcianske-teplice {
+  background-image: url('/images/turcianske-teplice-hero.webp');
+}
+.hero-turzovka {
+  background-image: url('/images/turzovka-hero.webp');
+}
+.hero-tvrdosin {
+  background-image: url('/images/tvrdosin-hero.webp');
+}
+.hero-vrutky {
+  background-image: url('/images/vrutky-hero.webp');
+}
+.hero-zakamenne {
+  background-image: url('/images/zakamenne-hero.webp');
+}
+.hero-zilina {
+  background-image: url('/images/zilina-hero.webp');
+}
+
+/* Mobilné verzie - Žilinský kraj */
+@media (max-width: 767px) {
+  .hero-bansky-studenec {
+    background-image: url('/images/mobile/bansky-studenec-hero-mobile.webp');
+  }
+  .hero-biel {
+    background-image: url('/images/mobile/biel-hero-mobile.webp');
+  }
+  .hero-blatnica {
+    background-image: url('/images/mobile/blatnica-hero-mobile.webp');
+  }
+  .hero-bytca {
+    background-image: url('/images/mobile/bytca-hero-mobile.webp');
+  }
+  .hero-cadca {
+    background-image: url('/images/mobile/cadca-hero-mobile.webp');
+  }
+  .hero-dolny-kubin {
+    background-image: url('/images/mobile/dolny-kubin-hero-mobile.webp');
+  }
+  .hero-kysucke-nove-mesto {
+    background-image: url('/images/mobile/kysucke-nove-mesto-hero-mobile.webp');
+  }
+  .hero-liptovsky-hradok {
+    background-image: url('/images/mobile/liptovsky-hradok-hero-mobile.webp');
+  }
+  .hero-liptovsky-mikulas {
+    background-image: url('/images/mobile/liptovsky-mikulas-hero-mobile.webp');
+  }
+  .hero-martin {
+    background-image: url('/images/mobile/martin-hero-mobile.webp');
+  }
+  .hero-namestovo {
+    background-image: url('/images/mobile/namestovo-hero-mobile.webp');
+  }
+  .hero-rajec {
+    background-image: url('/images/mobile/rajec-hero-mobile.webp');
+  }
+  .hero-ruzomberok {
+    background-image: url('/images/mobile/ruzomberok-hero-mobile.webp');
+  }
+  .hero-trstena {
+    background-image: url('/images/mobile/trstena-hero-mobile.webp');
+  }
+  .hero-turany {
+    background-image: url('/images/mobile/turany-hero-mobile.webp');
+  }
+  .hero-turcianske-teplice {
+    background-image: url('/images/mobile/turcianske-teplice-hero-mobile.webp');
+  }
+  .hero-turzovka {
+    background-image: url('/images/mobile/turzovka-hero-mobile.webp');
+  }
+  .hero-tvrdosin {
+    background-image: url('/images/mobile/tvrdosin-hero-mobile.webp');
+  }
+  .hero-vrutky {
+    background-image: url('/images/mobile/vrutky-hero-mobile.webp');
+  }
+  .hero-zakamenne {
+    background-image: url('/images/mobile/zakamenne-hero-mobile.webp');
+  }
+  .hero-zilina {
+    background-image: url('/images/mobile/zilina-hero-mobile.webp');
+  }
+}
+
+/* Nitriansky kraj - hero obrázky */
+.hero-nitra {
+  background-image: url('/images/nitra-hero.webp');
+}
+.hero-komarno {
+  background-image: url('/images/komarno-hero.webp');
+}
+.hero-nove-zamky {
+  background-image: url('/images/nove-zamky-hero.webp');
+}
+.hero-levice {
+  background-image: url('/images/levice-hero.webp');
+}
+.hero-sala {
+  background-image: url('/images/sala-hero.webp');
+}
+.hero-topolcany {
+  background-image: url('/images/topolcany-hero.webp');
+}
+.hero-sturovo {
+  background-image: url('/images/sturovo-hero.webp');
+}
+.hero-hurbanovo {
+  background-image: url('/images/hurbanovo-hero.webp');
+}
+.hero-kolarovo {
+  background-image: url('/images/kolarovo-hero.webp');
+}
+.hero-sahy {
+  background-image: url('/images/sahy-hero.webp');
+}
+.hero-surany {
+  background-image: url('/images/surany-hero.webp');
+}
+.hero-tlmace {
+  background-image: url('/images/tlmace-hero.webp');
+}
+.hero-velky-meder {
+  background-image: url('/images/velky-meder-hero.webp');
+}
+.hero-vrable {
+  background-image: url('/images/vrable-hero.webp');
+}
+.hero-zlate-moravce {
+  background-image: url('/images/zlate-moravce-hero.webp');
+}
+.hero-zeliezovce {
+  background-image: url('/images/zeliezovce-hero.webp');
+}
+.hero-dvory-nad-zitavou {
+  background-image: url('/images/dvory-nad-zitavou-hero.webp');
+}
+.hero-nesvady {
+  background-image: url('/images/nesvady-hero.webp');
+}
+.hero-bielovce {
+  background-image: url('/images/bielovce-hero.webp');
+}
+
+/* Mobilné verzie - Nitriansky kraj */
+@media (max-width: 767px) {
+  .hero-nitra {
+    background-image: url('/images/mobile/nitra-hero-mobile.webp');
+  }
+  .hero-komarno {
+    background-image: url('/images/mobile/komarno-hero-mobile.webp');
+  }
+  .hero-nove-zamky {
+    background-image: url('/images/mobile/nove-zamky-hero-mobile.webp');
+  }
+  .hero-levice {
+    background-image: url('/images/mobile/levice-hero-mobile.webp');
+  }
+  .hero-sala {
+    background-image: url('/images/mobile/sala-hero-mobile.webp');
+  }
+  .hero-topolcany {
+    background-image: url('/images/mobile/topolcany-hero-mobile.webp');
+  }
+  .hero-sturovo {
+    background-image: url('/images/mobile/sturovo-hero-mobile.webp');
+  }
+  .hero-hurbanovo {
+    background-image: url('/images/mobile/hurbanovo-hero-mobile.webp');
+  }
+  .hero-kolarovo {
+    background-image: url('/images/mobile/kolarovo-hero-mobile.webp');
+  }
+  .hero-sahy {
+    background-image: url('/images/mobile/sahy-hero-mobile.webp');
+  }
+  .hero-surany {
+    background-image: url('/images/mobile/surany-hero-mobile.webp');
+  }
+  .hero-tlmace {
+    background-image: url('/images/mobile/tlmace-hero-mobile.webp');
+  }
+  .hero-velky-meder {
+    background-image: url('/images/mobile/velky-meder-hero-mobile.webp');
+  }
+  .hero-vrable {
+    background-image: url('/images/mobile/vrable-hero-mobile.webp');
+  }
+  .hero-zlate-moravce {
+    background-image: url('/images/mobile/zlate-moravce-hero-mobile.webp');
+  }
+  .hero-zeliezovce {
+    background-image: url('/images/mobile/zeliezovce-hero-mobile.webp');
+  }
+  .hero-dvory-nad-zitavou {
+    background-image: url('/images/mobile/dvory-nad-zitavou-hero-mobile.webp');
+  }
+  .hero-nesvady {
+    background-image: url('/images/mobile/nesvady-hero-mobile.webp');
+  }
+  .hero-bielovce {
+    background-image: url('/images/mobile/bielovce-hero-mobile.webp');
+  }
+}
+
+/* Spoločné štýly pre všetky hero obrázky */
+[class*="hero-"] {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -382,12 +382,7 @@ async function CityPage({ city }: { city: CityData }) {
         <GeometricLines variant="subtle" count={6} />
         <div className="container mx-auto max-w-4xl relative z-10">
           <div
-            className="text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12"
-            style={{
-              backgroundImage: city.heroImage ? `url(${city.heroImage})` : 'none',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
+            className={`text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12 ${city.heroImage ? `hero-${city.slug}` : ''}`}
           >
             {city.heroImage && (
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
