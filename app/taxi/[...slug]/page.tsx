@@ -476,11 +476,6 @@ async function CityPage({ city }: { city: CityData }) {
                                 )}
                                 {service.name}
                               </CardTitle>
-                              {service.partnerData?.shortDescription && (
-                                <p className="text-white/80 text-sm mt-2 ml-10 md:ml-12">
-                                  {service.partnerData.shortDescription}
-                                </p>
-                              )}
                             </CardHeader>
                             <CardContent className="pt-0 pb-5 md:pb-6 px-4 md:px-5 relative z-10">
                               <div className="flex flex-wrap gap-3 text-sm">
