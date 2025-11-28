@@ -156,7 +156,7 @@ export const ArticleBanner = () => {
 
                   {/* Date */}
                   <div className="mt-auto pt-2 border-t border-foreground/10">
-                    <p className="text-[10px] md:text-xs text-foreground/50">
+                    <p className="text-[10px] md:text-xs text-foreground/70">
                       {new Date(article.date).toLocaleDateString('sk-SK', {
                         year: 'numeric',
                         month: 'long',
@@ -171,11 +171,12 @@ export const ArticleBanner = () => {
         })}
       </div>
 
-      {/* Dots indicator (mobile) */}
-      <div className="flex md:hidden items-center justify-center gap-1 mt-2">
-        {articles.map((_, index) => (
+      {/* Dots indicator (mobile) - min 24x24px touch target */}
+      <div className="flex md:hidden items-center justify-center gap-0 mt-2">
+        {articles.map((article, index) => (
           <button
             key={index}
+            aria-label={`Prejsť na článok ${index + 1}: ${article.title}`}
             onClick={() => {
               if (scrollContainerRef.current) {
                 const container = scrollContainerRef.current;
@@ -188,12 +189,14 @@ export const ArticleBanner = () => {
                 setCurrentIndex(index);
               }
             }}
-            className={`h-1 rounded-full transition-all ${
+            className="min-w-[24px] min-h-[24px] flex items-center justify-center"
+          >
+            <span className={`block rounded-full transition-all ${
               index === currentIndex
-                ? 'w-3 bg-primary'
-                : 'w-1 bg-foreground/20'
-            }`}
-          />
+                ? 'w-3 h-1.5 bg-primary'
+                : 'w-1.5 h-1.5 bg-foreground/20'
+            }`} />
+          </button>
         ))}
       </div>
 

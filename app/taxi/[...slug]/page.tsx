@@ -598,7 +598,7 @@ async function CityPage({ city }: { city: CityData }) {
               <div className="card-3d ">
                 <CardContent className="py-8 md:py-12 px-4">
                   <div className="text-center space-y-3 md:space-y-4">
-                    <MapPin className="h-12 w-12 md:h-16 md:w-16 text-foreground/50 mx-auto" />
+                    <MapPin className="h-12 w-12 md:h-16 md:w-16 text-foreground/70 mx-auto" />
                     <h3 className="text-xl md:text-2xl font-black text-foreground">
                       Zoznam taxislužieb sa pripravuje
                     </h3>
@@ -774,7 +774,7 @@ async function CityPage({ city }: { city: CityData }) {
               </Card>
               </div>
 
-              <p className="text-center text-sm text-foreground/50 mt-6">
+              <p className="text-center text-sm text-foreground/70 mt-6">
                 Transparentné ceny, žiadne skryté poplatky. PREMIUM aktivácia do 24 hodín, PARTNER do 48 hodín od dodania podkladov.
               </p>
             </div>

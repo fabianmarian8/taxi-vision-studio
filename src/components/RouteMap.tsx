@@ -136,7 +136,7 @@ export function RouteMap({
               {roadDistance} km
             </span>
             {hasPrecomputed && (
-              <span className="text-[10px] text-foreground/50">po ceste</span>
+              <span className="text-[10px] text-foreground/70">po ceste</span>
             )}
           </div>
           <div className="flex flex-col items-center">
@@ -155,7 +155,7 @@ export function RouteMap({
           </div>
         </div>
         {!hasPrecomputed && (
-          <p className="text-xs text-center text-foreground/50 mt-2">
+          <p className="text-xs text-center text-foreground/70 mt-2">
             * Odhad na základe vzdialenosti vzdušnou čiarou
           </p>
         )}

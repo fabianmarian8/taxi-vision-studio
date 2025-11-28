@@ -113,13 +113,10 @@ export const metadata: Metadata = {
   },
 };
 
-// Viewport konfigurácia (z index.html line 31)
-// maximum-scale=1 zabraňuje automatickému zoomu pri focus na input na iOS
+// Viewport konfigurácia
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   themeColor: '#ffd700', // Taxi yellow
 };
 

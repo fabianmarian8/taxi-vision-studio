@@ -74,7 +74,7 @@ export async function GoogleReviewsSection({ placeId, serviceName, googleMapsUrl
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <span className="font-bold text-foreground">{review.author}</span>
-                        <span className="text-sm text-foreground/50">{review.date}</span>
+                        <span className="text-sm text-foreground/70">{review.date}</span>
                       </div>
                       <div className="flex items-center gap-1 mb-3">
                         {[...Array(5)].map((_, i) => (
