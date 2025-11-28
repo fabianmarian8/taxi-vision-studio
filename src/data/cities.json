@@ -633,6 +633,7 @@
       "name": "Bratislava",
       "slug": "bratislava",
       "region": "Bratislavský kraj",
+      "heroImage": "/images/bratislava-hero.webp",
       "description": "Hlavné mesto Slovenska s najväčším počtom taxislužieb. Nájdite si spoľahlivé taxi v Bratislave kedykoľvek potrebujete.",
       "metaDescription": "Nájdite taxi v meste Bratislava. 14 taxislužieb s telefónnymi číslami a webovými stránkami: Taxi-Bratislava-City 🚕 Spoľahlivá taxi služba 24/7, Top-Taxi Bratislava, TAXI-TAXI Bratislava a ďalšie. Kontaktujte priamo.",
       "keywords": [
@@ -3215,6 +3216,7 @@
       "name": "Malacky",
       "slug": "malacky",
       "region": "Bratislavský kraj",
+      "heroImage": "/images/malacky-hero.webp",
       "description": "Okresné mesto v Bratislavskom kraji. Vyberte si taxi v Malackách.",
       "metaDescription": "Nájdite taxi v meste Malacky. 7 taxislužieb s telefónnymi číslami a webovými stránkami: Taxi Malacky-Taxik, M.R. TAXI, s.r.o., TAXI Capone a ďalšie. Kontaktujte priamo.",
       "keywords": [
@@ -3506,6 +3508,7 @@
       "name": "Modra",
       "slug": "modra",
       "region": "Bratislavský kraj",
+      "heroImage": "/images/modra-hero.webp",
       "description": "Vinárske mesto v Malokarpatskom regióne. Vyberte si taxi v Modre.",
       "metaDescription": "Nájdite taxi v meste Modra. 1 taxislužba s telefónnymi číslami a webovými stránkami: TAXI MODRA. Kontaktujte priamo.",
       "keywords": [
@@ -4141,6 +4144,7 @@
       "name": "Pezinok",
       "slug": "pezinok",
       "region": "Bratislavský kraj",
+      "heroImage": "/images/pezinok-hero.webp",
       "description": "Vinárske mesto v Malokarpatskom regióne. Vyberte si taxi v Pezinku.",
       "metaDescription": "Nájdite taxi v meste Pezinok. 8 taxislužieb s telefónnymi číslami a webovými stránkami: TAXI PEZINOK, Taxi Pezinok - Campo s.r.o., Taxi Pezinok - Peter Tahotný a ďalšie. Kontaktujte priamo.",
       "keywords": [
@@ -5030,6 +5034,7 @@
       "name": "Senec",
       "slug": "senec",
       "region": "Bratislavský kraj",
+      "heroImage": "/images/senec-hero.webp",
       "description": "Mesto pri Slnečných jazerách. Nájdite taxi v Senci.",
       "metaDescription": "Nájdite taxi v meste Senec. 12 taxislužieb s telefónnymi číslami a webovými stránkami: TAXI SENEC MATEJ, Vaše TAXI Senec, TAXI-7EVEN SENEC a ďalšie. Kontaktujte priamo.",
       "keywords": [
@@ -5807,6 +5812,7 @@
       "name": "Stupava",
       "slug": "stupava",
       "region": "Bratislavský kraj",
+      "heroImage": "/images/stupava-hero.webp",
       "description": "Mesto v blízkosti Bratislavy. Objednajte si taxi v Stupave.",
       "metaDescription": "Nájdite taxi v meste Stupava. 5 taxislužieb s telefónnymi číslami a webovými stránkami: TAXI Stupava, Rychle Taxi Stupava, LACI TAXI STUPAVA a ďalšie. Kontaktujte priamo.",
       "keywords": [
@@ -5854,6 +5860,7 @@
       "name": "Svätý Jur",
       "slug": "svaty-jur",
       "region": "Bratislavský kraj",
+      "heroImage": "/images/svaty-jur-hero.webp",
       "description": "Vinárske mesto v Malokarpatskom regióne. Nájdite taxi vo Svätom Jure.",
       "metaDescription": "Nájdite taxi v meste Svätý Jur. 5 taxislužieb s telefónnymi číslami a webovými stránkami: Purple taxi Svätý Jur, VANTAXI , Taxi Bernolákovo a ďalšie. Kontaktujte priamo.",
       "keywords": [

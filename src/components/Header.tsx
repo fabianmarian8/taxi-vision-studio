@@ -37,7 +37,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#f5a623] border-b-4 border-foreground backdrop-blur-sm">
+    <header className="sticky top-0 z-50 bg-[#f5a623] border-b border-foreground/30 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-8 py-1.5 md:py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3">
@@ -108,7 +108,7 @@ export const Header = () => {
 
       {/* Mobile menu drawer */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t-2 border-foreground bg-background/98 backdrop-blur-sm">
+        <div className="md:hidden border-t border-foreground/30 bg-background/98 backdrop-blur-sm">
           <nav className="container mx-auto px-4 py-3 flex flex-col gap-1">
             <a
               href="#cities"

@@ -5,7 +5,7 @@ import { reopenCookieSettings } from './cookie-banner/cookieManager';
 
 export const FooterLegal = () => {
   return (
-    <footer className="border-t-4 border-foreground py-12 px-8">
+    <footer className="border-t border-foreground/30 py-12 px-8">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-sm text-foreground font-bold">

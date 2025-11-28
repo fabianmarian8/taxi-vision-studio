@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 function Footer() {
   return (
-    <footer className="border-t-4 border-foreground py-8 md:py-12 px-4 md:px-8 relative">
+    <footer className="border-t border-foreground/30 py-8 md:py-12 px-4 md:px-8 relative">
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-foreground/20 to-transparent"></div>
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">

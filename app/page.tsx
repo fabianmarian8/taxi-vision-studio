@@ -63,7 +63,7 @@ export default function HomePage() {
       </section>
 
       {/* Black line separator - z-10 */}
-      <div className="border-b-4 border-foreground relative z-10"></div>
+      <div className="border-b border-foreground/30 relative z-10"></div>
 
       {/* ZMENA: Odstránený spoločný <div className="bg-white"> wrapper.
          Teraz sú sekcie priamymi súrodencami Headeru a Hero sekcie.
@@ -184,7 +184,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer with 3D Border */}
-      <footer className="border-t-4 border-foreground py-5 md:py-7 px-2 md:px-5 bg-white relative">
+      <footer className="border-t border-foreground/30 py-5 md:py-7 px-2 md:px-5 bg-white relative">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-foreground/20 to-transparent"></div>
 
         <div className="container mx-auto max-w-6xl">
