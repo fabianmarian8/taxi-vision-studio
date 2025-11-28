@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-28T17:49:37.016Z",
+  "lastUpdated": "2025-11-28T17:51:34.377Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2638,7 +2638,7 @@
         {
           "name": "Airportdrivetaxi Košice",
           "phone": null,
-          "website": "https://sites.google.com",
+          "website": "",
           "isPremium": true,
           "isPromotional": true,
           "premiumExpiresAt": "2025-12-03T20:14:09.941Z"
