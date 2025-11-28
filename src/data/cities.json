@@ -39,7 +39,8 @@
         }
       ],
       "latitude": 48.721667,
-      "longitude": 18.259826
+      "longitude": 18.259826,
+      "heroImage": "hero-banovce-nad-bebravou"
     },
     {
       "name": "Banská Bystrica",
@@ -353,7 +354,8 @@
         }
       ],
       "latitude": 49.292687,
-      "longitude": 21.275603
+      "longitude": 21.275603,
+      "heroImage": "hero-bardejov"
     },
     {
       "name": "Bátovce",
@@ -417,7 +419,8 @@
         }
       ],
       "latitude": 48.291142,
-      "longitude": 18.744436
+      "longitude": 18.744436,
+      "heroImage": "hero-batovce"
     },
     {
       "name": "Bernolákovo",
@@ -604,7 +607,8 @@
         }
       ],
       "latitude": 48.779959,
-      "longitude": 18.582199
+      "longitude": 18.582199,
+      "heroImage": "hero-bojnice"
     },
     {
       "name": "Boleráz",
@@ -639,7 +643,8 @@
         }
       ],
       "latitude": 48.464531,
-      "longitude": 17.492736
+      "longitude": 17.492736,
+      "heroImage": "hero-boleraz"
     },
     {
       "name": "Bratislava",
@@ -896,7 +901,8 @@
         }
       ],
       "latitude": 48.661644,
-      "longitude": 17.53703
+      "longitude": 17.53703,
+      "heroImage": "hero-brezova-pod-bradlom"
     },
     {
       "name": "Bytča",
@@ -1278,7 +1284,8 @@
         }
       ],
       "latitude": 48.957405,
-      "longitude": 18.166297
+      "longitude": 18.166297,
+      "heroImage": "hero-dubnica-nad-vahom"
     },
     {
       "name": "Dudince",
@@ -1406,7 +1413,8 @@
         }
       ],
       "latitude": 47.989375,
-      "longitude": 17.62026
+      "longitude": 17.62026,
+      "heroImage": "hero-dunajska-streda"
     },
     {
       "name": "Dvory nad Žitavou",
@@ -1556,7 +1564,8 @@
         }
       ],
       "latitude": 47.895106,
-      "longitude": 17.578125
+      "longitude": 17.578125,
+      "heroImage": "hero-gabcikovo"
     },
     {
       "name": "Galanta",
@@ -1636,7 +1645,8 @@
         }
       ],
       "latitude": 48.19105,
-      "longitude": 17.727063
+      "longitude": 17.727063,
+      "heroImage": "hero-galanta"
     },
     {
       "name": "Gelnica",
@@ -1670,7 +1680,7 @@
       ],
       "latitude": 48.853205,
       "longitude": 20.936916,
-      "heroImage": "/images/gelnica-hero.webp"
+      "heroImage": "hero-gelnica"
     },
     {
       "name": "Giraltovce",
@@ -1701,7 +1711,8 @@
         }
       ],
       "latitude": 49.113527,
-      "longitude": 21.516659
+      "longitude": 21.516659,
+      "heroImage": "hero-giraltovce"
     },
     {
       "name": "Handlová",
@@ -1733,7 +1744,8 @@
         }
       ],
       "latitude": 48.731432,
-      "longitude": 18.762694
+      "longitude": 18.762694,
+      "heroImage": "hero-handlova"
     },
     {
       "name": "Hanušovce nad Topľou",
@@ -1773,7 +1785,8 @@
         }
       ],
       "latitude": 49.026879,
-      "longitude": 21.502247
+      "longitude": 21.502247,
+      "heroImage": "hero-hanusovce-nad-toplou"
     },
     {
       "name": "Hlohovec",
@@ -1841,7 +1854,8 @@
         }
       ],
       "latitude": 48.427884,
-      "longitude": 17.798782
+      "longitude": 17.798782,
+      "heroImage": "hero-hlohovec"
     },
     {
       "name": "Hnúšťa",
@@ -1908,7 +1922,8 @@
         }
       ],
       "latitude": 48.808256,
-      "longitude": 17.162816
+      "longitude": 17.162816,
+      "heroImage": "hero-holic"
     },
     {
       "name": "Horná Streda",
@@ -1953,7 +1968,8 @@
         }
       ],
       "latitude": 48.65642,
-      "longitude": 17.844348
+      "longitude": 17.844348,
+      "heroImage": "hero-horna-streda"
     },
     {
       "name": "Horné Orešany",
@@ -1995,7 +2011,8 @@
         }
       ],
       "latitude": 48.465727,
-      "longitude": 17.440411
+      "longitude": 17.440411,
+      "heroImage": "hero-horne-oresany"
     },
     {
       "name": "Hostovce",
@@ -2151,7 +2168,8 @@
         }
       ],
       "latitude": 48.935003,
-      "longitude": 21.902027
+      "longitude": 21.902027,
+      "heroImage": "hero-humenne"
     },
     {
       "name": "Hurbanovo",
@@ -2265,7 +2283,8 @@
         }
       ],
       "latitude": 48.609821,
-      "longitude": 18.27348
+      "longitude": 18.27348,
+      "heroImage": "hero-chynorany"
     },
     {
       "name": "Ilava",
@@ -2303,7 +2322,8 @@
         }
       ],
       "latitude": 48.998567,
-      "longitude": 18.23076
+      "longitude": 18.23076,
+      "heroImage": "hero-ilava"
     },
     {
       "name": "Ivanka pri Dunaji",
@@ -2429,7 +2449,8 @@
         }
       ],
       "latitude": 49.136209,
-      "longitude": 20.43087
+      "longitude": 20.43087,
+      "heroImage": "hero-kezmarok"
     },
     {
       "name": "Kolárovo",
@@ -2736,7 +2757,7 @@
       "taxiServices": [],
       "latitude": 48.914412,
       "longitude": 20.875498,
-      "heroImage": "/images/krompachy-hero.webp"
+      "heroImage": "hero-krompachy"
     },
     {
       "name": "Krupina",
@@ -2887,7 +2908,8 @@
         }
       ],
       "latitude": 48.444178,
-      "longitude": 17.765443
+      "longitude": 17.765443,
+      "heroImage": "hero-leopoldov"
     },
     {
       "name": "Levice",
@@ -3007,7 +3029,8 @@
         }
       ],
       "latitude": 49.025112,
-      "longitude": 20.587999
+      "longitude": 20.587999,
+      "heroImage": "hero-levoca"
     },
     {
       "name": "Lipany",
@@ -3024,7 +3047,8 @@
       ],
       "taxiServices": [],
       "latitude": 49.152599,
-      "longitude": 20.9631
+      "longitude": 20.9631,
+      "heroImage": "hero-lipany"
     },
     {
       "name": "Liptovský Hrádok",
@@ -3464,7 +3488,8 @@
         }
       ],
       "latitude": 49.271132,
-      "longitude": 21.903965
+      "longitude": 21.903965,
+      "heroImage": "hero-medzilaborce"
     },
     {
       "name": "Michalovce",
@@ -3681,7 +3706,8 @@
         }
       ],
       "latitude": 48.754035,
-      "longitude": 17.565022
+      "longitude": 17.565022,
+      "heroImage": "hero-myjava"
     },
     {
       "name": "Námestovo",
@@ -3768,7 +3794,8 @@
       ],
       "taxiServices": [],
       "latitude": 48.964615,
-      "longitude": 18.117571
+      "longitude": 18.117571,
+      "heroImage": "hero-nemsova"
     },
     {
       "name": "Nesvady",
@@ -3964,7 +3991,8 @@
         }
       ],
       "latitude": 48.935874,
-      "longitude": 18.145735
+      "longitude": 18.145735,
+      "heroImage": "hero-nova-dubnica"
     },
     {
       "name": "Nováky",
@@ -4003,7 +4031,8 @@
         }
       ],
       "latitude": 48.716447,
-      "longitude": 18.54083
+      "longitude": 18.54083,
+      "heroImage": "hero-novaky"
     },
     {
       "name": "Nové Mesto nad Váhom",
@@ -4084,7 +4113,8 @@
         }
       ],
       "latitude": 48.763325,
-      "longitude": 17.830386
+      "longitude": 17.830386,
+      "heroImage": "hero-nove-mesto-nad-vahom"
     },
     {
       "name": "Nové Zámky",
@@ -4191,7 +4221,8 @@
         }
       ],
       "latitude": 48.626409,
-      "longitude": 18.373007
+      "longitude": 18.373007,
+      "heroImage": "hero-partizanske"
     },
     {
       "name": "Pezinok",
@@ -4334,7 +4365,8 @@
         }
       ],
       "latitude": 48.589525,
-      "longitude": 17.821385
+      "longitude": 17.821385,
+      "heroImage": "hero-piestany"
     },
     {
       "name": "Poltár",
@@ -4458,7 +4490,8 @@
         }
       ],
       "latitude": 49.054152,
-      "longitude": 20.29764
+      "longitude": 20.29764,
+      "heroImage": "hero-poprad"
     },
     {
       "name": "Považská Bystrica",
@@ -4547,7 +4580,8 @@
         }
       ],
       "latitude": 49.115932,
-      "longitude": 18.446994
+      "longitude": 18.446994,
+      "heroImage": "hero-povazska-bystrica"
     },
     {
       "name": "Prešov",
@@ -4641,7 +4675,8 @@
         }
       ],
       "latitude": 48.997631,
-      "longitude": 21.240187
+      "longitude": 21.240187,
+      "heroImage": "hero-presov"
     },
     {
       "name": "Prievidza",
@@ -4716,7 +4751,8 @@
         }
       ],
       "latitude": 48.771836,
-      "longitude": 18.623492
+      "longitude": 18.623492,
+      "heroImage": "hero-prievidza"
     },
     {
       "name": "Púchov",
@@ -4766,7 +4802,8 @@
         }
       ],
       "latitude": 49.123928,
-      "longitude": 18.323956
+      "longitude": 18.323956,
+      "heroImage": "hero-puchov"
     },
     {
       "name": "Rajec",
@@ -5087,7 +5124,8 @@
         }
       ],
       "latitude": 49.102674,
-      "longitude": 21.097334
+      "longitude": 21.097334,
+      "heroImage": "hero-sabinov"
     },
     {
       "name": "Senec",
@@ -5211,7 +5249,8 @@
         }
       ],
       "latitude": 48.678756,
-      "longitude": 17.366153
+      "longitude": 17.366153,
+      "heroImage": "hero-senica"
     },
     {
       "name": "Sereď",
@@ -5275,7 +5314,8 @@
         }
       ],
       "latitude": 48.288903,
-      "longitude": 17.730881
+      "longitude": 17.730881,
+      "heroImage": "hero-sered"
     },
     {
       "name": "Skalica",
@@ -5326,7 +5366,8 @@
         }
       ],
       "latitude": 48.845208,
-      "longitude": 17.227913
+      "longitude": 17.227913,
+      "heroImage": "hero-skalica"
     },
     {
       "name": "Sládkovičovo",
@@ -5368,7 +5409,8 @@
         }
       ],
       "latitude": 48.205354,
-      "longitude": 17.644104
+      "longitude": 17.644104,
+      "heroImage": "hero-sladkovicovo"
     },
     {
       "name": "Sliač",
@@ -5441,7 +5483,8 @@
         }
       ],
       "latitude": 48.990062,
-      "longitude": 22.155625
+      "longitude": 22.155625,
+      "heroImage": "hero-snina"
     },
     {
       "name": "Sobrance",
@@ -5513,7 +5556,8 @@
         }
       ],
       "latitude": 49.190005,
-      "longitude": 20.455325
+      "longitude": 20.455325,
+      "heroImage": "hero-spisska-bela"
     },
     {
       "name": "Spišská Nová Ves",
@@ -5601,7 +5645,7 @@
       ],
       "latitude": 48.943534,
       "longitude": 20.562964,
-      "heroImage": "/images/spisska-nova-ves-hero.webp"
+      "heroImage": "hero-spisska-nova-ves"
     },
     {
       "name": "Spišská Stará Ves",
@@ -5634,7 +5678,8 @@
         }
       ],
       "latitude": 49.383146,
-      "longitude": 20.359814
+      "longitude": 20.359814,
+      "heroImage": "hero-spisska-stara-ves"
     },
     {
       "name": "Spišské Podhradie",
@@ -5660,7 +5705,8 @@
         }
       ],
       "latitude": 49.000035,
-      "longitude": 20.751072
+      "longitude": 20.751072,
+      "heroImage": "hero-spisske-podhradie"
     },
     {
       "name": "Spišské Vlachy",
@@ -5747,7 +5793,8 @@
         }
       ],
       "latitude": 49.300153,
-      "longitude": 20.688923
+      "longitude": 20.688923,
+      "heroImage": "hero-stara-lubovna"
     },
     {
       "name": "Stará Turá",
@@ -5813,7 +5860,8 @@
         }
       ],
       "latitude": 48.779248,
-      "longitude": 17.694118
+      "longitude": 17.694118,
+      "heroImage": "hero-stara-tura"
     },
     {
       "name": "Strážske",
@@ -5870,7 +5918,8 @@
         }
       ],
       "latitude": 49.202009,
-      "longitude": 21.652134
+      "longitude": 21.652134,
+      "heroImage": "hero-stropkov"
     },
     {
       "name": "Stupava",
@@ -6008,7 +6057,8 @@
         }
       ],
       "latitude": 49.308508,
-      "longitude": 21.573351
+      "longitude": 21.573351,
+      "heroImage": "hero-svidnik"
     },
     {
       "name": "Svit",
@@ -6034,7 +6084,8 @@
         }
       ],
       "latitude": 49.058236,
-      "longitude": 20.196529
+      "longitude": 20.196529,
+      "heroImage": "hero-svit"
     },
     {
       "name": "Šahy",
@@ -6181,7 +6232,8 @@
         }
       ],
       "latitude": 48.027583,
-      "longitude": 17.311571
+      "longitude": 17.311571,
+      "heroImage": "hero-samorin"
     },
     {
       "name": "Šaštín-Stráže",
@@ -6214,7 +6266,8 @@
         }
       ],
       "latitude": 48.636992,
-      "longitude": 17.148493
+      "longitude": 17.148493,
+      "heroImage": "hero-sastin-straze"
     },
     {
       "name": "Štúrovo",
@@ -6646,7 +6699,8 @@
         }
       ],
       "latitude": 48.909445,
-      "longitude": 18.170298
+      "longitude": 18.170298,
+      "heroImage": "hero-trencianske-teplice"
     },
     {
       "name": "Trenčín",
@@ -6741,7 +6795,8 @@
         }
       ],
       "latitude": 48.892358,
-      "longitude": 18.039372
+      "longitude": 18.039372,
+      "heroImage": "hero-trencin"
     },
     {
       "name": "Trnava",
@@ -6822,7 +6877,8 @@
         }
       ],
       "latitude": 48.376765,
-      "longitude": 17.585818
+      "longitude": 17.585818,
+      "heroImage": "hero-trnava"
     },
     {
       "name": "Trstená",
@@ -7209,7 +7265,8 @@
         }
       ],
       "latitude": 49.05,
-      "longitude": 21.2
+      "longitude": 21.2,
+      "heroImage": "hero-velky-saris"
     },
     {
       "name": "Vráble",
@@ -7280,7 +7337,8 @@
         }
       ],
       "latitude": 48.889151,
-      "longitude": 21.682232
+      "longitude": 21.682232,
+      "heroImage": "hero-vranov-nad-toplou"
     },
     {
       "name": "Vrbové",
@@ -7318,7 +7376,8 @@
         }
       ],
       "latitude": 48.619531,
-      "longitude": 17.723876
+      "longitude": 17.723876,
+      "heroImage": "hero-vrbove"
     },
     {
       "name": "Vrútky",
@@ -7438,7 +7497,8 @@
         }
       ],
       "latitude": 49.13859,
-      "longitude": 20.220797
+      "longitude": 20.220797,
+      "heroImage": "hero-vysoke-tatry"
     },
     {
       "name": "Zlaté Moravce",

@@ -611,22 +611,30 @@ async function CityPage({ city }: { city: CityData }) {
             </Card>
           )}
 
-          {/* Partner & Premium info banner */}
-          <div className="mt-8 md:mt-12 py-6 md:py-10 px-4 md:px-6 rounded-xl md:rounded-2xl bg-gradient-to-br from-purple-50 via-white to-yellow-50 border border-foreground/10 overflow-hidden">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-800 px-4 py-2 rounded-full mb-4">
+          {/* Partner & Premium info banner - Collapsible */}
+          <details className="mt-8 md:mt-12 rounded-xl md:rounded-2xl bg-gradient-to-br from-purple-50 via-white to-yellow-50 border border-foreground/10 overflow-hidden group">
+            <summary className="cursor-pointer list-none py-4 md:py-6 px-4 md:px-6 text-center hover:bg-purple-50/50 transition-colors">
+              <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-800 px-4 py-2 rounded-full mb-2">
                 <Crown className="h-5 w-5" />
                 <span className="font-bold text-sm">Pre profesionálne taxislužby</span>
               </div>
-              <h3 className="text-2xl md:text-3xl font-black text-foreground mb-2">
+              <h3 className="text-xl md:text-2xl font-black text-foreground mb-1">
                 Ste taxislužba {locationText} {city.name}?
               </h3>
-              <p className="text-base md:text-lg text-foreground/70 font-medium">
+              <p className="text-sm md:text-base text-foreground/70 font-medium">
                 Získajte viac zákazníkov s TaxiNearMe
               </p>
-            </div>
+              <div className="mt-2 text-purple-600 text-sm font-medium flex items-center justify-center gap-1">
+                <span className="group-open:hidden">Zobraziť ponuku</span>
+                <span className="hidden group-open:inline">Skryť ponuku</span>
+                <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </summary>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="px-4 md:px-6 pb-6 md:pb-10">
+              <div className="grid md:grid-cols-2 gap-6">
               {/* Premium Card */}
               <Card className="relative overflow-hidden border-2 border-yellow-400 bg-gradient-to-br from-yellow-50 to-white hover:border-yellow-500 transition-colors">
                 <div className="absolute top-0 right-0 bg-gradient-to-r from-yellow-400 to-yellow-500 text-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
@@ -764,12 +772,13 @@ async function CityPage({ city }: { city: CityData }) {
                   </Link>
                 </CardContent>
               </Card>
-            </div>
+              </div>
 
-            <p className="text-center text-sm text-foreground/50 mt-6">
-              Transparentné ceny, žiadne skryté poplatky. PREMIUM aktivácia do 24 hodín, PARTNER do 48 hodín od dodania podkladov.
-            </p>
-          </div>
+              <p className="text-center text-sm text-foreground/50 mt-6">
+                Transparentné ceny, žiadne skryté poplatky. PREMIUM aktivácia do 24 hodín, PARTNER do 48 hodín od dodania podkladov.
+              </p>
+            </div>
+          </details>
         </div>
       </section>
 

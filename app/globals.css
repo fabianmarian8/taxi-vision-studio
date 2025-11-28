@@ -1108,6 +1108,426 @@
   }
 }
 
+/* Trnavský kraj - hero obrázky */
+.hero-trnava {
+  background-image: url('/images/trnava-hero.webp');
+}
+.hero-dunajska-streda {
+  background-image: url('/images/dunajska-streda-hero.webp');
+}
+.hero-piestany {
+  background-image: url('/images/piestany-hero.webp');
+}
+.hero-galanta {
+  background-image: url('/images/galanta-hero.webp');
+}
+.hero-hlohovec {
+  background-image: url('/images/hlohovec-hero.webp');
+}
+.hero-skalica {
+  background-image: url('/images/skalica-hero.webp');
+}
+.hero-senica {
+  background-image: url('/images/senica-hero.webp');
+}
+.hero-holic {
+  background-image: url('/images/holic-hero.webp');
+}
+.hero-sered {
+  background-image: url('/images/sered-hero.webp');
+}
+.hero-leopoldov {
+  background-image: url('/images/leopoldov-hero.webp');
+}
+.hero-gabcikovo {
+  background-image: url('/images/gabcikovo-hero.webp');
+}
+.hero-samorin {
+  background-image: url('/images/samorin-hero.webp');
+}
+.hero-sladkovicovo {
+  background-image: url('/images/sladkovicovo-hero.webp');
+}
+.hero-vrbove {
+  background-image: url('/images/vrbove-hero.webp');
+}
+.hero-sastin-straze {
+  background-image: url('/images/sastin-straze-hero.webp');
+}
+.hero-brezova-pod-bradlom {
+  background-image: url('/images/brezova-pod-bradlom-hero.webp');
+}
+.hero-boleraz {
+  background-image: url('/images/boleraz-hero.webp');
+}
+.hero-batovce {
+  background-image: url('/images/batovce-hero.webp');
+}
+.hero-horna-streda {
+  background-image: url('/images/horna-streda-hero.webp');
+}
+.hero-horne-oresany {
+  background-image: url('/images/horne-oresany-hero.webp');
+}
+
+/* Trenčiansky kraj - hero obrázky */
+.hero-trencin {
+  background-image: url('/images/trencin-hero.webp');
+}
+.hero-prievidza {
+  background-image: url('/images/prievidza-hero.webp');
+}
+.hero-povazska-bystrica {
+  background-image: url('/images/povazska-bystrica-hero.webp');
+}
+.hero-puchov {
+  background-image: url('/images/puchov-hero.webp');
+}
+.hero-dubnica-nad-vahom {
+  background-image: url('/images/dubnica-nad-vahom-hero.webp');
+}
+.hero-handlova {
+  background-image: url('/images/handlova-hero.webp');
+}
+.hero-chynorany {
+  background-image: url('/images/chynorany-hero.webp');
+}
+.hero-bojnice {
+  background-image: url('/images/bojnice-hero.webp');
+}
+.hero-ilava {
+  background-image: url('/images/ilava-hero.webp');
+}
+.hero-myjava {
+  background-image: url('/images/myjava-hero.webp');
+}
+.hero-nemsova {
+  background-image: url('/images/nemsova-hero.webp');
+}
+.hero-nova-dubnica {
+  background-image: url('/images/nova-dubnica-hero.webp');
+}
+.hero-novaky {
+  background-image: url('/images/novaky-hero.webp');
+}
+.hero-nove-mesto-nad-vahom {
+  background-image: url('/images/nove-mesto-nad-vahom-hero.webp');
+}
+.hero-partizanske {
+  background-image: url('/images/partizanske-hero.webp');
+}
+.hero-stara-tura {
+  background-image: url('/images/stara-tura-hero.webp');
+}
+.hero-trencianske-teplice {
+  background-image: url('/images/trencianske-teplice-hero.webp');
+}
+.hero-banovce-nad-bebravou {
+  background-image: url('/images/banovce-nad-bebravou-hero.webp');
+}
+
+/* Prešovský kraj - hero obrázky */
+.hero-presov {
+  background-image: url('/images/presov-hero.webp');
+}
+.hero-poprad {
+  background-image: url('/images/poprad-hero.webp');
+}
+.hero-bardejov {
+  background-image: url('/images/bardejov-hero.webp');
+}
+.hero-humenne {
+  background-image: url('/images/humenne-hero.webp');
+}
+.hero-vranov-nad-toplou {
+  background-image: url('/images/vranov-nad-toplou-hero.webp');
+}
+.hero-svidnik {
+  background-image: url('/images/svidnik-hero.webp');
+}
+.hero-snina {
+  background-image: url('/images/snina-hero.webp');
+}
+.hero-stropkov {
+  background-image: url('/images/stropkov-hero.webp');
+}
+.hero-medzilaborce {
+  background-image: url('/images/medzilaborce-hero.webp');
+}
+.hero-stara-lubovna {
+  background-image: url('/images/stara-lubovna-hero.webp');
+}
+.hero-kezmarok {
+  background-image: url('/images/kezmarok-hero.webp');
+}
+.hero-levoca {
+  background-image: url('/images/levoca-hero.webp');
+}
+.hero-spisska-nova-ves {
+  background-image: url('/images/spisska-nova-ves-hero.webp');
+}
+.hero-giraltovce {
+  background-image: url('/images/giraltovce-hero.webp');
+}
+.hero-lipany {
+  background-image: url('/images/lipany-hero.webp');
+}
+.hero-sabinov {
+  background-image: url('/images/sabinov-hero.webp');
+}
+.hero-svit {
+  background-image: url('/images/svit-hero.webp');
+}
+.hero-vysoke-tatry {
+  background-image: url('/images/vysoke-tatry-hero.webp');
+}
+.hero-spisska-bela {
+  background-image: url('/images/spisska-bela-hero.webp');
+}
+.hero-spisske-podhradie {
+  background-image: url('/images/spisske-podhradie-hero.webp');
+}
+.hero-velky-saris {
+  background-image: url('/images/velky-saris-hero.webp');
+}
+.hero-podolinec {
+  background-image: url('/images/podolinec-hero.webp');
+}
+.hero-hanusovce-nad-toplou {
+  background-image: url('/images/hanusovce-nad-toplou-hero.webp');
+}
+.hero-sarisske-michalany {
+  background-image: url('/images/sarisske-michalany-hero.webp');
+}
+.hero-krompachy {
+  background-image: url('/images/krompachy-hero.webp');
+}
+.hero-gelnica {
+  background-image: url('/images/gelnica-hero.webp');
+}
+.hero-cervenica {
+  background-image: url('/images/cervenica-hero.webp');
+}
+.hero-plavnica {
+  background-image: url('/images/plavnica-hero.webp');
+}
+.hero-spisska-stara-ves {
+  background-image: url('/images/spisska-stara-ves-hero.webp');
+}
+
+/* Mobilné verzie - Trnavský kraj */
+@media (max-width: 767px) {
+  .hero-trnava {
+    background-image: url('/images/mobile/trnava-hero-mobile.webp');
+  }
+  .hero-dunajska-streda {
+    background-image: url('/images/mobile/dunajska-streda-hero-mobile.webp');
+  }
+  .hero-piestany {
+    background-image: url('/images/mobile/piestany-hero-mobile.webp');
+  }
+  .hero-galanta {
+    background-image: url('/images/mobile/galanta-hero-mobile.webp');
+  }
+  .hero-hlohovec {
+    background-image: url('/images/mobile/hlohovec-hero-mobile.webp');
+  }
+  .hero-skalica {
+    background-image: url('/images/mobile/skalica-hero-mobile.webp');
+  }
+  .hero-senica {
+    background-image: url('/images/mobile/senica-hero-mobile.webp');
+  }
+  .hero-holic {
+    background-image: url('/images/mobile/holic-hero-mobile.webp');
+  }
+  .hero-sered {
+    background-image: url('/images/mobile/sered-hero-mobile.webp');
+  }
+  .hero-leopoldov {
+    background-image: url('/images/mobile/leopoldov-hero-mobile.webp');
+  }
+  .hero-gabcikovo {
+    background-image: url('/images/mobile/gabcikovo-hero-mobile.webp');
+  }
+  .hero-samorin {
+    background-image: url('/images/mobile/samorin-hero-mobile.webp');
+  }
+  .hero-sladkovicovo {
+    background-image: url('/images/mobile/sladkovicovo-hero-mobile.webp');
+  }
+  .hero-vrbove {
+    background-image: url('/images/mobile/vrbove-hero-mobile.webp');
+  }
+  .hero-sastin-straze {
+    background-image: url('/images/mobile/sastin-straze-hero-mobile.webp');
+  }
+  .hero-brezova-pod-bradlom {
+    background-image: url('/images/mobile/brezova-pod-bradlom-hero-mobile.webp');
+  }
+  .hero-boleraz {
+    background-image: url('/images/mobile/boleraz-hero-mobile.webp');
+  }
+  .hero-batovce {
+    background-image: url('/images/mobile/batovce-hero-mobile.webp');
+  }
+  .hero-horna-streda {
+    background-image: url('/images/mobile/horna-streda-hero-mobile.webp');
+  }
+  .hero-horne-oresany {
+    background-image: url('/images/mobile/horne-oresany-hero-mobile.webp');
+  }
+}
+
+/* Mobilné verzie - Trenčiansky kraj */
+@media (max-width: 767px) {
+  .hero-trencin {
+    background-image: url('/images/mobile/trencin-hero-mobile.webp');
+  }
+  .hero-prievidza {
+    background-image: url('/images/mobile/prievidza-hero-mobile.webp');
+  }
+  .hero-povazska-bystrica {
+    background-image: url('/images/mobile/povazska-bystrica-hero-mobile.webp');
+  }
+  .hero-puchov {
+    background-image: url('/images/mobile/puchov-hero-mobile.webp');
+  }
+  .hero-dubnica-nad-vahom {
+    background-image: url('/images/mobile/dubnica-nad-vahom-hero-mobile.webp');
+  }
+  .hero-handlova {
+    background-image: url('/images/mobile/handlova-hero-mobile.webp');
+  }
+  .hero-chynorany {
+    background-image: url('/images/mobile/chynorany-hero-mobile.webp');
+  }
+  .hero-bojnice {
+    background-image: url('/images/mobile/bojnice-hero-mobile.webp');
+  }
+  .hero-ilava {
+    background-image: url('/images/mobile/ilava-hero-mobile.webp');
+  }
+  .hero-myjava {
+    background-image: url('/images/mobile/myjava-hero-mobile.webp');
+  }
+  .hero-nemsova {
+    background-image: url('/images/mobile/nemsova-hero-mobile.webp');
+  }
+  .hero-nova-dubnica {
+    background-image: url('/images/mobile/nova-dubnica-hero-mobile.webp');
+  }
+  .hero-novaky {
+    background-image: url('/images/mobile/novaky-hero-mobile.webp');
+  }
+  .hero-nove-mesto-nad-vahom {
+    background-image: url('/images/mobile/nove-mesto-nad-vahom-hero-mobile.webp');
+  }
+  .hero-partizanske {
+    background-image: url('/images/mobile/partizanske-hero-mobile.webp');
+  }
+  .hero-stara-tura {
+    background-image: url('/images/mobile/stara-tura-hero-mobile.webp');
+  }
+  .hero-trencianske-teplice {
+    background-image: url('/images/mobile/trencianske-teplice-hero-mobile.webp');
+  }
+  .hero-banovce-nad-bebravou {
+    background-image: url('/images/mobile/banovce-nad-bebravou-hero-mobile.webp');
+  }
+}
+
+/* Mobilné verzie - Prešovský kraj */
+@media (max-width: 767px) {
+  .hero-presov {
+    background-image: url('/images/mobile/presov-hero-mobile.webp');
+  }
+  .hero-poprad {
+    background-image: url('/images/mobile/poprad-hero-mobile.webp');
+  }
+  .hero-bardejov {
+    background-image: url('/images/mobile/bardejov-hero-mobile.webp');
+  }
+  .hero-humenne {
+    background-image: url('/images/mobile/humenne-hero-mobile.webp');
+  }
+  .hero-vranov-nad-toplou {
+    background-image: url('/images/mobile/vranov-nad-toplou-hero-mobile.webp');
+  }
+  .hero-svidnik {
+    background-image: url('/images/mobile/svidnik-hero-mobile.webp');
+  }
+  .hero-snina {
+    background-image: url('/images/mobile/snina-hero-mobile.webp');
+  }
+  .hero-stropkov {
+    background-image: url('/images/mobile/stropkov-hero-mobile.webp');
+  }
+  .hero-medzilaborce {
+    background-image: url('/images/mobile/medzilaborce-hero-mobile.webp');
+  }
+  .hero-stara-lubovna {
+    background-image: url('/images/mobile/stara-lubovna-hero-mobile.webp');
+  }
+  .hero-kezmarok {
+    background-image: url('/images/mobile/kezmarok-hero-mobile.webp');
+  }
+  .hero-levoca {
+    background-image: url('/images/mobile/levoca-hero-mobile.webp');
+  }
+  .hero-spisska-nova-ves {
+    background-image: url('/images/mobile/spisska-nova-ves-hero-mobile.webp');
+  }
+  .hero-giraltovce {
+    background-image: url('/images/mobile/giraltovce-hero-mobile.webp');
+  }
+  .hero-lipany {
+    background-image: url('/images/mobile/lipany-hero-mobile.webp');
+  }
+  .hero-sabinov {
+    background-image: url('/images/mobile/sabinov-hero-mobile.webp');
+  }
+  .hero-svit {
+    background-image: url('/images/mobile/svit-hero-mobile.webp');
+  }
+  .hero-vysoke-tatry {
+    background-image: url('/images/mobile/vysoke-tatry-hero-mobile.webp');
+  }
+  .hero-spisska-bela {
+    background-image: url('/images/mobile/spisska-bela-hero-mobile.webp');
+  }
+  .hero-spisske-podhradie {
+    background-image: url('/images/mobile/spisske-podhradie-hero-mobile.webp');
+  }
+  .hero-velky-saris {
+    background-image: url('/images/mobile/velky-saris-hero-mobile.webp');
+  }
+  .hero-podolinec {
+    background-image: url('/images/mobile/podolinec-hero-mobile.webp');
+  }
+  .hero-hanusovce-nad-toplou {
+    background-image: url('/images/mobile/hanusovce-nad-toplou-hero-mobile.webp');
+  }
+  .hero-sarisske-michalany {
+    background-image: url('/images/mobile/sarisske-michalany-hero-mobile.webp');
+  }
+  .hero-krompachy {
+    background-image: url('/images/mobile/krompachy-hero-mobile.webp');
+  }
+  .hero-gelnica {
+    background-image: url('/images/mobile/gelnica-hero-mobile.webp');
+  }
+  .hero-cervenica {
+    background-image: url('/images/mobile/cervenica-hero-mobile.webp');
+  }
+  .hero-plavnica {
+    background-image: url('/images/mobile/plavnica-hero-mobile.webp');
+  }
+  .hero-spisska-stara-ves {
+    background-image: url('/images/mobile/spisska-stara-ves-hero-mobile.webp');
+  }
+}
+
 /* Spoločné štýly pre všetky hero obrázky */
 [class*="hero-"] {
   background-size: cover;
