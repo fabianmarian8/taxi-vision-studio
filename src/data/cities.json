@@ -415,6 +415,7 @@
     {
       "name": "Bernolákovo",
       "slug": "bernolakovo",
+      "heroImage": "/images/bernolakovo-hero.webp",
       "region": "Bratislavský kraj",
       "description": "Objavte taxi služby v meste Bernolákovo. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
       "metaDescription": "Taxi Bernolákovo - Nájdite taxislužby v meste Bernolákovo. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
@@ -2279,6 +2280,7 @@
     {
       "name": "Ivanka pri Dunaji",
       "slug": "ivanka-pri-dunaji",
+      "heroImage": "/images/ivanka-pri-dunaji-hero.webp",
       "region": "Bratislavský kraj",
       "description": "Objavte taxi služby v meste Ivanka pri Dunaji. Nájdite si spoľahlivú taxislužbu pre pohodlnú dopravu.",
       "metaDescription": "Taxi Ivanka pri Dunaji - Nájdite taxislužby v meste Ivanka pri Dunaji. Kontaktné informácie, telefónne čísla a webové stránky taxislužieb.",
