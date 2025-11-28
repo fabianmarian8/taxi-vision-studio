@@ -10,6 +10,7 @@ import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { ArticleSchema } from '@/components/schema/ArticleSchema';
 
 export const metadata: Metadata = {
   title: 'Psychológia zákazníkov v taxi | TaxiNearMe.sk',
@@ -48,6 +49,13 @@ export const metadata: Metadata = {
 export default function PsychologiaZakaznikovPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        title="Psychológia zákazníkov v taxi - typológia pasažierov"
+        description="Od tichého profesionála po toxického pasažiera. Ako rozpoznať typy zákazníkov a prispôsobiť im svoju komunikáciu."
+        url="https://www.taxinearme.sk/psychologia-zakaznikov"
+        publishedTime="2025-01-15"
+        modifiedTime="2025-01-15"
+      />
       <Header />
 
       <div className="hero-3d-bg">

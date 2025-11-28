@@ -10,6 +10,7 @@ import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { ArticleSchema } from '@/components/schema/ArticleSchema';
 
 export const metadata: Metadata = {
   title: 'Taxi navigácia: Ako nájsť najlepšiu trasu | TaxiNearMe.sk',
@@ -48,6 +49,13 @@ export const metadata: Metadata = {
 export default function NavigaciaPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        title="Taxi navigácia: Ako nájsť najlepšiu trasu"
+        description="Moderné nástroje a tipy pre efektívnu navigáciu v meste."
+        url="https://www.taxinearme.sk/navigacia"
+        publishedTime="2025-01-15"
+        modifiedTime="2025-01-15"
+      />
       <Header />
 
       <div className="hero-3d-bg">

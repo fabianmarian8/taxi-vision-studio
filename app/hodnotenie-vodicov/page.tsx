@@ -19,6 +19,7 @@ import { ArticleFAQ } from '@/components/ArticleFAQ';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { ShareButton } from '@/components/ShareButton';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { ArticleSchema } from '@/components/schema/ArticleSchema';
 
 export const metadata: Metadata = {
   title: 'Ako funguje hodnotenie vodičov v taxi aplikáciách | Taxi NearMe',
@@ -69,6 +70,12 @@ export const metadata: Metadata = {
 export default function HodnotenieVodicovPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        title="Ako funguje hodnotenie vodičov v taxi aplikáciách"
+        description="Prečo môžeš jedným klikom zničiť niekomu prácu. 4★ nie je dobré hodnotenie - je to penalizácia."
+        url="https://www.taxinearme.sk/hodnotenie-vodicov"
+        publishedTime="2025-01-15"
+      />
       <Header />
 
       <div className="hero-3d-bg">

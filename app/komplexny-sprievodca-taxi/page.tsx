@@ -10,6 +10,7 @@ import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { ArticleSchema } from '@/components/schema/ArticleSchema';
 
 export const metadata: Metadata = {
   title: 'Komplexný sprievodca taxislužbami na Slovensku | TaxiNearMe.sk',
@@ -48,6 +49,13 @@ export const metadata: Metadata = {
 export default function KomplexnySprievodcaPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        title="Komplexný sprievodca taxislužbami na Slovensku (2025)"
+        description="Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva."
+        url="https://www.taxinearme.sk/komplexny-sprievodca-taxi"
+        publishedTime="2025-01-15"
+        modifiedTime="2025-01-15"
+      />
       <Header />
 
       <div className="hero-3d-bg">

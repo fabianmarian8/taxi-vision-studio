@@ -3,6 +3,7 @@
 import { Metadata } from "next";
 import { PriceComparisonContent } from "@/components/PriceComparisonContent";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { ArticleSchema } from '@/components/schema/ArticleSchema';
 
 export const metadata: Metadata = {
   title: 'Index cien taxislužieb na Slovensku 2025 | TaxiNearMe.sk',
@@ -39,5 +40,16 @@ export const metadata: Metadata = {
 };
 
 export default function PriceComparisonPage() {
-  return <PriceComparisonContent />;
+  return (
+    <>
+      <ArticleSchema
+        title="Index cien taxislužieb na Slovensku 2025"
+        description="Komplexné porovnanie cien taxi v slovenských mestách. Zistite, kde je najlacnejšie a najdrahšie cestovať taxíkom."
+        url="https://www.taxinearme.sk/porovnanie-cien-taxi-2024-2025"
+        publishedTime="2025-01-15"
+        modifiedTime="2025-01-15"
+      />
+      <PriceComparisonContent />
+    </>
+  );
 }

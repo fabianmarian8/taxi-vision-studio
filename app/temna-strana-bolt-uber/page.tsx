@@ -10,6 +10,7 @@ import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { ArticleSchema } from '@/components/schema/ArticleSchema';
 
 export const metadata: Metadata = {
   title: 'Temná stránka Boltu a Uberu | TaxiNearMe.sk',
@@ -48,6 +49,13 @@ export const metadata: Metadata = {
 export default function TemnaBoltUberPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        title="Temná stránka Boltu a Uberu - problémy rideshare platforiem"
+        description="Nízke provízie, neférové hodnotenie, surge pricing a problémy, o ktorých sa nehovorí. Realita rideshare platforiem."
+        url="https://www.taxinearme.sk/temna-strana-bolt-uber"
+        publishedTime="2025-01-15"
+        modifiedTime="2025-01-15"
+      />
       <Header />
 
       <div className="hero-3d-bg">

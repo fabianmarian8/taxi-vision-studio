@@ -9,7 +9,7 @@
 import { MetadataRoute } from 'next';
 import citiesData from '@/data/cities.json';
 import { allMunicipalities } from '@/data/municipalities';
-import { getDistrictForMunicipality } from '@/data/districts';
+import { getDistrictForMunicipality, getAllDistricts } from '@/data/districts';
 import { createRegionSlug } from '@/data/cities';
 
 // Performance optimization: Cache sitemap for 24 hours
@@ -60,6 +60,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,
+    });
+  });
+
+  // Stránky okresov - /taxi/[regionSlug]/[districtSlug]
+  const districts = getAllDistricts();
+  districts.forEach((district) => {
+    sitemap.push({
+      url: `${baseUrl}/taxi/${district.regionSlug}/${district.slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.75,
     });
   });
 

@@ -117,7 +117,7 @@ export const CookieBanner = () => {
             <div className="flex-shrink-0">
               <div className="w-12 h-12 md:w-20 md:h-20 relative">
                 <Image
-                  src="/cookie-character-1.png"
+                  src="/cookie-character-1.webp"
                   alt="Cookie maskot"
                   className="object-contain"
                   fill

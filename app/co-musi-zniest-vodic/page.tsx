@@ -10,6 +10,7 @@ import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { ArticleSchema } from '@/components/schema/ArticleSchema';
 
 export const metadata: Metadata = {
   title: 'Čo všetko musí zniesť vodič taxi | TaxiNearMe.sk',
@@ -48,6 +49,13 @@ export const metadata: Metadata = {
 export default function CoMusiZniestVodicPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        title="Čo všetko musí zniesť vodič taxi"
+        description="Realita práce taxikára - výzvy, stres a každodenné situácie."
+        url="https://www.taxinearme.sk/co-musi-zniest-vodic"
+        publishedTime="2025-01-15"
+        modifiedTime="2025-01-15"
+      />
       <Header />
 
       <div className="hero-3d-bg">

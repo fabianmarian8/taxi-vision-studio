@@ -10,6 +10,7 @@ import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { ArticleSchema } from '@/components/schema/ArticleSchema';
 
 export const metadata: Metadata = {
   title: 'Elektrifikácia taxislužby na Slovensku | TaxiNearMe.sk',
@@ -48,6 +49,13 @@ export const metadata: Metadata = {
 export default function ElektrifikaciaPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        title="Elektrifikácia taxislužby na Slovensku"
+        description="Budúcnosť taxi je elektrická. Analýza trendu a výhod elektromobilov v taxislužbách."
+        url="https://www.taxinearme.sk/elektrifikacia-taxi"
+        publishedTime="2025-01-15"
+        modifiedTime="2025-01-15"
+      />
       <Header />
 
       <div className="hero-3d-bg">

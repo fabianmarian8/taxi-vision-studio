@@ -10,6 +10,7 @@ import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { ArticleSchema } from '@/components/schema/ArticleSchema';
 
 export const metadata: Metadata = {
   title: 'Komunikácia medzi taxikárom a zákazníkom | TaxiNearMe.sk',
@@ -48,6 +49,13 @@ export const metadata: Metadata = {
 export default function KomunikaciaPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        title="Ako vyzerá dobrá komunikácia medzi taxikárom a zákazníkom"
+        description="Jasné pravidlá, slušnosť a hranice, ktoré by mali poznať obe strany."
+        url="https://www.taxinearme.sk/komunikacia-taxikar-zakaznik"
+        publishedTime="2025-01-15"
+        modifiedTime="2025-01-15"
+      />
       <Header />
 
       <div className="hero-3d-bg">

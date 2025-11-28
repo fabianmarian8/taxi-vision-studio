@@ -11,6 +11,7 @@ import { ArticleFAQ } from "@/components/ArticleFAQ";
 import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { ArticleSchema } from '@/components/schema/ArticleSchema';
 
 export const metadata: Metadata = {
   title: 'Porovnanie cien taxislužieb v slovenských mestách | TaxiNearMe.sk',
@@ -49,6 +50,13 @@ export const metadata: Metadata = {
 export default function TaxiPriceArticlePage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        title="Porovnanie cien taxislužieb v slovenských mestách (2024/2025)"
+        description="Nástupné sadzby od 0,5€ do 3,5€, kilometrové tarify od 0,8€ do 1,5€. Detailný prehľad cien taxi na Slovensku."
+        url="https://www.taxinearme.sk/taxi-ceny"
+        publishedTime="2025-01-15"
+        modifiedTime="2025-01-15"
+      />
       <Header />
       <SEOBreadcrumbs items={[
         { label: 'Porovnanie cien taxi' }

@@ -100,7 +100,7 @@ export const metadata: Metadata = {
 
   // Ostatné meta tagy
   other: {
-    'google-site-verification': '', // Ak máš Google Search Console
+    'google-site-verification': 'zErTLx6mZJ_pALOvJPlUcZOXaZjW4tCTTfQVQICywzk',
   },
 
   // Hreflang a canonical URL pre SEO
@@ -131,6 +131,13 @@ export default function RootLayout({
   return (
     <html lang="sk" suppressHydrationWarning className={`${inter.variable} ${firaMono.variable}`}>
       <head>
+        {/* Preconnect pre externe domény - zrýchľuje načítanie */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+
         {/* Google AdSense verification meta tag */}
         <meta name="google-adsense-account" content="ca-pub-1462378482513953" />
 
