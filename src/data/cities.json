@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-11-27T19:00:00.000Z",
+  "lastUpdated": "2025-11-28T17:44:57.324Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -2754,7 +2754,29 @@
         "objednať taxi krompachy",
         "taxi krompachy telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Alena Kapitančíková - ADK TAXI",
+          "phone": "+421910 929 007",
+          "website": "https://www.adk-taxi.sk/",
+          "isPremium": false,
+          "isPartner": false
+        },
+        {
+          "name": "AAA RED TAXI",
+          "phone": "+421 903 958 802",
+          "website": "",
+          "isPremium": false,
+          "isPartner": false
+        },
+        {
+          "name": "",
+          "phone": "",
+          "website": "",
+          "isPremium": false,
+          "isPartner": false
+        }
+      ],
       "latitude": 48.914412,
       "longitude": 20.875498,
       "heroImage": "hero-krompachy"
