@@ -9,7 +9,7 @@ export const FooterLegal = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-sm text-foreground font-bold">
-            © 2024 Taxi NearMe. Všetky práva vyhradené.
+            © 2025 Taxi NearMe. Všetky práva vyhradené.
           </div>
 
           <div className="flex flex-wrap justify-center gap-8">

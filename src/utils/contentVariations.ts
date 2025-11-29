@@ -254,30 +254,32 @@ export function generateUniqueServiceContent(options: ServiceContentOptions) {
 /**
  * Generuje unikátnu meta description pre taxislužbu
  */
+const currentYear = new Date().getFullYear();
+
 export const metaDescriptionVariants = [
   (serviceName: string, cityName: string, phone: string) =>
-    `${serviceName} v ${cityName}. ${phone ? `Telefón: ${phone}.` : ''} Rýchla preprava po meste aj okolí.`,
+    `${serviceName} v ${cityName} (${currentYear}). ${phone ? `Telefón: ${phone}.` : ''} Rýchla preprava po meste aj okolí.`,
 
   (serviceName: string, cityName: string, phone: string) =>
-    `Taxi ${serviceName} v ${cityName}. ${phone ? `Kontakt: ${phone}.` : ''} Lokálna taxislužba s pokrytím celého mesta.`,
+    `Taxi ${serviceName} v ${cityName} (${currentYear}). ${phone ? `Kontakt: ${phone}.` : ''} Lokálna taxislužba s pokrytím celého mesta.`,
 
   (serviceName: string, cityName: string, phone: string) =>
-    `${serviceName} - taxislužba v ${cityName}. ${phone ? `Tel.: ${phone}.` : ''} Preprava osôb po meste a regióne.`,
+    `${serviceName} - taxislužba v ${cityName} (${currentYear}). ${phone ? `Tel.: ${phone}.` : ''} Preprava osôb po meste a regióne.`,
 
   (serviceName: string, cityName: string, phone: string) =>
-    `Objednajte si taxi ${serviceName} v ${cityName}. ${phone ? `Zavolajte ${phone}.` : ''} Rýchla a spoľahlivá doprava.`,
+    `Objednajte taxi ${serviceName} v ${cityName} (${currentYear}). ${phone ? `Zavolajte ${phone}.` : ''} Rýchla a spoľahlivá doprava.`,
 
   (serviceName: string, cityName: string, phone: string) =>
-    `${serviceName} v ${cityName} poskytuje taxi služby. ${phone ? `Telefónne číslo: ${phone}.` : ''} Preprava v meste aj okolí.`,
+    `${serviceName} v ${cityName} (${currentYear}) - taxi služby. ${phone ? `Telefónne číslo: ${phone}.` : ''} Preprava v meste aj okolí.`,
 
   (serviceName: string, cityName: string, phone: string) =>
-    `Taxi služba ${serviceName} v ${cityName}. ${phone ? `Volajte ${phone}.` : ''} Lokálna preprava pre obyvateľov a návštevníkov.`,
+    `Taxi ${serviceName} v ${cityName} (${currentYear}). ${phone ? `Volajte ${phone}.` : ''} Preprava pre obyvateľov a návštevníkov.`,
 
   (serviceName: string, cityName: string, phone: string) =>
-    `${serviceName} - taxi doprava v ${cityName}. ${phone ? `Kontaktné číslo: ${phone}.` : ''} Služby prepravy osôb po meste.`,
+    `${serviceName} - taxi v ${cityName} (${currentYear}). ${phone ? `Kontaktné číslo: ${phone}.` : ''} Služby prepravy osôb.`,
 
   (serviceName: string, cityName: string, phone: string) =>
-    `Kontaktujte ${serviceName} v ${cityName}. ${phone ? `Tel: ${phone}.` : ''} Taxi služby s lokálnou znalosťou mesta.`,
+    `Kontaktujte ${serviceName} v ${cityName} (${currentYear}). ${phone ? `Tel: ${phone}.` : ''} Taxi služby s lokálnou znalosťou.`,
 ];
 
 export function generateUniqueMetaDescription(serviceName: string, cityName: string, phone: string = ''): string {

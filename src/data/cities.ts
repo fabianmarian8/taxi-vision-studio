@@ -86,3 +86,68 @@ export const getRegionsData = (): RegionData[] => {
     citiesCount: getCitiesByRegion(region).length
   }));
 };
+
+/**
+ * Calculate distance between two coordinates using Haversine formula
+ */
+const calculateDistanceBetweenCities = (
+  lat1: number,
+  lon1: number,
+  lat2: number,
+  lon2: number
+): number => {
+  const R = 6371; // Earth's radius in kilometers
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLon = ((lon2 - lon1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+};
+
+/**
+ * Find nearby cities with taxi services
+ * @param currentCity The city to search from
+ * @param limit How many nearby cities to return (default 5)
+ * @returns Array of cities sorted by distance
+ */
+export const findNearbyCitiesWithTaxis = (
+  currentCity: CityData,
+  limit: number = 5
+): Array<{ city: CityData; distance: number }> => {
+  if (!currentCity.latitude || !currentCity.longitude) {
+    return [];
+  }
+
+  // Get cities with taxi services and coordinates, excluding current city
+  const citiesWithTaxis = slovakCities.filter(
+    (city) =>
+      city.slug !== currentCity.slug &&
+      city.taxiServices &&
+      city.taxiServices.length > 0 &&
+      city.latitude &&
+      city.longitude
+  );
+
+  // Calculate distances
+  const citiesWithDistances = citiesWithTaxis.map((city) => ({
+    city,
+    distance: Math.round(
+      calculateDistanceBetweenCities(
+        currentCity.latitude!,
+        currentCity.longitude!,
+        city.latitude!,
+        city.longitude!
+      )
+    ),
+  }));
+
+  // Sort by distance and return limited results
+  return citiesWithDistances
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, limit);
+};

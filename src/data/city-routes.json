@@ -1,0 +1,7585 @@
+{
+  "generatedAt": "2025-11-29T15:09:36.500Z",
+  "api": "Google",
+  "citiesCount": 30,
+  "routesCount": 435,
+  "cities": [
+    {
+      "name": "Bratislava",
+      "slug": "bratislava",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    {
+      "name": "Žilina",
+      "slug": "zilina",
+      "lat": 49.2231,
+      "lng": 18.7394
+    },
+    {
+      "name": "Dunajská Streda",
+      "slug": "dunajska-streda",
+      "lat": 47.9931,
+      "lng": 17.6183
+    },
+    {
+      "name": "Košice",
+      "slug": "kosice",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    {
+      "name": "Poprad",
+      "slug": "poprad",
+      "lat": 49.06,
+      "lng": 20.2975
+    },
+    {
+      "name": "Trenčín",
+      "slug": "trencin",
+      "lat": 48.8945,
+      "lng": 18.0444
+    },
+    {
+      "name": "Lučenec",
+      "slug": "lucenec",
+      "lat": 48.3308,
+      "lng": 19.6669
+    },
+    {
+      "name": "Považská Bystrica",
+      "slug": "povazska-bystrica",
+      "lat": 49.1217,
+      "lng": 18.4214
+    },
+    {
+      "name": "Prešov",
+      "slug": "presov",
+      "lat": 48.9986,
+      "lng": 21.2392
+    },
+    {
+      "name": "Banská Bystrica",
+      "slug": "banska-bystrica",
+      "lat": 48.736,
+      "lng": 19.1461
+    },
+    {
+      "name": "Liptovský Mikuláš",
+      "slug": "liptovsky-mikulas",
+      "lat": 49.0839,
+      "lng": 19.6119
+    },
+    {
+      "name": "Michalovce",
+      "slug": "michalovce",
+      "lat": 48.7547,
+      "lng": 21.9178
+    },
+    {
+      "name": "Nitra",
+      "slug": "nitra",
+      "lat": 48.3069,
+      "lng": 18.0864
+    },
+    {
+      "name": "Nové Mesto nad Váhom",
+      "slug": "nove-mesto-nad-vahom",
+      "lat": 48.7578,
+      "lng": 17.8303
+    },
+    {
+      "name": "Spišská Nová Ves",
+      "slug": "spisska-nova-ves",
+      "lat": 48.9461,
+      "lng": 20.5592
+    },
+    {
+      "name": "Zvolen",
+      "slug": "zvolen",
+      "lat": 48.5744,
+      "lng": 19.1236
+    },
+    {
+      "name": "Dolný Kubín",
+      "slug": "dolny-kubin",
+      "lat": 49.2094,
+      "lng": 19.3014
+    },
+    {
+      "name": "Martin",
+      "slug": "martin",
+      "lat": 49.0636,
+      "lng": 18.9236
+    },
+    {
+      "name": "Piešťany",
+      "slug": "piestany",
+      "lat": 48.5917,
+      "lng": 17.8336
+    },
+    {
+      "name": "Ružomberok",
+      "slug": "ruzomberok",
+      "lat": 49.0794,
+      "lng": 19.3061
+    },
+    {
+      "name": "Senec",
+      "slug": "senec",
+      "lat": 48.2192,
+      "lng": 17.3997
+    },
+    {
+      "name": "Trnava",
+      "slug": "trnava",
+      "lat": 48.3775,
+      "lng": 17.5883
+    },
+    {
+      "name": "Bardejov",
+      "slug": "bardejov",
+      "lat": 49.2922,
+      "lng": 21.2767
+    },
+    {
+      "name": "Galanta",
+      "slug": "galanta",
+      "lat": 48.19,
+      "lng": 17.7267
+    },
+    {
+      "name": "Humenné",
+      "slug": "humenne",
+      "lat": 48.9356,
+      "lng": 21.9064
+    },
+    {
+      "name": "Prievidza",
+      "slug": "prievidza",
+      "lat": 48.7744,
+      "lng": 18.6247
+    },
+    {
+      "name": "Rimavská Sobota",
+      "slug": "rimavska-sobota",
+      "lat": 48.3828,
+      "lng": 20.0219
+    },
+    {
+      "name": "Štúrovo",
+      "slug": "sturovo",
+      "lat": 47.7986,
+      "lng": 18.7172
+    },
+    {
+      "name": "Topoľčany",
+      "slug": "topolcany",
+      "lat": 48.5617,
+      "lng": 18.1783
+    },
+    {
+      "name": "Levice",
+      "slug": "levice",
+      "lat": 48.2167,
+      "lng": 18.6
+    }
+  ],
+  "routes": [
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "banska-bystrica-bardejov",
+      "distance_km": 233,
+      "duration_min": 177
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "slug": "banska-bystrica-bratislava",
+      "distance_km": 210,
+      "duration_min": 117
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "banska-bystrica-dolny-kubin",
+      "distance_km": 72,
+      "duration_min": 76
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "slug": "banska-bystrica-dunajska-streda",
+      "distance_km": 186,
+      "duration_min": 117
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "banska-bystrica-galanta",
+      "distance_km": 155,
+      "duration_min": 88
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "banska-bystrica-humenne",
+      "distance_km": 263,
+      "duration_min": 203
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "slug": "banska-bystrica-kosice",
+      "distance_km": 225,
+      "duration_min": 156
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "banska-bystrica-levice",
+      "distance_km": 98,
+      "duration_min": 66
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "slug": "banska-bystrica-liptovsky-mikulas",
+      "distance_km": 79,
+      "duration_min": 76
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "slug": "banska-bystrica-lucenec",
+      "distance_km": 77,
+      "duration_min": 59
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "banska-bystrica-martin",
+      "distance_km": 62,
+      "duration_min": 63
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "slug": "banska-bystrica-michalovce",
+      "distance_km": 271,
+      "duration_min": 197
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "banska-bystrica-nitra",
+      "distance_km": 118,
+      "duration_min": 70
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "banska-bystrica-nove-mesto-nad-vahom",
+      "distance_km": 219,
+      "duration_min": 122
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "banska-bystrica-piestany",
+      "distance_km": 197,
+      "duration_min": 110
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "slug": "banska-bystrica-poprad",
+      "distance_km": 116,
+      "duration_min": 100
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "slug": "banska-bystrica-povazska-bystrica",
+      "distance_km": 124,
+      "duration_min": 111
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "slug": "banska-bystrica-presov",
+      "distance_km": 192,
+      "duration_min": 139
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "banska-bystrica-prievidza",
+      "distance_km": 77,
+      "duration_min": 59
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "banska-bystrica-rimavska-sobota",
+      "distance_km": 108,
+      "duration_min": 78
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "banska-bystrica-ruzomberok",
+      "distance_km": 55,
+      "duration_min": 58
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "banska-bystrica-senec",
+      "distance_km": 184,
+      "duration_min": 102
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "banska-bystrica-spisska-nova-ves",
+      "distance_km": 141,
+      "duration_min": 116
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "banska-bystrica-sturovo",
+      "distance_km": 150,
+      "duration_min": 114
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "banska-bystrica-topolcany",
+      "distance_km": 114,
+      "duration_min": 93
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "slug": "banska-bystrica-trencin",
+      "distance_km": 142,
+      "duration_min": 114
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "banska-bystrica-trnava",
+      "distance_km": 165,
+      "duration_min": 93
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "slug": "banska-bystrica-zilina",
+      "distance_km": 91,
+      "duration_min": 91
+    },
+    {
+      "from": {
+        "name": "Banská Bystrica",
+        "slug": "banska-bystrica",
+        "lat": 48.736,
+        "lng": 19.1461
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "banska-bystrica-zvolen",
+      "distance_km": 20,
+      "duration_min": 17
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-bratislava",
+      "distance_km": 444,
+      "duration_min": 289
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-dolny-kubin",
+      "distance_km": 211,
+      "duration_min": 144
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-dunajska-streda",
+      "distance_km": 420,
+      "duration_min": 288
+    },
+    {
+      "from": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "bardejov-galanta",
+      "distance_km": 389,
+      "duration_min": 261
+    },
+    {
+      "from": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "bardejov-humenne",
+      "distance_km": 84,
+      "duration_min": 80
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-kosice",
+      "distance_km": 77,
+      "duration_min": 64
+    },
+    {
+      "from": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "bardejov-levice",
+      "distance_km": 332,
+      "duration_min": 239
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-liptovsky-mikulas",
+      "distance_km": 173,
+      "duration_min": 115
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-lucenec",
+      "distance_km": 234,
+      "duration_min": 183
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-martin",
+      "distance_km": 238,
+      "duration_min": 167
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-michalovce",
+      "distance_km": 101,
+      "duration_min": 92
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-nitra",
+      "distance_km": 351,
+      "duration_min": 240
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-nove-mesto-nad-vahom",
+      "distance_km": 356,
+      "duration_min": 239
+    },
+    {
+      "from": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-piestany",
+      "distance_km": 373,
+      "duration_min": 249
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-poprad",
+      "distance_km": 123,
+      "duration_min": 90
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-povazska-bystrica",
+      "distance_km": 291,
+      "duration_min": 204
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-presov",
+      "distance_km": 41,
+      "duration_min": 40
+    },
+    {
+      "from": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "bardejov-prievidza",
+      "distance_km": 289,
+      "duration_min": 216
+    },
+    {
+      "from": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "bardejov-rimavska-sobota",
+      "distance_km": 205,
+      "duration_min": 162
+    },
+    {
+      "from": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-ruzomberok",
+      "distance_km": 195,
+      "duration_min": 128
+    },
+    {
+      "from": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-senec",
+      "distance_km": 416,
+      "duration_min": 273
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-spisska-nova-ves",
+      "distance_km": 103,
+      "duration_min": 84
+    },
+    {
+      "from": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "bardejov-sturovo",
+      "distance_km": 377,
+      "duration_min": 257
+    },
+    {
+      "from": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "bardejov-topolcany",
+      "distance_km": 338,
+      "duration_min": 262
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-trencin",
+      "distance_km": 333,
+      "duration_min": 232
+    },
+    {
+      "from": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-trnava",
+      "distance_km": 399,
+      "duration_min": 265
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-zilina",
+      "distance_km": 258,
+      "duration_min": 184
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Bardejov",
+        "slug": "bardejov",
+        "lat": 49.2922,
+        "lng": 21.2767
+      },
+      "slug": "bardejov-zvolen",
+      "distance_km": 256,
+      "duration_min": 190
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "bratislava-dolny-kubin",
+      "distance_km": 263,
+      "duration_min": 167
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "slug": "bratislava-dunajska-streda",
+      "distance_km": 48,
+      "duration_min": 34
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "bratislava-galanta",
+      "distance_km": 59,
+      "duration_min": 48
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "bratislava-humenne",
+      "distance_km": 474,
+      "duration_min": 315
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "slug": "bratislava-kosice",
+      "distance_km": 403,
+      "duration_min": 261
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "bratislava-levice",
+      "distance_km": 150,
+      "duration_min": 96
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "slug": "bratislava-liptovsky-mikulas",
+      "distance_km": 286,
+      "duration_min": 184
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "slug": "bratislava-lucenec",
+      "distance_km": 251,
+      "duration_min": 146
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "bratislava-martin",
+      "distance_km": 232,
+      "duration_min": 146
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "slug": "bratislava-michalovce",
+      "distance_km": 482,
+      "duration_min": 309
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "bratislava-nitra",
+      "distance_km": 95,
+      "duration_min": 60
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "bratislava-nove-mesto-nad-vahom",
+      "distance_km": 111,
+      "duration_min": 69
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "bratislava-piestany",
+      "distance_km": 88,
+      "duration_min": 58
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "slug": "bratislava-poprad",
+      "distance_km": 327,
+      "duration_min": 212
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "slug": "bratislava-povazska-bystrica",
+      "distance_km": 174,
+      "duration_min": 101
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "slug": "bratislava-presov",
+      "distance_km": 403,
+      "duration_min": 253
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "bratislava-prievidza",
+      "distance_km": 192,
+      "duration_min": 126
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "bratislava-rimavska-sobota",
+      "distance_km": 278,
+      "duration_min": 166
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "bratislava-ruzomberok",
+      "distance_km": 262,
+      "duration_min": 166
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "bratislava-senec",
+      "distance_km": 31,
+      "duration_min": 26
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "bratislava-spisska-nova-ves",
+      "distance_km": 352,
+      "duration_min": 228
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "bratislava-sturovo",
+      "distance_km": 162,
+      "duration_min": 123
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "bratislava-topolcany",
+      "distance_km": 109,
+      "duration_min": 87
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "slug": "bratislava-trencin",
+      "distance_km": 132,
+      "duration_min": 82
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "bratislava-trnava",
+      "distance_km": 57,
+      "duration_min": 41
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "slug": "bratislava-zilina",
+      "distance_km": 202,
+      "duration_min": 118
+    },
+    {
+      "from": {
+        "name": "Bratislava",
+        "slug": "bratislava",
+        "lat": 48.1486,
+        "lng": 17.1077
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "bratislava-zvolen",
+      "distance_km": 195,
+      "duration_min": 110
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-dunajska-streda",
+      "distance_km": 265,
+      "duration_min": 181
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "dolny-kubin-galanta",
+      "distance_km": 234,
+      "duration_min": 152
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "dolny-kubin-humenne",
+      "distance_km": 241,
+      "duration_min": 170
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-kosice",
+      "distance_km": 203,
+      "duration_min": 126
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "dolny-kubin-levice",
+      "distance_km": 167,
+      "duration_min": 134
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-liptovsky-mikulas",
+      "distance_km": 41,
+      "duration_min": 38
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-lucenec",
+      "distance_km": 146,
+      "duration_min": 125
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "dolny-kubin-martin",
+      "distance_km": 45,
+      "duration_min": 43
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-michalovce",
+      "distance_km": 249,
+      "duration_min": 166
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-nitra",
+      "distance_km": 186,
+      "duration_min": 135
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-nove-mesto-nad-vahom",
+      "distance_km": 161,
+      "duration_min": 112
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "dolny-kubin-piestany",
+      "distance_km": 179,
+      "duration_min": 123
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-poprad",
+      "distance_km": 94,
+      "duration_min": 70
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-povazska-bystrica",
+      "distance_km": 96,
+      "duration_min": 78
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-presov",
+      "distance_km": 170,
+      "duration_min": 109
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "dolny-kubin-prievidza",
+      "distance_km": 94,
+      "duration_min": 88
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "dolny-kubin-rimavska-sobota",
+      "distance_km": 177,
+      "duration_min": 146
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "dolny-kubin-ruzomberok",
+      "distance_km": 17,
+      "duration_min": 19
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "dolny-kubin-senec",
+      "distance_km": 236,
+      "duration_min": 152
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-spisska-nova-ves",
+      "distance_km": 119,
+      "duration_min": 85
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "dolny-kubin-sturovo",
+      "distance_km": 219,
+      "duration_min": 182
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "dolny-kubin-topolcany",
+      "distance_km": 143,
+      "duration_min": 134
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-trencin",
+      "distance_km": 138,
+      "duration_min": 105
+    },
+    {
+      "from": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "dolny-kubin-trnava",
+      "distance_km": 218,
+      "duration_min": 143
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-zilina",
+      "distance_km": 64,
+      "duration_min": 58
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Dolný Kubín",
+        "slug": "dolny-kubin",
+        "lat": 49.2094,
+        "lng": 19.3014
+      },
+      "slug": "dolny-kubin-zvolen",
+      "distance_km": 91,
+      "duration_min": 85
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "dunajska-streda-galanta",
+      "distance_km": 31,
+      "duration_min": 32
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "dunajska-streda-humenne",
+      "distance_km": 450,
+      "duration_min": 314
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "slug": "dunajska-streda-kosice",
+      "distance_km": 379,
+      "duration_min": 260
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "dunajska-streda-levice",
+      "distance_km": 126,
+      "duration_min": 95
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "slug": "dunajska-streda-liptovsky-mikulas",
+      "distance_km": 262,
+      "duration_min": 184
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "slug": "dunajska-streda-lucenec",
+      "distance_km": 227,
+      "duration_min": 146
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "dunajska-streda-martin",
+      "distance_km": 209,
+      "duration_min": 149
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "slug": "dunajska-streda-michalovce",
+      "distance_km": 458,
+      "duration_min": 308
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "dunajska-streda-nitra",
+      "distance_km": 71,
+      "duration_min": 59
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "dunajska-streda-nove-mesto-nad-vahom",
+      "distance_km": 112,
+      "duration_min": 82
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "dunajska-streda-piestany",
+      "distance_km": 89,
+      "duration_min": 71
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "slug": "dunajska-streda-poprad",
+      "distance_km": 303,
+      "duration_min": 211
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "slug": "dunajska-streda-povazska-bystrica",
+      "distance_km": 175,
+      "duration_min": 115
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "slug": "dunajska-streda-presov",
+      "distance_km": 379,
+      "duration_min": 252
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "dunajska-streda-prievidza",
+      "distance_km": 183,
+      "duration_min": 127
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "dunajska-streda-rimavska-sobota",
+      "distance_km": 254,
+      "duration_min": 165
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "dunajska-streda-ruzomberok",
+      "distance_km": 238,
+      "duration_min": 165
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "dunajska-streda-senec",
+      "distance_km": 36,
+      "duration_min": 37
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "dunajska-streda-spisska-nova-ves",
+      "distance_km": 329,
+      "duration_min": 227
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "dunajska-streda-sturovo",
+      "distance_km": 102,
+      "duration_min": 94
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "dunajska-streda-topolcany",
+      "distance_km": 102,
+      "duration_min": 86
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "slug": "dunajska-streda-trencin",
+      "distance_km": 133,
+      "duration_min": 95
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "dunajska-streda-trnava",
+      "distance_km": 58,
+      "duration_min": 54
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "slug": "dunajska-streda-zilina",
+      "distance_km": 203,
+      "duration_min": 130
+    },
+    {
+      "from": {
+        "name": "Dunajská Streda",
+        "slug": "dunajska-streda",
+        "lat": 47.9931,
+        "lng": 17.6183
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "dunajska-streda-zvolen",
+      "distance_km": 171,
+      "duration_min": 109
+    },
+    {
+      "from": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "galanta-humenne",
+      "distance_km": 419,
+      "duration_min": 285
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-kosice",
+      "distance_km": 350,
+      "duration_min": 234
+    },
+    {
+      "from": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "galanta-levice",
+      "distance_km": 96,
+      "duration_min": 66
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-liptovsky-mikulas",
+      "distance_km": 231,
+      "duration_min": 157
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-lucenec",
+      "distance_km": 197,
+      "duration_min": 119
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-martin",
+      "distance_km": 178,
+      "duration_min": 122
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-michalovce",
+      "distance_km": 428,
+      "duration_min": 279
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-nitra",
+      "distance_km": 38,
+      "duration_min": 30
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-nove-mesto-nad-vahom",
+      "distance_km": 81,
+      "duration_min": 52
+    },
+    {
+      "from": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-piestany",
+      "distance_km": 60,
+      "duration_min": 43
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-poprad",
+      "distance_km": 273,
+      "duration_min": 183
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-povazska-bystrica",
+      "distance_km": 144,
+      "duration_min": 85
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-presov",
+      "distance_km": 349,
+      "duration_min": 222
+    },
+    {
+      "from": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "galanta-prievidza",
+      "distance_km": 152,
+      "duration_min": 98
+    },
+    {
+      "from": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "galanta-rimavska-sobota",
+      "distance_km": 223,
+      "duration_min": 136
+    },
+    {
+      "from": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-ruzomberok",
+      "distance_km": 207,
+      "duration_min": 138
+    },
+    {
+      "from": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-senec",
+      "distance_km": 27,
+      "duration_min": 27
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-spisska-nova-ves",
+      "distance_km": 298,
+      "duration_min": 198
+    },
+    {
+      "from": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "galanta-sturovo",
+      "distance_km": 95,
+      "duration_min": 83
+    },
+    {
+      "from": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "galanta-topolcany",
+      "distance_km": 71,
+      "duration_min": 57
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-trencin",
+      "distance_km": 103,
+      "duration_min": 67
+    },
+    {
+      "from": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-trnava",
+      "distance_km": 27,
+      "duration_min": 25
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-zilina",
+      "distance_km": 172,
+      "duration_min": 100
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Galanta",
+        "slug": "galanta",
+        "lat": 48.19,
+        "lng": 17.7267
+      },
+      "slug": "galanta-zvolen",
+      "distance_km": 140,
+      "duration_min": 80
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-kosice",
+      "distance_km": 75,
+      "duration_min": 69
+    },
+    {
+      "from": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "humenne-levice",
+      "distance_km": 362,
+      "duration_min": 265
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-liptovsky-mikulas",
+      "distance_km": 204,
+      "duration_min": 141
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-lucenec",
+      "distance_km": 235,
+      "duration_min": 188
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-martin",
+      "distance_km": 268,
+      "duration_min": 193
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-michalovce",
+      "distance_km": 27,
+      "duration_min": 27
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-nitra",
+      "distance_km": 381,
+      "duration_min": 266
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-nove-mesto-nad-vahom",
+      "distance_km": 386,
+      "duration_min": 265
+    },
+    {
+      "from": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-piestany",
+      "distance_km": 403,
+      "duration_min": 275
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-poprad",
+      "distance_km": 154,
+      "duration_min": 116
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-povazska-bystrica",
+      "distance_km": 321,
+      "duration_min": 230
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-presov",
+      "distance_km": 72,
+      "duration_min": 66
+    },
+    {
+      "from": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "humenne-prievidza",
+      "distance_km": 318,
+      "duration_min": 242
+    },
+    {
+      "from": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "humenne-rimavska-sobota",
+      "distance_km": 207,
+      "duration_min": 165
+    },
+    {
+      "from": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-ruzomberok",
+      "distance_km": 225,
+      "duration_min": 154
+    },
+    {
+      "from": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-senec",
+      "distance_km": 446,
+      "duration_min": 299
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-spisska-nova-ves",
+      "distance_km": 134,
+      "duration_min": 110
+    },
+    {
+      "from": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "humenne-sturovo",
+      "distance_km": 372,
+      "duration_min": 256
+    },
+    {
+      "from": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "humenne-topolcany",
+      "distance_km": 367,
+      "duration_min": 289
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-trencin",
+      "distance_km": 363,
+      "duration_min": 258
+    },
+    {
+      "from": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-trnava",
+      "distance_km": 430,
+      "duration_min": 291
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-zilina",
+      "distance_km": 289,
+      "duration_min": 210
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Humenné",
+        "slug": "humenne",
+        "lat": 48.9356,
+        "lng": 21.9064
+      },
+      "slug": "humenne-zvolen",
+      "distance_km": 286,
+      "duration_min": 216
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "kosice-levice",
+      "distance_km": 293,
+      "duration_min": 212
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "slug": "kosice-liptovsky-mikulas",
+      "distance_km": 166,
+      "duration_min": 95
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "slug": "kosice-lucenec",
+      "distance_km": 157,
+      "duration_min": 123
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "kosice-martin",
+      "distance_km": 232,
+      "duration_min": 150
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "slug": "kosice-michalovce",
+      "distance_km": 59,
+      "duration_min": 55
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "kosice-nitra",
+      "distance_km": 312,
+      "duration_min": 216
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "kosice-nove-mesto-nad-vahom",
+      "distance_km": 348,
+      "duration_min": 220
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "kosice-piestany",
+      "distance_km": 366,
+      "duration_min": 230
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "slug": "kosice-poprad",
+      "distance_km": 117,
+      "duration_min": 71
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "slug": "kosice-povazska-bystrica",
+      "distance_km": 283,
+      "duration_min": 185
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "slug": "kosice-presov",
+      "distance_km": 37,
+      "duration_min": 28
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "kosice-prievidza",
+      "distance_km": 282,
+      "duration_min": 194
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "kosice-rimavska-sobota",
+      "distance_km": 129,
+      "duration_min": 100
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "kosice-ruzomberok",
+      "distance_km": 187,
+      "duration_min": 109
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "kosice-senec",
+      "distance_km": 378,
+      "duration_min": 248
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "kosice-spisska-nova-ves",
+      "distance_km": 99,
+      "duration_min": 64
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "kosice-sturovo",
+      "distance_km": 298,
+      "duration_min": 199
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "kosice-topolcany",
+      "distance_km": 309,
+      "duration_min": 239
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "slug": "kosice-trencin",
+      "distance_km": 332,
+      "duration_min": 214
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "kosice-trnava",
+      "distance_km": 360,
+      "duration_min": 239
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "slug": "kosice-zilina",
+      "distance_km": 252,
+      "duration_min": 166
+    },
+    {
+      "from": {
+        "name": "Košice",
+        "slug": "kosice",
+        "lat": 48.7164,
+        "lng": 21.2611
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "kosice-zvolen",
+      "distance_km": 213,
+      "duration_min": 161
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-liptovsky-mikulas",
+      "distance_km": 173,
+      "duration_min": 135
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-lucenec",
+      "distance_km": 140,
+      "duration_min": 97
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-martin",
+      "distance_km": 121,
+      "duration_min": 100
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-michalovce",
+      "distance_km": 370,
+      "duration_min": 257
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-nitra",
+      "distance_km": 45,
+      "duration_min": 46
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-nove-mesto-nad-vahom",
+      "distance_km": 160,
+      "duration_min": 99
+    },
+    {
+      "from": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-piestany",
+      "distance_km": 138,
+      "duration_min": 90
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-poprad",
+      "distance_km": 215,
+      "duration_min": 161
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-povazska-bystrica",
+      "distance_km": 223,
+      "duration_min": 132
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-presov",
+      "distance_km": 291,
+      "duration_min": 200
+    },
+    {
+      "from": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-prievidza",
+      "distance_km": 96,
+      "duration_min": 77
+    },
+    {
+      "from": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-rimavska-sobota",
+      "distance_km": 166,
+      "duration_min": 117
+    },
+    {
+      "from": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-ruzomberok",
+      "distance_km": 150,
+      "duration_min": 116
+    },
+    {
+      "from": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-senec",
+      "distance_km": 123,
+      "duration_min": 79
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-spisska-nova-ves",
+      "distance_km": 241,
+      "duration_min": 176
+    },
+    {
+      "from": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-sturovo",
+      "distance_km": 56,
+      "duration_min": 58
+    },
+    {
+      "from": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-topolcany",
+      "distance_km": 71,
+      "duration_min": 73
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-trencin",
+      "distance_km": 181,
+      "duration_min": 114
+    },
+    {
+      "from": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-trnava",
+      "distance_km": 106,
+      "duration_min": 72
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-zilina",
+      "distance_km": 151,
+      "duration_min": 129
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Levice",
+        "slug": "levice",
+        "lat": 48.2167,
+        "lng": 18.6
+      },
+      "slug": "levice-zvolen",
+      "distance_km": 83,
+      "duration_min": 58
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "slug": "liptovsky-mikulas-lucenec",
+      "distance_km": 153,
+      "duration_min": 126
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "liptovsky-mikulas-martin",
+      "distance_km": 69,
+      "duration_min": 62
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "slug": "liptovsky-mikulas-michalovce",
+      "distance_km": 212,
+      "duration_min": 135
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "liptovsky-mikulas-nitra",
+      "distance_km": 193,
+      "duration_min": 138
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "liptovsky-mikulas-nove-mesto-nad-vahom",
+      "distance_km": 185,
+      "duration_min": 132
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "liptovsky-mikulas-piestany",
+      "distance_km": 203,
+      "duration_min": 142
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "slug": "liptovsky-mikulas-poprad",
+      "distance_km": 57,
+      "duration_min": 39
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "slug": "liptovsky-mikulas-povazska-bystrica",
+      "distance_km": 122,
+      "duration_min": 98
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "slug": "liptovsky-mikulas-presov",
+      "distance_km": 133,
+      "duration_min": 78
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "liptovsky-mikulas-prievidza",
+      "distance_km": 119,
+      "duration_min": 106
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "liptovsky-mikulas-rimavska-sobota",
+      "distance_km": 127,
+      "duration_min": 122
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "liptovsky-mikulas-ruzomberok",
+      "distance_km": 25,
+      "duration_min": 22
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "liptovsky-mikulas-senec",
+      "distance_km": 259,
+      "duration_min": 171
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "liptovsky-mikulas-spisska-nova-ves",
+      "distance_km": 82,
+      "duration_min": 54
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "liptovsky-mikulas-sturovo",
+      "distance_km": 226,
+      "duration_min": 183
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "liptovsky-mikulas-topolcany",
+      "distance_km": 168,
+      "duration_min": 153
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "slug": "liptovsky-mikulas-trencin",
+      "distance_km": 164,
+      "duration_min": 126
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "liptovsky-mikulas-trnava",
+      "distance_km": 241,
+      "duration_min": 162
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "slug": "liptovsky-mikulas-zilina",
+      "distance_km": 89,
+      "duration_min": 78
+    },
+    {
+      "from": {
+        "name": "Liptovský Mikuláš",
+        "slug": "liptovsky-mikulas",
+        "lat": 49.0839,
+        "lng": 19.6119
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "liptovsky-mikulas-zvolen",
+      "distance_km": 95,
+      "duration_min": 86
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "lucenec-martin",
+      "distance_km": 136,
+      "duration_min": 107
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "slug": "lucenec-michalovce",
+      "distance_km": 219,
+      "duration_min": 175
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "lucenec-nitra",
+      "distance_km": 160,
+      "duration_min": 100
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "lucenec-nove-mesto-nad-vahom",
+      "distance_km": 262,
+      "duration_min": 152
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "lucenec-piestany",
+      "distance_km": 239,
+      "duration_min": 141
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "slug": "lucenec-poprad",
+      "distance_km": 124,
+      "duration_min": 127
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "slug": "lucenec-povazska-bystrica",
+      "distance_km": 199,
+      "duration_min": 158
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "slug": "lucenec-presov",
+      "distance_km": 194,
+      "duration_min": 147
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "lucenec-prievidza",
+      "distance_km": 119,
+      "duration_min": 90
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "lucenec-rimavska-sobota",
+      "distance_km": 31,
+      "duration_min": 28
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "lucenec-ruzomberok",
+      "distance_km": 129,
+      "duration_min": 107
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "lucenec-senec",
+      "distance_km": 226,
+      "duration_min": 133
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "lucenec-spisska-nova-ves",
+      "distance_km": 146,
+      "duration_min": 132
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "lucenec-sturovo",
+      "distance_km": 121,
+      "duration_min": 121
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "lucenec-topolcany",
+      "distance_km": 156,
+      "duration_min": 124
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "slug": "lucenec-trencin",
+      "distance_km": 183,
+      "duration_min": 143
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "lucenec-trnava",
+      "distance_km": 207,
+      "duration_min": 124
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "slug": "lucenec-zilina",
+      "distance_km": 166,
+      "duration_min": 136
+    },
+    {
+      "from": {
+        "name": "Lučenec",
+        "slug": "lucenec",
+        "lat": 48.3308,
+        "lng": 19.6669
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "lucenec-zvolen",
+      "distance_km": 60,
+      "duration_min": 46
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "martin-michalovce",
+      "distance_km": 278,
+      "duration_min": 190
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "martin-nitra",
+      "distance_km": 141,
+      "duration_min": 101
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "martin-nove-mesto-nad-vahom",
+      "distance_km": 129,
+      "duration_min": 91
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "martin-piestany",
+      "distance_km": 147,
+      "duration_min": 101
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "martin-poprad",
+      "distance_km": 123,
+      "duration_min": 94
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "martin-povazska-bystrica",
+      "distance_km": 65,
+      "duration_min": 57
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "martin-presov",
+      "distance_km": 199,
+      "duration_min": 133
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "martin-prievidza",
+      "distance_km": 50,
+      "duration_min": 50
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "martin-rimavska-sobota",
+      "distance_km": 162,
+      "duration_min": 127
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "martin-ruzomberok",
+      "distance_km": 44,
+      "duration_min": 42
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "martin-senec",
+      "distance_km": 204,
+      "duration_min": 129
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "martin-spisska-nova-ves",
+      "distance_km": 148,
+      "duration_min": 109
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "martin-sturovo",
+      "distance_km": 173,
+      "duration_min": 148
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "martin-topolcany",
+      "distance_km": 99,
+      "duration_min": 97
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "martin-trencin",
+      "distance_km": 106,
+      "duration_min": 84
+    },
+    {
+      "from": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "martin-trnava",
+      "distance_km": 186,
+      "duration_min": 121
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "martin-zilina",
+      "distance_km": 32,
+      "duration_min": 37
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Martin",
+        "slug": "martin",
+        "lat": 49.0636,
+        "lng": 18.9236
+      },
+      "slug": "martin-zvolen",
+      "distance_km": 79,
+      "duration_min": 68
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "michalovce-nitra",
+      "distance_km": 390,
+      "duration_min": 261
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "michalovce-nove-mesto-nad-vahom",
+      "distance_km": 393,
+      "duration_min": 260
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "michalovce-piestany",
+      "distance_km": 412,
+      "duration_min": 270
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "slug": "michalovce-poprad",
+      "distance_km": 162,
+      "duration_min": 110
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "slug": "michalovce-povazska-bystrica",
+      "distance_km": 329,
+      "duration_min": 224
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "slug": "michalovce-presov",
+      "distance_km": 83,
+      "duration_min": 68
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "michalovce-prievidza",
+      "distance_km": 327,
+      "duration_min": 234
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "michalovce-rimavska-sobota",
+      "distance_km": 190,
+      "duration_min": 151
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "michalovce-ruzomberok",
+      "distance_km": 233,
+      "duration_min": 150
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "michalovce-senec",
+      "distance_km": 456,
+      "duration_min": 293
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "michalovce-spisska-nova-ves",
+      "distance_km": 145,
+      "duration_min": 105
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "michalovce-sturovo",
+      "distance_km": 355,
+      "duration_min": 243
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "michalovce-topolcany",
+      "distance_km": 376,
+      "duration_min": 281
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "slug": "michalovce-trencin",
+      "distance_km": 371,
+      "duration_min": 251
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "michalovce-trnava",
+      "distance_km": 438,
+      "duration_min": 284
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "slug": "michalovce-zilina",
+      "distance_km": 297,
+      "duration_min": 204
+    },
+    {
+      "from": {
+        "name": "Michalovce",
+        "slug": "michalovce",
+        "lat": 48.7547,
+        "lng": 21.9178
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "michalovce-zvolen",
+      "distance_km": 292,
+      "duration_min": 208
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "nitra-nove-mesto-nad-vahom",
+      "distance_km": 76,
+      "duration_min": 61
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "nitra-piestany",
+      "distance_km": 46,
+      "duration_min": 50
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "nitra-poprad",
+      "distance_km": 235,
+      "duration_min": 164
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "nitra-povazska-bystrica",
+      "distance_km": 168,
+      "duration_min": 96
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "nitra-presov",
+      "distance_km": 311,
+      "duration_min": 204
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "nitra-prievidza",
+      "distance_km": 81,
+      "duration_min": 76
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "nitra-rimavska-sobota",
+      "distance_km": 185,
+      "duration_min": 117
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "nitra-ruzomberok",
+      "distance_km": 169,
+      "duration_min": 117
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "nitra-senec",
+      "distance_km": 66,
+      "duration_min": 43
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "nitra-spisska-nova-ves",
+      "distance_km": 260,
+      "duration_min": 179
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "nitra-sturovo",
+      "distance_km": 87,
+      "duration_min": 79
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "nitra-topolcany",
+      "distance_km": 37,
+      "duration_min": 38
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "nitra-trencin",
+      "distance_km": 126,
+      "duration_min": 79
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "nitra-trnava",
+      "distance_km": 48,
+      "duration_min": 34
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "slug": "nitra-zilina",
+      "distance_km": 196,
+      "duration_min": 112
+    },
+    {
+      "from": {
+        "name": "Nitra",
+        "slug": "nitra",
+        "lat": 48.3069,
+        "lng": 18.0864
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "nitra-zvolen",
+      "distance_km": 102,
+      "duration_min": 61
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "nove-mesto-nad-vahom-piestany",
+      "distance_km": 20,
+      "duration_min": 24
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "nove-mesto-nad-vahom-poprad",
+      "distance_km": 239,
+      "duration_min": 164
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "nove-mesto-nad-vahom-povazska-bystrica",
+      "distance_km": 70,
+      "duration_min": 46
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "nove-mesto-nad-vahom-presov",
+      "distance_km": 314,
+      "duration_min": 203
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "nove-mesto-nad-vahom-prievidza",
+      "distance_km": 81,
+      "duration_min": 73
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "nove-mesto-nad-vahom-rimavska-sobota",
+      "distance_km": 287,
+      "duration_min": 169
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "nove-mesto-nad-vahom-ruzomberok",
+      "distance_km": 162,
+      "duration_min": 113
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "nove-mesto-nad-vahom-senec",
+      "distance_km": 83,
+      "duration_min": 51
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "nove-mesto-nad-vahom-spisska-nova-ves",
+      "distance_km": 264,
+      "duration_min": 178
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "nove-mesto-nad-vahom-sturovo",
+      "distance_km": 172,
+      "duration_min": 126
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "nove-mesto-nad-vahom-topolcany",
+      "distance_km": 58,
+      "duration_min": 58
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "nove-mesto-nad-vahom-trencin",
+      "distance_km": 26,
+      "duration_min": 29
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "nove-mesto-nad-vahom-trnava",
+      "distance_km": 65,
+      "duration_min": 43
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "slug": "nove-mesto-nad-vahom-zilina",
+      "distance_km": 98,
+      "duration_min": 61
+    },
+    {
+      "from": {
+        "name": "Nové Mesto nad Váhom",
+        "slug": "nove-mesto-nad-vahom",
+        "lat": 48.7578,
+        "lng": 17.8303
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "nove-mesto-nad-vahom-zvolen",
+      "distance_km": 204,
+      "duration_min": 113
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "piestany-poprad",
+      "distance_km": 257,
+      "duration_min": 173
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "piestany-povazska-bystrica",
+      "distance_km": 89,
+      "duration_min": 55
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "piestany-presov",
+      "distance_km": 333,
+      "duration_min": 213
+    },
+    {
+      "from": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "piestany-prievidza",
+      "distance_km": 107,
+      "duration_min": 82
+    },
+    {
+      "from": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "piestany-rimavska-sobota",
+      "distance_km": 266,
+      "duration_min": 160
+    },
+    {
+      "from": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "piestany-ruzomberok",
+      "distance_km": 179,
+      "duration_min": 123
+    },
+    {
+      "from": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "piestany-senec",
+      "distance_km": 61,
+      "duration_min": 42
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "piestany-spisska-nova-ves",
+      "distance_km": 282,
+      "duration_min": 189
+    },
+    {
+      "from": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "piestany-sturovo",
+      "distance_km": 150,
+      "duration_min": 117
+    },
+    {
+      "from": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "piestany-topolcany",
+      "distance_km": 34,
+      "duration_min": 40
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "piestany-trencin",
+      "distance_km": 47,
+      "duration_min": 38
+    },
+    {
+      "from": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "piestany-trnava",
+      "distance_km": 43,
+      "duration_min": 34
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "piestany-zilina",
+      "distance_km": 116,
+      "duration_min": 71
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Piešťany",
+        "slug": "piestany",
+        "lat": 48.5917,
+        "lng": 17.8336
+      },
+      "slug": "piestany-zvolen",
+      "distance_km": 182,
+      "duration_min": 102
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "slug": "poprad-povazska-bystrica",
+      "distance_km": 174,
+      "duration_min": 129
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "slug": "poprad-presov",
+      "distance_km": 83,
+      "duration_min": 54
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "poprad-prievidza",
+      "distance_km": 172,
+      "duration_min": 138
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "poprad-rimavska-sobota",
+      "distance_km": 101,
+      "duration_min": 109
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "poprad-ruzomberok",
+      "distance_km": 78,
+      "duration_min": 53
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "poprad-senec",
+      "distance_km": 301,
+      "duration_min": 197
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "poprad-spisska-nova-ves",
+      "distance_km": 32,
+      "duration_min": 29
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "poprad-sturovo",
+      "distance_km": 268,
+      "duration_min": 209
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "poprad-topolcany",
+      "distance_km": 221,
+      "duration_min": 185
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "slug": "poprad-trencin",
+      "distance_km": 223,
+      "duration_min": 157
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "poprad-trnava",
+      "distance_km": 283,
+      "duration_min": 188
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "slug": "poprad-zilina",
+      "distance_km": 141,
+      "duration_min": 107
+    },
+    {
+      "from": {
+        "name": "Poprad",
+        "slug": "poprad",
+        "lat": 49.06,
+        "lng": 20.2975
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "poprad-zvolen",
+      "distance_km": 137,
+      "duration_min": 111
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "slug": "povazska-bystrica-presov",
+      "distance_km": 250,
+      "duration_min": 168
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "povazska-bystrica-prievidza",
+      "distance_km": 67,
+      "duration_min": 72
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "povazska-bystrica-rimavska-sobota",
+      "distance_km": 225,
+      "duration_min": 176
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "povazska-bystrica-ruzomberok",
+      "distance_km": 97,
+      "duration_min": 78
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "povazska-bystrica-senec",
+      "distance_km": 146,
+      "duration_min": 84
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "povazska-bystrica-spisska-nova-ves",
+      "distance_km": 199,
+      "duration_min": 143
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "povazska-bystrica-sturovo",
+      "distance_km": 235,
+      "duration_min": 158
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "povazska-bystrica-topolcany",
+      "distance_km": 101,
+      "duration_min": 81
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "slug": "povazska-bystrica-trencin",
+      "distance_km": 48,
+      "duration_min": 39
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "povazska-bystrica-trnava",
+      "distance_km": 128,
+      "duration_min": 76
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "slug": "povazska-bystrica-zilina",
+      "distance_km": 34,
+      "duration_min": 27
+    },
+    {
+      "from": {
+        "name": "Považská Bystrica",
+        "slug": "povazska-bystrica",
+        "lat": 49.1217,
+        "lng": 18.4214
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "povazska-bystrica-zvolen",
+      "distance_km": 142,
+      "duration_min": 120
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "presov-prievidza",
+      "distance_km": 248,
+      "duration_min": 177
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "presov-rimavska-sobota",
+      "distance_km": 166,
+      "duration_min": 124
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "presov-ruzomberok",
+      "distance_km": 154,
+      "duration_min": 92
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "presov-senec",
+      "distance_km": 377,
+      "duration_min": 236
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "presov-spisska-nova-ves",
+      "distance_km": 66,
+      "duration_min": 47
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "presov-sturovo",
+      "distance_km": 338,
+      "duration_min": 220
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "presov-topolcany",
+      "distance_km": 297,
+      "duration_min": 224
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "slug": "presov-trencin",
+      "distance_km": 292,
+      "duration_min": 195
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "presov-trnava",
+      "distance_km": 359,
+      "duration_min": 227
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "slug": "presov-zilina",
+      "distance_km": 218,
+      "duration_min": 147
+    },
+    {
+      "from": {
+        "name": "Prešov",
+        "slug": "presov",
+        "lat": 48.9986,
+        "lng": 21.2392
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "presov-zvolen",
+      "distance_km": 213,
+      "duration_min": 151
+    },
+    {
+      "from": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "prievidza-rimavska-sobota",
+      "distance_km": 147,
+      "duration_min": 109
+    },
+    {
+      "from": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "prievidza-ruzomberok",
+      "distance_km": 95,
+      "duration_min": 87
+    },
+    {
+      "from": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "prievidza-senec",
+      "distance_km": 164,
+      "duration_min": 110
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "prievidza-spisska-nova-ves",
+      "distance_km": 197,
+      "duration_min": 153
+    },
+    {
+      "from": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "prievidza-sturovo",
+      "distance_km": 149,
+      "duration_min": 125
+    },
+    {
+      "from": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "prievidza-topolcany",
+      "distance_km": 49,
+      "duration_min": 47
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "prievidza-trencin",
+      "distance_km": 66,
+      "duration_min": 59
+    },
+    {
+      "from": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "prievidza-trnava",
+      "distance_km": 163,
+      "duration_min": 104
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "prievidza-zilina",
+      "distance_km": 61,
+      "duration_min": 69
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Prievidza",
+        "slug": "prievidza",
+        "lat": 48.7744,
+        "lng": 18.6247
+      },
+      "slug": "prievidza-zvolen",
+      "distance_km": 62,
+      "duration_min": 51
+    },
+    {
+      "from": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "rimavska-sobota-ruzomberok",
+      "distance_km": 160,
+      "duration_min": 128
+    },
+    {
+      "from": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "rimavska-sobota-senec",
+      "distance_km": 250,
+      "duration_min": 150
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "rimavska-sobota-spisska-nova-ves",
+      "distance_km": 115,
+      "duration_min": 108
+    },
+    {
+      "from": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "rimavska-sobota-sturovo",
+      "distance_km": 150,
+      "duration_min": 145
+    },
+    {
+      "from": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "rimavska-sobota-topolcany",
+      "distance_km": 182,
+      "duration_min": 144
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "rimavska-sobota-trencin",
+      "distance_km": 210,
+      "duration_min": 163
+    },
+    {
+      "from": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "rimavska-sobota-trnava",
+      "distance_km": 233,
+      "duration_min": 142
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "rimavska-sobota-zilina",
+      "distance_km": 192,
+      "duration_min": 156
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Rimavská Sobota",
+        "slug": "rimavska-sobota",
+        "lat": 48.3828,
+        "lng": 20.0219
+      },
+      "slug": "rimavska-sobota-zvolen",
+      "distance_km": 85,
+      "duration_min": 61
+    },
+    {
+      "from": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "ruzomberok-senec",
+      "distance_km": 236,
+      "duration_min": 152
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "ruzomberok-spisska-nova-ves",
+      "distance_km": 103,
+      "duration_min": 69
+    },
+    {
+      "from": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "ruzomberok-sturovo",
+      "distance_km": 203,
+      "duration_min": 164
+    },
+    {
+      "from": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "ruzomberok-topolcany",
+      "distance_km": 144,
+      "duration_min": 134
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "ruzomberok-trencin",
+      "distance_km": 139,
+      "duration_min": 106
+    },
+    {
+      "from": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "ruzomberok-trnava",
+      "distance_km": 218,
+      "duration_min": 143
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "ruzomberok-zilina",
+      "distance_km": 64,
+      "duration_min": 58
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Ružomberok",
+        "slug": "ruzomberok",
+        "lat": 49.0794,
+        "lng": 19.3061
+      },
+      "slug": "ruzomberok-zvolen",
+      "distance_km": 74,
+      "duration_min": 67
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "senec-spisska-nova-ves",
+      "distance_km": 326,
+      "duration_min": 212
+    },
+    {
+      "from": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "senec-sturovo",
+      "distance_km": 134,
+      "duration_min": 106
+    },
+    {
+      "from": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "senec-topolcany",
+      "distance_km": 82,
+      "duration_min": 70
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "senec-trencin",
+      "distance_km": 105,
+      "duration_min": 67
+    },
+    {
+      "from": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "senec-trnava",
+      "distance_km": 29,
+      "duration_min": 24
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "senec-zilina",
+      "distance_km": 174,
+      "duration_min": 100
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Senec",
+        "slug": "senec",
+        "lat": 48.2192,
+        "lng": 17.3997
+      },
+      "slug": "senec-zvolen",
+      "distance_km": 168,
+      "duration_min": 93
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "spisska-nova-ves-sturovo",
+      "distance_km": 293,
+      "duration_min": 224
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "spisska-nova-ves-topolcany",
+      "distance_km": 246,
+      "duration_min": 200
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "spisska-nova-ves-trencin",
+      "distance_km": 241,
+      "duration_min": 171
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "spisska-nova-ves-trnava",
+      "distance_km": 308,
+      "duration_min": 203
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "slug": "spisska-nova-ves-zilina",
+      "distance_km": 167,
+      "duration_min": 123
+    },
+    {
+      "from": {
+        "name": "Spišská Nová Ves",
+        "slug": "spisska-nova-ves",
+        "lat": 48.9461,
+        "lng": 20.5592
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "spisska-nova-ves-zvolen",
+      "distance_km": 162,
+      "duration_min": 127
+    },
+    {
+      "from": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "sturovo-topolcany",
+      "distance_km": 124,
+      "duration_min": 115
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "sturovo-trencin",
+      "distance_km": 193,
+      "duration_min": 141
+    },
+    {
+      "from": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "sturovo-trnava",
+      "distance_km": 118,
+      "duration_min": 99
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "sturovo-zilina",
+      "distance_km": 263,
+      "duration_min": 174
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Štúrovo",
+        "slug": "sturovo",
+        "lat": 47.7986,
+        "lng": 18.7172
+      },
+      "slug": "sturovo-zvolen",
+      "distance_km": 110,
+      "duration_min": 102
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "topolcany-trencin",
+      "distance_km": 52,
+      "duration_min": 56
+    },
+    {
+      "from": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "topolcany-trnava",
+      "distance_km": 65,
+      "duration_min": 63
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "topolcany-zilina",
+      "distance_km": 129,
+      "duration_min": 97
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Topoľčany",
+        "slug": "topolcany",
+        "lat": 48.5617,
+        "lng": 18.1783
+      },
+      "slug": "topolcany-zvolen",
+      "distance_km": 99,
+      "duration_min": 85
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "trencin-trnava",
+      "distance_km": 87,
+      "duration_min": 58
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "slug": "trencin-zilina",
+      "distance_km": 82,
+      "duration_min": 55
+    },
+    {
+      "from": {
+        "name": "Trenčín",
+        "slug": "trencin",
+        "lat": 48.8945,
+        "lng": 18.0444
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "trencin-zvolen",
+      "distance_km": 127,
+      "duration_min": 107
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "trnava-zilina",
+      "distance_km": 156,
+      "duration_min": 91
+    },
+    {
+      "from": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "to": {
+        "name": "Trnava",
+        "slug": "trnava",
+        "lat": 48.3775,
+        "lng": 17.5883
+      },
+      "slug": "trnava-zvolen",
+      "distance_km": 150,
+      "duration_min": 85
+    },
+    {
+      "from": {
+        "name": "Žilina",
+        "slug": "zilina",
+        "lat": 49.2231,
+        "lng": 18.7394
+      },
+      "to": {
+        "name": "Zvolen",
+        "slug": "zvolen",
+        "lat": 48.5744,
+        "lng": 19.1236
+      },
+      "slug": "zilina-zvolen",
+      "distance_km": 109,
+      "duration_min": 100
+    }
+  ]
+}

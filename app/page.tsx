@@ -14,6 +14,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { MapPinIcon } from '@/components/icons/MapPinIcon';
+import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { SearchPanel } from '@/components/SearchPanel';
 import { RegionCard } from '@/components/RegionCard';
@@ -23,6 +24,7 @@ import { ArticleBanner } from '@/components/ArticleBanner';
 import { AlphabeticalCityList } from '@/components/AlphabeticalCityList';
 import { getRegionsData } from '@/data/cities';
 import taxiLogo from '@/assets/taxi-nearme-logo.webp';
+import routePagesData from '../src/data/route-pages.json';
 
 // Note: Globálna metadata je definovaná v app/layout.tsx
 // HomePage je Server Component, ktorý obsahuje vnorené Client Components (Header, SearchPanel, ArticleBanner)
@@ -133,6 +135,48 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Popular Routes Section */}
+      <section className="py-12 md:py-16 px-4 md:px-8 bg-gradient-to-b from-foreground/5 to-white relative">
+        <GeometricLines variant="subtle" count={4} />
+        <div className="container mx-auto max-w-6xl relative">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-foreground">
+              Populárne trasy
+            </h2>
+            <p className="text-sm md:text-base text-foreground/90 font-bold px-4">
+              Najvyhľadávanejšie taxi transfery na Slovensku a do Rakúska
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            {routePagesData.routes.map((route) => (
+              <Link key={route.slug} href={`/trasa/${route.slug}`}>
+                <div className="bg-white rounded-xl p-5 md:p-6 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 border border-foreground/10">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <h3 className="font-bold text-foreground mb-2 text-base md:text-lg">
+                        {route.origin} → {route.destination.split(' ')[0]}
+                      </h3>
+                      <div className="flex flex-wrap gap-3 text-sm text-foreground/70">
+                        <span className="flex items-center gap-1">
+                          <MapPin className="h-4 w-4 text-primary-yellow" />
+                          {route.distance_km} km
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="h-4 w-4 text-primary-yellow" />
+                          {route.duration_min} min
+                        </span>
+                      </div>
+                    </div>
+                    <ArrowRight className="h-5 w-5 text-foreground/30 flex-shrink-0 mt-1" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <div className="bg-white">
         <HowItWorks />
@@ -190,7 +234,7 @@ export default function HomePage() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
             <div className="text-xs md:text-sm text-foreground font-bold text-center md:text-left">
-              © 2024 Taxi NearMe. Všetky práva vyhradené.
+              © 2025 Taxi NearMe. Všetky práva vyhradené.
             </div>
 
             <div className="flex flex-wrap justify-center gap-3 md:gap-5">

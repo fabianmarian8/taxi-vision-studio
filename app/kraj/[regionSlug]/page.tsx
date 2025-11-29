@@ -208,7 +208,7 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
             <div className="text-xs md:text-sm text-foreground font-bold text-center md:text-left">
-              © 2024 Taxi NearMe. Všetky práva vyhradené.
+              © 2025 Taxi NearMe. Všetky práva vyhradené.
             </div>
 
             <div className="flex flex-wrap justify-center gap-4 md:gap-8">

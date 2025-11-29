@@ -11,6 +11,8 @@ import citiesData from '@/data/cities.json';
 import { allMunicipalities } from '@/data/municipalities';
 import { getDistrictForMunicipality, getAllDistricts } from '@/data/districts';
 import { createRegionSlug } from '@/data/cities';
+import routePagesData from '../src/data/route-pages.json';
+import cityRoutesData from '../src/data/city-routes.json';
 
 // Performance optimization: Cache sitemap for 24 hours
 export const revalidate = 86400; // 24 hours in seconds
@@ -102,7 +104,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/ochrana-sukromia', priority: 0.3 },
     { path: '/cookies', priority: 0.3 },
     { path: '/podmienky-pouzivania', priority: 0.3 },
+    { path: '/obchodne-podmienky', priority: 0.3 },
     { path: '/kontakt', priority: 0.5 },
+    { path: '/pre-taxiky', priority: 0.6 },
   ];
 
   legalPages.forEach((page) => {
@@ -136,6 +140,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.6,
+    });
+  });
+
+  // Route pages (špeciálne taxi trasy - letisko, atď.)
+  routePagesData.routes.forEach((route) => {
+    sitemap.push({
+      url: `${baseUrl}/trasa/${route.slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    });
+  });
+
+  // Hub stránka pre taxi trasy
+  sitemap.push({
+    url: `${baseUrl}/taxi-trasa`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  });
+
+  // City-to-city routes (taxi-trasa) - 435 kombinácií TOP 30 miest
+  cityRoutesData.routes.forEach((route: { slug: string }) => {
+    sitemap.push({
+      url: `${baseUrl}/taxi-trasa/${route.slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.65,
     });
   });
 

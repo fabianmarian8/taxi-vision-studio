@@ -23,7 +23,8 @@ import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { LocalBusinessSchema } from '@/components/schema/LocalBusinessSchema';
 import { TaxiServiceSchema } from '@/components/schema/TaxiServiceSchema';
 import { MapPin, Phone, Globe, Crown, ArrowLeft, Star, BadgeCheck, CheckCircle2, ArrowRight, Clock, Award, Car } from 'lucide-react';
-import { getCityBySlug, createRegionSlug, slovakCities, getRegionBySlug, type CityData, type TaxiService } from '@/data/cities';
+import { getCityBySlug, createRegionSlug, slovakCities, getRegionBySlug, type CityData, type TaxiService, findNearbyCitiesWithTaxis } from '@/data/cities';
+import { NearbyCitiesSection } from '@/components/NearbyCitiesSection';
 import { getMunicipalityBySlug, findNearestCitiesWithTaxis, allMunicipalities, type Municipality } from '@/data/municipalities';
 import {
   getDistrictBySlugAndRegion,
@@ -43,6 +44,8 @@ import { RouteMapWrapper } from '@/components/RouteMapWrapper';
 import { generateUniqueServiceContent, generateUniqueMetaDescription } from '@/utils/contentVariations';
 import { GoogleReviewsSection } from '@/components/GoogleReviewsSection';
 import { fetchGoogleReviews } from '@/lib/google-reviews';
+import { ServiceContactButtons } from '@/components/ServiceContactButtons';
+import { PhoneLink } from '@/components/PhoneLink';
 
 // ISR: Revalidate once per week
 export const revalidate = 604800;
@@ -207,23 +210,32 @@ export async function generateMetadata({
   const { slug } = await params;
   const routeType = detectRouteType(slug);
   const baseUrl = 'https://www.taxinearme.sk';
-  const siteName = 'Taxi NearMe';
+  const siteName = 'TaxiNearMe';
+  const currentYear = new Date().getFullYear();
 
   switch (routeType.type) {
     case 'city': {
       const { city } = routeType;
       const currentUrl = `${baseUrl}/taxi/${city.slug}`;
+      const taxiCount = city.taxiServices?.length || 0;
       const taxiServicesList = city.taxiServices.slice(0, 3).map(s => s.name).join(', ');
       const locationText = city.isVillage ? 'v obci' : 'v meste';
-      const description = city.metaDescription ||
-        `Taxi ${locationText} ${city.name} - Kontakty na taxislužby. ${taxiServicesList ? `${taxiServicesList} a ďalšie.` : ''} Nájdite spoľahlivé taxi.`;
+      const countText = taxiCount > 5 ? `${taxiCount}+` : taxiCount > 0 ? `${taxiCount}` : '';
+      const description = countText
+        ? `Taxi ${locationText} ${city.name} (${currentYear}) - ${countText} taxislužieb s telefónnymi číslami. ${taxiServicesList ? `${taxiServicesList} a ďalšie.` : ''} Objednajte taxi jednoducho.`
+        : `Taxi ${locationText} ${city.name} (${currentYear}) - Kontakty na taxislužby. ${taxiServicesList ? `${taxiServicesList} a ďalšie.` : ''} Objednajte taxi jednoducho.`;
+
+      // Title format: "Taxi Bratislava - 15+ taxislužieb (2025) | TaxiNearMe"
+      const titleWithCount = countText
+        ? `Taxi ${city.name} - ${countText} taxislužieb (${currentYear}) | ${siteName}`
+        : `Taxi ${city.name} - Taxislužby (${currentYear}) | ${siteName}`;
 
       return {
-        title: `Taxi ${city.name} - Taxislužby a Kontakty | ${siteName}`,
+        title: titleWithCount,
         description,
         keywords: city.keywords || [`taxi ${city.name}`, `taxislužby ${city.name}`, `taxi ${city.region}`, 'objednať taxi'],
         openGraph: {
-          title: `Taxi ${city.name} - Spoľahlivé taxislužby`,
+          title: `Taxi ${city.name} - ${countText ? countText + ' taxislužieb' : 'Spoľahlivé taxislužby'}`,
           description,
           type: 'website',
           locale: 'sk_SK',
@@ -239,10 +251,10 @@ export async function generateMetadata({
       const nearestCities = findNearestCitiesWithTaxis(municipality, 1);
       const nearestCity = nearestCities[0];
       const currentUrl = `${baseUrl}/taxi/${municipality.slug}`;
-      const description = `Taxi v obci ${municipality.name} - Najbližšie taxislužby sú v meste ${nearestCity?.city.name} (${nearestCity?.distance} km). Nájdite spoľahlivé taxi služby v okolí.`;
+      const description = `Taxi v obci ${municipality.name} (${currentYear}) - Najbližšie taxislužby v meste ${nearestCity?.city.name} (${nearestCity?.distance} km). Objednajte taxi jednoducho.`;
 
       return {
-        title: `Taxi ${municipality.name} - Taxislužby v okolí | ${siteName}`,
+        title: `Taxi ${municipality.name} - Taxislužby v okolí (${currentYear}) | ${siteName}`,
         description,
         keywords: [`taxi ${municipality.name}`, `taxislužby ${municipality.name}`, `taxi ${municipality.district}`, `taxi ${municipality.region}`],
         openGraph: {
@@ -263,7 +275,7 @@ export async function generateMetadata({
       const description = generateUniqueMetaDescription(service.name, city.name, service.phone || '');
 
       return {
-        title: `${service.name} - Taxi ${city.name} | ${siteName}`,
+        title: `${service.name} - Taxi ${city.name} (${currentYear}) | ${siteName}`,
         description,
         keywords: [service.name, `taxi ${city.name}`, `taxislužba ${city.name}`, `${service.name} ${city.name}`],
         openGraph: {
@@ -281,10 +293,10 @@ export async function generateMetadata({
     case 'district': {
       const { district, regionSlug } = routeType;
       const currentUrl = `${baseUrl}/taxi/${regionSlug}/${district.slug}`;
-      const description = `Taxi v okrese ${district.name} - Kompletný zoznam ${district.municipalitiesCount} obcí a miest. Nájdite taxislužby v okolí.`;
+      const description = `Taxi v okrese ${district.name} (${currentYear}) - Zoznam ${district.municipalitiesCount} obcí a miest s taxislužbami. Objednajte taxi jednoducho.`;
 
       return {
-        title: `Taxi okres ${district.name} - Všetky obce a mestá | ${siteName}`,
+        title: `Taxi okres ${district.name} - ${district.municipalitiesCount} obcí (${currentYear}) | ${siteName}`,
         description,
         keywords: [`taxi ${district.name}`, `taxislužby okres ${district.name}`, `taxi ${district.region}`, 'taxi obce'],
         openGraph: {
@@ -304,10 +316,10 @@ export async function generateMetadata({
       const nearestCities = findNearestCitiesWithTaxis(municipality, 1);
       const nearestCity = nearestCities[0];
       const currentUrl = `${baseUrl}/taxi/${regionSlug}/${district.slug}/${municipality.slug}`;
-      const description = `Taxi v obci ${municipality.name}, okres ${district.name} - Najbližšie taxislužby sú v meste ${nearestCity?.city.name} (${nearestCity?.distance} km).`;
+      const description = `Taxi v obci ${municipality.name}, okres ${district.name} (${currentYear}) - Najbližšie taxislužby v meste ${nearestCity?.city.name} (${nearestCity?.distance} km). Objednajte taxi.`;
 
       return {
-        title: `Taxi ${municipality.name} - okres ${district.name} | ${siteName}`,
+        title: `Taxi ${municipality.name} - okres ${district.name} (${currentYear}) | ${siteName}`,
         description,
         keywords: [`taxi ${municipality.name}`, `taxi okres ${district.name}`, `taxislužby ${municipality.name}`, `taxi ${district.region}`],
         openGraph: {
@@ -813,6 +825,10 @@ async function CityPage({ city }: { city: CityData }) {
       </section>
 
       <CityContent citySlug={city.slug} cityName={city.name} />
+      <NearbyCitiesSection
+        nearbyCities={findNearbyCitiesWithTaxis(city, 6)}
+        currentCityName={city.name}
+      />
       <CityFAQ cityName={city.name} citySlug={city.slug} />
       <HowItWorks />
       <Footer />
@@ -1201,29 +1217,14 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 Profesionálna taxislužba {locationText} {city.name}
               </p>
 
-              {/* Contact buttons */}
-              <div className="flex flex-wrap justify-center gap-4">
-                {service.phone && (
-                  <a
-                    href={`tel:${service.phone}`}
-                    className="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-300 text-purple-900 font-black text-xl md:text-2xl px-8 py-4 rounded-xl transition-colors "
-                  >
-                    <Phone className="h-6 w-6" />
-                    {service.phone}
-                  </a>
-                )}
-                {service.website && (
-                  <a
-                    href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold px-6 py-4 rounded-xl transition-all"
-                  >
-                    <Globe className="h-5 w-5" />
-                    Navštíviť web
-                  </a>
-                )}
-              </div>
+              {/* Contact buttons with GA4 tracking */}
+              <ServiceContactButtons
+                phone={service.phone}
+                website={service.website}
+                serviceName={service.name}
+                cityName={city.name}
+                variant="hero"
+              />
             </div>
           </div>
         </section>
@@ -1278,15 +1279,12 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             <p className="text-purple-900/70 mb-6 text-lg">
               Zavolajte nám a odvezieme vás kam potrebujete.
             </p>
-            {service.phone && (
-              <a
-                href={`tel:${service.phone}`}
-                className="inline-flex items-center gap-3 bg-purple-900 text-white font-black text-2xl px-8 py-4 rounded-xl hover:bg-purple-800 transition-all "
-              >
-                <Phone className="h-7 w-7" />
-                {service.phone}
-              </a>
-            )}
+            <ServiceContactButtons
+              phone={service.phone}
+              serviceName={service.name}
+              cityName={city.name}
+              variant="cta"
+            />
           </div>
         </section>
 
@@ -1422,13 +1420,13 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                         <p className={`text-sm font-medium mb-1 ${isPremium ? 'text-black/70' : 'text-neutral-text'}`}>
                           Telefónne číslo
                         </p>
-                        <a
-                          href={`tel:${service.phone}`}
+                        <PhoneLink
+                          phone={service.phone!}
+                          serviceName={service.name}
+                          cityName={city.name}
                           className={`text-lg transition-colors font-bold ${isPremium ? 'text-black hover:text-black/80' : 'text-foreground hover:text-foreground/70'}`}
                           title={`Zavolať ${service.name}`}
-                        >
-                          {service.phone}
-                        </a>
+                        />
                       </div>
                     </div>
                   )}
@@ -1481,9 +1479,12 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                     return (
                       <span key={index}>
                         {part}
-                        <a href={`tel:${service.phone}`} className="font-bold text-foreground hover:text-foreground/70 transition-colors underline">
-                          {service.phone}
-                        </a>
+                        <PhoneLink
+                          phone={service.phone!}
+                          serviceName={service.name}
+                          cityName={city.name}
+                          className="font-bold text-foreground hover:text-foreground/70 transition-colors underline"
+                        />
                       </span>
                     );
                   })}
@@ -1558,7 +1559,7 @@ function Footer() {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
           <div className="text-xs md:text-sm text-foreground font-bold text-center md:text-left">
-            © 2024 Taxi NearMe. Všetky práva vyhradené.
+            © 2025 Taxi NearMe. Všetky práva vyhradené.
           </div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             <Link href="/ochrana-sukromia" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200">

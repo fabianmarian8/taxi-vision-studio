@@ -1,0 +1,283 @@
+{
+  "routes": [
+    {
+      "slug": "taxi-bratislava-letisko-vieden",
+      "origin": "Bratislava",
+      "destination": "Letisko Viedeň (Schwechat)",
+      "distance_km": "65-75",
+      "duration_min": "45-60",
+      "meta": {
+        "title": "Taxi Bratislava - Letisko Viedeň | Transfer Schwechat",
+        "description": "Taxi transfer z Bratislavy na letisko Viedeň Schwechat. Cesta trvá cca 45-60 minút. Pohodlný odvoz priamo k terminálu. Objednajte online alebo telefonicky."
+      },
+      "h1": "Taxi z Bratislavy na letisko Viedeň (Schwechat)",
+      "keywords": [
+        "taxi Bratislava letisko Viedeň",
+        "transfer Schwechat",
+        "taxi Bratislava Wien Flughafen",
+        "odvoz na letisko Viedeň",
+        "taxi BA - VIE",
+        "letiskový transfer Schwechat"
+      ],
+      "content": "Plánuješ odlet z Viedne? Cesta taxíkom z Bratislavy na letisko Schwechat je dnes už štandardná záležitosť. Vzdialenosť sa pohybuje medzi 65 až 75 kilometrami, podľa toho, z ktorej časti Bratislavy vyrážaš. Ak ideš z centra alebo Petržalky, si na diaľnici takmer okamžite. Z Dúbravky alebo Rače to trvá o niečo dlhšie, kým sa vymotáš z mesta.\n\nSamotná jazda trvá zvyčajne 45 až 60 minút. Tento čas sa môže natiahnuť počas rannej alebo poobednej špičky, najmä na obchvate Bratislavy alebo pri vstupe do Rakúska, kde sa občas zdržíš na hraniciach kvôli námatkovým kontrolám. Vodiči túto trasu poznajú naspamäť a sledujú aktuálnu dopravnú situáciu, takže vedia zareagovať, ak je na diaľnici A6 alebo A4 nehoda.\n\nNajväčšou výhodou je, že nemusíš riešiť parkovanie na letisku. Parkovacie domy na Schwechate sú často plné a hľadanie miesta či presun s kuframi z parkoviska C na terminál zaberie čas. Taxík ťa vysadí priamo na rampe pred odletovým terminálom (zväčša Terminál 1 alebo 3). Stačí vystúpiť, vybrať batožinu a si pri check-ine.\n\nPri objednávke stačí zadať presnú adresu vyzdvihnutia a čas, kedy chceš byť na letisku. Vodič príde priamo pred tvoj dom alebo kanceláriu. Ak cestuješ s deťmi, nezabudni to nahlásiť vopred kvôli autosedačkám. Taktiež, ak máš nadrozmernú batožinu (lyže, kočík, golfové bagy), daj vedieť dopredu, aby prišlo dostatočne veľké auto.",
+      "carriersIntro": "Na tejto trase je silná konkurencia, čo tlačí ceny nadol.",
+      "carriers": [
+        {
+          "name": "Schwechat Taxi",
+          "website": "https://schwechattaxi.eu",
+          "phone": "+421903778991",
+          "description": "Vozidlá Mercedes-Benz, ceny od 50 €. Nonstop služba."
+        },
+        {
+          "name": "Taxi Schwechat Bratislava",
+          "website": "https://taxischwechatbratislava.sk",
+          "phone": "+421903808800",
+          "description": "Ceny od 40 €, platba hotovosťou aj kartou."
+        },
+        {
+          "name": "Taxi Bratislava Schwechat",
+          "website": "https://www.taxibratislavaschwechat.sk",
+          "phone": "+421903784520",
+          "description": "Overená klasika, jazda stojí približne 55 €."
+        },
+        {
+          "name": "Taxi Do Viedne",
+          "website": "https://taxidoviedne.sk",
+          "phone": "+421911888801",
+          "description": "Nonstop služba, platba kartou v každom vozidle."
+        },
+        {
+          "name": "V.I.P. Taxi",
+          "website": "https://www.viptaxi.sk",
+          "phone": "+421903474100",
+          "description": "Prémiové vozidlá pre náročnejšiu klientelu, ceny od 70 €."
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ako dlho trvá cesta taxíkom z Bratislavy na letisko Viedeň?",
+          "answer": "Cesta trvá približne 45 až 60 minút. Závisí to od miesta vyzdvihnutia v Bratislave a od aktuálnej dopravnej situácie na diaľnici."
+        },
+        {
+          "question": "Kde ma vodič vyzdvihne a kde ma vysadí na letisku?",
+          "answer": "Vodič vás vyzdvihne na vami určenej adrese v Bratislave. Na letisku Schwechat vás vysadí priamo pred odletovým terminálom podľa vašej leteckej spoločnosti."
+        },
+        {
+          "question": "Musím platiť mýto alebo diaľničné poplatky zvlášť?",
+          "answer": "Nie, všetky poplatky za diaľnicu sú už zahrnuté. Nemusíte platiť nič navyše."
+        },
+        {
+          "question": "Čo ak má môj let meškanie alebo prídem skôr?",
+          "answer": "Vodič sleduje príletovú tabuľu. Ak má váš let meškanie, počká na vás. Odporúčame mať zapnutý telefón po pristátí."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-kosice-letisko",
+      "origin": "Košice",
+      "destination": "Letisko Košice (Barca)",
+      "distance_km": "6-10",
+      "duration_min": "10-15",
+      "meta": {
+        "title": "Taxi Košice Letisko | Odvoz na letisko Košice",
+        "description": "Taxi na letisko Košice alebo z letiska do mesta. Rýchly transfer za 10-15 minút. Objednajte odvoz vopred alebo využite taxi priamo na letisku."
+      },
+      "h1": "Taxi na letisko Košice - Barca",
+      "keywords": [
+        "taxi Košice letisko",
+        "taxi letisko Košice Barca",
+        "transfer letisko Košice",
+        "odvoz na letisko KE",
+        "taxi z letiska Košice",
+        "letiskový transfer Košice"
+      ],
+      "content": "Cesta na košické letisko je rýchla záležitosť, keďže letisko sa nachádza v mestskej časti Barca, len kúsok od centra. Vzdialenosť je zhruba 6 až 10 kilometrov. Ak vyrážaš z Hlavnej ulice alebo okolia stanice, v aute stráviš približne 10 až 15 minút. Zo sídlisk ako Ťahanovce alebo Furča počítaj s pár minútami navyše, ale stále ide o veľmi krátky presun.\n\nMHD síce na letisko premáva, ale s veľkými kuframi to nie je práve pohodlné, hlavne ak musíš prestupovať. Taxík ťa vyzdvihne priamo pred vchodom a odvezie až k terminálu. Vodiči majú povolený vjazd na krátkodobé státie priamo pred odletovou halou, takže s batožinou prejdeš len pár metrov.\n\nTáto možnosť je ideálna najmä pri skorých ranných odletoch do Viedne, Varšavy či Londýna, alebo pri neskorých príletoch, kedy sú spoje redšie. Nemusíš nikoho z rodiny budiť, aby ťa odviezol, ani riešiť, kde nechať auto počas dovolenky.",
+      "carriersIntro": "V Košiciach operuje niekoľko stabilných firiem.",
+      "carriers": [
+        {
+          "name": "Easy Taxi Košice",
+          "website": "https://easytaxi.sk/kosice",
+          "phone": "+421919333333",
+          "description": "Patrí k najlacnejším, ceny od 3 € v meste."
+        },
+        {
+          "name": "Hello Taxi Košice",
+          "website": "https://www.hello-taxi.sk",
+          "phone": "+421911434343",
+          "description": "Zľavy pre študentov, dôchodcov a ZŤP."
+        },
+        {
+          "name": "CTC Taxi Košice",
+          "website": "https://www.ctctaxi.sk",
+          "phone": "+421556333333",
+          "description": "Najväčšia taxislužba v Košiciach, od roku 1989."
+        },
+        {
+          "name": "American Taxi Košice",
+          "website": "https://americantaxi.sk",
+          "phone": "+421907556677",
+          "description": "Spoľahlivá voľba, možnosť prenájmu limuzíny."
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ako ďaleko je letisko od centra Košíc?",
+          "answer": "Letisko Košice-Barca je vzdialené približne 6 km od centra mesta. Cesta taxíkom trvá 10-15 minút podľa premávky."
+        },
+        {
+          "question": "Kde nájdem taxi priamo na letisku?",
+          "answer": "Taxi stanovište sa nachádza pred príletovou halou. Môžete si však objednať odvoz vopred a vodič na vás počká s tabuľkou s vaším menom."
+        },
+        {
+          "question": "Odvezú ma aj do okolitých obcí, nie len do Košíc?",
+          "answer": "Áno, taxi vás odvezie kamkoľvek - do Prešova, Michaloviec, Rožňavy či iných miest v okolí."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-bratislava-wien",
+      "origin": "Bratislava",
+      "destination": "Viedeň centrum",
+      "distance_km": "60-80",
+      "duration_min": "50-75",
+      "meta": {
+        "title": "Taxi Bratislava Viedeň | Transfer BA - Wien centrum",
+        "description": "Taxi z Bratislavy do Viedne - priamy transfer do centra alebo na ľubovoľnú adresu. Cesta trvá cca 1 hodinu. Pohodlná preprava bez prestupovania."
+      },
+      "h1": "Taxi z Bratislavy do Viedne",
+      "keywords": [
+        "taxi Bratislava Viedeň",
+        "taxi BA Wien",
+        "transfer Bratislava Vienna",
+        "taxi Bratislava - Viedeň centrum",
+        "preprava BA - Wien",
+        "medzinárodné taxi Viedeň"
+      ],
+      "content": "Ak sa potrebuješ dostať z Bratislavy priamo do centra Viedne, auto je často najrýchlejšia voľba, no má svoje špecifiká. Vzdialenosť je približne 60 až 80 kilometrov. Časovo to vychádza na 50 až 75 minút, no tu zohráva veľkú rolu viedenská doprava. Príjazd do mesta po A4 je plynulý, ale akonáhle zídeš z diaľnice, môžeš sa zdržať na semaforoch.\n\nNajväčší problém Viedne je parkovanie. Takmer celé mesto je jedna veľká zóna plateného parkovania (Kurzparkzone) a maximálna doba státia je často obmedzená na 2 hodiny. Hľadanie garáže v okolí Stephansplatzu alebo Mariahilfer Straße je stresujúce a drahé. S taxíkom toto odpadá. Vodič ťa vysadí presne na adrese – či už ideš na obchodné stretnutie, do hotela, alebo na nákupy.\n\nCesta je pohodlná, väčšinu času ideš po diaľnici. Vodič ťa vyzdvihne v Bratislave na zadanej adrese a ty si počas cesty môžeš vybaviť maily alebo si len oddýchnuť. Nemusíš riešiť diaľničnú známku pre Rakúsko ani tankovanie. Je to praktické riešenie, ak cestuješ vo dvojici alebo v skupine, kedy sa náklady rozrátajú a komfort je neporovnateľný s vlakom, z ktorého sa musíš ešte presúvať metrom alebo pešo.",
+      "carriersIntro": "Jazda do centra Viedne je špecifická a drahšia.",
+      "carriers": [
+        {
+          "name": "Taxi Do Viedne",
+          "website": "https://taxidoviedne.sk",
+          "phone": "+421911888801",
+          "description": "Transfer na adresu vo Viedni, nonstop služba."
+        },
+        {
+          "name": "Bratislava Taxi",
+          "website": "https://bratislava-taxi.sk",
+          "phone": "+421911030399",
+          "description": "24/7 služba, transfery do Viedne, Budapešti aj Prahy."
+        },
+        {
+          "name": "Taxi Bratislava City",
+          "website": "https://taxi-bratislava-city.sk",
+          "phone": "+421903106943",
+          "description": "Medzimestské transfery do európskych destinácií."
+        },
+        {
+          "name": "Luxor Taxi",
+          "website": "https://luxortaxi.sk",
+          "phone": "+421948099007",
+          "description": "Nonstop služba, možnosť objednania cez WhatsApp."
+        },
+        {
+          "name": "V.I.P. Taxi",
+          "website": "https://www.viptaxi.sk",
+          "phone": "+421903474100",
+          "description": "Prémiové vozidlá, cena závisí od obvodu vo Viedni."
+        }
+      ],
+      "faq": [
+        {
+          "question": "Potrebujem pas alebo občiansky preukaz na cestu taxíkom do Viedne?",
+          "answer": "Potrebujete platný doklad totožnosti. Aj keď sa bežne nekontroluje (Schengen), odporúčame mať občiansky preukaz alebo pas pri sebe."
+        },
+        {
+          "question": "Môžem si objednať taxi len jedným smerom alebo aj spiatočnú cestu?",
+          "answer": "Môžete si objednať jednosmernú cestu aj spiatočnú. Pri objednávke spiatočnej cesty uveďte čas, kedy vás má vodič vyzdvihnúť vo Viedni."
+        },
+        {
+          "question": "Kam presne vo Viedni ma môže taxi odviezť?",
+          "answer": "Kamkoľvek - do centra, na konkrétnu adresu, k hotelu, na nádražie, do obchodného centra či na stretnutie. Stačí zadať presnú adresu."
+        },
+        {
+          "question": "Je cesta taxíkom rýchlejšia ako vlakom alebo autobusom?",
+          "answer": "Taxi je porovnateľne rýchle s vlakom, ale vás vyzdvihne priamo na adrese a doviezie až k cieľu. Nemusíte riešiť prestupovanie ani nosenie batožiny."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-zilina-bratislava",
+      "origin": "Žilina",
+      "destination": "Bratislava",
+      "distance_km": "200",
+      "duration_min": "120-150",
+      "meta": {
+        "title": "Taxi Žilina Bratislava | Transfer ZA - BA a späť",
+        "description": "Taxi zo Žiliny do Bratislavy alebo z Bratislavy do Žiliny. Vzdialenosť 200 km, cesta trvá približne 2 hodiny. Pohodlná preprava po diaľnici D1."
+      },
+      "h1": "Taxi Žilina - Bratislava",
+      "keywords": [
+        "taxi Žilina Bratislava",
+        "taxi ZA - BA",
+        "transfer Žilina Bratislava",
+        "taxi Bratislava Žilina",
+        "preprava Žilina - Bratislava",
+        "diaľkové taxi Slovensko"
+      ],
+      "content": "Trasa zo Žiliny do Bratislavy je jednou z najfrekventovanejších na Slovensku. Ide o zhruba 200 kilometrov dlhú cestu, ktorá vedie primárne po diaľnici D1. Za ideálnych podmienok trvá jazda 2 až 2,5 hodiny. Realita však často závisí od situácie pod Strečnom a premávky pri vjazde do Bratislavy.\n\nVlak je na tejto trase silná konkurencia, no taxík má zmysel vtedy, keď potrebuješ ísť \"door-to-door\". Vlak ťa vyloží na stanici a ďalej musíš riešiť MHD alebo ďalší taxík. Pri priamej objednávke ťa auto čaká pred domom v Žiline a vysadí ťa priamo pred firmou, úradom alebo nemocnicou v Bratislave. Nemusíš vláčiť batožinu po nástupištiach ani čakať na meškajúce spoje.\n\nAk potrebuješ počas cesty pracovať, v aute máš súkromie, ktoré vo vagóne nenájdeš. Vodič sa prispôsobí tvojmu tempu – ak potrebuješ pauzu na kávu alebo toaletu na odpočívadle, stačí povedať. Cesta je vhodná aj pre prevoz dôležitých zásielok alebo pre ľudí, ktorí zo zdravotných dôvodov nemôžu cestovať hromadnou dopravou.",
+      "carriersIntro": "Pri diaľkových trasách zo Žiliny dominujú individuálne dohody.",
+      "carriers": [
+        {
+          "name": "Gold Taxi Žilina",
+          "website": "https://www.zilina.taxi",
+          "phone": "+421910595995",
+          "description": "NONSTOP taxi, ceny v meste od 5 €."
+        },
+        {
+          "name": "Taxi Fantasia Žilina",
+          "website": "https://www.taxifantasia.sk",
+          "phone": "+421905800600",
+          "description": "Lacné taxi, nonstop služba."
+        },
+        {
+          "name": "Laura Taxi Žilina",
+          "website": "https://www.taxilaura.sk",
+          "phone": "+421905202020",
+          "description": "NONSTOP taxi služba v Žiline."
+        },
+        {
+          "name": "RL Taxi Žilina",
+          "website": "https://www.rltaxi.sk",
+          "phone": "+421903417700",
+          "description": "Stanovisko pri železničnej stanici."
+        },
+        {
+          "name": "MIMA Taxi Žilina",
+          "website": "https://www.mimataxizilina.sk",
+          "phone": "+421940600222",
+          "description": "NONSTOP taxi, preprava na letisko, drink taxi."
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ako dlho trvá cesta taxíkom zo Žiliny do Bratislavy?",
+          "answer": "Cesta po diaľnici D1 trvá približne 2 hodiny. Pri horšej dopravnej situácii alebo prácach na ceste to môže byť o niečo dlhšie."
+        },
+        {
+          "question": "Môžem si objednať taxi zo Žiliny na letisko do Bratislavy?",
+          "answer": "Áno, vodič vás odvezie priamo na letisko M. R. Štefánika v Bratislave. Odporúčame objednať s dostatočnou rezervou pred odletom."
+        },
+        {
+          "question": "Je možné cestovať aj s viacerými osobami?",
+          "answer": "Áno, bežné taxi pohodlne odvezie 4 cestujúcich. Pre väčšie skupiny je možné objednať väčšie vozidlo alebo viac áut."
+        },
+        {
+          "question": "Vyzdvihne ma vodič aj v okolí Žiliny - napríklad v Martine alebo Čadci?",
+          "answer": "Áno, taxi vás vyzdvihne kdekoľvek v regióne. Stačí uviesť presnú adresu pri objednávke."
+        }
+      ]
+    }
+  ],
+  "disclaimer": "Uvedené časy, vzdialenosti a ceny sú orientačné. Ceny stanovuje konkrétny vodič/prepravca a môžu sa líšiť. TaxiNearMe.sk sprostredkúva kontakt, nezodpovedá za priebeh prepravy."
+}
