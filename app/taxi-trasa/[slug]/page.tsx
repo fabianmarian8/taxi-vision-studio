@@ -46,28 +46,77 @@ interface RoutePageProps {
   params: Promise<{ slug: string }>;
 }
 
-// Získanie trasy podľa slug
-const getRouteBySlug = (slug: string): CityRouteData | undefined => {
-  return (cityRoutesData.routes as CityRouteData[]).find(route => route.slug === slug);
+// Typ pre dáta mesta
+interface CityData {
+  name: string;
+  slug: string;
+  lat: number;
+  lng: number;
+}
+
+// Typ pre rozšírené dáta trasy s presným smerom podľa URL
+interface ParsedRoute {
+  from: CityData;
+  to: CityData;
+  distance_km: number;
+  duration_min: number;
+  urlSlug: string;
+}
+
+// Získanie mesta podľa slug z cities zoznamu
+const getCityBySlug = (slug: string): CityData | undefined => {
+  const cities = cityRoutesData.cities as CityData[];
+  return cities.find(city => city.slug === slug);
 };
 
-// Získanie kanonického slug (abecedne zoradený)
-const getCanonicalSlug = (slug: string): string => {
+// Parsovanie slug na dve mestá - skúša všetky kombinácie delenia
+const parseCitiesFromSlug = (slug: string): { from: CityData; to: CityData } | undefined => {
   const parts = slug.split('-');
-  // Nájdi všetky možné rozdelenia na dve mestá
-  for (let i = 1; i < parts.length; i++) {
-    const city1 = parts.slice(0, i).join('-');
-    const city2 = parts.slice(i).join('-');
 
-    // Skontroluj či existuje v dátach
-    const direct = cityRoutesData.routes.find(
-      (r: CityRouteData) => r.slug === `${city1}-${city2}` || r.slug === `${city2}-${city1}`
-    );
-    if (direct) {
-      return direct.slug;
+  // Skúšame všetky možné delenia
+  for (let i = 1; i < parts.length; i++) {
+    const city1Slug = parts.slice(0, i).join('-');
+    const city2Slug = parts.slice(i).join('-');
+
+    const city1 = getCityBySlug(city1Slug);
+    const city2 = getCityBySlug(city2Slug);
+
+    if (city1 && city2) {
+      return { from: city1, to: city2 };
     }
   }
-  return slug;
+
+  return undefined;
+};
+
+// Získanie trasy podľa slug - smer je určený podľa URL
+const getRouteBySlug = (slug: string): ParsedRoute | undefined => {
+  const routes = cityRoutesData.routes as CityRouteData[];
+
+  // Parsuj mestá z URL slug
+  const cities = parseCitiesFromSlug(slug);
+  if (!cities) {
+    return undefined;
+  }
+
+  // Nájdi trasu medzi týmito mestami (v hocijakom smere, potrebujeme len distance a duration)
+  const route = routes.find(r =>
+    (r.from.slug === cities.from.slug && r.to.slug === cities.to.slug) ||
+    (r.from.slug === cities.to.slug && r.to.slug === cities.from.slug)
+  );
+
+  if (!route) {
+    return undefined;
+  }
+
+  // Vráť dáta s presným smerom podľa URL
+  return {
+    from: cities.from,
+    to: cities.to,
+    distance_km: route.distance_km,
+    duration_min: route.duration_min,
+    urlSlug: slug,
+  };
 };
 
 // Získanie taxi služieb pre mesto
@@ -116,15 +165,24 @@ const formatDuration = (minutes: number): string => {
 };
 
 export async function generateStaticParams() {
-  return (cityRoutesData.routes as CityRouteData[]).map((route) => ({
-    slug: route.slug,
-  }));
+  const routes = cityRoutesData.routes as CityRouteData[];
+  const allSlugs: { slug: string }[] = [];
+
+  routes.forEach((route) => {
+    // Pridaj originálny slug (napr. banska-bystrica-bratislava)
+    allSlugs.push({ slug: route.slug });
+
+    // Pridaj aj opačný smer (napr. bratislava-banska-bystrica)
+    const reversedSlug = `${route.to.slug}-${route.from.slug}`;
+    allSlugs.push({ slug: reversedSlug });
+  });
+
+  return allSlugs; // 870 stránok (435 x 2)
 }
 
 export async function generateMetadata({ params }: RoutePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const canonicalSlug = getCanonicalSlug(slug);
-  const route = getRouteBySlug(canonicalSlug);
+  const route = getRouteBySlug(slug);
 
   if (!route) {
     return {
@@ -174,7 +232,7 @@ export async function generateMetadata({ params }: RoutePageProps): Promise<Meta
       type: 'website',
       locale: 'sk_SK',
       siteName: 'TaxiNearMe.sk',
-      url: `https://www.taxinearme.sk/taxi-trasa/${canonicalSlug}`,
+      url: `https://www.taxinearme.sk/taxi-trasa/${slug}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -182,7 +240,7 @@ export async function generateMetadata({ params }: RoutePageProps): Promise<Meta
       description,
     },
     alternates: {
-      canonical: `https://www.taxinearme.sk/taxi-trasa/${canonicalSlug}`,
+      canonical: `https://www.taxinearme.sk/taxi-trasa/${slug}`,
     },
     other: {
       // Geo tagy pre lokálne SEO
@@ -199,13 +257,6 @@ export async function generateMetadata({ params }: RoutePageProps): Promise<Meta
 
 export default async function CityRoutePage({ params }: RoutePageProps) {
   const { slug } = await params;
-  const canonicalSlug = getCanonicalSlug(slug);
-
-  // Redirect na kanonický URL ak sa líši
-  if (slug !== canonicalSlug) {
-    redirect(`/taxi-trasa/${canonicalSlug}`);
-  }
-
   const route = getRouteBySlug(slug);
 
   if (!route) {

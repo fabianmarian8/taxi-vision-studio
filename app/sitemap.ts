@@ -161,10 +161,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   });
 
-  // City-to-city routes (taxi-trasa) - 435 kombinácií TOP 30 miest
-  cityRoutesData.routes.forEach((route: { slug: string }) => {
+  // City-to-city routes (taxi-trasa) - 870 kombinácií TOP 30 miest (oba smery)
+  cityRoutesData.routes.forEach((route: { slug: string; from: { slug: string }; to: { slug: string } }) => {
+    // Originálny smer (from → to)
     sitemap.push({
       url: `${baseUrl}/taxi-trasa/${route.slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.65,
+    });
+
+    // Opačný smer (to → from)
+    const reversedSlug = `${route.to.slug}-${route.from.slug}`;
+    sitemap.push({
+      url: `${baseUrl}/taxi-trasa/${reversedSlug}`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.65,

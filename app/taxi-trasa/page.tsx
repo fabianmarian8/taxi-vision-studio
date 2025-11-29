@@ -83,13 +83,18 @@ export default function TaxiTrasaHubPage() {
   interface DisplayRoute extends CityRouteData {
     displayCity: string; // Mesto ktoré zobrazíme ako cieľ
     isReversed: boolean; // Či je trasa zobrazená v opačnom smere
+    linkSlug: string; // Slug pre link - unikátny pre každý smer
   }
 
   // Zoskupiť trasy podľa mesta - každé mesto vidí všetky trasy (z neho aj doň)
+  // DÔLEŽITÉ: linkSlug musí byť vždy [aktuálne-mesto]-[cieľové-mesto]
+  // Takže keď som v Bratislave a idem do Banskej Bystrice, link = bratislava-banska-bystrica
   const routesByCity = new Map<string, DisplayRoute[]>();
 
   routes.forEach((route) => {
-    // Pridať trasu pod "from" mesto (normálny smer)
+    // Pridať trasu pod "from" mesto
+    // Keď som v "from" meste, chcem ísť do "to" mesta
+    // Link slug = from-to
     if (!routesByCity.has(route.from.name)) {
       routesByCity.set(route.from.name, []);
     }
@@ -97,9 +102,12 @@ export default function TaxiTrasaHubPage() {
       ...route,
       displayCity: route.to.name,
       isReversed: false,
+      linkSlug: `${route.from.slug}-${route.to.slug}`, // from → to
     });
 
-    // Pridať trasu aj pod "to" mesto (opačný smer)
+    // Pridať trasu aj pod "to" mesto
+    // Keď som v "to" meste, chcem ísť do "from" mesta
+    // Link slug = to-from
     if (!routesByCity.has(route.to.name)) {
       routesByCity.set(route.to.name, []);
     }
@@ -107,6 +115,7 @@ export default function TaxiTrasaHubPage() {
       ...route,
       displayCity: route.from.name,
       isReversed: true,
+      linkSlug: `${route.to.slug}-${route.from.slug}`, // to → from
     });
   });
 
@@ -244,8 +253,8 @@ export default function TaxiTrasaHubPage() {
                         .sort((a, b) => a.displayCity.localeCompare(b.displayCity, 'sk'))
                         .map((route) => (
                           <Link
-                            key={`${route.slug}-${route.isReversed ? 'rev' : 'fwd'}`}
-                            href={`/taxi-trasa/${route.slug}`}
+                            key={`${route.linkSlug}`}
+                            href={`/taxi-trasa/${route.linkSlug}`}
                             className="group"
                           >
                             <Card className="p-3 hover:shadow-md transition-all hover:border-primary-yellow/50">
