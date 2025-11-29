@@ -459,13 +459,18 @@ async function CityPage({ city }: { city: CityData }) {
                               </div>
                             </div>
 
-                            <Crown className="hidden md:block absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 text-yellow-400/30" />
-                            <Crown className="hidden md:block absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 md:h-10 md:w-10 text-yellow-400/30" />
-
                             <CardHeader className="pb-2 pt-5 md:pt-6 px-4 md:px-5 relative z-10">
                               <CardTitle className="text-lg md:text-xl font-black flex items-center gap-2 text-white">
-                                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                                  <MapPin className="h-4 w-4 md:h-5 md:w-5 text-purple-900" />
+                                {/* Placeholder logo - not indexed by Google */}
+                                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-yellow-400" role="presentation">
+                                  <img
+                                    src="/images/taxi-placeholder-icon.png"
+                                    alt=""
+                                    width={48}
+                                    height={48}
+                                    className="w-full h-full object-cover"
+                                    loading="lazy"
+                                  />
                                 </div>
                                 {/* Google Rating Badge - inline */}
                                 {ratingData && (
@@ -516,15 +521,23 @@ async function CityPage({ city }: { city: CityData }) {
                                 <span className="hidden sm:inline">OVERENÉ</span>
                               </div>
                               <div className="bg-amber-900 text-yellow-300 text-[9px] md:text-xs font-black px-1.5 md:px-2 py-0.5 rounded-full flex items-center gap-0.5 md:gap-1 shadow">
-                                <Crown className="h-2.5 w-2.5 md:h-3 md:w-3" />
+                                <Star className="h-2.5 w-2.5 md:h-3 md:w-3" />
                                 <span className="hidden sm:inline">PREMIUM</span>
                               </div>
                             </div>
-                            <Crown className="hidden sm:block absolute left-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-amber-900/40" />
-                            <Crown className="hidden sm:block absolute right-1 top-1/2 -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-amber-900/40" />
                             <CardHeader className="pb-1 pt-3 md:pt-3.5 px-3 md:px-4">
                               <CardTitle className="text-sm md:text-base font-bold flex items-center gap-1.5 md:gap-2 text-black">
-                                <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-black" />
+                                {/* Placeholder logo - not indexed by Google */}
+                                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-amber-600" role="presentation">
+                                  <img
+                                    src="/images/taxi-placeholder-icon.png"
+                                    alt=""
+                                    width={40}
+                                    height={40}
+                                    className="w-full h-full object-cover"
+                                    loading="lazy"
+                                  />
+                                </div>
                                 {service.name}
                               </CardTitle>
                             </CardHeader>
@@ -562,7 +575,17 @@ async function CityPage({ city }: { city: CityData }) {
                         >
                           <CardHeader className="pb-1 pt-3 md:pt-3.5 px-3 md:px-4">
                             <CardTitle className="text-sm md:text-base font-semibold flex items-center gap-1.5 md:gap-2">
-                              <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 flex-shrink-0 text-success" />
+                              {/* Placeholder logo - not indexed by Google */}
+                              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full overflow-hidden flex-shrink-0" role="presentation">
+                                <img
+                                  src="/images/taxi-placeholder-icon.png"
+                                  alt=""
+                                  width={40}
+                                  height={40}
+                                  className="w-full h-full object-cover"
+                                  loading="lazy"
+                                />
+                              </div>
                               {service.name}
                             </CardTitle>
                           </CardHeader>
@@ -662,25 +685,31 @@ async function CityPage({ city }: { city: CityData }) {
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                       <span className="text-foreground/80">
-                        <strong>Pozícia na vrchu</strong> - vaša taxislužba sa zobrazí pred nezvýraznenými (Premium sa denne striedajú)
+                        <strong>Pozícia na vrchu</strong> - vaša taxislužba sa zobrazí pred nezvýraznenými
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                       <span className="text-foreground/80">
-                        <strong>Zlaté zvýraznenie</strong> - exkluzívny dizajn ktorý púta pozornosť
+                        <strong>Zlaté zvýraznenie</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                       <span className="text-foreground/80">
-                        <strong>Badge "OVERENÉ"</strong> - zvýšená dôveryhodnosť u zákazníkov
+                        <strong>Badge "OVERENÉ"</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                       <span className="text-foreground/80">
-                        <strong>Väčšie telefónne číslo</strong> - jednoduchšie kontaktovanie
+                        <strong>Väčšie telefónne číslo</strong>
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">
+                        <strong>Vlastné logo</strong> - zobrazenie vášho firemného loga v zozname
                       </span>
                     </li>
                   </ul>
@@ -731,7 +760,7 @@ async function CityPage({ city }: { city: CityData }) {
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
                       <span className="text-foreground/80">
-                        <strong>Všetko z PREMIUM</strong> - zvýraznenie, pozícia na vrchu, badge
+                        <strong>Všetko z PREMIUM</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
@@ -750,6 +779,12 @@ async function CityPage({ city }: { city: CityData }) {
                       <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
                       <span className="text-foreground/80">
                         <strong>Recenzie zákazníkov</strong> - zobrazenie recenzií z Google Máp
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">
+                        <strong>Prioritná podpora</strong> - rýchle riešenie požiadaviek
                       </span>
                     </li>
                   </ul>
@@ -1126,9 +1161,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               <div className="hidden md:block absolute bottom-0 left-0 w-64 h-64 bg-purple-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
             </>
           )}
-          <Crown className="absolute left-8 top-32 h-16 w-16 text-yellow-400/20 hidden lg:block" />
-          <Crown className="absolute right-8 bottom-32 h-16 w-16 text-yellow-400/20 hidden lg:block" />
-
           {/* Breadcrumbs inside hero */}
           <div className="relative z-10">
             <SEOBreadcrumbs
@@ -1343,12 +1375,10 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                     <span className="hidden sm:inline">OVERENÉ</span>
                   </div>
                   <div className="bg-amber-600 text-white text-[9px] md:text-sm font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-0.5 md:gap-1">
-                    <Crown className="h-3 w-3 md:h-4 md:w-4" />
+                    <Star className="h-3 w-3 md:h-4 md:w-4" />
                     <span className="hidden sm:inline">PREMIUM</span>
                   </div>
                 </div>
-                <Crown className="hidden sm:block absolute left-2 md:left-4 top-1/2 -translate-y-1/2 h-6 w-6 md:h-12 md:w-12 text-amber-400/30 z-10" />
-                <Crown className="hidden sm:block absolute right-2 md:right-4 top-1/2 -translate-y-1/2 h-6 w-6 md:h-12 md:w-12 text-amber-400/30 z-10" />
               </>
             )}
 
@@ -1375,12 +1405,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   : undefined
               }}
             >
-              {isPremium && (
-                <>
-                  <Crown className="absolute left-2 top-1/2 -translate-y-1/2 h-6 w-6 text-amber-400/30" />
-                  <Crown className="absolute right-2 top-1/2 -translate-y-1/2 h-6 w-6 text-amber-400/30" />
-                </>
-              )}
               <CardHeader>
                 <CardTitle className={`text-2xl font-bold flex items-center gap-3 ${isPremium ? 'text-black' : ''}`}>
                   <MapPin className={`h-6 w-6 ${isPremium ? 'text-black' : 'text-success'}`} />

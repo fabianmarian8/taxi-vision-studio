@@ -166,31 +166,31 @@ export default function PreTaxikyPage() {
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">
-                      <strong>Pozícia na vrchu</strong> - vaša taxislužba sa zobrazí pred nezvýraznenými (Premium sa denne striedajú)
+                      <strong>Pozícia na vrchu</strong> - vaša taxislužba sa zobrazí pred nezvýraznenými
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">
-                      <strong>Zlaté zvýraznenie</strong> - exkluzívny dizajn ktorý púta pozornosť
+                      <strong>Zlaté zvýraznenie</strong>
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">
-                      <strong>Badge "Overená taxislužba"</strong> - zvýšená dôveryhodnosť
+                      <strong>Badge "Overená taxislužba"</strong>
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">
-                      <strong>Väčšie telefónne číslo</strong> - jednoduchšie kontaktovanie
+                      <strong>Väčšie telefónne číslo</strong>
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">
-                      <strong>Prioritná podpora</strong> - rýchle riešenie požiadaviek
+                      <strong>Vlastné logo</strong> - zobrazenie vášho firemného loga v zozname
                     </span>
                   </li>
                 </ul>
@@ -268,6 +268,12 @@ export default function PreTaxikyPage() {
                     <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">
                       <strong>Recenzie zákazníkov</strong> - zobrazenie recenzií z Google Máp
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground/80">
+                      <strong>Prioritná podpora</strong> - rýchle riešenie požiadaviek
                     </span>
                   </li>
                 </ul>
