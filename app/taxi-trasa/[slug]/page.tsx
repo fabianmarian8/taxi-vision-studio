@@ -10519,621 +10519,12 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
           </>
         )}
 
-        {/* DUPLICITA - BRATISLAVA -> TRENČÍN */}
-        {slug === 'ZMAZAT-DUP-bratislava-trencin' && (
-          <>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
-                  <span>Ako sa dostať z Bratislavy do Trenčína</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5 sm:col-span-2 md:col-span-1">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Car className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow" />
-                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
-                      <span className="ml-auto text-xs bg-primary-yellow/20 px-2 py-0.5 rounded">Odporúčané</span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">Priama cesta od dverí k dverám bez starostí s batožinou.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> {minPrice}-{maxPrice}€</p>
-                      <p><span className="font-semibold">Čas:</span> {formatDuration(route.duration_min)}</p>
-                      <p><span className="font-semibold">Výhody:</span> Komfort, flexibilita, bez prestupovania</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK rýchliky R Považan - každých 30 minút.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> 4,50€ - 12€</p>
-                      <p><span className="font-semibold">Čas:</span> 1h 4min</p>
-                      <p><span className="font-semibold">Prestup:</span> Priamy spoj</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Bus className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">FlixBus - pravidelné spoje.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> od 6,50€</p>
-                      <p><span className="font-semibold">Čas:</span> cca 1h 30min</p>
-                      <p><span className="font-semibold">Frekvencia:</span> Pravidelne</p>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </section>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-red-500 shrink-0" />
-                  <span>TOP 5 atrakcií v Trenčíne</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">1. Trenčiansky hrad</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Jeden z najrozsiahlejších hradov v Európe s rímskym nápisom.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Trenčiansky+hrad" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">2. Mierové námestie</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Mestská pamiatková rezervácia s Mestskou vežou (32 m).</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Mierové+námestie+Trenčín" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">3. Piaristický kostol</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Najkrajšia baroková sakrálna pamiatka s iluzívnou maľbou kupoly.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Piaristický+kostol+Trenčín" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">4. Trenčianska synagóga</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Významná stavba z roku 1913.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Trenčianska+synagóga" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">5. Lesopark Brezina</h3>
-                    <p className="text-sm text-foreground/70 mb-3">212 hektárov s lanovým parkom Tarzánia.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Lesopark+Brezina+Trenčín" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                </div>
-              </div>
-            </section>
-          </>
-        )}
 
-        {/* DUPLICITA - BRATISLAVA -> TRNAVA */}
-        {slug === 'ZMAZAT-DUP-bratislava-trnava' && (
-          <>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
-                  <span>Ako sa dostať z Bratislavy do Trnavy</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5 sm:col-span-2 md:col-span-1">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Car className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow" />
-                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
-                      <span className="ml-auto text-xs bg-primary-yellow/20 px-2 py-0.5 rounded">Odporúčané</span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">Priama cesta od dverí k dverám bez starostí s batožinou.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> {minPrice}-{maxPrice}€</p>
-                      <p><span className="font-semibold">Čas:</span> {formatDuration(route.duration_min)}</p>
-                      <p><span className="font-semibold">Výhody:</span> Komfort, flexibilita, bez prestupovania</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK vlaky REX R55 v IDS BK - dvojhodinové intervaly.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> 2-5€</p>
-                      <p><span className="font-semibold">Čas:</span> 30-35 minút</p>
-                      <p><span className="font-semibold">Prestup:</span> Priamy spoj</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Bus className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">FlixBus a Slovak Lines Express.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> od 1€ (lacné lístky), od 8€ (FlixBus)</p>
-                      <p><span className="font-semibold">Čas:</span> 34-49 minút</p>
-                      <p><span className="font-semibold">Frekvencia:</span> 7x denne</p>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </section>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-red-500 shrink-0" />
-                  <span>TOP 5 atrakcií v Trnave</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">1. Mestská veža</h3>
-                    <p className="text-sm text-foreground/70 mb-3">57 metrov s 143 schodmi a hodinovým strojom z roku 1729.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Mestská+veža+Trnava" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">2. Mestské hradby</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Najzachovalejšie tehlové opevnenia v Európe z 13. storočia.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Mestské+hradby+Trnava" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">3. Bazilika sv. Mikuláša</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Gotický kostol z 14. storočia s obrazom Panny Márie Trnavskej.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Bazilika+sv.+Mikuláša+Trnava" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">4. Katedrála sv. Jána Krstiteľa</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Dvojvežová, najväčší chrám v Trnave.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Katedrála+sv.+Jána+Krstiteľa+Trnava" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">5. RELAX AQUA & SPA</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Aquapark s 5 bazénmi.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=RELAX+AQUA+SPA+Trnava" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                </div>
-              </div>
-            </section>
-          </>
-        )}
 
-        {/* DUPLICITA - BRATISLAVA -> PIEŠŤANY */}
-        {slug === 'ZMAZAT-DUP-bratislava-piestany' && (
-          <>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
-                  <span>Ako sa dostať z Bratislavy do Piešťan</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5 sm:col-span-2 md:col-span-1">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Car className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow" />
-                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
-                      <span className="ml-auto text-xs bg-primary-yellow/20 px-2 py-0.5 rounded">Odporúčané</span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">Priama cesta od dverí k dverám bez starostí s batožinou.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> {minPrice}-{maxPrice}€</p>
-                      <p><span className="font-semibold">Čas:</span> {formatDuration(route.duration_min)}</p>
-                      <p><span className="font-semibold">Výhody:</span> Komfort, flexibilita, bez prestupovania</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK a Leo Express - každú hodinu.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> 2-4€</p>
-                      <p><span className="font-semibold">Čas:</span> 46-47 minút</p>
-                      <p><span className="font-semibold">Prestup:</span> Priamy spoj</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Bus className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">Regionálne spoje - potrebné overiť.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> Na overenie</p>
-                      <p><span className="font-semibold">Čas:</span> Na overenie</p>
-                      <p><span className="font-semibold">Frekvencia:</span> Na cp.sk</p>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </section>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-red-500 shrink-0" />
-                  <span>TOP 5 atrakcií v Piešťanoch</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">1. Kolonádový most</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Najdlhší krytý most na Slovensku (funkcionalizmus) s výzdobou od Martina Benku.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Kolonádový+most+Piešťany" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">2. Socha Barlolámača</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Najfotografovanejší objekt kúpeľného mesta.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Barlolámač+Piešťany" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">3. Thermia Palace</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Secesné pamiatky s bahniskom a zrkadliskom.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Thermia+Palace+Piešťany" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">4. Kúpeľný ostrov</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Parkový areál s termálnymi prameňmi.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Kúpeľný+ostrov+Piešťany" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">5. Termálne kúpalisko Eva</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Národná kultúrna pamiatka funkcionalistickej architektúry.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Kúpalisko+Eva+Piešťany" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                </div>
-              </div>
-            </section>
-          </>
-        )}
 
-        {/* DUPLICITA - BRATISLAVA -> POPRAD */}
-        {slug === 'ZMAZAT-DUP-bratislava-poprad' && (
-          <>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
-                  <span>Ako sa dostať z Bratislavy do Popradu</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5 sm:col-span-2 md:col-span-1">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Car className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow" />
-                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
-                      <span className="ml-auto text-xs bg-primary-yellow/20 px-2 py-0.5 rounded">Odporúčané</span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">Priama cesta od dverí k dverám bez starostí s batožinou.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> {minPrice}-{maxPrice}€</p>
-                      <p><span className="font-semibold">Čas:</span> {formatDuration(route.duration_min)}</p>
-                      <p><span className="font-semibold">Výhody:</span> Komfort, flexibilita, bez prestupovania</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK expresy - 16 priamych spojov denne.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> od 16€</p>
-                      <p><span className="font-semibold">Čas:</span> 3h 41min</p>
-                      <p><span className="font-semibold">Prestup:</span> Priamy spoj</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Bus className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">FlixBus a Slovak Lines - 7 priamych spojov denne.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> od 24-26€</p>
-                      <p><span className="font-semibold">Čas:</span> 4h 30min</p>
-                      <p><span className="font-semibold">Frekvencia:</span> 7x denne</p>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </section>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-red-500 shrink-0" />
-                  <span>TOP 5 atrakcií v Poprade a okolí</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">1. AquaCity Poprad</h3>
-                    <p className="text-sm text-foreground/70 mb-3">13 bazénov nad geotermálnym prameňom s viac ako 350 vodnými atrakciami.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=AquaCity+Poprad" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">2. Spišská Sobota</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Historické námestie s kostolom sv. Juraja a oltárom Majstra Pavla z Levoče.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Spišská+Sobota+Poprad" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">3. Námestie sv. Egídia</h3>
-                    <p className="text-sm text-foreground/70 mb-3">S najstaršou známou maľbou zobrazujúcou Tatry (15. storočie).</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Námestie+sv.+Egídia+Poprad" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">4. Popradské pleso</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Ikonická lokalita vo Vysokých Tatrách so Symbolickým cintorínom.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Popradské+pleso" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">5. Belianska jaskyňa</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Jediná sprístupnená jaskyňa vo Vysokých Tatrách.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Belianska+jaskyňa" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                </div>
-              </div>
-            </section>
-          </>
-        )}
 
-        {/* DUPLICITA - BRATISLAVA -> PREŠOV */}
-        {slug === 'ZMAZAT-DUP-bratislava-presov' && (
-          <>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
-                  <span>Ako sa dostať z Bratislavy do Prešova</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5 sm:col-span-2 md:col-span-1">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Car className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow" />
-                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
-                      <span className="ml-auto text-xs bg-primary-yellow/20 px-2 py-0.5 rounded">Odporúčané</span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">Priama cesta od dverí k dverám bez starostí s batožinou.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> {minPrice}-{maxPrice}€</p>
-                      <p><span className="font-semibold">Čas:</span> {formatDuration(route.duration_min)}</p>
-                      <p><span className="font-semibold">Výhody:</span> Komfort, flexibilita, bez prestupovania</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK expresy s prestupom v Košiciach.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> Na overenie (zssk.sk)</p>
-                      <p><span className="font-semibold">Čas:</span> 5,5-6h</p>
-                      <p><span className="font-semibold">Prestup:</span> S prestupom v Košiciach</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Bus className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">FlixBus a Slovak Lines.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> od 17,48€ (FlixBus), od 37€ (Slovak Lines)</p>
-                      <p><span className="font-semibold">Čas:</span> 5h 55min</p>
-                      <p><span className="font-semibold">Frekvencia:</span> Pravidelne</p>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </section>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-red-500 shrink-0" />
-                  <span>TOP 5 atrakcií v Prešove</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">1. Hlavná ulica a námestie</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Mestská pamiatková rezervácia s Katedrálou sv. Mikuláša.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Hlavná+ulica+Prešov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">2. Rákociho palác</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Renesančný palác z prelomu 16.-17. storočia, dnes krajské múzeum.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Rákociho+palác+Prešov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">3. Ortodoxná synagóga</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Múzeum židovskej kultúry v neorománsko-maurskom štýle.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Ortodoxná+synagóga+Prešov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">4. Solivar</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Unikátny súbor objektov na čerpanie a varenie soli zo 17. storočia.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Solivar+Prešov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">5. Prešovská kalvária</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Druhá najkrajšia v bývalom Uhorsku.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Kalvária+Prešov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                </div>
-              </div>
-            </section>
-          </>
-        )}
 
-        {/* DUPLICITA - BRATISLAVA -> DUNAJSKÁ STREDA */}
-        {slug === 'ZMAZAT-DUP-bratislava-dunajska-streda' && (
-          <>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
-                  <span>Ako sa dostať z Bratislavy do Dunajskej Stredy</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5 sm:col-span-2 md:col-span-1">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Car className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow" />
-                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
-                      <span className="ml-auto text-xs bg-primary-yellow/20 px-2 py-0.5 rounded">Odporúčané</span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">Priama cesta od dverí k dverám bez starostí s batožinou.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> {minPrice}-{maxPrice}€</p>
-                      <p><span className="font-semibold">Čas:</span> {formatDuration(route.duration_min)}</p>
-                      <p><span className="font-semibold">Výhody:</span> Komfort, flexibilita, bez prestupovania</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK a Leo Express - pravidelné spoje.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> od 2,10€</p>
-                      <p><span className="font-semibold">Čas:</span> Na overenie (cp.sk)</p>
-                      <p><span className="font-semibold">Prestup:</span> Na overenie</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Bus className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">Regionálne spoje - potrebné overiť.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> Na overenie</p>
-                      <p><span className="font-semibold">Čas:</span> Na overenie</p>
-                      <p><span className="font-semibold">Frekvencia:</span> Na cp.sk</p>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </section>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-red-500 shrink-0" />
-                  <span>TOP 5 atrakcií v Dunajskej Strede</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">1. Thermalpark</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Najobľúbenejšie rekreačné stredisko Žitného ostrova so 7 šmýkačkami.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Thermalpark+Dunajská+Streda" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">2. Žltý kaštieľ</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Z 18. storočia, dnes Žitnoostrovné múzeum s etnografickými expozíciami.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Žltý+kaštieľ+Dunajská+Streda" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">3. Kostol Nanebovzatia Panny Márie</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Pôvodne gotický z 14. storočia.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Kostol+Nanebovzatia+Dunajská+Streda" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">4. Vodný mlyn v Dunajskom Klátove</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Jediná technická pamiatka v okrese.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Vodný+mlyn+Dunajský+Klátov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">5. Zoo Malkia Park</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Pri obci Orechová Potôň (9 km), ochrana cirkusových zvierat.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Malkia+Park+Orechová+Potôň" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                </div>
-              </div>
-            </section>
-          </>
-        )}
 
-        {/* DUPLICITA - PREŠOV -> KOŠICE */}
-        {slug === 'ZMAZAT-DUP-presov-kosice' && (
-          <>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
-                  <span>Ako sa dostať z Prešova do Košíc</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5 sm:col-span-2 md:col-span-1">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Car className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow" />
-                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
-                      <span className="ml-auto text-xs bg-primary-yellow/20 px-2 py-0.5 rounded">Odporúčané</span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">Priama cesta od dverí k dverám bez starostí s batožinou.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> {minPrice}-{maxPrice}€</p>
-                      <p><span className="font-semibold">Čas:</span> {formatDuration(route.duration_min)}</p>
-                      <p><span className="font-semibold">Výhody:</span> Komfort, flexibilita, bez prestupovania</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK REX vlaky - hodinový takt.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> 1-4€</p>
-                      <p><span className="font-semibold">Čas:</span> 27-36 minút</p>
-                      <p><span className="font-semibold">Prestup:</span> Priamy spoj</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                      <Bus className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
-                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">FlixBus - 7 spojov denne.</p>
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> od 6,50€</p>
-                      <p><span className="font-semibold">Čas:</span> 25 minút</p>
-                      <p><span className="font-semibold">Frekvencia:</span> 7x denne</p>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </section>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-red-500 shrink-0" />
-                  <span>TOP 5 atrakcií v Košiciach</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">1. Dóm sv. Alžbety</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Najväčší kostol na Slovensku, gotická katedrála z 14.-15. storočia. Výstup na Žigmundovu vežu.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Dóm+svätej+Alžbety+Košice" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">2. Hlavná ulica</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Najdlhšia pešia promenáda, najväčšia mestská pamiatková rezervácia (100+ chránených budov).</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Hlavná+ulica+Košice" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">3. Košická ZOO</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Najväčšia zoologická záhrada na Slovensku (288 hektárov).</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=ZOO+Košice" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">4. Spievajúca fontána</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Legendárna atrakcia v centre mesta so zvonkohrou.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Spievajúca+fontána+Košice" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2">5. Východoslovenská galéria</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Prvá regionálna galéria na Slovensku.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Východoslovenská+galéria+Košice" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                </div>
-              </div>
-            </section>
-          </>
-        )}
 
         {/* Špeciálny obsah pre trasu PREŠOV -> POPRAD */}
         {slug === 'presov-poprad' && (
@@ -11165,9 +10556,9 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     </div>
                     <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK vlaky - hodinový takt v pracovné dni.</p>
                     <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> Na overenie (zssk.sk)</p>
+                      <p><span className="font-semibold">Cena:</span> Cez IDS Východ kalkulátor</p>
                       <p><span className="font-semibold">Čas:</span> 45-60 minút</p>
-                      <p><span className="font-semibold">Prestup:</span> Priamy spoj</p>
+                      <p><span className="font-semibold">Prestup:</span> S prestupom v Kysaku</p>
                     </div>
                   </Card>
                   <Card className="p-4 sm:p-5">
@@ -11251,10 +10642,10 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                       <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
                       <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
                     </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK - prípoje v Kysaku, výletné vlaky cez víkendy.</p>
+                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK - každé 2 hodiny, hodinový takt vo vrcholoch.</p>
                     <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> Na overenie (IDS Východ)</p>
-                      <p><span className="font-semibold">Čas:</span> cca 1 hodina</p>
+                      <p><span className="font-semibold">Cena:</span> 3-6€</p>
+                      <p><span className="font-semibold">Čas:</span> 1h 32min</p>
                       <p><span className="font-semibold">Prestup:</span> Priamy spoj</p>
                     </div>
                   </Card>
@@ -11265,9 +10656,9 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     </div>
                     <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">SAD Humenné - regionálne spoje.</p>
                     <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> Na overenie (sadhe.sk)</p>
-                      <p><span className="font-semibold">Čas:</span> Na overenie</p>
-                      <p><span className="font-semibold">Frekvencia:</span> Podľa CP</p>
+                      <p><span className="font-semibold">Cena:</span> cca 1€ (IDS Východ)</p>
+                      <p><span className="font-semibold">Čas:</span> 1h 44min</p>
+                      <p><span className="font-semibold">Frekvencia:</span> 5× denne</p>
                     </div>
                   </Card>
                 </div>
@@ -11427,11 +10818,11 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                       <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
                       <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
                     </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK - potrebné overiť spojenia.</p>
+                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK - spojenie cez Strázske.</p>
                     <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> Na overenie (IDS Východ)</p>
-                      <p><span className="font-semibold">Čas:</span> Na overenie (zssk.sk)</p>
-                      <p><span className="font-semibold">Prestup:</span> Na overenie</p>
+                      <p><span className="font-semibold">Cena:</span> 3-6€ (IDS Východ)</p>
+                      <p><span className="font-semibold">Čas:</span> ~2h 40min</p>
+                      <p><span className="font-semibold">Prestup:</span> Cez Strázske</p>
                     </div>
                   </Card>
                   <Card className="p-4 sm:p-5">
@@ -11441,9 +10832,9 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     </div>
                     <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">SAD Prešov - linka 072 205.</p>
                     <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> cca 1€ (IDS Východ)</p>
-                      <p><span className="font-semibold">Čas:</span> Na overenie</p>
-                      <p><span className="font-semibold">Frekvencia:</span> Podľa CP</p>
+                      <p><span className="font-semibold">Cena:</span> cca 2.60€ (IDS Východ)</p>
+                      <p><span className="font-semibold">Čas:</span> ~1h 23min</p>
+                      <p><span className="font-semibold">Frekvencia:</span> 4× týždenne</p>
                     </div>
                   </Card>
                 </div>
@@ -11691,11 +11082,11 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                       <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
                       <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
                     </div>
-                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK - potrebné overiť spojenia.</p>
+                    <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK - obmedzené spojenia, overte na cp.sk.</p>
                     <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> Na overenie (zssk.sk)</p>
-                      <p><span className="font-semibold">Čas:</span> Na overenie</p>
-                      <p><span className="font-semibold">Prestup:</span> Na overenie</p>
+                      <p><span className="font-semibold">Cena:</span> Cez IDS Východ kalkulátor</p>
+                      <p><span className="font-semibold">Čas:</span> ~2-3 hodiny</p>
+                      <p><span className="font-semibold">Prestup:</span> Vyžaduje prestupy</p>
                     </div>
                   </Card>
                   <Card className="p-4 sm:p-5">
@@ -11869,8 +11260,8 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     </div>
                     <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">ZSSK - s prestupom v Kysaku.</p>
                     <div className="space-y-1 text-xs sm:text-sm">
-                      <p><span className="font-semibold">Cena:</span> Na overenie (IDS Východ)</p>
-                      <p><span className="font-semibold">Čas:</span> Na overenie</p>
+                      <p><span className="font-semibold">Cena:</span> Cez IDS Východ kalkulátor</p>
+                      <p><span className="font-semibold">Čas:</span> ~3-4 hodiny</p>
                       <p><span className="font-semibold">Prestup:</span> S prestupom v Kysaku</p>
                     </div>
                   </Card>
@@ -11882,8 +11273,8 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <p className="text-xs sm:text-sm text-foreground/70 mb-2 sm:mb-3">FlixBus - podľa cestovného poriadku.</p>
                     <div className="space-y-1 text-xs sm:text-sm">
                       <p><span className="font-semibold">Cena:</span> od 9,98€</p>
-                      <p><span className="font-semibold">Čas:</span> Na overenie</p>
-                      <p><span className="font-semibold">Frekvencia:</span> 7:30 - 15:35</p>
+                      <p><span className="font-semibold">Čas:</span> 3h 25min</p>
+                      <p><span className="font-semibold">Frekvencia:</span> 1× denne</p>
                     </div>
                   </Card>
                 </div>
@@ -13909,95 +13300,6 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
 
         {/* ==================== PREŠOV REVERSE ROUTES ==================== */}
 
-        {/* DUPLICITA - KOŠICE -> PREŠOV - originál je v KOŠICE ROUTES */}
-        {slug === 'ZMAZAT-DUP-kosice-presov-2' && (
-          <>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
-                  <span>Ako sa dostať z Košíc do Prešova</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5 sm:col-span-2 md:col-span-1">
-                    <div className="flex items-center gap-2 sm:gap-3 mb-3">
-                      <div className="p-2 rounded-full bg-primary-yellow/20">
-                        <Car className="h-5 w-5 text-primary-yellow" />
-                      </div>
-                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
-                    </div>
-                    <div className="space-y-2 text-sm">
-                      <p><span className="font-semibold">Cena:</span> <span className="text-green-600 font-bold">{minPrice}-{maxPrice}€</span></p>
-                      <p><span className="font-semibold">Čas:</span> {formatDuration(route.duration_min)}</p>
-                      <p><span className="font-semibold">Výhoda:</span> Door-to-door z centra Košíc</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 sm:gap-3 mb-3">
-                      <div className="p-2 rounded-full bg-blue-100">
-                        <Train className="h-5 w-5 text-blue-600" />
-                      </div>
-                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
-                    </div>
-                    <div className="space-y-2 text-sm">
-                      <p><span className="font-semibold">Cena:</span> 1-4€</p>
-                      <p><span className="font-semibold">Čas:</span> 28-42 min</p>
-                      <p><span className="font-semibold">Spoj:</span> REX každú hodinu</p>
-                    </div>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <div className="flex items-center gap-2 sm:gap-3 mb-3">
-                      <div className="p-2 rounded-full bg-green-100">
-                        <Bus className="h-5 w-5 text-green-600" />
-                      </div>
-                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
-                    </div>
-                    <div className="space-y-2 text-sm">
-                      <p><span className="font-semibold">Cena:</span> od 6,50€</p>
-                      <p><span className="font-semibold">Čas:</span> 25 min</p>
-                      <p><span className="font-semibold">Spoj:</span> FlixBus 7x denne</p>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </section>
-            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
-              <div className="container mx-auto max-w-6xl">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
-                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow shrink-0" />
-                  <span>TOP 5 atrakcií v Prešove</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-foreground mb-2">1. Hlavná ulica a námestie</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Mestská pamiatková rezervácia s Katedrálou sv. Mikuláša.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Hlavná+ulica+Prešov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-foreground mb-2">2. Rákociho palác</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Renesančný palác z 16.-17. storočia, dnes krajské múzeum.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Rákociho+palác+Prešov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-foreground mb-2">3. Ortodoxná synagóga</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Múzeum židovskej kultúry v neorománsko-maurskom štýle.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Synagóga+Prešov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-foreground mb-2">4. Solivar</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Unikátny súbor objektov na čerpanie soli zo 17. storočia.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Solivar+Prešov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                  <Card className="p-4 sm:p-5">
-                    <h3 className="font-bold text-foreground mb-2">5. Prešovská kalvária</h3>
-                    <p className="text-sm text-foreground/70 mb-3">Druhá najkrajšia v bývalom Uhorsku.</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Kalvária+Prešov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
-                  </Card>
-                </div>
-              </div>
-            </section>
-          </>
-        )}
 
         {/* Špeciálny obsah pre trasu POPRAD -> PREŠOV */}
         {slug === 'poprad-presov' && (
