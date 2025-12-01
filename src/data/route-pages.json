@@ -26,31 +26,46 @@
           "name": "Schwechat Taxi",
           "website": "https://schwechattaxi.eu",
           "phone": "+421903778991",
-          "description": "Vozidlá Mercedes-Benz, ceny od 50 €. Nonstop služba."
+          "description": "Vozidlá Mercedes-Benz, ceny od 50 €. Nonstop služba.",
+          "googlePlaceId": "ChIJ4ZoLceCObEcRxDNff2D6HBQ",
+          "googleRating": 4.2,
+          "googleReviewsCount": 13
         },
         {
           "name": "Taxi Schwechat Bratislava",
           "website": "https://taxischwechatbratislava.sk",
           "phone": "+421903808800",
-          "description": "Ceny od 40 €, platba hotovosťou aj kartou."
+          "description": "Ceny od 40 €, platba hotovosťou aj kartou.",
+          "googlePlaceId": "ChIJ4ZoLceCObEcRxDNff2D6HBQ",
+          "googleRating": 4.2,
+          "googleReviewsCount": 13
         },
         {
           "name": "Taxi Bratislava Schwechat",
           "website": "https://www.taxibratislavaschwechat.sk",
           "phone": "+421903784520",
-          "description": "Overená klasika, jazda stojí približne 55 €."
+          "description": "Overená klasika, jazda stojí približne 55 €.",
+          "googlePlaceId": "ChIJ4ZoLceCObEcRxDNff2D6HBQ",
+          "googleRating": 4.2,
+          "googleReviewsCount": 13
         },
         {
           "name": "Taxi Do Viedne",
           "website": "https://taxidoviedne.sk",
           "phone": "+421911888801",
-          "description": "Nonstop služba, platba kartou v každom vozidle."
+          "description": "Nonstop služba, platba kartou v každom vozidle.",
+          "googlePlaceId": "ChIJz6xyekKPbEcRj8bQAwJfzXQ",
+          "googleRating": 5,
+          "googleReviewsCount": 305
         },
         {
           "name": "V.I.P. Taxi",
           "website": "https://www.viptaxi.sk",
           "phone": "+421903474100",
-          "description": "Prémiové vozidlá pre náročnejšiu klientelu, ceny od 70 €."
+          "description": "Prémiové vozidlá pre náročnejšiu klientelu, ceny od 70 €.",
+          "googlePlaceId": "ChIJ05n338iIbEcRis6heKqoJls",
+          "googleRating": 1,
+          "googleReviewsCount": 2
         }
       ],
       "faq": [
@@ -98,25 +113,37 @@
           "name": "Easy Taxi Košice",
           "website": "https://easytaxi.sk/kosice",
           "phone": "+421919333333",
-          "description": "Patrí k najlacnejším, ceny od 3 € v meste."
+          "description": "Patrí k najlacnejším, ceny od 3 € v meste.",
+          "googlePlaceId": "ChIJOy1frW3gPkcRyUeVwWzN9X8",
+          "googleRating": 2.2,
+          "googleReviewsCount": 329
         },
         {
           "name": "Hello Taxi Košice",
           "website": "https://www.hello-taxi.sk",
           "phone": "+421911434343",
-          "description": "Zľavy pre študentov, dôchodcov a ZŤP."
+          "description": "Zľavy pre študentov, dôchodcov a ZŤP.",
+          "googlePlaceId": "ChIJ20BI-cHcPkcRyG-F54DrBW8",
+          "googleRating": 3.7,
+          "googleReviewsCount": 31
         },
         {
           "name": "CTC Taxi Košice",
           "website": "https://www.ctctaxi.sk",
           "phone": "+421556333333",
-          "description": "Najväčšia taxislužba v Košiciach, od roku 1989."
+          "description": "Najväčšia taxislužba v Košiciach, od roku 1989.",
+          "googlePlaceId": "ChIJrSqNMW0gP0cRRdIpzhc5f-8",
+          "googleRating": 3.9,
+          "googleReviewsCount": 16
         },
         {
           "name": "American Taxi Košice",
           "website": "https://americantaxi.sk",
           "phone": "+421907556677",
-          "description": "Spoľahlivá voľba, možnosť prenájmu limuzíny."
+          "description": "Spoľahlivá voľba, možnosť prenájmu limuzíny.",
+          "googlePlaceId": "ChIJef0j3_TfPkcRqYpF0S7cmps",
+          "googleRating": 3,
+          "googleReviewsCount": 32
         }
       ],
       "faq": [
@@ -160,31 +187,46 @@
           "name": "Taxi Do Viedne",
           "website": "https://taxidoviedne.sk",
           "phone": "+421911888801",
-          "description": "Transfer na adresu vo Viedni, nonstop služba."
+          "description": "Transfer na adresu vo Viedni, nonstop služba.",
+          "googlePlaceId": "ChIJz6xyekKPbEcRj8bQAwJfzXQ",
+          "googleRating": 5,
+          "googleReviewsCount": 305
         },
         {
           "name": "Bratislava Taxi",
           "website": "https://bratislava-taxi.sk",
           "phone": "+421911030399",
-          "description": "24/7 služba, transfery do Viedne, Budapešti aj Prahy."
+          "description": "24/7 služba, transfery do Viedne, Budapešti aj Prahy.",
+          "googlePlaceId": "ChIJC9tIoUOJbEcRg1pvIbf_1NA",
+          "googleRating": 4.5,
+          "googleReviewsCount": 90
         },
         {
           "name": "Taxi Bratislava City",
           "website": "https://taxi-bratislava-city.sk",
           "phone": "+421903106943",
-          "description": "Medzimestské transfery do európskych destinácií."
+          "description": "Medzimestské transfery do európskych destinácií.",
+          "googlePlaceId": "ChIJR07mtPOLbEcRuXbaYu-Mq8w",
+          "googleRating": 4.8,
+          "googleReviewsCount": 114
         },
         {
           "name": "Luxor Taxi",
           "website": "https://luxortaxi.sk",
           "phone": "+421948099007",
-          "description": "Nonstop služba, možnosť objednania cez WhatsApp."
+          "description": "Nonstop služba, možnosť objednania cez WhatsApp.",
+          "googlePlaceId": "ChIJR07mtPOLbEcRuXbaYu-Mq8w",
+          "googleRating": 4.8,
+          "googleReviewsCount": 114
         },
         {
           "name": "V.I.P. Taxi",
           "website": "https://www.viptaxi.sk",
           "phone": "+421903474100",
-          "description": "Prémiové vozidlá, cena závisí od obvodu vo Viedni."
+          "description": "Prémiové vozidlá, cena závisí od obvodu vo Viedni.",
+          "googlePlaceId": "ChIJ05n338iIbEcRis6heKqoJls",
+          "googleRating": 1,
+          "googleReviewsCount": 2
         }
       ],
       "faq": [
@@ -232,31 +274,46 @@
           "name": "Gold Taxi Žilina",
           "website": "https://www.zilina.taxi",
           "phone": "+421910595995",
-          "description": "NONSTOP taxi, ceny v meste od 5 €."
+          "description": "NONSTOP taxi, ceny v meste od 5 €.",
+          "googlePlaceId": "ChIJUekInohfFEcRSKXGLNG4tLk",
+          "googleRating": 4.4,
+          "googleReviewsCount": 35
         },
         {
           "name": "Taxi Fantasia Žilina",
           "website": "https://www.taxifantasia.sk",
           "phone": "+421905800600",
-          "description": "Lacné taxi, nonstop služba."
+          "description": "Lacné taxi, nonstop služba.",
+          "googlePlaceId": "ChIJGdnUfKReFEcRe9XsGVLrvIs",
+          "googleRating": 4.5,
+          "googleReviewsCount": 275
         },
         {
           "name": "Laura Taxi Žilina",
           "website": "https://www.taxilaura.sk",
           "phone": "+421905202020",
-          "description": "NONSTOP taxi služba v Žiline."
+          "description": "NONSTOP taxi služba v Žiline.",
+          "googlePlaceId": "ChIJ3wZuu9RdFEcR_5rvCu73Tvk",
+          "googleRating": 4.9,
+          "googleReviewsCount": 59
         },
         {
           "name": "RL Taxi Žilina",
           "website": "https://www.rltaxi.sk",
           "phone": "+421903417700",
-          "description": "Stanovisko pri železničnej stanici."
+          "description": "Stanovisko pri železničnej stanici.",
+          "googlePlaceId": "ChIJwRZc-aReFEcR_o8hSHgdA-U",
+          "googleRating": 2.6,
+          "googleReviewsCount": 23
         },
         {
           "name": "MIMA Taxi Žilina",
           "website": "https://www.mimataxizilina.sk",
           "phone": "+421940600222",
-          "description": "NONSTOP taxi, preprava na letisko, drink taxi."
+          "description": "NONSTOP taxi, preprava na letisko, drink taxi.",
+          "googlePlaceId": "ChIJCbWOkIVZFEcRjmWEY21Utow",
+          "googleRating": 4.9,
+          "googleReviewsCount": 62
         }
       ],
       "faq": [
@@ -275,6 +332,1310 @@
         {
           "question": "Vyzdvihne ma vodič aj v okolí Žiliny - napríklad v Martine alebo Čadci?",
           "answer": "Áno, taxi vás vyzdvihne kdekoľvek v regióne. Stačí uviesť presnú adresu pri objednávke."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-bratislava-letisko-bratislava",
+      "origin": "Bratislava",
+      "destination": "Letisko M. R. Štefánika",
+      "distance_km": "9-15",
+      "duration_min": "15-25",
+      "meta": {
+        "title": "Taxi Bratislava Letisko | Transfer na letisko BTS",
+        "description": "Taxi transfer na letisko M. R. Štefánika z Bratislavy. Rýchly odvoz za 15-25 minút. Objednajte online alebo telefonicky."
+      },
+      "h1": "Taxi na letisko Bratislava",
+      "keywords": [
+        "taxi Bratislava letisko",
+        "taxi na letisko BTS",
+        "odvoz letisko Štefánika",
+        "transfer letisko Bratislava",
+        "taxi z letiska Bratislava"
+      ],
+      "content": "Letisko M. R. Štefánika leží v mestskej časti Bratislava-Ružinov, necelých 10 kilometrov od centra. Presná vzdialenosť závisí od toho, odkiaľ vyrážaš. Z historického centra to býva okolo 9 km, z Petržalky približne 12 až 15 km. Čas cesty sa pohybuje medzi 15 až 25 minútami, no výrazne sa líši podľa dennej doby a premávky.\n\nPočas rannej špičky (7:00–9:00) alebo poobednej (16:00–18:00) sa môžeš zdržať na Prístavnom moste, Einsteinovej ulici alebo pri výjazde z centra. Ak odlietaš v takýto čas, počítaj s rezervou aspoň 30–35 minút. Naopak, v noci alebo cez víkend trvá cesta len tých základných 15 minút.\n\nAlternatívou je mestská hromadná doprava – autobus 61 ide z Hlavnej stanice priamo na letisko, no s veľkými kuframi to nie je ideálne. Taxi ťa vyzdvihne priamo pred domom a vysadí pred odletovou halou. Nemusíš teda vláčiť batožinu v autobuse ani riešiť lístky.\n\nPri objednávke zadaj čas, kedy máš letieť. Väčšina vodičov odporúča byť na letisku aspoň 90 minút pred odletom pri letoch v rámci Schengenu a 2 hodiny pri letoch mimo Schengenu. Pri skorých ranných odletoch okolo 6:00 sa oplatí dohodnúť odvoz už večer, aby si mal istotu.\n\nSamotné letisko má krátkodobé parkovisko priamo pred terminálom, kde taxi zastaví. Vystúpiš, vyberieš kufre a si hneď pri check-in pulte. Spiatočný transfer funguje podobne – po prílete ti vodič počká v príletovej hale alebo vonku na dohodnutom mieste.",
+      "carriersIntro": "Na tejto trase operuje množstvo prepravcov.",
+      "carriers": [
+        {
+          "name": "Taxi Do Viedne",
+          "website": "https://taxidoviedne.sk",
+          "phone": "+421911888801",
+          "description": "Nonstop služba, platba kartou v každom vozidle.",
+          "googlePlaceId": "ChIJz6xyekKPbEcRj8bQAwJfzXQ",
+          "googleRating": 5,
+          "googleReviewsCount": 305
+        },
+        {
+          "name": "Bratislava Taxi",
+          "website": "https://bratislava-taxi.sk",
+          "phone": "+421911030399",
+          "description": "24/7 služba, letiskové transfery.",
+          "googlePlaceId": "ChIJC9tIoUOJbEcRg1pvIbf_1NA",
+          "googleRating": 4.5,
+          "googleReviewsCount": 90
+        },
+        {
+          "name": "Taxi Bratislava City",
+          "website": "https://taxi-bratislava-city.sk",
+          "phone": "+421903106943",
+          "description": "Špecializácia na letiskové transfery.",
+          "googlePlaceId": "ChIJR07mtPOLbEcRuXbaYu-Mq8w",
+          "googleRating": 4.8,
+          "googleReviewsCount": 114
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ako dlho trvá cesta na letisko z centra Bratislavy?",
+          "answer": "Cesta trvá približne 15-25 minút v závislosti od dopravnej situácie a východiskovej časti Bratislavy."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-kosice-letisko-bratislava",
+      "origin": "Košice",
+      "destination": "Letisko Bratislava",
+      "distance_km": "400",
+      "duration_min": "240-280",
+      "meta": {
+        "title": "Taxi Košice Letisko Bratislava | Diaľkový transfer",
+        "description": "Taxi transfer z Košíc na letisko Bratislava. Pohodlná cesta po diaľnici. Objednajte si odvoz vopred."
+      },
+      "h1": "Taxi Košice - Letisko Bratislava",
+      "keywords": [
+        "taxi Košice letisko Bratislava",
+        "diaľkový transfer Košice BTS",
+        "odvoz Košice letisko BA"
+      ],
+      "content": "Cesta z Košíc na letisko Bratislava patrí medzi najdlhšie možné vnútroštátne taxi trasy na Slovensku. Ide o približne 400 kilometrov, čo pri ideálnej premávke znamená 4 až 4,5 hodiny čistého času v aute. Realita však môže byť iná – doprava pod Strečnom, spomalenia pri vjazde do Bratislavy alebo nehody na diaľnici D1 dokážu čas natiahnuť aj na 5 hodín.\n\nTáto trasa má zmysel v niekoľkých situáciách. Prvou je, keď z Košíc nemáš priamy let a potrebuješ odletieť z Bratislavy. Druhá situácia je návrat z dovolenky – pristaneš v Bratislave a potrebuješ sa dostať domov do Košíc, no nechce sa ti riešiť vlak s prestupmi a ťahaním batožiny. Tretím prípadom sú skupiny – ak cestujete traja alebo štyria, náklady sa rozdelia a vychádza to cenovo porovnateľne s vlakom, no s výrazne väčším komfortom.\n\nPočas cesty prejdeš prakticky celé Slovensko – Košice, Prešov (diaľnica sa napája až za mestom), dlhý úsek cez Spiš, Liptov, pod Strečnom, okolo Žiliny, Trenčín, Trnavu a nakoniec Bratislavu. Vodič spravidla zastaví na odpočívadle, ak potrebuješ prestávku na toaletu alebo občerstvenie.\n\nVýhodou je door-to-door služba – vodič ťa vyzdvihne kdekoľvek v Košiciach a odvezie priamo k terminálu letiska. Nevýhodou je samozrejme cena, ktorá sa pri takejto vzdialenosti pohybuje v stovkách eur. Je dôležité dohodnúť si presnú sumu vopred, aby nedošlo k nedorozumeniam. Objednať je potrebné minimálne deň vopred.",
+      "carriersIntro": "Diaľková trasa vyžaduje dohodnutie ceny vopred.",
+      "carriers": [
+        {
+          "name": "Hello Taxi Košice",
+          "website": "https://www.hello-taxi.sk",
+          "phone": "+421911434343",
+          "description": "Diaľkové transfery, zľavy pre študentov.",
+          "googlePlaceId": "ChIJ20BI-cHcPkcRyG-F54DrBW8",
+          "googleRating": 3.7,
+          "googleReviewsCount": 31
+        },
+        {
+          "name": "CTC Taxi Košice",
+          "website": "https://www.ctctaxi.sk",
+          "phone": "+421556333333",
+          "description": "Najväčšia taxislužba v Košiciach.",
+          "googlePlaceId": "ChIJrSqNMW0gP0cRRdIpzhc5f-8",
+          "googleRating": 3.9,
+          "googleReviewsCount": 16
+        },
+        {
+          "name": "American Taxi Košice",
+          "website": "https://americantaxi.sk",
+          "phone": "+421907556677",
+          "description": "Spoľahlivá voľba pre diaľkové trasy.",
+          "googlePlaceId": "ChIJef0j3_TfPkcRqYpF0S7cmps",
+          "googleRating": 3,
+          "googleReviewsCount": 32
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ako dlho trvá cesta z Košíc na letisko Bratislava?",
+          "answer": "Cesta trvá približne 4-4,5 hodiny po diaľnici D1."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-presov-letisko-kosice",
+      "origin": "Prešov",
+      "destination": "Letisko Košice",
+      "distance_km": "35-40",
+      "duration_min": "30-40",
+      "meta": {
+        "title": "Taxi Prešov Letisko Košice | Transfer na letisko KE",
+        "description": "Taxi transfer z Prešova na letisko Košice. Cesta trvá 30-40 minút. Pohodlný odvoz priamo k terminálu."
+      },
+      "h1": "Taxi Prešov - Letisko Košice",
+      "keywords": [
+        "taxi Prešov letisko Košice",
+        "transfer Prešov KE letisko",
+        "odvoz na letisko z Prešova"
+      ],
+      "content": "Prešov a Košice sú susedné mestá, ktoré spája nielen geografia, ale aj ekonomika. Letisko Košice v Barci slúži práve tomuto regiónu ako hlavný odbavovací bod pre medzinárodné lety. Vzdialenosť medzi Prešovom a letiskom je približne 35 až 40 kilometrov, čo pri plynulej premávke znamená 30 až 40 minút jazdy.\n\nCesta vedie po rýchlostnej ceste R4, ktorá spája obe mestá. Je to pomerne nová komunikácia, takže jazdí sa pohodlne a rýchlo. Problém môže nastať len v rannej alebo poobednej špičke pri vjazde do Košíc, kde sa premávka zhusťuje. Pri skorých ranných odletoch však táto trasa beží hladko.\n\nAlternatívou k taxi je vlak alebo autobus, no oboje vyžaduje presun na stanicu alebo autobusové stanovište v Prešove, následne cestu do Košíc a ďalší presun z košickej stanice na letisko. S veľkou batožinou, lyžami alebo detským kočíkom je to nepraktické. Taxi ťa vyzdvihne priamo doma a odvezie až k terminálu.\n\nTáto služba je obľúbená najmä pri skorých odletoch do Viedne, Varšavy či Londýna, ktoré odchádzajú okolo 6:00 alebo 7:00 ráno. V takomto čase už verejná doprava z Prešova nefunguje alebo je veľmi obmedzená. Pri prílete je situácia podobná – po pristátí ti vodič počká na parkovisku alebo v príletovej hale a odvezie ťa domov, bez toho aby si musel čakať na autobus.\n\nPri objednávke si dohodnite presnú adresu vyzdvihnutia v Prešove a čas, kedy máte odletieť. Odporúčame rezervovať si odvoz aspoň deň vopred, aby ste mali istotu.",
+      "carriersIntro": "Trasa je obľúbená pre cestujúcich z regiónu Prešov.",
+      "carriers": [
+        {
+          "name": "Alfa TAXI Prešov",
+          "website": "https://www.alfataxipo.sk",
+          "phone": "+421940545556",
+          "description": "NONSTOP služba od 2,50 €.",
+          "googlePlaceId": "ChIJc-lsm3ztPkcRSTVrCTzFcrw",
+          "googleRating": 3.3,
+          "googleReviewsCount": 185
+        },
+        {
+          "name": "EASY TAXI Prešov",
+          "website": "http://www.easytaxi.sk/presov/",
+          "phone": "+421907252525",
+          "description": "Spoľahlivá taxi služba.",
+          "googlePlaceId": "ChIJ6wiJf5jtPkcRyqP9H7LdnIA",
+          "googleRating": 3.9,
+          "googleReviewsCount": 139
+        },
+        {
+          "name": "SUPERB TAXI PREŠOV",
+          "website": "https://superbtaxipo.sk",
+          "phone": "+421948305136",
+          "description": "Špecializácia na letiskové transfery.",
+          "googlePlaceId": "ChIJdRsTDHvtPkcRQtNvC6oMgC0",
+          "googleRating": 4.7,
+          "googleReviewsCount": 23
+        },
+        {
+          "name": "EkoTaxi Prešov",
+          "website": "https://www.taxieko.sk",
+          "phone": "+421918055044",
+          "description": "Rýchlo, bezpečne, spoľahlivo.",
+          "googlePlaceId": "ChIJCRZyBb7yPkcRbwPuis_jhjg",
+          "googleRating": 3.9,
+          "googleReviewsCount": 101
+        }
+      ],
+      "faq": [
+        {
+          "question": "Kde ma vodič vyzdvihne v Prešove?",
+          "answer": "Vodič vás vyzdvihne na ľubovoľnej adrese v Prešove a okolí podľa vašej objednávky."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-zilina-letisko-vieden",
+      "origin": "Žilina",
+      "destination": "Letisko Viedeň",
+      "distance_km": "280-300",
+      "duration_min": "180-220",
+      "meta": {
+        "title": "Taxi Žilina Letisko Viedeň | Transfer ZA - VIE",
+        "description": "Taxi transfer zo Žiliny na letisko Viedeň. Cesta trvá približne 3-3,5 hodiny. Pohodlná preprava do Schwechatu."
+      },
+      "h1": "Taxi Žilina - Letisko Viedeň",
+      "keywords": [
+        "taxi Žilina letisko Viedeň",
+        "transfer Žilina Schwechat",
+        "odvoz Žilina VIE"
+      ],
+      "content": "Zo Žiliny na letisko Viedeň je to poriadny kus cesty – približne 280 až 300 kilometrov. Čas strávený v aute sa pohybuje okolo 3 až 3,5 hodiny, niekedy aj viac, ak narazíš na hustú premávku na rakúskej strane alebo v okolí Viedne. Ide o medzinárodnú trasu, ktorá vedie cez Bratislavu a pokračuje po rakúskej diaľnici A4 až do Schwechatu.\n\nTáto možnosť má zmysel, ak z Bratislavy nemáš priamy spoj, alebo ak cestujete vo väčšej skupine a rozdelíte si náklady. Pre jednotlivca vychádza cenovo podobne ako letenka do Viedne autom či vlakom plus transfer na letisko, no s taxíkom odpadá všetko riešenie okolo prestupov a čakania.\n\nCesta prebieha takmer výhradne po diaľniciach – D1 z Žiliny smerom na Bratislavu, obchvat Bratislavy a následne A6 a A4 v Rakúsku. Vodič má zaplatenú diaľničnú známku pre Rakúsko, takže ty sa o to nemusíš starať.途中 obvykle zastavíte na odpočívadle, či už na slovenskej alebo rakúskej strane, podľa potreby.\n\nPri tejto trase je kľúčové objednať si auto dostatočne vopred – ideálne aspoň 2-3 dni. Niektorí vodiči si účtujú príplatok za medzinárodnú jazdu, takže sa vždy informujte na finálnu cenu ešte pred odchodom. Pri skorých ranných odletoch okolo 6:00 to znamená vyraziť zo Žiliny už okolo 2:00-3:00 v noci.\n\nSpiatočný transfer z letiska do Žiliny funguje podobne – vodič sleduje príletovú tabuľu, takže ak má let meškanie, počká. Odporúčame mať zapnutý telefón po pristátí, aby ste sa mohli skontaktovať.",
+      "carriersIntro": "Diaľková trasa s medzinárodným prechodom.",
+      "carriers": [
+        {
+          "name": "Laura Taxi Žilina",
+          "website": "https://www.taxilaura.sk",
+          "phone": "+421905202020",
+          "description": "NONSTOP taxi služba, medzinárodné transfery.",
+          "googlePlaceId": "ChIJ3wZuu9RdFEcR_5rvCu73Tvk",
+          "googleRating": 4.9,
+          "googleReviewsCount": 59
+        },
+        {
+          "name": "Gold Taxi Žilina",
+          "website": "https://www.zilina.taxi",
+          "phone": "+421910595995",
+          "description": "NONSTOP taxi, letiskové transfery.",
+          "googlePlaceId": "ChIJUekInohfFEcRSKXGLNG4tLk",
+          "googleRating": 4.4,
+          "googleReviewsCount": 35
+        },
+        {
+          "name": "Taxi Fantasia Žilina",
+          "website": "https://www.taxifantasia.sk",
+          "phone": "+421905800600",
+          "description": "Lacné taxi, medzinárodné trasy.",
+          "googlePlaceId": "ChIJGdnUfKReFEcRe9XsGVLrvIs",
+          "googleRating": 4.5,
+          "googleReviewsCount": 275
+        }
+      ],
+      "faq": [
+        {
+          "question": "Musím platiť mýto a diaľničnú známku zvlášť?",
+          "answer": "Nie, všetky poplatky za diaľnice a mýto sú zahrnuté v cene."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-poprad-letisko-poprad",
+      "origin": "Poprad",
+      "destination": "Letisko Poprad-Tatry",
+      "distance_km": "5-8",
+      "duration_min": "10-15",
+      "meta": {
+        "title": "Taxi Poprad Letisko | Transfer na letisko Poprad-Tatry",
+        "description": "Taxi na letisko Poprad-Tatry. Krátka cesta 10-15 minút. Ideálne pre lyžiarsku sezónu."
+      },
+      "h1": "Taxi na letisko Poprad-Tatry",
+      "keywords": [
+        "taxi Poprad letisko",
+        "taxi letisko Tatry",
+        "odvoz na letisko Poprad"
+      ],
+      "content": "Letisko Poprad-Tatry leží len pár kilometrov od samotného Popradu, v smere k Veľkej Lomnici. Vzdialenosť je približne 5 až 8 km, čo znamená 10 až 15 minút jazdy. Je to jedno z najkratších možných letiskových spojení na Slovensku. Pre cestujúcich je to obrovská výhoda – vyrazíš z domu a o pár minút neskôr si už na letisku.\n\nLetisko má špecifický charakter. Nie je to klasický medzinárodný hub ako Bratislava či Košice. Prevádzka je výrazne sezónna – najväčší ruch je v zime, počas lyžiarskej sezóny, keď sem priletávajú charterové lety z Londýna, Kyjeva, Moskvy či ďalších destinácií. Cestujúci smerujú priamo do tatranských stredísk ako Štrbské Pleso, Tatranská Lomnica, Smokovec alebo Ždiar.\n\nV lete je prevádzka obmedzená, no letisko stále slúži na súkromné lety, helikoptéry a malé chartery. Ak teda plánuješ odletieť odtiaľto, over si vopred, či v daný termín prebieha prevádzka.\n\nTaxi z Popradu na letisko je rýchle a pohodlné riešenie. Vyzdvihne ťa pred hotelom, penziònom alebo domom a za 10 minút si na letisku. Nemusíš riešiť parkovanie, čo je pri krátkych pobytoch zbytočný náklad. Pri prílete ťa vodič vyzdvihne priamo pred príletovou halou a odvezie kamkoľvek – do Popradu, Tatier alebo dokonca do Liptova.\n\nPri objednávke stačí zadať adresu v Poprade a čas, kedy máš odletieť. Letisko je malé, takže odporúčaná doba príchodu pred odletom je približne 60-90 minút, nie viac.",
+      "carriersIntro": "Letisko slúži najmä v zimnej sezóne.",
+      "carriers": [
+        {
+          "name": "Taxi Tatry Poprad",
+          "website": "https://taxitatry.sk",
+          "phone": "+421917614856",
+          "description": "Špecializácia na letiskové transfery.",
+          "googlePlaceId": "ChIJRVCDQsA6PkcRXXmulJrUidA",
+          "googleRating": 4.1,
+          "googleReviewsCount": 123
+        },
+        {
+          "name": "ABA TAXI Poprad",
+          "website": "https://www.abataxi.sk",
+          "phone": "+421905999000",
+          "description": "Spoľahlivá a rýchla taxislužba.",
+          "googlePlaceId": "ChIJHfFWYcA6PkcR4dDP4ZmSqgw",
+          "googleRating": 4.1,
+          "googleReviewsCount": 342
+        },
+        {
+          "name": "LP TAXI Poprad",
+          "website": "https://www.lptaxipoprad.sk",
+          "phone": "+421940566743",
+          "description": "NONSTOP služba.",
+          "googlePlaceId": "ChIJHfFWYcA6PkcR4dDP4ZmSqgw",
+          "googleRating": 4.1,
+          "googleReviewsCount": 342
+        },
+        {
+          "name": "Royal Taxi Poprad",
+          "website": "https://www.royaltaxi.sk",
+          "phone": "+421907566966",
+          "description": "Letiskové transfery a preprava v Tatrách.",
+          "googlePlaceId": "ChIJ_-o9rpo6PkcRNu1-GudQCHI",
+          "googleRating": 3.7,
+          "googleReviewsCount": 15
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je letisko Poprad-Tatry v prevádzke celý rok?",
+          "answer": "Letisko má charterovú prevádzku najmä počas zimnej sezóny. Letná prevádzka je obmedzená."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-nitra-letisko-bratislava",
+      "origin": "Nitra",
+      "destination": "Letisko Bratislava",
+      "distance_km": "90-100",
+      "duration_min": "70-90",
+      "meta": {
+        "title": "Taxi Nitra Letisko Bratislava | Transfer NR - BTS",
+        "description": "Taxi z Nitry na letisko Bratislava. Cesta trvá približne 70-90 minút. Pohodlný transfer priamo k terminálu."
+      },
+      "h1": "Taxi Nitra - Letisko Bratislava",
+      "keywords": [
+        "taxi Nitra letisko Bratislava",
+        "transfer Nitra BTS",
+        "odvoz Nitra letisko"
+      ],
+      "content": "Cesta z Nitry na letisko Bratislava je jednou z najfrekventovanejších regionálnych letiskových trás. Vzdialenosť sa pohybuje medzi 90 až 100 kilometrami, podľa presného miesta vyzdvihnutia v Nitre. Časovo to vychádza na 70 až 90 minút, no môže to byť viac, ak narazíš na hustú premávku pri vjazde do Bratislavy alebo na diaľničný obchvat.\n\nCesta vedie primárne po rýchlostnej ceste R1, ktorá spája Nitru s bratislavským obchvatom. Táto komunikácia je pomerne plynulá, ale občas sa tu dejú dopravné nehody alebo údržbárske práce, ktoré dokážu presun natiahnuť. V špičke môže byť problematický aj úsek okolo Trnavy či pri vjazde do Bratislavy.\n\nPre Nitranov, ktorí cestujú do zahraničia, je letisko Bratislava najbližšou možnosťou. Vlak či autobus síce existujú, ale vyžadujú prestupy a celý proces trvá aj 2,5 hodiny. S veľkou batožinou, lyžami alebo keď cestujete vo dvojici či trojici, taxi vychádza cenovo rozumne a ušetrí čas.\n\nVodič ťa vyzdvihne priamo pred domom v Nitre a odvezie až k terminálu na letisku. Pri objednávke si dohodnete čas podľa vášho odletu – väčšina vodičov odporúča vyraziť s rezervou aspoň 2 hodiny pred plánovaným odletom, aby ste stihli aj prípadné zdržanie v premávke. Pri ranných odletoch okolo 6:00 to znamená vyrážať z Nitry už okolo 4:00.\n\nSpiatočný transfer z letiska do Nitry funguje rovnako – vodič sleduje príletovú tabuľu, takže ak let meškanie, počká na vás. Odporúčame si taxi objednať aspoň deň vopred, aby bola zaistená dostupnosť.",
+      "carriersIntro": "Populárna trasa pre cestujúcich z regiónu Nitra.",
+      "carriers": [
+        {
+          "name": "Top Taxi Nitra",
+          "website": "http://toptaxinitra.sk",
+          "phone": "+421940550220",
+          "description": "NONSTOP služba, letiskové transfery.",
+          "googlePlaceId": "ChIJn7-HYtM_a0cR8G-tjalCCYQ",
+          "googleRating": 3.9,
+          "googleReviewsCount": 51
+        },
+        {
+          "name": "HEY TAXI Nitra",
+          "website": "https://heytaxi.sk",
+          "phone": "+421903133233",
+          "description": "Moderná taxislužba.",
+          "googlePlaceId": "ChIJdT0aotY_a0cRGcQQVTBLpK4",
+          "googleRating": 3.3,
+          "googleReviewsCount": 66
+        },
+        {
+          "name": "CITY TAXI Nitra",
+          "website": "https://www.city-taxi.sk",
+          "phone": "+421911442255",
+          "description": "Spoľahlivé transfery na letisko.",
+          "googlePlaceId": "ChIJN9iMoeA-a0cRzui3u02Q6Ks",
+          "googleRating": 3.4,
+          "googleReviewsCount": 125
+        }
+      ],
+      "faq": [
+        {
+          "question": "O koľko hodín vopred by som mal objednať taxi?",
+          "answer": "Odporúčame objednať aspoň 24 hodín vopred, najmä počas špičky."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-trnava-letisko-bratislava",
+      "origin": "Trnava",
+      "destination": "Letisko Bratislava",
+      "distance_km": "50-60",
+      "duration_min": "40-55",
+      "meta": {
+        "title": "Taxi Trnava Letisko Bratislava | Transfer TT - BTS",
+        "description": "Taxi z Trnavy na letisko Bratislava. Rýchla cesta 40-55 minút po diaľnici. Objednajte odvoz vopred."
+      },
+      "h1": "Taxi Trnava - Letisko Bratislava",
+      "keywords": [
+        "taxi Trnava letisko Bratislava",
+        "transfer Trnava BTS",
+        "odvoz Trnava letisko"
+      ],
+      "content": "Z Trnavy na bratislavské letisko je to jedna z najkratších medzimestských letiskových trás. Vzdialenosť činí približne 50 až 60 kilometrov a cesta trvá 40 až 55 minút. Väčšina trasy vedie po diaľnici D1, čo zabezpečuje plynulú a rýchlu jazdu. Problém môžu spôsobiť len ranné či popoludňajšie špičky pri vjazde do Bratislavy alebo nehody na diaľnici.\n\nTrnava leží strategicky blízko Bratislavy, takže pre ľudí z tohto regiónu je letisko M. R. Štefánika logickou voľbou pre medzinárodné lety. Vlak aj autobus síce premávajú, no vyžadujú prestup v Bratislave a následný posun na letisko, čo celkovo zaberie viac času ako priamy taxi transfer.\n\nTaxi ťa vyzdvihne priamo pred domom v Trnave – či už bývaš v centre pri Trojičnom námestí, na sídlisku Prednádražie, alebo kdekoľvek inde. Vodič ťa odvezie priamo k odletovej hale, takže nemusíš riešiť prestupovanie ani nosenie batožiny po nástupištiach. Pri skorých ranných odletoch okolo 6:00 to znamená vyraziť z Trnavy okolo 4:30-5:00, aby si stihol check-in.\n\nVýhodou taxi je aj to, že sa nemusíš starať o parkovanie. Parkovanie na letisku nie je lacné a ak ideš na dlhšiu dovolenku, náklady sa rýchlo nasčítajú. Taxi ťa vysadí, ty vystúpiš a ideš priamo do terminálu.\n\nSpiatočný transfer funguje podobne – pri objednávke zadáš čas pristátia a vodič ťa vyzdvihne v príletovej hale. Ak má let meškanie, vodič sleduje príletovú tabuľu a prispôsobí sa. Odporúčame objednať aspoň deň vopred, aby bola zaistená dostupnosť.",
+      "carriersIntro": "Krátka a pohodlná trasa po diaľnici.",
+      "carriers": [
+        {
+          "name": "Team Taxi Trnava",
+          "website": "https://teamtaxi.sk",
+          "phone": "+421940747474",
+          "description": "NON-STOP služba, letiskové transfery.",
+          "googlePlaceId": "ChIJU5evTodfa0cRL6R70JaLM0k",
+          "googleRating": 3.5,
+          "googleReviewsCount": 125
+        },
+        {
+          "name": "TT-TAXI TRNAVA",
+          "website": "https://tt-taxi.sk",
+          "phone": "+421904959595",
+          "description": "NON-STOP, od 3,50 €.",
+          "googlePlaceId": "ChIJ1ZwNTZqgbEcR9x1o-ft4SeQ",
+          "googleRating": 3.4,
+          "googleReviewsCount": 246
+        },
+        {
+          "name": "Euro Taxi Trnava",
+          "website": "https://www.eurotaxitt.sk",
+          "phone": "+421904744780",
+          "description": "Najspoľahlivejšia taxislužba."
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je cesta po diaľnici alebo cez mesto?",
+          "answer": "Cesta vedie primárne po diaľnici D1, čo zabezpečuje rýchly a plynulý presun."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-banska-bystrica-letisko-bratislava",
+      "origin": "Banská Bystrica",
+      "destination": "Letisko Bratislava",
+      "distance_km": "200-210",
+      "duration_min": "140-170",
+      "meta": {
+        "title": "Taxi Banská Bystrica Letisko Bratislava | Transfer BB - BTS",
+        "description": "Taxi z Banskej Bystrice na letisko Bratislava. Cesta trvá približne 2,5-3 hodiny. Diaľková preprava."
+      },
+      "h1": "Taxi Banská Bystrica - Letisko Bratislava",
+      "keywords": [
+        "taxi Banská Bystrica letisko Bratislava",
+        "transfer BB BTS",
+        "odvoz Banská Bystrica letisko"
+      ],
+      "content": "Banská Bystrica leží v strede Slovenska, takže cesta na letisko Bratislava patrí medzi dlhšie regionálne trasy. Vzdialenosť je približne 200 až 210 kilometrov, čo predstavuje 2,5 až 3 hodiny jazdy. Presný čas závisí od dopravnej situácie – najmä pri vjazde do Bratislavy alebo na úseku pod Strečnom sa môžeš zdržať.\n\nCesta vedie cez Zvolen, následne sa napája na diaľnicu D1 pri Lučenci a pokračuje cez Levice, Nitru, Trnavu až do Bratislavy. Väčšina trasy je po diaľnici alebo rýchlostnej ceste, takže sa jazdí pohodlne. Vodič obvykle zastaví na odpočívadle, ak potrebuješ pauzu na kávu alebo toaletu.\n\nTáto trasa má zmysel hlavne vtedy, keď potrebuješ odletieť z Bratislavy, pretože z Banskej Bystrice žiadne pravidelné letecké spoje neexistujú. Najbližším letiskom je práve Bratislava, prípadne Viedeň (čo je ešte ďalej). Alternatívou je vlak alebo autobus, no vyžaduje prestupy a celý posun trvá aj 4 hodiny. S veľkou batožinou alebo ak cestujete vo dvojici, taxi je pohodlnejšia a časovo porovnateľná voľba.\n\nPri ranných odletoch okolo 6:00-7:00 to znamená vyraziť z Banskej Bystrice už okolo 3:00-4:00 v noci. Niektorí vodiči ponúkajú nočné transfery, no je potrebné si ich dohodnúť vopred – minimálne 2-3 dni. Pri objednávke si dohodnite presnú adresu vyzdvihnutia v Banskej Bystrici a čas odletu.\n\nSpiatočný transfer z letiska do Banskej Bystrice funguje rovnako. Vodič sleduje príletovú tabuľu, takže ak má let meškanie, počká. Pri takejto dlhej trase je dôležité mať dohodnutú cenu vopred, aby nedošlo k nedorozumeniam.",
+      "carriersIntro": "Diaľková trasa cez stred Slovenska.",
+      "carriers": [
+        {
+          "name": "Haló TAXI Banská Bystrica",
+          "website": "https://www.halotaxibb.sk",
+          "phone": "+421905453535",
+          "description": "NONSTOP služba, diaľkové transfery.",
+          "googlePlaceId": "ChIJoW6RrgY-FUcRVjGp2AP0724",
+          "googleRating": 4.4,
+          "googleReviewsCount": 66
+        },
+        {
+          "name": "ONE TAXI BB",
+          "website": "http://www.onetaxi.sk",
+          "phone": "+421905442544",
+          "description": "Spolahlivá taxislužba.",
+          "googlePlaceId": "ChIJudpNaus9FUcRtIy0cfPXt-g",
+          "googleRating": 4.4,
+          "googleReviewsCount": 241
+        },
+        {
+          "name": "EXPRES TAXI BB",
+          "website": "https://www.taxibb.sk",
+          "phone": "+421902410041",
+          "description": "Letiskové transfery.",
+          "googlePlaceId": "ChIJW2Skjfg9FUcRPVMCIg1ufOY",
+          "googleRating": 3.6,
+          "googleReviewsCount": 47
+        }
+      ],
+      "faq": [
+        {
+          "question": "Vedie cesta cez hory?",
+          "answer": "Cesta vedie cez Zvolen a potom po diaľnici D1. Nejde o horský úsek."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-bratislava-kosice",
+      "origin": "Bratislava",
+      "destination": "Košice",
+      "distance_km": "400",
+      "duration_min": "240-280",
+      "meta": {
+        "title": "Taxi Bratislava Košice | Transfer BA - KE",
+        "description": "Taxi z Bratislavy do Košíc. Najdlhšia vnútroštátna trasa cca 400 km. Cesta trvá približne 4-4,5 hodiny."
+      },
+      "h1": "Taxi Bratislava - Košice",
+      "keywords": [
+        "taxi Bratislava Košice",
+        "transfer BA KE",
+        "diaľkové taxi Slovensko"
+      ],
+      "content": "Trasa Bratislava – Košice je najdlhšia možná medzimestská cesta v rámci Slovenska. Ide o približne 400 kilometrov, ktoré pri ideálnych podmienkach znamenajú 4 až 4,5 hodiny v aute. V realite však môže cesta trvať aj 5 hodín, ak narazíš na hustú premávku pod Strečnom, okolo Žiliny alebo pri vjazde do Košíc.\n\nCesta vedie takmer výhradne po diaľnici D1, ktorá spája obe mestá a prechádza prakticky celým Slovenskom. Začína sa v Bratislave, pokračuje cez Trnavu, Trenčín, pod Strečnom, okolo Žiliny, cez Liptov, Spiš a končí v Košiciach. Vodič spravidla zastaví na odpočívadle – buď na Triblavine pri Žiline, alebo niekde v Liptove.\n\nTáto služba má zmysel v niekoľkých scenároch. Prvý je pracovný – potrebuješ rýchlo a pohodlne prejsť celé Slovensko na stretnutie, konferenciu či rodinné udalosti. Druhý je vtedy, keď vlak meškanie alebo nemáš priamy spoj. Tretí prípad sú skupiny – ak cestujete traja alebo štyria, náklady sa rozdelia a vychádza to cenovo prijateľne vzhľadom na komfort.\n\nV porovnaní s vlakom je taxi rýchlejšie a pohodlnejšie, no výrazne drahšie. Vlak trvá približne 5-6 hodín, vyžaduje prestup a nosenie batožiny, no stojí zlomok ceny. Taxi ťa vyzdvihne priamo doma v Bratislave a odvezie až pred cieľovú adresu v Košiciach, bez toho aby si musel riešiť čokoľvek.\n\nPri objednávke je kľúčové dohodnúť si presnú cenu vopred – pri takejto vzdialenosti sa ceny pohybujú v stovkách eur. Odporúčame objednať aspoň 2-3 dni vopred, aby bola zaistená dostupnosť.",
+      "carriersIntro": "Najdlhšia štandardná vnútroštátna trasa.",
+      "carriers": [
+        {
+          "name": "Bratislava Taxi",
+          "website": "https://bratislava-taxi.sk",
+          "phone": "+421911030399",
+          "description": "24/7 služba, diaľkové transfery.",
+          "googlePlaceId": "ChIJC9tIoUOJbEcRg1pvIbf_1NA",
+          "googleRating": 4.5,
+          "googleReviewsCount": 90
+        },
+        {
+          "name": "Taxi Bratislava City",
+          "website": "https://taxi-bratislava-city.sk",
+          "phone": "+421903106943",
+          "description": "Medzimestské transfery.",
+          "googlePlaceId": "ChIJR07mtPOLbEcRuXbaYu-Mq8w",
+          "googleRating": 4.8,
+          "googleReviewsCount": 114
+        }
+      ],
+      "faq": [
+        {
+          "question": "Sú v cene zahrnuté odpočívadlá?",
+          "answer": "Áno, vodič môže zastať na odpočívadle podľa potreby bez príplatku."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-bratislava-zilina",
+      "origin": "Bratislava",
+      "destination": "Žilina",
+      "distance_km": "200",
+      "duration_min": "120-150",
+      "meta": {
+        "title": "Taxi Bratislava Žilina | Transfer BA - ZA",
+        "description": "Taxi z Bratislavy do Žiliny. Cesta trvá približne 2 hodiny po diaľnici D1. Pohodlná preprava."
+      },
+      "h1": "Taxi Bratislava - Žilina",
+      "keywords": [
+        "taxi Bratislava Žilina",
+        "transfer BA ZA",
+        "preprava Bratislava Žilina"
+      ],
+      "content": "Bratislava a Žilina sú dve kľúčové mestá spojené diaľnicou D1. Vzdialenosť medzi nimi je približne 200 kilometrov, čo pri plynulej premávke znamená 2 až 2,5 hodiny jazdy. Realita je však často iná – úsek pod Strečnom je známy častými kolónami, rovnako ako vjazd do Bratislavy v rannej alebo poobednej špičke.\n\nTáto trasa je jedna z najfrekventovanejších na Slovensku. Vlak je silná konkurencia, no taxi má svoje výhody. Nemusíš ísť na stanicu, čakať na spoj ani riešiť prestup. Vodič ťa vyzdvihne priamo pred domom v Bratislave a odvezie až k cieľovej adrese v Žiline. Ak potrebuješ cestovať so zaujímavou batožinou (športové vybavenie, náradie, veľké kufre), taxi je logická voľba.\n\nCesta vedie takmer výhradne po diaľnici D1. Vodič spravidla zastaví na odpočívadle pri Triblavine, ak potrebuješ pauzu. Úsek pod Strečnom je úzky a často plný kamiónov, čo môže jazdu predĺžiť. V ideálnom prípade však celú trasu zvládneš za 2 hodiny.\n\nTaxi z Bratislavy do Žiliny má zmysel najmä vtedy, keď cestujete vo dvojici alebo trojici a náklady si rozdelíte. Pre jednotlivca je vlak cenovo výhodnejší, no časovo porovnateľný a s menším komfortom. Pri pracovných cestách, keď potrebuješ počas cesty pracovať na notebooku alebo telefonovať, je auto ideálne riešenie.\n\nPri objednávke si dohodnite presnú adresu v Bratislave a cieľovú adresu v Žiline. Cena závisí od prepravcu, obvykle sa pohybuje okolo 80-120 € v závislosti od typu vozidla a času objednávky. Odporúčame rezervovať aspoň deň vopred.",
+      "carriersIntro": "Frekventovaná trasa po hlavnej diaľnici.",
+      "carriers": [
+        {
+          "name": "Taxi Do Viedne",
+          "website": "https://taxidoviedne.sk",
+          "phone": "+421911888801",
+          "description": "Medzimestské transfery.",
+          "googlePlaceId": "ChIJz6xyekKPbEcRj8bQAwJfzXQ",
+          "googleRating": 5,
+          "googleReviewsCount": 305
+        },
+        {
+          "name": "Bratislava Taxi",
+          "website": "https://bratislava-taxi.sk",
+          "phone": "+421911030399",
+          "description": "Transfery do Žiliny a ďalej.",
+          "googlePlaceId": "ChIJC9tIoUOJbEcRg1pvIbf_1NA",
+          "googleRating": 4.5,
+          "googleReviewsCount": 90
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je cesta rýchlejšia taxíkom alebo vlakom?",
+          "answer": "Taxi je porovnateľné s vlakom, ale s výhodou door-to-door služby."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-bratislava-nitra",
+      "origin": "Bratislava",
+      "destination": "Nitra",
+      "distance_km": "90-100",
+      "duration_min": "70-90",
+      "meta": {
+        "title": "Taxi Bratislava Nitra | Transfer BA - NR",
+        "description": "Taxi z Bratislavy do Nitry. Cesta trvá približne 70-90 minút. Rýchly transfer po diaľnici R1."
+      },
+      "h1": "Taxi Bratislava - Nitra",
+      "keywords": [
+        "taxi Bratislava Nitra",
+        "transfer BA NR",
+        "preprava Bratislava Nitra"
+      ],
+      "content": "Bratislava a Nitra sú dve významné slovenské mestá vzdialené približne 90 až 100 kilometrov. Cesta medzi nimi trvá zhruba 70 až 90 minút, v závislosti od dopravnej situácie. Trasa vedie primárne po rýchlostnej ceste R1, ktorá spája bratislavský obchvat s Nitrou cez Trnavu.\n\nTáto komunikácia je pomerne nová a plynulá, no občas sa tu dejú nehody alebo údržbárske práce, ktoré dokážu presun skomplikovať. V špičke môže byť problematický úsek okolo Trnavy alebo pri vstupe do Bratislavy. Pri ranných odletoch z Bratislavy alebo pri večernom návrate z pracovných stretnutí však cesta beží hladko.\n\nTaxi z Bratislavy do Nitry má zmysel najmä pri pracovných cestách – stretnutia na úradoch, obchodné rokovania, návštevy v nemocnici či univerzite. Vlak aj autobus síce premávajú, no vyžadujú presun na stanicu a celkovo to trvá podobne dlho. Ak cestujete vo dvojici alebo trojici, náklady sa rozdelia a komfort je neporovnateľne vyšší.\n\nVodič ťa vyzdvihne priamo na zadanej adrese v Bratislave – či už ide o kanceláriu, hotel alebo byt – a odvezie priamo k cieľu v Nitre. Nemusíš riešiť parkovanie, čo je v oboch mestách stále väčší problém. Ak potrebuješ počas cesty pracovať, máš súkromie a pokoj.\n\nCena sa obvykle pohybuje okolo 60-80 € v závislosti od typu vozidla a času objednávky. Pri ranných odjazdoch okolo 6:00 alebo nočných návratoch po 22:00 môže byť mierny príplatok. Odporúčame objednať aspoň deň vopred, aby bola zaistená dostupnosť.",
+      "carriersIntro": "Pomerne krátka medziregionálna trasa.",
+      "carriers": [
+        {
+          "name": "Bratislava Taxi",
+          "website": "https://bratislava-taxi.sk",
+          "phone": "+421911030399",
+          "description": "Transfery do Nitry a okolí.",
+          "googlePlaceId": "ChIJC9tIoUOJbEcRg1pvIbf_1NA",
+          "googleRating": 4.5,
+          "googleReviewsCount": 90
+        },
+        {
+          "name": "Taxi Bratislava City",
+          "website": "https://taxi-bratislava-city.sk",
+          "phone": "+421903106943",
+          "description": "Regionálne transfery.",
+          "googlePlaceId": "ChIJR07mtPOLbEcRuXbaYu-Mq8w",
+          "googleRating": 4.8,
+          "googleReviewsCount": 114
+        }
+      ],
+      "faq": [
+        {
+          "question": "Vedie cesta po diaľnici?",
+          "answer": "Áno, väčšina cesty vedie po rýchlostnej ceste R1."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-bratislava-trnava",
+      "origin": "Bratislava",
+      "destination": "Trnava",
+      "distance_km": "50-60",
+      "duration_min": "35-50",
+      "meta": {
+        "title": "Taxi Bratislava Trnava | Transfer BA - TT",
+        "description": "Taxi z Bratislavy do Trnavy. Krátka cesta 35-50 minút po diaľnici D1. Rýchly a pohodlný transfer."
+      },
+      "h1": "Taxi Bratislava - Trnava",
+      "keywords": [
+        "taxi Bratislava Trnava",
+        "transfer BA TT",
+        "preprava Bratislava Trnava"
+      ],
+      "content": "Bratislava a Trnava patria medzi najbližšie slovenské mestá. Vzdialenosť je len 50 až 60 kilometrov, čo pri plynulej premávke znamená 35 až 50 minút jazdy. Trasa vedie takmer výhradne po diaľnici D1, čo zabezpečuje rýchlu a pohodlnú cestu. Problém môžu spôsobiť len ranné alebo popoludňajšie špičky pri výjazde z Bratislavy.\n\nTáto trasa je jednou z najfrekventovanejších na Slovensku. Veľa ľudí z Trnavy pracuje v Bratislave a naopak. Vlak premáva často a je rýchly, no taxi má svoje výhody – nemusíš riešiť cestu na stanicu, čakanie na spoj ani prestup v prípade meškania. Vodič ťa vyzdvihne priamo pred domom alebo kanceláriou a odvezie až k cieľu.\n\nTaxi z Bratislavy do Trnavy má zmysel najmä pri pracovných cestách, keď potrebuješ byť presne načas na stretnutí. Rovnako je to vhodné pri preprave väčšej batožiny, športového vybavenia alebo keď cestujete vo dvojici či trojici. Pri rozdelení nákladov vychádza cena porovnateľne s vlakom, no s výrazne väčším komfortom.\n\nPočas cesty prejdeš bratislavský obchvat a pokračuješ priamo na Trnavu. Celá trasa je diaľničná, takže sa jazdí rýchlo a plynulo. V ideálnom prípade si v Trnave už o 40 minút.\n\nCena sa obvykle pohybuje okolo 40-60 € v závislosti od typu vozidla a času objednávky. Pri skorých ranných odjazdoch alebo nočných návratoch môže byť mierny príplatok. Odporúčame objednať aspoň pár hodín vopred, aby bola zaistená dostupnosť – táto trasa je veľmi obľúbená a vodiči sú často obsadení.",
+      "carriersIntro": "Krátka a frekventovaná trasa.",
+      "carriers": [
+        {
+          "name": "Taxi Do Viedne",
+          "website": "https://taxidoviedne.sk",
+          "phone": "+421911888801",
+          "description": "Krátke transfery.",
+          "googlePlaceId": "ChIJz6xyekKPbEcRj8bQAwJfzXQ",
+          "googleRating": 5,
+          "googleReviewsCount": 305
+        },
+        {
+          "name": "Bratislava Taxi",
+          "website": "https://bratislava-taxi.sk",
+          "phone": "+421911030399",
+          "description": "Transfer do Trnavy.",
+          "googlePlaceId": "ChIJC9tIoUOJbEcRg1pvIbf_1NA",
+          "googleRating": 4.5,
+          "googleReviewsCount": 90
+        }
+      ],
+      "faq": [
+        {
+          "question": "Koľko stojí taxi z Bratislavy do Trnavy?",
+          "answer": "Cena závisí od prepravcu, zvyčajne sa pohybuje medzi 40-60 €."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-bratislava-banska-bystrica",
+      "origin": "Bratislava",
+      "destination": "Banská Bystrica",
+      "distance_km": "200-210",
+      "duration_min": "140-170",
+      "meta": {
+        "title": "Taxi Bratislava Banská Bystrica | Transfer BA - BB",
+        "description": "Taxi z Bratislavy do Banskej Bystrice. Cesta trvá približne 2,5-3 hodiny cez stred Slovenska."
+      },
+      "h1": "Taxi Bratislava - Banská Bystrica",
+      "keywords": [
+        "taxi Bratislava Banská Bystrica",
+        "transfer BA BB",
+        "preprava do Banskej Bystrice"
+      ],
+      "content": "Bratislava a Banská Bystrica sú vzdialené približne 200 až 210 kilometrov, čo predstavuje 2,5 až 3 hodiny jazdy. Presný čas závisí od dopravnej situácie, najmä na úseku pod Strečnom a pri vjazde do Bratislavy. Táto trasa vedie cez stred Slovenska a spája hlavné mesto s centrom stredného Slovenska.\n\nCesta začína v Bratislave, pokračuje cez Nitru, Levice, Zvolen a končí v Banskej Bystrici. Väčšina trasy vedie po diaľnici D1 a rýchlostnej ceste R1, čo zabezpečuje pomerne plynulú jazdu. Vodič obvykle zastaví na odpočívadle, ak potrebuješ pauzu na kávu alebo toaletu.\n\nTaxi z Bratislavy do Banskej Bystrice má zmysel najmä pri pracovných cestách – stretnutia na úradoch, obchodné rokovania, návštevy v nemocnici alebo univerzite. Vlak aj autobus síce premávajú, no vyžadujú prestupy a celý posun trvá aj 4 hodiny. Pri cestovaní vo dvojici alebo trojici vychádza taxi cenovo prijateľne vzhľadom na komfort a ušetrený čas.\n\nVodič ťa vyzdvihne priamo na zadanej adrese v Bratislave a odvezie priamo k cieľu v Banskej Bystrici. Nemusíš riešiť parkovanie, prestupy ani nosenie batožiny. Ak potrebuješ počas cesty pracovať, máš súkromie a pokoj.\n\nCena sa obvykle pohybuje okolo 100-150 € v závislosti od typu vozidla a času objednávky. Pri ranných odjazdoch alebo nočných návratoch môže byť mierny príplatok. Odporúčame objednať aspoň 2-3 dni vopred, aby bola zaistená dostupnosť – ide o dlhšiu trasu a nie všetci vodiči ju berú.",
+      "carriersIntro": "Stredne dlhá medziregionálna trasa.",
+      "carriers": [
+        {
+          "name": "Bratislava Taxi",
+          "website": "https://bratislava-taxi.sk",
+          "phone": "+421911030399",
+          "description": "Diaľkové transfery.",
+          "googlePlaceId": "ChIJC9tIoUOJbEcRg1pvIbf_1NA",
+          "googleRating": 4.5,
+          "googleReviewsCount": 90
+        },
+        {
+          "name": "Taxi Bratislava City",
+          "website": "https://taxi-bratislava-city.sk",
+          "phone": "+421903106943",
+          "description": "Transfer do Banskej Bystrice.",
+          "googlePlaceId": "ChIJR07mtPOLbEcRuXbaYu-Mq8w",
+          "googleRating": 4.8,
+          "googleReviewsCount": 114
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je potrebné objednať si taxi vopred?",
+          "answer": "Áno, pri diaľkových trasách je potrebné objednať aspoň deň vopred."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-bratislava-presov",
+      "origin": "Bratislava",
+      "destination": "Prešov",
+      "distance_km": "360-380",
+      "duration_min": "220-260",
+      "meta": {
+        "title": "Taxi Bratislava Prešov | Transfer BA - PO",
+        "description": "Taxi z Bratislavy do Prešova. Dlhá trasa približne 360 km, cesta trvá 3,5-4 hodiny."
+      },
+      "h1": "Taxi Bratislava - Prešov",
+      "keywords": [
+        "taxi Bratislava Prešov",
+        "transfer BA PO",
+        "diaľkové taxi Prešov"
+      ],
+      "content": "Bratislava a Prešov sú vzdialené približne 360 až 380 kilometrov, čo predstavuje jednu z najdlhších možných vnútroštátnych trás. Pri ideálnej premávke trvá cesta 3,5 až 4 hodiny, no v realite to môže byť aj 4,5 hodiny, ak narazíš na hustú premávku pod Strečnom alebo okolo Žiliny.\n\nCesta vedie takmer výhradne po diaľnici D1, ktorá spája západné a východné Slovensko. Začína sa v Bratislave, pokračuje cez Trnavu, Trenčín, pod Strečnom, okolo Žiliny, cez Liptov, Spiš a končí tesne pred Prešovom (diaľnica sa napája až za mestom). Vodič spravidla zastaví na odpočívadle – buď pri Triblavine alebo niekde v Liptove.\n\nTáto trasa má zmysel v niekoľkých prípadoch. Prvý je pracovný – potrebuješ rýchlo prejsť celé Slovensko na stretnutie, konferenciu alebo rodinné udalosti. Druhý je vtedy, keď vlak meškanie alebo nemáš priamy spoj. Tretí prípad sú skupiny – ak cestujete traja alebo štyria, náklady sa rozdelia a vychádza to cenovo prijateľne vzhľadom na komfort.\n\nV porovnaní s vlakom je taxi výrazne rýchlejšie a pohodlnejšie, no drahšie. Vlak trvá približne 6-7 hodín a často vyžaduje prestup. Taxi ťa vyzdvihne priamo doma v Bratislave a odvezie až pred cieľovú adresu v Prešove, bez toho aby si musel riešiť čokoľvek.\n\nPri objednávke je kľúčové dohodnúť si presnú cenu vopred – pri takejto vzdialenosti sa ceny pohybujú v stovkách eur (200-300 €). Odporúčame objednať aspoň 2-3 dni vopred, aby bola zaistená dostupnosť.",
+      "carriersIntro": "Jedna z najdlhších vnútroštátnych trás.",
+      "carriers": [
+        {
+          "name": "Bratislava Taxi",
+          "website": "https://bratislava-taxi.sk",
+          "phone": "+421911030399",
+          "description": "Dlhé diaľkové trasy.",
+          "googlePlaceId": "ChIJC9tIoUOJbEcRg1pvIbf_1NA",
+          "googleRating": 4.5,
+          "googleReviewsCount": 90
+        },
+        {
+          "name": "Taxi Bratislava City",
+          "website": "https://taxi-bratislava-city.sk",
+          "phone": "+421903106943",
+          "description": "Transfer do Prešova.",
+          "googlePlaceId": "ChIJR07mtPOLbEcRuXbaYu-Mq8w",
+          "googleRating": 4.8,
+          "googleReviewsCount": 114
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ako dlho trvá cesta z Bratislavy do Prešova?",
+          "answer": "Cesta trvá približne 3,5-4 hodiny v závislosti od dopravnej situácie."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-bratislava-trencin",
+      "origin": "Bratislava",
+      "destination": "Trenčín",
+      "distance_km": "120-130",
+      "duration_min": "80-100",
+      "meta": {
+        "title": "Taxi Bratislava Trenčín | Transfer BA - TN",
+        "description": "Taxi z Bratislavy do Trenčína. Cesta trvá približne 80-100 minút po diaľnici D1."
+      },
+      "h1": "Taxi Bratislava - Trenčín",
+      "keywords": [
+        "taxi Bratislava Trenčín",
+        "transfer BA TN",
+        "preprava Bratislava Trenčín"
+      ],
+      "content": "Bratislava a Trenčín sú vzdialené približne 120 až 130 kilometrov, čo predstavuje 80 až 100 minút jazdy. Trasa vedie takmer výhradne po diaľnici D1, ktorá zabezpečuje plynulú a rýchlu cestu. Problém môže nastať len v rannej alebo popoludňajšej špičke pri výjazde z Bratislavy alebo pri vstupe do Trenčína.\n\nCesta prebieha cez západné Slovensko – Bratislava, okolo Trnavy, okolie Piešťan a pokračuje priamo do Trenčína. Vodič obvykle nezdržuje na odpočívadle, pretože trasa je pomerne krátka. V ideálnom prípade si v Trenčíne už o hodinu a pol.\n\nTaxi z Bratislavy do Trenčína má zmysel najmä pri pracovných cestách – stretnutia na úradoch, obchodné rokovania, návštevy v nemocnici či univerzite. Vlak síce premáva, no vyžaduje presun na stanicu a celkovo to trvá podobne dlho. Ak cestujete vo dvojici alebo trojici, náklady sa rozdelia a komfort je neporovnateľne vyšší.\n\nVodič ťa vyzdvihne priamo na zadanej adrese v Bratislave – či už ide o kanceláriu, hotel alebo byt – a odvezie priamo k cieľu v Trenčíne. Nemusíš riešiť parkovanie, čo je v oboch mestách stále väčší problém. Ak potrebuješ počas cesty pracovať, máš súkromie a pokoj.\n\nCena sa obvykle pohybuje okolo 60-90 € v závislosti od typu vozidla a času objednávky. Pri ranných odjazdoch okolo 6:00 alebo nočných návratoch po 22:00 môže byť mierny príplatok. Odporúčame objednať aspoň deň vopred, aby bola zaistená dostupnosť.",
+      "carriersIntro": "Stredne dlhá trasa na sever.",
+      "carriers": [
+        {
+          "name": "Bratislava Taxi",
+          "website": "https://bratislava-taxi.sk",
+          "phone": "+421911030399",
+          "description": "Transfer do Trenčína.",
+          "googlePlaceId": "ChIJC9tIoUOJbEcRg1pvIbf_1NA",
+          "googleRating": 4.5,
+          "googleReviewsCount": 90
+        },
+        {
+          "name": "Taxi Do Viedne",
+          "website": "https://taxidoviedne.sk",
+          "phone": "+421911888801",
+          "description": "Medzimestské transfery.",
+          "googlePlaceId": "ChIJz6xyekKPbEcRj8bQAwJfzXQ",
+          "googleRating": 5,
+          "googleReviewsCount": 305
+        }
+      ],
+      "faq": [
+        {
+          "question": "Vedie cesta po diaľnici?",
+          "answer": "Áno, celá cesta vedie po diaľnici D1, čo zabezpečuje plynulú jazdu."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-kosice-presov",
+      "origin": "Košice",
+      "destination": "Prešov",
+      "distance_km": "35-40",
+      "duration_min": "30-40",
+      "meta": {
+        "title": "Taxi Košice Prešov | Transfer KE - PO",
+        "description": "Taxi z Košíc do Prešova. Krátka cesta 30-40 minút. Najbežnejšia regionálna trasa na východe."
+      },
+      "h1": "Taxi Košice - Prešov",
+      "keywords": [
+        "taxi Košice Prešov",
+        "transfer KE PO",
+        "preprava Košice Prešov"
+      ],
+      "content": "Košice a Prešov sú dve najväčšie mestá východného Slovenska, vzdialené len 35 až 40 kilometrov. Cesta medzi nimi trvá približne 30 až 40 minút, čo ju robí ideálnou pre každodenné dochádzanie alebo pracovné cesty. Trasa vedie po rýchlostnej ceste R4, ktorá spája obe mestá a zabezpečuje plynulú jazdu.\n\nTáto trasa je najfrekventovanejšia na východe Slovenska. Veľa ľudí z Prešova pracuje v Košiciach a naopak. Vlak aj autobus síce premávajú často, no taxi má svoje výhody – nemusíš riešiť cestu na stanicu, čakanie na spoj ani prestup v prípade meškania. Vodič ťa vyzdvihne priamo pred domom alebo kanceláriou a odvezie až k cieľu.\n\nPočas cesty prejdeš rýchlostnú cestu R4, ktorá je pomerne nová a jazdí sa po nej pohodlne. Problém môže nastať len v rannej špičke pri vjazde do Košíc alebo v popoludňajšej špičke pri výjazde z Košíc. V ideálnom prípade je cesta za 30-35 minút.\n\nTaxi z Košíc do Prešova má zmysel najmä pri pracovných cestách, keď potrebuješ byť presne načas na stretnutí. Rovnako je to vhodné pri preprave väčšej batožiny, športového vybavenia alebo keď cestujete vo dvojici či trojici. Pri rozdelení nákladov vychádza cena porovnateľne s vlakom, no s výrazne väčším komfortom.\n\nCena sa obvykle pohybuje okolo 25-40 € v závislosti od typu vozidla a času objednávky. Pri skorých ranných odjazdoch alebo nočných návratoch môže byť mierny príplatok. Táto trasa je veľmi obľúbená, takže odporúčame objednať aspoň pár hodín vopred.",
+      "carriersIntro": "Najfrekventovanejšia trasa na východe Slovenska.",
+      "carriers": [
+        {
+          "name": "CTC Taxi Košice",
+          "website": "https://www.ctctaxi.sk",
+          "phone": "+421556333333",
+          "description": "Transfery do Prešova.",
+          "googlePlaceId": "ChIJrSqNMW0gP0cRRdIpzhc5f-8",
+          "googleRating": 3.9,
+          "googleReviewsCount": 16
+        },
+        {
+          "name": "Hello Taxi Košice",
+          "website": "https://www.hello-taxi.sk",
+          "phone": "+421911434343",
+          "description": "Regionálne transfery.",
+          "googlePlaceId": "ChIJ20BI-cHcPkcRyG-F54DrBW8",
+          "googleRating": 3.7,
+          "googleReviewsCount": 31
+        },
+        {
+          "name": "American Taxi Košice",
+          "website": "https://americantaxi.sk",
+          "phone": "+421907556677",
+          "description": "Spoľahlivá preprava.",
+          "googlePlaceId": "ChIJef0j3_TfPkcRqYpF0S7cmps",
+          "googleRating": 3,
+          "googleReviewsCount": 32
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ako dlho trvá cesta z Košíc do Prešova?",
+          "answer": "Cesta trvá približne 30-40 minút po rýchlostnej ceste."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-kosice-poprad",
+      "origin": "Košice",
+      "destination": "Poprad",
+      "distance_km": "95-105",
+      "duration_min": "70-90",
+      "meta": {
+        "title": "Taxi Košice Poprad | Transfer KE - PP",
+        "description": "Taxi z Košíc do Popradu. Cesta trvá približne 70-90 minút. Ideálne pre lyžiarsku sezónu."
+      },
+      "h1": "Taxi Košice - Poprad",
+      "keywords": [
+        "taxi Košice Poprad",
+        "transfer KE PP",
+        "preprava Košice Tatry"
+      ],
+      "content": "Košice a Poprad sú významné mestá východného Slovenska, vzdialené približne 95 až 105 kilometrov. Cesta medzi nimi trvá zhruba 70 až 90 minút, čo ju robí ideálnou pre výlety do Tatier alebo lyžiarsku sezónu. Trasa vedie po diaľnici D1 a následne po ceste smerom do Popradu a Tatier.\n\nTáto trasa je obľúbená najmä v zimnej sezóne, keď ľudia z Košíc cestujú do tatranských lyžiarskych stredísk ako Tatranská Lomnica, Štrbské Pleso alebo Smokovec. Taxi je pohodlnejšia alternatíva k vlaku, pretože ťa vyzdvihne priamo doma a odvezie až k hotelu alebo lyžiarskemu stredisku.\n\nCesta vedie cez Spiš – Košice, okolo Margecian, Spišské Podhradie a pokračuje priamo do Popradu. V zime môže byť cesta trochu dlhšia kvôli sneženiu alebo poľadovici, no vodiči sú na to zvyknutí a majú zimné pneumatiky.\n\nTaxi z Košíc do Popradu má zmysel najmä vtedy, keď cestujete s lyžiarskym vybavením, veľkou batožinou alebo vo väčšej skupine. Pri rozdelení nákladov vychádza cena prijateľne a komfort je neporovnateľný. Vodič vás môže odviezť nielen do Popradu, ale aj priamo do Tatier – Štrbské Pleso, Tatranská Lomnica či ďalšie lokality.\n\nCena sa obvykle pohybuje okolo 50-80 € v závislosti od typu vozidla a cieľovej destinácie. Ak idete priamo do Tatier (nie len do Popradu), cena môže byť vyššia. Odporúčame objednať aspoň deň vopred, najmä v lyžiarskej sezóne, keď je dopyt vysoký.",
+      "carriersIntro": "Obľúbená trasa smerom k Tatrám.",
+      "carriers": [
+        {
+          "name": "CTC Taxi Košice",
+          "website": "https://www.ctctaxi.sk",
+          "phone": "+421556333333",
+          "description": "Transfery do Popradu a Tatier.",
+          "googlePlaceId": "ChIJrSqNMW0gP0cRRdIpzhc5f-8",
+          "googleRating": 3.9,
+          "googleReviewsCount": 16
+        },
+        {
+          "name": "Hello Taxi Košice",
+          "website": "https://www.hello-taxi.sk",
+          "phone": "+421911434343",
+          "description": "Preprava do lyžiarskych stredísk.",
+          "googlePlaceId": "ChIJ20BI-cHcPkcRyG-F54DrBW8",
+          "googleRating": 3.7,
+          "googleReviewsCount": 31
+        }
+      ],
+      "faq": [
+        {
+          "question": "Môže ma vodič odviezť aj do Tatier?",
+          "answer": "Áno, vodič vás odvezie kamkoľvek v regióne - Poprad, Vysoké Tatry, Štrbské Pleso."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-zilina-kosice",
+      "origin": "Žilina",
+      "destination": "Košice",
+      "distance_km": "240-260",
+      "duration_min": "150-180",
+      "meta": {
+        "title": "Taxi Žilina Košice | Transfer ZA - KE",
+        "description": "Taxi zo Žiliny do Košíc. Dlhá trasa približne 240 km, cesta trvá 2,5-3 hodiny."
+      },
+      "h1": "Taxi Žilina - Košice",
+      "keywords": [
+        "taxi Žilina Košice",
+        "transfer ZA KE",
+        "diaľkové taxi Košice"
+      ],
+      "content": "Žilina a Košice sú vzdialené približne 240 až 260 kilometrov, čo predstavuje jednu z dlhších medzimestských trás na Slovensku. Pri ideálnej premávke trvá cesta 2,5 až 3 hodiny, no v realite to môže byť aj 3,5 hodiny, ak narazíš na hustú premávku pod Strečnom alebo v okolí Košíc.\n\nCesta vedie takmer výhradne po diaľnici D1, ktorá spája severné a východné Slovensko. Začína sa v Žiline, pokračuje cez Liptov, Spiš a končí v Košiciach. Vodič spravidla zastaví na odpočívadle v Liptove alebo pri Mengusovciach, ak potrebuješ pauzu na kávu alebo toaletu.\n\nTáto trasa má zmysel v niekoľkých situáciách. Prvou je pracovná cesta – potrebuješ rýchlo a pohodlne prejsť zo západu na východ na stretnutie, konferenciu či rodinné udalosti. Druhou je vtedy, keď vlak meškanie alebo nemáš priamy spoj. Treťou sú skupiny – ak cestujete traja alebo štyria, náklady sa rozdelia a vychádza to cenovo prijateľne vzhľadom na komfort.\n\nV porovnaní s vlakom je taxi rýchlejšie a pohodlnejšie. Vlak trvá približne 3,5-4 hodiny a často vyžaduje prestup. Taxi ťa vyzdvihne priamo doma v Žiline a odvezie až pred cieľovú adresu v Košiciach, bez toho aby si musel riešiť čokoľvek.\n\nPri objednávke je kľúčové dohodnúť si presnú cenu vopred – pri takejto vzdialenosti sa ceny pohybujú okolo 120-180 €. Odporúčame objednať aspoň 2 dni vopred, aby bola zaistená dostupnosť.",
+      "carriersIntro": "Dlhá medziregionálna trasa.",
+      "carriers": [
+        {
+          "name": "Laura Taxi Žilina",
+          "website": "https://www.taxilaura.sk",
+          "phone": "+421905202020",
+          "description": "Diaľkové transfery.",
+          "googlePlaceId": "ChIJ3wZuu9RdFEcR_5rvCu73Tvk",
+          "googleRating": 4.9,
+          "googleReviewsCount": 59
+        },
+        {
+          "name": "Gold Taxi Žilina",
+          "website": "https://www.zilina.taxi",
+          "phone": "+421910595995",
+          "description": "Transfer do Košíc.",
+          "googlePlaceId": "ChIJUekInohfFEcRSKXGLNG4tLk",
+          "googleRating": 4.4,
+          "googleReviewsCount": 35
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ako dlho trvá cesta zo Žiliny do Košíc?",
+          "answer": "Cesta trvá približne 2,5-3 hodiny po diaľnici D1."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-zilina-martin",
+      "origin": "Žilina",
+      "destination": "Martin",
+      "distance_km": "25-30",
+      "duration_min": "20-30",
+      "meta": {
+        "title": "Taxi Žilina Martin | Transfer ZA - MT",
+        "description": "Taxi zo Žiliny do Martina. Krátka cesta 20-30 minút. Najbližšie väčšie mesto."
+      },
+      "h1": "Taxi Žilina - Martin",
+      "keywords": [
+        "taxi Žilina Martin",
+        "transfer ZA MT",
+        "preprava Žilina Martin"
+      ],
+      "content": "Žilina a Martin sú susedné mestá severného Slovenska, vzdialené len 25 až 30 kilometrov. Cesta medzi nimi trvá približne 20 až 30 minút, čo ju robí jednou z najkratších medzimestských trás. Vedie po hlavnej ceste I/18, ktorá spája obe mestá priamo.\n\nTáto trasa je veľmi frekventovaná, pretože veľa ľudí z Martina pracuje v Žiline a naopak. Autobus premáva často a vlak tiež, no taxi má svoje výhody – nemusíš riešiť cestu na stanicu ani čakanie na spoj. Vodič ťa vyzdvihne priamo pred domom alebo kanceláriou a odvezie až k cieľu.\n\nCesta vedie cez Varín, pozdĺž rieky Váh. Je to pekná panoramatická trasa, ktorá však v rannej alebo popoludňajšej špičke môže byť plná kamiónov. V ideálnom prípade je cesta za 20-25 minút.\n\nTaxi zo Žiliny do Martina má zmysel najmä pri pracovných cestách, keď potrebuješ byť presne načas na stretnutí. Rovnako je to vhodné pri preprave väčšej batožiny, športového vybavenia alebo keď cestujete vo dvojici či trojici. Pri rozdelení nákladov vychádza cena porovnateľne s autobusom, no s výrazne väčším komfortom.\n\nCena sa obvykle pohybuje okolo 20-35 € v závislosti od typu vozidla a času objednávky. Pri skorých ranných odjazdoch alebo nočných návratoch môže byť mierny príplatok. Táto trasa je veľmi obľúbená a vodiči ju bežne robia, takže objednať môžete aj pár hodín vopred.",
+      "carriersIntro": "Veľmi krátka regionálna trasa.",
+      "carriers": [
+        {
+          "name": "Gold Taxi Žilina",
+          "website": "https://www.zilina.taxi",
+          "phone": "+421910595995",
+          "description": "Krátke regionálne trasy.",
+          "googlePlaceId": "ChIJUekInohfFEcRSKXGLNG4tLk",
+          "googleRating": 4.4,
+          "googleReviewsCount": 35
+        },
+        {
+          "name": "MIMA Taxi Žilina",
+          "website": "https://www.mimataxizilina.sk",
+          "phone": "+421940600222",
+          "description": "NONSTOP služba.",
+          "googlePlaceId": "ChIJCbWOkIVZFEcRjmWEY21Utow",
+          "googleRating": 4.9,
+          "googleReviewsCount": 62
+        },
+        {
+          "name": "Laura Taxi Žilina",
+          "website": "https://www.taxilaura.sk",
+          "phone": "+421905202020",
+          "description": "Transfer do Martina.",
+          "googlePlaceId": "ChIJ3wZuu9RdFEcR_5rvCu73Tvk",
+          "googleRating": 4.9,
+          "googleReviewsCount": 59
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je to krátka trasa?",
+          "answer": "Áno, Martin je len 25-30 km od Žiliny, cesta trvá približne 20-30 minút."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-banska-bystrica-kosice",
+      "origin": "Banská Bystrica",
+      "destination": "Košice",
+      "distance_km": "200-220",
+      "duration_min": "140-170",
+      "meta": {
+        "title": "Taxi Banská Bystrica Košice | Transfer BB - KE",
+        "description": "Taxi z Banskej Bystrice do Košíc. Cesta trvá približne 2,5-3 hodiny cez stred Slovenska."
+      },
+      "h1": "Taxi Banská Bystrica - Košice",
+      "keywords": [
+        "taxi Banská Bystrica Košice",
+        "transfer BB KE",
+        "preprava BB Košice"
+      ],
+      "content": "Banská Bystrica a Košice sú vzdialené približne 200 až 220 kilometrov, čo predstavuje 2,5 až 3 hodiny jazdy. Táto trasa spája stredné a východné Slovensko a vedie cez menej frekventované oblasti krajiny. Presný čas závisí od dopravnej situácie, no cesta je pomerne plynulá.\n\nTrasa vedie cez Zvolen, Detvu, Rimavskú Sobotu a Rožňavu, následne pokračuje do Košíc. Nie je to diaľničná trasa, takže sa jazdí po dvojprúdových cestách. Vodič obvykle zastaví na odpočívadle alebo pri čerpacej stanici, ak potrebuješ pauzu.\n\nTaxi z Banskej Bystrice do Košíc má zmysel najmä pri pracovných cestách – stretnutia na úradoch, obchodné rokovania, návštevy v nemocnici alebo univerzite. Vlak aj autobus síce premávajú, no vyžadujú prestupy a celý posun trvá aj 4 hodiny. Pri cestovaní vo dvojici alebo trojici vychádza taxi cenovo prijateľne vzhľadom na komfort a ušetrený čas.\n\nVodič ťa vyzdvihne priamo na zadanej adrese v Banskej Bystrici a odvezie priamo k cieľu v Košiciach. Nemusíš riešiť parkovanie, prestupy ani nosenie batožiny. Ak potrebuješ počas cesty pracovať, máš súkromie a pokoj.\n\nCena sa obvykle pohybuje okolo 100-140 € v závislosti od typu vozidla a času objednávky. Pri ranných odjazdoch alebo nočných návratoch môže byť mierny príplatok. Odporúčame objednať aspoň 2 dni vopred, aby bola zaistená dostupnosť – ide o dlhšiu trasu a nie všetci vodiči ju berú.",
+      "carriersIntro": "Medziregionálna trasa cez stred Slovenska.",
+      "carriers": [
+        {
+          "name": "Haló TAXI Banská Bystrica",
+          "website": "https://www.halotaxibb.sk",
+          "phone": "+421905453535",
+          "description": "Diaľkové transfery.",
+          "googlePlaceId": "ChIJoW6RrgY-FUcRVjGp2AP0724",
+          "googleRating": 4.4,
+          "googleReviewsCount": 66
+        },
+        {
+          "name": "ONE TAXI BB",
+          "website": "http://www.onetaxi.sk",
+          "phone": "+421905442544",
+          "description": "Transfer do Košíc.",
+          "googlePlaceId": "ChIJudpNaus9FUcRtIy0cfPXt-g",
+          "googleRating": 4.4,
+          "googleReviewsCount": 241
+        }
+      ],
+      "faq": [
+        {
+          "question": "Vedie cesta cez hory?",
+          "answer": "Cesta vedie cez nižšie položené oblasti, nie cez vysoké hory."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-presov-bratislava",
+      "origin": "Prešov",
+      "destination": "Bratislava",
+      "distance_km": "360-380",
+      "duration_min": "220-260",
+      "meta": {
+        "title": "Taxi Prešov Bratislava | Transfer PO - BA",
+        "description": "Taxi z Prešova do Bratislavy. Dlhá trasa približne 360 km, cesta trvá 3,5-4 hodiny."
+      },
+      "h1": "Taxi Prešov - Bratislava",
+      "keywords": [
+        "taxi Prešov Bratislava",
+        "transfer PO BA",
+        "diaľkové taxi Bratislava"
+      ],
+      "content": "Prešov a Bratislava sú vzdialené približne 360 až 380 kilometrov, čo predstavuje jednu z najdlhších možných vnútroštátnych trás. Pri ideálnej premávke trvá cesta 3,5 až 4 hodiny, no v realite to môže byť aj 4,5 hodiny, ak narazíš na hustú premávku pod Strečnom alebo okolo Žiliny.\n\nCesta vedie takmer výhradne po diaľnici D1, ktorá spája východné a západné Slovensko. Začína sa v Prešove (diaľnica sa napája až za mestom), pokračuje cez Spiš, Liptov, pod Strečnom, okolo Žiliny, cez Trenčín, Trnavu a končí v Bratislave. Vodič spravidla zastaví na odpočívadle – buď v Liptove alebo pri Triblavine.\n\nTáto trasa má zmysel v niekoľkých prípadoch. Prvý je pracovný – potrebuješ rýchlo prejsť celé Slovensko na stretnutie, konferenciu alebo rodinné udalosti v hlavnom meste. Druhý je vtedy, keď vlak meškanie alebo nemáš priamy spoj. Tretí prípad sú skupiny – ak cestujete traja alebo štyria, náklady sa rozdelia a vychádza to cenovo prijateľne vzhľadom na komfort.\n\nV porovnaní s vlakom je taxi výrazne rýchlejšie a pohodlnejšie, no drahšie. Vlak trvá približne 6-7 hodín a často vyžaduje prestup. Taxi ťa vyzdvihne priamo doma v Prešove a odvezie až pred cieľovú adresu v Bratislave, bez toho aby si musel riešiť čokoľvek.\n\nPri objednávke je kľúčové dohodnúť si presnú cenu vopred – pri takejto vzdialenosti sa ceny pohybujú v stovkách eur (200-300 €). Odporúčame objednať aspoň 2-3 dni vopred, aby bola zaistená dostupnosť.",
+      "carriersIntro": "Jedna z najdlhších vnútroštátnych trás.",
+      "carriers": [
+        {
+          "name": "Alfa TAXI Prešov",
+          "website": "https://www.alfataxipo.sk",
+          "phone": "+421940545556",
+          "description": "Diaľkové transfery.",
+          "googlePlaceId": "ChIJc-lsm3ztPkcRSTVrCTzFcrw",
+          "googleRating": 3.3,
+          "googleReviewsCount": 185
+        },
+        {
+          "name": "SUPERB TAXI PREŠOV",
+          "website": "https://superbtaxipo.sk",
+          "phone": "+421948305136",
+          "description": "Transfer do Bratislavy.",
+          "googlePlaceId": "ChIJdRsTDHvtPkcRQtNvC6oMgC0",
+          "googleRating": 4.7,
+          "googleReviewsCount": 23
+        }
+      ],
+      "faq": [
+        {
+          "question": "Koľko stojí taxi z Prešova do Bratislavy?",
+          "answer": "Cena sa pohybuje približne okolo 200-300 € v závislosti od prepravcu."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-trencin-bratislava",
+      "origin": "Trenčín",
+      "destination": "Bratislava",
+      "distance_km": "120-130",
+      "duration_min": "80-100",
+      "meta": {
+        "title": "Taxi Trenčín Bratislava | Transfer TN - BA",
+        "description": "Taxi z Trenčína do Bratislavy. Cesta trvá približne 80-100 minút po diaľnici D1."
+      },
+      "h1": "Taxi Trenčín - Bratislava",
+      "keywords": [
+        "taxi Trenčín Bratislava",
+        "transfer TN BA",
+        "preprava Trenčín Bratislava"
+      ],
+      "content": "Trenčín a Bratislava sú vzdialené približne 120 až 130 kilometrov, čo predstavuje 80 až 100 minút jazdy. Trasa vedie takmer výhradne po diaľnici D1, ktorá zabezpečuje plynulú a rýchlu cestu. Problém môže nastať len v rannej alebo popoludňajšej špičke pri vjazde do Bratislavy alebo pri výjazde z Trenčína.\n\nCesta prebieha cez západné Slovensko – Trenčín, okolie Piešťan, okolo Trnavy a pokračuje priamo do Bratislavy. Vodič obvykle nezdržuje na odpočívadle, pretože trasa je pomerne krátka. V ideálnom prípade si v Bratislave už o hodinu a pol.\n\nTaxi z Trenčína do Bratislavy má zmysel najmä pri pracovných cestách – stretnutia na úradoch, obchodné rokovania, návštevy v nemocnici či univerzite. Vlak síce premáva, no vyžaduje presun na stanicu a celkovo to trvá podobne dlho. Ak cestujete vo dvojici alebo trojici, náklady sa rozdelia a komfort je neporovnateľne vyšší.\n\nVodič ťa vyzdvihne priamo na zadanej adrese v Trenčíne – či už ide o kanceláriu, hotel alebo byt – a odvezie priamo k cieľu v Bratislave. Nemusíš riešiť parkovanie, čo je v oboch mestách stále väčší problém. Ak potrebuješ počas cesty pracovať, máš súkromie a pokoj.\n\nCena sa obvykle pohybuje okolo 60-90 € v závislosti od typu vozidla a času objednávky. Pri ranných odjazdoch okolo 6:00 alebo nočných návratoch po 22:00 môže byť mierny príplatok. Odporúčame objednať aspoň deň vopred, aby bola zaistená dostupnosť.",
+      "carriersIntro": "Stredne dlhá trasa na juh.",
+      "carriers": [
+        {
+          "name": "DODO Taxi Trenčín",
+          "website": "https://www.dodotaxi.sk",
+          "phone": "+421948716555",
+          "description": "Transfer do Bratislavy.",
+          "googlePlaceId": "ChIJw2fG9X6hFEcRjyCYnMdvMHk",
+          "googleRating": 4.3,
+          "googleReviewsCount": 308
+        },
+        {
+          "name": "Tony Taxi Trenčín",
+          "website": "https://www.tonytaxi.sk",
+          "phone": "+421944401954",
+          "description": "Najlacnejšie taxi v Trenčíne.",
+          "googlePlaceId": "ChIJR1LIXzTMuCERrLAJsqz6_No",
+          "googleRating": 3.7,
+          "googleReviewsCount": 41
+        },
+        {
+          "name": "ROYAL TAXI Trenčín",
+          "website": "https://www.royaltaxitrencin.sk",
+          "phone": "+421949156989",
+          "description": "Medzimestské transfery.",
+          "googlePlaceId": "ChIJjcVl1Y2TeEwRJ-Jtuk0CzLo",
+          "googleRating": 4.8,
+          "googleReviewsCount": 268
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je cesta plynulá?",
+          "answer": "Áno, celá cesta vedie po diaľnici D1 bez väčších komplikácií."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-martin-bratislava",
+      "origin": "Martin",
+      "destination": "Bratislava",
+      "distance_km": "220-230",
+      "duration_min": "140-170",
+      "meta": {
+        "title": "Taxi Martin Bratislava | Transfer MT - BA",
+        "description": "Taxi z Martina do Bratislavy. Cesta trvá približne 2,5-3 hodiny po diaľnici."
+      },
+      "h1": "Taxi Martin - Bratislava",
+      "keywords": [
+        "taxi Martin Bratislava",
+        "transfer MT BA",
+        "preprava Martin Bratislava"
+      ],
+      "content": "Martin a Bratislava sú vzdialené približne 220 až 230 kilometrov, čo predstavuje 2,5 až 3 hodiny jazdy. Trasa vedie takmer výhradne po diaľnici D1, ktorá spája severné Slovensko s hlavným mestom. Presný čas závisí od dopravnej situácie, najmä na úseku pod Strečnom a pri vjazde do Bratislavy.\n\nCesta začína v Martine, pokračuje cez Žilinu, pod Strečnom, okolo Trenčína, Trnavy a končí v Bratislave. Vodič spravidla zastaví na odpočívadle pri Triblavine, ak potrebuješ pauzu na kávu alebo toaletu.\n\nTaxi z Martina do Bratislavy má zmysel najmä pri pracovných cestách – stretnutia na úradoch, obchodné rokovania, návštevy v nemocnici alebo univerzite. Vlak aj autobus síce premávajú, no vyžadujú prestupy a celý posun trvá aj 3,5 hodiny. Pri cestovaní vo dvojici alebo trojici vychádza taxi cenovo prijateľne vzhľadom na komfort a ušetrený čas.\n\nVodič ťa vyzdvihne priamo na zadanej adrese v Martine a odvezie priamo k cieľu v Bratislave. Nemusíš riešiť parkovanie, prestupy ani nosenie batožiny. Ak potrebuješ počas cesty pracovať, máš súkromie a pokoj.\n\nCena sa obvykle pohybuje okolo 100-140 € v závislosti od typu vozidla a času objednávky. Pri ranných odjazdoch alebo nočných návratoch môže byť mierny príplatok. Odporúčame objednať aspoň 2 dni vopred, aby bola zaistená dostupnosť – ide o dlhšiu trasu a nie všetci vodiči ju berú.",
+      "carriersIntro": "Dlhšia medziregionálna trasa.",
+      "carriers": [
+        {
+          "name": "Bugo Taxi Martin",
+          "website": "https://bugotaxi.sk",
+          "phone": "+421907077077",
+          "description": "Diaľkové transfery.",
+          "googlePlaceId": "ChIJP6Fa6-X-FEcRLlkrCGT1fiY",
+          "googleRating": 4.3,
+          "googleReviewsCount": 141
+        },
+        {
+          "name": "Hifo Taxi Martin",
+          "website": "https://www.hifotaxi.sk",
+          "phone": "+421902740140",
+          "description": "Transfer do Bratislavy.",
+          "googlePlaceId": "ChIJNax1Oij_FEcRGhutMd4u8l8",
+          "googleRating": 4.1,
+          "googleReviewsCount": 152
+        },
+        {
+          "name": "PH Taxi Martin",
+          "website": "https://phtaxi.sk",
+          "phone": "+421905830730",
+          "description": "Medzimestské transfery.",
+          "googlePlaceId": "ChIJA6XVqlX_FEcRkbu5LjGXFJk",
+          "googleRating": 3.3,
+          "googleReviewsCount": 4
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ako dlho trvá cesta z Martina do Bratislavy?",
+          "answer": "Cesta trvá približne 2,5-3 hodiny v závislosti od dopravnej situácie."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-poprad-bratislava",
+      "origin": "Poprad",
+      "destination": "Bratislava",
+      "distance_km": "320-340",
+      "duration_min": "200-240",
+      "meta": {
+        "title": "Taxi Poprad Bratislava | Transfer PP - BA",
+        "description": "Taxi z Popradu do Bratislavy. Dlhá trasa približne 320 km, cesta trvá 3,5-4 hodiny."
+      },
+      "h1": "Taxi Poprad - Bratislava",
+      "keywords": [
+        "taxi Poprad Bratislava",
+        "transfer PP BA",
+        "diaľkové taxi Poprad"
+      ],
+      "content": "Poprad a Bratislava sú vzdialené približne 320 až 340 kilometrov, čo predstavuje jednu z dlhších vnútroštátnych trás. Pri ideálnej premávke trvá cesta 3,5 až 4 hodiny, no v realite to môže byť aj 4,5 hodiny, ak narazíš na hustú premávku pod Strečnom alebo pri vjazde do Bratislavy.\n\nCesta vedie takmer výhradne po diaľnici D1, ktorá spája Tatranský región s hlavným mestom. Začína sa v Poprade, pokračuje cez Liptov, pod Strečnom, okolo Žiliny, cez Trenčín, Trnavu a končí v Bratislave. Vodič spravidla zastaví na odpočívadle v Liptove alebo pri Triblavine.\n\nTáto trasa má zmysel v niekoľkých situáciách. Prvou je pracovná cesta – potrebuješ rýchlo a pohodlne prejsť z Tatier do hlavného mesta na stretnutie, konferenciu či rodinné udalosti. Druhou je vtedy, keď vlak meškanie alebo nemáš priamy spoj. Treťou sú skupiny – ak cestujete traja alebo štyria, náklady sa rozdelia a vychádza to cenovo prijateľne vzhľadom na komfort.\n\nV porovnaní s vlakom je taxi rýchlejšie a pohodlnejšie. Vlak trvá približne 5-6 hodín a často vyžaduje prestup. Taxi ťa vyzdvihne priamo v Poprade (alebo aj v Tatrách) a odvezie až pred cieľovú adresu v Bratislave, bez toho aby si musel riešiť čokoľvek.\n\nPri objednávke je kľúčové dohodnúť si presnú cenu vopred – pri takejto vzdialenosti sa ceny pohybujú okolo 150-220 €. Odporúčame objednať aspoň 2 dni vopred, aby bola zaistená dostupnosť.",
+      "carriersIntro": "Dlhá trasa z Tatier do hlavného mesta.",
+      "carriers": [
+        {
+          "name": "Taxi Tatry Poprad",
+          "website": "https://taxitatry.sk",
+          "phone": "+421917614856",
+          "description": "Diaľkové transfery.",
+          "googlePlaceId": "ChIJRVCDQsA6PkcRXXmulJrUidA",
+          "googleRating": 4.1,
+          "googleReviewsCount": 123
+        },
+        {
+          "name": "ABA TAXI Poprad",
+          "website": "https://www.abataxi.sk",
+          "phone": "+421905999000",
+          "description": "Transfer do Bratislavy.",
+          "googlePlaceId": "ChIJHfFWYcA6PkcR4dDP4ZmSqgw",
+          "googleRating": 4.1,
+          "googleReviewsCount": 342
+        },
+        {
+          "name": "Royal Taxi Poprad",
+          "website": "https://www.royaltaxi.sk",
+          "phone": "+421907566966",
+          "description": "Medzimestské trasy.",
+          "googlePlaceId": "ChIJ_-o9rpo6PkcRNu1-GudQCHI",
+          "googleRating": 3.7,
+          "googleReviewsCount": 15
+        }
+      ],
+      "faq": [
+        {
+          "question": "Vyzdvihne ma vodič aj v horách?",
+          "answer": "Áno, vodič vás vyzdvihne kamkoľvek v regióne Tatier - Poprad, Vysoké Tatry, Štrbské Pleso."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-nitra-kosice",
+      "origin": "Nitra",
+      "destination": "Košice",
+      "distance_km": "300-320",
+      "duration_min": "180-220",
+      "meta": {
+        "title": "Taxi Nitra Košice | Transfer NR - KE",
+        "description": "Taxi z Nitry do Košíc. Dlhá medziregionálna trasa približne 300 km, cesta trvá 3-3,5 hodiny."
+      },
+      "h1": "Taxi Nitra - Košice",
+      "keywords": [
+        "taxi Nitra Košice",
+        "transfer NR KE",
+        "diaľkové taxi Nitra"
+      ],
+      "content": "Nitra a Košice sú vzdialené približne 300 až 320 kilometrov, čo predstavuje dlhú medziregionálnu trasu spájajúcu juhozápadné a východné Slovensko. Pri ideálnej premávke trvá cesta 3 až 3,5 hodiny, no v realite to môže byť aj 4 hodiny, ak narazíš na hustú premávku alebo nehody na diaľnici.\n\nCesta vedie takmer výhradne po diaľnici D1 a rýchlostnej ceste. Začína sa v Nitre, pokračuje cez Bratislavu (obchvat), Trnavu, Trenčín, pod Strečnom, okolo Žiliny, cez Liptov, Spiš a končí v Košiciach. Vodič spravidla zastaví na odpočívadle – buď v Liptove alebo pri Triblavine.\n\nTáto trasa má zmysel hlavne pri pracovných cestách cez celé Slovensko – stretnutia, konferencie či rodinné udalosti. Vlak aj autobus vyžadujú prestupy a celý posun trvá aj 5-6 hodín. Pri cestovaní vo dvojici alebo trojici vychádza taxi cenovo prijateľne vzhľadom na komfort a ušetrený čas.\n\nVodič ťa vyzdvihne priamo na zadanej adrese v Nitre a odvezie priamo k cieľu v Košiciach. Nemusíš riešiť parkovanie, prestupy ani nosenie batožiny. Ak potrebuješ počas cesty pracovať, máš súkromie a pokoj.\n\nCena sa obvykle pohybuje okolo 150-200 € v závislosti od typu vozidla a času objednávky. Pri ranných odjazdoch alebo nočných návratoch môže byť mierny príplatok. Odporúčame objednať aspoň 2-3 dni vopred, aby bola zaistená dostupnosť – ide o veľmi dlhú trasu a nie všetci vodiči ju berú.",
+      "carriersIntro": "Dlhá medziregionálna trasa.",
+      "carriers": [
+        {
+          "name": "Top Taxi Nitra",
+          "website": "http://toptaxinitra.sk",
+          "phone": "+421940550220",
+          "description": "Diaľkové transfery.",
+          "googlePlaceId": "ChIJn7-HYtM_a0cR8G-tjalCCYQ",
+          "googleRating": 3.9,
+          "googleReviewsCount": 51
+        },
+        {
+          "name": "HEY TAXI Nitra",
+          "website": "https://heytaxi.sk",
+          "phone": "+421903133233",
+          "description": "Transfer do Košíc.",
+          "googlePlaceId": "ChIJdT0aotY_a0cRGcQQVTBLpK4",
+          "googleRating": 3.3,
+          "googleReviewsCount": 66
+        }
+      ],
+      "faq": [
+        {
+          "question": "Ako dlho trvá cesta z Nitry do Košíc?",
+          "answer": "Cesta trvá približne 3-3,5 hodiny po diaľnici."
+        }
+      ]
+    },
+    {
+      "slug": "taxi-trnava-kosice",
+      "origin": "Trnava",
+      "destination": "Košice",
+      "distance_km": "350-370",
+      "duration_min": "210-250",
+      "meta": {
+        "title": "Taxi Trnava Košice | Transfer TT - KE",
+        "description": "Taxi z Trnavy do Košíc. Dlhá trasa približne 350 km, cesta trvá 3,5-4 hodiny."
+      },
+      "h1": "Taxi Trnava - Košice",
+      "keywords": [
+        "taxi Trnava Košice",
+        "transfer TT KE",
+        "diaľkové taxi Košice"
+      ],
+      "content": "Trnava a Košice sú vzdialené približne 350 až 370 kilometrov, čo predstavuje jednu z najdlhších možných medzimestských trás na Slovensku. Pri ideálnej premávke trvá cesta 3,5 až 4 hodiny, no v realite to môže byť aj 4,5 hodiny, ak narazíš na hustú premávku pod Strečnom, okolo Žiliny alebo pri vjazde do Košíc.\n\nCesta vedie takmer výhradne po diaľnici D1, ktorá spája západné a východné Slovensko. Začína sa v Trnave, pokračuje okolo Trenčína, pod Strečnom, okolo Žiliny, cez Liptov, Spiš a končí v Košiciach. Vodič spravidla zastaví na odpočívadle – buď pri Triblavine alebo v Liptove.\n\nTáto trasa má zmysel hlavne pri pracovných cestách cez celé Slovensko – stretnutia, konferencie či rodinné udalosti. Vlak aj autobus vyžadujú prestupy a celý posun trvá aj 5-6 hodín. Pri cestovaní vo dvojici alebo trojici vychádza taxi cenovo prijateľne vzhľadom na komfort a ušetrený čas.\n\nVodič ťa vyzdvihne priamo na zadanej adrese v Trnave a odvezie priamo k cieľu v Košiciach. Nemusíš riešiť parkovanie, prestupy ani nosenie batožiny. Ak potrebuješ počas cesty pracovať, máš súkromie a pokoj.\n\nCena sa obvykle pohybuje okolo 170-240 € v závislosti od typu vozidla a času objednávky. Pri ranných odjazdoch alebo nočných návratoch môže byť mierny príplatok. Odporúčame objednať aspoň 2-3 dni vopred, aby bola zaistená dostupnosť – ide o veľmi dlhú trasu a nie všetci vodiči ju berú.",
+      "carriersIntro": "Dlhá medziregionálna trasa.",
+      "carriers": [
+        {
+          "name": "Team Taxi Trnava",
+          "website": "https://teamtaxi.sk",
+          "phone": "+421940747474",
+          "description": "Diaľkové transfery.",
+          "googlePlaceId": "ChIJU5evTodfa0cRL6R70JaLM0k",
+          "googleRating": 3.5,
+          "googleReviewsCount": 125
+        },
+        {
+          "name": "TT-TAXI TRNAVA",
+          "website": "https://tt-taxi.sk",
+          "phone": "+421904959595",
+          "description": "Transfer do Košíc.",
+          "googlePlaceId": "ChIJ1ZwNTZqgbEcR9x1o-ft4SeQ",
+          "googleRating": 3.4,
+          "googleReviewsCount": 246
+        }
+      ],
+      "faq": [
+        {
+          "question": "Je potrebné objednať vopred?",
+          "answer": "Áno, pri diaľkových trasách je potrebné objednať aspoň deň vopred."
         }
       ]
     }

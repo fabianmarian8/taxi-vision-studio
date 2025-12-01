@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { MapPin, Clock, Car, ArrowLeft, Phone, HelpCircle, ExternalLink, Euro } from 'lucide-react';
+import { MapPin, Clock, Car, ArrowLeft, Phone, HelpCircle, ExternalLink, Euro, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import routePagesData from '../../../src/data/route-pages.json';
 
@@ -10,6 +10,9 @@ interface CarrierData {
   website: string;
   phone?: string;
   description: string;
+  googlePlaceId?: string;
+  googleRating?: number;
+  googleReviewsCount?: number;
 }
 
 interface RouteData {
@@ -222,7 +225,16 @@ export default async function RoutePage({ params }: RoutePageProps) {
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="flex-1">
                         <h3 className="font-bold text-foreground text-lg mb-1">{carrier.name}</h3>
-                        <p className="text-foreground/70 text-sm">{carrier.description}</p>
+                        <p className="text-foreground/70 text-sm mb-2">{carrier.description}</p>
+                        {carrier.googleRating && (
+                          <div className="flex items-center gap-1">
+                            <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                            <span className="font-bold text-foreground">{carrier.googleRating.toFixed(1)}</span>
+                            <span className="text-foreground/60 text-sm">
+                              ({carrier.googleReviewsCount} {carrier.googleReviewsCount === 1 ? 'recenzia' : carrier.googleReviewsCount && carrier.googleReviewsCount < 5 ? 'recenzie' : 'recenzií'})
+                            </span>
+                          </div>
+                        )}
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {carrier.phone && (
