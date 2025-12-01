@@ -6942,6 +6942,893 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
           </>
         )}
 
+        {/* Špeciálny obsah pre trasu BANSKÁ BYSTRICA -> BARDEJOV */}
+        {slug === 'banska-bystrica-bardejov' && (
+          <>
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
+                  <span>Ako sa dostať z Banskej Bystrice do Bardejova</span>
+                </h2>
+
+                <p className="text-sm sm:text-base text-foreground/80 mb-4 sm:mb-6">
+                  Bardejov je mesto UNESCO s jedinečným gotickým námestím. Cesta z Banskej Bystrice
+                  vedie cez malebné krajiny východného Slovenska.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-primary-yellow/20">
+                        <Car className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
+                      <span className="ml-auto text-xs bg-primary-yellow text-foreground px-2 py-0.5 rounded-full font-medium">
+                        Odporúčané
+                      </span>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">{formatDuration(route.duration_min)}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Pohodlie:</span>
+                        <span className="font-semibold flex items-center gap-1">
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">Priama cesta bez prestupov, vyzdvihnutie kdekoľvek.</p>
+                  </Card>
+
+                  <Card className="p-4 sm:p-5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-blue-100">
+                        <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold">15-25€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">5-6 hod</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Prestupy:</span>
+                        <span className="font-semibold text-orange-600">1-2×</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">
+                      <a href="https://www.zssk.sk" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">ZSSK</a>: Prestup v Košiciach alebo Prešove.
+                    </p>
+                  </Card>
+
+                  <Card className="p-4 sm:p-5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-green-100">
+                        <Bus className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold">od 16€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">3h 50min</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Spoje:</span>
+                        <span className="font-semibold">denne</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">
+                      <a href="https://www.flixbus.sk/autobusove-spoje/banska-bystrica-bardejov" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">FlixBus</a>: WiFi, zásuvky, WC na palube.
+                    </p>
+                  </Card>
+                </div>
+
+                <div className="bg-white rounded-lg p-4 border border-foreground/10">
+                  <h3 className="font-bold text-foreground mb-2">Prečo zvoliť taxi do Bardejova?</h3>
+                  <ul className="text-sm text-foreground/70 space-y-1">
+                    <li>• Priama cesta bez prestupovania - úspora času</li>
+                    <li>• Možnosť zastávky v Košiciach alebo Prešove</li>
+                    <li>• Ideálne pre skupiny a rodiny s deťmi</li>
+                    <li>• Dovezieme vás až na námestie UNESCO</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow shrink-0" />
+                  <span>Čo navštíviť v Bardejove (UNESCO)</span>
+                </h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Radničné námestie</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Centrum mesta s 46 meštianskymi domami na gotických parcelách. Najkrajšie námestie na Slovensku.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Radničné+námestie+Bardejov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Bazilika sv. Egídia</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Gotický chrám zo 14. storočia s 11 vzácnymi neskorogotickými krídlovými oltármi.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Bazilika+sv.+Egídia+Bardejov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Mestská radnica</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Prvá renesančná stavba na Slovensku (1505-1511). Unikátna pamiatka stredoeurópskej architektúry.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mestská+radnica+Bardejov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Židovské suburbium (UNESCO)</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Unikátny komplex synagógy a rituálnych kúpeľov z 18. storočia zapísaný v UNESCO.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Židovské+suburbium+Bardejov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Mestské hradby a bašty</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Najzachovanejší stredoveký obranný systém na Slovensku vrátane Katovho domu.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mestské+hradby+Bardejov" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Bardejovské kúpele a skanzen</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Najstarší skanzen na Slovensku (1965) s 28 ľudovými stavbami zo Šariša.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Bardejovské+kúpele+skanzen" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+                </div>
+
+                <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                  <h3 className="font-bold text-foreground mb-2">💡 Tip: Drevený kostol v Hervartove</h3>
+                  <p className="text-sm text-foreground/70">
+                    Len 10 km od Bardejova sa nachádza najstarší drevený kostol na Slovensku (15. stor.), tiež zapísaný v UNESCO.
+                    <a href="https://www.google.com/maps/search/?api=1&query=Drevený+kostol+Hervartov" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">Zobraziť na mape →</a>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-foreground/5">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6">
+                  Praktické informácie pre cestu
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Trasa cesty</h3>
+                    <p className="text-sm text-foreground/70">
+                      Cesta vedie cez Zvolen, Brezno, Rožňavu a Prešov.
+                      Malebná krajina cez Slovenský raj a Šarišskú vrchovinu.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Najlepší čas na návštevu</h3>
+                    <p className="text-sm text-foreground/70">
+                      Bardejov je krásny celoročne. V lete kultúrne podujatia,
+                      v zime vianočné trhy na námestí UNESCO.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Kombinácia s Prešovom</h3>
+                    <p className="text-sm text-foreground/70">
+                      Cestou môžete navštíviť Prešov (40 km od Bardejova).
+                      Soľný banský revír a historické centrum.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Ubytovanie</h3>
+                    <p className="text-sm text-foreground/70">
+                      V Bardejovských kúpeľoch aj v centre mesta.
+                      Kúpeľné hotely s wellness službami.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* Špeciálny obsah pre trasu BANSKÁ BYSTRICA -> DOLNÝ KUBÍN */}
+        {slug === 'banska-bystrica-dolny-kubin' && (
+          <>
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
+                  <span>Ako sa dostať z Banskej Bystrice do Dolného Kubína</span>
+                </h2>
+
+                <p className="text-sm sm:text-base text-foreground/80 mb-4 sm:mb-6">
+                  Dolný Kubín je centrom Oravy s bohatou históriou a blízkym prístupom k Oravskému hradu.
+                  Cesta z Banskej Bystrice vedie cez krásnu oravskú krajinu.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-primary-yellow/20">
+                        <Car className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
+                      <span className="ml-auto text-xs bg-primary-yellow text-foreground px-2 py-0.5 rounded-full font-medium">
+                        Odporúčané
+                      </span>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">{formatDuration(route.duration_min)}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Pohodlie:</span>
+                        <span className="font-semibold flex items-center gap-1">
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">Priama cesta bez prestupov, vyzdvihnutie kdekoľvek.</p>
+                  </Card>
+
+                  <Card className="p-4 sm:p-5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-blue-100">
+                        <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold">6-12€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">3h 20min</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Prestupy:</span>
+                        <span className="font-semibold text-orange-600">2× (Vrútky, Kraľovany)</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">
+                      <a href="https://www.zssk.sk" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">ZSSK</a>: Prestup vo Vrútkach a Kraľovanoch.
+                    </p>
+                  </Card>
+
+                  <Card className="p-4 sm:p-5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-green-100">
+                        <Bus className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold">9-14€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">1h 17min</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Spoje:</span>
+                        <span className="font-semibold">denne</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">
+                      <a href="https://www.flixbus.sk" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">FlixBus</a>: WiFi, zásuvky, WC na palube.
+                    </p>
+                  </Card>
+                </div>
+
+                <div className="bg-white rounded-lg p-4 border border-foreground/10">
+                  <h3 className="font-bold text-foreground mb-2">Prečo zvoliť taxi na Oravu?</h3>
+                  <ul className="text-sm text-foreground/70 space-y-1">
+                    <li>• Priama cesta bez prestupovania - úspora času</li>
+                    <li>• Možnosť zastávky pri Oravskom hrade</li>
+                    <li>• Ideálne pre skupiny a rodiny s deťmi</li>
+                    <li>• Zavezieme vás priamo k lyžiarskemu stredisku Kubínska hoľa</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow shrink-0" />
+                  <span>Čo navštíviť v Dolnom Kubíne a okolí</span>
+                </h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Oravský hrad</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Jeden z najkrajších hradov na Slovensku, tyčiaci sa 112 m nad riekou Orava. Len 10 km od Dolného Kubína.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Oravský+hrad" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Oravská galéria</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Sídli v historickom Župnom dome zo 17. stor. Expozície starého umenia, ikon a slovenského výtvarného umenia.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Oravská+galéria+Dolný+Kubín" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Múzeum P. O. Hviezdoslava</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Najstaršie literárne múzeum na Slovensku (1954). Život a dielo veľkého slovenského básnika.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Oravské+múzeum+Dolný+Kubín" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Kubínska hoľa</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Obľúbené lyžiarske stredisko v Oravskej Magure. V lete turistické chodníky s výhľadmi na Tatry.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Kubínska+hoľa+lyžiarske+stredisko" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Aquapark AquaRelax</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Moderný aquapark v centre mesta s bazénmi, tobogánmi a wellness zónou.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Aquapark+AquaRelax+Dolný+Kubín" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Múzeum oravskej dediny (Zuberec)</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Jeden z najnavštevovanejších skanzenov na Slovensku v prostredí Roháčov. 28 ľudových stavieb.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Múzeum+oravskej+dediny+Zuberec" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+                </div>
+
+                <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                  <h3 className="font-bold text-foreground mb-2">💡 Tip: Drevený kostol v Leštinách (UNESCO)</h3>
+                  <p className="text-sm text-foreground/70">
+                    Len 15 km od Dolného Kubína sa nachádza drevený artikulárny evanjelický kostol z roku 1688, zapísaný v UNESCO.
+                    <a href="https://www.google.com/maps/search/?api=1&query=Drevený+kostol+Leštiny" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">Zobraziť na mape →</a>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-foreground/5">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6">
+                  Praktické informácie pre cestu
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Trasa cesty</h3>
+                    <p className="text-sm text-foreground/70">
+                      Cesta vedie cez Zvolen, Martin a Kraľovany.
+                      Prekrásna krajina cez Turiec a pozdĺž rieky Orava.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Najlepší čas na návštevu</h3>
+                    <p className="text-sm text-foreground/70">
+                      V zime lyžovačka na Kubínskej holi, v lete turistika v Roháčoch
+                      a návšteva Oravského hradu.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Zastávka pri Oravskom hrade</h3>
+                    <p className="text-sm text-foreground/70">
+                      Cestou môžeme urobiť zastávku pri Oravskom Podzámku.
+                      Prehliadka hradu trvá cca 1-2 hodiny.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Ubytovanie</h3>
+                    <p className="text-sm text-foreground/70">
+                      V Dolnom Kubíne aj v lyžiarskom stredisku.
+                      Penzióny a hotely v centre mesta aj na Kubínskej.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* Špeciálny obsah pre trasu BANSKÁ BYSTRICA -> DUNAJSKÁ STREDA */}
+        {slug === 'banska-bystrica-dunajska-streda' && (
+          <>
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
+                  <span>Ako sa dostať z Banskej Bystrice do Dunajskej Stredy</span>
+                </h2>
+
+                <p className="text-sm sm:text-base text-foreground/80 mb-4 sm:mb-6">
+                  Dunajská Streda je srdcom Žitného ostrova s termálnym kúpaliskom svetového formátu.
+                  Ideálna destinácia pre wellness pobyt a relax.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-primary-yellow/20">
+                        <Car className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
+                      <span className="ml-auto text-xs bg-primary-yellow text-foreground px-2 py-0.5 rounded-full font-medium">
+                        Odporúčané
+                      </span>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">{formatDuration(route.duration_min)}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Pohodlie:</span>
+                        <span className="font-semibold flex items-center gap-1">
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">Priama cesta bez prestupov, vyzdvihnutie kdekoľvek.</p>
+                  </Card>
+
+                  <Card className="p-4 sm:p-5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-blue-100">
+                        <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold">12-18€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">4-5 hod</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Prestupy:</span>
+                        <span className="font-semibold text-orange-600">2× (Bratislava)</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">
+                      <a href="https://www.zssk.sk" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">ZSSK</a>: Prestup v Bratislave, potom regionálny vlak.
+                    </p>
+                  </Card>
+
+                  <Card className="p-4 sm:p-5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-green-100">
+                        <Bus className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold">12-20€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">3-4 hod</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Spoje:</span>
+                        <span className="font-semibold">obmedzené</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">
+                      <a href="https://www.slovaklines.sk" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">Slovak Lines</a>: Väčšinou s prestupom v Bratislave.
+                    </p>
+                  </Card>
+                </div>
+
+                <div className="bg-white rounded-lg p-4 border border-foreground/10">
+                  <h3 className="font-bold text-foreground mb-2">Prečo zvoliť taxi do Dunajskej Stredy?</h3>
+                  <ul className="text-sm text-foreground/70 space-y-1">
+                    <li>• Priama cesta bez prestupovania - dovezieme vás až ku kúpalisku</li>
+                    <li>• Ideálne pre rodiny s deťmi a batožinou</li>
+                    <li>• Možnosť zastávky v Bratislave alebo Trnave</li>
+                    <li>• Odvoz priamo od vchodu do Thermalparku</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow shrink-0" />
+                  <span>Čo navštíviť v Dunajskej Strede a okolí</span>
+                </h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Thermalpark Dunajská Streda</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Jeden z najväčších termálnych aquaparkov na Slovensku. 10 bazénov, tobogány, wellness, termálna voda 26-39°C.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Thermalpark+Dunajská+Streda" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Vodný mlyn Jelka</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Historický vodný mlyn na brehu Malého Dunaja z roku 1894. Unikátna technická pamiatka regiónu.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Vodný+mlyn+Jelka" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Zoo Malkia Park</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Rodinná zoo pri Slovakia Ring s exotickými zvieratami. Ideálne pre rodiny s deťmi.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Zoo+Malkia+Park" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Slovakia Ring</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Medzinárodný automobilový okruh. Jazdy na supersportoch, kartingové centrum a motorsport eventy.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Slovakia+Ring" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Splav Malého Dunaja</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Romantický splav na kanoe alebo raftoch po Malom Dunaji. Obľúbená letná aktivita v regióne.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Malý+Dunaj+splav" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Žitnoostrovné múzeum</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Regionálne múzeum v Dunajskej Strede dokumentujúce históriu a tradície Žitného ostrova.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Žitnoostrovné+múzeum+Dunajská+Streda" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+                </div>
+
+                <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                  <h3 className="font-bold text-foreground mb-2">💡 Tip: Golfové ihriská</h3>
+                  <p className="text-sm text-foreground/70">
+                    V okolí Dunajskej Stredy nájdete kvalitné golfové ihriská - Golf Welten v Báči a Golf Jelka.
+                    <a href="https://www.google.com/maps/search/?api=1&query=Golf+Welten+Báč" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">Zobraziť na mape →</a>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-foreground/5">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6">
+                  Praktické informácie pre cestu
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Trasa cesty</h3>
+                    <p className="text-sm text-foreground/70">
+                      Cesta vedie cez Zvolen, Nitru alebo priamo cez Bratislavu.
+                      Rôzne možnosti podľa preferovanej trasy.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Najlepší čas na návštevu</h3>
+                    <p className="text-sm text-foreground/70">
+                      Thermalpark je otvorený celoročne. V lete vonkajšie bazény,
+                      v zime wellness a vnútorná časť.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Kombinácia s Bratislavou</h3>
+                    <p className="text-sm text-foreground/70">
+                      Cestou môžete navštíviť Bratislavu (50 km od DS).
+                      Ideálne ako denný výlet z hlavného mesta.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Ubytovanie</h3>
+                    <p className="text-sm text-foreground/70">
+                      Hotel Thermalpark priamo pri kúpalisku.
+                      Penzióny a apartmány v centre mesta.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* Špeciálny obsah pre trasu BANSKÁ BYSTRICA -> GALANTA */}
+        {slug === 'banska-bystrica-galanta' && (
+          <>
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-primary-yellow/5">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                  <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 shrink-0" />
+                  <span>Ako sa dostať z Banskej Bystrice do Galanty</span>
+                </h2>
+
+                <p className="text-sm sm:text-base text-foreground/80 mb-4 sm:mb-6">
+                  Galanta je mesto s bohatou históriou a nádherným neogotickým kaštieľom rodiny Esterházy.
+                  Známe aj vďaka slávnym Galantským tancom Zoltána Kodálya.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <Card className="p-4 sm:p-5 border-2 border-primary-yellow bg-primary-yellow/5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-primary-yellow/20">
+                        <Car className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Taxi</h3>
+                      <span className="ml-auto text-xs bg-primary-yellow text-foreground px-2 py-0.5 rounded-full font-medium">
+                        Odporúčané
+                      </span>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">{formatDuration(route.duration_min)}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Pohodlie:</span>
+                        <span className="font-semibold flex items-center gap-1">
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                          <Star className="h-4 w-4 text-primary-yellow fill-primary-yellow" />
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">Priama cesta bez prestupov, vyzdvihnutie kdekoľvek.</p>
+                  </Card>
+
+                  <Card className="p-4 sm:p-5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-blue-100">
+                        <Train className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Vlak</h3>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold">10-15€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">3-4 hod</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Prestupy:</span>
+                        <span className="font-semibold text-orange-600">1-2×</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">
+                      <a href="https://www.zssk.sk" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">ZSSK</a>: Prestup v Leopoldove alebo Bratislave.
+                    </p>
+                  </Card>
+
+                  <Card className="p-4 sm:p-5">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="p-2 sm:p-2.5 rounded-full bg-green-100">
+                        <Bus className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />
+                      </div>
+                      <h3 className="font-bold text-base sm:text-lg">Autobus</h3>
+                    </div>
+                    <div className="space-y-2 sm:space-y-3 text-sm">
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Cena:</span>
+                        <span className="font-semibold">10-16€</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Čas cesty:</span>
+                        <span className="font-semibold">3-4 hod</span>
+                      </div>
+                      <div className="flex justify-between items-center py-1">
+                        <span className="text-foreground/60">Spoje:</span>
+                        <span className="font-semibold">obmedzené</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-3">
+                      <a href="https://www.slovaklines.sk" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">Slovak Lines</a>: Menej časté priame spoje.
+                    </p>
+                  </Card>
+                </div>
+
+                <div className="bg-white rounded-lg p-4 border border-foreground/10">
+                  <h3 className="font-bold text-foreground mb-2">Prečo zvoliť taxi do Galanty?</h3>
+                  <ul className="text-sm text-foreground/70 space-y-1">
+                    <li>• Priama cesta bez prestupovania</li>
+                    <li>• Možnosť zastávky v Nitre alebo Trnave</li>
+                    <li>• Ideálne pre pracovné cesty a obchodné stretnutia</li>
+                    <li>• Odvoz priamo ku kaštieľu alebo kdekoľvek v meste</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary-yellow shrink-0" />
+                  <span>Čo navštíviť v Galante a okolí</span>
+                </h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Neogotický kaštieľ Esterházyovcov</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Nádherný kaštieľ z roku 1633 s neogotickou prestavbou z 1861. Múzeum, galéria a pamätné izby.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Neogotický+kaštieľ+Galanta" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Mestský park</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Historický park okolo kaštieľa so vzácnymi drevinami - duby, tisy, ginko, platany.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mestský+park+Galanta" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Pamätná izba Zoltána Kodálya</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Venovaná slávnemu skladateľovi, autorovi Galantských tancov. V severnom krídle kaštieľa.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Pamätná+izba+Kodálya+Galanta" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Pamätná izba Karola Duchoňa</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Expozícia venovaná populárnemu slovenskému spevákom, rodákovi z Galanty.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Neogotický+kaštieľ+Galanta" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Termálne kúpalisko Vincov les</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Obľúbené termálne kúpalisko v blízkosti Sládkovičova. Ideálne na letné osvieženie.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Vincov+les+kúpalisko" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+
+                  <Card className="p-4">
+                    <h3 className="font-bold mb-2">Vodný mlyn Tomášikovo</h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      Funkčný vodný mlyn na Malom Dunaji. Technická pamiatka s ukážkami mletia.
+                    </p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Vodný+mlyn+Tomášikovo" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">Zobraziť na mape →</a>
+                  </Card>
+                </div>
+
+                <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
+                  <h3 className="font-bold text-foreground mb-2">💡 Tip: Galantské trhy</h3>
+                  <p className="text-sm text-foreground/70">
+                    V auguste sa v Galante konajú tradičné Galantské trhy - najväčšie jarmočné podujatie v regióne.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className="py-6 sm:py-8 md:py-12 px-3 sm:px-4 md:px-8 bg-foreground/5">
+              <div className="container mx-auto max-w-6xl">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6">
+                  Praktické informácie pre cestu
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Trasa cesty</h3>
+                    <p className="text-sm text-foreground/70">
+                      Cesta vedie cez Zvolen a Nitru alebo cez Bratislavu.
+                      Vzdialenosť približne 180 km.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Najlepší čas na návštevu</h3>
+                    <p className="text-sm text-foreground/70">
+                      Kaštieľ je otvorený celoročne. V auguste Galantské trhy,
+                      v decembri vianočné podujatia.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Kombinácia s okolím</h3>
+                    <p className="text-sm text-foreground/70">
+                      Blízko sú Trnava (25 km), Dunajská Streda (20 km)
+                      a Sereď (15 km).
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-white rounded-lg">
+                    <h3 className="font-bold text-foreground mb-2">Ubytovanie</h3>
+                    <p className="text-sm text-foreground/70">
+                      Hotely a penzióny v centre mesta.
+                      Blízko sú aj kúpeľné hotely v Dunajskej Strede.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
+
         {/* Špeciálny obsah pre trasu BANSKÁ BYSTRICA -> BRATISLAVA */}
         {slug === 'banska-bystrica-bratislava' && (
           <>
