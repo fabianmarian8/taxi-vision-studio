@@ -756,8 +756,7 @@ múzeá [mesto]
 ### Nízka priorita (MÔŽE byť pridané neskôr)
 7. ⏸️ Google Maps linky pre atrakcie
 8. ⏸️ Oficiálne web stránky atrakcií
-9. ⏸️ Presné časy odchodov vlakov/autobusov
-10. ⏸️ Vybavenie v dopravných prostriedkoch
+9. ⏸️ Vybavenie v dopravných prostriedkoch
 
 ---
 
