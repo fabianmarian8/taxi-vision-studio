@@ -392,7 +392,7 @@ async function CityPage({ city }: { city: CityData }) {
 
       <section className="pt-4 md:pt-6 pb-8 md:pb-12 px-4 md:px-8 relative bg-white">
         <GeometricLines variant="subtle" count={6} />
-        <div className="container mx-auto max-w-4xl relative z-10">
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div
             className={`text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12 ${city.heroImage ? `hero-${city.slug}` : ''}`}
           >
@@ -415,7 +415,7 @@ async function CityPage({ city }: { city: CityData }) {
       </section>
 
       <section className="py-8 md:py-10 lg:py-14 px-4 md:px-8 relative bg-white">
-        <div className="container mx-auto max-w-4xl relative z-10">
+        <div className="container mx-auto max-w-6xl relative z-10">
           {city.taxiServices.length > 0 ? (
             <div className="grid gap-3">
               {(() => {
@@ -866,55 +866,127 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
 
       <SEOBreadcrumbs items={breadcrumbItems} />
 
-      <section className="pt-4 md:pt-6 pb-8 md:pb-12 px-4 md:px-8 relative bg-white">
-        <GeometricLines variant="subtle" count={6} />
-        <div className="container mx-auto max-w-4xl relative z-10">
-          <div className="text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-6 md:p-10 lg:p-12">
-            <div className="absolute inset-0 hero-3d-bg" />
-            <div className="relative z-10">
-              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold mb-3 md:mb-6 text-foreground">
-                Taxi {municipality.name}
-              </h1>
-              <p className="text-sm sm:text-base md:text-xl font-semibold px-2 sm:px-4 text-foreground/90">
-                {isHierarchical && actualDistrict
-                  ? `Taxislužby v okolí obce ${municipality.name}, okres ${actualDistrict.name}`
-                  : `Taxislužby v okolí obce ${municipality.name}`
-                }
-              </p>
+      {/* Above The Fold dizajn - konzistentný s taxi-trasa */}
+      <section className="relative bg-gradient-to-br from-primary-yellow/10 via-white to-primary-yellow/5">
+        <div className="container mx-auto max-w-6xl px-4 py-6 md:py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
+
+            {/* Ľavá strana - Info */}
+            <div className="lg:col-span-2 flex flex-col">
+              <div className="mb-4">
+                <p className="text-sm text-foreground/60 mb-1">
+                  {isHierarchical && actualDistrict ? `Okres ${actualDistrict.name}` : municipality.region}
+                </p>
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-foreground leading-tight">
+                  {municipality.name}
+                </h1>
+                <p className="text-sm sm:text-base text-foreground/70 mt-2">
+                  Objednajte si taxi v okolí
+                </p>
+              </div>
+
+              {!hasTaxiServices && nearestCities.length > 0 && (
+                <>
+                  {/* Orientačná cena */}
+                  <div className="bg-white rounded-xl shadow-lg border-2 border-primary-yellow p-4 mb-4">
+                    <div className="flex items-baseline gap-2 mb-2">
+                      <span className="text-3xl md:text-4xl font-black text-green-600">
+                        {Math.ceil(2 + nearestCities[0].distance * 0.85)}€
+                      </span>
+                      <span className="text-lg text-foreground/50">
+                        - {Math.ceil(2 + nearestCities[0].distance * 1.15)}€
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-4 text-sm text-foreground/70">
+                      <span className="flex items-center gap-1">
+                        <MapPin className="h-4 w-4" />
+                        {nearestCities[0].roadDistance} km
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="h-4 w-4" />
+                        {nearestCities[0].duration} min
+                      </span>
+                    </div>
+                    <p className="text-xs text-foreground/60 mt-2">
+                      do {nearestCities[0].city.name}
+                    </p>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="space-y-3">
+                    <Link
+                      href={`/taxi/${nearestCities[0].city.slug}`}
+                      className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-xl text-lg"
+                    >
+                      <Phone className="h-6 w-6" />
+                      Taxislužby v {nearestCities[0].city.name}
+                    </Link>
+                    <Link
+                      href={`#taxi-sluzby`}
+                      className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-primary-yellow text-foreground font-bold rounded-xl hover:bg-primary-yellow/90 transition-all"
+                    >
+                      <Car className="h-5 w-5" />
+                      Zobraziť všetky možnosti
+                    </Link>
+                  </div>
+                </>
+              )}
+
+              {hasTaxiServices && cityWithTaxi && (
+                <>
+                  <div className="bg-primary-yellow/10 rounded-xl p-4 mb-4">
+                    <p className="text-sm font-semibold text-foreground/80">
+                      ✓ V obci {municipality.name} máme {cityWithTaxi.taxiServices.length} taxislužieb
+                    </p>
+                  </div>
+                  <Link
+                    href="#taxi-sluzby"
+                    className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-xl text-lg"
+                  >
+                    <Phone className="h-6 w-6" />
+                    Zobraziť taxislužby
+                  </Link>
+                </>
+              )}
             </div>
+
+            {/* Pravá strana - Mapa */}
+            {!hasTaxiServices && nearestCities.length > 0 && nearestCities[0].city.latitude && (
+              <div className="lg:col-span-3">
+                <div className="rounded-xl overflow-hidden shadow-lg h-[250px] md:h-[300px] lg:h-full lg:min-h-[350px]">
+                  <RouteMapWrapper
+                    fromLat={municipality.latitude}
+                    fromLng={municipality.longitude}
+                    fromName={municipality.name}
+                    fromSlug={municipality.slug}
+                    toLat={nearestCities[0].city.latitude}
+                    toLng={nearestCities[0].city.longitude}
+                    toName={nearestCities[0].city.name}
+                    toSlug={nearestCities[0].city.slug}
+                    distance={nearestCities[0].distance}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Breadcrumb - navigácia */}
+          <div className="mt-6 pt-4 border-t border-foreground/10">
+            <Link
+              href={isHierarchical && actualDistrict ? `/taxi/${regionSlug}/${actualDistrict.slug}` : `/kraj/${regionSlug}`}
+              className="inline-flex items-center gap-2 text-sm text-foreground/60 hover:text-foreground transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              {isHierarchical && actualDistrict ? `Späť na okres ${actualDistrict.name}` : `Späť na ${municipality.region}`}
+            </Link>
           </div>
         </div>
       </section>
 
-      {!hasTaxiServices && nearestCities.length > 0 && nearestCities[0].city.latitude && nearestCities[0].city.longitude && (
-        <section className="py-8 md:py-12 px-4 md:px-8 bg-gradient-to-b from-white to-foreground/5">
-          <div className="container mx-auto max-w-4xl">
-            <div className="mb-6 text-center">
-              <h2 className="text-2xl md:text-3xl font-black mb-3 text-foreground">
-                Trasa do najbližšieho mesta
-              </h2>
-              <p className="text-sm md:text-base text-foreground/70 font-semibold">
-                {municipality.name} → {nearestCities[0].city.name}
-              </p>
-            </div>
-            <RouteMapWrapper
-              fromLat={municipality.latitude}
-              fromLng={municipality.longitude}
-              fromName={municipality.name}
-              fromSlug={municipality.slug}
-              toLat={nearestCities[0].city.latitude}
-              toLng={nearestCities[0].city.longitude}
-              toName={nearestCities[0].city.name}
-              toSlug={nearestCities[0].city.slug}
-              distance={nearestCities[0].distance}
-            />
-          </div>
-        </section>
-      )}
-
+      {/* Najbližšie taxislužby */}
       {!hasTaxiServices && nearestCities.length > 0 && (
         <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-white">
-          <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="container mx-auto max-w-6xl relative z-10">
             <div className="mb-8 text-center">
               <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
                 Najbližšie taxislužby
@@ -971,7 +1043,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
 
       {hasTaxiServices && cityWithTaxi && (
         <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-white">
-          <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="container mx-auto max-w-6xl relative z-10">
             <div className="mb-8 text-center">
               <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
                 Taxislužby {cityWithTaxi.isVillage ? 'v obci' : 'v meste'} {municipality.name}
@@ -1102,7 +1174,7 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
       </section>
 
       <section className="py-8 md:py-12 px-4 md:px-8 bg-foreground/5">
-        <div className="container mx-auto max-w-4xl text-center">
+        <div className="container mx-auto max-w-6xl text-center">
           <h2 className="text-xl md:text-2xl font-black mb-4 text-foreground">
             Hľadáte taxi v okrese {district.name}?
           </h2>
@@ -1188,7 +1260,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             />
           </div>
 
-          <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="container mx-auto max-w-6xl relative z-10">
             <Link
               href={`/taxi/${city.slug}`}
               className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-bold mb-6"
@@ -1231,7 +1303,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
         {/* Features Section */}
         <section className="py-12 md:py-16 px-4 md:px-8 bg-white">
-          <div className="container mx-auto max-w-4xl">
+          <div className="container mx-auto max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-black text-foreground mb-8 text-center">
               Prečo si vybrať {service.name}?
             </h2>
@@ -1272,7 +1344,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
         {/* CTA Section */}
         <section className="py-12 md:py-16 px-4 md:px-8 bg-gradient-to-r from-yellow-400 to-yellow-500">
-          <div className="container mx-auto max-w-4xl text-center">
+          <div className="container mx-auto max-w-6xl text-center">
             <h2 className="text-2xl md:text-3xl font-black text-purple-900 mb-4">
               Potrebujete taxi {locationText} {city.name}?
             </h2>
@@ -1291,7 +1363,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         {/* Other services */}
         {city.taxiServices.length > 1 && (
           <section className="py-12 md:py-16 px-4 md:px-8 bg-foreground/5">
-            <div className="container mx-auto max-w-4xl">
+            <div className="container mx-auto max-w-6xl">
               <h2 className="text-2xl font-black mb-6 text-foreground text-center">
                 Ďalšie taxislužby {locationText} {city.name}
               </h2>
@@ -1344,7 +1416,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
       <section className="pt-4 md:pt-6 pb-8 md:pb-12 px-4 md:px-8 relative bg-white">
         <GeometricLines variant="subtle" count={6} />
-        <div className="container mx-auto max-w-4xl relative z-10">
+        <div className="container mx-auto max-w-6xl relative z-10">
           <Link
             href={`/taxi/${city.slug}`}
             className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold mb-6 text-sm md:text-base"
@@ -1393,7 +1465,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
       </section>
 
       <section className="py-12 md:py-16 px-4 md:px-8 relative bg-white">
-        <div className="container mx-auto max-w-4xl relative z-10">
+        <div className="container mx-auto max-w-6xl relative z-10">
           <Card className={`mb-8 overflow-hidden ${isPremium ? 'ring-2 ring-amber-300' : ''}`}>
             <div
               className="relative"
