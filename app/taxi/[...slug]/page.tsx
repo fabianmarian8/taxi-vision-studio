@@ -1246,204 +1246,152 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
     );
   }
 
+  // Získaj iniciály pre fallback logo
+  const initials = service.name
+    .split(' ')
+    .filter(word => word.length > 0 && !['taxi', 'TAXI', 'Taxi'].includes(word))
+    .slice(0, 2)
+    .map(word => word.charAt(0).toUpperCase())
+    .join('') || service.name.charAt(0).toUpperCase();
+
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
-      <TaxiServiceSchema
-        service={service}
-        city={city}
-        citySlug={city.slug}
-        serviceSlug={serviceSlug}
-      />
-      <Header />
+    <>
+      <div className="min-h-screen bg-gray-50 overflow-x-hidden pb-20 md:pb-0">
+        <TaxiServiceSchema
+          service={service}
+          city={city}
+          citySlug={city.slug}
+          serviceSlug={serviceSlug}
+        />
+        <Header />
 
-      <SEOBreadcrumbs
-        items={[
-          { label: city.region, href: `/kraj/${regionSlug}` },
-          { label: city.name, href: `/taxi/${city.slug}` },
-          { label: service.name },
-        ]}
-      />
-
-      <section className="pt-4 md:pt-6 pb-8 md:pb-12 px-4 md:px-8 relative bg-white">
-        <GeometricLines variant="subtle" count={6} />
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <Link
-            href={`/taxi/${city.slug}`}
-            className="inline-flex items-center gap-2 text-foreground hover:text-foreground/70 transition-colors font-bold mb-6 text-sm md:text-base"
-            title={`Späť na zoznam taxislužieb ${locationText} ${city.name}`}
-          >
-            <ArrowLeft className="h-4 w-4 flex-shrink-0" />
-            <span className="truncate">Späť na taxislužby {locationText} {city.name}</span>
-          </Link>
-
-          <div className={`text-center mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden relative p-4 sm:p-6 md:p-10 lg:p-12 ${isPremium ? 'ring-2 md:ring-4 ring-amber-300' : ''}`}>
-            <div
-              className="absolute inset-0"
-              style={{
-                background: isPremium
-                  ? 'linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%)'
-                  : undefined
-              }}
-            />
-            {!isPremium && <div className="absolute inset-0 hero-3d-bg" />}
-
-            {isPremium && (
-              <>
-                <div className="absolute top-2 right-2 md:top-4 md:right-4 flex gap-1 md:gap-2 z-20 flex-wrap justify-end max-w-[60%]">
-                  <div className="bg-green-500 text-white text-[9px] md:text-sm font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-0.5 md:gap-1">
-                    <BadgeCheck className="h-3 w-3 md:h-4 md:w-4" />
-                    <span className="hidden sm:inline">OVERENÉ</span>
-                  </div>
-                  <div className="bg-amber-600 text-white text-[9px] md:text-sm font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-0.5 md:gap-1">
-                    <Star className="h-3 w-3 md:h-4 md:w-4" />
-                    <span className="hidden sm:inline">PREMIUM</span>
-                  </div>
-                </div>
-              </>
-            )}
-
-            <div className="relative z-10">
-              <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-3 md:mb-4 ${isPremium ? 'text-black' : 'text-foreground'}`}>
-                {service.name}
-              </h1>
-              <p className={`text-sm sm:text-base md:text-xl font-semibold ${isPremium ? 'text-black/80' : 'text-foreground/90'}`}>
-                Taxislužba {locationText} {city.name}
-              </p>
-            </div>
+        {/* Kompaktné breadcrumbs - len späť */}
+        <div className="bg-white border-b border-gray-100">
+          <div className="container mx-auto max-w-4xl px-4 py-3">
+            <Link
+              href={`/taxi/${city.slug}`}
+              className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span>{city.name}</span>
+              <span className="text-gray-400">({city.taxiServices.length} taxislužieb)</span>
+            </Link>
           </div>
         </div>
-      </section>
 
-      <section className="py-12 md:py-16 px-4 md:px-8 relative bg-white">
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <Card className={`mb-8 overflow-hidden ${isPremium ? 'ring-2 ring-amber-300' : ''}`}>
-            <div
-              className="relative"
-              style={{
-                background: isPremium
-                  ? 'linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%)'
-                  : undefined
-              }}
-            >
-              <CardHeader>
-                <CardTitle className={`text-2xl font-bold flex items-center gap-3 ${isPremium ? 'text-black' : ''}`}>
-                  <MapPin className={`h-6 w-6 ${isPremium ? 'text-black' : 'text-success'}`} />
-                  Kontaktné informácie
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-col gap-4">
-                  {service.phone && (
-                    <div className="flex items-start gap-3">
-                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${isPremium ? 'bg-amber-500' : 'bg-primary-yellow-light'}`}>
-                        <Phone className={`h-5 w-5 mt-0 ${isPremium ? 'text-white' : 'text-primary-yellow-dark'}`} />
-                      </div>
-                      <div>
-                        <p className={`text-sm font-medium mb-1 ${isPremium ? 'text-black/70' : 'text-neutral-text'}`}>
-                          Telefónne číslo
-                        </p>
-                        <PhoneLink
-                          phone={service.phone!}
-                          serviceName={service.name}
-                          cityName={city.name}
-                          className={`text-lg transition-colors font-bold ${isPremium ? 'text-black hover:text-black/80' : 'text-foreground hover:text-foreground/70'}`}
-                          title={`Zavolať ${service.name}`}
-                        />
-                      </div>
-                    </div>
-                  )}
-                  {service.website && (
-                    <div className="flex items-start gap-3">
-                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${isPremium ? 'bg-amber-900' : 'bg-info-light'}`}>
-                        <Globe className={`h-5 w-5 mt-0 ${isPremium ? 'text-yellow-300' : 'text-info'}`} />
-                      </div>
-                      <div>
-                        <p className={`text-sm font-medium mb-1 ${isPremium ? 'text-black/70' : 'text-neutral-text'}`}>
-                          Webová stránka
-                        </p>
-                        <a
-                          href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`text-lg transition-colors font-bold ${isPremium ? 'text-black hover:text-black/80' : 'text-foreground hover:text-foreground/70'}`}
-                          title={`Navštíviť webovú stránku ${service.name}`}
-                        >
-                          {truncateUrl(service.website)}
-                        </a>
-                      </div>
-                    </div>
+        {/* Profilová sekcia - zlúčená karta */}
+        <section className="bg-white">
+          <div className="container mx-auto max-w-4xl px-4 py-6">
+            {/* Logo + Názov + Badge */}
+            <div className="flex items-start gap-4 mb-6">
+              {/* Logo/Iniciály */}
+              <div className={`flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center text-xl font-bold ${
+                isPremium
+                  ? 'bg-gradient-to-br from-amber-400 to-amber-500 text-white'
+                  : 'bg-gray-100 text-gray-700'
+              }`}>
+                {initials}
+              </div>
+
+              {/* Názov a info */}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-start gap-2 flex-wrap">
+                  <h1 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">
+                    {service.name}
+                  </h1>
+                  {isPremium && (
+                    <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded-full">
+                      <Star className="h-3 w-3" />
+                      PREMIUM
+                    </span>
                   )}
                 </div>
-              </CardContent>
+                <div className="flex items-center gap-2 mt-1 text-sm text-gray-500">
+                  <MapPin className="h-4 w-4" />
+                  <span>{city.name}, {city.region}</span>
+                </div>
+                {/* Overená taxislužba badge */}
+                <div className="flex items-center gap-1 mt-2 text-sm text-green-600">
+                  <CheckCircle2 className="h-4 w-4" />
+                  <span className="font-medium">Overená taxislužba</span>
+                </div>
+              </div>
             </div>
-          </Card>
 
-          <div className="mt-8 prose prose-sm md:prose-base max-w-none">
-            <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
-              O taxislužbe {service.name} {locationText} {city.name}
-            </h2>
-            <p className="text-foreground/80 mb-4 leading-relaxed">{content.intro}</p>
-            <p className="text-foreground/80 mb-4 leading-relaxed">{content.disclaimer}</p>
-
-            <h3 className="text-xl md:text-2xl font-black mb-3 text-foreground mt-6">
-              Prečo môže byť {service.name} vhodnou voľbou?
-            </h3>
-            <p className="text-foreground/80 mb-4 leading-relaxed">{content.benefits}</p>
-
-            {service.phone && content.ordering && (
-              <>
-                <h3 className="text-xl md:text-2xl font-black mb-3 text-foreground mt-6">
-                  Ako objednať taxi {locationText} {city.name}?
-                </h3>
-                <p className="text-foreground/80 mb-4 leading-relaxed">
-                  {content.ordering.split(service.phone).map((part, index, arr) => {
-                    if (index === arr.length - 1) return part;
-                    return (
-                      <span key={index}>
-                        {part}
-                        <PhoneLink
-                          phone={service.phone!}
-                          serviceName={service.name}
-                          cityName={city.name}
-                          className="font-bold text-foreground hover:text-foreground/70 transition-colors underline"
-                        />
-                      </span>
-                    );
-                  })}
-                </p>
-              </>
+            {/* Hlavné CTA tlačidlo - cez celú šírku */}
+            {service.phone && (
+              <a
+                href={`tel:${service.phone.replace(/\s/g, '')}`}
+                className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all shadow-lg text-lg"
+              >
+                <Phone className="h-6 w-6" />
+                <span>Zavolať {service.phone}</span>
+              </a>
             )}
 
-            {/* Promo banner for non-Premium/Partner services */}
-            {!isPremium && !isPartner && (
-              <div className="my-6 p-4 bg-gradient-to-r from-purple-50 to-yellow-50 rounded-xl border border-foreground/10">
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            {/* Webová stránka - sekundárne */}
+            {service.website && (
+              <a
+                href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full mt-3 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-xl transition-all"
+              >
+                <Globe className="h-5 w-5" />
+                <span>Navštíviť web</span>
+              </a>
+            )}
+          </div>
+        </section>
+
+        {/* O taxislužbe - SEO content */}
+        <section className="py-6 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <div className="bg-white rounded-xl p-6 shadow-sm">
+              <h2 className="text-lg font-bold text-gray-900 mb-4">
+                O taxislužbe
+              </h2>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">{content.intro}</p>
+              <p className="text-gray-500 text-xs leading-relaxed">{content.disclaimer}</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Promo banner for non-Premium/Partner services */}
+        {!isPremium && !isPartner && (
+          <section className="px-4 pb-6">
+            <div className="container mx-auto max-w-4xl">
+              <div className="bg-gradient-to-r from-purple-50 to-amber-50 rounded-xl p-4 border border-purple-100">
+                <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-600 to-yellow-500 flex items-center justify-center flex-shrink-0">
-                      <Star className="h-4 w-4 text-white" />
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-amber-500 flex items-center justify-center flex-shrink-0">
+                      <Crown className="h-5 w-5 text-white" />
                     </div>
-                    <p className="font-bold text-foreground text-sm">Ste majiteľom? <span className="font-normal text-foreground/70">Získajte lepšiu pozíciu</span></p>
+                    <div>
+                      <p className="font-bold text-gray-900 text-sm">Ste majiteľom?</p>
+                      <p className="text-gray-500 text-xs">Získajte lepšiu pozíciu</p>
+                    </div>
                   </div>
                   <Link
                     href="/pre-taxiky"
-                    className="inline-flex items-center gap-1.5 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all"
+                    className="inline-flex items-center gap-1 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all"
                   >
                     Zistiť viac
-                    <ArrowLeft className="h-3 w-3 rotate-180" />
                   </Link>
                 </div>
               </div>
-            )}
+            </div>
+          </section>
+        )}
 
-            <p className="text-foreground/80 mb-4 leading-relaxed">{content.conclusion}</p>
-          </div>
-
-          {city.taxiServices.length > 1 && (
-            <div className="mt-12">
-              <h2 className="text-2xl font-black mb-6 text-foreground">
+        {/* Ďalšie taxislužby */}
+        {city.taxiServices.length > 1 && (
+          <section className="px-4 pb-6">
+            <div className="container mx-auto max-w-4xl">
+              <h2 className="text-lg font-bold text-gray-900 mb-4">
                 Ďalšie taxislužby {locationText} {city.name}
               </h2>
-              <div className="grid gap-3">
+              <div className="bg-white rounded-xl shadow-sm divide-y divide-gray-100">
                 {[...city.taxiServices]
                   .sort((a, b) => a.name.localeCompare(b.name, 'sk'))
                   .filter((s) => s.name !== service.name)
@@ -1451,26 +1399,45 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   .map((otherService, index) => {
                     const otherSlug = createServiceSlug(otherService.name);
                     return (
-                      <Card key={index} className="perspective-1000">
-                        <Link href={`/taxi/${city.slug}/${otherSlug}`}>
-                          <div className="card-3d  transition-all p-4">
-                            <div className="flex items-center gap-2">
-                              <MapPin className="h-4 w-4 text-foreground flex-shrink-0" />
-                              <span className="font-bold text-foreground">{otherService.name}</span>
-                            </div>
-                          </div>
-                        </Link>
-                      </Card>
+                      <Link
+                        key={index}
+                        href={`/taxi/${city.slug}/${otherSlug}`}
+                        className="flex items-center justify-between p-4 hover:bg-gray-50 transition-colors"
+                      >
+                        <span className="font-medium text-gray-900">{otherService.name}</span>
+                        <ArrowRight className="h-4 w-4 text-gray-400" />
+                      </Link>
                     );
                   })}
               </div>
             </div>
-          )}
-        </div>
-      </section>
+          </section>
+        )}
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+
+      {/* Sticky Footer - vždy viditeľné na mobile */}
+      {service.phone && (
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.15)] z-50 md:hidden"
+          style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+        >
+          <div className="flex items-center justify-between px-4 py-3">
+            <div className="text-sm">
+              <span className="text-gray-500">Taxislužba</span>
+              <p className="font-bold text-gray-900 truncate max-w-[150px]">{service.name}</p>
+            </div>
+            <a
+              href={`tel:${service.phone.replace(/\s/g, '')}`}
+              className="flex items-center gap-2 px-5 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all"
+            >
+              <Phone className="h-5 w-5" />
+              <span>Zavolať</span>
+            </a>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
