@@ -35,7 +35,7 @@ export const SearchPanel = () => {
   const [searchValue, setSearchValue] = useState("");
   const [isLoadingLocation, setIsLoadingLocation] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [filteredResults, setFilteredResults] = useState<Array<{ name: string; region: string; slug: string; type: 'city' | 'municipality' }>>([]);
+  const [filteredResults, setFilteredResults] = useState<Array<{ name: string; region: string; district?: string; slug: string; type: 'city' | 'municipality' }>>([]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -95,7 +95,7 @@ export const SearchPanel = () => {
       const filteredMunicipalities = allMunicipalities
         .filter((mun) => normalizeText(mun.name).includes(normalizedSearch))
         .filter((mun) => !slovakCities.some(city => city.slug === mun.slug)) // Exclude duplicates
-        .map((mun) => ({ name: mun.name, region: mun.region, slug: mun.slug, type: 'municipality' as const }));
+        .map((mun) => ({ name: mun.name, region: mun.region, district: mun.district, slug: mun.slug, type: 'municipality' as const }));
 
       // Combine: cities first, then municipalities
       const combined = [...filteredCities, ...filteredMunicipalities];
@@ -410,7 +410,9 @@ export const SearchPanel = () => {
                     <span className="text-xs bg-foreground/10 px-1.5 py-0.5 rounded text-foreground/70">obec</span>
                   )}
                 </div>
-                <div className="text-xs md:text-sm text-foreground/60 mt-0.5">{result.region}</div>
+                <div className="text-xs md:text-sm text-foreground/60 mt-0.5">
+                  {result.district ? `Okres ${result.district}, ${result.region}` : result.region}
+                </div>
               </button>
             ))}
             {filteredResults.length > 10 && (
