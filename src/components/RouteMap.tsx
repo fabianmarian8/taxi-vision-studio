@@ -161,8 +161,13 @@ export function RouteMap({
         )}
       </div>
 
+      {/* Disclaimer pre ceny - len mobile, nad mapou */}
+      <p className="text-xs text-center text-foreground/50 md:hidden">
+        * Uvedené ceny sú orientačné a môžu sa líšiť v závislosti od konkrétnej taxi služby.
+      </p>
+
       {/* Map */}
-      <div className="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10 relative">
+      <div className="w-full h-[350px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10 relative">
         <div
           ref={mapContainerRef}
           className="h-full w-full"
@@ -170,8 +175,8 @@ export function RouteMap({
         />
       </div>
 
-      {/* Disclaimer pre ceny */}
-      <p className="text-xs text-center text-foreground/50 mt-3">
+      {/* Disclaimer pre ceny - desktop, pod mapou */}
+      <p className="text-xs text-center text-foreground/50 mt-3 hidden md:block">
         * Uvedené ceny sú orientačné a môžu sa líšiť v závislosti od konkrétnej taxi služby, typu vozidla, času jazdy a aktuálnej dopravnej situácie.
       </p>
     </div>

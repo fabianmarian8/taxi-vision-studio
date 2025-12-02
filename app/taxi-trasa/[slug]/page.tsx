@@ -450,6 +450,9 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                         {formatDuration(route.duration_min)}
                       </span>
                     </div>
+                    <p className="text-xs text-foreground/50 mt-2">
+                      * Uvedené ceny sú len orientačné.
+                    </p>
                   </div>
 
                   {/* CTA - denná náhodná taxislužba alebo generický link */}

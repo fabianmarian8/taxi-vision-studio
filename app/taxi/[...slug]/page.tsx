@@ -768,7 +768,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
              municipality.latitude && municipality.longitude &&
              nearestCities[0].city.latitude && nearestCities[0].city.longitude && (
               <div className="lg:col-span-3">
-                <div className="rounded-xl overflow-hidden shadow-lg h-[250px] md:h-[300px] lg:h-full lg:min-h-[350px]">
+                <div className="rounded-xl overflow-hidden shadow-lg h-[400px] md:h-[350px] lg:h-full lg:min-h-[350px]">
                   <RouteMapWrapper
                     fromLat={municipality.latitude}
                     fromLng={municipality.longitude}

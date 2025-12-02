@@ -8,7 +8,7 @@ const CityRouteMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10 bg-foreground/5 flex items-center justify-center">
+      <div className="w-full h-[350px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10 bg-foreground/5 flex items-center justify-center">
         <span className="text-foreground/50">Načítavam mapu...</span>
       </div>
     ),

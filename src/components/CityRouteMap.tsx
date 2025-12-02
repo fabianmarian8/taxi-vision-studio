@@ -104,18 +104,12 @@ function CityRouteMapInner({
   }, [initMap]);
 
   return (
-    <div className="space-y-3">
-      <div className="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10 relative">
-        <div
-          ref={mapContainerRef}
-          className="h-full w-full"
-          style={{ height: '100%', width: '100%' }}
-        />
-      </div>
-      {/* Disclaimer pre ceny */}
-      <p className="text-xs text-center text-foreground/50">
-        * Uvedené ceny sú orientačné a môžu sa líšiť v závislosti od konkrétnej taxi služby, typu vozidla, času jazdy a aktuálnej dopravnej situácie.
-      </p>
+    <div className="w-full h-[350px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10 relative">
+      <div
+        ref={mapContainerRef}
+        className="h-full w-full"
+        style={{ height: '100%', width: '100%' }}
+      />
     </div>
   );
 }
@@ -138,7 +132,7 @@ export function CityRouteMap(props: CityRouteMapProps) {
 
   if (!shouldRender) {
     return (
-      <div className="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10 bg-foreground/5 flex items-center justify-center">
+      <div className="w-full h-[350px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10 bg-foreground/5 flex items-center justify-center">
         <span className="text-foreground/50">Načítavam mapu...</span>
       </div>
     );

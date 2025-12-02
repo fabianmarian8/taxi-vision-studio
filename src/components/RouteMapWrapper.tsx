@@ -8,7 +8,7 @@ import { Skeleton } from './ui/skeleton';
 const RouteMap = dynamic(() => import('./RouteMap').then((mod) => mod.RouteMap), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10">
+    <div className="w-full h-[350px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10">
       <Skeleton className="w-full h-full" />
     </div>
   ),
@@ -45,7 +45,7 @@ export function RouteMapWrapper(props: RouteMapWrapperProps) {
 
   if (!shouldRender) {
     return (
-      <div className="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10">
+      <div className="w-full h-[350px] md:h-[400px] rounded-xl overflow-hidden border-2 border-foreground/10">
         <Skeleton className="w-full h-full" />
       </div>
     );
