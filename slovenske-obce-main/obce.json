@@ -59,8 +59,8 @@
     "name": "Ardovo",
     "district": "Rožňava",
     "region": "Košický kraj",
-    "x": 48.533333,
-    "y": 20.416667
+    "x": 48.5329878,
+    "y": 20.4187708
   },
   {
     "name": "Arnutovce",
@@ -801,8 +801,8 @@
     "name": "Blatná Polianka",
     "district": "Sobrance",
     "region": "Košický kraj",
-    "x": 48.683333,
-    "y": 22.1
+    "x": 48.6924214,
+    "y": 22.1053097
   },
   {
     "name": "Blatné",
@@ -1193,36 +1193,36 @@
     "name": "Bratislava I",
     "district": "Bratislava",
     "region": "Bratislavský kraj",
-    "x": 48.14816,
-    "y": 17.10674
+    "x": 48.1436,
+    "y": 17.1096
   },
   {
     "name": "Bratislava II",
     "district": "Bratislava",
     "region": "Bratislavský kraj",
-    "x": 48.14816,
-    "y": 17.10674
+    "x": 48.1483,
+    "y": 17.175
   },
   {
     "name": "Bratislava III",
     "district": "Bratislava",
     "region": "Bratislavský kraj",
-    "x": 48.14816,
-    "y": 17.10674
+    "x": 48.1741,
+    "y": 17.1248
   },
   {
     "name": "Bratislava IV",
     "district": "Bratislava",
     "region": "Bratislavský kraj",
-    "x": 48.14816,
-    "y": 17.10674
+    "x": 48.1579,
+    "y": 17.054
   },
   {
     "name": "Bratislava V",
     "district": "Bratislava",
     "region": "Bratislavský kraj",
-    "x": 48.14816,
-    "y": 17.10674
+    "x": 48.1054,
+    "y": 17.1133
   },
   {
     "name": "Braväcovo",
@@ -1725,8 +1725,8 @@
     "name": "Bystrička",
     "district": "Martin",
     "region": "Žilinský kraj",
-    "x": 49.05,
-    "y": 18.883333
+    "x": 49.0499991,
+    "y": 18.8421643
   },
   {
     "name": "Byšta",
@@ -1753,8 +1753,8 @@
     "name": "Bzenov",
     "district": "Prešov",
     "region": "Prešovský kraj",
-    "x": 48.95,
-    "y": 21.166667
+    "x": 48.9551489,
+    "y": 21.1712417
   },
   {
     "name": "Bzince pod Javorinou",
@@ -3118,8 +3118,8 @@
     "name": "Dolný Vadičov",
     "district": "Kysucké Nové Mesto",
     "region": "Žilinský kraj",
-    "x": 49.266667,
-    "y": 18.85
+    "x": 49.2662701,
+    "y": 18.8513232
   },
   {
     "name": "Doľany",
@@ -3286,8 +3286,8 @@
     "name": "Družstevná pri Hornáde",
     "district": "Košice-okolie",
     "region": "Košický kraj",
-    "x": 48.8,
-    "y": 21.25
+    "x": 48.8019716,
+    "y": 21.2493026
   },
   {
     "name": "Drženice",
@@ -3573,8 +3573,8 @@
     "name": "Ďačov",
     "district": "Sabinov",
     "region": "Prešovský kraj",
-    "x": 49.15,
-    "y": 20.933333
+    "x": 49.1471713,
+    "y": 20.9458054
   },
   {
     "name": "Ďanová",
@@ -3748,8 +3748,8 @@
     "name": "Fričovce",
     "district": "Prešov",
     "region": "Prešovský kraj",
-    "x": 49.016667,
-    "y": 20.966667
+    "x": 49.016435,
+    "y": 20.9655448
   },
   {
     "name": "Fulianka",
@@ -3846,8 +3846,8 @@
     "name": "Gemer",
     "district": "Revúca",
     "region": "Banskobystrický kraj",
-    "x": 48.45,
-    "y": 20.316667
+    "x": 48.6230932,
+    "y": 20.0991984
   },
   {
     "name": "Gemerček",
@@ -3944,8 +3944,8 @@
     "name": "Giglovce",
     "district": "Vranov nad Topľou",
     "region": "Prešovský kraj",
-    "x": 49,
-    "y": 21.733333
+    "x": 49.0008512,
+    "y": 21.7300685
   },
   {
     "name": "Giraltovce",
@@ -4175,8 +4175,8 @@
     "name": "Hanková",
     "district": "Rožňava",
     "region": "Košický kraj",
-    "x": 48.75,
-    "y": 20.316667
+    "x": 48.7492326,
+    "y": 20.3132654
   },
   {
     "name": "Hankovce",
@@ -4441,8 +4441,8 @@
     "name": "Hnilec",
     "district": "Spišská Nová Ves",
     "region": "Košický kraj",
-    "x": 48.833333,
-    "y": 20.5
+    "x": 48.8388293,
+    "y": 20.5044013
   },
   {
     "name": "Hnojné",
@@ -4665,8 +4665,8 @@
     "name": "Horná Súča",
     "district": "Trenčín",
     "region": "Trenčiansky kraj",
-    "x": 48.966667,
-    "y": 17.983333
+    "x": 48.9735688,
+    "y": 17.9769819
   },
   {
     "name": "Horná Štubňa",
@@ -4875,8 +4875,8 @@
     "name": "Horný Kalník",
     "district": "Martin",
     "region": "Žilinský kraj",
-    "x": 49.033333,
-    "y": 18.966667
+    "x": 49.0339065,
+    "y": 18.9694374
   },
   {
     "name": "Horný Lieskov",
@@ -4903,8 +4903,8 @@
     "name": "Horný Vadičov",
     "district": "Kysucké Nové Mesto",
     "region": "Žilinský kraj",
-    "x": 49.266667,
-    "y": 18.883333
+    "x": 49.2685262,
+    "y": 18.8847034
   },
   {
     "name": "Horňa",
@@ -5407,8 +5407,8 @@
     "name": "Hubovo",
     "district": "Rimavská Sobota",
     "region": "Banskobystrický kraj",
-    "x": 48.4,
-    "y": 20.366667
+    "x": 48.3946703,
+    "y": 20.3947292
   },
   {
     "name": "Hucín",
@@ -5428,8 +5428,8 @@
     "name": "Hul",
     "district": "Nové Zámky",
     "region": "Nitriansky kraj",
-    "x": 48.1,
-    "y": 18.266667
+    "x": 48.0979334,
+    "y": 18.2656086
   },
   {
     "name": "Humenné",
@@ -5526,8 +5526,8 @@
     "name": "Chanava",
     "district": "Rimavská Sobota",
     "region": "Banskobystrický kraj",
-    "x": 48.333333,
-    "y": 20.3
+    "x": 48.3387161,
+    "y": 20.2984024
   },
   {
     "name": "Chlebnice",
@@ -5568,8 +5568,8 @@
     "name": "Chmeľová",
     "district": "Bardejov",
     "region": "Prešovský kraj",
-    "x": 49.4,
-    "y": 21.3
+    "x": 49.3996111,
+    "y": 21.2980709
   },
   {
     "name": "Chmeľovec",
@@ -5918,8 +5918,8 @@
     "name": "Jablonec",
     "district": "Pezinok",
     "region": "Bratislavský kraj",
-    "x": 48.333333,
-    "y": 17.45
+    "x": 48.3282,
+    "y": 17.4565
   },
   {
     "name": "Jablonica",
@@ -6023,8 +6023,8 @@
     "name": "Jakubova Voľa",
     "district": "Sabinov",
     "region": "Prešovský kraj",
-    "x": 49.133333,
-    "y": 21.016667
+    "x": 49.1312793,
+    "y": 21.018226
   },
   {
     "name": "Jakubovany",
@@ -6275,8 +6275,8 @@
     "name": "Jastrabá",
     "district": "Žiar nad Hronom",
     "region": "Banskobystrický kraj",
-    "x": 48.633333,
-    "y": 18.933333
+    "x": 48.6440249,
+    "y": 18.9243758
   },
   {
     "name": "Jastrabie nad Topľou",
@@ -7101,8 +7101,8 @@
     "name": "Kolačkov",
     "district": "Stará Ľubovňa",
     "region": "Prešovský kraj",
-    "x": 49.266667,
-    "y": 20.633333
+    "x": 49.2748176,
+    "y": 20.6373244
   },
   {
     "name": "Kolačno",
@@ -7465,29 +7465,29 @@
     "name": "Košice I",
     "district": "Košice",
     "region": "Košický kraj",
-    "x": 48.71395,
-    "y": 21.25808
+    "x": 48.72,
+    "y": 21.258
   },
   {
     "name": "Košice II",
     "district": "Košice",
     "region": "Košický kraj",
-    "x": 48.71395,
-    "y": 21.25808
+    "x": 48.724,
+    "y": 21.226
   },
   {
     "name": "Košice III",
     "district": "Košice",
     "region": "Košický kraj",
-    "x": 48.71395,
-    "y": 21.25808
+    "x": 48.74,
+    "y": 21.243
   },
   {
     "name": "Košice IV",
     "district": "Košice",
     "region": "Košický kraj",
-    "x": 48.71395,
-    "y": 21.25808
+    "x": 48.692,
+    "y": 21.245
   },
   {
     "name": "Košická Belá",
@@ -7598,8 +7598,8 @@
     "name": "Koválovec",
     "district": "Skalica",
     "region": "Trnavský kraj",
-    "x": 48.783333,
-    "y": 17.3
+    "x": 48.784089,
+    "y": 17.3034199
   },
   {
     "name": "Kovarce",
@@ -7633,8 +7633,8 @@
     "name": "Kožany",
     "district": "Bardejov",
     "region": "Prešovský kraj",
-    "x": 49.216667,
-    "y": 21.5
+    "x": 49.2148364,
+    "y": 21.4910196
   },
   {
     "name": "Kožuchov",
@@ -7829,8 +7829,8 @@
     "name": "Krásnohorské Podhradie",
     "district": "Rožňava",
     "region": "Košický kraj",
-    "x": 48.65,
-    "y": 20.6
+    "x": 48.6532654,
+    "y": 20.5976651
   },
   {
     "name": "Krásnovce",
@@ -8172,8 +8172,8 @@
     "name": "Kunešov",
     "district": "Žiar nad Hronom",
     "region": "Banskobystrický kraj",
-    "x": 48.733333,
-    "y": 18.866667
+    "x": 48.7315888,
+    "y": 18.8691006
   },
   {
     "name": "Kunova Teplica",
@@ -8466,8 +8466,8 @@
     "name": "Laškovce",
     "district": "Michalovce",
     "region": "Košický kraj",
-    "x": 48.7,
-    "y": 21.85
+    "x": 48.6978447,
+    "y": 21.8533406
   },
   {
     "name": "Látky",
@@ -8662,8 +8662,8 @@
     "name": "Lesné",
     "district": "Michalovce",
     "region": "Košický kraj",
-    "x": 48.8,
-    "y": 21.816667
+    "x": 48.7989489,
+    "y": 21.8156679
   },
   {
     "name": "Lesnica",
@@ -9103,8 +9103,8 @@
     "name": "Livinské Opatovce",
     "district": "Partizánske",
     "region": "Trenčiansky kraj",
-    "x": 48.65,
-    "y": 18.233333
+    "x": 48.6499477,
+    "y": 18.2321493
   },
   {
     "name": "Livov",
@@ -9166,8 +9166,8 @@
     "name": "Lomnička",
     "district": "Stará Ľubovňa",
     "region": "Prešovský kraj",
-    "x": 49.25,
-    "y": 20.569041
+    "x": 49.247085,
+    "y": 20.570535
   },
   {
     "name": "Lontov",
@@ -9579,8 +9579,8 @@
     "name": "Ľutina",
     "district": "Sabinov",
     "region": "Prešovský kraj",
-    "x": 49.166667,
-    "y": 21.05
+    "x": 49.1655104,
+    "y": 21.0491309
   },
   {
     "name": "Ľutov",
@@ -10286,8 +10286,8 @@
     "name": "Meliata",
     "district": "Rožňava",
     "region": "Košický kraj",
-    "x": 48.516667,
-    "y": 20.333333
+    "x": 48.5146519,
+    "y": 20.3296606
   },
   {
     "name": "Mengusovce",
@@ -10461,8 +10461,8 @@
     "name": "Miňovce",
     "district": "Stropkov",
     "region": "Prešovský kraj",
-    "x": 49.133333,
-    "y": 21.65
+    "x": 49.1357875,
+    "y": 21.6514159
   },
   {
     "name": "Mirkovce",
@@ -10475,8 +10475,8 @@
     "name": "Miroľa",
     "district": "Svidník",
     "region": "Prešovský kraj",
-    "x": 49.329959,
-    "y": 21.733333
+    "x": 49.3268339,
+    "y": 21.7336708
   },
   {
     "name": "Mládzovo",
@@ -10650,8 +10650,8 @@
     "name": "Mokrý Háj",
     "district": "Skalica",
     "region": "Trnavský kraj",
-    "x": 48.816667,
-    "y": 17.25
+    "x": 48.8123051,
+    "y": 17.2449264
   },
   {
     "name": "Moldava nad Bodvou",
@@ -11231,8 +11231,8 @@
     "name": "Nižná Olšava",
     "district": "Stropkov",
     "region": "Prešovský kraj",
-    "x": 49.15,
-    "y": 21.633333
+    "x": 49.1427475,
+    "y": 21.6356452
   },
   {
     "name": "Nižná Pisaná",
@@ -11777,8 +11777,8 @@
     "name": "Olejníkov",
     "district": "Sabinov",
     "region": "Prešovský kraj",
-    "x": 49.183333,
-    "y": 21.066667
+    "x": 49.1818945,
+    "y": 21.0643756
   },
   {
     "name": "Olešná",
@@ -11994,8 +11994,8 @@
     "name": "Oravská Polhora",
     "district": "Námestovo",
     "region": "Žilinský kraj",
-    "x": 49.516667,
-    "y": 19.45
+    "x": 49.5409182,
+    "y": 19.4244065
   },
   {
     "name": "Oravská Poruba",
@@ -12043,8 +12043,8 @@
     "name": "Oravské Veselé",
     "district": "Námestovo",
     "region": "Žilinský kraj",
-    "x": 49.466667,
-    "y": 19.383333
+    "x": 49.49715,
+    "y": 19.364822
   },
   {
     "name": "Oreské",
@@ -12071,8 +12071,8 @@
     "name": "Orlov",
     "district": "Stará Ľubovňa",
     "region": "Prešovský kraj",
-    "x": 49.283333,
-    "y": 20.866667
+    "x": 49.2801874,
+    "y": 20.8703632
   },
   {
     "name": "Orovnica",
@@ -12169,8 +12169,8 @@
     "name": "Osturňa",
     "district": "Kežmarok",
     "region": "Prešovský kraj",
-    "x": 49.333333,
-    "y": 20.233333
+    "x": 49.3344798,
+    "y": 20.2336133
   },
   {
     "name": "Osuské",
@@ -12316,8 +12316,8 @@
     "name": "Parchovany",
     "district": "Trebišov",
     "region": "Košický kraj",
-    "x": 48.75,
-    "y": 21.716667
+    "x": 48.749364,
+    "y": 21.6973227
   },
   {
     "name": "Parihuzovce",
@@ -12778,8 +12778,8 @@
     "name": "Pobedim",
     "district": "Nové Mesto nad Váhom",
     "region": "Trenčiansky kraj",
-    "x": 48.65,
-    "y": 17.8
+    "x": 48.6565325,
+    "y": 17.8096414
   },
   {
     "name": "Počarová",
@@ -13058,15 +13058,15 @@
     "name": "Poloma",
     "district": "Sabinov",
     "region": "Prešovský kraj",
-    "x": 49.166667,
-    "y": 20.833333
+    "x": 49.1682692,
+    "y": 20.8269613
   },
   {
     "name": "Polomka",
     "district": "Brezno",
     "region": "Banskobystrický kraj",
-    "x": 48.85,
-    "y": 19.85
+    "x": 48.8464144,
+    "y": 19.854664
   },
   {
     "name": "Poltár",
@@ -13464,8 +13464,8 @@
     "name": "Priechod",
     "district": "Banská Bystrica",
     "region": "Banskobystrický kraj",
-    "x": 48.783333,
-    "y": 19.233333
+    "x": 48.776725,
+    "y": 19.2260379
   },
   {
     "name": "Priekopa",
@@ -13709,8 +13709,8 @@
     "name": "Radimov",
     "district": "Skalica",
     "region": "Trnavský kraj",
-    "x": 48.75,
-    "y": 17.2
+    "x": 48.7514235,
+    "y": 17.1962056
   },
   {
     "name": "Radnovce",
@@ -13744,8 +13744,8 @@
     "name": "Radošina",
     "district": "Topoľčany",
     "region": "Nitriansky kraj",
-    "x": 48.55,
-    "y": 17.933333
+    "x": 48.5471246,
+    "y": 17.9374718
   },
   {
     "name": "Radošovce",
@@ -14066,8 +14066,8 @@
     "name": "Remetské Hámre",
     "district": "Sobrance",
     "region": "Košický kraj",
-    "x": 48.85,
-    "y": 22.183333
+    "x": 48.8351137,
+    "y": 22.1775218
   },
   {
     "name": "Renčišov",
@@ -14108,8 +14108,8 @@
     "name": "Revúca",
     "district": "Revúca",
     "region": "Banskobystrický kraj",
-    "x": 48.683333,
-    "y": 20.116667
+    "x": 48.6835,
+    "y": 20.1173
   },
   {
     "name": "Revúcka Lehota",
@@ -14332,8 +14332,8 @@
     "name": "Rozložná",
     "district": "Rožňava",
     "region": "Košický kraj",
-    "x": 48.616667,
-    "y": 20.35
+    "x": 48.618522,
+    "y": 20.3501528
   },
   {
     "name": "Roztoky",
@@ -14955,8 +14955,8 @@
     "name": "Sirk",
     "district": "Revúca",
     "region": "Banskobystrický kraj",
-    "x": 48.616667,
-    "y": 20.1
+    "x": 48.6189416,
+    "y": 20.1007732
   },
   {
     "name": "Sirník",
@@ -15221,8 +15221,8 @@
     "name": "Slovenská Kajňa",
     "district": "Vranov nad Topľou",
     "region": "Prešovský kraj",
-    "x": 48.966667,
-    "y": 21.7
+    "x": 48.9689952,
+    "y": 21.7005135
   },
   {
     "name": "Slovenská Ľupča",
@@ -15725,8 +15725,8 @@
     "name": "Starina",
     "district": "Stará Ľubovňa",
     "region": "Prešovský kraj",
-    "x": 49.333333,
-    "y": 20.833333
+    "x": 49.3218808,
+    "y": 20.829366
   },
   {
     "name": "Starý Hrádok",
@@ -16089,8 +16089,8 @@
     "name": "Svätuš",
     "district": "Sobrance",
     "region": "Košický kraj",
-    "x": 48.683333,
-    "y": 22.133333
+    "x": 48.6848837,
+    "y": 22.1371133
   },
   {
     "name": "Svätuše",
@@ -16383,8 +16383,8 @@
     "name": "Šašová",
     "district": "Bardejov",
     "region": "Prešovský kraj",
-    "x": 49.25,
-    "y": 21.45
+    "x": 49.2566751,
+    "y": 21.4488072
   },
   {
     "name": "Šaštín-Stráže",
@@ -16439,8 +16439,8 @@
     "name": "Šiba",
     "district": "Bardejov",
     "region": "Prešovský kraj",
-    "x": 49.233333,
-    "y": 21.233333
+    "x": 49.2965628,
+    "y": 21.2323031
   },
   {
     "name": "Šíd",
@@ -17251,8 +17251,8 @@
     "name": "Trenčianska Turná",
     "district": "Trenčín",
     "region": "Trenčiansky kraj",
-    "x": 48.85,
-    "y": 18.016667
+    "x": 48.8458494,
+    "y": 18.0316491
   },
   {
     "name": "Trenčianske Bohuslavice",
@@ -17860,8 +17860,8 @@
     "name": "Váhovce",
     "district": "Galanta",
     "region": "Trnavský kraj",
-    "x": 48.25,
-    "y": 17.783333
+    "x": 48.2499551,
+    "y": 17.7851641
   },
   {
     "name": "Vajkovce",
@@ -18000,8 +18000,8 @@
     "name": "Vavrinec",
     "district": "Vranov nad Topľou",
     "region": "Prešovský kraj",
-    "x": 49.05,
-    "y": 21.6
+    "x": 49.0496012,
+    "y": 21.5965773
   },
   {
     "name": "Vavrišovo",
@@ -18175,8 +18175,8 @@
     "name": "Veľká Tŕňa",
     "district": "Trebišov",
     "region": "Košický kraj",
-    "x": 48.466667,
-    "y": 21.683333
+    "x": 48.4685345,
+    "y": 21.678321
   },
   {
     "name": "Veľká Ves",
@@ -18273,8 +18273,8 @@
     "name": "Veľké Kosihy",
     "district": "Komárno",
     "region": "Nitriansky kraj",
-    "x": 47.766667,
-    "y": 17.883333
+    "x": 47.7492473,
+    "y": 17.8775351
   },
   {
     "name": "Veľké Kostoľany",
@@ -18308,8 +18308,8 @@
     "name": "Veľké Lovce",
     "district": "Nové Zámky",
     "region": "Nitriansky kraj",
-    "x": 48.066661,
-    "y": 18.333335
+    "x": 48.0604746,
+    "y": 18.3354092
   },
   {
     "name": "Veľké Ludince",
@@ -18357,8 +18357,8 @@
     "name": "Veľké Ripňany",
     "district": "Topoľčany",
     "region": "Nitriansky kraj",
-    "x": 48.5,
-    "y": 17.983628
+    "x": 48.4914731,
+    "y": 17.954949
   },
   {
     "name": "Veľké Rovné",
@@ -18574,8 +18574,8 @@
     "name": "Veľký Šariš",
     "district": "Prešov",
     "region": "Prešovský kraj",
-    "x": 49.05,
-    "y": 21.2
+    "x": 49.0422,
+    "y": 21.199
   },
   {
     "name": "Veľopolie",
@@ -18595,8 +18595,8 @@
     "name": "Veselé",
     "district": "Piešťany",
     "region": "Trnavský kraj",
-    "x": 48.55,
-    "y": 17.733333
+    "x": 48.5480682,
+    "y": 17.736509
   },
   {
     "name": "Veterná Poruba",
@@ -18966,8 +18966,8 @@
     "name": "Voľa",
     "district": "Michalovce",
     "region": "Košický kraj",
-    "x": 48.85,
-    "y": 21.85
+    "x": 48.844257,
+    "y": 21.8521216
   },
   {
     "name": "Voznica",
@@ -19918,8 +19918,8 @@
     "name": "Zlaté Moravce",
     "district": "Zlaté Moravce",
     "region": "Nitriansky kraj",
-    "x": 48.383333,
-    "y": 18.4
+    "x": 48.3855,
+    "y": 18.4006
   },
   {
     "name": "Zlatná na Ostrove",
@@ -19981,8 +19981,8 @@
     "name": "Zubák",
     "district": "Púchov",
     "region": "Trenčiansky kraj",
-    "x": 49.15,
-    "y": 18.216667
+    "x": 49.1488899,
+    "y": 18.2050219
   },
   {
     "name": "Zuberec",
