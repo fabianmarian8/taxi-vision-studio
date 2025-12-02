@@ -1810,13 +1810,6 @@
           "website": null,
           "isPremium": false,
           "isPromotional": false
-        },
-        {
-          "name": "Hanušovce Nad Topľou,,AS",
-          "phone": null,
-          "website": "http://www.sadhe.sk",
-          "isPremium": false,
-          "isPromotional": false
         }
       ],
       "latitude": 49.026879,
@@ -2669,14 +2662,6 @@
           "name": "BENZE Transfer Košice",
           "phone": "+421940645645",
           "website": "http://www.benze.sk"
-        },
-        {
-          "name": "Airportdrivetaxi Košice",
-          "phone": null,
-          "website": "",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-03T20:14:09.941Z"
         },
         {
           "name": "Hello Taxi: Tomáš Kurčinka",
