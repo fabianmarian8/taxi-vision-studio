@@ -154,11 +154,6 @@ export function RouteMap({
             </span>
           </div>
         </div>
-        {!hasPrecomputed && (
-          <p className="text-xs text-center text-foreground/70 mt-2">
-            * Odhad na základe vzdialenosti vzdušnou čiarou
-          </p>
-        )}
       </div>
 
       {/* Disclaimer pre ceny - len mobile, nad mapou */}
