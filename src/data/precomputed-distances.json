@@ -3720,21 +3720,21 @@
       "duration": 31
     },
     {
-      "municipalitySlug": "brezany",
+      "municipalitySlug": "brezany-zilina",
       "citySlug": "zilina",
       "airDistance": 6.1,
       "roadDistance": 7.6,
       "duration": 14
     },
     {
-      "municipalitySlug": "brezany",
+      "municipalitySlug": "brezany-zilina",
       "citySlug": "bytca",
       "airDistance": 9.2,
       "roadDistance": 15.6,
       "duration": 19
     },
     {
-      "municipalitySlug": "brezany",
+      "municipalitySlug": "brezany-zilina",
       "citySlug": "rajec",
       "airDistance": 11.5,
       "roadDistance": 20.1,
@@ -3972,21 +3972,21 @@
       "duration": 40
     },
     {
-      "municipalitySlug": "brezany",
+      "municipalitySlug": "brezany-presov",
       "citySlug": "presov",
       "airDistance": 9.7,
       "roadDistance": 16.1,
       "duration": 24
     },
     {
-      "municipalitySlug": "brezany",
+      "municipalitySlug": "brezany-presov",
       "citySlug": "velky-saris",
       "airDistance": 10.3,
       "roadDistance": 19.5,
       "duration": 23
     },
     {
-      "municipalitySlug": "brezany",
+      "municipalitySlug": "brezany-presov",
       "citySlug": "sabinov",
       "airDistance": 13.9,
       "roadDistance": 30.4,
@@ -5092,21 +5092,21 @@
       "duration": 42
     },
     {
-      "municipalitySlug": "cernina",
+      "municipalitySlug": "cernina-svidnik",
       "citySlug": "svidnik",
       "airDistance": 7.4,
       "roadDistance": 15.3,
       "duration": 21
     },
     {
-      "municipalitySlug": "cernina",
+      "municipalitySlug": "cernina-svidnik",
       "citySlug": "bardejov",
       "airDistance": 14.3,
       "roadDistance": 22.6,
       "duration": 31
     },
     {
-      "municipalitySlug": "cernina",
+      "municipalitySlug": "cernina-svidnik",
       "citySlug": "stropkov",
       "airDistance": 16.7,
       "roadDistance": 23.4,
@@ -5932,21 +5932,21 @@
       "duration": 32
     },
     {
-      "municipalitySlug": "celovce",
+      "municipalitySlug": "celovce-velky-krtis",
       "citySlug": "modry-kamen",
       "airDistance": 15.4,
       "roadDistance": 26.4,
       "duration": 32
     },
     {
-      "municipalitySlug": "celovce",
+      "municipalitySlug": "celovce-velky-krtis",
       "citySlug": "velky-krtis",
       "airDistance": 15.4,
       "roadDistance": 24.9,
       "duration": 32
     },
     {
-      "municipalitySlug": "celovce",
+      "municipalitySlug": "celovce-velky-krtis",
       "citySlug": "sahy",
       "airDistance": 19.3,
       "roadDistance": 29.5,
@@ -5995,21 +5995,21 @@
       "duration": 28
     },
     {
-      "municipalitySlug": "celovce",
+      "municipalitySlug": "celovce-trebisov",
       "citySlug": "trebisov",
       "airDistance": 7.4,
       "roadDistance": 11.9,
       "duration": 13
     },
     {
-      "municipalitySlug": "celovce",
+      "municipalitySlug": "celovce-trebisov",
       "citySlug": "michalovce",
       "airDistance": 27.2,
       "roadDistance": 34.6,
       "duration": 40
     },
     {
-      "municipalitySlug": "celovce",
+      "municipalitySlug": "celovce-presov",
       "citySlug": "kosice",
       "airDistance": 30.7,
       "roadDistance": 44.1,
@@ -6163,21 +6163,21 @@
       "duration": 25
     },
     {
-      "municipalitySlug": "cernina",
+      "municipalitySlug": "cernina-humenne",
       "citySlug": "humenne",
       "airDistance": 14.2,
       "roadDistance": 17.3,
       "duration": 22
     },
     {
-      "municipalitySlug": "cernina",
+      "municipalitySlug": "cernina-humenne",
       "citySlug": "strazske",
       "airDistance": 19.8,
       "roadDistance": 26.6,
       "duration": 32
     },
     {
-      "municipalitySlug": "cernina",
+      "municipalitySlug": "cernina-humenne",
       "citySlug": "chlmec",
       "airDistance": 20.3,
       "roadDistance": 23.7,
@@ -27128,21 +27128,21 @@
       "duration": 17
     },
     {
-      "municipalitySlug": "sklabina",
+      "municipalitySlug": "sklabina-martin",
       "citySlug": "martin",
       "airDistance": 6.2,
       "roadDistance": 8.4,
       "duration": 10
     },
     {
-      "municipalitySlug": "sklabina",
+      "municipalitySlug": "sklabina-martin",
       "citySlug": "turany",
       "airDistance": 8.3,
       "roadDistance": 12.9,
       "duration": 15
     },
     {
-      "municipalitySlug": "sklabina",
+      "municipalitySlug": "sklabina-martin",
       "citySlug": "vrutky",
       "airDistance": 9.1,
       "roadDistance": 13.4,
@@ -46231,42 +46231,42 @@
       "duration": 28
     },
     {
-      "municipalitySlug": "janovce",
+      "municipalitySlug": "janovce-bardejov",
       "citySlug": "bardejov",
       "airDistance": 11.6,
       "roadDistance": 14.8,
       "duration": 15
     },
     {
-      "municipalitySlug": "janovce",
+      "municipalitySlug": "janovce-bardejov",
       "citySlug": "velky-saris",
       "airDistance": 17.4,
       "roadDistance": 27.8,
       "duration": 28
     },
     {
-      "municipalitySlug": "janovce",
+      "municipalitySlug": "janovce-bardejov",
       "citySlug": "giraltovce",
       "airDistance": 17.6,
       "roadDistance": 23.7,
       "duration": 23
     },
     {
-      "municipalitySlug": "janovce",
+      "municipalitySlug": "janovce-galanta",
       "citySlug": "sladkovicovo",
       "airDistance": 8.8,
       "roadDistance": 23.9,
       "duration": 21
     },
     {
-      "municipalitySlug": "janovce",
+      "municipalitySlug": "janovce-galanta",
       "citySlug": "senec",
       "airDistance": 11.1,
       "roadDistance": 14.4,
       "duration": 15
     },
     {
-      "municipalitySlug": "janovce",
+      "municipalitySlug": "janovce-galanta",
       "citySlug": "galanta",
       "airDistance": 14.5,
       "roadDistance": 27,
@@ -52972,21 +52972,21 @@
       "duration": 24
     },
     {
-      "municipalitySlug": "lazany",
+      "municipalitySlug": "lazany-prievidza",
       "citySlug": "bojnice",
       "airDistance": 5.2,
       "roadDistance": 7.8,
       "duration": 12
     },
     {
-      "municipalitySlug": "lazany",
+      "municipalitySlug": "lazany-prievidza",
       "citySlug": "prievidza",
       "airDistance": 5.3,
       "roadDistance": 7.5,
       "duration": 10
     },
     {
-      "municipalitySlug": "lazany",
+      "municipalitySlug": "lazany-prievidza",
       "citySlug": "novaky",
       "airDistance": 12.9,
       "roadDistance": 18.2,
@@ -53035,21 +53035,21 @@
       "duration": 42
     },
     {
-      "municipalitySlug": "lazany",
+      "municipalitySlug": "lazany-presov",
       "citySlug": "sabinov",
       "airDistance": 7.3,
       "roadDistance": 10.8,
       "duration": 13
     },
     {
-      "municipalitySlug": "lazany",
+      "municipalitySlug": "lazany-presov",
       "citySlug": "velky-saris",
       "airDistance": 7.6,
       "roadDistance": 15.5,
       "duration": 18
     },
     {
-      "municipalitySlug": "lazany",
+      "municipalitySlug": "lazany-presov",
       "citySlug": "presov",
       "airDistance": 11.3,
       "roadDistance": 14.1,
@@ -55492,42 +55492,42 @@
       "duration": 19
     },
     {
-      "municipalitySlug": "lukacovce",
+      "municipalitySlug": "lukacovce-humenne",
       "citySlug": "humenne",
       "airDistance": 13.7,
       "roadDistance": 16.9,
       "duration": 17
     },
     {
-      "municipalitySlug": "lukacovce",
+      "municipalitySlug": "lukacovce-humenne",
       "citySlug": "vranov-nad-toplou",
       "airDistance": 17.4,
       "roadDistance": 30.1,
       "duration": 29
     },
     {
-      "municipalitySlug": "lukacovce",
+      "municipalitySlug": "lukacovce-humenne",
       "citySlug": "strazske",
       "airDistance": 17.7,
       "roadDistance": 26.6,
       "duration": 27
     },
     {
-      "municipalitySlug": "lukacovce",
+      "municipalitySlug": "lukacovce-nitra",
       "citySlug": "hlohovec",
       "airDistance": 10.9,
       "roadDistance": 15.4,
       "duration": 18
     },
     {
-      "municipalitySlug": "lukacovce",
+      "municipalitySlug": "lukacovce-nitra",
       "citySlug": "leopoldov",
       "airDistance": 13.8,
       "roadDistance": 18.4,
       "duration": 21
     },
     {
-      "municipalitySlug": "lukacovce",
+      "municipalitySlug": "lukacovce-nitra",
       "citySlug": "nitra",
       "airDistance": 14.5,
       "roadDistance": 21.6,
@@ -57970,21 +57970,21 @@
       "duration": 41
     },
     {
-      "municipalitySlug": "sklabina",
+      "municipalitySlug": "sklabina-velky-krtis",
       "citySlug": "velky-krtis",
       "airDistance": 5.6,
       "roadDistance": 6.8,
       "duration": 8
     },
     {
-      "municipalitySlug": "sklabina",
+      "municipalitySlug": "sklabina-velky-krtis",
       "citySlug": "modry-kamen",
       "airDistance": 9.2,
       "roadDistance": 10,
       "duration": 11
     },
     {
-      "municipalitySlug": "sklabina",
+      "municipalitySlug": "sklabina-velky-krtis",
       "citySlug": "lucenec",
       "airDistance": 29.6,
       "roadDistance": 41,

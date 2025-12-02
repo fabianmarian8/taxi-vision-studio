@@ -36,21 +36,25 @@ const toSlug = (text: string): string => {
     .replace(/(^-|-$)/g, '');
 };
 
-// First pass: count occurrences of each name to detect duplicates
-const nameCount = new Map<string, number>();
+// First pass: count occurrences of each BASE SLUG to detect duplicates
+// This catches cases like "Lukáčovce" and "Lukačovce" which have different names
+// but produce the same slug "lukacovce" after normalization
+const slugCount = new Map<string, number>();
 municipalitiesData.forEach((item: { name: string }) => {
-  nameCount.set(item.name, (nameCount.get(item.name) || 0) + 1);
+  const baseSlug = toSlug(item.name);
+  slugCount.set(baseSlug, (slugCount.get(baseSlug) || 0) + 1);
 });
 
 // Transform obce.json format (x,y) to our format (latitude, longitude)
-// For duplicate names, include district in slug to make it unique
+// For duplicate slugs, include district in slug to make it unique
 const allMunicipalities: Municipality[] = municipalitiesData.map((item: { name: string; district: string; region: string; x: number; y: number }) => {
-  const isDuplicate = (nameCount.get(item.name) || 0) > 1;
+  const baseSlug = toSlug(item.name);
+  const isDuplicateSlug = (slugCount.get(baseSlug) || 0) > 1;
 
-  // For duplicate names, create slug with district (e.g., "bohunice-ilava")
-  const slug = isDuplicate
+  // For duplicate slugs, create slug with district (e.g., "lukacovce-nitra", "lukacovce-humenne")
+  const slug = isDuplicateSlug
     ? toSlug(`${item.name}-${item.district}`)
-    : toSlug(item.name);
+    : baseSlug;
 
   return {
     name: item.name,
