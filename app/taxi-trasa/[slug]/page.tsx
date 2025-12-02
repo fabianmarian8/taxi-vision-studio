@@ -391,9 +391,8 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
         {/* Header */}
         <Header />
 
-        {/* NOVÝ Above The Fold dizajn - pre trasy z Bratislavy a Banskej Bystrice */}
-        {(slug.startsWith('bratislava-') || slug.startsWith('banska-bystrica-')) ? (
-          <section className="relative bg-gradient-to-br from-primary-yellow/10 via-white to-blue-50/30">
+        {/* Above The Fold dizajn - jednotný pre všetky trasy */}
+        <section className="relative bg-gradient-to-br from-primary-yellow/10 via-white to-blue-50/30">
             {/* Kompaktný Hero - všetko dôležité na jednej obrazovke */}
             <div className="container mx-auto max-w-6xl px-4 py-6 md:py-8">
 
@@ -452,7 +451,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                       className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-primary-yellow text-foreground font-bold rounded-xl hover:bg-primary-yellow/90 transition-all"
                     >
                       <Car className="h-5 w-5" />
-                      {fromTaxis.length > 0 ? `${fromTaxis.length} taxi služieb v Bratislave` : 'Zobraziť taxi služby'}
+                      {fromTaxis.length > 0 ? `${fromTaxis.length} taxi služieb v ${route.from.name}` : 'Zobraziť taxi služby'}
                     </Link>
                   </div>
                 </div>
@@ -484,124 +483,6 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
               </div>
             </div>
           </section>
-        ) : (
-          /* Pôvodný Hero Section pre ostatné trasy */
-          <section className="relative bg-gradient-to-br from-primary-yellow/20 via-white to-white py-12 md:py-16">
-            <div className="container mx-auto max-w-6xl px-4 md:px-8">
-              <Link
-                href="/taxi-trasa"
-                className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground mb-6 transition-colors"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                Späť na taxi trasy
-              </Link>
-
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-6">
-                Taxi {route.from.name} - {route.to.name}
-              </h1>
-
-              <p className="text-lg text-foreground/70 mb-8">
-                Hľadáte spoľahlivú taxi prepravu z {route.from.name} do {route.to.name}?
-                Nižšie nájdete všetky potrebné informácie vrátane vzdialenosti, času cesty a orientačnej ceny.
-              </p>
-
-              {/* Route Info Cards */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <Card className="p-4 bg-white/80 backdrop-blur">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-primary-yellow/20">
-                      <MapPin className="h-5 w-5 text-primary-yellow" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-foreground/60">Vzdialenosť</p>
-                      <p className="font-bold text-foreground">{route.distance_km} km</p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-4 bg-white/80 backdrop-blur">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-primary-yellow/20">
-                      <Clock className="h-5 w-5 text-primary-yellow" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-foreground/60">Čas cesty</p>
-                      <p className="font-bold text-foreground">{formatDuration(route.duration_min)}</p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-4 bg-white/80 backdrop-blur">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-green-500/20">
-                      <Euro className="h-5 w-5 text-green-600" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-foreground/60">Cena od</p>
-                      <p className="font-bold text-green-600">{minPrice} - {maxPrice}€</p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-4 bg-white/80 backdrop-blur">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-primary-yellow/20">
-                      <Car className="h-5 w-5 text-primary-yellow" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-foreground/60">Trasa</p>
-                      <p className="font-bold text-foreground text-xs">{route.from.name} → {route.to.name}</p>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-
-              {/* Hero CTA - rýchly prístup k taxi službám */}
-              {(fromTaxis.length > 0 || toTaxis.length > 0) && (
-                <div className="flex flex-wrap gap-3">
-                  {fromTaxis[0]?.phone && (
-                    <a
-                      href={`tel:${fromTaxis[0].phone.replace(/\s/g, '')}`}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors shadow-lg"
-                    >
-                      <Phone className="h-5 w-5" />
-                      Zavolať taxi {route.from.name}
-                    </a>
-                  )}
-                  <Link
-                    href="#taxi-sluzby"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary-yellow text-foreground font-bold rounded-lg hover:bg-primary-yellow/90 transition-colors shadow-lg"
-                  >
-                    <Car className="h-5 w-5" />
-                    Zobraziť všetky taxi
-                  </Link>
-                </div>
-              )}
-            </div>
-          </section>
-        )}
-
-        {/* Map Section - skryť pre trasy z Bratislavy a BB (mapa je v hero) */}
-        {!(slug.startsWith('bratislava-') || slug.startsWith('banska-bystrica-')) && (
-          <section className="py-8 md:py-12 px-4 md:px-8">
-            <div className="container mx-auto max-w-6xl">
-              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
-                <Navigation className="h-6 w-6 text-primary-yellow" />
-                Mapa trasy
-              </h2>
-              <div className="rounded-xl overflow-hidden shadow-lg">
-                <CityRouteMapWrapper
-                  fromLat={route.from.lat}
-                  fromLng={route.from.lng}
-                  fromName={route.from.name}
-                  toLat={route.to.lat}
-                  toLng={route.to.lng}
-                  toName={route.to.name}
-                />
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* Taxi Services Section - len z východiskového mesta */}
         <section id="taxi-sluzby" className="py-8 md:py-12 px-4 md:px-8 bg-foreground/5 scroll-mt-4">
