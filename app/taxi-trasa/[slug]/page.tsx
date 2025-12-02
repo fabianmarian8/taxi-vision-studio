@@ -126,6 +126,28 @@ const getTaxiServicesForCity = (citySlug: string) => {
   return city?.taxiServices?.slice(0, 5) || []; // Max 5 služieb
 };
 
+// Deterministický náhodný výber taxislužby podľa dňa a slug
+// Každý deň sa zobrazí iná taxislužba, ale pre rovnaký deň a slug je vždy rovnaká
+const getDailyFeaturedTaxi = (taxis: typeof citiesData.cities[0]['taxiServices'], routeSlug: string) => {
+  if (!taxis || taxis.length === 0) return null;
+
+  // Získaj dnešný dátum ako číslo dní od epoch
+  const today = new Date();
+  const daysSinceEpoch = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
+
+  // Vytvor hash zo slug pre konzistentné rozloženie medzi trasami
+  let slugHash = 0;
+  for (let i = 0; i < routeSlug.length; i++) {
+    slugHash = ((slugHash << 5) - slugHash) + routeSlug.charCodeAt(i);
+    slugHash = slugHash & slugHash; // Convert to 32bit integer
+  }
+
+  // Kombinuj deň a hash pre finálny index
+  const index = Math.abs((daysSinceEpoch + slugHash) % taxis.length);
+
+  return taxis[index];
+};
+
 // Získanie podobných trás (trasy z/do rovnakých miest)
 const getRelatedRoutes = (currentSlug: string, fromSlug: string, toSlug: string, limit: number = 6) => {
   const routes = cityRoutesData.routes as CityRouteData[];
@@ -268,6 +290,9 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
   const fromTaxis = getTaxiServicesForCity(route.from.slug);
   const toTaxis = getTaxiServicesForCity(route.to.slug);
   const relatedRoutes = getRelatedRoutes(slug, route.from.slug, route.to.slug, 6);
+
+  // Vyber dennú "featured" taxislužbu - mení sa každý deň
+  const featuredTaxi = getDailyFeaturedTaxi(fromTaxis, slug);
 
   // BreadcrumbList Schema - KRITICKÉ pre SEO
   const breadcrumbJsonLd = {
@@ -427,15 +452,15 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     </div>
                   </div>
 
-                  {/* CTA - reálne údaje alebo generický link */}
+                  {/* CTA - denná náhodná taxislužba alebo generický link */}
                   <div className="space-y-3 mb-4">
-                    {fromTaxis[0]?.phone ? (
+                    {featuredTaxi?.phone ? (
                       <a
-                        href={`tel:${fromTaxis[0].phone.replace(/\s/g, '')}`}
+                        href={`tel:${featuredTaxi.phone.replace(/\s/g, '')}`}
                         className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-xl text-lg"
                       >
                         <Phone className="h-6 w-6" />
-                        Zavolať {fromTaxis[0].name}
+                        Zavolať {featuredTaxi.name}
                       </a>
                     ) : (
                       <Link
