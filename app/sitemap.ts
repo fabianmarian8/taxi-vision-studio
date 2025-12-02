@@ -131,7 +131,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/komplexny-sprievodca-taxi',
     '/temna-strana-bolt-uber',
     '/porovnanie-cien-taxi-2024-2025',
-    '/prieskum-cien-taxisluzieb-slovensko-2025', // Redirect na porovnanie-cien-taxi-2024-2025
+    // Odstránené: '/prieskum-cien-taxisluzieb-slovensko-2025' - je to redirect, nepatrí do sitemap
   ];
 
   blogArticles.forEach((article) => {

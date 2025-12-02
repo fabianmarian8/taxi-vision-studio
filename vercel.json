@@ -7,5 +7,18 @@
       "main": true
     }
   },
-  "ignoreCommand": "bash ignored-build-step.sh"
+  "ignoreCommand": "bash ignored-build-step.sh",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "taxinearme.sk"
+        }
+      ],
+      "destination": "https://www.taxinearme.sk/:path*",
+      "permanent": true
+    }
+  ]
 }

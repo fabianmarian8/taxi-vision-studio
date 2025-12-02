@@ -1,7 +1,7 @@
-/** Redirect z starej URL na novú */
+/** Redirect z starej URL na novú - 301 Permanent */
 
-import { redirect } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 
 export default function PrieskumRedirect() {
-  redirect('/porovnanie-cien-taxi-2024-2025');
+  permanentRedirect('/porovnanie-cien-taxi-2024-2025');
 }

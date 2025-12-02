@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: RoutePageProps): Promise<Meta
       locale: 'sk_SK',
     },
     alternates: {
-      canonical: `https://taxinearme.sk/trasa/${route.slug}`,
+      canonical: `https://www.taxinearme.sk/trasa/${route.slug}`,
     },
   };
 }

@@ -13,7 +13,7 @@
 
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound, redirect } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { HowItWorks } from '@/components/HowItWorks';
 import { GeometricLines } from '@/components/GeometricLines';
@@ -1685,8 +1685,8 @@ export default async function TaxiCatchAllPage({
       />;
 
     case 'redirect':
-      redirect(routeType.to);
-      // redirect() throws, but we need return for ESLint no-fallthrough rule
+      permanentRedirect(routeType.to);
+      // permanentRedirect() throws, but we need return for ESLint no-fallthrough rule
       return null;
 
     case 'notFound':
