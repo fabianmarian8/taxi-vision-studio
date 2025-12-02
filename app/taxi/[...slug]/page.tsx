@@ -1310,11 +1310,13 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   <MapPin className="h-4 w-4" />
                   <span>{city.name}, {city.region}</span>
                 </div>
-                {/* Overená taxislužba badge */}
-                <div className="flex items-center gap-1 mt-2 text-sm text-green-600">
-                  <CheckCircle2 className="h-4 w-4" />
-                  <span className="font-medium">Overená taxislužba</span>
-                </div>
+                {/* Overená taxislužba badge - len pre Premium/Partner */}
+                {(isPremium || isPartner) && (
+                  <div className="flex items-center gap-1 mt-2 text-sm text-green-600">
+                    <CheckCircle2 className="h-4 w-4" />
+                    <span className="font-medium">Overená taxislužba</span>
+                  </div>
+                )}
               </div>
             </div>
 
