@@ -109,7 +109,7 @@ export default function PreTaxikyPage() {
                 <div className="text-sm text-foreground/60 font-medium">Miest a obcí</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-purple-600">500+</div>
+                <div className="text-3xl md:text-4xl font-black text-purple-600">1000+</div>
                 <div className="text-sm text-foreground/60 font-medium">Taxislužieb</div>
               </div>
               <div className="text-center">
