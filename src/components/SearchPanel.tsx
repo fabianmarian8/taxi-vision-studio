@@ -398,7 +398,7 @@ export const SearchPanel = () => {
           >
             {filteredResults.slice(0, 10).map((result, index) => (
               <button
-                key={result.slug}
+                key={`${result.slug}-${result.district || index}`}
                 onClick={() => navigateToLocation(result.slug, result.name)}
                 className={`w-full text-left px-4 md:px-6 py-2.5 md:py-3 hover:bg-foreground/5 active:bg-foreground/10 transition-colors border-b border-foreground/5 last:border-b-0 ${
                   index === selectedIndex ? "bg-foreground/10" : ""
