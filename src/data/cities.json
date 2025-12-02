@@ -652,7 +652,7 @@
       "region": "Bratislavský kraj",
       "heroImage": "/images/bratislava-hero.webp",
       "description": "Hlavné mesto Slovenska s najväčším počtom taxislužieb. Nájdite si spoľahlivé taxi v Bratislave kedykoľvek potrebujete.",
-      "metaDescription": "Nájdite taxi v meste Bratislava. 14 taxislužieb s telefónnymi číslami a webovými stránkami: Taxi-Bratislava-City 🚕 Spoľahlivá taxi služba 24/7, Top-Taxi Bratislava, TAXI-TAXI Bratislava a ďalšie. Kontaktujte priamo.",
+      "metaDescription": "Nájdite taxi v meste Bratislava. 32 taxislužieb s telefónnymi číslami a webovými stránkami: Taxi-Bratislava-City, TAXI-TAXI, EASY TAXI, FUN TAXI, City Taxi a ďalšie. Kontaktujte priamo.",
       "keywords": [
         "taxi bratislava",
         "taxislužba bratislava",
@@ -812,6 +812,41 @@
           "name": "Taxi do Viedne",
           "phone": "+421948997878",
           "website": "https://www.taxidoviedne.sk",
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "TAXI Bratislava 16 300",
+          "phone": "+421915161300",
+          "website": "https://taxibratislava.eu/",
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "EASY TAXI Bratislava",
+          "phone": "+421918555555",
+          "website": "https://easytaxi.sk/bratislava/",
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "FUN TAXI Bratislava",
+          "phone": "+42122227777",
+          "website": "https://www.funtaxi.sk/",
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "City Taxi Bratislava",
+          "phone": "+421909166661",
+          "website": "https://citytaxibratislava.sk/",
+          "isPremium": false,
+          "isPromotional": false
+        },
+        {
+          "name": "VB Taxi Bratislava",
+          "phone": "+421905660660",
+          "website": null,
           "isPremium": false,
           "isPromotional": false
         }
