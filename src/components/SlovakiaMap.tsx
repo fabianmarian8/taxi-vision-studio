@@ -191,6 +191,11 @@ export const SlovakiaMap = ({ cities, selectedCity, onCitySelect }: SlovakiaMapP
       <div className="mt-6 text-center text-sm text-foreground/60">
         Kliknite na mesto pre zobrazenie detailných informácií
       </div>
+
+      {/* Disclaimer pre ceny */}
+      <div className="mt-4 text-center text-xs text-foreground/50">
+        * Uvedené ceny sú orientačné a môžu sa líšiť v závislosti od konkrétnej taxi služby, typu vozidla, času jazdy a aktuálnej dopravnej situácie. Pre presnú cenu kontaktujte priamo vybranú taxi službu.
+      </div>
     </div>
   );
 };

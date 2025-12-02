@@ -438,7 +438,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                   <div className="bg-white rounded-xl shadow-lg border-2 border-primary-yellow p-4 mb-4">
                     <div className="flex items-baseline gap-2 mb-2">
                       <span className="text-3xl md:text-4xl font-black text-green-600">{minPrice}€</span>
-                      <span className="text-lg text-foreground/50">- {maxPrice}€</span>
+                      <span className="text-lg text-foreground/50">- {maxPrice}€*</span>
                     </div>
                     <div className="flex items-center gap-4 text-sm text-foreground/70">
                       <span className="flex items-center gap-1">
@@ -554,7 +554,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -848,7 +848,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -1111,7 +1111,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -1374,7 +1374,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -1639,7 +1639,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -1963,7 +1963,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -2295,7 +2295,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -2558,7 +2558,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -2821,7 +2821,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -3084,7 +3084,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -3347,7 +3347,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -3610,7 +3610,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -3873,7 +3873,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -4136,7 +4136,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -4399,7 +4399,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -6877,7 +6877,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -7099,7 +7099,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -7321,7 +7321,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -7543,7 +7543,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -7763,7 +7763,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -7945,7 +7945,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -8076,7 +8076,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -8221,7 +8221,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -8370,7 +8370,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -8514,7 +8514,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -8614,7 +8614,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -8714,7 +8714,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -8815,7 +8815,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -8924,7 +8924,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -9029,7 +9029,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -9143,7 +9143,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -9252,7 +9252,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -9361,7 +9361,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>
@@ -9470,7 +9470,7 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
                     <div className="space-y-2 sm:space-y-3 text-sm">
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Cena:</span>
-                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€</span>
+                        <span className="font-semibold text-green-600 text-base">{minPrice}-{maxPrice}€*</span>
                       </div>
                       <div className="flex justify-between items-center py-1">
                         <span className="text-foreground/60">Čas cesty:</span>

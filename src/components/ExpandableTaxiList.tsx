@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Phone, ChevronDown, Car } from 'lucide-react';
+import { Phone, ChevronDown } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 interface TaxiService {
@@ -26,11 +26,6 @@ export function ExpandableTaxiList({ taxis, cityName, citySlug }: ExpandableTaxi
 
   return (
     <div className="mb-6">
-      <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-        <Car className="h-5 w-5 text-primary-yellow" />
-        Taxi služby v {cityName}
-      </h3>
-
       {/* Prvá taxi služba - vždy viditeľná */}
       <Card className="p-4 hover:shadow-md transition-shadow border-2 border-primary-yellow/30">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">

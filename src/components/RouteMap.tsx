@@ -150,7 +150,7 @@ export function RouteMap({
             <Car className="h-5 w-5 text-primary-yellow mb-1" />
             <span className="text-xs text-foreground/60 font-medium">Odhadovaná cena</span>
             <span className="text-lg font-black text-foreground">
-              {price.min}€ - {price.max}€
+              {price.min}€ - {price.max}€*
             </span>
           </div>
         </div>
@@ -169,6 +169,11 @@ export function RouteMap({
           style={{ height: '100%', width: '100%' }}
         />
       </div>
+
+      {/* Disclaimer pre ceny */}
+      <p className="text-xs text-center text-foreground/50 mt-3">
+        * Uvedené ceny sú orientačné a môžu sa líšiť v závislosti od konkrétnej taxi služby, typu vozidla, času jazdy a aktuálnej dopravnej situácie.
+      </p>
     </div>
   );
 }

@@ -220,7 +220,7 @@ export default function TaxiTrasaHubPage() {
                       {route.to.name}
                     </p>
                     <p className="text-xs text-green-600 font-bold mt-1">
-                      od {calculatePrice(route.distance_km)}€
+                      od {calculatePrice(route.distance_km)}€*
                     </p>
                   </Card>
                 </Link>
@@ -263,7 +263,7 @@ export default function TaxiTrasaHubPage() {
                                   {route.isReversed ? '←' : '→'} {route.displayCity}
                                 </p>
                                 <span className="text-sm text-green-600 font-bold">
-                                  od {calculatePrice(route.distance_km)}€
+                                  od {calculatePrice(route.distance_km)}€*
                                 </span>
                               </div>
                               <div className="flex items-center gap-3 text-xs text-foreground/60">

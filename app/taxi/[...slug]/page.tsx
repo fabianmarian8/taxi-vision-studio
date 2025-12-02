@@ -734,50 +734,15 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
               </div>
 
               {!hasTaxiServices && nearestCities.length > 0 && (
-                <>
-                  {/* Orientačná cena */}
-                  <div className="bg-white rounded-xl shadow-lg border-2 border-primary-yellow p-4 mb-4">
-                    <div className="flex items-baseline gap-2 mb-2">
-                      <span className="text-3xl md:text-4xl font-black text-green-600">
-                        {Math.ceil(2 + nearestCities[0].distance * 0.85)}€
-                      </span>
-                      <span className="text-lg text-foreground/50">
-                        - {Math.ceil(2 + nearestCities[0].distance * 1.15)}€
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-4 text-sm text-foreground/70">
-                      <span className="flex items-center gap-1">
-                        <MapPin className="h-4 w-4" />
-                        {nearestCities[0].roadDistance} km
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        {nearestCities[0].duration} min
-                      </span>
-                    </div>
-                    <p className="text-xs text-foreground/60 mt-2">
-                      do {nearestCities[0].city.name}
-                    </p>
-                  </div>
-
-                  {/* CTA */}
-                  <div className="space-y-3">
-                    <Link
-                      href={`/taxi/${nearestCities[0].city.slug}`}
-                      className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-xl text-lg"
-                    >
-                      <Phone className="h-6 w-6" />
-                      Taxislužby v {nearestCities[0].city.name}
-                    </Link>
-                    <Link
-                      href={`#taxi-sluzby`}
-                      className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-primary-yellow text-foreground font-bold rounded-xl hover:bg-primary-yellow/90 transition-all"
-                    >
-                      <Car className="h-5 w-5" />
-                      Zobraziť všetky možnosti
-                    </Link>
-                  </div>
-                </>
+                <div className="mt-4">
+                  <Link
+                    href={`/taxi/${nearestCities[0].city.slug}`}
+                    className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-xl text-lg"
+                  >
+                    <Phone className="h-6 w-6" />
+                    Taxislužby v {nearestCities[0].city.name}
+                  </Link>
+                </div>
               )}
 
               {hasTaxiServices && cityWithTaxi && (
