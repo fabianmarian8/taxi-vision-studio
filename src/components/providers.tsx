@@ -15,7 +15,7 @@
  * - Radix UI providers (interaktívne komponenty)
  */
 
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/toaster';
@@ -26,10 +26,9 @@ import {
   saveCookieConsent
 } from './cookie-banner/cookieManager';
 
-// QueryClient instance - vytvorený mimo komponentu pre stabilitu
-const queryClient = new QueryClient();
-
 export function Providers({ children }: { children: React.ReactNode }) {
+  // QueryClient vytvorený v useState - zabráni zdieľaniu stavu medzi SSR requestmi
+  const [queryClient] = useState(() => new QueryClient());
   // Cookie consent inicializácia (z pôvodného App.tsx)
   useEffect(() => {
     // Aplikuj uložený consent pri načítaní stránky

@@ -10,6 +10,8 @@ import {
 } from './cookieManager';
 
 export const CookieBanner = () => {
+  // Mounted state pre prevenciu hydration mismatch
+  const [mounted, setMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
@@ -19,14 +21,37 @@ export const CookieBanner = () => {
     marketing: false,
   });
 
+  // Najprv nastavíme mounted state
   useEffect(() => {
-    // Kontrola či už užívateľ dal súhlas
-    if (!hasValidConsent()) {
-      // Zobraz banner ihneď (bez umelého oneskorenia pre lepšie LCP)
-      setIsVisible(true);
-    }
+    setMounted(true);
+  }, []);
 
-    // Listener pre znovu otvorenie nastavení
+  // Potom kontrolujeme consent - len po mountnutí (client-side)
+  useEffect(() => {
+    if (!mounted) return;
+
+    // Delay zobrazenia bannera o 100ms po DOMContentLoaded
+    // Toto zabezpečí, že hlavný obsah sa stane LCP elementom, nie cookie banner
+    const showBannerAfterLCP = () => {
+      if (!hasValidConsent()) {
+        // Počkaj 100ms aby hlavný obsah stihol byť LCP
+        setTimeout(() => setIsVisible(true), 100);
+      }
+    };
+
+    // Ak je DOM už načítaný, spusti hneď
+    if (document.readyState === 'complete') {
+      showBannerAfterLCP();
+    } else {
+      window.addEventListener('load', showBannerAfterLCP);
+      return () => window.removeEventListener('load', showBannerAfterLCP);
+    }
+  }, [mounted]);
+
+  // Listener pre znovu otvorenie nastavení
+  useEffect(() => {
+    if (!mounted) return;
+
     const handleReopenSettings = () => {
       setIsVisible(true);
       setShowDetails(false);
@@ -36,7 +61,7 @@ export const CookieBanner = () => {
     return () => {
       window.removeEventListener('cookieSettingsRequested', handleReopenSettings);
     };
-  }, []);
+  }, [mounted]);
 
   const handleAcceptAll = () => {
     const allAccepted: CookiePreferences = {
@@ -75,7 +100,9 @@ export const CookieBanner = () => {
     }));
   };
 
-  if (!isVisible) return null;
+  // Nerenderuj nič kým nie je mounted (prevencia hydration mismatch)
+  // alebo kým nie je banner viditeľný
+  if (!mounted || !isVisible) return null;
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-end justify-center p-3 pointer-events-none">
