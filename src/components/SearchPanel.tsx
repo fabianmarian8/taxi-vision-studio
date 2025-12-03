@@ -87,9 +87,15 @@ export const SearchPanel = () => {
       const normalizedSearch = normalizeText(trimmedSearch);
 
       // Search in cities (with taxi services) - supports search without diacritics
+      // Obce s isVillage: true dostanú type 'municipality' pre správne zobrazenie odznaku
       const filteredCities = slovakCities
         .filter((city) => normalizeText(city.name).includes(normalizedSearch))
-        .map((city) => ({ name: city.name, region: city.region, slug: city.slug, type: 'city' as const }));
+        .map((city) => ({
+          name: city.name,
+          region: city.region,
+          slug: city.slug,
+          type: city.isVillage ? 'municipality' as const : 'city' as const
+        }));
 
       // Search in municipalities (without taxi services in our DB)
       const filteredMunicipalities = allMunicipalities

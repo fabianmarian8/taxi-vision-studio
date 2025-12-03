@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-02T16:13:08.389Z",
+  "lastUpdated": "2025-12-03T20:52:54.466Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -478,9 +478,8 @@
         {
           "name": "Albert Duriančik - Albert Taxi",
           "phone": "+42153/4411111",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.979631,
@@ -504,9 +503,8 @@
         {
           "name": "Juraj Varga",
           "phone": "+421 918 022 222",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.408549,
@@ -1016,9 +1014,8 @@
         {
           "name": "PAPI TAXI - LUČENEC",
           "phone": "+421940551044",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.447124,
@@ -1617,9 +1614,8 @@
           "name": "Milan Zajac",
           "phone": "+421918012888",
           "website": "http://www.elektrotaxi.szm.sk",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 47.895106,
@@ -2285,9 +2281,8 @@
         {
           "name": "Stravka Jan Taxi",
           "phone": "+421918885458",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.886396,
@@ -2982,9 +2977,8 @@
         {
           "name": "Leopoldov Taxi",
           "phone": "+421904563000",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.444178,
@@ -3574,9 +3568,8 @@
         {
           "name": "Taxi Medzilaborce",
           "phone": "+421915555765",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 49.271132,
@@ -3688,9 +3681,8 @@
           "name": "TAXI MODRA",
           "website": "http://www.taxi-modra.sk",
           "phone": "+421905426242",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.335726,
@@ -3758,9 +3750,8 @@
         {
           "name": "Sky Taxi Moldava nad Bodvou",
           "phone": "+421940600048",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.614142,
@@ -3914,9 +3905,8 @@
         {
           "name": "TAXI NESVADY",
           "phone": "+421908618620",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 47.92852,
@@ -4505,9 +4495,8 @@
           "name": "Vengra TAXI",
           "website": "",
           "phone": "+421 904 707 202",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.430829,
@@ -5571,9 +5560,8 @@
           "name": "Taxi Sliač - rýchlo a lacno",
           "website": "https://www.taxisliac.sk",
           "phone": "+421948238626",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.613181,
@@ -5846,9 +5834,8 @@
           "name": "Metro Taxi Spišské Podhradie ",
           "website": "https://www.facebook.com/people/Metro-Taxi-Spi%C5%A1sk%C3%A9-Podhradie/100077417521708/?sk=about&locale=sk_SK",
           "phone": "+421 911 530 432",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 49.000035,
@@ -6061,9 +6048,8 @@
         {
           "name": "TAXI Stropkov - Mišo",
           "phone": "+421940191151",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 49.202009,
@@ -6117,6 +6103,33 @@
       ],
       "latitude": 48.273132,
       "longitude": 17.032746
+    },
+    {
+      "name": "Streda nad Bodrogom",
+      "slug": "streda-nad-bodrogom",
+      "region": "Košický kraj",
+      "isVillage": true,
+      "description": "Obec v Tokajskom regióne s dostupnou taxislužbou. Ideálne pre letiskové transfery a cesty po okolí.",
+      "metaDescription": "Taxi Streda nad Bodrogom - Bodrog Taxi na Tokaji. Letiskové transfery a taxislužba v Tokajskom regióne. Kontaktujte +421 944 551 883.",
+      "keywords": [
+        "taxi streda nad bodrogom",
+        "taxislužba tokaj",
+        "taxi trebišov",
+        "letiskový transfer košice",
+        "bodrog taxi"
+      ],
+      "taxiServices": [
+        {
+          "name": "Bodrog Taxi na Tokaji",
+          "phone": "+421944551883",
+          "website": null,
+          "description": "Letiskové transfery",
+          "isPremium": false,
+          "isPromotional": false
+        }
+      ],
+      "latitude": 48.375222,
+      "longitude": 21.754882
     },
     {
       "name": "Svätý Jur",
@@ -6231,9 +6244,8 @@
           "name": "taxi svit s.r.o.",
           "website": "https://svittaxi.sk",
           "phone": "+421905211311",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 49.058236,
@@ -6556,9 +6568,8 @@
         {
           "name": "JŠ Šavel Taxi",
           "phone": "+421902318870",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.681276,
@@ -7983,9 +7994,8 @@
         {
           "name": "Taxi Marek Mrekaj",
           "phone": "+421911504333",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 49.388036,

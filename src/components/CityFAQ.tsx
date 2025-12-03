@@ -14,11 +14,12 @@ import { citySpecificFAQs, getDefaultFAQItems, type FAQItem } from "@/data/cityF
 interface CityFAQProps {
   cityName: string;
   citySlug: string;
+  isVillage?: boolean;
 }
 
-export const CityFAQ = ({ cityName, citySlug }: CityFAQProps) => {
-  // Get city-specific FAQs or use default ones
-  const faqItems: FAQItem[] = citySpecificFAQs[citySlug] || getDefaultFAQItems(cityName);
+export const CityFAQ = ({ cityName, citySlug, isVillage = false }: CityFAQProps) => {
+  // Get city-specific FAQs or use default ones (with isVillage for correct location text)
+  const faqItems: FAQItem[] = citySpecificFAQs[citySlug] || getDefaultFAQItems(cityName, isVillage);
 
   // Pridanie FAQ Schema.org Structured Data
   useEffect(() => {
@@ -68,7 +69,7 @@ export const CityFAQ = ({ cityName, citySlug }: CityFAQProps) => {
             Často Kladené Otázky
           </h2>
           <p className="text-base md:text-xl text-foreground/90 font-bold px-4">
-            Všetko, čo potrebujete vedieť o taxi v meste {cityName}
+            Všetko, čo potrebujete vedieť o taxi {isVillage ? 'v obci' : 'v meste'} {cityName}
           </p>
         </div>
 

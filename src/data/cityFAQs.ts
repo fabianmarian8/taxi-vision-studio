@@ -3959,29 +3959,35 @@ export const citySpecificFAQs: Record<string, FAQItem[]> = {
 };
 
 // Default FAQ items for cities without specific FAQs (fallback)
-export const getDefaultFAQItems = (cityName: string): FAQItem[] => [
-  {
-    question: `Ako si objednám taxi v meste ${cityName}?`,
-    answer: `Taxi v meste ${cityName} si môžete objednať telefonicky, cez webovú stránku taxislužby alebo mobilnú aplikáciu. Na našej stránke nájdete kontaktné údaje na dostupné taxislužby v meste.`
-  },
-  {
-    question: `Koľko stojí jazda taxíkom v meste ${cityName}?`,
-    answer: `Cena taxislužby závisí od vzdialenosti, času jazdy a konkrétnej taxislužby. Väčšina taxíkov má základný poplatok a cenu za kilometer. Presné cenníky si môžete overiť priamo u vybratej taxislužby.`
-  },
-  {
-    question: `Sú taxislužby v meste ${cityName} dostupné nonstop?`,
-    answer: `Väčšina taxislužieb v meste ${cityName} poskytuje služby 24 hodín denne, 7 dní v týždni. Niektoré menšie taxislužby môžu mať obmedzený prevádzkový čas. Odporúčame overiť si dostupnosť priamo u zvolenej taxislužby.`
-  },
-  {
-    question: `Môžem platiť kartou v taxi v meste ${cityName}?`,
-    answer: `Väčšina moderných taxislužieb v meste ${cityName} akceptuje platby kartou. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.`
-  },
-  {
-    question: `Ako poznám, že ide o legálnu taxislužbu v meste ${cityName}?`,
-    answer: `Naša stránka je iba databáza kontaktov na taxislužby a nie poskytovateľ ani overovateľ týchto služieb. Odporúčame vám pred jazdou si overiť legitimitu taxislužby - legálne taxi má označené vozidlo s logom, menovkou vodiča a cenníkom viditeľným v interiéri vozidla.`
-  },
-  {
-    question: `Môžem si vopred rezervovať taxi v meste ${cityName}?`,
-    answer: `Áno, väčšina taxislužieb v meste ${cityName} ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez web.`
-  }
-];
+// isVillage parameter rozlišuje medzi mestom a obcou
+export const getDefaultFAQItems = (cityName: string, isVillage: boolean = false): FAQItem[] => {
+  const locationText = isVillage ? 'v obci' : 'v meste';
+  const locationTextShort = isVillage ? 'obci' : 'meste';
+
+  return [
+    {
+      question: `Ako si objednám taxi ${locationText} ${cityName}?`,
+      answer: `Taxi ${locationText} ${cityName} si môžete objednať telefonicky, cez webovú stránku taxislužby alebo mobilnú aplikáciu. Na našej stránke nájdete kontaktné údaje na dostupné taxislužby.`
+    },
+    {
+      question: `Koľko stojí jazda taxíkom ${locationText} ${cityName}?`,
+      answer: `Cena taxislužby závisí od vzdialenosti, času jazdy a konkrétnej taxislužby. Väčšina taxíkov má základný poplatok a cenu za kilometer. Presné cenníky si môžete overiť priamo u vybratej taxislužby.`
+    },
+    {
+      question: `Sú taxislužby ${locationText} ${cityName} dostupné nonstop?`,
+      answer: `Väčšina taxislužieb ${locationText} ${cityName} poskytuje služby 24 hodín denne, 7 dní v týždni. Niektoré menšie taxislužby môžu mať obmedzený prevádzkový čas. Odporúčame overiť si dostupnosť priamo u zvolenej taxislužby.`
+    },
+    {
+      question: `Môžem platiť kartou v taxi ${locationText} ${cityName}?`,
+      answer: `Väčšina moderných taxislužieb ${locationText} ${cityName} akceptuje platby kartou. Pri objednávaní je vhodné overiť si formy platby, ktoré daná taxislužba akceptuje.`
+    },
+    {
+      question: `Ako poznám, že ide o legálnu taxislužbu ${locationText} ${cityName}?`,
+      answer: `Naša stránka je iba databáza kontaktov na taxislužby a nie poskytovateľ ani overovateľ týchto služieb. Odporúčame vám pred jazdou si overiť legitimitu taxislužby - legálne taxi má označené vozidlo s logom, menovkou vodiča a cenníkom viditeľným v interiéri vozidla.`
+    },
+    {
+      question: `Môžem si vopred rezervovať taxi ${locationText} ${cityName}?`,
+      answer: `Áno, väčšina taxislužieb ${locationText} ${cityName} ponúka možnosť vopred si rezervovať taxi na konkrétny čas. Stačí kontaktovať vybranú taxislužbu telefonicky alebo cez web.`
+    }
+  ];
+};

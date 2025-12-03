@@ -221,21 +221,24 @@ export async function generateMetadata({
       const taxiServicesList = city.taxiServices.slice(0, 3).map(s => s.name).join(', ');
       const locationText = city.isVillage ? 'v obci' : 'v meste';
       const countText = taxiCount > 5 ? `${taxiCount}+` : taxiCount > 0 ? `${taxiCount}` : '';
-      const description = countText
-        ? `Taxi ${locationText} ${city.name} (${currentYear}) - ${countText} taxislužieb s telefónnymi číslami. ${taxiServicesList ? `${taxiServicesList} a ďalšie.` : ''} Objednajte taxi jednoducho.`
-        : `Taxi ${locationText} ${city.name} (${currentYear}) - Kontakty na taxislužby. ${taxiServicesList ? `${taxiServicesList} a ďalšie.` : ''} Objednajte taxi jednoducho.`;
 
-      // Title format: "Taxi Bratislava - 15+ taxislužieb (2025) | TaxiNearMe"
+      // Pre obce (isVillage) iný formát - bez "Taxi" v nadpise
+      const titlePrefix = city.isVillage ? '' : 'Taxi ';
+      const description = countText
+        ? `${city.isVillage ? 'Taxislužba' : 'Taxi'} ${locationText} ${city.name} (${currentYear}) - ${countText} taxislužieb s telefónnymi číslami. ${taxiServicesList ? `${taxiServicesList}.` : ''} Objednajte taxi jednoducho.`
+        : `${city.isVillage ? 'Taxislužba' : 'Taxi'} ${locationText} ${city.name} (${currentYear}) - Kontakty na taxislužby. Objednajte taxi jednoducho.`;
+
+      // Title format: "Streda nad Bodrogom - 1 taxislužba (2025)" pre obce, "Taxi Bratislava - 15+ taxislužieb (2025)" pre mestá
       const titleWithCount = countText
-        ? `Taxi ${city.name} - ${countText} taxislužieb (${currentYear}) | ${siteName}`
-        : `Taxi ${city.name} - Taxislužby (${currentYear}) | ${siteName}`;
+        ? `${titlePrefix}${city.name} - ${countText} ${taxiCount === 1 ? 'taxislužba' : 'taxislužieb'} (${currentYear}) | ${siteName}`
+        : `${titlePrefix}${city.name} - Taxislužby (${currentYear}) | ${siteName}`;
 
       return {
         title: titleWithCount,
         description,
         keywords: city.keywords || [`taxi ${city.name}`, `taxislužby ${city.name}`, `taxi ${city.region}`, 'objednať taxi'],
         openGraph: {
-          title: `Taxi ${city.name} - ${countText ? countText + ' taxislužieb' : 'Spoľahlivé taxislužby'}`,
+          title: `${titlePrefix}${city.name} - ${countText ? countText + (taxiCount === 1 ? ' taxislužba' : ' taxislužieb') : 'Taxislužby'}`,
           description,
           type: 'website',
           locale: 'sk_SK',
@@ -421,10 +424,10 @@ async function UniversalListView({
       <section className="pt-4 pb-3 px-4 bg-white border-b border-gray-100">
         <div className="container mx-auto max-w-4xl">
           <h1 className="text-[28px] md:text-[32px] font-black text-foreground leading-tight">
-            Taxi {city.name}
+            {city.isVillage ? city.name : `Taxi ${city.name}`}
           </h1>
           <p className="text-sm text-foreground/60 mt-1">
-            {city.taxiServices.length} taxislužieb • {city.region}
+            {city.taxiServices.length} {city.taxiServices.length === 1 ? 'taxislužba' : 'taxislužieb'} • {city.region}
           </p>
         </div>
       </section>
@@ -641,7 +644,7 @@ async function UniversalListView({
         nearbyCities={findNearbyCitiesWithTaxis(city, 6)}
         currentCityName={city.name}
       />
-      <CityFAQ cityName={city.name} citySlug={city.slug} />
+      <CityFAQ cityName={city.name} citySlug={city.slug} isVillage={city.isVillage} />
       <HowItWorks />
       <Footer />
     </div>
@@ -845,7 +848,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
                         href={`/taxi/${city.slug}`}
                         className="mt-3 inline-block text-sm font-bold text-primary-yellow hover:underline"
                       >
-                        Zobraziť všetky taxislužby v meste {city.name} →
+                        Zobraziť všetky taxislužby {city.isVillage ? 'v obci' : 'v meste'} {city.name} →
                       </Link>
                     </CardContent>
                   </div>

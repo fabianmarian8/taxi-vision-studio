@@ -64,6 +64,7 @@ function seedPremiumTaxis() {
   let citiesWithTaxis = 0;
   let citiesWithPaidPremium = 0;
   let citiesSkippedNoTaxis = 0;
+  let citiesSkippedOnlyOne = 0;
 
   // Expiracny datum - 1 týždeň od dnes
   const expirationDate = new Date();
@@ -79,6 +80,13 @@ function seedPremiumTaxis() {
     }
 
     citiesWithTaxis++;
+
+    // Ak má mesto len 1 taxislužbu, preskočíme - nemá konkurenciu, nemá zmysel dávať Premium
+    if (city.taxiServices.length === 1) {
+      citiesSkippedOnlyOne++;
+      console.log(`[SKIP] ${city.name} - len 1 taxislužba (bez konkurencie)`);
+      return city;
+    }
 
     // Preskočiť vylúčené mestá (napr. Zvolen - má permanentné nastavenie)
     if (EXCLUDED_CITIES.includes(city.slug)) {
@@ -150,6 +158,7 @@ function seedPremiumTaxis() {
   console.log(`Celkovo miest:                  ${data.cities.length}`);
   console.log(`Miest s taxisluzami:            ${citiesWithTaxis}`);
   console.log(`Miest bez taxisluzieb:          ${citiesSkippedNoTaxis}`);
+  console.log(`Miest s len 1 taxislužbou:      ${citiesSkippedOnlyOne}`);
   console.log(`Miest s platenym Premium:       ${citiesWithPaidPremium}`);
   console.log(`Novych promo PREMIUM:           ${totalUpgraded}`);
   console.log('');
