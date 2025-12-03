@@ -45,7 +45,7 @@ const nextConfig: NextConfig = {
           ...(!isDev ? [{
             key: 'Content-Security-Policy',
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.clarity.ms https://www.google-analytics.com https://nominatim.openstreetmap.org; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.clarity.ms https://www.google-analytics.com https://nominatim.openstreetmap.org; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';",
           }] : []),
           {
             key: 'X-Content-Type-Options',

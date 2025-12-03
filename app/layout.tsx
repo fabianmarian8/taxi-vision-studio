@@ -131,12 +131,7 @@ export default function RootLayout({
         {/* Preconnect pre externe domény - zrýchľuje načítanie */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-
-        {/* Google AdSense verification meta tag */}
-        <meta name="google-adsense-account" content="ca-pub-1462378482513953" />
 
         {/* Sitemap link (z index.html line 43) */}
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -203,19 +198,6 @@ export default function RootLayout({
             });
           `}
         </Script>
-
-        {/*
-          Google AdSense
-          MUSÍ BYŤ lazyOnload pre mobilné skóre.
-          Toto je jediná cesta k 90+ bodov na mobile s AdSense.
-          Pre desktop CLS: používame CSS rezerváciu miesta (.google-auto-placed).
-        */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1462378482513953"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
 
         {/*
           Google Analytics (gtag.js)
