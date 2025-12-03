@@ -365,6 +365,7 @@ export const SearchPanel = () => {
           size="icon"
           onClick={handleSearch}
           className="rounded-[4px] h-10 w-10 md:h-12 md:w-12 flex-shrink-0"
+          aria-label="Vyhľadať"
         >
           <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
         </Button>
@@ -375,6 +376,7 @@ export const SearchPanel = () => {
           onClick={handleLocationClick}
           disabled={isLoadingLocation}
           className="rounded-[4px] h-10 w-10 md:h-12 md:w-12 disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+          aria-label="Použiť moju polohu"
         >
           {isLoadingLocation ? (
             <Loader2 className="h-4 w-4 md:h-5 md:w-5 animate-spin" />

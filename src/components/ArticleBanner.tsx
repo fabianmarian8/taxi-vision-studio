@@ -80,6 +80,7 @@ export const ArticleBanner = () => {
             size="icon"
             onClick={scrollToPrev}
             className="h-6 w-6 rounded-full"
+            aria-label="Predchádzajúci článok"
           >
             <ChevronLeft className="h-3 w-3" />
           </Button>
@@ -88,6 +89,7 @@ export const ArticleBanner = () => {
             size="icon"
             onClick={scrollToNext}
             className="h-6 w-6 rounded-full"
+            aria-label="Ďalší článok"
           >
             <ChevronRight className="h-3 w-3" />
           </Button>
@@ -133,7 +135,7 @@ export const ArticleBanner = () => {
                     <div className="p-1 bg-primary/10 rounded-md group-hover:bg-primary/20 transition-colors">
                       <Icon className="h-3 w-3 text-primary" />
                     </div>
-                    <span className="text-[11px] font-semibold text-amber-700 px-1.5 py-0.5 bg-primary/10 rounded-full">
+                    <span className="text-[11px] font-semibold text-amber-800 px-1.5 py-0.5 bg-primary/10 rounded-full">
                       {article.category}
                     </span>
                   </div>
@@ -149,7 +151,7 @@ export const ArticleBanner = () => {
                   </p>
 
                   {/* CTA */}
-                  <div className="flex items-center gap-1 text-[11px] md:text-xs font-semibold text-amber-700 group-hover:gap-2 transition-all">
+                  <div className="flex items-center gap-1 text-[11px] md:text-xs font-semibold text-amber-800 group-hover:gap-2 transition-all">
                     Čítať viac
                     <ArrowRight className="h-2.5 w-2.5 md:h-3 md:w-3" />
                   </div>

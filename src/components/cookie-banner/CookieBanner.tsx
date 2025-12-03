@@ -22,8 +22,8 @@ export const CookieBanner = () => {
   useEffect(() => {
     // Kontrola či už užívateľ dal súhlas
     if (!hasValidConsent()) {
-      // Zobraz banner po 1 sekunde (aby to nebolo hneď agresívne)
-      setTimeout(() => setIsVisible(true), 1000);
+      // Zobraz banner ihneď (bez umelého oneskorenia pre lepšie LCP)
+      setIsVisible(true);
     }
 
     // Listener pre znovu otvorenie nastavení
