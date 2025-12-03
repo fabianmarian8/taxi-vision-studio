@@ -49,7 +49,8 @@ export default function HomePage() {
                 alt="Taxi NearMe - Slovenský zoznam taxislužieb"
                 className="h-24 md:h-36 lg:h-44 xl:h-52 w-auto mx-auto rounded-2xl"
                 width={600}
-                height={300}
+                height={327}
+                sizes="(max-width: 640px) 176px, (max-width: 768px) 264px, (max-width: 1024px) 322px, 380px"
                 priority
               />
             </div>
@@ -197,18 +198,6 @@ export default function HomePage() {
 
           <div className="perspective-1000">
             <div className="relative bg-card rounded-xl md:rounded-2xl p-5 md:p-7 lg:p-10 card-3d min-h-[180px] md:min-h-[240px] flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 opacity-5">
-                {[...Array(20)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-2 h-2 bg-foreground rounded-full"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                    }}
-                  />
-                ))}
-              </div>
 
               <div className="relative z-10 text-center px-2">
                 <MapPinIcon
