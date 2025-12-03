@@ -12,13 +12,14 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Home } from "lucide-react";
 
-export interface BreadcrumbItem {
+// Premenované z BreadcrumbItem na BreadcrumbItemData aby nekolidovalo s importom
+export interface BreadcrumbItemData {
   label: string;
   href?: string;
 }
 
 interface SEOBreadcrumbsProps {
-  items: BreadcrumbItem[];
+  items: BreadcrumbItemData[];
 }
 
 export const SEOBreadcrumbs = ({ items }: SEOBreadcrumbsProps) => {

@@ -25,7 +25,7 @@ type SidebarContext = {
   setOpen: (open: boolean) => void;
   openMobile: boolean;
   setOpenMobile: (open: boolean) => void;
-  isMobile: boolean;
+  isMobile: boolean; // Vždy boolean v kontexte - undefined sa konvertuje na false
   toggleSidebar: () => void;
 };
 
@@ -97,7 +97,7 @@ const SidebarProvider = React.forwardRef<
       state,
       open,
       setOpen,
-      isMobile,
+      isMobile: isMobile ?? false, // Konvertuj undefined na false pre konzistentnosť
       openMobile,
       setOpenMobile,
       toggleSidebar,

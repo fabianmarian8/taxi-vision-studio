@@ -17,9 +17,14 @@ import { Download, Share2, FileText } from "lucide-react";
 import { toast } from "sonner";
 
 // Helper funkcia na formátovanie dátumu - konzistentná medzi SSR/CSR
+// Používame rovnaký formát ako v ArticleBanner
 const formatDate = (dateString: string): string => {
   const [year, month, day] = dateString.split('-').map(Number);
-  return `${day}. ${month}. ${year}`;
+  const months = [
+    'januára', 'februára', 'marca', 'apríla', 'mája', 'júna',
+    'júla', 'augusta', 'septembra', 'októbra', 'novembra', 'decembra'
+  ];
+  return `${day}. ${months[month - 1]} ${year}`;
 };
 
 interface PriceData {
