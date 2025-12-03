@@ -504,7 +504,8 @@ async function UniversalListView({
                           </span>
                         )}
                         {isPremium && !isPartner && (
-                          <span className="text-[10px] bg-amber-600 text-white px-1.5 py-0.5 rounded font-bold">
+                          <span className="text-[10px] bg-amber-600 text-white px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
+                            <BadgeCheck className="h-3 w-3" />
                             PREMIUM
                           </span>
                         )}
@@ -536,8 +537,6 @@ async function UniversalListView({
                         className={`flex-shrink-0 flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl font-bold text-sm transition-all active:scale-95 ${
                           isPartner
                             ? 'bg-purple-600 hover:bg-purple-700 text-white shadow-sm shadow-purple-200'
-                            : isPremium
-                            ? 'bg-amber-500 hover:bg-amber-600 text-white shadow-sm shadow-amber-200'
                             : 'bg-green-600 hover:bg-green-700 text-white shadow-sm shadow-green-200'
                         }`}
                         title={`Zavolať ${service.name}`}
