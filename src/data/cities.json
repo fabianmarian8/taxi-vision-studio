@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-03T20:52:54.466Z",
+  "lastUpdated": "2025-12-03T22:03:25.220Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -6124,7 +6124,7 @@
           "phone": "+421944551883",
           "website": null,
           "description": "Letiskové transfery",
-          "isPremium": false,
+          "isPremium": true,
           "isPromotional": false
         }
       ],
