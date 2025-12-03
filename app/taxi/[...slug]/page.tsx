@@ -504,10 +504,15 @@ async function UniversalListView({
                           </span>
                         )}
                         {isPremium && !isPartner && (
-                          <span className="text-[10px] bg-amber-600 text-white px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
-                            <BadgeCheck className="h-3 w-3" />
-                            PREMIUM
-                          </span>
+                          <>
+                            <span className="text-[10px] bg-amber-600 text-white px-1.5 py-0.5 rounded font-bold">
+                              PREMIUM
+                            </span>
+                            <span className="text-[10px] bg-green-600 text-white px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
+                              <BadgeCheck className="h-3 w-3" />
+                              OVERENÉ
+                            </span>
+                          </>
                         )}
 
                         {/* Rating - malé, len pre ne-partnerov (partneri majú veľký baner) */}
