@@ -1,4 +1,10 @@
-# Robots.txt pre taxinearme.sk
+/**
+ * Robots.txt API Route
+ * Vracia statický robots.txt - obíde Cloudflare modifikáciu
+ */
+
+export async function GET() {
+  const robotsTxt = `# Robots.txt pre taxinearme.sk
 
 User-Agent: *
 Allow: /
@@ -38,3 +44,12 @@ User-Agent: DotBot
 Disallow: /
 
 Sitemap: https://www.taxinearme.sk/sitemap.xml
+`;
+
+  return new Response(robotsTxt, {
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+    },
+  });
+}
