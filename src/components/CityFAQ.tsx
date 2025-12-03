@@ -22,6 +22,9 @@ export const CityFAQ = ({ cityName, citySlug }: CityFAQProps) => {
 
   // Pridanie FAQ Schema.org Structured Data
   useEffect(() => {
+    // Guard pre SSR - document nie je dostupný na serveri
+    if (typeof document === 'undefined') return;
+
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",

@@ -22,6 +22,9 @@ export const ArticleFAQ = ({ articleSlug, articleTitle }: ArticleFAQProps) => {
 
   // Pridanie FAQ Schema.org Structured Data
   useEffect(() => {
+    // Guard pre SSR - document nie je dostupný na serveri
+    if (typeof document === 'undefined') return;
+
     // Only add schema if we have FAQ items
     if (faqItems.length === 0) {
       return;

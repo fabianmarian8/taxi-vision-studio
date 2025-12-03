@@ -11,7 +11,8 @@ interface ShareButtonProps {
 
 export const ShareButton = ({ title, url }: ShareButtonProps) => {
   const handleShare = async () => {
-    const shareUrl = url || window.location.href;
+    // Bezpečný prístup k window.location len v event handleri (client-side)
+    const shareUrl = url || (typeof window !== 'undefined' ? window.location.href : '');
     try {
       await navigator.share({
         title,

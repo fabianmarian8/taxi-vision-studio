@@ -1,11 +1,23 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight, Newspaper } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { articles } from "@/data/articles";
+
+// Helper funkcia na formátovanie dátumu - použije sa iba na klientovi
+// Pre SSR vrátime formátovaný string priamo z dátumu
+const formatDate = (dateString: string): string => {
+  // Parsovanie YYYY-MM-DD formátu manuálne pre konzistentnosť SSR/CSR
+  const [year, month, day] = dateString.split('-').map(Number);
+  const months = [
+    'januára', 'februára', 'marca', 'apríla', 'mája', 'júna',
+    'júla', 'augusta', 'septembra', 'októbra', 'novembra', 'decembra'
+  ];
+  return `${day}. ${months[month - 1]} ${year}`;
+};
 
 export const ArticleBanner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -159,11 +171,7 @@ export const ArticleBanner = () => {
                   {/* Date */}
                   <div className="mt-auto pt-2 border-t border-foreground/10">
                     <p className="text-[10px] md:text-xs text-foreground/70">
-                      {new Date(article.date).toLocaleDateString('sk-SK', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}
+                      {formatDate(article.date)}
                     </p>
                   </div>
                 </div>

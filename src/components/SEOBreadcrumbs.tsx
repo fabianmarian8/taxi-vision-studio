@@ -25,6 +25,9 @@ export const SEOBreadcrumbs = ({ items }: SEOBreadcrumbsProps) => {
   const baseUrl = 'https://www.taxinearme.sk';
 
   useEffect(() => {
+    // Guard pre SSR - document nie je dostupný na serveri
+    if (typeof document === 'undefined') return;
+
     // Vytvorenie BreadcrumbList Schema.org Structured Data
     const breadcrumbSchema = {
       "@context": "https://schema.org",

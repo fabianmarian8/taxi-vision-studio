@@ -3,6 +3,7 @@
 /** Migrované z: src/vite-pages/PriceComparisonPage.tsx */
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Header } from "@/components/Header";
 import { GeometricLines } from "@/components/GeometricLines";
 import { PriceCalculator } from "@/components/PriceCalculator";
@@ -14,6 +15,12 @@ import { CityLinksSection } from "@/components/CityLinksSection";
 import { Button } from "@/components/ui/button";
 import { Download, Share2, FileText } from "lucide-react";
 import { toast } from "sonner";
+
+// Helper funkcia na formátovanie dátumu - konzistentná medzi SSR/CSR
+const formatDate = (dateString: string): string => {
+  const [year, month, day] = dateString.split('-').map(Number);
+  return `${day}. ${month}. ${year}`;
+};
 
 interface PriceData {
   meta: {
@@ -64,6 +71,7 @@ interface PriceData {
 }
 
 export function PriceComparisonContent() {
+  const router = useRouter();
   const [priceData, setPriceData] = useState<PriceData | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
@@ -94,22 +102,24 @@ export function PriceComparisonContent() {
   };
 
   const handleShare = async () => {
+    // Bezpečný prístup k window.location len v event handleri
+    const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
     const shareData = {
       title: 'Index cien taxislužieb na Slovensku 2025',
       text: 'Porovnanie cien taxi v slovenských mestách. Kde je najlacnejšie?',
-      url: window.location.href
+      url: currentUrl
     };
 
-    if (navigator.share) {
+    if (typeof navigator !== 'undefined' && navigator.share) {
       try {
         await navigator.share(shareData);
         toast.success('Úspešne zdieľané');
       } catch (err) {
         console.error('Error sharing:', err);
       }
-    } else {
+    } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
       // Fallback: Copy to clipboard
-      navigator.clipboard.writeText(window.location.href);
+      navigator.clipboard.writeText(currentUrl);
       toast.success('Link skopírovaný do schránky');
     }
   };
@@ -186,7 +196,7 @@ export function PriceComparisonContent() {
             </div>
 
             <p className="text-sm text-foreground/60">
-              Posledná aktualizácia: {new Date(priceData.meta.lastUpdated).toLocaleDateString('sk-SK')}
+              Posledná aktualizácia: {formatDate(priceData.meta.lastUpdated)}
             </p>
           </div>
         </div>
@@ -313,7 +323,7 @@ export function PriceComparisonContent() {
           </p>
           <Button
             size="lg"
-            onClick={() => window.location.href = '/'}
+            onClick={() => router.push('/')}
             className="text-lg px-8 py-6"
           >
             Vyhľadať taxislužby
