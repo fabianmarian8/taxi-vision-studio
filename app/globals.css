@@ -232,29 +232,9 @@
     transform-style: preserve-3d;
   }
 
-  .rotate-3d-hover {
-    /* Hover transform disabled */
-  }
-
-  .rotate-3d-hover:hover {
-    /* Hover transform disabled */
-  }
-
-  .float-3d {
-    /* Animation disabled */
-  }
-
   .line-3d {
     transform-style: preserve-3d;
     transform: perspective(1000px) rotateX(60deg) rotateZ(45deg);
-  }
-
-  .card-3d {
-    /* Hover transform disabled */
-  }
-
-  .card-3d:hover {
-    /* Hover transform disabled */
   }
 }
 
@@ -381,43 +361,24 @@
 @media (max-width: 640px) {
   /* Vypnutie náročných 3D transformácií a tieňov na mobile */
   .hero-3d-bg,
-  .card-3d,
   .shadow-3d-lg,
   .shadow-3d-xl {
-    /* Odstránenie 3D transformácií - šetrí procesor */
     transform: none !important;
-    /* Zjednodušený tieň namiesto multi-layer 3D tieňa */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
-    /* Vypnutie animácií - ďalšia úspora */
     transition: none !important;
   }
 
-  /* Zjednodušenie gradientov na mobile - čistá farba je oveľa rýchlejšia */
+  /* Zjednodušenie gradientov na mobile */
   .hero-3d-bg {
-    /* Jednoduchá oranžová farba namiesto komplexného gradientu */
     background: hsl(37, 91%, 55%) !important;
   }
 
   .hero-3d-bg::before {
-    /* Vypnutie overlay gradientu */
     display: none;
-  }
-
-  /* Vypnutie hover efektov na mobile - nemajú význam na dotykových zariadeniach */
-  .rotate-3d-hover:hover,
-  .card-3d:hover {
-    transform: none !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
-  }
-
-  /* Vypnutie animácií na mobile */
-  .float-3d {
-    animation: none;
   }
 
   /* Zjednodušenie geometrických línií */
   .geometric-line {
-    /* Jednoduchý background namiesto gradientu */
     background: rgba(15, 15, 15, 0.06) !important;
   }
 }

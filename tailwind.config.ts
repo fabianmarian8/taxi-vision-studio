@@ -58,14 +58,7 @@ export default {
         taxi: {
           yellow: "hsl(var(--taxi-yellow))",
           dark: "hsl(var(--taxi-dark))",
-          light: "hsl(var(--taxi-light))",
-          orange: "hsl(var(--taxi-orange))",
         },
-      },
-      boxShadow: {
-        'soft': 'var(--shadow-soft)',
-        'medium': 'var(--shadow-medium)',
-        'lifted': 'var(--shadow-lifted)',
       },
       borderRadius: {
         lg: "var(--radius)",
