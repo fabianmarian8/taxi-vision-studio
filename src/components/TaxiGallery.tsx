@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { X, ZoomIn } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface TaxiGalleryProps {
   images: string[];
@@ -9,50 +9,108 @@ interface TaxiGalleryProps {
 }
 
 export function TaxiGallery({ images, serviceName }: TaxiGalleryProps) {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!images || images.length === 0) return null;
 
+  const openLightbox = (index: number) => {
+    setCurrentIndex(index);
+    setLightboxOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+
+  const goNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const goPrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') goNext();
+    if (e.key === 'ArrowLeft') goPrev();
+  };
+
   return (
     <>
-      {/* Miniatúry */}
-      <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
-        {images.map((image, index) => (
+      {/* Thumbnail Grid */}
+      <div className="flex flex-wrap gap-3 justify-center">
+        {images.map((image, idx) => (
           <button
-            key={index}
-            onClick={() => setSelectedImage(image)}
-            className="relative flex-shrink-0 group"
+            key={idx}
+            onClick={() => openLightbox(idx)}
+            className="relative w-24 h-24 md:w-28 md:h-28 rounded-xl overflow-hidden group cursor-pointer transition-transform hover:scale-105 shadow-md"
           >
             <img
               src={image}
-              alt={`${serviceName} - foto ${index + 1}`}
-              className="w-[120px] h-[120px] object-cover rounded-lg border-2 border-gray-200 hover:border-green-500 transition-all"
+              alt={`${serviceName} - foto ${idx + 1}`}
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 rounded-lg transition-all flex items-center justify-center">
-              <ZoomIn className="h-5 w-5 text-white opacity-0 group-hover:opacity-100 transition-all" />
-            </div>
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
           </button>
         ))}
       </div>
 
       {/* Lightbox */}
-      {selectedImage && (
+      {lightboxOpen && (
         <div
-          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+          onClick={closeLightbox}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
         >
+          {/* Close button */}
           <button
-            onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-all"
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white/80 hover:text-white p-2 z-10"
           >
-            <X className="h-6 w-6 text-white" />
+            <X className="h-8 w-8" />
           </button>
-          <img
-            src={selectedImage}
-            alt={serviceName}
-            className="max-w-full max-h-[90vh] object-contain rounded-lg"
+
+          {/* Navigation - Previous */}
+          {images.length > 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+              className="absolute left-4 text-white/80 hover:text-white p-2 z-10"
+            >
+              <ChevronLeft className="h-10 w-10" />
+            </button>
+          )}
+
+          {/* Main Image */}
+          <div
+            className="max-w-[90vw] max-h-[85vh] relative"
             onClick={(e) => e.stopPropagation()}
-          />
+          >
+            <img
+              src={images[currentIndex]}
+              alt={`${serviceName} - foto ${currentIndex + 1}`}
+              className="max-w-full max-h-[85vh] object-contain rounded-lg"
+            />
+
+            {/* Counter */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-4 py-2 rounded-full text-sm">
+              {currentIndex + 1} / {images.length}
+            </div>
+          </div>
+
+          {/* Navigation - Next */}
+          {images.length > 1 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); goNext(); }}
+              className="absolute right-4 text-white/80 hover:text-white p-2 z-10"
+            >
+              <ChevronRight className="h-10 w-10" />
+            </button>
+          )}
         </div>
       )}
     </>

@@ -1092,7 +1092,15 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
     const heroImage = partnerData?.heroImage;
 
     return (
-      <div className="min-h-screen bg-white overflow-x-hidden">
+      <div
+        className="min-h-screen overflow-x-hidden"
+        style={{
+          backgroundImage: 'url(/textures/kraft-paper-bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+          backgroundAttachment: 'fixed'
+        }}
+      >
         <TaxiServiceSchema
           service={service}
           city={city}
@@ -1102,7 +1110,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         <Header />
 
         {/* Hero Section - Partner */}
-        <section className="bg-white pt-0 pb-8 md:pb-12">
+        <section className="pt-0 pb-8 md:pb-12">
           {/* Breadcrumbs */}
           <div className="container mx-auto max-w-4xl px-4">
             <SEOBreadcrumbs
@@ -1222,31 +1230,38 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 </a>
               )}
             </div>
+
+            {/* Gallery - under contact buttons */}
+            {service.gallery && service.gallery.length > 0 && (
+              <div className="mt-6">
+                <TaxiGallery images={service.gallery} serviceName={service.name} />
+              </div>
+            )}
           </div>
         </section>
 
         {/* Features Section */}
-        <section className="py-12 md:py-16 px-4 md:px-8 bg-white">
+        <section className="py-12 md:py-16 px-4 md:px-8">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-black text-foreground mb-8 text-center">
               Prečo si vybrať {service.name}?
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-purple-50 rounded-xl">
+              <div className="text-center p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm">
                 <div className="w-16 h-16 rounded-full bg-purple-600 flex items-center justify-center mx-auto mb-4">
                   <BadgeCheck className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="font-bold text-lg text-foreground mb-2">Overená taxislužba</h3>
                 <p className="text-foreground/70">Partner program zaručuje kvalitu a spoľahlivosť služieb.</p>
               </div>
-              <div className="text-center p-6 bg-purple-50 rounded-xl">
+              <div className="text-center p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm">
                 <div className="w-16 h-16 rounded-full bg-purple-600 flex items-center justify-center mx-auto mb-4">
                   <Phone className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="font-bold text-lg text-foreground mb-2">Rýchly kontakt</h3>
                 <p className="text-foreground/70">Jednoduché objednanie taxi telefonicky alebo cez web.</p>
               </div>
-              <div className="text-center p-6 bg-purple-50 rounded-xl">
+              <div className="text-center p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm">
                 <div className="w-16 h-16 rounded-full bg-purple-600 flex items-center justify-center mx-auto mb-4">
                   <Star className="h-8 w-8 text-white" />
                 </div>
@@ -1259,7 +1274,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
         {/* Cenník - ak má partner pricelist */}
         {partnerData?.pricelist && partnerData.pricelist.length > 0 && (
-          <section className="py-8 px-4 md:px-8">
+          <section className="py-8 px-4 md:px-8 pb-16">
             <div className="container mx-auto max-w-4xl">
               <TaxiPricelist
                 pricelist={partnerData.pricelist}

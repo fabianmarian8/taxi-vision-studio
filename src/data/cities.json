@@ -7856,7 +7856,14 @@
               {"destination": "Letisko Viedeň", "price": "250€"}
             ]
           },
-          "logo": "/logos/fast-taxi-zvolen.webp"
+          "logo": "/logos/fast-taxi-zvolen.webp",
+          "gallery": [
+            "/gallery/fast-taxi-zvolen/starostlivost.jpg",
+            "/gallery/fast-taxi-zvolen/letisko.jpg",
+            "/gallery/fast-taxi-zvolen/nakupy.jpg",
+            "/gallery/fast-taxi-zvolen/business.jpg",
+            "/gallery/fast-taxi-zvolen/vodic.jpg"
+          ]
         }
       ],
       "latitude": 48.578252,
