@@ -499,9 +499,15 @@ async function UniversalListView({
                       <div className="flex items-center gap-2 mt-1 flex-wrap">
                         {/* Badge */}
                         {isPartner && (
-                          <span className="text-[10px] bg-purple-600 text-white px-1.5 py-0.5 rounded font-bold">
-                            PARTNER
-                          </span>
+                          <>
+                            <span className="text-[10px] bg-purple-600 text-white px-1.5 py-0.5 rounded font-bold">
+                              PARTNER
+                            </span>
+                            <span className="text-[10px] bg-green-600 text-white px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
+                              <BadgeCheck className="h-3 w-3" />
+                              OVERENÉ
+                            </span>
+                          </>
                         )}
                         {isPremium && !isPartner && (
                           <>
