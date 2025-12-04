@@ -1,5 +1,12 @@
 import citiesDataJson from './cities.json';
 
+export interface PricelistItem {
+  destination: string;
+  distance?: number; // km
+  price: string;
+  note?: string;
+}
+
 export interface PartnerData {
   heroImage?: string;
   shortDescription?: string;
@@ -8,6 +15,10 @@ export interface PartnerData {
   workingHours?: string;
   googlePlaceId?: string;
   googleMapsUrl?: string;
+  pricelist?: PricelistItem[]; // Cenník taxislužby
+  pricePerKm?: string; // Cena za km (napr. "0.80€/km")
+  paymentMethods?: string[]; // Spôsoby platby
+  whatsapp?: string; // WhatsApp číslo
 }
 
 export interface TaxiService {

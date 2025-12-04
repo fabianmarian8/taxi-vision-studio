@@ -22,7 +22,7 @@ import { CityContent } from '@/components/CityContent';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { LocalBusinessSchema } from '@/components/schema/LocalBusinessSchema';
 import { TaxiServiceSchema } from '@/components/schema/TaxiServiceSchema';
-import { MapPin, Phone, Globe, Crown, ArrowLeft, Star, BadgeCheck, CheckCircle2, ArrowRight, Clock, Award, Car } from 'lucide-react';
+import { MapPin, Phone, Globe, Crown, ArrowLeft, Star, BadgeCheck, CheckCircle2, ArrowRight, Clock, Award, Car, MessageCircle } from 'lucide-react';
 import { getCityBySlug, createRegionSlug, slovakCities, getRegionBySlug, type CityData, type TaxiService, findNearbyCitiesWithTaxis } from '@/data/cities';
 import { NearbyCitiesSection } from '@/components/NearbyCitiesSection';
 import { getMunicipalityBySlug, findNearestCitiesWithTaxis, allMunicipalities, type Municipality } from '@/data/municipalities';
@@ -47,6 +47,7 @@ import { fetchGoogleReviews } from '@/lib/google-reviews';
 import { ServiceContactButtons } from '@/components/ServiceContactButtons';
 import { PhoneLink } from '@/components/PhoneLink';
 import { TaxiGallery } from '@/components/TaxiGallery';
+import { TaxiPricelist } from '@/components/TaxiPricelist';
 
 // ISR: Revalidate once per week
 export const revalidate = 604800;
@@ -455,10 +456,13 @@ async function UniversalListView({
               // Typ služby pre vizuálne odlíšenie
               const serviceType = isPartner ? 'partner' : isPremium ? 'premium' : 'standard';
 
+              // Partner hero image pre pozadie
+              const partnerHeroImage = service.partnerData?.heroImage;
+
               return (
                 <div
                   key={index}
-                  className={`py-3 px-3 transition-colors ${
+                  className={`py-3 px-3 transition-colors relative overflow-hidden ${
                     isPartner
                       ? 'bg-purple-50 hover:bg-purple-100'
                       : isPremium
@@ -466,8 +470,26 @@ async function UniversalListView({
                       : 'hover:bg-gray-50'
                   }`}
                 >
+                  {/* Partner background image - fade from middle to right */}
+                  {isPartner && partnerHeroImage && (
+                    <div
+                      className="absolute pointer-events-none"
+                      style={{
+                        top: 0,
+                        bottom: 0,
+                        left: '50%',
+                        right: 0,
+                        backgroundImage: `url(${partnerHeroImage})`,
+                        backgroundPosition: 'center 75%',
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                        maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 100%)',
+                        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 100%)'
+                      }}
+                    />
+                  )}
                   {/* Hlavný riadok - logo, názov, akcia */}
-                  <div className="flex items-center gap-3" style={{ minHeight: '56px' }}>
+                  <div className="flex items-center gap-3 relative z-10" style={{ minHeight: '56px' }}>
                   {/* Logo/Iniciály - 40x40px s fallback podľa oponenta */}
                   <Link href={`/taxi/${city.slug}/${serviceSlug}`} className="flex-shrink-0">
                     {service.logo ? (
@@ -1080,30 +1102,9 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         <Header />
 
         {/* Hero Section - Partner */}
-        <section className="pt-0 pb-8 md:pb-12 lg:pb-16 px-4 md:px-8 relative overflow-hidden min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
-          {/* Background - Image or Gradient */}
-          {heroImage ? (
-            <>
-              <div
-                className="absolute inset-0 bg-no-repeat"
-                style={{
-                  backgroundImage: `url(${heroImage})`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover'
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
-            </>
-          ) : (
-            <>
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800" />
-              {/* Decorative elements - hidden on mobile to prevent overflow */}
-              <div className="hidden md:block absolute top-0 right-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-              <div className="hidden md:block absolute bottom-0 left-0 w-64 h-64 bg-purple-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
-            </>
-          )}
-          {/* Breadcrumbs inside hero */}
-          <div className="relative z-10">
+        <section className="bg-white pt-0 pb-8 md:pb-12">
+          {/* Breadcrumbs */}
+          <div className="container mx-auto max-w-4xl px-4">
             <SEOBreadcrumbs
               items={[
                 { label: city.region, href: `/kraj/${regionSlug}` },
@@ -1113,43 +1114,113 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             />
           </div>
 
-          <div className="container mx-auto max-w-6xl relative z-10">
+          {/* Hero with constrained width */}
+          <div className="container mx-auto max-w-4xl px-4">
             <Link
               href={`/taxi/${city.slug}`}
-              className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-bold mb-6"
+              className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors font-bold mb-4"
             >
               <ArrowLeft className="h-4 w-4" />
               Späť na zoznam taxislužieb
             </Link>
 
-            <div className="text-center py-8 md:py-12">
-              {/* Badges */}
-              <div className="flex justify-center gap-2 mb-6">
-                <div className="bg-green-500 text-white text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5 ">
-                  <BadgeCheck className="h-4 w-4" />
-                  OVERENÉ
-                </div>
-                <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5 ">
-                  <Star className="h-4 w-4" />
-                  PARTNER
+            {/* Hero image container */}
+            {heroImage && (
+              <div
+                className="relative rounded-2xl overflow-hidden mb-8"
+                style={{ minHeight: '300px', maxHeight: '400px' }}
+              >
+                <div
+                  className="absolute inset-0 bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(${heroImage})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover'
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+
+                {/* Content overlay */}
+                <div className="relative z-10 flex flex-col justify-end h-full p-6 md:p-8" style={{ minHeight: '300px' }}>
+                  {/* Badges */}
+                  <div className="flex gap-2 mb-4">
+                    <div className="bg-green-500 text-white text-xs font-black px-3 py-1 rounded-full flex items-center gap-1">
+                      <BadgeCheck className="h-3 w-3" />
+                      OVERENÉ
+                    </div>
+                    <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-xs font-black px-3 py-1 rounded-full flex items-center gap-1">
+                      <Star className="h-3 w-3" />
+                      PARTNER
+                    </div>
+                  </div>
+
+                  <h1 className="text-3xl md:text-4xl font-black text-white mb-2">
+                    {service.name}
+                  </h1>
+                  <p className="text-white/90 mb-4">
+                    Profesionálna taxislužba {locationText} {city.name}
+                  </p>
                 </div>
               </div>
+            )}
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 ">
-                {service.name}
-              </h1>
-              <p className="text-xl text-white/90 mb-8">
-                Profesionálna taxislužba {locationText} {city.name}
-              </p>
+            {/* Fallback gradient hero if no image */}
+            {!heroImage && (
+              <div className="relative rounded-2xl overflow-hidden mb-8 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 p-8 md:p-12">
+                {/* Badges */}
+                <div className="flex gap-2 mb-6">
+                  <div className="bg-green-500 text-white text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5">
+                    <BadgeCheck className="h-4 w-4" />
+                    OVERENÉ
+                  </div>
+                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5">
+                    <Star className="h-4 w-4" />
+                    PARTNER
+                  </div>
+                </div>
 
-              {/* Contact buttons with GA4 tracking */}
-              <ServiceContactButtons
-                phone={service.phone}
-                website={service.website}
-                serviceName={service.name}
-                cityName={city.name}
-                variant="hero"
-              />
+                <h1 className="text-4xl md:text-5xl font-black text-white mb-4">
+                  {service.name}
+                </h1>
+                <p className="text-xl text-white/90">
+                  Profesionálna taxislužba {locationText} {city.name}
+                </p>
+              </div>
+            )}
+
+            {/* Contact buttons - outside hero for better visibility */}
+            <div className="flex flex-wrap gap-3 mb-8">
+              {service.phone && (
+                <a
+                  href={`tel:${service.phone}`}
+                  className="flex-1 min-w-[200px] flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-black text-lg px-6 py-4 rounded-xl transition-colors"
+                >
+                  <Phone className="h-5 w-5" />
+                  {service.phone}
+                </a>
+              )}
+              {partnerData?.whatsapp && (
+                <a
+                  href={`https://wa.me/${partnerData.whatsapp.replace(/[\s+]/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-4 rounded-xl transition-colors"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  WhatsApp
+                </a>
+              )}
+              {service.website && (
+                <a
+                  href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold px-6 py-4 rounded-xl transition-colors"
+                >
+                  <Globe className="h-5 w-5" />
+                  Navštíviť web
+                </a>
+              )}
             </div>
           </div>
         </section>
@@ -1186,6 +1257,20 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           </div>
         </section>
 
+        {/* Cenník - ak má partner pricelist */}
+        {partnerData?.pricelist && partnerData.pricelist.length > 0 && (
+          <section className="py-8 px-4 md:px-8">
+            <div className="container mx-auto max-w-4xl">
+              <TaxiPricelist
+                pricelist={partnerData.pricelist}
+                pricePerKm={partnerData.pricePerKm}
+                paymentMethods={partnerData.paymentMethods}
+                serviceName={service.name}
+              />
+            </div>
+          </section>
+        )}
+
         {/* Google Reviews Section - Dynamic */}
         {partnerData?.googlePlaceId && (
           <GoogleReviewsSection
@@ -1206,6 +1291,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             </p>
             <ServiceContactButtons
               phone={service.phone}
+              whatsapp={partnerData?.whatsapp}
               serviceName={service.name}
               cityName={city.name}
               variant="cta"

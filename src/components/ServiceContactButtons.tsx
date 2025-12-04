@@ -1,10 +1,11 @@
 'use client';
 
-import { Phone, Globe } from 'lucide-react';
+import { Phone, Globe, MessageCircle } from 'lucide-react';
 
 interface ServiceContactButtonsProps {
   phone?: string;
   website?: string;
+  whatsapp?: string;
   serviceName: string;
   cityName: string;
   variant?: 'hero' | 'cta';
@@ -13,6 +14,7 @@ interface ServiceContactButtonsProps {
 export function ServiceContactButtons({
   phone,
   website,
+  whatsapp,
   serviceName,
   cityName,
   variant = 'hero'
@@ -30,16 +32,45 @@ export function ServiceContactButtons({
     }
   };
 
+  const handleWhatsAppClick = () => {
+    // GA4 WhatsApp tracking
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'whatsapp_click', {
+        event_category: 'engagement',
+        event_label: `${serviceName} - ${cityName}`,
+        service_name: serviceName,
+        city_name: cityName
+      });
+    }
+  };
+
+  // Format WhatsApp number (remove spaces and +)
+  const formatWhatsApp = (num: string) => num.replace(/[\s+]/g, '');
+
   if (variant === 'cta') {
     return phone ? (
-      <a
-        href={`tel:${phone}`}
-        onClick={handlePhoneClick}
-        className="inline-flex items-center gap-3 bg-purple-900 text-white font-black text-2xl px-8 py-4 rounded-xl hover:bg-purple-800 transition-all"
-      >
-        <Phone className="h-7 w-7" />
-        {phone}
-      </a>
+      <div className="flex flex-wrap justify-center gap-4">
+        <a
+          href={`tel:${phone}`}
+          onClick={handlePhoneClick}
+          className="inline-flex items-center gap-3 bg-purple-900 text-white font-black text-2xl px-8 py-4 rounded-xl hover:bg-purple-800 transition-all"
+        >
+          <Phone className="h-7 w-7" />
+          {phone}
+        </a>
+        {whatsapp && (
+          <a
+            href={`https://wa.me/${formatWhatsApp(whatsapp)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleWhatsAppClick}
+            className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-4 rounded-xl transition-all"
+          >
+            <MessageCircle className="h-6 w-6" />
+            WhatsApp
+          </a>
+        )}
+      </div>
     ) : null;
   }
 
@@ -53,6 +84,18 @@ export function ServiceContactButtons({
         >
           <Phone className="h-6 w-6" />
           {phone}
+        </a>
+      )}
+      {whatsapp && (
+        <a
+          href={`https://wa.me/${formatWhatsApp(whatsapp)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleWhatsAppClick}
+          className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold px-6 py-4 rounded-xl transition-all"
+        >
+          <MessageCircle className="h-5 w-5" />
+          WhatsApp
         </a>
       )}
       {website && (

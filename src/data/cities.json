@@ -7820,18 +7820,41 @@
           "website": "https://zvolen-taxi.sk/",
           "isPartner": true,
           "partnerData": {
-            "heroImage": "/images/partners/fast-taxi-zvolen-hero.webp",
-            "description": "Fast Taxi Zvolen je profesionálna taxislužba s dlhoročnými skúsenosťami v oblasti osobnej prepravy. Ponúkame spoľahlivé služby 24 hodín denne, 7 dní v týždni. Naša flotila moderných vozidiel zabezpečí váš komfort a bezpečnosť na každej ceste.",
+            "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
+            "description": "Fast Taxi Zvolen je profesionálna taxislužba s dlhoročnými skúsenosťami v oblasti osobnej prepravy. Ponúkame spoľahlivé služby 24 hodín denne, 7 dní v týždni. Naša flotila moderných vozidiel zabezpečí váš komfort a bezpečnosť na každej ceste. Profesionálni vodiči, anglicky hovoriaci personál, monitorovanie letov pri letiskových transferoch.",
             "services": [
               "Nonstop služby 24/7",
               "Letiskové transfery",
               "Firemná preprava",
-              "Preprava na svadby",
-              "Diaľkové jazdy"
+              "Medzimestské transfery",
+              "Hotel Polana - pristavenie vozidla"
             ],
             "workingHours": "Nonstop 24/7",
             "googlePlaceId": "ChIJe9x_Mpk3FUcRx7LLqAwRdYo",
-            "googleMapsUrl": "https://maps.app.goo.gl/i2jYFNbQaBq9odse7"
+            "googleMapsUrl": "https://maps.app.goo.gl/i2jYFNbQaBq9odse7",
+            "whatsapp": "+421919040118",
+            "pricePerKm": "0.80€/km",
+            "paymentMethods": ["Hotovosť", "Bankový prevod", "Faktúra pre firmy"],
+            "pricelist": [
+              {"destination": "V rámci mesta Zvolen", "price": "od 3€"},
+              {"destination": "Banská Bystrica", "distance": 21, "price": "od 17€"},
+              {"destination": "Žiar nad Hronom", "distance": 25, "price": "od 23€"},
+              {"destination": "Detva", "distance": 26, "price": "od 21€"},
+              {"destination": "Krupina", "distance": 28, "price": "od 22€"},
+              {"destination": "Letisko Sliač", "price": "10€"},
+              {"destination": "Lučenec", "distance": 59, "price": "47€"},
+              {"destination": "Brezno", "distance": 63, "price": "50€"},
+              {"destination": "Ružomberok", "distance": 73, "price": "58€"},
+              {"destination": "Martin", "distance": 79, "price": "63€"},
+              {"destination": "Liptovský Mikuláš", "distance": 95, "price": "76€"},
+              {"destination": "Nitra", "distance": 102, "price": "82€"},
+              {"destination": "Žilina", "distance": 108, "price": "86€"},
+              {"destination": "Poprad", "distance": 136, "price": "109€"},
+              {"destination": "Letisko Budapešť", "price": "170€"},
+              {"destination": "Bratislava", "distance": 195, "price": "180€"},
+              {"destination": "Košice", "distance": 212, "price": "170€"},
+              {"destination": "Letisko Viedeň", "price": "250€"}
+            ]
           },
           "logo": "/logos/fast-taxi-zvolen.webp"
         }
