@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { X, Cookie, Shield, BarChart3 } from 'lucide-react';
 import {
   CookiePreferences,
@@ -138,22 +137,9 @@ export const CookieBanner = () => {
         </button>
 
         <div className="relative p-3 md:p-5">
-          {/* Header s Cookie postavičkou */}
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4 mb-3 md:mb-4">
-            {/* Cookie Character - použije sa prvý obrázok */}
-            <div className="flex-shrink-0">
-              <div className="w-12 h-12 md:w-20 md:h-20 relative">
-                <Image
-                  src="/cookie-character-1.webp"
-                  alt="Cookie maskot"
-                  className="object-contain"
-                  fill
-                  sizes="(max-width: 768px) 48px, 80px"
-                />
-              </div>
-            </div>
-
-            <div className="flex-1 text-center md:text-left">
+          {/* Header */}
+          <div className="mb-3 md:mb-4">
+            <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-1.5 md:gap-2 mb-1.5 md:mb-2">
                 <Cookie className="w-3 h-3 md:w-5 md:h-5 text-black" />
                 <h2 className="text-sm md:text-xl font-bold text-black">

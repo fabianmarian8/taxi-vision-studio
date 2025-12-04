@@ -215,6 +215,15 @@ export default function PreTaxikyPage() {
               <div className="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
                 NAJLEPŠIA HODNOTA
               </div>
+              {/* Ukážka Partner stránky */}
+              <Link
+                href="/taxi/zvolen/fast-taxi-zvolen"
+                className="absolute top-10 right-3 inline-flex items-center gap-2 text-sm text-white font-bold transition-all bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 px-4 py-2 rounded-full shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                <Eye className="h-4 w-4" />
+                Pozri ukážku
+                <ArrowRight className="h-4 w-4" />
+              </Link>
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
