@@ -16,6 +16,7 @@ export interface TaxiService {
   phone?: string;
   description?: string;
   customDescription?: string; // Vlastný text pre detail stránku (namiesto generovania)
+  logo?: string; // Cesta k logu taxislužby (napr. /logos/fast-taxi-zvolen.webp)
   isPremium?: boolean;
   isPartner?: boolean;
   isPromotional?: boolean; // Flag pre marketingové promo premium (neplatia)

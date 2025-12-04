@@ -469,17 +469,31 @@ async function UniversalListView({
                   <div className="flex items-center gap-3" style={{ minHeight: '56px' }}>
                   {/* Logo/Iniciály - 40x40px s fallback podľa oponenta */}
                   <Link href={`/taxi/${city.slug}/${serviceSlug}`} className="flex-shrink-0">
-                    <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-transform hover:scale-105 ${
-                        isPartner
-                          ? 'bg-purple-600 text-white ring-2 ring-purple-300'
-                          : isPremium
-                          ? 'bg-amber-500 text-white ring-2 ring-amber-300'
-                          : 'bg-gray-100 text-gray-700 ring-1 ring-gray-200'
-                      }`}
-                    >
-                      {initials || '?'}
-                    </div>
+                    {service.logo ? (
+                      <img
+                        src={service.logo}
+                        alt={`${service.name} logo`}
+                        className={`w-10 h-10 rounded-full object-cover transition-transform hover:scale-105 ${
+                          isPartner
+                            ? 'ring-2 ring-purple-300'
+                            : isPremium
+                            ? 'ring-2 ring-amber-300'
+                            : 'ring-1 ring-gray-200'
+                        }`}
+                      />
+                    ) : (
+                      <div
+                        className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-transform hover:scale-105 ${
+                          isPartner
+                            ? 'bg-purple-600 text-white ring-2 ring-purple-300'
+                            : isPremium
+                            ? 'bg-amber-500 text-white ring-2 ring-amber-300'
+                            : 'bg-gray-100 text-gray-700 ring-1 ring-gray-200'
+                        }`}
+                      >
+                        {initials || '?'}
+                      </div>
+                    )}
                   </Link>
 
                   {/* Stredná časť - Názov + info (hierarchia textu podľa oponenta) */}
@@ -1273,13 +1287,25 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             {/* Logo + Názov + Badge */}
             <div className="flex items-start gap-4 mb-6">
               {/* Logo/Iniciály */}
-              <div className={`flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center text-xl font-bold ${
-                isPremium
-                  ? 'bg-gradient-to-br from-amber-400 to-amber-500 text-white'
-                  : 'bg-gray-100 text-gray-700'
-              }`}>
-                {initials}
-              </div>
+              {service.logo ? (
+                <img
+                  src={service.logo}
+                  alt={`${service.name} logo`}
+                  className={`flex-shrink-0 w-16 h-16 rounded-2xl object-cover ${
+                    isPremium
+                      ? 'ring-2 ring-amber-300'
+                      : 'ring-1 ring-gray-200'
+                  }`}
+                />
+              ) : (
+                <div className={`flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center text-xl font-bold ${
+                  isPremium
+                    ? 'bg-gradient-to-br from-amber-400 to-amber-500 text-white'
+                    : 'bg-gray-100 text-gray-700'
+                }`}>
+                  {initials}
+                </div>
+              )}
 
               {/* Názov a info */}
               <div className="flex-1 min-w-0">

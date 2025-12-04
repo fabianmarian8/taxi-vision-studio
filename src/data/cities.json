@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-04T06:34:43.974Z",
+  "lastUpdated": "2025-12-04T08:14:51.138Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -7770,7 +7770,8 @@
           "name": "AIR TAXI ZVOLEN",
           "website": "https://airtaxizvolen.sk/",
           "phone": "+421 905 891 958",
-          "isPremium": true
+          "isPremium": true,
+          "logo": "/logos/air-taxi-zvolen.webp"
         },
         {
           "name": "Taxi Zvolen",
@@ -7829,7 +7830,8 @@
             "workingHours": "Nonstop 24/7",
             "googlePlaceId": "ChIJe9x_Mpk3FUcRx7LLqAwRdYo",
             "googleMapsUrl": "https://maps.app.goo.gl/i2jYFNbQaBq9odse7"
-          }
+          },
+          "logo": "/logos/fast-taxi-zvolen.webp"
         }
       ],
       "latitude": 48.578252,
