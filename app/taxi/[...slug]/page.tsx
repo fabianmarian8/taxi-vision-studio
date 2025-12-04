@@ -1325,8 +1325,16 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               <h2 className="text-lg font-bold text-gray-900 mb-4">
                 O taxislužbe
               </h2>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">{content.intro}</p>
-              <p className="text-gray-500 text-xs leading-relaxed">{content.disclaimer}</p>
+              {service.customDescription ? (
+                <div className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                  {service.customDescription}
+                </div>
+              ) : (
+                <>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{content.intro}</p>
+                  <p className="text-gray-500 text-xs leading-relaxed">{content.disclaimer}</p>
+                </>
+              )}
             </div>
           </div>
         </section>

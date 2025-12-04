@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-03T22:03:25.220Z",
+  "lastUpdated": "2025-12-04T06:34:43.974Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -8112,6 +8112,34 @@
       "latitude": 49.223467,
       "longitude": 18.739314,
       "heroImage": "/images/zilina-hero.webp"
+    },
+    {
+      "name": "Podbrezová",
+      "slug": "podbrezova",
+      "region": "Banskobystrický kraj",
+      "isVillage": true,
+      "description": "Obec v regióne Horehronie s dostupnou taxislužbou. Ski taxi servis Chopok Juh a okolie.",
+      "metaDescription": "Taxi Podbrezová - R.S.T. Taxi & Ski Taxi 6+1. Sedemmiestne taxi, letiskové transfery, SKI taxi Chopok.",
+      "keywords": [
+        "taxi podbrezová",
+        "ski taxi chopok",
+        "taxi horehronie",
+        "letiskový transfer",
+        "taxi 6+1"
+      ],
+      "taxiServices": [
+        {
+          "name": "R.S.T. Taxi & Ski Taxi 6+1",
+          "phone": "+421904334971",
+          "website": "https://taxipodbrezova.sk/",
+          "description": "Taxi 6+1 (Sedemmiestne taxi). Hotelový a letiskový transfer. SKI taxi servis Chopok Juh a okolie. Preprava osôb a batožiny v regióne Horehronie, v rámci SR a EÚ. Časová objednávka prepravy. Kuriér express - doručenie malých zásielok do 6h po celej SR. Donášková služba. Drink & drive taxi. Asistenčné služby - dodanie PHM, núdzové štartovanie vozidla. Možnosť bezkontaktnej platby.",
+          "isPremium": false,
+          "isPromotional": false,
+          "customDescription": "R.S.T. Taxi & Ski Taxi 6+1 je taxislužba pôsobiaca v obci Podbrezová a regióne Horehronie.\n\nPonúkame široké spektrum služieb:\n• Taxi 6+1 (Sedemmiestne taxi) - ideálne pre väčšie skupiny\n• Hotelový a letiskový transfer\n• SKI taxi servis Chopok Juh a okolie\n• Preprava osôb a batožiny v regióne Horehronie, v rámci SR a EÚ\n• Časová objednávka prepravy na Vami požadovaný deň a presný čas\n• Kuriér express - doručenie malých zásielok do 6h po celej SR\n• Donášková služba - nákup a doručenie tovaru\n• Drink & drive taxi\n• Asistenčné služby - dodanie PHM a prevádzkových kvapalín, núdzové štartovanie vozidla\n• Možnosť bezkontaktnej platby\n\nKontaktujte nás telefonicky alebo cez WhatsApp pre rýchlu a spoľahlivú prepravu."
+        }
+      ],
+      "latitude": 48.8147,
+      "longitude": 19.5297
     }
   ]
 }

@@ -14,6 +14,8 @@ export interface TaxiService {
   name: string;
   website?: string;
   phone?: string;
+  description?: string;
+  customDescription?: string; // Vlastný text pre detail stránku (namiesto generovania)
   isPremium?: boolean;
   isPartner?: boolean;
   isPromotional?: boolean; // Flag pre marketingové promo premium (neplatia)
