@@ -495,6 +495,13 @@ async function UniversalListView({
                         </span>
                       </div>
 
+                      {/* Partner popis - pod názvom, nad odznakmi */}
+                      {isPartner && (
+                        <p className="text-xs text-foreground/60 mt-0.5">
+                          Profesionálna preprava s dôrazom na spoľahlivosť a komfort.
+                        </p>
+                      )}
+
                       {/* Sekundárne info - menšie, šedé */}
                       <div className="flex items-center gap-2 mt-1 flex-wrap">
                         {/* Badge */}
@@ -506,9 +513,6 @@ async function UniversalListView({
                             <span className="text-[10px] bg-green-600 text-white px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
                               <BadgeCheck className="h-3 w-3" />
                               OVERENÉ
-                            </span>
-                            <span className="text-xs text-foreground/60 ml-1">
-                              Profesionálna preprava s dôrazom na spoľahlivosť a komfort.
                             </span>
                           </>
                         )}
