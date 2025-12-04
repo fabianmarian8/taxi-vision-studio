@@ -46,6 +46,7 @@ import { GoogleReviewsSection } from '@/components/GoogleReviewsSection';
 import { fetchGoogleReviews } from '@/lib/google-reviews';
 import { ServiceContactButtons } from '@/components/ServiceContactButtons';
 import { PhoneLink } from '@/components/PhoneLink';
+import { TaxiGallery } from '@/components/TaxiGallery';
 
 // ISR: Revalidate once per week
 export const revalidate = 604800;
@@ -1356,6 +1357,11 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 <Globe className="h-5 w-5" />
                 <span>Navštíviť web</span>
               </a>
+            )}
+
+            {/* Galéria fotiek */}
+            {service.gallery && service.gallery.length > 0 && (
+              <TaxiGallery images={service.gallery} serviceName={service.name} />
             )}
           </div>
         </section>

@@ -6124,6 +6124,8 @@
           "phone": "+421944551883",
           "website": null,
           "description": "Letiskové transfery",
+          "logo": "/logos/bodrog-taxi.webp",
+          "gallery": ["/logos/bodrog-taxi-banner.webp"],
           "isPremium": true,
           "isPromotional": false
         }
