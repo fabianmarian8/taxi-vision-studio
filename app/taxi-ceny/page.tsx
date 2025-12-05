@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     url: 'https://www.taxinearme.sk/taxi-ceny',
     type: 'article',
     images: [{
-      url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
+      url: 'https://www.taxinearme.sk/blog-images/porovnanie-cien.jpg',
       width: 1200,
       height: 630,
       alt: 'Porovnanie cien taxi'
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Porovnanie cien taxislužieb v slovenských mestách (2024/2025)',
     description: 'Nástupné sadzby od 0,5€ do 3,5€, kilometrové tarify od 0,8€ do 1,5€. Detailný prehľad cien taxi na Slovensku.',
-    images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
+    images: ['https://www.taxinearme.sk/blog-images/porovnanie-cien.jpg']
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/taxi-ceny',

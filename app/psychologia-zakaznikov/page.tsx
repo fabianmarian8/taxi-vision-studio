@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.taxinearme.sk/psychologia-zakaznikov',
     type: 'article',
     images: [{
-      url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
+      url: 'https://www.taxinearme.sk/blog-images/psycholog.jpg',
       width: 1200,
       height: 630,
       alt: 'Psychológia zákazníkov v taxi'
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Psychológia zákazníkov v taxi - typológia pasažierov',
     description: 'Od tichého profesionála po toxického pasažiera. Ako rozpoznať typy zákazníkov a prispôsobiť im svoju komunikáciu.',
-    images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
+    images: ['https://www.taxinearme.sk/blog-images/psycholog.jpg']
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/psychologia-zakaznikov',

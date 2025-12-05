@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.taxinearme.sk/navigacia',
     type: 'article',
     images: [{
-      url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
+      url: 'https://www.taxinearme.sk/blog-images/navigacia.jpg',
       width: 1200,
       height: 630,
       alt: 'Taxi navigácia'
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Taxi navigácia: Ako nájsť najlepšiu trasu',
     description: 'Moderné nástroje a tipy pre efektívnu navigáciu v meste.',
-    images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
+    images: ['https://www.taxinearme.sk/blog-images/navigacia.jpg']
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/navigacia',

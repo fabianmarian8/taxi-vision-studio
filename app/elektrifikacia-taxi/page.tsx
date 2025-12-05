@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.taxinearme.sk/elektrifikacia-taxi',
     type: 'article',
     images: [{
-      url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
+      url: 'https://www.taxinearme.sk/blog-images/elektricke-auta.jpg',
       width: 1200,
       height: 630,
       alt: 'Elektrifikácia taxislužby na Slovensku'
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Elektrifikácia taxislužby na Slovensku',
     description: 'Budúcnosť taxi je elektrická. Analýza trendu a výhod elektromobilov v taxislužbách.',
-    images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
+    images: ['https://www.taxinearme.sk/blog-images/elektricke-auta.jpg']
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/elektrifikacia-taxi',

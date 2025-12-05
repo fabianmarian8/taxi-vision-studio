@@ -1,4 +1,4 @@
-import { BarChart3, TrendingUp, DollarSign, MapPin, Clock, Users, FileText, Star, AlertCircle, BookOpen, MessageCircle, Zap, Brain, Navigation, AlertTriangle } from "lucide-react";
+import { BarChart3, TrendingUp, DollarSign, MapPin, Clock, Users, FileText, Star, AlertCircle, BookOpen, MessageCircle, Zap, Brain, Navigation, AlertTriangle, Scale, ShieldCheck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface Article {
@@ -15,6 +15,28 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    id: 'kontrola-financna-sprava-taxi',
+    title: 'Kontrola finančnej správy pri taxi: Čo musíte mať v poriadku',
+    excerpt: 'Kompletný prehľad čo kontroluje finančná správa pri taxi. eKasa, doklady vodiča, vozidla a sankcie 150€ - 30 000€.',
+    slug: '/kontrola-financna-sprava-taxi',
+    icon: ShieldCheck,
+    date: '2025-12-05',
+    category: 'Legislatíva',
+    featured: true,
+    image: '/blog/kontrola-financna-sprava-taxi.jpg'
+  },
+  {
+    id: 'koncesia-taxisluzba-2025',
+    title: 'Ako získať koncesiu na taxislužbu v roku 2025',
+    excerpt: 'Kompletný návod ako získať koncesiu na taxislužbu na Slovensku. Podmienky, poplatky 30€, postup krok za krokom.',
+    slug: '/koncesia-taxisluzba-2025',
+    icon: Scale,
+    date: '2025-12-05',
+    category: 'Legislatíva',
+    featured: true,
+    image: '/blog/koncesia-taxisluzba-2025.jpg'
+  },
+  {
     id: 'index-cien-2025',
     title: 'Index cien taxislužieb na Slovensku 2025',
     excerpt: 'Bratislava je najdrahšie mesto (11.70€ za 5km), Poprad najlacnejšie (5.00€). Kompletné porovnanie cien v 10 mestách.',
@@ -23,7 +45,7 @@ export const articles: Article[] = [
     date: '2025-11-18',
     category: 'Prieskum',
     featured: true,
-    image: '/blog-images/index-cien.webp'
+    image: '/blog-images/index-cien.jpg'
   },
   {
     id: 'porovnanie-cien-taxi-2024-2025',
@@ -34,7 +56,7 @@ export const articles: Article[] = [
     date: '2025-10-15',
     category: 'Blog',
     featured: true,
-    image: '/blog-images/porovnanie-cien.webp'
+    image: '/blog-images/porovnanie-cien.jpg'
   },
   {
     id: 'hodnotenie-vodicov',
@@ -45,7 +67,7 @@ export const articles: Article[] = [
     date: '2025-09-22',
     category: 'Hodnotenie',
     featured: true,
-    image: '/blog-images/hodnotenie.webp'
+    image: '/blog-images/hodnotenie.jpg'
   },
   {
     id: 'alkohol-nocny-zivot',
@@ -56,7 +78,7 @@ export const articles: Article[] = [
     date: '2025-08-07',
     category: 'Bezpečnosť',
     featured: true,
-    image: '/blog-images/alkohol.webp'
+    image: '/blog-images/alkohol.jpg'
   },
   {
     id: 'komplexny-sprievodca-taxi',
@@ -67,7 +89,7 @@ export const articles: Article[] = [
     date: '2025-07-12',
     category: 'Sprievodca',
     featured: true,
-    image: '/blog-images/sprievodca.webp'
+    image: '/blog-images/sprievodca.jpg'
   },
   {
     id: 'komunikacia-taxikar-zakaznik',
@@ -78,7 +100,7 @@ export const articles: Article[] = [
     date: '2025-06-25',
     category: 'Komunikácia',
     featured: true,
-    image: '/blog-images/komunikacia.webp'
+    image: '/blog-images/komunikacia.jpg'
   },
   {
     id: 'elektrifikacia-taxi',
@@ -89,7 +111,7 @@ export const articles: Article[] = [
     date: '2025-05-09',
     category: 'Elektrifikácia',
     featured: true,
-    image: '/blog-images/elektricke-auta.webp'
+    image: '/blog-images/elektricke-auta.jpg'
   },
   {
     id: 'psychologia-zakaznikov',
@@ -100,7 +122,7 @@ export const articles: Article[] = [
     date: '2025-04-14',
     category: 'Psychológia',
     featured: true,
-    image: '/blog-images/psycholog.webp'
+    image: '/blog-images/psycholog.jpg'
   },
   {
     id: 'taxi-navigacia',
@@ -111,7 +133,7 @@ export const articles: Article[] = [
     date: '2025-03-28',
     category: 'Navigácia',
     featured: true,
-    image: '/blog-images/navigacia.webp'
+    image: '/blog-images/navigacia.jpg'
   },
   {
     id: 'co-musi-zniest-vodic',
@@ -122,7 +144,7 @@ export const articles: Article[] = [
     date: '2025-02-11',
     category: 'Realita',
     featured: true,
-    image: '/blog-images/vodic.webp'
+    image: '/blog-images/vodic.jpg'
   },
   {
     id: 'temna-strana-bolt-uber',
@@ -133,7 +155,7 @@ export const articles: Article[] = [
     date: '2025-01-20',
     category: 'Analýza',
     featured: true,
-    image: '/blog-images/temna-strana.webp'
+    image: '/blog-images/temna-strana.jpg'
   }
 ];
 

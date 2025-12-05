@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.taxinearme.sk/komunikacia-taxikar-zakaznik',
     type: 'article',
     images: [{
-      url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
+      url: 'https://www.taxinearme.sk/blog-images/komunikacia.jpg',
       width: 1200,
       height: 630,
       alt: 'Komunikácia medzi taxikárom a zákazníkom'
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Komunikácia medzi taxikárom a zákazníkom',
     description: 'Jasné pravidlá, slušnosť a hranice, ktoré by mali poznať obe strany.',
-    images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
+    images: ['https://www.taxinearme.sk/blog-images/komunikacia.jpg']
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/komunikacia-taxikar-zakaznik',

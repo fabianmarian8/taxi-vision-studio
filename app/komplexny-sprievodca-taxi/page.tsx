@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.taxinearme.sk/komplexny-sprievodca-taxi',
     type: 'article',
     images: [{
-      url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
+      url: 'https://www.taxinearme.sk/blog-images/sprievodca.jpg',
       width: 1200,
       height: 630,
       alt: 'Komplexný sprievodca taxislužbami'
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Komplexný sprievodca taxislužbami na Slovensku (2025)',
     description: 'Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva.',
-    images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
+    images: ['https://www.taxinearme.sk/blog-images/sprievodca.jpg']
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/komplexny-sprievodca-taxi',

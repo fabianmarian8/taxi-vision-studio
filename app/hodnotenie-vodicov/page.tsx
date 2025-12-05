@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     url: 'https://www.taxinearme.sk/hodnotenie-vodicov',
     images: [
       {
-        url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
+        url: 'https://www.taxinearme.sk/blog-images/hodnotenie.jpg',
         width: 1200,
         height: 630,
-        alt: 'Taxi NearMe',
+        alt: 'Hodnotenie vodičov v taxi aplikáciách',
       },
     ],
   },
@@ -57,6 +57,7 @@ export const metadata: Metadata = {
     title: 'Ako funguje hodnotenie vodičov v taxi aplikáciách',
     description:
       'Prečo môžeš jedným klikom zničiť niekomu prácu. 4★ nie je dobré hodnotenie - je to penalizácia.',
+    images: ['https://www.taxinearme.sk/blog-images/hodnotenie.jpg'],
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/hodnotenie-vodicov',

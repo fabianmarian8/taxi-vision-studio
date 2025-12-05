@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.taxinearme.sk/alkohol-nocny-zivot',
     type: 'article',
     images: [{
-      url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
+      url: 'https://www.taxinearme.sk/blog-images/alkohol.jpg',
       width: 1200,
       height: 630,
       alt: 'Alkohol, nočný život a taxík'
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Alkohol, nočný život a taxík',
     description: 'Hranica medzi službou a záchrannou misiou. Kedy môže vodič odmietnuť jazdu a ako sa správať v noci.',
-    images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
+    images: ['https://www.taxinearme.sk/blog-images/alkohol.jpg']
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/alkohol-nocny-zivot',

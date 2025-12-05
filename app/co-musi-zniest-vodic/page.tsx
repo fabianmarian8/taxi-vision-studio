@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.taxinearme.sk/co-musi-zniest-vodic',
     type: 'article',
     images: [{
-      url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
+      url: 'https://www.taxinearme.sk/blog-images/vodic.jpg',
       width: 1200,
       height: 630,
       alt: 'Čo všetko musí zniesť vodič taxi'
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Čo všetko musí zniesť vodič taxi',
     description: 'Realita práce taxikára - výzvy, stres a každodenné situácie.',
-    images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
+    images: ['https://www.taxinearme.sk/blog-images/vodic.jpg']
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/co-musi-zniest-vodic',

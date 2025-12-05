@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: 'https://www.taxinearme.sk/porovnanie-cien-taxi-2024-2025',
     type: 'article',
     images: [{
-      url: 'https://www.taxinearme.sk/og-price-comparison.png',
+      url: 'https://www.taxinearme.sk/blog-images/index-cien.jpg',
       width: 1200,
       height: 630,
       alt: 'Index cien taxislužieb'
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Index cien taxislužieb na Slovensku 2025',
     description: 'Komplexné porovnanie cien taxi v slovenských mestách. Zistite, kde je najlacnejšie a najdrahšie cestovať taxíkom.',
-    images: ['https://www.taxinearme.sk/og-price-comparison.png']
+    images: ['https://www.taxinearme.sk/blog-images/index-cien.jpg']
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/porovnanie-cien-taxi-2024-2025',

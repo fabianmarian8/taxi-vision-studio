@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: 'https://www.taxinearme.sk/temna-strana-bolt-uber',
     type: 'article',
     images: [{
-      url: 'https://www.taxinearme.sk/taxi-nearme-logo.png',
+      url: 'https://www.taxinearme.sk/blog-images/temna-strana.jpg',
       width: 1200,
       height: 630,
       alt: 'Temná stránka Bolt/Uber'
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     site: SEO_CONSTANTS.twitterSite,
     title: 'Temná stránka Boltu a Uberu - problémy rideshare platforiem',
     description: 'Nízke provízie, neférové hodnotenie, surge pricing a problémy, o ktorých sa nehovorí. Realita rideshare platforiem.',
-    images: ['https://www.taxinearme.sk/taxi-nearme-logo.png']
+    images: ['https://www.taxinearme.sk/blog-images/temna-strana.jpg']
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/temna-strana-bolt-uber',
