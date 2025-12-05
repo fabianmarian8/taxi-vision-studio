@@ -25,6 +25,23 @@ export const TaxiServiceSchema = ({ service, city, citySlug, serviceSlug }: Taxi
   const baseUrl = 'https://www.taxinearme.sk';
   const serviceUrl = `${baseUrl}/taxi/${citySlug}/${serviceSlug}`;
 
+  // Parse street address from the service address if available
+  const parseAddress = (fullAddress: string | undefined) => {
+    if (!fullAddress) return null;
+    // Address format: "Street Name 123, City"
+    const parts = fullAddress.split(',');
+    if (parts.length >= 1) {
+      return {
+        streetAddress: parts[0].trim(),
+        // Try to extract postal code from the address (5 digits)
+        postalCode: fullAddress.match(/\d{5}/)?.[0] || undefined,
+      };
+    }
+    return null;
+  };
+
+  const parsedAddress = parseAddress(service.address);
+
   // Build TaxiService schema
   const taxiServiceSchema = {
     '@context': 'https://schema.org',
@@ -39,12 +56,14 @@ export const TaxiServiceSchema = ({ service, city, citySlug, serviceSlug }: Taxi
       name: city.name,
     },
 
-    // Address information
+    // Address information - use real address if available
     address: {
       '@type': 'PostalAddress',
+      ...(parsedAddress?.streetAddress && { streetAddress: parsedAddress.streetAddress }),
       addressLocality: city.name,
       addressRegion: city.region,
       addressCountry: 'SK',
+      ...(parsedAddress?.postalCode && { postalCode: parsedAddress.postalCode }),
     },
 
     // GPS coordinates (if available - using city's coordinates)

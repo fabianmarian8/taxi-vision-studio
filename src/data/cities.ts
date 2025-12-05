@@ -25,6 +25,8 @@ export interface TaxiService {
   name: string;
   website?: string;
   phone?: string;
+  address?: string; // Adresa taxislužby z Google Places API
+  placeId?: string; // Google Places ID pre budúce využitie
   description?: string;
   customDescription?: string; // Vlastný text pre detail stránku (namiesto generovania)
   logo?: string; // Cesta k logu taxislužby (napr. /logos/fast-taxi-zvolen.webp)

@@ -1452,7 +1452,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 </div>
                 <div className="flex items-center gap-2 mt-1 text-sm text-gray-500">
                   <MapPin className="h-4 w-4" />
-                  <span>{city.name}, {city.region}</span>
+                  <span>{service.address ? service.address : `${city.name}, ${city.region}`}</span>
                 </div>
                 {/* Overená taxislužba badge - len pre Premium/Partner */}
                 {(isPremium || isPartner) && (
