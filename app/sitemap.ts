@@ -61,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/kraj/${regionSlug}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.7,
     });
   });
 
@@ -72,28 +72,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/taxi/${district.regionSlug}/${district.slug}`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.75,
+      priority: 0.6,
     });
   });
 
-  // Stránky miest
+  // Stránky miest s taxi službami - NAJVYŠŠIA PRIORITA
   citiesData.cities.forEach((city) => {
+    // Mestá s taxi službami majú vysokú prioritu
+    const hasTaxi = city.taxiServices && city.taxiServices.length > 0;
     sitemap.push({
       url: `${baseUrl}/taxi/${city.slug}`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
+      changeFrequency: hasTaxi ? 'weekly' : 'monthly',
+      priority: hasTaxi ? 0.9 : 0.5,
     });
 
-    // Stránky jednotlivých taxislužieb
-    if (city.taxiServices && city.taxiServices.length > 0) {
+    // Stránky jednotlivých taxislužieb - vysoká priorita
+    if (hasTaxi) {
       city.taxiServices.forEach((service) => {
         const serviceSlug = createServiceSlug(service.name);
         sitemap.push({
           url: `${baseUrl}/taxi/${city.slug}/${serviceSlug}`,
           lastModified: currentDate,
           changeFrequency: 'monthly',
-          priority: 0.7,
+          priority: 0.8,
         });
       });
     }
@@ -170,7 +172,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/taxi-trasa/${route.slug}`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.65,
+      priority: 0.55,
     });
 
     // Opačný smer (to → from)
@@ -179,7 +181,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/taxi-trasa/${reversedSlug}`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.65,
+      priority: 0.55,
     });
   });
 
@@ -196,11 +198,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       if (district) {
         // Hierarchický formát: /taxi/[regionSlug]/[districtSlug]/[municipalitySlug]
+        // Nízka priorita pre obce bez taxi služieb
         sitemap.push({
           url: `${baseUrl}/taxi/${district.regionSlug}/${district.slug}/${obec.slug}`,
           lastModified: currentDate,
           changeFrequency: 'monthly',
-          priority: 0.5,
+          priority: 0.3,
         });
       }
     }

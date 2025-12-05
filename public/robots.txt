@@ -1,0 +1,11 @@
+# robots.txt for taxinearme.sk
+# https://www.taxinearme.sk
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.taxinearme.sk/sitemap.xml
+
+# Crawl-delay (optional - be gentle with the server)
+Crawl-delay: 1

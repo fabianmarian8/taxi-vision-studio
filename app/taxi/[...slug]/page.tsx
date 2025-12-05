@@ -48,6 +48,9 @@ import { ServiceContactButtons } from '@/components/ServiceContactButtons';
 import { PhoneLink } from '@/components/PhoneLink';
 import { TaxiGallery } from '@/components/TaxiGallery';
 import { TaxiPricelist } from '@/components/TaxiPricelist';
+import { MunicipalityInfo } from '@/components/MunicipalityInfo';
+import { NearbyMunicipalities } from '@/components/NearbyMunicipalities';
+import { getMunicipalityStats } from '@/lib/municipality-data';
 
 // ISR: Revalidate once per week
 export const revalidate = 604800;
@@ -785,6 +788,18 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
   const regionSlug = createRegionSlug(municipality.region);
   const actualDistrict = district || getDistrictForMunicipality(municipality);
 
+  // Get municipalities in the same district for internal linking
+  const municipalitiesInDistrict = actualDistrict
+    ? getMunicipalitiesByDistrictSlug(actualDistrict.slug)
+    : [];
+
+  // Get municipality statistics (PSČ, population, area)
+  const municipalityStats = getMunicipalityStats(
+    municipality.slug,
+    municipality.name,
+    municipality.district
+  );
+
   const breadcrumbItems = isHierarchical && actualDistrict
     ? [
         { label: municipality.region, href: `/kraj/${regionSlug}` },
@@ -986,6 +1001,30 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
           </div>
         </section>
       )}
+
+      {/* Ďalšie obce v okrese - interné prelinkovanie */}
+      {actualDistrict && municipalitiesInDistrict.length > 1 && (
+        <NearbyMunicipalities
+          currentMunicipality={municipality}
+          allMunicipalities={municipalitiesInDistrict}
+          district={actualDistrict}
+          regionSlug={regionSlug}
+          limit={12}
+        />
+      )}
+
+      {/* Informácie o obci - SEO obsah na spodku */}
+      <MunicipalityInfo
+        name={municipality.name}
+        district={municipality.district}
+        region={municipality.region}
+        slug={municipality.slug}
+        latitude={municipality.latitude}
+        longitude={municipality.longitude}
+        postalCode={municipalityStats.postalCode}
+        population={municipalityStats.population}
+        area={municipalityStats.area}
+      />
 
       <HowItWorks />
       <Footer />
