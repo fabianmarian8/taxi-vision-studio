@@ -677,21 +677,49 @@ async function UniversalListView({
       {/* Partner & Premium info banner */}
       <section className="py-8 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
-            <Crown className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-            <h3 className="font-bold text-lg text-foreground mb-2">
-              Ste taxislužba {locationText} {city.name}?
-            </h3>
-            <p className="text-sm text-foreground/60 mb-4">
-              Získajte lepšiu pozíciu a viac zákazníkov
-            </p>
-            <Link
-              href="/pre-taxiky"
-              className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm"
-            >
-              <Star className="h-4 w-4" />
-              Zobraziť ponuku
-            </Link>
+          <div
+            className="relative text-center p-8 rounded-2xl overflow-hidden shadow-lg"
+            style={{
+              backgroundImage: 'url(/images/taxi-partner-bg.jpg)',
+              backgroundSize: '99%',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundColor: 'white'
+            }}
+          >
+
+            <div className="relative z-10">
+              <h3 className="font-bold text-xl text-gray-900 mb-2">
+                Ste taxislužba {locationText} {city.name}?
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Získajte lepšiu pozíciu a viac zákazníkov
+              </p>
+              <div className="flex items-center justify-center gap-4">
+                <Link
+                  href="/pre-taxiky"
+                  className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-900 text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm shadow-lg"
+                >
+                  <Star className="h-4 w-4" />
+                  Zobraziť ponuku
+                </Link>
+                <a
+                  href="/images/taxi-partner-preview.png"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block w-20 h-20 rounded-lg overflow-hidden border-2 border-purple-400 hover:border-purple-600 transition-all shadow-lg hover:shadow-xl hover:scale-110 transform rotate-3 hover:rotate-0"
+                >
+                  <img
+                    src="/images/taxi-partner-preview.png"
+                    alt="Ukážka partnerskej stránky"
+                    className="w-full h-full object-cover"
+                  />
+                  <span className="absolute bottom-0 left-0 right-0 bg-gray-800 text-white font-bold text-xs py-1 text-center">
+                    KLIK!
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

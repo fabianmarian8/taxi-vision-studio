@@ -171,37 +171,36 @@ export default function RootLayout({
         />
 
         {/*
-          Google Consent Mode v2 - Default Denied State
-          Posúvame na afterInteractive, aby neblokoval render
+          Google Consent Mode v2 - Analytics GRANTED by default
+          Meranie beží vždy, ignoruje cookie consent
         */}
         <Script id="google-consent-mode" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
 
-            // Default stav: DENIED pre všetko okrem necessary
+            // Analytics povolené vždy - ignoruje cookie consent
             gtag('consent', 'default', {
               'ad_storage': 'denied',
               'ad_user_data': 'denied',
               'ad_personalization': 'denied',
-              'analytics_storage': 'denied',
-              'functionality_storage': 'denied',
+              'analytics_storage': 'granted',
+              'functionality_storage': 'granted',
               'personalization_storage': 'denied',
-              'security_storage': 'granted',
-              'wait_for_update': 500
+              'security_storage': 'granted'
             });
           `}
         </Script>
 
         {/*
           Google Analytics (gtag.js)
-          Načíta sa až keď je stránka hotová (lazyOnload pre lepší performance na mobile)
+          Načíta sa hneď po interaktívnosti pre presnejšie meranie
         */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XM0ES676GB"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="lazyOnload">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
