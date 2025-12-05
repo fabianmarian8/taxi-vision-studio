@@ -53,7 +53,7 @@ export default function KontrolaFinancnaSpravaTaxiPage() {
         url="https://www.taxinearme.sk/kontrola-financna-sprava-taxi"
         publishedTime="2025-12-05"
         modifiedTime="2025-12-05"
-        image="https://www.taxinearme.sk/blog/kontrola-financna-sprava-taxi.jpg"
+        imageUrl="https://www.taxinearme.sk/blog/kontrola-financna-sprava-taxi.jpg"
       />
       <Header />
 
@@ -466,32 +466,8 @@ export default function KontrolaFinancnaSpravaTaxiPage() {
 
       {/* FAQ */}
       <ArticleFAQ
-        items={[
-          {
-            question: "Aká je najčastejšia pokuta pri kontrole taxi?",
-            answer: "V akcii 'Taxi' 2025 bola najnižšia pokuta 150€ a najvyššia 3 000€. Pri opakovanom porušení môže pokuta dosiahnuť až 30 000€."
-          },
-          {
-            question: "Čo je mystery shopping pri kontrole taxi?",
-            answer: "Kontrolóri nastúpia do vozidla ako bežní zákazníci, zaplatia za jazdu a sledujú, či je tržba zaevidovaná v eKase. Po jazde sa preukážu služobnými preukazmi."
-          },
-          {
-            question: "Čo hrozí pri opakovanom porušení?",
-            answer: "Vyššia pokuta (až 30 000€), zákaz predaja alebo poskytovania služby, prípadne návrh na zrušenie živnosti pri systematickom porušovaní."
-          },
-          {
-            question: "Musím mať vo vozidle eKasu?",
-            answer: "Áno, podnikateľ v taxislužbe je povinný používať pokladnicu eKasa klient (ORP alebo VRP), evidovať tržby v reálnom čase a vydávať doklady."
-          },
-          {
-            question: "Čo ak odmietnem spolupracovať pri kontrole?",
-            answer: "Za nesúčinnosť, marenie kontroly alebo nepredloženie dokladov môže byť uložená samostatná pokuta podľa daňového poriadku."
-          },
-          {
-            question: "Koľko percent taxikárov porušilo zákon v roku 2025?",
-            answer: "Podľa finančnej správy až 86% kontrolovaných taxikárov porušilo zákonné povinnosti."
-          }
-        ]}
+        articleSlug="kontrola-financna-sprava-taxi"
+        articleTitle="Kontrola finančnou správou - Taxi"
       />
 
       {/* Back button */}

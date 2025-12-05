@@ -247,6 +247,60 @@ export const articleFAQs: Record<string, FAQItem[]> = {
     }
   ],
 
+  'koncesia-taxisluzba-2025': [
+    {
+      question: 'Koľko stojí koncesia na taxislužbu?',
+      answer: 'Správny poplatok za udelenie koncesie na taxislužbu je 30 €. Preukaz vodiča taxislužby stojí 50 €. Pri urýchlenom rozhodnutí (do 5 dní) sa platí trojnásobok poplatku.'
+    },
+    {
+      question: 'Na ako dlho sa vydáva koncesia?',
+      answer: 'Koncesia na taxislužbu sa vydáva na 10 rokov. Po uplynutí je potrebné požiadať o novú koncesiu.'
+    },
+    {
+      question: 'Potrebujem koncesiu aj keď jazdím cez Bolt alebo Uber?',
+      answer: 'Áno, digitálne platformy len sprostredkujú objednávku, ale samotná preprava je právne taxislužba. Vodič musí mať koncesiu, preukaz vodiča a vozidlo zaradené ako taxi.'
+    },
+    {
+      question: 'Môžem jazdiť taxi s českým alebo poľským EČV?',
+      answer: 'Nie, od 1. januára 2025 možno taxislužbu prevádzkovať len vozidlami evidovanými v Slovenskej republike.'
+    },
+    {
+      question: 'Aké sú pokuty za jazdu bez koncesie?',
+      answer: 'Pri porušovaní pravidiel hrozia pokuty od 100 do 15 000 €, pri opakovanom porušení až do 50 000 € a odobratie koncesie.'
+    },
+    {
+      question: 'Potrebujem odbornú spôsobilosť na taxislužbu?',
+      answer: 'Nie, od novely zákona účinnej od 1. 4. 2019 sa požiadavky na finančnú spoľahlivosť a odbornú spôsobilosť nevzťahujú na taxislužbu.'
+    }
+  ],
+
+  'kontrola-financna-sprava-taxi': [
+    {
+      question: 'Čo kontroluje finančná správa pri taxi?',
+      answer: 'Kontrolóri overujú eKasu a pokladničné doklady, preukaz vodiča taxislužby, kópiu koncesnej listiny, označenie vozidla (strešná svietidlo, cenník) a daňové priznania.'
+    },
+    {
+      question: 'Aké sú pokuty za porušenie predpisov pri taxi?',
+      answer: 'Pokuty sa pohybujú od 100 € za menšie nedostatky až po 30 000 € pri opakovanom porušení. Za jazdu bez koncesie hrozí pokuta do 15 000 € a pri recidíve až 50 000 €.'
+    },
+    {
+      question: 'Musí mať každý taxikár eKasu?',
+      answer: 'Áno, od 1. 7. 2019 je eKasa povinná pre všetkých podnikateľov v taxislužbe. Každá hotovostná platba musí byť zaznamenaná v online pokladnici.'
+    },
+    {
+      question: 'Čo ak vodič nemá pri sebe všetky doklady?',
+      answer: 'Za nepredloženie dokladov pri kontrole hrozí pokuta. Vodič musí mať vždy pri sebe preukaz vodiča taxislužby, kópiu koncesnej listiny a technický preukaz vozidla.'
+    },
+    {
+      question: 'Ako často robí finančná správa kontroly taxi?',
+      answer: 'Kontroly sú pravidelné, najmä počas celoslovenských akcií ako "Akcia TAXI". V roku 2024 boli na Slovensku odhalené stovky porušení pri takýchto kontrolách.'
+    },
+    {
+      question: 'Čo robiť počas kontroly finančnou správou?',
+      answer: 'Spolupracujte, predložte všetky požadované doklady, neodmietajte kontrolu. Pri pochybnostiach žiadajte služobný preukaz kontrolóra a zápis z kontroly.'
+    }
+  ],
+
   'temna-strana-bolt-uber': [
     {
       question: 'Prečo vodiči Bolt/Uber zarábajú menej?',

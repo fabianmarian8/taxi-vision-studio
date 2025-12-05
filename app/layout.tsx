@@ -12,7 +12,7 @@
 
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Inter, Fira_Mono } from 'next/font/google';
+import { Inter, Fira_Mono, Special_Elite } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
@@ -31,6 +31,14 @@ const firaMono = Fira_Mono({
   weight: ['400', '500', '700'],
   display: 'swap',
   variable: '--font-fira-mono',
+});
+
+// Special Elite - typewriter font pre články
+const specialElite = Special_Elite({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-typewriter',
 });
 
 // Metadata API - SEO optimalizácia (migrované z index.html lines 3-43)
@@ -120,7 +128,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sk" suppressHydrationWarning className={`${inter.variable} ${firaMono.variable}`}>
+    <html lang="sk" suppressHydrationWarning className={`${inter.variable} ${firaMono.variable} ${specialElite.variable}`}>
       <head>
         {/* Preconnect pre externe domény - zrýchľuje načítanie */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />

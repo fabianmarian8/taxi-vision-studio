@@ -53,7 +53,7 @@ export default function KoncesiaTaxisluzbaPage() {
         url="https://www.taxinearme.sk/koncesia-taxisluzba-2025"
         publishedTime="2025-12-05"
         modifiedTime="2025-12-05"
-        image="https://www.taxinearme.sk/blog/koncesia-taxisluzba-2025.jpg"
+        imageUrl="https://www.taxinearme.sk/blog/koncesia-taxisluzba-2025.jpg"
       />
       <Header />
 
@@ -476,32 +476,8 @@ export default function KoncesiaTaxisluzbaPage() {
 
       {/* FAQ */}
       <ArticleFAQ
-        items={[
-          {
-            question: "Koľko stojí koncesia na taxislužbu?",
-            answer: "Správny poplatok za udelenie koncesie na taxislužbu je 30 €. Preukaz vodiča taxislužby stojí 50 €. Pri urýchlenom rozhodnutí (do 5 dní) sa platí trojnásobok poplatku."
-          },
-          {
-            question: "Na ako dlho sa vydáva koncesia?",
-            answer: "Koncesia na taxislužbu sa vydáva na 10 rokov. Po uplynutí je potrebné požiadať o novú koncesiu."
-          },
-          {
-            question: "Potrebujem koncesiu aj keď jazdím cez Bolt alebo Uber?",
-            answer: "Áno, digitálne platformy len sprostredkujú objednávku, ale samotná preprava je právne taxislužba. Vodič musí mať koncesiu, preukaz vodiča a vozidlo zaradené ako taxi."
-          },
-          {
-            question: "Môžem jazdiť taxi s českým alebo poľským EČV?",
-            answer: "Nie, od 1. januára 2025 možno taxislužbu prevádzkovať len vozidlami evidovanými v Slovenskej republike."
-          },
-          {
-            question: "Aké sú pokuty za jazdu bez koncesie?",
-            answer: "Pri porušovaní pravidiel hrozia pokuty od 100 do 15 000 €, pri opakovanom porušení až do 50 000 € a odobratie koncesie."
-          },
-          {
-            question: "Potrebujem odbornú spôsobilosť na taxislužbu?",
-            answer: "Nie, od novely zákona účinnej od 1. 4. 2019 sa požiadavky na finančnú spoľahlivosť a odbornú spôsobilosť nevzťahujú na taxislužbu."
-          }
-        ]}
+        articleSlug="koncesia-taxisluzba-2025"
+        articleTitle="Koncesia na taxislužbu 2025"
       />
 
       {/* Back button */}
