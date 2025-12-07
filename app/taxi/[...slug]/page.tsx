@@ -1427,7 +1427,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
   return (
     <>
-      <div className="min-h-screen bg-gray-50 overflow-x-hidden pb-20 md:pb-0">
+      {/* pb-24 na mobile pre sticky footer (80px footer + safe area) */}
+      <div className="min-h-screen bg-gray-50 overflow-x-hidden pb-24 md:pb-0">
         <TaxiServiceSchema
           service={service}
           city={city}

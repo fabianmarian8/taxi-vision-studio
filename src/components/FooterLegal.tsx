@@ -42,6 +42,13 @@ export const FooterLegal = () => {
               Obchodné podmienky
             </Link>
             <Link
+              href="/o-nas"
+              className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors"
+              title="O nás - náš tím a príbeh"
+            >
+              O nás
+            </Link>
+            <Link
               href="/kontakt"
               className="text-sm text-foreground font-bold hover:text-foreground/70 transition-colors"
               title="Kontaktný formulár"

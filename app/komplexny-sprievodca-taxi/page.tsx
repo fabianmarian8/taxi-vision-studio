@@ -11,6 +11,7 @@ import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { ArticleSchema } from '@/components/schema/ArticleSchema';
+import { ArticleAuthor } from '@/components/ArticleAuthor';
 
 export const metadata: Metadata = {
   title: 'Komplexný sprievodca taxislužbami na Slovensku | TaxiNearMe.sk',
@@ -69,7 +70,7 @@ export default function KomplexnySprievodcaPage() {
 
         <div className="container mx-auto max-w-4xl relative z-10">
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex flex-wrap items-center gap-3 mb-2">
             <span className="px-1.5 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-semibold">
               <BookOpen className="h-2.5 w-2.5 inline mr-1" />
               Sprievodca
@@ -78,6 +79,8 @@ export default function KomplexnySprievodcaPage() {
               <Calendar className="h-2.5 w-2.5" />
               15. január 2025
             </div>
+            <div className="hidden sm:block text-foreground/30">•</div>
+            <ArticleAuthor variant="inline" />
           </div>
 
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-foreground leading-tight">
@@ -452,6 +455,12 @@ export default function KomplexnySprievodcaPage() {
                   </Button>
                 </Link>
               </div>
+            </div>
+
+            {/* Autor článku */}
+            <div className="mt-12 pt-8 border-t border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">O autorovi</h3>
+              <ArticleAuthor variant="card" showBio />
             </div>
           </article>
 

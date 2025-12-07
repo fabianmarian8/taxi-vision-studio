@@ -101,7 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   });
 
-  // Právne stránky
+  // Právne stránky a info stránky
   const legalPages = [
     { path: '/ochrana-sukromia', priority: 0.3 },
     { path: '/cookies', priority: 0.3 },
@@ -109,6 +109,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/obchodne-podmienky', priority: 0.3 },
     { path: '/kontakt', priority: 0.5 },
     { path: '/pre-taxiky', priority: 0.6 },
+    { path: '/o-nas', priority: 0.6 },
   ];
 
   legalPages.forEach((page) => {

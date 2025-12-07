@@ -9,6 +9,7 @@ import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { ArticleSchema } from '@/components/schema/ArticleSchema';
+import { ArticleAuthor } from '@/components/ArticleAuthor';
 
 export const metadata: Metadata = {
   title: 'Ako získať koncesiu na taxislužbu v roku 2025 (Slovensko) | TaxiNearMe.sk',
@@ -67,7 +68,7 @@ export default function KoncesiaTaxisluzbaPage() {
 
         <div className="container mx-auto max-w-4xl relative z-10">
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex flex-wrap items-center gap-3 mb-2">
             <span className="px-1.5 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-semibold">
               <Scale className="h-2.5 w-2.5 inline mr-1" />
               Legislatíva
@@ -76,6 +77,8 @@ export default function KoncesiaTaxisluzbaPage() {
               <Calendar className="h-2.5 w-2.5" />
               5. december 2025
             </div>
+            <div className="hidden sm:block text-foreground/30">•</div>
+            <ArticleAuthor variant="inline" />
           </div>
 
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-foreground leading-tight">
@@ -469,6 +472,12 @@ export default function KoncesiaTaxisluzbaPage() {
               <li><a href="https://www.minv.sk/?subor=327198&vzory-ziadosti-taxi-a-podnikanie-v-cestnej-doprave=" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Ministerstvo vnútra SR – Správne poplatky TAXI</a></li>
               <li><a href="https://www.akmv.sk/licencia-na-taxisluzbu-ako-ju-vybavit-postup-a-poplatky/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">AKMV – Licencia na taxislužbu – postup a poplatky</a></li>
             </ul>
+
+            {/* Autor článku */}
+            <div className="mt-12 pt-8 border-t border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">O autorovi</h3>
+              <ArticleAuthor variant="card" showBio />
+            </div>
 
           </article>
         </div>

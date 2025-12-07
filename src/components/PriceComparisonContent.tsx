@@ -15,6 +15,7 @@ import { CityLinksSection } from "@/components/CityLinksSection";
 import { Button } from "@/components/ui/button";
 import { Download, Share2, FileText } from "lucide-react";
 import { toast } from "sonner";
+import { ArticleAuthor } from "@/components/ArticleAuthor";
 
 // Helper funkcia na formátovanie dátumu - konzistentná medzi SSR/CSR
 // Používame rovnaký formát ako v ArticleBanner
@@ -200,9 +201,11 @@ export function PriceComparisonContent() {
               </Button>
             </div>
 
-            <p className="text-sm text-foreground/60">
-              Posledná aktualizácia: {formatDate(priceData.meta.lastUpdated)}
-            </p>
+            <div className="flex items-center justify-center gap-3 text-sm text-foreground/60">
+              <span>Posledná aktualizácia: {formatDate(priceData.meta.lastUpdated)}</span>
+              <span className="hidden sm:block">•</span>
+              <ArticleAuthor variant="inline" />
+            </div>
           </div>
         </div>
       </section>
@@ -314,6 +317,16 @@ export function PriceComparisonContent() {
 
       {/* City Links Section */}
       <CityLinksSection />
+
+      {/* Autor článku */}
+      <section className="py-12 md:py-16 px-4 md:px-8 relative">
+        <div className="container mx-auto max-w-4xl">
+          <div className="border-t border-foreground/10 pt-8">
+            <h3 className="text-lg font-bold text-foreground mb-4">O autorovi</h3>
+            <ArticleAuthor variant="card" showBio />
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-12 md:py-16 px-4 md:px-8 relative hero-3d-bg">

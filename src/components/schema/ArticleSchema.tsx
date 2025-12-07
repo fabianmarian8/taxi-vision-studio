@@ -4,9 +4,12 @@
  * Generates Schema.org Article/BlogPosting structured data for blog articles.
  * This helps Google understand the article content and improves
  * visibility in search results with rich snippets.
+ *
+ * E-E-A-T: Author je teraz Person s prepojením na /o-nas stránku
  */
 
 import Script from 'next/script';
+import { authorData } from '@/components/ArticleAuthor';
 
 interface ArticleSchemaProps {
   title: string;
@@ -14,7 +17,6 @@ interface ArticleSchemaProps {
   url: string;
   publishedTime: string;
   modifiedTime?: string;
-  authorName?: string;
   imageUrl?: string;
 }
 
@@ -24,7 +26,6 @@ export const ArticleSchema = ({
   url,
   publishedTime,
   modifiedTime,
-  authorName = 'Taxi NearMe',
   imageUrl = 'https://www.taxinearme.sk/og-image.png',
 }: ArticleSchemaProps) => {
   const articleSchema = {
@@ -36,13 +37,15 @@ export const ArticleSchema = ({
     datePublished: publishedTime,
     dateModified: modifiedTime || publishedTime,
     author: {
-      '@type': 'Organization',
-      name: authorName,
-      url: 'https://www.taxinearme.sk',
+      '@type': 'Person',
+      name: authorData.name,
+      jobTitle: authorData.role,
+      url: 'https://www.taxinearme.sk/o-nas',
+      image: `https://www.taxinearme.sk${authorData.image}`,
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Taxi NearMe',
+      name: 'TaxiNearMe.sk',
       url: 'https://www.taxinearme.sk',
       logo: {
         '@type': 'ImageObject',

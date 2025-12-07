@@ -70,6 +70,13 @@ export const Header = () => {
               Ako to funguje
             </a>
             <Link
+              href="/o-nas"
+              className="text-sm font-bold hover:text-foreground/70 transition-colors"
+              title="O nás"
+            >
+              O nás
+            </Link>
+            <Link
               href="/kontakt"
               className="text-sm font-bold hover:text-foreground/70 transition-colors"
               title="Kontaktujte nás"
@@ -126,6 +133,14 @@ export const Header = () => {
             >
               Ako to funguje
             </a>
+            <Link
+              href="/o-nas"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="min-h-[44px] flex items-center px-4 text-base font-bold hover:bg-foreground/5 rounded-lg transition-colors"
+              title="O nás"
+            >
+              O nás
+            </Link>
             <Link
               href="/kontakt"
               onClick={() => setIsMobileMenuOpen(false)}

@@ -9,6 +9,7 @@ import { SEOBreadcrumbs } from "@/components/SEOBreadcrumbs";
 import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { ArticleSchema } from '@/components/schema/ArticleSchema';
+import { ArticleAuthor } from '@/components/ArticleAuthor';
 
 export const metadata: Metadata = {
   title: 'Čo kontroluje finančná správa pri taxi - eKasa, doklady, pokuty | TaxiNearMe.sk',
@@ -67,7 +68,7 @@ export default function KontrolaFinancnaSpravaTaxiPage() {
 
         <div className="container mx-auto max-w-4xl relative z-10">
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex flex-wrap items-center gap-3 mb-2">
             <span className="px-1.5 py-0.5 bg-red-100 text-red-700 rounded-full text-[10px] font-semibold">
               <Shield className="h-2.5 w-2.5 inline mr-1" />
               Kontroly
@@ -76,6 +77,8 @@ export default function KontrolaFinancnaSpravaTaxiPage() {
               <Calendar className="h-2.5 w-2.5" />
               5. december 2025
             </div>
+            <div className="hidden sm:block text-foreground/30">•</div>
+            <ArticleAuthor variant="inline" />
           </div>
 
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-3 text-foreground leading-tight">
@@ -459,6 +462,12 @@ export default function KontrolaFinancnaSpravaTaxiPage() {
               <li><a href="https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2012/56/20220521" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Zákon č. 56/2012 Z. z. o cestnej doprave</a></li>
               <li><a href="https://www.financnasprava.sk/sk/pre-media/novinky/archiv-noviniek/detail-novinky/_kontrol-akcia-navrat2-ts/bc" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Finančná správa SR – Kontrolná akcia „Návrat 2"</a></li>
             </ul>
+
+            {/* Autor článku */}
+            <div className="mt-12 pt-8 border-t border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">O autorovi</h3>
+              <ArticleAuthor variant="card" showBio />
+            </div>
 
           </article>
         </div>
