@@ -6,5 +6,8 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-# Sitemap location
+# Sitemap locations (segmented for better crawl efficiency)
 Sitemap: https://www.taxinearme.sk/sitemap.xml
+Sitemap: https://www.taxinearme.sk/sitemap-cities/sitemap.xml
+Sitemap: https://www.taxinearme.sk/sitemap-routes/sitemap.xml
+Sitemap: https://www.taxinearme.sk/sitemap-municipalities/sitemap.xml

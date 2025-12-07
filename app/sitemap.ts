@@ -1,52 +1,31 @@
 /**
- * Sitemap - Next.js App Router
- *
- * Migrované z: api/sitemap.xml.js
+ * Sitemap - Základné stránky (Homepage, Legal, Blog, Kraje, Okresy)
  *
  * Next.js automaticky generuje /sitemap.xml z tohto súboru
+ * Ďalšie sitemapy:
+ * - /sitemap-cities/sitemap.xml - Mestá s taxi (~1000 URL)
+ * - /sitemap-routes/sitemap.xml - Taxi trasy (~870 URL)
+ * - /sitemap-municipalities/sitemap.xml - Obce (~2900 URL)
  */
 
 import { MetadataRoute } from 'next';
 import citiesData from '@/data/cities.json';
-import { allMunicipalities } from '@/data/municipalities';
-import { getDistrictForMunicipality, getAllDistricts } from '@/data/districts';
+import { getAllDistricts } from '@/data/districts';
 import { createRegionSlug } from '@/data/cities';
-import routePagesData from '../src/data/route-pages.json';
-import cityRoutesData from '../src/data/city-routes.json';
 
-// Performance optimization: Cache sitemap for 24 hours
-export const revalidate = 86400; // 24 hours in seconds
-
-// Use Node.js runtime for better performance with large data
+export const revalidate = 86400; // 24 hours
 export const runtime = 'nodejs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.taxinearme.sk';
   const currentDate = new Date();
 
-  // Helper funkcia pre vytvorenie slug z názvu taxislužby (cached)
-  const slugCache = new Map<string, string>();
-  const createServiceSlug = (serviceName: string): string => {
-    if (slugCache.has(serviceName)) {
-      return slugCache.get(serviceName)!;
-    }
-    const slug = serviceName
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)/g, '');
-    slugCache.set(serviceName, slug);
-    return slug;
-  };
-
   // Získanie unikátnych regiónov
   const regions = [...new Set(citiesData.cities.map((city) => city.region))].sort();
 
-  // Pre-allocate array s približným počtom URL (performance)
   const sitemap: MetadataRoute.Sitemap = [];
 
-  // Homepage
+  // Homepage - NAJVYŠŠIA PRIORITA
   sitemap.push({
     url: baseUrl,
     lastModified: currentDate,
@@ -74,31 +53,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.6,
     });
-  });
-
-  // Stránky miest s taxi službami - NAJVYŠŠIA PRIORITA
-  citiesData.cities.forEach((city) => {
-    // Mestá s taxi službami majú vysokú prioritu
-    const hasTaxi = city.taxiServices && city.taxiServices.length > 0;
-    sitemap.push({
-      url: `${baseUrl}/taxi/${city.slug}`,
-      lastModified: currentDate,
-      changeFrequency: hasTaxi ? 'weekly' : 'monthly',
-      priority: hasTaxi ? 0.9 : 0.5,
-    });
-
-    // Stránky jednotlivých taxislužieb - vysoká priorita
-    if (hasTaxi) {
-      city.taxiServices.forEach((service) => {
-        const serviceSlug = createServiceSlug(service.name);
-        sitemap.push({
-          url: `${baseUrl}/taxi/${city.slug}/${serviceSlug}`,
-          lastModified: currentDate,
-          changeFrequency: 'monthly',
-          priority: 0.8,
-        });
-      });
-    }
   });
 
   // Právne stránky a info stránky
@@ -136,7 +90,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/porovnanie-cien-taxi-2024-2025',
     '/koncesia-taxisluzba-2025',
     '/kontrola-financna-sprava-taxi',
-    // Odstránené: '/prieskum-cien-taxisluzieb-slovensko-2025' - je to redirect, nepatrí do sitemap
   ];
 
   blogArticles.forEach((article) => {
@@ -146,68 +99,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     });
-  });
-
-  // Route pages (špeciálne taxi trasy - letisko, atď.)
-  routePagesData.routes.forEach((route) => {
-    sitemap.push({
-      url: `${baseUrl}/trasa/${route.slug}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    });
-  });
-
-  // Hub stránka pre taxi trasy
-  sitemap.push({
-    url: `${baseUrl}/taxi-trasa`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  });
-
-  // City-to-city routes (taxi-trasa) - 870 kombinácií TOP 30 miest (oba smery)
-  cityRoutesData.routes.forEach((route: { slug: string; from: { slug: string }; to: { slug: string } }) => {
-    // Originálny smer (from → to)
-    sitemap.push({
-      url: `${baseUrl}/taxi-trasa/${route.slug}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.55,
-    });
-
-    // Opačný smer (to → from)
-    const reversedSlug = `${route.to.slug}-${route.from.slug}`;
-    sitemap.push({
-      url: `${baseUrl}/taxi-trasa/${reversedSlug}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.55,
-    });
-  });
-
-  // Pridanie všetkých slovenských obcí (~2900) v hierarchickom formáte
-  // /taxi/[kraj]/[okres]/[obec]
-  // Filtrujeme duplicity - obce, ktoré už sú v Tier 1 mestách
-  const existingSlugs = new Set(citiesData.cities.map((c) => c.slug));
-
-  allMunicipalities.forEach((obec) => {
-    // Pridať iba ak už nie je pokryté v hlavnom zozname miest
-    if (!existingSlugs.has(obec.slug)) {
-      // Získať district pre správny hierarchický URL formát
-      const district = getDistrictForMunicipality(obec);
-
-      if (district) {
-        // Hierarchický formát: /taxi/[regionSlug]/[districtSlug]/[municipalitySlug]
-        // Nízka priorita pre obce bez taxi služieb
-        sitemap.push({
-          url: `${baseUrl}/taxi/${district.regionSlug}/${district.slug}/${obec.slug}`,
-          lastModified: currentDate,
-          changeFrequency: 'monthly',
-          priority: 0.3,
-        });
-      }
-    }
   });
 
   return sitemap;
