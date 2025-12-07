@@ -85,32 +85,34 @@ export const Header = () => {
             </Link>
           </nav>
 
-          {/* +pridať button */}
-          <button
-            onClick={() => setIsContactModalOpen(true)}
-            className="home-button"
-          >
-            <span>+</span>
-            <span>p</span>
-            <span>r</span>
-            <span>i</span>
-            <span>d</span>
-            <span>a</span>
-            <span>ť</span>
-          </button>
+          {/* Pravá strana: +pridať a hamburger vedľa seba */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setIsContactModalOpen(true)}
+              className="home-button"
+            >
+              <span>+</span>
+              <span>p</span>
+              <span>r</span>
+              <span>i</span>
+              <span>d</span>
+              <span>a</span>
+              <span>ť</span>
+            </button>
 
-          {/* Mobile: hamburger menu - úplne vpravo */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center text-foreground hover:text-foreground/70 transition-colors"
-            aria-label="Toggle mobile menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+            {/* Mobile: hamburger menu */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center text-foreground hover:text-foreground/70 transition-colors"
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
