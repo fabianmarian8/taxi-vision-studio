@@ -85,10 +85,10 @@ export const Header = () => {
             </Link>
           </nav>
 
-          {/* Desktop: +pridať button */}
+          {/* +pridať button */}
           <button
             onClick={() => setIsContactModalOpen(true)}
-            className="hidden md:flex home-button"
+            className="home-button"
           >
             <span>+</span>
             <span>p</span>
@@ -99,32 +99,18 @@ export const Header = () => {
             <span>ť</span>
           </button>
 
-          {/* Mobile: +pridať a hamburger */}
-          <div className="flex md:hidden items-center gap-2">
-            <button
-              onClick={() => setIsContactModalOpen(true)}
-              className="home-button"
-            >
-              <span>+</span>
-              <span>p</span>
-              <span>r</span>
-              <span>i</span>
-              <span>d</span>
-              <span>a</span>
-              <span>ť</span>
-            </button>
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="min-h-[44px] min-w-[44px] flex items-center justify-center text-foreground hover:text-foreground/70 transition-colors"
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
-          </div>
+          {/* Mobile: hamburger menu - úplne vpravo */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center text-foreground hover:text-foreground/70 transition-colors"
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
         </div>
       </div>
 
