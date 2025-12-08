@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-08T06:41:11.381Z",
+  "lastUpdated": "2025-12-08T21:35:00.385Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -10053,7 +10053,8 @@
           "isPromotional": false,
           "customDescription": "R.S.T. Taxi & Ski Taxi 6+1 je taxislužba pôsobiaca v obci Podbrezová a regióne Horehronie.\n\nPonúkame široké spektrum služieb:\n• Taxi 6+1 (Sedemmiestne taxi) - ideálne pre väčšie skupiny\n• Hotelový a letiskový transfer\n• SKI taxi servis Chopok Juh a okolie\n• Preprava osôb a batožiny v regióne Horehronie, v rámci SR a EÚ\n• Časová objednávka prepravy na Vami požadovaný deň a presný čas\n• Kuriér express - doručenie malých zásielok do 6h po celej SR\n• Donášková služba - nákup a doručenie tovaru\n• Drink & drive taxi\n• Asistenčné služby - dodanie PHM a prevádzkových kvapalín, núdzové štartovanie vozidla\n• Možnosť bezkontaktnej platby\n\nKontaktujte nás telefonicky alebo cez WhatsApp pre rýchlu a spoľahlivú prepravu.",
           "address": "Kolkáreň 17/22, Podbrezová",
-          "placeId": "ChIJfS9BuBxvFUcRbujx0MIqcCk"
+          "placeId": "ChIJfS9BuBxvFUcRbujx0MIqcCk",
+          "isPartner": true
         }
       ],
       "latitude": 48.8147,
