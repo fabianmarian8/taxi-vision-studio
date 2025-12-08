@@ -23,7 +23,6 @@ import { GeometricLines } from '@/components/GeometricLines';
 import { ArticleBanner } from '@/components/ArticleBanner';
 import { AlphabeticalCityList } from '@/components/AlphabeticalCityList';
 import { getRegionsData } from '@/data/cities';
-import taxiLogo from '@/assets/taxi-nearme-logo.webp';
 import routePagesData from '../src/data/route-pages.json';
 
 // Note: Globálna metadata je definovaná v app/layout.tsx
@@ -42,10 +41,10 @@ export default function HomePage() {
         <GeometricLines variant="hero" count={10} />
         <div className="container mx-auto max-w-6xl relative">
           <div className="text-center space-y-2 md:space-y-3">
-            {/* Taxi Logo */}
+            {/* Taxi Logo - preloaded v layout.tsx pre lepšie LCP */}
             <div className="mb-0">
               <Image
-                src={taxiLogo}
+                src="/taxi-nearme-logo.webp"
                 alt="Taxi NearMe - Slovenský zoznam taxislužieb"
                 className="h-24 md:h-36 lg:h-44 xl:h-52 w-auto mx-auto rounded-2xl"
                 width={600}

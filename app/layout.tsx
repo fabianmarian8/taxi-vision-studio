@@ -130,10 +130,21 @@ export default function RootLayout({
   return (
     <html lang="sk" suppressHydrationWarning className={`${inter.variable} ${firaMono.variable} ${specialElite.variable}`}>
       <head>
+        {/* LCP Optimalizácia: Preload hero obrázka */}
+        <link
+          rel="preload"
+          as="image"
+          type="image/webp"
+          href="/taxi-nearme-logo.webp"
+          fetchPriority="high"
+        />
+
         {/* Preconnect pre externe domény - zrýchľuje načítanie */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://nominatim.openstreetmap.org" />
 
         {/* Sitemap link (z index.html line 43) */}
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -202,11 +213,11 @@ export default function RootLayout({
 
         {/*
           Google Analytics (gtag.js)
-          Načíta sa hneď po interaktívnosti pre presnejšie meranie
+          lazyOnload - načíta sa až po plnom načítaní stránky (lepší LCP)
         */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XM0ES676GB"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
