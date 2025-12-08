@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-08T21:35:00.385Z",
+"lastUpdated": "2025-12-08T21:35:00.385Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -10048,13 +10048,34 @@
           "name": "R.S.T. Taxi & Ski Taxi 6+1",
           "phone": "+421904334971",
           "website": "https://taxipodbrezova.sk/",
+          "logo": "/logos/rst-taxi-podbrezova.webp",
           "description": "Taxi 6+1 (Sedemmiestne taxi). Hotelový a letiskový transfer. SKI taxi servis Chopok Juh a okolie. Preprava osôb a batožiny v regióne Horehronie, v rámci SR a EÚ. Časová objednávka prepravy. Kuriér express - doručenie malých zásielok do 6h po celej SR. Donášková služba. Drink & drive taxi. Asistenčné služby - dodanie PHM, núdzové štartovanie vozidla. Možnosť bezkontaktnej platby.",
           "isPremium": false,
           "isPromotional": false,
           "customDescription": "R.S.T. Taxi & Ski Taxi 6+1 je taxislužba pôsobiaca v obci Podbrezová a regióne Horehronie.\n\nPonúkame široké spektrum služieb:\n• Taxi 6+1 (Sedemmiestne taxi) - ideálne pre väčšie skupiny\n• Hotelový a letiskový transfer\n• SKI taxi servis Chopok Juh a okolie\n• Preprava osôb a batožiny v regióne Horehronie, v rámci SR a EÚ\n• Časová objednávka prepravy na Vami požadovaný deň a presný čas\n• Kuriér express - doručenie malých zásielok do 6h po celej SR\n• Donášková služba - nákup a doručenie tovaru\n• Drink & drive taxi\n• Asistenčné služby - dodanie PHM a prevádzkových kvapalín, núdzové štartovanie vozidla\n• Možnosť bezkontaktnej platby\n\nKontaktujte nás telefonicky alebo cez WhatsApp pre rýchlu a spoľahlivú prepravu.",
           "address": "Kolkáreň 17/22, Podbrezová",
           "placeId": "ChIJfS9BuBxvFUcRbujx0MIqcCk",
-          "isPartner": true
+          "isPartner": true,
+          "partnerData": {
+            "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
+            "description": "R.S.T. Taxi & Ski Taxi 6+1 je profesionálna taxislužba v regióne Horehronie. Špecializujeme sa na ski transfery, letiskové transfery a prepravu väčších skupín v sedemmiestnom vozidle. Ponúkame komplexné služby vrátane kuriérskych služieb a asistenčnej pomoci.",
+            "services": [
+              "Taxi 6+1 (Sedemmiestne taxi)",
+              "SKI taxi servis Chopok Juh",
+              "Hotelový a letiskový transfer",
+              "Kuriér express do 6h",
+              "Drink & drive taxi",
+              "Asistenčné služby"
+            ],
+            "workingHours": "Nonstop 24/7",
+            "googlePlaceId": "ChIJfS9BuBxvFUcRbujx0MIqcCk",
+            "googleMapsUrl": "https://www.google.com/maps/place/R.S.T.+Taxi+%26+Ski+Taxi+6%2B1",
+            "whatsapp": "+421904334971",
+            "paymentMethods": [
+              "Hotovosť",
+              "Bezkontaktná platba"
+            ]
+          }
         }
       ],
       "latitude": 48.8147,
