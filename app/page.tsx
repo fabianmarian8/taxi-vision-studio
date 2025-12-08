@@ -1,29 +1,82 @@
 /**
  * Homepage - Next.js App Router
  *
- * Migrované z: src/vite-pages/Index.tsx
- *
- * Zmeny oproti Vite verzii:
- * - SEOHead komponent → metadata export (Next.js Metadata API)
- * - Link z react-router-dom → next/link
- * - taxiLogo import upravený pre Next.js static assets
- * - Všetky komponenty ostali rovnaké (Header, SearchPanel, RegionCard, ...)
+ * LCP Optimalizácia Fáza 2:
+ * - Dynamic imports pre komponenty pod foldom (lazy loading)
+ * - Suspense boundaries pre streaming SSR
  * - Server Component s vnoreným Client Components pre optimálne SEO
  */
 
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { MapPinIcon } from '@/components/icons/MapPinIcon';
 import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { SearchPanel } from '@/components/SearchPanel';
 import { RegionCard } from '@/components/RegionCard';
-import { HowItWorks } from '@/components/HowItWorks';
 import { GeometricLines } from '@/components/GeometricLines';
-import { ArticleBanner } from '@/components/ArticleBanner';
-import { AlphabeticalCityList } from '@/components/AlphabeticalCityList';
 import { getRegionsData } from '@/data/cities';
 import routePagesData from '../src/data/route-pages.json';
+
+// Dynamic imports pre komponenty pod foldom - znižuje initial JS bundle
+// Tieto komponenty nie sú viditeľné pri prvom renderovaní (below the fold)
+const AlphabeticalCityList = dynamic(
+  () => import('@/components/AlphabeticalCityList').then((mod) => ({ default: mod.AlphabeticalCityList })),
+  {
+    ssr: true,
+    loading: () => <AlphabeticalCityListSkeleton />,
+  }
+);
+
+const ArticleBanner = dynamic(
+  () => import('@/components/ArticleBanner').then((mod) => ({ default: mod.ArticleBanner })),
+  {
+    ssr: true,
+    loading: () => <div className="h-48 bg-foreground/5 rounded-xl animate-pulse" />,
+  }
+);
+
+const HowItWorks = dynamic(
+  () => import('@/components/HowItWorks').then((mod) => ({ default: mod.HowItWorks })),
+  {
+    ssr: true,
+    loading: () => <HowItWorksSkeleton />,
+  }
+);
+
+// Skeleton komponenty pre loading states (below-the-fold komponenty)
+function HowItWorksSkeleton() {
+  return (
+    <section className="py-12 md:py-16 px-4 md:px-8">
+      <div className="container mx-auto max-w-6xl">
+        <div className="h-8 w-48 bg-foreground/10 rounded mx-auto mb-8 animate-pulse" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <div key={i} className="h-40 bg-foreground/10 rounded-xl animate-pulse" />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AlphabeticalCityListSkeleton() {
+  return (
+    <div className="w-full">
+      <div className="flex flex-wrap justify-center gap-1 md:gap-2 mb-6">
+        {Array.from({ length: 26 }).map((_, i) => (
+          <div key={i} className="w-8 h-8 md:w-10 md:h-10 bg-foreground/10 rounded-lg animate-pulse" />
+        ))}
+      </div>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div key={i} className="h-20 bg-foreground/10 rounded-lg animate-pulse" />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 // Note: Globálna metadata je definovaná v app/layout.tsx
 // HomePage je Server Component, ktorý obsahuje vnorené Client Components (Header, SearchPanel, ArticleBanner)
