@@ -1,9 +1,10 @@
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
 
-const SECRET_KEY = new TextEncoder().encode(
-  process.env.SESSION_SECRET || 'default-secret-change-in-production'
-);
+if (!process.env.SESSION_SECRET) {
+  throw new Error('SESSION_SECRET environment variable is required');
+}
+const SECRET_KEY = new TextEncoder().encode(process.env.SESSION_SECRET);
 
 export interface SessionPayload {
   username: string;
@@ -51,8 +52,12 @@ export async function deleteSession() {
 }
 
 export async function verifyCredentials(username: string, password: string): Promise<boolean> {
-  const adminUsername = process.env.ADMIN_USERNAME || 'admin';
-  const adminPassword = process.env.ADMIN_PASSWORD || 'admin';
+  const adminUsername = process.env.ADMIN_USERNAME;
+  const adminPassword = process.env.ADMIN_PASSWORD;
+
+  if (!adminUsername || !adminPassword) {
+    throw new Error('ADMIN_USERNAME and ADMIN_PASSWORD environment variables are required');
+  }
 
   return username === adminUsername && password === adminPassword;
 }
