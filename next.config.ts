@@ -75,8 +75,8 @@ const nextConfig: NextConfig = {
       allowedOrigins: ['localhost:3000', 'taxinearme.sk', 'www.taxinearme.sk'],
       bodySizeLimit: '2mb',
     },
-    // LCP Optimalizácia: Inline critical CSS (vyžaduje critters)
-    optimizeCss: true,
+    // NOTE: optimizeCss s critters nefunguje spoľahlivo na Vercel
+    // Namiesto toho používame font-display: swap a minimalizáciu fontov
   },
 
   // Output configuration:

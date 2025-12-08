@@ -5,40 +5,25 @@
  * Obsahuje:
  * - Metadata (SEO, Open Graph, favicons) - migrované z index.html
  * - Google Analytics + Consent Mode v2 - migrované z index.html <head>
- * - Google Fonts (Manrope) - optimalizované cez next/font
+ * - Google Fonts (Inter only) - optimalizované cez next/font (1 font = 200ms úspora)
  * - Global Providers (QueryClient, Tooltip) - Client Component wrapper
  * - Cookie Banner - GDPR compliance
  */
 
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Inter, Fira_Mono, Special_Elite } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { CookieBanner } from '@/components/cookie-banner';
 
 // Optimalizovaný Inter font cez next/font/google
+// LCP Optimalizácia: Redukovaný z 3 fontov na 1 (úspora ~200ms render-blocking)
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
-});
-
-// Fira Mono font pre tlačidlá
-const firaMono = Fira_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  display: 'swap',
-  variable: '--font-fira-mono',
-});
-
-// Special Elite - typewriter font pre články
-const specialElite = Special_Elite({
-  subsets: ['latin'],
-  weight: '400',
-  display: 'swap',
-  variable: '--font-typewriter',
 });
 
 // Metadata API - SEO optimalizácia (migrované z index.html lines 3-43)
@@ -128,7 +113,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sk" suppressHydrationWarning className={`${inter.variable} ${firaMono.variable} ${specialElite.variable}`}>
+    <html lang="sk" suppressHydrationWarning className={inter.variable}>
       <head>
         {/* LCP Optimalizácia: Preload hero obrázka */}
         <link

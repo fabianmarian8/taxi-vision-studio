@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Typewriter font utility class */
-.font-typewriter {
-  font-family: var(--font-typewriter), 'Courier New', monospace;
-}
+/* Font utility classes - zredukované pre LCP optimalizáciu */
 
 /* 3D Minimalist Design System - Inspired by Taxi NearMe Logo */
 
@@ -395,7 +392,7 @@
 }
 
 .home-button span {
-  font-family: var(--font-fira-mono), 'Fira Mono', monospace;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Consolas', monospace;
   font-weight: 700;
   font-size: 13px;
   color: #1a1a1a;
