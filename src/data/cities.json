@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-05T15:36:26.787Z",
+  "lastUpdated": "2025-12-08T06:41:11.381Z",
   "cities": [
     {
       "name": "Bánovce nad Bebravou",
@@ -19,10 +19,11 @@
           "name": "Euro Taxi BN",
           "phone": "+421902830000",
           "website": "http://www.eurotaxi-bn.sk",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Hviezdoslavova 1602, Bánovce nad Bebravou",
-          "placeId": "ChIJVR5v9hO3FEcRYrQOlA4DJWI"
+          "placeId": "ChIJVR5v9hO3FEcRYrQOlA4DJWI",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "LAURA TAXI",
@@ -37,9 +38,8 @@
           "name": "Bn Taxi",
           "phone": "+421904109080",
           "website": null,
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Hviezdoslavova 1602, Bánovce nad Bebravou",
           "placeId": "ChIJVR5v9hO3FEcRYrQOlA4DJWI"
         }
@@ -94,10 +94,11 @@
           "name": "IMPULZ TAXI - Richard Hudák",
           "phone": "+421911656545",
           "website": null,
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Slnečná 3801/7, Banská Bystrica",
-          "placeId": "ChIJK9-Z-Y09FUcRy91kLRMo0YU"
+          "placeId": "ChIJK9-Z-Y09FUcRy91kLRMo0YU",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "ECO Hybrid TAXI Banská Bystrica",
@@ -128,9 +129,8 @@
           "name": "inTAXI Banská Bystrica",
           "phone": "+421940777757",
           "website": "http://www.intaxi.sk",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Kláry Jarunkovej 2, Banská Bystrica",
           "placeId": "ChIJETcVK4s9FUcRBo9b8EODWTA"
         },
@@ -194,7 +194,10 @@
           "phone": "+421919345765",
           "website": "http://www.taxibs.sk",
           "address": "Banská Štiavnica",
-          "placeId": "ChIJ2bS7wCAzFUcR-eoysqITWlI"
+          "placeId": "ChIJ2bS7wCAzFUcR-eoysqITWlI",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "JOMA Taxi",
@@ -232,9 +235,8 @@
           "name": "LOŽEK PETER TAXI BANSKÁ ŠTIAVNICA",
           "phone": "+421917984430",
           "website": null,
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Štiavnické Bane 69, Štiavnické Bane",
           "placeId": "ChIJgfrbXNcyFUcRwWl9VRELpHM"
         },
@@ -309,10 +311,11 @@
         {
           "name": "BeriTaxi",
           "phone": "+421902345673",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Banská Belá 316, Banská Belá",
-          "placeId": "ChIJt3IOGBAzFUcR5_QbHO8nyUg"
+          "placeId": "ChIJt3IOGBAzFUcR5_QbHO8nyUg",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "ROYAL-TAXI",
@@ -333,9 +336,8 @@
           "name": "Taxi Fero",
           "website": "https://www.ferotaxi.sk",
           "phone": "+421905949671",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Námestie svätej Trojice 11, Banská Štiavnica",
           "placeId": "ChIJbXF1NAAzFUcRy6k1l6-HPd0"
         }
@@ -418,7 +420,10 @@
           "phone": "+421949570576",
           "website": null,
           "address": "Námestie armádneho generála Ludvíka Svobodu, Bardejov",
-          "placeId": "ChIJp8MNZeaAPkcR_MDNYvP-kb8"
+          "placeId": "ChIJp8MNZeaAPkcR_MDNYvP-kb8",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Stenďo PJ Bard, s.r.o.",
@@ -440,9 +445,8 @@
           "name": "VIP TRANSFERY BARDEJOV",
           "phone": "+421948787807",
           "website": null,
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Slovenská 3009/19, Bardejov",
           "placeId": "ChIJR15sw_iBPkcRdVOjkR3W7gA"
         }
@@ -485,15 +489,17 @@
           "website": "http://www.levice-taxi.sk",
           "phone": "+421905714858",
           "address": "Mládežnícka 1471/25, Levice",
-          "placeId": "ChIJ8SatSFXcakcRg8GbpZZx3h4"
+          "placeId": "ChIJ8SatSFXcakcRg8GbpZZx3h4",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "ECO TAXI Levice",
           "website": "http://www.eco-taxi.sk",
           "phone": "+421910333373",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Kalvínske Námestie 126/2, Levice",
           "placeId": "ChIJpXxt3E_cakcRhP4vM0nm1vg"
         },
@@ -553,9 +559,8 @@
           "name": "Taxi Bernolakovo",
           "website": "https://massivetaxi.sk",
           "phone": "+421910275078",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Poštová 4, Bernolákovo",
           "placeId": "ChIJjfUMk2KQaw4R4Tz5xeQfRGk"
         },
@@ -563,7 +568,10 @@
           "name": "Taxi Rado",
           "phone": "+421944300402",
           "address": "Staničná 10, Bernolákovo",
-          "placeId": "ChIJyZfbAiyFbEcR1tt8_x0Ep1c"
+          "placeId": "ChIJyZfbAiyFbEcR1tt8_x0Ep1c",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.198971,
@@ -640,9 +648,8 @@
         {
           "name": " Šahy TAXI Ipolyság",
           "phone": "+421 944 091 135",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Hlavné námestie 3/3, Šahy",
           "placeId": "ChIJIdtsZFuLGqQRqvMfDmQ64VU"
         },
@@ -650,10 +657,11 @@
           "name": "Jozef Sýkora - City Taxi I.",
           "website": "",
           "phone": "1421 911 394 480",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Petöfiho 250, Šahy",
-          "placeId": "ChIJK1FgPH-WakcRTeQgJ2bTVdw"
+          "placeId": "ChIJK1FgPH-WakcRTeQgJ2bTVdw",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Eco Hybrid Taxi Šahy ",
@@ -695,7 +703,7 @@
           "phone": "+421 948 96 96 95",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Ľ. Kossutha 1270, Kráľovský Chlmec",
           "placeId": "ChIJV7DrJ1rcOEcRWpiT0_Ohn90"
         }
@@ -722,9 +730,8 @@
           "name": "Taxi Bojnice - Nonstop",
           "phone": "+421918266886",
           "website": "http://www.taxibojnice.sk",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Sládkovičova 176/1, Bojnice",
           "placeId": "ChIJw3eyM8zcFEcR96LOe4rev04"
         },
@@ -732,10 +739,11 @@
           "name": "Kováč Peter, Ing. Extra taxi",
           "phone": "+421948706656",
           "website": null,
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Lány 1396/10, Bojnice",
-          "placeId": "ChIJWwcbuNXcFEcRXAUhSxsToqY"
+          "placeId": "ChIJWwcbuNXcFEcRXAUhSxsToqY",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.779959,
@@ -771,7 +779,7 @@
           "phone": "+421940747474",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Andreja Kubinu 6937, Trnava",
           "placeId": "ChIJU5evTodfa0cRL6R70JaLM0k"
         },
@@ -831,7 +839,10 @@
           "phone": "+421911516202",
           "website": "http://www.taxi-bratislava.eu",
           "address": "Cintorínska 6, Bratislava",
-          "placeId": "ChIJHaaJNoGJbEcRD8-m5Al7k7s"
+          "placeId": "ChIJHaaJNoGJbEcRD8-m5Al7k7s",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Vienna Bratislava",
@@ -951,9 +962,8 @@
           "name": "Transfer Schwechat",
           "phone": "+421918561282",
           "website": "https://transferschwechat.sk/",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Sputniková 5534/14, Bratislava",
           "placeId": "ChIJHUqvRCaPbEcRYW4RTeSZhss"
         },
@@ -1080,7 +1090,7 @@
           "website": "http://www.pvsa.sk",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Boženy Němcovej 1069/2, Brezno",
           "placeId": "ChIJgZTzVdhkFUcR10CZATqN03g"
         },
@@ -1142,15 +1152,17 @@
           "phone": "+421940095050",
           "website": "http://www.taxilavita.sk",
           "address": "Pažického 416/14, Myjava",
-          "placeId": "ChIJpZtUqwtOE0cRwCaKs1nFxds"
+          "placeId": "ChIJpZtUqwtOE0cRwCaKs1nFxds",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "TAXI MY",
           "website": "",
           "phone": "+421 948 333 338",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Hurbanova 933, Myjava",
           "placeId": "ChIJKX1F0ApOE0cRAjVyActBHAo"
         }
@@ -1202,7 +1214,7 @@
           "phone": "+421 901 711 831",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Veľké Rovné 486, Veľké Rovné",
           "placeId": "ChIJNabrr45mFEcRBfZVarIe4WM"
         }
@@ -1264,7 +1276,10 @@
           "phone": "+421910100440",
           "website": "http://www.profitaxicadca.sk",
           "address": "Staničná, Čadca",
-          "placeId": "ChIJR29NCe5BFEcRVn1afB5CKB0"
+          "placeId": "ChIJR29NCe5BFEcRVn1afB5CKB0",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "DALLAS TAXI CADCA",
@@ -1300,9 +1315,8 @@
           "name": "SPEED TAXI",
           "phone": "+421910153143",
           "website": null,
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Horná, Čadca",
           "placeId": "ChIJl1m8NgBBFEcRkhtVLS5aSDM"
         },
@@ -1354,7 +1368,7 @@
           "phone": "+421919066191",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "M. Helmecziho 19, Kráľovský Chlmec",
           "placeId": "ChIJeZl8ykndOEcRoxILmkaPbCQ"
         }
@@ -1381,9 +1395,8 @@
           "name": "Express TAXI Detva",
           "phone": "+421910888250",
           "website": null,
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Záhradná, Detva",
           "placeId": "ChIJ93owIJZbFUcR_FMV7gW_rTo"
         },
@@ -1391,10 +1404,11 @@
           "name": "GOLD TAXI DETVA",
           "phone": "+421949474323",
           "website": null,
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Obrancov mieru 2, Detva",
-          "placeId": "ChIJqbKjDGpbFUcR6MBdbQKLC1c"
+          "placeId": "ChIJqbKjDGpbFUcR6MBdbQKLC1c",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "RK TAXI – DETVA",
@@ -1435,9 +1449,8 @@
           "name": "Ján Ambroz",
           "website": "",
           "phone": "058/788 55 95",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Ľ. Fullu 1966, Môťová, Zvolen",
           "placeId": "ChIJSU_Q0Pw3FUcRgYysHJYzsNk"
         },
@@ -1445,8 +1458,9 @@
           "name": "Dušan taxi Dobšiná",
           "website": "",
           "phone": "0951 610 248",
-          "isPremium": false,
-          "isPromotional": false
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.821136,
@@ -1485,9 +1499,8 @@
           "name": "LS TAXI Dolný Kubín",
           "phone": "+421902885555",
           "website": null,
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Dolný Kubín 150, Jasenová",
           "placeId": "ChIJ7-leY0CvFUcRotqGpqnfbrY"
         },
@@ -1512,7 +1525,10 @@
           "phone": "+421907262000",
           "website": null,
           "address": "Dukelských hrdinov 2039/9, Dolný Kubín-Brezovec",
-          "placeId": "ChIJWw5LhryvFUcRXGfsoioL9eA"
+          "placeId": "ChIJWw5LhryvFUcRXGfsoioL9eA",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "FAKO TAXI Dolný Kubín",
@@ -1583,10 +1599,11 @@
           "name": "Taxi Omnia Dubnica nad Váhom",
           "phone": "+421911703888",
           "website": "https://omniataxi.sk",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Námestie Matice Slovenskej 1/1, Dubnica nad Váhom",
-          "placeId": "ChIJ9X5kMLmZFEcRdXPEcgdPvUk"
+          "placeId": "ChIJ9X5kMLmZFEcRdXPEcgdPvUk",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "RM TAXI Dubnica",
@@ -1608,9 +1625,8 @@
           "name": "TAXI GO LETISKOVÉ TRANSFERY",
           "phone": "+421948875999",
           "website": "https://www.taxigo.sk",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Pod Hájom 4254, Dubnica nad Váhom",
           "placeId": "ChIJgZJkLXDdRacRx-Nz2T-pzUo"
         }
@@ -1637,16 +1653,16 @@
           "name": "Eco Hybrid Taxi Dudince",
           "website": "",
           "phone": "+421 944 771 888",
-          "isPremium": false,
-          "isPromotional": false
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": " Taxi Dudince Fortuna",
           "website": "",
           "phone": "+421 911 332 470",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Okružná 409, Dudince - sídlisko, Dudince",
           "placeId": "ChIJA65FtYPAakcRO3V5KcNd0_o"
         },
@@ -1690,7 +1706,10 @@
           "website": "http://www.boomerangtaxi.biz",
           "phone": "+421918808589",
           "address": "Trhovisko 10, Dunajská Streda",
-          "placeId": "ChIJi44pJK-da0cRv2XHnJPbaSw"
+          "placeId": "ChIJi44pJK-da0cRv2XHnJPbaSw",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Zsán Dunajská streda",
@@ -1767,9 +1786,8 @@
         {
           "name": "M-TAXI",
           "phone": "+421944273564",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Letištná, Dunajská Streda",
           "placeId": "ChIJ4TEhg-V3a0cRr-3dmvSDfSg"
         },
@@ -1810,9 +1828,8 @@
           "name": "alfataxi surany",
           "website": "http://alfataxisurany.eu",
           "phone": "+421949266288",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Šurianska 1156/35, Bánov",
           "placeId": "ChIJK4z4Fr0Ea0cRiHH-uABndGw"
         },
@@ -1852,10 +1869,11 @@
           "name": "Gondola Express",
           "website": "http://www.gondolanz.sk",
           "phone": "+421910202020",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Ľudovíta Štúra 7, Nové Zámky",
-          "placeId": "ChIJZaClT1UBa0cR2Hfgcl5mFgo"
+          "placeId": "ChIJZaClT1UBa0cR2Hfgcl5mFgo",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "S.O.S. taxi",
@@ -1909,9 +1927,8 @@
           "name": "Cheap-Taxi Fiľakovo",
           "website": "https://www.facebook.com/share/19KSr9x4yv",
           "phone": "+421940033880",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Mocsáryho 783, Fiľakovo",
           "placeId": "ChIJlb-7rGALQEcRM-uzKJ_LMAc"
         },
@@ -1919,7 +1936,10 @@
           "name": "DANI TAXI FIĽAKOVO",
           "phone": "+421952020030",
           "address": "Fiľakovo",
-          "placeId": "ChIJF361NbYLQEcRNBBiSPHGDoo"
+          "placeId": "ChIJF361NbYLQEcRNBBiSPHGDoo",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "FŐNIX TAXI FIĽAKOVO",
@@ -1995,10 +2015,11 @@
           "name": "Ado Taxi Galanta",
           "phone": "+421911807622",
           "website": "http://www.adotaxi.sk",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Ružová 161/3, Galanta",
-          "placeId": "ChIJL9AWdXlva0cR26M64_nf7_c"
+          "placeId": "ChIJL9AWdXlva0cR26M64_nf7_c",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Dzino - taxi, s.r.o.",
@@ -2032,9 +2053,8 @@
           "name": "Taxi Galanta",
           "phone": "+421907200270",
           "website": null,
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Ružová 161/3, Galanta",
           "placeId": "ChIJL9AWdXlva0cR26M64_nf7_c"
         },
@@ -2093,9 +2113,8 @@
           "name": "GL TAXI",
           "phone": "+421918307761",
           "website": null,
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Hlavná 118/29, Gelnica",
           "placeId": "ChIJAaPWXBv5PkcRH4TeQm_Oo1c"
         },
@@ -2103,10 +2122,11 @@
           "name": "GreentaxiGelnica",
           "phone": "+421948180180",
           "website": "http://www.greentaxigelnica.sk",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Slovenské Cechy 666/27, Slovenské Cechy - Turzov, Gelnica",
-          "placeId": "ChIJySDof1L5PkcRrayRyBU7QCs"
+          "placeId": "ChIJySDof1L5PkcRrayRyBU7QCs",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.853205,
@@ -2133,7 +2153,7 @@
           "website": null,
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Dukelská 33/37, Giraltovce",
           "placeId": "ChIJnS_FMhOiPkcRQfEhHBqRvC8"
         },
@@ -2179,7 +2199,7 @@
           "phone": "+421948484485",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "1. mája 295/17, Handlová",
           "placeId": "ChIJw2hrj0XfFEcRxfNH_sl1CrM"
         }
@@ -2206,9 +2226,8 @@
           "name": "STARS TAXI",
           "phone": "+421944744724",
           "website": "https://www.facebook.com",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Jarmočná, Hanušovce nad Topľou",
           "placeId": "ChIJe8SoL1uVPkcRLtr2ENDqAhA"
         },
@@ -2216,10 +2235,11 @@
           "name": "TAXI NISTRA",
           "phone": "+421904995699",
           "website": null,
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Kukorelliho 392, Hanušovce nad Topľou",
-          "placeId": "ChIJPb1k4IiVPkcR-FDQUqej2mo"
+          "placeId": "ChIJPb1k4IiVPkcR-FDQUqej2mo",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 49.026879,
@@ -2251,9 +2271,8 @@
           "name": "Harlej Taxi Hlohovec",
           "phone": "+421910966996",
           "website": "https://www.facebook.com",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Hurbanova 23, Hlohovec",
           "placeId": "ChIJYyvbeP1-YQURK1uvqkOkpDU"
         },
@@ -2271,7 +2290,10 @@
           "phone": "+421904847888",
           "website": "http://taxihlohovec.sk",
           "address": "Hurbanova 624/10, Hlohovec",
-          "placeId": "ChIJAVacNa5ba0cRDrS7G_dA4dg"
+          "placeId": "ChIJAVacNa5ba0cRDrS7G_dA4dg",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "NAJ Taxi Hlohovec",
@@ -2333,18 +2355,18 @@
           "name": "Zdenko Búr",
           "phone": "+421907122575",
           "website": null,
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Športová 459, Hnúšťa",
-          "placeId": "ChIJe7mSIkjoP0cRC9jNnvR6vLQ"
+          "placeId": "ChIJe7mSIkjoP0cRC9jNnvR6vLQ",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Shot Taxi",
           "website": "https://taxihnusta.sk/",
           "phone": "+421 915051659",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Športová 459, Hnúšťa",
           "placeId": "ChIJe7mSIkjoP0cRC9jNnvR6vLQ"
         }
@@ -2371,9 +2393,8 @@
           "name": "Taxi Holič Topgun 908 51",
           "phone": "+421911775565",
           "website": "https://www.facebook.com",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Lúčky 1, Holíč",
           "placeId": "ChIJX8OT0f0xE0cRFmscPIchXMU"
         },
@@ -2381,10 +2402,11 @@
           "name": "Taxi Bella",
           "phone": "+421907127540",
           "website": "https://zoznamtaxi.sktaxi.sk",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Sasinkova 22, Holíč",
-          "placeId": "ChIJD6pd0msxE0cR-8IbxpYc6lE"
+          "placeId": "ChIJD6pd0msxE0cR-8IbxpYc6lE",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.808256,
@@ -2409,10 +2431,11 @@
           "name": "Blue Taxi - Nové Mesto nad Váhom",
           "website": "https://bluetaxi.sk",
           "phone": "+421908505404",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Modrovka 83, Modrovka",
-          "placeId": "ChIJJdm-n8WpFEcRt2jgktztxiI"
+          "placeId": "ChIJJdm-n8WpFEcRt2jgktztxiI",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Piešťany",
@@ -2434,9 +2457,8 @@
           "name": "Taxi Piešťany - Peter Baláž",
           "website": "http://www.taxi-pn.sk",
           "phone": "+421915336649",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Piešťany, 92101",
           "placeId": "ChIJl3g464VUa0cRVNn1iVxD7zQ"
         }
@@ -2473,7 +2495,7 @@
           "phone": "+421 907 030 303",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Skladová 6, Trnava",
           "placeId": "ChIJZ9TjnmKaNk0RWW9qun3FhMo"
         },
@@ -2516,7 +2538,7 @@
           "phone": "+421911188228",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Jána Smreka 3948/10, Zlaté Moravce",
           "placeId": "ChIJ2c1a_j4va0cRCBQz5uKL50I"
         },
@@ -2557,9 +2579,8 @@
           "name": "RK TAXI – DETVA",
           "website": "http://www.rktaxi.sk",
           "phone": "+421944384666",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Novosady 921/6, Detva",
           "placeId": "ChIJZ8jdg4tbFUcRn4pJ_t4md64"
         },
@@ -2574,10 +2595,11 @@
         {
           "name": "Express TAXI Detva",
           "phone": "+421910888250",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Záhradná, Detva",
-          "placeId": "ChIJ93owIJZbFUcR_FMV7gW_rTo"
+          "placeId": "ChIJ93owIJZbFUcR_FMV7gW_rTo",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.57646,
@@ -2603,7 +2625,10 @@
           "phone": "+421907902902",
           "website": "http://www.blacktaxihe.sk",
           "address": "Námestie slobody 70, Humenné",
-          "placeId": "ChIJM80Mlr61PkcRPQCcaiOLa4Q"
+          "placeId": "ChIJM80Mlr61PkcRPQCcaiOLa4Q",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Humenné TAXISLUŽBA",
@@ -2616,9 +2641,8 @@
           "name": "Sovqa taxi HUMENNÉ",
           "phone": "+421908141811",
           "website": null,
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Laborecká 1, Humenné",
           "placeId": "ChIJaQ5IatW1PkcRw1-HiYYkX8g"
         },
@@ -2716,7 +2740,7 @@
           "website": "http://limcar.sk",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Komárňanská 121, Hurbanovo",
           "placeId": "ChIJgQpzdtmqa0cRtpZH-IbfEz8"
         },
@@ -2777,10 +2801,11 @@
           "name": "Taxi Bošany",
           "website": "https://taxi-bosany.webnode.sk",
           "phone": "+421944220766",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Staničná 15/15, Pri stanici, Bošany",
-          "placeId": "ChIJMcQT20kWES8RPlfxaZWMBTA"
+          "placeId": "ChIJMcQT20kWES8RPlfxaZWMBTA",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Joker Taxi Partizánske",
@@ -2792,9 +2817,8 @@
         {
           "name": "Taxi Topoľčany",
           "phone": "+421944786989",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Martina Rázusa 6, Topoľčany",
           "placeId": "ChIJnYEElY41a0cRHBo-WVlsZlk"
         },
@@ -2848,18 +2872,18 @@
           "name": "CITY TAXI",
           "phone": "+421948482727",
           "website": "https://sluzby.sktaxi.sk",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Ľ. Štúra 2000/79, Ilava",
-          "placeId": "ChIJh3RzababFEcRJVH8iPVMGOc"
+          "placeId": "ChIJh3RzababFEcRJVH8iPVMGOc",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "ROCAR Taxi",
           "phone": "+421949424704",
           "website": "http://www.jtgroup.sk",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Slovenského národného povstania, Ilava",
           "placeId": "ChIJ0cOt0nSaFEcREvjJzr8xy3s"
         }
@@ -2894,9 +2918,8 @@
           "name": "Massive Taxi Ivanka pri Dunaji",
           "website": "",
           "phone": "+421 950 862 806",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Poštová 4, Bernolákovo",
           "placeId": "ChIJjfUMk2KQaw4R4Tz5xeQfRGk"
         },
@@ -2904,10 +2927,11 @@
           "name": "Purple taxi Ivanka pri Dunaji",
           "website": "https://purpletaxibratislava.sk/taxi-ivanka-pri-dunaji/",
           "phone": "+421 903 106 943",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Beniakova 3, Karlova Ves",
-          "placeId": "ChIJR07mtPOLbEcRuXbaYu-Mq8w"
+          "placeId": "ChIJR07mtPOLbEcRuXbaYu-Mq8w",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.188593,
@@ -2931,9 +2955,8 @@
           "name": "TAXI REVUCA",
           "phone": "+421911456999",
           "website": "https://www.facebook.com",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Námestie slobody 5/5, Revúca",
           "placeId": "ChIJNQLu_3bGP0cRMaTX4q37L48"
         },
@@ -2941,10 +2964,11 @@
           "name": "Marek Balag-trans",
           "phone": "+421915812672",
           "website": "http://marekbalag-trans.sk",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Svätého Quirina 1530/13, Revúca",
-          "placeId": "ChIJA6bwidXFP0cRyqAFfcdXGVI"
+          "placeId": "ChIJA6bwidXFP0cRyqAFfcdXGVI",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.627958,
@@ -2970,7 +2994,10 @@
           "phone": "+421910524555",
           "website": "https://www.expresstaxi.sk",
           "address": "Karola Kuzmányho 1, Kežmarok",
-          "placeId": "ChIJw8El2To8PkcRG1sJK2gK78w"
+          "placeId": "ChIJw8El2To8PkcRG1sJK2gK78w",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "MM TAXI Kežmarok",
@@ -2992,9 +3019,8 @@
           "name": "EuroTaxi Kežmarok",
           "phone": "+421904931222",
           "website": "https://www.facebook.com",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Lidl, Slavkovská 1, Kežmarok",
           "placeId": "ChIJYQguGDM8PkcRlfVsLSSt7fM"
         },
@@ -3036,15 +3062,17 @@
           "phone": "+421907120024",
           "website": "https://facebook.com",
           "address": "Staničná 714/62, Kolárovo",
-          "placeId": "ChIJaz8ej5Cna0cRdbh0H0QNnv0"
+          "placeId": "ChIJaz8ej5Cna0cRdbh0H0QNnv0",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "PT TAXI",
           "phone": "+421948131131",
           "website": null,
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Kostolné námestie 5, Kolárovo",
           "placeId": "ChIJBw9R_F2na0cRPhpCOJ6dJM4"
         },
@@ -3080,10 +3108,11 @@
           "name": "City Taxi Komárno",
           "phone": "+421910204080",
           "website": "https://citytaxikomarno.sk",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Petöfiho 30, Komárno",
-          "placeId": "ChIJox37Koeta0cRaEuCYmSvM1s"
+          "placeId": "ChIJox37Koeta0cRaEuCYmSvM1s",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "W -TAXI KOMÁRNO",
@@ -3105,9 +3134,8 @@
           "name": "Star Taxi",
           "phone": "+421918076666",
           "website": "https://www.facebook.com/share/19N47mRQjJ",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Mládeže 51, Komárno",
           "placeId": "ChIJIQ6TMGOta0cR_rhnNxHjITA"
         },
@@ -3177,7 +3205,10 @@
           "phone": "+421910340770",
           "website": "https://www.mytaxikosice.sk",
           "address": "Hlavná 3, Košice",
-          "placeId": "ChIJkxiX3rDhPkcRUls7FpaAbho"
+          "placeId": "ChIJkxiX3rDhPkcRUls7FpaAbho",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Yellow Taxi",
@@ -3243,9 +3274,8 @@
           "name": "BENZE Transfer Košice",
           "phone": "+421940645645",
           "website": "http://www.benze.sk",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Medzinárodné letisko Košice - Kosice International Airport (KSC), Barca",
           "placeId": "ChIJ42wx4ongPkcR2ic-uxPOj7A"
         },
@@ -3286,9 +3316,8 @@
           "phone": "+421919066191",
           "website": "https://sites.google.com",
           "address": "M. Helmecziho 19, 077 01 Kráľovský Chlmec, Slovensko",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         },
         {
           "name": "Transem spol. s r.o.",
@@ -3302,7 +3331,10 @@
           "name": "BT-Taxi",
           "phone": "+421947100777",
           "website": null,
-          "address": "Kostolný rad 318/15, 077 01 Kráľovský Chlmec, Slovensko"
+          "address": "Kostolný rad 318/15, 077 01 Kráľovský Chlmec, Slovensko",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Tony taxi",
@@ -3336,15 +3368,17 @@
           "phone": "+421940606888",
           "website": "https://www.ekotaxi.sk",
           "address": "Námestie Slovenského národného povstania, 967 01 Kremnica, Slovensko",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         },
         {
           "name": "Bijan Taxi",
           "phone": "+421948984898",
           "website": "https://www.bijantaxi.sk",
-          "address": "Dolná 44/11, 967 01 Kremnica, Slovensko"
+          "address": "Dolná 44/11, 967 01 Kremnica, Slovensko",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.706577,
@@ -3372,7 +3406,7 @@
           "isPremium": true,
           "isPartner": false,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Hlavná 32, Krompachy",
           "placeId": "ChIJL01jBR2DeKcR3m5OshjIE_U"
         },
@@ -3415,9 +3449,8 @@
           "phone": "+421904404900",
           "website": "http://krupinskyexpresstaxi0.webnode.sk",
           "address": "Slnečná 33, 963 01 Krupina, Slovensko",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         },
         {
           "name": "Eco Hybrid Taxi Krupina",
@@ -3431,7 +3464,10 @@
           "name": "ZDRAVOS - KRUPINČAN",
           "phone": "+421944600638",
           "website": "http://www.taxikrupina.com",
-          "address": "Fraňa Kráľa 14, 963 01 Krupina, Slovensko"
+          "address": "Fraňa Kráľa 14, 963 01 Krupina, Slovensko",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxislužba - Ján Dado",
@@ -3473,9 +3509,8 @@
           "phone": "+421911883883",
           "website": null,
           "address": "SNP 1, 024 01 Kysucké Nové Mesto, Slovensko",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         },
         {
           "name": "VIP Taxi KNM",
@@ -3493,7 +3528,10 @@
           "name": "City Taxi KNM",
           "phone": "+421915777072",
           "website": "http://citytaxiknm.webnode.sk",
-          "address": "1, SNP 560, 024 01 Kysucké Nové Mesto, Slovensko"
+          "address": "1, SNP 560, 024 01 Kysucké Nové Mesto, Slovensko",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "B&W Taxi KNM",
@@ -3566,15 +3604,17 @@
           "website": "http://www.taxilevice.eu",
           "phone": "+421915415522",
           "address": "Orgovánová 2927/13, Levice",
-          "placeId": "ChIJm65H3v3cakcRvTMmOmN8xyI"
+          "placeId": "ChIJm65H3v3cakcRvTMmOmN8xyI",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "ECO TAXI Levice",
           "website": "http://www.eco-taxi.sk",
           "phone": "+421910333373",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Kalvínske Námestie 126/2, Levice",
           "placeId": "ChIJpXxt3E_cakcRhP4vM0nm1vg"
         },
@@ -3669,9 +3709,8 @@
           "phone": "+421907817824",
           "website": "https://www.taxieuropa.sk",
           "address": "Dlhá 246/21, 054 01 Levoča, Slovensko",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         },
         {
           "name": "METRO Taxi Levoča",
@@ -3685,7 +3724,10 @@
           "name": "Tara-Trans-Taxi - Radoslav Tarbaj",
           "phone": "+421910650605",
           "website": "http://www.tara-trans-taxi.sk",
-          "address": "Jána Francisciho 1677/15, 054 01 Levoča, Slovensko"
+          "address": "Jána Francisciho 1677/15, 054 01 Levoča, Slovensko",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 49.025112,
@@ -3734,9 +3776,8 @@
         {
           "name": "TAXI - Ján Vrabec",
           "phone": "+421944287041",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Liptovský Hrádok",
           "placeId": "ChIJOzPxRcqcFUcRr1TIMy2_rIw"
         },
@@ -3775,7 +3816,10 @@
           "website": "http://www.taxiliptov.com",
           "phone": "+421944446456",
           "address": "Belanská, Roveň, Liptovský Hrádok",
-          "placeId": "ChIJfVsi8rudFUcRfNDPik8oJr4"
+          "placeId": "ChIJfVsi8rudFUcRfNDPik8oJr4",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 49.037179,
@@ -3846,9 +3890,8 @@
         {
           "name": "BrotherTaxi",
           "phone": "+421940171918",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Riečna 330/18, Okoličné, Liptovský Mikuláš",
           "placeId": "ChIJ3_E-hwxKqgkRkg4kGxSpgYo"
         },
@@ -3887,7 +3930,10 @@
           "name": "City taxi",
           "website": "http://wew.citytaxilm.com",
           "address": "OC Liptáčik, Belopotockého, Liptovský Mikuláš",
-          "placeId": "ChIJXeouGTCZFUcRfj6_gCcf0dI"
+          "placeId": "ChIJXeouGTCZFUcRfj6_gCcf0dI",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 49.083248,
@@ -3927,7 +3973,7 @@
           "phone": "+421908309949",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Kpt. Nálepku, Lučenec",
           "placeId": "ChIJJxudUer5P0cRT7SWJWtwyUk"
         },
@@ -4038,9 +4084,8 @@
         {
           "name": "M.R. TAXI, s.r.o.",
           "phone": "+421910908910",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Malé námestie 5000, Malacky",
           "placeId": "ChIJ69AJPRTCbEcRok-9NTpVwc4"
         },
@@ -4055,7 +4100,10 @@
           "website": "https://www.taximalacky.sk",
           "phone": "+421903266227",
           "address": "Záhorácka, Malacky",
-          "placeId": "ChIJ_RH-bBTCbEcRZ0t_CgQa6m8"
+          "placeId": "ChIJ_RH-bBTCbEcRZ0t_CgQa6m8",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Dinamo Taxi - Malacky",
@@ -4140,9 +4188,8 @@
           "name": "Alpha Taxi",
           "website": "https://www.alphataxi.sk",
           "phone": "+421902345600",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "M. R. Štefánika 03601, Martin",
           "placeId": "ChIJt94FCd_-FEcRI6mkAEVTQKg"
         },
@@ -4165,7 +4212,10 @@
           "website": "http://www.mambataxi.sk",
           "phone": "+421908229900",
           "address": "Železničná 13, Vrútky",
-          "placeId": "ChIJfdKL0HhXFEcRgwhmWgr_hrU"
+          "placeId": "ChIJfdKL0HhXFEcRgwhmWgr_hrU",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "CITY TAXI Martin",
@@ -4212,17 +4262,17 @@
           "name": "TIBI TAXI",
           "website": "http://www.tibitaxi.sk",
           "phone": "+421907139053",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Školská, Turňa nad Bodvou",
-          "placeId": "ChIJYQY-MG4FP0cRLD-KdOLzKTU"
+          "placeId": "ChIJYQY-MG4FP0cRLD-KdOLzKTU",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Sky Taxi Moldava nad Bodvou",
           "phone": "+421940600048",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Hviezdoslavova 211/35, Moldava nad Bodvou",
           "placeId": "ChIJd4XUyEcbP0cRWVusGsKRNHg"
         },
@@ -4327,14 +4377,16 @@
           "name": "TIBI TAXI MICHALOVCE",
           "phone": "+421947130805",
           "address": "Nad Laborcom 8, Stráňany, Michalovce",
-          "placeId": "ChIJ6Q7PFPozOUcR3pMc932n_yY"
+          "placeId": "ChIJ6Q7PFPozOUcR3pMc932n_yY",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "TAXI Michalovce",
           "phone": "+421948765000",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Ružová 7, Stráňany, Michalovce",
           "placeId": "ChIJr8bM6QMzOUcRvy9sVXn37yk"
         },
@@ -4442,7 +4494,7 @@
           "phone": "+421949459846",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Nemocničná 7, Veľký Krtíš",
           "placeId": "ChIJr_df5a-pakcRDmZc5_139eY"
         },
@@ -4521,17 +4573,17 @@
           "name": "Taxi La Vita Myjava",
           "website": "http://www.taxilavita.sk",
           "phone": "+421940095050",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Pažického 416/14, Myjava",
-          "placeId": "ChIJpZtUqwtOE0cRwCaKs1nFxds"
+          "placeId": "ChIJpZtUqwtOE0cRwCaKs1nFxds",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Marián Smyčka MY-TAXI",
           "phone": "+421902311911",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Hurbanova 933, Myjava",
           "placeId": "ChIJKX1F0ApOE0cRAjVyActBHAo"
         }
@@ -4559,7 +4611,10 @@
           "website": "https://tmtaxinamestovo.sk",
           "phone": "+421915774664",
           "address": "Nábrežie 1, Námestovo",
-          "placeId": "ChIJK4QW1tM7Z4oR9KiJXPzGneQ"
+          "placeId": "ChIJK4QW1tM7Z4oR9KiJXPzGneQ",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "SOVA TAXI NAMESTOVO",
@@ -4621,9 +4676,8 @@
         {
           "name": "ZAFIR TAXI NÁMESTOVO",
           "phone": "+421904818135",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Nábrežie 2, Námestovo",
           "placeId": "ChIJcWvQabnJFUcRLnt3fe1l35A"
         }
@@ -4722,9 +4776,8 @@
           "name": "SMILE Taxi Nitra",
           "website": "https://www.facebook.com/smiletaxinitra",
           "phone": "+421907363952",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Palánok 1, Nitra",
           "placeId": "ChIJVwC3TJA_a0cRTsV-VkIl1Bg"
         },
@@ -4770,7 +4823,10 @@
           "website": "http://www.viptaxinitra.sk",
           "phone": "+421948313131",
           "address": "Staničná 7a, Nitra",
-          "placeId": "ChIJr6R0owQ_a0cRKq7Wj2NUYKE"
+          "placeId": "ChIJr6R0owQ_a0cRKq7Wj2NUYKE",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Regiotaxinitra, s.r.o.",
@@ -4825,18 +4881,18 @@
           "name": "TAXI TERMINÁL - NOVÁ BAŇA",
           "website": "http://www.taxinovabana.wbl.sk",
           "phone": "+421905583517",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Kalvárska 222/4, Nová Baňa",
-          "placeId": "ChIJo8iSwszVakcRT0CnEVUnL1Q"
+          "placeId": "ChIJo8iSwszVakcRT0CnEVUnL1Q",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "EKO TAXI - Nová Baňa",
           "website": "http://www.ekotaxi.sk",
           "phone": "+421917100505",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Námestie svätej Alžbety, Nová Baňa",
           "placeId": "ChIJDQZmQTLUakcRnHpWh-1ctWU"
         },
@@ -4872,9 +4928,8 @@
           "name": "CITY TAXI",
           "website": "https://www.facebook.com/share/17VhxgLpe8",
           "phone": "+421948482727",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "SNP, Nová Dubnica",
           "placeId": "ChIJmb5cXgCZFEcRjNyRs5muXF4"
         },
@@ -4882,10 +4937,11 @@
           "name": "TAXI GO LETISKOVÉ TRANSFERY",
           "website": "http://www.taxigo.sk",
           "phone": "+421903505999",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "SNP 35/57, Nová Dubnica",
-          "placeId": "ChIJ43mtL3djPGQR4aeVXzJE84M"
+          "placeId": "ChIJ43mtL3djPGQR4aeVXzJE84M",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.935874,
@@ -4909,9 +4965,8 @@
         {
           "name": "Fajn Taxi Nováky",
           "phone": "+421949880111",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Chemikov 18/28, Nováky",
           "placeId": "ChIJoZ7j8hnbFEcR5F99X2W7AP0"
         },
@@ -4935,7 +4990,10 @@
           "name": "Zebra",
           "phone": "+421918999116",
           "address": "Námestie SNP, Nováky",
-          "placeId": "ChIJWRfSZADbFEcRKM1aVjZozEw"
+          "placeId": "ChIJWRfSZADbFEcRKM1aVjZozEw",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.716447,
@@ -4981,18 +5039,18 @@
         {
           "name": "Drive Taxi",
           "phone": "+421910299229",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Ctiborova, Nové Mesto nad Váhom",
-          "placeId": "ChIJ4emoQzOpFEcRtXcpPXH8uPc"
+          "placeId": "ChIJ4emoQzOpFEcRtXcpPXH8uPc",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "TopSPEED s.r.o. - taxislužba",
           "website": "http://www.taxitopspeed.sk",
           "phone": "+421902441044",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Ondreja Plachého 149, Nové Mesto nad Váhom",
           "placeId": "ChIJtdjx0NdXE0cRZzNPorUDJVc"
         },
@@ -5088,7 +5146,7 @@
           "phone": "+421903377378",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Ľudovíta Štúra 32, Nové Zámky",
           "placeId": "ChIJDyEmGCsDa0cRSW2nSKIgJVo"
         },
@@ -5130,9 +5188,8 @@
           "name": "Joker Taxi Partizánske",
           "website": "https://www.jokertaxipe.sk",
           "phone": "+421911866792",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Partizánske",
           "placeId": "ChIJvc4rDcW6nWgRU3Yq_UNvqJk"
         },
@@ -5163,7 +5220,10 @@
           "website": "http://www.euro-taxi.sk",
           "phone": "+421907224449",
           "address": "Malinovského, Partizánske",
-          "placeId": "ChIJJaRMt6XOFEcRF6HR42qEHp0"
+          "placeId": "ChIJJaRMt6XOFEcRF6HR42qEHp0",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "ELE Taxi",
@@ -5239,9 +5299,8 @@
         {
           "name": "VIP TAXI 19",
           "phone": "+421910191919",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Holubyho 79, Pezinok",
           "placeId": "ChIJtbmVtLqRbEcRWW-Qj7ju314"
         },
@@ -5258,7 +5317,10 @@
           "name": "TAXI MI-KA ",
           "phone": "+421911938164",
           "address": "Jesenského 13A, Pezinok",
-          "placeId": "ChIJH45NawmRbEcR1TeVkx9tmtE"
+          "placeId": "ChIJH45NawmRbEcR1TeVkx9tmtE",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Rýchla Šupa",
@@ -5298,10 +5360,11 @@
           "name": "A-Taxi Piešťany",
           "website": "https://www.ataxi.sk",
           "phone": "+421915666600",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Mojmírova 35, Piešťany",
-          "placeId": "ChIJ6bVGGYRUa0cRF1xUFkn8dM4"
+          "placeId": "ChIJ6bVGGYRUa0cRF1xUFkn8dM4",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "ETAXI Piešťany",
@@ -5323,9 +5386,8 @@
           "name": "Taxi PN Piešťany",
           "website": "http://www.taxi-pn.sk",
           "phone": "+421940757563",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Dopravná 2341/1, Piešťany",
           "placeId": "ChIJsdTC-O1Ua0cRONdF5GL9ies"
         },
@@ -5440,7 +5502,10 @@
           "website": "http://www.citytaxi-poprad.sk",
           "phone": "+421903367800",
           "address": "Teplická 4, Veľká, Poprad",
-          "placeId": "ChIJqVod_r86PkcRlg8s4mMisOk"
+          "placeId": "ChIJqVod_r86PkcRlg8s4mMisOk",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Lm taxi Poprad s.r.o.",
@@ -5484,9 +5549,8 @@
           "name": "ABA Taxi s.r.o.",
           "website": "http://www.abataxi.sk",
           "phone": "+421948334773",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Jiřího Wolkera, Poprad",
           "placeId": "ChIJHfFWYcA6PkcR4dDP4ZmSqgw"
         },
@@ -5561,9 +5625,8 @@
           "name": "LIŠIAK TAXI",
           "website": "http://www.lisiak.taxi",
           "phone": "+421909200900",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Robotnícka 290, Považská Bystrica",
           "placeId": "ChIJBQvi3piJFEcRD89ULIQqFBo"
         },
@@ -5628,7 +5691,10 @@
           "website": "http://www.fb.com/100063533464051",
           "phone": "+421904405500",
           "address": "Rozkvet 2056, Považská Bystrica",
-          "placeId": "ChIJdV8UTw-LFEcRix7faZFG784"
+          "placeId": "ChIJdV8UTw-LFEcRix7faZFG784",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "TAXI PETER",
@@ -5674,15 +5740,17 @@
           "website": "http://www.alfataxipo.sk",
           "phone": "+421940545556",
           "address": "Kúpeľná 6, Prešov",
-          "placeId": "ChIJc-lsm3ztPkcRSTVrCTzFcrw"
+          "placeId": "ChIJc-lsm3ztPkcRSTVrCTzFcrw",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "AB Taxi Prešov",
           "website": "http://www.abtaxipresov.sk",
           "phone": "+421915124141",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Masarykova 11266/31, Prešov",
           "placeId": "ChIJ6wiJf5jtPkcRyqP9H7LdnIA"
         },
@@ -5843,7 +5911,10 @@
           "name": "PD Taxi železničná stanica",
           "phone": "+421918707766",
           "address": "Terézie Vansovej 9, Prievidza",
-          "placeId": "ChIJB55mpSHdFEcRpB_4AEXNQK0"
+          "placeId": "ChIJB55mpSHdFEcRpB_4AEXNQK0",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Rádio Taxi",
@@ -5856,9 +5927,8 @@
         {
           "name": "EXPRESTAXI.EU - Najlepšia a najlacnejšia taxislužba v meste Prievidza",
           "phone": "+421905202021",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Nábrežná 432/2, Prievidza II. Píly",
           "placeId": "ChIJI3W-2efcFEcRxhT0xYqPezA"
         },
@@ -5898,9 +5968,8 @@
           "name": "SB Taxi - Púchov",
           "website": "http://www.sbtaxi.sk",
           "phone": "+421905706650",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Pribinova 1639, Púchov",
           "placeId": "ChIJR8AV4VWPFEcRzox80tFum-g"
         },
@@ -5918,7 +5987,10 @@
           "website": "https://www.jjtaxi.sk",
           "phone": "+421949476634",
           "address": "Novonosická 322/73, Horné Kočkovce, Púchov",
-          "placeId": "ChIJPwjQnxiPFEcRKoJU7Znn5Zs"
+          "placeId": "ChIJPwjQnxiPFEcRKoJU7Znn5Zs",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "JD Taxi Púchov",
@@ -5963,7 +6035,7 @@
           "phone": "+421948998080",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "M. R. Štefánika, Rajec",
           "placeId": "ChIJjeE-z2z0FEcRR076Fl7-Wd0"
         },
@@ -5999,7 +6071,7 @@
           "phone": "+421911456999",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Námestie slobody 5/5, Revúca",
           "placeId": "ChIJNQLu_3bGP0cRMaTX4q37L48"
         },
@@ -6050,10 +6122,11 @@
         {
           "name": "Farkaš TAXI",
           "phone": "+421915340406",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Tomašovská 23, Sobôtka, Rimavská Sobota",
-          "placeId": "ChIJOQCBa3vzP0cRzbRzEY2z2wY"
+          "placeId": "ChIJOQCBa3vzP0cRzbRzEY2z2wY",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "White Taxi s.r.o.",
@@ -6065,9 +6138,8 @@
           "name": "Taxi Logan Rimavská Sobota",
           "website": "https://logantaxi-8.webnode.sk",
           "phone": "+421910709236",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Cukrovarská, Rimavská Sobota",
           "placeId": "ChIJiXnUDw7zP0cRhHIz-akZacI"
         },
@@ -6162,7 +6234,10 @@
           "name": "Atax Taxi Rožňava",
           "phone": "+421908828818",
           "address": "OD BILLA, Košická 56, Rožňava",
-          "placeId": "ChIJy-XZZnyvP0cRtTsqSimcIyw"
+          "placeId": "ChIJy-XZZnyvP0cRtTsqSimcIyw",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Tóth Valent - T.v. - Taxi",
@@ -6190,9 +6265,8 @@
           "name": "KoFa Academy, s. r. o.",
           "website": "http://kofaacademy.sk",
           "phone": "+421910227722",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Jovická 1861/36, Rožňava",
           "placeId": "ChIJsZSHnYGvP0cRysblThqUJXg"
         },
@@ -6253,9 +6327,8 @@
         {
           "name": "Taxi Lego - Nonstop",
           "phone": "+421904274854",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Jarná 1544/6, Ružomberok",
           "placeId": "ChIJBXKmzN6nFUcRkoQfudHtgKA"
         },
@@ -6295,7 +6368,10 @@
           "name": "Janco Taxi",
           "phone": "+421908407107",
           "address": "Antona Bernoláka 5185 03401, Ružomberok",
-          "placeId": "ChIJdbFoyM2nFUcRFSGPDrPxV8Q"
+          "placeId": "ChIJdbFoyM2nFUcRFSGPDrPxV8Q",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Peter Stano - Taxi služba",
@@ -6327,16 +6403,18 @@
           "name": " TAXI PALUS Sabinov",
           "website": "https://taxipalus.com/",
           "phone": "+421 951 071 272",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z"
+          "isPremium": false,
+          "isPromotional": false
         },
         {
           "name": " LM TAXI",
           "website": "",
           "phone": "+421 915 083 080",
           "address": "Ovocinárska 4, Sabinov",
-          "placeId": "ChIJU10SZwCLPkcRr6RHW_N6Dg0"
+          "placeId": "ChIJU10SZwCLPkcRr6RHW_N6Dg0",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 49.102674,
@@ -6378,10 +6456,11 @@
           "name": "TAXI-7EVEN SENEC",
           "website": "https://taxi7evensenec.sk",
           "phone": "+421907288562",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Kysucká 6, Senec",
-          "placeId": "ChIJW78QXLmcbEcRFQP8nE04EZI"
+          "placeId": "ChIJW78QXLmcbEcRFQP8nE04EZI",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Brano Taxi Senec",
@@ -6429,9 +6508,8 @@
         {
           "name": "TaxiTaxi 3",
           "phone": "+421910168665",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Kollárova 587/15, Senec",
           "placeId": "ChIJISXK_ZScbEcRSIbIp40VbHo"
         },
@@ -6487,15 +6565,17 @@
           "website": "https://www.taxirudynsenica.sk",
           "phone": "+421908081081",
           "address": "Sládkovičova 180/17, Senica",
-          "placeId": "ChIJOYaoVaFUdWYR7VMGA3iN6a0"
+          "placeId": "ChIJOYaoVaFUdWYR7VMGA3iN6a0",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Albi Senica",
           "website": "https://www.facebook.com/taxi.albi",
           "phone": "+421908646662",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Moyzesova 839/4, Senica",
           "placeId": "ChIJmY7ZWxi1bEcRNyi0PumVhgU"
         }
@@ -6544,9 +6624,8 @@
         {
           "name": "RG Taxi",
           "phone": "+421908816150",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Vinárska, Sereď",
           "placeId": "ChIJjRVk-NNna0cRlLmtP2w_ty4"
         },
@@ -6562,7 +6641,10 @@
           "website": "https://www.instagram.com/kajo_taxi_sered",
           "phone": "+421911122666",
           "address": "Svätoplukova, Sereď",
-          "placeId": "ChIJ34V5Cphna0cRF80ngyxHHds"
+          "placeId": "ChIJ34V5Cphna0cRF80ngyxHHds",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "TAXI Bugár Sereď",
@@ -6621,10 +6703,11 @@
           "name": "Happy taxi Skalica",
           "website": "http://www.happytaxisi.sk",
           "phone": "+421944647787",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "SNP, Skalica",
-          "placeId": "ChIJ14cu3AAxE0cRB3pGN3CIw9w"
+          "placeId": "ChIJ14cu3AAxE0cRB3pGN3CIw9w",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Dinamo Taxi - Skalica",
@@ -6638,9 +6721,8 @@
         {
           "name": "Taxi EXPRESS",
           "phone": "+421911408566",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Námestie slobody 18, Skalica",
           "placeId": "ChIJt1I9yMgxE0cR6AtBDzvKfyQ"
         },
@@ -6697,7 +6779,7 @@
           "phone": "+421910581848",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Fučíkova 2/2, Sládkovičovo",
           "placeId": "ChIJy5Sdqixla0cRcdXYjZd_1zE"
         }
@@ -6760,9 +6842,8 @@
           "name": "SNINA TAXI",
           "website": "https://www.facebook.com/taxinoro",
           "phone": "+421908992128",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Strojárska, Snina",
           "placeId": "ChIJMU5EcWpPOUcRCi6mMXJkaP4"
         },
@@ -6771,7 +6852,10 @@
           "website": "https://m.facebook.com/groups/528535691898412",
           "phone": "+421905909290",
           "address": "Komenského, Snina",
-          "placeId": "ChIJ8RUuEOxPOUcRfq4jwxQcbTQ"
+          "placeId": "ChIJ8RUuEOxPOUcRfq4jwxQcbTQ",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "ZAFIRTAXI - taxi Snina",
@@ -6817,19 +6901,19 @@
         {
           "name": "ATTAXI",
           "phone": "+421909113548",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Námestie Slobody, Sobrance",
           "placeId": "ChIJ4S-xJvA7OUcRXxUZraywXo0"
         },
         {
           "name": "L - TAXI, taxislužba",
           "phone": "+421918217217",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Sobrance 32, Sobrance",
-          "placeId": "ChIJYzk8HIw7OUcRiPeKmjR013Y"
+          "placeId": "ChIJYzk8HIw7OUcRiPeKmjR013Y",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.74465,
@@ -6863,7 +6947,7 @@
           "phone": "+421940992000",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Mierová 735/13, Spišská Belá",
           "placeId": "ChIJm9a33MoXPkcRoG1IxD1aM4M"
         },
@@ -6898,9 +6982,8 @@
           "name": "ABC TAXI SNV",
           "website": "http://www.abctaxi.eu",
           "phone": "+421948433333",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Drevárska 2, Spišská Nová Ves",
           "placeId": "ChIJ9dh_2NNOPkcRO1M9bEzO1AY"
         },
@@ -6975,7 +7058,10 @@
           "name": "NF-TAXI SNV NF-KURIER SNV",
           "phone": "+421911608224",
           "address": "Brezová 2, Spišská Nová Ves-Tarča",
-          "placeId": "ChIJ8XbOgNFPPkcRegyq5PiKBGo"
+          "placeId": "ChIJ8XbOgNFPPkcRegyq5PiKBGo",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "AUTOKRES SK s.r.o.",
@@ -7025,7 +7111,7 @@
           "phone": "+421 917 538 143",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Drevárska 2, Spišská Nová Ves",
           "placeId": "ChIJ9dh_2NNOPkcRO1M9bEzO1AY"
         }
@@ -7096,7 +7182,7 @@
           "phone": "+421950582528",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Komenského 21, Spišské Vlachy",
           "placeId": "ChIJ7w7eA_dRPkcR-qfQkU9nHzE"
         }
@@ -7143,7 +7229,7 @@
           "phone": "+421940630939",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Okružná 60, Stará Ľubovňa",
           "placeId": "ChIJZ1qoL7gw5CoRriHooyengD8"
         },
@@ -7187,7 +7273,10 @@
           "website": "",
           "phone": "+421910666966",
           "address": "Husitská cesta, Stará Turá",
-          "placeId": "ChIJLal0fmJUryYRHKXy22PWqo8"
+          "placeId": "ChIJLal0fmJUryYRHKXy22PWqo8",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "FAJN TAXÍK Stará Turá",
@@ -7201,9 +7290,8 @@
           "name": "Taxi La Vita Stará Turá",
           "website": "https://www.taxilavita.sk",
           "phone": "+421903806904",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Mýtna 144/4, Stará Turá",
           "placeId": "ChIJ0Sv7u3BRE0cRHgaYR14yPhs"
         },
@@ -7272,7 +7360,7 @@
           "phone": "+421950280770",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Krivošťany, Strážske",
           "placeId": "ChIJK0Wm0FPKPkcR9-L6IFhVC5I"
         },
@@ -7335,7 +7423,10 @@
           "name": "TAXI Stupava",
           "phone": "+421918404040",
           "address": "Hlavná 33, Stupava",
-          "placeId": "ChIJXbhtiEDtbEcRxs3-nVZ9Xa8"
+          "placeId": "ChIJXbhtiEDtbEcRxs3-nVZ9Xa8",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Rychle Taxi Stupava",
@@ -7348,9 +7439,8 @@
           "name": "LACI TAXI STUPAVA",
           "website": "http://lacitaxistupava.sk",
           "phone": "+421 911 777 565",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Jilemnického 12, Stupava",
           "placeId": "ChIJF9wddEDtbEcRJw1j5OjOIjA"
         },
@@ -7434,15 +7524,17 @@
           "website": "https://vantaxi.sk/lokalita/taxi-svaty-jur/",
           "phone": "+421 903 351 122",
           "address": "Radničné námestie 1, Pezinok",
-          "placeId": "ChIJ4-ND5--QbEcRSTZ663-Ilvg"
+          "placeId": "ChIJ4-ND5--QbEcRSTZ663-Ilvg",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Bernolákovo",
           "website": "https://www.taxibernolakovo.sk/",
           "phone": "+421 910 275 078",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Poštová 4, Bernolákovo",
           "placeId": "ChIJjfUMk2KQaw4R4Tz5xeQfRGk"
         },
@@ -7502,14 +7594,16 @@
           "name": "TAXI Svidník",
           "phone": "+421944748686",
           "address": "Pionierska 357, Svidník",
-          "placeId": "ChIJQQZo4X0nPEcRCgnamK3VOYc"
+          "placeId": "ChIJQQZo4X0nPEcRCgnamK3VOYc",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Svidnicky Express",
           "phone": "+421952161061",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Nižný Orlík",
           "placeId": "ChIJS6yXw64nPEcRJtq-Ls8ofC8"
         }
@@ -7563,19 +7657,19 @@
         {
           "name": "Šahy TAXI Ipolyság",
           "phone": "+421944091135",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Hlavné námestie 3/3, Šahy",
           "placeId": "ChIJIdtsZFuLGqQRqvMfDmQ64VU"
         },
         {
           "name": "Jozef Sýkora - City Taxi I.",
           "phone": "+421911394480",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Petöfiho 250, Šahy",
-          "placeId": "ChIJK1FgPH-WakcRTeQgJ2bTVdw"
+          "placeId": "ChIJK1FgPH-WakcRTeQgJ2bTVdw",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.069456,
@@ -7601,7 +7695,10 @@
           "website": "https://www.iptaxisala.eu",
           "phone": "+421915330550",
           "address": "Nitrianska 1529/71, Veča, Šaľa",
-          "placeId": "ChIJ-aYFYOZsa0cRKmvGHBEo2yQ"
+          "placeId": "ChIJ-aYFYOZsa0cRKmvGHBEo2yQ",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "K - Taxi Šaľa",
@@ -7656,9 +7753,8 @@
         {
           "name": "SB Taxi",
           "phone": "+421940577277",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Narcisová 1947/13, Veča, Šaľa",
           "placeId": "ChIJSxSptU1ta0cR4u6oXL5BBXg"
         },
@@ -7693,15 +7789,17 @@
           "website": "https://taxi-samorin.sk",
           "phone": "+421944065006",
           "address": "Školská 7, Šamorín",
-          "placeId": "ChIJExH8ZUp_bEcR9qMT0os0jEc"
+          "placeId": "ChIJExH8ZUp_bEcR9qMT0os0jEc",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Plus Šamorín",
           "website": "http://taxiplus-samorin.sk",
           "phone": "+421944160016",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Pomlejská cesta 428, Šamorín",
           "placeId": "ChIJbV5XM81_bEcRIEK1kwaPtTE"
         },
@@ -7750,9 +7848,8 @@
           "name": "Taxi Šaštin",
           "website": "https://www.taxisastin.eu",
           "phone": "+421905750702",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Slnečná 1104, Šaštín, Šaštín-Stráže",
           "placeId": "ChIJu35nZrDObEcR-wk-gEHBM5s"
         },
@@ -7760,10 +7857,11 @@
           "name": "Peter Černoch - TAXI",
           "website": "https://taxisastin.sk",
           "phone": "+421904530243",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Jesenského 1241, Šaštín, Šaštín-Stráže",
-          "placeId": "ChIJERETubvObEcRk6axZLxq4NE"
+          "placeId": "ChIJERETubvObEcRk6axZLxq4NE",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.636992,
@@ -7830,7 +7928,7 @@
           "phone": "+421908700000",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "10, Jozefa Bema 570, Štúrovo",
           "placeId": "ChIJx_c5Kr5hakcRaHivK74p6G0"
         },
@@ -7900,7 +7998,7 @@
           "phone": "+421949266288",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Šurianska 1156/35, Bánov",
           "placeId": "ChIJK4z4Fr0Ea0cRiHH-uABndGw"
         }
@@ -7983,18 +8081,18 @@
           "name": "ECO TAXI Levice",
           "website": "http://www.eco-taxi.sk",
           "phone": "+421910333373",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Kalvínske Námestie 126/2, Levice",
-          "placeId": "ChIJpXxt3E_cakcRhP4vM0nm1vg"
+          "placeId": "ChIJpXxt3E_cakcRhP4vM0nm1vg",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "City Taxi Levice",
           "website": "https://citytaxilevice.wixsite.com",
           "phone": "+421907295255",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Mlynská, Levice",
           "placeId": "ChIJBUOUZ8W2pI0RoyDEtPt4TDU"
         },
@@ -8078,9 +8176,8 @@
         {
           "name": "TAXI Plus Topoľčany",
           "phone": "+421947111900",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Povstania 1633/34, Topoľčany",
           "placeId": "ChIJR8D4BqxLa0cRl7c63Imi53E"
         },
@@ -8089,7 +8186,10 @@
           "website": "http://www.taxitopolcany.sk",
           "phone": "+421910111333",
           "address": "Martina Rázusa 01, Topoľčany",
-          "placeId": "ChIJCQkv0zpLa0cRJhg44C4M24s"
+          "placeId": "ChIJCQkv0zpLa0cRJhg44C4M24s",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi PEPE MB, s.r.o.",
@@ -8163,7 +8263,10 @@
           "website": "https://www.facebook.com/Family-taxi-Tornaľa-108102755085358",
           "phone": "+421902750931",
           "address": "1. mája 8, Tornaľa",
-          "placeId": "ChIJF3_4O8ibP0cRw-dOgosrJBE"
+          "placeId": "ChIJF3_4O8ibP0cRw-dOgosrJBE",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi7 Tornaľa",
@@ -8178,9 +8281,8 @@
           "name": "Ján Puškáš",
           "website": "https://www.jptaxitornala.sk",
           "phone": "+421940541288",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Kostolné námestie 1159, Tornaľa",
           "placeId": "ChIJcYYuYUGaP0cRpQAkyypKtjs"
         }
@@ -8207,9 +8309,8 @@
           "name": "Gold Taxi Trebišov",
           "website": "https://goldtaxi.sk",
           "phone": "+421949378111",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Komenského 2222/87, Trebišov",
           "placeId": "ChIJfZ-QCBgrOUcRIoJxPXwwSIs"
         },
@@ -8223,7 +8324,10 @@
           "name": "Taxi Trebišov Gray",
           "phone": "+421915956540",
           "address": "Československej armády 2, Trebišov",
-          "placeId": "ChIJ1c-Ekd_TPkcRgHRzVJBMJdI"
+          "placeId": "ChIJ1c-Ekd_TPkcRgHRzVJBMJdI",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Trebišov | Tv-Taxi 2",
@@ -8303,7 +8407,7 @@
           "phone": "+421910116999",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Štvrť SNP 136/36, Trenčianske Teplice",
           "placeId": "ChIJLffZ_yiZFEcR2RfQ9kMCYKE"
         }
@@ -8344,9 +8448,8 @@
           "name": "DoDo TAXI Trenčin NONSTOP",
           "website": "http://www.dodotaxi.sk",
           "phone": "+421905716555",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Dlhé Hony 20, Trenčín",
           "placeId": "ChIJw2fG9X6hFEcRjyCYnMdvMHk"
         },
@@ -8403,10 +8506,11 @@
         {
           "name": "Taxi Life S.r.o.",
           "phone": "+421903442844",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Bavlnárska 320/19, Zlatovce, Trenčín",
-          "placeId": "ChIJQwVZ6ZehFEcRxn1R3Dp7YJI"
+          "placeId": "ChIJQwVZ6ZehFEcRxn1R3Dp7YJI",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "GaMe Taxi",
@@ -8466,7 +8570,10 @@
           "website": "http://www.teamtaxi.sk",
           "phone": "+421940747474",
           "address": "Andreja Kubinu 6937, Trnava",
-          "placeId": "ChIJU5evTodfa0cRL6R70JaLM0k"
+          "placeId": "ChIJU5evTodfa0cRL6R70JaLM0k",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "LUX Taxi Trnava",
@@ -8479,9 +8586,8 @@
           "name": "Yellow Taxi Trnava",
           "website": "http://www.taxisluzbatrnava.sk",
           "phone": "+42133/3030303",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Skladová 6, Trnava",
           "placeId": "ChIJZ9TjnmKaNk0RWW9qun3FhMo"
         },
@@ -8571,7 +8677,7 @@
           "phone": "+421 918 171 718",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Horná 69, Banská Bystrica",
           "placeId": "ChIJW2Skjfg9FUcRPVMCIg1ufOY"
         }
@@ -8631,7 +8737,7 @@
           "phone": "+421905830730",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Železničná 038 61, Vrútky",
           "placeId": "ChIJx2-1FQFWFEcRfkbFn-_-33o"
         },
@@ -8674,10 +8780,11 @@
           "name": "Nonstop Taxi Turčianske Teplice - Berco TAXI parking",
           "website": "http://www.taxi-turciansketeplice.sk",
           "phone": "+421917044444",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Kollárova, Turčianske Teplice",
-          "placeId": "ChIJx-zc_uThFEcRNvqsFybb7os"
+          "placeId": "ChIJx-zc_uThFEcRNvqsFybb7os",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Turčianske Teplice - Ivan",
@@ -8703,9 +8810,8 @@
           "name": "MMautodoprava",
           "website": "http://www.mmdoprava.sk",
           "phone": "+421905522275",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Somolického 750, Turčianske Teplice",
           "placeId": "ChIJ-bs2RO7hFEcRB2TDbloAp70"
         }
@@ -8733,15 +8839,17 @@
           "website": "http://www.tiptoptaxi.sk",
           "phone": "+421907567567",
           "address": "Nádražná, Turzovka",
-          "placeId": "ChIJPSiwCa5uFEcRT8CVTak1t8s"
+          "placeId": "ChIJPSiwCa5uFEcRT8CVTak1t8s",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "M.T.Taxi Turzovka",
           "website": "http://www.mttaxi.sk",
           "phone": "+421948234444",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Nádražná 66, Turzovka",
           "placeId": "ChIJja_CHglvFEcRF7wtnhEErak"
         }
@@ -8769,7 +8877,7 @@
           "phone": "+421948177228",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Konopná 198, Tvrdošín",
           "placeId": "ChIJaxJHzpm4FUcRiPdNmIDqWXE"
         },
@@ -8818,10 +8926,11 @@
         {
           "name": "Štefi taxi",
           "phone": "+421907122023",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Sídlisko P. O. Hviezdoslava 79/137, Veľké Kapušany",
-          "placeId": "ChIJqfI5fsghOUcRDimhOSFKrJQ"
+          "placeId": "ChIJqfI5fsghOUcRDimhOSFKrJQ",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Elite Taxi Veľké Kapušany ",
@@ -8834,9 +8943,8 @@
           "name": "Taxi Király ",
           "website": "",
           "phone": "+421 918 015 000",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Sídlisko P. O. Hviezdoslava 79/137, Veľké Kapušany",
           "placeId": "ChIJqfI5fsghOUcRDimhOSFKrJQ"
         }
@@ -8880,7 +8988,7 @@
           "phone": "+421949459846",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Nemocničná 7, Veľký Krtíš",
           "placeId": "ChIJr_df5a-pakcRDmZc5_139eY"
         },
@@ -8921,7 +9029,7 @@
           "phone": "+421915500633",
           "isPremium": true,
           "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z",
           "address": "Promenádna 3356/23, Veľký Meder",
           "placeId": "ChIJD2a1LySja0cR4ymUiusERF0"
         },
@@ -8956,9 +9064,8 @@
         {
           "name": "NOVA TAXI",
           "phone": "+42151/7722733",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Prešovská, 08221 Veľký Šariš",
           "placeId": "ChIJJSm26CqNPkcR6gtJLmcH0NQ"
         },
@@ -8994,10 +9101,11 @@
           "name": "EuroCombi TAXI Prešov",
           "website": "https://www.eurocombitaxi.sk",
           "phone": "+42151/7710710",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Masarykova 2724/26, Prešov",
-          "placeId": "ChIJRXKTGnbtPkcRZIxq78nGqsk"
+          "placeId": "ChIJRXKTGnbtPkcRZIxq78nGqsk",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "A-A VikyTaxi",
@@ -9030,9 +9138,8 @@
           "name": "Eko Taxi Vráble",
           "website": "http://www.ekotaxi.sk",
           "phone": "+421904006666",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Obycká 29, Machulince",
           "placeId": "ChIJx0AEXgUxc4IRmOhelrtswzY"
         },
@@ -9040,10 +9147,11 @@
           "name": "Penzeš s.r.o.",
           "website": "http://www.penzes.sk",
           "phone": "+421905712578",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Družstevná 1994/5, Vráble",
-          "placeId": "ChIJ2RQVmj8ia0cRM-LZrlRotNg"
+          "placeId": "ChIJ2RQVmj8ia0cRM-LZrlRotNg",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "TAXI V Vrábľoch",
@@ -9075,19 +9183,19 @@
           "name": "Gold Taxi Vranov nad Topľou",
           "website": "https://goldtaxi.sk",
           "phone": "+421940636303",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Budovateľská 2691/37A, Vranov nad Topľou",
           "placeId": "ChIJf1qj_sDHPkcR-Dus58MijxU"
         },
         {
           "name": "Taxi Vranov Balint",
           "phone": "+421948050843",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Sídlisko Juh, Vranov nad Topľou",
-          "placeId": "ChIJh5JCFvrJPkcR_1n7mhcOs3g"
+          "placeId": "ChIJh5JCFvrJPkcR_1n7mhcOs3g",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.889151,
@@ -9112,18 +9220,18 @@
           "name": "A-Taxi Piešťany",
           "website": "https://www.ataxi.sk",
           "phone": "+421915666600",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Mojmírova 35, Piešťany",
-          "placeId": "ChIJ6bVGGYRUa0cRF1xUFkn8dM4"
+          "placeId": "ChIJ6bVGGYRUa0cRF1xUFkn8dM4",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "ALPHA TAXI ČACHTICE",
           "website": "http://alphataxist.sk",
           "phone": "+421940883353",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Malinovského, Čachtice",
           "placeId": "ChIJE0K65AFRE0cRFgTkV5ujrh4"
         },
@@ -9159,9 +9267,8 @@
           "name": "Mamba Taxi",
           "website": "http://www.mambataxi.sk",
           "phone": "+421908229900",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Železničná 13, Vrútky",
           "placeId": "ChIJfdKL0HhXFEcRgwhmWgr_hrU"
         },
@@ -9184,10 +9291,11 @@
           "name": "PH taxi",
           "website": "http://phtaxi.sk",
           "phone": "+421905830730",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Železničná 038 61, Vrútky",
-          "placeId": "ChIJx2-1FQFWFEcRfkbFn-_-33o"
+          "placeId": "ChIJx2-1FQFWFEcRfkbFn-_-33o",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "MB TAXI Martin",
@@ -9251,9 +9359,8 @@
           "name": "Transfer | Vysoké Tatry - Transfer service | Taxi",
           "website": "http://www.tatryubytovanie.sk",
           "phone": "+421905609326",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Tatranská Lomnica 151, Vysoké Tatry",
           "placeId": "ChIJN4I_UTiNbEcR_Fufz6A4ugk"
         },
@@ -9262,7 +9369,10 @@
           "website": "http://www.vktaxi.szm.sk",
           "phone": "+421905700330",
           "address": "Starý Smokovec, Vysoké Tatry",
-          "placeId": "ChIJQTu5-xAjPkcRGU6s2LJ2w6w"
+          "placeId": "ChIJQTu5-xAjPkcRGU6s2LJ2w6w",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Vladimír Hric",
@@ -9311,7 +9421,10 @@
           "website": "http://profitaxizm.sk",
           "phone": "+421911188228",
           "address": "Jána Smreka 3948/10, Zlaté Moravce",
-          "placeId": "ChIJ2c1a_j4va0cRCBQz5uKL50I"
+          "placeId": "ChIJ2c1a_j4va0cRCBQz5uKL50I",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "EKO TAXI",
@@ -9325,9 +9438,8 @@
         {
           "name": "BoRa TAXI Zlaté Moravce",
           "phone": "+421915750725",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Hviezdoslavova 41, Zlaté Moravce",
           "placeId": "ChIJPfOeHgYva0cR4lvwXi2FkUc"
         },
@@ -9623,9 +9735,8 @@
         {
           "name": "STAT TAXI",
           "phone": "+421948228905",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Bystrická, Žarnovica",
           "placeId": "ChIJvRp2EJ0rFUcRAOD_otdprGU"
         },
@@ -9633,10 +9744,11 @@
           "name": "Vladimír Nikodém - CITY TAXI ŽARNOVICA",
           "phone": "+421516588045",
           "website": null,
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Bystrická 106, Žarnovica-Žarnovická Huta",
-          "placeId": "ChIJ0cCdJigrFUcRtZ1Or48aPaI"
+          "placeId": "ChIJ0cCdJigrFUcRtZ1Or48aPaI",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         }
       ],
       "latitude": 48.483398,
@@ -9662,15 +9774,17 @@
           "website": "",
           "phone": "+421 940 644 885",
           "address": "Kalvínske Námestie 126/2, Levice",
-          "placeId": "ChIJpXxt3E_cakcRhP4vM0nm1vg"
+          "placeId": "ChIJpXxt3E_cakcRhP4vM0nm1vg",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Eco Taxi Želiezovce",
           "website": "",
           "phone": "+421 950 333 555",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Kalvínske Námestie 126/2, Levice",
           "placeId": "ChIJpXxt3E_cakcRhP4vM0nm1vg"
         },
@@ -9705,10 +9819,11 @@
         {
           "name": "ANO TAXI ZH",
           "phone": "+421910333366",
-          "isPremium": false,
-          "isPromotional": false,
+          "isPremium": true,
+          "isPromotional": true,
           "address": "Slovenského národného povstania 528/121, Žiar nad Hronom",
-          "placeId": "ChIJLSO-JwYvFUcR53k94R0H_ww"
+          "placeId": "ChIJLSO-JwYvFUcR53k94R0H_ww",
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "Taxi Toki Žiar nad Hronom",
@@ -9732,9 +9847,8 @@
         {
           "name": "MNK TAXI",
           "phone": "+421948122554",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "J. Hollého 6, Žiar nad Hronom",
           "placeId": "ChIJT8qrYgAvFUcRUQ6TtrqBv-Q"
         }
@@ -9863,9 +9977,8 @@
           "name": "MJ Taxi Žilina",
           "website": "https://mjtaxizilina.sk",
           "phone": "+421914272829",
-          "isPremium": true,
-          "isPromotional": true,
-          "premiumExpiresAt": "2025-12-09T16:13:08.386Z",
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Veľká Okružná 59A, Žilina",
           "placeId": "ChIJY0Ee0uBdFEcRFfHgcVBMzYA"
         },
@@ -9881,7 +9994,10 @@
           "website": "http://www.eurotaxi.sk",
           "phone": "+421902300400",
           "address": "Dlabacova,autobusove Nastupiste, Žilina",
-          "placeId": "ChIJMyGzlU9ZFEcR2B5pE-WlWBo"
+          "placeId": "ChIJMyGzlU9ZFEcR2B5pE-WlWBo",
+          "isPremium": true,
+          "isPromotional": true,
+          "premiumExpiresAt": "2025-12-15T06:41:11.377Z"
         },
         {
           "name": "KERAM TAXI Žilina",
