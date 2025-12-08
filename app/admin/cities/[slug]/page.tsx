@@ -103,9 +103,40 @@ export default function AdminCityDetailPage() {
 
   const updateTaxiService = (index: number, field: keyof TaxiService, value: string | boolean) => {
     if (!city) return;
-    const updated = [...city.taxiServices];
-    updated[index] = { ...updated[index], [field]: value };
-    setCity({ ...city, taxiServices: updated });
+    setCity(prevCity => {
+      if (!prevCity) return prevCity;
+      const updated = [...prevCity.taxiServices];
+      updated[index] = { ...updated[index], [field]: value };
+      return { ...prevCity, taxiServices: updated };
+    });
+  };
+
+  const togglePremium = (index: number, checked: boolean) => {
+    if (!city) return;
+    setCity(prevCity => {
+      if (!prevCity) return prevCity;
+      const updated = [...prevCity.taxiServices];
+      updated[index] = {
+        ...updated[index],
+        isPremium: checked,
+        isPartner: checked ? false : updated[index].isPartner
+      };
+      return { ...prevCity, taxiServices: updated };
+    });
+  };
+
+  const togglePartner = (index: number, checked: boolean) => {
+    if (!city) return;
+    setCity(prevCity => {
+      if (!prevCity) return prevCity;
+      const updated = [...prevCity.taxiServices];
+      updated[index] = {
+        ...updated[index],
+        isPartner: checked,
+        isPremium: checked ? false : updated[index].isPremium
+      };
+      return { ...prevCity, taxiServices: updated };
+    });
   };
 
   if (loading) {
@@ -274,13 +305,7 @@ export default function AdminCityDetailPage() {
                           <Checkbox
                             id={`premium-${index}`}
                             checked={service.isPremium || false}
-                            onCheckedChange={(checked) => {
-                              updateTaxiService(index, 'isPremium', checked === true);
-                              // Ak zapneme PREMIUM, vypneme PARTNER (vzájomne sa vylučujú)
-                              if (checked) {
-                                updateTaxiService(index, 'isPartner', false);
-                              }
-                            }}
+                            onCheckedChange={(checked) => togglePremium(index, checked === true)}
                           />
                           <Label
                             htmlFor={`premium-${index}`}
@@ -298,13 +323,7 @@ export default function AdminCityDetailPage() {
                           <Checkbox
                             id={`partner-${index}`}
                             checked={service.isPartner || false}
-                            onCheckedChange={(checked) => {
-                              updateTaxiService(index, 'isPartner', checked === true);
-                              // Ak zapneme PARTNER, vypneme PREMIUM (vzájomne sa vylučujú)
-                              if (checked) {
-                                updateTaxiService(index, 'isPremium', false);
-                              }
-                            }}
+                            onCheckedChange={(checked) => togglePartner(index, checked === true)}
                           />
                           <Label
                             htmlFor={`partner-${index}`}
