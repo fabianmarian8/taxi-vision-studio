@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { jwtVerify } from 'jose';
 
-if (!process.env.SESSION_SECRET) {
-  throw new Error('SESSION_SECRET environment variable is required');
+// Lazy initialization - only validate when actually used (not at build time)
+function getSecretKey(): Uint8Array {
+  if (!process.env.SESSION_SECRET) {
+    throw new Error('SESSION_SECRET environment variable is required');
+  }
+  return new TextEncoder().encode(process.env.SESSION_SECRET);
 }
-const SECRET_KEY = new TextEncoder().encode(process.env.SESSION_SECRET);
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -33,7 +36,7 @@ export async function middleware(request: NextRequest) {
 
     try {
       // Verify session
-      await jwtVerify(session, SECRET_KEY);
+      await jwtVerify(session, getSecretKey());
       return NextResponse.next();
     } catch (error) {
       console.error('Session verification failed in middleware:', error);

@@ -1,10 +1,13 @@
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
 
-if (!process.env.SESSION_SECRET) {
-  throw new Error('SESSION_SECRET environment variable is required');
+// Lazy initialization - only validate when actually used (not at build time)
+function getSecretKey(): Uint8Array {
+  if (!process.env.SESSION_SECRET) {
+    throw new Error('SESSION_SECRET environment variable is required');
+  }
+  return new TextEncoder().encode(process.env.SESSION_SECRET);
 }
-const SECRET_KEY = new TextEncoder().encode(process.env.SESSION_SECRET);
 
 export interface SessionPayload {
   username: string;
@@ -17,7 +20,7 @@ export async function createSession(username: string) {
   const session = await new SignJWT({ username, expiresAt: expiresAt.getTime() })
     .setProtectedHeader({ alg: 'HS256' })
     .setExpirationTime(expiresAt)
-    .sign(SECRET_KEY);
+    .sign(getSecretKey());
 
   const cookieStore = await cookies();
   cookieStore.set('session', session, {
@@ -38,7 +41,7 @@ export async function getSession(): Promise<SessionPayload | null> {
   if (!session) return null;
 
   try {
-    const { payload } = await jwtVerify(session, SECRET_KEY);
+    const { payload } = await jwtVerify(session, getSecretKey());
     return payload as unknown as SessionPayload;
   } catch (error) {
     console.error('Session verification failed:', error);
