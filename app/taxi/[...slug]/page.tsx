@@ -1412,8 +1412,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           </div>
         </section>
 
-        {/* Other services - Mobile optimized */}
-        {city.taxiServices.length > 1 && (
+        {/* Other services - Mobile optimized - hidden for premium/partner */}
+        {city.taxiServices.length > 1 && !service.isPremium && !service.isPartner && (
           <section className="py-8 md:py-16 px-4 md:px-8 bg-foreground/5">
             <div className="container mx-auto max-w-4xl">
               <h2 className="text-lg md:text-2xl font-black mb-4 md:mb-6 text-foreground text-center">
