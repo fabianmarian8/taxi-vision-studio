@@ -423,7 +423,7 @@ export default function TemnaBoltUberPage() {
           <div className="mt-16 p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
             <h3 className="text-2xl font-bold mb-3 text-center">Chcete vidieť komplexný sprievodca taxislužbami?</h3>
             <p className="text-center text-gray-700 mb-3">
-              Prečítajte si všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025.
+              Prečítajte si všetko, čo potrebujete vedieť o taxi na Slovensku.
             </p>
             <div className="flex justify-center">
               <Link href="/komplexny-sprievodca-taxi">

@@ -15,11 +15,11 @@ import { ArticleAuthor } from '@/components/ArticleAuthor';
 
 export const metadata: Metadata = {
   title: 'Komplexný sprievodca taxislužbami na Slovensku | TaxiNearMe.sk',
-  description: 'Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva.',
+  description: 'Všetko, čo potrebujete vedieť o taxi na Slovensku. Od výberu služby až po vaše práva ako zákazníka.',
   keywords: ['taxi sprievodca', 'taxislužby slovensko', 'ako si vybrať taxi', 'práva zákazníkov', 'taxi aplikácie', 'objednať taxi'],
   openGraph: {
-    title: 'Komplexný sprievodca taxislužbami na Slovensku (2025)',
-    description: 'Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva.',
+    title: 'Komplexný sprievodca taxislužbami na Slovensku',
+    description: 'Všetko, čo potrebujete vedieť o taxi na Slovensku. Od výberu služby až po vaše práva ako zákazníka.',
     url: 'https://www.taxinearme.sk/komplexny-sprievodca-taxi',
     type: 'article',
     images: [{
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: SEO_CONSTANTS.twitterSite,
-    title: 'Komplexný sprievodca taxislužbami na Slovensku (2025)',
-    description: 'Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva.',
+    title: 'Komplexný sprievodca taxislužbami na Slovensku',
+    description: 'Všetko, čo potrebujete vedieť o taxi na Slovensku. Od výberu služby až po vaše práva ako zákazníka.',
     images: ['https://www.taxinearme.sk/blog-images/sprievodca.jpg']
   },
   alternates: {
@@ -51,8 +51,8 @@ export default function KomplexnySprievodcaPage() {
   return (
     <div className="min-h-screen bg-white">
       <ArticleSchema
-        title="Komplexný sprievodca taxislužbami na Slovensku (2025)"
-        description="Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva."
+        title="Komplexný sprievodca taxislužbami na Slovensku"
+        description="Všetko, čo potrebujete vedieť o taxi na Slovensku. Od výberu služby až po vaše práva ako zákazníka."
         url="https://www.taxinearme.sk/komplexny-sprievodca-taxi"
         publishedTime="2025-01-15"
         modifiedTime="2025-01-15"
@@ -88,11 +88,11 @@ export default function KomplexnySprievodcaPage() {
           </h1>
 
           <p className="text-xl text-foreground/80 mb-3">
-            Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025
+            Všetko, čo potrebujete vedieť o taxi na Slovensku
           </p>
 
           <ShareButton
-            title="Komplexný sprievodca taxislužbami na Slovensku (2025)"
+            title="Komplexný sprievodca taxislužbami na Slovensku"
           />
         </div>
       </section>
@@ -159,7 +159,7 @@ export default function KomplexnySprievodcaPage() {
             </p>
 
             <div className="bg-yellow-50 p-6 rounded-lg my-4">
-              <h3 className="text-xl font-bold mb-3">Priemerné ceny (2025)</h3>
+              <h3 className="text-xl font-bold mb-3">Priemerné ceny taxi</h3>
               <ul className="space-y-2">
                 <li><strong>Nástupná sadzba:</strong> 2,00 € - 3,50 €</li>
                 <li><strong>Cena za kilometer:</strong> 0,80 € - 1,20 €</li>
@@ -441,7 +441,7 @@ export default function KomplexnySprievodcaPage() {
               <div className="grid md:grid-cols-3 gap-4 mt-6">
                 <Link href="/prieskum-cien-taxisluzieb-slovensko-2025">
                   <Button variant="outline" className="w-full">
-                    Cenový prieskum 2025
+                    Cenový prieskum
                   </Button>
                 </Link>
                 <Link href="/hodnotenie-vodicov">

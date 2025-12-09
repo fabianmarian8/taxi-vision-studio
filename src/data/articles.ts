@@ -83,7 +83,7 @@ export const articles: Article[] = [
   {
     id: 'komplexny-sprievodca-taxi',
     title: 'Komplexný sprievodca taxislužbami na Slovensku',
-    excerpt: 'Všetko, čo potrebujete vedieť o taxi na Slovensku v roku 2025. Od výberu služby až po vaše práva.',
+    excerpt: 'Všetko, čo potrebujete vedieť o taxi na Slovensku. Od výberu služby až po vaše práva ako zákazníka.',
     slug: '/komplexny-sprievodca-taxi',
     icon: BookOpen,
     date: '2025-07-12',

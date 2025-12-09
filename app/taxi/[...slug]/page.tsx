@@ -235,13 +235,13 @@ export async function generateMetadata({
       // Pre obce (isVillage) iný formát - bez "Taxi" v nadpise
       const titlePrefix = city.isVillage ? '' : 'Taxi ';
       const description = countText
-        ? `${city.isVillage ? 'Taxislužba' : 'Taxi'} ${locationText} ${city.name} (${currentYear}) - ${countText} taxislužieb s telefónnymi číslami. ${taxiServicesList ? `${taxiServicesList}.` : ''} Objednajte taxi jednoducho.`
-        : `${city.isVillage ? 'Taxislužba' : 'Taxi'} ${locationText} ${city.name} (${currentYear}) - Kontakty na taxislužby. Objednajte taxi jednoducho.`;
+        ? `${city.isVillage ? 'Taxislužba' : 'Taxi'} ${locationText} ${city.name} - ${countText} taxislužieb s telefónnymi číslami. ${taxiServicesList ? `${taxiServicesList}.` : ''} Objednajte taxi jednoducho.`
+        : `${city.isVillage ? 'Taxislužba' : 'Taxi'} ${locationText} ${city.name} - Kontakty na taxislužby. Objednajte taxi jednoducho.`;
 
-      // Title format: "Streda nad Bodrogom - 1 taxislužba (2025)" pre obce, "Taxi Bratislava - 15+ taxislužieb (2025)" pre mestá
+      // Title format: "Streda nad Bodrogom - 1 taxislužba" pre obce, "Taxi Bratislava - 15+ taxislužieb" pre mestá
       const titleWithCount = countText
-        ? `${titlePrefix}${city.name} - ${countText} ${taxiCount === 1 ? 'taxislužba' : 'taxislužieb'} (${currentYear}) | ${siteName}`
-        : `${titlePrefix}${city.name} - Taxislužby (${currentYear}) | ${siteName}`;
+        ? `${titlePrefix}${city.name} - ${countText} ${taxiCount === 1 ? 'taxislužba' : 'taxislužieb'} | ${siteName}`
+        : `${titlePrefix}${city.name} - Taxislužby | ${siteName}`;
 
       return {
         title: titleWithCount,
@@ -264,10 +264,10 @@ export async function generateMetadata({
       const nearestCities = findNearestCitiesWithTaxis(municipality, 1);
       const nearestCity = nearestCities[0];
       const currentUrl = `${baseUrl}/taxi/${municipality.slug}`;
-      const description = `Taxi v obci ${municipality.name} (${currentYear}) - Najbližšie taxislužby v meste ${nearestCity?.city.name} (${nearestCity?.distance} km). Objednajte taxi jednoducho.`;
+      const description = `Taxi v obci ${municipality.name} - Najbližšie taxislužby v meste ${nearestCity?.city.name} (${nearestCity?.distance} km). Objednajte taxi jednoducho.`;
 
       return {
-        title: `Taxi ${municipality.name} - Taxislužby v okolí (${currentYear}) | ${siteName}`,
+        title: `Taxi ${municipality.name} - Taxislužby v okolí | ${siteName}`,
         description,
         keywords: [`taxi ${municipality.name}`, `taxislužby ${municipality.name}`, `taxi ${municipality.district}`, `taxi ${municipality.region}`],
         openGraph: {
@@ -288,7 +288,7 @@ export async function generateMetadata({
       const description = generateUniqueMetaDescription(service.name, city.name, service.phone || '');
 
       return {
-        title: `${service.name} - Taxi ${city.name} (${currentYear}) | ${siteName}`,
+        title: `${service.name} - Taxi ${city.name} | ${siteName}`,
         description,
         keywords: [service.name, `taxi ${city.name}`, `taxislužba ${city.name}`, `${service.name} ${city.name}`],
         openGraph: {
@@ -306,10 +306,10 @@ export async function generateMetadata({
     case 'district': {
       const { district, regionSlug } = routeType;
       const currentUrl = `${baseUrl}/taxi/${regionSlug}/${district.slug}`;
-      const description = `Taxi v okrese ${district.name} (${currentYear}) - Zoznam ${district.municipalitiesCount} obcí a miest s taxislužbami. Objednajte taxi jednoducho.`;
+      const description = `Taxi v okrese ${district.name} - Zoznam ${district.municipalitiesCount} obcí a miest s taxislužbami. Objednajte taxi jednoducho.`;
 
       return {
-        title: `Taxi okres ${district.name} - ${district.municipalitiesCount} obcí (${currentYear}) | ${siteName}`,
+        title: `Taxi okres ${district.name} - ${district.municipalitiesCount} obcí | ${siteName}`,
         description,
         keywords: [`taxi ${district.name}`, `taxislužby okres ${district.name}`, `taxi ${district.region}`, 'taxi obce'],
         openGraph: {
@@ -329,10 +329,10 @@ export async function generateMetadata({
       const nearestCities = findNearestCitiesWithTaxis(municipality, 1);
       const nearestCity = nearestCities[0];
       const currentUrl = `${baseUrl}/taxi/${regionSlug}/${district.slug}/${municipality.slug}`;
-      const description = `Taxi v obci ${municipality.name}, okres ${district.name} (${currentYear}) - Najbližšie taxislužby v meste ${nearestCity?.city.name} (${nearestCity?.distance} km). Objednajte taxi.`;
+      const description = `Taxi v obci ${municipality.name}, okres ${district.name} - Najbližšie taxislužby v meste ${nearestCity?.city.name} (${nearestCity?.distance} km). Objednajte taxi.`;
 
       return {
-        title: `Taxi ${municipality.name} - okres ${district.name} (${currentYear}) | ${siteName}`,
+        title: `Taxi ${municipality.name} - okres ${district.name} | ${siteName}`,
         description,
         keywords: [`taxi ${municipality.name}`, `taxi okres ${district.name}`, `taxislužby ${municipality.name}`, `taxi ${district.region}`],
         openGraph: {

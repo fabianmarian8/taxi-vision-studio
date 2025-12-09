@@ -12,8 +12,8 @@ import { ArticleSchema } from '@/components/schema/ArticleSchema';
 import { ArticleAuthor } from '@/components/ArticleAuthor';
 
 export const metadata: Metadata = {
-  title: 'Ako získať koncesiu na taxislužbu v roku 2025 (Slovensko) | TaxiNearMe.sk',
-  description: 'Kompletný návod ako získať koncesiu na taxislužbu na Slovensku v roku 2025. Podmienky, poplatky, postup krok za krokom, potrebné dokumenty.',
+  title: 'Koncesia na taxislužbu 2025 - Kompletný návod | TaxiNearMe.sk',
+  description: 'Ako získať koncesiu na taxislužbu na Slovensku. Podmienky, poplatky 30€, postup krok za krokom, potrebné dokumenty.',
   keywords: ['koncesia taxislužba', 'koncesia taxi', 'taxislužba slovensko', 'licencia taxi', 'preukaz vodiča taxislužby', 'ako získať koncesiu', 'taxislužba 2025', 'bolt uber koncesia'],
   openGraph: {
     title: 'Ako získať koncesiu na taxislužbu v roku 2025 (Slovensko)',
