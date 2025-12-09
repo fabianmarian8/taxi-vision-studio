@@ -19,6 +19,7 @@ export interface PartnerData {
   pricePerKm?: string; // Cena za km (napr. "0.80€/km")
   paymentMethods?: string[]; // Spôsoby platby
   whatsapp?: string; // WhatsApp číslo
+  bookingUrl?: string; // URL na časovú objednávku
 }
 
 export interface TaxiService {
