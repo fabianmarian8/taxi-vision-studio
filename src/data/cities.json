@@ -1104,12 +1104,42 @@
           "placeId": "ChIJvxsMISZlFUcRDsfmtu58vBs"
         },
         {
-          "name": "R.S.T. Taxi & Ski Taxi 6+1 - Podbrezová - Brezno a okolie",
+          "name": "R.S.T. Taxi & Ski Taxi 6+1",
           "phone": "+421904334971",
-          "website": "https://taxipodbrezova.sk",
+          "website": "https://taxipodbrezova.sk/",
           "logo": "/logos/rst-taxi-podbrezova.webp",
+          "description": "Taxi 6+1 (Sedemmiestne taxi). Hotelový a letiskový transfer. SKI taxi servis Chopok Juh a okolie. Preprava osôb a batožiny v regióne Horehronie, v rámci SR a EÚ. Časová objednávka prepravy. Kuriér express - doručenie malých zásielok do 6h po celej SR. Donášková služba. Drink & drive taxi. Asistenčné služby - dodanie PHM, núdzové štartovanie vozidla. Možnosť bezkontaktnej platby.",
+          "customDescription": "Taxi & Ski Taxi Brezno - Podbrezová a okolie\n\n• Taxi 6+1 (Sedemmiestne taxi)\n• Hotelový a letiskový transfer\n• SKI taxi servis Chopok Juh a okolie\n• Preprava osôb a batožiny v regióne Horehronie, v rámci SR a EÚ\n• Časová objednávka prepravy na Vami požadovaný deň a presný čas\n• Kuriér express - doručenie malých zásielok do 6h po celej SR\n• Donášková služba - nákup a doručenie tovaru\n• Drink & drive taxi\n• Asistenčné služby - dodanie PHM a prevádzkových kvapalín, núdzové štartovanie vozidla\n• Možnosť bezkontaktnej platby",
           "address": "Kolkáreň 17/22, Podbrezová",
-          "redirectTo": "/taxi/podbrezova/r-s-t-taxi-ski-taxi-6-1"
+          "gallery": [
+            "/gallery/rst-taxi/rst-taxi-1.webp",
+            "/gallery/rst-taxi/rst-taxi-2.webp",
+            "/gallery/rst-taxi/rst-taxi-3.webp",
+            "/gallery/rst-taxi/rst-taxi-4.webp",
+            "/gallery/rst-taxi/rst-taxi-5.webp",
+            "/gallery/rst-taxi/rst-taxi-6.webp"
+          ],
+          "isPartner": true,
+          "partnerData": {
+            "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
+            "description": "R.S.T. Taxi & Ski Taxi 6+1 je profesionálna taxislužba v regióne Horehronie. Špecializujeme sa na ski transfery, letiskové transfery a prepravu väčších skupín v sedemmiestnom vozidle. Ponúkame komplexné služby vrátane kuriérskych služieb a asistenčnej pomoci.",
+            "services": [
+              "Taxi 6+1 (Sedemmiestne taxi)",
+              "SKI taxi servis Chopok Juh",
+              "Hotelový a letiskový transfer",
+              "Kuriér express do 6h",
+              "Drink & drive taxi",
+              "Asistenčné služby"
+            ],
+            "workingHours": "Nonstop 24/7",
+            "bookingUrl": "https://taxipodbrezova.sk/ponuka/taxi-casova-objednavka",
+            "whatsapp": "+421904334971",
+            "paymentMethods": [
+              "Hotovosť",
+              "Bezkontaktná platba"
+            ],
+            "secondaryCity": "Podbrezová"
+          }
         },
         {
           "name": "BREZNO PK - TAXI a oklie",
@@ -10046,43 +10076,12 @@
       ],
       "taxiServices": [
         {
-          "name": "R.S.T. Taxi & Ski Taxi 6+1",
+          "name": "R.S.T. Taxi & Ski Taxi 6+1 - Brezno - Podbrezová a okolie",
           "phone": "+421904334971",
-          "website": "https://taxipodbrezova.sk/",
+          "website": "https://taxipodbrezova.sk",
           "logo": "/logos/rst-taxi-podbrezova.webp",
-          "description": "Taxi 6+1 (Sedemmiestne taxi). Hotelový a letiskový transfer. SKI taxi servis Chopok Juh a okolie. Preprava osôb a batožiny v regióne Horehronie, v rámci SR a EÚ. Časová objednávka prepravy. Kuriér express - doručenie malých zásielok do 6h po celej SR. Donášková služba. Drink & drive taxi. Asistenčné služby - dodanie PHM, núdzové štartovanie vozidla. Možnosť bezkontaktnej platby.",
-          "isPremium": false,
-          "isPromotional": false,
-          "customDescription": "Taxi & Ski Taxi Podbrezová - Brezno a okolie\n\n• Taxi 6+1 (Sedemmiestne taxi)\n• Hotelový a letiskový transfer\n• SKI taxi servis Chopok Juh a okolie\n• Preprava osôb a batožiny v regióne Horehronie, v rámci SR a EÚ\n• Časová objednávka prepravy na Vami požadovaný deň a presný čas\n• Kuriér express - doručenie malých zásielok do 6h po celej SR\n• Donášková služba - nákup a doručenie tovaru\n• Drink & drive taxi\n• Asistenčné služby - dodanie PHM a prevádzkových kvapalín, núdzové štartovanie vozidla\n• Možnosť bezkontaktnej platby",
           "address": "Kolkáreň 17/22, Podbrezová",
-          "gallery": [
-            "/gallery/rst-taxi/rst-taxi-1.webp",
-            "/gallery/rst-taxi/rst-taxi-2.webp",
-            "/gallery/rst-taxi/rst-taxi-3.webp",
-            "/gallery/rst-taxi/rst-taxi-4.webp",
-            "/gallery/rst-taxi/rst-taxi-5.webp",
-            "/gallery/rst-taxi/rst-taxi-6.webp"
-          ],
-          "isPartner": true,
-          "partnerData": {
-            "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
-            "description": "R.S.T. Taxi & Ski Taxi 6+1 je profesionálna taxislužba v regióne Horehronie. Špecializujeme sa na ski transfery, letiskové transfery a prepravu väčších skupín v sedemmiestnom vozidle. Ponúkame komplexné služby vrátane kuriérskych služieb a asistenčnej pomoci.",
-            "services": [
-              "Taxi 6+1 (Sedemmiestne taxi)",
-              "SKI taxi servis Chopok Juh",
-              "Hotelový a letiskový transfer",
-              "Kuriér express do 6h",
-              "Drink & drive taxi",
-              "Asistenčné služby"
-            ],
-            "workingHours": "Nonstop 24/7",
-            "bookingUrl": "https://taxipodbrezova.sk/ponuka/taxi-casova-objednavka",
-            "whatsapp": "+421904334971",
-            "paymentMethods": [
-              "Hotovosť",
-              "Bezkontaktná platba"
-            ]
-          }
+          "redirectTo": "/taxi/brezno/r-s-t-taxi-ski-taxi-6-1"
         }
       ],
       "latitude": 48.8147,

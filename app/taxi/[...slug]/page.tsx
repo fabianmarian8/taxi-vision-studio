@@ -1178,98 +1178,103 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-                {/* Content overlay */}
-                <div className="relative z-10 flex flex-col justify-end h-full p-6 md:p-8" style={{ minHeight: '300px' }}>
+                {/* Content overlay - Mobile optimized */}
+                <div className="relative z-10 flex flex-col justify-end h-full p-4 md:p-8" style={{ minHeight: '280px' }}>
                   {/* Badges */}
-                  <div className="flex gap-2 mb-4">
-                    <div className="bg-green-500 text-white text-xs font-black px-3 py-1 rounded-full flex items-center gap-1">
-                      <BadgeCheck className="h-3 w-3" />
+                  <div className="flex gap-1.5 md:gap-2 mb-2 md:mb-4">
+                    <div className="bg-green-500 text-white text-[10px] md:text-xs font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-1">
+                      <BadgeCheck className="h-2.5 w-2.5 md:h-3 md:w-3" />
                       OVERENÉ
                     </div>
-                    <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-xs font-black px-3 py-1 rounded-full flex items-center gap-1">
-                      <Star className="h-3 w-3" />
+                    <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-[10px] md:text-xs font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-1">
+                      <Star className="h-2.5 w-2.5 md:h-3 md:w-3" />
                       PARTNER
                     </div>
                   </div>
 
-                  <h1 className="text-3xl md:text-4xl font-black text-white mb-2">
+                  <h1 className="text-2xl md:text-4xl font-black text-white mb-1 md:mb-2">
                     {service.name}
                   </h1>
-                  <p className="text-white/90 mb-4">
+                  <p className="text-white/90 text-sm md:text-base mb-2 md:mb-4">
                     Profesionálna taxislužba {locationText} {city.name}
                   </p>
                 </div>
               </div>
             )}
 
-            {/* Fallback gradient hero if no image */}
+            {/* Fallback gradient hero if no image - Mobile optimized */}
             {!heroImage && (
-              <div className="relative rounded-2xl overflow-hidden mb-8 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 p-8 md:p-12">
+              <div className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 p-5 md:p-12">
                 {/* Badges */}
-                <div className="flex gap-2 mb-6">
-                  <div className="bg-green-500 text-white text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5">
-                    <BadgeCheck className="h-4 w-4" />
+                <div className="flex gap-1.5 md:gap-2 mb-4 md:mb-6">
+                  <div className="bg-green-500 text-white text-[10px] md:text-sm font-black px-2 md:px-4 py-0.5 md:py-1.5 rounded-full flex items-center gap-1">
+                    <BadgeCheck className="h-2.5 w-2.5 md:h-4 md:w-4" />
                     OVERENÉ
                   </div>
-                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-sm font-black px-4 py-1.5 rounded-full flex items-center gap-1.5">
-                    <Star className="h-4 w-4" />
+                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-[10px] md:text-sm font-black px-2 md:px-4 py-0.5 md:py-1.5 rounded-full flex items-center gap-1">
+                    <Star className="h-2.5 w-2.5 md:h-4 md:w-4" />
                     PARTNER
                   </div>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl font-black text-white mb-4">
+                <h1 className="text-2xl md:text-5xl font-black text-white mb-2 md:mb-4">
                   {service.name}
                 </h1>
-                <p className="text-xl text-white/90">
+                <p className="text-base md:text-xl text-white/90">
                   Profesionálna taxislužba {locationText} {city.name}
                 </p>
               </div>
             )}
 
-            {/* Contact buttons - outside hero for better visibility */}
-            <div className="flex flex-wrap gap-3 mb-8">
+            {/* Contact buttons - mobile optimized */}
+            <div className="space-y-3 mb-6">
+              {/* Primary CTA - Phone - full width */}
               {service.phone && (
                 <a
                   href={`tel:${service.phone}`}
-                  className="flex-1 min-w-[200px] flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-black text-lg px-6 py-4 rounded-xl transition-colors"
+                  className="w-full flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-black text-base md:text-lg px-4 py-3.5 md:py-4 rounded-xl transition-colors shadow-lg"
                 >
                   <Phone className="h-5 w-5" />
                   {service.phone}
                 </a>
               )}
-              {partnerData?.whatsapp && (
-                <a
-                  href={`https://wa.me/${partnerData.whatsapp.replace(/[\s+]/g, '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-4 rounded-xl transition-colors"
-                >
-                  <MessageCircle className="h-5 w-5" />
-                  WhatsApp
-                </a>
-              )}
-              {partnerData?.bookingUrl && (
-                <a
-                  href={partnerData.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-4 rounded-xl transition-colors"
-                >
-                  <Clock className="h-5 w-5" />
-                  Časová objednávka
-                </a>
-              )}
-              {service.website && (
-                <a
-                  href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold px-6 py-4 rounded-xl transition-colors"
-                >
-                  <Globe className="h-5 w-5" />
-                  Navštíviť web
-                </a>
-              )}
+
+              {/* Secondary buttons - 2 column grid on mobile */}
+              <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
+                {partnerData?.whatsapp && (
+                  <a
+                    href={`https://wa.me/${partnerData.whatsapp.replace(/[\s+]/g, '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
+                  >
+                    <MessageCircle className="h-4 w-4 md:h-5 md:w-5" />
+                    <span>WhatsApp</span>
+                  </a>
+                )}
+                {partnerData?.bookingUrl && (
+                  <a
+                    href={partnerData.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
+                  >
+                    <Clock className="h-4 w-4 md:h-5 md:w-5" />
+                    <span className="hidden sm:inline">Časová </span>Objednávka
+                  </a>
+                )}
+                {service.website && (
+                  <a
+                    href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors col-span-2 md:col-span-1"
+                  >
+                    <Globe className="h-4 w-4 md:h-5 md:w-5" />
+                    <span>Navštíviť web</span>
+                  </a>
+                )}
+              </div>
             </div>
 
             {/* Gallery - under contact buttons */}
@@ -1279,11 +1284,11 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               </div>
             )}
 
-            {/* Custom description / services */}
+            {/* Custom description / services - Mobile optimized */}
             {service.customDescription && (
-              <div className="mt-8 bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm">
-                <h2 className="text-xl font-bold text-foreground mb-4">Naše služby</h2>
-                <div className="text-foreground/80 leading-relaxed whitespace-pre-line">
+              <div className="mt-6 md:mt-8 bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-sm">
+                <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">Naše služby</h2>
+                <div className="text-sm md:text-base text-foreground/80 leading-relaxed whitespace-pre-line">
                   {service.customDescription}
                 </div>
               </div>
@@ -1291,33 +1296,39 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-12 md:py-16 px-4 md:px-8">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-2xl md:text-3xl font-black text-foreground mb-8 text-center">
+        {/* Features Section - Mobile optimized */}
+        <section className="py-8 md:py-16 px-4 md:px-8">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-xl md:text-3xl font-black text-foreground mb-6 md:mb-8 text-center">
               Prečo si vybrať {service.name}?
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-purple-600 flex items-center justify-center mx-auto mb-4">
-                  <BadgeCheck className="h-8 w-8 text-white" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
+              <div className="flex md:flex-col items-center md:text-center p-4 md:p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm gap-3 md:gap-0">
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 md:mx-auto md:mb-4">
+                  <BadgeCheck className="h-5 w-5 md:h-7 md:w-7 text-white" />
                 </div>
-                <h3 className="font-bold text-lg text-foreground mb-2">Overená taxislužba</h3>
-                <p className="text-foreground/70">Partner program zaručuje kvalitu a spoľahlivosť služieb.</p>
+                <div className="flex-1 md:flex-none">
+                  <h3 className="font-bold text-sm md:text-lg text-foreground md:mb-2">Overená taxislužba</h3>
+                  <p className="text-foreground/70 text-xs md:text-base">Partner program zaručuje kvalitu a spoľahlivosť.</p>
+                </div>
               </div>
-              <div className="text-center p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-purple-600 flex items-center justify-center mx-auto mb-4">
-                  <Phone className="h-8 w-8 text-white" />
+              <div className="flex md:flex-col items-center md:text-center p-4 md:p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm gap-3 md:gap-0">
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 md:mx-auto md:mb-4">
+                  <Phone className="h-5 w-5 md:h-7 md:w-7 text-white" />
                 </div>
-                <h3 className="font-bold text-lg text-foreground mb-2">Rýchly kontakt</h3>
-                <p className="text-foreground/70">Jednoduché objednanie taxi telefonicky alebo cez web.</p>
+                <div className="flex-1 md:flex-none">
+                  <h3 className="font-bold text-sm md:text-lg text-foreground md:mb-2">Rýchly kontakt</h3>
+                  <p className="text-foreground/70 text-xs md:text-base">Jednoduché objednanie taxi telefonicky.</p>
+                </div>
               </div>
-              <div className="text-center p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-purple-600 flex items-center justify-center mx-auto mb-4">
-                  <Star className="h-8 w-8 text-white" />
+              <div className="flex md:flex-col items-center md:text-center p-4 md:p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm gap-3 md:gap-0">
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 md:mx-auto md:mb-4">
+                  <Star className="h-5 w-5 md:h-7 md:w-7 text-white" />
                 </div>
-                <h3 className="font-bold text-lg text-foreground mb-2">Profesionálny prístup</h3>
-                <p className="text-foreground/70">Skúsení vodiči a kvalitné vozidlá pre váš komfort.</p>
+                <div className="flex-1 md:flex-none">
+                  <h3 className="font-bold text-sm md:text-lg text-foreground md:mb-2">Profesionálny prístup</h3>
+                  <p className="text-foreground/70 text-xs md:text-base">Skúsení vodiči a kvalitné vozidlá.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -1346,13 +1357,13 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           />
         )}
 
-        {/* CTA Section */}
-        <section className="py-12 md:py-16 px-4 md:px-8 bg-gradient-to-r from-yellow-400 to-yellow-500">
-          <div className="container mx-auto max-w-6xl text-center">
-            <h2 className="text-2xl md:text-3xl font-black text-purple-900 mb-4">
+        {/* CTA Section - Mobile optimized */}
+        <section className="py-8 md:py-16 px-4 md:px-8 bg-gradient-to-r from-yellow-400 to-yellow-500">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-xl md:text-3xl font-black text-purple-900 mb-2 md:mb-4">
               Potrebujete taxi {locationText} {city.name}?
             </h2>
-            <p className="text-purple-900/70 mb-6 text-lg">
+            <p className="text-purple-900/70 mb-4 md:mb-6 text-sm md:text-lg">
               Zavolajte nám a odvezieme vás kam potrebujete.
             </p>
             <ServiceContactButtons
@@ -1365,14 +1376,35 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           </div>
         </section>
 
-        {/* Other services */}
+        {/* Secondary CTA Section - pre druhé mesto pôsobenia */}
+        {partnerData?.secondaryCity && (
+          <section className="py-8 md:py-16 px-4 md:px-8 bg-gradient-to-r from-purple-500 to-purple-600">
+            <div className="container mx-auto max-w-4xl text-center">
+              <h2 className="text-xl md:text-3xl font-black text-white mb-2 md:mb-4">
+                Potrebujete taxi v obci {partnerData.secondaryCity}?
+              </h2>
+              <p className="text-white/80 mb-4 md:mb-6 text-sm md:text-lg">
+                Pôsobíme aj v {partnerData.secondaryCity} a okolí.
+              </p>
+              <ServiceContactButtons
+                phone={service.phone}
+                whatsapp={partnerData?.whatsapp}
+                serviceName={service.name}
+                cityName={partnerData.secondaryCity}
+                variant="cta"
+              />
+            </div>
+          </section>
+        )}
+
+        {/* Other services - Mobile optimized */}
         {city.taxiServices.length > 1 && (
-          <section className="py-12 md:py-16 px-4 md:px-8 bg-foreground/5">
-            <div className="container mx-auto max-w-6xl">
-              <h2 className="text-2xl font-black mb-6 text-foreground text-center">
+          <section className="py-8 md:py-16 px-4 md:px-8 bg-foreground/5">
+            <div className="container mx-auto max-w-4xl">
+              <h2 className="text-lg md:text-2xl font-black mb-4 md:mb-6 text-foreground text-center">
                 Ďalšie taxislužby {locationText} {city.name}
               </h2>
-              <div className="grid gap-3">
+              <div className="grid gap-2 md:gap-3">
                 {[...city.taxiServices]
                   .filter((s) => s.name !== service.name)
                   .slice(0, 5)

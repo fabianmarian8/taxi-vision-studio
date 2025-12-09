@@ -20,6 +20,7 @@ export interface PartnerData {
   paymentMethods?: string[]; // Spôsoby platby
   whatsapp?: string; // WhatsApp číslo
   bookingUrl?: string; // URL na časovú objednávku
+  secondaryCity?: string; // Druhé mesto pôsobenia (pre CTA sekciu)
 }
 
 export interface TaxiService {

@@ -49,13 +49,13 @@ export function TaxiGallery({ images, serviceName }: TaxiGalleryProps) {
 
   return (
     <>
-      {/* Thumbnail Grid */}
-      <div className="flex flex-wrap gap-3 justify-center">
+      {/* Thumbnail Grid - Mobile optimized */}
+      <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
         {images.map((image, idx) => (
           <button
             key={idx}
             onClick={() => openLightbox(idx)}
-            className="relative w-24 h-24 md:w-28 md:h-28 rounded-xl overflow-hidden group cursor-pointer transition-transform hover:scale-105 shadow-md"
+            className="relative w-20 h-20 md:w-28 md:h-28 rounded-lg md:rounded-xl overflow-hidden group cursor-pointer transition-transform hover:scale-105 shadow-md"
           >
             <img
               src={getThumbnail(image)}
