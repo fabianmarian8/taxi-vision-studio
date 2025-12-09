@@ -1361,7 +1361,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         <section className="py-8 md:py-16 px-4 md:px-8 bg-gradient-to-r from-yellow-400 to-yellow-500">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-xl md:text-3xl font-black text-purple-900 mb-2 md:mb-4">
-              Potrebujete taxi {locationText} {city.name}?
+              Potrebujete taxi {locationText} {city.name}{partnerData?.secondaryCity ? ` alebo v obci ${partnerData.secondaryCity}` : ''}?
             </h2>
             <p className="text-purple-900/70 mb-4 md:mb-6 text-sm md:text-lg">
               Zavolajte nám a odvezieme vás kam potrebujete.
@@ -1375,27 +1375,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             />
           </div>
         </section>
-
-        {/* Secondary CTA Section - pre druhé mesto pôsobenia */}
-        {partnerData?.secondaryCity && (
-          <section className="py-8 md:py-16 px-4 md:px-8 bg-gradient-to-r from-purple-500 to-purple-600">
-            <div className="container mx-auto max-w-4xl text-center">
-              <h2 className="text-xl md:text-3xl font-black text-white mb-2 md:mb-4">
-                Potrebujete taxi v obci {partnerData.secondaryCity}?
-              </h2>
-              <p className="text-white/80 mb-4 md:mb-6 text-sm md:text-lg">
-                Pôsobíme aj v {partnerData.secondaryCity} a okolí.
-              </p>
-              <ServiceContactButtons
-                phone={service.phone}
-                whatsapp={partnerData?.whatsapp}
-                serviceName={service.name}
-                cityName={partnerData.secondaryCity}
-                variant="cta"
-              />
-            </div>
-          </section>
-        )}
 
         {/* Other services - Mobile optimized */}
         {city.taxiServices.length > 1 && (
