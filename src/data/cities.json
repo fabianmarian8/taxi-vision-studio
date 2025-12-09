@@ -1138,7 +1138,10 @@
               "Hotovosť",
               "Bezkontaktná platba"
             ],
-            "secondaryCity": "Podbrezová"
+            "secondaryCity": "Podbrezová",
+            "pricelistUrl": "https://taxipodbrezova.sk/info/rst-taxi-cennik",
+            "transportRulesUrl": "https://taxipodbrezova.sk/info/prepravný-poriadok",
+            "contactUrl": "https://taxipodbrezova.sk/kontakt"
           }
         },
         {

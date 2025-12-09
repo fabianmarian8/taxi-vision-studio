@@ -22,7 +22,7 @@ import { CityContent } from '@/components/CityContent';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { LocalBusinessSchema } from '@/components/schema/LocalBusinessSchema';
 import { TaxiServiceSchema } from '@/components/schema/TaxiServiceSchema';
-import { MapPin, Phone, Globe, Crown, ArrowLeft, Star, BadgeCheck, CheckCircle2, ArrowRight, Clock, Award, Car, MessageCircle, Eye } from 'lucide-react';
+import { MapPin, Phone, Globe, Crown, ArrowLeft, Star, BadgeCheck, CheckCircle2, ArrowRight, Clock, Award, Car, MessageCircle, Eye, FileText, ScrollText, Users } from 'lucide-react';
 import { getCityBySlug, createRegionSlug, slovakCities, getRegionBySlug, type CityData, type TaxiService, findNearbyCitiesWithTaxis } from '@/data/cities';
 import { NearbyCitiesSection } from '@/components/NearbyCitiesSection';
 import { getMunicipalityBySlug, findNearestCitiesWithTaxis, allMunicipalities, type Municipality } from '@/data/municipalities';
@@ -1165,8 +1165,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             {/* Hero image container */}
             {heroImage && (
               <div
-                className="relative rounded-2xl overflow-hidden mb-8"
-                style={{ minHeight: '300px', maxHeight: '400px' }}
+                className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 h-[200px] md:h-[260px]"
               >
                 <div
                   className="absolute inset-0 bg-no-repeat"
@@ -1176,10 +1175,10 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                     backgroundSize: 'cover'
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-                {/* Content overlay - Mobile optimized */}
-                <div className="relative z-10 flex flex-col justify-end h-full p-4 md:p-8" style={{ minHeight: '280px' }}>
+                {/* Content overlay */}
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-4 md:p-8">
                   {/* Badges */}
                   <div className="flex gap-1.5 md:gap-2 mb-2 md:mb-4">
                     <div className="bg-green-500 text-white text-[10px] md:text-xs font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-1">
@@ -1195,9 +1194,35 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   <h1 className="text-2xl md:text-4xl font-black text-white mb-1 md:mb-2">
                     {service.name}
                   </h1>
-                  <p className="text-white/90 text-sm md:text-base mb-2 md:mb-4">
+                  <p className="text-white/90 text-sm md:text-base">
                     Profesionálna taxislužba {locationText} {city.name}
                   </p>
+
+                  {/* Web & Contact buttons in hero - at bottom */}
+                  <div className="flex gap-2 md:gap-3 mt-2 md:mt-3">
+                    {service.website && (
+                      <a
+                        href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-1.5 md:gap-2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2 md:py-2.5 rounded-lg transition-colors"
+                      >
+                        <Globe className="h-4 w-4 md:h-5 md:w-5" />
+                        <span>Web</span>
+                      </a>
+                    )}
+                    {partnerData?.contactUrl && (
+                      <a
+                        href={partnerData.contactUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-1.5 md:gap-2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2 md:py-2.5 rounded-lg transition-colors"
+                      >
+                        <Users className="h-4 w-4 md:h-5 md:w-5" />
+                        <span>Kontakt</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             )}
@@ -1263,18 +1288,29 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                     <span className="hidden sm:inline">Časová </span>Objednávka
                   </a>
                 )}
-                {service.website && (
+                                {partnerData?.pricelistUrl && (
                   <a
-                    href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
+                    href={partnerData.pricelistUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors col-span-2 md:col-span-1"
+                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-amber-100 hover:bg-amber-200 text-amber-800 font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
                   >
-                    <Globe className="h-4 w-4 md:h-5 md:w-5" />
-                    <span>Navštíviť web</span>
+                    <FileText className="h-4 w-4 md:h-5 md:w-5" />
+                    <span>Cenník</span>
                   </a>
                 )}
-              </div>
+                {partnerData?.transportRulesUrl && (
+                  <a
+                    href={partnerData.transportRulesUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-blue-100 hover:bg-blue-200 text-blue-800 font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
+                  >
+                    <ScrollText className="h-4 w-4 md:h-5 md:w-5" />
+                    <span>Prepravný poriadok</span>
+                  </a>
+                )}
+                              </div>
             </div>
 
             {/* Gallery - under contact buttons */}
