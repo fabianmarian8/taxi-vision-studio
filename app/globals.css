@@ -431,6 +431,14 @@
   }
 }
 
+/* Partner page background - prevents flash of yellow on load */
+.partner-page-bg {
+  background-image: url('/textures/kraft-paper-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
 /* Dodatočná ochrana proti horizontálnemu scrollu */
 @media (max-width: 640px) {
   html, body {

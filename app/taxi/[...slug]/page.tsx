@@ -1122,15 +1122,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
     const heroImage = partnerData?.heroImage;
 
     return (
-      <div
-        className="min-h-screen overflow-x-hidden"
-        style={{
-          backgroundImage: 'url(/textures/kraft-paper-bg.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center top',
-          backgroundAttachment: 'fixed'
-        }}
-      >
+      <div className="min-h-screen overflow-x-hidden partner-page-bg">
         <TaxiServiceSchema
           service={service}
           city={city}
