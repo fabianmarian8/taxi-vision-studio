@@ -120,6 +120,10 @@ function detectRouteType(slugArray: string[]): RouteType {
     if (city) {
       const service = city.taxiServices.find(s => createServiceSlug(s.name) === second);
       if (service) {
+        // Check if service has redirect
+        if (service.redirectTo) {
+          return { type: 'redirect', to: service.redirectTo };
+        }
         return { type: 'service', city, service, serviceSlug: second };
       }
     }
@@ -381,10 +385,10 @@ async function UniversalListView({
   locationText: string;
   partnerRatings: Map<string, { rating: number; count: number }>;
 }) {
-  // Separate services by tier
-  const partners = city.taxiServices.filter(s => s.isPartner);
-  const premiums = city.taxiServices.filter(s => s.isPremium && !s.isPartner);
-  const standard = city.taxiServices.filter(s => !s.isPremium && !s.isPartner);
+  // Separate services by tier (redirectTo = partner redirect, counts as partner)
+  const partners = city.taxiServices.filter(s => s.isPartner || s.redirectTo);
+  const premiums = city.taxiServices.filter(s => s.isPremium && !s.isPartner && !s.redirectTo);
+  const standard = city.taxiServices.filter(s => !s.isPremium && !s.isPartner && !s.redirectTo);
 
   // Shuffle Premium services using deterministic daily seed
   const dailySeed = new Date().toISOString().slice(0, 10);
@@ -444,7 +448,8 @@ async function UniversalListView({
           <div className="divide-y divide-gray-100">
             {allServices.map((service, index) => {
               const serviceSlug = createServiceSlug(service.name);
-              const isPartner = service.isPartner;
+              // Služba s redirectTo na partner stránku sa tiež zobrazí ako partner
+              const isPartner = service.isPartner || !!service.redirectTo;
               const isPremium = service.isPremium;
               const ratingData = partnerRatings.get(service.name);
               const primaryAction = getPrimaryAction(service);
@@ -1243,6 +1248,17 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   WhatsApp
                 </a>
               )}
+              {partnerData?.bookingUrl && (
+                <a
+                  href={partnerData.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-4 rounded-xl transition-colors"
+                >
+                  <Clock className="h-5 w-5" />
+                  Časová objednávka
+                </a>
+              )}
               {service.website && (
                 <a
                   href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
@@ -1260,6 +1276,16 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             {service.gallery && service.gallery.length > 0 && (
               <div className="mt-6">
                 <TaxiGallery images={service.gallery} serviceName={service.name} />
+              </div>
+            )}
+
+            {/* Custom description / services */}
+            {service.customDescription && (
+              <div className="mt-8 bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-foreground mb-4">Naše služby</h2>
+                <div className="text-foreground/80 leading-relaxed whitespace-pre-line">
+                  {service.customDescription}
+                </div>
               </div>
             )}
           </div>

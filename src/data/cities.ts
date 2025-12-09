@@ -36,6 +36,7 @@ export interface TaxiService {
   isPromotional?: boolean; // Flag pre marketingové promo premium (neplatia)
   premiumExpiresAt?: string; // ISO date string pre expiráciu
   partnerData?: PartnerData;
+  redirectTo?: string; // Presmerovanie na inú stránku (napr. partner stránku v inom meste)
 }
 
 export interface CityData {

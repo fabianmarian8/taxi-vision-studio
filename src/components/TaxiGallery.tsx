@@ -8,6 +8,14 @@ interface TaxiGalleryProps {
   serviceName: string;
 }
 
+// Helper to get thumbnail path from full image path
+function getThumbnail(imagePath: string): string {
+  // /gallery/rst-taxi/rst-taxi-1.webp -> /gallery/rst-taxi/rst-taxi-1-thumb.webp
+  const ext = imagePath.lastIndexOf('.');
+  if (ext === -1) return imagePath;
+  return imagePath.slice(0, ext) + '-thumb' + imagePath.slice(ext);
+}
+
 export function TaxiGallery({ images, serviceName }: TaxiGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,9 +58,10 @@ export function TaxiGallery({ images, serviceName }: TaxiGalleryProps) {
             className="relative w-24 h-24 md:w-28 md:h-28 rounded-xl overflow-hidden group cursor-pointer transition-transform hover:scale-105 shadow-md"
           >
             <img
-              src={image}
+              src={getThumbnail(image)}
               alt={`${serviceName} - foto ${idx + 1}`}
               className="w-full h-full object-cover"
+              onError={(e) => { e.currentTarget.src = image; }}
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
           </button>

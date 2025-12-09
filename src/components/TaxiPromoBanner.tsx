@@ -13,8 +13,8 @@ interface TaxiPromoBannerProps {
 export function TaxiPromoBanner({ cityName, locationText, taxiCount }: TaxiPromoBannerProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Ak je menej ako 3 taxislužby, zobraz rozbaľovací banner
-  const isCollapsible = taxiCount < 3;
+  // Vždy rozbaľovací banner (globálne nastavenie)
+  const isCollapsible = true;
 
   // Plný obsah bannera
   const BannerContent = () => (
