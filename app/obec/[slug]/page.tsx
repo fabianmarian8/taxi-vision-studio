@@ -1,6 +1,24 @@
 import { redirect, notFound } from 'next/navigation';
 import municipalityData from '@/data/municipality-data.json';
 
+// Typy pre municipality data
+interface Municipality {
+  name: string;
+  slug: string;
+  district: string;
+  region: string;
+  postalCode?: string;
+  population?: number;
+  area?: number;
+}
+
+interface MunicipalityData {
+  lastUpdated: string;
+  source: string;
+  count: number;
+  municipalities: Record<string, Municipality>;
+}
+
 // Helper na vytvorenie slug pre kraj
 function toSlug(text: string): string {
   return text
@@ -28,14 +46,15 @@ export default async function ObecRedirectPage({ params }: PageProps) {
   const { slug } = await params;
 
   // Nájdi obec v databáze
-  const municipalities = (municipalityData as any).municipalities;
+  const data = municipalityData as unknown as MunicipalityData;
+  const municipalities = data.municipalities;
   const obec = municipalities[slug];
 
   if (!obec) {
     // Skús nájsť bez diakritiky
-    const found = Object.values(municipalities).find((m: any) =>
+    const found = Object.values(municipalities).find((m: Municipality) =>
       toSlug(m.name) === slug || m.slug === slug
-    ) as any;
+    );
 
     if (found) {
       const regionSlug = getRegionSlug(found.region);

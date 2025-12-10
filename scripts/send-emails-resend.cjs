@@ -21,8 +21,8 @@ const DAILY_LIMIT = 100; // Resend free tier limit
 const DELAY_MS = 10000; // 10 sekúnd medzi emailami (bezpečnejšie)
 
 // === SÚBORY ===
-const JSON_FILE = path.join(__dirname, '..', 'data', 'obce-mailing-list-verified.json'); // Overené emaily (good + risky)
-const SENT_LOG = path.join(__dirname, '..', 'data', 'obce-sent-log.json');
+const JSON_FILE = path.join(__dirname, '..', 'data', 'obce-mailing-list-v3-verified.json'); // v3 so správnymi URL
+const SENT_LOG = path.join(__dirname, '..', 'data', 'obce-sent-log-v3.json'); // Nový log pre v3
 
 // === EMAIL ŠABLÓNA ===
 function getEmailSubject(nazovObce) {
