@@ -42,7 +42,11 @@ async function writeCitiesData(data: CitiesJsonData, commitMessage: string): Pro
     console.log('[API] Writing cities to GitHub');
     await writeFileToGitHub(CITIES_FILE_PATH, content, commitMessage);
   } else {
-    console.log('[API] Writing cities to local file system');
+    // V produkcii (Vercel) je file system read-only, takže vyhodíme explicitnú chybu
+    if (process.env.VERCEL || process.env.NODE_ENV === 'production') {
+      throw new Error('GitHub konfigurácia chýba. Nastavte GITHUB_TOKEN, GITHUB_OWNER a GITHUB_REPO environment premenné.');
+    }
+    console.log('[API] Writing cities to local file system (development mode)');
     const citiesPath = path.join(process.cwd(), CITIES_FILE_PATH);
     await fs.writeFile(citiesPath, content, 'utf-8');
   }

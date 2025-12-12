@@ -4710,10 +4710,13 @@
         {
           "name": "ZAFIR TAXI NÁMESTOVO",
           "phone": "+421904818135",
+          "phone2": "+421907835782",
+          "phone3": "+421948232232",
           "isPremium": false,
           "isPromotional": false,
           "address": "Nábrežie 2, Námestovo",
-          "placeId": "ChIJcWvQabnJFUcRLnt3fe1l35A"
+          "placeId": "ChIJcWvQabnJFUcRLnt3fe1l35A",
+          "nonstop": true
         }
       ],
       "latitude": 49.409512,

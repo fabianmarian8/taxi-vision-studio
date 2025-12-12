@@ -275,7 +275,7 @@ export default async function RoutePage({ params }: RoutePageProps) {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href={`/taxi/${route.origin.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')}`}
+                href={`/taxi/${route.origin.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-')}`}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary-yellow text-foreground font-bold rounded-lg hover:bg-primary-yellow/90 transition-colors"
               >
                 <Phone className="h-5 w-5" />

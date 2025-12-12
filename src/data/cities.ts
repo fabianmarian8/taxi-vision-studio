@@ -30,6 +30,8 @@ export interface TaxiService {
   name: string;
   website?: string;
   phone?: string;
+  phone2?: string; // Druhé telefónne číslo
+  phone3?: string; // Tretie telefónne číslo
   address?: string; // Adresa taxislužby z Google Places API
   placeId?: string; // Google Places ID pre budúce využitie
   description?: string;
@@ -42,6 +44,7 @@ export interface TaxiService {
   premiumExpiresAt?: string; // ISO date string pre expiráciu
   partnerData?: PartnerData;
   redirectTo?: string; // Presmerovanie na inú stránku (napr. partner stránku v inom meste)
+  nonstop?: boolean; // 24/7 služba
 }
 
 export interface CityData {

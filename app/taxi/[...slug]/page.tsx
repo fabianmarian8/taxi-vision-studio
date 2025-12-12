@@ -1181,6 +1181,12 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                       <Star className="h-2.5 w-2.5 md:h-3 md:w-3" />
                       PARTNER
                     </div>
+                    {service.nonstop && (
+                      <div className="bg-blue-600 text-white text-[10px] md:text-xs font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-1">
+                        <Clock className="h-2.5 w-2.5 md:h-3 md:w-3" />
+                        NONSTOP
+                      </div>
+                    )}
                   </div>
 
                   <h1 className="text-2xl md:text-4xl font-black text-white mb-1 md:mb-2">
@@ -1232,6 +1238,12 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                     <Star className="h-2.5 w-2.5 md:h-4 md:w-4" />
                     PARTNER
                   </div>
+                  {service.nonstop && (
+                    <div className="bg-blue-600 text-white text-[10px] md:text-sm font-black px-2 md:px-4 py-0.5 md:py-1.5 rounded-full flex items-center gap-1">
+                      <Clock className="h-2.5 w-2.5 md:h-4 md:w-4" />
+                      NONSTOP
+                    </div>
+                  )}
                 </div>
 
                 <h1 className="text-2xl md:text-5xl font-black text-white mb-2 md:mb-4">
@@ -1254,6 +1266,29 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   <Phone className="h-5 w-5" />
                   {service.phone}
                 </a>
+              )}
+              {/* Additional phone numbers */}
+              {(service.phone2 || service.phone3) && (
+                <div className="flex flex-wrap gap-2">
+                  {service.phone2 && (
+                    <a
+                      href={`tel:${service.phone2}`}
+                      className="flex-1 flex items-center justify-center gap-2 bg-green-500/80 hover:bg-green-600 text-white font-bold text-sm px-3 py-2.5 rounded-lg transition-colors"
+                    >
+                      <Phone className="h-4 w-4" />
+                      {service.phone2}
+                    </a>
+                  )}
+                  {service.phone3 && (
+                    <a
+                      href={`tel:${service.phone3}`}
+                      className="flex-1 flex items-center justify-center gap-2 bg-green-500/80 hover:bg-green-600 text-white font-bold text-sm px-3 py-2.5 rounded-lg transition-colors"
+                    >
+                      <Phone className="h-4 w-4" />
+                      {service.phone3}
+                    </a>
+                  )}
+                </div>
               )}
 
               {/* Secondary buttons - 2 column grid on mobile */}
@@ -1679,7 +1714,7 @@ function Footer() {
             <Link href="/podmienky-pouzivania" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200">
               Podmienky používania
             </Link>
-            <Link href="/" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200">
+            <Link href="/kontakt" className="text-xs md:text-sm text-foreground font-bold hover:text-foreground/70 transition-colors duration-200">
               Kontakt
             </Link>
           </div>
