@@ -8330,7 +8330,7 @@
       "slug": "trebisov",
       "region": "Košický kraj",
       "description": "Okresné mesto v regióne Zemplín. Objednajte si taxi v Trebišove.",
-      "metaDescription": "Nájdite taxi v meste Trebišov. 7 taxislužieb s telefónnymi číslami a webovými stránkami: Gold Taxi Trebišov, Taxi Gold Trebišov, Taxi Trebišov Gray a ďalšie. Kontaktujte priamo.",
+      "metaDescription": "Nájdite taxi v meste Trebišov. 8 taxislužieb s telefónnymi číslami a webovými stránkami: EBBE TAXI, Gold Taxi Trebišov, Taxi Gold Trebišov, Taxi Trebišov Gray a ďalšie. Kontaktujte priamo.",
       "keywords": [
         "taxi trebišov",
         "taxislužba trebišov",
@@ -8394,6 +8394,13 @@
           "isPromotional": false,
           "address": "Májová 1, Trebišov",
           "placeId": "ChIJu_BO7XYrOUcRrQ58r_5L0ho"
+        },
+        {
+          "name": "EBBE TAXI",
+          "website": "https://www.ebbetaxi.sk",
+          "phone": "+421911861386",
+          "address": "Hlavná 123, Trebišov",
+          "description": "Klasické taxi jazdy, drink taxi, študentská doprava, skupinové prepravy a kuriér taxi."
         }
       ],
       "latitude": 48.628622,
