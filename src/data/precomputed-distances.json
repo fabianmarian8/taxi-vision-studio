@@ -1,6 +1,6 @@
 {
   "generatedAt": "2025-12-12T21:17:17.631Z",
-  "totalPairs": 8379,
+  "totalPairs": 8380,
   "distances": [
     {
       "municipalitySlug": "abraham",
@@ -58654,6 +58654,13 @@
       "airDistance": 10,
       "roadDistance": 16.2,
       "duration": 17
+    },
+    {
+      "municipalitySlug": "benus",
+      "citySlug": "podbrezova",
+      "airDistance": 17.0,
+      "roadDistance": 19,
+      "duration": 22
     }
   ],
   "lastFixed": "2025-12-12T18:36:14.660Z",
