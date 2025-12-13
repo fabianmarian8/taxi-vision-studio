@@ -78,6 +78,21 @@ export default async function AdminDashboard() {
             </Card>
           </Link>
 
+          {/* Partner Drafts Card */}
+          <Link href="/admin/partner-drafts">
+            <Card className="cursor-pointer border-purple-200 bg-purple-50/50">
+              <CardHeader>
+                <CardTitle>Partner úpravy</CardTitle>
+                <CardDescription>
+                  Schvaľovať zmeny od partnerov taxislužieb
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full" variant="outline">Otvoriť</Button>
+              </CardContent>
+            </Card>
+          </Link>
+
           {/* Azet Scraper Card */}
           <Link href="/admin/azet-scraper">
             <Card className="cursor-pointer border-yellow-200 bg-yellow-50/50">
