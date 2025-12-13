@@ -997,40 +997,40 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
                                   ? 'bg-amber-50/30 border-amber-100 hover:border-amber-200'
                                   : 'hover:shadow-md'
                               }`}>
-                                <CardContent className="py-3 px-4">
-                                  <div className="flex items-center justify-between gap-3">
-                                    <div className="flex flex-col gap-1 min-w-0">
-                                      <div className="flex items-center gap-2">
-                                        <span className={`font-bold text-sm truncate ${isPartner ? 'text-purple-900' : 'text-foreground'}`}>
+                                <CardContent className="py-2 px-3 md:py-3 md:px-4">
+                                  <div className="flex items-center justify-between gap-2">
+                                    <div className="flex flex-col gap-1 min-w-0 flex-1">
+                                      <div className="flex flex-wrap items-center gap-1 md:gap-2">
+                                        <span className={`font-bold text-xs md:text-sm truncate max-w-[120px] md:max-w-none ${isPartner ? 'text-purple-900' : 'text-foreground'}`}>
                                           {service.name}
                                         </span>
                                         {isPartner && (
-                                          <span className="flex-shrink-0 text-[10px] bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
-                                            <Star className="h-2.5 w-2.5" />
+                                          <span className="flex-shrink-0 text-[8px] md:text-[10px] bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 px-1 md:px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
+                                            <Star className="h-2 w-2 md:h-2.5 md:w-2.5" />
                                             PARTNER
                                           </span>
                                         )}
                                         {isPremium && (
-                                          <span className="flex-shrink-0 text-[10px] bg-amber-500 text-white px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
-                                            <Star className="h-2.5 w-2.5" />
+                                          <span className="flex-shrink-0 text-[8px] md:text-[10px] bg-amber-500 text-white px-1 md:px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
+                                            <Star className="h-2 w-2 md:h-2.5 md:w-2.5" />
                                             PREMIUM
                                           </span>
                                         )}
                                         {(isPartner || isPremium) && (
-                                          <span className="flex-shrink-0 text-[10px] bg-green-600 text-white px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
-                                            <BadgeCheck className="h-2.5 w-2.5" />
+                                          <span className="hidden sm:flex flex-shrink-0 text-[8px] md:text-[10px] bg-green-600 text-white px-1 md:px-1.5 py-0.5 rounded font-bold items-center gap-0.5">
+                                            <BadgeCheck className="h-2 w-2 md:h-2.5 md:w-2.5" />
                                             OVERENÉ
                                           </span>
                                         )}
                                       </div>
                                       {service.phone && (
-                                        <span className="text-xs text-foreground/70 flex items-center gap-1.5">
-                                          <Phone className={`h-3 w-3 ${isPartner ? 'text-purple-600' : 'text-foreground/50'}`} />
+                                        <span className="text-[10px] md:text-xs text-foreground/70 flex items-center gap-1">
+                                          <Phone className={`h-2.5 w-2.5 md:h-3 md:w-3 ${isPartner ? 'text-purple-600' : 'text-foreground/50'}`} />
                                           {service.phone}
                                         </span>
                                       )}
                                     </div>
-                                    
+
                                     <div className="flex-shrink-0">
                                        <ArrowRight className={`h-4 w-4 ${isPartner ? 'text-purple-400' : 'text-gray-300'}`} />
                                     </div>
