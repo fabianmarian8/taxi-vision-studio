@@ -15,11 +15,13 @@ interface CityFAQProps {
   cityName: string;
   citySlug: string;
   isVillage?: boolean;
+  customItems?: FAQItem[];
 }
 
-export const CityFAQ = ({ cityName, citySlug, isVillage = false }: CityFAQProps) => {
+export const CityFAQ = ({ cityName, citySlug, isVillage = false, customItems }: CityFAQProps) => {
   // Get city-specific FAQs or use default ones (with isVillage for correct location text)
-  const faqItems: FAQItem[] = citySpecificFAQs[citySlug] || getDefaultFAQItems(cityName, isVillage);
+  // If customItems are provided, use them instead
+  const faqItems: FAQItem[] = customItems || citySpecificFAQs[citySlug] || getDefaultFAQItems(cityName, isVillage);
 
   // Pridanie FAQ Schema.org Structured Data
   useEffect(() => {

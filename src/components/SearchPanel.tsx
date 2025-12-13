@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { findNearestCity } from "@/lib/locationUtils";
 import { slovakCities } from "@/data/cities";
 import { allMunicipalities } from "@/data/municipalities";
+import { locations } from "@/data/locations";
 import { looksLikePostalCode, findByPostalCode, normalizePostalCode } from "@/data/postal-codes";
 import {
   useFloating,
@@ -35,7 +36,7 @@ export const SearchPanel = () => {
   const [searchValue, setSearchValue] = useState("");
   const [isLoadingLocation, setIsLoadingLocation] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [filteredResults, setFilteredResults] = useState<Array<{ name: string; region: string; district?: string; slug: string; type: 'city' | 'municipality' }>>([]);
+  const [filteredResults, setFilteredResults] = useState<Array<{ name: string; region: string; district?: string; slug: string; type: 'city' | 'municipality' | 'location' }>>([]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -97,14 +98,25 @@ export const SearchPanel = () => {
           type: city.isVillage ? 'municipality' as const : 'city' as const
         }));
 
+      // Search in locations (resorts, poi)
+      const filteredLocations = locations
+        .filter((loc) => normalizeText(loc.name).includes(normalizedSearch))
+        .map((loc) => ({
+          name: loc.name,
+          region: loc.region,
+          district: loc.district,
+          slug: loc.slug,
+          type: 'location' as const
+        }));
+
       // Search in municipalities (without taxi services in our DB)
       const filteredMunicipalities = allMunicipalities
         .filter((mun) => normalizeText(mun.name).includes(normalizedSearch))
         .filter((mun) => !slovakCities.some(city => city.slug === mun.slug)) // Exclude duplicates
         .map((mun) => ({ name: mun.name, region: mun.region, district: mun.district, slug: mun.slug, type: 'municipality' as const }));
 
-      // Combine: cities first, then municipalities
-      const combined = [...filteredCities, ...filteredMunicipalities];
+      // Combine: cities first, then locations, then municipalities
+      const combined = [...filteredCities, ...filteredLocations, ...filteredMunicipalities];
       setFilteredResults(combined);
       setShowDropdown(combined.length > 0);
       setSelectedIndex(-1);
@@ -172,6 +184,16 @@ export const SearchPanel = () => {
 
     if (exactCityMatch) {
       navigateToLocation(exactCityMatch.slug, exactCityMatch.name);
+      return;
+    }
+
+    // Try exact match in locations
+    const exactLocationMatch = locations.find(
+      (loc) => normalizeText(loc.name) === normalizedSearch
+    );
+
+    if (exactLocationMatch) {
+      navigateToLocation(exactLocationMatch.slug, exactLocationMatch.name);
       return;
     }
 
@@ -416,6 +438,9 @@ export const SearchPanel = () => {
                   <div className="font-semibold text-sm md:text-base text-foreground">{result.name}</div>
                   {result.type === 'municipality' && (
                     <span className="text-xs bg-foreground/10 px-1.5 py-0.5 rounded text-foreground/70">obec</span>
+                  )}
+                  {result.type === 'location' && (
+                    <span className="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded font-bold">lokalita</span>
                   )}
                 </div>
                 <div className="text-xs md:text-sm text-foreground/60 mt-0.5">

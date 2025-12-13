@@ -1,6 +1,6 @@
 {
   "generatedAt": "2025-12-12T21:17:17.631Z",
-  "totalPairs": 8361,
+  "totalPairs": 8379,
   "distances": [
     {
       "municipalitySlug": "abraham",
@@ -12291,8 +12291,8 @@
       "municipalitySlug": "hiadel",
       "citySlug": "banska-bystrica",
       "airDistance": 14,
-      "roadDistance": 19.5,
-      "duration": 21
+      "roadDistance": 22.6,
+      "duration": 23
     },
     {
       "municipalitySlug": "hiadel",
@@ -13565,8 +13565,8 @@
       "municipalitySlug": "lubietova",
       "citySlug": "banska-bystrica",
       "airDistance": 14.8,
-      "roadDistance": 19.9,
-      "duration": 21
+      "roadDistance": 23.3,
+      "duration": 24
     },
     {
       "municipalitySlug": "lubietova",
@@ -55264,8 +55264,8 @@
       "municipalitySlug": "lucatin",
       "citySlug": "banska-bystrica",
       "airDistance": 12.9,
-      "roadDistance": 16.7,
-      "duration": 18
+      "roadDistance": 19.7,
+      "duration": 19
     },
     {
       "municipalitySlug": "lucatin",
@@ -58528,6 +58528,132 @@
       "airDistance": 0,
       "roadDistance": 0,
       "duration": 0
+    },
+    {
+      "municipalitySlug": "osrblie",
+      "citySlug": "podbrezova",
+      "airDistance": 6,
+      "roadDistance": 9,
+      "duration": 12
+    },
+    {
+      "municipalitySlug": "hronec",
+      "citySlug": "podbrezova",
+      "airDistance": 3,
+      "roadDistance": 5,
+      "duration": 7
+    },
+    {
+      "municipalitySlug": "bystra",
+      "citySlug": "podbrezova",
+      "airDistance": 6,
+      "roadDistance": 8,
+      "duration": 10
+    },
+    {
+      "municipalitySlug": "myto-pod-dumbierom",
+      "citySlug": "podbrezova",
+      "airDistance": 8,
+      "roadDistance": 10,
+      "duration": 12
+    },
+    {
+      "municipalitySlug": "horna-lehota",
+      "citySlug": "podbrezova",
+      "airDistance": 5,
+      "roadDistance": 7,
+      "duration": 9
+    },
+    {
+      "municipalitySlug": "dolna-lehota",
+      "citySlug": "podbrezova",
+      "airDistance": 4,
+      "roadDistance": 6,
+      "duration": 8
+    },
+    {
+      "municipalitySlug": "jasenie",
+      "citySlug": "podbrezova",
+      "airDistance": 7,
+      "roadDistance": 10,
+      "duration": 12
+    },
+    {
+      "municipalitySlug": "predajna",
+      "citySlug": "podbrezova",
+      "airDistance": 6,
+      "roadDistance": 8,
+      "duration": 10
+    },
+    {
+      "municipalitySlug": "nemecka",
+      "citySlug": "podbrezova",
+      "airDistance": 10,
+      "roadDistance": 12,
+      "duration": 15
+    },
+    {
+      "municipalitySlug": "raztoka",
+      "citySlug": "podbrezova",
+      "airDistance": 11,
+      "roadDistance": 14,
+      "duration": 17
+    },
+    {
+      "municipalitySlug": "brusno",
+      "citySlug": "podbrezova",
+      "airDistance": 14,
+      "roadDistance": 17,
+      "duration": 18
+    },
+    {
+      "municipalitySlug": "pohronsky-bukovec",
+      "citySlug": "podbrezova",
+      "airDistance": 16,
+      "roadDistance": 20,
+      "duration": 22
+    },
+    {
+      "municipalitySlug": "medzibrod",
+      "citySlug": "podbrezova",
+      "airDistance": 17,
+      "roadDistance": 20,
+      "duration": 20
+    },
+    {
+      "municipalitySlug": "lucatin",
+      "citySlug": "podbrezova",
+      "airDistance": 15,
+      "roadDistance": 18.7,
+      "duration": 16
+    },
+    {
+      "municipalitySlug": "lubietova",
+      "citySlug": "podbrezova",
+      "airDistance": 18,
+      "roadDistance": 21.8,
+      "duration": 20
+    },
+    {
+      "municipalitySlug": "slovenska-lupca",
+      "citySlug": "podbrezova",
+      "airDistance": 20,
+      "roadDistance": 22.9,
+      "duration": 19
+    },
+    {
+      "municipalitySlug": "hiadel",
+      "citySlug": "podbrezova",
+      "airDistance": 18,
+      "roadDistance": 21.6,
+      "duration": 21
+    },
+    {
+      "municipalitySlug": "cierny-balog",
+      "citySlug": "podbrezova",
+      "airDistance": 10,
+      "roadDistance": 16.2,
+      "duration": 17
     }
   ],
   "lastFixed": "2025-12-12T18:36:14.660Z",

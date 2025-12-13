@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Tále",
+    "slug": "tale",
+    "region": "Banskobystrický kraj",
+    "district": "Brezno",
+    "latitude": 48.8745,
+    "longitude": 19.6015,
+    "nearestCitySlug": "podbrezova",
+    "description": "Známe turistické stredisko a golfové ihrisko v Nízkych Tatrách.",
+    "metaDescription": "Taxi Tále - Rýchla a spoľahlivá doprava do strediska Tále, hotela Partizán a golfového ihriska.",
+    "content": {
+      "intro": "Tále sú jedným z najvýznamnejších stredísk cestovného ruchu v Nízkych Tatrách. Nachádzajú sa v katastri obce Horná Lehota a Bystrá. Sú známe predovšetkým vďaka špičkovému golfovému ihrisku Gray Bear, ktoré je prvým majstrovským 18-jamkovým ihriskom na Slovensku. V zime sa menia na vyhľadávané lyžiarske stredisko Ski Tále, ktoré ponúka podmienky pre rodiny s deťmi aj pokročilých lyžiarov.",
+      "transport": "Doprava na Tále je kľúčová pre hostí ubytovaných v hoteloch Partizán, Stupka či Golf. Hoci sem premávajú autobusy, ich frekvencia nemusí vyhovovať každému, najmä vo večerných hodinách alebo ak cestujete s lyžiarskou výstrojou. Taxislužby z Podbrezovej a Brezna zabezpečujú komfortný transfer priamo pred recepciu hotela alebo k vleku.",
+      "attractions": "Okrem golfu a lyžovania sú Tále východiskovým bodom pre túry na Ďumbier a Chopok. V blízkosti sa nachádza aj Bystrianska jaskyňa a wellness centrá v miestnych hoteloch."
+    },
+    "faqs": [
+      {
+        "question": "Koľko stojí taxi z Podbrezovej na Tále?",
+        "answer": "Cena sa zvyčajne pohybuje okolo 10 - 15 EUR v závislosti od konkrétnej taxislužby a času jazdy. Odporúčame využiť miestne taxislužby z Podbrezovej, ktoré majú najlepšie ceny pre túto trasu."
+      },
+      {
+        "question": "Odvezie ma taxi aj s lyžami?",
+        "answer": "Áno, väčšina taxislužieb operujúcich v oblasti Tále (napr. R.S.T. Taxi) disponuje vozidlami typu kombi alebo mikrobusmi (6+1), ktoré sú prispôsobené na prepravu lyžiarskeho vybavenia. Pri objednávke je vhodné na to upozorniť."
+      },
+      {
+        "question": "Ako dlho trvá cesta taxíkom z Brezna na Tále?",
+        "answer": "Cesta z Brezna na Tále trvá približne 15 až 20 minút (cca 13 km). V zimnej sezóne sa čas môže mierne predĺžiť kvôli snehovým podmienkam."
+      },
+      {
+        "question": "Je možné objednať taxi na Tále v noci?",
+        "answer": "Áno, viaceré taxislužby v regióne fungujú nonstop alebo na telefonickú objednávku. Odporúčame si však odvoz, najmä v neskorých nočných hodinách, dohodnúť vopred."
+      }
+    ]
+  },
+  {
+    "name": "Chopok Juh",
+    "slug": "chopok-juh",
+    "region": "Banskobystrický kraj",
+    "district": "Brezno",
+    "latitude": 48.9250,
+    "longitude": 19.5850,
+    "nearestCitySlug": "podbrezova",
+    "description": "Nástupná stanica lanovky na Chopok z južnej strany (Srdiečko, Krupová).",
+    "metaDescription": "Taxi Chopok Juh - Preprava lyžiarov a turistov na Srdiečko a Krupovú. Ski taxi servis.",
+    "content": {
+      "intro": "Chopok Juh je južná vstupná brána do najväčšieho lyžiarskeho strediska na Slovensku - Jasná Nízke Tatry. Lokality Srdiečko a Krupová sú obľúbené medzi lyžiarmi pre svoje široké slnečné zjazdovky a moderné lanovky, ktoré vás vyvezú až na vrchol Chopku (2024 m n.m.). V lete je to ideálny štartovací bod pre hrebeňové túry Nízkych Tatier.",
+      "transport": "Dostať sa na Chopok Juh (Srdiečko/Krupová) môže byť v zime náročné kvôli plným parkoviskám. Využitie taxi je pohodlnou alternatívou, ktorá vás zbaví starostí s parkovaním a nutnosťou používať skibusy. Taxi vás vyvezie až priamo k nástupnej stanici lanovky.",
+      "attractions": "Dominantou je vrchol Chopok s Rotundou, odkiaľ sú nádherné výhľady na celé Slovensko. Pre freeriderov sú tu k dispozícii freeridové zóny. V lete je populárna turistika na Ďumbier alebo Dereše."
+    },
+    "faqs": [
+      {
+        "question": "Dostane sa taxi až na Srdiečko/Krupovú?",
+        "answer": "Áno, taxi má prístup až k nástupným staniciam lanoviek na Srdiečku a Krupovej, čo je veľká výhoda oproti osobnému autu, ktoré musíte často nechať na záchytnom parkovisku."
+      },
+      {
+        "question": "Ponúkate odvoz pre väčšie skupiny lyžiarov?",
+        "answer": "Určite. Miestne taxislužby (napr. z Podbrezovej) často disponujú 7-miestnymi vozidlami (van/minibus), ktoré sú ideálne pre skupiny lyžiarov aj s výstrojom."
+      },
+      {
+        "question": "Aká je cena taxi z Podbrezovej na Chopok Juh?",
+        "answer": "Vzdialenosť je približne 18 km. Cena sa pohybuje orientačne okolo 20 - 25 EUR. Pri 4 a viacerých osobách je to cenovo porovnateľné s verejnou dopravou, no s výrazne vyšším komfortom."
+      }
+    ]
+  },
+  {
+    "name": "Krpáčovo",
+    "slug": "krpacovo",
+    "region": "Banskobystrický kraj",
+    "district": "Brezno",
+    "latitude": 48.8680,
+    "longitude": 19.5530,
+    "nearestCitySlug": "podbrezova",
+    "description": "Rekreačná oblasť v Nízkych Tatrách s jazerom a chatami.",
+    "metaDescription": "Taxi Krpáčovo - Doprava do chatovej oblasti a k jazeru Krpáčovo. Spoľahlivé taxi služby.",
+    "content": {
+      "intro": "Krpáčovo je pokojná rekreačná oblasť v Nízkych Tatrách, učupená v lesoch pod Ďumbierom. Je známa svojím umelým jazerom, ktoré v lete slúži na kúpanie a člnkovanie. V okolí sa nachádza množstvo súkromných chát, hotelov (napr. Hotel Polianka) a menšie lyžiarske stredisko, čo z neho robí ideálne miesto pre rodinnú dovolenku.",
+      "transport": "Krpáčovo je tvorené roztrúsenými chatami a prístup k nim môže byť, najmä v zime, komplikovaný. Taxi služba je často jedinou spoľahlivou možnosťou, ako sa dostať priamo k ubytovaniu, ak nemáte vlastné auto 4x4, alebo ak si chcete dopriať večeru v kolibe bez starostí o šoférovanie.",
+      "attractions": "Okrem jazera a lyžovania je Krpáčovo križovatkou turistických trás. Obľúbená je prechádzka k Vajskovskému vodopádu v neďalekej Vajskovskej doline."
+    },
+    "faqs": [
+      {
+        "question": "Príde taxi aj k odľahlej chate na Krpáčove?",
+        "answer": "Miestni taxikári poznajú terén Krpáčova veľmi dobre a zvyčajne nemajú problém prísť až k vašej chate, pokiaľ je cesta zjazdná."
+      },
+      {
+        "question": "Koľko stojí taxi z Brezna na Krpáčovo?",
+        "answer": "Cena za jazdu z Brezna na Krpáčovo sa pohybuje okolo 15 - 20 EUR."
+      },
+      {
+        "question": "Funguje tu mobilný signál na privolanie taxi?",
+        "answer": "Pokrytie signálom na Krpáčove môže byť v niektorých dolinách slabšie, ale pri hlavných hoteloch a jazere je signál dostatočný na zavolanie taxislužby."
+      }
+    ]
+  }
+]

@@ -53,6 +53,13 @@ import { NearbyMunicipalities } from '@/components/NearbyMunicipalities';
 import { getMunicipalityStats } from '@/lib/municipality-data';
 import { TaxiPromoBanner } from '@/components/TaxiPromoBanner';
 
+import {
+  getLocationBySlug,
+  locationToMunicipality,
+  locations,
+  type Location
+} from '@/data/locations';
+
 // ISR: Revalidate once per week
 export const revalidate = 604800;
 
@@ -66,6 +73,7 @@ export const dynamicParams = true;
 type RouteType =
   | { type: 'city'; city: CityData }
   | { type: 'municipality'; municipality: Municipality }
+  | { type: 'location'; location: Location }
   | { type: 'service'; city: CityData; service: TaxiService; serviceSlug: string }
   | { type: 'district'; district: District; regionSlug: string }
   | { type: 'hierarchical'; municipality: Municipality; district: District; regionSlug: string }
@@ -90,6 +98,12 @@ function detectRouteType(slugArray: string[]): RouteType {
     const city = getCityBySlug(slug);
     if (city) {
       return { type: 'city', city };
+    }
+
+    // Check if it's a special location (Tale, Chopok, etc.)
+    const location = getLocationBySlug(slug);
+    if (location) {
+      return { type: 'location', location };
     }
 
     // Check if it's a municipality (village without taxi)
@@ -159,6 +173,16 @@ function detectRouteType(slugArray: string[]): RouteType {
       };
     }
 
+    // Check if it's a location
+    const location = getLocationBySlug(munSlug);
+    if (location) {
+       // Locations are not usually hierarchical, but if accessed this way, redirect to canonical
+       return {
+         type: 'redirect',
+         to: `/taxi/${location.slug}`
+       };
+    }
+
     // Find municipality (village without taxi in our DB)
     const municipality = getMunicipalityBySlug(munSlug);
     if (municipality) {
@@ -197,7 +221,12 @@ export function generateStaticParams() {
     });
   });
 
-  // 3. Districts: /taxi/[regionSlug]/[districtSlug]
+  // 3. Locations: /taxi/[locationSlug]
+  locations.forEach(location => {
+    params.push({ slug: [location.slug] });
+  });
+
+  // 4. Districts: /taxi/[regionSlug]/[districtSlug]
   const districts = getAllDistricts();
   districts.forEach(district => {
     params.push({ slug: [district.regionSlug, district.slug] });
@@ -250,6 +279,26 @@ export async function generateMetadata({
         openGraph: {
           title: `${titlePrefix}${city.name} - ${countText ? countText + (taxiCount === 1 ? ' taxislužba' : ' taxislužieb') : 'Taxislužby'}`,
           description,
+          type: 'website',
+          locale: 'sk_SK',
+          url: currentUrl,
+          siteName,
+        },
+        alternates: { canonical: currentUrl },
+      };
+    }
+
+    case 'location': {
+      const { location } = routeType;
+      const currentUrl = `${baseUrl}/taxi/${location.slug}`;
+      
+      return {
+        title: `${location.metaDescription.split('-')[0].trim()} | ${siteName}`,
+        description: location.metaDescription,
+        keywords: [`taxi ${location.name}`, `taxislužba ${location.name}`, `taxi ${location.district}`, `taxi ${location.region}`],
+        openGraph: {
+          title: `Taxi ${location.name} - Taxislužby`,
+          description: location.metaDescription,
           type: 'website',
           locale: 'sk_SK',
           url: currentUrl,
@@ -738,16 +787,38 @@ async function CityPage({ city }: { city: CityData }) {
   return <UniversalListView city={city} regionSlug={regionSlug} locationText={locationText} partnerRatings={partnerRatings} />;
 
 }
-function MunicipalityPage({ municipality, isHierarchical = false, district }: {
+// Helper to sort services by tier: Partner > Premium > Standard > Alphabetical
+function sortServicesByTier(services: TaxiService[]) {
+  return [...services].sort((a, b) => {
+    // 1. Partner (check isPartner OR redirectTo which implies partner linking)
+    const aPartner = a.isPartner || !!a.redirectTo;
+    const bPartner = b.isPartner || !!b.redirectTo;
+    
+    if (aPartner && !bPartner) return -1;
+    if (!aPartner && bPartner) return 1;
+
+    // 2. Premium
+    if (a.isPremium && !b.isPremium) return -1;
+    if (!a.isPremium && b.isPremium) return 1;
+
+    // 3. Alphabetical
+    return a.name.localeCompare(b.name, 'sk');
+  });
+}
+
+function MunicipalityPage({ municipality, isHierarchical = false, district, overrideNearestCities, customContent, customFaqs }: {
   municipality: Municipality;
   isHierarchical?: boolean;
   district?: District;
+  overrideNearestCities?: Array<{ city: CityData; distance: number; roadDistance: number; duration: number }>;
+  customContent?: { intro: string; transport: string; attractions: string };
+  customFaqs?: Array<{ question: string; answer: string }>;
 }) {
   // Check if this municipality is actually a city with taxi services
   const cityWithTaxi = getCityBySlug(municipality.slug);
   const hasTaxiServices = cityWithTaxi && cityWithTaxi.taxiServices.length > 0;
 
-  const nearestCities = hasTaxiServices ? [] : findNearestCitiesWithTaxis(municipality, 3);
+  const nearestCities = overrideNearestCities || (hasTaxiServices ? [] : findNearestCitiesWithTaxis(municipality, 3));
   const regionSlug = createRegionSlug(municipality.region);
   const actualDistrict = district || getDistrictForMunicipality(municipality);
 
@@ -845,6 +916,8 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
                     toName={nearestCities[0].city.name}
                     toSlug={nearestCities[0].city.slug}
                     distance={nearestCities[0].distance}
+                    roadDistance={nearestCities[0].roadDistance}
+                    duration={nearestCities[0].duration}
                   />
                 </div>
               </div>
@@ -864,16 +937,34 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
         </div>
       </section>
 
+      {/* Custom Content Section for Locations */}
+      {customContent && (
+        <section className="py-12 px-4 md:px-8 bg-white">
+          <div className="container mx-auto max-w-4xl">
+            <div className="prose prose-lg max-w-none text-foreground/80">
+              <h2 className="text-2xl font-bold text-foreground mb-4">O lokalite {municipality.name}</h2>
+              <p className="mb-6">{customContent.intro}</p>
+              
+              <h3 className="text-xl font-bold text-foreground mb-3">Doprava a Taxi</h3>
+              <p className="mb-6">{customContent.transport}</p>
+              
+              <h3 className="text-xl font-bold text-foreground mb-3">Zaujímavosti</h3>
+              <p>{customContent.attractions}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Najbližšie taxislužby */}
       {!hasTaxiServices && nearestCities.length > 0 && (
-        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-white">
+        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-gray-50">
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="mb-8 text-center">
               <h2 className="text-2xl md:text-3xl font-black mb-4 text-foreground">
                 Najbližšie taxislužby
               </h2>
               <p className="text-base md:text-lg text-foreground/80 font-semibold">
-                V obci {municipality.name} momentálne neevidujeme taxislužby. Nižšie nájdete najbližšie dostupné taxi služby z okolitých miest.
+                V lokalite {municipality.name} momentálne neevidujeme taxislužby. Nižšie nájdete najbližšie dostupné taxi služby z okolitých miest.
               </p>
             </div>
 
@@ -892,20 +983,63 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
                         Vzdialenosť: <strong>{roadDistance} km</strong> ({duration} min) | Orientačná cena: <strong>cca {Math.ceil(2 + roadDistance * 0.85)}€ - {Math.ceil(2 + roadDistance * 1.15)}€</strong>
                       </p>
                       <div className="grid gap-2">
-                        {city.taxiServices.slice(0, 3).map((service, idx) => (
-                          <Link key={idx} href={`/taxi/${city.slug}`} className="block">
-                            <Card className="hover: transition-shadow">
-                              <CardContent className="py-2 px-3">
-                                <div className="flex items-center justify-between">
-                                  <span className="font-semibold text-sm">{service.name}</span>
-                                  {service.phone && (
-                                    <span className="text-xs text-foreground/70">{service.phone}</span>
-                                  )}
-                                </div>
-                              </CardContent>
-                            </Card>
-                          </Link>
-                        ))}
+                        {sortServicesByTier(city.taxiServices).slice(0, 3).map((service, idx) => {
+                          const isPartner = service.isPartner || !!service.redirectTo;
+                          const isPremium = service.isPremium && !isPartner;
+                          const serviceSlug = createServiceSlug(service.name);
+                          
+                          return (
+                            <Link key={idx} href={`/taxi/${city.slug}/${serviceSlug}`} className="block">
+                              <Card className={`hover: transition-all duration-300 ${
+                                isPartner 
+                                  ? 'bg-gradient-to-r from-purple-50 to-white border-purple-200 shadow-sm hover:shadow-purple-100 hover:border-purple-300 transform hover:-translate-y-0.5' 
+                                  : isPremium
+                                  ? 'bg-amber-50/30 border-amber-100 hover:border-amber-200'
+                                  : 'hover:shadow-md'
+                              }`}>
+                                <CardContent className="py-3 px-4">
+                                  <div className="flex items-center justify-between gap-3">
+                                    <div className="flex flex-col gap-1 min-w-0">
+                                      <div className="flex items-center gap-2">
+                                        <span className={`font-bold text-sm truncate ${isPartner ? 'text-purple-900' : 'text-foreground'}`}>
+                                          {service.name}
+                                        </span>
+                                        {isPartner && (
+                                          <span className="flex-shrink-0 text-[10px] bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
+                                            <Star className="h-2.5 w-2.5" />
+                                            PARTNER
+                                          </span>
+                                        )}
+                                        {isPremium && (
+                                          <span className="flex-shrink-0 text-[10px] bg-amber-500 text-white px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
+                                            <Star className="h-2.5 w-2.5" />
+                                            PREMIUM
+                                          </span>
+                                        )}
+                                        {(isPartner || isPremium) && (
+                                          <span className="flex-shrink-0 text-[10px] bg-green-600 text-white px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
+                                            <BadgeCheck className="h-2.5 w-2.5" />
+                                            OVERENÉ
+                                          </span>
+                                        )}
+                                      </div>
+                                      {service.phone && (
+                                        <span className="text-xs text-foreground/70 flex items-center gap-1.5">
+                                          <Phone className={`h-3 w-3 ${isPartner ? 'text-purple-600' : 'text-foreground/50'}`} />
+                                          {service.phone}
+                                        </span>
+                                      )}
+                                    </div>
+                                    
+                                    <div className="flex-shrink-0">
+                                       <ArrowRight className={`h-4 w-4 ${isPartner ? 'text-purple-400' : 'text-gray-300'}`} />
+                                    </div>
+                                  </div>
+                                </CardContent>
+                              </Card>
+                            </Link>
+                          );
+                        })}
                       </div>
                       <Link
                         href={`/taxi/${city.slug}`}
@@ -974,6 +1108,11 @@ function MunicipalityPage({ municipality, isHierarchical = false, district }: {
           regionSlug={regionSlug}
           limit={12}
         />
+      )}
+
+      {/* FAQ Sekcia - len ak je customFaqs alebo nie je customContent (aby sme prebili default pre obce) */}
+      {(customFaqs || !customContent) && (
+        <CityFAQ cityName={municipality.name} citySlug={municipality.slug} isVillage={true} customItems={customFaqs} />
       )}
 
       {/* Informácie o obci - SEO obsah na spodku */}
@@ -1725,6 +1864,57 @@ function Footer() {
 }
 
 // ============================================================================
+// LOCATION PAGE COMPONENT
+// ============================================================================
+
+function LocationPage({ location }: { location: Location }) {
+  const municipality = locationToMunicipality(location);
+  const nearestCity = getCityBySlug(location.nearestCitySlug);
+  
+  let nearestCities: Array<{ city: CityData; distance: number; roadDistance: number; duration: number }> = [];
+  
+  if (nearestCity) {
+     // Define specific estimates for known locations to match real-world routing
+     let distance = 8;
+     let roadDistance = 12;
+     let duration = 15;
+
+     switch (location.slug) {
+       case 'chopok-juh':
+         distance = 12; // Air
+         roadDistance = 18; // User verified
+         duration = 25; 
+         break;
+       case 'tale':
+         distance = 7;
+         roadDistance = 11; // User verified
+         duration = 15; 
+         break;
+       case 'krpacovo':
+         distance = 8; 
+         roadDistance = 12; // User verified
+         duration = 18; 
+         break;
+     }
+
+     nearestCities = [{
+        city: nearestCity,
+        distance, 
+        roadDistance, 
+        duration
+     }];
+  }
+
+  return <MunicipalityPage 
+    municipality={municipality} 
+    overrideNearestCities={nearestCities} 
+    customContent={location.content}
+    customFaqs={location.faqs}
+  />;
+}
+
+
+// ============================================================================
 // MAIN PAGE COMPONENT
 // ============================================================================
 
@@ -1742,6 +1932,9 @@ export default async function TaxiCatchAllPage({
 
     case 'municipality':
       return <MunicipalityPage municipality={routeType.municipality} />;
+
+    case 'location':
+      return <LocationPage location={routeType.location} />;
 
     case 'service':
       return <ServicePage city={routeType.city} service={routeType.service} serviceSlug={routeType.serviceSlug} />;

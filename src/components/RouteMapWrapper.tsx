@@ -24,6 +24,8 @@ interface RouteMapWrapperProps {
   toName: string;
   toSlug: string;
   distance: number;
+  roadDistance?: number;
+  duration?: number;
 }
 
 export function RouteMapWrapper(props: RouteMapWrapperProps) {

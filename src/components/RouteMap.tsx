@@ -37,6 +37,8 @@ interface RouteMapProps {
   toName: string;
   toSlug: string; // City slug for precomputed lookup
   distance: number; // Fallback distance (air distance)
+  roadDistance?: number; // Manual override
+  duration?: number; // Manual override
 }
 
 export function RouteMap({
@@ -49,6 +51,8 @@ export function RouteMap({
   toName,
   toSlug,
   distance: airDistance,
+  roadDistance: manualRoadDistance,
+  duration: manualDuration,
 }: RouteMapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
@@ -60,13 +64,28 @@ export function RouteMap({
   const precomputed = getPrecomputedDistance(fromSlug, toSlug);
   const hasPrecomputed = precomputed !== null;
 
-  // Use precomputed distance or fallback to air distance * 2.0 (rough estimate)
-  const roadDistance = hasPrecomputed
-    ? precomputed.roadDistance
-    : Math.round(airDistance * 2.0 * 10) / 10;
-  const duration = hasPrecomputed
-    ? precomputed.duration
-    : Math.round(roadDistance * 1.5); // Rough estimate: 40 km/h average
+  // Determine final road distance and duration
+  let roadDistance = 0;
+  let duration = 0;
+  let isAccurate = false;
+
+  if (manualRoadDistance) {
+    // 1. Manual override (highest priority - from props)
+    roadDistance = manualRoadDistance;
+    duration = manualDuration || Math.round(roadDistance * 1.5);
+    isAccurate = true;
+  } else if (hasPrecomputed) {
+    // 2. Precomputed database
+    roadDistance = precomputed.roadDistance;
+    duration = precomputed.duration;
+    isAccurate = true;
+  } else {
+    // 3. Fallback estimation
+    roadDistance = Math.round(airDistance * 2.0 * 10) / 10;
+    duration = Math.round(roadDistance * 1.5); // Rough estimate: 40 km/h average
+    isAccurate = false;
+  }
+
   const price = estimateRoadTaxiPrice(roadDistance);
 
   // Initialize map
@@ -135,7 +154,7 @@ export function RouteMap({
             <span className="text-lg font-black text-foreground">
               {roadDistance} km
             </span>
-            {hasPrecomputed && (
+            {isAccurate && (
               <span className="text-[10px] text-foreground/70">po ceste</span>
             )}
           </div>

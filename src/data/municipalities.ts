@@ -10,6 +10,7 @@ export interface Municipality {
   latitude: number;
   longitude: number;
   slug: string;
+  isVillage?: boolean;
 }
 
 interface PrecomputedDistance {
