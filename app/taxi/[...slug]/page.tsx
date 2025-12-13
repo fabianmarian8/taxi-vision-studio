@@ -593,7 +593,7 @@ async function UniversalListView({
                       {/* Partner popis - pod názvom, nad odznakmi */}
                       {isPartner && (
                         <p className="text-xs text-foreground/60 mt-0.5">
-                          Profesionálna preprava s dôrazom na spoľahlivosť a komfort.
+                          Profesionálna preprava s dôrazom na spoľahlivosť, bezpečnosť a komfort.
                         </p>
                       )}
 
@@ -1563,7 +1563,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         <section className="py-8 md:py-16 px-4 md:px-8 bg-gradient-to-r from-yellow-400 to-yellow-500">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-xl md:text-3xl font-black text-purple-900 mb-2 md:mb-4">
-              Potrebujete taxi {locationText} {city.name}{partnerData?.secondaryCity ? ` alebo v obci ${partnerData.secondaryCity}` : ''}?
+              Potrebujete taxi {partnerData?.customCtaTitle ? partnerData.customCtaTitle : `${locationText} ${city.name}${partnerData?.secondaryCity ? ` alebo v obci ${partnerData.secondaryCity}` : ''}`}?
             </h2>
             <p className="text-purple-900/70 mb-4 md:mb-6 text-sm md:text-lg">
               Zavolajte nám a odvezieme vás kam potrebujete.

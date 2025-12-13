@@ -41,7 +41,7 @@
       "municipalitySlug": "adidovce",
       "citySlug": "chlmec",
       "airDistance": 16,
-      "roadDistance": 21.8,
+      "roadDistance": 21.7,
       "duration": 23
     },
     {
@@ -111,8 +111,8 @@
       "municipalitySlug": "andovce",
       "citySlug": "nove-zamky",
       "airDistance": 4.5,
-      "roadDistance": 6.6,
-      "duration": 10
+      "roadDistance": 5.2,
+      "duration": 6
     },
     {
       "municipalitySlug": "andovce",
@@ -132,8 +132,8 @@
       "municipalitySlug": "abranovce",
       "citySlug": "hostovce",
       "airDistance": 9.3,
-      "roadDistance": 14.8,
-      "duration": 16
+      "roadDistance": 71.8,
+      "duration": 59
     },
     {
       "municipalitySlug": "abranovce",
@@ -321,8 +321,8 @@
       "municipalitySlug": "babina",
       "citySlug": "bansky-studenec",
       "airDistance": 9,
-      "roadDistance": 15.2,
-      "duration": 32
+      "roadDistance": 31.3,
+      "duration": 37
     },
     {
       "municipalitySlug": "babina",
@@ -433,8 +433,8 @@
       "municipalitySlug": "bacurov",
       "citySlug": "bansky-studenec",
       "airDistance": 10.4,
-      "roadDistance": 28,
-      "duration": 35
+      "roadDistance": 36.4,
+      "duration": 42
     },
     {
       "municipalitySlug": "bacurov",
@@ -489,8 +489,8 @@
       "municipalitySlug": "backovik",
       "citySlug": "hostovce",
       "airDistance": 15.3,
-      "roadDistance": 31.6,
-      "duration": 23
+      "roadDistance": 69.8,
+      "duration": 55
     },
     {
       "municipalitySlug": "backovik",
@@ -517,8 +517,8 @@
       "municipalitySlug": "badin",
       "citySlug": "banska-bystrica",
       "airDistance": 8.5,
-      "roadDistance": 10.8,
-      "duration": 12
+      "roadDistance": 15.2,
+      "duration": 16
     },
     {
       "municipalitySlug": "badin",
@@ -608,8 +608,8 @@
       "municipalitySlug": "bajerov",
       "citySlug": "hostovce",
       "airDistance": 14.6,
-      "roadDistance": 31.3,
-      "duration": 24
+      "roadDistance": 91,
+      "duration": 67
     },
     {
       "municipalitySlug": "bajerovce",
@@ -699,8 +699,8 @@
       "municipalitySlug": "balaze",
       "citySlug": "banska-bystrica",
       "airDistance": 8.9,
-      "roadDistance": 14.3,
-      "duration": 20
+      "roadDistance": 17.5,
+      "duration": 23
     },
     {
       "municipalitySlug": "balaze",
@@ -804,15 +804,15 @@
       "municipalitySlug": "banska-bela",
       "citySlug": "banska-stiavnica",
       "airDistance": 3.4,
-      "roadDistance": 5,
-      "duration": 8
+      "roadDistance": 6.5,
+      "duration": 9
     },
     {
       "municipalitySlug": "banska-bela",
       "citySlug": "bansky-studenec",
       "airDistance": 3.7,
-      "roadDistance": 5.1,
-      "duration": 15
+      "roadDistance": 11.6,
+      "duration": 16
     },
     {
       "municipalitySlug": "banska-bystrica",
@@ -867,8 +867,8 @@
       "municipalitySlug": "bansky-studenec",
       "citySlug": "banska-stiavnica",
       "airDistance": 5.5,
-      "roadDistance": 8.6,
-      "duration": 14
+      "roadDistance": 5.8,
+      "duration": 9
     },
     {
       "municipalitySlug": "bansky-studenec",
@@ -1021,8 +1021,8 @@
       "municipalitySlug": "baska",
       "citySlug": "kosice",
       "airDistance": 5.2,
-      "roadDistance": 7.4,
-      "duration": 13
+      "roadDistance": 11.8,
+      "duration": 15
     },
     {
       "municipalitySlug": "baska",
@@ -1035,8 +1035,8 @@
       "municipalitySlug": "baska",
       "citySlug": "hostovce",
       "airDistance": 18.9,
-      "roadDistance": 33.4,
-      "duration": 28
+      "roadDistance": 39.4,
+      "duration": 36
     },
     {
       "municipalitySlug": "baskovce-humenne",
@@ -1056,7 +1056,7 @@
       "municipalitySlug": "baskovce-humenne",
       "citySlug": "chlmec",
       "airDistance": 18,
-      "roadDistance": 21.1,
+      "roadDistance": 21,
       "duration": 22
     },
     {
@@ -1441,7 +1441,7 @@
       "municipalitySlug": "bela-nad-cirochou",
       "citySlug": "chlmec",
       "airDistance": 15.7,
-      "roadDistance": 22.2,
+      "roadDistance": 21.7,
       "duration": 22
     },
     {
@@ -1462,7 +1462,7 @@
       "municipalitySlug": "beladice",
       "citySlug": "nitra",
       "airDistance": 14.8,
-      "roadDistance": 18,
+      "roadDistance": 23.8,
       "duration": 18
     },
     {
@@ -1497,8 +1497,8 @@
       "municipalitySlug": "belin",
       "citySlug": "tornala",
       "airDistance": 18.3,
-      "roadDistance": 27.5,
-      "duration": 31
+      "roadDistance": 36.9,
+      "duration": 36
     },
     {
       "municipalitySlug": "belin",
@@ -1665,8 +1665,8 @@
       "municipalitySlug": "beniakovce",
       "citySlug": "hostovce",
       "airDistance": 11.4,
-      "roadDistance": 13.7,
-      "duration": 12
+      "roadDistance": 55.3,
+      "duration": 45
     },
     {
       "municipalitySlug": "beniakovce",
@@ -1798,8 +1798,8 @@
       "municipalitySlug": "benatina",
       "citySlug": "chlmec",
       "airDistance": 29.5,
-      "roadDistance": 70.4,
-      "duration": 67
+      "roadDistance": 54.1,
+      "duration": 62
     },
     {
       "municipalitySlug": "benus",
@@ -1833,8 +1833,8 @@
       "municipalitySlug": "bernolakovo",
       "citySlug": "senec",
       "airDistance": 7.5,
-      "roadDistance": 7.9,
-      "duration": 10
+      "roadDistance": 9.8,
+      "duration": 12
     },
     {
       "municipalitySlug": "bertotovce",
@@ -1847,8 +1847,8 @@
       "municipalitySlug": "bertotovce",
       "citySlug": "velky-saris",
       "airDistance": 13.1,
-      "roadDistance": 21.7,
-      "duration": 17
+      "roadDistance": 17.2,
+      "duration": 15
     },
     {
       "municipalitySlug": "bertotovce",
@@ -1938,8 +1938,8 @@
       "municipalitySlug": "betliar",
       "citySlug": "roznava",
       "airDistance": 5,
-      "roadDistance": 5.2,
-      "duration": 6
+      "roadDistance": 6.3,
+      "duration": 7
     },
     {
       "municipalitySlug": "betliar",
@@ -1987,8 +1987,8 @@
       "municipalitySlug": "bidovce",
       "citySlug": "hostovce",
       "airDistance": 19.2,
-      "roadDistance": 25.9,
-      "duration": 17
+      "roadDistance": 64.3,
+      "duration": 50
     },
     {
       "municipalitySlug": "bidovce",
@@ -2071,7 +2071,7 @@
       "municipalitySlug": "biskupice",
       "citySlug": "filakovo",
       "airDistance": 2.4,
-      "roadDistance": 3.6,
+      "roadDistance": 2.8,
       "duration": 5
     },
     {
@@ -2204,7 +2204,7 @@
       "municipalitySlug": "blahova",
       "citySlug": "sladkovicovo",
       "airDistance": 15.4,
-      "roadDistance": 26.8,
+      "roadDistance": 38.8,
       "duration": 34
     },
     {
@@ -2309,8 +2309,8 @@
       "municipalitySlug": "blatne-revistia",
       "citySlug": "chlmec",
       "airDistance": 19.4,
-      "roadDistance": 50,
-      "duration": 61
+      "roadDistance": 34.8,
+      "duration": 46
     },
     {
       "municipalitySlug": "blatnica",
@@ -2344,8 +2344,8 @@
       "municipalitySlug": "blazice",
       "citySlug": "hostovce",
       "airDistance": 24.6,
-      "roadDistance": 31.9,
-      "duration": 23
+      "roadDistance": 53.8,
+      "duration": 46
     },
     {
       "municipalitySlug": "blazovce",
@@ -2463,15 +2463,15 @@
       "municipalitySlug": "bobrovcek",
       "citySlug": "liptovsky-hradok",
       "airDistance": 14.7,
-      "roadDistance": 20,
-      "duration": 25
+      "roadDistance": 24.7,
+      "duration": 23
     },
     {
       "municipalitySlug": "bobrovcek",
       "citySlug": "tvrdosin",
       "airDistance": 21.8,
-      "roadDistance": 49.3,
-      "duration": 69
+      "roadDistance": 58.7,
+      "duration": 64
     },
     {
       "municipalitySlug": "bobrovec",
@@ -2484,8 +2484,8 @@
       "municipalitySlug": "bobrovec",
       "citySlug": "liptovsky-hradok",
       "airDistance": 11.9,
-      "roadDistance": 16.3,
-      "duration": 21
+      "roadDistance": 20.7,
+      "duration": 19
     },
     {
       "municipalitySlug": "bobrovec",
@@ -2589,7 +2589,7 @@
       "municipalitySlug": "bodorova",
       "citySlug": "blatnica",
       "airDistance": 6.8,
-      "roadDistance": 8,
+      "roadDistance": 11.7,
       "duration": 10
     },
     {
@@ -2666,8 +2666,8 @@
       "municipalitySlug": "bodzianske-luky",
       "citySlug": "kolarovo",
       "airDistance": 8.1,
-      "roadDistance": 12.2,
-      "duration": 12
+      "roadDistance": 9.5,
+      "duration": 10
     },
     {
       "municipalitySlug": "bodzianske-luky",
@@ -2722,8 +2722,8 @@
       "municipalitySlug": "bohdanovce",
       "citySlug": "hostovce",
       "airDistance": 25.3,
-      "roadDistance": 33.1,
-      "duration": 23
+      "roadDistance": 52.4,
+      "duration": 44
     },
     {
       "municipalitySlug": "bohdanovce-nad-trnavou",
@@ -2778,15 +2778,15 @@
       "municipalitySlug": "bohunice-levice",
       "citySlug": "nova-bana",
       "airDistance": 13,
-      "roadDistance": 18.3,
-      "duration": 36
+      "roadDistance": 41.7,
+      "duration": 38
     },
     {
       "municipalitySlug": "bohunice-levice",
       "citySlug": "zarnovica",
       "airDistance": 16.8,
-      "roadDistance": 28.8,
-      "duration": 36
+      "roadDistance": 51.3,
+      "duration": 42
     },
     {
       "municipalitySlug": "bohunovo",
@@ -2904,8 +2904,8 @@
       "municipalitySlug": "bolesov",
       "citySlug": "dubnica-nad-vahom",
       "airDistance": 3.2,
-      "roadDistance": 7.2,
-      "duration": 9
+      "roadDistance": 5.6,
+      "duration": 10
     },
     {
       "municipalitySlug": "bolesov",
@@ -2925,8 +2925,8 @@
       "municipalitySlug": "boliarov",
       "citySlug": "hostovce",
       "airDistance": 14,
-      "roadDistance": 19.5,
-      "duration": 22
+      "roadDistance": 72.5,
+      "duration": 58
     },
     {
       "municipalitySlug": "boliarov",
@@ -2988,7 +2988,7 @@
       "municipalitySlug": "borcova",
       "citySlug": "blatnica",
       "airDistance": 6.5,
-      "roadDistance": 12,
+      "roadDistance": 15.6,
       "duration": 14
     },
     {
@@ -3009,8 +3009,8 @@
       "municipalitySlug": "borcany",
       "citySlug": "chynorany",
       "airDistance": 6.5,
-      "roadDistance": 9.2,
-      "duration": 12
+      "roadDistance": 12.4,
+      "duration": 13
     },
     {
       "municipalitySlug": "borcany",
@@ -3261,8 +3261,8 @@
       "municipalitySlug": "botany",
       "citySlug": "cierna-nad-tisou",
       "airDistance": 3.1,
-      "roadDistance": 8,
-      "duration": 10
+      "roadDistance": 10.4,
+      "duration": 11
     },
     {
       "municipalitySlug": "botany",
@@ -3282,7 +3282,7 @@
       "municipalitySlug": "borka",
       "citySlug": "medzev",
       "airDistance": 12.2,
-      "roadDistance": 55.2,
+      "roadDistance": 62.4,
       "duration": 55
     },
     {
@@ -3401,8 +3401,8 @@
       "municipalitySlug": "bratislava-ii",
       "citySlug": "svaty-jur",
       "airDistance": 14.2,
-      "roadDistance": 16.7,
-      "duration": 19
+      "roadDistance": 24.4,
+      "duration": 20
     },
     {
       "municipalitySlug": "bratislava-iii",
@@ -3422,8 +3422,8 @@
       "municipalitySlug": "bratislava-iii",
       "citySlug": "svaty-jur",
       "airDistance": 11,
-      "roadDistance": 15.2,
-      "duration": 18
+      "roadDistance": 8.6,
+      "duration": 12
     },
     {
       "municipalitySlug": "bratislava-iv",
@@ -3436,15 +3436,15 @@
       "municipalitySlug": "bratislava-iv",
       "citySlug": "ivanka-pri-dunaji",
       "airDistance": 12.1,
-      "roadDistance": 23.1,
+      "roadDistance": 29.2,
       "duration": 23
     },
     {
       "municipalitySlug": "bratislava-iv",
       "citySlug": "svaty-jur",
       "airDistance": 14.2,
-      "roadDistance": 28.1,
-      "duration": 28
+      "roadDistance": 34.6,
+      "duration": 30
     },
     {
       "municipalitySlug": "bratislava-v",
@@ -3457,8 +3457,8 @@
       "municipalitySlug": "bratislava-v",
       "citySlug": "ivanka-pri-dunaji",
       "airDistance": 12.1,
-      "roadDistance": 18.7,
-      "duration": 19
+      "roadDistance": 23.9,
+      "duration": 17
     },
     {
       "municipalitySlug": "bratislava-v",
@@ -3548,8 +3548,8 @@
       "municipalitySlug": "brehy",
       "citySlug": "batovce",
       "airDistance": 14.6,
-      "roadDistance": 20.9,
-      "duration": 38
+      "roadDistance": 38.9,
+      "duration": 34
     },
     {
       "municipalitySlug": "brekov",
@@ -3569,7 +3569,7 @@
       "municipalitySlug": "brekov",
       "citySlug": "chlmec",
       "airDistance": 7.7,
-      "roadDistance": 14,
+      "roadDistance": 13.9,
       "duration": 16
     },
     {
@@ -3583,7 +3583,7 @@
       "municipalitySlug": "brestov-humenne",
       "citySlug": "chlmec",
       "airDistance": 9.5,
-      "roadDistance": 10.8,
+      "roadDistance": 10.4,
       "duration": 12
     },
     {
@@ -3660,8 +3660,8 @@
       "municipalitySlug": "bretejovce",
       "citySlug": "hostovce",
       "airDistance": 4.9,
-      "roadDistance": 6.6,
-      "duration": 8
+      "roadDistance": 57,
+      "duration": 45
     },
     {
       "municipalitySlug": "bretejovce",
@@ -3772,8 +3772,8 @@
       "municipalitySlug": "breziny",
       "citySlug": "bansky-studenec",
       "airDistance": 11,
-      "roadDistance": 29.5,
-      "duration": 38
+      "roadDistance": 38.7,
+      "duration": 44
     },
     {
       "municipalitySlug": "breziny",
@@ -3807,8 +3807,8 @@
       "municipalitySlug": "breznicka-poltar",
       "citySlug": "poltar",
       "airDistance": 4.1,
-      "roadDistance": 4.5,
-      "duration": 6
+      "roadDistance": 5.6,
+      "duration": 9
     },
     {
       "municipalitySlug": "breznicka-poltar",
@@ -3905,15 +3905,15 @@
       "municipalitySlug": "brezovec",
       "citySlug": "chlmec",
       "airDistance": 33.1,
-      "roadDistance": 54.3,
-      "duration": 56
+      "roadDistance": 54.2,
+      "duration": 55
     },
     {
       "municipalitySlug": "brezovica-tvrdosin",
       "citySlug": "trstena",
       "airDistance": 3.8,
-      "roadDistance": 6.9,
-      "duration": 10
+      "roadDistance": 4.3,
+      "duration": 5
     },
     {
       "municipalitySlug": "brezovica-tvrdosin",
@@ -4276,8 +4276,8 @@
       "municipalitySlug": "bucany",
       "citySlug": "hlohovec",
       "airDistance": 7.5,
-      "roadDistance": 10.1,
-      "duration": 12
+      "roadDistance": 12.2,
+      "duration": 15
     },
     {
       "municipalitySlug": "bucany",
@@ -4290,8 +4290,8 @@
       "municipalitySlug": "budca",
       "citySlug": "zvolen",
       "airDistance": 4.4,
-      "roadDistance": 6.3,
-      "duration": 9
+      "roadDistance": 8.3,
+      "duration": 8
     },
     {
       "municipalitySlug": "budca",
@@ -4332,8 +4332,8 @@
       "municipalitySlug": "budimir",
       "citySlug": "hostovce",
       "airDistance": 7.9,
-      "roadDistance": 9.6,
-      "duration": 11
+      "roadDistance": 53.8,
+      "duration": 43
     },
     {
       "municipalitySlug": "budimir",
@@ -4577,8 +4577,8 @@
       "municipalitySlug": "bunetice",
       "citySlug": "hostovce",
       "airDistance": 9.3,
-      "roadDistance": 11.8,
-      "duration": 14
+      "roadDistance": 67.6,
+      "duration": 57
     },
     {
       "municipalitySlug": "bunetice",
@@ -4808,8 +4808,8 @@
       "municipalitySlug": "bystricka",
       "citySlug": "martin",
       "airDistance": 4.2,
-      "roadDistance": 7.9,
-      "duration": 15
+      "roadDistance": 4.1,
+      "duration": 6
     },
     {
       "municipalitySlug": "bystricka",
@@ -4899,8 +4899,8 @@
       "municipalitySlug": "bzenov",
       "citySlug": "hostovce",
       "airDistance": 11.8,
-      "roadDistance": 20.2,
-      "duration": 23
+      "roadDistance": 87.2,
+      "duration": 64
     },
     {
       "municipalitySlug": "bzince-pod-javorinou",
@@ -4976,8 +4976,8 @@
       "municipalitySlug": "bzovska-lehotka",
       "citySlug": "bansky-studenec",
       "airDistance": 12.4,
-      "roadDistance": 22.6,
-      "duration": 40
+      "roadDistance": 38.9,
+      "duration": 44
     },
     {
       "municipalitySlug": "bzovska-lehotka",
@@ -5599,8 +5599,8 @@
       "municipalitySlug": "cana",
       "citySlug": "hostovce",
       "airDistance": 28.9,
-      "roadDistance": 37,
-      "duration": 28
+      "roadDistance": 40.4,
+      "duration": 35
     },
     {
       "municipalitySlug": "caradice",
@@ -5802,8 +5802,8 @@
       "municipalitySlug": "cecehov",
       "citySlug": "chlmec",
       "airDistance": 18.4,
-      "roadDistance": 40.6,
-      "duration": 42
+      "roadDistance": 27.9,
+      "duration": 40
     },
     {
       "municipalitySlug": "cecejovce",
@@ -5963,8 +5963,8 @@
       "municipalitySlug": "celadice",
       "citySlug": "nitra",
       "airDistance": 11.3,
-      "roadDistance": 15.4,
-      "duration": 20
+      "roadDistance": 25.3,
+      "duration": 19
     },
     {
       "municipalitySlug": "celadice",
@@ -6110,8 +6110,8 @@
       "municipalitySlug": "cerin",
       "citySlug": "banska-bystrica",
       "airDistance": 10.9,
-      "roadDistance": 14.5,
-      "duration": 16
+      "roadDistance": 17.8,
+      "duration": 23
     },
     {
       "municipalitySlug": "cerin",
@@ -6180,7 +6180,7 @@
       "municipalitySlug": "cernina-humenne",
       "citySlug": "chlmec",
       "airDistance": 20.3,
-      "roadDistance": 23.7,
+      "roadDistance": 23.6,
       "duration": 25
     },
     {
@@ -6250,8 +6250,8 @@
       "municipalitySlug": "cervenica",
       "citySlug": "hostovce",
       "airDistance": 13.4,
-      "roadDistance": 22.9,
-      "duration": 27
+      "roadDistance": 75.9,
+      "duration": 65
     },
     {
       "municipalitySlug": "cervenica",
@@ -6299,8 +6299,8 @@
       "municipalitySlug": "cervenik",
       "citySlug": "hlohovec",
       "airDistance": 4.7,
-      "roadDistance": 6.2,
-      "duration": 10
+      "roadDistance": 8.4,
+      "duration": 13
     },
     {
       "municipalitySlug": "cervenik",
@@ -6530,8 +6530,8 @@
       "municipalitySlug": "cierna-voda",
       "citySlug": "sladkovicovo",
       "airDistance": 8.3,
-      "roadDistance": 14,
-      "duration": 13
+      "roadDistance": 10.6,
+      "duration": 12
     },
     {
       "municipalitySlug": "cierna-voda",
@@ -6782,8 +6782,8 @@
       "municipalitySlug": "cizatice",
       "citySlug": "hostovce",
       "airDistance": 12.2,
-      "roadDistance": 23,
-      "duration": 19
+      "roadDistance": 64.6,
+      "duration": 52
     },
     {
       "municipalitySlug": "cizatice",
@@ -6873,7 +6873,7 @@
       "municipalitySlug": "cremosne",
       "citySlug": "blatnica",
       "airDistance": 10.2,
-      "roadDistance": 15.4,
+      "roadDistance": 19.1,
       "duration": 16
     },
     {
@@ -6887,8 +6887,8 @@
       "municipalitySlug": "cucma",
       "citySlug": "roznava",
       "airDistance": 3.2,
-      "roadDistance": 3.7,
-      "duration": 5
+      "roadDistance": 4.7,
+      "duration": 8
     },
     {
       "municipalitySlug": "cucma",
@@ -6957,8 +6957,8 @@
       "municipalitySlug": "daletice",
       "citySlug": "velky-saris",
       "airDistance": 10,
-      "roadDistance": 22.5,
-      "duration": 20
+      "roadDistance": 17.8,
+      "duration": 18
     },
     {
       "municipalitySlug": "daletice",
@@ -7062,14 +7062,14 @@
       "municipalitySlug": "dedacov",
       "citySlug": "snina",
       "airDistance": 14,
-      "roadDistance": 25.7,
-      "duration": 30
+      "roadDistance": 34.3,
+      "duration": 37
     },
     {
       "municipalitySlug": "dedacov",
       "citySlug": "chlmec",
       "airDistance": 16.6,
-      "roadDistance": 22,
+      "roadDistance": 21.8,
       "duration": 23
     },
     {
@@ -7125,8 +7125,8 @@
       "municipalitySlug": "dedinky",
       "citySlug": "betlanovce",
       "airDistance": 12.7,
-      "roadDistance": 33.4,
-      "duration": 40
+      "roadDistance": 41.5,
+      "duration": 44
     },
     {
       "municipalitySlug": "dedinky",
@@ -7167,8 +7167,8 @@
       "municipalitySlug": "dekys",
       "citySlug": "zarnovica",
       "airDistance": 12,
-      "roadDistance": 19.6,
-      "duration": 26
+      "roadDistance": 35.8,
+      "duration": 49
     },
     {
       "municipalitySlug": "dekys",
@@ -7524,8 +7524,8 @@
       "municipalitySlug": "dlha-nad-kysucou",
       "citySlug": "turzovka",
       "airDistance": 1.9,
-      "roadDistance": 3.6,
-      "duration": 5
+      "roadDistance": 2.3,
+      "duration": 4
     },
     {
       "municipalitySlug": "dlha-nad-kysucou",
@@ -7538,8 +7538,8 @@
       "municipalitySlug": "dlha-nad-kysucou",
       "citySlug": "kysucke-nove-mesto",
       "airDistance": 14.7,
-      "roadDistance": 20,
-      "duration": 38
+      "roadDistance": 37.9,
+      "duration": 41
     },
     {
       "municipalitySlug": "dlha-nad-oravou",
@@ -7636,8 +7636,8 @@
       "municipalitySlug": "dlhe-nad-cirochou",
       "citySlug": "chlmec",
       "airDistance": 12.3,
-      "roadDistance": 18.6,
-      "duration": 19
+      "roadDistance": 18.3,
+      "duration": 18
     },
     {
       "municipalitySlug": "dlhe-pole",
@@ -7650,8 +7650,8 @@
       "municipalitySlug": "dlhe-pole",
       "citySlug": "turzovka",
       "airDistance": 11.2,
-      "roadDistance": 24.5,
-      "duration": 38
+      "roadDistance": 32.1,
+      "duration": 36
     },
     {
       "municipalitySlug": "dlhe-pole",
@@ -7664,8 +7664,8 @@
       "municipalitySlug": "dlhe-straze",
       "citySlug": "levoca",
       "airDistance": 4.9,
-      "roadDistance": 8.3,
-      "duration": 11
+      "roadDistance": 6.2,
+      "duration": 6
     },
     {
       "municipalitySlug": "dlhe-straze",
@@ -7748,8 +7748,8 @@
       "municipalitySlug": "dobra-niva",
       "citySlug": "bansky-studenec",
       "airDistance": 10.1,
-      "roadDistance": 19.7,
-      "duration": 37
+      "roadDistance": 35.7,
+      "duration": 40
     },
     {
       "municipalitySlug": "dobra-niva",
@@ -7769,8 +7769,8 @@
       "municipalitySlug": "dobra-voda",
       "citySlug": "brezova-pod-bradlom",
       "airDistance": 7.2,
-      "roadDistance": 12.6,
-      "duration": 26
+      "roadDistance": 39.2,
+      "duration": 39
     },
     {
       "municipalitySlug": "dobra-voda",
@@ -7853,7 +7853,7 @@
       "municipalitySlug": "dobsina",
       "citySlug": "betlanovce",
       "airDistance": 17.7,
-      "roadDistance": 38.1,
+      "roadDistance": 45.3,
       "duration": 46
     },
     {
@@ -7951,8 +7951,8 @@
       "municipalitySlug": "dolna-krupa",
       "citySlug": "boleraz",
       "airDistance": 4.8,
-      "roadDistance": 10.3,
-      "duration": 17
+      "roadDistance": 18.5,
+      "duration": 18
     },
     {
       "municipalitySlug": "dolna-krupa",
@@ -8014,8 +8014,8 @@
       "municipalitySlug": "dolna-micina",
       "citySlug": "banska-bystrica",
       "airDistance": 8.7,
-      "roadDistance": 11.3,
-      "duration": 13
+      "roadDistance": 14.4,
+      "duration": 19
     },
     {
       "municipalitySlug": "dolna-micina",
@@ -8049,8 +8049,8 @@
       "municipalitySlug": "dolna-poruba",
       "citySlug": "ilava",
       "airDistance": 10.8,
-      "roadDistance": 13.1,
-      "duration": 19
+      "roadDistance": 28.6,
+      "duration": 29
     },
     {
       "municipalitySlug": "dolna-sec",
@@ -8077,8 +8077,8 @@
       "municipalitySlug": "dolna-streda",
       "citySlug": "sered",
       "airDistance": 2.8,
-      "roadDistance": 3.2,
-      "duration": 5
+      "roadDistance": 2.4,
+      "duration": 3
     },
     {
       "municipalitySlug": "dolna-streda",
@@ -8133,8 +8133,8 @@
       "municipalitySlug": "dolna-tizina",
       "citySlug": "vrutky",
       "airDistance": 12.1,
-      "roadDistance": 21.4,
-      "duration": 32
+      "roadDistance": 35.6,
+      "duration": 35
     },
     {
       "municipalitySlug": "dolna-tizina",
@@ -8364,8 +8364,8 @@
       "municipalitySlug": "dolne-oresany",
       "citySlug": "horne-oresany",
       "airDistance": 3.2,
-      "roadDistance": 3.9,
-      "duration": 5
+      "roadDistance": 21.4,
+      "duration": 28
     },
     {
       "municipalitySlug": "dolne-oresany",
@@ -8511,8 +8511,8 @@
       "municipalitySlug": "dolne-trhoviste",
       "citySlug": "hlohovec",
       "airDistance": 7,
-      "roadDistance": 10.3,
-      "duration": 13
+      "roadDistance": 13.2,
+      "duration": 17
     },
     {
       "municipalitySlug": "dolne-trhoviste",
@@ -8567,8 +8567,8 @@
       "municipalitySlug": "dolne-zelenice",
       "citySlug": "hlohovec",
       "airDistance": 6.9,
-      "roadDistance": 9.6,
-      "duration": 11
+      "roadDistance": 12,
+      "duration": 15
     },
     {
       "municipalitySlug": "dolne-zelenice",
@@ -8672,8 +8672,8 @@
       "municipalitySlug": "dolny-chotar",
       "citySlug": "kolarovo",
       "airDistance": 13.2,
-      "roadDistance": 16.4,
-      "duration": 20
+      "roadDistance": 36.8,
+      "duration": 35
     },
     {
       "municipalitySlug": "dolny-chotar",
@@ -8686,7 +8686,7 @@
       "municipalitySlug": "dolny-chotar",
       "citySlug": "velky-meder",
       "airDistance": 17.8,
-      "roadDistance": 25.9,
+      "roadDistance": 34.6,
       "duration": 33
     },
     {
@@ -8854,8 +8854,8 @@
       "municipalitySlug": "dolany-pezinok",
       "citySlug": "horne-oresany",
       "airDistance": 7.3,
-      "roadDistance": 8.7,
-      "duration": 10
+      "roadDistance": 25,
+      "duration": 31
     },
     {
       "municipalitySlug": "dolany-pezinok",
@@ -8903,8 +8903,8 @@
       "municipalitySlug": "domaniky",
       "citySlug": "dudince",
       "airDistance": 13.3,
-      "roadDistance": 13.8,
-      "duration": 12
+      "roadDistance": 16.8,
+      "duration": 16
     },
     {
       "municipalitySlug": "domaniky",
@@ -8973,8 +8973,8 @@
       "municipalitySlug": "donovaly",
       "citySlug": "ruzomberok",
       "airDistance": 23.3,
-      "roadDistance": 39.2,
-      "duration": 45
+      "roadDistance": 27.5,
+      "duration": 29
     },
     {
       "municipalitySlug": "drabsko",
@@ -9085,8 +9085,8 @@
       "municipalitySlug": "drazkovce",
       "citySlug": "martin",
       "airDistance": 3.2,
-      "roadDistance": 4.3,
-      "duration": 6
+      "roadDistance": 3.1,
+      "duration": 4
     },
     {
       "municipalitySlug": "drazkovce",
@@ -9106,8 +9106,8 @@
       "municipalitySlug": "drazovce",
       "citySlug": "dudince",
       "airDistance": 9.6,
-      "roadDistance": 11.2,
-      "duration": 12
+      "roadDistance": 14.1,
+      "duration": 16
     },
     {
       "municipalitySlug": "drazovce",
@@ -9169,8 +9169,8 @@
       "municipalitySlug": "drienov",
       "citySlug": "hostovce",
       "airDistance": 0.9,
-      "roadDistance": 0.9,
-      "duration": 2
+      "roadDistance": 64,
+      "duration": 48
     },
     {
       "municipalitySlug": "drienov",
@@ -9225,15 +9225,15 @@
       "municipalitySlug": "drienovo",
       "citySlug": "sahy",
       "airDistance": 19.9,
-      "roadDistance": 34.1,
-      "duration": 56
+      "roadDistance": 53.8,
+      "duration": 53
     },
     {
       "municipalitySlug": "drienovska-nova-ves",
       "citySlug": "hostovce",
       "airDistance": 4.1,
-      "roadDistance": 8.3,
-      "duration": 9
+      "roadDistance": 68.3,
+      "duration": 52
     },
     {
       "municipalitySlug": "drienovska-nova-ves",
@@ -9281,8 +9281,8 @@
       "municipalitySlug": "drnava",
       "citySlug": "medzev",
       "airDistance": 18.4,
-      "roadDistance": 45.3,
-      "duration": 44
+      "roadDistance": 52.3,
+      "duration": 45
     },
     {
       "municipalitySlug": "drnava",
@@ -9316,14 +9316,14 @@
       "municipalitySlug": "druzstevna-pri-hornade",
       "citySlug": "hostovce",
       "airDistance": 7.5,
-      "roadDistance": 13.3,
-      "duration": 15
+      "roadDistance": 50.8,
+      "duration": 48
     },
     {
       "municipalitySlug": "druzstevna-pri-hornade",
       "citySlug": "kosice",
       "airDistance": 9.2,
-      "roadDistance": 11.4,
+      "roadDistance": 17.3,
       "duration": 17
     },
     {
@@ -9400,8 +9400,8 @@
       "municipalitySlug": "dubnica-nad-vahom",
       "citySlug": "nova-dubnica",
       "airDistance": 2.8,
-      "roadDistance": 4.3,
-      "duration": 6
+      "roadDistance": 5.2,
+      "duration": 8
     },
     {
       "municipalitySlug": "dubnica-nad-vahom",
@@ -9568,15 +9568,15 @@
       "municipalitySlug": "dubove-turcianske-teplice",
       "citySlug": "blatnica",
       "airDistance": 13,
-      "roadDistance": 15.7,
+      "roadDistance": 19.2,
       "duration": 17
     },
     {
       "municipalitySlug": "dubove-turcianske-teplice",
       "citySlug": "handlova",
       "airDistance": 14.4,
-      "roadDistance": 23.3,
-      "duration": 43
+      "roadDistance": 45.4,
+      "duration": 46
     },
     {
       "municipalitySlug": "dubovec",
@@ -9708,8 +9708,8 @@
       "municipalitySlug": "dulova-ves",
       "citySlug": "hostovce",
       "airDistance": 10,
-      "roadDistance": 18.3,
-      "duration": 16
+      "roadDistance": 78.2,
+      "duration": 58
     },
     {
       "municipalitySlug": "dulova-ves",
@@ -9792,8 +9792,8 @@
       "municipalitySlug": "dunajov",
       "citySlug": "cadca",
       "airDistance": 8.9,
-      "roadDistance": 17.7,
-      "duration": 18
+      "roadDistance": 12.6,
+      "duration": 16
     },
     {
       "municipalitySlug": "dunajov",
@@ -9876,8 +9876,8 @@
       "municipalitySlug": "dubrava-liptovsky-mikulas",
       "citySlug": "liptovsky-hradok",
       "airDistance": 16.1,
-      "roadDistance": 22.5,
-      "duration": 26
+      "roadDistance": 27.1,
+      "duration": 24
     },
     {
       "municipalitySlug": "dubravica",
@@ -9925,8 +9925,8 @@
       "municipalitySlug": "dubravy",
       "citySlug": "detva",
       "airDistance": 5.9,
-      "roadDistance": 7.8,
-      "duration": 11
+      "roadDistance": 5.9,
+      "duration": 7
     },
     {
       "municipalitySlug": "dubravy",
@@ -10051,8 +10051,8 @@
       "municipalitySlug": "dvory-nad-zitavou",
       "citySlug": "nove-zamky",
       "airDistance": 7.6,
-      "roadDistance": 8.7,
-      "duration": 11
+      "roadDistance": 11.6,
+      "duration": 15
     },
     {
       "municipalitySlug": "dvory-nad-zitavou",
@@ -10198,8 +10198,8 @@
       "municipalitySlug": "durdosik",
       "citySlug": "hostovce",
       "airDistance": 17.8,
-      "roadDistance": 27.8,
-      "duration": 19
+      "roadDistance": 61.5,
+      "duration": 50
     },
     {
       "municipalitySlug": "durdosik",
@@ -10240,8 +10240,8 @@
       "municipalitySlug": "durkov",
       "citySlug": "hostovce",
       "airDistance": 21.7,
-      "roadDistance": 26.4,
-      "duration": 18
+      "roadDistance": 65.2,
+      "duration": 52
     },
     {
       "municipalitySlug": "durkov",
@@ -10394,8 +10394,8 @@
       "municipalitySlug": "fekisovce",
       "citySlug": "chlmec",
       "airDistance": 16.6,
-      "roadDistance": 47.3,
-      "duration": 58
+      "roadDistance": 30.4,
+      "duration": 43
     },
     {
       "municipalitySlug": "figa",
@@ -10695,8 +10695,8 @@
       "municipalitySlug": "galovany",
       "citySlug": "liptovsky-hradok",
       "airDistance": 14.4,
-      "roadDistance": 17.6,
-      "duration": 21
+      "roadDistance": 22,
+      "duration": 18
     },
     {
       "municipalitySlug": "galovany",
@@ -10828,8 +10828,8 @@
       "municipalitySlug": "geca",
       "citySlug": "hostovce",
       "airDistance": 26.8,
-      "roadDistance": 32.6,
-      "duration": 28
+      "roadDistance": 42.8,
+      "duration": 38
     },
     {
       "municipalitySlug": "gelnica",
@@ -10863,8 +10863,8 @@
       "municipalitySlug": "gemer",
       "citySlug": "rimavska-sobota",
       "airDistance": 23.3,
-      "roadDistance": 39.2,
-      "duration": 54
+      "roadDistance": 28.8,
+      "duration": 30
     },
     {
       "municipalitySlug": "gemercek",
@@ -11297,8 +11297,8 @@
       "municipalitySlug": "gotovany",
       "citySlug": "liptovsky-hradok",
       "airDistance": 16.2,
-      "roadDistance": 21.6,
-      "duration": 23
+      "roadDistance": 26.4,
+      "duration": 22
     },
     {
       "municipalitySlug": "granc-petrovce",
@@ -11346,8 +11346,8 @@
       "municipalitySlug": "gregorovce",
       "citySlug": "velky-saris",
       "airDistance": 2.1,
-      "roadDistance": 3.7,
-      "duration": 5
+      "roadDistance": 5.1,
+      "duration": 6
     },
     {
       "municipalitySlug": "gregorovce",
@@ -11396,7 +11396,7 @@
       "citySlug": "chlmec",
       "airDistance": 10.9,
       "roadDistance": 12.7,
-      "duration": 15
+      "duration": 14
     },
     {
       "municipalitySlug": "gruzovce",
@@ -11486,8 +11486,8 @@
       "municipalitySlug": "hacava",
       "citySlug": "gelnica",
       "airDistance": 21.9,
-      "roadDistance": 54.2,
-      "duration": 80
+      "roadDistance": 81.4,
+      "duration": 85
     },
     {
       "municipalitySlug": "haj",
@@ -11507,29 +11507,29 @@
       "municipalitySlug": "haj-turcianske-teplice",
       "citySlug": "handlova",
       "airDistance": 17.1,
-      "roadDistance": 27.8,
-      "duration": 36
+      "roadDistance": 54,
+      "duration": 55
     },
     {
       "municipalitySlug": "hajna-nova-ves",
       "citySlug": "topolcany",
       "airDistance": 10.9,
-      "roadDistance": 18,
-      "duration": 23
+      "roadDistance": 13.1,
+      "duration": 15
     },
     {
       "municipalitySlug": "hajna-nova-ves",
       "citySlug": "piestany",
       "airDistance": 16.6,
-      "roadDistance": 21.5,
-      "duration": 24
+      "roadDistance": 26.7,
+      "duration": 30
     },
     {
       "municipalitySlug": "hajna-nova-ves",
       "citySlug": "horna-streda",
       "airDistance": 19.3,
-      "roadDistance": 29.6,
-      "duration": 33
+      "roadDistance": 34.9,
+      "duration": 38
     },
     {
       "municipalitySlug": "hajnacka",
@@ -11710,8 +11710,8 @@
       "municipalitySlug": "handlova",
       "citySlug": "kremnica",
       "airDistance": 11.6,
-      "roadDistance": 26.2,
-      "duration": 37
+      "roadDistance": 40.3,
+      "duration": 36
     },
     {
       "municipalitySlug": "hanigovce",
@@ -11745,8 +11745,8 @@
       "municipalitySlug": "haniska-presov",
       "citySlug": "hostovce",
       "airDistance": 10.4,
-      "roadDistance": 14.5,
-      "duration": 15
+      "roadDistance": 76.9,
+      "duration": 57
     },
     {
       "municipalitySlug": "haniska-presov",
@@ -11857,8 +11857,8 @@
       "municipalitySlug": "harichovce",
       "citySlug": "levoca",
       "airDistance": 7.1,
-      "roadDistance": 9.4,
-      "duration": 13
+      "roadDistance": 6.6,
+      "duration": 7
     },
     {
       "municipalitySlug": "harichovce",
@@ -12011,8 +12011,8 @@
       "municipalitySlug": "hazin",
       "citySlug": "chlmec",
       "airDistance": 16,
-      "roadDistance": 42.8,
-      "duration": 54
+      "roadDistance": 30.5,
+      "duration": 42
     },
     {
       "municipalitySlug": "hazin-nad-cirochou",
@@ -12025,8 +12025,8 @@
       "municipalitySlug": "hazin-nad-cirochou",
       "citySlug": "chlmec",
       "airDistance": 5,
-      "roadDistance": 9.5,
-      "duration": 10
+      "roadDistance": 9.1,
+      "duration": 9
     },
     {
       "municipalitySlug": "hazin-nad-cirochou",
@@ -12123,8 +12123,8 @@
       "municipalitySlug": "henclova",
       "citySlug": "roznava",
       "airDistance": 14.6,
-      "roadDistance": 40.7,
-      "duration": 53
+      "roadDistance": 58,
+      "duration": 62
     },
     {
       "municipalitySlug": "henclova",
@@ -12144,8 +12144,8 @@
       "municipalitySlug": "hencovce",
       "citySlug": "vranov-nad-toplou",
       "airDistance": 4,
-      "roadDistance": 6.5,
-      "duration": 8
+      "roadDistance": 4.7,
+      "duration": 7
     },
     {
       "municipalitySlug": "hencovce",
@@ -12172,8 +12172,8 @@
       "municipalitySlug": "hendrichovce",
       "citySlug": "velky-saris",
       "airDistance": 15.1,
-      "roadDistance": 23.9,
-      "duration": 19
+      "roadDistance": 19.1,
+      "duration": 17
     },
     {
       "municipalitySlug": "hendrichovce",
@@ -12186,8 +12186,8 @@
       "municipalitySlug": "herlany",
       "citySlug": "hostovce",
       "airDistance": 17.2,
-      "roadDistance": 34.9,
-      "duration": 25
+      "roadDistance": 73,
+      "duration": 57
     },
     {
       "municipalitySlug": "herlany",
@@ -12214,8 +12214,8 @@
       "municipalitySlug": "hermanovce",
       "citySlug": "velky-saris",
       "airDistance": 13.4,
-      "roadDistance": 24.9,
-      "duration": 20
+      "roadDistance": 19.8,
+      "duration": 18
     },
     {
       "municipalitySlug": "hermanovce",
@@ -12389,8 +12389,8 @@
       "municipalitySlug": "hlboke-nad-vahom",
       "citySlug": "rajec",
       "airDistance": 14,
-      "roadDistance": 23.4,
-      "duration": 39
+      "roadDistance": 35.9,
+      "duration": 38
     },
     {
       "municipalitySlug": "hlinik-nad-hronom",
@@ -12452,8 +12452,8 @@
       "municipalitySlug": "hlivistia",
       "citySlug": "chlmec",
       "airDistance": 22.3,
-      "roadDistance": 61.4,
-      "duration": 72
+      "roadDistance": 43.7,
+      "duration": 54
     },
     {
       "municipalitySlug": "hlohovec",
@@ -12550,8 +12550,8 @@
       "municipalitySlug": "hnojne",
       "citySlug": "chlmec",
       "airDistance": 15.5,
-      "roadDistance": 46.8,
-      "duration": 58
+      "roadDistance": 28.7,
+      "duration": 39
     },
     {
       "municipalitySlug": "hnusta",
@@ -12634,15 +12634,15 @@
       "municipalitySlug": "hodrusa-hamre",
       "citySlug": "zarnovica",
       "airDistance": 6.8,
-      "roadDistance": 8.2,
-      "duration": 11
+      "roadDistance": 4.8,
+      "duration": 6
     },
     {
       "municipalitySlug": "hodrusa-hamre",
       "citySlug": "banska-stiavnica",
       "airDistance": 7.2,
-      "roadDistance": 11,
-      "duration": 17
+      "roadDistance": 16.5,
+      "duration": 23
     },
     {
       "municipalitySlug": "hodrusa-hamre",
@@ -12879,8 +12879,8 @@
       "municipalitySlug": "hontianske-tesare",
       "citySlug": "dudince",
       "airDistance": 4.9,
-      "roadDistance": 5.1,
-      "duration": 5
+      "roadDistance": 8.2,
+      "duration": 10
     },
     {
       "municipalitySlug": "hontianske-tesare",
@@ -13026,8 +13026,8 @@
       "municipalitySlug": "horna-micina",
       "citySlug": "banska-bystrica",
       "airDistance": 6.1,
-      "roadDistance": 8.1,
-      "duration": 10
+      "roadDistance": 11.5,
+      "duration": 17
     },
     {
       "municipalitySlug": "horna-micina",
@@ -13061,8 +13061,8 @@
       "municipalitySlug": "horna-poruba",
       "citySlug": "trencianske-teplice",
       "airDistance": 10.4,
-      "roadDistance": 16.7,
-      "duration": 29
+      "roadDistance": 26.7,
+      "duration": 26
     },
     {
       "municipalitySlug": "horna-poton",
@@ -13180,7 +13180,7 @@
       "municipalitySlug": "horna-stubna",
       "citySlug": "blatnica",
       "airDistance": 13.2,
-      "roadDistance": 16.9,
+      "roadDistance": 20.4,
       "duration": 17
     },
     {
@@ -13250,8 +13250,8 @@
       "municipalitySlug": "horne-hamre",
       "citySlug": "nova-bana",
       "airDistance": 8.3,
-      "roadDistance": 12.8,
-      "duration": 16
+      "roadDistance": 16.6,
+      "duration": 14
     },
     {
       "municipalitySlug": "horne-hamre",
@@ -13544,8 +13544,8 @@
       "municipalitySlug": "lubica",
       "citySlug": "kezmarok",
       "airDistance": 2.2,
-      "roadDistance": 3.4,
-      "duration": 7
+      "roadDistance": 2.1,
+      "duration": 3
     },
     {
       "municipalitySlug": "lubica",
@@ -13593,8 +13593,8 @@
       "municipalitySlug": "lubisa",
       "citySlug": "chlmec",
       "airDistance": 13.3,
-      "roadDistance": 17.3,
-      "duration": 18
+      "roadDistance": 17.1,
+      "duration": 17
     },
     {
       "municipalitySlug": "lubisa",
@@ -13635,15 +13635,15 @@
       "municipalitySlug": "luborec",
       "citySlug": "modry-kamen",
       "airDistance": 15.6,
-      "roadDistance": 21.4,
-      "duration": 22
+      "roadDistance": 54.4,
+      "duration": 54
     },
     {
       "municipalitySlug": "luborec",
       "citySlug": "velky-krtis",
       "airDistance": 16.7,
-      "roadDistance": 20.7,
-      "duration": 22
+      "roadDistance": 52.1,
+      "duration": 52
     },
     {
       "municipalitySlug": "luboriecka",
@@ -13670,8 +13670,8 @@
       "municipalitySlug": "lubotice",
       "citySlug": "presov",
       "airDistance": 3.1,
-      "roadDistance": 5.6,
-      "duration": 10
+      "roadDistance": 4,
+      "duration": 6
     },
     {
       "municipalitySlug": "lubotice",
@@ -13684,8 +13684,8 @@
       "municipalitySlug": "lubotice",
       "citySlug": "hostovce",
       "airDistance": 16.1,
-      "roadDistance": 22,
-      "duration": 23
+      "roadDistance": 81.1,
+      "duration": 64
     },
     {
       "municipalitySlug": "lubotin",
@@ -13712,8 +13712,8 @@
       "municipalitySlug": "lubovec",
       "citySlug": "hostovce",
       "airDistance": 8.6,
-      "roadDistance": 14.1,
-      "duration": 17
+      "roadDistance": 73.9,
+      "duration": 60
     },
     {
       "municipalitySlug": "lubovec",
@@ -13768,8 +13768,8 @@
       "municipalitySlug": "lutina",
       "citySlug": "bardejov",
       "airDistance": 21.6,
-      "roadDistance": 39.3,
-      "duration": 58
+      "roadDistance": 58.6,
+      "duration": 59
     },
     {
       "municipalitySlug": "lutov",
@@ -13845,8 +13845,8 @@
       "municipalitySlug": "madunice",
       "citySlug": "hlohovec",
       "airDistance": 5.7,
-      "roadDistance": 8.4,
-      "duration": 11
+      "roadDistance": 10.3,
+      "duration": 14
     },
     {
       "municipalitySlug": "madunice",
@@ -13936,8 +13936,8 @@
       "municipalitySlug": "majerovce",
       "citySlug": "vranov-nad-toplou",
       "airDistance": 2.5,
-      "roadDistance": 7.8,
-      "duration": 9
+      "roadDistance": 5.8,
+      "duration": 8
     },
     {
       "municipalitySlug": "majerovce",
@@ -14118,7 +14118,7 @@
       "municipalitySlug": "mala-ida",
       "citySlug": "kosice",
       "airDistance": 7.5,
-      "roadDistance": 10.4,
+      "roadDistance": 12.6,
       "duration": 14
     },
     {
@@ -14146,8 +14146,8 @@
       "municipalitySlug": "mala-lehota",
       "citySlug": "zarnovica",
       "airDistance": 11.1,
-      "roadDistance": 15.8,
-      "duration": 27
+      "roadDistance": 29.3,
+      "duration": 30
     },
     {
       "municipalitySlug": "mala-lehota",
@@ -14160,8 +14160,8 @@
       "municipalitySlug": "mala-lodina",
       "citySlug": "hostovce",
       "airDistance": 10,
-      "roadDistance": 16.2,
-      "duration": 17
+      "roadDistance": 76,
+      "duration": 60
     },
     {
       "municipalitySlug": "mala-lodina",
@@ -14314,8 +14314,8 @@
       "municipalitySlug": "malas",
       "citySlug": "bielovce",
       "airDistance": 19.4,
-      "roadDistance": 38.6,
-      "duration": 34
+      "roadDistance": 31.9,
+      "duration": 31
     },
     {
       "municipalitySlug": "malatina",
@@ -14412,8 +14412,8 @@
       "municipalitySlug": "male-dvorniky",
       "citySlug": "dunajska-streda",
       "airDistance": 2.7,
-      "roadDistance": 3.8,
-      "duration": 7
+      "roadDistance": 3,
+      "duration": 5
     },
     {
       "municipalitySlug": "male-dvorniky",
@@ -14678,8 +14678,8 @@
       "municipalitySlug": "male-trakany",
       "citySlug": "cierna-nad-tisou",
       "airDistance": 2.4,
-      "roadDistance": 3.1,
-      "duration": 5
+      "roadDistance": 2.4,
+      "duration": 3
     },
     {
       "municipalitySlug": "male-trakany",
@@ -14825,8 +14825,8 @@
       "municipalitySlug": "malinovo",
       "citySlug": "ivanka-pri-dunaji",
       "airDistance": 4.8,
-      "roadDistance": 5.4,
-      "duration": 8
+      "roadDistance": 7.2,
+      "duration": 10
     },
     {
       "municipalitySlug": "malinovo",
@@ -14839,8 +14839,8 @@
       "municipalitySlug": "malinovo",
       "citySlug": "senec",
       "airDistance": 10.7,
-      "roadDistance": 15.3,
-      "duration": 18
+      "roadDistance": 18.7,
+      "duration": 22
     },
     {
       "municipalitySlug": "maluzina",
@@ -14895,15 +14895,15 @@
       "municipalitySlug": "maly-cepcin",
       "citySlug": "blatnica",
       "airDistance": 7.5,
-      "roadDistance": 8.9,
+      "roadDistance": 12.5,
       "duration": 11
     },
     {
       "municipalitySlug": "maly-cepcin",
       "citySlug": "handlova",
       "airDistance": 19.9,
-      "roadDistance": 31.7,
-      "duration": 39
+      "roadDistance": 51.5,
+      "duration": 52
     },
     {
       "municipalitySlug": "maly-hores",
@@ -15063,8 +15063,8 @@
       "municipalitySlug": "maly-saris",
       "citySlug": "velky-saris",
       "airDistance": 4.8,
-      "roadDistance": 6.4,
-      "duration": 9
+      "roadDistance": 4.4,
+      "duration": 5
     },
     {
       "municipalitySlug": "maly-saris",
@@ -15084,8 +15084,8 @@
       "municipalitySlug": "malzenice",
       "citySlug": "hlohovec",
       "airDistance": 9.3,
-      "roadDistance": 10.2,
-      "duration": 12
+      "roadDistance": 12.8,
+      "duration": 16
     },
     {
       "municipalitySlug": "malzenice",
@@ -15175,8 +15175,8 @@
       "municipalitySlug": "margecany",
       "citySlug": "hostovce",
       "airDistance": 18.8,
-      "roadDistance": 33.4,
-      "duration": 40
+      "roadDistance": 76.4,
+      "duration": 74
     },
     {
       "municipalitySlug": "marhan",
@@ -15308,8 +15308,8 @@
       "municipalitySlug": "martin",
       "citySlug": "vrutky",
       "airDistance": 4.1,
-      "roadDistance": 5.3,
-      "duration": 8
+      "roadDistance": 6.9,
+      "duration": 10
     },
     {
       "municipalitySlug": "martin",
@@ -15483,8 +15483,8 @@
       "municipalitySlug": "matiaska",
       "citySlug": "stropkov",
       "airDistance": 16.4,
-      "roadDistance": 40.3,
-      "duration": 48
+      "roadDistance": 46,
+      "duration": 40
     },
     {
       "municipalitySlug": "matiasovce",
@@ -15532,8 +15532,8 @@
       "municipalitySlug": "matuskovo",
       "citySlug": "galanta",
       "airDistance": 2.8,
-      "roadDistance": 3.7,
-      "duration": 7
+      "roadDistance": 2.8,
+      "duration": 4
     },
     {
       "municipalitySlug": "matuskovo",
@@ -15931,15 +15931,15 @@
       "municipalitySlug": "micakovce",
       "citySlug": "giraltovce",
       "airDistance": 4.2,
-      "roadDistance": 4.8,
-      "duration": 5
+      "roadDistance": 2.8,
+      "duration": 3
     },
     {
       "municipalitySlug": "micakovce",
       "citySlug": "hanusovce-nad-toplou",
       "airDistance": 5.8,
-      "roadDistance": 8.3,
-      "duration": 11
+      "roadDistance": 10.1,
+      "duration": 12
     },
     {
       "municipalitySlug": "micakovce",
@@ -16008,7 +16008,7 @@
       "municipalitySlug": "michajlov",
       "citySlug": "chlmec",
       "airDistance": 29.8,
-      "roadDistance": 51.4,
+      "roadDistance": 51.3,
       "duration": 52
     },
     {
@@ -16071,8 +16071,8 @@
       "municipalitySlug": "michalkova",
       "citySlug": "bansky-studenec",
       "airDistance": 15.1,
-      "roadDistance": 37,
-      "duration": 43
+      "roadDistance": 42.6,
+      "duration": 54
     },
     {
       "municipalitySlug": "michalok",
@@ -16120,8 +16120,8 @@
       "municipalitySlug": "michalovce",
       "citySlug": "chlmec",
       "airDistance": 15.1,
-      "roadDistance": 34.3,
-      "duration": 35
+      "roadDistance": 21.9,
+      "duration": 33
     },
     {
       "municipalitySlug": "michalovce",
@@ -16169,8 +16169,8 @@
       "municipalitySlug": "miklusovce",
       "citySlug": "hostovce",
       "airDistance": 14.9,
-      "roadDistance": 24.2,
-      "duration": 28
+      "roadDistance": 84,
+      "duration": 72
     },
     {
       "municipalitySlug": "mikova",
@@ -16323,8 +16323,8 @@
       "municipalitySlug": "mirkovce",
       "citySlug": "hostovce",
       "airDistance": 5.2,
-      "roadDistance": 9.5,
-      "duration": 11
+      "roadDistance": 65.9,
+      "duration": 53
     },
     {
       "municipalitySlug": "mirkovce",
@@ -16456,8 +16456,8 @@
       "municipalitySlug": "mlynky",
       "citySlug": "betlanovce",
       "airDistance": 14.5,
-      "roadDistance": 35.3,
-      "duration": 43
+      "roadDistance": 43.3,
+      "duration": 46
     },
     {
       "municipalitySlug": "mnichova-lehota",
@@ -16610,7 +16610,7 @@
       "municipalitySlug": "modra-nad-cirochou",
       "citySlug": "chlmec",
       "airDistance": 10,
-      "roadDistance": 16.5,
+      "roadDistance": 16.9,
       "duration": 17
     },
     {
@@ -16722,8 +16722,8 @@
       "municipalitySlug": "mojs",
       "citySlug": "zilina",
       "airDistance": 6.5,
-      "roadDistance": 8.7,
-      "duration": 15
+      "roadDistance": 6.9,
+      "duration": 10
     },
     {
       "municipalitySlug": "mojs",
@@ -16799,8 +16799,8 @@
       "municipalitySlug": "mokrance",
       "citySlug": "moldava-nad-bodvou",
       "airDistance": 2.6,
-      "roadDistance": 3.2,
-      "duration": 6
+      "roadDistance": 2.5,
+      "duration": 3
     },
     {
       "municipalitySlug": "mokrance",
@@ -16848,8 +16848,8 @@
       "municipalitySlug": "mokry-haj",
       "citySlug": "holic",
       "airDistance": 6.5,
-      "roadDistance": 14.6,
-      "duration": 13
+      "roadDistance": 10.8,
+      "duration": 12
     },
     {
       "municipalitySlug": "mokry-haj",
@@ -16981,8 +16981,8 @@
       "municipalitySlug": "mostova",
       "citySlug": "sladkovicovo",
       "airDistance": 7.7,
-      "roadDistance": 11.8,
-      "duration": 11
+      "roadDistance": 8.5,
+      "duration": 10
     },
     {
       "municipalitySlug": "mostova",
@@ -17107,8 +17107,8 @@
       "municipalitySlug": "motycky",
       "citySlug": "blatnica",
       "airDistance": 19.9,
-      "roadDistance": 50.4,
-      "duration": 57
+      "roadDistance": 55.8,
+      "duration": 54
     },
     {
       "municipalitySlug": "motycky",
@@ -17121,8 +17121,8 @@
       "municipalitySlug": "molca",
       "citySlug": "banska-bystrica",
       "airDistance": 6.2,
-      "roadDistance": 10,
-      "duration": 13
+      "roadDistance": 13.7,
+      "duration": 18
     },
     {
       "municipalitySlug": "molca",
@@ -17205,8 +17205,8 @@
       "municipalitySlug": "mudrovce",
       "citySlug": "hostovce",
       "airDistance": 14,
-      "roadDistance": 19.9,
-      "duration": 24
+      "roadDistance": 72.8,
+      "duration": 63
     },
     {
       "municipalitySlug": "mudrovce",
@@ -17422,8 +17422,8 @@
       "municipalitySlug": "myslina",
       "citySlug": "chlmec",
       "airDistance": 9,
-      "roadDistance": 13.5,
-      "duration": 16
+      "roadDistance": 13.1,
+      "duration": 15
     },
     {
       "municipalitySlug": "mytna",
@@ -17506,8 +17506,8 @@
       "municipalitySlug": "nacina-ves",
       "citySlug": "chlmec",
       "airDistance": 9.7,
-      "roadDistance": 23.9,
-      "duration": 25
+      "roadDistance": 23.2,
+      "duration": 23
     },
     {
       "municipalitySlug": "nadlice",
@@ -17653,8 +17653,8 @@
       "municipalitySlug": "nedanovce",
       "citySlug": "chynorany",
       "airDistance": 2.4,
-      "roadDistance": 3.5,
-      "duration": 6
+      "roadDistance": 2.8,
+      "duration": 5
     },
     {
       "municipalitySlug": "nedanovce",
@@ -17772,15 +17772,15 @@
       "municipalitySlug": "nechvalova-polianka",
       "citySlug": "chlmec",
       "airDistance": 23.3,
-      "roadDistance": 30.4,
+      "roadDistance": 30.8,
       "duration": 32
     },
     {
       "municipalitySlug": "nemce",
       "citySlug": "banska-bystrica",
       "airDistance": 3.5,
-      "roadDistance": 5.5,
-      "duration": 9
+      "roadDistance": 6.9,
+      "duration": 10
     },
     {
       "municipalitySlug": "nemce",
@@ -17905,8 +17905,8 @@
       "municipalitySlug": "nemesany",
       "citySlug": "levoca",
       "airDistance": 7.4,
-      "roadDistance": 9.5,
-      "duration": 11
+      "roadDistance": 14.1,
+      "duration": 10
     },
     {
       "municipalitySlug": "nemesany",
@@ -17919,8 +17919,8 @@
       "municipalitySlug": "nemsova",
       "citySlug": "dubnica-nad-vahom",
       "airDistance": 3.6,
-      "roadDistance": 5.1,
-      "duration": 8
+      "roadDistance": 6.2,
+      "duration": 9
     },
     {
       "municipalitySlug": "nemsova",
@@ -18010,8 +18010,8 @@
       "municipalitySlug": "neslusa",
       "citySlug": "turzovka",
       "airDistance": 13.8,
-      "roadDistance": 19.9,
-      "duration": 37
+      "roadDistance": 39.7,
+      "duration": 45
     },
     {
       "municipalitySlug": "neverice",
@@ -18136,8 +18136,8 @@
       "municipalitySlug": "nitra-nad-iplom",
       "citySlug": "filakovo",
       "airDistance": 6.5,
-      "roadDistance": 7.8,
-      "duration": 14
+      "roadDistance": 12,
+      "duration": 15
     },
     {
       "municipalitySlug": "nitra-nad-iplom",
@@ -18199,8 +18199,8 @@
       "municipalitySlug": "nitrianske-hrnciarovce",
       "citySlug": "nitra",
       "airDistance": 3.4,
-      "roadDistance": 3.8,
-      "duration": 7
+      "roadDistance": 5,
+      "duration": 9
     },
     {
       "municipalitySlug": "nitrianske-hrnciarovce",
@@ -18213,8 +18213,8 @@
       "municipalitySlug": "nitrianske-hrnciarovce",
       "citySlug": "zlate-moravce",
       "airDistance": 21.1,
-      "roadDistance": 30.7,
-      "duration": 24
+      "roadDistance": 25.2,
+      "duration": 23
     },
     {
       "municipalitySlug": "nitrianske-pravno",
@@ -18353,8 +18353,8 @@
       "municipalitySlug": "nizna-hutka",
       "citySlug": "hostovce",
       "airDistance": 24.1,
-      "roadDistance": 27.7,
-      "duration": 19
+      "roadDistance": 47,
+      "duration": 40
     },
     {
       "municipalitySlug": "nizna-hutka",
@@ -18416,8 +18416,8 @@
       "municipalitySlug": "nizna-kamenica",
       "citySlug": "hostovce",
       "airDistance": 19.5,
-      "roadDistance": 31,
-      "duration": 22
+      "roadDistance": 69.7,
+      "duration": 55
     },
     {
       "municipalitySlug": "nizna-kamenica",
@@ -18521,8 +18521,8 @@
       "municipalitySlug": "nizna-rybnica",
       "citySlug": "chlmec",
       "airDistance": 21.4,
-      "roadDistance": 51.8,
-      "duration": 50
+      "roadDistance": 36.2,
+      "duration": 45
     },
     {
       "municipalitySlug": "nizna-sitnica",
@@ -18598,8 +18598,8 @@
       "municipalitySlug": "nizne-ladickovce",
       "citySlug": "chlmec",
       "airDistance": 15.3,
-      "roadDistance": 20.9,
-      "duration": 22
+      "roadDistance": 20.8,
+      "duration": 21
     },
     {
       "municipalitySlug": "nizne-ladickovce",
@@ -18689,8 +18689,8 @@
       "municipalitySlug": "nizny-caj",
       "citySlug": "hostovce",
       "airDistance": 24.3,
-      "roadDistance": 33.5,
-      "duration": 23
+      "roadDistance": 52.4,
+      "duration": 44
     },
     {
       "municipalitySlug": "nizny-hrabovec",
@@ -18738,8 +18738,8 @@
       "municipalitySlug": "nizny-klatov",
       "citySlug": "kosice",
       "airDistance": 8.1,
-      "roadDistance": 9.8,
-      "duration": 15
+      "roadDistance": 13.9,
+      "duration": 17
     },
     {
       "municipalitySlug": "nizny-klatov",
@@ -18752,8 +18752,8 @@
       "municipalitySlug": "nizny-klatov",
       "citySlug": "hostovce",
       "airDistance": 17.8,
-      "roadDistance": 35.8,
-      "duration": 30
+      "roadDistance": 41.7,
+      "duration": 41
     },
     {
       "municipalitySlug": "nizny-komarnik",
@@ -18787,8 +18787,8 @@
       "municipalitySlug": "nizny-krucov",
       "citySlug": "strazske",
       "airDistance": 13.8,
-      "roadDistance": 28.8,
-      "duration": 28
+      "roadDistance": 17.4,
+      "duration": 19
     },
     {
       "municipalitySlug": "nizny-krucov",
@@ -19151,7 +19151,7 @@
       "municipalitySlug": "nova-lesna",
       "citySlug": "poprad",
       "airDistance": 7.9,
-      "roadDistance": 9.1,
+      "roadDistance": 12.1,
       "duration": 12
     },
     {
@@ -19186,8 +19186,8 @@
       "municipalitySlug": "nova-polhora",
       "citySlug": "hostovce",
       "airDistance": 5.5,
-      "roadDistance": 7.8,
-      "duration": 8
+      "roadDistance": 58.8,
+      "duration": 46
     },
     {
       "municipalitySlug": "nova-polhora",
@@ -19298,8 +19298,8 @@
       "municipalitySlug": "nova-ves-nad-zitavou",
       "citySlug": "tlmace",
       "airDistance": 15.4,
-      "roadDistance": 29.1,
-      "duration": 25
+      "roadDistance": 22.2,
+      "duration": 26
     },
     {
       "municipalitySlug": "nova-vieska",
@@ -19396,8 +19396,8 @@
       "municipalitySlug": "nove-sady",
       "citySlug": "hlohovec",
       "airDistance": 13.5,
-      "roadDistance": 22.5,
-      "duration": 27
+      "roadDistance": 27.4,
+      "duration": 26
     },
     {
       "municipalitySlug": "nove-sady",
@@ -19508,15 +19508,15 @@
       "municipalitySlug": "novy-salas",
       "citySlug": "hostovce",
       "airDistance": 32.2,
-      "roadDistance": 43.6,
-      "duration": 33
+      "roadDistance": 62.8,
+      "duration": 54
     },
     {
       "municipalitySlug": "novy-svet",
       "citySlug": "senec",
       "airDistance": 6.2,
-      "roadDistance": 9.7,
-      "duration": 10
+      "roadDistance": 7.5,
+      "duration": 9
     },
     {
       "municipalitySlug": "novy-svet",
@@ -19683,8 +19683,8 @@
       "municipalitySlug": "obisovce",
       "citySlug": "hostovce",
       "airDistance": 2.3,
-      "roadDistance": 5.4,
-      "duration": 7
+      "roadDistance": 65.1,
+      "duration": 50
     },
     {
       "municipalitySlug": "obisovce",
@@ -19753,8 +19753,8 @@
       "municipalitySlug": "obyce",
       "citySlug": "nova-bana",
       "airDistance": 13.9,
-      "roadDistance": 33.3,
-      "duration": 29
+      "roadDistance": 26.4,
+      "duration": 31
     },
     {
       "municipalitySlug": "obyce",
@@ -19865,8 +19865,8 @@
       "municipalitySlug": "ohradzany",
       "citySlug": "chlmec",
       "airDistance": 14.4,
-      "roadDistance": 17.3,
-      "duration": 19
+      "roadDistance": 16.9,
+      "duration": 18
     },
     {
       "municipalitySlug": "ochodnica",
@@ -20033,15 +20033,15 @@
       "municipalitySlug": "olejnikov",
       "citySlug": "bardejov",
       "airDistance": 19.4,
-      "roadDistance": 36.9,
-      "duration": 55
+      "roadDistance": 60.4,
+      "duration": 61
     },
     {
       "municipalitySlug": "olesna",
       "citySlug": "turzovka",
       "airDistance": 4.2,
-      "roadDistance": 5.9,
-      "duration": 10
+      "roadDistance": 9.8,
+      "duration": 14
     },
     {
       "municipalitySlug": "olesna",
@@ -20082,8 +20082,8 @@
       "municipalitySlug": "olsovany",
       "citySlug": "hostovce",
       "airDistance": 20.9,
-      "roadDistance": 28.7,
-      "duration": 20
+      "roadDistance": 57.2,
+      "duration": 48
     },
     {
       "municipalitySlug": "olsovany",
@@ -20180,7 +20180,7 @@
       "municipalitySlug": "olsavka-stropkov",
       "citySlug": "svidnik",
       "airDistance": 8.6,
-      "roadDistance": 14.4,
+      "roadDistance": 23.8,
       "duration": 23
     },
     {
@@ -20285,8 +20285,8 @@
       "municipalitySlug": "ondavka",
       "citySlug": "bardejov",
       "airDistance": 16.6,
-      "roadDistance": 24.1,
-      "duration": 26
+      "roadDistance": 19.2,
+      "duration": 22
     },
     {
       "municipalitySlug": "ondavka",
@@ -20320,8 +20320,8 @@
       "municipalitySlug": "ondrasovce",
       "citySlug": "velky-saris",
       "airDistance": 11.2,
-      "roadDistance": 19.6,
-      "duration": 17
+      "roadDistance": 15,
+      "duration": 15
     },
     {
       "municipalitySlug": "ondrasovce",
@@ -20390,8 +20390,8 @@
       "municipalitySlug": "opatka",
       "citySlug": "medzev",
       "airDistance": 15.6,
-      "roadDistance": 48.5,
-      "duration": 55
+      "roadDistance": 62,
+      "duration": 65
     },
     {
       "municipalitySlug": "opatka",
@@ -20488,8 +20488,8 @@
       "municipalitySlug": "opina",
       "citySlug": "hostovce",
       "airDistance": 11.8,
-      "roadDistance": 18.7,
-      "duration": 22
+      "roadDistance": 72.5,
+      "duration": 61
     },
     {
       "municipalitySlug": "opina",
@@ -20523,8 +20523,8 @@
       "municipalitySlug": "opoj",
       "citySlug": "sladkovicovo",
       "airDistance": 10.9,
-      "roadDistance": 13,
-      "duration": 14
+      "roadDistance": 19.7,
+      "duration": 15
     },
     {
       "municipalitySlug": "oponice",
@@ -20775,8 +20775,8 @@
       "municipalitySlug": "oravske-vesele",
       "citySlug": "namestovo",
       "airDistance": 9.5,
-      "roadDistance": 19.4,
-      "duration": 23
+      "roadDistance": 14.8,
+      "duration": 17
     },
     {
       "municipalitySlug": "oravske-vesele",
@@ -21020,8 +21020,8 @@
       "municipalitySlug": "ostra-luka",
       "citySlug": "bansky-studenec",
       "airDistance": 12.6,
-      "roadDistance": 24.2,
-      "duration": 30
+      "roadDistance": 32.7,
+      "duration": 38
     },
     {
       "municipalitySlug": "ostratice",
@@ -21279,8 +21279,8 @@
       "municipalitySlug": "ozdany",
       "citySlug": "rimavska-sobota",
       "airDistance": 9.2,
-      "roadDistance": 11.4,
-      "duration": 15
+      "roadDistance": 13.9,
+      "duration": 14
     },
     {
       "municipalitySlug": "ozdany",
@@ -21307,8 +21307,8 @@
       "municipalitySlug": "paca",
       "citySlug": "medzev",
       "airDistance": 20.7,
-      "roadDistance": 39.9,
-      "duration": 40
+      "roadDistance": 55,
+      "duration": 48
     },
     {
       "municipalitySlug": "paca",
@@ -21671,8 +21671,8 @@
       "municipalitySlug": "pastuchov",
       "citySlug": "hlohovec",
       "airDistance": 5.8,
-      "roadDistance": 9.5,
-      "duration": 12
+      "roadDistance": 11.8,
+      "duration": 16
     },
     {
       "municipalitySlug": "pastuchov",
@@ -21811,8 +21811,8 @@
       "municipalitySlug": "pavlice",
       "citySlug": "sered",
       "airDistance": 11.9,
-      "roadDistance": 29.7,
-      "duration": 24
+      "roadDistance": 24.5,
+      "duration": 23
     },
     {
       "municipalitySlug": "pavlice",
@@ -21853,8 +21853,8 @@
       "municipalitySlug": "pavlova-ves",
       "citySlug": "liptovsky-hradok",
       "airDistance": 14.4,
-      "roadDistance": 18,
-      "duration": 22
+      "roadDistance": 22.5,
+      "duration": 20
     },
     {
       "municipalitySlug": "pavlova-ves",
@@ -21909,8 +21909,8 @@
       "municipalitySlug": "pavlany",
       "citySlug": "spisske-podhradie",
       "airDistance": 6.9,
-      "roadDistance": 8.9,
-      "duration": 18
+      "roadDistance": 24.7,
+      "duration": 25
     },
     {
       "municipalitySlug": "pavlany",
@@ -21965,7 +21965,7 @@
       "municipalitySlug": "pcoline",
       "citySlug": "chlmec",
       "airDistance": 26.2,
-      "roadDistance": 35.2,
+      "roadDistance": 35,
       "duration": 35
     },
     {
@@ -22224,8 +22224,8 @@
       "municipalitySlug": "petrovany",
       "citySlug": "hostovce",
       "airDistance": 5.6,
-      "roadDistance": 6,
-      "duration": 9
+      "roadDistance": 69.9,
+      "duration": 57
     },
     {
       "municipalitySlug": "petrovany",
@@ -22371,7 +22371,7 @@
       "municipalitySlug": "pichne",
       "citySlug": "chlmec",
       "airDistance": 21.3,
-      "roadDistance": 31.6,
+      "roadDistance": 31.2,
       "duration": 32
     },
     {
@@ -22742,8 +22742,8 @@
       "municipalitySlug": "pliesovce",
       "citySlug": "bansky-studenec",
       "airDistance": 13.6,
-      "roadDistance": 22.5,
-      "duration": 41
+      "roadDistance": 38.7,
+      "duration": 45
     },
     {
       "municipalitySlug": "pliesovce",
@@ -22945,8 +22945,8 @@
       "municipalitySlug": "podhorie-banska-stiavnica",
       "citySlug": "banska-stiavnica",
       "airDistance": 4.7,
-      "roadDistance": 5.6,
-      "duration": 8
+      "roadDistance": 7.6,
+      "duration": 10
     },
     {
       "municipalitySlug": "podhorie-banska-stiavnica",
@@ -22973,8 +22973,8 @@
       "municipalitySlug": "podhorod",
       "citySlug": "chlmec",
       "airDistance": 27.5,
-      "roadDistance": 63.3,
-      "duration": 64
+      "roadDistance": 52.4,
+      "duration": 60
     },
     {
       "municipalitySlug": "podhradie-topolcany",
@@ -22987,8 +22987,8 @@
       "municipalitySlug": "podhradie-topolcany",
       "citySlug": "horna-streda",
       "airDistance": 15.3,
-      "roadDistance": 29.6,
-      "duration": 52
+      "roadDistance": 49.1,
+      "duration": 53
     },
     {
       "municipalitySlug": "podhradie-topolcany",
@@ -23022,8 +23022,8 @@
       "municipalitySlug": "podkonice",
       "citySlug": "banska-bystrica",
       "airDistance": 9.8,
-      "roadDistance": 12.1,
-      "duration": 18
+      "roadDistance": 17.8,
+      "duration": 20
     },
     {
       "municipalitySlug": "podkonice",
@@ -23190,8 +23190,8 @@
       "municipalitySlug": "podturen",
       "citySlug": "liptovsky-hradok",
       "airDistance": 2.8,
-      "roadDistance": 3,
-      "duration": 5
+      "roadDistance": 3.9,
+      "duration": 6
     },
     {
       "municipalitySlug": "podturen",
@@ -23211,8 +23211,8 @@
       "municipalitySlug": "podvysoka",
       "citySlug": "turzovka",
       "airDistance": 3.2,
-      "roadDistance": 3.8,
-      "duration": 6
+      "roadDistance": 5.3,
+      "duration": 7
     },
     {
       "municipalitySlug": "podvysoka",
@@ -23239,8 +23239,8 @@
       "municipalitySlug": "podzamcok",
       "citySlug": "bansky-studenec",
       "airDistance": 11.6,
-      "roadDistance": 33,
-      "duration": 41
+      "roadDistance": 39.2,
+      "duration": 44
     },
     {
       "municipalitySlug": "podzamcok",
@@ -23386,8 +23386,8 @@
       "municipalitySlug": "pokryvac",
       "citySlug": "ruzomberok",
       "airDistance": 14.9,
-      "roadDistance": 32.3,
-      "duration": 39
+      "roadDistance": 24.8,
+      "duration": 32
     },
     {
       "municipalitySlug": "pokryvac",
@@ -23652,8 +23652,8 @@
       "municipalitySlug": "poniky",
       "citySlug": "zvolen",
       "airDistance": 19.2,
-      "roadDistance": 35,
-      "duration": 32
+      "roadDistance": 23.3,
+      "duration": 25
     },
     {
       "municipalitySlug": "poprad",
@@ -23673,8 +23673,8 @@
       "municipalitySlug": "poproc-rimavska-sobota",
       "citySlug": "revuca",
       "airDistance": 12.7,
-      "roadDistance": 35.5,
-      "duration": 41
+      "roadDistance": 43.5,
+      "duration": 50
     },
     {
       "municipalitySlug": "poproc-rimavska-sobota",
@@ -23792,8 +23792,8 @@
       "municipalitySlug": "poruba-pod-vihorlatom",
       "citySlug": "chlmec",
       "airDistance": 16,
-      "roadDistance": 52.4,
-      "duration": 62
+      "roadDistance": 27.9,
+      "duration": 39
     },
     {
       "municipalitySlug": "poruba-pod-vihorlatom",
@@ -23841,8 +23841,8 @@
       "municipalitySlug": "posa",
       "citySlug": "chlmec",
       "airDistance": 14.4,
-      "roadDistance": 27.7,
-      "duration": 28
+      "roadDistance": 27.4,
+      "duration": 29
     },
     {
       "municipalitySlug": "potok-ruzomberok",
@@ -23904,8 +23904,8 @@
       "municipalitySlug": "potocky",
       "citySlug": "medzilaborce",
       "airDistance": 15.3,
-      "roadDistance": 28.8,
-      "duration": 34
+      "roadDistance": 41.9,
+      "duration": 41
     },
     {
       "municipalitySlug": "potonske-luky",
@@ -23918,15 +23918,15 @@
       "municipalitySlug": "potonske-luky",
       "citySlug": "sladkovicovo",
       "airDistance": 13.1,
-      "roadDistance": 32.3,
+      "roadDistance": 44.7,
       "duration": 41
     },
     {
       "municipalitySlug": "potonske-luky",
       "citySlug": "galanta",
       "airDistance": 14.9,
-      "roadDistance": 40.3,
-      "duration": 54
+      "roadDistance": 46.5,
+      "duration": 47
     },
     {
       "municipalitySlug": "potvorice",
@@ -23988,8 +23988,8 @@
       "municipalitySlug": "povina",
       "citySlug": "kysucke-nove-mesto",
       "airDistance": 2.3,
-      "roadDistance": 3.6,
-      "duration": 7
+      "roadDistance": 2.7,
+      "duration": 4
     },
     {
       "municipalitySlug": "povina",
@@ -24037,15 +24037,15 @@
       "municipalitySlug": "povraznik",
       "citySlug": "detva",
       "airDistance": 19.4,
-      "roadDistance": 45.4,
-      "duration": 55
+      "roadDistance": 61.7,
+      "duration": 71
     },
     {
       "municipalitySlug": "povraznik",
       "citySlug": "hrinova",
       "airDistance": 19.6,
-      "roadDistance": 55.6,
-      "duration": 63
+      "roadDistance": 75.5,
+      "duration": 78
     },
     {
       "municipalitySlug": "pozba",
@@ -24128,8 +24128,8 @@
       "municipalitySlug": "praha",
       "citySlug": "modry-kamen",
       "airDistance": 18.7,
-      "roadDistance": 35.6,
-      "duration": 38
+      "roadDistance": 52,
+      "duration": 55
     },
     {
       "municipalitySlug": "prakovce",
@@ -24331,8 +24331,8 @@
       "municipalitySlug": "predmier",
       "citySlug": "rajec",
       "airDistance": 14.3,
-      "roadDistance": 21.2,
-      "duration": 39
+      "roadDistance": 36.4,
+      "duration": 37
     },
     {
       "municipalitySlug": "prencov",
@@ -24408,8 +24408,8 @@
       "municipalitySlug": "presov",
       "citySlug": "hostovce",
       "airDistance": 14.7,
-      "roadDistance": 19.7,
-      "duration": 19
+      "roadDistance": 80.4,
+      "duration": 61
     },
     {
       "municipalitySlug": "pribelce",
@@ -24541,8 +24541,8 @@
       "municipalitySlug": "priechod",
       "citySlug": "banska-bystrica",
       "airDistance": 7.5,
-      "roadDistance": 8.2,
-      "duration": 12
+      "roadDistance": 12,
+      "duration": 16
     },
     {
       "municipalitySlug": "priechod",
@@ -24583,8 +24583,8 @@
       "municipalitySlug": "priepasne",
       "citySlug": "brezova-pod-bradlom",
       "airDistance": 4.4,
-      "roadDistance": 5.6,
-      "duration": 7
+      "roadDistance": 7.7,
+      "duration": 9
     },
     {
       "municipalitySlug": "priepasne",
@@ -24730,8 +24730,8 @@
       "municipalitySlug": "prislop",
       "citySlug": "chlmec",
       "airDistance": 33.1,
-      "roadDistance": 45.7,
-      "duration": 47
+      "roadDistance": 45.4,
+      "duration": 46
     },
     {
       "municipalitySlug": "prislop",
@@ -24744,8 +24744,8 @@
       "municipalitySlug": "pritulany",
       "citySlug": "stropkov",
       "airDistance": 12,
-      "roadDistance": 16.6,
-      "duration": 33
+      "roadDistance": 44.6,
+      "duration": 42
     },
     {
       "municipalitySlug": "pritulany",
@@ -24947,7 +24947,7 @@
       "municipalitySlug": "pticie",
       "citySlug": "chlmec",
       "airDistance": 2.5,
-      "roadDistance": 3.1,
+      "roadDistance": 3,
       "duration": 4
     },
     {
@@ -25031,15 +25031,15 @@
       "municipalitySlug": "pukanec",
       "citySlug": "nova-bana",
       "airDistance": 10.3,
-      "roadDistance": 15.2,
-      "duration": 33
+      "roadDistance": 39.3,
+      "duration": 36
     },
     {
       "municipalitySlug": "pukanec",
       "citySlug": "zarnovica",
       "airDistance": 14.9,
-      "roadDistance": 25.2,
-      "duration": 38
+      "roadDistance": 49,
+      "duration": 40
     },
     {
       "municipalitySlug": "puste-cemerne",
@@ -25052,8 +25052,8 @@
       "municipalitySlug": "puste-cemerne",
       "citySlug": "chlmec",
       "airDistance": 10.1,
-      "roadDistance": 22.4,
-      "duration": 24
+      "roadDistance": 22.2,
+      "duration": 23
     },
     {
       "municipalitySlug": "puste-cemerne",
@@ -25220,8 +25220,8 @@
       "municipalitySlug": "radatice",
       "citySlug": "hostovce",
       "airDistance": 9.1,
-      "roadDistance": 17.8,
-      "duration": 21
+      "roadDistance": 77,
+      "duration": 63
     },
     {
       "municipalitySlug": "radatice",
@@ -25612,8 +25612,8 @@
       "municipalitySlug": "rakos-kosice-okolie",
       "citySlug": "hostovce",
       "airDistance": 27.3,
-      "roadDistance": 35.8,
-      "duration": 25
+      "roadDistance": 54.8,
+      "duration": 46
     },
     {
       "municipalitySlug": "rakova",
@@ -25759,8 +25759,8 @@
       "municipalitySlug": "raksa",
       "citySlug": "handlova",
       "airDistance": 18.8,
-      "roadDistance": 30.2,
-      "duration": 38
+      "roadDistance": 52,
+      "duration": 53
     },
     {
       "municipalitySlug": "rakusy",
@@ -25808,8 +25808,8 @@
       "municipalitySlug": "rankovce",
       "citySlug": "hostovce",
       "airDistance": 15.5,
-      "roadDistance": 20.4,
-      "duration": 24
+      "roadDistance": 75.2,
+      "duration": 60
     },
     {
       "municipalitySlug": "rankovce",
@@ -26039,8 +26039,8 @@
       "municipalitySlug": "ratkovske-bystre",
       "citySlug": "tisovec",
       "airDistance": 9.4,
-      "roadDistance": 19.3,
-      "duration": 32
+      "roadDistance": 39,
+      "duration": 46
     },
     {
       "municipalitySlug": "ratkovske-bystre",
@@ -26158,8 +26158,8 @@
       "municipalitySlug": "reca",
       "citySlug": "senec",
       "airDistance": 4.1,
-      "roadDistance": 4.4,
-      "duration": 6
+      "roadDistance": 5.3,
+      "duration": 7
     },
     {
       "municipalitySlug": "reca",
@@ -26270,15 +26270,15 @@
       "municipalitySlug": "remetske-hamre",
       "citySlug": "snina",
       "airDistance": 15.7,
-      "roadDistance": 37.6,
-      "duration": 52
+      "roadDistance": 64.2,
+      "duration": 65
     },
     {
       "municipalitySlug": "remetske-hamre",
       "citySlug": "chlmec",
       "airDistance": 18.3,
-      "roadDistance": 59.9,
-      "duration": 68
+      "roadDistance": 35.3,
+      "duration": 45
     },
     {
       "municipalitySlug": "rencisov",
@@ -26844,8 +26844,8 @@
       "municipalitySlug": "rovensko",
       "citySlug": "senica",
       "airDistance": 4.4,
-      "roadDistance": 5.8,
-      "duration": 10
+      "roadDistance": 4.1,
+      "duration": 6
     },
     {
       "municipalitySlug": "rovensko",
@@ -26886,8 +26886,8 @@
       "municipalitySlug": "rovne-rimavska-sobota",
       "citySlug": "hnusta",
       "airDistance": 7.3,
-      "roadDistance": 7.5,
-      "duration": 10
+      "roadDistance": 13.7,
+      "duration": 18
     },
     {
       "municipalitySlug": "rovne",
@@ -26928,15 +26928,15 @@
       "municipalitySlug": "rozhanovce",
       "citySlug": "kosice",
       "airDistance": 7.9,
-      "roadDistance": 16.6,
-      "duration": 17
+      "roadDistance": 11.6,
+      "duration": 14
     },
     {
       "municipalitySlug": "rozhanovce",
       "citySlug": "hostovce",
       "airDistance": 14.1,
-      "roadDistance": 16.9,
-      "duration": 13
+      "roadDistance": 56.4,
+      "duration": 46
     },
     {
       "municipalitySlug": "rozhanovce",
@@ -27264,8 +27264,8 @@
       "municipalitySlug": "slancik",
       "citySlug": "hostovce",
       "airDistance": 28.3,
-      "roadDistance": 34.6,
-      "duration": 26
+      "roadDistance": 61.7,
+      "duration": 54
     },
     {
       "municipalitySlug": "slanec",
@@ -27285,8 +27285,8 @@
       "municipalitySlug": "slanec",
       "citySlug": "hostovce",
       "airDistance": 30,
-      "roadDistance": 40.2,
-      "duration": 29
+      "roadDistance": 59.3,
+      "duration": 50
     },
     {
       "municipalitySlug": "slanska-huta",
@@ -27306,8 +27306,8 @@
       "municipalitySlug": "slanska-huta",
       "citySlug": "hostovce",
       "airDistance": 33.1,
-      "roadDistance": 45.5,
-      "duration": 35
+      "roadDistance": 64.9,
+      "duration": 57
     },
     {
       "municipalitySlug": "slanske-nove-mesto",
@@ -27698,8 +27698,8 @@
       "municipalitySlug": "slovenska-lupca",
       "citySlug": "banska-bystrica",
       "airDistance": 9.2,
-      "roadDistance": 11.4,
-      "duration": 14
+      "roadDistance": 14.5,
+      "duration": 16
     },
     {
       "municipalitySlug": "slovenska-lupca",
@@ -27775,8 +27775,8 @@
       "municipalitySlug": "slovenska-volova",
       "citySlug": "chlmec",
       "airDistance": 12.6,
-      "roadDistance": 15.1,
-      "duration": 17
+      "roadDistance": 14.9,
+      "duration": 16
     },
     {
       "municipalitySlug": "slovenske-darmoty",
@@ -27838,7 +27838,7 @@
       "municipalitySlug": "slovenske-krive",
       "citySlug": "chlmec",
       "airDistance": 21.3,
-      "roadDistance": 27.3,
+      "roadDistance": 27.4,
       "duration": 28
     },
     {
@@ -27873,7 +27873,7 @@
       "municipalitySlug": "slovenske-pravno",
       "citySlug": "blatnica",
       "airDistance": 12.6,
-      "roadDistance": 15.8,
+      "roadDistance": 19.5,
       "duration": 17
     },
     {
@@ -27971,8 +27971,8 @@
       "municipalitySlug": "smizany",
       "citySlug": "spisska-nova-ves",
       "airDistance": 3.4,
-      "roadDistance": 4.4,
-      "duration": 10
+      "roadDistance": 3.5,
+      "duration": 7
     },
     {
       "municipalitySlug": "smizany",
@@ -28160,8 +28160,8 @@
       "municipalitySlug": "snina",
       "citySlug": "chlmec",
       "airDistance": 19.6,
-      "roadDistance": 26.1,
-      "duration": 27
+      "roadDistance": 27,
+      "duration": 28
     },
     {
       "municipalitySlug": "socovce",
@@ -28307,8 +28307,8 @@
       "municipalitySlug": "sokol",
       "citySlug": "hostovce",
       "airDistance": 7,
-      "roadDistance": 16.8,
-      "duration": 19
+      "roadDistance": 52.5,
+      "duration": 50
     },
     {
       "municipalitySlug": "sokol",
@@ -28433,8 +28433,8 @@
       "municipalitySlug": "solnicka",
       "citySlug": "kralovsky-chlmec",
       "airDistance": 6.2,
-      "roadDistance": 8.2,
-      "duration": 10
+      "roadDistance": 10.9,
+      "duration": 11
     },
     {
       "municipalitySlug": "solnicka",
@@ -28503,7 +28503,7 @@
       "municipalitySlug": "sopkovce",
       "citySlug": "chlmec",
       "airDistance": 15.1,
-      "roadDistance": 20,
+      "roadDistance": 20.1,
       "duration": 22
     },
     {
@@ -28762,8 +28762,8 @@
       "municipalitySlug": "stakcin",
       "citySlug": "chlmec",
       "airDistance": 25.2,
-      "roadDistance": 33,
-      "duration": 34
+      "roadDistance": 32.2,
+      "duration": 33
     },
     {
       "municipalitySlug": "stakcin",
@@ -28783,7 +28783,7 @@
       "municipalitySlug": "stakcinska-roztoka",
       "citySlug": "chlmec",
       "airDistance": 28.3,
-      "roadDistance": 37.1,
+      "roadDistance": 36.6,
       "duration": 38
     },
     {
@@ -29084,7 +29084,7 @@
       "municipalitySlug": "stare",
       "citySlug": "chlmec",
       "airDistance": 5.5,
-      "roadDistance": 20.9,
+      "roadDistance": 20.7,
       "duration": 21
     },
     {
@@ -29455,8 +29455,8 @@
       "municipalitySlug": "strazske",
       "citySlug": "chlmec",
       "airDistance": 7.8,
-      "roadDistance": 18.1,
-      "duration": 19
+      "roadDistance": 17.7,
+      "duration": 18
     },
     {
       "municipalitySlug": "strazske",
@@ -29567,7 +29567,7 @@
       "municipalitySlug": "strelniky",
       "citySlug": "detva",
       "airDistance": 19.7,
-      "roadDistance": 75.6,
+      "roadDistance": 58.7,
       "duration": 65
     },
     {
@@ -29651,7 +29651,7 @@
       "municipalitySlug": "strihovce",
       "citySlug": "chlmec",
       "airDistance": 24.8,
-      "roadDistance": 61.2,
+      "roadDistance": 61,
       "duration": 62
     },
     {
@@ -29826,8 +29826,8 @@
       "municipalitySlug": "sucany",
       "citySlug": "martin",
       "airDistance": 5.6,
-      "roadDistance": 10.9,
-      "duration": 16
+      "roadDistance": 8.5,
+      "duration": 10
     },
     {
       "municipalitySlug": "sudince",
@@ -29875,8 +29875,8 @@
       "municipalitySlug": "sucha-dolina",
       "citySlug": "hostovce",
       "airDistance": 10.6,
-      "roadDistance": 18,
-      "duration": 21
+      "roadDistance": 77.7,
+      "duration": 64
     },
     {
       "municipalitySlug": "sucha-dolina",
@@ -29966,7 +29966,7 @@
       "municipalitySlug": "suche",
       "citySlug": "chlmec",
       "airDistance": 15.3,
-      "roadDistance": 32.5,
+      "roadDistance": 32.3,
       "duration": 32
     },
     {
@@ -30183,8 +30183,8 @@
       "municipalitySlug": "svatus",
       "citySlug": "velke-kapusany",
       "airDistance": 15,
-      "roadDistance": 31.1,
-      "duration": 30
+      "roadDistance": 24.5,
+      "duration": 27
     },
     {
       "municipalitySlug": "svatus",
@@ -30225,8 +30225,8 @@
       "municipalitySlug": "svaty-anton",
       "citySlug": "banska-stiavnica",
       "airDistance": 5.3,
-      "roadDistance": 6.4,
-      "duration": 12
+      "roadDistance": 4.1,
+      "duration": 5
     },
     {
       "municipalitySlug": "svaty-anton",
@@ -30260,8 +30260,8 @@
       "municipalitySlug": "svaty-kriz",
       "citySlug": "liptovsky-hradok",
       "airDistance": 13.7,
-      "roadDistance": 19,
-      "duration": 21
+      "roadDistance": 23.5,
+      "duration": 19
     },
     {
       "municipalitySlug": "svaty-kriz",
@@ -30414,8 +30414,8 @@
       "municipalitySlug": "svinia",
       "citySlug": "velky-saris",
       "airDistance": 7,
-      "roadDistance": 11.6,
-      "duration": 14
+      "roadDistance": 9,
+      "duration": 9
     },
     {
       "municipalitySlug": "svinia",
@@ -30442,8 +30442,8 @@
       "municipalitySlug": "svinica",
       "citySlug": "hostovce",
       "airDistance": 20.7,
-      "roadDistance": 27.3,
-      "duration": 19
+      "roadDistance": 65.3,
+      "duration": 50
     },
     {
       "municipalitySlug": "svinica",
@@ -30505,8 +30505,8 @@
       "municipalitySlug": "svit",
       "citySlug": "vysoke-tatry",
       "airDistance": 9.1,
-      "roadDistance": 12.6,
-      "duration": 16
+      "roadDistance": 16.1,
+      "duration": 13
     },
     {
       "municipalitySlug": "svodin",
@@ -30827,8 +30827,8 @@
       "municipalitySlug": "sarisske-bohdanovce",
       "citySlug": "hostovce",
       "airDistance": 4.4,
-      "roadDistance": 5.2,
-      "duration": 7
+      "roadDistance": 60.4,
+      "duration": 47
     },
     {
       "municipalitySlug": "sarisske-bohdanovce",
@@ -31191,8 +31191,8 @@
       "municipalitySlug": "siba",
       "citySlug": "velky-saris",
       "airDistance": 20.5,
-      "roadDistance": 44.7,
-      "duration": 49
+      "roadDistance": 39.3,
+      "duration": 40
     },
     {
       "municipalitySlug": "sid",
@@ -31233,8 +31233,8 @@
       "municipalitySlug": "simonovce",
       "citySlug": "tornala",
       "airDistance": 22.8,
-      "roadDistance": 40.7,
-      "duration": 40
+      "roadDistance": 31.9,
+      "duration": 32
     },
     {
       "municipalitySlug": "sindliar",
@@ -31443,7 +31443,7 @@
       "municipalitySlug": "smigovec",
       "citySlug": "chlmec",
       "airDistance": 27.7,
-      "roadDistance": 58,
+      "roadDistance": 57.9,
       "duration": 58
     },
     {
@@ -32388,8 +32388,8 @@
       "municipalitySlug": "tekovska-breznica",
       "citySlug": "nova-bana",
       "airDistance": 4.8,
-      "roadDistance": 7.7,
-      "duration": 10
+      "roadDistance": 5.8,
+      "duration": 8
     },
     {
       "municipalitySlug": "tekovska-breznica",
@@ -32556,8 +32556,8 @@
       "municipalitySlug": "teplicka-nad-vahom",
       "citySlug": "zilina",
       "airDistance": 4,
-      "roadDistance": 6.8,
-      "duration": 13
+      "roadDistance": 4.9,
+      "duration": 8
     },
     {
       "municipalitySlug": "teplicka-nad-vahom",
@@ -32577,8 +32577,8 @@
       "municipalitySlug": "teplicky",
       "citySlug": "hlohovec",
       "airDistance": 5.8,
-      "roadDistance": 8.1,
-      "duration": 10
+      "roadDistance": 10.2,
+      "duration": 13
     },
     {
       "municipalitySlug": "teplicky",
@@ -32619,8 +32619,8 @@
       "municipalitySlug": "terany",
       "citySlug": "dudince",
       "airDistance": 2,
-      "roadDistance": 2.2,
-      "duration": 2
+      "roadDistance": 4.9,
+      "duration": 6
     },
     {
       "municipalitySlug": "terany",
@@ -32675,8 +32675,8 @@
       "municipalitySlug": "teriakovce",
       "citySlug": "hostovce",
       "airDistance": 14.1,
-      "roadDistance": 21,
-      "duration": 19
+      "roadDistance": 80.6,
+      "duration": 62
     },
     {
       "municipalitySlug": "terna",
@@ -32948,15 +32948,15 @@
       "municipalitySlug": "tomasov",
       "citySlug": "ivanka-pri-dunaji",
       "airDistance": 7.7,
-      "roadDistance": 9,
-      "duration": 11
+      "roadDistance": 11.7,
+      "duration": 12
     },
     {
       "municipalitySlug": "tomasov",
       "citySlug": "senec",
       "airDistance": 9.8,
-      "roadDistance": 11.3,
-      "duration": 14
+      "roadDistance": 13.8,
+      "duration": 15
     },
     {
       "municipalitySlug": "tomasovce-lucenec",
@@ -32991,7 +32991,7 @@
       "citySlug": "chlmec",
       "airDistance": 35,
       "roadDistance": 50.2,
-      "duration": 52
+      "duration": 51
     },
     {
       "municipalitySlug": "topola",
@@ -33214,8 +33214,8 @@
       "municipalitySlug": "tovarniky",
       "citySlug": "topolcany",
       "airDistance": 2.6,
-      "roadDistance": 3,
-      "duration": 5
+      "roadDistance": 2.2,
+      "duration": 3
     },
     {
       "municipalitySlug": "tovarniky",
@@ -33263,8 +33263,8 @@
       "municipalitySlug": "trakovice",
       "citySlug": "hlohovec",
       "airDistance": 6.6,
-      "roadDistance": 7.1,
-      "duration": 8
+      "roadDistance": 9.3,
+      "duration": 11
     },
     {
       "municipalitySlug": "trakovice",
@@ -33340,8 +33340,8 @@
       "municipalitySlug": "trebejov",
       "citySlug": "hostovce",
       "airDistance": 4.9,
-      "roadDistance": 8.9,
-      "duration": 10
+      "roadDistance": 55.3,
+      "duration": 52
     },
     {
       "municipalitySlug": "trebejov",
@@ -33487,8 +33487,8 @@
       "municipalitySlug": "trencianska-tepla",
       "citySlug": "dubnica-nad-vahom",
       "airDistance": 4.2,
-      "roadDistance": 4.6,
-      "duration": 6
+      "roadDistance": 6.3,
+      "duration": 9
     },
     {
       "municipalitySlug": "trencianska-tepla",
@@ -33501,8 +33501,8 @@
       "municipalitySlug": "trencianska-turna",
       "citySlug": "trencin",
       "airDistance": 5,
-      "roadDistance": 5.9,
-      "duration": 10
+      "roadDistance": 4.6,
+      "duration": 7
     },
     {
       "municipalitySlug": "trencianska-turna",
@@ -33578,8 +33578,8 @@
       "municipalitySlug": "trencianske-mitice",
       "citySlug": "nova-dubnica",
       "airDistance": 13.6,
-      "roadDistance": 23.8,
-      "duration": 26
+      "roadDistance": 33.3,
+      "duration": 27
     },
     {
       "municipalitySlug": "trencianske-stankovce",
@@ -33718,8 +33718,8 @@
       "municipalitySlug": "trnava-pri-laborci",
       "citySlug": "chlmec",
       "airDistance": 7.8,
-      "roadDistance": 40,
-      "duration": 38
+      "roadDistance": 20,
+      "duration": 31
     },
     {
       "municipalitySlug": "trnava-pri-laborci",
@@ -33921,8 +33921,8 @@
       "municipalitySlug": "trstene",
       "citySlug": "liptovsky-hradok",
       "airDistance": 11.4,
-      "roadDistance": 17,
-      "duration": 22
+      "roadDistance": 22,
+      "duration": 21
     },
     {
       "municipalitySlug": "trstene",
@@ -34005,8 +34005,8 @@
       "municipalitySlug": "trstany",
       "citySlug": "hostovce",
       "airDistance": 15.8,
-      "roadDistance": 30.1,
-      "duration": 22
+      "roadDistance": 63.5,
+      "duration": 52
     },
     {
       "municipalitySlug": "trstany",
@@ -34019,7 +34019,7 @@
       "municipalitySlug": "trnie",
       "citySlug": "zvolen",
       "airDistance": 7.5,
-      "roadDistance": 11.3,
+      "roadDistance": 13.7,
       "duration": 16
     },
     {
@@ -34061,8 +34061,8 @@
       "municipalitySlug": "tuhrina",
       "citySlug": "hostovce",
       "airDistance": 10.9,
-      "roadDistance": 19.1,
-      "duration": 21
+      "roadDistance": 75.7,
+      "duration": 63
     },
     {
       "municipalitySlug": "tuhrina",
@@ -34166,8 +34166,8 @@
       "municipalitySlug": "turany",
       "citySlug": "martin",
       "airDistance": 9.4,
-      "roadDistance": 15.6,
-      "duration": 19
+      "roadDistance": 12.4,
+      "duration": 14
     },
     {
       "municipalitySlug": "turany-nad-ondavou",
@@ -34194,7 +34194,7 @@
       "municipalitySlug": "turcovce",
       "citySlug": "chlmec",
       "airDistance": 19.7,
-      "roadDistance": 23.4,
+      "roadDistance": 23.3,
       "duration": 25
     },
     {
@@ -34404,8 +34404,8 @@
       "municipalitySlug": "turen",
       "citySlug": "senec",
       "airDistance": 3.2,
-      "roadDistance": 4.5,
-      "duration": 6
+      "roadDistance": 5.8,
+      "duration": 8
     },
     {
       "municipalitySlug": "turen",
@@ -34509,8 +34509,8 @@
       "municipalitySlug": "turova",
       "citySlug": "zvolen",
       "airDistance": 5.8,
-      "roadDistance": 9.2,
-      "duration": 13
+      "roadDistance": 11.5,
+      "duration": 12
     },
     {
       "municipalitySlug": "turova",
@@ -34712,8 +34712,8 @@
       "municipalitySlug": "ubla",
       "citySlug": "chlmec",
       "airDistance": 33,
-      "roadDistance": 50.5,
-      "duration": 52
+      "roadDistance": 50.3,
+      "duration": 51
     },
     {
       "municipalitySlug": "ubrez",
@@ -34733,8 +34733,8 @@
       "municipalitySlug": "ubrez",
       "citySlug": "chlmec",
       "airDistance": 17.9,
-      "roadDistance": 52.5,
-      "duration": 51
+      "roadDistance": 33.7,
+      "duration": 44
     },
     {
       "municipalitySlug": "udavske",
@@ -34747,8 +34747,8 @@
       "municipalitySlug": "udavske",
       "citySlug": "chlmec",
       "airDistance": 10,
-      "roadDistance": 14.3,
-      "duration": 16
+      "roadDistance": 14.1,
+      "duration": 15
     },
     {
       "municipalitySlug": "udavske",
@@ -34803,8 +34803,8 @@
       "municipalitySlug": "uhliska",
       "citySlug": "nova-bana",
       "airDistance": 8.5,
-      "roadDistance": 17.7,
-      "duration": 21
+      "roadDistance": 47.5,
+      "duration": 46
     },
     {
       "municipalitySlug": "uhliska",
@@ -34943,7 +34943,7 @@
       "municipalitySlug": "ulic",
       "citySlug": "chlmec",
       "airDistance": 36.4,
-      "roadDistance": 57.9,
+      "roadDistance": 57.5,
       "duration": 59
     },
     {
@@ -34964,8 +34964,8 @@
       "municipalitySlug": "ulicske-krive",
       "citySlug": "chlmec",
       "airDistance": 38.2,
-      "roadDistance": 61.5,
-      "duration": 62
+      "roadDistance": 61.3,
+      "duration": 61
     },
     {
       "municipalitySlug": "uloza",
@@ -35251,8 +35251,8 @@
       "municipalitySlug": "vajkovce",
       "citySlug": "hostovce",
       "airDistance": 10.2,
-      "roadDistance": 13,
-      "duration": 11
+      "roadDistance": 54.4,
+      "duration": 44
     },
     {
       "municipalitySlug": "vajkovce",
@@ -35279,8 +35279,8 @@
       "municipalitySlug": "valaliky",
       "citySlug": "hostovce",
       "airDistance": 25.1,
-      "roadDistance": 30.9,
-      "duration": 26
+      "roadDistance": 45.3,
+      "duration": 39
     },
     {
       "municipalitySlug": "valaska",
@@ -35349,22 +35349,22 @@
       "municipalitySlug": "valaskovce-vojensky-obvod",
       "citySlug": "chlmec",
       "airDistance": 9.8,
-      "roadDistance": 19.3,
-      "duration": 37
+      "roadDistance": 19.8,
+      "duration": 24
     },
     {
       "municipalitySlug": "valaskovce-vojensky-obvod",
       "citySlug": "snina",
       "airDistance": 12.7,
-      "roadDistance": 24.4,
-      "duration": 39
+      "roadDistance": 17.8,
+      "duration": 24
     },
     {
       "municipalitySlug": "valaskovce-vojensky-obvod",
       "citySlug": "humenne",
       "airDistance": 13.5,
-      "roadDistance": 23,
-      "duration": 36
+      "roadDistance": 15.6,
+      "duration": 20
     },
     {
       "municipalitySlug": "valca",
@@ -35559,8 +35559,8 @@
       "municipalitySlug": "varhanovce",
       "citySlug": "hostovce",
       "airDistance": 7,
-      "roadDistance": 8.9,
-      "duration": 11
+      "roadDistance": 64.7,
+      "duration": 53
     },
     {
       "municipalitySlug": "varhanovce",
@@ -35622,8 +35622,8 @@
       "municipalitySlug": "vavrecka",
       "citySlug": "namestovo",
       "airDistance": 2.8,
-      "roadDistance": 3.8,
-      "duration": 6
+      "roadDistance": 2.9,
+      "duration": 4
     },
     {
       "municipalitySlug": "vavrecka",
@@ -36042,8 +36042,8 @@
       "municipalitySlug": "velka-lodina",
       "citySlug": "hostovce",
       "airDistance": 8.1,
-      "roadDistance": 13.2,
-      "duration": 15
+      "roadDistance": 73.1,
+      "duration": 58
     },
     {
       "municipalitySlug": "velka-lodina",
@@ -36098,8 +36098,8 @@
       "municipalitySlug": "velka-luka",
       "citySlug": "banska-bystrica",
       "airDistance": 12.1,
-      "roadDistance": 15.3,
-      "duration": 17
+      "roadDistance": 19,
+      "duration": 20
     },
     {
       "municipalitySlug": "velka-maca",
@@ -36357,8 +36357,8 @@
       "municipalitySlug": "velke-dvorniky",
       "citySlug": "dunajska-streda",
       "airDistance": 2.7,
-      "roadDistance": 3.5,
-      "duration": 6
+      "roadDistance": 2.8,
+      "duration": 4
     },
     {
       "municipalitySlug": "velke-dvorniky",
@@ -36693,8 +36693,8 @@
       "municipalitySlug": "velke-revistia",
       "citySlug": "chlmec",
       "airDistance": 19.3,
-      "roadDistance": 48.7,
-      "duration": 49
+      "roadDistance": 32.9,
+      "duration": 44
     },
     {
       "municipalitySlug": "velke-ripnany",
@@ -36707,8 +36707,8 @@
       "municipalitySlug": "velke-ripnany",
       "citySlug": "topolcany",
       "airDistance": 15.6,
-      "roadDistance": 23,
-      "duration": 32
+      "roadDistance": 17.9,
+      "duration": 19
     },
     {
       "municipalitySlug": "velke-ripnany",
@@ -36861,8 +36861,8 @@
       "municipalitySlug": "velke-ulany",
       "citySlug": "sladkovicovo",
       "airDistance": 6.9,
-      "roadDistance": 8.5,
-      "duration": 10
+      "roadDistance": 22.7,
+      "duration": 24
     },
     {
       "municipalitySlug": "velke-ulany",
@@ -36903,8 +36903,8 @@
       "municipalitySlug": "velke-zaluzie",
       "citySlug": "nitra",
       "airDistance": 11.2,
-      "roadDistance": 14.1,
-      "duration": 16
+      "roadDistance": 11,
+      "duration": 13
     },
     {
       "municipalitySlug": "velke-zaluzie",
@@ -37036,7 +37036,7 @@
       "municipalitySlug": "velky-cepcin",
       "citySlug": "blatnica",
       "airDistance": 9.8,
-      "roadDistance": 11.5,
+      "roadDistance": 15.1,
       "duration": 14
     },
     {
@@ -37078,8 +37078,8 @@
       "municipalitySlug": "velky-folkmar",
       "citySlug": "hostovce",
       "airDistance": 18.5,
-      "roadDistance": 35.8,
-      "duration": 41
+      "roadDistance": 71.5,
+      "duration": 68
     },
     {
       "municipalitySlug": "velky-folkmar",
@@ -37351,8 +37351,8 @@
       "municipalitySlug": "velopolie",
       "citySlug": "chlmec",
       "airDistance": 11.9,
-      "roadDistance": 17,
-      "duration": 18
+      "roadDistance": 16.6,
+      "duration": 17
     },
     {
       "municipalitySlug": "velopolie",
@@ -37645,8 +37645,8 @@
       "municipalitySlug": "vinne",
       "citySlug": "chlmec",
       "airDistance": 8.7,
-      "roadDistance": 39.6,
-      "duration": 38
+      "roadDistance": 12.9,
+      "duration": 25
     },
     {
       "municipalitySlug": "vinne",
@@ -38086,8 +38086,8 @@
       "municipalitySlug": "vlkanova",
       "citySlug": "banska-bystrica",
       "airDistance": 7.9,
-      "roadDistance": 10.5,
-      "duration": 11
+      "roadDistance": 14.1,
+      "duration": 14
     },
     {
       "municipalitySlug": "vlkanova",
@@ -38443,8 +38443,8 @@
       "municipalitySlug": "vola",
       "citySlug": "chlmec",
       "airDistance": 7.7,
-      "roadDistance": 20.1,
-      "duration": 20
+      "roadDistance": 20.7,
+      "duration": 21
     },
     {
       "municipalitySlug": "vola",
@@ -38702,8 +38702,8 @@
       "municipalitySlug": "vrchtepla",
       "citySlug": "bytca",
       "airDistance": 10.4,
-      "roadDistance": 18.2,
-      "duration": 24
+      "roadDistance": 22.3,
+      "duration": 22
     },
     {
       "municipalitySlug": "vricko",
@@ -38765,8 +38765,8 @@
       "municipalitySlug": "vtackovce",
       "citySlug": "hostovce",
       "airDistance": 8.9,
-      "roadDistance": 15,
-      "duration": 15
+      "roadDistance": 63.6,
+      "duration": 54
     },
     {
       "municipalitySlug": "vtackovce",
@@ -39136,8 +39136,8 @@
       "municipalitySlug": "vysna-hutka",
       "citySlug": "hostovce",
       "airDistance": 22.1,
-      "roadDistance": 28.9,
-      "duration": 20
+      "roadDistance": 48,
+      "duration": 41
     },
     {
       "municipalitySlug": "vysna-hutka",
@@ -39199,8 +39199,8 @@
       "municipalitySlug": "vysna-kamenica",
       "citySlug": "hostovce",
       "airDistance": 18.7,
-      "roadDistance": 32.9,
-      "duration": 24
+      "roadDistance": 71.3,
+      "duration": 56
     },
     {
       "municipalitySlug": "vysna-kamenica",
@@ -39227,8 +39227,8 @@
       "municipalitySlug": "vysna-mysla",
       "citySlug": "hostovce",
       "airDistance": 27.3,
-      "roadDistance": 31.6,
-      "duration": 23
+      "roadDistance": 50.7,
+      "duration": 44
     },
     {
       "municipalitySlug": "vysna-olsava",
@@ -39304,8 +39304,8 @@
       "municipalitySlug": "vysna-rybnica",
       "citySlug": "chlmec",
       "airDistance": 18.8,
-      "roadDistance": 57.7,
-      "duration": 55
+      "roadDistance": 32.5,
+      "duration": 43
     },
     {
       "municipalitySlug": "vysna-rybnica",
@@ -39409,8 +39409,8 @@
       "municipalitySlug": "vysne-ladickovce",
       "citySlug": "chlmec",
       "airDistance": 17,
-      "roadDistance": 22.9,
-      "duration": 24
+      "roadDistance": 23,
+      "duration": 23
     },
     {
       "municipalitySlug": "vysne-ladickovce",
@@ -39472,8 +39472,8 @@
       "municipalitySlug": "vysne-remety",
       "citySlug": "chlmec",
       "airDistance": 17.9,
-      "roadDistance": 58.3,
-      "duration": 56
+      "roadDistance": 32.9,
+      "duration": 44
     },
     {
       "municipalitySlug": "vysne-remety",
@@ -39542,7 +39542,7 @@
       "municipalitySlug": "vysne-valice",
       "citySlug": "jelsava",
       "airDistance": 19.4,
-      "roadDistance": 33.3,
+      "roadDistance": 40.8,
       "duration": 43
     },
     {
@@ -39556,8 +39556,8 @@
       "municipalitySlug": "vysny-caj",
       "citySlug": "hostovce",
       "airDistance": 22.6,
-      "roadDistance": 32,
-      "duration": 24
+      "roadDistance": 55.1,
+      "duration": 47
     },
     {
       "municipalitySlug": "vysny-caj",
@@ -39605,8 +39605,8 @@
       "municipalitySlug": "vysny-hrusov",
       "citySlug": "chlmec",
       "airDistance": 12.9,
-      "roadDistance": 18.5,
-      "duration": 20
+      "roadDistance": 18.3,
+      "duration": 19
     },
     {
       "municipalitySlug": "vysny-kazimir",
@@ -39633,15 +39633,15 @@
       "municipalitySlug": "vysny-klatov",
       "citySlug": "kosice",
       "airDistance": 9.7,
-      "roadDistance": 12.2,
-      "duration": 18
+      "roadDistance": 16.6,
+      "duration": 20
     },
     {
       "municipalitySlug": "vysny-klatov",
       "citySlug": "hostovce",
       "airDistance": 17.1,
-      "roadDistance": 38.2,
-      "duration": 33
+      "roadDistance": 44.3,
+      "duration": 44
     },
     {
       "municipalitySlug": "vysny-klatov",
@@ -39913,8 +39913,8 @@
       "municipalitySlug": "zaborske",
       "citySlug": "hostovce",
       "airDistance": 8.8,
-      "roadDistance": 16.7,
-      "duration": 13
+      "roadDistance": 75.9,
+      "duration": 55
     },
     {
       "municipalitySlug": "zaborske",
@@ -40011,22 +40011,22 @@
       "municipalitySlug": "zahorie-vojensky-obvod",
       "citySlug": "malacky",
       "airDistance": 12.1,
-      "roadDistance": 15,
-      "duration": 22
+      "roadDistance": 28.8,
+      "duration": 25
     },
     {
       "municipalitySlug": "zahorie-vojensky-obvod",
       "citySlug": "sastin-straze",
       "airDistance": 16.6,
-      "roadDistance": 37.8,
-      "duration": 41
+      "roadDistance": 17.2,
+      "duration": 16
     },
     {
       "municipalitySlug": "zahorie-vojensky-obvod",
       "citySlug": "modra",
       "airDistance": 20,
-      "roadDistance": 37.6,
-      "duration": 44
+      "roadDistance": 51.2,
+      "duration": 49
     },
     {
       "municipalitySlug": "zahorska-ves",
@@ -40193,8 +40193,8 @@
       "municipalitySlug": "zaluzice",
       "citySlug": "chlmec",
       "airDistance": 14.4,
-      "roadDistance": 39.5,
-      "duration": 40
+      "roadDistance": 27.5,
+      "duration": 39
     },
     {
       "municipalitySlug": "zamarovce",
@@ -40333,8 +40333,8 @@
       "municipalitySlug": "zavadka-humenne",
       "citySlug": "chlmec",
       "airDistance": 8.5,
-      "roadDistance": 12.4,
-      "duration": 15
+      "roadDistance": 12.3,
+      "duration": 14
     },
     {
       "municipalitySlug": "zavadka-nad-hronom",
@@ -40501,7 +40501,7 @@
       "municipalitySlug": "zboj",
       "citySlug": "chlmec",
       "airDistance": 42.7,
-      "roadDistance": 67.1,
+      "roadDistance": 66.9,
       "duration": 67
     },
     {
@@ -40620,8 +40620,8 @@
       "municipalitySlug": "zbudske-dlhe",
       "citySlug": "chlmec",
       "airDistance": 21.1,
-      "roadDistance": 25.3,
-      "duration": 25
+      "roadDistance": 25.2,
+      "duration": 26
     },
     {
       "municipalitySlug": "zbudza",
@@ -40893,7 +40893,7 @@
       "municipalitySlug": "zemplinske-hamre",
       "citySlug": "chlmec",
       "airDistance": 17.3,
-      "roadDistance": 26.9,
+      "roadDistance": 26.7,
       "duration": 27
     },
     {
@@ -40998,8 +40998,8 @@
       "municipalitySlug": "zlata-bana",
       "citySlug": "hostovce",
       "airDistance": 14.6,
-      "roadDistance": 23.6,
-      "duration": 26
+      "roadDistance": 87.2,
+      "duration": 68
     },
     {
       "municipalitySlug": "zlata-idka",
@@ -41278,8 +41278,8 @@
       "municipalitySlug": "zubne",
       "citySlug": "chlmec",
       "airDistance": 20.1,
-      "roadDistance": 26.1,
-      "duration": 27
+      "roadDistance": 25.9,
+      "duration": 26
     },
     {
       "municipalitySlug": "zubrohlava",
@@ -41313,8 +41313,8 @@
       "municipalitySlug": "zvolen",
       "citySlug": "banska-bystrica",
       "airDistance": 18,
-      "roadDistance": 19.9,
-      "duration": 17
+      "roadDistance": 24,
+      "duration": 21
     },
     {
       "municipalitySlug": "zvolenska-slatina",
@@ -41362,8 +41362,8 @@
       "municipalitySlug": "zabokreky",
       "citySlug": "martin",
       "airDistance": 5.1,
-      "roadDistance": 6.5,
-      "duration": 9
+      "roadDistance": 4.9,
+      "duration": 7
     },
     {
       "municipalitySlug": "zabokreky",
@@ -41572,8 +41572,8 @@
       "municipalitySlug": "zehna",
       "citySlug": "hostovce",
       "airDistance": 7.9,
-      "roadDistance": 12.8,
-      "duration": 13
+      "roadDistance": 69.7,
+      "duration": 56
     },
     {
       "municipalitySlug": "zehna",
@@ -41922,8 +41922,8 @@
       "municipalitySlug": "zitavany",
       "citySlug": "zlate-moravce",
       "airDistance": 2.3,
-      "roadDistance": 2.6,
-      "duration": 4
+      "roadDistance": 3.6,
+      "duration": 5
     },
     {
       "municipalitySlug": "zitavany",
@@ -42006,8 +42006,8 @@
       "municipalitySlug": "zupcany",
       "citySlug": "velky-saris",
       "airDistance": 5.3,
-      "roadDistance": 9.1,
-      "duration": 12
+      "roadDistance": 6.6,
+      "duration": 7
     },
     {
       "municipalitySlug": "zupcany",
@@ -42027,15 +42027,15 @@
       "municipalitySlug": "zupkov",
       "citySlug": "zarnovica",
       "airDistance": 6.2,
-      "roadDistance": 6.8,
-      "duration": 8
+      "roadDistance": 9.1,
+      "duration": 12
     },
     {
       "municipalitySlug": "zupkov",
       "citySlug": "nova-bana",
       "airDistance": 9.8,
-      "roadDistance": 12.4,
-      "duration": 15
+      "roadDistance": 15.1,
+      "duration": 20
     },
     {
       "municipalitySlug": "zupkov",
@@ -42454,8 +42454,8 @@
       "municipalitySlug": "horne-trhoviste",
       "citySlug": "hlohovec",
       "airDistance": 6.9,
-      "roadDistance": 10.1,
-      "duration": 12
+      "roadDistance": 12.2,
+      "duration": 16
     },
     {
       "municipalitySlug": "horne-trhoviste",
@@ -42538,8 +42538,8 @@
       "municipalitySlug": "horne-zelenice",
       "citySlug": "hlohovec",
       "airDistance": 5.6,
-      "roadDistance": 8.5,
-      "duration": 10
+      "roadDistance": 10.3,
+      "duration": 12
     },
     {
       "municipalitySlug": "horne-zelenice",
@@ -42741,8 +42741,8 @@
       "municipalitySlug": "horna",
       "citySlug": "chlmec",
       "airDistance": 23.9,
-      "roadDistance": 57.3,
-      "duration": 56
+      "roadDistance": 39.1,
+      "duration": 50
     },
     {
       "municipalitySlug": "hornany",
@@ -42965,8 +42965,8 @@
       "municipalitySlug": "horka",
       "citySlug": "poprad",
       "airDistance": 7.9,
-      "roadDistance": 9.5,
-      "duration": 13
+      "roadDistance": 6.9,
+      "duration": 8
     },
     {
       "municipalitySlug": "horka",
@@ -43231,7 +43231,7 @@
       "municipalitySlug": "hradiste-poltar",
       "citySlug": "cinobana",
       "airDistance": 7.3,
-      "roadDistance": 16.5,
+      "roadDistance": 10.5,
       "duration": 21
     },
     {
@@ -43427,8 +43427,8 @@
       "municipalitySlug": "hrasovik",
       "citySlug": "hostovce",
       "airDistance": 13.9,
-      "roadDistance": 19.8,
-      "duration": 14
+      "roadDistance": 55.5,
+      "duration": 45
     },
     {
       "municipalitySlug": "hrasovik",
@@ -43679,8 +43679,8 @@
       "municipalitySlug": "hrochot",
       "citySlug": "detva",
       "airDistance": 14.4,
-      "roadDistance": 36.8,
-      "duration": 34
+      "roadDistance": 31.4,
+      "duration": 33
     },
     {
       "municipalitySlug": "hrochot",
@@ -43714,8 +43714,8 @@
       "municipalitySlug": "hronec",
       "citySlug": "brezno",
       "airDistance": 4.8,
-      "roadDistance": 6.6,
-      "duration": 11
+      "roadDistance": 8.6,
+      "duration": 12
     },
     {
       "municipalitySlug": "hronec",
@@ -43770,8 +43770,8 @@
       "municipalitySlug": "hronsek",
       "citySlug": "banska-bystrica",
       "airDistance": 9.8,
-      "roadDistance": 12.6,
-      "duration": 14
+      "roadDistance": 16.1,
+      "duration": 17
     },
     {
       "municipalitySlug": "hronska-breznica",
@@ -43819,8 +43819,8 @@
       "municipalitySlug": "hronske-klacany",
       "citySlug": "levice",
       "airDistance": 3.6,
-      "roadDistance": 8.6,
-      "duration": 13
+      "roadDistance": 6.3,
+      "duration": 8
     },
     {
       "municipalitySlug": "hronske-klacany",
@@ -43847,8 +43847,8 @@
       "municipalitySlug": "hronske-kosihy",
       "citySlug": "levice",
       "airDistance": 5.8,
-      "roadDistance": 9.6,
-      "duration": 13
+      "roadDistance": 7.3,
+      "duration": 10
     },
     {
       "municipalitySlug": "hronske-kosihy",
@@ -43882,8 +43882,8 @@
       "municipalitySlug": "hruba-borsa",
       "citySlug": "senec",
       "airDistance": 7.6,
-      "roadDistance": 10.7,
-      "duration": 12
+      "roadDistance": 8.2,
+      "duration": 10
     },
     {
       "municipalitySlug": "hruba-borsa",
@@ -43945,8 +43945,8 @@
       "municipalitySlug": "hruby-sur",
       "citySlug": "senec",
       "airDistance": 5.8,
-      "roadDistance": 8.2,
-      "duration": 9
+      "roadDistance": 6.2,
+      "duration": 8
     },
     {
       "municipalitySlug": "hruby-sur",
@@ -44092,8 +44092,8 @@
       "municipalitySlug": "hubosovce",
       "citySlug": "velky-saris",
       "airDistance": 5.1,
-      "roadDistance": 7.4,
-      "duration": 10
+      "roadDistance": 8.9,
+      "duration": 11
     },
     {
       "municipalitySlug": "hubosovce",
@@ -44225,8 +44225,8 @@
       "municipalitySlug": "humenne",
       "citySlug": "chlmec",
       "airDistance": 6.1,
-      "roadDistance": 7.5,
-      "duration": 9
+      "roadDistance": 7.2,
+      "duration": 8
     },
     {
       "municipalitySlug": "humenne",
@@ -44470,8 +44470,8 @@
       "municipalitySlug": "hylov",
       "citySlug": "kosice",
       "airDistance": 10.7,
-      "roadDistance": 12.3,
-      "duration": 17
+      "roadDistance": 16.8,
+      "duration": 20
     },
     {
       "municipalitySlug": "hylov",
@@ -44659,8 +44659,8 @@
       "municipalitySlug": "chminianska-nova-ves",
       "citySlug": "velky-saris",
       "airDistance": 9.9,
-      "roadDistance": 16.9,
-      "duration": 14
+      "roadDistance": 12.8,
+      "duration": 12
     },
     {
       "municipalitySlug": "chminianska-nova-ves",
@@ -44701,8 +44701,8 @@
       "municipalitySlug": "chminany",
       "citySlug": "velky-saris",
       "airDistance": 10.8,
-      "roadDistance": 18.4,
-      "duration": 16
+      "roadDistance": 13.7,
+      "duration": 14
     },
     {
       "municipalitySlug": "chminany",
@@ -44932,8 +44932,8 @@
       "municipalitySlug": "chrastne",
       "citySlug": "hostovce",
       "airDistance": 10.3,
-      "roadDistance": 15.9,
-      "duration": 13
+      "roadDistance": 56.9,
+      "duration": 46
     },
     {
       "municipalitySlug": "chrastne",
@@ -45100,8 +45100,8 @@
       "municipalitySlug": "chvojnica-myjava",
       "citySlug": "senica",
       "airDistance": 12.2,
-      "roadDistance": 13.2,
-      "duration": 12
+      "roadDistance": 17.6,
+      "duration": 20
     },
     {
       "municipalitySlug": "chvojnica",
@@ -45254,8 +45254,8 @@
       "municipalitySlug": "iliasovce",
       "citySlug": "levoca",
       "airDistance": 6,
-      "roadDistance": 9.4,
-      "duration": 12
+      "roadDistance": 7.2,
+      "duration": 8
     },
     {
       "municipalitySlug": "iliasovce",
@@ -45268,8 +45268,8 @@
       "municipalitySlug": "ilija",
       "citySlug": "banska-stiavnica",
       "airDistance": 4.3,
-      "roadDistance": 6.3,
-      "duration": 12
+      "roadDistance": 4.5,
+      "duration": 7
     },
     {
       "municipalitySlug": "ilija",
@@ -45289,8 +45289,8 @@
       "municipalitySlug": "imel",
       "citySlug": "nesvady",
       "airDistance": 3.1,
-      "roadDistance": 4.2,
-      "duration": 6
+      "roadDistance": 3.1,
+      "duration": 4
     },
     {
       "municipalitySlug": "imel",
@@ -45324,8 +45324,8 @@
       "municipalitySlug": "inovce",
       "citySlug": "chlmec",
       "airDistance": 31.4,
-      "roadDistance": 73.9,
-      "duration": 72
+      "roadDistance": 58,
+      "duration": 67
     },
     {
       "municipalitySlug": "ina",
@@ -45485,8 +45485,8 @@
       "municipalitySlug": "ivancina",
       "citySlug": "blatnica",
       "airDistance": 8.8,
-      "roadDistance": 11.7,
-      "duration": 14
+      "roadDistance": 15.2,
+      "duration": 13
     },
     {
       "municipalitySlug": "ivancina",
@@ -45786,7 +45786,7 @@
       "municipalitySlug": "jablon",
       "citySlug": "chlmec",
       "airDistance": 20.1,
-      "roadDistance": 25,
+      "roadDistance": 24.9,
       "duration": 25
     },
     {
@@ -45870,8 +45870,8 @@
       "municipalitySlug": "jaklovce",
       "citySlug": "hostovce",
       "airDistance": 20.3,
-      "roadDistance": 36.5,
-      "duration": 44
+      "roadDistance": 74.4,
+      "duration": 71
     },
     {
       "municipalitySlug": "jakovany",
@@ -45933,8 +45933,8 @@
       "municipalitySlug": "jakubov",
       "citySlug": "svaty-jur",
       "airDistance": 27.8,
-      "roadDistance": 64.1,
-      "duration": 50
+      "roadDistance": 48.1,
+      "duration": 53
     },
     {
       "municipalitySlug": "jakubova-vola",
@@ -46017,8 +46017,8 @@
       "municipalitySlug": "jalova",
       "citySlug": "chlmec",
       "airDistance": 27.5,
-      "roadDistance": 38.3,
-      "duration": 40
+      "roadDistance": 38.1,
+      "duration": 39
     },
     {
       "municipalitySlug": "jalovec-liptovsky-mikulas",
@@ -46031,8 +46031,8 @@
       "municipalitySlug": "jalovec-liptovsky-mikulas",
       "citySlug": "liptovsky-hradok",
       "airDistance": 13.1,
-      "roadDistance": 18.1,
-      "duration": 23
+      "roadDistance": 23,
+      "duration": 21
     },
     {
       "municipalitySlug": "jalovec-liptovsky-mikulas",
@@ -46052,8 +46052,8 @@
       "municipalitySlug": "jalsove",
       "citySlug": "hlohovec",
       "airDistance": 9.1,
-      "roadDistance": 10.5,
-      "duration": 12
+      "roadDistance": 12.8,
+      "duration": 16
     },
     {
       "municipalitySlug": "jalsove",
@@ -46094,8 +46094,8 @@
       "municipalitySlug": "jamnik-liptovsky-mikulas",
       "citySlug": "liptovsky-mikulas",
       "airDistance": 6.9,
-      "roadDistance": 7.5,
-      "duration": 12
+      "roadDistance": 11,
+      "duration": 13
     },
     {
       "municipalitySlug": "jamnik-liptovsky-mikulas",
@@ -46199,8 +46199,8 @@
       "municipalitySlug": "janov",
       "citySlug": "hostovce",
       "airDistance": 10.3,
-      "roadDistance": 18.3,
-      "duration": 21
+      "roadDistance": 78.4,
+      "duration": 64
     },
     {
       "municipalitySlug": "janov",
@@ -46276,8 +46276,8 @@
       "municipalitySlug": "janovik",
       "citySlug": "hostovce",
       "airDistance": 3.6,
-      "roadDistance": 5.2,
-      "duration": 7
+      "roadDistance": 58.5,
+      "duration": 47
     },
     {
       "municipalitySlug": "janovik",
@@ -46437,8 +46437,8 @@
       "municipalitySlug": "jasenov-humenne",
       "citySlug": "chlmec",
       "airDistance": 2.2,
-      "roadDistance": 2.9,
-      "duration": 3
+      "roadDistance": 8.4,
+      "duration": 10
     },
     {
       "municipalitySlug": "jasenova",
@@ -46675,8 +46675,8 @@
       "municipalitySlug": "jazernica",
       "citySlug": "blatnica",
       "airDistance": 7.1,
-      "roadDistance": 11.4,
-      "duration": 14
+      "roadDistance": 15,
+      "duration": 13
     },
     {
       "municipalitySlug": "jazernica",
@@ -46976,8 +46976,8 @@
       "municipalitySlug": "jovsa",
       "citySlug": "chlmec",
       "airDistance": 13.6,
-      "roadDistance": 49.3,
-      "duration": 48
+      "roadDistance": 24.6,
+      "duration": 36
     },
     {
       "municipalitySlug": "jovsa",
@@ -47256,8 +47256,8 @@
       "municipalitySlug": "kalna-roztoka",
       "citySlug": "chlmec",
       "airDistance": 28.9,
-      "roadDistance": 40.5,
-      "duration": 41
+      "roadDistance": 41.9,
+      "duration": 43
     },
     {
       "municipalitySlug": "kalnica",
@@ -47375,8 +47375,8 @@
       "municipalitySlug": "kaluza",
       "citySlug": "chlmec",
       "airDistance": 9.8,
-      "roadDistance": 42.3,
-      "duration": 41
+      "roadDistance": 17.3,
+      "duration": 29
     },
     {
       "municipalitySlug": "kaluza",
@@ -47396,8 +47396,8 @@
       "municipalitySlug": "kalamenova",
       "citySlug": "blatnica",
       "airDistance": 12.2,
-      "roadDistance": 14.1,
-      "duration": 21
+      "roadDistance": 17.9,
+      "duration": 22
     },
     {
       "municipalitySlug": "kalamenova",
@@ -47495,7 +47495,7 @@
       "citySlug": "chlmec",
       "airDistance": 6.5,
       "roadDistance": 11.9,
-      "duration": 13
+      "duration": 12
     },
     {
       "municipalitySlug": "kamenica-nad-cirochou",
@@ -47683,7 +47683,7 @@
       "municipalitySlug": "kamienka-humenne",
       "citySlug": "chlmec",
       "airDistance": 4.9,
-      "roadDistance": 14.3,
+      "roadDistance": 13.9,
       "duration": 14
     },
     {
@@ -47711,8 +47711,8 @@
       "municipalitySlug": "kanianka",
       "citySlug": "prievidza",
       "airDistance": 5.8,
-      "roadDistance": 7.3,
-      "duration": 12
+      "roadDistance": 9.4,
+      "duration": 11
     },
     {
       "municipalitySlug": "kanianka",
@@ -47914,8 +47914,8 @@
       "municipalitySlug": "katov",
       "citySlug": "holic",
       "airDistance": 2.8,
-      "roadDistance": 3.2,
-      "duration": 6
+      "roadDistance": 2.4,
+      "duration": 4
     },
     {
       "municipalitySlug": "katov",
@@ -47956,8 +47956,8 @@
       "municipalitySlug": "kecerovce",
       "citySlug": "hostovce",
       "airDistance": 11.7,
-      "roadDistance": 16.4,
-      "duration": 19
+      "roadDistance": 69.1,
+      "duration": 57
     },
     {
       "municipalitySlug": "kecerovce",
@@ -47977,8 +47977,8 @@
       "municipalitySlug": "kecerovsky-lipovec",
       "citySlug": "hostovce",
       "airDistance": 12.5,
-      "roadDistance": 18.8,
-      "duration": 22
+      "roadDistance": 72.2,
+      "duration": 61
     },
     {
       "municipalitySlug": "kecerovsky-lipovec",
@@ -48061,8 +48061,8 @@
       "municipalitySlug": "kendice",
       "citySlug": "hostovce",
       "airDistance": 6.7,
-      "roadDistance": 11.4,
-      "duration": 12
+      "roadDistance": 71.2,
+      "duration": 55
     },
     {
       "municipalitySlug": "kendice",
@@ -48285,8 +48285,8 @@
       "municipalitySlug": "klenov",
       "citySlug": "hostovce",
       "airDistance": 17,
-      "roadDistance": 26.7,
-      "duration": 32
+      "roadDistance": 86.4,
+      "duration": 75
     },
     {
       "municipalitySlug": "klenova",
@@ -48376,8 +48376,8 @@
       "municipalitySlug": "klin",
       "citySlug": "namestovo",
       "airDistance": 3.1,
-      "roadDistance": 3.5,
-      "duration": 6
+      "roadDistance": 4.3,
+      "duration": 5
     },
     {
       "municipalitySlug": "klin",
@@ -48929,8 +48929,8 @@
       "municipalitySlug": "kokosovce",
       "citySlug": "hostovce",
       "airDistance": 10.2,
-      "roadDistance": 16.7,
-      "duration": 19
+      "roadDistance": 80.5,
+      "duration": 60
     },
     {
       "municipalitySlug": "kokosovce",
@@ -48957,8 +48957,8 @@
       "municipalitySlug": "koksov-baksa",
       "citySlug": "hostovce",
       "airDistance": 24.7,
-      "roadDistance": 33.2,
-      "duration": 28
+      "roadDistance": 47.9,
+      "duration": 44
     },
     {
       "municipalitySlug": "kolackov",
@@ -49083,7 +49083,7 @@
       "municipalitySlug": "kolbasov",
       "citySlug": "chlmec",
       "airDistance": 35,
-      "roadDistance": 51.2,
+      "roadDistance": 51.4,
       "duration": 52
     },
     {
@@ -49188,7 +49188,7 @@
       "municipalitySlug": "kolonica",
       "citySlug": "chlmec",
       "airDistance": 24.5,
-      "roadDistance": 38.8,
+      "roadDistance": 38.6,
       "duration": 39
     },
     {
@@ -49335,8 +49335,8 @@
       "municipalitySlug": "komjatna",
       "citySlug": "turany",
       "airDistance": 15.3,
-      "roadDistance": 23.8,
-      "duration": 29
+      "roadDistance": 41,
+      "duration": 41
     },
     {
       "municipalitySlug": "komoca",
@@ -49402,21 +49402,21 @@
       "duration": 43
     },
     {
-      "municipalitySlug": "konska-zilina",
+      "municipalitySlug": "konska-liptovsky-mikulas",
       "citySlug": "liptovsky-mikulas",
       "airDistance": 8.2,
       "roadDistance": 11.8,
       "duration": 16
     },
     {
-      "municipalitySlug": "konska-zilina",
+      "municipalitySlug": "konska-liptovsky-mikulas",
       "citySlug": "liptovsky-hradok",
       "airDistance": 8.8,
       "roadDistance": 11.3,
       "duration": 14
     },
     {
-      "municipalitySlug": "konska-zilina",
+      "municipalitySlug": "konska-liptovsky-mikulas",
       "citySlug": "tvrdosin",
       "airDistance": 27.2,
       "roadDistance": 66.2,
@@ -49482,8 +49482,8 @@
       "municipalitySlug": "kopernica",
       "citySlug": "ziar-nad-hronom",
       "airDistance": 10.6,
-      "roadDistance": 14.4,
-      "duration": 27
+      "roadDistance": 23,
+      "duration": 26
     },
     {
       "municipalitySlug": "koplotovce",
@@ -49496,8 +49496,8 @@
       "municipalitySlug": "koplotovce",
       "citySlug": "hlohovec",
       "airDistance": 5.4,
-      "roadDistance": 6.6,
-      "duration": 8
+      "roadDistance": 8.5,
+      "duration": 13
     },
     {
       "municipalitySlug": "koplotovce",
@@ -49601,8 +49601,8 @@
       "municipalitySlug": "koromla",
       "citySlug": "velke-kapusany",
       "airDistance": 24,
-      "roadDistance": 41.2,
-      "duration": 40
+      "roadDistance": 31.8,
+      "duration": 39
     },
     {
       "municipalitySlug": "koromla",
@@ -49748,8 +49748,8 @@
       "municipalitySlug": "kostolec",
       "citySlug": "rajec",
       "airDistance": 8.7,
-      "roadDistance": 24.1,
-      "duration": 30
+      "roadDistance": 33.2,
+      "duration": 38
     },
     {
       "municipalitySlug": "kostolec",
@@ -49762,8 +49762,8 @@
       "municipalitySlug": "kostoliste",
       "citySlug": "malacky",
       "airDistance": 3,
-      "roadDistance": 3.8,
-      "duration": 6
+      "roadDistance": 2.8,
+      "duration": 4
     },
     {
       "municipalitySlug": "kostoliste",
@@ -49783,8 +49783,8 @@
       "municipalitySlug": "kostolna-pri-dunaji",
       "citySlug": "senec",
       "airDistance": 4.7,
-      "roadDistance": 7,
-      "duration": 9
+      "roadDistance": 5.3,
+      "duration": 8
     },
     {
       "municipalitySlug": "kostolna-pri-dunaji",
@@ -49888,8 +49888,8 @@
       "municipalitySlug": "kostolany-nad-hornadom",
       "citySlug": "hostovce",
       "airDistance": 8,
-      "roadDistance": 14.3,
-      "duration": 16
+      "roadDistance": 50.1,
+      "duration": 47
     },
     {
       "municipalitySlug": "kostolany-nad-hornadom",
@@ -49951,8 +49951,8 @@
       "municipalitySlug": "kosariska",
       "citySlug": "brezova-pod-bradlom",
       "airDistance": 4.4,
-      "roadDistance": 5.7,
-      "duration": 7
+      "roadDistance": 4.5,
+      "duration": 4
     },
     {
       "municipalitySlug": "kosariska",
@@ -50042,15 +50042,15 @@
       "municipalitySlug": "kosice-i",
       "citySlug": "hostovce",
       "airDistance": 17,
-      "roadDistance": 21.7,
-      "duration": 19
+      "roadDistance": 49,
+      "duration": 48
     },
     {
       "municipalitySlug": "kosice-i",
       "citySlug": "moldava-nad-bodvou",
       "airDistance": 22.1,
-      "roadDistance": 29.8,
-      "duration": 30
+      "roadDistance": 37.8,
+      "duration": 39
     },
     {
       "municipalitySlug": "kosice-ii",
@@ -50063,15 +50063,15 @@
       "municipalitySlug": "kosice-ii",
       "citySlug": "hostovce",
       "airDistance": 17,
-      "roadDistance": 23,
-      "duration": 21
+      "roadDistance": 30.5,
+      "duration": 25
     },
     {
       "municipalitySlug": "kosice-ii",
       "citySlug": "moldava-nad-bodvou",
       "airDistance": 22.1,
-      "roadDistance": 30.1,
-      "duration": 27
+      "roadDistance": 19.3,
+      "duration": 16
     },
     {
       "municipalitySlug": "kosice-iii",
@@ -50084,14 +50084,14 @@
       "municipalitySlug": "kosice-iii",
       "citySlug": "hostovce",
       "airDistance": 17,
-      "roadDistance": 20.5,
-      "duration": 17
+      "roadDistance": 48,
+      "duration": 41
     },
     {
       "municipalitySlug": "kosice-iii",
       "citySlug": "moldava-nad-bodvou",
       "airDistance": 22.1,
-      "roadDistance": 31.7,
+      "roadDistance": 36.8,
       "duration": 32
     },
     {
@@ -50105,15 +50105,15 @@
       "municipalitySlug": "kosice-iv",
       "citySlug": "hostovce",
       "airDistance": 17,
-      "roadDistance": 28.1,
-      "duration": 23
+      "roadDistance": 43.7,
+      "duration": 39
     },
     {
       "municipalitySlug": "kosice-iv",
       "citySlug": "moldava-nad-bodvou",
       "airDistance": 22.1,
-      "roadDistance": 27.2,
-      "duration": 24
+      "roadDistance": 32.5,
+      "duration": 30
     },
     {
       "municipalitySlug": "kosicka-bela",
@@ -50126,8 +50126,8 @@
       "municipalitySlug": "kosicka-bela",
       "citySlug": "hostovce",
       "airDistance": 13.7,
-      "roadDistance": 31.2,
-      "duration": 35
+      "roadDistance": 59.1,
+      "duration": 57
     },
     {
       "municipalitySlug": "kosicka-bela",
@@ -50147,8 +50147,8 @@
       "municipalitySlug": "kosicka-polianka",
       "citySlug": "hostovce",
       "airDistance": 20.1,
-      "roadDistance": 24.3,
-      "duration": 20
+      "roadDistance": 49.5,
+      "duration": 45
     },
     {
       "municipalitySlug": "kosicka-polianka",
@@ -50168,8 +50168,8 @@
       "municipalitySlug": "kosicke-olsany",
       "citySlug": "hostovce",
       "airDistance": 16.1,
-      "roadDistance": 19.2,
-      "duration": 14
+      "roadDistance": 54.7,
+      "duration": 44
     },
     {
       "municipalitySlug": "kosicke-olsany",
@@ -50266,8 +50266,8 @@
       "municipalitySlug": "kostany-nad-turcom",
       "citySlug": "martin",
       "airDistance": 5.1,
-      "roadDistance": 5.9,
-      "duration": 9
+      "roadDistance": 4.3,
+      "duration": 6
     },
     {
       "municipalitySlug": "kostany-nad-turcom",
@@ -50350,8 +50350,8 @@
       "municipalitySlug": "kovacova-zvolen",
       "citySlug": "zvolen",
       "airDistance": 3,
-      "roadDistance": 5,
-      "duration": 7
+      "roadDistance": 6.5,
+      "duration": 10
     },
     {
       "municipalitySlug": "kovacova-zvolen",
@@ -50364,8 +50364,8 @@
       "municipalitySlug": "kovacova-zvolen",
       "citySlug": "banska-bystrica",
       "airDistance": 15.7,
-      "roadDistance": 30.8,
-      "duration": 21
+      "roadDistance": 21.8,
+      "duration": 18
     },
     {
       "municipalitySlug": "kovacovce",
@@ -50833,7 +50833,7 @@
       "municipalitySlug": "kralova-nad-vahom",
       "citySlug": "sala",
       "airDistance": 3,
-      "roadDistance": 3.3,
+      "roadDistance": 4,
       "duration": 6
     },
     {
@@ -50896,8 +50896,8 @@
       "municipalitySlug": "kralovce",
       "citySlug": "hostovce",
       "airDistance": 8.5,
-      "roadDistance": 10.6,
-      "duration": 11
+      "roadDistance": 56.7,
+      "duration": 46
     },
     {
       "municipalitySlug": "kralovce",
@@ -51295,8 +51295,8 @@
       "municipalitySlug": "kremnicke-bane",
       "citySlug": "kremnica",
       "airDistance": 3,
-      "roadDistance": 3.4,
-      "duration": 5
+      "roadDistance": 4.4,
+      "duration": 6
     },
     {
       "municipalitySlug": "kremnicke-bane",
@@ -51421,8 +51421,8 @@
       "municipalitySlug": "krivan",
       "citySlug": "detva",
       "airDistance": 2.7,
-      "roadDistance": 4.3,
-      "duration": 6
+      "roadDistance": 5.6,
+      "duration": 8
     },
     {
       "municipalitySlug": "krivan",
@@ -51547,8 +51547,8 @@
       "municipalitySlug": "krizovany",
       "citySlug": "velky-saris",
       "airDistance": 13.2,
-      "roadDistance": 21.2,
-      "duration": 18
+      "roadDistance": 16.7,
+      "duration": 17
     },
     {
       "municipalitySlug": "krizovany",
@@ -51694,8 +51694,8 @@
       "municipalitySlug": "krskany",
       "citySlug": "levice",
       "airDistance": 5.3,
-      "roadDistance": 7.9,
-      "duration": 12
+      "roadDistance": 9.8,
+      "duration": 11
     },
     {
       "municipalitySlug": "krskany",
@@ -52030,8 +52030,8 @@
       "municipalitySlug": "kukova",
       "citySlug": "giraltovce",
       "airDistance": 4.6,
-      "roadDistance": 7,
-      "duration": 9
+      "roadDistance": 5.6,
+      "duration": 6
     },
     {
       "municipalitySlug": "kukova",
@@ -52114,22 +52114,22 @@
       "municipalitySlug": "kunova-teplica",
       "citySlug": "jelsava",
       "airDistance": 10.5,
-      "roadDistance": 20,
-      "duration": 20
+      "roadDistance": 27,
+      "duration": 28
     },
     {
       "municipalitySlug": "kunova-teplica",
       "citySlug": "roznava",
       "airDistance": 12.5,
-      "roadDistance": 19.1,
-      "duration": 22
+      "roadDistance": 26.3,
+      "duration": 23
     },
     {
       "municipalitySlug": "kunova-teplica",
       "citySlug": "revuca",
       "airDistance": 21,
-      "roadDistance": 31.8,
-      "duration": 34
+      "roadDistance": 38.7,
+      "duration": 42
     },
     {
       "municipalitySlug": "kuralany",
@@ -52177,8 +52177,8 @@
       "municipalitySlug": "kurimany",
       "citySlug": "levoca",
       "airDistance": 4.2,
-      "roadDistance": 7.3,
-      "duration": 11
+      "roadDistance": 5.3,
+      "duration": 6
     },
     {
       "municipalitySlug": "kurimany",
@@ -52247,8 +52247,8 @@
       "municipalitySlug": "kusin",
       "citySlug": "chlmec",
       "airDistance": 12,
-      "roadDistance": 46.9,
-      "duration": 46
+      "roadDistance": 22,
+      "duration": 34
     },
     {
       "municipalitySlug": "kusin",
@@ -52261,8 +52261,8 @@
       "municipalitySlug": "kutniky",
       "citySlug": "dunajska-streda",
       "airDistance": 3.3,
-      "roadDistance": 4.2,
-      "duration": 6
+      "roadDistance": 3,
+      "duration": 4
     },
     {
       "municipalitySlug": "kutniky",
@@ -52394,15 +52394,15 @@
       "municipalitySlug": "kvetoslavov",
       "citySlug": "ivanka-pri-dunaji",
       "airDistance": 16.2,
-      "roadDistance": 31.5,
-      "duration": 21
+      "roadDistance": 23.1,
+      "duration": 20
     },
     {
       "municipalitySlug": "kvetoslavov",
       "citySlug": "bernolakovo",
       "airDistance": 16.3,
-      "roadDistance": 35.2,
-      "duration": 25
+      "roadDistance": 27,
+      "duration": 23
     },
     {
       "municipalitySlug": "kyjatice",
@@ -52450,8 +52450,8 @@
       "municipalitySlug": "kyncelova",
       "citySlug": "banska-bystrica",
       "airDistance": 2.4,
-      "roadDistance": 3.9,
-      "duration": 7
+      "roadDistance": 7.2,
+      "duration": 10
     },
     {
       "municipalitySlug": "kyncelova",
@@ -52471,8 +52471,8 @@
       "municipalitySlug": "kysak",
       "citySlug": "hostovce",
       "airDistance": 3.7,
-      "roadDistance": 6.9,
-      "duration": 9
+      "roadDistance": 66.8,
+      "duration": 52
     },
     {
       "municipalitySlug": "kysak",
@@ -52646,7 +52646,7 @@
       "municipalitySlug": "lackovce",
       "citySlug": "chlmec",
       "airDistance": 5.9,
-      "roadDistance": 11.1,
+      "roadDistance": 11,
       "duration": 13
     },
     {
@@ -52695,8 +52695,8 @@
       "municipalitySlug": "ladce",
       "citySlug": "dubnica-nad-vahom",
       "airDistance": 12.6,
-      "roadDistance": 20.1,
-      "duration": 15
+      "roadDistance": 13,
+      "duration": 16
     },
     {
       "municipalitySlug": "ladice",
@@ -52744,8 +52744,8 @@
       "municipalitySlug": "ladomerska-vieska",
       "citySlug": "ziar-nad-hronom",
       "airDistance": 2.5,
-      "roadDistance": 3.5,
-      "duration": 7
+      "roadDistance": 2.5,
+      "duration": 5
     },
     {
       "municipalitySlug": "ladomerska-vieska",
@@ -52779,7 +52779,7 @@
       "municipalitySlug": "ladomirov",
       "citySlug": "chlmec",
       "airDistance": 27,
-      "roadDistance": 44.1,
+      "roadDistance": 43.7,
       "duration": 44
     },
     {
@@ -52807,8 +52807,8 @@
       "municipalitySlug": "ladzany",
       "citySlug": "dudince",
       "airDistance": 11,
-      "roadDistance": 12.8,
-      "duration": 14
+      "roadDistance": 15.7,
+      "duration": 18
     },
     {
       "municipalitySlug": "ladzany",
@@ -53003,8 +53003,8 @@
       "municipalitySlug": "lazisko",
       "citySlug": "liptovsky-hradok",
       "airDistance": 13.1,
-      "roadDistance": 21.6,
-      "duration": 25
+      "roadDistance": 26.3,
+      "duration": 24
     },
     {
       "municipalitySlug": "lazisko",
@@ -53143,8 +53143,8 @@
       "municipalitySlug": "lehota",
       "citySlug": "nitra",
       "airDistance": 7.2,
-      "roadDistance": 10.3,
-      "duration": 13
+      "roadDistance": 7.3,
+      "duration": 9
     },
     {
       "municipalitySlug": "lehota",
@@ -53220,8 +53220,8 @@
       "municipalitySlug": "lehotka",
       "citySlug": "modry-kamen",
       "airDistance": 19.2,
-      "roadDistance": 27.7,
-      "duration": 27
+      "roadDistance": 49.8,
+      "duration": 51
     },
     {
       "municipalitySlug": "lehotka-pod-brehmi",
@@ -53332,8 +53332,8 @@
       "municipalitySlug": "lemesany",
       "citySlug": "hostovce",
       "airDistance": 1.8,
-      "roadDistance": 3.3,
-      "duration": 4
+      "roadDistance": 63.2,
+      "duration": 48
     },
     {
       "municipalitySlug": "lemesany",
@@ -53451,7 +53451,7 @@
       "municipalitySlug": "lentvora",
       "citySlug": "modry-kamen",
       "airDistance": 17,
-      "roadDistance": 31.1,
+      "roadDistance": 40.1,
       "duration": 42
     },
     {
@@ -53465,8 +53465,8 @@
       "municipalitySlug": "leopoldov",
       "citySlug": "hlohovec",
       "airDistance": 3.1,
-      "roadDistance": 4,
-      "duration": 6
+      "roadDistance": 6.1,
+      "duration": 9
     },
     {
       "municipalitySlug": "leopoldov",
@@ -53500,8 +53500,8 @@
       "municipalitySlug": "lesicek",
       "citySlug": "hostovce",
       "airDistance": 10.3,
-      "roadDistance": 17.8,
-      "duration": 19
+      "roadDistance": 74.5,
+      "duration": 62
     },
     {
       "municipalitySlug": "lesicek",
@@ -53535,8 +53535,8 @@
       "municipalitySlug": "lesne",
       "citySlug": "chlmec",
       "airDistance": 13.2,
-      "roadDistance": 27,
-      "duration": 28
+      "roadDistance": 26.9,
+      "duration": 27
     },
     {
       "municipalitySlug": "lesnica",
@@ -53717,8 +53717,8 @@
       "municipalitySlug": "levoca",
       "citySlug": "spisska-nova-ves",
       "airDistance": 9.3,
-      "roadDistance": 12.5,
-      "duration": 18
+      "roadDistance": 9.9,
+      "duration": 11
     },
     {
       "municipalitySlug": "levoca",
@@ -53794,8 +53794,8 @@
       "municipalitySlug": "licartovce",
       "citySlug": "hostovce",
       "airDistance": 1.7,
-      "roadDistance": 5.5,
-      "duration": 6
+      "roadDistance": 65.4,
+      "duration": 50
     },
     {
       "municipalitySlug": "licartovce",
@@ -53864,8 +53864,8 @@
       "municipalitySlug": "lieskovec-humenne",
       "citySlug": "strazske",
       "airDistance": 8.5,
-      "roadDistance": 10.8,
-      "duration": 12
+      "roadDistance": 16,
+      "duration": 15
     },
     {
       "municipalitySlug": "lieskovec",
@@ -54067,15 +54067,15 @@
       "municipalitySlug": "lipniky",
       "citySlug": "hanusovce-nad-toplou",
       "airDistance": 7.3,
-      "roadDistance": 11.5,
-      "duration": 16
+      "roadDistance": 8.3,
+      "duration": 7
     },
     {
       "municipalitySlug": "lipniky",
       "citySlug": "giraltovce",
       "airDistance": 11,
-      "roadDistance": 20.4,
-      "duration": 23
+      "roadDistance": 12.7,
+      "duration": 12
     },
     {
       "municipalitySlug": "lipniky",
@@ -54088,22 +54088,22 @@
       "municipalitySlug": "lipova-nove-zamky",
       "citySlug": "surany",
       "airDistance": 51.3,
-      "roadDistance": 64.3,
-      "duration": 55
+      "roadDistance": 2.9,
+      "duration": 4
     },
     {
       "municipalitySlug": "lipova-nove-zamky",
       "citySlug": "nove-zamky",
       "airDistance": 46.6,
-      "roadDistance": 51,
-      "duration": 43
+      "roadDistance": 17.6,
+      "duration": 17
     },
     {
       "municipalitySlug": "lipova-nove-zamky",
       "citySlug": "dvory-nad-zitavou",
       "airDistance": 40.5,
-      "roadDistance": 49.1,
-      "duration": 40
+      "roadDistance": 24.6,
+      "duration": 23
     },
     {
       "municipalitySlug": "lipovany",
@@ -54172,8 +54172,8 @@
       "municipalitySlug": "lipovec-martin",
       "citySlug": "vrutky",
       "airDistance": 1.9,
-      "roadDistance": 4.4,
-      "duration": 6
+      "roadDistance": 3.3,
+      "duration": 4
     },
     {
       "municipalitySlug": "lipovec-martin",
@@ -54340,8 +54340,8 @@
       "municipalitySlug": "liptovska-stiavnica",
       "citySlug": "ruzomberok",
       "airDistance": 5.1,
-      "roadDistance": 7.1,
-      "duration": 12
+      "roadDistance": 5.3,
+      "duration": 8
     },
     {
       "municipalitySlug": "liptovska-stiavnica",
@@ -54410,8 +54410,8 @@
       "municipalitySlug": "liptovske-beharovce",
       "citySlug": "liptovsky-hradok",
       "airDistance": 15.2,
-      "roadDistance": 18.9,
-      "duration": 24
+      "roadDistance": 23.6,
+      "duration": 22
     },
     {
       "municipalitySlug": "liptovske-beharovce",
@@ -54529,15 +54529,15 @@
       "municipalitySlug": "liptovsky-jan",
       "citySlug": "liptovsky-hradok",
       "airDistance": 3.3,
-      "roadDistance": 6.2,
+      "roadDistance": 8.5,
       "duration": 8
     },
     {
       "municipalitySlug": "liptovsky-jan",
       "citySlug": "liptovsky-mikulas",
       "airDistance": 6,
-      "roadDistance": 7.6,
-      "duration": 11
+      "roadDistance": 9.7,
+      "duration": 9
     },
     {
       "municipalitySlug": "liptovsky-jan",
@@ -54641,8 +54641,8 @@
       "municipalitySlug": "liptovsky-trnovec",
       "citySlug": "liptovsky-hradok",
       "airDistance": 15.7,
-      "roadDistance": 17.1,
-      "duration": 21
+      "roadDistance": 22,
+      "duration": 20
     },
     {
       "municipalitySlug": "liptovsky-trnovec",
@@ -55306,8 +55306,8 @@
       "municipalitySlug": "lucina",
       "citySlug": "hostovce",
       "airDistance": 12.4,
-      "roadDistance": 23.2,
-      "duration": 25
+      "roadDistance": 77.8,
+      "duration": 67
     },
     {
       "municipalitySlug": "lucina",
@@ -55432,8 +55432,8 @@
       "municipalitySlug": "ludrova",
       "citySlug": "ruzomberok",
       "airDistance": 4.4,
-      "roadDistance": 6.8,
-      "duration": 12
+      "roadDistance": 5,
+      "duration": 8
     },
     {
       "municipalitySlug": "ludrova",
@@ -55516,8 +55516,8 @@
       "municipalitySlug": "lukacovce-nitra",
       "citySlug": "hlohovec",
       "airDistance": 10.9,
-      "roadDistance": 15.4,
-      "duration": 18
+      "roadDistance": 19.1,
+      "duration": 19
     },
     {
       "municipalitySlug": "lukacovce-nitra",
@@ -55747,8 +55747,8 @@
       "municipalitySlug": "luzianky",
       "citySlug": "nitra",
       "airDistance": 5.7,
-      "roadDistance": 9.6,
-      "duration": 12
+      "roadDistance": 7.3,
+      "duration": 10
     },
     {
       "municipalitySlug": "luzianky",
@@ -55852,8 +55852,8 @@
       "municipalitySlug": "malatina",
       "citySlug": "liptovsky-mikulas",
       "airDistance": 17.6,
-      "roadDistance": 35.5,
-      "duration": 39
+      "roadDistance": 49.2,
+      "duration": 46
     },
     {
       "municipalitySlug": "malcov",
@@ -55880,8 +55880,8 @@
       "municipalitySlug": "medzany",
       "citySlug": "velky-saris",
       "airDistance": 3.3,
-      "roadDistance": 6.7,
-      "duration": 10
+      "roadDistance": 4.8,
+      "duration": 6
     },
     {
       "municipalitySlug": "medzev",
@@ -56237,8 +56237,8 @@
       "municipalitySlug": "rokycany",
       "citySlug": "hostovce",
       "airDistance": 13.9,
-      "roadDistance": 29.1,
-      "duration": 24
+      "roadDistance": 88.1,
+      "duration": 64
     },
     {
       "municipalitySlug": "roznava",
@@ -56265,8 +56265,8 @@
       "municipalitySlug": "rudinska",
       "citySlug": "turzovka",
       "airDistance": 11.8,
-      "roadDistance": 44.2,
-      "duration": 51
+      "roadDistance": 15.2,
+      "duration": 42
     },
     {
       "municipalitySlug": "rudlov",
@@ -56475,7 +56475,7 @@
       "municipalitySlug": "runina",
       "citySlug": "chlmec",
       "airDistance": 39.7,
-      "roadDistance": 57.1,
+      "roadDistance": 57,
       "duration": 59
     },
     {
@@ -56517,8 +56517,8 @@
       "municipalitySlug": "ruska-bystra",
       "citySlug": "chlmec",
       "airDistance": 26.3,
-      "roadDistance": 62.2,
-      "duration": 64
+      "roadDistance": 61.7,
+      "duration": 63
     },
     {
       "municipalitySlug": "ruska-kajna",
@@ -56559,8 +56559,8 @@
       "municipalitySlug": "ruska-nova-ves",
       "citySlug": "hostovce",
       "airDistance": 13,
-      "roadDistance": 21.7,
-      "duration": 20
+      "roadDistance": 81.2,
+      "duration": 63
     },
     {
       "municipalitySlug": "ruska-poruba",
@@ -56601,7 +56601,7 @@
       "municipalitySlug": "ruska-volova",
       "citySlug": "chlmec",
       "airDistance": 31.8,
-      "roadDistance": 48.2,
+      "roadDistance": 48.1,
       "duration": 49
     },
     {
@@ -56664,8 +56664,8 @@
       "municipalitySlug": "ruskov",
       "citySlug": "hostovce",
       "airDistance": 23.8,
-      "roadDistance": 29.4,
-      "duration": 21
+      "roadDistance": 56.3,
+      "duration": 48
     },
     {
       "municipalitySlug": "ruskovce-banovce-nad-bebravou",
@@ -56706,8 +56706,8 @@
       "municipalitySlug": "rusky-hrabovec",
       "citySlug": "chlmec",
       "airDistance": 30.5,
-      "roadDistance": 56.7,
-      "duration": 57
+      "roadDistance": 56.4,
+      "duration": 56
     },
     {
       "municipalitySlug": "rusky-potok",
@@ -56727,7 +56727,7 @@
       "municipalitySlug": "rusky-potok",
       "citySlug": "chlmec",
       "airDistance": 37.6,
-      "roadDistance": 56.7,
+      "roadDistance": 56.8,
       "duration": 57
     },
     {
@@ -56923,8 +56923,8 @@
       "municipalitySlug": "sedlice",
       "citySlug": "hostovce",
       "airDistance": 12.4,
-      "roadDistance": 20.2,
-      "duration": 24
+      "roadDistance": 79.9,
+      "duration": 67
     },
     {
       "municipalitySlug": "sedlice",
@@ -56972,8 +56972,8 @@
       "municipalitySlug": "sady-nad-torysou",
       "citySlug": "hostovce",
       "airDistance": 18.6,
-      "roadDistance": 22.5,
-      "duration": 18
+      "roadDistance": 51,
+      "duration": 43
     },
     {
       "municipalitySlug": "sady-nad-torysou",
@@ -57126,8 +57126,8 @@
       "municipalitySlug": "sebedin-becov",
       "citySlug": "banska-bystrica",
       "airDistance": 12.8,
-      "roadDistance": 16.6,
-      "duration": 18
+      "roadDistance": 20.1,
+      "duration": 25
     },
     {
       "municipalitySlug": "sebedrazie",
@@ -57364,8 +57364,8 @@
       "municipalitySlug": "selce-banska-bystrica",
       "citySlug": "banska-bystrica",
       "airDistance": 4.5,
-      "roadDistance": 5.5,
-      "duration": 8
+      "roadDistance": 8.9,
+      "duration": 12
     },
     {
       "municipalitySlug": "selce-banska-bystrica",
@@ -57448,15 +57448,15 @@
       "municipalitySlug": "semerovo",
       "citySlug": "dvory-nad-zitavou",
       "airDistance": 6.1,
-      "roadDistance": 8.1,
-      "duration": 7
+      "roadDistance": 9.8,
+      "duration": 9
     },
     {
       "municipalitySlug": "semerovo",
       "citySlug": "nove-zamky",
       "airDistance": 13.7,
-      "roadDistance": 16.8,
-      "duration": 19
+      "roadDistance": 20.2,
+      "duration": 21
     },
     {
       "municipalitySlug": "semerovo",
@@ -57490,8 +57490,8 @@
       "municipalitySlug": "seniakovce",
       "citySlug": "hostovce",
       "airDistance": 5.5,
-      "roadDistance": 7.2,
-      "duration": 9
+      "roadDistance": 57.2,
+      "duration": 46
     },
     {
       "municipalitySlug": "seniakovce",
@@ -57616,8 +57616,8 @@
       "municipalitySlug": "sielnica",
       "citySlug": "sliac",
       "airDistance": 3.1,
-      "roadDistance": 3.4,
-      "duration": 5
+      "roadDistance": 2.7,
+      "duration": 3
     },
     {
       "municipalitySlug": "sielnica",
@@ -57630,8 +57630,8 @@
       "municipalitySlug": "sielnica",
       "citySlug": "banska-bystrica",
       "airDistance": 12.2,
-      "roadDistance": 14.6,
-      "duration": 13
+      "roadDistance": 18.2,
+      "duration": 15
     },
     {
       "municipalitySlug": "sihelne",
@@ -57903,8 +57903,8 @@
       "municipalitySlug": "skalite",
       "citySlug": "kysucke-nove-mesto",
       "airDistance": 23.5,
-      "roadDistance": 38.1,
-      "duration": 37
+      "roadDistance": 30.2,
+      "duration": 35
     },
     {
       "municipalitySlug": "skalka-nad-vahom",
@@ -58379,8 +58379,8 @@
       "municipalitySlug": "velky-saris",
       "citySlug": "velky-saris",
       "airDistance": 0,
-      "roadDistance": 2.1,
-      "duration": 5
+      "roadDistance": 0,
+      "duration": 0
     },
     {
       "municipalitySlug": "vrable",
@@ -58470,8 +58470,8 @@
       "municipalitySlug": "zlate-moravce",
       "citySlug": "zlate-moravce",
       "airDistance": 0,
-      "roadDistance": 0.3,
-      "duration": 1
+      "roadDistance": 0,
+      "duration": 0
     },
     {
       "municipalitySlug": "zvolen",
@@ -58484,8 +58484,8 @@
       "municipalitySlug": "zakarovce",
       "citySlug": "gelnica",
       "airDistance": 2.9,
-      "roadDistance": 5.8,
-      "duration": 7
+      "roadDistance": 7,
+      "duration": 9
     },
     {
       "municipalitySlug": "zarnovica",
@@ -58533,8 +58533,8 @@
       "municipalitySlug": "osrblie",
       "citySlug": "podbrezova",
       "airDistance": 6,
-      "roadDistance": 9,
-      "duration": 12
+      "roadDistance": 11.1,
+      "duration": 17
     },
     {
       "municipalitySlug": "hronec",
@@ -58547,8 +58547,8 @@
       "municipalitySlug": "bystra",
       "citySlug": "podbrezova",
       "airDistance": 6,
-      "roadDistance": 8,
-      "duration": 10
+      "roadDistance": 6.8,
+      "duration": 7
     },
     {
       "municipalitySlug": "myto-pod-dumbierom",
@@ -58561,8 +58561,8 @@
       "municipalitySlug": "horna-lehota",
       "citySlug": "podbrezova",
       "airDistance": 5,
-      "roadDistance": 7,
-      "duration": 9
+      "roadDistance": 113,
+      "duration": 96
     },
     {
       "municipalitySlug": "dolna-lehota",
@@ -58610,15 +58610,15 @@
       "municipalitySlug": "pohronsky-bukovec",
       "citySlug": "podbrezova",
       "airDistance": 16,
-      "roadDistance": 20,
-      "duration": 22
+      "roadDistance": 16.2,
+      "duration": 16
     },
     {
       "municipalitySlug": "medzibrod",
       "citySlug": "podbrezova",
       "airDistance": 17,
-      "roadDistance": 20,
-      "duration": 20
+      "roadDistance": 15.7,
+      "duration": 15
     },
     {
       "municipalitySlug": "lucatin",
@@ -58658,9 +58658,149 @@
     {
       "municipalitySlug": "benus",
       "citySlug": "podbrezova",
-      "airDistance": 17.0,
+      "airDistance": 17,
       "roadDistance": 19,
       "duration": 22
+    },
+    {
+      "municipalitySlug": "bacuch",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 25.6,
+      "duration": 30
+    },
+    {
+      "municipalitySlug": "bravacovo",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 20.1,
+      "duration": 24
+    },
+    {
+      "municipalitySlug": "brezno",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 8.8,
+      "duration": 11
+    },
+    {
+      "municipalitySlug": "bystra-brezno",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 6.8,
+      "duration": 7
+    },
+    {
+      "municipalitySlug": "drabsko",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 30.2,
+      "duration": 32
+    },
+    {
+      "municipalitySlug": "helpa",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 35.8,
+      "duration": 38
+    },
+    {
+      "municipalitySlug": "horna-lehota-brezno",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 3.6,
+      "duration": 5
+    },
+    {
+      "municipalitySlug": "jaraba",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 16.1,
+      "duration": 17
+    },
+    {
+      "municipalitySlug": "lom-nad-rimavicou",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 31.4,
+      "duration": 33
+    },
+    {
+      "municipalitySlug": "michalova",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 20.5,
+      "duration": 19
+    },
+    {
+      "municipalitySlug": "podbrezova",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 0,
+      "duration": 0
+    },
+    {
+      "municipalitySlug": "pohorela",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 40.5,
+      "duration": 44
+    },
+    {
+      "municipalitySlug": "pohronska-polhora",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 22.2,
+      "duration": 21
+    },
+    {
+      "municipalitySlug": "polomka",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 27.1,
+      "duration": 29
+    },
+    {
+      "municipalitySlug": "sihla",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 29.7,
+      "duration": 31
+    },
+    {
+      "municipalitySlug": "sumiac",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 50.8,
+      "duration": 54
+    },
+    {
+      "municipalitySlug": "telgart",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 55.8,
+      "duration": 58
+    },
+    {
+      "municipalitySlug": "valaska",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 3.5,
+      "duration": 4
+    },
+    {
+      "municipalitySlug": "valkovna",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 44.4,
+      "duration": 47
+    },
+    {
+      "municipalitySlug": "zavadka-nad-hronom",
+      "citySlug": "podbrezova",
+      "airDistance": 0,
+      "roadDistance": 31.4,
+      "duration": 34
     }
   ],
   "lastFixed": "2025-12-12T18:36:14.660Z",

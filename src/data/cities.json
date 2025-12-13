@@ -1139,6 +1139,7 @@
               "Bezkontaktná platba"
             ],
             "secondaryCity": "Podbrezová",
+            "customCtaTitle": "do okolitých obcí, alebo do oblasti Nízkych Tatier pod Chopkom Juh",
             "pricelistUrl": "https://taxipodbrezova.sk/info/rst-taxi-cennik",
             "transportRulesUrl": "https://taxipodbrezova.sk/info/prepravný-poriadok",
             "contactUrl": "https://taxipodbrezova.sk/kontakt"
@@ -10124,6 +10125,7 @@
               "Bezkontaktná platba"
             ],
             "secondaryCity": "Podbrezová",
+            "customCtaTitle": "v obci Podbrezová či v oblastiach Nízkych Tatier pod Chopkom Juh",
             "pricelistUrl": "https://taxipodbrezova.sk/info/rst-taxi-cennik",
             "transportRulesUrl": "https://taxipodbrezova.sk/info/prepravný-poriadok",
             "contactUrl": "https://taxipodbrezova.sk/kontakt"

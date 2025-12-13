@@ -21,6 +21,7 @@ export interface PartnerData {
   whatsapp?: string; // WhatsApp číslo
   bookingUrl?: string; // URL na časovú objednávku
   secondaryCity?: string; // Druhé mesto pôsobenia (pre CTA sekciu)
+  customCtaTitle?: string; // Vlastný text pre CTA sekciu (napr. "do okolitých obcí")
   pricelistUrl?: string; // Externý odkaz na cenník
   transportRulesUrl?: string; // Externý odkaz na prepravný poriadok
   contactUrl?: string; // Externý odkaz na kontaktné informácie
