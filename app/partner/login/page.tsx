@@ -1,14 +1,39 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 
 export default function PartnerLoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [loginMode, setLoginMode] = useState<'password' | 'magic'>('password');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handlePasswordLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage(null);
+
+    const supabase = createClient();
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      setMessage({ type: 'error', text: error.message });
+    } else {
+      router.push('/partner');
+    }
+
+    setLoading(false);
+  };
+
+  const handleMagicLink = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setMessage(null);
@@ -29,7 +54,6 @@ export default function PartnerLoginPage() {
         type: 'success',
         text: 'Odkaz na prihlásenie bol odoslaný na váš email. Skontrolujte si schránku.',
       });
-      setEmail('');
     }
 
     setLoading(false);
@@ -57,11 +81,37 @@ export default function PartnerLoginPage() {
             </div>
             <h1 className="text-2xl font-bold text-gray-900">Partner Portal</h1>
             <p className="text-gray-600 mt-2">
-              Prihláste sa pomocou emailu pre správu vašej taxislužby
+              Prihláste sa pre správu vašej taxislužby
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Toggle buttons */}
+          <div className="flex rounded-lg bg-gray-100 p-1 mb-6">
+            <button
+              type="button"
+              onClick={() => setLoginMode('password')}
+              className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
+                loginMode === 'password'
+                  ? 'bg-white text-purple-600 shadow-sm'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              Heslo
+            </button>
+            <button
+              type="button"
+              onClick={() => setLoginMode('magic')}
+              className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
+                loginMode === 'magic'
+                  ? 'bg-white text-purple-600 shadow-sm'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              Magic Link
+            </button>
+          </div>
+
+          <form onSubmit={loginMode === 'password' ? handlePasswordLogin : handleMagicLink} className="space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                 Email adresa
@@ -77,6 +127,23 @@ export default function PartnerLoginPage() {
               />
             </div>
 
+            {loginMode === 'password' && (
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                  Heslo
+                </label>
+                <input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Vaše heslo"
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                />
+              </div>
+            )}
+
             {message && (
               <div
                 className={`p-4 rounded-lg ${
@@ -91,7 +158,7 @@ export default function PartnerLoginPage() {
 
             <button
               type="submit"
-              disabled={loading || !email}
+              disabled={loading || !email || (loginMode === 'password' && !password)}
               className="w-full bg-purple-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
@@ -112,21 +179,23 @@ export default function PartnerLoginPage() {
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     />
                   </svg>
-                  Odosielam...
+                  {loginMode === 'password' ? 'Prihlasujem...' : 'Odosielam...'}
                 </span>
+              ) : loginMode === 'password' ? (
+                'Prihlásiť sa'
               ) : (
                 'Poslať prihlasovací odkaz'
               )}
             </button>
           </form>
 
-          <div className="mt-8 pt-6 border-t border-gray-200">
-            <p className="text-sm text-gray-500 text-center">
-              Na váš email príde odkaz, ktorým sa prihlásite bez hesla.
-              <br />
-              Odkaz je platný 24 hodín.
-            </p>
-          </div>
+          {loginMode === 'magic' && (
+            <div className="mt-6 pt-6 border-t border-gray-200">
+              <p className="text-sm text-gray-500 text-center">
+                Na váš email príde odkaz, ktorým sa prihlásite bez hesla.
+              </p>
+            </div>
+          )}
         </div>
 
         <p className="text-center text-sm text-gray-500 mt-6">
