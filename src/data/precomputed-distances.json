@@ -3393,9 +3393,9 @@
     {
       "municipalitySlug": "bratislava-ii",
       "citySlug": "ivanka-pri-dunaji",
-      "airDistance": 12.1,
-      "roadDistance": 11.7,
-      "duration": 14
+      "airDistance": 9.5,
+      "roadDistance": 15,
+      "duration": 18
     },
     {
       "municipalitySlug": "bratislava-ii",
@@ -3414,16 +3414,16 @@
     {
       "municipalitySlug": "bratislava-iii",
       "citySlug": "ivanka-pri-dunaji",
-      "airDistance": 12.1,
-      "roadDistance": 12.1,
-      "duration": 18
+      "airDistance": 9.5,
+      "roadDistance": 10.7,
+      "duration": 14
     },
     {
       "municipalitySlug": "bratislava-iii",
       "citySlug": "svaty-jur",
-      "airDistance": 14.2,
-      "roadDistance": 12.7,
-      "duration": 16
+      "airDistance": 11,
+      "roadDistance": 15.2,
+      "duration": 18
     },
     {
       "municipalitySlug": "bratislava-iv",
@@ -10856,8 +10856,8 @@
       "municipalitySlug": "gemer",
       "citySlug": "jelsava",
       "airDistance": 20.6,
-      "roadDistance": 16,
-      "duration": 22
+      "roadDistance": 29,
+      "duration": 38
     },
     {
       "municipalitySlug": "gemer",
@@ -22777,8 +22777,8 @@
       "municipalitySlug": "pobedim",
       "citySlug": "horna-streda",
       "airDistance": 3.3,
-      "roadDistance": 3.2,
-      "duration": 4
+      "roadDistance": 4.2,
+      "duration": 5
     },
     {
       "municipalitySlug": "pobedim",
@@ -31177,8 +31177,8 @@
       "municipalitySlug": "siba",
       "citySlug": "bardejov",
       "airDistance": 7.3,
-      "roadDistance": 3.5,
-      "duration": 9
+      "roadDistance": 8.8,
+      "duration": 12
     },
     {
       "municipalitySlug": "siba",
@@ -55537,8 +55537,8 @@
       "municipalitySlug": "lukavica-bardejov",
       "citySlug": "bardejov",
       "airDistance": 5.1,
-      "roadDistance": 5,
-      "duration": 7
+      "roadDistance": 6.6,
+      "duration": 9
     },
     {
       "municipalitySlug": "lukavica-bardejov",
