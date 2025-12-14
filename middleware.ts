@@ -13,9 +13,10 @@ function getSecretKey(): Uint8Array {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Partner portal routes - Supabase auth
-  if (pathname.startsWith('/partner') && pathname !== '/partner/login') {
+  // Partner portal routes and API routes - Supabase auth
+  if ((pathname.startsWith('/partner') || pathname.startsWith('/api/partner')) && pathname !== '/partner/login') {
     let response = NextResponse.next({ request });
+    const isApiRoute = pathname.startsWith('/api/partner');
 
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -39,6 +40,13 @@ export async function middleware(request: NextRequest) {
     const { data: { user } } = await supabase.auth.getUser();
 
     if (!user) {
+      // For API routes, return JSON 401 instead of redirect
+      if (isApiRoute) {
+        return NextResponse.json(
+          { error: 'Neautorizovaný prístup' },
+          { status: 401 }
+        );
+      }
       return NextResponse.redirect(new URL('/partner/login', request.url));
     }
 
@@ -93,5 +101,6 @@ export const config = {
     '/admin/:path*',
     '/api/admin/:path*',
     '/partner/:path*',
+    '/api/partner/:path*',
   ],
 };
