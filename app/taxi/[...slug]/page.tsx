@@ -52,6 +52,7 @@ import { MunicipalityInfo } from '@/components/MunicipalityInfo';
 import { NearbyMunicipalities } from '@/components/NearbyMunicipalities';
 import { getMunicipalityStats } from '@/lib/municipality-data';
 import { TaxiPromoBanner } from '@/components/TaxiPromoBanner';
+import { getApprovedPartnerData } from '@/lib/partner-data';
 
 import {
   getLocationBySlug,
@@ -1257,8 +1258,27 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
   // Partner page - full branded page
   if (isPartner) {
+    // Fetch approved data from Supabase (partner portal changes)
+    const approvedData = await getApprovedPartnerData(serviceSlug);
+
+    // Merge approved data with cities.json data (approved data takes precedence if not null/empty)
     const partnerData = service.partnerData;
-    const heroImage = partnerData?.heroImage;
+
+    // Use approved gallery if it exists and has items, otherwise use cities.json gallery
+    const mergedGallery = (approvedData?.gallery && approvedData.gallery.length > 0)
+      ? approvedData.gallery
+      : service.gallery;
+
+    // Use approved hero image if it exists, otherwise use cities.json
+    const heroImage = approvedData?.hero_image_url || partnerData?.heroImage;
+
+    // Use approved description if it exists, otherwise use cities.json
+    const mergedDescription = approvedData?.description || partnerData?.description;
+
+    // Hero image positioning from approved data
+    const heroImageZoom = approvedData?.hero_image_zoom || 100;
+    const heroImagePosX = approvedData?.hero_image_pos_x || 50;
+    const heroImagePosY = approvedData?.hero_image_pos_y || 50;
 
     return (
       <div className="min-h-screen overflow-x-hidden partner-page-bg">
@@ -1293,7 +1313,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               Späť na zoznam taxislužieb
             </Link>
 
-            {/* Hero image container */}
+            {/* Hero image container (uses Supabase approved positioning if available) */}
             {heroImage && (
               <div
                 className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 h-[200px] md:h-[260px]"
@@ -1302,8 +1322,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   className="absolute inset-0 bg-no-repeat"
                   style={{
                     backgroundImage: `url(${heroImage})`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover'
+                    backgroundPosition: `${heroImagePosX}% ${heroImagePosY}%`,
+                    backgroundSize: `${heroImageZoom}%`
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -1479,10 +1499,28 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                               </div>
             </div>
 
-            {/* Gallery - under contact buttons */}
-            {service.gallery && service.gallery.length > 0 && (
+            {/* Gallery - under contact buttons (uses merged gallery from Supabase approved data) */}
+            {mergedGallery && mergedGallery.length > 0 && (
               <div className="mt-6">
-                <TaxiGallery images={service.gallery} serviceName={service.name} />
+                <TaxiGallery images={mergedGallery} serviceName={service.name} />
+              </div>
+            )}
+
+            {/* Services Section - only if show_services is enabled in partner portal */}
+            {approvedData?.show_services && approvedData?.services && approvedData.services.length > 0 && (
+              <div className="mt-6 md:mt-8 bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-sm">
+                <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">Ponúkané služby</h2>
+                <div className="flex flex-wrap gap-2">
+                  {approvedData.services.map((service: string, index: number) => (
+                    <span
+                      key={index}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-100 text-purple-800 rounded-full text-sm font-medium"
+                    >
+                      <CheckCircle2 className="h-4 w-4" />
+                      {service}
+                    </span>
+                  ))}
+                </div>
               </div>
             )}
 

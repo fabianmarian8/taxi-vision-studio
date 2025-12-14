@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 import { Partner, PartnerDraft } from '@/lib/supabase/types';
@@ -9,6 +9,7 @@ interface Props {
   partner: Partner & { partner_drafts: PartnerDraft[] };
   initialDraft: PartnerDraft | null;
   userEmail: string;
+  rejectionMessage?: string | null;
 }
 
 interface FormData {
@@ -18,16 +19,41 @@ interface FormData {
   email: string;
   website: string;
   hero_image_url: string;
+  hero_image_zoom: number;
+  hero_image_pos_x: number;
+  hero_image_pos_y: number;
   hero_title: string;
   hero_subtitle: string;
   banner_title: string;
   banner_subtitle: string;
   services: string[];
+  show_services: boolean;
+  gallery: string[];
   social_facebook: string;
   social_instagram: string;
 }
 
-export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
+// Generate thumbnail URL for Supabase storage images
+function getThumbnailUrl(url: string, width: number = 300): string {
+  if (!url) return url;
+
+  // For Supabase storage URLs, use image transformation
+  if (url.includes('supabase.co/storage')) {
+    // Add render/image transformation for thumbnails
+    // Format: /render/image/sign/.../object/.../...?width=300
+    const transformUrl = url.replace(
+      '/storage/v1/object/public/',
+      `/storage/v1/render/image/public/`
+    );
+    const separator = transformUrl.includes('?') ? '&' : '?';
+    return `${transformUrl}${separator}width=${width}&quality=80`;
+  }
+
+  return url;
+}
+
+export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessage }: Props) {
+  const [showRejectionMessage, setShowRejectionMessage] = useState(!!rejectionMessage);
   const [formData, setFormData] = useState<FormData>({
     company_name: initialDraft?.company_name || partner.name || '',
     description: initialDraft?.description || '',
@@ -35,11 +61,16 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
     email: initialDraft?.email || '',
     website: initialDraft?.website || '',
     hero_image_url: initialDraft?.hero_image_url || '',
+    hero_image_zoom: initialDraft?.hero_image_zoom || 100,
+    hero_image_pos_x: initialDraft?.hero_image_pos_x || 50,
+    hero_image_pos_y: initialDraft?.hero_image_pos_y || 50,
     hero_title: initialDraft?.hero_title || '',
     hero_subtitle: initialDraft?.hero_subtitle || '',
     banner_title: initialDraft?.banner_title || '',
     banner_subtitle: initialDraft?.banner_subtitle || '',
     services: (initialDraft?.services as string[]) || [],
+    show_services: initialDraft?.show_services ?? false,
+    gallery: (initialDraft?.gallery as string[]) || [],
     social_facebook: initialDraft?.social_facebook || '',
     social_instagram: initialDraft?.social_instagram || '',
   });
@@ -47,9 +78,16 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
   const [saving, setSaving] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
-  const [activeTab, setActiveTab] = useState<'general' | 'hero' | 'social'>('general');
+  const [activeTab, setActiveTab] = useState<'general' | 'hero' | 'gallery' | 'social'>('general');
+  const [uploading, setUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState<string | null>(null);
+  const [galleryUploading, setGalleryUploading] = useState(false);
+  const heroImageInputRef = useRef<HTMLInputElement>(null);
+  const galleryImageInputRef = useRef<HTMLInputElement>(null);
+  // Track draft ID to prevent duplicate inserts
+  const [draftId, setDraftId] = useState<string | null>(initialDraft?.id || null);
 
-  const handleChange = useCallback((field: keyof FormData, value: string | string[]) => {
+  const handleChange = useCallback((field: keyof FormData, value: string | string[] | number | boolean) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   }, []);
 
@@ -61,6 +99,148 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
         : [...prev.services, service],
     }));
   }, []);
+
+  const GALLERY_LIMIT = 10;
+
+  const handleGalleryUpload = async (files: FileList) => {
+    const remainingSlots = GALLERY_LIMIT - formData.gallery.length;
+
+    if (remainingSlots <= 0) {
+      setMessage({
+        type: 'error',
+        text: `Dosiahnutý limit ${GALLERY_LIMIT} obrázkov. Najprv odstráňte niektoré existujúce.`,
+      });
+      return;
+    }
+
+    const filesToUpload = Math.min(files.length, remainingSlots);
+    if (filesToUpload < files.length) {
+      setMessage({
+        type: 'error',
+        text: `Môžete nahrať max. ${remainingSlots} obrázkov (limit je ${GALLERY_LIMIT}).`,
+      });
+    }
+
+    setGalleryUploading(true);
+    if (filesToUpload === files.length) {
+      setMessage(null);
+    }
+
+    const uploadedUrls: string[] = [];
+    const errors: string[] = [];
+
+    for (let i = 0; i < filesToUpload; i++) {
+      const file = files[i];
+      try {
+        const uploadFormData = new FormData();
+        uploadFormData.append('file', file);
+        uploadFormData.append('type', 'gallery');
+
+        const response = await fetch('/api/partner/upload-image', {
+          method: 'POST',
+          body: uploadFormData,
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error || 'Upload failed');
+        }
+
+        uploadedUrls.push(result.url);
+      } catch (error) {
+        errors.push(file.name);
+      }
+    }
+
+    // Add uploaded URLs to gallery
+    if (uploadedUrls.length > 0) {
+      setFormData((prev) => ({
+        ...prev,
+        gallery: [...prev.gallery, ...uploadedUrls],
+      }));
+    }
+
+    setGalleryUploading(false);
+
+    if (errors.length > 0) {
+      setMessage({
+        type: 'error',
+        text: `Nepodarilo sa nahrať: ${errors.join(', ')}`,
+      });
+    } else if (uploadedUrls.length > 0) {
+      setMessage({
+        type: 'success',
+        text: `Nahraných ${uploadedUrls.length} obrázkov`,
+      });
+    }
+  };
+
+  const handleGalleryRemove = useCallback((index: number) => {
+    setFormData((prev) => ({
+      ...prev,
+      gallery: prev.gallery.filter((_, i) => i !== index),
+    }));
+  }, []);
+
+  const handleGalleryFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      handleGalleryUpload(files);
+    }
+    e.target.value = '';
+  };
+
+  const handleImageUpload = async (file: File, type: 'hero' | 'logo') => {
+    setUploading(true);
+    setUploadProgress('Komprimujem a nahrávam...');
+    setMessage(null);
+
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('type', type);
+
+      const response = await fetch('/api/partner/upload-image', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Upload failed');
+      }
+
+      // Update form with new image URL
+      if (type === 'hero') {
+        handleChange('hero_image_url', result.url);
+      }
+
+      setUploadProgress(null);
+      setMessage({
+        type: 'success',
+        text: `Obrázok bol nahraný (${Math.round(result.size / 1024)} KB)`,
+      });
+    } catch (error) {
+      setUploadProgress(null);
+      setMessage({
+        type: 'error',
+        text: error instanceof Error ? error.message : 'Chyba pri nahrávaní',
+      });
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>, type: 'hero' | 'logo') => {
+    const file = e.target.files?.[0];
+    if (file) {
+      handleImageUpload(file, type);
+    }
+    // Reset input so same file can be selected again
+    e.target.value = '';
+  };
 
   const saveDraft = async () => {
     setSaving(true);
@@ -76,13 +256,24 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
     };
 
     let result;
-    if (initialDraft?.id) {
+    if (draftId) {
+      // Update existing draft
       result = await supabase
         .from('partner_drafts')
         .update(draftData)
-        .eq('id', initialDraft.id);
+        .eq('id', draftId);
     } else {
-      result = await supabase.from('partner_drafts').insert(draftData);
+      // Insert new draft and get the ID back
+      result = await supabase
+        .from('partner_drafts')
+        .insert(draftData)
+        .select('id')
+        .single();
+
+      // Save the new draft ID to prevent duplicates
+      if (result.data?.id) {
+        setDraftId(result.data.id);
+      }
     }
 
     if (result.error) {
@@ -109,13 +300,24 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
     };
 
     let result;
-    if (initialDraft?.id) {
+    if (draftId) {
+      // Update existing draft
       result = await supabase
         .from('partner_drafts')
         .update(draftData)
-        .eq('id', initialDraft.id);
+        .eq('id', draftId);
     } else {
-      result = await supabase.from('partner_drafts').insert(draftData);
+      // Insert new draft and get the ID back
+      result = await supabase
+        .from('partner_drafts')
+        .insert(draftData)
+        .select('id')
+        .single();
+
+      // Save the new draft ID to prevent duplicates
+      if (result.data?.id) {
+        setDraftId(result.data.id);
+      }
     }
 
     if (result.error) {
@@ -182,6 +384,38 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
         </div>
       </header>
 
+      {/* Rejection Message Banner */}
+      {showRejectionMessage && rejectionMessage && (
+        <div className="bg-amber-50 border-b border-amber-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-start gap-3">
+              <div className="flex-shrink-0">
+                <svg className="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-sm font-medium text-amber-800">Vaša posledná žiadosť bola zamietnutá</h3>
+                <p className="mt-1 text-sm text-amber-700">
+                  {rejectionMessage || 'Bez uvedenia dôvodu.'}
+                </p>
+                <p className="mt-2 text-sm text-amber-600">
+                  Údaje boli obnovené na pôvodnú verziu. Môžete vykonať úpravy a odoslať novú žiadosť.
+                </p>
+              </div>
+              <button
+                onClick={() => setShowRejectionMessage(false)}
+                className="flex-shrink-0 text-amber-500 hover:text-amber-700"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Message */}
       {message && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
@@ -208,6 +442,7 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
                 {[
                   { id: 'general', label: 'Základné info' },
                   { id: 'hero', label: 'Hero sekcia' },
+                  { id: 'gallery', label: 'Galéria' },
                   { id: 'social', label: 'Sociálne siete' },
                 ].map((tab) => (
                   <button
@@ -294,9 +529,32 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-3">
-                      Služby
-                    </label>
+                    <div className="flex items-center justify-between mb-3">
+                      <label className="block text-sm font-medium text-gray-700">
+                        Služby
+                      </label>
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <span className="text-xs text-gray-500">Zobraziť na stránke</span>
+                        <button
+                          type="button"
+                          onClick={() => handleChange('show_services', !formData.show_services)}
+                          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                            formData.show_services ? 'bg-purple-600' : 'bg-gray-300'
+                          }`}
+                        >
+                          <span
+                            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                              formData.show_services ? 'translate-x-6' : 'translate-x-1'
+                            }`}
+                          />
+                        </button>
+                      </label>
+                    </div>
+                    {!formData.show_services && (
+                      <p className="text-xs text-amber-600 mb-3">
+                        Služby sa nezobrazia na vašej stránke. Zapnite prepínač ak ich chcete zobraziť.
+                      </p>
+                    )}
                     <div className="flex flex-wrap gap-2">
                       {availableServices.map((service) => (
                         <button
@@ -321,18 +579,138 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Hero obrázok (URL)
+                      Hero obrázok
                     </label>
-                    <input
-                      type="url"
-                      value={formData.hero_image_url}
-                      onChange={(e) => handleChange('hero_image_url', e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                      placeholder="https://..."
-                    />
-                    <p className="text-xs text-gray-500 mt-1">
-                      Odporúčaná veľkosť: 1920x1080px
+
+                    {/* Current image preview with zoom/position */}
+                    {formData.hero_image_url && (
+                      <div className="mb-4 space-y-3">
+                        <div className="relative rounded-lg overflow-hidden aspect-video bg-gray-100">
+                          <img
+                            src={formData.hero_image_url}
+                            alt="Hero preview"
+                            className="w-full h-full"
+                            style={{
+                              objectFit: 'cover',
+                              objectPosition: `${formData.hero_image_pos_x}% ${formData.hero_image_pos_y}%`,
+                              transform: `scale(${formData.hero_image_zoom / 100})`,
+                              transformOrigin: `${formData.hero_image_pos_x}% ${formData.hero_image_pos_y}%`,
+                            }}
+                          />
+                        </div>
+
+                        {/* Zoom control */}
+                        <div>
+                          <div className="flex items-center justify-between mb-1">
+                            <label className="text-xs font-medium text-gray-600">Zoom</label>
+                            <span className="text-xs text-gray-500">{formData.hero_image_zoom}%</span>
+                          </div>
+                          <input
+                            type="range"
+                            min="100"
+                            max="200"
+                            value={formData.hero_image_zoom}
+                            onChange={(e) => handleChange('hero_image_zoom', parseInt(e.target.value))}
+                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-purple-600"
+                          />
+                        </div>
+
+                        {/* Position controls */}
+                        <div className="grid grid-cols-2 gap-3">
+                          <div>
+                            <div className="flex items-center justify-between mb-1">
+                              <label className="text-xs font-medium text-gray-600">Pozícia X</label>
+                              <span className="text-xs text-gray-500">{formData.hero_image_pos_x}%</span>
+                            </div>
+                            <input
+                              type="range"
+                              min="0"
+                              max="100"
+                              value={formData.hero_image_pos_x}
+                              onChange={(e) => handleChange('hero_image_pos_x', parseInt(e.target.value))}
+                              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-purple-600"
+                            />
+                          </div>
+                          <div>
+                            <div className="flex items-center justify-between mb-1">
+                              <label className="text-xs font-medium text-gray-600">Pozícia Y</label>
+                              <span className="text-xs text-gray-500">{formData.hero_image_pos_y}%</span>
+                            </div>
+                            <input
+                              type="range"
+                              min="0"
+                              max="100"
+                              value={formData.hero_image_pos_y}
+                              onChange={(e) => handleChange('hero_image_pos_y', parseInt(e.target.value))}
+                              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-purple-600"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Reset button */}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            handleChange('hero_image_zoom', 100);
+                            handleChange('hero_image_pos_x', 50);
+                            handleChange('hero_image_pos_y', 50);
+                          }}
+                          className="text-xs text-purple-600 hover:text-purple-700"
+                        >
+                          Resetovať na predvolené
+                        </button>
+                      </div>
+                    )}
+
+                    {/* Upload button */}
+                    <div className="flex gap-2">
+                      <input
+                        ref={heroImageInputRef}
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp,image/gif"
+                        onChange={(e) => handleFileSelect(e, 'hero')}
+                        className="hidden"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => heroImageInputRef.current?.click()}
+                        disabled={uploading}
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {uploading ? (
+                          <>
+                            <svg className="animate-spin h-5 w-5 text-purple-600" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                            </svg>
+                            <span className="text-sm text-gray-600">{uploadProgress}</span>
+                          </>
+                        ) : (
+                          <>
+                            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span className="text-sm text-gray-600">Nahrať obrázok z počítača</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+
+                    <p className="text-xs text-gray-500 mt-2">
+                      Podporované formáty: JPG, PNG, WebP, GIF (max 5MB). Automaticky sa skonvertuje na WebP.
                     </p>
+
+                    {/* Or use URL */}
+                    <div className="mt-3">
+                      <p className="text-xs text-gray-500 mb-1">Alebo zadajte URL:</p>
+                      <input
+                        type="url"
+                        value={formData.hero_image_url}
+                        onChange={(e) => handleChange('hero_image_url', e.target.value)}
+                        className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        placeholder="https://..."
+                      />
+                    </div>
                   </div>
 
                   <div>
@@ -360,33 +738,97 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
                       placeholder="Profesionálna preprava 24/7"
                     />
                   </div>
+                </div>
+              )}
 
-                  <div className="pt-4 border-t">
-                    <h4 className="text-sm font-medium text-gray-700 mb-4">Banner v zozname</h4>
-                    <div className="space-y-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Názov v banneri
-                        </label>
-                        <input
-                          type="text"
-                          value={formData.banner_title}
-                          onChange={(e) => handleChange('banner_title', e.target.value)}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                        />
+              {activeTab === 'gallery' && (
+                <div className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Fotogaléria ({formData.gallery.length}/{GALLERY_LIMIT} obrázkov)
+                    </label>
+                    <p className="text-xs text-gray-500 mb-4">
+                      Pridajte obrázky vašich vozidiel, interiéru alebo služieb. Obrázky sa automaticky skonvertujú na WebP.
+                      {formData.gallery.length >= GALLERY_LIMIT && (
+                        <span className="text-amber-600 font-medium"> Dosiahnutý limit.</span>
+                      )}
+                    </p>
+
+                    {/* Gallery grid */}
+                    {formData.gallery.length > 0 && (
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
+                        {formData.gallery.map((url, index) => (
+                          <div key={index} className="relative group aspect-video rounded-lg overflow-hidden bg-gray-100">
+                            <img
+                              src={getThumbnailUrl(url, 400)}
+                              alt={`Galéria ${index + 1}`}
+                              className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                              <button
+                                type="button"
+                                onClick={() => handleGalleryRemove(index)}
+                                className="p-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors"
+                                title="Odstrániť obrázok"
+                              >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                              </button>
+                            </div>
+                            <div className="absolute bottom-1 left-1 bg-black/60 text-white text-xs px-1.5 py-0.5 rounded">
+                              {index + 1}
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Podtitul v banneri
-                        </label>
-                        <input
-                          type="text"
-                          value={formData.banner_subtitle}
-                          onChange={(e) => handleChange('banner_subtitle', e.target.value)}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                        />
+                    )}
+
+                    {/* Upload area */}
+                    <input
+                      ref={galleryImageInputRef}
+                      type="file"
+                      accept="image/jpeg,image/png,image/webp,image/gif"
+                      multiple
+                      onChange={handleGalleryFileSelect}
+                      className="hidden"
+                    />
+                    {formData.gallery.length >= GALLERY_LIMIT ? (
+                      <div className="w-full flex items-center justify-center gap-2 px-4 py-6 border-2 border-dashed border-gray-300 rounded-lg bg-gray-50 text-gray-500">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-sm">Galéria je plná ({GALLERY_LIMIT} obrázkov)</span>
                       </div>
-                    </div>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => galleryImageInputRef.current?.click()}
+                        disabled={galleryUploading}
+                        className="w-full flex items-center justify-center gap-2 px-4 py-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {galleryUploading ? (
+                          <>
+                            <svg className="animate-spin h-5 w-5 text-purple-600" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                            </svg>
+                            <span className="text-sm text-gray-600">Nahrávam obrázky...</span>
+                          </>
+                        ) : (
+                          <>
+                            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                            <span className="text-sm text-gray-600">Pridať obrázky do galérie</span>
+                          </>
+                        )}
+                      </button>
+                    )}
+
+                    <p className="text-xs text-gray-500 mt-2">
+                      Podporované formáty: JPG, PNG, WebP, GIF (max 5MB na obrázok). Môžete vybrať viacero naraz.
+                    </p>
                   </div>
                 </div>
               )}
@@ -452,7 +894,11 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
                   className="relative rounded-lg overflow-hidden bg-gradient-to-br from-purple-600 to-purple-800 aspect-video"
                   style={
                     formData.hero_image_url
-                      ? { backgroundImage: `url(${formData.hero_image_url})`, backgroundSize: 'cover', backgroundPosition: 'center' }
+                      ? {
+                          backgroundImage: `url(${formData.hero_image_url})`,
+                          backgroundSize: `${formData.hero_image_zoom}%`,
+                          backgroundPosition: `${formData.hero_image_pos_x}% ${formData.hero_image_pos_y}%`
+                        }
                       : {}
                   }
                 >
@@ -507,6 +953,31 @@ export function PartnerEditor({ partner, initialDraft, userEmail }: Props) {
                       </span>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* Gallery Preview */}
+              {formData.gallery.length > 0 && (
+                <div className="mb-6">
+                  <h4 className="text-xs font-medium text-gray-500 uppercase mb-3">
+                    Galéria ({formData.gallery.length})
+                  </h4>
+                  <div className="grid grid-cols-3 gap-1.5">
+                    {formData.gallery.slice(0, 6).map((url, index) => (
+                      <div key={index} className="aspect-video rounded overflow-hidden bg-gray-100">
+                        <img
+                          src={getThumbnailUrl(url, 200)}
+                          alt={`Galéria ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  {formData.gallery.length > 6 && (
+                    <p className="text-xs text-gray-500 mt-2 text-center">
+                      + {formData.gallery.length - 6} ďalších
+                    </p>
+                  )}
                 </div>
               )}
 

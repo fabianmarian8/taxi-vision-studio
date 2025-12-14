@@ -25,6 +25,9 @@ export interface PartnerDraft {
 
   // Hero sekcia
   hero_image_url: string | null;
+  hero_image_zoom: number | null;
+  hero_image_pos_x: number | null;
+  hero_image_pos_y: number | null;
   hero_title: string | null;
   hero_subtitle: string | null;
 
@@ -34,10 +37,14 @@ export interface PartnerDraft {
 
   // Služby a vozidlá
   services: string[] | null;
+  show_services: boolean | null;
   vehicles: string[] | null;
 
   // Ceny
   prices: PriceItem[] | null;
+
+  // Galéria
+  gallery: string[] | null;
 
   // Sociálne siete
   social_facebook: string | null;

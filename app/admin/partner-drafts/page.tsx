@@ -17,6 +17,9 @@ interface PartnerDraft {
   hero_title: string | null;
   hero_subtitle: string | null;
   services: string[] | null;
+  gallery: string[] | null;
+  social_facebook: string | null;
+  social_instagram: string | null;
   admin_notes: string | null;
   submitted_at: string | null;
   reviewed_at: string | null;
@@ -249,6 +252,48 @@ export default function PartnerDraftsPage() {
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Popis</p>
                     <p className="text-sm">{selectedDraft.description}</p>
+                  </div>
+                )}
+
+                {/* Gallery */}
+                {selectedDraft.gallery && selectedDraft.gallery.length > 0 && (
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Galéria ({selectedDraft.gallery.length} obrázkov)
+                    </p>
+                    <div className="grid grid-cols-3 gap-2">
+                      {selectedDraft.gallery.map((url, idx) => (
+                        <div key={idx} className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                          <img
+                            src={url}
+                            alt={`Galéria ${idx + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Social Links */}
+                {(selectedDraft.social_facebook || selectedDraft.social_instagram) && (
+                  <div className="grid grid-cols-2 gap-4">
+                    {selectedDraft.social_facebook && (
+                      <div>
+                        <p className="text-sm text-muted-foreground">Facebook</p>
+                        <a href={selectedDraft.social_facebook} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline truncate block">
+                          {selectedDraft.social_facebook}
+                        </a>
+                      </div>
+                    )}
+                    {selectedDraft.social_instagram && (
+                      <div>
+                        <p className="text-sm text-muted-foreground">Instagram</p>
+                        <a href={selectedDraft.social_instagram} target="_blank" rel="noopener noreferrer" className="text-sm text-pink-600 hover:underline truncate block">
+                          {selectedDraft.social_instagram}
+                        </a>
+                      </div>
+                    )}
                   </div>
                 )}
 

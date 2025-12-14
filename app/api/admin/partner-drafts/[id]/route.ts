@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { clearPartnerCache } from '@/lib/partner-data';
 
-// Create admin client with service role
-function getAdminClient() {
+// Create client with anon key - we use SECURITY DEFINER functions to bypass RLS
+function getClient() {
   return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     { auth: { persistSession: false } }
   );
 }
@@ -14,11 +15,12 @@ interface Props {
   params: Promise<{ id: string }>;
 }
 
-// GET - Get single draft
+// GET - Get single draft (using direct query for single item)
 export async function GET(request: NextRequest, { params }: Props) {
   const { id } = await params;
-  const supabase = getAdminClient();
+  const supabase = getClient();
 
+  // For single draft, we can query directly since admin page doesn't require RLS bypass for read
   const { data: draft, error } = await supabase
     .from('partner_drafts')
     .select(`
@@ -54,19 +56,28 @@ export async function PATCH(request: NextRequest, { params }: Props) {
     );
   }
 
-  const supabase = getAdminClient();
-
+  const supabase = getClient();
   const newStatus = action === 'approve' ? 'approved' : 'rejected';
 
-  const { data: draft, error } = await supabase
+  // Use SECURITY DEFINER function to bypass RLS
+  const { data: result, error } = await supabase.rpc('update_partner_draft_admin', {
+    p_draft_id: id,
+    p_status: newStatus,
+    p_admin_notes: admin_notes || null,
+  });
+
+  if (error) {
+    console.error('Error updating draft:', error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  if (result?.error) {
+    return NextResponse.json({ error: result.error }, { status: 400 });
+  }
+
+  // Fetch the updated draft to return full data
+  const { data: draft } = await supabase
     .from('partner_drafts')
-    .update({
-      status: newStatus,
-      admin_notes: admin_notes || null,
-      reviewed_at: new Date().toISOString(),
-      reviewed_by: 'admin', // TODO: Get actual admin name
-    })
-    .eq('id', id)
     .select(`
       *,
       partners (
@@ -77,14 +88,14 @@ export async function PATCH(request: NextRequest, { params }: Props) {
         email
       )
     `)
+    .eq('id', id)
     .single();
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  // Clear partner cache so public page shows updated data immediately
+  if (draft?.partners?.slug) {
+    clearPartnerCache(draft.partners.slug);
+    console.log('[Admin] Cache cleared for partner:', draft.partners.slug);
   }
-
-  // TODO: Send email notification to partner
-  // TODO: If approved, update the actual taxi service data in cities.json
 
   return NextResponse.json({
     success: true,

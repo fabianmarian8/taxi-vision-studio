@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import { PasswordSettings } from './PasswordSettings';
 
 export default async function PartnerDashboard() {
   const supabase = await createClient();
@@ -62,14 +63,17 @@ export default async function PartnerDashboard() {
                 <p className="text-sm text-gray-500">{user.email}</p>
               </div>
             </div>
-            <form action="/partner/auth/signout" method="POST">
-              <button
-                type="submit"
-                className="text-gray-600 hover:text-gray-900 text-sm font-medium"
-              >
-                Odhlásiť sa
-              </button>
-            </form>
+            <div className="flex items-center gap-4">
+              <PasswordSettings />
+              <form action="/partner/auth/signout" method="POST">
+                <button
+                  type="submit"
+                  className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                >
+                  Odhlásiť sa
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </header>

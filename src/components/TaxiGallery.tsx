@@ -9,10 +9,14 @@ interface TaxiGalleryProps {
 }
 
 // Helper to get thumbnail path from full image path
+// Works for both local and Supabase images
+// image.webp -> image-thumb.webp
 function getThumbnail(imagePath: string): string {
-  // /gallery/rst-taxi/rst-taxi-1.webp -> /gallery/rst-taxi/rst-taxi-1-thumb.webp
+  if (!imagePath) return imagePath;
+
   const ext = imagePath.lastIndexOf('.');
   if (ext === -1) return imagePath;
+
   return imagePath.slice(0, ext) + '-thumb' + imagePath.slice(ext);
 }
 
