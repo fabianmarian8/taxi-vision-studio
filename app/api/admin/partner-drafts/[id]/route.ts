@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { clearPartnerCache } from '@/lib/partner-data';
+import { revalidatePath } from 'next/cache';
 
 // Create client with anon key - we use SECURITY DEFINER functions to bypass RLS
 function getClient() {
@@ -91,10 +91,15 @@ export async function PATCH(request: NextRequest, { params }: Props) {
     .eq('id', id)
     .single();
 
-  // Clear partner cache so public page shows updated data immediately
-  if (draft?.partners?.slug) {
-    clearPartnerCache(draft.partners.slug);
-    console.log('[Admin] Cache cleared for partner:', draft.partners.slug);
+  // Invalidate Next.js cache for partner pages (on-demand revalidation)
+  // This immediately refreshes the public pages after approval
+  if (action === 'approve' && draft?.partners?.slug && draft?.partners?.city_slug) {
+    const partnerPath = `/taxi/${draft.partners.city_slug}/${draft.partners.slug}`;
+    const cityPath = `/taxi/${draft.partners.city_slug}`;
+
+    revalidatePath(partnerPath);
+    revalidatePath(cityPath);
+    console.log('[Admin] Revalidated paths:', partnerPath, cityPath);
   }
 
   return NextResponse.json({

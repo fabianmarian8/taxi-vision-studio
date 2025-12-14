@@ -31,24 +31,17 @@ export interface ApprovedPartnerData {
   social_instagram: string | null;
 }
 
-// Cache for approved partner data (in-memory, per server instance)
-// Note: On Vercel serverless, each instance has its own cache
-// Combined with ISR revalidate=60, this ensures fresh data within ~90 seconds
-const partnerDataCache = new Map<string, { data: ApprovedPartnerData | null; timestamp: number }>();
-const CACHE_TTL = 30 * 1000; // 30 seconds - short TTL for real-time partner updates
-
 /**
  * Fetch approved partner data from Supabase using SECURITY DEFINER RPC function
  * This bypasses RLS to allow public reading of approved partner data
  * Returns null if no approved draft exists
+ *
+ * NOTE: No in-memory caching is used because:
+ * 1. Vercel serverless functions are stateless - cache doesn't persist across instances
+ * 2. We use on-demand revalidation (revalidatePath) in admin API after approval
+ * 3. Next.js ISR with revalidate=60 provides the caching layer
  */
 export async function getApprovedPartnerData(partnerSlug: string): Promise<ApprovedPartnerData | null> {
-  // Check cache first
-  const cached = partnerDataCache.get(partnerSlug);
-  if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
-    return cached.data;
-  }
-
   try {
     const supabase = getReadOnlyClient();
 
@@ -59,7 +52,6 @@ export async function getApprovedPartnerData(partnerSlug: string): Promise<Appro
 
     if (error) {
       console.error('[getApprovedPartnerData] RPC error:', error.message);
-      partnerDataCache.set(partnerSlug, { data: null, timestamp: Date.now() });
       return null;
     }
 
@@ -68,13 +60,12 @@ export async function getApprovedPartnerData(partnerSlug: string): Promise<Appro
 
     if (!draft) {
       console.log('[getApprovedPartnerData] No approved draft found for:', partnerSlug);
-      partnerDataCache.set(partnerSlug, { data: null, timestamp: Date.now() });
       return null;
     }
 
     console.log('[getApprovedPartnerData] Found approved data with gallery:', draft.gallery?.length || 0, 'images');
 
-    const approvedData: ApprovedPartnerData = {
+    return {
       company_name: draft.company_name,
       description: draft.description,
       show_description: draft.show_description,
@@ -95,18 +86,8 @@ export async function getApprovedPartnerData(partnerSlug: string): Promise<Appro
       social_facebook: draft.social_facebook,
       social_instagram: draft.social_instagram,
     };
-
-    partnerDataCache.set(partnerSlug, { data: approvedData, timestamp: Date.now() });
-    return approvedData;
   } catch (error) {
     console.error('[getApprovedPartnerData] Error:', error);
     return null;
   }
-}
-
-/**
- * Clear cache for a specific partner (call after approval)
- */
-export function clearPartnerCache(partnerSlug: string): void {
-  partnerDataCache.delete(partnerSlug);
 }
