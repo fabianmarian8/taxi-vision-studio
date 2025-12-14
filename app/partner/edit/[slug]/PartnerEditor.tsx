@@ -357,7 +357,20 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
           companyName: formData.company_name,
           citySlug: partner.city_slug,
         }),
-      }).catch((err) => console.warn('Failed to send notification:', err));
+      })
+        .then((res) => {
+          if (!res.ok) {
+            console.error('[Notify] HTTP error:', res.status, res.statusText);
+          }
+          return res.json();
+        })
+        .then((data) => {
+          console.log('[Notify] Response:', data);
+          if (!data.emailSent && data.error) {
+            console.error('[Notify] Email failed:', data.error);
+          }
+        })
+        .catch((err) => console.warn('[Notify] Network error:', err));
 
       setMessage({
         type: 'success',
