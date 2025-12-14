@@ -19,6 +19,7 @@ export interface PartnerDraft {
   // Editovateľné polia
   company_name: string | null;
   description: string | null;
+  show_description: boolean | null;
   phone: string | null;
   email: string | null;
   website: string | null;

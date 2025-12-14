@@ -4,17 +4,20 @@ import { useState, useCallback, useRef } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 import { Partner, PartnerDraft } from '@/lib/supabase/types';
+import { TaxiPreview } from './TaxiPreview';
 
 interface Props {
   partner: Partner & { partner_drafts: PartnerDraft[] };
   initialDraft: PartnerDraft | null;
   userEmail: string;
   rejectionMessage?: string | null;
+  cityName?: string;
 }
 
 interface FormData {
   company_name: string;
   description: string;
+  show_description: boolean;
   phone: string;
   email: string;
   website: string;
@@ -52,11 +55,12 @@ function getThumbnailUrl(url: string, width: number = 300): string {
   return url;
 }
 
-export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessage }: Props) {
+export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessage, cityName = 'Zvolen' }: Props) {
   const [showRejectionMessage, setShowRejectionMessage] = useState(!!rejectionMessage);
   const [formData, setFormData] = useState<FormData>({
     company_name: initialDraft?.company_name || partner.name || '',
     description: initialDraft?.description || '',
+    show_description: initialDraft?.show_description ?? true,
     phone: initialDraft?.phone || '',
     email: initialDraft?.email || '',
     website: initialDraft?.website || '',
@@ -477,9 +481,27 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Popis
-                    </label>
+                    <div className="flex items-center justify-between mb-2">
+                      <label className="block text-sm font-medium text-gray-700">
+                        Popis (sekcia "O nás")
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() => handleChange('show_description', !formData.show_description)}
+                        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                          formData.show_description ? 'bg-purple-600' : 'bg-gray-300'
+                        }`}
+                      >
+                        <span
+                          className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                            formData.show_description ? 'translate-x-6' : 'translate-x-1'
+                          }`}
+                        />
+                      </button>
+                    </div>
+                    {!formData.show_description && (
+                      <p className="text-xs text-amber-600 mb-2">Sekcia "O nás" nebude zobrazená na stránke</p>
+                    )}
                     <textarea
                       value={formData.description}
                       onChange={(e) => handleChange('description', e.target.value)}
@@ -876,127 +898,11 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
           </div>
 
           {/* Live Preview Panel */}
-          <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-            <div className="bg-gray-50 px-6 py-3 border-b border-gray-200">
-              <h3 className="text-sm font-medium text-gray-700 flex items-center gap-2">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-                Náhľad zmien
-              </h3>
-            </div>
-            <div className="p-6">
-              {/* Hero Preview */}
-              <div className="mb-6">
-                <h4 className="text-xs font-medium text-gray-500 uppercase mb-3">Hero sekcia</h4>
-                <div
-                  className="relative rounded-lg overflow-hidden bg-gradient-to-br from-purple-600 to-purple-800 aspect-video"
-                  style={
-                    formData.hero_image_url
-                      ? {
-                          backgroundImage: `url(${formData.hero_image_url})`,
-                          backgroundSize: `${formData.hero_image_zoom}%`,
-                          backgroundPosition: `${formData.hero_image_pos_x}% ${formData.hero_image_pos_y}%`
-                        }
-                      : {}
-                  }
-                >
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <h2 className="text-xl font-bold mb-1">
-                        {formData.hero_title || formData.company_name || 'Názov taxislužby'}
-                      </h2>
-                      <p className="text-sm opacity-90">
-                        {formData.hero_subtitle || 'Podnadpis'}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Info Preview */}
-              <div className="mb-6">
-                <h4 className="text-xs font-medium text-gray-500 uppercase mb-3">Základné info</h4>
-                <div className="bg-gray-50 rounded-lg p-4 space-y-2">
-                  <p className="font-semibold text-gray-900">{formData.company_name || 'Názov'}</p>
-                  {formData.description && (
-                    <p className="text-sm text-gray-600">{formData.description}</p>
-                  )}
-                  {formData.phone && (
-                    <p className="text-sm text-gray-600">
-                      <span className="font-medium">Tel:</span> {formData.phone}
-                    </p>
-                  )}
-                  {formData.email && (
-                    <p className="text-sm text-gray-600">
-                      <span className="font-medium">Email:</span> {formData.email}
-                    </p>
-                  )}
-                  {formData.website && (
-                    <p className="text-sm text-purple-600">{formData.website}</p>
-                  )}
-                </div>
-              </div>
-
-              {/* Services Preview */}
-              {formData.services.length > 0 && (
-                <div className="mb-6">
-                  <h4 className="text-xs font-medium text-gray-500 uppercase mb-3">Služby</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {formData.services.map((service) => (
-                      <span
-                        key={service}
-                        className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium"
-                      >
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Gallery Preview */}
-              {formData.gallery.length > 0 && (
-                <div className="mb-6">
-                  <h4 className="text-xs font-medium text-gray-500 uppercase mb-3">
-                    Galéria ({formData.gallery.length})
-                  </h4>
-                  <div className="grid grid-cols-3 gap-1.5">
-                    {formData.gallery.slice(0, 6).map((url, index) => (
-                      <div key={index} className="aspect-video rounded overflow-hidden bg-gray-100">
-                        <img
-                          src={getThumbnailUrl(url, 200)}
-                          alt={`Galéria ${index + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                  {formData.gallery.length > 6 && (
-                    <p className="text-xs text-gray-500 mt-2 text-center">
-                      + {formData.gallery.length - 6} ďalších
-                    </p>
-                  )}
-                </div>
-              )}
-
-              {/* Social Preview */}
-              {(formData.social_facebook || formData.social_instagram) && (
-                <div>
-                  <h4 className="text-xs font-medium text-gray-500 uppercase mb-3">Sociálne siete</h4>
-                  <div className="flex gap-3">
-                    {formData.social_facebook && (
-                      <span className="text-sm text-blue-600">Facebook: /{formData.social_facebook}</span>
-                    )}
-                    {formData.social_instagram && (
-                      <span className="text-sm text-pink-600">Instagram: @{formData.social_instagram}</span>
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+          <TaxiPreview
+            formData={formData}
+            partnerSlug={partner.slug}
+            cityName={cityName}
+          />
         </div>
       </div>
     </div>

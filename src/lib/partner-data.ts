@@ -12,6 +12,7 @@ function getReadOnlyClient() {
 export interface ApprovedPartnerData {
   company_name: string | null;
   description: string | null;
+  show_description: boolean | null;
   phone: string | null;
   email: string | null;
   website: string | null;
@@ -74,6 +75,7 @@ export async function getApprovedPartnerData(partnerSlug: string): Promise<Appro
     const approvedData: ApprovedPartnerData = {
       company_name: draft.company_name,
       description: draft.description,
+      show_description: draft.show_description,
       phone: draft.phone,
       email: draft.email,
       website: draft.website,

@@ -4,6 +4,54 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 
+// Helper to translate Supabase errors to Slovak
+function translateError(error: { message: string; status?: number }): string {
+  const msg = error.message.toLowerCase();
+
+  // Rate limit errors
+  if (msg.includes('rate limit') || msg.includes('too many requests') || error.status === 429) {
+    return 'Príliš veľa pokusov. Počkajte prosím minútu a skúste znova.';
+  }
+
+  // Email not found / user not found
+  if (msg.includes('user not found') || msg.includes('no user found')) {
+    return 'Používateľ s týmto emailom neexistuje.';
+  }
+
+  // Signups not allowed
+  if (msg.includes('signups not allowed') || msg.includes('signup')) {
+    return 'Registrácia nie je povolená. Kontaktujte administrátora.';
+  }
+
+  // Invalid credentials
+  if (msg.includes('invalid login credentials') || msg.includes('invalid password')) {
+    return 'Nesprávny email alebo heslo.';
+  }
+
+  // OTP expired
+  if (msg.includes('expired') || msg.includes('token has expired')) {
+    return 'Kód vypršal. Vyžiadajte si nový kód.';
+  }
+
+  // Invalid OTP
+  if (msg.includes('invalid') && msg.includes('otp')) {
+    return 'Nesprávny overovací kód.';
+  }
+
+  // Network errors
+  if (msg.includes('network') || msg.includes('fetch') || msg.includes('failed to fetch')) {
+    return 'Chyba siete. Skontrolujte pripojenie k internetu.';
+  }
+
+  // Email sending failed
+  if (msg.includes('email') && (msg.includes('send') || msg.includes('deliver'))) {
+    return 'Nepodarilo sa odoslať email. Skúste to znova neskôr.';
+  }
+
+  // Default - return original message
+  return error.message;
+}
+
 export default function PartnerLoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState('');
@@ -19,17 +67,21 @@ export default function PartnerLoginPage() {
     setLoading(true);
     setMessage(null);
 
-    const supabase = createClient();
+    try {
+      const supabase = createClient();
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
 
-    if (error) {
-      setMessage({ type: 'error', text: error.message });
-    } else {
-      router.push('/partner');
+      if (error) {
+        setMessage({ type: 'error', text: translateError(error) });
+      } else {
+        router.push('/partner');
+      }
+    } catch (err) {
+      setMessage({ type: 'error', text: 'Neočakávaná chyba. Skúste to znova.' });
     }
 
     setLoading(false);
@@ -40,24 +92,37 @@ export default function PartnerLoginPage() {
     setLoading(true);
     setMessage(null);
 
-    const supabase = createClient();
+    try {
+      const supabase = createClient();
 
-    // Send OTP code (not magic link)
-    const { error } = await supabase.auth.signInWithOtp({
-      email,
-      options: {
-        shouldCreateUser: false, // Don't create new users, only existing partners
-      },
-    });
-
-    if (error) {
-      setMessage({ type: 'error', text: error.message });
-    } else {
-      setOtpSent(true);
-      setMessage({
-        type: 'success',
-        text: 'Kód bol odoslaný na váš email. Zadajte ho nižšie.',
+      // Create a promise that rejects after 15 seconds
+      const timeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error('Časový limit vypršal. Server neodpovedá.')), 15000);
       });
+
+      // Send OTP code (not magic link)
+      const otpPromise = supabase.auth.signInWithOtp({
+        email,
+        options: {
+          shouldCreateUser: false, // Don't create new users, only existing partners
+        },
+      });
+
+      // Race between the OTP request and timeout
+      const { error } = await Promise.race([otpPromise, timeoutPromise]) as { error: { message: string; status?: number } | null };
+
+      if (error) {
+        setMessage({ type: 'error', text: translateError(error) });
+      } else {
+        setOtpSent(true);
+        setMessage({
+          type: 'success',
+          text: 'Kód bol odoslaný na váš email. Zadajte ho nižšie.',
+        });
+      }
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Neočakávaná chyba. Skúste to znova.';
+      setMessage({ type: 'error', text: errorMessage });
     }
 
     setLoading(false);
@@ -68,18 +133,22 @@ export default function PartnerLoginPage() {
     setLoading(true);
     setMessage(null);
 
-    const supabase = createClient();
+    try {
+      const supabase = createClient();
 
-    const { error } = await supabase.auth.verifyOtp({
-      email,
-      token: otpCode,
-      type: 'email',
-    });
+      const { error } = await supabase.auth.verifyOtp({
+        email,
+        token: otpCode,
+        type: 'email',
+      });
 
-    if (error) {
-      setMessage({ type: 'error', text: error.message });
-    } else {
-      router.push('/partner');
+      if (error) {
+        setMessage({ type: 'error', text: translateError(error) });
+      } else {
+        router.push('/partner');
+      }
+    } catch (err) {
+      setMessage({ type: 'error', text: 'Neočakávaná chyba. Skúste to znova.' });
     }
 
     setLoading(false);

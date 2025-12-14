@@ -22,7 +22,7 @@ import { CityContent } from '@/components/CityContent';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { LocalBusinessSchema } from '@/components/schema/LocalBusinessSchema';
 import { TaxiServiceSchema } from '@/components/schema/TaxiServiceSchema';
-import { MapPin, Phone, Globe, Crown, ArrowLeft, Star, BadgeCheck, CheckCircle2, ArrowRight, Clock, Award, Car, MessageCircle, Eye, FileText, ScrollText, Users } from 'lucide-react';
+import { MapPin, Phone, Globe, Crown, ArrowLeft, Star, BadgeCheck, CheckCircle2, ArrowRight, Clock, Award, Car, MessageCircle, Eye, FileText, ScrollText, Users, Facebook, Instagram, Mail } from 'lucide-react';
 import { getCityBySlug, createRegionSlug, slovakCities, getRegionBySlug, type CityData, type TaxiService, findNearbyCitiesWithTaxis } from '@/data/cities';
 import { NearbyCitiesSection } from '@/components/NearbyCitiesSection';
 import { getMunicipalityBySlug, findNearestCitiesWithTaxis, allMunicipalities, type Municipality } from '@/data/municipalities';
@@ -1280,6 +1280,11 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
     const heroImagePosX = approvedData?.hero_image_pos_x || 50;
     const heroImagePosY = approvedData?.hero_image_pos_y || 50;
 
+    // Social links from approved data
+    const mergedFacebook = approvedData?.social_facebook || null;
+    const mergedInstagram = approvedData?.social_instagram || null;
+    const mergedEmail = approvedData?.email || null;
+
     return (
       <div className="min-h-screen overflow-x-hidden partner-page-bg">
         <TaxiServiceSchema
@@ -1496,6 +1501,37 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                     <span>Prepravný poriadok</span>
                   </a>
                 )}
+                {mergedEmail && (
+                  <a
+                    href={`mailto:${mergedEmail}`}
+                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
+                  >
+                    <Mail className="h-4 w-4 md:h-5 md:w-5" />
+                    <span>Email</span>
+                  </a>
+                )}
+                {mergedFacebook && (
+                  <a
+                    href={mergedFacebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
+                  >
+                    <Facebook className="h-4 w-4 md:h-5 md:w-5" />
+                    <span>Facebook</span>
+                  </a>
+                )}
+                {mergedInstagram && (
+                  <a
+                    href={mergedInstagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
+                  >
+                    <Instagram className="h-4 w-4 md:h-5 md:w-5" />
+                    <span>Instagram</span>
+                  </a>
+                )}
                               </div>
             </div>
 
@@ -1503,6 +1539,16 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             {mergedGallery && mergedGallery.length > 0 && (
               <div className="mt-6">
                 <TaxiGallery images={mergedGallery} serviceName={service.name} />
+              </div>
+            )}
+
+            {/* About / Description Section - from partner portal */}
+            {(approvedData?.show_description !== false) && mergedDescription && (
+              <div className="mt-6 md:mt-8 bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-sm">
+                <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">O nás</h2>
+                <p className="text-sm md:text-base text-foreground/80 leading-relaxed whitespace-pre-line">
+                  {mergedDescription}
+                </p>
               </div>
             )}
 
