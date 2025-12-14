@@ -608,15 +608,12 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
                     {formData.hero_image_url && (
                       <div className="mb-4 space-y-3">
                         <div className="relative rounded-lg overflow-hidden aspect-video bg-gray-100">
-                          <img
-                            src={formData.hero_image_url}
-                            alt="Hero preview"
-                            className="w-full h-full"
+                          <div
+                            className="absolute inset-0 bg-no-repeat"
                             style={{
-                              objectFit: 'cover',
-                              objectPosition: `${formData.hero_image_pos_x}% ${formData.hero_image_pos_y}%`,
-                              transform: `scale(${formData.hero_image_zoom / 100})`,
-                              transformOrigin: `${formData.hero_image_pos_x}% ${formData.hero_image_pos_y}%`,
+                              backgroundImage: `url(${formData.hero_image_url})`,
+                              backgroundPosition: `${formData.hero_image_pos_x}% ${formData.hero_image_pos_y}%`,
+                              backgroundSize: `${formData.hero_image_zoom}%`,
                             }}
                           />
                         </div>
