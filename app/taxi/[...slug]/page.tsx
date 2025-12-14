@@ -61,8 +61,9 @@ import {
   type Location
 } from '@/data/locations';
 
-// ISR: Revalidate once per week
-export const revalidate = 604800;
+// ISR: Revalidate every 60 seconds for partner data updates
+// Partners can edit their profiles in real-time, so we need fresh data
+export const revalidate = 60;
 
 // Enable dynamic params for all patterns
 export const dynamicParams = true;

@@ -32,8 +32,10 @@ export interface ApprovedPartnerData {
 }
 
 // Cache for approved partner data (in-memory, per server instance)
+// Note: On Vercel serverless, each instance has its own cache
+// Combined with ISR revalidate=60, this ensures fresh data within ~90 seconds
 const partnerDataCache = new Map<string, { data: ApprovedPartnerData | null; timestamp: number }>();
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+const CACHE_TTL = 30 * 1000; // 30 seconds - short TTL for real-time partner updates
 
 /**
  * Fetch approved partner data from Supabase using SECURITY DEFINER RPC function
