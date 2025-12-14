@@ -325,7 +325,7 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
     } else {
       setMessage({
         type: 'success',
-        text: 'Zmeny boli odoslané na schválenie. O výsledku vás budeme informovať emailom.',
+        text: 'Zmeny boli odoslané na schválenie.',
       });
     }
 
