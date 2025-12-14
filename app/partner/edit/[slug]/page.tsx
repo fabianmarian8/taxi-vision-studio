@@ -76,7 +76,7 @@ export default async function PartnerEditPage({ params }: Props) {
     redirect('/partner/login');
   }
 
-  // Get partner by slug
+  // Get partner by slug with drafts ordered by updated_at DESC
   const { data: partner, error } = await supabase
     .from('partners')
     .select(`
@@ -85,6 +85,7 @@ export default async function PartnerEditPage({ params }: Props) {
     `)
     .eq('slug', slug)
     .eq('user_id', user.id)
+    .order('updated_at', { ascending: false, referencedTable: 'partner_drafts' })
     .single();
 
   if (error || !partner) {
