@@ -1281,9 +1281,17 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
     const heroImagePosX = approvedData?.hero_image_pos_x || 50;
     const heroImagePosY = approvedData?.hero_image_pos_y || 50;
 
-    // Social links from approved data
-    const mergedFacebook = approvedData?.social_facebook || null;
-    const mergedInstagram = approvedData?.social_instagram || null;
+    // Social links from approved data - build full URLs
+    const mergedFacebook = approvedData?.social_facebook
+      ? (approvedData.social_facebook.startsWith('http')
+          ? approvedData.social_facebook
+          : `https://facebook.com/${approvedData.social_facebook}`)
+      : null;
+    const mergedInstagram = approvedData?.social_instagram
+      ? (approvedData.social_instagram.startsWith('http')
+          ? approvedData.social_instagram
+          : `https://instagram.com/${approvedData.social_instagram}`)
+      : null;
     const mergedEmail = approvedData?.email || null;
 
     return (
