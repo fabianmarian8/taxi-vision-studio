@@ -126,10 +126,12 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
     }
 
     const uploadedUrls: string[] = [];
-    const errors: string[] = [];
+    const errors: { name: string; reason: string }[] = [];
 
     for (let i = 0; i < filesToUpload; i++) {
       const file = files[i];
+      console.log(`[Gallery] Uploading file ${i + 1}/${filesToUpload}: ${file.name} (${file.type}, ${Math.round(file.size / 1024)}KB)`);
+
       try {
         const uploadFormData = new FormData();
         uploadFormData.append('file', file);
@@ -140,15 +142,29 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
           body: uploadFormData,
         });
 
+        console.log(`[Gallery] Response status: ${response.status}`);
+
+        // Handle non-JSON responses (like HTML error pages)
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          const text = await response.text();
+          console.error('[Gallery] Non-JSON response:', text.substring(0, 200));
+          throw new Error('Server vrátil neočakávanú odpoveď');
+        }
+
         const result = await response.json();
+        console.log(`[Gallery] Result:`, result);
 
         if (!response.ok) {
-          throw new Error(result.error || 'Upload failed');
+          throw new Error(result.error || `HTTP ${response.status}`);
         }
 
         uploadedUrls.push(result.url);
+        console.log(`[Gallery] Successfully uploaded: ${file.name}`);
       } catch (error) {
-        errors.push(file.name);
+        const errorMessage = error instanceof Error ? error.message : 'Neznáma chyba';
+        console.error(`[Gallery] Error uploading ${file.name}:`, error);
+        errors.push({ name: file.name, reason: errorMessage });
       }
     }
 
@@ -163,9 +179,11 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
     setGalleryUploading(false);
 
     if (errors.length > 0) {
+      const errorDetails = errors.map(e => `${e.name}: ${e.reason}`).join('; ');
+      console.error('[Gallery] Upload errors:', errorDetails);
       setMessage({
         type: 'error',
-        text: `Nepodarilo sa nahrať: ${errors.join(', ')}`,
+        text: `Nepodarilo sa nahrať ${errors.length} súbor(y): ${errors.map(e => e.name).join(', ')}. Dôvod: ${errors[0].reason}`,
       });
     } else if (uploadedUrls.length > 0) {
       setMessage({

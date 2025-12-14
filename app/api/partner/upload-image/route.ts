@@ -4,6 +4,8 @@ import sharp from 'sharp';
 
 export async function POST(request: NextRequest) {
   try {
+    console.log('[Upload API] Request received');
+
     const supabase = await createClient();
 
     // Check authentication
@@ -12,8 +14,11 @@ export async function POST(request: NextRequest) {
     } = await supabase.auth.getUser();
 
     if (!user) {
+      console.log('[Upload API] Unauthorized - no user');
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
+
+    console.log('[Upload API] User authenticated:', user.id);
 
     // Get form data
     const formData = await request.formData();
@@ -21,31 +26,39 @@ export async function POST(request: NextRequest) {
     const type = formData.get('type') as string; // 'hero' or 'logo'
 
     if (!file) {
+      console.log('[Upload API] No file provided');
       return NextResponse.json({ error: 'No file provided' }, { status: 400 });
     }
+
+    console.log(`[Upload API] File received: ${file.name}, type: ${file.type}, size: ${Math.round(file.size / 1024)}KB`);
 
     // Validate file type
     const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
     if (!allowedTypes.includes(file.type)) {
+      console.log(`[Upload API] Invalid file type: ${file.type}`);
       return NextResponse.json(
-        { error: 'Invalid file type. Allowed: JPEG, PNG, WebP, GIF' },
+        { error: `Neplatný typ súboru: ${file.type}. Povolené: JPEG, PNG, WebP, GIF` },
         { status: 400 }
       );
     }
 
     // Validate file size (5MB max)
     if (file.size > 5 * 1024 * 1024) {
+      console.log(`[Upload API] File too large: ${file.size} bytes`);
       return NextResponse.json(
-        { error: 'File too large. Maximum size is 5MB' },
+        { error: 'Súbor je príliš veľký. Maximum je 5MB' },
         { status: 400 }
       );
     }
 
     // Convert to buffer
+    console.log('[Upload API] Converting to buffer...');
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
+    console.log(`[Upload API] Buffer created: ${buffer.length} bytes`);
 
     // Process with sharp - resize and convert to WebP
+    console.log('[Upload API] Processing with sharp...');
     let processedImage: Buffer;
 
     if (type === 'hero') {
@@ -86,6 +99,8 @@ export async function POST(request: NextRequest) {
         .toBuffer();
     }
 
+    console.log(`[Upload API] Sharp processing complete: ${processedImage.length} bytes`);
+
     // Generate unique filename
     const timestamp = Date.now();
     const randomId = Math.random().toString(36).substring(2, 8);
@@ -95,6 +110,7 @@ export async function POST(request: NextRequest) {
     // Generate thumbnail for gallery images (200x200 cover crop)
     let thumbnailBuffer: Buffer | null = null;
     if (type === 'gallery') {
+      console.log('[Upload API] Generating thumbnail...');
       thumbnailBuffer = await sharp(buffer)
         .resize(200, 200, {
           fit: 'cover',
@@ -102,9 +118,11 @@ export async function POST(request: NextRequest) {
         })
         .webp({ quality: 75 })
         .toBuffer();
+      console.log(`[Upload API] Thumbnail generated: ${thumbnailBuffer.length} bytes`);
     }
 
     // Upload main image to Supabase Storage
+    console.log(`[Upload API] Uploading to Supabase: ${filename}`);
     const { data, error } = await supabase.storage
       .from('partner-images')
       .upload(filename, processedImage, {
@@ -113,12 +131,14 @@ export async function POST(request: NextRequest) {
       });
 
     if (error) {
-      console.error('Storage upload error:', error);
+      console.error('[Upload API] Storage upload error:', error);
       return NextResponse.json(
-        { error: 'Failed to upload image: ' + error.message },
+        { error: 'Chyba pri nahrávaní: ' + error.message },
         { status: 500 }
       );
     }
+
+    console.log('[Upload API] Main image uploaded successfully');
 
     // Upload thumbnail if generated
     if (thumbnailBuffer) {
@@ -149,6 +169,8 @@ export async function POST(request: NextRequest) {
       thumbnailUrl = thumbUrlData.publicUrl;
     }
 
+    console.log(`[Upload API] Success! URL: ${urlData.publicUrl}`);
+
     return NextResponse.json({
       success: true,
       url: urlData.publicUrl,
@@ -157,9 +179,10 @@ export async function POST(request: NextRequest) {
       size: processedImage.length,
     });
   } catch (error) {
-    console.error('Upload error:', error);
+    console.error('[Upload API] Unexpected error:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Neznáma chyba';
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: `Chyba servera: ${errorMessage}` },
       { status: 500 }
     );
   }
