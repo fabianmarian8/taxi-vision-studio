@@ -36,20 +36,15 @@ interface FormData {
   social_instagram: string;
 }
 
-// Generate thumbnail URL for Supabase storage images
-function getThumbnailUrl(url: string, width: number = 300): string {
+// Get thumbnail URL - use pre-generated thumbnails for Supabase storage images
+function getThumbnailUrl(url: string): string {
   if (!url) return url;
 
-  // For Supabase storage URLs, use image transformation
-  if (url.includes('supabase.co/storage')) {
-    // Add render/image transformation for thumbnails
-    // Format: /render/image/sign/.../object/.../...?width=300
-    const transformUrl = url.replace(
-      '/storage/v1/object/public/',
-      `/storage/v1/render/image/public/`
-    );
-    const separator = transformUrl.includes('?') ? '&' : '?';
-    return `${transformUrl}${separator}width=${width}&quality=80`;
+  // For Supabase storage URLs, use pre-generated thumbnail (-thumb.webp)
+  // These are created during upload in /api/partner/upload-image
+  if (url.includes('supabase.co/storage') && url.endsWith('.webp')) {
+    // Replace .webp with -thumb.webp
+    return url.replace('.webp', '-thumb.webp');
   }
 
   return url;
@@ -779,7 +774,7 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
                         {formData.gallery.map((url, index) => (
                           <div key={index} className="relative group aspect-video rounded-lg overflow-hidden bg-gray-100">
                             <img
-                              src={getThumbnailUrl(url, 400)}
+                              src={getThumbnailUrl(url)}
                               alt={`Galéria ${index + 1}`}
                               className="w-full h-full object-cover"
                             />
