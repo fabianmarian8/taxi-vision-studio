@@ -128,9 +128,17 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
     const uploadedUrls: string[] = [];
     const errors: { name: string; reason: string }[] = [];
 
-    for (let i = 0; i < filesToUpload; i++) {
-      const file = files[i];
-      console.log(`[Gallery] Uploading file ${i + 1}/${filesToUpload}: ${file.name} (${file.type}, ${Math.round(file.size / 1024)}KB)`);
+    // Convert FileList to Array for reliable iteration
+    const filesArray = Array.from(files).slice(0, filesToUpload);
+    console.log(`[Gallery] Files to upload: ${filesArray.length}, names: ${filesArray.map(f => f.name).join(', ')}`);
+
+    for (let i = 0; i < filesArray.length; i++) {
+      const file = filesArray[i];
+      if (!file) {
+        console.error(`[Gallery] File at index ${i} is undefined, skipping`);
+        continue;
+      }
+      console.log(`[Gallery] Uploading file ${i + 1}/${filesArray.length}: ${file.name} (${file.type}, ${Math.round(file.size / 1024)}KB)`);
 
       try {
         const uploadFormData = new FormData();
