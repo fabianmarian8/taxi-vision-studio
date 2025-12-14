@@ -348,6 +348,16 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
     if (result.error) {
       setMessage({ type: 'error', text: 'Chyba pri odosielaní: ' + result.error.message });
     } else {
+      // Send notification email (fire and forget - don't block on this)
+      fetch('/api/partner/notify-submission', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          companyName: formData.company_name,
+          citySlug: partner.city_slug,
+        }),
+      }).catch((err) => console.warn('Failed to send notification:', err));
+
       setMessage({
         type: 'success',
         text: 'Zmeny boli odoslané na schválenie.',
