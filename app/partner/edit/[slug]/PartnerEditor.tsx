@@ -352,6 +352,7 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
       fetch('/api/partner/notify-submission', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include', // Include cookies for Supabase auth
         body: JSON.stringify({
           companyName: formData.company_name,
           citySlug: partner.city_slug,
