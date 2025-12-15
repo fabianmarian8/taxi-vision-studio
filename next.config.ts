@@ -70,8 +70,8 @@ const nextConfig: NextConfig = {
 
   // Experimental features
   experimental: {
-    // Zapnutie optimalizácie CSS (requires 'critters' package)
-    optimizeCss: true,
+    // optimizeCss vypnute - na Verceli sposobuje pomale TTFB a nefunguje spolahlivo
+    optimizeCss: false,
     // Optimalizácia importov pre menší bundle size
     optimizePackageImports: ['lucide-react', 'date-fns', 'recharts', '@radix-ui/react-icons'],
     
