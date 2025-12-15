@@ -115,15 +115,6 @@ export default function RootLayout({
   return (
     <html lang="sk" suppressHydrationWarning className={inter.variable}>
       <head>
-        {/* LCP Optimalizácia: Preload hero obrázka */}
-        <link
-          rel="preload"
-          as="image"
-          type="image/webp"
-          href="/taxi-nearme-logo.webp"
-          fetchPriority="high"
-        />
-
         {/* Preconnect pre externe domény - zrýchľuje načítanie */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
