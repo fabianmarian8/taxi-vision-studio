@@ -70,40 +70,17 @@ const nextConfig: NextConfig = {
 
   // Experimental features
   experimental: {
+    // Zapnutie optimalizácie CSS (requires 'critters' package)
+    optimizeCss: true,
+    // Optimalizácia importov pre menší bundle size
+    optimizePackageImports: ['lucide-react', 'date-fns', 'recharts', '@radix-ui/react-icons'],
+    
     // Server Actions - pripravené pre Stripe platby
     serverActions: {
       allowedOrigins: ['localhost:3000', 'taxinearme.sk', 'www.taxinearme.sk'],
       bodySizeLimit: '2mb',
     },
-    // NOTE: optimizeCss s critters nefunguje spoľahlivo na Vercel
-    // Namiesto toho používame font-display: swap a minimalizáciu fontov
   },
-
-  // Output configuration:
-  // Using default (no static export) to support API routes
-  // API routes vyžadujú server-side rendering, ktoré je default v Next.js
-  // Pre Vercel je toto optimálne nastavenie
-
-  // Redirects (ak potrebné)
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/old-path',
-  //       destination: '/new-path',
-  //       permanent: true,
-  //     },
-  //   ];
-  // },
-
-  // Rewrites (ak potrebné pre API routes)
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/api/:path*',
-  //       destination: '/api/:path*',
-  //     },
-  //   ];
-  // },
 };
 
 export default nextConfig;
