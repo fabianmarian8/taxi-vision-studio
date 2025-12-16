@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
@@ -17,6 +17,9 @@ interface ChatWidgetProps {
   partnerEmail: string;
 }
 
+// Polling interval in milliseconds (3 seconds)
+const POLL_INTERVAL = 3000;
+
 export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -25,18 +28,53 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const lastMessageIdRef = useRef<string | null>(null);
 
   // Memoize supabase client
   const supabase = useMemo(() => createClient(), []);
 
-  // Load messages on open
+  // Function to check for new messages (polling)
+  const checkForNewMessages = useCallback(async () => {
+    if (!partnerId) return;
+
+    try {
+      const { data, error: fetchError } = await supabase
+        .from('chat_messages')
+        .select('*')
+        .eq('partner_id', partnerId)
+        .order('created_at', { ascending: true });
+
+      if (fetchError) {
+        console.error('Error polling messages:', fetchError);
+        return;
+      }
+
+      if (data && data.length > 0) {
+        const latestId = data[data.length - 1].id;
+        // Only update if there are new messages
+        if (latestId !== lastMessageIdRef.current) {
+          setMessages(data);
+          lastMessageIdRef.current = latestId;
+        }
+      }
+    } catch (err) {
+      console.error('Error polling messages:', err);
+    }
+  }, [partnerId, supabase]);
+
+  // Load messages on open and start polling
   useEffect(() => {
     if (isOpen && partnerId) {
       loadMessages();
-      const cleanup = subscribeToMessages();
-      return cleanup;
+
+      // Start polling for new messages
+      const pollInterval = setInterval(checkForNewMessages, POLL_INTERVAL);
+
+      return () => {
+        clearInterval(pollInterval);
+      };
     }
-  }, [isOpen, partnerId]);
+  }, [isOpen, partnerId, checkForNewMessages]);
 
   // Scroll to bottom on new messages
   useEffect(() => {
@@ -58,53 +96,15 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
         setError('Nepodarilo sa načítať správy');
       } else if (data) {
         setMessages(data);
+        if (data.length > 0) {
+          lastMessageIdRef.current = data[data.length - 1].id;
+        }
       }
     } catch (err) {
       console.error('Error loading messages:', err);
       setError('Nepodarilo sa načítať správy');
     } finally {
       setIsLoading(false);
-    }
-  };
-
-  const subscribeToMessages = () => {
-    try {
-      const channel = supabase
-        .channel(`chat:${partnerId}`)
-        .on(
-          'postgres_changes',
-          {
-            event: 'INSERT',
-            schema: 'public',
-            table: 'chat_messages',
-            filter: `partner_id=eq.${partnerId}`,
-          },
-          (payload) => {
-            console.log('Realtime message received:', payload);
-            const newMsg = payload.new as Message;
-            // Avoid duplicates - check if message already exists
-            setMessages((prev) => {
-              const exists = prev.some((m) => m.id === newMsg.id);
-              if (exists) {
-                console.log('Message already exists, skipping');
-                return prev;
-              }
-              console.log('Adding new message to state');
-              return [...prev, newMsg];
-            });
-          }
-        )
-        .subscribe((status) => {
-          console.log('Realtime subscription status:', status);
-        });
-
-      return () => {
-        console.log('Unsubscribing from realtime');
-        supabase.removeChannel(channel);
-      };
-    } catch (err) {
-      console.error('Error subscribing to messages:', err);
-      return () => {};
     }
   };
 
