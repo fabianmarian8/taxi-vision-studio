@@ -310,18 +310,20 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
     setSaving(false);
   };
 
-  const submitForApproval = async () => {
+  const publishChanges = async () => {
     setSubmitting(true);
     setMessage(null);
 
     const supabase = createClient();
 
+    // Set status directly to 'approved' - changes are published immediately
     const draftData = {
       partner_id: partner.id,
-      status: 'pending' as const,
+      status: 'approved' as const,
       ...formData,
       services: formData.services,
       submitted_at: new Date().toISOString(),
+      reviewed_at: new Date().toISOString(),
     };
 
     let result;
@@ -346,35 +348,16 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
     }
 
     if (result.error) {
-      setMessage({ type: 'error', text: 'Chyba pri odosielaní: ' + result.error.message });
+      setMessage({ type: 'error', text: 'Chyba pri publikovaní: ' + result.error.message });
     } else {
-      // Send notification email (fire and forget - don't block on this)
-      fetch('/api/partner/notify-submission', {
+      // Revalidate the partner page to show changes immediately
+      fetch(`/api/revalidate?path=/taxi/${partner.city_slug}/${partner.slug}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include', // Include cookies for Supabase auth
-        body: JSON.stringify({
-          companyName: formData.company_name,
-          citySlug: partner.city_slug,
-        }),
-      })
-        .then((res) => {
-          if (!res.ok) {
-            console.error('[Notify] HTTP error:', res.status, res.statusText);
-          }
-          return res.json();
-        })
-        .then((data) => {
-          console.log('[Notify] Response:', data);
-          if (!data.emailSent && data.error) {
-            console.error('[Notify] Email failed:', data.error);
-          }
-        })
-        .catch((err) => console.warn('[Notify] Network error:', err));
+      }).catch((err) => console.warn('[Revalidate] Error:', err));
 
       setMessage({
         type: 'success',
-        text: 'Zmeny boli odoslané na schválenie.',
+        text: 'Zmeny boli publikované! Stránka sa aktualizuje do niekoľkých sekúnd.',
       });
     }
 
@@ -422,11 +405,11 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
                 {saving ? 'Ukladám...' : 'Uložiť rozpracované'}
               </button>
               <button
-                onClick={submitForApproval}
+                onClick={publishChanges}
                 disabled={submitting}
                 className="px-4 py-2 text-white bg-purple-600 rounded-lg hover:bg-purple-700 disabled:opacity-50 transition-colors"
               >
-                {submitting ? 'Odosielam...' : 'Odoslať na schválenie'}
+                {submitting ? 'Publikujem...' : 'Publikovať zmeny'}
               </button>
             </div>
           </div>
