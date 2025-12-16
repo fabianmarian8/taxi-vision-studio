@@ -103,19 +103,39 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
     const messageText = newMessage.trim();
     setNewMessage('');
 
+    // Optimistic update - show message immediately
+    const tempId = `temp-${Date.now()}`;
+    const optimisticMessage: Message = {
+      id: tempId,
+      sender_type: 'partner',
+      message: messageText,
+      created_at: new Date().toISOString(),
+    };
+    setMessages((prev) => [...prev, optimisticMessage]);
+
     try {
       // Insert message to Supabase
-      const { error: insertError } = await supabase.from('chat_messages').insert({
-        partner_id: partnerId,
-        sender_type: 'partner',
-        message: messageText,
-      });
+      const { data, error: insertError } = await supabase
+        .from('chat_messages')
+        .insert({
+          partner_id: partnerId,
+          sender_type: 'partner',
+          message: messageText,
+        })
+        .select()
+        .single();
 
       if (insertError) {
         console.error('Error sending message:', insertError);
         setError('Nepodarilo sa odoslať správu');
         setNewMessage(messageText); // Restore message
-      } else {
+        // Remove optimistic message on error
+        setMessages((prev) => prev.filter((m) => m.id !== tempId));
+      } else if (data) {
+        // Replace temp message with real one
+        setMessages((prev) =>
+          prev.map((m) => (m.id === tempId ? data : m))
+        );
         // Send Telegram notification (don't wait for it)
         fetch('/api/partner/chat-notify', {
           method: 'POST',
@@ -131,6 +151,8 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
       console.error('Error sending message:', err);
       setError('Nepodarilo sa odoslať správu');
       setNewMessage(messageText); // Restore message
+      // Remove optimistic message on error
+      setMessages((prev) => prev.filter((m) => m.id !== tempId));
     } finally {
       setIsSending(false);
     }
