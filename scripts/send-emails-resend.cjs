@@ -17,12 +17,12 @@ const https = require('https');
 const RESEND_API_KEY = 're_85fb8hVQ_8pkLheudxM3NLjwZMMcJjGxa';
 const FROM_EMAIL = 'Marián Fabián <info@taxinearme.sk>';
 const REPLY_TO = 'info@taxinearme.sk';
-const DAILY_LIMIT = 90; // Znížený limit pre bezpečnosť
-const DELAY_MS = 10000; // 10 sekúnd medzi emailami (bezpečnejšie)
+const DAILY_LIMIT = 1000; // Zvýšené predplatné - poslať všetko naraz
+const DELAY_MS = 1000; // 1 sekunda medzi emailami (rýchlejšie)
 
 // === SÚBORY ===
-const JSON_FILE = path.join(__dirname, '..', 'data', 'obce-mailing-list-v3-verified.json'); // v3 so správnymi URL
-const SENT_LOG = path.join(__dirname, '..', 'data', 'obce-sent-log-v3.json'); // Nový log pre v3
+const JSON_FILE = path.join(__dirname, '..', 'data', 'obce-mailing-list-v4-remaining.json'); // v4 - zostávajúce obce
+const SENT_LOG = path.join(__dirname, '..', 'data', 'obce-sent-log-v4.json'); // Nový log pre v4
 
 // === EMAIL ŠABLÓNA ===
 function getEmailSubject(nazovObce) {

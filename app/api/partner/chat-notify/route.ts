@@ -5,7 +5,7 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 export async function POST(request: NextRequest) {
   try {
-    const { partnerId, partnerName, partnerEmail, message } = await request.json();
+    const { partnerId, partnerName, partnerEmail, message, attachmentUrl, attachmentType } = await request.json();
 
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
       console.error('Telegram credentials not configured');
@@ -13,13 +13,19 @@ export async function POST(request: NextRequest) {
     }
 
     // Format message with partner ID for reply functionality
+    const attachmentInfo = attachmentUrl
+      ? `\n📎 *Príloha:* [${attachmentType === 'image' ? 'Obrázok' : 'PDF'}](${attachmentUrl})`
+      : '';
+
+    const messageText = message || (attachmentUrl ? '(len príloha)' : '');
+
     const telegramMessage = `🚕 *Nova sprava od partnera*
 
 👤 *Partner:* ${partnerName}
 📧 *Email:* ${partnerEmail}
 
 💬 *Sprava:*
-${message}
+${messageText}${attachmentInfo}
 
 ➡️ *Pre odpoved odpiste na tuto spravu*
 🆔 \`${partnerId}\``;

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import { MessageCircle, X, Send, Loader2, RotateCcw } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2, RotateCcw, Paperclip, FileText, Image as ImageIcon } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
 interface Message {
@@ -9,7 +9,13 @@ interface Message {
   sender_type: 'partner' | 'admin';
   message: string;
   created_at: string;
+  attachment_url?: string;
+  attachment_type?: string;
 }
+
+// Allowed file types and max size
+const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'application/pdf'];
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
 interface ChatWidgetProps {
   partnerId: string;
@@ -28,8 +34,11 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
   const [isSending, setIsSending] = useState(false);
   const [isClearing, setIsClearing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const lastMessageIdRef = useRef<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Memoize supabase client
   const supabase = useMemo(() => createClient(), []);
@@ -111,31 +120,53 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
 
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newMessage.trim() || isSending) return;
+    if ((!newMessage.trim() && !selectedFile) || isSending) return;
 
     setIsSending(true);
     setError(null);
     const messageText = newMessage.trim();
+    const fileToUpload = selectedFile;
     setNewMessage('');
+    setSelectedFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
 
     // Optimistic update - show message immediately
     const tempId = `temp-${Date.now()}`;
     const optimisticMessage: Message = {
       id: tempId,
       sender_type: 'partner',
-      message: messageText,
+      message: messageText || (fileToUpload ? `📎 ${fileToUpload.name}` : ''),
       created_at: new Date().toISOString(),
     };
     setMessages((prev) => [...prev, optimisticMessage]);
 
     try {
+      // Upload file if selected
+      let attachmentData: { url: string; type: string } | null = null;
+      if (fileToUpload) {
+        setIsUploading(true);
+        attachmentData = await uploadFile(fileToUpload);
+        setIsUploading(false);
+
+        if (!attachmentData) {
+          setError('Nepodarilo sa nahrať súbor');
+          setMessages((prev) => prev.filter((m) => m.id !== tempId));
+          setIsSending(false);
+          return;
+        }
+      }
+
       // Insert message to Supabase
       const { data, error: insertError } = await supabase
         .from('chat_messages')
         .insert({
           partner_id: partnerId,
           sender_type: 'partner',
-          message: messageText,
+          message: messageText || (fileToUpload ? `📎 ${fileToUpload.name}` : ''),
+          attachment_url: attachmentData?.url || null,
+          attachment_type: attachmentData?.type || null,
         })
         .select()
         .single();
@@ -160,6 +191,8 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
             partnerName,
             partnerEmail,
             message: messageText,
+            attachmentUrl: attachmentData?.url,
+            attachmentType: attachmentData?.type,
           }),
         }).catch(console.error);
       }
@@ -171,7 +204,59 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
       setMessages((prev) => prev.filter((m) => m.id !== tempId));
     } finally {
       setIsSending(false);
+      setIsUploading(false);
     }
+  };
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Validate file type
+    if (!ALLOWED_TYPES.includes(file.type)) {
+      setError('Povolené sú len obrázky (JPG, PNG, GIF, WebP) a PDF');
+      return;
+    }
+
+    // Validate file size
+    if (file.size > MAX_FILE_SIZE) {
+      setError('Maximálna veľkosť súboru je 5MB');
+      return;
+    }
+
+    setSelectedFile(file);
+    setError(null);
+  };
+
+  const removeSelectedFile = () => {
+    setSelectedFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
+
+  const uploadFile = async (file: File): Promise<{ url: string; type: string } | null> => {
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+    const filePath = `${partnerId}/${fileName}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from('chat-attachments')
+      .upload(filePath, file);
+
+    if (uploadError) {
+      console.error('Upload error:', uploadError);
+      return null;
+    }
+
+    const { data: { publicUrl } } = supabase.storage
+      .from('chat-attachments')
+      .getPublicUrl(filePath);
+
+    return {
+      url: publicUrl,
+      type: file.type.startsWith('image/') ? 'image' : 'pdf'
+    };
   };
 
   const clearChatHistory = async () => {
@@ -284,7 +369,31 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
                         : 'bg-white border border-gray-200 text-gray-800'
                     }`}
                   >
-                    <p className="text-sm whitespace-pre-wrap">{msg.message}</p>
+                    {/* Attachment preview */}
+                    {msg.attachment_url && (
+                      <div className="mb-2">
+                        {msg.attachment_type === 'image' ? (
+                          <a href={msg.attachment_url} target="_blank" rel="noopener noreferrer">
+                            <img
+                              src={msg.attachment_url}
+                              alt="Príloha"
+                              className="max-w-full max-h-40 rounded cursor-pointer hover:opacity-90"
+                            />
+                          </a>
+                        ) : (
+                          <a
+                            href={msg.attachment_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm underline hover:no-underline"
+                          >
+                            <FileText className="h-4 w-4" />
+                            Zobraziť PDF
+                          </a>
+                        )}
+                      </div>
+                    )}
+                    {msg.message && <p className="text-sm whitespace-pre-wrap">{msg.message}</p>}
                     <p className={`text-xs mt-1 ${msg.sender_type === 'partner' ? 'text-black/60' : 'text-gray-400'}`}>
                       {formatTime(msg.created_at)}
                     </p>
@@ -295,24 +404,63 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
             <div ref={messagesEndRef} />
           </div>
 
+          {/* Selected file preview */}
+          {selectedFile && (
+            <div className="px-3 py-2 bg-gray-100 border-t border-gray-200 flex items-center gap-2">
+              {selectedFile.type.startsWith('image/') ? (
+                <ImageIcon className="h-4 w-4 text-gray-500" />
+              ) : (
+                <FileText className="h-4 w-4 text-gray-500" />
+              )}
+              <span className="text-xs text-gray-600 truncate flex-1">{selectedFile.name}</span>
+              <button
+                type="button"
+                onClick={removeSelectedFile}
+                className="text-gray-400 hover:text-gray-600"
+                aria-label="Odstrániť súbor"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+          )}
+
           {/* Input */}
           <form onSubmit={sendMessage} className="p-3 border-t border-gray-200 bg-white rounded-b-lg">
             <div className="flex gap-2">
+              {/* Hidden file input */}
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/jpeg,image/png,image/gif,image/webp,application/pdf"
+                onChange={handleFileSelect}
+                className="hidden"
+              />
+              {/* Attachment button */}
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={isSending || isUploading}
+                className="text-gray-500 hover:text-gray-700 disabled:opacity-50 p-2 rounded-lg transition-colors"
+                title="Pridať prílohu (max 5MB)"
+                aria-label="Pridať prílohu"
+              >
+                <Paperclip className="h-5 w-5" />
+              </button>
               <input
                 type="text"
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
                 placeholder="Napísať správu..."
                 className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#f5a623] focus:border-transparent"
-                disabled={isSending}
+                disabled={isSending || isUploading}
               />
               <button
                 type="submit"
-                disabled={!newMessage.trim() || isSending}
+                disabled={(!newMessage.trim() && !selectedFile) || isSending || isUploading}
                 className="bg-[#f5a623] hover:bg-[#e09000] disabled:opacity-50 disabled:cursor-not-allowed text-black p-2 rounded-lg transition-colors"
                 aria-label="Odoslať správu"
               >
-                {isSending ? (
+                {isSending || isUploading ? (
                   <Loader2 className="h-5 w-5 animate-spin" />
                 ) : (
                   <Send className="h-5 w-5" />
