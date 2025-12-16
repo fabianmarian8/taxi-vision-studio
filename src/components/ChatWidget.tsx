@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
@@ -23,14 +23,18 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
   const [newMessage, setNewMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const supabase = createClient();
+
+  // Memoize supabase client
+  const supabase = useMemo(() => createClient(), []);
 
   // Load messages on open
   useEffect(() => {
     if (isOpen && partnerId) {
       loadMessages();
-      subscribeToMessages();
+      const cleanup = subscribeToMessages();
+      return cleanup;
     }
   }, [isOpen, partnerId]);
 
@@ -40,39 +44,54 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
   }, [messages]);
 
   const loadMessages = async () => {
-    setIsLoading(true);
-    const { data, error } = await supabase
-      .from('chat_messages')
-      .select('*')
-      .eq('partner_id', partnerId)
-      .order('created_at', { ascending: true });
+    try {
+      setIsLoading(true);
+      setError(null);
+      const { data, error: fetchError } = await supabase
+        .from('chat_messages')
+        .select('*')
+        .eq('partner_id', partnerId)
+        .order('created_at', { ascending: true });
 
-    if (!error && data) {
-      setMessages(data);
+      if (fetchError) {
+        console.error('Error loading messages:', fetchError);
+        setError('Nepodarilo sa načítať správy');
+      } else if (data) {
+        setMessages(data);
+      }
+    } catch (err) {
+      console.error('Error loading messages:', err);
+      setError('Nepodarilo sa načítať správy');
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   const subscribeToMessages = () => {
-    const channel = supabase
-      .channel(`chat:${partnerId}`)
-      .on(
-        'postgres_changes',
-        {
-          event: 'INSERT',
-          schema: 'public',
-          table: 'chat_messages',
-          filter: `partner_id=eq.${partnerId}`,
-        },
-        (payload) => {
-          setMessages((prev) => [...prev, payload.new as Message]);
-        }
-      )
-      .subscribe();
+    try {
+      const channel = supabase
+        .channel(`chat:${partnerId}`)
+        .on(
+          'postgres_changes',
+          {
+            event: 'INSERT',
+            schema: 'public',
+            table: 'chat_messages',
+            filter: `partner_id=eq.${partnerId}`,
+          },
+          (payload) => {
+            setMessages((prev) => [...prev, payload.new as Message]);
+          }
+        )
+        .subscribe();
 
-    return () => {
-      supabase.removeChannel(channel);
-    };
+      return () => {
+        supabase.removeChannel(channel);
+      };
+    } catch (err) {
+      console.error('Error subscribing to messages:', err);
+      return () => {};
+    }
   };
 
   const sendMessage = async (e: React.FormEvent) => {
@@ -80,37 +99,52 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
     if (!newMessage.trim() || isSending) return;
 
     setIsSending(true);
+    setError(null);
     const messageText = newMessage.trim();
     setNewMessage('');
 
-    // Insert message to Supabase
-    const { error } = await supabase.from('chat_messages').insert({
-      partner_id: partnerId,
-      sender_type: 'partner',
-      message: messageText,
-    });
-
-    if (!error) {
-      // Send Telegram notification
-      await fetch('/api/partner/chat-notify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          partnerName,
-          partnerEmail,
-          message: messageText,
-        }),
+    try {
+      // Insert message to Supabase
+      const { error: insertError } = await supabase.from('chat_messages').insert({
+        partner_id: partnerId,
+        sender_type: 'partner',
+        message: messageText,
       });
-    }
 
-    setIsSending(false);
+      if (insertError) {
+        console.error('Error sending message:', insertError);
+        setError('Nepodarilo sa odoslať správu');
+        setNewMessage(messageText); // Restore message
+      } else {
+        // Send Telegram notification (don't wait for it)
+        fetch('/api/partner/chat-notify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            partnerName,
+            partnerEmail,
+            message: messageText,
+          }),
+        }).catch(console.error);
+      }
+    } catch (err) {
+      console.error('Error sending message:', err);
+      setError('Nepodarilo sa odoslať správu');
+      setNewMessage(messageText); // Restore message
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const formatTime = (dateString: string) => {
-    return new Date(dateString).toLocaleTimeString('sk-SK', {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
+    try {
+      return new Date(dateString).toLocaleTimeString('sk-SK', {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+    } catch {
+      return '';
+    }
   };
 
   return (
@@ -120,6 +154,7 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-5 right-5 z-50 bg-[#f5a623] hover:bg-[#e09000] text-black p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-105"
         title="Podpora"
+        aria-label={isOpen ? 'Zavrieť chat' : 'Otvoriť chat'}
       >
         {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
       </button>
@@ -132,6 +167,13 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
             <h3 className="font-bold">Podpora TaxiNearMe</h3>
             <p className="text-xs opacity-80">Odpovieme čo najskôr</p>
           </div>
+
+          {/* Error message */}
+          {error && (
+            <div className="bg-red-50 text-red-600 text-xs px-4 py-2 border-b border-red-100">
+              {error}
+            </div>
+          )}
 
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-[200px] max-h-[300px] bg-gray-50">
@@ -184,6 +226,7 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
                 type="submit"
                 disabled={!newMessage.trim() || isSending}
                 className="bg-[#f5a623] hover:bg-[#e09000] disabled:opacity-50 disabled:cursor-not-allowed text-black p-2 rounded-lg transition-colors"
+                aria-label="Odoslať správu"
               >
                 {isSending ? (
                   <Loader2 className="h-5 w-5 animate-spin" />
