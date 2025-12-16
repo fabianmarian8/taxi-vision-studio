@@ -8,16 +8,28 @@
     }
   },
   "ignoreCommand": "bash ignored-build-step.sh",
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/((?!api/).*)",
+      "source": "/api/:path*",
       "has": [
         {
           "type": "host",
           "value": "taxinearme.sk"
         }
       ],
-      "destination": "https://www.taxinearme.sk/$1",
+      "destination": "https://www.taxinearme.sk/api/:path*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path((?!api).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "taxinearme.sk"
+        }
+      ],
+      "destination": "https://www.taxinearme.sk/:path*",
       "permanent": true
     }
   ]
