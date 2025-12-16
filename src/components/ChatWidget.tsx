@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2, RotateCcw } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
 interface Message {
@@ -26,6 +26,7 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
   const [newMessage, setNewMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSending, setIsSending] = useState(false);
+  const [isClearing, setIsClearing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const lastMessageIdRef = useRef<string | null>(null);
@@ -173,6 +174,35 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
     }
   };
 
+  const clearChatHistory = async () => {
+    if (!confirm('Naozaj chcete vymazať históriu chatu? Táto akcia sa nedá vrátiť.')) {
+      return;
+    }
+
+    setIsClearing(true);
+    setError(null);
+
+    try {
+      const { error: deleteError } = await supabase
+        .from('chat_messages')
+        .delete()
+        .eq('partner_id', partnerId);
+
+      if (deleteError) {
+        console.error('Error clearing chat:', deleteError);
+        setError('Nepodarilo sa vymazať históriu');
+      } else {
+        setMessages([]);
+        lastMessageIdRef.current = null;
+      }
+    } catch (err) {
+      console.error('Error clearing chat:', err);
+      setError('Nepodarilo sa vymazať históriu');
+    } finally {
+      setIsClearing(false);
+    }
+  };
+
   const formatTime = (dateString: string) => {
     try {
       return new Date(dateString).toLocaleTimeString('sk-SK', {
@@ -200,9 +230,26 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
       {isOpen && (
         <div className="fixed bottom-20 right-5 z-50 w-80 sm:w-96 bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col max-h-[500px]">
           {/* Header */}
-          <div className="bg-[#f5a623] text-black px-4 py-3 rounded-t-lg">
-            <h3 className="font-bold">Podpora TaxiNearMe</h3>
-            <p className="text-xs opacity-80">Odpovieme čo najskôr</p>
+          <div className="bg-[#f5a623] text-black px-4 py-3 rounded-t-lg flex items-center justify-between">
+            <div>
+              <h3 className="font-bold">Podpora TaxiNearMe</h3>
+              <p className="text-xs opacity-80">Odpovieme čo najskôr</p>
+            </div>
+            {messages.length > 0 && (
+              <button
+                onClick={clearChatHistory}
+                disabled={isClearing}
+                className="p-2 hover:bg-black/10 rounded-lg transition-colors"
+                title="Nový chat - vymazať históriu"
+                aria-label="Nový chat"
+              >
+                {isClearing ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <RotateCcw className="h-4 w-4" />
+                )}
+              </button>
+            )}
           </div>
 
           {/* Error message */}
