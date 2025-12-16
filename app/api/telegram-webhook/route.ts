@@ -29,7 +29,19 @@ interface TelegramUpdate {
 
 export async function POST(request: NextRequest) {
   try {
-    const update: TelegramUpdate = await request.json();
+    // Read raw body first for better error handling
+    const rawBody = await request.text();
+    console.log('Telegram webhook raw body length:', rawBody.length);
+
+    let update: TelegramUpdate;
+    try {
+      update = JSON.parse(rawBody);
+    } catch (parseError) {
+      console.error('JSON parse error:', parseError);
+      console.error('Raw body preview:', rawBody.substring(0, 500));
+      // Return 200 to prevent Telegram from retrying
+      return NextResponse.json({ ok: true, error: 'parse_error' });
+    }
 
     console.log('Telegram webhook received:', JSON.stringify(update, null, 2));
 
