@@ -1799,8 +1799,548 @@
       "nazovObce": "Drienica",
       "sentAt": "2025-12-13T08:26:40.936Z",
       "resendId": "e6d011d7-3bec-4f5b-a63d-b2c5b32ee2ae"
+    },
+    {
+      "email": "ocu@drienov.sk",
+      "nazovObce": "Drienov",
+      "sentAt": "2025-12-16T09:41:10.020Z",
+      "resendId": "88c3ee11-e339-4498-9db8-980a255193a4"
+    },
+    {
+      "email": "obec@drienovec.sk",
+      "nazovObce": "Drienovec",
+      "sentAt": "2025-12-16T09:41:20.292Z",
+      "resendId": "25368ca6-a79a-480e-ad0f-b64d84d9572a"
+    },
+    {
+      "email": "obecdrienovo@gmail.com",
+      "nazovObce": "Drienovo",
+      "sentAt": "2025-12-16T09:41:30.842Z",
+      "resendId": "c6218e0e-a0e9-4077-bba7-e5cdb0511c82"
+    },
+    {
+      "email": "obec.drna@gmail.com",
+      "nazovObce": "Drňa",
+      "sentAt": "2025-12-16T09:41:41.093Z",
+      "resendId": "ecd4f200-2d5d-48f3-8538-d9857921c303"
+    },
+    {
+      "email": "obec.drnava@centrum.sk",
+      "nazovObce": "Drnava",
+      "sentAt": "2025-12-16T09:41:51.345Z",
+      "resendId": "db6f4444-415e-4941-89a8-19c9e5a9169b"
+    },
+    {
+      "email": "obec.drzenice@pobox.sk",
+      "nazovObce": "Drženice",
+      "sentAt": "2025-12-16T09:42:01.598Z",
+      "resendId": "59ee9c88-9d8e-4348-800a-d396e1cdc69a"
+    },
+    {
+      "email": "info@obecdrzkovce.sk",
+      "nazovObce": "Držkovce",
+      "sentAt": "2025-12-16T09:42:11.905Z",
+      "resendId": "93b5f094-67d9-40c0-92ab-d47533634af8"
+    },
+    {
+      "email": "starosta@dubinne.sk",
+      "nazovObce": "Dubinné",
+      "sentAt": "2025-12-16T09:42:22.162Z",
+      "resendId": "f6c769ac-3419-4a7d-b8c2-59b68dfbb5b3"
+    },
+    {
+      "email": "obec.dubnicka@slovanet.sk",
+      "nazovObce": "Dubnička",
+      "sentAt": "2025-12-16T09:42:32.471Z",
+      "resendId": "eb7378a0-40c2-40be-b5ec-acedafcfcad5"
+    },
+    {
+      "email": "obecdubno@gmail.com",
+      "nazovObce": "Dubno",
+      "sentAt": "2025-12-16T09:42:42.725Z",
+      "resendId": "54d0c063-e0a6-4b30-a172-fe7da9d8e01f"
+    },
+    {
+      "email": "starosta@dubova.sk",
+      "nazovObce": "Dubová",
+      "sentAt": "2025-12-16T09:42:52.961Z",
+      "resendId": "67c506a4-f316-4a02-b8be-8fa69798c1b1"
+    },
+    {
+      "email": "obec.dubova@gmail.com",
+      "nazovObce": "Dubová",
+      "sentAt": "2025-12-16T09:43:03.227Z",
+      "resendId": "a6b444fa-b435-4970-bf7a-7716bff22459"
+    },
+    {
+      "email": "dubovany@dubovany.sk",
+      "nazovObce": "Dubovany",
+      "sentAt": "2025-12-16T09:43:13.489Z",
+      "resendId": "277bc0bd-0d4e-4710-b215-fd2c3fd27c07"
+    },
+    {
+      "email": "obec@obecdubove.sk",
+      "nazovObce": "Dubové",
+      "sentAt": "2025-12-16T09:43:23.787Z",
+      "resendId": "82035439-eb77-4f24-8105-c098684ae663"
+    },
+    {
+      "email": "ou.dubovec@azet.sk",
+      "nazovObce": "Dubovec",
+      "sentAt": "2025-12-16T09:43:34.132Z",
+      "resendId": "ebb3186f-8ecf-43ce-84f7-0c454a87733f"
+    },
+    {
+      "email": "info@obecdubovica.sk",
+      "nazovObce": "Dubovica",
+      "sentAt": "2025-12-16T09:43:44.473Z",
+      "resendId": "5376ce3c-1c47-4266-8ee8-c54d26c7d6fe"
+    },
+    {
+      "email": "info@dubravaspis.sk",
+      "nazovObce": "Dúbrava",
+      "sentAt": "2025-12-16T09:43:54.814Z",
+      "resendId": "8a81adc2-2e2e-490a-babd-6657945dbf70"
+    },
+    {
+      "email": "ou.dubrava@gmail.com",
+      "nazovObce": "Dúbrava",
+      "sentAt": "2025-12-16T09:44:05.464Z",
+      "resendId": "2547d335-aa0d-4932-b6ce-b68985fd7318"
+    },
+    {
+      "email": "obecdubravalm@imafex.sk",
+      "nazovObce": "Dúbrava",
+      "sentAt": "2025-12-16T09:44:16.131Z",
+      "resendId": "68ea5e8d-528a-49a1-9a07-739ca3f1e20f"
+    },
+    {
+      "email": "obec@dubravica.sk",
+      "nazovObce": "Dúbravica",
+      "sentAt": "2025-12-16T09:44:26.456Z",
+      "resendId": "c64b5ced-3059-4813-aafe-0236cf138cc4"
+    },
+    {
+      "email": "ducove@ducove.sk",
+      "nazovObce": "Ducové",
+      "sentAt": "2025-12-16T09:44:36.832Z",
+      "resendId": "d3c924a3-92a0-4e5a-9598-c9b659736419"
+    },
+    {
+      "email": "msu@dudince-mesto.sk",
+      "nazovObce": "Dudince",
+      "sentAt": "2025-12-16T09:44:47.423Z",
+      "resendId": "879eac49-8296-4eab-bb60-875de9687d1d"
+    },
+    {
+      "email": "obecdukovce@wi-net.sk",
+      "nazovObce": "Dukovce",
+      "sentAt": "2025-12-16T09:44:57.665Z",
+      "resendId": "a9f2397c-adcc-4b0d-991b-9740e9de5745"
+    },
+    {
+      "email": "obec@dulov.sk",
+      "nazovObce": "Dulov",
+      "sentAt": "2025-12-16T09:45:07.925Z",
+      "resendId": "50b06f8f-1948-4194-ac8d-c252061943aa"
+    },
+    {
+      "email": "starosta@dulovce.eu",
+      "nazovObce": "Dulovce",
+      "sentAt": "2025-12-16T09:45:18.273Z",
+      "resendId": "e4c49259-1310-43ff-a9be-0e49e78b340b"
+    },
+    {
+      "email": "oudulovo@centrum.sk",
+      "nazovObce": "Dulovo",
+      "sentAt": "2025-12-16T09:45:28.518Z",
+      "resendId": "3a727e43-9394-4336-a261-b44c5b79823d"
+    },
+    {
+      "email": "obec@dunajov.sk",
+      "nazovObce": "Dunajov",
+      "sentAt": "2025-12-16T09:45:39.162Z",
+      "resendId": "aa69a209-d735-43fd-ac09-73318f08ceaf"
+    },
+    {
+      "email": "obecduplin@gmail.com",
+      "nazovObce": "Duplín",
+      "sentAt": "2025-12-16T09:45:49.810Z",
+      "resendId": "c194d824-3e4c-45ec-b6a6-cc78c6fd4b21"
+    },
+    {
+      "email": "obecdurcina@obecdurcina.sk",
+      "nazovObce": "Ďurčiná",
+      "sentAt": "2025-12-16T09:46:00.152Z",
+      "resendId": "ab08b994-7a81-42f7-971c-925118c0ca47"
+    },
+    {
+      "email": "obecdurdos@gmail.com",
+      "nazovObce": "Ďurďoš",
+      "sentAt": "2025-12-16T09:46:10.707Z",
+      "resendId": "7b16a2ab-3760-4f36-9bc7-8e78258bc601"
+    },
+    {
+      "email": "podatelna@obecdurdosik.sk",
+      "nazovObce": "Ďurďošík",
+      "sentAt": "2025-12-16T09:46:21.281Z",
+      "resendId": "f9c40087-bf46-49b2-a425-70c4cb1e0c79"
+    },
+    {
+      "email": "obec@durdove.eu",
+      "nazovObce": "Ďurďové",
+      "sentAt": "2025-12-16T09:46:31.538Z",
+      "resendId": "6d717cb9-8b60-4ef1-9859-a556b041e665"
+    },
+    {
+      "email": "obecdurkova@slnet.sk",
+      "nazovObce": "Ďurková",
+      "sentAt": "2025-12-16T09:46:41.861Z",
+      "resendId": "f9c741d2-6696-4867-bf81-ec91a82e3f86"
+    },
+    {
+      "email": "obec.durkovce@gmail.com",
+      "nazovObce": "Ďurkovce",
+      "sentAt": "2025-12-16T09:46:52.406Z",
+      "resendId": "0a12bd78-b990-49ff-98c6-e29659fb8185"
+    },
+    {
+      "email": "obec@dvorec.sk",
+      "nazovObce": "Dvorec",
+      "sentAt": "2025-12-16T09:47:02.719Z",
+      "resendId": "2df85357-ac3a-43f1-93c2-17c19f461b4e"
+    },
+    {
+      "email": "obecdvorianky@centrum.sk",
+      "nazovObce": "Dvorianky",
+      "sentAt": "2025-12-16T09:47:13.061Z",
+      "resendId": "ff8af597-bd76-4bd1-84d7-f949ca4d5380"
+    },
+    {
+      "email": "obecegres@obecegres.sk",
+      "nazovObce": "Egreš",
+      "sentAt": "2025-12-16T09:47:23.324Z",
+      "resendId": "fbacbddb-f39f-4dc0-a3e5-856a166932bb"
+    },
+    {
+      "email": "urad@obecfackov.sk",
+      "nazovObce": "Fačkov",
+      "sentAt": "2025-12-16T09:47:33.643Z",
+      "resendId": "944d1c69-b171-4bd5-822e-abfb5dbb896a"
+    },
+    {
+      "email": "farna@nextra.sk",
+      "nazovObce": "Farná",
+      "sentAt": "2025-12-16T09:47:43.878Z",
+      "resendId": "3ee79fe3-ea70-4ae1-8cba-4177cf06a854"
+    },
+    {
+      "email": "obec.fekisovce@szm.sk",
+      "nazovObce": "Fekišovce",
+      "sentAt": "2025-12-16T09:47:54.151Z",
+      "resendId": "09880d89-4d0f-4506-aac1-891206417eaf"
+    },
+    {
+      "email": "obecfiga@post.sk",
+      "nazovObce": "Figa",
+      "sentAt": "2025-12-16T09:48:04.444Z",
+      "resendId": "df11875d-1f00-45f0-b075-518eb7dab168"
+    },
+    {
+      "email": "obecfijas@gmail.com",
+      "nazovObce": "Fijaš",
+      "sentAt": "2025-12-16T09:48:15.013Z",
+      "resendId": "843a5ad3-356c-498d-b1c4-e769abf6af09"
+    },
+    {
+      "email": "mesto@filakovo.sk",
+      "nazovObce": "Fiľakovo",
+      "sentAt": "2025-12-16T09:48:25.622Z",
+      "resendId": "7838e819-a4da-40e0-a784-06efae28132e"
+    },
+    {
+      "email": "oufintice@hotmail.com",
+      "nazovObce": "Fintice",
+      "sentAt": "2025-12-16T09:48:36.176Z",
+      "resendId": "5af8b2dd-d213-4e6a-bf1f-4927d88b2d52"
+    },
+    {
+      "email": "obecfolkusova@gmail.com",
+      "nazovObce": "Folkušová",
+      "sentAt": "2025-12-16T09:48:46.734Z",
+      "resendId": "7cd11b67-dbba-4f4a-903e-e48a1b84cf40"
+    },
+    {
+      "email": "ouforbasy@slnet.sk",
+      "nazovObce": "Forbasy",
+      "sentAt": "2025-12-16T09:48:56.995Z",
+      "resendId": "34fd660d-a814-42fb-bcdf-2eb7cfde90cb"
+    },
+    {
+      "email": "obecfricka@zoznam.sk",
+      "nazovObce": "Frička",
+      "sentAt": "2025-12-16T09:49:07.338Z",
+      "resendId": "7bc700ba-c0b8-4cf8-a180-d60c99b54aad"
+    },
+    {
+      "email": "frickovce@frickovce.sk",
+      "nazovObce": "Fričkovce",
+      "sentAt": "2025-12-16T09:49:17.593Z",
+      "resendId": "3c68fb20-341c-4bb7-9c69-5de0c52ae85e"
+    },
+    {
+      "email": "podatelna@obecfricovce.sk",
+      "nazovObce": "Fričovce",
+      "sentAt": "2025-12-16T09:49:27.906Z",
+      "resendId": "9beb1321-b8d0-4c20-9f7d-351ba7534edc"
+    },
+    {
+      "email": "obec@fulianka.sk",
+      "nazovObce": "Fulianka",
+      "sentAt": "2025-12-16T09:49:38.162Z",
+      "resendId": "fa760de8-32da-4866-ad40-b9d511d65a49"
+    },
+    {
+      "email": "gabcikovo@gabcikovo.sk",
+      "nazovObce": "Gabčíkovo",
+      "sentAt": "2025-12-16T09:49:48.394Z",
+      "resendId": "47972cd6-354f-449d-9a4c-d8977a983a73"
+    },
+    {
+      "email": "obec@gaboltov.sk",
+      "nazovObce": "Gaboltov",
+      "sentAt": "2025-12-16T09:49:59.050Z",
+      "resendId": "def14f46-50bd-46f1-a1ee-9ccce9711f3b"
+    },
+    {
+      "email": "starosta@gajary.sk",
+      "nazovObce": "Gajary",
+      "sentAt": "2025-12-16T09:50:09.392Z",
+      "resendId": "76b3e5db-7301-42a5-a713-50b785e5c377"
+    },
+    {
+      "email": "galanta@galanta.sk",
+      "nazovObce": "Galanta",
+      "sentAt": "2025-12-16T09:50:19.658Z",
+      "resendId": "5df09338-dfc9-4bd5-8bbf-84fcc47ba743"
+    },
+    {
+      "email": "ougalovany@alconet.sk",
+      "nazovObce": "Galovany",
+      "sentAt": "2025-12-16T09:50:29.917Z",
+      "resendId": "43a48bc7-bfb8-459a-9c87-4dafc3a92c67"
+    },
+    {
+      "email": "obecganovce1@sinet.sk",
+      "nazovObce": "Gánovce",
+      "sentAt": "2025-12-16T09:50:40.163Z",
+      "resendId": "d5b76b0b-9afe-4398-b53e-aeee65cb9969"
+    },
+    {
+      "email": "starosta@gbelce.sk",
+      "nazovObce": "Gbelce",
+      "sentAt": "2025-12-16T09:50:50.459Z",
+      "resendId": "c8eb633e-c419-463d-83ba-89cdd8d50010"
+    },
+    {
+      "email": "sekretariat@gbely.sk",
+      "nazovObce": "Gbely",
+      "sentAt": "2025-12-16T09:51:00.797Z",
+      "resendId": "4bc8fbc0-8039-45d7-bfb7-785e8589952b"
+    },
+    {
+      "email": "ougeca@obecgeca.sk",
+      "nazovObce": "Geča",
+      "sentAt": "2025-12-16T09:51:11.139Z",
+      "resendId": "046b13cf-bcdd-4eb1-b8a0-f89f01c6459f"
+    },
+    {
+      "email": "sekretariat@gelnica.sk",
+      "nazovObce": "Gelnica",
+      "sentAt": "2025-12-16T09:51:21.390Z",
+      "resendId": "3a3c8b7a-da9f-4f1b-a1dd-037a54da0a72"
+    },
+    {
+      "email": "ougemer@centrum.sk",
+      "nazovObce": "Gemer",
+      "sentAt": "2025-12-16T09:51:31.658Z",
+      "resendId": "57f2d6f5-b3bc-478c-8360-ab225696dba8"
+    },
+    {
+      "email": "obugemercek@post.sk",
+      "nazovObce": "Gemerček",
+      "sentAt": "2025-12-16T09:51:41.963Z",
+      "resendId": "ea26d6dd-439c-4433-aa9b-10eb0b636d67"
+    },
+    {
+      "email": "obecgeraltov@gmail.com",
+      "nazovObce": "Geraltov",
+      "sentAt": "2025-12-16T09:51:52.254Z",
+      "resendId": "6404b004-ca63-4461-b893-093bb3aff0fe"
+    },
+    {
+      "email": "obecnyurad.gerlachov@gmail.com",
+      "nazovObce": "Gerlachov",
+      "sentAt": "2025-12-16T09:52:02.538Z",
+      "resendId": "b23c0853-1a0d-4c4c-abfe-ee1a6a02fc0e"
+    },
+    {
+      "email": "ocugiglovce@gmail.com",
+      "nazovObce": "Giglovce",
+      "sentAt": "2025-12-16T09:52:12.882Z",
+      "resendId": "1b0abfa3-e5b6-498f-a9c2-9482ca58d335"
+    },
+    {
+      "email": "sekretariat@giraltovce.sk",
+      "nazovObce": "Giraltovce",
+      "sentAt": "2025-12-16T09:52:23.132Z",
+      "resendId": "260d2c9f-791f-4299-92fc-e6b78927152e"
+    },
+    {
+      "email": "obecgirovce@gmail.com",
+      "nazovObce": "Girovce",
+      "sentAt": "2025-12-16T09:52:33.404Z",
+      "resendId": "ed3691df-0788-48a7-9b71-015a1878570f"
+    },
+    {
+      "email": "glabusovce@gmail.com",
+      "nazovObce": "Glabušovce",
+      "sentAt": "2025-12-16T09:52:43.653Z",
+      "resendId": "6edb0f36-4bb7-4fd7-b83a-816fdf66f690"
+    },
+    {
+      "email": "obec.gocaltovo@gmail.com",
+      "nazovObce": "Gočaltovo",
+      "sentAt": "2025-12-16T09:52:53.904Z",
+      "resendId": "422b182c-0a54-4c37-a6d5-8e0bcac86163"
+    },
+    {
+      "email": "obec@gocovo.sk",
+      "nazovObce": "Gočovo",
+      "sentAt": "2025-12-16T09:53:04.145Z",
+      "resendId": "c0501dd9-5630-4c29-954b-6fcee23a4c13"
+    },
+    {
+      "email": "obec.golianovo@gmail.com",
+      "nazovObce": "Golianovo",
+      "sentAt": "2025-12-16T09:53:14.397Z",
+      "resendId": "7de50a9f-61c2-455e-b3cc-e04cf078425a"
+    },
+    {
+      "email": "ougotovany@alconet.sk",
+      "nazovObce": "Gôtovany",
+      "sentAt": "2025-12-16T09:53:24.639Z",
+      "resendId": "39385343-18cc-46da-8511-b7825e816c1a"
+    },
+    {
+      "email": "obecgrancpetrovce@gmail.com",
+      "nazovObce": "Granč - Petrovce",
+      "sentAt": "2025-12-16T09:53:35.012Z",
+      "resendId": "de18ae9d-01cd-4a57-97f1-0543b93a4e51"
+    },
+    {
+      "email": "starosta@obecgregorovce.sk",
+      "nazovObce": "Gregorovce",
+      "sentAt": "2025-12-16T09:53:45.297Z",
+      "resendId": "c6274fe5-bff5-49ff-a474-860a69190f5a"
+    },
+    {
+      "email": "obecgribov@gmail.com",
+      "nazovObce": "Gribov",
+      "sentAt": "2025-12-16T09:53:55.857Z",
+      "resendId": "b881ee7a-fa47-4a84-8538-b990cc52f12f"
+    },
+    {
+      "email": "gruzovce1@gmail.com",
+      "nazovObce": "Gruzovce",
+      "sentAt": "2025-12-16T09:54:06.120Z",
+      "resendId": "151aa473-e928-4504-aae5-6c93dc7edb59"
+    },
+    {
+      "email": "ocuhabura@centrum.sk",
+      "nazovObce": "Habura",
+      "sentAt": "2025-12-16T09:54:16.358Z",
+      "resendId": "8ebffdbb-1bd0-4814-838b-63aadb0fdd45"
+    },
+    {
+      "email": "ocuhacava@gmail.com",
+      "nazovObce": "Hačava",
+      "sentAt": "2025-12-16T09:54:26.724Z",
+      "resendId": "ac9a0740-0563-4967-b9c1-6556d0bb73bf"
+    },
+    {
+      "email": "hajnacka@obechajnacka.sk",
+      "nazovObce": "Hajnáčka",
+      "sentAt": "2025-12-16T09:54:36.986Z",
+      "resendId": "d0542e2c-09cc-4fc8-a92e-76f463519398"
+    },
+    {
+      "email": "obec@hajske.sk",
+      "nazovObce": "Hájske",
+      "sentAt": "2025-12-16T09:54:47.306Z",
+      "resendId": "9844be6c-0e41-4be5-b7f9-502553a3a08b"
+    },
+    {
+      "email": "obec.halacovce@gmail.com",
+      "nazovObce": "Haláčovce",
+      "sentAt": "2025-12-16T09:54:57.751Z",
+      "resendId": "8569986d-7e02-496f-9eef-2ac0d4938fa5"
+    },
+    {
+      "email": "obechaligovce@slnet.sk",
+      "nazovObce": "Haligovce",
+      "sentAt": "2025-12-16T09:55:08.094Z",
+      "resendId": "5a58b470-9577-4488-8f4e-830906f0e84e"
+    },
+    {
+      "email": "obec.haluzice@centrum.sk",
+      "nazovObce": "Haluzice",
+      "sentAt": "2025-12-16T09:55:18.435Z",
+      "resendId": "ce373e5e-91db-4184-8614-87c4bae33f02"
+    },
+    {
+      "email": "info@obechamuliakovo.sk",
+      "nazovObce": "Hamuliakovo",
+      "sentAt": "2025-12-16T09:55:28.698Z",
+      "resendId": "45be42f7-bdfe-48e6-aa24-8d0ab3aeb988"
+    },
+    {
+      "email": "sekretariat@handlova.sk",
+      "nazovObce": "Handlová",
+      "sentAt": "2025-12-16T09:55:39.018Z",
+      "resendId": "be541165-e8a0-442c-aa33-0f6a04b51016"
+    },
+    {
+      "email": "obec@hanigovce.sk",
+      "nazovObce": "Hanigovce",
+      "sentAt": "2025-12-16T09:55:49.292Z",
+      "resendId": "c3afd052-884f-48e8-bd3d-8ee4d15ec22e"
+    },
+    {
+      "email": "obechankova@gmail.com",
+      "nazovObce": "Hanková",
+      "sentAt": "2025-12-16T09:55:59.600Z",
+      "resendId": "e7c0da57-b965-40d1-a52f-2d4f08710bbc"
+    },
+    {
+      "email": "obechankovce@gmail.com",
+      "nazovObce": "Hankovce",
+      "sentAt": "2025-12-16T09:56:09.951Z",
+      "resendId": "946665f1-b97c-4f45-97d7-4ea630af4395"
+    },
+    {
+      "email": "info@obechankovce.sk",
+      "nazovObce": "Hankovce",
+      "sentAt": "2025-12-16T09:56:20.308Z",
+      "resendId": "fb8ba959-a2be-418a-bcfd-5668549112f0"
+    },
+    {
+      "email": "starostka@harakovce.sk",
+      "nazovObce": "Harakovce",
+      "sentAt": "2025-12-16T09:56:30.547Z",
+      "resendId": "4dfcbfbf-b6e9-46fa-9901-d6f3e572f52b"
     }
   ],
   "failed": [],
-  "lastRun": "2025-12-13T08:26:40.936Z"
+  "lastRun": "2025-12-16T09:56:30.547Z"
 }

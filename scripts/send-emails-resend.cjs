@@ -17,7 +17,7 @@ const https = require('https');
 const RESEND_API_KEY = 're_85fb8hVQ_8pkLheudxM3NLjwZMMcJjGxa';
 const FROM_EMAIL = 'Marián Fabián <info@taxinearme.sk>';
 const REPLY_TO = 'info@taxinearme.sk';
-const DAILY_LIMIT = 100; // Resend free tier limit
+const DAILY_LIMIT = 90; // Znížený limit pre bezpečnosť
 const DELAY_MS = 10000; // 10 sekúnd medzi emailami (bezpečnejšie)
 
 // === SÚBORY ===
