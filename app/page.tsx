@@ -104,6 +104,7 @@ export default function HomePage() {
                 height={327}
                 sizes="(max-width: 640px) 176px, (max-width: 768px) 264px, (max-width: 1024px) 322px, 380px"
                 priority
+                fetchPriority="high"
               />
             </div>
 

@@ -122,6 +122,15 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://nominatim.openstreetmap.org" />
 
+        {/* LCP Optimalizácia: Preload hero image - znižuje LCP o ~200-400ms */}
+        <link
+          rel="preload"
+          as="image"
+          href="/taxi-nearme-logo.webp"
+          type="image/webp"
+          fetchPriority="high"
+        />
+
         {/* Sitemap link (z index.html line 43) */}
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
