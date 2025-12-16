@@ -80,12 +80,26 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
             filter: `partner_id=eq.${partnerId}`,
           },
           (payload) => {
-            setMessages((prev) => [...prev, payload.new as Message]);
+            console.log('Realtime message received:', payload);
+            const newMsg = payload.new as Message;
+            // Avoid duplicates - check if message already exists
+            setMessages((prev) => {
+              const exists = prev.some((m) => m.id === newMsg.id);
+              if (exists) {
+                console.log('Message already exists, skipping');
+                return prev;
+              }
+              console.log('Adding new message to state');
+              return [...prev, newMsg];
+            });
           }
         )
-        .subscribe();
+        .subscribe((status) => {
+          console.log('Realtime subscription status:', status);
+        });
 
       return () => {
+        console.log('Unsubscribing from realtime');
         supabase.removeChannel(channel);
       };
     } catch (err) {
