@@ -10119,6 +10119,13 @@
     },
     {
       "municipalitySlug": "dapalovce",
+      "citySlug": "vranov-nad-toplou",
+      "airDistance": 22.5,
+      "roadDistance": 28.8,
+      "duration": 30
+    },
+    {
+      "municipalitySlug": "dapalovce",
       "citySlug": "humenne",
       "airDistance": 18.4,
       "roadDistance": 34.4,
