@@ -10,14 +10,14 @@
   "ignoreCommand": "bash ignored-build-step.sh",
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/((?!api/).*)",
       "has": [
         {
           "type": "host",
           "value": "taxinearme.sk"
         }
       ],
-      "destination": "https://www.taxinearme.sk/:path*",
+      "destination": "https://www.taxinearme.sk/$1",
       "permanent": true
     }
   ]
