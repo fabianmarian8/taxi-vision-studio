@@ -282,7 +282,13 @@ export default function PreTaxikyPage() {
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">
-                      <strong>Prioritná podpora</strong> - rýchle riešenie požiadaviek
+                      <strong>Partner portál</strong> - upravujte si obsah stránky kedykoľvek sami
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-purple-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground/80">
+                      <strong>Prioritná podpora</strong> - priamy chat s administrátorom
                     </span>
                   </li>
                 </ul>
