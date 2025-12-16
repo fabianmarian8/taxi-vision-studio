@@ -141,6 +141,7 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
+            partnerId,
             partnerName,
             partnerEmail,
             message: messageText,

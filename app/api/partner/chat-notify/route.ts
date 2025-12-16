@@ -5,20 +5,24 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 export async function POST(request: NextRequest) {
   try {
-    const { partnerName, partnerEmail, message } = await request.json();
+    const { partnerId, partnerName, partnerEmail, message } = await request.json();
 
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
       console.error('Telegram credentials not configured');
       return NextResponse.json({ error: 'Telegram not configured' }, { status: 500 });
     }
 
+    // Format message with partner ID for reply functionality
     const telegramMessage = `🚕 *Nova sprava od partnera*
 
 👤 *Partner:* ${partnerName}
 📧 *Email:* ${partnerEmail}
 
 💬 *Sprava:*
-${message}`;
+${message}
+
+➡️ *Pre odpoved odpiste na tuto spravu*
+🆔 \`${partnerId}\``;
 
     const response = await fetch(
       `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
