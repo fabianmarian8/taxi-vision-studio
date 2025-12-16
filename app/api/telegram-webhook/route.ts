@@ -6,9 +6,6 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
-// Webhook secret for verification (optional but recommended)
-const WEBHOOK_SECRET = process.env.TELEGRAM_WEBHOOK_SECRET;
-
 interface TelegramMessage {
   message_id: number;
   from: {
@@ -32,17 +29,21 @@ interface TelegramUpdate {
 
 export async function POST(request: NextRequest) {
   try {
-    // Optional: Verify webhook secret from header
-    const secretHeader = request.headers.get('X-Telegram-Bot-Api-Secret-Token');
-    if (WEBHOOK_SECRET && secretHeader !== WEBHOOK_SECRET) {
-      console.error('Invalid webhook secret');
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const update: TelegramUpdate = await request.json();
 
+    console.log('Telegram webhook received:', JSON.stringify(update, null, 2));
+
     // Only process messages from our admin chat
-    if (!update.message || String(update.message.chat.id) !== TELEGRAM_CHAT_ID) {
+    if (!update.message) {
+      console.log('No message in update');
+      return NextResponse.json({ ok: true });
+    }
+
+    const chatId = String(update.message.chat.id);
+    console.log('Chat ID:', chatId, 'Expected:', TELEGRAM_CHAT_ID);
+
+    if (chatId !== TELEGRAM_CHAT_ID) {
+      console.log('Chat ID mismatch, ignoring');
       return NextResponse.json({ ok: true });
     }
 
@@ -51,8 +52,12 @@ export async function POST(request: NextRequest) {
 
     // Skip if no text
     if (!text) {
+      console.log('No text in message');
       return NextResponse.json({ ok: true });
     }
+
+    console.log('Message text:', text);
+    console.log('Reply to message:', message.reply_to_message?.text);
 
     // Extract partner_id from reply or from /reply command
     let partnerId: string | null = null;
@@ -61,11 +66,23 @@ export async function POST(request: NextRequest) {
     // Method 1: Reply to message - extract partner_id from original message
     if (message.reply_to_message?.text) {
       const originalText = message.reply_to_message.text;
-      // Look for partner ID in the format: 🆔 `uuid`
-      const idMatch = originalText.match(/🆔\s*`?([a-f0-9-]{36})`?/i);
+      console.log('Looking for partner ID in:', originalText);
+
+      // Look for partner ID - try multiple patterns
+      // Pattern 1: 🆔 `uuid` or 🆔 uuid
+      let idMatch = originalText.match(/🆔\s*`?([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})`?/i);
+
+      // Pattern 2: Just UUID anywhere in text
+      if (!idMatch) {
+        idMatch = originalText.match(/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i);
+      }
+
+      console.log('ID match result:', idMatch);
+
       if (idMatch) {
         partnerId = idMatch[1];
         replyText = text;
+        console.log('Found partner ID:', partnerId);
       }
     }
 
@@ -75,23 +92,28 @@ export async function POST(request: NextRequest) {
       if (parts.length >= 2) {
         const potentialId = parts[0];
         // Validate UUID format
-        if (/^[a-f0-9-]{36}$/i.test(potentialId)) {
+        if (/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(potentialId)) {
           partnerId = potentialId;
           replyText = parts.slice(1).join(' ');
+          console.log('Found partner ID from /reply command:', partnerId);
         }
       }
     }
 
     // If we have a valid reply, save it to Supabase
     if (partnerId && replyText) {
+      console.log('Saving reply to Supabase for partner:', partnerId);
+
       const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
 
       // Verify partner exists
-      const { data: partner } = await supabase
+      const { data: partner, error: partnerError } = await supabase
         .from('partners')
         .select('id, name')
         .eq('id', partnerId)
         .single();
+
+      console.log('Partner lookup result:', partner, partnerError);
 
       if (!partner) {
         await sendTelegramMessage(`❌ Partner s ID ${partnerId} neexistuje.`);
@@ -109,8 +131,11 @@ export async function POST(request: NextRequest) {
         console.error('Error saving reply:', error);
         await sendTelegramMessage(`❌ Chyba pri ukladaní odpovede: ${error.message}`);
       } else {
+        console.log('Reply saved successfully');
         await sendTelegramMessage(`✅ Odpoveď odoslaná partnerovi ${partner.name}`);
       }
+    } else {
+      console.log('No valid partner ID or reply text found');
     }
 
     return NextResponse.json({ ok: true });
