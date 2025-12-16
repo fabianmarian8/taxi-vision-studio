@@ -1,6 +1,6 @@
 'use client';
 
-import { Plus, Menu, X } from "lucide-react";
+import { Plus, Menu, X, User } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
@@ -99,6 +99,16 @@ export const Header = () => {
               <span>a</span>
               <span>ť</span>
             </button>
+
+            <a
+              href="https://www.taxinearme.sk/partner/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-button flex items-center justify-center"
+              title="Partner prihlásenie"
+            >
+              <User className="h-4 w-4" />
+            </a>
 
             {/* Mobile: hamburger menu */}
             <button
