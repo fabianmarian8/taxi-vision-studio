@@ -285,6 +285,7 @@ export async function generateMetadata({
           locale: 'sk_SK',
           url: currentUrl,
           siteName,
+          images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
         },
         alternates: { canonical: currentUrl },
       };
@@ -305,6 +306,7 @@ export async function generateMetadata({
           locale: 'sk_SK',
           url: currentUrl,
           siteName,
+          images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
         },
         alternates: { canonical: currentUrl },
       };
@@ -328,6 +330,7 @@ export async function generateMetadata({
           locale: 'sk_SK',
           url: currentUrl,
           siteName,
+          images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
         },
         alternates: { canonical: currentUrl },
       };
@@ -349,6 +352,7 @@ export async function generateMetadata({
           locale: 'sk_SK',
           url: currentUrl,
           siteName,
+          images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
         },
         alternates: { canonical: currentUrl },
       };
@@ -370,6 +374,7 @@ export async function generateMetadata({
           locale: 'sk_SK',
           url: currentUrl,
           siteName,
+          images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
         },
         alternates: { canonical: currentUrl },
       };
@@ -393,6 +398,7 @@ export async function generateMetadata({
           locale: 'sk_SK',
           url: currentUrl,
           siteName,
+          images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
         },
         alternates: { canonical: currentUrl },
       };

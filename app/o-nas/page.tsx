@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Users, Target, ArrowRight } from "lucide-react";
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
   title: 'O nás | TaxiNearMe.sk',
@@ -12,6 +13,16 @@ export const metadata: Metadata = {
     description: 'Sme tím, ktorý pomáha ľuďom nájsť spoľahlivé taxi na Slovensku.',
     url: 'https://www.taxinearme.sk/o-nas',
     type: 'website',
+    locale: 'sk_SK',
+    siteName: 'TaxiNearMe.sk',
+    images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
+    title: 'O nás | TaxiNearMe.sk',
+    description: 'Sme tím, ktorý pomáha ľuďom nájsť spoľahlivé taxi na Slovensku.',
+    images: [SEO_CONSTANTS.defaultImage],
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/o-nas',

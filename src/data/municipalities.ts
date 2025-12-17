@@ -143,4 +143,34 @@ export function isMunicipality(slug: string): boolean {
   return !isMainCity && isMunicipality;
 }
 
+/**
+ * Find nearby municipalities by geographic distance
+ * Returns municipalities sorted by air distance from the current one
+ * @param municipality The current municipality
+ * @param limit How many nearby municipalities to return
+ * @param sameDistrictOnly If true, only return municipalities from the same district
+ */
+export function findNearbyMunicipalities(
+  municipality: Municipality,
+  limit: number = 12,
+  sameDistrictOnly: boolean = false
+): Municipality[] {
+  return allMunicipalities
+    .filter((m) => {
+      if (m.slug === municipality.slug) return false;
+      if (sameDistrictOnly && m.district !== municipality.district) return false;
+      return true;
+    })
+    .map((m) => ({
+      municipality: m,
+      distance: calculateDistance(
+        { latitude: municipality.latitude, longitude: municipality.longitude },
+        { latitude: m.latitude, longitude: m.longitude }
+      ),
+    }))
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, limit)
+    .map((item) => item.municipality);
+}
+
 export { allMunicipalities };

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { MapPin, Clock, Car, ArrowLeft, Phone, HelpCircle, ExternalLink, Euro, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import routePagesData from '../../../src/data/route-pages.json';
 
 interface CarrierData {
@@ -69,6 +70,16 @@ export async function generateMetadata({ params }: RoutePageProps): Promise<Meta
       description: route.meta.description,
       type: 'website',
       locale: 'sk_SK',
+      siteName: 'TaxiNearMe.sk',
+      url: `https://www.taxinearme.sk/trasa/${route.slug}`,
+      images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: SEO_CONSTANTS.twitterSite,
+      title: route.meta.title,
+      description: route.meta.description,
+      images: [SEO_CONSTANTS.defaultImage],
     },
     alternates: {
       canonical: `https://www.taxinearme.sk/trasa/${route.slug}`,

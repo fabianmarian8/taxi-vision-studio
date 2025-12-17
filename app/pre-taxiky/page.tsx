@@ -21,6 +21,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
   title: 'Pre taxislužby - PREMIUM a PARTNER program | Taxi NearMe',
@@ -33,6 +34,25 @@ export const metadata: Metadata = {
     'taxislužba online',
     'taxi portál slovensko',
   ],
+  openGraph: {
+    title: 'Pre taxislužby - PREMIUM a PARTNER program | Taxi NearMe',
+    description: 'Zvýšte viditeľnosť vašej taxislužby na najväčšom slovenskom portáli.',
+    type: 'website',
+    locale: 'sk_SK',
+    url: 'https://www.taxinearme.sk/pre-taxiky',
+    siteName: 'TaxiNearMe.sk',
+    images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
+    title: 'Pre taxislužby - PREMIUM a PARTNER program | Taxi NearMe',
+    description: 'Zvýšte viditeľnosť vašej taxislužby na najväčšom slovenskom portáli.',
+    images: [SEO_CONSTANTS.defaultImage],
+  },
+  alternates: {
+    canonical: 'https://www.taxinearme.sk/pre-taxiky',
+  },
 };
 
 function Footer() {

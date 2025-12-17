@@ -22,6 +22,7 @@ import { Header } from '@/components/Header';
 import { FooterLegal } from '@/components/FooterLegal';
 import { CityRouteMapWrapper } from '@/components/CityRouteMapWrapper';
 import { ExpandableTaxiList } from '@/components/ExpandableTaxiList';
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import cityRoutesData from '../../../src/data/city-routes.json';
 import citiesData from '../../../src/data/cities.json';
 
@@ -256,11 +257,14 @@ export async function generateMetadata({ params }: RoutePageProps): Promise<Meta
       locale: 'sk_SK',
       siteName: 'TaxiNearMe.sk',
       url: `https://www.taxinearme.sk/taxi-trasa/${slug}`,
+      images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
     },
     twitter: {
       card: 'summary_large_image',
+      site: SEO_CONSTANTS.twitterSite,
       title,
       description,
+      images: [SEO_CONSTANTS.defaultImage],
     },
     alternates: {
       canonical: `https://www.taxinearme.sk/taxi-trasa/${slug}`,

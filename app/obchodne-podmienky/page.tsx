@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'sk_SK',
     url: 'https://www.taxinearme.sk/obchodne-podmienky',
-    siteName: 'Taxi NearMe',
+    siteName: 'TaxiNearMe.sk',
+    images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
+    title: 'Obchodné podmienky – PREMIUM a PARTNER služby – TaxiNearMe.sk',
+    description: 'Všeobecné obchodné podmienky pre platené služby PREMIUM a PARTNER na portáli TaxiNearMe.sk.',
+    images: [SEO_CONSTANTS.defaultImage],
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/obchodne-podmienky',

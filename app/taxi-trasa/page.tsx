@@ -15,6 +15,7 @@ import { MapPin, Clock, Euro, Route, Search, ArrowRight } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Header } from '@/components/Header';
 import { FooterLegal } from '@/components/FooterLegal';
+import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import cityRoutesData from '../../src/data/city-routes.json';
 
 interface CityRouteData {
@@ -69,6 +70,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'sk_SK',
     siteName: 'TaxiNearMe.sk',
+    url: 'https://www.taxinearme.sk/taxi-trasa',
+    images: [{ url: SEO_CONSTANTS.defaultImage, width: SEO_CONSTANTS.defaultImageWidth, height: SEO_CONSTANTS.defaultImageHeight }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: SEO_CONSTANTS.twitterSite,
+    title: 'Taxi trasy medzi mestami | TaxiNearMe.sk',
+    description: 'Nájdite taxi trasy medzi 30 najväčšími mestami na Slovensku. 435 kombinácií s cenami.',
+    images: [SEO_CONSTANTS.defaultImage],
   },
   alternates: {
     canonical: 'https://www.taxinearme.sk/taxi-trasa',

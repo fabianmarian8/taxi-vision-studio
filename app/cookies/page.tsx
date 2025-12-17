@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'sk_SK',
     url: 'https://www.taxinearme.sk/cookies',
-    siteName: 'Taxi NearMe',
+    siteName: 'TaxiNearMe.sk',
     images: [
       {
         url: 'https://www.taxinearme.sk/og-image.png',
