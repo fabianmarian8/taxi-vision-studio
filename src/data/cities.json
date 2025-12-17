@@ -7446,7 +7446,7 @@
       "slug": "strazske",
       "region": "Košický kraj",
       "description": "Mesto v Košickom kraji. Vyberte si taxi v Strážskom.",
-      "metaDescription": "Nájdite taxi v meste Strážske. 2 taxislužby s telefónnymi číslami a webovými stránkami: Taxislužba GreDas Strážske, TAXI LIENKA Strážske. Kontaktujte priamo.",
+      "metaDescription": "Nájdite taxi v meste Strážske. 3 taxislužby: Taxislužba GreDas, TAXI LIENKA, Urgent Taxi. Kontaktujte priamo.",
       "keywords": [
         "taxi strážske",
         "taxislužba strážske",
@@ -7471,6 +7471,12 @@
           "isPromotional": false,
           "address": "Okružná 446, Strážske",
           "placeId": "ChIJV3Y8U7HLPkcRQ_KgczALPbk"
+        },
+        {
+          "name": "Urgent Taxi",
+          "phone": "+421952594080",
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.87466,
