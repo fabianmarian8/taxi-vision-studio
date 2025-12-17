@@ -9987,7 +9987,7 @@
       "slug": "zakamenne",
       "region": "Žilinský kraj",
       "description": "Obec v okrese Námestovo v Žilinskom kraji. Nájdite taxi v Zákamennom.",
-      "metaDescription": "Nájdite taxi v obci Zákamenné. Taxislužba Taxi Marek Mrekaj s telefónnym číslom. Kontaktujte priamo.",
+      "metaDescription": "Nájdite taxi v obci Zákamenné. 2 taxislužby: Taxi Marek Mrekaj a OuKej Taxi s telefónnymi číslami. Kontaktujte priamo.",
       "keywords": [
         "taxi zákamenné",
         "taxislužba zákamenné",
@@ -10003,6 +10003,15 @@
           "isPromotional": false,
           "address": "Poriecie 1265/164, Zákamenné",
           "placeId": "ChIJpazWgnTLFUcRamdSS_RTFrg"
+        },
+        {
+          "name": "OuKej Taxi",
+          "website": "https://oukej-taxi-sk.webnode.sk/",
+          "phone": "+421949235929",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Novoť 325, 029 55 Novoť",
+          "description": "0949 235 929 (5-miestne) | 0907 373 029 (9-miestne)"
         }
       ],
       "latitude": 49.388036,
