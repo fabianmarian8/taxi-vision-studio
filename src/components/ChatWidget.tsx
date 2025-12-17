@@ -240,18 +240,25 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
     const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
     const filePath = `${partnerId}/${fileName}`;
 
+    console.log('Uploading file:', { fileName, filePath, fileType: file.type, fileSize: file.size });
+
     const { error: uploadError } = await supabase.storage
       .from('chat-attachments')
       .upload(filePath, file);
 
     if (uploadError) {
       console.error('Upload error:', uploadError);
+      // Show specific error to user
+      const errorMsg = uploadError.message || 'Neznáma chyba pri nahrávaní';
+      setError(`Upload zlyhal: ${errorMsg}`);
       return null;
     }
 
     const { data: { publicUrl } } = supabase.storage
       .from('chat-attachments')
       .getPublicUrl(filePath);
+
+    console.log('Upload successful:', publicUrl);
 
     return {
       url: publicUrl,
