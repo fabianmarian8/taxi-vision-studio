@@ -56,7 +56,7 @@ export const Header = () => {
             <a
               href="#cities"
               onClick={handleNavClick('cities')}
-              className="text-sm font-bold hover:text-foreground/70 transition-colors cursor-pointer"
+              className="text-sm font-bold text-foreground hover:text-foreground/70 transition-colors cursor-pointer"
               title="Prejsť na zoznam miest"
             >
               Mestá
@@ -64,21 +64,21 @@ export const Header = () => {
             <a
               href="#how-it-works"
               onClick={handleNavClick('how-it-works')}
-              className="text-sm font-bold hover:text-foreground/70 transition-colors cursor-pointer"
+              className="text-sm font-bold text-foreground hover:text-foreground/70 transition-colors cursor-pointer"
               title="Ako funguje Taxi NearMe"
             >
               Ako to funguje
             </a>
             <Link
               href="/o-nas"
-              className="text-sm font-bold hover:text-foreground/70 transition-colors"
+              className="text-sm font-bold text-foreground hover:text-foreground/70 transition-colors"
               title="O nás"
             >
               O nás
             </Link>
             <Link
               href="/kontakt"
-              className="text-sm font-bold hover:text-foreground/70 transition-colors"
+              className="text-sm font-bold text-foreground hover:text-foreground/70 transition-colors"
               title="Kontaktujte nás"
             >
               Kontakt
@@ -107,7 +107,7 @@ export const Header = () => {
               className="home-button flex items-center justify-center"
               title="Partner prihlásenie"
             >
-              <User className="h-4 w-4" />
+              <User className="h-4 w-4 text-[#1a1a1a]" />
             </a>
 
             {/* Mobile: hamburger menu */}
