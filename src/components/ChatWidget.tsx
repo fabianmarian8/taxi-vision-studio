@@ -13,9 +13,10 @@ interface Message {
   attachment_type?: string;
 }
 
-// Allowed file types and max size
-const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'application/pdf'];
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+// Allowed file types and max size (must match Supabase bucket settings)
+const ALLOWED_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp', 'application/pdf'];
+const ALLOWED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.pdf'];
+const MAX_FILE_SIZE = 20 * 1024 * 1024; // 20MB - synced with Supabase bucket
 
 interface ChatWidgetProps {
   partnerId: string;
@@ -212,15 +213,26 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
     const file = e.target.files?.[0];
     if (!file) return;
 
-    // Validate file type
-    if (!ALLOWED_TYPES.includes(file.type)) {
-      setError('Povolené sú len obrázky (JPG, PNG, GIF, WebP) a PDF');
+    // Get file extension for Android Chrome MIME type bug workaround
+    const extension = '.' + file.name.split('.').pop()?.toLowerCase();
+    const mimeType = file.type.toLowerCase();
+
+    // Android Chrome bug workaround - check extension if MIME is empty or non-standard
+    const isValidType = ALLOWED_TYPES.includes(mimeType) ||
+                        (mimeType === '' && ALLOWED_EXTENSIONS.includes(extension)) ||
+                        (mimeType === 'image/jpg' && ALLOWED_EXTENSIONS.includes(extension));
+
+    if (!isValidType) {
+      console.error('[ChatWidget] Invalid file type:', { mimeType, extension, fileName: file.name });
+      setError(`Nepovolený typ súboru. Povolené: JPG, PNG, GIF, WebP, PDF`);
       return;
     }
 
     // Validate file size
     if (file.size > MAX_FILE_SIZE) {
-      setError('Maximálna veľkosť súboru je 5MB');
+      const sizeMB = (file.size / (1024 * 1024)).toFixed(1);
+      console.error('[ChatWidget] File too large:', { size: file.size, sizeMB, fileName: file.name });
+      setError(`Súbor je príliš veľký (${sizeMB}MB). Maximum je 20MB.`);
       return;
     }
 
@@ -236,34 +248,56 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
   };
 
   const uploadFile = async (file: File): Promise<{ url: string; type: string } | null> => {
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
-    const filePath = `${partnerId}/${fileName}`;
-
-    console.log('Uploading file:', { fileName, filePath, fileType: file.type, fileSize: file.size });
-
-    const { error: uploadError } = await supabase.storage
-      .from('chat-attachments')
-      .upload(filePath, file);
-
-    if (uploadError) {
-      console.error('Upload error:', uploadError);
-      // Show specific error to user
-      const errorMsg = uploadError.message || 'Neznáma chyba pri nahrávaní';
-      setError(`Upload zlyhal: ${errorMsg}`);
+    // Verify session is still active before upload
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      console.error('[ChatWidget] No active session for upload');
+      setError('Vaša session vypršala. Prosím, obnovte stránku a prihláste sa znova.');
       return null;
     }
 
-    const { data: { publicUrl } } = supabase.storage
-      .from('chat-attachments')
-      .getPublicUrl(filePath);
+    const fileExt = file.name.split('.').pop()?.toLowerCase();
+    const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+    const filePath = `${partnerId}/${fileName}`;
 
-    console.log('Upload successful:', publicUrl);
+    console.log('[ChatWidget] Uploading file:', { fileName, filePath, fileType: file.type, fileSize: file.size });
 
-    return {
-      url: publicUrl,
-      type: file.type.startsWith('image/') ? 'image' : 'pdf'
-    };
+    try {
+      const { error: uploadError } = await supabase.storage
+        .from('chat-attachments')
+        .upload(filePath, file);
+
+      if (uploadError) {
+        console.error('[ChatWidget] Upload error:', uploadError);
+        // Show specific error to user with more details
+        let errorMsg = uploadError.message || 'Neznáma chyba pri nahrávaní';
+        if (errorMsg.includes('Payload too large')) {
+          errorMsg = 'Súbor je príliš veľký pre server';
+        } else if (errorMsg.includes('Invalid')) {
+          errorMsg = 'Neplatný formát súboru';
+        }
+        setError(`Upload zlyhal: ${errorMsg}`);
+        return null;
+      }
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('chat-attachments')
+        .getPublicUrl(filePath);
+
+      console.log('[ChatWidget] Upload successful:', publicUrl);
+
+      // Determine type based on extension if MIME is unreliable
+      const isImage = ['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(fileExt || '');
+
+      return {
+        url: publicUrl,
+        type: isImage ? 'image' : 'pdf'
+      };
+    } catch (err) {
+      console.error('[ChatWidget] Upload exception:', err);
+      setError('Chyba siete pri nahrávaní. Skúste znova.');
+      return null;
+    }
   };
 
   const clearChatHistory = async () => {
@@ -448,7 +482,7 @@ export function ChatWidget({ partnerId, partnerName, partnerEmail }: ChatWidgetP
                 onClick={() => fileInputRef.current?.click()}
                 disabled={isSending || isUploading}
                 className="text-gray-500 hover:text-gray-700 disabled:opacity-50 p-2 rounded-lg transition-colors"
-                title="Pridať prílohu (max 5MB)"
+                title="Pridať prílohu (max 20MB)"
                 aria-label="Pridať prílohu"
               >
                 <Paperclip className="h-5 w-5" />
