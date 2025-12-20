@@ -11,6 +11,7 @@ export interface PartnerData {
   heroImage?: string;
   shortDescription?: string;
   description?: string;
+  servicesDescription?: string; // Popis služieb (pre inline editor)
   services?: string[];
   workingHours?: string;
   googlePlaceId?: string;

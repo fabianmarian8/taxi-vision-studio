@@ -25,10 +25,16 @@ export interface ApprovedPartnerData {
   banner_title: string | null;
   banner_subtitle: string | null;
   services: string[] | null;
+  services_description: string | null;
   show_services: boolean | null;
   gallery: string[] | null;
   social_facebook: string | null;
   social_instagram: string | null;
+  whatsapp: string | null;
+  booking_url: string | null;
+  pricelist_url: string | null;
+  transport_rules_url: string | null;
+  contact_url: string | null;
 }
 
 /**
@@ -81,10 +87,16 @@ export async function getApprovedPartnerData(partnerSlug: string): Promise<Appro
       banner_title: draft.banner_title,
       banner_subtitle: draft.banner_subtitle,
       services: draft.services,
+      services_description: draft.services_description,
       show_services: draft.show_services,
       gallery: draft.gallery,
       social_facebook: draft.social_facebook,
       social_instagram: draft.social_instagram,
+      whatsapp: draft.whatsapp,
+      booking_url: draft.booking_url,
+      pricelist_url: draft.pricelist_url,
+      transport_rules_url: draft.transport_rules_url,
+      contact_url: draft.contact_url,
     };
   } catch (error) {
     console.error('[getApprovedPartnerData] Error:', error);

@@ -34,3 +34,4 @@ out/
 .env
 .env.local
 .aider*
+.env*.local

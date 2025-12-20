@@ -1,13 +1,18 @@
 'use client';
 
-import { Plus, Menu, X, User } from "lucide-react";
-import { Button } from "./ui/button";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { ContactFormModal } from "./ContactFormModal";
 import { useState } from "react";
+import { UserMenu } from "./UserMenu";
 
-export const Header = () => {
+interface HeaderProps {
+  partnerSlug?: string;
+  isOwner?: boolean;
+}
+
+export const Header = ({ partnerSlug, isOwner = false }: HeaderProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -37,7 +42,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#f5a623] border-b border-foreground/30 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 bg-[#f5a623] border-b border-foreground/30">
       <div className="container mx-auto px-4 md:px-8 py-1.5 md:py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-3">
@@ -100,15 +105,7 @@ export const Header = () => {
               <span>ť</span>
             </button>
 
-            <a
-              href="https://www.taxinearme.sk/partner/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="home-button flex items-center justify-center"
-              title="Partner prihlásenie"
-            >
-              <User className="h-4 w-4 text-[#1a1a1a]" />
-            </a>
+            <UserMenu partnerSlug={partnerSlug} isOwner={isOwner} />
 
             {/* Mobile: hamburger menu */}
             <button

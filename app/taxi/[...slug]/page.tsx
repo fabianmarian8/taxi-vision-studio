@@ -53,6 +53,9 @@ import { NearbyMunicipalities } from '@/components/NearbyMunicipalities';
 import { getMunicipalityStats } from '@/lib/municipality-data';
 import { TaxiPromoBanner } from '@/components/TaxiPromoBanner';
 import { getApprovedPartnerData } from '@/lib/partner-data';
+import { checkPartnerOwnership } from '@/lib/partner-ownership';
+import { PartnerPageWrapper } from '@/components/inline-editor';
+import { EditableHeroTitle, EditableHeroSubtitle, EditableDescription, EditableHeroImage, EditableGallery, EditableServices, EditableContactButtons, EditablePhoneButton } from '@/components/partner/PartnerPageContent';
 
 import {
   getLocationBySlug,
@@ -1268,6 +1271,9 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
     // Fetch approved data from Supabase (partner portal changes)
     const approvedData = await getApprovedPartnerData(serviceSlug);
 
+    // Check if current user is owner (for inline editing)
+    const { isOwner, draftData, partnerId, draftId } = await checkPartnerOwnership(serviceSlug);
+
     // Merge approved data with cities.json data (approved data takes precedence if not null/empty)
     const partnerData = service.partnerData;
 
@@ -1300,7 +1306,40 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
       : null;
     const mergedEmail = approvedData?.email || null;
 
+    // Build initial data for inline editor (draft data overrides approved data)
+    const initialEditorData = {
+      company_name: draftData?.company_name ?? approvedData?.company_name ?? service.name,
+      description: draftData?.description ?? mergedDescription ?? '',
+      phone: draftData?.phone ?? approvedData?.phone ?? service.phone ?? '',
+      email: draftData?.email ?? mergedEmail ?? '',
+      website: draftData?.website ?? approvedData?.website ?? service.website ?? '',
+      hero_title: draftData?.hero_title ?? approvedData?.hero_title ?? service.name,
+      hero_subtitle: draftData?.hero_subtitle ?? approvedData?.hero_subtitle ?? `Profesionálna taxislužba ${locationText} ${city.name}`,
+      hero_image_url: draftData?.hero_image_url ?? heroImage ?? undefined,
+      hero_image_zoom: draftData?.hero_image_zoom ?? heroImageZoom,
+      hero_image_pos_x: draftData?.hero_image_pos_x ?? heroImagePosX,
+      hero_image_pos_y: draftData?.hero_image_pos_y ?? heroImagePosY,
+      services: draftData?.services ?? approvedData?.services ?? undefined,
+      services_description: draftData?.services_description ?? approvedData?.services_description ?? partnerData?.servicesDescription ?? '',
+      gallery: draftData?.gallery ?? mergedGallery ?? [],
+      social_facebook: draftData?.social_facebook ?? approvedData?.social_facebook ?? '',
+      social_instagram: draftData?.social_instagram ?? approvedData?.social_instagram ?? '',
+      whatsapp: draftData?.whatsapp ?? approvedData?.whatsapp ?? '',
+      booking_url: draftData?.booking_url ?? approvedData?.booking_url ?? partnerData?.bookingUrl ?? '',
+      pricelist_url: draftData?.pricelist_url ?? approvedData?.pricelist_url ?? partnerData?.pricelistUrl ?? '',
+      transport_rules_url: draftData?.transport_rules_url ?? approvedData?.transport_rules_url ?? partnerData?.transportRulesUrl ?? '',
+      contact_url: draftData?.contact_url ?? approvedData?.contact_url ?? partnerData?.contactUrl ?? '',
+    };
+
     return (
+      <PartnerPageWrapper
+        isOwner={isOwner}
+        initialData={initialEditorData}
+        partnerId={partnerId}
+        draftId={draftId}
+        partnerSlug={serviceSlug}
+        citySlug={city.slug}
+      >
       <div className="min-h-screen overflow-x-hidden partner-page-bg">
         <TaxiServiceSchema
           service={service}
@@ -1308,7 +1347,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           citySlug={city.slug}
           serviceSlug={serviceSlug}
         />
-        <Header />
+        <Header partnerSlug={serviceSlug} isOwner={isOwner} />
 
         {/* Hero Section - Partner */}
         <section className="pt-0 pb-8 md:pb-12">
@@ -1335,15 +1374,22 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
             {/* Hero image container (uses Supabase approved positioning if available) */}
             {heroImage && (
+              <EditableHeroImage
+                defaultImage={heroImage}
+                defaultZoom={heroImageZoom}
+                defaultPosX={heroImagePosX}
+                defaultPosY={heroImagePosY}
+                partnerId={partnerId}
+              >
               <div
                 className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 h-[200px] md:h-[260px]"
               >
                 <div
                   className="absolute inset-0 bg-no-repeat"
                   style={{
-                    backgroundImage: `url(${heroImage})`,
-                    backgroundPosition: `${heroImagePosX}% ${heroImagePosY}%`,
-                    backgroundSize: `${heroImageZoom}%`
+                    backgroundImage: 'var(--hero-image)',
+                    backgroundPosition: 'var(--hero-pos-x) var(--hero-pos-y)',
+                    backgroundSize: 'var(--hero-zoom)',
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -1368,12 +1414,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                     )}
                   </div>
 
-                  <h1 className="text-2xl md:text-4xl font-black text-white mb-1 md:mb-2">
-                    {service.name}
-                  </h1>
-                  <p className="text-white/90 text-sm md:text-base">
-                    Profesionálna taxislužba {locationText} {city.name}
-                  </p>
+                  <EditableHeroTitle defaultValue={service.name} />
+                  <EditableHeroSubtitle defaultValue={`Profesionálna taxislužba ${locationText} ${city.name}`} />
 
                   {/* Web & Contact buttons in hero - at bottom */}
                   <div className="flex gap-2 md:gap-3 mt-2 md:mt-3">
@@ -1402,6 +1444,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   </div>
                 </div>
               </div>
+              </EditableHeroImage>
             )}
 
             {/* Fallback gradient hero if no image - Mobile optimized */}
@@ -1425,28 +1468,17 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   )}
                 </div>
 
-                <h1 className="text-2xl md:text-5xl font-black text-white mb-2 md:mb-4">
-                  {service.name}
-                </h1>
-                <p className="text-base md:text-xl text-white/90">
-                  Profesionálna taxislužba {locationText} {city.name}
-                </p>
+                <EditableHeroTitle defaultValue={service.name} />
+                <EditableHeroSubtitle defaultValue={`Profesionálna taxislužba ${locationText} ${city.name}`} />
               </div>
             )}
 
-            {/* Contact buttons - mobile optimized */}
+            {/* Contact buttons - mobile optimized with live preview */}
             <div className="space-y-3 mb-6">
-              {/* Primary CTA - Phone - full width */}
-              {service.phone && (
-                <a
-                  href={`tel:${service.phone}`}
-                  className="w-full flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-black text-base md:text-lg px-4 py-3.5 md:py-4 rounded-xl transition-colors shadow-lg"
-                >
-                  <Phone className="h-5 w-5" />
-                  {service.phone}
-                </a>
-              )}
-              {/* Additional phone numbers */}
+              {/* Primary CTA - Phone - full width - EDITABLE */}
+              <EditablePhoneButton defaultPhone={service.phone || ''} />
+
+              {/* Additional phone numbers (static - not editable) */}
               {(service.phone2 || service.phone3) && (
                 <div className="flex flex-wrap gap-2">
                   {service.phone2 && (
@@ -1470,119 +1502,50 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 </div>
               )}
 
-              {/* Secondary buttons - 2 column grid on mobile */}
-              <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
-                {partnerData?.whatsapp && (
-                  <a
-                    href={`https://wa.me/${partnerData.whatsapp.replace(/[\s+]/g, '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
-                  >
-                    <MessageCircle className="h-4 w-4 md:h-5 md:w-5" />
-                    <span>WhatsApp</span>
-                  </a>
-                )}
-                {partnerData?.bookingUrl && (
-                  <a
-                    href={partnerData.bookingUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
-                  >
-                    <Clock className="h-4 w-4 md:h-5 md:w-5" />
-                    <span className="hidden sm:inline">Časová </span>Objednávka
-                  </a>
-                )}
-                                {partnerData?.pricelistUrl && (
-                  <a
-                    href={partnerData.pricelistUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-amber-100 hover:bg-amber-200 text-amber-800 font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
-                  >
-                    <FileText className="h-4 w-4 md:h-5 md:w-5" />
-                    <span>Cenník</span>
-                  </a>
-                )}
-                {partnerData?.transportRulesUrl && (
-                  <a
-                    href={partnerData.transportRulesUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-blue-100 hover:bg-blue-200 text-blue-800 font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
-                  >
-                    <ScrollText className="h-4 w-4 md:h-5 md:w-5" />
-                    <span>Prepravný poriadok</span>
-                  </a>
-                )}
-                {mergedEmail && (
-                  <a
-                    href={`mailto:${mergedEmail}`}
-                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
-                  >
-                    <Mail className="h-4 w-4 md:h-5 md:w-5" />
-                    <span>Email</span>
-                  </a>
-                )}
-                {mergedFacebook && (
-                  <a
-                    href={mergedFacebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
-                  >
-                    <Facebook className="h-4 w-4 md:h-5 md:w-5" />
-                    <span>Facebook</span>
-                  </a>
-                )}
-                {mergedInstagram && (
-                  <a
-                    href={mergedInstagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-1.5 md:gap-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
-                  >
-                    <Instagram className="h-4 w-4 md:h-5 md:w-5" />
-                    <span>Instagram</span>
-                  </a>
-                )}
-                              </div>
+              {/* Secondary buttons - EDITABLE with live preview */}
+              <EditableContactButtons
+                defaultLinks={{
+                  whatsapp: partnerData?.whatsapp || '',
+                  booking_url: partnerData?.bookingUrl || '',
+                  pricelist_url: partnerData?.pricelistUrl || '',
+                  transport_rules_url: partnerData?.transportRulesUrl || '',
+                  email: mergedEmail || '',
+                  facebook: approvedData?.social_facebook || '',
+                  instagram: approvedData?.social_instagram || '',
+                  website: service.website || '',
+                  contact_url: partnerData?.contactUrl || '',
+                }}
+              />
             </div>
 
             {/* Gallery - under contact buttons (uses merged gallery from Supabase approved data) */}
-            {mergedGallery && mergedGallery.length > 0 && (
-              <div className="mt-6">
-                <TaxiGallery images={mergedGallery} serviceName={service.name} />
-              </div>
-            )}
+            <EditableGallery
+              defaultImages={mergedGallery || []}
+              serviceName={service.name}
+              partnerId={partnerId}
+            />
 
-            {/* About / Description Section - from partner portal */}
-            {(approvedData?.show_description !== false) && mergedDescription && (
-              <div className="mt-6 md:mt-8 bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-sm">
-                <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">O nás</h2>
-                <p className="text-sm md:text-base text-foreground/80 leading-relaxed whitespace-pre-line">
-                  {mergedDescription}
-                </p>
-              </div>
-            )}
+            {/* About / Description Section - editable */}
+            <EditableDescription defaultValue={mergedDescription || ''} />
 
             {/* Services Section - only if show_services is enabled in partner portal */}
             {approvedData?.show_services && approvedData?.services && approvedData.services.length > 0 && (
-              <div className="mt-6 md:mt-8 bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-sm">
-                <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">Ponúkané služby</h2>
-                <div className="flex flex-wrap gap-2">
-                  {approvedData.services.map((service: string, index: number) => (
-                    <span
-                      key={index}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-100 text-purple-800 rounded-full text-sm font-medium"
-                    >
-                      <CheckCircle2 className="h-4 w-4" />
-                      {service}
-                    </span>
-                  ))}
+              <EditableServices defaultServices={approvedData.services}>
+                <div className="mt-6 md:mt-8 bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-sm">
+                  <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">Ponúkané služby</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {approvedData.services.map((svc: string, index: number) => (
+                      <span
+                        key={index}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-100 text-purple-800 rounded-full text-sm font-medium"
+                      >
+                        <CheckCircle2 className="h-4 w-4" />
+                        {svc}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </EditableServices>
             )}
 
             {/* Custom description / services - Mobile optimized */}
@@ -1710,6 +1673,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
         <Footer />
       </div>
+      </PartnerPageWrapper>
     );
   }
 

@@ -2,7 +2,7 @@ import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
-export async function POST(request: Request) {
+async function handleSignOut(request: Request) {
   const cookieStore = await cookies();
 
   const supabase = createServerClient(
@@ -28,5 +28,15 @@ export async function POST(request: Request) {
 
   await supabase.auth.signOut();
 
-  return NextResponse.redirect(new URL('/partner/login', request.url));
+  // Presmerovanie na hlavnú stránku namiesto login
+  return NextResponse.redirect(new URL('/', request.url));
+}
+
+// Support both POST and GET for signout
+export async function POST(request: Request) {
+  return handleSignOut(request);
+}
+
+export async function GET(request: Request) {
+  return handleSignOut(request);
 }
