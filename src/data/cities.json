@@ -3807,7 +3807,16 @@
         "objednať taxi lipany",
         "taxi lipany telefón"
       ],
-      "taxiServices": [],
+      "taxiServices": [
+        {
+          "name": "Taxi Lipany NONSTOP",
+          "phone": "0907 091 891",
+          "email": "taxilipany@gmail.com",
+          "nonstop": true,
+          "description": "Nonstop preprava osôb v Lipanoch a okolí (24/7).",
+          "customDescription": "Taxi Lipany – Nonstop odvoz & letiská\n\n📞 0907 091 891 – nonstop preprava osôb v Lipanoch a okolí (24/7)\n📧 taxilipany@gmail.com\n\n🚖 Služby: miestna taxi preprava, odvoz na diskotéku, do práce, domov aj dlhšie trasy, letiskové transfery (napr. Košice, Poprad, Bratislava, Budapešť, Viedeň), preprava na oslavy / svadby či firemné akcie.\n\n🌟 Funguje nonstop 24/7 – objednávku si urobíš jednoducho telefonicky alebo e-mailom."
+        }
+      ],
       "latitude": 49.152599,
       "longitude": 20.9631,
       "heroImage": "hero-lipany"
