@@ -260,16 +260,6 @@ export function UserMenu({
                 </button>
               </form>
 
-              <div className="mt-3 pt-3 border-t border-gray-100">
-                <Link
-                  href="/partner/register"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 text-sm text-purple-600 hover:text-purple-700 transition-colors"
-                >
-                  <span className="font-bold">+</span>
-                  Vytvoriť účet
-                </Link>
-              </div>
             </div>
           )}
         </div>
