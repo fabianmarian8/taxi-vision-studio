@@ -17,6 +17,7 @@ import './globals.css';
 import { Providers } from '@/components/providers';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { CookieBanner } from '@/components/cookie-banner';
+import { GlobalChatWidget } from '@/components/GlobalChatWidget';
 
 // Optimalizovaný Inter font cez next/font/google
 // LCP Optimalizácia: Redukovaný z 3 fontov na 1 (úspora ~200ms render-blocking)
@@ -242,6 +243,12 @@ export default function RootLayout({
           Globálny komponent, zobrazuje sa na všetkých stránkach
         */}
         <CookieBanner />
+
+        {/*
+          Global Chat Widget - Podpora pre prihlásených partnerov
+          Zobrazuje sa na všetkých stránkach ak je používateľ prihlásený
+        */}
+        <GlobalChatWidget />
       </body>
     </html>
   );

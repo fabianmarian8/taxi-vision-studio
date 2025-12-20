@@ -2,7 +2,6 @@ import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { PasswordSettings } from './PasswordSettings';
-import { ChatWidgetWrapper } from './ChatWidgetWrapper';
 
 export default async function PartnerDashboard() {
   const supabase = await createClient();
@@ -178,15 +177,6 @@ export default async function PartnerDashboard() {
           </div>
         )}
       </main>
-
-      {/* Chat Widget - zobrazuje sa len ak má partner aspoň jednu taxislužbu */}
-      {partners && partners.length > 0 && (
-        <ChatWidgetWrapper
-          partnerId={partners[0].id}
-          partnerName={partners[0].name}
-          partnerEmail={user.email || ''}
-        />
-      )}
     </div>
   );
 }
