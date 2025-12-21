@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 import { Partner, PartnerDraft } from '@/lib/supabase/types';
@@ -88,6 +88,22 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
   const galleryImageInputRef = useRef<HTMLInputElement>(null);
   // Track draft ID to prevent duplicate inserts
   const [draftId, setDraftId] = useState<string | null>(initialDraft?.id || null);
+
+  // Mobile keyboard fix - scroll input into view when focused
+  useEffect(() => {
+    const handleFocus = (e: FocusEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
+        // Wait for keyboard to appear
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    };
+
+    document.addEventListener('focusin', handleFocus);
+    return () => document.removeEventListener('focusin', handleFocus);
+  }, []);
 
   const handleChange = useCallback((field: keyof FormData, value: string | string[] | number | boolean) => {
     setFormData((prev) => ({ ...prev, [field]: value }));

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile keyboard fix - ensure inputs stay visible when keyboard opens */
+input, textarea {
+  scroll-margin-top: 120px;
+  scroll-margin-bottom: 40px;
+}
+
 /* Font utility classes - zredukované pre LCP optimalizáciu */
 
 /* 3D Minimalist Design System - Inspired by Taxi NearMe Logo */
