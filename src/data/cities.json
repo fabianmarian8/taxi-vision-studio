@@ -9713,7 +9713,7 @@
             "googlePlaceId": "ChIJe9x_Mpk3FUcRx7LLqAwRdYo",
             "googleMapsUrl": "https://maps.app.goo.gl/i2jYFNbQaBq9odse7",
             "whatsapp": "+421919040118",
-            "pricePerKm": "0.80€/km",
+            "pricePerKm": "1.00€/km",
             "paymentMethods": [
               "Hotovosť",
               "Bankový prevod",
@@ -9722,89 +9722,92 @@
             "pricelist": [
               {
                 "destination": "V rámci mesta Zvolen",
-                "price": "od 3€"
+                "price": "od 4€"
               },
               {
                 "destination": "Banská Bystrica",
                 "distance": 21,
-                "price": "od 17€"
+                "price": "21€"
               },
               {
                 "destination": "Žiar nad Hronom",
                 "distance": 25,
-                "price": "od 23€"
+                "price": "25€"
               },
               {
                 "destination": "Detva",
                 "distance": 26,
-                "price": "od 21€"
+                "price": "26€"
               },
               {
                 "destination": "Krupina",
                 "distance": 28,
-                "price": "od 22€"
+                "price": "28€"
               },
               {
                 "destination": "Letisko Sliač",
-                "price": "10€"
+                "distance": 12,
+                "price": "12€"
               },
               {
                 "destination": "Lučenec",
                 "distance": 59,
-                "price": "47€"
+                "price": "59€"
               },
               {
                 "destination": "Brezno",
                 "distance": 63,
-                "price": "50€"
+                "price": "63€"
               },
               {
                 "destination": "Ružomberok",
                 "distance": 73,
-                "price": "58€"
+                "price": "73€"
               },
               {
                 "destination": "Martin",
                 "distance": 79,
-                "price": "63€"
+                "price": "79€"
               },
               {
                 "destination": "Liptovský Mikuláš",
                 "distance": 95,
-                "price": "76€"
+                "price": "95€"
               },
               {
                 "destination": "Nitra",
                 "distance": 102,
-                "price": "82€"
+                "price": "102€"
               },
               {
                 "destination": "Žilina",
                 "distance": 108,
-                "price": "86€"
+                "price": "108€"
               },
               {
                 "destination": "Poprad",
                 "distance": 136,
-                "price": "109€"
+                "price": "136€"
               },
               {
                 "destination": "Letisko Budapešť",
-                "price": "170€"
+                "distance": 220,
+                "price": "220€"
               },
               {
                 "destination": "Bratislava",
                 "distance": 195,
-                "price": "180€"
+                "price": "195€"
               },
               {
                 "destination": "Košice",
                 "distance": 212,
-                "price": "170€"
+                "price": "212€"
               },
               {
                 "destination": "Letisko Viedeň",
-                "price": "250€"
+                "distance": 310,
+                "price": "310€"
               }
             ]
           },
