@@ -66,42 +66,45 @@ export function FloatingAdminBar({
           )}
         </button>
 
-        {/* Separator */}
-        <div className="w-px h-6 bg-gray-600" />
+        {/* Save Status - only show when relevant (editing, saving, or has changes) */}
+        {(isEditMode || isSaving || hasPendingChanges || hasUnsavedChanges || saveError || lastSaved) && (
+          <>
+            {/* Separator */}
+            <div className="w-px h-6 bg-gray-600" />
 
-        {/* Save Status */}
-        <div className="flex items-center gap-2 text-sm">
-          {saveError ? (
-            <>
-              <AlertCircle className="w-4 h-4 text-red-400" />
-              <span className="text-red-400" title={saveError}>Chyba ukladania!</span>
-            </>
-          ) : isSaving ? (
-            <>
-              <Cloud className="w-4 h-4 animate-pulse text-yellow-400" />
-              <span className="text-gray-300">Ukladám...</span>
-            </>
-          ) : hasPendingChanges ? (
-            <>
-              <CloudOff className="w-4 h-4 text-yellow-400 animate-pulse" />
-              <span className="text-yellow-400">Neuložené...</span>
-            </>
-          ) : hasUnsavedChanges ? (
-            <>
-              <CloudOff className="w-4 h-4 text-orange-400" />
-              <span className="text-orange-400">Nepublikované</span>
-            </>
-          ) : (
-            <>
-              <Cloud className="w-4 h-4 text-green-400" />
-              <span className="text-gray-300">
-                {lastSaved
-                  ? `Uložené ${lastSaved.toLocaleTimeString('sk-SK', { hour: '2-digit', minute: '2-digit' })}`
-                  : 'Uložené'}
-              </span>
-            </>
-          )}
-        </div>
+            {/* Save Status */}
+            <div className="flex items-center gap-2 text-sm">
+              {saveError ? (
+                <>
+                  <AlertCircle className="w-4 h-4 text-red-400" />
+                  <span className="text-red-400" title={saveError}>Chyba ukladania!</span>
+                </>
+              ) : isSaving ? (
+                <>
+                  <Cloud className="w-4 h-4 animate-pulse text-yellow-400" />
+                  <span className="text-gray-300">Ukladám...</span>
+                </>
+              ) : hasPendingChanges ? (
+                <>
+                  <CloudOff className="w-4 h-4 text-yellow-400 animate-pulse" />
+                  <span className="text-yellow-400">Neuložené...</span>
+                </>
+              ) : hasUnsavedChanges ? (
+                <>
+                  <CloudOff className="w-4 h-4 text-orange-400" />
+                  <span className="text-orange-400">Nepublikované</span>
+                </>
+              ) : lastSaved ? (
+                <>
+                  <Cloud className="w-4 h-4 text-green-400" />
+                  <span className="text-gray-300">
+                    Uložené {lastSaved.toLocaleTimeString('sk-SK', { hour: '2-digit', minute: '2-digit' })}
+                  </span>
+                </>
+              ) : null}
+            </div>
+          </>
+        )}
 
         {/* Actions - only show when there are changes */}
         {hasUnsavedChanges && (
