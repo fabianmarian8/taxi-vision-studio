@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server';
 import { redirect, notFound } from 'next/navigation';
 import { PartnerEditor } from './PartnerEditor';
 import citiesData from '@/data/cities.json';
+import { DEFAULT_PARTNER_SKIN } from '@/lib/partner-skins';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -57,6 +58,7 @@ function findOriginalServiceData(partnerSlug: string, citySlug: string) {
     hero_subtitle: '',
     banner_title: '',
     banner_subtitle: '',
+    template_variant: DEFAULT_PARTNER_SKIN,
     services: ((partnerData.services || []) as string[]),
     gallery: ((serviceAny.gallery || []) as string[]),
     social_facebook: '',
@@ -123,6 +125,7 @@ export default async function PartnerEditPage({ params }: Props) {
           hero_subtitle: originalData.hero_subtitle,
           banner_title: originalData.banner_title,
           banner_subtitle: originalData.banner_subtitle,
+          template_variant: originalData.template_variant,
           services: originalData.services,
           gallery: originalData.gallery,
           social_facebook: originalData.social_facebook,

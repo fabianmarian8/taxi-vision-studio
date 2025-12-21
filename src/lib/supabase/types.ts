@@ -36,6 +36,9 @@ export interface PartnerDraft {
   banner_title: string | null;
   banner_subtitle: string | null;
 
+  // Vzhlad sablony
+  template_variant: string | null;
+
   // Služby a vozidlá
   services: string[] | null;
   show_services: boolean | null;

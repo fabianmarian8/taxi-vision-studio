@@ -53,7 +53,7 @@ export function ServiceContactButtons({
         <a
           href={`tel:${phone}`}
           onClick={handlePhoneClick}
-          className="inline-flex items-center gap-3 bg-purple-900 text-white font-black text-2xl px-8 py-4 rounded-xl hover:bg-purple-800 transition-all"
+          className="inline-flex items-center gap-3 partner-accent-btn font-black text-2xl px-8 py-4 rounded-xl transition-all"
         >
           <Phone className="h-7 w-7" />
           {phone}

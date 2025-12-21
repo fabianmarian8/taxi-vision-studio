@@ -5,6 +5,7 @@ import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 import { Partner, PartnerDraft } from '@/lib/supabase/types';
 import { TaxiPreview } from './TaxiPreview';
+import { PARTNER_SKINS, normalizePartnerSkin } from '@/lib/partner-skins';
 
 interface Props {
   partner: Partner & { partner_drafts: PartnerDraft[] };
@@ -34,6 +35,7 @@ interface FormData {
   gallery: string[];
   social_facebook: string;
   social_instagram: string;
+  template_variant: string;
 }
 
 // Get thumbnail URL - use pre-generated thumbnails for Supabase storage images
@@ -72,12 +74,13 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
     gallery: (initialDraft?.gallery as string[]) || [],
     social_facebook: initialDraft?.social_facebook || '',
     social_instagram: initialDraft?.social_instagram || '',
+    template_variant: normalizePartnerSkin(initialDraft?.template_variant),
   });
 
   const [saving, setSaving] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
-  const [activeTab, setActiveTab] = useState<'general' | 'hero' | 'gallery' | 'social'>('general');
+  const [activeTab, setActiveTab] = useState<'general' | 'hero' | 'gallery' | 'social' | 'appearance'>('general');
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState<string | null>(null);
   const [galleryUploading, setGalleryUploading] = useState(false);
@@ -474,6 +477,7 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
                 {[
                   { id: 'general', label: 'Základné info' },
                   { id: 'hero', label: 'Hero sekcia' },
+                  { id: 'appearance', label: 'Vzhľad' },
                   { id: 'gallery', label: 'Galéria' },
                   { id: 'social', label: 'Sociálne siete' },
                 ].map((tab) => (
@@ -784,6 +788,44 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                       placeholder="Profesionálna preprava 24/7"
                     />
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'appearance' && (
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-sm font-medium text-gray-700">Vizuálny štýl stránky</h3>
+                    <p className="text-xs text-gray-500 mt-1">
+                      Vyberte si univerzálny skin. Zmena sa zobrazí v náhľade okamžite.
+                    </p>
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    {PARTNER_SKINS.map((skin) => {
+                      const isSelected = formData.template_variant === skin.id;
+
+                      return (
+                        <button
+                          key={skin.id}
+                          type="button"
+                          onClick={() => handleChange('template_variant', skin.id)}
+                          className={`text-left rounded-xl border p-3 transition-all ${
+                            isSelected
+                              ? 'border-gray-900 ring-2 ring-gray-900'
+                              : 'border-gray-200 hover:border-gray-400'
+                          }`}
+                        >
+                          <div className={`partner-skin partner-skin--${skin.id} partner-skin-option rounded-lg p-3`}>
+                            <div className="text-sm font-semibold">{skin.name}</div>
+                            <p className="text-xs opacity-90 mt-1">{skin.description}</p>
+                          </div>
+                          {isSelected && (
+                            <div className="mt-2 text-xs font-semibold text-gray-900">Vybrané</div>
+                          )}
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
               )}

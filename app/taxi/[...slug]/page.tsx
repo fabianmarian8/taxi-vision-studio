@@ -54,6 +54,7 @@ import { getMunicipalityStats } from '@/lib/municipality-data';
 import { TaxiPromoBanner } from '@/components/TaxiPromoBanner';
 import { getApprovedPartnerData } from '@/lib/partner-data';
 import { checkPartnerOwnership } from '@/lib/partner-ownership';
+import { getPartnerSkinClass, normalizePartnerSkin } from '@/lib/partner-skins';
 import { PartnerPageWrapper } from '@/components/inline-editor';
 import { EditableHeroTitle, EditableHeroSubtitle, EditableDescription, EditableHeroImage, EditableGallery, EditableServices, EditableContactButtons, EditablePhoneButton } from '@/components/partner/PartnerPageContent';
 
@@ -1306,6 +1307,11 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
       : null;
     const mergedEmail = approvedData?.email || null;
 
+    const templateVariant = normalizePartnerSkin(
+      draftData?.template_variant ?? approvedData?.template_variant ?? null
+    );
+    const skinClass = getPartnerSkinClass(templateVariant);
+
     // Build initial data for inline editor (draft data overrides approved data)
     const initialEditorData = {
       company_name: draftData?.company_name ?? approvedData?.company_name ?? service.name,
@@ -1329,6 +1335,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
       pricelist_url: draftData?.pricelist_url ?? approvedData?.pricelist_url ?? partnerData?.pricelistUrl ?? '',
       transport_rules_url: draftData?.transport_rules_url ?? approvedData?.transport_rules_url ?? partnerData?.transportRulesUrl ?? '',
       contact_url: draftData?.contact_url ?? approvedData?.contact_url ?? partnerData?.contactUrl ?? '',
+      template_variant: templateVariant,
     };
 
     return (
@@ -1340,7 +1347,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         partnerSlug={serviceSlug}
         citySlug={city.slug}
       >
-      <div className="min-h-screen overflow-x-hidden partner-page-bg">
+      <div className={`min-h-screen overflow-x-hidden partner-page-bg partner-skin ${skinClass}`}>
         <TaxiServiceSchema
           service={service}
           city={city}
@@ -1449,7 +1456,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
             {/* Fallback gradient hero if no image - Mobile optimized */}
             {!heroImage && (
-              <div className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 p-5 md:p-12">
+              <div className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 partner-hero-fallback p-5 md:p-12">
                 {/* Badges */}
                 <div className="flex gap-1.5 md:gap-2 mb-4 md:mb-6">
                   <div className="bg-green-500 text-white text-[10px] md:text-sm font-black px-2 md:px-4 py-0.5 md:py-1.5 rounded-full flex items-center gap-1">
@@ -1531,13 +1538,13 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             {/* Services Section - only if show_services is enabled in partner portal */}
             {approvedData?.show_services && approvedData?.services && approvedData.services.length > 0 && (
               <EditableServices defaultServices={approvedData.services}>
-                <div className="mt-6 md:mt-8 bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-sm">
+                <div className="mt-6 md:mt-8 partner-card rounded-xl p-4 md:p-6">
                   <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">Ponúkané služby</h2>
                   <div className="flex flex-wrap gap-2">
                     {approvedData.services.map((svc: string, index: number) => (
                       <span
                         key={index}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-100 text-purple-800 rounded-full text-sm font-medium"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 partner-tag rounded-full text-sm font-medium"
                       >
                         <CheckCircle2 className="h-4 w-4" />
                         {svc}
@@ -1550,7 +1557,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
             {/* Custom description / services - Mobile optimized */}
             {service.customDescription && (
-              <div className="mt-6 md:mt-8 bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-sm">
+              <div className="mt-6 md:mt-8 partner-card rounded-xl p-4 md:p-6">
                 <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">Naše služby</h2>
                 <div className="text-sm md:text-base text-foreground/80 leading-relaxed whitespace-pre-line">
                   {service.customDescription}
@@ -1567,8 +1574,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               Prečo si vybrať {service.name}?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
-              <div className="flex md:flex-col items-center md:text-center p-4 md:p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm gap-3 md:gap-0">
-                <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 md:mx-auto md:mb-4">
+              <div className="flex md:flex-col items-center md:text-center p-4 md:p-6 partner-card rounded-xl gap-3 md:gap-0">
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-full partner-accent-bg flex items-center justify-center flex-shrink-0 md:mx-auto md:mb-4">
                   <BadgeCheck className="h-5 w-5 md:h-7 md:w-7 text-white" />
                 </div>
                 <div className="flex-1 md:flex-none">
@@ -1576,8 +1583,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   <p className="text-foreground/70 text-xs md:text-base">Partner program zaručuje kvalitu a spoľahlivosť.</p>
                 </div>
               </div>
-              <div className="flex md:flex-col items-center md:text-center p-4 md:p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm gap-3 md:gap-0">
-                <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 md:mx-auto md:mb-4">
+              <div className="flex md:flex-col items-center md:text-center p-4 md:p-6 partner-card rounded-xl gap-3 md:gap-0">
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-full partner-accent-bg flex items-center justify-center flex-shrink-0 md:mx-auto md:mb-4">
                   <Phone className="h-5 w-5 md:h-7 md:w-7 text-white" />
                 </div>
                 <div className="flex-1 md:flex-none">
@@ -1585,8 +1592,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   <p className="text-foreground/70 text-xs md:text-base">Jednoduché objednanie taxi telefonicky.</p>
                 </div>
               </div>
-              <div className="flex md:flex-col items-center md:text-center p-4 md:p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm gap-3 md:gap-0">
-                <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 md:mx-auto md:mb-4">
+              <div className="flex md:flex-col items-center md:text-center p-4 md:p-6 partner-card rounded-xl gap-3 md:gap-0">
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-full partner-accent-bg flex items-center justify-center flex-shrink-0 md:mx-auto md:mb-4">
                   <Star className="h-5 w-5 md:h-7 md:w-7 text-white" />
                 </div>
                 <div className="flex-1 md:flex-none">
@@ -1622,12 +1629,12 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         )}
 
         {/* CTA Section - Mobile optimized */}
-        <section className="py-8 md:py-16 px-4 md:px-8 bg-gradient-to-r from-yellow-400 to-yellow-500">
+        <section className="py-8 md:py-16 px-4 md:px-8 partner-cta">
           <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-xl md:text-3xl font-black text-purple-900 mb-2 md:mb-4">
+            <h2 className="text-xl md:text-3xl font-black mb-2 md:mb-4">
               Potrebujete taxi {partnerData?.customCtaTitle ? partnerData.customCtaTitle : `${locationText} ${city.name}${partnerData?.secondaryCity ? ` alebo v obci ${partnerData.secondaryCity}` : ''}`}?
             </h2>
-            <p className="text-purple-900/70 mb-4 md:mb-6 text-sm md:text-lg">
+            <p className="partner-cta-muted mb-4 md:mb-6 text-sm md:text-lg">
               Zavolajte nám a odvezieme vás kam potrebujete.
             </p>
             <ServiceContactButtons

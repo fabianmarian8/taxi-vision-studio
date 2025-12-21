@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Phone, Globe, MessageCircle, Star, BadgeCheck, CheckCircle2, Monitor, Smartphone, ExternalLink, Facebook, Instagram, Mail } from 'lucide-react';
+import { getPartnerSkinClass } from '@/lib/partner-skins';
 
 interface TaxiPreviewProps {
   formData: {
@@ -22,6 +23,7 @@ interface TaxiPreviewProps {
     gallery: string[];
     social_facebook: string;
     social_instagram: string;
+    template_variant: string;
   };
   partnerSlug: string;
   cityName: string;
@@ -39,6 +41,7 @@ export function TaxiPreview({ formData, partnerSlug, cityName }: TaxiPreviewProp
   const [viewMode, setViewMode] = useState<'desktop' | 'mobile'>('mobile');
 
   const previewUrl = `/taxi/zvolen/${partnerSlug}`;
+  const skinClass = getPartnerSkinClass(formData.template_variant);
 
   return (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full">
@@ -103,7 +106,7 @@ export function TaxiPreview({ formData, partnerSlug, cityName }: TaxiPreviewProp
           }}
         >
           {/* Partner page background */}
-          <div className="partner-page-bg min-h-full">
+          <div className={`partner-page-bg partner-skin ${skinClass} min-h-full`}>
             {/* Hero Section */}
             <div
               className={`relative overflow-hidden ${
@@ -123,7 +126,7 @@ export function TaxiPreview({ formData, partnerSlug, cityName }: TaxiPreviewProp
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 </>
               ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800" />
+                <div className="absolute inset-0 partner-hero-fallback" />
               )}
 
               {/* Content overlay */}
@@ -228,7 +231,7 @@ export function TaxiPreview({ formData, partnerSlug, cityName }: TaxiPreviewProp
 
             {/* About / Description */}
             {formData.show_description && formData.description && (
-              <div className={`mt-4 ${viewMode === 'mobile' ? 'mx-3' : 'mx-4'} bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-sm`}>
+              <div className={`mt-4 ${viewMode === 'mobile' ? 'mx-3' : 'mx-4'} partner-card rounded-xl p-3`}>
                 <h2 className="text-sm font-bold text-gray-900 mb-2">O nás</h2>
                 <p className={`text-gray-600 leading-relaxed ${viewMode === 'mobile' ? 'text-[10px]' : 'text-xs'}`}>
                   {formData.description.length > 150
@@ -240,13 +243,13 @@ export function TaxiPreview({ formData, partnerSlug, cityName }: TaxiPreviewProp
 
             {/* Services */}
             {formData.show_services && formData.services.length > 0 && (
-              <div className={`mt-4 ${viewMode === 'mobile' ? 'mx-3' : 'mx-4'} bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-sm`}>
+              <div className={`mt-4 ${viewMode === 'mobile' ? 'mx-3' : 'mx-4'} partner-card rounded-xl p-3`}>
                 <h2 className="text-sm font-bold text-gray-900 mb-2">Ponúkané služby</h2>
                 <div className="flex flex-wrap gap-1.5">
                   {formData.services.map((service, index) => (
                     <span
                       key={index}
-                      className="inline-flex items-center gap-1 px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-[10px] font-medium"
+                      className="inline-flex items-center gap-1 px-2 py-1 partner-tag rounded-full text-[10px] font-medium"
                     >
                       <CheckCircle2 className="h-3 w-3" />
                       {service}
@@ -269,11 +272,11 @@ export function TaxiPreview({ formData, partnerSlug, cityName }: TaxiPreviewProp
                 ].map((feature, index) => (
                   <div
                     key={index}
-                    className={`flex items-center gap-2 p-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm ${
+                    className={`flex items-center gap-2 p-2 partner-card rounded-lg ${
                       viewMode === 'mobile' ? '' : 'flex-col text-center p-3'
                     }`}
                   >
-                    <div className={`rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 ${
+                    <div className={`rounded-full partner-accent-bg flex items-center justify-center flex-shrink-0 ${
                       viewMode === 'mobile' ? 'w-8 h-8' : 'w-10 h-10'
                     }`}>
                       <feature.icon className={`text-white ${viewMode === 'mobile' ? 'h-4 w-4' : 'h-5 w-5'}`} />
@@ -292,16 +295,16 @@ export function TaxiPreview({ formData, partnerSlug, cityName }: TaxiPreviewProp
             </div>
 
             {/* CTA Section */}
-            <div className={`bg-gradient-to-r from-yellow-400 to-yellow-500 ${viewMode === 'mobile' ? 'p-4' : 'p-6'}`}>
+            <div className={`partner-cta ${viewMode === 'mobile' ? 'p-4' : 'p-6'}`}>
               <div className="text-center">
-                <h2 className={`font-black text-purple-900 ${viewMode === 'mobile' ? 'text-sm mb-1' : 'text-lg mb-2'}`}>
+                <h2 className={`font-black ${viewMode === 'mobile' ? 'text-sm mb-1' : 'text-lg mb-2'}`}>
                   Potrebujete taxi?
                 </h2>
-                <p className={`text-purple-900/70 ${viewMode === 'mobile' ? 'text-xs mb-2' : 'text-sm mb-3'}`}>
+                <p className={`partner-cta-muted ${viewMode === 'mobile' ? 'text-xs mb-2' : 'text-sm mb-3'}`}>
                   Zavolajte nám a odvezieme vás kam potrebujete.
                 </p>
                 {formData.phone && (
-                  <div className={`inline-flex items-center gap-2 bg-purple-900 text-white font-black rounded-xl ${
+                  <div className={`inline-flex items-center gap-2 partner-accent-btn font-black rounded-xl ${
                     viewMode === 'mobile' ? 'px-4 py-2 text-sm' : 'px-6 py-3 text-lg'
                   }`}>
                     <Phone className={viewMode === 'mobile' ? 'h-4 w-4' : 'h-5 w-5'} />

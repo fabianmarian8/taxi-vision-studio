@@ -35,6 +35,7 @@ export interface ApprovedPartnerData {
   pricelist_url: string | null;
   transport_rules_url: string | null;
   contact_url: string | null;
+  template_variant: string | null;
 }
 
 /**
@@ -97,6 +98,7 @@ export async function getApprovedPartnerData(partnerSlug: string): Promise<Appro
       pricelist_url: draft.pricelist_url,
       transport_rules_url: draft.transport_rules_url,
       contact_url: draft.contact_url,
+      template_variant: draft.template_variant,
     };
   } catch (error) {
     console.error('[getApprovedPartnerData] Error:', error);

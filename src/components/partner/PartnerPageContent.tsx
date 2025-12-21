@@ -91,7 +91,7 @@ export function EditableDescription({ defaultValue }: { defaultValue: string }) 
   if (!value && !isEditMode) return null;
 
   return (
-    <div className="mt-6 md:mt-8 bg-white/90 backdrop-blur-sm rounded-xl p-4 md:p-6 shadow-sm">
+    <div className="mt-6 md:mt-8 partner-card rounded-xl p-4 md:p-6">
       <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">O nás</h2>
       <EditableField
         fieldKey="description"
@@ -583,7 +583,7 @@ export function EditableContactButtons({ defaultLinks }: EditableContactButtonsP
           href={bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1.5 md:gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
+          className="flex items-center justify-center gap-1.5 md:gap-2 partner-accent-btn font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
           onClick={(e) => isEditMode && e.preventDefault()}
         >
           <Clock className="h-4 w-4 md:h-5 md:w-5" />

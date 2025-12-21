@@ -50,6 +50,7 @@ export async function GET(
           gallery,
           social_facebook,
           social_instagram,
+          template_variant,
           whatsapp,
           booking_url,
           pricelist_url,

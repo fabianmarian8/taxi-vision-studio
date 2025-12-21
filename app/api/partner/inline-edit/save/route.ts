@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+import { isPartnerSkinId } from '@/lib/partner-skins';
 import { NextRequest, NextResponse } from 'next/server';
 
 // Whitelist povolených polí
@@ -25,7 +26,8 @@ const ALLOWED_FIELDS = [
   'pricelist_url',
   'transport_rules_url',
   'contact_url',
-  'services_description'
+  'services_description',
+  'template_variant'
 ];
 
 // URL polia ktoré vyžadujú validáciu
@@ -122,6 +124,12 @@ export async function POST(request: NextRequest) {
           // Validácia WhatsApp čísla
           if (!isValidWhatsApp(value)) {
             validationErrors.push('whatsapp must contain only numbers, + and spaces');
+          } else {
+            sanitizedChanges[key] = value;
+          }
+        } else if (key === 'template_variant') {
+          if (typeof value !== 'string' || !isPartnerSkinId(value)) {
+            validationErrors.push('template_variant must be a valid template option');
           } else {
             sanitizedChanges[key] = value;
           }

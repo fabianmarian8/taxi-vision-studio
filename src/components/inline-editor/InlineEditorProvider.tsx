@@ -23,6 +23,7 @@ export interface DraftData {
   gallery?: string[];
   social_facebook?: string;
   social_instagram?: string;
+  template_variant?: string;
   whatsapp?: string;
   booking_url?: string;
   pricelist_url?: string;

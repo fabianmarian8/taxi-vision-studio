@@ -441,10 +441,118 @@
 
 /* Partner page background - prevents flash of yellow on load */
 .partner-page-bg {
-  background-image: url('/textures/kraft-paper-bg.jpg');
+  background-image: var(--partner-bg-image, url('/textures/kraft-paper-bg.jpg'));
   background-size: cover;
   background-position: center top;
-  background-attachment: fixed;
+  background-attachment: var(--partner-bg-attachment, fixed);
+  background-repeat: no-repeat;
+}
+
+/* Partner skins - CSS variables allow safe visual swaps without layout changes */
+.partner-skin {
+  --partner-bg-image: url('/textures/kraft-paper-bg.jpg');
+  --partner-bg-attachment: fixed;
+  --partner-hero-fallback: linear-gradient(135deg, #7c3aed 0%, #6d28d9 45%, #3730a3 100%);
+  --partner-card-bg: rgba(255, 255, 255, 0.9);
+  --partner-card-border: rgba(15, 23, 42, 0.08);
+  --partner-card-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --partner-tag-bg: #ede9fe;
+  --partner-tag-text: #5b21b6;
+  --partner-accent: #7c3aed;
+  --partner-accent-hover: #6d28d9;
+  --partner-accent-foreground: #ffffff;
+  --partner-cta-bg: linear-gradient(90deg, #facc15, #f59e0b);
+  --partner-cta-text: #4c1d95;
+  --partner-cta-muted: rgba(76, 29, 149, 0.7);
+}
+
+.partner-skin--metro {
+  --partner-bg-image: linear-gradient(180deg, #f0f5ff 0%, #ffffff 55%, #eff6ff 100%);
+  --partner-bg-attachment: scroll;
+  --partner-hero-fallback: linear-gradient(135deg, #2563eb 0%, #1d4ed8 45%, #0ea5e9 100%);
+  --partner-tag-bg: #dbeafe;
+  --partner-tag-text: #1e40af;
+  --partner-accent: #2563eb;
+  --partner-accent-hover: #1d4ed8;
+  --partner-cta-bg: linear-gradient(90deg, #bae6fd, #7dd3fc);
+  --partner-cta-text: #0f172a;
+  --partner-cta-muted: rgba(15, 23, 42, 0.7);
+}
+
+.partner-skin--sunset {
+  --partner-bg-image: linear-gradient(180deg, #fff7ed 0%, #fffaf2 55%, #ffffff 100%);
+  --partner-bg-attachment: scroll;
+  --partner-hero-fallback: linear-gradient(135deg, #f97316 0%, #ea580c 45%, #c2410c 100%);
+  --partner-tag-bg: #ffedd5;
+  --partner-tag-text: #9a3412;
+  --partner-accent: #ea580c;
+  --partner-accent-hover: #c2410c;
+  --partner-cta-bg: linear-gradient(90deg, #fed7aa, #fdba74);
+  --partner-cta-text: #7c2d12;
+  --partner-cta-muted: rgba(124, 45, 18, 0.7);
+}
+
+.partner-skin--forest {
+  --partner-bg-image: linear-gradient(180deg, #f0fdf4 0%, #ecfeff 55%, #ffffff 100%);
+  --partner-bg-attachment: scroll;
+  --partner-hero-fallback: linear-gradient(135deg, #059669 0%, #0d9488 45%, #0f766e 100%);
+  --partner-tag-bg: #d1fae5;
+  --partner-tag-text: #065f46;
+  --partner-accent: #059669;
+  --partner-accent-hover: #047857;
+  --partner-cta-bg: linear-gradient(90deg, #bbf7d0, #6ee7b7);
+  --partner-cta-text: #065f46;
+  --partner-cta-muted: rgba(6, 95, 70, 0.7);
+}
+
+.partner-hero-fallback {
+  background: var(--partner-hero-fallback, linear-gradient(135deg, #7c3aed 0%, #6d28d9 45%, #3730a3 100%));
+}
+
+.partner-card {
+  background: var(--partner-card-bg, rgba(255, 255, 255, 0.9));
+  border: 1px solid var(--partner-card-border, rgba(15, 23, 42, 0.08));
+  box-shadow: var(--partner-card-shadow, 0 1px 3px rgba(15, 23, 42, 0.08));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.partner-tag {
+  background: var(--partner-tag-bg, #ede9fe);
+  color: var(--partner-tag-text, #5b21b6);
+}
+
+.partner-accent-bg {
+  background-color: var(--partner-accent, #7c3aed);
+  color: var(--partner-accent-foreground, #ffffff);
+}
+
+.partner-accent-btn {
+  background-color: var(--partner-accent, #7c3aed);
+  color: var(--partner-accent-foreground, #ffffff);
+}
+
+.partner-accent-btn:hover {
+  background-color: var(--partner-accent-hover, #6d28d9);
+}
+
+.partner-cta {
+  background: var(--partner-cta-bg, linear-gradient(90deg, #facc15, #f59e0b));
+  color: var(--partner-cta-text, #4c1d95);
+}
+
+.partner-cta .partner-cta-muted {
+  color: var(--partner-cta-muted, rgba(76, 29, 149, 0.7));
+}
+
+.partner-skin-option {
+  background: var(--partner-hero-fallback, linear-gradient(135deg, #7c3aed 0%, #6d28d9 45%, #3730a3 100%));
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(15, 23, 42, 0.35);
+}
+
+.partner-skin-option-accent {
+  background-color: var(--partner-accent, #7c3aed);
 }
 
 /* Dodatočná ochrana proti horizontálnemu scrollu */
@@ -468,4 +576,3 @@
     zoom: 1 !important;
   }
 }
-

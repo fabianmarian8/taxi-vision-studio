@@ -165,9 +165,12 @@ export default async function PartnerDashboard() {
                       <Link
                         href={`/taxi/${partner.city_slug}/${partner.slug}`}
                         target="_blank"
-                        className="flex-1 bg-gray-100 text-gray-700 text-center py-2 px-4 rounded-lg font-medium hover:bg-gray-200 transition-colors"
+                        className="flex-1 relative bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 text-center py-2 px-4 rounded-lg font-bold hover:from-yellow-500 hover:to-orange-600 transition-all shadow-md hover:shadow-lg"
                       >
-                        Zobraziť na webe
+                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full animate-pulse">
+                          NEW
+                        </span>
+                        LIVE úpravy
                       </Link>
                     </div>
                   </div>

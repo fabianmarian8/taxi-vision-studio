@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+import { DEFAULT_PARTNER_SKIN } from '@/lib/partner-skins';
 
 export interface PartnerDraftData {
   id: string;
@@ -26,6 +27,7 @@ export interface PartnerDraftData {
   transport_rules_url: string | null;
   contact_url: string | null;
   services_description: string | null;
+  template_variant: string | null;
   updated_at: string | null;
 }
 
@@ -103,6 +105,7 @@ export async function checkPartnerOwnership(partnerSlug: string): Promise<Partne
           gallery,
           social_facebook,
           social_instagram,
+          template_variant,
           updated_at
         )
       `)
@@ -182,6 +185,7 @@ interface BaseData {
   contact_url?: string;
   facebook?: string;
   instagram?: string;
+  template_variant?: string;
 }
 
 /**
@@ -227,6 +231,9 @@ export function transformDraftToEditorData(draftData: PartnerDraftData | null, b
     // Social
     social_facebook: draftData.social_facebook || baseData.facebook || '',
     social_instagram: draftData.social_instagram || baseData.instagram || '',
+
+    // Vzhlad sablony
+    template_variant: draftData.template_variant || baseData.template_variant || DEFAULT_PARTNER_SKIN,
 
     // Metadata
     status: draftData.status || 'draft',
