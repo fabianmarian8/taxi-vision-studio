@@ -107,6 +107,36 @@ export default async function AdminDashboard() {
               </CardContent>
             </Card>
           </Link>
+
+          {/* Revenue Dashboard Card */}
+          <Link href="/admin/revenue">
+            <Card className="cursor-pointer border-green-200 bg-green-50/50">
+              <CardHeader>
+                <CardTitle>Revenue Dashboard</CardTitle>
+                <CardDescription>
+                  MRR, predplatné, churn rate a finančné metriky
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full" variant="outline">Otvoriť</Button>
+              </CardContent>
+            </Card>
+          </Link>
+
+          {/* SEO Performance Card */}
+          <Link href="/admin/seo">
+            <Card className="cursor-pointer border-blue-200 bg-blue-50/50">
+              <CardHeader>
+                <CardTitle>SEO Performance</CardTitle>
+                <CardDescription>
+                  Google Search Console metriky a keyword rankings
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full" variant="outline">Otvoriť</Button>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
 
         {/* Instructions */}
