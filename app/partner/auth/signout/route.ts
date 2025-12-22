@@ -35,7 +35,8 @@ async function handleSignOut(request: Request) {
   const origin = host ? `${protocol}://${host}` : new URL(request.url).origin;
 
   // Presmerovanie na login stránku
-  return NextResponse.redirect(new URL('/partner/login', origin));
+  // Use 303 status to force GET request after POST (prevents HTTP 405)
+  return NextResponse.redirect(new URL('/partner/login', origin), { status: 303 });
 }
 
 // Support both POST and GET for signout
