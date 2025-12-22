@@ -1,7 +1,7 @@
 import { google, searchconsole_v1 } from 'googleapis';
 
 // Initialize Google Search Console client
-const SITE_URL = 'sc-domain:taxinearme.sk';
+const SITE_URL = 'https://www.taxinearme.sk/';
 
 /**
  * Get authenticated Search Console client
