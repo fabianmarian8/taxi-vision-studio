@@ -1,6 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSession } from '@/lib/auth';
 import { createClient } from '@supabase/supabase-js';
+import {
+  fetchPageAnalytics,
+  fetchQueryAnalytics,
+  fetchDailyTrends,
+  extractCitySlugFromUrl,
+  extractCityFromQuery,
+  getDateDaysAgo,
+} from '@/lib/gsc';
 
 // Use service role for admin operations
 const supabase = createClient(
@@ -15,47 +23,38 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
+  // Check if GSC credentials are configured
+  if (!process.env.GOOGLE_SERVICE_ACCOUNT_KEY) {
+    return NextResponse.json(
+      {
+        error: 'GSC not configured',
+        message: 'GOOGLE_SERVICE_ACCOUNT_KEY environment variable is not set. Please add your Google Service Account credentials.',
+      },
+      { status: 400 }
+    );
+  }
+
   try {
-    // TODO: Implement actual GSC API integration
-    // For now, this is a placeholder that shows the structure
+    const endDate = getDateDaysAgo(2); // GSC data has 2-day delay
+    const startDate = getDateDaysAgo(32); // Last 30 days
 
-    // Option 1: Use Google Search Console API directly
-    // const gscData = await fetchFromGSC();
+    console.log(`Syncing GSC data from ${startDate} to ${endDate}`);
 
-    // Option 2: Use GSC MCP Server (if available)
-    // This would require MCP client integration
+    // Fetch data from GSC
+    const [pageData, queryData, trendData] = await Promise.all([
+      fetchPageAnalytics(startDate, endDate, 100),
+      fetchQueryAnalytics(startDate, endDate, 200),
+      fetchDailyTrends(startDate, endDate),
+    ]);
 
-    // For demonstration, we'll create some sample data
-    // In production, replace this with actual GSC API calls
+    console.log(`Fetched: ${pageData.length} pages, ${queryData.length} keywords, ${trendData.length} days`);
 
-    const now = new Date();
-    const endDate = now.toISOString().split('T')[0];
-    const startDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
-      .toISOString()
-      .split('T')[0];
+    // Process and insert page snapshots
+    let pagesInserted = 0;
+    for (const page of pageData) {
+      const citySlug = extractCitySlugFromUrl(page.page);
 
-    // Sample data structure that would come from GSC
-    const samplePages = [
-      { page: 'https://www.taxinearme.sk/taxi/bratislava', clicks: 45, impressions: 890, ctr: 0.051, position: 3.2 },
-      { page: 'https://www.taxinearme.sk/taxi/kosice', clicks: 32, impressions: 650, ctr: 0.049, position: 4.1 },
-      { page: 'https://www.taxinearme.sk/taxi/zilina', clicks: 28, impressions: 520, ctr: 0.054, position: 3.8 },
-      { page: 'https://www.taxinearme.sk/taxi/nitra', clicks: 22, impressions: 410, ctr: 0.054, position: 5.2 },
-      { page: 'https://www.taxinearme.sk/taxi/presov', clicks: 18, impressions: 380, ctr: 0.047, position: 6.1 },
-    ];
-
-    const sampleKeywords = [
-      { keyword: 'taxi bratislava', clicks: 45, impressions: 890, position: 3.2, city: 'bratislava' },
-      { keyword: 'taxi kosice', clicks: 32, impressions: 650, position: 4.1, city: 'kosice' },
-      { keyword: 'taxisluzba zilina', clicks: 15, impressions: 320, position: 5.5, city: 'zilina' },
-      { keyword: 'taxi nitra telefon', clicks: 12, impressions: 280, position: 4.8, city: 'nitra' },
-      { keyword: 'taxi presov cena', clicks: 10, impressions: 220, position: 6.2, city: 'presov' },
-    ];
-
-    // Insert/Update SEO snapshots
-    for (const page of samplePages) {
-      const citySlug = extractCitySlug(page.page);
-
-      await supabase.from('seo_snapshots').upsert(
+      const { error } = await supabase.from('seo_snapshots').upsert(
         {
           page_url: page.page,
           city_slug: citySlug,
@@ -70,73 +69,96 @@ export async function POST(request: NextRequest) {
           onConflict: 'page_url,date_start,date_end',
         }
       );
+
+      if (!error) pagesInserted++;
     }
 
-    // Insert keyword rankings
-    for (const kw of sampleKeywords) {
+    // Process and insert keyword rankings
+    let keywordsInserted = 0;
+    for (const query of queryData) {
+      const citySlug = extractCityFromQuery(query.query);
+
       // Get previous position for comparison
       const { data: existing } = await supabase
         .from('keyword_rankings')
         .select('position')
-        .eq('keyword', kw.keyword)
+        .eq('keyword', query.query)
         .lt('snapshot_date', endDate)
         .order('snapshot_date', { ascending: false })
         .limit(1)
         .single();
 
-      await supabase.from('keyword_rankings').upsert(
+      const { error } = await supabase.from('keyword_rankings').upsert(
         {
-          keyword: kw.keyword,
-          city_slug: kw.city,
-          position: kw.position,
+          keyword: query.query,
+          city_slug: citySlug,
+          position: query.position,
           previous_position: existing?.position || null,
-          clicks: kw.clicks,
-          impressions: kw.impressions,
-          ctr: kw.clicks / kw.impressions,
+          clicks: query.clicks,
+          impressions: query.impressions,
+          ctr: query.ctr,
           snapshot_date: endDate,
         },
         {
           onConflict: 'keyword,snapshot_date',
         }
       );
+
+      if (!error) keywordsInserted++;
+    }
+
+    // Store daily trend data (for charts)
+    let trendsInserted = 0;
+    for (const day of trendData) {
+      const { error } = await supabase.from('seo_snapshots').upsert(
+        {
+          page_url: 'https://www.taxinearme.sk/', // Aggregate for whole site
+          city_slug: null,
+          clicks: day.clicks,
+          impressions: day.impressions,
+          ctr: day.ctr,
+          position: day.position,
+          date_start: day.date,
+          date_end: day.date,
+        },
+        {
+          onConflict: 'page_url,date_start,date_end',
+        }
+      );
+
+      if (!error) trendsInserted++;
     }
 
     return NextResponse.json({
       success: true,
       synced_at: new Date().toISOString(),
-      pages_synced: samplePages.length,
-      keywords_synced: sampleKeywords.length,
-      message: 'Toto su ukazkove data. Pre realne data nastavte GSC API credentials.',
+      period: { start: startDate, end: endDate },
+      pages_synced: pagesInserted,
+      keywords_synced: keywordsInserted,
+      trends_synced: trendsInserted,
+      totals: {
+        pages: pageData.length,
+        keywords: queryData.length,
+        days: trendData.length,
+      },
     });
   } catch (error) {
-    console.error('Error syncing SEO data:', error);
-    return NextResponse.json({ error: 'Sync failed' }, { status: 500 });
+    console.error('Error syncing GSC data:', error);
+
+    // Return helpful error message
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+
+    return NextResponse.json(
+      {
+        error: 'Sync failed',
+        message: errorMessage,
+        hint: errorMessage.includes('not set')
+          ? 'Please configure GOOGLE_SERVICE_ACCOUNT_KEY in your environment variables.'
+          : errorMessage.includes('permission')
+          ? 'The Service Account may not have access to the Search Console property. Please verify permissions.'
+          : 'Check the server logs for more details.',
+      },
+      { status: 500 }
+    );
   }
 }
-
-function extractCitySlug(url: string): string | null {
-  const match = url.match(/\/taxi\/([^/]+)/);
-  return match ? match[1] : null;
-}
-
-// TODO: Implement this function with actual GSC API
-// async function fetchFromGSC() {
-//   const auth = new google.auth.GoogleAuth({
-//     credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY!),
-//     scopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
-//   });
-//
-//   const searchconsole = google.searchconsole({ version: 'v1', auth });
-//
-//   const response = await searchconsole.searchanalytics.query({
-//     siteUrl: 'sc-domain:taxinearme.sk',
-//     requestBody: {
-//       startDate: '2024-11-22',
-//       endDate: '2024-12-22',
-//       dimensions: ['page', 'query'],
-//       rowLimit: 1000,
-//     },
-//   });
-//
-//   return response.data.rows;
-// }
