@@ -258,6 +258,14 @@ export function UserMenu({
                     'Prihlásiť sa'
                   )}
                 </button>
+
+                <Link
+                  href="/partner/login"
+                  onClick={() => setIsOpen(false)}
+                  className="block text-center text-xs text-gray-500 hover:text-yellow-600 mt-2"
+                >
+                  Zabudol som heslo
+                </Link>
               </form>
 
             </div>

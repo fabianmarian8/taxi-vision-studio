@@ -1,9 +1,10 @@
 import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 async function handleSignOut(request: Request) {
   const cookieStore = await cookies();
+  const headersList = await headers();
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -28,8 +29,13 @@ async function handleSignOut(request: Request) {
 
   await supabase.auth.signOut();
 
-  // Presmerovanie na hlavnú stránku namiesto login
-  return NextResponse.redirect(new URL('/', request.url));
+  // Get the correct origin - use host header or fallback to request URL
+  const host = headersList.get('host');
+  const protocol = headersList.get('x-forwarded-proto') || 'https';
+  const origin = host ? `${protocol}://${host}` : new URL(request.url).origin;
+
+  // Presmerovanie na hlavnú stránku
+  return NextResponse.redirect(new URL('/', origin));
 }
 
 // Support both POST and GET for signout
