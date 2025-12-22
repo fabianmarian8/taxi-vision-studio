@@ -2078,7 +2078,7 @@ export default async function TaxiCatchAllPage({
       let overrideNearestCities: Array<{ city: CityData; distance: number; roadDistance: number; duration: number }> | undefined;
       let hideNearbyTaxis = false;
       let priceOverride: { min: number; max: number } | undefined;
-      let ctaOverride: { text: string; href: string } | undefined;
+      let ctaOverride: { text: string; href: string; heroImage?: string; logo?: string } | undefined;
 
       if (routeType.municipality.slug === 'lest-vojensky-obvod') {
         const zvolen = getCityBySlug('zvolen');
