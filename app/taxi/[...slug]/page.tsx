@@ -818,13 +818,16 @@ function sortServicesByTier(services: TaxiService[]) {
   });
 }
 
-function MunicipalityPage({ municipality, isHierarchical = false, district, overrideNearestCities, customContent, customFaqs }: {
+function MunicipalityPage({ municipality, isHierarchical = false, district, overrideNearestCities, customContent, customFaqs, hideNearbyTaxisSection = false, priceOverride, ctaOverride }: {
   municipality: Municipality;
   isHierarchical?: boolean;
   district?: District;
   overrideNearestCities?: Array<{ city: CityData; distance: number; roadDistance: number; duration: number }>;
   customContent?: { intro: string; transport: string; attractions: string };
   customFaqs?: Array<{ question: string; answer: string }>;
+  hideNearbyTaxisSection?: boolean;
+  priceOverride?: { min: number; max: number };
+  ctaOverride?: { text: string; href: string };
 }) {
   // Check if this municipality is actually a city with taxi services
   const cityWithTaxi = getCityBySlug(municipality.slug);
@@ -885,11 +888,11 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
               {!hasTaxiServices && nearestCities.length > 0 && (
                 <div className="mt-4">
                   <Link
-                    href={`/taxi/${nearestCities[0].city.slug}`}
+                    href={ctaOverride?.href || `/taxi/${nearestCities[0].city.slug}`}
                     className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-xl text-lg"
                   >
                     <Phone className="h-6 w-6" />
-                    Taxislužby v {nearestCities[0].city.name}
+                    {ctaOverride?.text || `Taxislužby v ${nearestCities[0].city.name}`}
                   </Link>
                 </div>
               )}
@@ -930,6 +933,8 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
                     distance={nearestCities[0].distance}
                     roadDistance={nearestCities[0].roadDistance}
                     duration={nearestCities[0].duration}
+                    priceMin={priceOverride?.min}
+                    priceMax={priceOverride?.max}
                   />
                 </div>
               </div>
@@ -968,7 +973,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
       )}
 
       {/* Najbližšie taxislužby */}
-      {!hasTaxiServices && nearestCities.length > 0 && (
+      {!hasTaxiServices && nearestCities.length > 0 && !hideNearbyTaxisSection && (
         <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-gray-50">
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="mb-8 text-center">
@@ -2012,12 +2017,38 @@ export default async function TaxiCatchAllPage({
     case 'district':
       return <DistrictPage district={routeType.district} regionSlug={routeType.regionSlug} />;
 
-    case 'hierarchical':
+    case 'hierarchical': {
+      // Lešť vojenský obvod - mapa na Zvolen, skryť sekciu "Najbližšie taxislužby", vlastná cena
+      let overrideNearestCities: Array<{ city: CityData; distance: number; roadDistance: number; duration: number }> | undefined;
+      let hideNearbyTaxis = false;
+      let priceOverride: { min: number; max: number } | undefined;
+      let ctaOverride: { text: string; href: string } | undefined;
+
+      if (routeType.municipality.slug === 'lest-vojensky-obvod') {
+        const zvolen = getCityBySlug('zvolen');
+        if (zvolen) {
+          overrideNearestCities = [{
+            city: zvolen,
+            distance: 38,
+            roadDistance: 38,
+            duration: 40
+          }];
+        }
+        hideNearbyTaxis = true;
+        priceOverride = { min: 40, max: 46 };
+        ctaOverride = { text: 'Taxislužba Zvolen', href: '/taxi/zvolen/fast-taxi-zvolen' };
+      }
+
       return <MunicipalityPage
         municipality={routeType.municipality}
         isHierarchical={true}
         district={routeType.district}
+        overrideNearestCities={overrideNearestCities}
+        hideNearbyTaxisSection={hideNearbyTaxis}
+        priceOverride={priceOverride}
+        ctaOverride={ctaOverride}
       />;
+    }
 
     case 'redirect':
       permanentRedirect(routeType.to);

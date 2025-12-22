@@ -39,6 +39,8 @@ interface RouteMapProps {
   distance: number; // Fallback distance (air distance)
   roadDistance?: number; // Manual override
   duration?: number; // Manual override
+  priceMin?: number; // Manual price override
+  priceMax?: number; // Manual price override
 }
 
 export function RouteMap({
@@ -53,6 +55,8 @@ export function RouteMap({
   distance: airDistance,
   roadDistance: manualRoadDistance,
   duration: manualDuration,
+  priceMin: manualPriceMin,
+  priceMax: manualPriceMax,
 }: RouteMapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
@@ -86,7 +90,12 @@ export function RouteMap({
     isAccurate = false;
   }
 
-  const price = estimateRoadTaxiPrice(roadDistance);
+  // Cena - manuálny override má prioritu
+  const calculatedPrice = estimateRoadTaxiPrice(roadDistance);
+  const price = {
+    min: manualPriceMin ?? calculatedPrice.min,
+    max: manualPriceMax ?? calculatedPrice.max,
+  };
 
   // Initialize map
   const initMap = useCallback(() => {

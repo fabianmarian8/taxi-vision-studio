@@ -26,6 +26,8 @@ interface RouteMapWrapperProps {
   distance: number;
   roadDistance?: number;
   duration?: number;
+  priceMin?: number;
+  priceMax?: number;
 }
 
 export function RouteMapWrapper(props: RouteMapWrapperProps) {
