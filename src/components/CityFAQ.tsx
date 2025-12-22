@@ -1,6 +1,3 @@
-'use client';
-
-import { useEffect } from 'react';
 import {
   Accordion,
   AccordionContent,
@@ -23,45 +20,28 @@ export const CityFAQ = ({ cityName, citySlug, isVillage = false, customItems }: 
   // If customItems are provided, use them instead
   const faqItems: FAQItem[] = customItems || citySpecificFAQs[citySlug] || getDefaultFAQItems(cityName, isVillage);
 
-  // Pridanie FAQ Schema.org Structured Data
-  useEffect(() => {
-    // Guard pre SSR - document nie je dostupný na serveri
-    if (typeof document === 'undefined') return;
-
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqItems.map(item => ({
-        "@type": "Question",
-        "name": item.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.answer
-        }
-      }))
-    };
-
-    // Pridanie FAQ schema do <head>
-    let faqScriptElement = document.querySelector('script[data-faq-schema="true"]');
-    if (!faqScriptElement) {
-      faqScriptElement = document.createElement('script');
-      faqScriptElement.setAttribute('type', 'application/ld+json');
-      faqScriptElement.setAttribute('data-faq-schema', 'true');
-      document.head.appendChild(faqScriptElement);
-    }
-    faqScriptElement.textContent = JSON.stringify(faqSchema);
-
-    // Cleanup
-    return () => {
-      const element = document.querySelector('script[data-faq-schema="true"]');
-      if (element) {
-        element.remove();
+  // FAQ Schema.org Structured Data - renderované priamo v HTML pre SSR
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
       }
-    };
-  }, [cityName, faqItems]);
+    }))
+  };
 
   return (
     <section className="py-12 md:py-20 lg:py-24 px-4 md:px-8 relative">
+      {/* FAQ Schema - SSR renderované */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center mb-8 md:mb-12">
           <div className="flex justify-center mb-4">

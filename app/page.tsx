@@ -108,7 +108,7 @@ export default function HomePage() {
               />
             </div>
 
-            <h1 className="text-sm md:text-lg lg:text-xl text-foreground max-w-2xl mx-auto font-black px-4">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl text-foreground max-w-2xl mx-auto font-black px-4">
               Kompletný katalóg taxislužieb na Slovensku
             </h1>
             <p className="text-xs md:text-sm lg:text-base text-foreground/80 max-w-2xl mx-auto font-medium px-4">

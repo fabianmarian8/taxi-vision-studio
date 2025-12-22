@@ -58,7 +58,10 @@ export const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
     areaServed: {
       '@type': 'City',
       name: city.name,
-      '@id': `https://www.wikidata.org/wiki/${city.name}`,
+      containedInPlace: {
+        '@type': 'Country',
+        name: 'Slovensko',
+      },
     },
 
     // Offer catalog - list of taxi services
