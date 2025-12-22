@@ -115,7 +115,7 @@ export async function POST(request: NextRequest) {
 }
 
 function extractCitySlug(url: string): string | null {
-  const match = url.match(/\/taxi\/([^\/]+)/);
+  const match = url.match(/\/taxi\/([^/]+)/);
   return match ? match[1] : null;
 }
 

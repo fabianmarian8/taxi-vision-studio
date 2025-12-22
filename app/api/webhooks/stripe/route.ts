@@ -66,7 +66,10 @@ export async function POST(request: NextRequest) {
 }
 
 async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
-  const amountCents = subscription.items.data[0]?.price?.unit_amount || 0;
+  const subscriptionItem = subscription.items.data[0];
+  const amountCents = subscriptionItem?.price?.unit_amount || 0;
+  const periodStart = subscriptionItem?.current_period_start || Math.floor(Date.now() / 1000);
+  const periodEnd = subscriptionItem?.current_period_end || Math.floor(Date.now() / 1000);
 
   // Get customer email
   const { data: customerData } = await supabase
@@ -81,13 +84,13 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
   const { error } = await supabase.from('subscriptions').upsert({
     stripe_subscription_id: subscription.id,
     stripe_customer_id: subscription.customer as string,
-    stripe_price_id: subscription.items.data[0]?.price?.id || '',
+    stripe_price_id: subscriptionItem?.price?.id || '',
     plan_type: getPlanTypeFromAmount(amountCents),
     status: subscription.status,
     amount_cents: amountCents,
     currency: subscription.currency,
-    current_period_start: new Date(subscription.current_period_start * 1000).toISOString(),
-    current_period_end: new Date(subscription.current_period_end * 1000).toISOString(),
+    current_period_start: new Date(periodStart * 1000).toISOString(),
+    current_period_end: new Date(periodEnd * 1000).toISOString(),
     cancel_at_period_end: subscription.cancel_at_period_end,
     customer_email: customerEmail,
     // city_slug and taxi_service_name need to be mapped manually or from metadata
@@ -108,7 +111,10 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
 }
 
 async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
-  const amountCents = subscription.items.data[0]?.price?.unit_amount || 0;
+  const subscriptionItem = subscription.items.data[0];
+  const amountCents = subscriptionItem?.price?.unit_amount || 0;
+  const periodStart = subscriptionItem?.current_period_start || Math.floor(Date.now() / 1000);
+  const periodEnd = subscriptionItem?.current_period_end || Math.floor(Date.now() / 1000);
 
   // Get previous status
   const { data: existing } = await supabase
@@ -125,8 +131,8 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
     .update({
       status: subscription.status,
       amount_cents: amountCents,
-      current_period_start: new Date(subscription.current_period_start * 1000).toISOString(),
-      current_period_end: new Date(subscription.current_period_end * 1000).toISOString(),
+      current_period_start: new Date(periodStart * 1000).toISOString(),
+      current_period_end: new Date(periodEnd * 1000).toISOString(),
       cancel_at_period_end: subscription.cancel_at_period_end,
       canceled_at: subscription.canceled_at
         ? new Date(subscription.canceled_at * 1000).toISOString()
@@ -188,11 +194,13 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
 }
 
 async function handleInvoicePaid(invoice: Stripe.Invoice) {
-  if (!invoice.subscription) return;
+  // Get subscription ID from invoice (handle both old and new API structure)
+  const subscriptionId = (invoice as unknown as { subscription?: string | null }).subscription;
+  if (!subscriptionId) return;
 
   // Log renewal event
   await logSubscriptionEvent(
-    invoice.subscription as string,
+    subscriptionId,
     'renewed',
     invoice.amount_paid,
     null,
@@ -201,7 +209,9 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
 }
 
 async function handlePaymentFailed(invoice: Stripe.Invoice) {
-  if (!invoice.subscription) return;
+  // Get subscription ID from invoice (handle both old and new API structure)
+  const subscriptionId = (invoice as unknown as { subscription?: string | null }).subscription;
+  if (!subscriptionId) return;
 
   // Update subscription status
   await supabase
@@ -210,11 +220,11 @@ async function handlePaymentFailed(invoice: Stripe.Invoice) {
       status: 'past_due',
       updated_at: new Date().toISOString(),
     })
-    .eq('stripe_subscription_id', invoice.subscription);
+    .eq('stripe_subscription_id', subscriptionId);
 
   // Log event
   await logSubscriptionEvent(
-    invoice.subscription as string,
+    subscriptionId,
     'payment_failed',
     invoice.amount_due,
     null,

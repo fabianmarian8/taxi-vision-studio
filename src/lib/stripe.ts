@@ -2,7 +2,7 @@ import Stripe from 'stripe';
 
 // Initialize Stripe client
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2024-12-18.acacia',
+  apiVersion: '2025-12-15.clover',
   typescript: true,
 });
 
@@ -112,8 +112,11 @@ export function formatSubscriptionForDB(
   subscription: Stripe.Subscription,
   customer: Stripe.Customer | Stripe.DeletedCustomer
 ) {
-  const priceId = subscription.items.data[0]?.price?.id || '';
-  const amountCents = subscription.items.data[0]?.price?.unit_amount || 0;
+  const subscriptionItem = subscription.items.data[0];
+  const priceId = subscriptionItem?.price?.id || '';
+  const amountCents = subscriptionItem?.price?.unit_amount || 0;
+  const periodStart = subscriptionItem?.current_period_start || Math.floor(Date.now() / 1000);
+  const periodEnd = subscriptionItem?.current_period_end || Math.floor(Date.now() / 1000);
 
   return {
     stripe_subscription_id: subscription.id,
@@ -123,8 +126,8 @@ export function formatSubscriptionForDB(
     status: subscription.status,
     amount_cents: amountCents,
     currency: subscription.currency,
-    current_period_start: new Date(subscription.current_period_start * 1000).toISOString(),
-    current_period_end: new Date(subscription.current_period_end * 1000).toISOString(),
+    current_period_start: new Date(periodStart * 1000).toISOString(),
+    current_period_end: new Date(periodEnd * 1000).toISOString(),
     cancel_at_period_end: subscription.cancel_at_period_end,
     canceled_at: subscription.canceled_at
       ? new Date(subscription.canceled_at * 1000).toISOString()
