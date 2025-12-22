@@ -34,8 +34,8 @@ async function handleSignOut(request: Request) {
   const protocol = headersList.get('x-forwarded-proto') || 'https';
   const origin = host ? `${protocol}://${host}` : new URL(request.url).origin;
 
-  // Presmerovanie na hlavnú stránku
-  return NextResponse.redirect(new URL('/', origin));
+  // Presmerovanie na login stránku
+  return NextResponse.redirect(new URL('/partner/login', origin));
 }
 
 // Support both POST and GET for signout
