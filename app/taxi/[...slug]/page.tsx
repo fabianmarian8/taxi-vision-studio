@@ -389,14 +389,32 @@ export async function generateMetadata({
       const nearestCities = findNearestCitiesWithTaxis(municipality, 1);
       const nearestCity = nearestCities[0];
       const currentUrl = `${baseUrl}/taxi/${regionSlug}/${district.slug}/${municipality.slug}`;
-      const description = `Taxi v obci ${municipality.name}, okres ${district.name} - Najbližšie taxislužby v meste ${nearestCity?.city.name} (${nearestCity?.distance} km). Objednajte taxi.`;
+      let description = `Taxi v obci ${municipality.name}, okres ${district.name} - Najbližšie taxislužby v meste ${nearestCity?.city.name} (${nearestCity?.distance} km). Objednajte taxi.`;
+      let keywords = [`taxi ${municipality.name}`, `taxi okres ${district.name}`, `taxislužby ${municipality.name}`, `taxi ${district.region}`];
+      let title = `Taxi ${municipality.name} - okres ${district.name} | ${siteName}`;
+
+      // SEO optimalizácia pre Lešť - multilingválne dopyty pre NATO vojská
+      if (municipality.slug === 'lest-vojensky-obvod') {
+        title = `Taxi Lešť NATO base - Military Taxi Service | ${siteName}`;
+        description = `Reliable 24/7 Taxi service for NATO personnel at Lešť military base. English speaking drivers, transfers to Zvolen, Banská Bystrica, and Airports (Vienna, Budapest). Book via WhatsApp.`;
+        keywords = [
+          ...keywords,
+          'Taxi Lest', 'NATO base taxi', 'Taxi Force Lest', 'Lest military area transport', // EN
+          'Táxi Lešť', 'transporte base militar', // PT
+          'Taxi base militar Lešť', // ES
+          'Taxi vojašnica Lešť', // SI
+          'Taxi baza militară Lešť', // RO
+          'Taxi Truppenübungsplatz Lešť', // DE
+          'Vojenský újezd Lešť taxi' // CZ
+        ];
+      }
 
       return {
-        title: `Taxi ${municipality.name} - okres ${district.name} | ${siteName}`,
+        title,
         description,
-        keywords: [`taxi ${municipality.name}`, `taxi okres ${district.name}`, `taxislužby ${municipality.name}`, `taxi ${district.region}`],
+        keywords,
         openGraph: {
-          title: `Taxi ${municipality.name} - okres ${district.name}`,
+          title,
           description,
           type: 'website',
           locale: 'sk_SK',
@@ -2093,8 +2111,8 @@ export default async function TaxiCatchAllPage({
         hideNearbyTaxis = true;
         priceOverride = { min: 40, max: 46 };
         ctaOverride = {
-          text: 'Fast Taxi Zvolen',
-          href: '/taxi/zvolen/fast-taxi-zvolen',
+          text: 'Lešť Taxi (vojenský obvod)',
+          href: '/taxi/zvolen/lest-taxi-vojensky-obvod',
           heroImage: '/logos/fast-taxi-zvolen-hero.jpg',
           logo: '/logos/fast-taxi-zvolen.webp'
         };

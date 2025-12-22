@@ -9679,8 +9679,10 @@
       "taxiServices": [
         {
           "name": "Lešť Taxi (vojenský obvod)",
-          "website": "www.lesttaxi.com",
-          "phone": "+421 902 048 583"
+          "website": "https://www.lesttaxi.com",
+          "phone": "+421 902 048 583",
+          "placeId": "ChIJuc22cU7NoYMStmHPfOAYlXE",
+          "address": "Lešť, 962 63 Pliešovce"
         },
         {
           "name": "Europa Taxi Zvolen",
