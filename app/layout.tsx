@@ -18,6 +18,7 @@ import { Providers } from '@/components/providers';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { CookieBanner } from '@/components/cookie-banner';
 import { GlobalChatWidget } from '@/components/GlobalChatWidget';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 
 // Optimalizovaný Inter font cez next/font/google
 // LCP Optimalizácia: Redukovaný z 3 fontov na 1 (úspora ~200ms render-blocking)
@@ -176,15 +177,21 @@ export default function RootLayout({
         />
 
         {/*
-          Google Consent Mode v2 - Analytics GRANTED by default
-          Meranie beží vždy, ignoruje cookie consent
+          Google Analytics (gtag.js) s Consent Mode v2
+          - Načíta sa po hydratácii (afterInteractive)
+          - Consent nastavený na granted pre analytics
+          - Všetka inicializácia v jednom skripte
         */}
-        <Script id="google-consent-mode" strategy="afterInteractive">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XM0ES676GB"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
 
-            // Analytics povolené vždy - ignoruje cookie consent
+            // Consent Mode v2 - analytics povolené vždy
             gtag('consent', 'default', {
               'ad_storage': 'denied',
               'ad_user_data': 'denied',
@@ -194,23 +201,13 @@ export default function RootLayout({
               'personalization_storage': 'denied',
               'security_storage': 'granted'
             });
-          `}
-        </Script>
 
-        {/*
-          Google Analytics (gtag.js)
-          lazyOnload - načíta sa až po plnom načítaní stránky (lepší LCP)
-        */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XM0ES676GB"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            // Inicializácia GA4
             gtag('js', new Date());
-            gtag('config', 'G-XM0ES676GB');
+            gtag('config', 'G-XM0ES676GB', {
+              page_path: window.location.pathname,
+              send_page_view: true
+            });
           `}
         </Script>
 
@@ -230,6 +227,11 @@ export default function RootLayout({
       </head>
 
       <body className="font-sans antialiased" suppressHydrationWarning>
+        {/*
+          Google Analytics - Route change tracking pre Next.js App Router
+        */}
+        <GoogleAnalytics />
+
         {/*
           Providers wrapper - Client Component
           Obsahuje: QueryClient, TooltipProvider, Toasters, Cookie Consent logic
