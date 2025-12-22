@@ -35,7 +35,7 @@ export function PasswordSettings() {
     if (error) {
       setMessage({ type: 'error', text: error.message });
     } else {
-      setMessage({ type: 'success', text: 'Heslo bolo úspešne nastavené. Teraz sa môžete prihlasovať pomocou hesla.' });
+      setMessage({ type: 'success', text: 'Heslo bolo úspešne zmenené.' });
       setNewPassword('');
       setConfirmPassword('');
       setTimeout(() => setIsOpen(false), 3000);
@@ -53,7 +53,7 @@ export function PasswordSettings() {
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
         </svg>
-        Nastaviť heslo
+        Zmeniť heslo
       </button>
     );
   }
@@ -61,7 +61,7 @@ export function PasswordSettings() {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-gray-900">Nastaviť heslo</h3>
+        <h3 className="text-lg font-semibold text-gray-900">Zmeniť heslo</h3>
         <button
           onClick={() => { setIsOpen(false); setMessage(null); }}
           className="text-gray-400 hover:text-gray-600"
@@ -73,7 +73,7 @@ export function PasswordSettings() {
       </div>
 
       <p className="text-sm text-gray-600 mb-4">
-        Nastavte si heslo pre prihlasovanie. Po nastavení sa budete môcť prihlasovať heslom alebo emailovým kódom.
+        Zmeňte si heslo pre prihlasovanie. Môžete sa prihlasovať heslom alebo emailovým kódom.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">

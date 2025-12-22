@@ -268,6 +268,14 @@ export default function PartnerLoginPage() {
                   'Prihlásiť sa'
                 )}
               </button>
+
+              <button
+                type="button"
+                onClick={() => { setLoginMode('otp'); setMessage({ type: 'success', text: 'Zadajte váš email a pošleme vám prihlasovací kód.' }); }}
+                className="w-full text-purple-600 py-2 text-sm hover:underline"
+              >
+                Zabudol som heslo
+              </button>
             </form>
           )}
 
