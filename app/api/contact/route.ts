@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { z } from 'zod';
+import { escapeHtml, escapeHtmlWithBreaks } from '@/lib/html-escape';
 
 // Helper pre podmienené logovanie (iba v development)
 const isDev = process.env.NODE_ENV === 'development';
@@ -64,32 +65,32 @@ const ContactFormEmail = ({
     <div class="content">
       <div class="field">
         <div class="field-label">👤 Meno odosielateľa:</div>
-        <div class="field-value">${name}</div>
+        <div class="field-value">${escapeHtml(name)}</div>
       </div>
 
       <div class="field">
         <div class="field-label">📧 Email odosielateľa:</div>
-        <div class="field-value"><a href="mailto:${email}">${email}</a></div>
+        <div class="field-value"><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></div>
       </div>
 
       <div class="field">
         <div class="field-label">🏙️ Mesto:</div>
-        <div class="field-value">${city}</div>
+        <div class="field-value">${escapeHtml(city)}</div>
       </div>
 
       <div class="field">
         <div class="field-label">🚖 Názov taxislužby:</div>
-        <div class="field-value">${taxiName}</div>
+        <div class="field-value">${escapeHtml(taxiName)}</div>
       </div>
 
       <div class="field">
         <div class="field-label">💬 Správa / Údaje na doplnenie:</div>
-        <div class="field-value">${message.replace(/\n/g, '<br>')}</div>
+        <div class="field-value">${escapeHtmlWithBreaks(message)}</div>
       </div>
 
       <div class="footer">
         <p>Tento email bol odoslaný z kontaktného formulára na <strong>taxinearme.sk</strong></p>
-        <p>Môžete odpovedať priamo na email odosielateľa: ${email}</p>
+        <p>Môžete odpovedať priamo na email odosielateľa: ${escapeHtml(email)}</p>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
+import bcrypt from 'bcryptjs';
 
 // Lazy initialization - only validate when actually used (not at build time)
 function getSecretKey(): Uint8Array {
@@ -56,11 +57,29 @@ export async function deleteSession() {
 
 export async function verifyCredentials(username: string, password: string): Promise<boolean> {
   const adminUsername = process.env.ADMIN_USERNAME;
-  const adminPassword = process.env.ADMIN_PASSWORD;
+  const adminPasswordHash = process.env.ADMIN_PASSWORD_HASH;
 
-  if (!adminUsername || !adminPassword) {
-    throw new Error('ADMIN_USERNAME and ADMIN_PASSWORD environment variables are required');
+  // Fallback to plain password for backwards compatibility (remove after migration)
+  const adminPasswordPlain = process.env.ADMIN_PASSWORD;
+
+  if (!adminUsername) {
+    throw new Error('ADMIN_USERNAME environment variable is required');
   }
 
-  return username === adminUsername && password === adminPassword;
+  if (!adminPasswordHash && !adminPasswordPlain) {
+    throw new Error('ADMIN_PASSWORD_HASH or ADMIN_PASSWORD environment variable is required');
+  }
+
+  // Check username first
+  if (username !== adminUsername) {
+    return false;
+  }
+
+  // Use bcrypt hash if available, otherwise fall back to plain text (temporary)
+  if (adminPasswordHash) {
+    return bcrypt.compare(password, adminPasswordHash);
+  }
+
+  // Fallback for migration period - remove this after setting ADMIN_PASSWORD_HASH
+  return password === adminPasswordPlain;
 }

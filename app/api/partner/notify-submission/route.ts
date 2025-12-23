@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { Resend } from 'resend';
+import { escapeHtml, sanitizeUrl } from '@/lib/html-escape';
 
 // Lazy initialization
 function getResendClient() {
@@ -47,25 +48,25 @@ const SubmissionNotificationEmail = ({
     <div class="content">
       <div class="field">
         <div class="field-label">Taxislužba:</div>
-        <div class="field-value">${companyName}</div>
+        <div class="field-value">${escapeHtml(companyName)}</div>
       </div>
 
       <div class="field">
         <div class="field-label">Email partnera:</div>
-        <div class="field-value"><a href="mailto:${partnerEmail}">${partnerEmail}</a></div>
+        <div class="field-value"><a href="mailto:${escapeHtml(partnerEmail)}">${escapeHtml(partnerEmail)}</a></div>
       </div>
 
       <div class="field">
         <div class="field-label">Mesto:</div>
-        <div class="field-value">${cityName}</div>
+        <div class="field-value">${escapeHtml(cityName)}</div>
       </div>
 
       <div class="field">
         <div class="field-label">Odoslané:</div>
-        <div class="field-value">${submittedAt}</div>
+        <div class="field-value">${escapeHtml(submittedAt)}</div>
       </div>
 
-      <a href="${adminUrl}" class="cta-button">Pozrieť v admin paneli</a>
+      <a href="${sanitizeUrl(adminUrl)}" class="cta-button">Pozrieť v admin paneli</a>
 
       <div class="footer">
         <p>Tento email bol automaticky odoslaný z Partner portálu na <strong>taxinearme.sk</strong></p>
