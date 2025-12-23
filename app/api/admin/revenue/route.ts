@@ -75,6 +75,39 @@ export async function GET(request: NextRequest) {
     const totalActive = premiumCount + partnerCount;
     const churnRate = totalActive > 0 ? (canceledThisMonth / totalActive) * 100 : 0;
 
+    // Calculate ARPU and LTV
+    const arpu = totalActive > 0 ? mrr / totalActive : 0;
+    const ltv = churnRate > 0 ? arpu / (churnRate / 100) : arpu * 12; // Default to 12 months if no churn
+
+    // Get failed payments (past_due status)
+    const { data: failedPayments } = await supabase
+      .from('subscriptions')
+      .select('*')
+      .eq('status', 'past_due')
+      .order('updated_at', { ascending: false });
+
+    // Get all subscriptions for the list view
+    const { data: allSubscriptions } = await supabase
+      .from('subscriptions')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    // Get recent created events with subscription details
+    const { data: recentCreated } = await supabase
+      .from('subscription_events')
+      .select('*, subscriptions(*)')
+      .eq('event_type', 'created')
+      .gte('created_at', new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString())
+      .order('created_at', { ascending: false });
+
+    // Get recent canceled events with subscription details
+    const { data: recentCanceled } = await supabase
+      .from('subscription_events')
+      .select('*, subscriptions(*)')
+      .eq('event_type', 'canceled')
+      .gte('created_at', new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString())
+      .order('created_at', { ascending: false });
+
     return NextResponse.json({
       mrr,
       subscriptions: {
@@ -88,6 +121,15 @@ export async function GET(request: NextRequest) {
         newThisMonth,
         canceledThisMonth,
         churnRate: Math.round(churnRate * 100) / 100,
+      },
+      // New fields
+      arpu: Math.round(arpu * 100) / 100,
+      ltv: Math.round(ltv * 100) / 100,
+      failedPayments: failedPayments || [],
+      allSubscriptions: allSubscriptions || [],
+      recentEvents: {
+        created: recentCreated || [],
+        canceled: recentCanceled || [],
       },
     });
   } catch (error) {
