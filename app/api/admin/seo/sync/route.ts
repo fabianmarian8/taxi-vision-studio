@@ -40,6 +40,8 @@ export async function POST(request: NextRequest) {
 
     console.log(`Syncing GSC data from ${startDate} to ${endDate}`);
 
+    const syncTimestamp = new Date().toISOString();
+
     // Fetch data from GSC
     const [pageData, queryData, trendData] = await Promise.all([
       fetchPageAnalytics(startDate, endDate, 100),
@@ -64,6 +66,7 @@ export async function POST(request: NextRequest) {
           position: page.position,
           date_start: startDate,
           date_end: endDate,
+          created_at: syncTimestamp,
         },
         {
           onConflict: 'page_url,date_start,date_end',
@@ -120,6 +123,7 @@ export async function POST(request: NextRequest) {
           position: day.position,
           date_start: day.date,
           date_end: day.date,
+          created_at: syncTimestamp,
         },
         {
           onConflict: 'page_url,date_start,date_end',
