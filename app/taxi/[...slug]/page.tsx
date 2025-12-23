@@ -1357,16 +1357,21 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
     // Merge approved data with cities.json data (approved data takes precedence if not null/empty)
     const partnerData = service.partnerData;
 
-    // Use approved gallery if it exists and has items, otherwise use cities.json gallery
-    const mergedGallery = (approvedData?.gallery && approvedData.gallery.length > 0)
+    // Use approved gallery if defined (even empty array means partner cleared it)
+    // undefined = not set, use fallback; [] = explicitly cleared
+    const mergedGallery = approvedData?.gallery !== undefined
       ? approvedData.gallery
       : service.gallery;
 
-    // Use approved hero image if it exists, otherwise use cities.json
-    const heroImage = approvedData?.hero_image_url || partnerData?.heroImage;
+    // Use approved hero image if defined (null/empty = partner removed it)
+    const heroImage = approvedData?.hero_image_url !== undefined
+      ? approvedData.hero_image_url
+      : partnerData?.heroImage;
 
-    // Use approved description if it exists, otherwise use cities.json
-    const mergedDescription = approvedData?.description || partnerData?.description;
+    // Use approved description if defined (empty string = partner cleared it)
+    const mergedDescription = approvedData?.description !== undefined
+      ? approvedData.description
+      : partnerData?.description;
 
     // Hero image positioning from approved data
     const heroImageZoom = approvedData?.hero_image_zoom || 100;
@@ -1612,13 +1617,13 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             {/* About / Description Section - editable */}
             <EditableDescription defaultValue={mergedDescription || ''} />
 
-            {/* Services Section - only if show_services is enabled in partner portal */}
-            {approvedData?.show_services && approvedData?.services && approvedData.services.length > 0 && (
-              <EditableServices defaultServices={approvedData.services}>
+            {/* Services Section - uses initialEditorData for live preview */}
+            {initialEditorData.services && initialEditorData.services.length > 0 && (
+              <EditableServices defaultServices={initialEditorData.services}>
                 <div className="mt-6 md:mt-8 partner-card rounded-xl p-4 md:p-6">
                   <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">Ponúkané služby</h2>
                   <div className="flex flex-wrap gap-2">
-                    {approvedData.services.map((svc: string, index: number) => (
+                    {initialEditorData.services.map((svc: string, index: number) => (
                       <span
                         key={index}
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 partner-tag rounded-full text-sm font-medium"

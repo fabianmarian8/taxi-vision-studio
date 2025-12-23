@@ -24,7 +24,8 @@ export default async function PartnerDashboard() {
         status,
         company_name,
         submitted_at,
-        reviewed_at
+        reviewed_at,
+        updated_at
       )
     `)
     .eq('user_id', user.id);
@@ -124,7 +125,11 @@ export default async function PartnerDashboard() {
         {partners && partners.length > 0 && (
           <div className="grid gap-6 md:grid-cols-2">
             {partners.map((partner) => {
-              const latestDraft = partner.partner_drafts?.[0];
+              // Sort drafts by updated_at descending and get the latest
+              const sortedDrafts = [...(partner.partner_drafts || [])].sort(
+                (a, b) => new Date(b.updated_at || 0).getTime() - new Date(a.updated_at || 0).getTime()
+              );
+              const latestDraft = sortedDrafts[0];
               const status = latestDraft?.status || 'draft';
               const statusInfo = statusLabels[status];
 

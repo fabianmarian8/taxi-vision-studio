@@ -102,9 +102,15 @@ export async function checkPartnerOwnership(partnerSlug: string): Promise<Partne
           hero_image_pos_y,
           services,
           show_services,
+          services_description,
           gallery,
           social_facebook,
           social_instagram,
+          whatsapp,
+          booking_url,
+          pricelist_url,
+          transport_rules_url,
+          contact_url,
           template_variant,
           updated_at
         )
