@@ -56,7 +56,7 @@ import { getApprovedPartnerData } from '@/lib/partner-data';
 import { checkPartnerOwnership } from '@/lib/partner-ownership';
 import { getPartnerSkinClass, normalizePartnerSkin } from '@/lib/partner-skins';
 import { PartnerPageWrapper } from '@/components/inline-editor';
-import { EditableHeroTitle, EditableHeroSubtitle, EditableDescription, EditableHeroImage, EditableGallery, EditableServices, EditableContactButtons, EditablePhoneButton } from '@/components/partner/PartnerPageContent';
+import { EditableHeroTitle, EditableDescription, EditableHeroImage, EditableGallery, EditableServices, EditableContactButtons, EditablePhoneButton } from '@/components/partner/PartnerPageContent';
 
 import {
   getLocationBySlug,
@@ -1501,7 +1501,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   </div>
 
                   <EditableHeroTitle defaultValue={service.name} />
-                  <EditableHeroSubtitle defaultValue={`Profesionálna taxislužba ${locationText} ${city.name}`} />
 
                   {/* Web & Contact buttons in hero - at bottom */}
                   <div className="flex gap-2 md:gap-3 mt-2 md:mt-3">
@@ -1555,7 +1554,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 </div>
 
                 <EditableHeroTitle defaultValue={service.name} />
-                <EditableHeroSubtitle defaultValue={`Profesionálna taxislužba ${locationText} ${city.name}`} />
               </div>
             )}
 
