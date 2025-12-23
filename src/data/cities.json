@@ -1073,6 +1073,54 @@
           "isPromotional": false,
           "address": "Vlčie hrdlo 90, Bratislava",
           "placeId": "ChIJKfPyJDiJbEcRkhScK7Berbw"
+        },
+        {
+          "name": "Expres Taxi Bratislava",
+          "phone": "+421902222333",
+          "website": "https://expres-taxi.sk/",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Nobelova 34, Bratislava"
+        },
+        {
+          "name": "TaxiVBA Bratislava",
+          "phone": "+421944690688",
+          "website": "https://taxivba.sk/",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Hurbanovo námestie 6, Bratislava"
+        },
+        {
+          "name": "Zindler Taxi 8+1",
+          "phone": "+421907709824",
+          "website": "https://zindlertaxi.sk/",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Púpavová 24, Bratislava"
+        },
+        {
+          "name": "Jexi Taxi Viacmiestne 8+1",
+          "phone": "+421948603601",
+          "website": "https://jexitaxi.sk/",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "L. Novomeského 2721/36, Pezinok"
+        },
+        {
+          "name": "BM Taxi Bratislava",
+          "phone": "+421952009717",
+          "website": "https://bmtaxibratislava.sk/",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Bratislava"
+        },
+        {
+          "name": "Taxislužba Bratislava TXTX",
+          "phone": "+421904176666",
+          "website": "https://www.taxisluzba-bratislava.sk/",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Bratislava"
         }
       ],
       "latitude": 48.151699,
