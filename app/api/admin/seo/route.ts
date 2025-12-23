@@ -39,14 +39,6 @@ export async function GET(request: NextRequest) {
 
     if (kwError) throw kwError;
 
-    // Get the most recent sync time (latest created_at)
-    const { data: latestSync } = await supabase
-      .from('seo_snapshots')
-      .select('created_at')
-      .order('created_at', { ascending: false })
-      .limit(1)
-      .single();
-
     // Calculate totals
     const totalClicks = (snapshots || []).reduce((sum, s) => sum + (s.clicks || 0), 0);
     const totalImpressions = (snapshots || []).reduce((sum, s) => sum + (s.impressions || 0), 0);
@@ -82,7 +74,13 @@ export async function GET(request: NextRequest) {
       topPages,
       keywords: keywords || [],
       weakCities,
-      lastSync: latestSync?.created_at || null,
+      // Get latest synced_at from existing data (no extra query needed)
+      lastSync: snapshots?.length
+        ? snapshots.reduce((latest, s) => {
+            const syncTime = s.synced_at || s.created_at;
+            return syncTime > latest ? syncTime : latest;
+          }, '')
+        : null,
     });
   } catch (error) {
     console.error('Error fetching SEO data:', error);
