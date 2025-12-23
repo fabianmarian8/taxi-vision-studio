@@ -57,8 +57,9 @@ export async function GET(request: NextRequest) {
       .sort((a, b) => b.impressions - a.impressions)
       .slice(0, 10);
 
-    // Top performing pages
+    // Top performing pages (exclude homepage - those are trend records)
     const topPages = (snapshots || [])
+      .filter((s) => s.page_url !== 'https://www.taxinearme.sk/')
       .sort((a, b) => b.clicks - a.clicks)
       .slice(0, 10);
 
