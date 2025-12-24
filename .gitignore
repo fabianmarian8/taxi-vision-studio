@@ -35,3 +35,6 @@ out/
 .env.local
 .aider*
 .env*.local
+
+# Claude Code collective metrics
+.claude-collective/
