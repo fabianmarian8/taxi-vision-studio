@@ -1596,7 +1596,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             {/* Contact buttons - mobile optimized with live preview */}
             <div className="space-y-3 mb-6">
               {/* Primary CTA - Phone - full width - EDITABLE */}
-              <EditablePhoneButton defaultPhone={service.phone || ''} />
+              <EditablePhoneButton defaultPhone={service.phone || ''} citySlug={city.slug} serviceName={service.name} />
 
               {/* Additional phone numbers (static - not editable) */}
               {(service.phone2 || service.phone3) && (
@@ -1635,6 +1635,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   website: service.website || '',
                   contact_url: partnerData?.contactUrl || '',
                 }}
+                citySlug={city.slug}
+                serviceName={service.name}
               />
             </div>
 

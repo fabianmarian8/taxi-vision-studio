@@ -500,9 +500,11 @@ export function EditableServices({ defaultServices, children }: EditableServices
  */
 interface EditableContactButtonsProps {
   defaultLinks: ButtonLinks;
+  citySlug?: string;
+  serviceName?: string;
 }
 
-export function EditableContactButtons({ defaultLinks }: EditableContactButtonsProps) {
+export function EditableContactButtons({ defaultLinks, citySlug, serviceName }: EditableContactButtonsProps) {
   const context = useContext(EditorContext);
   const [isEditorOpen, setIsEditorOpen] = useState(false);
 
@@ -549,6 +551,22 @@ export function EditableContactButtons({ defaultLinks }: EditableContactButtonsP
     contact_url: contactUrl,
   };
 
+  // Click tracking for WhatsApp
+  const handleWhatsAppClick = () => {
+    if (!isEditMode && citySlug && serviceName) {
+      fetch('/api/track/click', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_type: 'whatsapp_click',
+          city_slug: citySlug,
+          service_name: serviceName,
+          phone_number: whatsapp,
+        }),
+      }).catch(() => {});
+    }
+  };
+
   const handleSave = (links: ButtonLinks) => {
     if (saveField) {
       saveField('whatsapp', links.whatsapp);
@@ -572,7 +590,13 @@ export function EditableContactButtons({ defaultLinks }: EditableContactButtonsP
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-1.5 md:gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-sm md:text-base px-3 md:px-5 py-2.5 md:py-3 rounded-lg md:rounded-xl transition-colors"
-          onClick={(e) => isEditMode && e.preventDefault()}
+          onClick={(e) => {
+            if (isEditMode) {
+              e.preventDefault();
+            } else {
+              handleWhatsAppClick();
+            }
+          }}
         >
           <MessageCircle className="h-4 w-4 md:h-5 md:w-5" />
           <span>WhatsApp</span>
@@ -726,9 +750,11 @@ export function EditableContactButtons({ defaultLinks }: EditableContactButtonsP
  */
 interface EditablePhoneButtonProps {
   defaultPhone: string;
+  citySlug?: string;
+  serviceName?: string;
 }
 
-export function EditablePhoneButton({ defaultPhone }: EditablePhoneButtonProps) {
+export function EditablePhoneButton({ defaultPhone, citySlug, serviceName }: EditablePhoneButtonProps) {
   const context = useContext(EditorContext);
   const isEditMode = context?.isEditMode ?? false;
   const draftData = context?.draftData ?? {};
@@ -739,12 +765,34 @@ export function EditablePhoneButton({ defaultPhone }: EditablePhoneButtonProps) 
 
   if (!currentPhone) return null;
 
+  // Click tracking for phone
+  const handlePhoneClick = () => {
+    if (!isEditMode && citySlug && serviceName) {
+      fetch('/api/track/click', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_type: 'phone_click',
+          city_slug: citySlug,
+          service_name: serviceName,
+          phone_number: currentPhone,
+        }),
+      }).catch(() => {});
+    }
+  };
+
   // Render the phone button directly
   const phoneButton = (
     <a
       href={`tel:${currentPhone}`}
       className="w-full flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-black text-base md:text-lg px-4 py-3.5 md:py-4 rounded-xl transition-colors shadow-lg"
-      onClick={(e) => isEditMode && e.preventDefault()}
+      onClick={(e) => {
+        if (isEditMode) {
+          e.preventDefault();
+        } else {
+          handlePhoneClick();
+        }
+      }}
     >
       <Phone className="h-5 w-5" />
       {currentPhone}
