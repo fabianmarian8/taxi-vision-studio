@@ -1,6 +1,12 @@
 import { createClient } from '@/lib/supabase/server';
 import { DEFAULT_PARTNER_SKIN } from '@/lib/partner-skins';
 
+// Superadmin emails - can edit ALL partner pages
+const SUPERADMIN_EMAILS = [
+  'fabianmarian8@gmail.com',
+  'fabianmarian8@users.noreply.github.com',
+];
+
 export interface PartnerDraftData {
   id: string;
   status: string;
@@ -125,13 +131,16 @@ export async function checkPartnerOwnership(partnerSlug: string): Promise<Partne
 
     console.log('[checkPartnerOwnership] Found partner:', partner.id, 'user_id:', partner.user_id);
 
-    // Kontrola vlastníctva
-    if (partner.user_id !== user.id) {
+    // Check if user is superadmin (can edit all pages)
+    const isSuperadmin = user.email && SUPERADMIN_EMAILS.includes(user.email.toLowerCase());
+
+    // Kontrola vlastníctva alebo superadmin
+    if (partner.user_id !== user.id && !isSuperadmin) {
       console.log('[checkPartnerOwnership] User mismatch - partner.user_id:', partner.user_id, 'user.id:', user.id);
       return defaultResult;
     }
 
-    console.log('[checkPartnerOwnership] User IS owner!');
+    console.log('[checkPartnerOwnership] User IS owner!', isSuperadmin ? '(superadmin)' : '');
 
     // Nájdi najnovší draft (preferuj draft status, potom approved)
     const drafts = (partner.partner_drafts || []) as PartnerDraftData[];
