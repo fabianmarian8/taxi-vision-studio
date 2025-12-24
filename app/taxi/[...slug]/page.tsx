@@ -54,8 +54,9 @@ import { getMunicipalityStats } from '@/lib/municipality-data';
 import { TaxiPromoBanner } from '@/components/TaxiPromoBanner';
 import { getApprovedPartnerData } from '@/lib/partner-data';
 import { checkPartnerOwnership } from '@/lib/partner-ownership';
+import { checkCityEditAccess } from '@/lib/city-ownership';
 import { getPartnerSkinClass, normalizePartnerSkin } from '@/lib/partner-skins';
-import { PartnerPageWrapper } from '@/components/inline-editor';
+import { PartnerPageWrapper, CityEditorProvider, EditableCityDescription } from '@/components/inline-editor';
 import { EditableHeroTitle, EditableDescription, EditableHeroImage, EditableGallery, EditableServices, EditableContactButtons, EditablePhoneButton } from '@/components/partner/PartnerPageContent';
 
 import {
@@ -457,12 +458,14 @@ async function UniversalListView({
   city,
   regionSlug,
   locationText,
-  partnerRatings
+  partnerRatings,
+  isAdmin = false
 }: {
   city: CityData;
   regionSlug: string;
   locationText: string;
   partnerRatings: Map<string, { rating: number; count: number }>;
+  isAdmin?: boolean;
 }) {
   // Separate services by tier (redirectTo = partner redirect, counts as partner)
   const partners = city.taxiServices.filter(s => s.isPartner || s.redirectTo);
@@ -497,7 +500,21 @@ async function UniversalListView({
     return null;
   };
 
+  // Initial data for city editor
+  const cityEditorData = {
+    name: city.name,
+    description: city.description,
+    meta_description: city.metaDescription,
+    keywords: city.keywords,
+    hero_image: city.heroImage,
+  };
+
   return (
+    <CityEditorProvider
+      initialData={cityEditorData}
+      isAdmin={isAdmin}
+      citySlug={city.slug}
+    >
     <div className="min-h-screen bg-white overflow-x-hidden">
       <LocalBusinessSchema city={city} />
       <Header />
@@ -518,6 +535,14 @@ async function UniversalListView({
           <p className="text-sm text-foreground/60 mt-1">
             {city.taxiServices.length} {city.taxiServices.length === 1 ? 'taxislužba' : 'taxislužieb'} • {city.region}
           </p>
+          {/* City description - editable by admin */}
+          {city.description && (
+            <EditableCityDescription fieldKey="description" className="text-base">
+              <p className="text-sm text-foreground/70 mt-3 leading-relaxed">
+                {city.description}
+              </p>
+            </EditableCityDescription>
+          )}
         </div>
       </section>
 
@@ -778,6 +803,7 @@ async function UniversalListView({
       <HowItWorks />
       <Footer />
     </div>
+    </CityEditorProvider>
   );
 }
 
@@ -813,8 +839,11 @@ async function CityPage({ city }: { city: CityData }) {
   // Fetch ratings for partner services
   const partnerRatings = await getPartnerRatings(city.taxiServices);
 
+  // Check if current user is admin (for inline city editing)
+  const { isAdmin } = await checkCityEditAccess();
+
   // Všetky mestá používajú vylepšený List View dizajn od oponenta
-  return <UniversalListView city={city} regionSlug={regionSlug} locationText={locationText} partnerRatings={partnerRatings} />;
+  return <UniversalListView city={city} regionSlug={regionSlug} locationText={locationText} partnerRatings={partnerRatings} isAdmin={isAdmin} />;
 
 }
 // Helper to sort services by tier: Partner > Premium > Standard > Alphabetical

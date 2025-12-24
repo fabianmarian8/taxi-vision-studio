@@ -7,3 +7,4 @@ export { GalleryEditor } from './GalleryEditor';
 export { ServiceTagsEditor } from './ServiceTagsEditor';
 export { ButtonLinksEditor, type ButtonLinks } from './ButtonLinksEditor';
 export { PartnerPageWrapper } from './PartnerPageWrapper';
+export { CityEditorProvider, useCityEditor, EditableCityDescription, EditableCityTitle, type CityDraftData } from './CityEditorProvider';
