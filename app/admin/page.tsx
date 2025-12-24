@@ -137,6 +137,21 @@ export default async function AdminDashboard() {
               </CardContent>
             </Card>
           </Link>
+
+          {/* Click Stats Card */}
+          <Link href="/admin/stats">
+            <Card className="cursor-pointer border-orange-200 bg-orange-50/50">
+              <CardHeader>
+                <CardTitle>Štatistiky kliknutí</CardTitle>
+                <CardDescription>
+                  Sledovanie telefónnych a WhatsApp kliknutí na taxislužby
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full" variant="outline">Otvoriť</Button>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
 
         {/* Instructions */}

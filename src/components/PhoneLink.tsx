@@ -6,6 +6,7 @@ interface PhoneLinkProps {
   phone: string;
   serviceName: string;
   cityName: string;
+  citySlug?: string;
   className?: string;
   title?: string;
   children?: ReactNode;
@@ -15,6 +16,7 @@ export function PhoneLink({
   phone,
   serviceName,
   cityName,
+  citySlug,
   className = '',
   title,
   children
@@ -28,6 +30,22 @@ export function PhoneLink({
         phone_number: phone,
         service_name: serviceName,
         city_name: cityName
+      });
+    }
+
+    // Supabase click tracking (non-blocking)
+    if (citySlug) {
+      fetch('/api/track/click', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_type: 'phone_click',
+          city_slug: citySlug,
+          service_name: serviceName,
+          phone_number: phone,
+        }),
+      }).catch(() => {
+        // Ignore tracking errors - non-critical
       });
     }
   };

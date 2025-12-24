@@ -8,6 +8,7 @@ interface ServiceContactButtonsProps {
   whatsapp?: string;
   serviceName: string;
   cityName: string;
+  citySlug?: string;
   variant?: 'hero' | 'cta';
 }
 
@@ -17,6 +18,7 @@ export function ServiceContactButtons({
   whatsapp,
   serviceName,
   cityName,
+  citySlug,
   variant = 'hero'
 }: ServiceContactButtonsProps) {
   const handlePhoneClick = () => {
@@ -30,6 +32,20 @@ export function ServiceContactButtons({
         city_name: cityName
       });
     }
+
+    // Supabase click tracking (non-blocking)
+    if (citySlug) {
+      fetch('/api/track/click', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_type: 'phone_click',
+          city_slug: citySlug,
+          service_name: serviceName,
+          phone_number: phone,
+        }),
+      }).catch(() => {});
+    }
   };
 
   const handleWhatsAppClick = () => {
@@ -41,6 +57,20 @@ export function ServiceContactButtons({
         service_name: serviceName,
         city_name: cityName
       });
+    }
+
+    // Supabase click tracking (non-blocking)
+    if (citySlug) {
+      fetch('/api/track/click', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_type: 'whatsapp_click',
+          city_slug: citySlug,
+          service_name: serviceName,
+          phone_number: whatsapp,
+        }),
+      }).catch(() => {});
     }
   };
 

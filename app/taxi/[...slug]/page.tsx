@@ -1753,6 +1753,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               whatsapp={partnerData?.whatsapp}
               serviceName={service.name}
               cityName={city.name}
+              citySlug={city.slug}
               variant="cta"
             />
           </div>
