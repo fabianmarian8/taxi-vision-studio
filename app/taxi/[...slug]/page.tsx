@@ -46,6 +46,7 @@ import { GoogleReviewsSection } from '@/components/GoogleReviewsSection';
 import { fetchGoogleReviews } from '@/lib/google-reviews';
 import { ServiceContactButtons } from '@/components/ServiceContactButtons';
 import { PhoneLink } from '@/components/PhoneLink';
+import { TrackedPhoneButton } from '@/components/TrackedPhoneButton';
 import { TaxiGallery } from '@/components/TaxiGallery';
 import { TaxiPricelist } from '@/components/TaxiPricelist';
 import { MunicipalityInfo } from '@/components/MunicipalityInfo';
@@ -700,19 +701,20 @@ async function UniversalListView({
                   {/* Pravá strana - Primárna akcia podľa typu (oponent) */}
                   {primaryAction && (
                     primaryAction.type === 'phone' ? (
-                      <a
-                        href={`tel:${primaryAction.value.replace(/\s/g, '')}`}
+                      <TrackedPhoneButton
+                        phone={primaryAction.value}
+                        serviceName={service.name}
+                        citySlug={city.slug}
                         className={`flex-shrink-0 flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl font-bold text-sm transition-all active:scale-95 ${
                           isPartner
                             ? 'bg-purple-600 hover:bg-purple-700 text-white shadow-sm shadow-purple-200'
                             : 'bg-green-600 hover:bg-green-700 text-white shadow-sm shadow-green-200'
                         }`}
                         title={`Zavolať ${service.name}`}
-                        style={{ minWidth: '100px' }}
                       >
                         <Phone className="h-4 w-4" />
                         <span>VOLAŤ</span>
-                      </a>
+                      </TrackedPhoneButton>
                     ) : (
                       <a
                         href={primaryAction.value.startsWith('http') ? primaryAction.value : `https://${primaryAction.value}`}
