@@ -106,6 +106,13 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
     throw error;
   }
 
+  // Link subscription to taxi service (auto-enables premium)
+  await linkSubscriptionToTaxiService(
+    subscription.id,
+    subscription.metadata?.city_slug as string,
+    subscription.metadata?.taxi_service_name as string
+  );
+
   // Log event
   await logSubscriptionEvent(subscription.id, 'created', amountCents, null, subscription.status);
 }
@@ -230,6 +237,50 @@ async function handlePaymentFailed(invoice: Stripe.Invoice) {
     null,
     'past_due'
   );
+}
+
+/**
+ * Link Stripe subscription to taxi service for auto premium enable/disable
+ */
+async function linkSubscriptionToTaxiService(
+  stripeSubscriptionId: string,
+  citySlug: string | undefined,
+  taxiServiceName: string | undefined
+) {
+  if (!citySlug || !taxiServiceName) {
+    console.warn('Missing city_slug or taxi_service_name in subscription metadata');
+    return;
+  }
+
+  // Get our subscription ID
+  const { data: subscription } = await supabase
+    .from('subscriptions')
+    .select('id, status, current_period_end')
+    .eq('stripe_subscription_id', stripeSubscriptionId)
+    .single();
+
+  if (!subscription) {
+    console.warn(`Subscription not found: ${stripeSubscriptionId}`);
+    return;
+  }
+
+  // Find and update the matching taxi service
+  const { error } = await supabase
+    .from('taxi_services')
+    .update({
+      subscription_id: subscription.id,
+      is_premium: subscription.status === 'active',
+      premium_expires_at: subscription.status === 'active' ? subscription.current_period_end : null,
+      updated_at: new Date().toISOString(),
+    })
+    .eq('city_slug', citySlug)
+    .ilike('name', taxiServiceName);
+
+  if (error) {
+    console.error('Error linking subscription to taxi service:', error);
+  } else {
+    console.log(`Linked subscription ${stripeSubscriptionId} to ${taxiServiceName} in ${citySlug}`);
+  }
 }
 
 async function logSubscriptionEvent(
