@@ -4,7 +4,7 @@
  * Utility functions for testing Next.js API routes
  */
 
-import { vi } from 'vitest';
+import { vi, expect } from 'vitest';
 
 // =============================================================================
 // MOCK FACTORIES
