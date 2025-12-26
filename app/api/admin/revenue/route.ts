@@ -2,17 +2,26 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getSession } from '@/lib/auth';
 import { createClient } from '@supabase/supabase-js';
 
-// Use service role for admin operations
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+function getSupabase() {
+  if (!supabaseUrl || !supabaseServiceKey) {
+    return null;
+  }
+  return createClient(supabaseUrl, supabaseServiceKey);
+}
 
 export async function GET(request: NextRequest) {
   // Verify admin session
   const session = await getSession();
   if (!session) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  const supabase = getSupabase();
+  if (!supabase) {
+    return NextResponse.json({ error: 'Supabase not configured' }, { status: 500 });
   }
 
   try {
@@ -60,7 +69,7 @@ export async function GET(request: NextRequest) {
     // If RPC not available, calculate manually
     let history = monthlyHistory;
     if (historyError || !history) {
-      history = await calculateMonthlyHistoryManually();
+      history = await calculateMonthlyHistoryManually(supabase);
     }
 
     // Get recent events for churn calculation
@@ -138,7 +147,8 @@ export async function GET(request: NextRequest) {
   }
 }
 
-async function calculateMonthlyHistoryManually() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function calculateMonthlyHistoryManually(supabaseClient: any) {
   const history = [];
   const now = new Date();
 
@@ -148,20 +158,20 @@ async function calculateMonthlyHistoryManually() {
     const monthKey = monthStart.toISOString().substring(0, 7);
 
     // Get active subscriptions for this month
-    const { data: subs } = await supabase
+    const { data: subs } = await supabaseClient
       .from('subscriptions')
       .select('*')
       .lte('created_at', monthEnd.toISOString())
       .or(`canceled_at.is.null,canceled_at.gt.${monthStart.toISOString()}`);
 
     const activeSubs = subs || [];
-    const mrr = activeSubs.reduce((t, s) => t + (s.amount_cents || 0), 0) / 100;
+    const mrr = activeSubs.reduce((t: number, s: { amount_cents?: number }) => t + (s.amount_cents || 0), 0) / 100;
 
     history.push({
       month: monthKey,
       mrr,
-      premium_count: activeSubs.filter(s => s.plan_type === 'premium').length,
-      partner_count: activeSubs.filter(s => s.plan_type === 'partner').length,
+      premium_count: activeSubs.filter((s: { plan_type?: string }) => s.plan_type === 'premium').length,
+      partner_count: activeSubs.filter((s: { plan_type?: string }) => s.plan_type === 'partner').length,
       new_subscriptions: 0, // Would need events table
       canceled_subscriptions: 0,
     });

@@ -10,17 +10,26 @@ import {
   getDateDaysAgo,
 } from '@/lib/gsc';
 
-// Use service role for admin operations
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+function getSupabase() {
+  if (!supabaseUrl || !supabaseServiceKey) {
+    return null;
+  }
+  return createClient(supabaseUrl, supabaseServiceKey);
+}
 
 export async function POST(request: NextRequest) {
   // Verify admin session
   const session = await getSession();
   if (!session) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  const supabase = getSupabase();
+  if (!supabase) {
+    return NextResponse.json({ error: 'Supabase not configured' }, { status: 500 });
   }
 
   // Check if GSC credentials are configured

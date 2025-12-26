@@ -2,13 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { revalidatePath } from 'next/cache';
 
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
 // Create client with anon key - we use SECURITY DEFINER functions to bypass RLS
 function getClient() {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    { auth: { persistSession: false } }
-  );
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return null;
+  }
+  return createClient(supabaseUrl, supabaseAnonKey, { auth: { persistSession: false } });
 }
 
 interface Props {
@@ -19,6 +21,9 @@ interface Props {
 export async function GET(request: NextRequest, { params }: Props) {
   const { id } = await params;
   const supabase = getClient();
+  if (!supabase) {
+    return NextResponse.json({ error: 'Supabase not configured' }, { status: 500 });
+  }
 
   // For single draft, we can query directly since admin page doesn't require RLS bypass for read
   const { data: draft, error } = await supabase
@@ -57,6 +62,9 @@ export async function PATCH(request: NextRequest, { params }: Props) {
   }
 
   const supabase = getClient();
+  if (!supabase) {
+    return NextResponse.json({ error: 'Supabase not configured' }, { status: 500 });
+  }
   const newStatus = action === 'approve' ? 'approved' : 'rejected';
 
   // Use SECURITY DEFINER function to bypass RLS

@@ -1,18 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
 // Create client with anon key - we use SECURITY DEFINER functions to bypass RLS
 function getClient() {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    { auth: { persistSession: false } }
-  );
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return null;
+  }
+  return createClient(supabaseUrl, supabaseAnonKey, { auth: { persistSession: false } });
 }
 
 // GET - List drafts by status for admin
 export async function GET(request: NextRequest) {
   const supabase = getClient();
+  if (!supabase) {
+    return NextResponse.json({ error: 'Supabase not configured' }, { status: 500 });
+  }
 
   // Parse status from query parameter (default: pending)
   const { searchParams } = new URL(request.url);
