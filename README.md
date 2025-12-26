@@ -1,73 +1,76 @@
-# Welcome to your Lovable project
+# Taxi Vision Studio
 
-## Project info
+Slovensky taxi agregator - prehladavac taxisluzieb po celom Slovensku.
 
-**URL**: https://lovable.dev/projects/b2d2da35-c6f6-452d-b394-89cc5f8627b6
+## Tech Stack
 
-## How can I edit this code?
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI + shadcn/ui
+- **Database**: Supabase (optional)
+- **Deployment**: Vercel
 
-There are several ways of editing your application.
+## Local Development
 
-**Use Lovable**
+```bash
+# Install dependencies
+npm install
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b2d2da35-c6f6-452d-b394-89cc5f8627b6) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Run tests
+npm test
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+taxi-vision-studio/
+├── app/                    # Next.js App Router pages
+│   ├── taxi/[...slug]/     # Catch-all taxi route (cities, services)
+│   ├── admin/              # Admin panel
+│   ├── partner/            # Partner management
+│   └── api/                # API routes
+├── src/
+│   ├── components/         # React components
+│   ├── data/               # Static data (cities.json, etc.)
+│   ├── lib/                # Utilities and helpers
+│   └── utils/              # Helper functions
+└── scripts/                # Build and maintenance scripts
+```
 
-**Use GitHub Codespaces**
+## Environment Variables
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+# Required for Google Places features
+GOOGLE_PLACES_API_KEY=your_key
 
-## What technologies are used for this project?
+# Optional - Supabase
+NEXT_PUBLIC_SUPABASE_URL=your_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
 
-This project is built with:
+# Admin panel
+ADMIN_PASSWORD=your_secure_password
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
+Project is deployed on Vercel with automatic deployments from `main` branch.
 
-Simply open [Lovable](https://lovable.dev/projects/b2d2da35-c6f6-452d-b394-89cc5f8627b6) and click on Share -> Publish.
+## Scripts
 
-## Can I connect a custom domain to my Lovable project?
+```bash
+# Precompute city distances
+npm run precompute-distances
 
-Yes, you can!
+# Seed premium data
+npm run seed-premium
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+# Scrape taxi data from Azet
+npm run scrape-azet
+```

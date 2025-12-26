@@ -27,7 +27,7 @@ jobs:
 
       - name: Update Google Ratings
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: npx tsx scripts/fetch-place-ids.ts
 
       - name: Commit and push changes
