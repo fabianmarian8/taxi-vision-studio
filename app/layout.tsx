@@ -13,6 +13,7 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import { Providers } from '@/components/providers';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
@@ -239,6 +240,12 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
+
+        {/*
+          Vercel Speed Insights - Performance monitoring
+          Tracks web vitals and reports to Vercel
+        */}
+        <SpeedInsights />
 
         {/*
           Cookie Banner - GDPR Compliance
