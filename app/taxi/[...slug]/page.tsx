@@ -52,6 +52,7 @@ import { TaxiPricelist } from '@/components/TaxiPricelist';
 import { MunicipalityInfo } from '@/components/MunicipalityInfo';
 import { NearbyMunicipalities } from '@/components/NearbyMunicipalities';
 import { ReportNumberButton } from '@/components/ReportNumberModal';
+import { OwnerClaimButton } from '@/components/OwnerClaimButton';
 import { getMunicipalityStats } from '@/lib/municipality-data';
 import { TaxiPromoBanner } from '@/components/TaxiPromoBanner';
 import { getApprovedPartnerData } from '@/lib/partner-data';
@@ -820,11 +821,22 @@ async function UniversalListView({
                       <p className="text-sm text-foreground/60">
                         {service.phone}
                       </p>
-                      <ReportNumberButton
-                        serviceName={service.name}
-                        servicePhone={service.phone}
-                        cityName={city.name}
-                      />
+                      <div className="flex items-center gap-3">
+                        {/* Ste majiteľ? - len pre neoverené služby */}
+                        {!isPartner && !isPremium && (
+                          <OwnerClaimButton
+                            serviceName={service.name}
+                            servicePhone={service.phone}
+                            cityName={city.name}
+                            citySlug={city.slug}
+                          />
+                        )}
+                        <ReportNumberButton
+                          serviceName={service.name}
+                          servicePhone={service.phone}
+                          cityName={city.name}
+                        />
+                      </div>
                     </div>
                   )}
                 </div>
