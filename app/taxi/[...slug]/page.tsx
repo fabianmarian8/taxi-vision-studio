@@ -51,6 +51,7 @@ import { TaxiGallery } from '@/components/TaxiGallery';
 import { TaxiPricelist } from '@/components/TaxiPricelist';
 import { MunicipalityInfo } from '@/components/MunicipalityInfo';
 import { NearbyMunicipalities } from '@/components/NearbyMunicipalities';
+import { ReportNumberButton } from '@/components/ReportNumberModal';
 import { getMunicipalityStats } from '@/lib/municipality-data';
 import { TaxiPromoBanner } from '@/components/TaxiPromoBanner';
 import { getApprovedPartnerData } from '@/lib/partner-data';
@@ -66,6 +67,13 @@ import {
   locations,
   type Location
 } from '@/data/locations';
+import {
+  generateMetaDescription as generateDeclensionMetaDescription,
+  generateIntroText,
+  getLocativePhrase,
+  getAccusativePhrase,
+  getGenitivePhrase
+} from '@/utils/declensions';
 
 // ISR: Revalidate every 60 seconds for partner data updates
 // Partners can edit their profiles in real-time, so we need fresh data
@@ -411,6 +419,33 @@ export async function generateMetadata({
         ];
       }
 
+      // SEO optimalizácia pre VŠETKY obce bez taxislužieb - korektné slovenské skloňovanie
+      if (nearestCity) {
+        const nearestCitiesMultiple = findNearestCitiesWithTaxis(municipality, 2);
+        const cityNames = nearestCitiesMultiple.map(c => c.city.name).join(', ');
+
+        title = `Taxi ${municipality.name} – najbližšie taxislužby (${cityNames}) | ${siteName}`;
+        // Generované meta description s korektným skloňovaním
+        description = generateDeclensionMetaDescription(
+          { slug: municipality.slug, name: municipality.name },
+          nearestCitiesMultiple.map(c => ({
+            city: { slug: c.city.slug, name: c.city.name },
+            roadDistance: c.roadDistance,
+            duration: c.duration
+          }))
+        );
+        // Dynamické keywords s korektným skloňovaním
+        const accusativeForm = getAccusativePhrase(municipality.slug, municipality.name);
+        keywords = [
+          `taxi ${municipality.name}`,
+          `taxi ${accusativeForm.replace('do ', '')}`, // "taxi do Aboviec" → "taxi Aboviec"
+          `taxislužba ${municipality.name}`,
+          `taxi ${nearestCity.city.name}`,
+          `taxi okres ${district.name}`,
+          `najbližšie taxi ${municipality.name}`
+        ];
+      }
+
       return {
         title,
         description,
@@ -678,6 +713,12 @@ async function UniversalListView({
                             </span>
                           </>
                         )}
+                        {/* Neoverené badge pre štandardné služby */}
+                        {!isPartner && !isPremium && (
+                          <span className="text-[10px] bg-gray-400 text-white px-1.5 py-0.5 rounded font-medium">
+                            Neoverené
+                          </span>
+                        )}
 
                         {/* Rating - malé, len pre ne-partnerov (partneri majú veľký baner) */}
                         {ratingData && !isPartner && (
@@ -770,6 +811,20 @@ async function UniversalListView({
                         {/* Verified badge */}
                         <BadgeCheck className="h-4 w-4 text-purple-600 ml-auto" />
                       </div>
+                    </div>
+                  )}
+
+                  {/* Telefónne číslo + Nahlásiť nefunkčné - globálne pre všetky služby */}
+                  {service.phone && (
+                    <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100 relative z-10">
+                      <p className="text-sm text-foreground/60">
+                        {service.phone}
+                      </p>
+                      <ReportNumberButton
+                        serviceName={service.name}
+                        servicePhone={service.phone}
+                        cityName={city.name}
+                      />
                     </div>
                   )}
                 </div>
@@ -916,148 +971,316 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
 
       <SEOBreadcrumbs items={breadcrumbItems} />
 
-      {/* Above The Fold dizajn - konzistentný s taxi-trasa */}
-      <section className="relative bg-gradient-to-br from-primary-yellow/10 via-white to-primary-yellow/5">
-        <div className="container mx-auto max-w-6xl px-4 py-6 md:py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
+      {/* Above The Fold dizajn - pre VŠETKY obce bez taxislužieb */}
+      {!hasTaxiServices && nearestCities.length > 0 ? (
+        <section className="relative bg-gradient-to-br from-primary-yellow/10 via-white to-primary-yellow/5">
+          <div className="container mx-auto max-w-6xl px-4 py-6 md:py-8">
+            {/* H1 + Pravdivá veta */}
+            <div className="mb-6">
+              <p className="text-sm text-foreground/60 mb-1">
+                {isHierarchical && actualDistrict ? `Okres ${actualDistrict.name}` : municipality.region}
+              </p>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-foreground leading-tight">
+                Taxi {municipality.name}
+              </h1>
+              <p className="text-base md:text-lg text-foreground/70 mt-3 max-w-2xl">
+                {generateIntroText({ slug: municipality.slug, name: municipality.name })}
+              </p>
+            </div>
 
-            {/* Ľavá strana - Info */}
-            <div className="lg:col-span-2 flex flex-col">
-              <div className="mb-4">
-                <p className="text-sm text-foreground/60 mb-1">
-                  {isHierarchical && actualDistrict ? `Okres ${actualDistrict.name}` : municipality.region}
-                </p>
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-foreground leading-tight">
-                  {municipality.name}
-                </h1>
-                <p className="text-sm sm:text-base text-foreground/70 mt-2">
-                  Objednajte si taxi v okolí
-                </p>
-              </div>
-
-              {!hasTaxiServices && nearestCities.length > 0 && (
-                <div className="mt-4 space-y-3">
-                  {ctaOverride?.heroImage ? (
-                    // Partner štýl tlačidlo s hero obrázkom
-                    <Link
-                      href={ctaOverride.href}
-                      className="relative flex items-center gap-4 w-full px-5 py-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden border border-purple-200 hover:border-purple-300"
+            {/* TOP 3 TAXI KARTY S VOLÁŤ - ABOVE THE FOLD */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              {nearestCities.slice(0, 3).flatMap(({ city, roadDistance, duration }) =>
+                city.taxiServices.slice(0, 1).map((service, idx) => {
+                  const isPartner = service.isPartner || !!service.redirectTo;
+                  const isPremium = service.isPremium && !isPartner;
+                  const serviceSlug = createServiceSlug(service.name);
+                  const serviceDetailUrl = `/taxi/${city.slug}/${serviceSlug}`;
+                  return (
+                    <div
+                      key={`${city.slug}-${idx}`}
+                      className={`rounded-xl p-4 shadow-lg border-2 ${
+                        isPartner
+                          ? 'bg-gradient-to-br from-purple-50 to-white border-purple-300'
+                          : isPremium
+                          ? 'bg-gradient-to-br from-amber-50 to-white border-amber-300'
+                          : 'bg-white border-gray-200'
+                      }`}
                     >
-                      {/* Hero image na pozadí */}
-                      <div
-                        className="absolute pointer-events-none"
-                        style={{
-                          top: 0,
-                          bottom: 0,
-                          left: '40%',
-                          right: 0,
-                          backgroundImage: `url(${ctaOverride.heroImage})`,
-                          backgroundPosition: 'center 75%',
-                          backgroundSize: 'cover',
-                          backgroundRepeat: 'no-repeat',
-                          maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.4) 100%)',
-                          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.4) 100%)'
-                        }}
-                      />
-                      {/* Logo */}
-                      {ctaOverride.logo && (
-                        <img
-                          src={ctaOverride.logo}
-                          alt={ctaOverride.text}
-                          className="w-12 h-12 rounded-full object-cover ring-2 ring-purple-300 flex-shrink-0 relative z-10"
-                        />
-                      )}
-                      <div className="flex-1 relative z-10">
-                        <span className="font-bold text-lg text-gray-900">{ctaOverride.text}</span>
-                        <div className="flex items-center gap-2 text-sm text-purple-600 font-semibold">
-                          <Phone className="h-4 w-4" />
-                          Zobraziť kontakt
+                      {/* Header - meno + badge */}
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <div>
+                          <Link href={serviceDetailUrl} className={`font-bold text-lg hover:underline ${isPartner ? 'text-purple-900' : 'text-foreground'}`}>
+                            <h3>{service.name}</h3>
+                          </Link>
+                          <Link href={`/taxi/${city.slug}`} className="text-sm text-foreground/60 hover:underline">
+                            {city.name}
+                          </Link>
+                        </div>
+                        <div className="flex flex-col gap-1 items-end">
+                          {isPartner && (
+                            <span className="text-[10px] bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 px-2 py-0.5 rounded font-bold flex items-center gap-1">
+                              <Star className="h-3 w-3" />
+                              PARTNER
+                            </span>
+                          )}
+                          {/* Trust signál s dátumom */}
+                          {(isPartner || isPremium) ? (
+                            <span className="text-[10px] bg-green-600 text-white px-2 py-0.5 rounded font-bold flex items-center gap-1">
+                              <BadgeCheck className="h-3 w-3" />
+                              Overené: 01/2026
+                            </span>
+                          ) : (
+                            <span className="text-[10px] bg-gray-400 text-white px-2 py-0.5 rounded font-medium">
+                              Neoverené
+                            </span>
+                          )}
                         </div>
                       </div>
-                      <ArrowRight className="h-5 w-5 text-purple-400 relative z-10" />
-                    </Link>
-                  ) : (
-                    // Štandardné zelené tlačidlo
-                    <Link
-                      href={ctaOverride?.href || `/taxi/${nearestCities[0].city.slug}`}
-                      className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-xl text-lg"
-                    >
-                      <Phone className="h-6 w-6" />
-                      {ctaOverride?.text || `Taxislužby v ${nearestCities[0].city.name}`}
-                    </Link>
-                  )}
-                  {whatsappNumber && (
-                    <a
-                      href={`https://wa.me/${whatsappNumber.replace(/\s/g, '').replace(/^0/, '421')}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#1da851] transition-all shadow-lg hover:shadow-xl text-lg"
-                    >
-                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                      </svg>
-                      WhatsApp
-                    </a>
-                  )}
-                </div>
-              )}
 
-              {hasTaxiServices && cityWithTaxi && (
-                <>
-                  <div className="bg-primary-yellow/10 rounded-xl p-4 mb-4">
-                    <p className="text-sm font-semibold text-foreground/80">
-                      ✓ V obci {municipality.name} máme {cityWithTaxi.taxiServices.length} taxislužieb
-                    </p>
-                  </div>
-                  <Link
-                    href="#taxi-sluzby"
-                    className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-xl text-lg"
-                  >
-                    <Phone className="h-6 w-6" />
-                    Zobraziť taxislužby
-                  </Link>
-                </>
+                      {/* Info - vzdialenosť + čas */}
+                      <div className="flex items-center gap-3 text-sm text-foreground/70 mb-3">
+                        <span className="flex items-center gap-1">
+                          <MapPin className="h-4 w-4" />
+                          {roadDistance} km
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="h-4 w-4" />
+                          ~{duration} min
+                        </span>
+                      </div>
+
+                      {/* VOLÁŤ BUTTON - tel: link */}
+                      {service.phone && (
+                        <a
+                          href={`tel:${service.phone.replace(/\s/g, '')}`}
+                          className={`flex items-center justify-center gap-2 w-full px-4 py-3 rounded-lg font-bold text-white transition-all shadow-md hover:shadow-lg ${
+                            isPartner
+                              ? 'bg-purple-600 hover:bg-purple-700'
+                              : 'bg-green-600 hover:bg-green-700'
+                          }`}
+                        >
+                          <Phone className="h-5 w-5" />
+                          VOLÁŤ
+                        </a>
+                      )}
+
+                      {/* Telefónne číslo + Nahlásiť nefunkčné */}
+                      {service.phone && (
+                        <div className="flex items-center justify-between mt-2">
+                          <p className="text-sm text-foreground/60">
+                            {service.phone}
+                          </p>
+                          <ReportNumberButton
+                            serviceName={service.name}
+                            servicePhone={service.phone}
+                            cityName={city.name}
+                          />
+                        </div>
+                      )}
+
+                      {/* Sekundárny link na profil - dôležité pre interné linkovanie */}
+                      <Link
+                        href={serviceDetailUrl}
+                        className="block text-center text-xs text-foreground/50 hover:text-foreground/70 hover:underline mt-2 pt-2 border-t border-gray-100"
+                      >
+                        Zobraziť profil →
+                      </Link>
+                    </div>
+                  );
+                })
               )}
             </div>
 
-            {/* Pravá strana - Mapa */}
-            {!hasTaxiServices && nearestCities.length > 0 &&
-             municipality.latitude && municipality.longitude &&
+            {/* Mapa - MENŠIA, pod kartami */}
+            {municipality.latitude && municipality.longitude &&
              nearestCities[0].city.latitude && nearestCities[0].city.longitude && (
-              <div className="lg:col-span-3">
-                <div className="rounded-xl overflow-hidden shadow-lg h-[400px] md:h-[350px] lg:h-full lg:min-h-[350px]">
-                  <RouteMapWrapper
-                    fromLat={municipality.latitude}
-                    fromLng={municipality.longitude}
-                    fromName={municipality.name}
-                    fromSlug={municipality.slug}
-                    toLat={nearestCities[0].city.latitude}
-                    toLng={nearestCities[0].city.longitude}
-                    toName={nearestCities[0].city.name}
-                    toSlug={nearestCities[0].city.slug}
-                    distance={nearestCities[0].distance}
-                    roadDistance={nearestCities[0].roadDistance}
-                    duration={nearestCities[0].duration}
-                    priceMin={priceOverride?.min}
-                    priceMax={priceOverride?.max}
-                  />
-                </div>
+              <div className="rounded-xl overflow-hidden shadow-lg h-[250px] md:h-[300px]">
+                <RouteMapWrapper
+                  fromLat={municipality.latitude}
+                  fromLng={municipality.longitude}
+                  fromName={municipality.name}
+                  fromSlug={municipality.slug}
+                  toLat={nearestCities[0].city.latitude}
+                  toLng={nearestCities[0].city.longitude}
+                  toName={nearestCities[0].city.name}
+                  toSlug={nearestCities[0].city.slug}
+                  distance={nearestCities[0].distance}
+                  roadDistance={nearestCities[0].roadDistance}
+                  duration={nearestCities[0].duration}
+                  priceMin={priceOverride?.min}
+                  priceMax={priceOverride?.max}
+                />
               </div>
             )}
-          </div>
 
-          {/* Breadcrumb - navigácia */}
-          <div className="mt-6 pt-4 border-t border-foreground/10">
-            <Link
-              href={isHierarchical && actualDistrict ? `/taxi/${regionSlug}/${actualDistrict.slug}` : `/kraj/${regionSlug}`}
-              className="inline-flex items-center gap-2 text-sm text-foreground/60 hover:text-foreground transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              {isHierarchical && actualDistrict ? `Späť na okres ${actualDistrict.name}` : `Späť na ${municipality.region}`}
-            </Link>
+            {/* Link na všetky služby v najbližšom meste */}
+            <div className="mt-6 text-center">
+              <Link
+                href={`/taxi/${nearestCities[0].city.slug}`}
+                className="inline-flex items-center gap-2 text-primary-yellow hover:underline font-semibold"
+              >
+                Zobraziť všetky taxislužby v {nearestCities[0].city.name}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            {/* Breadcrumb */}
+            <div className="mt-6 pt-4 border-t border-foreground/10">
+              <Link
+                href={isHierarchical && actualDistrict ? `/taxi/${regionSlug}/${actualDistrict.slug}` : `/kraj/${regionSlug}`}
+                className="inline-flex items-center gap-2 text-sm text-foreground/60 hover:text-foreground transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                {isHierarchical && actualDistrict ? `Späť na okres ${actualDistrict.name}` : `Späť na ${municipality.region}`}
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        /* PÔVODNÝ Above The Fold dizajn */
+        <section className="relative bg-gradient-to-br from-primary-yellow/10 via-white to-primary-yellow/5">
+          <div className="container mx-auto max-w-6xl px-4 py-6 md:py-8">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8">
+
+              {/* Ľavá strana - Info */}
+              <div className="lg:col-span-2 flex flex-col">
+                <div className="mb-4">
+                  <p className="text-sm text-foreground/60 mb-1">
+                    {isHierarchical && actualDistrict ? `Okres ${actualDistrict.name}` : municipality.region}
+                  </p>
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-foreground leading-tight">
+                    {municipality.name}
+                  </h1>
+                  <p className="text-sm sm:text-base text-foreground/70 mt-2">
+                    Objednajte si taxi v okolí
+                  </p>
+                </div>
+
+                {!hasTaxiServices && nearestCities.length > 0 && (
+                  <div className="mt-4 space-y-3">
+                    {ctaOverride?.heroImage ? (
+                      // Partner štýl tlačidlo s hero obrázkom
+                      <Link
+                        href={ctaOverride.href}
+                        className="relative flex items-center gap-4 w-full px-5 py-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden border border-purple-200 hover:border-purple-300"
+                      >
+                        {/* Hero image na pozadí */}
+                        <div
+                          className="absolute pointer-events-none"
+                          style={{
+                            top: 0,
+                            bottom: 0,
+                            left: '40%',
+                            right: 0,
+                            backgroundImage: `url(${ctaOverride.heroImage})`,
+                            backgroundPosition: 'center 75%',
+                            backgroundSize: 'cover',
+                            backgroundRepeat: 'no-repeat',
+                            maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.4) 100%)',
+                            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.4) 100%)'
+                          }}
+                        />
+                        {/* Logo */}
+                        {ctaOverride.logo && (
+                          <img
+                            src={ctaOverride.logo}
+                            alt={ctaOverride.text}
+                            className="w-12 h-12 rounded-full object-cover ring-2 ring-purple-300 flex-shrink-0 relative z-10"
+                          />
+                        )}
+                        <div className="flex-1 relative z-10">
+                          <span className="font-bold text-lg text-gray-900">{ctaOverride.text}</span>
+                          <div className="flex items-center gap-2 text-sm text-purple-600 font-semibold">
+                            <Phone className="h-4 w-4" />
+                            Zobraziť kontakt
+                          </div>
+                        </div>
+                        <ArrowRight className="h-5 w-5 text-purple-400 relative z-10" />
+                      </Link>
+                    ) : (
+                      // Štandardné zelené tlačidlo
+                      <Link
+                        href={ctaOverride?.href || `/taxi/${nearestCities[0].city.slug}`}
+                        className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-xl text-lg"
+                      >
+                        <Phone className="h-6 w-6" />
+                        {ctaOverride?.text || `Taxislužby v ${nearestCities[0].city.name}`}
+                      </Link>
+                    )}
+                    {whatsappNumber && (
+                      <a
+                        href={`https://wa.me/${whatsappNumber.replace(/\s/g, '').replace(/^0/, '421')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#1da851] transition-all shadow-lg hover:shadow-xl text-lg"
+                      >
+                        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        WhatsApp
+                      </a>
+                    )}
+                  </div>
+                )}
+
+                {hasTaxiServices && cityWithTaxi && (
+                  <>
+                    <div className="bg-primary-yellow/10 rounded-xl p-4 mb-4">
+                      <p className="text-sm font-semibold text-foreground/80">
+                        ✓ V obci {municipality.name} máme {cityWithTaxi.taxiServices.length} taxislužieb
+                      </p>
+                    </div>
+                    <Link
+                      href="#taxi-sluzby"
+                      className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-xl text-lg"
+                    >
+                      <Phone className="h-6 w-6" />
+                      Zobraziť taxislužby
+                    </Link>
+                  </>
+                )}
+              </div>
+
+              {/* Pravá strana - Mapa */}
+              {!hasTaxiServices && nearestCities.length > 0 &&
+               municipality.latitude && municipality.longitude &&
+               nearestCities[0].city.latitude && nearestCities[0].city.longitude && (
+                <div className="lg:col-span-3">
+                  <div className="rounded-xl overflow-hidden shadow-lg h-[400px] md:h-[350px] lg:h-full lg:min-h-[350px]">
+                    <RouteMapWrapper
+                      fromLat={municipality.latitude}
+                      fromLng={municipality.longitude}
+                      fromName={municipality.name}
+                      fromSlug={municipality.slug}
+                      toLat={nearestCities[0].city.latitude}
+                      toLng={nearestCities[0].city.longitude}
+                      toName={nearestCities[0].city.name}
+                      toSlug={nearestCities[0].city.slug}
+                      distance={nearestCities[0].distance}
+                      roadDistance={nearestCities[0].roadDistance}
+                      duration={nearestCities[0].duration}
+                      priceMin={priceOverride?.min}
+                      priceMax={priceOverride?.max}
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Breadcrumb - navigácia */}
+            <div className="mt-6 pt-4 border-t border-foreground/10">
+              <Link
+                href={isHierarchical && actualDistrict ? `/taxi/${regionSlug}/${actualDistrict.slug}` : `/kraj/${regionSlug}`}
+                className="inline-flex items-center gap-2 text-sm text-foreground/60 hover:text-foreground transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                {isHierarchical && actualDistrict ? `Späť na okres ${actualDistrict.name}` : `Späť na ${municipality.region}`}
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Custom Content Section for Locations */}
       {customContent && (
@@ -1077,8 +1300,8 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
         </section>
       )}
 
-      {/* Najbližšie taxislužby */}
-      {!hasTaxiServices && nearestCities.length > 0 && !hideNearbyTaxisSection && (
+      {/* Najbližšie taxislužby - SKRYTÉ pre obce bez taxi (už sú hore v top 3 kartách) */}
+      {!hasTaxiServices && nearestCities.length > 0 && !hideNearbyTaxisSection && false && (
         <section className="py-12 md:py-16 lg:py-20 px-4 md:px-8 relative bg-gray-50">
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="mb-8 text-center">
@@ -1232,9 +1455,70 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
         />
       )}
 
-      {/* FAQ Sekcia - len ak je customFaqs alebo nie je customContent (aby sme prebili default pre obce) */}
-      {(customFaqs || !customContent) && (
-        <CityFAQ cityName={municipality.name} citySlug={municipality.slug} isVillage={true} customItems={customFaqs} />
+      {/* Lokálne dátové FAQ pre obce bez taxislužieb */}
+      {!hasTaxiServices && nearestCities.length > 0 ? (
+        <CityFAQ
+          cityName={municipality.name}
+          citySlug={municipality.slug}
+          isVillage={true}
+          customItems={[
+            {
+              question: `Kde nájdem najbližšie taxi ${getAccusativePhrase(municipality.slug, municipality.name)}?`,
+              answer: `Najbližšie taxi ${getAccusativePhrase(municipality.slug, municipality.name)} je ${getGenitivePhrase(nearestCities[0].city.slug, nearestCities[0].city.name)} (${nearestCities[0].roadDistance} km, cca ${nearestCities[0].duration} min). V okolí evidujeme taxislužby aj v ${nearestCities.slice(1).map(c => c.city.name).join(' a ')}.`
+            },
+            {
+              question: `Koľko stojí taxi ${getAccusativePhrase(municipality.slug, municipality.name)}?`,
+              answer: `Orientačná cena taxi ${getGenitivePhrase(nearestCities[0].city.slug, nearestCities[0].city.name)} ${getAccusativePhrase(municipality.slug, municipality.name)} je ${Math.ceil(2 + nearestCities[0].roadDistance * 0.85)}€ - ${Math.ceil(2 + nearestCities[0].roadDistance * 1.15)}€. Finálna cena závisí od konkrétnej taxislužby a času jazdy.`
+            },
+            {
+              question: `Je ${getLocativePhrase(municipality.slug, municipality.name).replace(/^V /i, 'v ')} taxislužba?`,
+              answer: `${getLocativePhrase(municipality.slug, municipality.name)} momentálne neevidujeme žiadnu taxislužbu. Odporúčame využiť taxi z okolitých miest - najbližšie sú ${nearestCities.map(c => `${c.city.name} (${c.roadDistance} km)`).join(', ')}.`
+            }
+          ]}
+        />
+      ) : (
+        /* Štandardné FAQ pre ostatné obce */
+        (customFaqs || !customContent) && (
+          <CityFAQ cityName={municipality.name} citySlug={municipality.slug} isVillage={true} customItems={customFaqs} />
+        )
+      )}
+
+      {/* Najčastejšie ciele - intent sekcia pre obce bez taxi */}
+      {!hasTaxiServices && nearestCities.length > 0 && (
+        <section className="py-8 md:py-12 px-4 md:px-8 bg-gray-50">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-xl md:text-2xl font-black mb-4 text-foreground">
+              Najčastejšie ciele z {municipality.name}
+            </h2>
+            <p className="text-sm text-foreground/70 mb-6">
+              Kam najčastejšie cestujú ľudia z {municipality.name}? Tu sú obľúbené destinácie:
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {nearestCities.map(({ city, roadDistance }) => (
+                <Link
+                  key={city.slug}
+                  href={`/taxi/trasa/${municipality.slug}-${city.slug}`}
+                  className="flex flex-col items-center p-4 bg-white rounded-lg border hover:border-primary-yellow hover:shadow-md transition-all text-center"
+                >
+                  <MapPin className="h-5 w-5 text-primary-yellow mb-2" />
+                  <span className="font-bold text-foreground">{municipality.name} → {city.name}</span>
+                  <span className="text-xs text-foreground/60">{roadDistance} km</span>
+                </Link>
+              ))}
+              {/* Okresné mesto */}
+              {actualDistrict && (
+                <Link
+                  href={`/taxi/${regionSlug}/${actualDistrict.slug}`}
+                  className="flex flex-col items-center p-4 bg-white rounded-lg border hover:border-primary-yellow hover:shadow-md transition-all text-center"
+                >
+                  <MapPin className="h-5 w-5 text-primary-yellow mb-2" />
+                  <span className="font-bold text-foreground">Okres {actualDistrict.name}</span>
+                  <span className="text-xs text-foreground/60">Všetky taxi</span>
+                </Link>
+              )}
+            </div>
+          </div>
+        </section>
       )}
 
       {/* Informácie o obci - SEO obsah na spodku */}
@@ -1250,7 +1534,8 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
         area={municipalityStats.area}
       />
 
-      <HowItWorks />
+      {/* HowItWorks - SKRYTÉ pre obce bez taxi (šablónový obsah) */}
+      {hasTaxiServices && <HowItWorks />}
       <Footer />
     </div>
   );
