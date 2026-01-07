@@ -821,22 +821,11 @@ async function UniversalListView({
                       <p className="text-sm text-foreground/60">
                         {service.phone}
                       </p>
-                      <div className="flex items-center gap-3">
-                        {/* Ste majiteľ? - len pre neoverené služby */}
-                        {!isPartner && !isPremium && (
-                          <OwnerClaimButton
-                            serviceName={service.name}
-                            servicePhone={service.phone}
-                            cityName={city.name}
-                            citySlug={city.slug}
-                          />
-                        )}
-                        <ReportNumberButton
-                          serviceName={service.name}
-                          servicePhone={service.phone}
-                          cityName={city.name}
-                        />
-                      </div>
+                      <ReportNumberButton
+                        serviceName={service.name}
+                        servicePhone={service.phone}
+                        cityName={city.name}
+                      />
                     </div>
                   )}
                 </div>
@@ -2138,7 +2127,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         {/* Promo banner for non-Premium/Partner services */}
         {!isPremium && !isPartner && (
           <section className="px-4 pb-6">
-            <div className="container mx-auto max-w-4xl">
+            <div className="container mx-auto max-w-4xl space-y-3">
+              {/* Upgrade banner */}
               <div className="bg-gradient-to-r from-purple-50 to-amber-50 rounded-xl p-4 border border-purple-100">
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
@@ -2156,6 +2146,19 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   >
                     Zistiť viac
                   </Link>
+                </div>
+              </div>
+
+              {/* Owner claim - update info */}
+              <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-gray-600 text-sm">Potrebujete aktualizovať údaje?</p>
+                  <OwnerClaimButton
+                    serviceName={service.name}
+                    servicePhone={service.phone}
+                    cityName={city.name}
+                    citySlug={city.slug}
+                  />
                 </div>
               </div>
             </div>
