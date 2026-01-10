@@ -38,7 +38,7 @@ import {
   type District
 } from '@/data/districts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { truncateUrl } from '@/utils/urlUtils';
+import { truncateUrl, createServiceSlug } from '@/utils/urlUtils';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { RouteMapWrapper } from '@/components/RouteMapWrapper';
 import { generateUniqueServiceContent, generateUniqueMetaDescription } from '@/utils/contentVariations';
@@ -96,15 +96,6 @@ type RouteType =
   | { type: 'hierarchical'; municipality: Municipality; district: District; regionSlug: string }
   | { type: 'redirect'; to: string }
   | { type: 'notFound' };
-
-function createServiceSlug(serviceName: string): string {
-  return serviceName
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
 
 function detectRouteType(slugArray: string[]): RouteType {
   if (slugArray.length === 1) {
@@ -481,15 +472,6 @@ export async function generateMetadata({
 // H1: 28-32px, Riadok: 80px, Logo: 40px s fallback, Akcia podľa typu
 // Aplikované na VŠETKY mestá a obce s taxislužbami
 // ============================================================================
-
-function createServiceSlugForList(serviceName: string): string {
-  return serviceName
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
 
 async function UniversalListView({
   city,

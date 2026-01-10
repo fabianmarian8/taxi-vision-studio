@@ -1,31 +1,38 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import { X, AlertTriangle, Phone, PhoneOff, HelpCircle } from 'lucide-react';
 
-interface ReportNumberModalProps {
+interface ReportNumberButtonProps {
   serviceName: string;
   servicePhone: string;
   cityName: string;
 }
 
-type ReportReason = 'not_answering' | 'wrong_number' | 'not_exists' | null;
+type ReportReason = 'not_answering' | 'wrong_number' | 'not_exists';
 
-const reportReasons = [
-  { id: 'not_answering' as const, label: 'Neberie telefón', icon: PhoneOff, description: 'Volal som, ale nikto nezdvíha' },
-  { id: 'wrong_number' as const, label: 'Zlé číslo', icon: Phone, description: 'Číslo neexistuje alebo patrí niekomu inému' },
-  { id: 'not_exists' as const, label: 'Taxislužba neexistuje', icon: HelpCircle, description: 'Firma už nepôsobí' },
-];
+const REPORT_REASONS = [
+  { id: 'not_answering', label: 'Neberie telefon', icon: PhoneOff, description: 'Volal som, ale nikto nezdviha' },
+  { id: 'wrong_number', label: 'Zle cislo', icon: Phone, description: 'Cislo neexistuje alebo patri niekomu inemu' },
+  { id: 'not_exists', label: 'Taxisluzba neexistuje', icon: HelpCircle, description: 'Firma uz neposobi' },
+] as const;
 
-export function ReportNumberButton({ serviceName, servicePhone, cityName }: ReportNumberModalProps) {
+export function ReportNumberButton({ serviceName, servicePhone, cityName }: ReportNumberButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedReason, setSelectedReason] = useState<ReportReason>(null);
+  const [selectedReason, setSelectedReason] = useState<ReportReason | null>(null);
   const [comment, setComment] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async () => {
+  function resetForm(): void {
+    setIsOpen(false);
+    setIsSubmitted(false);
+    setSelectedReason(null);
+    setComment('');
+  }
+
+  async function handleSubmit(): Promise<void> {
     if (!selectedReason || isSubmitting) return;
 
     setIsSubmitting(true);
@@ -50,19 +57,13 @@ export function ReportNumberButton({ serviceName, servicePhone, cityName }: Repo
       }
 
       setIsSubmitted(true);
-      setTimeout(() => {
-        setIsOpen(false);
-        setIsSubmitted(false);
-        setSelectedReason(null);
-        setComment('');
-      }, 2000);
-    } catch (err) {
-      console.error('Report submit error:', err);
-      setError('Nepodarilo sa odoslať. Skúste znova.');
+      setTimeout(resetForm, 2000);
+    } catch {
+      setError('Nepodarilo sa odoslat. Skuste znova.');
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }
 
   return (
     <>
@@ -106,8 +107,8 @@ export function ReportNumberButton({ serviceName, servicePhone, cityName }: Repo
 
                 {/* Reason selection */}
                 <div className="space-y-2 mb-4">
-                  <p className="text-sm font-medium text-foreground/80">Čo sa stalo?</p>
-                  {reportReasons.map((reason) => (
+                  <p className="text-sm font-medium text-foreground/80">Co sa stalo?</p>
+                  {REPORT_REASONS.map((reason) => (
                     <button
                       key={reason.id}
                       onClick={() => setSelectedReason(reason.id)}

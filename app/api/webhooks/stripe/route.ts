@@ -1,13 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { constructWebhookEvent, formatSubscriptionForDB, getPlanTypeFromAmount } from '@/lib/stripe';
-import { createClient } from '@supabase/supabase-js';
+import { constructWebhookEvent, getPlanTypeFromAmount } from '@/lib/stripe';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-// Use service role for admin operations
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+// Lazy-initialized Supabase client to avoid build-time errors
+let _supabase: SupabaseClient | null = null;
+
+function getSupabase(): SupabaseClient {
+  if (!_supabase) {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    if (!url || !key) {
+      throw new Error('Supabase credentials not configured');
+    }
+    _supabase = createClient(url, key);
+  }
+  return _supabase;
+}
 
 export async function POST(request: NextRequest) {
   const body = await request.text();
@@ -72,7 +81,7 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
   const periodEnd = subscriptionItem?.current_period_end || Math.floor(Date.now() / 1000);
 
   // Get customer email
-  const { data: customerData } = await supabase
+  const { data: customerData } = await getSupabase()
     .from('subscriptions')
     .select('customer_email')
     .eq('stripe_customer_id', subscription.customer as string)
@@ -81,7 +90,7 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
   const customerEmail = customerData?.customer_email || '';
 
   // Insert new subscription
-  const { error } = await supabase.from('subscriptions').upsert({
+  const { error } = await getSupabase().from('subscriptions').upsert({
     stripe_subscription_id: subscription.id,
     stripe_customer_id: subscription.customer as string,
     stripe_price_id: subscriptionItem?.price?.id || '',
@@ -124,7 +133,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
   const periodEnd = subscriptionItem?.current_period_end || Math.floor(Date.now() / 1000);
 
   // Get previous status
-  const { data: existing } = await supabase
+  const { data: existing } = await getSupabase()
     .from('subscriptions')
     .select('status')
     .eq('stripe_subscription_id', subscription.id)
@@ -133,7 +142,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
   const previousStatus = existing?.status || null;
 
   // Update subscription
-  const { error } = await supabase
+  const { error } = await getSupabase()
     .from('subscriptions')
     .update({
       status: subscription.status,
@@ -167,7 +176,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
 
 async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
   // Get previous status
-  const { data: existing } = await supabase
+  const { data: existing } = await getSupabase()
     .from('subscriptions')
     .select('status')
     .eq('stripe_subscription_id', subscription.id)
@@ -176,7 +185,7 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
   const previousStatus = existing?.status || null;
 
   // Update subscription status to canceled
-  const { error } = await supabase
+  const { error } = await getSupabase()
     .from('subscriptions')
     .update({
       status: 'canceled',
@@ -221,7 +230,7 @@ async function handlePaymentFailed(invoice: Stripe.Invoice) {
   if (!subscriptionId) return;
 
   // Update subscription status
-  await supabase
+  await getSupabase()
     .from('subscriptions')
     .update({
       status: 'past_due',
@@ -253,7 +262,7 @@ async function linkSubscriptionToTaxiService(
   }
 
   // Get our subscription ID
-  const { data: subscription } = await supabase
+  const { data: subscription } = await getSupabase()
     .from('subscriptions')
     .select('id, status, current_period_end')
     .eq('stripe_subscription_id', stripeSubscriptionId)
@@ -265,7 +274,7 @@ async function linkSubscriptionToTaxiService(
   }
 
   // Find and update the matching taxi service
-  const { error } = await supabase
+  const { error } = await getSupabase()
     .from('taxi_services')
     .update({
       subscription_id: subscription.id,
@@ -291,7 +300,7 @@ async function logSubscriptionEvent(
   newStatus: string | null
 ) {
   // Get subscription ID from our database
-  const { data: subscription } = await supabase
+  const { data: subscription } = await getSupabase()
     .from('subscriptions')
     .select('id')
     .eq('stripe_subscription_id', stripeSubscriptionId)
@@ -302,7 +311,7 @@ async function logSubscriptionEvent(
     return;
   }
 
-  await supabase.from('subscription_events').insert({
+  await getSupabase().from('subscription_events').insert({
     subscription_id: subscription.id,
     event_type: eventType,
     amount_cents: amountCents,

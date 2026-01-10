@@ -12,19 +12,10 @@ import { MetadataRoute } from 'next';
 import citiesData from '@/data/cities.json';
 import { getMunicipalityBySlug } from '@/data/municipalities';
 import { getDistrictForMunicipality } from '@/data/districts';
+import { createServiceSlug } from '@/utils/urlUtils';
 
 export const revalidate = 86400; // 24 hours
 export const runtime = 'nodejs';
-
-// Helper funkcia pre vytvorenie slug
-const createServiceSlug = (serviceName: string): string => {
-  return serviceName
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-};
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.taxinearme.sk';

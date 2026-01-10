@@ -10,6 +10,13 @@ interface OwnerClaimButtonProps {
   citySlug: string;
 }
 
+const INITIAL_FORM_DATA = {
+  ownerName: '',
+  ownerPhone: '',
+  ownerEmail: '',
+  message: ''
+};
+
 export function OwnerClaimButton({
   serviceName,
   servicePhone,
@@ -20,15 +27,15 @@ export function OwnerClaimButton({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [formData, setFormData] = useState(INITIAL_FORM_DATA);
 
-  const [formData, setFormData] = useState({
-    ownerName: '',
-    ownerPhone: '',
-    ownerEmail: '',
-    message: ''
-  });
+  function resetForm(): void {
+    setIsOpen(false);
+    setIsSuccess(false);
+    setFormData(INITIAL_FORM_DATA);
+  }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  async function handleSubmit(e: React.FormEvent): Promise<void> {
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
@@ -47,21 +54,17 @@ export function OwnerClaimButton({
       });
 
       if (!response.ok) {
-        throw new Error('Nepodarilo sa odoslať žiadosť');
+        throw new Error('Nepodarilo sa odoslat ziadost');
       }
 
       setIsSuccess(true);
-      setTimeout(() => {
-        setIsOpen(false);
-        setIsSuccess(false);
-        setFormData({ ownerName: '', ownerPhone: '', ownerEmail: '', message: '' });
-      }, 2000);
+      setTimeout(resetForm, 2000);
     } catch {
-      setError('Nastala chyba. Skúste to znova.');
+      setError('Nastala chyba. Skuste to znova.');
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }
 
   return (
     <>

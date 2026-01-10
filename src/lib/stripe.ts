@@ -1,9 +1,28 @@
 import Stripe from 'stripe';
 
-// Initialize Stripe client
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2025-12-15.clover',
-  typescript: true,
+// Lazy-initialized Stripe client to avoid build-time errors
+let _stripe: Stripe | null = null;
+
+function getStripe(): Stripe {
+  if (!_stripe) {
+    const key = process.env.STRIPE_SECRET_KEY;
+    if (!key) {
+      throw new Error('STRIPE_SECRET_KEY is not configured');
+    }
+    _stripe = new Stripe(key, {
+      apiVersion: '2025-12-15.clover',
+      typescript: true,
+    });
+  }
+  return _stripe;
+}
+
+export const stripe = new Proxy({} as Stripe, {
+  get: (_, prop) => {
+    const instance = getStripe();
+    const value = instance[prop as keyof Stripe];
+    return typeof value === 'function' ? value.bind(instance) : value;
+  },
 });
 
 // Price IDs from Stripe Dashboard

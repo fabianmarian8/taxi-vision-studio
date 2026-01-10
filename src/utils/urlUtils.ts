@@ -16,3 +16,17 @@ export function truncateUrl(url: string, maxLength: number = 20): string {
 
   return displayUrl.substring(0, maxLength) + '...';
 }
+
+/**
+ * Vytvorí URL-safe slug z názvu taxislužby
+ * @param serviceName - Názov taxislužby
+ * @returns URL slug
+ */
+export function createServiceSlug(serviceName: string): string {
+  return serviceName
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
