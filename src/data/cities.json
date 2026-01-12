@@ -9378,7 +9378,7 @@
       "slug": "vrable",
       "region": "Nitriansky kraj",
       "description": "Okresné mesto v Nitrianskom kraji. Nájdite taxi vo Vrábloch.",
-      "metaDescription": "Nájdite taxi v meste Vráble. 3 taxislužby s telefónnymi číslami a webovými stránkami: Eko Taxi Vráble, Penzeš s.r.o., TAXI V Vrábľoch. Kontaktujte priamo.",
+      "metaDescription": "Nájdite taxi v meste Vráble. 4 taxislužby s telefónnymi číslami a webovými stránkami: Eko Taxi Vráble, Penzeš s.r.o., TAXI V Vrábľoch, VOLAJ TAXI. Kontaktujte priamo.",
       "keywords": [
         "taxi vráble",
         "taxislužba vráble",
@@ -9412,6 +9412,13 @@
           "phone": "+421915483656",
           "address": "1. mája, Vráble",
           "placeId": "ChIJwYg-A-Eja0cRbjBN5_f9X1E"
+        },
+        {
+          "name": "VOLAJ TAXI",
+          "phone": "+421944919604",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Vráble"
         }
       ],
       "latitude": 48.244285,
