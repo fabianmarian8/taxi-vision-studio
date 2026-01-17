@@ -40,10 +40,10 @@ const ALLOWED_FIELDS = [
 // URL polia ktoré vyžadujú validáciu
 const URL_FIELDS = ['website', 'booking_url', 'pricelist_url', 'transport_rules_url', 'contact_url', 'hero_image_url'];
 
-// Validácia URL - musí byť prázdny string, alebo začínať http:// alebo https://
+// Validácia URL - musí byť prázdny string, null, undefined alebo začínať http:// alebo https://
 function isValidUrl(value: unknown): boolean {
+  if (value === null || value === undefined || value === '') return true; // empty values are OK
   if (typeof value !== 'string') return false;
-  if (value === '') return true; // prázdny string je OK
   return /^https?:\/\//i.test(value);
 }
 
