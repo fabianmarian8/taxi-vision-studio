@@ -583,7 +583,7 @@ export function EditableContactButtons({ defaultLinks, citySlug, serviceName }: 
 
   // Render buttons directly with live values
   const buttonsContent = (
-    <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3">
+    <div className="grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-2 md:gap-3">
       {whatsapp && (
         <a
           href={`https://wa.me/${whatsapp.replace(/[\s+]/g, '')}`}
