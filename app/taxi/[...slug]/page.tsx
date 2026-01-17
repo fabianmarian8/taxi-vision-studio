@@ -1735,8 +1735,14 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               </EditableHeroImage>
             )}
 
-            {/* Fallback gradient hero if no image - Mobile optimized */}
+            {/* Fallback gradient hero if no image - Mobile optimized - NOW EDITABLE */}
             {!heroImage && (
+              <EditableHeroImage
+                defaultImage=""
+                defaultZoom={100}
+                defaultPosX={50}
+                defaultPosY={50}
+              >
               <div className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 partner-hero-fallback p-5 md:p-12">
                 {/* Badges */}
                 <div className="flex gap-1.5 md:gap-2 mb-4 md:mb-6">
@@ -1758,6 +1764,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
                 <EditableHeroTitle defaultValue={service.name} />
               </div>
+              </EditableHeroImage>
             )}
 
             {/* Contact buttons - mobile optimized with live preview */}

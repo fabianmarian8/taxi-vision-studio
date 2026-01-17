@@ -1,6 +1,13 @@
 import { createClient } from '@/lib/supabase/server';
+import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
+
+// Superadmin emails - can edit ALL partner pages
+const SUPERADMIN_EMAILS = [
+  'fabianmarian8@gmail.com',
+  'fabianmarian8@users.noreply.github.com',
+];
 
 // POST /api/partner/inline-edit/publish
 // Publikovanie zmien (status -> approved)
@@ -27,13 +34,28 @@ export async function POST(request: NextRequest) {
       }, { status: 400 });
     }
 
-    // Overenie vlastníctva + načítanie partnera
-    const { data: partner, error: partnerError } = await supabase
+    // Check if user is superadmin
+    const isSuperadmin = user.email && SUPERADMIN_EMAILS.includes(user.email.toLowerCase());
+
+    // Use admin client for superadmins to bypass RLS
+    const queryClient = isSuperadmin
+      ? createAdminClient(
+          process.env.NEXT_PUBLIC_SUPABASE_URL!,
+          process.env.SUPABASE_SERVICE_ROLE_KEY!
+        )
+      : supabase;
+
+    // Overenie vlastníctva + načítanie partnera (superadmins can publish any)
+    let partnerQuery = queryClient
       .from('partners')
-      .select('id, slug, city_slug')
-      .eq('id', partner_id)
-      .eq('user_id', user.id)
-      .single();
+      .select('id, slug, city_slug, user_id')
+      .eq('id', partner_id);
+
+    if (!isSuperadmin) {
+      partnerQuery = partnerQuery.eq('user_id', user.id);
+    }
+
+    const { data: partner, error: partnerError } = await partnerQuery.single();
 
     if (partnerError || !partner) {
       return NextResponse.json({
@@ -43,7 +65,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Aktualizácia statusu na approved - verify that row was actually updated
-    const { data: updatedDraft, error: updateError } = await supabase
+    const { data: updatedDraft, error: updateError } = await queryClient
       .from('partner_drafts')
       .update({
         status: 'approved',

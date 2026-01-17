@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { DEFAULT_PARTNER_SKIN } from '@/lib/partner-skins';
 
 // Superadmin emails - can edit ALL partner pages
@@ -82,9 +83,21 @@ export async function checkPartnerOwnership(partnerSlug: string): Promise<Partne
       return defaultResult;
     }
 
+    // Check if user is superadmin FIRST (before query that might fail due to RLS)
+    const isSuperadmin = user.email && SUPERADMIN_EMAILS.includes(user.email.toLowerCase());
+    console.log('[checkPartnerOwnership] Is superadmin:', isSuperadmin, 'email:', user.email);
+
+    // Use admin client for superadmins to bypass RLS
+    const queryClient = isSuperadmin
+      ? createAdminClient(
+          process.env.NEXT_PUBLIC_SUPABASE_URL!,
+          process.env.SUPABASE_SERVICE_ROLE_KEY!
+        )
+      : supabase;
+
     // Nájdi partnera podľa slugu
     // NOTE: Niektoré stĺpce (whatsapp, booking_url, etc.) nemusia existovať v starších DB
-    const { data: partner, error } = await supabase
+    const { data: partner, error } = await queryClient
       .from('partners')
       .select(`
         id,
@@ -131,10 +144,7 @@ export async function checkPartnerOwnership(partnerSlug: string): Promise<Partne
 
     console.log('[checkPartnerOwnership] Found partner:', partner.id, 'user_id:', partner.user_id);
 
-    // Check if user is superadmin (can edit all pages)
-    const isSuperadmin = user.email && SUPERADMIN_EMAILS.includes(user.email.toLowerCase());
-
-    // Kontrola vlastníctva alebo superadmin
+    // Kontrola vlastníctva alebo superadmin (isSuperadmin already checked above)
     if (partner.user_id !== user.id && !isSuperadmin) {
       console.log('[checkPartnerOwnership] User mismatch - partner.user_id:', partner.user_id, 'user.id:', user.id);
       return defaultResult;

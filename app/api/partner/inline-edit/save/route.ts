@@ -1,6 +1,13 @@
 import { createClient } from '@/lib/supabase/server';
+import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { isPartnerSkinId } from '@/lib/partner-skins';
 import { NextRequest, NextResponse } from 'next/server';
+
+// Superadmin emails - can edit ALL partner pages
+const SUPERADMIN_EMAILS = [
+  'fabianmarian8@gmail.com',
+  'fabianmarian8@users.noreply.github.com',
+];
 
 // Whitelist povolených polí
 const ALLOWED_FIELDS = [
@@ -88,13 +95,29 @@ export async function POST(request: NextRequest) {
       }, { status: 400 });
     }
 
-    // Overenie vlastníctva
-    const { data: partner, error: partnerError } = await supabase
+    // Check if user is superadmin
+    const isSuperadmin = user.email && SUPERADMIN_EMAILS.includes(user.email.toLowerCase());
+
+    // Use admin client for superadmins to bypass RLS
+    const queryClient = isSuperadmin
+      ? createAdminClient(
+          process.env.NEXT_PUBLIC_SUPABASE_URL!,
+          process.env.SUPABASE_SERVICE_ROLE_KEY!
+        )
+      : supabase;
+
+    // Overenie vlastníctva (superadmins can edit any partner)
+    let partnerQuery = queryClient
       .from('partners')
-      .select('id, slug, city_slug')
-      .eq('id', partner_id)
-      .eq('user_id', user.id)
-      .single();
+      .select('id, slug, city_slug, user_id')
+      .eq('id', partner_id);
+
+    // Non-superadmins must own the partner
+    if (!isSuperadmin) {
+      partnerQuery = partnerQuery.eq('user_id', user.id);
+    }
+
+    const { data: partner, error: partnerError } = await partnerQuery.single();
 
     if (partnerError || !partner) {
       return NextResponse.json({
@@ -147,6 +170,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (validationErrors.length > 0) {
+      console.error('[inline-edit/save] Validation errors:', validationErrors);
       return NextResponse.json({
         success: false,
         error: validationErrors.join(', ')
@@ -154,6 +178,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (Object.keys(sanitizedChanges).length === 0) {
+      console.error('[inline-edit/save] No valid fields. Received changes:', changes);
       return NextResponse.json({
         success: false,
         error: 'No valid fields to update'
@@ -165,7 +190,7 @@ export async function POST(request: NextRequest) {
     if (draft_id) {
       // Update existujúci draft - NEPREPISUJ status ak je approved!
       // Inline editor edituje approved draft priamo, nechceme ho degradovať na draft
-      const { data, error } = await supabase
+      const { data, error } = await queryClient
         .from('partner_drafts')
         .update({
           ...sanitizedChanges,
@@ -188,7 +213,7 @@ export async function POST(request: NextRequest) {
       result = data;
     } else {
       // Vytvor nový draft
-      const { data, error } = await supabase
+      const { data, error } = await queryClient
         .from('partner_drafts')
         .insert({
           partner_id,
