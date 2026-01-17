@@ -9421,7 +9421,8 @@
           "isPremium": false,
           "isPromotional": false,
           "isPartner": true,
-          "address": "Vráble"
+          "address": "Vráble",
+          "logo": "/logos/volaj-taxi-vrable.webp"
         }
       ],
       "latitude": 48.244285,
