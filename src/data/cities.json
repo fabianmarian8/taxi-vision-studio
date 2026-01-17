@@ -9420,6 +9420,7 @@
           "phone": "+421944919604",
           "isPremium": false,
           "isPromotional": false,
+          "isPartner": true,
           "address": "Vráble"
         }
       ],
