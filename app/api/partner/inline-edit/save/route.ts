@@ -138,6 +138,7 @@ export async function POST(request: NextRequest) {
           sanitizedChanges[key] = Math.round(Number(value) || 0);
         } else if (URL_FIELDS.includes(key)) {
           // Validácia URL polí
+          console.log(`[inline-edit/save] URL field ${key}:`, typeof value, JSON.stringify(value)?.substring(0, 100));
           if (!isValidUrl(value)) {
             validationErrors.push(`${key} must be a valid URL starting with http:// or https://`);
           } else {
