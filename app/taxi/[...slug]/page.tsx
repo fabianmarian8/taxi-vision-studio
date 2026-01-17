@@ -1742,6 +1742,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 defaultZoom={100}
                 defaultPosX={50}
                 defaultPosY={50}
+                partnerId={partnerId}
               >
               <div className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 partner-hero-fallback p-5 md:p-12">
                 {/* Badges */}
