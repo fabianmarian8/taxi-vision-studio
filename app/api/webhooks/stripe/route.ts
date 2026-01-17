@@ -249,7 +249,7 @@ async function handlePaymentFailed(invoice: Stripe.Invoice) {
 }
 
 /**
- * Link Stripe subscription to taxi service for auto premium enable/disable
+ * Link Stripe subscription to taxi service for auto premium/partner enable/disable
  */
 async function linkSubscriptionToTaxiService(
   stripeSubscriptionId: string,
@@ -261,10 +261,10 @@ async function linkSubscriptionToTaxiService(
     return;
   }
 
-  // Get our subscription ID
+  // Get our subscription ID with plan_type
   const { data: subscription } = await getSupabase()
     .from('subscriptions')
-    .select('id, status, current_period_end')
+    .select('id, status, plan_type, current_period_end')
     .eq('stripe_subscription_id', stripeSubscriptionId)
     .single();
 
@@ -273,13 +273,17 @@ async function linkSubscriptionToTaxiService(
     return;
   }
 
+  const isActive = subscription.status === 'active';
+  const isPartnerPlan = subscription.plan_type === 'partner';
+
   // Find and update the matching taxi service
   const { error } = await getSupabase()
     .from('taxi_services')
     .update({
       subscription_id: subscription.id,
-      is_premium: subscription.status === 'active',
-      premium_expires_at: subscription.status === 'active' ? subscription.current_period_end : null,
+      is_premium: isActive,
+      is_partner: isActive && isPartnerPlan,
+      premium_expires_at: isActive ? subscription.current_period_end : null,
       updated_at: new Date().toISOString(),
     })
     .eq('city_slug', citySlug)
@@ -288,7 +292,7 @@ async function linkSubscriptionToTaxiService(
   if (error) {
     console.error('Error linking subscription to taxi service:', error);
   } else {
-    console.log(`Linked subscription ${stripeSubscriptionId} to ${taxiServiceName} in ${citySlug}`);
+    console.log(`Linked subscription ${stripeSubscriptionId} to ${taxiServiceName} in ${citySlug} (partner: ${isPartnerPlan})`);
   }
 }
 

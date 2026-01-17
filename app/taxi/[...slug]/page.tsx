@@ -2294,8 +2294,12 @@ export default async function TaxiCatchAllPage({
   const routeType = detectRouteType(slug);
 
   switch (routeType.type) {
-    case 'city':
-      return <CityPage city={routeType.city} />;
+    case 'city': {
+      // Merge with DB to get real-time partner/premium status
+      const { mergeTaxiServicesWithDB } = await import('@/lib/taxi-services');
+      const cityWithDBStatus = await mergeTaxiServicesWithDB(routeType.city);
+      return <CityPage city={cityWithDBStatus} />;
+    }
 
     case 'municipality':
       return <MunicipalityPage municipality={routeType.municipality} />;
@@ -2303,8 +2307,16 @@ export default async function TaxiCatchAllPage({
     case 'location':
       return <LocationPage location={routeType.location} />;
 
-    case 'service':
-      return <ServicePage city={routeType.city} service={routeType.service} serviceSlug={routeType.serviceSlug} />;
+    case 'service': {
+      // Merge with DB to get real-time partner/premium status
+      const { mergeTaxiServicesWithDB } = await import('@/lib/taxi-services');
+      const cityWithDBStatus = await mergeTaxiServicesWithDB(routeType.city);
+      // Find updated service from merged city data
+      const updatedService = cityWithDBStatus.taxiServices.find(
+        s => createServiceSlug(s.name) === routeType.serviceSlug
+      ) || routeType.service;
+      return <ServicePage city={cityWithDBStatus} service={updatedService} serviceSlug={routeType.serviceSlug} />;
+    }
 
     case 'district':
       return <DistrictPage district={routeType.district} regionSlug={routeType.regionSlug} />;
