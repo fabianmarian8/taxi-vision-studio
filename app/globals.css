@@ -534,23 +534,24 @@ input, textarea {
   --partner-cta-muted: rgba(61, 41, 20, 0.7);
 }
 
-/* Silver skin: hnedé písmo pre hlavné textové elementy */
-.partner-skin--silver {
-  --foreground: 25 51% 33%; /* Hnedá farba v HSL */
-}
-
-.partner-skin--silver h1,
-.partner-skin--silver h2,
-.partner-skin--silver h3,
-.partner-skin--silver h4,
-.partner-skin--silver p,
-.partner-skin--silver span:not(.text-white):not([class*="text-"]),
-.partner-skin--silver a:not(.text-white):not([class*="text-"]):not([class*="bg-"]) {
+/* Silver skin: hnedé písmo pre hlavné textové elementy - ALE NIE pre header */
+.partner-skin--silver section h1,
+.partner-skin--silver section h2,
+.partner-skin--silver section h3,
+.partner-skin--silver section h4,
+.partner-skin--silver section p,
+.partner-skin--silver section span:not(.text-white):not([class*="text-"]),
+.partner-skin--silver section a:not(.text-white):not([class*="text-"]):not([class*="bg-"]),
+.partner-skin--silver .partner-card h1,
+.partner-skin--silver .partner-card h2,
+.partner-skin--silver .partner-card h3,
+.partner-skin--silver .partner-card p {
   color: #6b4423;
 }
 
-/* Override pre muted text v silver skine */
-.partner-skin--silver .text-muted-foreground {
+/* Override pre muted text v silver skine - len v content area */
+.partner-skin--silver section .text-muted-foreground,
+.partner-skin--silver .partner-card .text-muted-foreground {
   color: #8b6b4a;
 }
 
