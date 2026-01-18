@@ -1954,9 +1954,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-900/70 text-xs mt-3 text-center font-medium">
-                      Ceny sú orientačné. Pre presnú kalkuláciu nás kontaktujte.
-                    </p>
                   </div>
                 </div>
 
