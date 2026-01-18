@@ -137,27 +137,31 @@ export default async function RoutePage({ params }: RoutePageProps) {
   const priceMin = Math.ceil(2 + distance * 0.85);
   const priceMax = Math.ceil(2 + distance * 1.15);
 
-  // Nájdi taxislužby v cieľovom meste (alebo najbližšie)
+  // Nájdi taxislužby pri VÝCHODISKU (tam kde človek je a potrebuje vyzdvihnutie)
   let taxiServices: CityData['taxiServices'] = [];
   let taxiCityName = '';
   let taxiCitySlug = '';
 
-  if (toLocation.type === 'city' && toLocation.data.taxiServices.length > 0) {
-    taxiServices = toLocation.data.taxiServices;
-    taxiCityName = toLocation.data.name;
-    taxiCitySlug = toLocation.data.slug;
-  } else if (fromLocation.type === 'city' && fromLocation.data.taxiServices.length > 0) {
+  if (fromLocation.type === 'city' && fromLocation.data.taxiServices.length > 0) {
+    // 1. Východisko je mesto s taxi
     taxiServices = fromLocation.data.taxiServices;
     taxiCityName = fromLocation.data.name;
     taxiCitySlug = fromLocation.data.slug;
   } else if (fromLocation.type === 'municipality') {
-    // Nájdi najbližšie taxi
+    // 2. Východisko je obec - nájdi najbližšie taxi
     const nearest = findNearestCitiesWithTaxis(fromLocation.data, 1);
     if (nearest.length > 0) {
       taxiServices = nearest[0].city.taxiServices;
       taxiCityName = nearest[0].city.name;
       taxiCitySlug = nearest[0].city.slug;
     }
+  }
+
+  // 3. Fallback: ak pri východisku nie sú taxi, skús cieľ
+  if (taxiServices.length === 0 && toLocation.type === 'city' && toLocation.data.taxiServices.length > 0) {
+    taxiServices = toLocation.data.taxiServices;
+    taxiCityName = toLocation.data.name;
+    taxiCitySlug = toLocation.data.slug;
   }
 
   const breadcrumbItems = [
