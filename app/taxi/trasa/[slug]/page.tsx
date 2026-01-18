@@ -12,17 +12,41 @@ interface RoutePageProps {
 }
 
 // Parsuje slug "abovce-tornala" na { from: "abovce", to: "tornala" }
+// Podporuje viacslovné názvy ako "silicka-brezova-jelsava" → { from: "silicka-brezova", to: "jelsava" }
 function parseRouteSlug(slug: string): { from: string; to: string } | null {
   const parts = slug.split('-');
   if (parts.length < 2) return null;
 
-  // Skúsime rôzne kombinácie pre prípad viacslovných názvov
-  // Pre jednoduchosť: prvé slovo = from, zvyšok = to
-  // Neskôr: sofistikovanejšie parsovanie
-  const from = parts[0];
-  const to = parts.slice(1).join('-');
+  // Skúsime všetky možné kombinácie rozdelenia
+  // Pre "silicka-brezova-jelsava" skúsime:
+  // 1. silicka / brezova-jelsava
+  // 2. silicka-brezova / jelsava
+  for (let i = 1; i < parts.length; i++) {
+    const from = parts.slice(0, i).join('-');
+    const to = parts.slice(i).join('-');
 
-  return { from, to };
+    // Skontroluj či obe lokality existujú
+    const fromLocation = findLocationBySlug(from);
+    const toLocation = findLocationBySlug(to);
+
+    if (fromLocation && toLocation) {
+      return { from, to };
+    }
+  }
+
+  // Fallback: prvé slovo = from, zvyšok = to (aj keď neexistujú)
+  return { from: parts[0], to: parts.slice(1).join('-') };
+}
+
+// Pomocná funkcia pre parseRouteSlug - nájde lokalitu podľa slug
+function findLocationBySlug(slug: string): boolean {
+  const city = getCityBySlug(slug);
+  if (city) return true;
+
+  const municipality = getMunicipalityBySlug(slug);
+  if (municipality) return true;
+
+  return false;
 }
 
 // Nájde lokalitu (mesto alebo obec) podľa slug
