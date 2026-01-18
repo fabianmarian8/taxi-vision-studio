@@ -37,18 +37,41 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
       dbServiceMap.set(service.name.toLowerCase(), service);
     });
 
+    // Helper to check if premium is expired
+    const isExpired = (expiresAt: string | null | undefined): boolean => {
+      if (!expiresAt) return false;
+      return new Date(expiresAt) < new Date();
+    };
+
     // Merge DB status into JSON taxi services
     const mergedServices = city.taxiServices.map((service): TaxiService => {
       const dbService = dbServiceMap.get(service.name.toLowerCase());
 
       if (dbService) {
-        // Use || to preserve JSON values if DB has false (default)
-        // This way existing partners from JSON are not overwritten by DB defaults
+        // Determine effective expiration (DB takes priority)
+        const effectiveExpiration = dbService.premium_expires_at ?? service.premiumExpiresAt;
+
+        // DB premium is valid if true and not expired
+        const dbPremiumValid = dbService.is_premium && !isExpired(dbService.premium_expires_at);
+        // JSON premium is valid if true and not expired (and DB doesn't have its own expiration)
+        const jsonPremiumValid = service.isPremium && !isExpired(service.premiumExpiresAt) && !dbService.premium_expires_at;
+
+        // Partner status: DB takes priority, fallback to JSON
+        const isPartner = dbService.is_partner || service.isPartner;
+
         return {
           ...service,
-          isPremium: dbService.is_premium || service.isPremium,
-          isPartner: dbService.is_partner || service.isPartner,
-          premiumExpiresAt: dbService.premium_expires_at ?? service.premiumExpiresAt,
+          isPremium: dbPremiumValid || jsonPremiumValid,
+          isPartner,
+          premiumExpiresAt: effectiveExpiration,
+        };
+      }
+
+      // No DB record - check if JSON premium is expired
+      if (service.isPremium && isExpired(service.premiumExpiresAt)) {
+        return {
+          ...service,
+          isPremium: false,
         };
       }
 

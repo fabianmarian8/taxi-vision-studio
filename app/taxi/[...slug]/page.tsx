@@ -14,6 +14,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
+import { createClient } from '@/lib/supabase/server';
 import { Header } from '@/components/Header';
 import { HowItWorks } from '@/components/HowItWorks';
 import { GeometricLines } from '@/components/GeometricLines';
@@ -486,6 +487,49 @@ async function UniversalListView({
   partnerRatings: Map<string, { rating: number; count: number }>;
   isAdmin?: boolean;
 }) {
+  // Fetch hero images from Supabase for partners without JSON heroImage
+  const partnerHeroImages = new Map<string, string>();
+  const partnersNeedingHeroImage = city.taxiServices.filter(
+    s => (s.isPartner || s.redirectTo) && !s.partnerData?.heroImage
+  );
+
+  if (partnersNeedingHeroImage.length > 0) {
+    // Use admin client to bypass RLS for reading partner hero images
+    const { createClient: createAdminClient } = await import('@supabase/supabase-js');
+    const adminClient = createAdminClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+    const partnerSlugs = partnersNeedingHeroImage.map(s => createServiceSlug(s.name));
+
+    const { data: partnerData } = await adminClient
+      .from('partners')
+      .select('slug, id')
+      .in('slug', partnerSlugs);
+
+    if (partnerData && partnerData.length > 0) {
+      const partnerIds = partnerData.map(p => p.id);
+
+      const { data: drafts } = await adminClient
+        .from('partner_drafts')
+        .select('partner_id, hero_image_url')
+        .in('partner_id', partnerIds)
+        .eq('status', 'approved');
+
+      if (drafts) {
+        // Create mapping: partner slug -> hero image
+        drafts.forEach(draft => {
+          if (draft.hero_image_url) {
+            const partner = partnerData.find(p => p.id === draft.partner_id);
+            if (partner) {
+              partnerHeroImages.set(partner.slug, draft.hero_image_url);
+            }
+          }
+        });
+      }
+    }
+  }
+
   // Separate services by tier (redirectTo = partner redirect, counts as partner)
   const partners = city.taxiServices.filter(s => s.isPartner || s.redirectTo);
   const premiums = city.taxiServices.filter(s => s.isPremium && !s.isPartner && !s.redirectTo);
@@ -588,8 +632,8 @@ async function UniversalListView({
               // Typ služby pre vizuálne odlíšenie
               const serviceType = isPartner ? 'partner' : isPremium ? 'premium' : 'standard';
 
-              // Partner hero image pre pozadie
-              const partnerHeroImage = service.partnerData?.heroImage;
+              // Partner hero image pre pozadie - JSON alebo Supabase
+              const partnerHeroImage = service.partnerData?.heroImage || partnerHeroImages.get(serviceSlug);
 
               return (
                 <div
@@ -1655,7 +1699,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           <div className="container mx-auto max-w-4xl px-4">
             <Link
               href={`/taxi/${city.slug}`}
-              className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors font-bold mb-4"
+              className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors font-bold mb-4 site-navigation"
             >
               <ArrowLeft className="h-4 w-4" />
               Späť na zoznam taxislužieb
@@ -1872,7 +1916,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         </section>
 
         {/* Features Section - Mobile optimized */}
-        <section className="py-8 md:py-16 px-4 md:px-8">
+        <section className="py-8 md:py-16 px-4 md:px-8 default-theme">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-xl md:text-3xl font-black text-foreground mb-6 md:mb-8 text-center">
               Prečo si vybrať {service.name}?
@@ -1933,7 +1977,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         )}
 
         {/* CTA Section - Mobile optimized */}
-        <section className="py-8 md:py-16 px-4 md:px-8 partner-cta">
+        <section className="py-8 md:py-16 px-4 md:px-8 default-theme default-cta">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-xl md:text-3xl font-black mb-2 md:mb-4">
               Potrebujete taxi {partnerData?.customCtaTitle ? partnerData.customCtaTitle : `${locationText} ${city.name}${partnerData?.secondaryCity ? ` alebo v obci ${partnerData.secondaryCity}` : ''}`}?
@@ -2228,7 +2272,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
 function Footer() {
   return (
-    <footer className="border-t border-foreground/30 py-8 md:py-12 px-4 md:px-8 relative">
+    <footer className="border-t border-foreground/30 py-8 md:py-12 px-4 md:px-8 relative default-theme">
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-foreground/20 to-transparent"></div>
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">

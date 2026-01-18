@@ -555,6 +555,76 @@ input, textarea {
   color: #8b6b4a;
 }
 
+/* Site navigation (breadcrumbs, back links) - neutrálne farby aj v partner skinoch */
+.partner-skin--silver .site-navigation,
+.partner-skin--silver .site-navigation *,
+.partner-skin--silver section .site-navigation a,
+.partner-skin--silver section .site-navigation span {
+  color: inherit !important;
+}
+.partner-skin--silver .site-navigation a {
+  color: #4b5563 !important; /* gray-600 */
+}
+.partner-skin--silver .site-navigation a:hover {
+  color: #111827 !important; /* gray-900 */
+}
+
+/* Default theme sections - pôvodné farby aj v partner skinoch */
+/* Reset všetkých textových farieb na default */
+.partner-skin--silver .default-theme h1,
+.partner-skin--silver .default-theme h2,
+.partner-skin--silver .default-theme h3,
+.partner-skin--silver .default-theme h4,
+.partner-skin--silver .default-theme p,
+.partner-skin--silver .default-theme span,
+.partner-skin--silver .default-theme a,
+.partner-skin--silver .default-theme div {
+  color: inherit;
+}
+.partner-skin--silver .default-theme .text-foreground {
+  color: hsl(var(--foreground)) !important;
+}
+.partner-skin--silver .default-theme .text-foreground\/70 {
+  color: hsl(var(--foreground) / 0.7) !important;
+}
+.partner-skin--silver .default-theme .text-foreground\/80 {
+  color: hsl(var(--foreground) / 0.8) !important;
+}
+
+/* Partner accent v default sekcii - taxi oranžová */
+.partner-skin--silver .default-theme .partner-accent-bg {
+  background: hsl(var(--primary)) !important;
+}
+
+/* Partner karty v default sekcii - biele s jemným tieňom */
+.partner-skin--silver .default-theme .partner-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Default CTA sekcia - pôvodný žlto-oranžový gradient */
+.partner-skin--silver .default-cta {
+  background: linear-gradient(90deg, #facc15, #f59e0b) !important;
+  color: #4c1d95 !important;
+}
+.partner-skin--silver .default-cta h2,
+.partner-skin--silver .default-cta p {
+  color: #4c1d95 !important;
+}
+.partner-skin--silver .default-cta .partner-cta-muted {
+  color: rgba(76, 29, 149, 0.7) !important;
+}
+
+/* Footer v default theme */
+.partner-skin--silver footer.default-theme,
+.partner-skin--silver footer.default-theme * {
+  color: hsl(var(--foreground)) !important;
+}
+.partner-skin--silver footer.default-theme a:hover {
+  color: hsl(var(--foreground) / 0.7) !important;
+}
+
 .partner-hero-fallback {
   background: var(--partner-hero-fallback, linear-gradient(135deg, #7c3aed 0%, #6d28d9 45%, #3730a3 100%));
 }

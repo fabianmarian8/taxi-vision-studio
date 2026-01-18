@@ -68,7 +68,7 @@ export const SEOBreadcrumbs = ({ items }: SEOBreadcrumbsProps) => {
         }}
       />
 
-      <div className="container mx-auto max-w-7xl px-4 md:px-8 pt-2 md:pt-3">
+      <div className="container mx-auto max-w-7xl px-4 md:px-8 pt-2 md:pt-3 site-navigation">
         <Breadcrumb>
           <BreadcrumbList className="text-xs md:text-sm">
             <BreadcrumbItem>
