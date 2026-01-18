@@ -141,7 +141,10 @@ function detectRouteType(slugArray: string[]): RouteType {
     // First, check if it's a city + service pattern
     const city = getCityBySlug(first);
     if (city) {
-      const service = city.taxiServices.find(s => createServiceSlug(s.name) === second);
+      // Check both explicit slug field and generated slug from name
+      const service = city.taxiServices.find(s =>
+        s.slug === second || createServiceSlug(s.name) === second
+      );
       if (service) {
         // Check if service has redirect
         if (service.redirectTo) {
@@ -2445,9 +2448,9 @@ export default async function TaxiCatchAllPage({
       // Merge with DB to get real-time partner/premium status
       const { mergeTaxiServicesWithDB } = await import('@/lib/taxi-services');
       const cityWithDBStatus = await mergeTaxiServicesWithDB(routeType.city);
-      // Find updated service from merged city data
+      // Find updated service from merged city data (check both slug field and generated slug)
       const updatedService = cityWithDBStatus.taxiServices.find(
-        s => createServiceSlug(s.name) === routeType.serviceSlug
+        s => s.slug === routeType.serviceSlug || createServiceSlug(s.name) === routeType.serviceSlug
       ) || routeType.service;
       return <ServicePage city={cityWithDBStatus} service={updatedService} serviceSlug={routeType.serviceSlug} />;
     }
