@@ -10153,7 +10153,9 @@
           "isPromotional": false,
           "isPartner": true,
           "partnerData": {
-            "heroImage": "/logos/fast-taxi-zvolen-hero.jpg"
+            "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
+            "googlePlaceId": "ChIJpazWgnTLFUcRamdSS_RTFrg",
+            "googleMapsUrl": "https://maps.app.goo.gl/rqMwsVmHJB8Z9sGF9"
           },
           "address": "Poriecie 1265/164, Zákamenné",
           "placeId": "ChIJpazWgnTLFUcRamdSS_RTFrg"
