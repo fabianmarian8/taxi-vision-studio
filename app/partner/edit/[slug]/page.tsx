@@ -181,12 +181,18 @@ export default async function PartnerEditPage({ params }: Props) {
     }
   }
 
+  // Find city name from cities.json
+  const city = citiesData.cities.find((c) => c.slug === partner.city_slug);
+  const cityName = city?.name || partner.city_slug;
+
   return (
     <PartnerEditor
       partner={partner}
       initialDraft={initialDraft}
       userEmail={user.email || ''}
       rejectionMessage={wasRejected ? rejectionNotes : null}
+      cityName={cityName}
+      citySlug={partner.city_slug}
     />
   );
 }
