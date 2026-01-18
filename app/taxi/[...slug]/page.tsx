@@ -1676,7 +1676,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         partnerSlug={serviceSlug}
         citySlug={city.slug}
       >
-      <div className={`min-h-screen overflow-x-hidden partner-page-bg partner-skin ${skinClass}`}>
+      <div className={`min-h-screen overflow-x-hidden partner-page-bg partner-skin ${skinClass} ${serviceSlug === 'volaj-taxi' ? 'pb-16 md:pb-0' : ''}`}>
         <TaxiServiceSchema
           service={service}
           city={city}
@@ -1874,11 +1874,11 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               <EditableServices defaultServices={initialEditorData.services}>
                 <div className="mt-6 md:mt-8 partner-card rounded-xl p-4 md:p-6">
                   <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">Ponúkané služby</h2>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2">
                     {initialEditorData.services.map((svc: string, index: number) => (
                       <span
                         key={index}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 partner-tag rounded-full text-sm font-medium"
+                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 partner-tag rounded-full text-sm font-medium ${svc.length > 25 ? 'col-span-2' : ''}`}
                       >
                         <CheckCircle2 className="h-4 w-4" />
                         {svc}
@@ -1905,6 +1905,40 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                       Letiskové transfery
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      {/* Sliač */}
+                      <div className="bg-gray-900 rounded-xl p-4 transform hover:scale-[1.02] transition-transform cursor-default">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg className="w-6 h-6 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                            </svg>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-yellow-400 text-xs font-bold uppercase tracking-wide">Sliač</div>
+                            <div className="text-white font-bold text-sm truncate">Letisko</div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-yellow-400 text-2xl md:text-3xl font-black">90€</div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* Bratislava */}
+                      <div className="bg-gray-900 rounded-xl p-4 transform hover:scale-[1.02] transition-transform cursor-default">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg className="w-6 h-6 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                            </svg>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-yellow-400 text-xs font-bold uppercase tracking-wide">Bratislava</div>
+                            <div className="text-white font-bold text-sm truncate">M. R. Štefánik</div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-yellow-400 text-2xl md:text-3xl font-black">90€</div>
+                          </div>
+                        </div>
+                      </div>
                       {/* Viedeň */}
                       <div className="bg-gray-900 rounded-xl p-4 transform hover:scale-[1.02] transition-transform cursor-default">
                         <div className="flex items-center gap-3">
@@ -1939,7 +1973,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                           </div>
                         </div>
                       </div>
-                      {/* Bratislava */}
+                      {/* Praha */}
                       <div className="bg-gray-900 rounded-xl p-4 transform hover:scale-[1.02] transition-transform cursor-default">
                         <div className="flex items-center gap-3">
                           <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
@@ -1948,11 +1982,11 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                             </svg>
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="text-yellow-400 text-xs font-bold uppercase tracking-wide">Bratislava</div>
-                            <div className="text-white font-bold text-sm truncate">M. R. Štefánik</div>
+                            <div className="text-yellow-400 text-xs font-bold uppercase tracking-wide">Praha</div>
+                            <div className="text-white font-bold text-sm truncate">Václav Havel</div>
                           </div>
                           <div className="text-right">
-                            <div className="text-yellow-400 text-2xl md:text-3xl font-black">90€</div>
+                            <div className="text-yellow-400 text-2xl md:text-3xl font-black">320€</div>
                           </div>
                         </div>
                       </div>
@@ -2099,6 +2133,19 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         )}
 
         <Footer />
+
+        {/* Sticky Call Bar - Mobile only */}
+        {serviceSlug === 'volaj-taxi' && service.phone && (
+          <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+            <a
+              href={`tel:${service.phone.replace(/\s/g, '')}`}
+              className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white py-4 px-6 font-bold text-lg shadow-lg transition-colors"
+            >
+              <Phone className="h-6 w-6" />
+              <span>Zavolať {service.phone}</span>
+            </a>
+          </div>
+        )}
       </div>
       </PartnerPageWrapper>
     );

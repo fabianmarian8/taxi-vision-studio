@@ -521,9 +521,9 @@ input, textarea {
   --partner-card-bg: rgba(255, 255, 255, 0.95);
   --partner-card-border: rgba(139, 90, 43, 0.12);
   --partner-card-shadow: 0 2px 4px rgba(139, 90, 43, 0.08);
-  /* Tagy - svetlo hnedé */
-  --partner-tag-bg: #f5ebe0;
-  --partner-tag-text: #6b4423;
+  /* Tagy - hnedé pozadie */
+  --partner-tag-bg: #d4b896;
+  --partner-tag-text: #5c3d2e;
   /* Akcent - hnedá */
   --partner-accent: #8b5a2b;
   --partner-accent-hover: #704821;
@@ -534,19 +534,19 @@ input, textarea {
   --partner-cta-muted: rgba(61, 41, 20, 0.7);
 }
 
-/* Silver skin: hnedé písmo pre hlavné textové elementy - ALE NIE pre header */
-.partner-skin--silver section h1,
+/* Silver skin: hnedé písmo pre hlavné textové elementy - ALE NIE pre header a hero titulku */
+.partner-skin--silver section h1:not(.text-white),
 .partner-skin--silver section h2,
 .partner-skin--silver section h3,
 .partner-skin--silver section h4,
 .partner-skin--silver section p,
 .partner-skin--silver section span:not(.text-white):not([class*="text-"]),
 .partner-skin--silver section a:not(.text-white):not([class*="text-"]):not([class*="bg-"]),
-.partner-skin--silver .partner-card h1,
+.partner-skin--silver .partner-card h1:not(.text-white),
 .partner-skin--silver .partner-card h2,
 .partner-skin--silver .partner-card h3,
 .partner-skin--silver .partner-card p {
-  color: #6b4423;
+  color: #5c3d2e !important;
 }
 
 /* Override pre muted text v silver skine - len v content area */
