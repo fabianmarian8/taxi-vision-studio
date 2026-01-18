@@ -10,6 +10,7 @@
 
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { Track404 } from './components/Track404';
 
 export const metadata: Metadata = {
   title: '404 - Stránka nenájdená | Taxi NearMe',
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
+      <Track404 />
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>
         <p className="mb-4 text-xl text-gray-600">Ups! Stránka nebola nájdená</p>
