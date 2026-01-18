@@ -143,13 +143,13 @@ export function InlineEditorProvider({
       if (message?.type === 'PREVIEW_UPDATE' && message.payload) {
         console.log('[InlineEditor] Received PREVIEW_UPDATE');
         // Filter out empty string values - don't override with empty
-        const filteredPayload = Object.fromEntries(
-          Object.entries(message.payload).filter(([, value]) => {
-            // Keep the value if it's not an empty string
-            // (allow null, undefined, arrays, numbers, non-empty strings)
-            return value !== '';
-          })
-        );
+        const filteredPayload: Partial<DraftData> = {};
+        for (const [key, value] of Object.entries(message.payload)) {
+          // Keep the value if it's not an empty string
+          if (value !== '') {
+            filteredPayload[key] = value as string | number | string[] | undefined;
+          }
+        }
         setDraftData(prev => ({
           ...prev,
           ...filteredPayload
