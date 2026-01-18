@@ -2452,7 +2452,9 @@ export default async function TaxiCatchAllPage({
       const updatedService = cityWithDBStatus.taxiServices.find(
         s => s.slug === routeType.serviceSlug || createServiceSlug(s.name) === routeType.serviceSlug
       ) || routeType.service;
-      return <ServicePage city={cityWithDBStatus} service={updatedService} serviceSlug={routeType.serviceSlug} />;
+      // Use explicit slug from service if available (for partners with custom slugs)
+      const effectiveSlug = updatedService.slug || routeType.serviceSlug;
+      return <ServicePage city={cityWithDBStatus} service={updatedService} serviceSlug={effectiveSlug} />;
     }
 
     case 'district':

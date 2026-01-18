@@ -30,6 +30,7 @@ export interface PartnerData {
 
 export interface TaxiService {
   name: string;
+  slug?: string; // Explicitný slug (ak sa líši od generovaného z názvu)
   website?: string;
   phone?: string;
   phone2?: string; // Druhé telefónne číslo
