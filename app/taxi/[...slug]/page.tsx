@@ -1889,16 +1889,87 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             {/* About / Description Section - editable */}
             <EditableDescription defaultValue={mergedDescription || ''} />
 
-            {/* Cenník obrázok - zatiaľ hardcoded pre volaj-taxi na testovanie */}
+            {/* Cenník sekcia - zatiaľ hardcoded pre volaj-taxi na testovanie */}
             {serviceSlug === 'volaj-taxi' && (
-              <div className="mt-6 md:mt-8 partner-card rounded-xl overflow-hidden">
-                <h2 className="text-lg md:text-xl font-bold text-foreground p-4 md:p-6 pb-0 md:pb-0">Cenník</h2>
-                <div className="p-4 md:p-6 pt-3 md:pt-4">
-                  <img
-                    src="https://kkuybturazislquqaxci.supabase.co/storage/v1/object/public/partner-images/volaj-taxi/cennik.webp"
-                    alt="Cenník VOLAJ TAXI"
-                    className="w-full h-auto rounded-lg"
-                  />
+              <div className="mt-6 md:mt-8 space-y-4">
+                {/* Letiskové transfery bannery */}
+                <div className="partner-card rounded-xl overflow-hidden">
+                  <div className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 p-4 md:p-5">
+                    <h2 className="text-lg md:text-xl font-black text-gray-900 flex items-center gap-2 mb-4">
+                      <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
+                      Letiskové transfery
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      {/* Viedeň */}
+                      <div className="bg-gray-900 rounded-xl p-4 transform hover:scale-[1.02] transition-transform cursor-default">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg className="w-6 h-6 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                            </svg>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-yellow-400 text-xs font-bold uppercase tracking-wide">Viedeň</div>
+                            <div className="text-white font-bold text-sm truncate">Schwechat</div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-yellow-400 text-2xl md:text-3xl font-black">140€</div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* Budapešť */}
+                      <div className="bg-gray-900 rounded-xl p-4 transform hover:scale-[1.02] transition-transform cursor-default">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg className="w-6 h-6 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                            </svg>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-yellow-400 text-xs font-bold uppercase tracking-wide">Budapešť</div>
+                            <div className="text-white font-bold text-sm truncate">Ferenc Liszt</div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-yellow-400 text-2xl md:text-3xl font-black">140€</div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* Bratislava */}
+                      <div className="bg-gray-900 rounded-xl p-4 transform hover:scale-[1.02] transition-transform cursor-default">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg className="w-6 h-6 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                            </svg>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-yellow-400 text-xs font-bold uppercase tracking-wide">Bratislava</div>
+                            <div className="text-white font-bold text-sm truncate">M. R. Štefánik</div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-yellow-400 text-2xl md:text-3xl font-black">90€</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-gray-900/70 text-xs mt-3 text-center font-medium">
+                      Ceny sú orientačné. Pre presnú kalkuláciu nás kontaktujte.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Cenník obrázok */}
+                <div className="partner-card rounded-xl overflow-hidden">
+                  <h2 className="text-lg md:text-xl font-bold text-foreground p-4 md:p-6 pb-0 md:pb-0">Kompletný cenník</h2>
+                  <div className="p-4 md:p-6 pt-3 md:pt-4">
+                    <img
+                      src="https://kkuybturazislquqaxci.supabase.co/storage/v1/object/public/partner-images/volaj-taxi/cennik.webp"
+                      alt="Cenník VOLAJ TAXI"
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </div>
                 </div>
               </div>
             )}
