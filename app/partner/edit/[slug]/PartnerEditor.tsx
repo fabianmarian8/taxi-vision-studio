@@ -336,51 +336,38 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
     setSubmitting(true);
     setMessage(null);
 
-    const supabase = createClient();
-
-    // Set status directly to 'approved' - changes are published immediately
-    const draftData = {
-      partner_id: partner.id,
-      status: 'approved' as const,
-      ...formData,
-      services: formData.services,
-      submitted_at: new Date().toISOString(),
-      reviewed_at: new Date().toISOString(),
-    };
-
-    let result;
-    if (draftId) {
-      // Update existing draft
-      result = await supabase
-        .from('partner_drafts')
-        .update(draftData)
-        .eq('id', draftId);
-    } else {
-      // Insert new draft and get the ID back
-      result = await supabase
-        .from('partner_drafts')
-        .insert(draftData)
-        .select('id')
-        .single();
-
-      // Save the new draft ID to prevent duplicates
-      if (result.data?.id) {
-        setDraftId(result.data.id);
-      }
-    }
-
-    if (result.error) {
-      setMessage({ type: 'error', text: 'Chyba pri publikovaní: ' + result.error.message });
-    } else {
-      // Revalidate the partner page to show changes immediately
-      fetch(`/api/revalidate?path=/taxi/${partner.city_slug}/${partner.slug}`, {
+    try {
+      const response = await fetch('/api/partner/publish-changes', {
         method: 'POST',
-      }).catch((err) => console.warn('[Revalidate] Error:', err));
-
-      setMessage({
-        type: 'success',
-        text: 'Zmeny boli publikované! Stránka sa aktualizuje do niekoľkých sekúnd.',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          partner_id: partner.id,
+          draft_id: draftId,
+          formData: {
+            ...formData,
+            services: formData.services,
+          },
+        }),
       });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        setMessage({ type: 'error', text: 'Chyba pri publikovaní: ' + (result.error || 'Unknown error') });
+      } else {
+        // Save the new draft ID if it was created
+        if (result.draft_id && !draftId) {
+          setDraftId(result.draft_id);
+        }
+
+        setMessage({
+          type: 'success',
+          text: 'Zmeny boli publikované! Stránka sa aktualizuje do niekoľkých sekúnd.',
+        });
+      }
+    } catch (error) {
+      console.error('[publishChanges] Error:', error);
+      setMessage({ type: 'error', text: 'Chyba pri publikovaní: Network error' });
     }
 
     setSubmitting(false);
