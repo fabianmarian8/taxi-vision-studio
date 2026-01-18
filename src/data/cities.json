@@ -10151,6 +10151,7 @@
           "phone": "+421911504333",
           "isPremium": false,
           "isPromotional": false,
+          "isPartner": true,
           "address": "Poriecie 1265/164, Zákamenné",
           "placeId": "ChIJpazWgnTLFUcRamdSS_RTFrg"
         },
