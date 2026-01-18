@@ -4,7 +4,7 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 import { Partner, PartnerDraft } from '@/lib/supabase/types';
-import { TaxiPreview } from './TaxiPreview';
+import { IframePreview } from './IframePreview';
 import { PARTNER_SKINS, normalizePartnerSkin } from '@/lib/partner-skins';
 
 interface Props {
@@ -1039,7 +1039,7 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
           </div>
 
           {/* Live Preview Panel */}
-          <TaxiPreview
+          <IframePreview
             formData={formData}
             partnerSlug={partner.slug}
             citySlug={citySlug || partner.city_slug}

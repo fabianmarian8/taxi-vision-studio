@@ -4,6 +4,7 @@ import { createContext, useContext, useState, useCallback, useRef, useEffect, Re
 import { FloatingAdminBar } from './FloatingAdminBar';
 import { EditorDrawer } from './EditorDrawer';
 import type { FieldType } from './EditableField';
+import { PreviewMessage } from '@/lib/preview-protocol';
 
 // Draft data type - all editable fields
 export interface DraftData {
@@ -84,6 +85,7 @@ export function InlineEditorProvider({
   const [draftId, setDraftId] = useState<string | null>(initialDraftId);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [hasPendingChanges, setHasPendingChanges] = useState(false);
+  const [isPreviewMode, setIsPreviewMode] = useState(false);
 
   // Draft data
   const [draftData, setDraftData] = useState<DraftData>({
@@ -117,14 +119,56 @@ export function InlineEditorProvider({
   const saveTimerRef = useRef<NodeJS.Timeout | null>(null);
   const pendingChangesRef = useRef<Record<string, unknown>>({});
 
+  // Detect preview mode
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('preview') === 'editor') {
+        setIsPreviewMode(true);
+      }
+    }
+  }, []);
+
+  // Handle preview messages
+  useEffect(() => {
+    if (!isPreviewMode) return;
+
+    // Notify parent that we are ready
+    if (window.opener || window.parent !== window) {
+      console.log('[InlineEditor] Sending PREVIEW_READY');
+      window.parent.postMessage({ type: 'PREVIEW_READY' }, '*');
+    }
+
+    const handleMessage = (event: MessageEvent) => {
+       const message = event.data as PreviewMessage;
+       if (message?.type === 'PREVIEW_UPDATE' && message.payload) {
+         // Update local state without triggering save
+         setDraftData(prev => ({
+           ...prev,
+           ...message.payload
+         }));
+       }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, [isPreviewMode]);
+
   // Open editor drawer
   const openEditor = useCallback((fieldKey: string, fieldType: FieldType, label: string) => {
+    // Disable drawer in preview mode
+    if (isPreviewMode) return;
     setActiveField({ key: fieldKey, type: fieldType, label });
     setDrawerOpen(true);
-  }, []);
+  }, [isPreviewMode]);
 
   // Save changes to API (debounced) - returns true on success, false on failure
   const saveToApi = useCallback(async (changes: Record<string, unknown>): Promise<boolean> => {
+    if (isPreviewMode) {
+      console.log('[InlineEditor] In preview mode, skipping API save');
+      return true;
+    }
+
     if (!partnerId) {
       console.log('[InlineEditor] No partnerId, skipping API save (demo mode)');
       setHasPendingChanges(false);
@@ -302,8 +346,8 @@ export function InlineEditorProvider({
     }}>
       {children}
 
-      {/* Only show admin UI if owner */}
-      {isOwner && (
+      {/* Only show admin UI if owner and not in preview mode */}
+      {isOwner && !isPreviewMode && (
         <>
           {/* Floating Admin Bar */}
           <FloatingAdminBar
