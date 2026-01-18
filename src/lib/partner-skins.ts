@@ -19,6 +19,11 @@ export const PARTNER_SKINS = [
     name: 'Forest Green',
     description: 'Jemna zelen a prirodzeny kontrast.',
   },
+  {
+    id: 'silver',
+    name: 'Silver Brown',
+    description: 'Strieborné pozadie s hnedým písmom.',
+  },
 ] as const;
 
 export type PartnerSkinId = (typeof PARTNER_SKINS)[number]['id'];

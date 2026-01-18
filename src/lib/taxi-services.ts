@@ -42,10 +42,12 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
       const dbService = dbServiceMap.get(service.name.toLowerCase());
 
       if (dbService) {
+        // Use || to preserve JSON values if DB has false (default)
+        // This way existing partners from JSON are not overwritten by DB defaults
         return {
           ...service,
-          isPremium: dbService.is_premium ?? service.isPremium,
-          isPartner: dbService.is_partner ?? service.isPartner,
+          isPremium: dbService.is_premium || service.isPremium,
+          isPartner: dbService.is_partner || service.isPartner,
           premiumExpiresAt: dbService.premium_expires_at ?? service.premiumExpiresAt,
         };
       }
