@@ -1605,8 +1605,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
       ? approvedData.gallery
       : service.gallery;
 
-    // Use approved hero image if defined (null/empty = partner removed it)
-    const heroImage = approvedData?.hero_image_url !== undefined
+    // Use approved hero image if it has actual URL, otherwise fallback to cities.json
+    const heroImage = (approvedData?.hero_image_url && approvedData.hero_image_url.trim() !== '')
       ? approvedData.hero_image_url
       : partnerData?.heroImage;
 
