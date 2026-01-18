@@ -119,40 +119,50 @@ export function InlineEditorProvider({
   const saveTimerRef = useRef<NodeJS.Timeout | null>(null);
   const pendingChangesRef = useRef<Record<string, unknown>>({});
 
-  // Detect preview mode
+  // Detect preview mode and setup message handling
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('preview') === 'editor') {
-        setIsPreviewMode(true);
-      }
-    }
-  }, []);
+    if (typeof window === 'undefined') return;
 
-  // Handle preview messages
-  useEffect(() => {
-    if (!isPreviewMode) return;
+    const params = new URLSearchParams(window.location.search);
+    const isPreview = params.get('preview') === 'editor';
 
-    // Notify parent that we are ready
-    if (window.opener || window.parent !== window) {
-      console.log('[InlineEditor] Sending PREVIEW_READY');
+    console.log('[InlineEditor] Preview check:', { isPreview, search: window.location.search });
+
+    if (!isPreview) return;
+
+    setIsPreviewMode(true);
+
+    // Small delay to ensure component is mounted, then notify parent
+    const readyTimeout = setTimeout(() => {
+      console.log('[InlineEditor] Sending PREVIEW_READY to parent');
       window.parent.postMessage({ type: 'PREVIEW_READY' }, '*');
-    }
+    }, 100);
 
     const handleMessage = (event: MessageEvent) => {
-       const message = event.data as PreviewMessage;
-       if (message?.type === 'PREVIEW_UPDATE' && message.payload) {
-         // Update local state without triggering save
-         setDraftData(prev => ({
-           ...prev,
-           ...message.payload
-         }));
-       }
+      const message = event.data as PreviewMessage;
+      if (message?.type === 'PREVIEW_UPDATE' && message.payload) {
+        console.log('[InlineEditor] Received PREVIEW_UPDATE');
+        // Filter out empty string values - don't override with empty
+        const filteredPayload = Object.fromEntries(
+          Object.entries(message.payload).filter(([, value]) => {
+            // Keep the value if it's not an empty string
+            // (allow null, undefined, arrays, numbers, non-empty strings)
+            return value !== '';
+          })
+        );
+        setDraftData(prev => ({
+          ...prev,
+          ...filteredPayload
+        }));
+      }
     };
 
     window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, [isPreviewMode]);
+    return () => {
+      clearTimeout(readyTimeout);
+      window.removeEventListener('message', handleMessage);
+    };
+  }, []);
 
   // Open editor drawer
   const openEditor = useCallback((fieldKey: string, fieldType: FieldType, label: string) => {

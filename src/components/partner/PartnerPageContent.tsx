@@ -41,8 +41,8 @@ function useSafeInlineEditor() {
  */
 export function EditableHeroTitle({ defaultValue }: { defaultValue: string }) {
   const { isEditMode, draftData, openEditor } = useSafeInlineEditor();
-  // Use ?? to allow empty string, use 'in' check to differentiate between undefined and empty
-  const value = 'hero_title' in draftData ? (draftData.hero_title as string) ?? defaultValue : defaultValue;
+  // Use || to fallback to defaultValue when hero_title is empty string or undefined
+  const value = (draftData.hero_title as string) || defaultValue;
 
   return (
     <EditableField

@@ -5,7 +5,28 @@ import { Smartphone, Monitor, ExternalLink } from 'lucide-react';
 import { PreviewMessage } from '@/lib/preview-protocol';
 
 interface IframePreviewProps {
-  formData: any;
+  formData: {
+    company_name: string;
+    description: string;
+    show_description: boolean;
+    phone: string;
+    email: string;
+    website: string;
+    hero_image_url: string;
+    hero_image_zoom: number;
+    hero_image_pos_x: number;
+    hero_image_pos_y: number;
+    hero_title: string;
+    hero_subtitle: string;
+    services: string[];
+    show_services: boolean;
+    gallery: string[];
+    social_facebook: string;
+    social_instagram: string;
+    template_variant: string;
+    banner_title?: string;
+    banner_subtitle?: string;
+  };
   partnerSlug: string;
   citySlug: string;
   cityName: string;
