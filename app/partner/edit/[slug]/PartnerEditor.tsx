@@ -13,6 +13,7 @@ interface Props {
   userEmail: string;
   rejectionMessage?: string | null;
   cityName?: string;
+  citySlug?: string;
 }
 
 interface FormData {
@@ -52,7 +53,7 @@ function getThumbnailUrl(url: string): string {
   return url;
 }
 
-export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessage, cityName = 'Zvolen' }: Props) {
+export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessage, cityName = 'Zvolen', citySlug }: Props) {
   const [showRejectionMessage, setShowRejectionMessage] = useState(!!rejectionMessage);
   const [formData, setFormData] = useState<FormData>({
     company_name: initialDraft?.company_name || partner.name || '',
@@ -88,6 +89,8 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
   const galleryImageInputRef = useRef<HTMLInputElement>(null);
   // Track draft ID to prevent duplicate inserts
   const [draftId, setDraftId] = useState<string | null>(initialDraft?.id || null);
+  // Custom service input
+  const [newCustomService, setNewCustomService] = useState('');
 
   // Mobile keyboard fix - scroll input into view when focused
   useEffect(() => {
@@ -641,6 +644,68 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
                         </button>
                       ))}
                     </div>
+
+                    {/* Custom services (not in predefined list) */}
+                    {formData.services.filter(s => !availableServices.includes(s)).length > 0 && (
+                      <div className="mt-3">
+                        <p className="text-xs text-gray-500 mb-2">Vlastné služby:</p>
+                        <div className="flex flex-wrap gap-2">
+                          {formData.services
+                            .filter(s => !availableServices.includes(s))
+                            .map((service) => (
+                              <span
+                                key={service}
+                                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium bg-purple-600 text-white"
+                              >
+                                {service}
+                                <button
+                                  type="button"
+                                  onClick={() => handleServiceToggle(service)}
+                                  className="ml-1 hover:bg-purple-700 rounded-full p-0.5"
+                                  title="Odstrániť"
+                                >
+                                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </button>
+                              </span>
+                            ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Add custom service */}
+                    <div className="mt-3 flex gap-2">
+                      <input
+                        type="text"
+                        value={newCustomService}
+                        onChange={(e) => setNewCustomService(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' && newCustomService.trim()) {
+                            e.preventDefault();
+                            if (!formData.services.includes(newCustomService.trim())) {
+                              handleChange('services', [...formData.services, newCustomService.trim()]);
+                            }
+                            setNewCustomService('');
+                          }
+                        }}
+                        placeholder="Pridať vlastnú službu..."
+                        className="flex-1 px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (newCustomService.trim() && !formData.services.includes(newCustomService.trim())) {
+                            handleChange('services', [...formData.services, newCustomService.trim()]);
+                            setNewCustomService('');
+                          }
+                        }}
+                        disabled={!newCustomService.trim()}
+                        className="px-4 py-1.5 text-sm font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      >
+                        Pridať
+                      </button>
+                    </div>
                   </div>
                 </div>
               )}
@@ -984,6 +1049,7 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
           <TaxiPreview
             formData={formData}
             partnerSlug={partner.slug}
+            citySlug={citySlug || partner.city_slug}
             cityName={cityName}
           />
         </div>

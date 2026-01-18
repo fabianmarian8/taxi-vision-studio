@@ -1,9 +1,19 @@
 import { createClient } from '@/lib/supabase/server';
+import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { PasswordSettings } from './PasswordSettings';
+import { SuperadminPartnerList } from './SuperadminPartnerList';
+import { isSuperadmin } from '@/lib/superadmin';
 
-export default async function PartnerDashboard() {
+interface PageProps {
+  searchParams: Promise<{ as?: string }>;
+}
+
+export default async function PartnerDashboard({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const impersonatingSlug = params.as || null;
+
   const supabase = await createClient();
 
   const {
@@ -14,21 +24,105 @@ export default async function PartnerDashboard() {
     redirect('/partner/login');
   }
 
-  // Get partner's taxi services
-  const { data: partners, error } = await supabase
-    .from('partners')
-    .select(`
-      *,
-      partner_drafts (
-        id,
-        status,
-        company_name,
-        submitted_at,
-        reviewed_at,
-        updated_at
-      )
-    `)
-    .eq('user_id', user.id);
+  const userIsSuperadmin = isSuperadmin(user.email);
+
+  // For superadmin: get ALL partners for the list
+  let allPartners: Array<{
+    id: string;
+    name: string;
+    slug: string;
+    city_slug: string;
+    email: string | null;
+    user_id: string | null;
+    created_at: string;
+  }> = [];
+
+  if (userIsSuperadmin) {
+    // Use admin client to bypass RLS
+    const adminClient = createAdminClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+
+    const { data: allPartnersData } = await adminClient
+      .from('partners')
+      .select('id, name, slug, city_slug, email, user_id, created_at')
+      .order('name');
+
+    allPartners = allPartnersData || [];
+  }
+
+  // Determine which partners to show in the dashboard
+  let displayPartnerId: string | null = null;
+  let displayPartnerName: string | null = null;
+
+  // If superadmin is impersonating, find that partner
+  if (userIsSuperadmin && impersonatingSlug) {
+    const impersonatedPartner = allPartners.find((p) => p.slug === impersonatingSlug);
+    if (impersonatedPartner) {
+      displayPartnerId = impersonatedPartner.id;
+      displayPartnerName = impersonatedPartner.name;
+    }
+  }
+
+  // Get partner's taxi services based on impersonation or user
+  let partnersQuery;
+
+  if (userIsSuperadmin && displayPartnerId) {
+    // Superadmin impersonating - use admin client
+    const adminClient = createAdminClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+    partnersQuery = adminClient
+      .from('partners')
+      .select(`
+        *,
+        partner_drafts (
+          id,
+          status,
+          company_name,
+          submitted_at,
+          reviewed_at,
+          updated_at
+        )
+      `)
+      .eq('id', displayPartnerId);
+  } else if (userIsSuperadmin && !impersonatingSlug) {
+    // Superadmin without impersonation - show their own partners (if any)
+    partnersQuery = supabase
+      .from('partners')
+      .select(`
+        *,
+        partner_drafts (
+          id,
+          status,
+          company_name,
+          submitted_at,
+          reviewed_at,
+          updated_at
+        )
+      `)
+      .eq('user_id', user.id);
+  } else {
+    // Regular user - show their partners
+    partnersQuery = supabase
+      .from('partners')
+      .select(`
+        *,
+        partner_drafts (
+          id,
+          status,
+          company_name,
+          submitted_at,
+          reviewed_at,
+          updated_at
+        )
+      `)
+      .eq('user_id', user.id);
+  }
+
+  const { data: partners, error } = await partnersQuery;
 
   const statusLabels: Record<string, { label: string; color: string }> = {
     draft: { label: 'Rozpracované', color: 'bg-gray-100 text-gray-700' },
@@ -44,27 +138,48 @@ export default async function PartnerDashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
+              <div className={`w-10 h-10 ${userIsSuperadmin ? 'bg-gradient-to-br from-purple-600 to-indigo-600' : 'bg-purple-600'} rounded-full flex items-center justify-center`}>
+                {userIsSuperadmin ? (
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                ) : (
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+                )}
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">Partner Portal</h1>
+                <div className="flex items-center gap-2">
+                  <h1 className="text-xl font-bold text-gray-900">Partner Portal</h1>
+                  {userIsSuperadmin && (
+                    <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-0.5 rounded-full">
+                      SUPERADMIN
+                    </span>
+                  )}
+                </div>
                 <p className="text-sm text-gray-500">{user.email}</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
+              {userIsSuperadmin && (
+                <Link
+                  href="/admin"
+                  className="text-purple-600 hover:text-purple-800 text-sm font-medium"
+                >
+                  Admin Panel
+                </Link>
+              )}
               <PasswordSettings />
               <form action="/partner/auth/signout" method="POST">
                 <button
@@ -81,10 +196,24 @@ export default async function PartnerDashboard() {
 
       {/* Main content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Superadmin Partner List */}
+        {userIsSuperadmin && (
+          <SuperadminPartnerList
+            partners={allPartners}
+            currentImpersonating={impersonatingSlug}
+          />
+        )}
+
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">Vaše taxislužby</h2>
+          <h2 className="text-2xl font-bold text-gray-900">
+            {impersonatingSlug && displayPartnerName
+              ? `Taxislužby partnera: ${displayPartnerName}`
+              : 'Vaše taxislužby'}
+          </h2>
           <p className="text-gray-600 mt-1">
-            Spravujte informácie o vašich taxislužbách
+            {impersonatingSlug
+              ? 'Upravujete profil ako superadmin'
+              : 'Spravujte informácie o vašich taxislužbách'}
           </p>
         </div>
 
@@ -112,12 +241,24 @@ export default async function PartnerDashboard() {
               </svg>
             </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">
-              Žiadne taxislužby
+              {impersonatingSlug ? 'Žiadne taxislužby pre tohto partnera' : 'Žiadne taxislužby'}
             </h3>
             <p className="text-gray-500">
-              Zatiaľ nemáte priradenú žiadnu taxislužbu.
-              <br />
-              Kontaktujte administrátora pre pridanie vašej taxislužby.
+              {impersonatingSlug ? (
+                <>
+                  Tento partner nemá priradenú žiadnu taxislužbu.
+                  <br />
+                  <Link href="/partner" className="text-purple-600 hover:underline">
+                    Vrátiť sa späť
+                  </Link>
+                </>
+              ) : (
+                <>
+                  Zatiaľ nemáte priradenú žiadnu taxislužbu.
+                  <br />
+                  Kontaktujte administrátora pre pridanie vašej taxislužby.
+                </>
+              )}
             </p>
           </div>
         )}

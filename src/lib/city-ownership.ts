@@ -1,10 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
-
-// Superadmin emails - can edit ALL city pages
-const SUPERADMIN_EMAILS = [
-  'fabianmarian8@gmail.com',
-  'fabianmarian8@users.noreply.github.com',
-];
+import { isSuperadmin } from '@/lib/superadmin';
 
 export interface CityOwnershipResult {
   isAdmin: boolean;
@@ -40,10 +35,10 @@ export async function checkCityEditAccess(): Promise<CityOwnershipResult> {
     }
 
     // Check if user is superadmin
-    const isSuperadmin = user.email && SUPERADMIN_EMAILS.includes(user.email.toLowerCase());
+    const userIsSuperadmin = isSuperadmin(user.email);
 
     return {
-      isAdmin: isSuperadmin || false,
+      isAdmin: userIsSuperadmin,
       userId: user.id,
       userEmail: user.email || null,
     };

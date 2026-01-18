@@ -1,8 +1,10 @@
 import { createClient } from '@/lib/supabase/server';
+import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { redirect, notFound } from 'next/navigation';
 import { PartnerEditor } from './PartnerEditor';
 import citiesData from '@/data/cities.json';
 import { DEFAULT_PARTNER_SKIN } from '@/lib/partner-skins';
+import { isSuperadmin } from '@/lib/superadmin';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -78,17 +80,33 @@ export default async function PartnerEditPage({ params }: Props) {
     redirect('/partner/login');
   }
 
+  const userIsSuperadmin = isSuperadmin(user.email);
+
+  // Use admin client for superadmins to bypass RLS
+  const queryClient = userIsSuperadmin
+    ? createAdminClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.SUPABASE_SERVICE_ROLE_KEY!
+      )
+    : supabase;
+
   // Get partner by slug with drafts ordered by updated_at DESC
-  const { data: partner, error } = await supabase
+  // Superadmin can edit any partner, regular users only their own
+  let query = queryClient
     .from('partners')
     .select(`
       *,
       partner_drafts (*)
     `)
     .eq('slug', slug)
-    .eq('user_id', user.id)
-    .order('updated_at', { ascending: false, referencedTable: 'partner_drafts' })
-    .single();
+    .order('updated_at', { ascending: false, referencedTable: 'partner_drafts' });
+
+  // Only filter by user_id for non-superadmins
+  if (!userIsSuperadmin) {
+    query = query.eq('user_id', user.id);
+  }
+
+  const { data: partner, error } = await query.single();
 
   if (error || !partner) {
     notFound();

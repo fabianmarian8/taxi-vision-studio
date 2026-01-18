@@ -26,6 +26,7 @@ interface TaxiPreviewProps {
     template_variant: string;
   };
   partnerSlug: string;
+  citySlug: string;
   cityName: string;
 }
 
@@ -37,10 +38,10 @@ function getThumbnail(imagePath: string): string {
   return imagePath.slice(0, ext) + '-thumb' + imagePath.slice(ext);
 }
 
-export function TaxiPreview({ formData, partnerSlug, cityName }: TaxiPreviewProps) {
+export function TaxiPreview({ formData, partnerSlug, citySlug, cityName }: TaxiPreviewProps) {
   const [viewMode, setViewMode] = useState<'desktop' | 'mobile'>('mobile');
 
-  const previewUrl = `/taxi/zvolen/${partnerSlug}`;
+  const previewUrl = `/taxi/${citySlug}/${partnerSlug}`;
   const skinClass = getPartnerSkinClass(formData.template_variant);
 
   return (
@@ -229,19 +230,7 @@ export function TaxiPreview({ formData, partnerSlug, cityName }: TaxiPreviewProp
               </div>
             )}
 
-            {/* About / Description */}
-            {formData.show_description && formData.description && (
-              <div className={`mt-4 ${viewMode === 'mobile' ? 'mx-3' : 'mx-4'} partner-card rounded-xl p-3`}>
-                <h2 className="text-sm font-bold text-gray-900 mb-2">O nás</h2>
-                <p className={`text-gray-600 leading-relaxed ${viewMode === 'mobile' ? 'text-[10px]' : 'text-xs'}`}>
-                  {formData.description.length > 150
-                    ? formData.description.substring(0, 150) + '...'
-                    : formData.description}
-                </p>
-              </div>
-            )}
-
-            {/* Services */}
+            {/* Services - NAD sekciou O nás */}
             {formData.show_services && formData.services.length > 0 && (
               <div className={`mt-4 ${viewMode === 'mobile' ? 'mx-3' : 'mx-4'} partner-card rounded-xl p-3`}>
                 <h2 className="text-sm font-bold text-gray-900 mb-2">Ponúkané služby</h2>
@@ -256,6 +245,18 @@ export function TaxiPreview({ formData, partnerSlug, cityName }: TaxiPreviewProp
                     </span>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {/* About / Description */}
+            {formData.show_description && formData.description && (
+              <div className={`mt-4 ${viewMode === 'mobile' ? 'mx-3' : 'mx-4'} partner-card rounded-xl p-3`}>
+                <h2 className="text-sm font-bold text-gray-900 mb-2">O nás</h2>
+                <p className={`text-gray-600 leading-relaxed ${viewMode === 'mobile' ? 'text-[10px]' : 'text-xs'}`}>
+                  {formData.description.length > 150
+                    ? formData.description.substring(0, 150) + '...'
+                    : formData.description}
+                </p>
               </div>
             )}
 

@@ -1,12 +1,7 @@
 import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { DEFAULT_PARTNER_SKIN } from '@/lib/partner-skins';
-
-// Superadmin emails - can edit ALL partner pages
-const SUPERADMIN_EMAILS = [
-  'fabianmarian8@gmail.com',
-  'fabianmarian8@users.noreply.github.com',
-];
+import { isSuperadmin } from '@/lib/superadmin';
 
 export interface PartnerDraftData {
   id: string;
@@ -84,11 +79,11 @@ export async function checkPartnerOwnership(partnerSlug: string): Promise<Partne
     }
 
     // Check if user is superadmin FIRST (before query that might fail due to RLS)
-    const isSuperadmin = user.email && SUPERADMIN_EMAILS.includes(user.email.toLowerCase());
-    console.log('[checkPartnerOwnership] Is superadmin:', isSuperadmin, 'email:', user.email);
+    const userIsSuperadmin = isSuperadmin(user.email);
+    console.log('[checkPartnerOwnership] Is superadmin:', userIsSuperadmin, 'email:', user.email);
 
     // Use admin client for superadmins to bypass RLS
-    const queryClient = isSuperadmin
+    const queryClient = userIsSuperadmin
       ? createAdminClient(
           process.env.NEXT_PUBLIC_SUPABASE_URL!,
           process.env.SUPABASE_SERVICE_ROLE_KEY!
@@ -144,13 +139,13 @@ export async function checkPartnerOwnership(partnerSlug: string): Promise<Partne
 
     console.log('[checkPartnerOwnership] Found partner:', partner.id, 'user_id:', partner.user_id);
 
-    // Kontrola vlastníctva alebo superadmin (isSuperadmin already checked above)
-    if (partner.user_id !== user.id && !isSuperadmin) {
+    // Kontrola vlastníctva alebo superadmin (userIsSuperadmin already checked above)
+    if (partner.user_id !== user.id && !userIsSuperadmin) {
       console.log('[checkPartnerOwnership] User mismatch - partner.user_id:', partner.user_id, 'user.id:', user.id);
       return defaultResult;
     }
 
-    console.log('[checkPartnerOwnership] User IS owner!', isSuperadmin ? '(superadmin)' : '');
+    console.log('[checkPartnerOwnership] User IS owner!', userIsSuperadmin ? '(superadmin)' : '');
 
     // Nájdi najnovší draft (preferuj draft status, potom approved)
     const drafts = (partner.partner_drafts || []) as PartnerDraftData[];
