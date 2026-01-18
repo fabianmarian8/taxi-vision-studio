@@ -295,10 +295,12 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
 
     const supabase = createClient();
 
+    // Convert empty strings to null for URL fields so fallback to cities.json works
     const draftData = {
       partner_id: partner.id,
       status: 'draft' as const,
       ...formData,
+      hero_image_url: formData.hero_image_url?.trim() || null,
       services: formData.services,
     };
 
@@ -337,16 +339,20 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
     setMessage(null);
 
     try {
+      // Convert empty strings to null for URL fields so fallback to cities.json works
+      const cleanedFormData = {
+        ...formData,
+        hero_image_url: formData.hero_image_url?.trim() || null,
+        services: formData.services,
+      };
+
       const response = await fetch('/api/partner/publish-changes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           partner_id: partner.id,
           draft_id: draftId,
-          formData: {
-            ...formData,
-            services: formData.services,
-          },
+          formData: cleanedFormData,
         }),
       });
 
