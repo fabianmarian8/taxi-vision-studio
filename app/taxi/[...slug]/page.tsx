@@ -1866,24 +1866,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               partnerId={partnerId}
             />
 
-            {/* About / Description Section - editable */}
-            <EditableDescription defaultValue={mergedDescription || ''} />
-
-            {/* Cenník obrázok - zatiaľ hardcoded pre volaj-taxi na testovanie */}
-            {serviceSlug === 'volaj-taxi' && (
-              <div className="mt-6 md:mt-8 partner-card rounded-xl overflow-hidden">
-                <h2 className="text-lg md:text-xl font-bold text-foreground p-4 md:p-6 pb-0 md:pb-0">Cenník</h2>
-                <div className="p-4 md:p-6 pt-3 md:pt-4">
-                  <img
-                    src="https://kkuybturazislquqaxci.supabase.co/storage/v1/object/public/partner-images/volaj-taxi/cennik.webp"
-                    alt="Cenník VOLAJ TAXI"
-                    className="w-full h-auto rounded-lg"
-                  />
-                </div>
-              </div>
-            )}
-
-            {/* Services Section - uses initialEditorData for live preview */}
+            {/* Services Section - NAD sekciou O nás */}
             {initialEditorData.services && initialEditorData.services.length > 0 && (
               <EditableServices defaultServices={initialEditorData.services}>
                 <div className="mt-6 md:mt-8 partner-card rounded-xl p-4 md:p-6">
@@ -1901,6 +1884,23 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   </div>
                 </div>
               </EditableServices>
+            )}
+
+            {/* About / Description Section - editable */}
+            <EditableDescription defaultValue={mergedDescription || ''} />
+
+            {/* Cenník obrázok - zatiaľ hardcoded pre volaj-taxi na testovanie */}
+            {serviceSlug === 'volaj-taxi' && (
+              <div className="mt-6 md:mt-8 partner-card rounded-xl overflow-hidden">
+                <h2 className="text-lg md:text-xl font-bold text-foreground p-4 md:p-6 pb-0 md:pb-0">Cenník</h2>
+                <div className="p-4 md:p-6 pt-3 md:pt-4">
+                  <img
+                    src="https://kkuybturazislquqaxci.supabase.co/storage/v1/object/public/partner-images/volaj-taxi/cennik.webp"
+                    alt="Cenník VOLAJ TAXI"
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
             )}
 
             {/* Custom description / services - Mobile optimized */}
