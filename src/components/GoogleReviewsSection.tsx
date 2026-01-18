@@ -1,6 +1,7 @@
 import { fetchGoogleReviews, transformReview } from '@/lib/google-reviews';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star } from 'lucide-react';
+import { ReviewAvatar } from './ReviewAvatar';
 
 interface GoogleReviewsSectionProps {
   placeId: string;
@@ -58,19 +59,10 @@ export async function GoogleReviewsSection({ placeId, serviceName, googleMapsUrl
               <Card key={index} className="overflow-hidden">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    {review.profilePhoto ? (
-                      <img
-                        src={review.profilePhoto}
-                        alt={review.author}
-                        className="w-12 h-12 rounded-full flex-shrink-0"
-                      />
-                    ) : (
-                      <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
-                        <span className="text-purple-600 font-bold text-lg">
-                          {review.author.charAt(0).toUpperCase()}
-                        </span>
-                      </div>
-                    )}
+                    <ReviewAvatar
+                      profilePhoto={review.profilePhoto}
+                      author={review.author}
+                    />
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
                         <span className="font-bold text-foreground">{review.author}</span>
