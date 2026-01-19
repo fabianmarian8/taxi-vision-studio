@@ -78,8 +78,21 @@ export default function PartnerLoginPage() {
       if (error) {
         setMessage({ type: 'error', text: translateError(error) });
       } else {
-        // Log successful login to audit
-        fetch('/api/audit/log-login', { method: 'POST' }).catch(() => {});
+        // Get user info for audit logging
+        const { data: { user } } = await supabase.auth.getUser();
+
+        // Log successful login to audit with user info
+        if (user) {
+          fetch('/api/audit/log-login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              userId: user.id,
+              userEmail: user.email
+            })
+          }).catch(() => {});
+        }
+
         router.push('/partner');
       }
     } catch (err) {
@@ -147,8 +160,21 @@ export default function PartnerLoginPage() {
       if (error) {
         setMessage({ type: 'error', text: translateError(error) });
       } else {
-        // Log successful login to audit
-        fetch('/api/audit/log-login', { method: 'POST' }).catch(() => {});
+        // Get user info for audit logging
+        const { data: { user } } = await supabase.auth.getUser();
+
+        // Log successful login to audit with user info
+        if (user) {
+          fetch('/api/audit/log-login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              userId: user.id,
+              userEmail: user.email
+            })
+          }).catch(() => {});
+        }
+
         router.push('/partner');
       }
     } catch (err) {
