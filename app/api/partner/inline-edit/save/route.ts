@@ -190,6 +190,14 @@ export async function POST(request: NextRequest) {
     const forwardedFor = request.headers.get('x-forwarded-for');
     const ipAddress = forwardedFor?.split(',')[0]?.trim() || null;
 
+    // DEBUG: Log user info pre audit
+    console.log('[inline-edit/save] Audit params:', {
+      user_id: user.id,
+      user_email: user.email,
+      ip_address: ipAddress,
+      isSuperadmin
+    });
+
     // Použiť RPC funkciu ktorá nastaví audit kontext A vykoná operáciu v jednej transakcii
     if (draft_id) {
       // Update existujúci draft cez RPC
