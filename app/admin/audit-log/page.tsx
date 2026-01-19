@@ -74,6 +74,7 @@ export default function AuditLogPage() {
     INSERT: 'bg-green-100 text-green-700',
     UPDATE: 'bg-blue-100 text-blue-700',
     DELETE: 'bg-red-100 text-red-700',
+    LOGIN: 'bg-purple-100 text-purple-700',
   };
 
   const formatChangedFields = (changed: Record<string, unknown> | null) => {
@@ -114,6 +115,7 @@ export default function AuditLogPage() {
             <option value="">Všetky tabuľky</option>
             <option value="partners">partners</option>
             <option value="partner_drafts">partner_drafts</option>
+            <option value="partner_login">partner_login</option>
           </select>
           <select
             value={filterOperation}
@@ -124,6 +126,7 @@ export default function AuditLogPage() {
             <option value="INSERT">INSERT</option>
             <option value="UPDATE">UPDATE</option>
             <option value="DELETE">DELETE</option>
+            <option value="LOGIN">LOGIN</option>
           </select>
           <span className="text-sm text-muted-foreground self-center">
             Celkom: {total} záznamov
