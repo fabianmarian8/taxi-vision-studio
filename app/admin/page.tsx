@@ -152,6 +152,21 @@ export default async function AdminDashboard() {
               </CardContent>
             </Card>
           </Link>
+
+          {/* Audit Log Card */}
+          <Link href="/admin/audit-log">
+            <Card className="cursor-pointer border-gray-300 bg-gray-50/50">
+              <CardHeader>
+                <CardTitle>Audit Log</CardTitle>
+                <CardDescription>
+                  Kto sa kedy prihlásil a aké zmeny vykonal
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full" variant="outline">Otvoriť</Button>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
 
         {/* Instructions */}
