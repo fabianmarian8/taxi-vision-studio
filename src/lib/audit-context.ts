@@ -36,7 +36,7 @@ export async function setAuditContextFromAuth(
   try {
     const { data: { user } } = await supabase.auth.getUser();
     if (user) {
-      await setAuditContext(supabase, user.id, user.email, ipAddress);
+      await setAuditContext(supabase, user.id, user.email || null, ipAddress);
     }
   } catch (error) {
     console.error('[setAuditContextFromAuth] Error:', error);
