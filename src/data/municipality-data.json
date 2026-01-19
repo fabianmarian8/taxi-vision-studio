@@ -1,7 +1,7 @@
 {
   "lastUpdated": "2025-12-05T17:42:07.239Z",
   "source": "SODB 2021 + GitHub gunsoft/obce-okresy-kraje-slovenska",
-  "count": 4206,
+  "count": 4205,
   "municipalities": {
     "abelova": {
       "name": "Ábelová",
@@ -27301,16 +27301,9 @@
       "population": 1149,
       "area": 18.92
     },
-    "stankovce-michalovce": {
+    "stankovce": {
       "name": "Stankovce",
-      "slug": "stankovce-michalovce",
-      "district": "Michalovce",
-      "region": "Košický kraj kraj",
-      "postalCode": "072 21"
-    },
-    "stankovce-trebisov": {
-      "name": "Stankovce",
-      "slug": "stankovce-trebisov",
+      "slug": "stankovce",
       "district": "Trebišov",
       "region": "Košický kraj kraj",
       "postalCode": "076 61",
