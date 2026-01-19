@@ -1,0 +1,239 @@
+'use client';
+
+import { useState } from 'react';
+import { ArrowRight, Loader2, X } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+interface CheckoutFormProps {
+  plan: 'premium' | 'partner';
+  onClose?: () => void;
+}
+
+// Zoznam slovenských miest (hlavné mestá)
+const CITIES = [
+  { slug: 'bratislava', name: 'Bratislava' },
+  { slug: 'kosice', name: 'Košice' },
+  { slug: 'presov', name: 'Prešov' },
+  { slug: 'zilina', name: 'Žilina' },
+  { slug: 'banska-bystrica', name: 'Banská Bystrica' },
+  { slug: 'nitra', name: 'Nitra' },
+  { slug: 'trnava', name: 'Trnava' },
+  { slug: 'trencin', name: 'Trenčín' },
+  { slug: 'martin', name: 'Martin' },
+  { slug: 'poprad', name: 'Poprad' },
+  { slug: 'prievidza', name: 'Prievidza' },
+  { slug: 'zvolen', name: 'Zvolen' },
+  { slug: 'povazska-bystrica', name: 'Považská Bystrica' },
+  { slug: 'michalovce', name: 'Michalovce' },
+  { slug: 'nove-zamky', name: 'Nové Zámky' },
+  { slug: 'spisska-nova-ves', name: 'Spišská Nová Ves' },
+  { slug: 'komarno', name: 'Komárno' },
+  { slug: 'humenne', name: 'Humenné' },
+  { slug: 'levice', name: 'Levice' },
+  { slug: 'lucenec', name: 'Lučenec' },
+  { slug: 'ruzomberok', name: 'Ružomberok' },
+  { slug: 'liptovsky-mikulas', name: 'Liptovský Mikuláš' },
+  { slug: 'piestany', name: 'Piešťany' },
+  { slug: 'dunajska-streda', name: 'Dunajská Streda' },
+  { slug: 'bardejov', name: 'Bardejov' },
+  { slug: 'vranov-nad-toplou', name: 'Vranov nad Topľou' },
+  { slug: 'dolny-kubin', name: 'Dolný Kubín' },
+  { slug: 'cadca', name: 'Čadca' },
+  { slug: 'pezinok', name: 'Pezinok' },
+  { slug: 'partizanske', name: 'Partizánske' },
+  { slug: 'rimavska-sobota', name: 'Rimavská Sobota' },
+  { slug: 'senica', name: 'Senica' },
+  { slug: 'hlohovec', name: 'Hlohovec' },
+  { slug: 'galanta', name: 'Galanta' },
+  { slug: 'sala', name: 'Šaľa' },
+  { slug: 'malacky', name: 'Malacky' },
+  { slug: 'snina', name: 'Snina' },
+  { slug: 'stara-lubovna', name: 'Stará Ľubovňa' },
+  { slug: 'trebisov', name: 'Trebišov' },
+  { slug: 'kezmarok', name: 'Kežmarok' },
+].sort((a, b) => a.name.localeCompare(b.name, 'sk'));
+
+export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
+  const [citySlug, setCitySlug] = useState('');
+  const [taxiServiceName, setTaxiServiceName] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+
+    if (!citySlug) {
+      setError('Vyberte mesto');
+      return;
+    }
+
+    if (!taxiServiceName.trim()) {
+      setError('Zadajte názov vašej taxislužby');
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('/api/checkout/create-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plan,
+          citySlug,
+          taxiServiceName: taxiServiceName.trim(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Nepodarilo sa vytvoriť checkout session');
+      }
+
+      // Presmerovanie na Stripe Checkout
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Niečo sa pokazilo');
+      setIsLoading(false);
+    }
+  };
+
+  const isPremium = plan === 'premium';
+
+  return (
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div className={cn(
+        "relative w-full max-w-md rounded-2xl p-6 md:p-8",
+        isPremium
+          ? "bg-slate-900 border border-white/10"
+          : "bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-yellow-400/50"
+      )}>
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        {/* Header */}
+        <div className="mb-6">
+          <h2 className={cn(
+            "text-2xl font-bold mb-2",
+            isPremium ? "text-white" : "text-yellow-400"
+          )}>
+            {isPremium ? 'PREMIUM' : 'PARTNER'} balíček
+          </h2>
+          <p className="text-slate-400 text-sm">
+            Vyplňte údaje a pokračujte na platbu
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {/* City Select */}
+          <div>
+            <label className="block text-sm font-medium text-slate-300 mb-2">
+              Mesto pôsobenia *
+            </label>
+            <select
+              value={citySlug}
+              onChange={(e) => setCitySlug(e.target.value)}
+              className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+              required
+            >
+              <option value="">Vyberte mesto</option>
+              {CITIES.map((city) => (
+                <option key={city.slug} value={city.slug}>
+                  {city.name}
+                </option>
+              ))}
+              <option value="other">Iné mesto (napíšte nám)</option>
+            </select>
+          </div>
+
+          {/* Taxi Service Name */}
+          <div>
+            <label className="block text-sm font-medium text-slate-300 mb-2">
+              Názov taxislužby *
+            </label>
+            <input
+              type="text"
+              value={taxiServiceName}
+              onChange={(e) => setTaxiServiceName(e.target.value)}
+              placeholder="napr. Fast Taxi Zvolen"
+              className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+              required
+            />
+          </div>
+
+          {/* Error */}
+          {error && (
+            <div className="text-red-400 text-sm bg-red-400/10 border border-red-400/20 rounded-lg px-4 py-2">
+              {error}
+            </div>
+          )}
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={isLoading}
+            className={cn(
+              "w-full flex items-center justify-center gap-2 font-bold px-6 py-4 rounded-xl transition-all text-base disabled:opacity-50 disabled:cursor-not-allowed",
+              isPremium
+                ? "bg-white/10 hover:bg-white/20 border border-white/10 text-white"
+                : "bg-yellow-400 hover:bg-yellow-300 text-slate-900 shadow-lg shadow-yellow-400/20 hover:shadow-yellow-400/30"
+            )}
+          >
+            {isLoading ? (
+              <>
+                <Loader2 className="h-5 w-5 animate-spin" />
+                Načítavam...
+              </>
+            ) : (
+              <>
+                Pokračovať na platbu
+                <ArrowRight className="h-5 w-5" />
+              </>
+            )}
+          </button>
+
+          {/* Price info */}
+          <p className="text-center text-slate-500 text-xs">
+            {isPremium ? '3,99€' : '8,99€'} / mesiac • Bez viazanosti • Zrušíte kedykoľvek
+          </p>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+// Wrapper komponent pre použitie na stránke
+export function CheckoutButton({
+  plan,
+  className,
+  children
+}: {
+  plan: 'premium' | 'partner';
+  className?: string;
+  children: React.ReactNode;
+}) {
+  const [showForm, setShowForm] = useState(false);
+
+  return (
+    <>
+      <button
+        onClick={() => setShowForm(true)}
+        className={className}
+      >
+        {children}
+      </button>
+      {showForm && (
+        <CheckoutForm plan={plan} onClose={() => setShowForm(false)} />
+      )}
+    </>
+  );
+}

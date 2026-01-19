@@ -29,6 +29,7 @@ import {
 } from '@/components/ui/accordion';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { cn } from '@/lib/utils';
+import { CheckoutButton } from './CheckoutForm';
 
 export const metadata: Metadata = {
   title: 'Pre taxislužby - PREMIUM a PARTNER program | Taxi NearMe',
@@ -343,14 +344,12 @@ export default function PreTaxikyPage() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="https://buy.stripe.com/8x26oH7CK8SU5G94NX7Re00"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <CheckoutButton
+                  plan="premium"
                   className="w-full inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold px-6 py-3 md:py-4 rounded-xl transition-all text-sm md:text-base"
                 >
                   Vybrať PREMIUM
-                </a>
+                </CheckoutButton>
               </CardContent>
             </Card>
 
@@ -393,15 +392,13 @@ export default function PreTaxikyPage() {
                   ))}
                 </ul>
                 <div className="space-y-3 md:space-y-4">
-                  <a
-                    href="https://buy.stripe.com/7sYeVd0ai9WYc4x94d7Re01"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <CheckoutButton
+                    plan="partner"
                     className="w-full inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-black px-6 py-3 md:py-4 rounded-xl transition-all shadow-lg shadow-yellow-400/20 hover:shadow-yellow-400/30 hover:scale-[1.02] text-sm md:text-base"
                   >
                     Stať sa PARTNEROM
                     <ArrowRight className="h-5 w-5" />
-                  </a>
+                  </CheckoutButton>
                   <div className="text-center">
                     <Link
                       href="/taxi/zvolen/fast-taxi-zvolen"

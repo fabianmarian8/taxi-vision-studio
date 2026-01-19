@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { constructWebhookEvent, getPlanTypeFromAmount } from '@/lib/stripe';
+import { constructWebhookEvent, getPlanTypeFromAmount, stripe } from '@/lib/stripe';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 // Lazy-initialized Supabase client to avoid build-time errors
@@ -80,14 +80,33 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
   const periodStart = subscriptionItem?.current_period_start || Math.floor(Date.now() / 1000);
   const periodEnd = subscriptionItem?.current_period_end || Math.floor(Date.now() / 1000);
 
-  // Get customer email
-  const { data: customerData } = await getSupabase()
-    .from('subscriptions')
-    .select('customer_email')
-    .eq('stripe_customer_id', subscription.customer as string)
-    .single();
+  // Get customer email from Stripe API (not from DB - new customers won't have DB record yet)
+  let customerEmail = '';
+  let customerName = '';
+  try {
+    const customerId = subscription.customer as string;
+    const customer = await stripe.customers.retrieve(customerId);
+    if (customer && !customer.deleted) {
+      customerEmail = customer.email || '';
+      customerName = customer.name || '';
+    }
+  } catch (err) {
+    console.warn('Could not retrieve customer from Stripe:', err);
+  }
 
-  const customerEmail = customerData?.customer_email || '';
+  // Extract metadata (may be missing from Payment Links)
+  const citySlug = (subscription.metadata?.city_slug as string) || 'unknown';
+  const taxiServiceName = (subscription.metadata?.taxi_service_name as string) || 'Unknown Service';
+
+  // Log warning if metadata is missing
+  if (citySlug === 'unknown' || taxiServiceName === 'Unknown Service') {
+    console.warn(`⚠️ Subscription ${subscription.id} missing metadata:`, {
+      city_slug: citySlug,
+      taxi_service_name: taxiServiceName,
+      customer_email: customerEmail,
+      metadata: subscription.metadata,
+    });
+  }
 
   // Insert new subscription
   const { error } = await getSupabase().from('subscriptions').upsert({
@@ -102,9 +121,9 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
     current_period_end: new Date(periodEnd * 1000).toISOString(),
     cancel_at_period_end: subscription.cancel_at_period_end,
     customer_email: customerEmail,
-    // city_slug and taxi_service_name need to be mapped manually or from metadata
-    city_slug: (subscription.metadata?.city_slug as string) || 'unknown',
-    taxi_service_name: (subscription.metadata?.taxi_service_name as string) || 'Unknown Service',
+    customer_name: customerName,
+    city_slug: citySlug,
+    taxi_service_name: taxiServiceName,
     metadata: subscription.metadata || {},
   }, {
     onConflict: 'stripe_subscription_id',
@@ -115,12 +134,16 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
     throw error;
   }
 
+  console.log(`✅ Subscription created: ${subscription.id}`, {
+    customer_email: customerEmail,
+    customer_name: customerName,
+    city_slug: citySlug,
+    taxi_service_name: taxiServiceName,
+    plan_type: getPlanTypeFromAmount(amountCents),
+  });
+
   // Link subscription to taxi service (auto-enables premium)
-  await linkSubscriptionToTaxiService(
-    subscription.id,
-    subscription.metadata?.city_slug as string,
-    subscription.metadata?.taxi_service_name as string
-  );
+  await linkSubscriptionToTaxiService(subscription.id, citySlug, taxiServiceName);
 
   // Log event
   await logSubscriptionEvent(subscription.id, 'created', amountCents, null, subscription.status);
