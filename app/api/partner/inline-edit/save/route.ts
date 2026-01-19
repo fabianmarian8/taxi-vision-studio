@@ -2,7 +2,6 @@ import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { isPartnerSkinId } from '@/lib/partner-skins';
 import { NextRequest, NextResponse } from 'next/server';
-import { setAuditContext } from '@/lib/audit-context';
 
 // Superadmin emails - can edit ALL partner pages
 const SUPERADMIN_EMAILS = [
@@ -187,71 +186,87 @@ export async function POST(request: NextRequest) {
       }, { status: 400 });
     }
 
-    // Nastaviť audit kontext pred zmenami
+    // Získať IP adresu
     const forwardedFor = request.headers.get('x-forwarded-for');
     const ipAddress = forwardedFor?.split(',')[0]?.trim() || null;
-    await setAuditContext(queryClient, user.id, user.email || null, ipAddress);
 
-    let result;
-
+    // Použiť RPC funkciu ktorá nastaví audit kontext A vykoná operáciu v jednej transakcii
     if (draft_id) {
-      // Update existujúci draft - NEPREPISUJ status ak je approved!
-      // Inline editor edituje approved draft priamo, nechceme ho degradovať na draft
-      const { data, error } = await queryClient
-        .from('partner_drafts')
-        .update({
-          ...sanitizedChanges,
-          // status sa NEMENÍ - ponecháme pôvodný (approved alebo draft)
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', draft_id)
-        .eq('partner_id', partner_id)
-        .select('id, updated_at')
-        .single();
+      // Update existujúci draft cez RPC
+      const { data, error } = await queryClient.rpc('update_partner_draft_with_audit', {
+        p_draft_id: draft_id,
+        p_partner_id: partner_id,
+        p_changes: sanitizedChanges,
+        p_user_id: user.id,
+        p_user_email: user.email || null,
+        p_ip_address: ipAddress
+      });
 
       if (error) {
-        console.error('[inline-edit/save] Update error:', error);
+        console.error('[inline-edit/save] RPC update error:', error);
         return NextResponse.json({
           success: false,
           error: error.message
         }, { status: 500 });
       }
 
-      result = data;
+      if (!data?.success) {
+        console.error('[inline-edit/save] Update failed:', data?.error);
+        return NextResponse.json({
+          success: false,
+          error: data?.error || 'Update failed'
+        }, { status: 500 });
+      }
+
+      console.log('[inline-edit/save] Saved via RPC:', {
+        partner_id,
+        draft_id: data.draft_id,
+        fields: Object.keys(sanitizedChanges)
+      });
+
+      return NextResponse.json({
+        success: true,
+        draft_id: data.draft_id,
+        updated_at: data.updated_at
+      });
     } else {
-      // Vytvor nový draft
-      const { data, error } = await queryClient
-        .from('partner_drafts')
-        .insert({
-          partner_id,
-          ...sanitizedChanges,
-          status: 'draft'
-        })
-        .select('id, updated_at')
-        .single();
+      // Insert nový draft cez RPC
+      const { data, error } = await queryClient.rpc('insert_partner_draft_with_audit', {
+        p_partner_id: partner_id,
+        p_changes: sanitizedChanges,
+        p_user_id: user.id,
+        p_user_email: user.email || null,
+        p_ip_address: ipAddress
+      });
 
       if (error) {
-        console.error('[inline-edit/save] Insert error:', error);
+        console.error('[inline-edit/save] RPC insert error:', error);
         return NextResponse.json({
           success: false,
           error: error.message
         }, { status: 500 });
       }
 
-      result = data;
+      if (!data?.success) {
+        console.error('[inline-edit/save] Insert failed:', data?.error);
+        return NextResponse.json({
+          success: false,
+          error: data?.error || 'Insert failed'
+        }, { status: 500 });
+      }
+
+      console.log('[inline-edit/save] Created via RPC:', {
+        partner_id,
+        draft_id: data.draft_id,
+        fields: Object.keys(sanitizedChanges)
+      });
+
+      return NextResponse.json({
+        success: true,
+        draft_id: data.draft_id,
+        updated_at: data.updated_at
+      });
     }
-
-    console.log('[inline-edit/save] Saved:', {
-      partner_id,
-      draft_id: result.id,
-      fields: Object.keys(sanitizedChanges)
-    });
-
-    return NextResponse.json({
-      success: true,
-      draft_id: result.id,
-      updated_at: result.updated_at
-    });
 
   } catch (error) {
     console.error('[inline-edit/save] Unexpected error:', error);

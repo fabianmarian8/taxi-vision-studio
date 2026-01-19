@@ -2,7 +2,6 @@ import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
-import { setAuditContext } from '@/lib/audit-context';
 
 // Superadmin emails - can edit ALL partner pages
 const SUPERADMIN_EMAILS = [
@@ -65,38 +64,32 @@ export async function POST(request: NextRequest) {
       }, { status: 403 });
     }
 
-    // Nastaviť audit kontext pred zmenami
+    // Získať IP adresu
     const forwardedFor = request.headers.get('x-forwarded-for');
     const ipAddress = forwardedFor?.split(',')[0]?.trim() || null;
-    await setAuditContext(queryClient, user.id, user.email || null, ipAddress);
 
-    // Aktualizácia statusu na approved - verify that row was actually updated
-    const { data: updatedDraft, error: updateError } = await queryClient
-      .from('partner_drafts')
-      .update({
-        status: 'approved',
-        submitted_at: new Date().toISOString(),
-        reviewed_at: new Date().toISOString() // Self-approved (inline editor)
-      })
-      .eq('id', draft_id)
-      .eq('partner_id', partner_id)
-      .select('id')
-      .single();
+    // Použiť RPC funkciu ktorá nastaví audit kontext A vykoná publish v jednej transakcii
+    const { data, error: rpcError } = await queryClient.rpc('publish_partner_draft_with_audit', {
+      p_draft_id: draft_id,
+      p_partner_id: partner_id,
+      p_user_id: user.id,
+      p_user_email: user.email || null,
+      p_ip_address: ipAddress
+    });
 
-    if (updateError) {
-      console.error('[inline-edit/publish] Update error:', updateError);
+    if (rpcError) {
+      console.error('[inline-edit/publish] RPC error:', rpcError);
       return NextResponse.json({
         success: false,
-        error: updateError.message
+        error: rpcError.message
       }, { status: 500 });
     }
 
-    // Verify that we actually updated a row
-    if (!updatedDraft) {
-      console.error('[inline-edit/publish] No draft found to update:', { draft_id, partner_id });
+    if (!data?.success) {
+      console.error('[inline-edit/publish] Publish failed:', data?.error);
       return NextResponse.json({
         success: false,
-        error: 'Draft not found or already published'
+        error: data?.error || 'Draft not found or already published'
       }, { status: 404 });
     }
 
