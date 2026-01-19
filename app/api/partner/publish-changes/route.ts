@@ -68,36 +68,74 @@ export async function POST(request: NextRequest) {
       reviewed_at: new Date().toISOString(),
     };
 
-    let result;
+    // Získať IP adresu
+    const forwardedFor = request.headers.get('x-forwarded-for');
+    const ipAddress = forwardedFor?.split(',')[0]?.trim() || null;
+
     let newDraftId = draft_id;
 
+    // DEBUG: Log user info pre audit
+    console.log('[publish-changes] DEBUG User:', {
+      user_id: user.id,
+      user_email: user.email,
+      isSuperadmin: userIsSuperadmin
+    });
+
     if (draft_id) {
-      // Update existing draft
-      result = await queryClient
-        .from('partner_drafts')
-        .update(draftData)
-        .eq('id', draft_id)
-        .select('id')
-        .single();
-    } else {
-      // Insert new draft
-      result = await queryClient
-        .from('partner_drafts')
-        .insert(draftData)
-        .select('id')
-        .single();
+      // Update existing draft cez RPC s audit parametrami
+      const { data, error } = await queryClient.rpc('update_partner_draft_with_audit', {
+        p_draft_id: draft_id,
+        p_partner_id: partner_id,
+        p_changes: draftData,
+        p_user_id: user.id,
+        p_user_email: user.email || null,
+        p_ip_address: ipAddress
+      });
 
-      if (result.data?.id) {
-        newDraftId = result.data.id;
+      if (error) {
+        console.error('[publish-changes] RPC update error:', error);
+        return NextResponse.json({
+          success: false,
+          error: error.message
+        }, { status: 500 });
       }
-    }
 
-    if (result.error) {
-      console.error('[publish-changes] Error:', result.error);
-      return NextResponse.json({
-        success: false,
-        error: result.error.message
-      }, { status: 500 });
+      if (!data?.success) {
+        console.error('[publish-changes] Update failed:', data?.error);
+        return NextResponse.json({
+          success: false,
+          error: data?.error || 'Update failed'
+        }, { status: 500 });
+      }
+
+      newDraftId = data.draft_id;
+    } else {
+      // Insert new draft cez RPC s audit parametrami
+      const { data, error } = await queryClient.rpc('insert_partner_draft_with_audit', {
+        p_partner_id: partner_id,
+        p_changes: draftData,
+        p_user_id: user.id,
+        p_user_email: user.email || null,
+        p_ip_address: ipAddress
+      });
+
+      if (error) {
+        console.error('[publish-changes] RPC insert error:', error);
+        return NextResponse.json({
+          success: false,
+          error: error.message
+        }, { status: 500 });
+      }
+
+      if (!data?.success) {
+        console.error('[publish-changes] Insert failed:', data?.error);
+        return NextResponse.json({
+          success: false,
+          error: data?.error || 'Insert failed'
+        }, { status: 500 });
+      }
+
+      newDraftId = data.draft_id;
     }
 
     // Revalidácia stránky
