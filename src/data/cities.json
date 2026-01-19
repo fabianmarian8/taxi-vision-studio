@@ -10149,6 +10149,7 @@
         {
           "name": "Taxi Marek Mrekaj",
           "slug": "taxi-marek-mrekaj-zakamenne",
+          "logo": "/logos/taxi-marek-mrekaj.webp",
           "phone": "+421911504333",
           "isPremium": false,
           "isPromotional": false,
