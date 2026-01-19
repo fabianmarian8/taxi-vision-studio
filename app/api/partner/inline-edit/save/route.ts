@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { isPartnerSkinId } from '@/lib/partner-skins';
 import { NextRequest, NextResponse } from 'next/server';
+import { setAuditContext } from '@/lib/audit-context';
 
 // Superadmin emails - can edit ALL partner pages
 const SUPERADMIN_EMAILS = [
@@ -185,6 +186,11 @@ export async function POST(request: NextRequest) {
         error: 'No valid fields to update'
       }, { status: 400 });
     }
+
+    // Nastaviť audit kontext pred zmenami
+    const forwardedFor = request.headers.get('x-forwarded-for');
+    const ipAddress = forwardedFor?.split(',')[0]?.trim() || null;
+    await setAuditContext(queryClient, user.id, user.email || null, ipAddress);
 
     let result;
 

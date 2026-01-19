@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
+import { setAuditContext } from '@/lib/audit-context';
 
 // Superadmin emails - can edit ALL partner pages
 const SUPERADMIN_EMAILS = [
@@ -63,6 +64,11 @@ export async function POST(request: NextRequest) {
         error: 'Not owner or partner not found'
       }, { status: 403 });
     }
+
+    // Nastaviť audit kontext pred zmenami
+    const forwardedFor = request.headers.get('x-forwarded-for');
+    const ipAddress = forwardedFor?.split(',')[0]?.trim() || null;
+    await setAuditContext(queryClient, user.id, user.email || null, ipAddress);
 
     // Aktualizácia statusu na approved - verify that row was actually updated
     const { data: updatedDraft, error: updateError } = await queryClient
