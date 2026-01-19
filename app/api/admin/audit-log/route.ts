@@ -24,34 +24,26 @@ export async function GET(request: NextRequest) {
   const operation = searchParams.get('operation') || null;
   const userId = searchParams.get('user_id') || null;
 
-  // Build query - use schema prefix in table name
-  let query = supabase
-    .from('audit.activity_log')
-    .select('*', { count: 'exact' })
-    .order('created_at', { ascending: false })
-    .range(offset, offset + limit - 1);
-
-  // Apply filters
-  if (table) {
-    query = query.eq('table_name', table);
-  }
-  if (operation) {
-    query = query.eq('operation', operation);
-  }
-  if (userId) {
-    query = query.eq('user_id', userId);
-  }
-
-  const { data, error, count } = await query;
+  // Use RPC function to access audit schema (SECURITY DEFINER)
+  const { data, error } = await supabase.rpc('get_audit_log', {
+    p_limit: limit,
+    p_offset: offset,
+    p_table: table,
+    p_operation: operation,
+    p_user_id: userId
+  });
 
   if (error) {
     console.error('Error fetching audit log:', error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
+  // Extract total_count from first row (window function)
+  const total = data && data.length > 0 ? Number(data[0].total_count) : 0;
+
   return NextResponse.json({
     logs: data || [],
-    total: count || 0,
+    total,
     limit,
     offset,
   });
