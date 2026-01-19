@@ -191,11 +191,13 @@ export async function POST(request: NextRequest) {
     const ipAddress = forwardedFor?.split(',')[0]?.trim() || null;
 
     // DEBUG: Log user info pre audit
+    console.log('[inline-edit/save] DEBUG User object:', JSON.stringify(user, null, 2));
     console.log('[inline-edit/save] Audit params:', {
       user_id: user.id,
       user_email: user.email,
       ip_address: ipAddress,
-      isSuperadmin
+      isSuperadmin,
+      user_keys: Object.keys(user || {})
     });
 
     // Použiť RPC funkciu ktorá nastaví audit kontext A vykoná operáciu v jednej transakcii
