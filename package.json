@@ -15,7 +15,8 @@
     "precompute-distances": "node --loader ts-node/esm scripts/precompute-distances.ts",
     "seed-premium": "node scripts/seed-marketing-premium.js",
     "scrape-azet": "node --loader ts-node/esm scripts/scrape-azet-taxi.ts",
-    "import-azet": "node --loader ts-node/esm scripts/import-azet-data.ts"
+    "import-azet": "node --loader ts-node/esm scripts/import-azet-data.ts",
+    "fomo-premium": "npx tsx scripts/fomo-premium-sk.ts"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.16",

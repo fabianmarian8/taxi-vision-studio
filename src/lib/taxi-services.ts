@@ -55,20 +55,22 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
         const dbPremiumValid = dbService.is_premium && !isExpired(dbService.premium_expires_at);
         // JSON premium is valid if true and not expired (and DB doesn't have its own expiration)
         const jsonPremiumValid = service.isPremium && !isExpired(service.premiumExpiresAt) && !dbService.premium_expires_at;
+        // Promotional premium (FOMO marketing) - never expires based on date, only when flag is removed
+        const promotionalPremiumValid = service.isPremium && service.isPromotional;
 
         // Partner status: DB takes priority, fallback to JSON
         const isPartner = dbService.is_partner || service.isPartner;
 
         return {
           ...service,
-          isPremium: dbPremiumValid || jsonPremiumValid,
+          isPremium: dbPremiumValid || jsonPremiumValid || promotionalPremiumValid,
           isPartner,
           premiumExpiresAt: effectiveExpiration,
         };
       }
 
-      // No DB record - check if JSON premium is expired
-      if (service.isPremium && isExpired(service.premiumExpiresAt)) {
+      // No DB record - check if JSON premium is expired (but not promotional)
+      if (service.isPremium && !service.isPromotional && isExpired(service.premiumExpiresAt)) {
         return {
           ...service,
           isPremium: false,
