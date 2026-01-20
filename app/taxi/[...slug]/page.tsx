@@ -621,6 +621,7 @@ async function UniversalListView({
               // Služba s redirectTo na partner stránku sa tiež zobrazí ako partner
               const isPartner = service.isPartner || !!service.redirectTo;
               const isPremium = service.isPremium;
+              const isPromotional = service.isPromotional; // Promo premium (nie platiaci)
               const ratingData = partnerRatings.get(service.name);
               const primaryAction = getPrimaryAction(service);
 
@@ -682,6 +683,12 @@ async function UniversalListView({
                             ? 'ring-2 ring-amber-300'
                             : 'ring-1 ring-gray-200'
                         }`}
+                      />
+                    ) : isPremium && isPromotional ? (
+                      <img
+                        src="/premium-taxi-badge.webp"
+                        alt="Premium taxi"
+                        className="w-10 h-10 rounded-full object-cover transition-transform hover:scale-105 ring-2 ring-amber-300"
                       />
                     ) : (
                       <div
@@ -1590,6 +1597,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
   const isPartner = service.isPartner;
   const isPremium = service.isPremium;
+  const isPromotional = service.isPromotional; // Promo premium (nie platiaci)
 
   // Partner page - full branded page
   if (isPartner) {
@@ -2200,6 +2208,12 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                       ? 'ring-2 ring-amber-300'
                       : 'ring-1 ring-gray-200'
                   }`}
+                />
+              ) : isPremium && isPromotional ? (
+                <img
+                  src="/premium-taxi-badge.webp"
+                  alt="Premium taxi"
+                  className="flex-shrink-0 w-16 h-16 rounded-2xl object-cover ring-2 ring-amber-300"
                 />
               ) : (
                 <div className={`flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center text-xl font-bold ${
