@@ -5876,8 +5876,8 @@
         },
         {
           "name": "TAXI KOSŤO 🚖",
-          "website": "https://www.facebook.com/people/Taxi-Kosťo/100057682898542",
-          "phone": "+421910205050",
+          "website": "https://www.instagram.com/taxikosto/",
+          "phone": "+421910505020",
           "address": "Zakvášov 1521/29, Považská Bystrica",
           "placeId": "ChIJc8STAdSNFEcRdKBBDmBEkYA"
         },
@@ -9208,7 +9208,7 @@
       "slug": "velke-kapusany",
       "region": "Košický kraj",
       "description": "Okresné mesto vo východnej časti Slovenska. Objednajte si taxi vo Veľkých Kapušanoch.",
-      "metaDescription": "Nájdite taxi v meste Veľké Kapušany. 4 taxislužby s telefónnymi číslami a webovými stránkami: Juraj Varga, Štefi taxi, Elite Taxi Veľké Kapušany  a ďalšie. Kontaktujte priamo.",
+      "metaDescription": "Nájdite taxi v meste Veľké Kapušany. 3 taxislužby s telefónnymi číslami a webovými stránkami: Juraj Varga, Elite Taxi Veľké Kapušany, Taxi Király. Kontaktujte priamo.",
       "keywords": [
         "taxi veľké kapušany",
         "taxislužba veľké kapušany",
@@ -9224,15 +9224,6 @@
           "isPromotional": false,
           "address": "23, P. O. Hviezdoslava 26, Veľké Kapušany",
           "placeId": "ChIJrzIGS8MgOUcRHm_wHEfRFdo"
-        },
-        {
-          "name": "Štefi taxi",
-          "phone": "+421907122023",
-          "isPremium": true,
-          "isPromotional": true,
-          "address": "Sídlisko P. O. Hviezdoslava 79/137, Veľké Kapušany",
-          "placeId": "ChIJqfI5fsghOUcRDimhOSFKrJQ",
-          "premiumExpiresAt": "2026-01-27T18:19:55.622Z"
         },
         {
           "name": "Elite Taxi Veľké Kapušany ",
