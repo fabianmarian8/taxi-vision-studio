@@ -20,8 +20,8 @@ Sentry.init({
   // Environment
   environment: process.env.NODE_ENV,
 
-  // Only enable in production
-  enabled: process.env.NODE_ENV === 'production',
+  // Enable in production and allow testing in development with SENTRY_DEBUG env
+  enabled: process.env.NODE_ENV === 'production' || process.env.NEXT_PUBLIC_SENTRY_DSN?.length > 0,
 
   // Filter out known non-issues
   ignoreErrors: [
