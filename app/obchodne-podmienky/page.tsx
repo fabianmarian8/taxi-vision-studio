@@ -240,6 +240,18 @@ const ObchodnePodmienky = () => {
               <li>Už zaplatené poplatky sa nevracajú</li>
               <li>Po skončení obdobia sa taxislužba vráti do štandardného zobrazenia</li>
             </ul>
+
+            <div className="bg-orange-50 dark:bg-orange-900/20 border-l-4 border-orange-500 p-6 mt-6">
+              <p className="text-foreground font-semibold mb-2">
+                Dôležité upozornenie o skončení predplatného:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-foreground/80">
+                <li>Všetky výhody služieb PREMIUM a PARTNER sa vzťahujú <strong>výhradne na obdobie aktívneho predplatného</strong></li>
+                <li><strong>Po skončení PREMIUM:</strong> taxislužba stratí zlaté zvýraznenie, badge "OVERENÉ" a prioritnú pozíciu v zozname</li>
+                <li><strong>Po skončení PARTNER:</strong> okrem vyššie uvedeného bude odstránená aj personalizovaná stránka taxislužby vrátane galérie a cenníka</li>
+                <li>Taxislužba sa automaticky vráti do štandardného (bezplatného) zobrazenia v zozname</li>
+              </ul>
+            </div>
           </section>
 
           {/* 9. Reklamácie */}
