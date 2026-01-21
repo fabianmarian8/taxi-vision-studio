@@ -11,6 +11,7 @@
  */
 
 import type { NextConfig } from 'next';
+import { withSentryConfig } from '@sentry/nextjs';
 import withBundleAnalyzer from '@next/bundle-analyzer';
 
 const bundleAnalyzer = withBundleAnalyzer({
@@ -50,7 +51,7 @@ const nextConfig: NextConfig = {
           ...(!isDev ? [{
             key: 'Content-Security-Policy',
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.clarity.ms https://www.google-analytics.com https://nominatim.openstreetmap.org https://*.supabase.co; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.clarity.ms https://www.googletagmanager.com https://www.google-analytics.com https://*.sentry.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.clarity.ms https://www.google-analytics.com https://nominatim.openstreetmap.org https://*.supabase.co https://*.sentry.io https://*.ingest.sentry.io; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';",
           }] : []),
           {
             key: 'X-Content-Type-Options',
@@ -88,4 +89,33 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default bundleAnalyzer(nextConfig);
+// Sentry configuration options
+const sentryWebpackPluginOptions = {
+  // For all available options, see:
+  // https://github.com/getsentry/sentry-webpack-plugin#options
+
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+
+  // Only print logs for uploading source maps in CI
+  silent: !process.env.CI,
+
+  // Upload a larger set of source maps for prettier stack traces (increases build time)
+  widenClientFileUpload: true,
+
+  // Automatically annotate React components to show their full name in breadcrumbs and session replay
+  reactComponentAnnotation: {
+    enabled: true,
+  },
+
+  // Route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
+  tunnelRoute: '/monitoring',
+
+  // Hides source maps from generated client bundles
+  hideSourceMaps: true,
+
+  // Automatically tree-shake Sentry logger statements to reduce bundle size
+  disableLogger: true,
+};
+
+export default withSentryConfig(bundleAnalyzer(nextConfig), sentryWebpackPluginOptions);
