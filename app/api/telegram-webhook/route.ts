@@ -3,6 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+const TELEGRAM_WEBHOOK_SECRET = process.env.TELEGRAM_WEBHOOK_SECRET;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
@@ -29,6 +30,17 @@ interface TelegramUpdate {
 
 export async function POST(request: NextRequest) {
   try {
+    // SECURITY: Validate Telegram webhook secret token
+    // This token is set when registering the webhook with setWebhook API
+    // Telegram sends it in X-Telegram-Bot-Api-Secret-Token header
+    if (TELEGRAM_WEBHOOK_SECRET) {
+      const secretHeader = request.headers.get('x-telegram-bot-api-secret-token');
+      if (secretHeader !== TELEGRAM_WEBHOOK_SECRET) {
+        console.warn('Telegram webhook: Invalid or missing secret token');
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      }
+    }
+
     // Read raw body first for better error handling
     const rawBody = await request.text();
     console.log('Telegram webhook raw body length:', rawBody.length);

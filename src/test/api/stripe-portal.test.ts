@@ -1,5 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { createMockRequest, expectError, expectJsonResponse } from '../api-helpers';
+import { createMockRequest, createMockSupabaseClient, expectError, expectJsonResponse } from '../api-helpers';
+
+// Mock Supabase server client
+const mockSupabaseClient = createMockSupabaseClient();
+vi.mock('@/lib/supabase/server', () => ({
+  createClient: vi.fn(() => Promise.resolve(mockSupabaseClient)),
+}));
 
 // Mock Stripe
 vi.mock('@/lib/stripe', () => ({
@@ -21,7 +27,13 @@ describe('POST /api/stripe/portal', () => {
     vi.clearAllMocks();
   });
 
-  it('should return 400 when customerId is missing', async () => {
+  it('should return 401 when user is not authenticated', async () => {
+    // Mock no authenticated user
+    mockSupabaseClient.auth.getUser.mockResolvedValue({
+      data: { user: null },
+      error: { message: 'No session' },
+    });
+
     const request = createMockRequest({
       method: 'POST',
       body: { returnUrl: 'https://example.com' },
@@ -29,16 +41,58 @@ describe('POST /api/stripe/portal', () => {
 
     const response = await POST(request as never);
 
-    await expectError(response, 400, 'Customer ID required');
+    await expectError(response, 401, 'Unauthorized');
+  });
+
+  it('should return 404 when no billing account found', async () => {
+    // Mock authenticated user
+    mockSupabaseClient.auth.getUser.mockResolvedValue({
+      data: { user: { id: 'user_123', email: 'test@example.com' } },
+      error: null,
+    });
+
+    // Mock no partner/stripe_customer_id found
+    const mockQuery = {
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockReturnThis(),
+      single: vi.fn().mockResolvedValue({ data: null, error: null }),
+    };
+    mockSupabaseClient.from.mockReturnValue(mockQuery);
+
+    const request = createMockRequest({
+      method: 'POST',
+      body: { returnUrl: 'https://example.com' },
+    });
+
+    const response = await POST(request as never);
+
+    await expectError(response, 404, 'No billing account found');
   });
 
   it('should create portal session successfully', async () => {
     const mockSession = { url: 'https://billing.stripe.com/session123' };
     vi.mocked(stripe.billingPortal.sessions.create).mockResolvedValue(mockSession as never);
 
+    // Mock authenticated user
+    mockSupabaseClient.auth.getUser.mockResolvedValue({
+      data: { user: { id: 'user_123', email: 'test@example.com' } },
+      error: null,
+    });
+
+    // Mock partner with stripe_customer_id
+    const mockQuery = {
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockReturnThis(),
+      single: vi.fn().mockResolvedValue({
+        data: { stripe_customer_id: 'cus_test123' },
+        error: null,
+      }),
+    };
+    mockSupabaseClient.from.mockReturnValue(mockQuery);
+
     const request = createMockRequest({
       method: 'POST',
-      body: { customerId: 'cus_test123', returnUrl: 'https://example.com/partner' },
+      body: { returnUrl: 'https://example.com/partner' },
     });
 
     const response = await POST(request as never);
@@ -56,9 +110,26 @@ describe('POST /api/stripe/portal', () => {
       new Error('Customer not found')
     );
 
+    // Mock authenticated user
+    mockSupabaseClient.auth.getUser.mockResolvedValue({
+      data: { user: { id: 'user_123', email: 'test@example.com' } },
+      error: null,
+    });
+
+    // Mock partner with stripe_customer_id
+    const mockQuery = {
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockReturnThis(),
+      single: vi.fn().mockResolvedValue({
+        data: { stripe_customer_id: 'cus_invalid' },
+        error: null,
+      }),
+    };
+    mockSupabaseClient.from.mockReturnValue(mockQuery);
+
     const request = createMockRequest({
       method: 'POST',
-      body: { customerId: 'cus_invalid' },
+      body: {},
     });
 
     const response = await POST(request as never);

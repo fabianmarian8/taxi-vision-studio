@@ -1,22 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
+import { createClient } from '@/lib/supabase/server';
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { customerId, returnUrl } = body;
+    // SECURITY: Verify user is authenticated
+    const supabase = await createClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
 
-    // Validation
-    if (!customerId || typeof customerId !== 'string') {
+    if (authError || !user) {
       return NextResponse.json(
-        { error: 'Customer ID required' },
-        { status: 400 }
+        { error: 'Unauthorized' },
+        { status: 401 }
       );
     }
 
-    // Create portal session
+    // SECURITY: Get stripe_customer_id from partner record, NOT from request
+    const { data: partner, error: partnerError } = await supabase
+      .from('partners')
+      .select('stripe_customer_id')
+      .eq('user_id', user.id)
+      .single();
+
+    if (partnerError || !partner?.stripe_customer_id) {
+      return NextResponse.json(
+        { error: 'No billing account found' },
+        { status: 404 }
+      );
+    }
+
+    const body = await request.json();
+    const { returnUrl } = body;
+
+    // Create portal session using verified customer ID
     const session = await stripe.billingPortal.sessions.create({
-      customer: customerId,
+      customer: partner.stripe_customer_id,
       return_url: returnUrl || `${getBaseUrl(request)}/partner`,
     });
 

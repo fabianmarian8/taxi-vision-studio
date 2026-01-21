@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { createClient as createServerClient } from '@/lib/supabase/server';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -13,13 +14,17 @@ function getServiceClient() {
 
 export async function POST(request: NextRequest) {
   try {
-    // Parse request body to get user info
-    const body = await request.json();
-    const { userId, userEmail } = body;
+    // SECURITY: Get user from authenticated session, NOT from request body
+    const supabase = await createServerClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
 
-    if (!userId || !userEmail) {
-      return NextResponse.json({ error: 'Missing user ID or email' }, { status: 400 });
+    if (authError || !user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
+
+    // Use verified user data from session
+    const userId = user.id;
+    const userEmail = user.email || 'unknown';
 
     // Get IP address from headers
     const forwardedFor = request.headers.get('x-forwarded-for');
