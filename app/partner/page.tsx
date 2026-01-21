@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { PasswordSettings } from './PasswordSettings';
 import { SuperadminPartnerList } from './SuperadminPartnerList';
 import { isSuperadmin } from '@/lib/superadmin';
+import { CustomerPortalButton } from '@/components/stripe/CustomerPortalButton';
 
 interface PageProps {
   searchParams: Promise<{ as?: string }>;
@@ -123,6 +124,46 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
   }
 
   const { data: partners, error } = await partnersQuery;
+
+  // Fetch subscription data for each partner (via taxi_services)
+  const partnerSubscriptions: Map<string, { stripe_customer_id: string; status: string; plan_type: string }> = new Map();
+
+  if (partners && partners.length > 0) {
+    const adminClient = createAdminClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+
+    // Get all taxi_services with subscriptions for these partners
+    for (const partner of partners) {
+      const { data: taxiService } = await adminClient
+        .from('taxi_services')
+        .select(`
+          subscription_id,
+          subscriptions (
+            stripe_customer_id,
+            status,
+            plan_type
+          )
+        `)
+        .eq('city_slug', partner.city_slug)
+        .ilike('name', partner.name)
+        .not('subscription_id', 'is', null)
+        .single();
+
+      if (taxiService?.subscriptions) {
+        // Supabase returns nested object when using .single()
+        const sub = taxiService.subscriptions as unknown as { stripe_customer_id: string; status: string; plan_type: string };
+        if (sub.stripe_customer_id) {
+          partnerSubscriptions.set(partner.id, {
+            stripe_customer_id: sub.stripe_customer_id,
+            status: sub.status,
+            plan_type: sub.plan_type,
+          });
+        }
+      }
+    }
+  }
 
   const statusLabels: Record<string, { label: string; color: string }> = {
     draft: { label: 'Rozpracované', color: 'bg-gray-100 text-gray-700' },
@@ -273,6 +314,7 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
               const latestDraft = sortedDrafts[0];
               const status = latestDraft?.status || 'draft';
               const statusInfo = statusLabels[status];
+              const subscription = partnerSubscriptions.get(partner.id);
 
               return (
                 <div
@@ -287,11 +329,24 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
                         </h3>
                         <p className="text-sm text-gray-500">{partner.city_slug}</p>
                       </div>
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-medium ${statusInfo.color}`}
-                      >
-                        {statusInfo.label}
-                      </span>
+                      <div className="flex flex-col items-end gap-1">
+                        <span
+                          className={`px-3 py-1 rounded-full text-xs font-medium ${statusInfo.color}`}
+                        >
+                          {statusInfo.label}
+                        </span>
+                        {subscription && (
+                          <span
+                            className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                              subscription.status === 'active'
+                                ? 'bg-green-100 text-green-700'
+                                : 'bg-gray-100 text-gray-600'
+                            }`}
+                          >
+                            {subscription.plan_type?.toUpperCase()} {subscription.status === 'active' ? '✓' : ''}
+                          </span>
+                        )}
+                      </div>
                     </div>
 
                     {latestDraft?.submitted_at && (
@@ -319,6 +374,20 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
                         LIVE úpravy
                       </Link>
                     </div>
+
+                    {/* Stripe Customer Portal - pre správu predplatného */}
+                    {subscription && subscription.stripe_customer_id && (
+                      <div className="mt-4 pt-4 border-t border-gray-100">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-gray-600">Predplatné</span>
+                          <CustomerPortalButton
+                            customerId={subscription.stripe_customer_id}
+                            variant="outline"
+                            className="text-sm"
+                          />
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               );
