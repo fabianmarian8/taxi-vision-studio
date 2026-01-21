@@ -53,10 +53,10 @@ export async function middleware(request: NextRequest) {
     return response;
   }
 
-  // Protect /admin routes (except /admin/login)
-  if (pathname.startsWith('/admin')) {
-    if (pathname === '/admin/login') {
-      // Allow access to login page
+  // Protect /admin and /api/admin routes (except login endpoints)
+  if (pathname.startsWith('/admin') || pathname.startsWith('/api/admin')) {
+    if (pathname === '/admin/login' || pathname === '/api/admin/login') {
+      // Allow access to login page and login API
       return NextResponse.next();
     }
 

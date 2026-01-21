@@ -39,28 +39,40 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
   }
 
-  console.log(`Received Stripe event: ${event.type}`);
+  console.log(`Received Stripe event: ${event.type} (${event.id})`);
+
+  // Idempotency check - skip if we've already processed this event
+  const { data: existingEvent } = await getSupabase()
+    .from('subscription_events')
+    .select('id')
+    .eq('stripe_event_id', event.id)
+    .maybeSingle();
+
+  if (existingEvent) {
+    console.log(`⏭️ Skipping duplicate event: ${event.id}`);
+    return NextResponse.json({ received: true, skipped: true });
+  }
 
   try {
     switch (event.type) {
       case 'customer.subscription.created':
-        await handleSubscriptionCreated(event.data.object as Stripe.Subscription);
+        await handleSubscriptionCreated(event.data.object as Stripe.Subscription, event.id);
         break;
 
       case 'customer.subscription.updated':
-        await handleSubscriptionUpdated(event.data.object as Stripe.Subscription);
+        await handleSubscriptionUpdated(event.data.object as Stripe.Subscription, event.id);
         break;
 
       case 'customer.subscription.deleted':
-        await handleSubscriptionDeleted(event.data.object as Stripe.Subscription);
+        await handleSubscriptionDeleted(event.data.object as Stripe.Subscription, event.id);
         break;
 
       case 'invoice.paid':
-        await handleInvoicePaid(event.data.object as Stripe.Invoice);
+        await handleInvoicePaid(event.data.object as Stripe.Invoice, event.id);
         break;
 
       case 'invoice.payment_failed':
-        await handlePaymentFailed(event.data.object as Stripe.Invoice);
+        await handlePaymentFailed(event.data.object as Stripe.Invoice, event.id);
         break;
 
       default:
@@ -74,11 +86,17 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ received: true });
 }
 
-async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
+async function handleSubscriptionCreated(subscription: Stripe.Subscription, stripeEventId: string) {
   const subscriptionItem = subscription.items.data[0];
   const amountCents = subscriptionItem?.price?.unit_amount || 0;
-  const periodStart = subscriptionItem?.current_period_start || Math.floor(Date.now() / 1000);
-  const periodEnd = subscriptionItem?.current_period_end || Math.floor(Date.now() / 1000);
+  // Period fields are on subscription items in current Stripe SDK
+  const periodStart = subscriptionItem?.current_period_start;
+  const periodEnd = subscriptionItem?.current_period_end;
+
+  if (!periodStart || !periodEnd) {
+    console.error(`Missing period data for subscription ${subscription.id}`);
+    throw new Error('Missing period data');
+  }
 
   // Get customer email from Stripe API (not from DB - new customers won't have DB record yet)
   let customerEmail = '';
@@ -145,15 +163,21 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
   // Link subscription to taxi service (auto-enables premium)
   await linkSubscriptionToTaxiService(subscription.id, citySlug, taxiServiceName);
 
-  // Log event
-  await logSubscriptionEvent(subscription.id, 'created', amountCents, null, subscription.status);
+  // Log event with Stripe event ID for idempotency
+  await logSubscriptionEvent(subscription.id, 'created', amountCents, null, subscription.status, stripeEventId);
 }
 
-async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
+async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stripeEventId: string) {
   const subscriptionItem = subscription.items.data[0];
   const amountCents = subscriptionItem?.price?.unit_amount || 0;
-  const periodStart = subscriptionItem?.current_period_start || Math.floor(Date.now() / 1000);
-  const periodEnd = subscriptionItem?.current_period_end || Math.floor(Date.now() / 1000);
+  // Period fields are on subscription items in current Stripe SDK
+  const periodStart = subscriptionItem?.current_period_start;
+  const periodEnd = subscriptionItem?.current_period_end;
+
+  if (!periodStart || !periodEnd) {
+    console.error(`Missing period data for subscription ${subscription.id}`);
+    throw new Error('Missing period data');
+  }
 
   // Get previous status
   const { data: existing } = await getSupabase()
@@ -192,12 +216,13 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
       'updated',
       amountCents,
       previousStatus,
-      subscription.status
+      subscription.status,
+      stripeEventId
     );
   }
 }
 
-async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
+async function handleSubscriptionDeleted(subscription: Stripe.Subscription, stripeEventId: string) {
   // Get previous status
   const { data: existing } = await getSupabase()
     .from('subscriptions')
@@ -228,11 +253,12 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
     'canceled',
     null,
     previousStatus,
-    'canceled'
+    'canceled',
+    stripeEventId
   );
 }
 
-async function handleInvoicePaid(invoice: Stripe.Invoice) {
+async function handleInvoicePaid(invoice: Stripe.Invoice, stripeEventId: string) {
   // Get subscription ID from invoice (handle both old and new API structure)
   const subscriptionId = (invoice as unknown as { subscription?: string | null }).subscription;
   if (!subscriptionId) return;
@@ -243,11 +269,12 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
     'renewed',
     invoice.amount_paid,
     null,
-    null
+    null,
+    stripeEventId
   );
 }
 
-async function handlePaymentFailed(invoice: Stripe.Invoice) {
+async function handlePaymentFailed(invoice: Stripe.Invoice, stripeEventId: string) {
   // Get subscription ID from invoice (handle both old and new API structure)
   const subscriptionId = (invoice as unknown as { subscription?: string | null }).subscription;
   if (!subscriptionId) return;
@@ -267,7 +294,8 @@ async function handlePaymentFailed(invoice: Stripe.Invoice) {
     'payment_failed',
     invoice.amount_due,
     null,
-    'past_due'
+    'past_due',
+    stripeEventId
   );
 }
 
@@ -300,7 +328,13 @@ async function linkSubscriptionToTaxiService(
   const isPartnerPlan = subscription.plan_type === 'partner';
 
   // Find and update the matching taxi service
-  const { error } = await getSupabase()
+  // SECURITY: Escape LIKE pattern characters to prevent pattern injection
+  const escapedName = taxiServiceName
+    .replace(/\\/g, '\\\\')
+    .replace(/%/g, '\\%')
+    .replace(/_/g, '\\_');
+
+  const { error, count } = await getSupabase()
     .from('taxi_services')
     .update({
       subscription_id: subscription.id,
@@ -308,14 +342,18 @@ async function linkSubscriptionToTaxiService(
       is_partner: isActive && isPartnerPlan,
       premium_expires_at: isActive ? subscription.current_period_end : null,
       updated_at: new Date().toISOString(),
-    })
+    }, { count: 'exact' })
     .eq('city_slug', citySlug)
-    .ilike('name', taxiServiceName);
+    .ilike('name', escapedName);
 
   if (error) {
     console.error('Error linking subscription to taxi service:', error);
+  } else if (count === 0) {
+    console.warn(`⚠️ No taxi service found for ${taxiServiceName} in ${citySlug}`);
+  } else if (count && count > 1) {
+    console.error(`🚨 SECURITY: Multiple (${count}) taxi services updated for ${taxiServiceName} in ${citySlug}!`);
   } else {
-    console.log(`Linked subscription ${stripeSubscriptionId} to ${taxiServiceName} in ${citySlug} (partner: ${isPartnerPlan})`);
+    console.log(`✅ Linked subscription ${stripeSubscriptionId} to ${taxiServiceName} in ${citySlug} (partner: ${isPartnerPlan})`);
   }
 }
 
@@ -324,7 +362,8 @@ async function logSubscriptionEvent(
   eventType: string,
   amountCents: number | null,
   previousStatus: string | null,
-  newStatus: string | null
+  newStatus: string | null,
+  stripeEventId: string
 ) {
   // Get subscription ID from our database
   const { data: subscription } = await getSupabase()
@@ -338,11 +377,19 @@ async function logSubscriptionEvent(
     return;
   }
 
-  await getSupabase().from('subscription_events').insert({
+  // Insert with stripe_event_id for idempotency (UNIQUE constraint handles duplicates)
+  const { error } = await getSupabase().from('subscription_events').insert({
     subscription_id: subscription.id,
+    stripe_event_id: stripeEventId,
     event_type: eventType,
     amount_cents: amountCents,
     previous_status: previousStatus,
     new_status: newStatus,
   });
+
+  // Throw on non-duplicate errors so Stripe retries
+  if (error && !error.message?.includes('duplicate')) {
+    console.error('Error logging subscription event:', error);
+    throw error;
+  }
 }
