@@ -34,6 +34,19 @@ Sentry.init({
     'Load failed',
     // User cancellations
     'AbortError',
+    // Microsoft Clarity - third-party analytics script errors (iOS Safari race condition)
+    /usedContainerScopedDefaults/,
+    /clarity\.js/,
+  ],
+
+  // Ignore errors from third-party scripts
+  denyUrls: [
+    // Microsoft Clarity
+    /clarity\.ms/i,
+    /clarity\.js/i,
+    // Google Analytics / GTM
+    /gtag/i,
+    /googletagmanager\.com/i,
   ],
 
   // Integrations
