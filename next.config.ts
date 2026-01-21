@@ -13,6 +13,7 @@
 import type { NextConfig } from 'next';
 import { withSentryConfig } from '@sentry/nextjs';
 import withBundleAnalyzer from '@next/bundle-analyzer';
+import { withAxiom } from 'next-axiom';
 
 const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
@@ -118,4 +119,5 @@ const sentryWebpackPluginOptions = {
   disableLogger: true,
 };
 
-export default withSentryConfig(bundleAnalyzer(nextConfig), sentryWebpackPluginOptions);
+// Wrapper order: Axiom -> Bundle Analyzer -> Sentry (outer to inner)
+export default withSentryConfig(withAxiom(bundleAnalyzer(nextConfig)), sentryWebpackPluginOptions);
