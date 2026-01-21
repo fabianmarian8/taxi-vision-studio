@@ -11,13 +11,13 @@ export async function POST(request: NextRequest) {
     // Check rate limit first
     const clientIp = getClientIp(request);
     const rateLimitKey = `login:${clientIp}`;
-    const rateLimit = checkRateLimit(rateLimitKey, LOGIN_RATE_LIMIT, LOGIN_WINDOW_MS);
+    const rateLimit = await checkRateLimit(rateLimitKey, LOGIN_RATE_LIMIT, LOGIN_WINDOW_MS);
 
     if (!rateLimit.success) {
       const retryAfter = Math.ceil((rateLimit.resetAt.getTime() - Date.now()) / 1000);
       return NextResponse.json(
         {
-          error: 'Too many login attempts. Please try again later.',
+          error: 'Príliš veľa pokusov. Skúste neskôr.',
           retryAfter,
         },
         {

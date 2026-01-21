@@ -16,7 +16,7 @@ vi.mock('@/lib/auth', () => ({
 
 vi.mock('@/lib/rate-limit', () => ({
   getClientIp: vi.fn().mockReturnValue('127.0.0.1'),
-  checkRateLimit: vi.fn().mockReturnValue({ success: true, remaining: 4 }),
+  checkRateLimit: vi.fn().mockResolvedValue({ success: true, remaining: 4 }),
 }));
 
 // Import after mocks
@@ -99,7 +99,7 @@ describe('POST /api/admin/login', () => {
   describe('Rate Limiting', () => {
     it('should return 429 when rate limit exceeded', async () => {
       const resetAt = new Date(Date.now() + 60000);
-      vi.mocked(checkRateLimit).mockReturnValue({
+      vi.mocked(checkRateLimit).mockResolvedValue({
         success: false,
         remaining: 0,
         resetAt,
@@ -116,12 +116,12 @@ describe('POST /api/admin/login', () => {
       expect(response.headers.get('Retry-After')).toBeDefined();
 
       const json = (await response.json()) as { error: string; retryAfter: number };
-      expect(json.error).toContain('Too many login attempts');
+      expect(json.error).toContain('Príliš veľa pokusov');
       expect(json.retryAfter).toBeGreaterThan(0);
     });
 
     it('should allow request when within rate limit', async () => {
-      vi.mocked(checkRateLimit).mockReturnValue({
+      vi.mocked(checkRateLimit).mockResolvedValue({
         success: true,
         remaining: 3,
         resetAt: new Date(),
@@ -142,7 +142,7 @@ describe('POST /api/admin/login', () => {
 
   describe('Error Handling', () => {
     it('should return 500 on unexpected error', async () => {
-      vi.mocked(checkRateLimit).mockReturnValue({ success: true, remaining: 4, resetAt: new Date() });
+      vi.mocked(checkRateLimit).mockResolvedValue({ success: true, remaining: 4, resetAt: new Date() });
       vi.mocked(verifyCredentials).mockRejectedValue(new Error('Database connection failed'));
 
       const request = createMockRequest({

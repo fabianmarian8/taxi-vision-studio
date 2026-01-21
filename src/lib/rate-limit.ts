@@ -1,15 +1,65 @@
-/**
- * Simple in-memory rate limiter for login protection
- * Note: This resets on server restart - acceptable for basic brute force protection
- * For production at scale, consider Upstash Redis rate limiting
- */
+import { Ratelimit } from '@upstash/ratelimit';
+import { Redis } from '@upstash/redis';
 
+// Lazy initialization
+let ratelimit: Ratelimit | null = null;
+
+export interface RateLimitResult {
+  success: boolean;
+  remaining: number;
+  resetAt: Date;
+}
+
+function getRatelimit() {
+  if (!ratelimit && process.env.UPSTASH_REDIS_REST_URL) {
+    const redis = new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+    });
+
+    ratelimit = new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(5, '15 m'), // 5 requests per 15 minutes
+      analytics: true,
+    });
+  }
+  return ratelimit;
+}
+
+/**
+ * Check rate limit for a given identifier (usually IP address)
+ * Falls back to in-memory implementation if Upstash is not configured
+ * @param identifier - Unique identifier (IP, user ID, etc.)
+ * @param limit - Maximum requests allowed
+ * @param windowMs - Time window in milliseconds
+ */
+export async function checkRateLimit(
+  identifier: string,
+  limit: number = 5,
+  windowMs: number = 15 * 60 * 1000 // 15 minutes
+): Promise<RateLimitResult> {
+  const limiter = getRatelimit();
+
+  if (limiter) {
+    // Use Upstash Redis rate limiting
+    const result = await limiter.limit(identifier);
+    return {
+      success: result.success,
+      remaining: result.remaining,
+      resetAt: new Date(result.reset),
+    };
+  }
+
+  // Fallback to in-memory implementation
+  return checkRateLimitInMemory(identifier, limit, windowMs);
+}
+
+// Fallback in-memory implementation
 interface RateLimitEntry {
   count: number;
   resetAt: number;
 }
 
-// In-memory store (shared across requests in same serverless instance)
 const store = new Map<string, RateLimitEntry>();
 
 // Cleanup old entries periodically (every 100 calls)
@@ -26,22 +76,10 @@ function cleanupOldEntries() {
   }
 }
 
-export interface RateLimitResult {
-  success: boolean;
-  remaining: number;
-  resetAt: Date;
-}
-
-/**
- * Check rate limit for a given identifier (usually IP address)
- * @param identifier - Unique identifier (IP, user ID, etc.)
- * @param limit - Maximum requests allowed
- * @param windowMs - Time window in milliseconds
- */
-export function checkRateLimit(
+function checkRateLimitInMemory(
   identifier: string,
-  limit: number = 5,
-  windowMs: number = 15 * 60 * 1000 // 15 minutes
+  limit: number,
+  windowMs: number
 ): RateLimitResult {
   cleanupOldEntries();
 
