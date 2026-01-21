@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe, STRIPE_PRICES } from '@/lib/stripe';
+import { logger } from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
+  const startTime = Date.now();
+  const log = logger.with({ endpoint: 'checkout/create-session' });
+
   try {
     const body = await request.json();
     const { plan, citySlug, taxiServiceName } = body;
@@ -64,12 +68,25 @@ export async function POST(request: NextRequest) {
       allow_promotion_codes: true,
     });
 
+    log.info('Checkout session created', {
+      sessionId: session.id,
+      plan,
+      citySlug,
+      taxiServiceName,
+      duration: Date.now() - startTime,
+    });
+    await logger.flush();
+
     return NextResponse.json({
       sessionId: session.id,
       url: session.url,
     });
   } catch (error) {
-    console.error('[checkout/create-session] Error:', error);
+    log.error('Checkout session creation failed', {
+      error: error instanceof Error ? error.message : 'Unknown',
+      duration: Date.now() - startTime,
+    });
+    await logger.flush();
     return NextResponse.json(
       { error: 'Failed to create checkout session' },
       { status: 500 }

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { constructWebhookEvent, getPlanTypeFromAmount, stripe } from '@/lib/stripe';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { logger } from '@/lib/logger';
 
 // Lazy-initialized Supabase client to avoid build-time errors
 let _supabase: SupabaseClient | null = null;
@@ -19,10 +20,13 @@ function getSupabase(): SupabaseClient {
 }
 
 export async function POST(request: NextRequest) {
+  const startTime = Date.now();
   const body = await request.text();
   const signature = request.headers.get('stripe-signature');
 
   if (!signature) {
+    logger.warn('Stripe webhook missing signature');
+    await logger.flush();
     return NextResponse.json({ error: 'Missing signature' }, { status: 400 });
   }
 
@@ -35,11 +39,15 @@ export async function POST(request: NextRequest) {
       process.env.STRIPE_WEBHOOK_SECRET || ''
     );
   } catch (err) {
-    console.error('Webhook signature verification failed:', err);
+    logger.error('Stripe webhook signature verification failed', {
+      error: err instanceof Error ? err.message : 'Unknown',
+    });
+    await logger.flush();
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
   }
 
-  console.log(`Received Stripe event: ${event.type} (${event.id})`);
+  const log = logger.with({ endpoint: 'stripe-webhook', eventType: event.type, eventId: event.id });
+  log.info('Stripe webhook received');
 
   // Idempotency check - skip if we've already processed this event
   const { data: existingEvent } = await getSupabase()
@@ -79,10 +87,16 @@ export async function POST(request: NextRequest) {
         console.log(`Unhandled event type: ${event.type}`);
     }
   } catch (error) {
-    console.error('Error processing webhook:', error);
+    log.error('Webhook processing failed', {
+      error: error instanceof Error ? error.message : 'Unknown',
+      duration: Date.now() - startTime,
+    });
+    await logger.flush();
     return NextResponse.json({ error: 'Webhook processing failed' }, { status: 500 });
   }
 
+  log.info('Webhook processed successfully', { duration: Date.now() - startTime });
+  await logger.flush();
   return NextResponse.json({ received: true });
 }
 

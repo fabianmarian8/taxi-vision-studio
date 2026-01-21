@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { z } from 'zod';
 import { escapeHtml, escapeHtmlWithBreaks } from '@/lib/html-escape';
+import { logger } from '@/lib/logger';
 
 // Helper pre podmienené logovanie (iba v development)
 const isDev = process.env.NODE_ENV === 'development';
@@ -99,12 +100,16 @@ const ContactFormEmail = ({
 `;
 
 export async function POST(request: NextRequest) {
+  const startTime = Date.now();
+  const log = logger.with({ endpoint: 'contact' });
+
   try {
     devLog('[Contact API] Received POST request');
 
     // Kontrola API kľúča
     if (!process.env.RESEND_API_KEY) {
-      console.error('[Contact API] RESEND_API_KEY is not configured');
+      log.error('RESEND_API_KEY is not configured');
+      await logger.flush();
       return NextResponse.json(
         { error: 'Email service is not configured' },
         { status: 500 }
@@ -197,12 +202,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    devLog('[Contact API] Email sent successfully:', {
-      id: data?.id,
+    const duration = Date.now() - startTime;
+    log.info('Contact form submitted successfully', {
+      emailId: data?.id,
       city,
       taxiName,
-      timestamp: new Date().toISOString(),
+      duration,
     });
+    await logger.flush();
 
     return NextResponse.json(
       {
@@ -213,8 +220,12 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    // Error handling - iba minimálne logovanie v produkcii
-    console.error('[Contact API] Unexpected error:', error instanceof Error ? error.message : 'Unknown');
+    const duration = Date.now() - startTime;
+    log.error('Contact form error', {
+      error: error instanceof Error ? error.message : 'Unknown',
+      duration,
+    });
+    await logger.flush();
 
     return NextResponse.json(
       {
