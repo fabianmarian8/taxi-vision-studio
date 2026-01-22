@@ -9873,7 +9873,7 @@
           "name": "Fast Taxi Zvolen",
           "phone": "+421 902 048 583",
           "website": "https://zvolen-taxi.sk/",
-          "isPartner": true,
+          "isPartner": false,
           "partnerData": {
             "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
             "description": "Fast Taxi Zvolen je profesionálna taxislužba s dlhoročnými skúsenosťami v oblasti osobnej prepravy. Ponúkame spoľahlivé služby 24 hodín denne, 7 dní v týždni. Naša flotila moderných vozidiel zabezpečí váš komfort a bezpečnosť na každej ceste. Profesionálni vodiči, anglicky hovoriaci personál, monitorovanie letov pri letiskových transferoch.",
