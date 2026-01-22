@@ -141,7 +141,7 @@ export default function PreTaxikyPage() {
             </p>
 
             {/* Hero Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
+            <div className="grid grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto">
               {[
                 { label: 'Miest a obcí', value: '2 897+', icon: MapPin, color: 'text-purple-400' },
                 { label: 'Taxislužieb', value: '1 000+', icon: Rocket, color: 'text-yellow-400' },
@@ -150,12 +150,6 @@ export default function PreTaxikyPage() {
                   value: '100k+',
                   icon: Eye,
                   color: 'text-blue-400',
-                },
-                {
-                  label: 'Spokojných partnerov',
-                  value: '100%',
-                  icon: ShieldCheck,
-                  color: 'text-green-400',
                 },
               ].map((stat, i) => (
                 <div
