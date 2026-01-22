@@ -5929,6 +5929,13 @@
           "phone": "+421905535455",
           "address": "2, Štúrova 34, Považská Bystrica",
           "placeId": "ChIJgeLGwOSLFEcRqGBDg2TmXTA"
+        },
+        {
+          "name": "Môj Taxi - Považská Bystrica",
+          "phone": "+421902030902",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 49.115932,
