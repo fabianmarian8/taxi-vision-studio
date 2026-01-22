@@ -1211,6 +1211,13 @@
           "address": "Stanovište taxislužby, Brezno",
           "placeId": "ChIJbXLeGIRvFUcRN_klwgSej6I",
           "premiumExpiresAt": "2026-01-27T18:19:55.622Z"
+        },
+        {
+          "name": "BR Taxi",
+          "phone": "+421910955666",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.805335,
