@@ -172,7 +172,7 @@ export function OwnerClaimButton({
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         rows={3}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-yellow focus:border-primary-yellow resize-none"
-                        placeholder="Napr. zmena telefónneho čísla, názvu, pridanie loga..."
+                        placeholder="Napr. zmena telefónneho čísla, názvu..."
                       />
                     </div>
 
