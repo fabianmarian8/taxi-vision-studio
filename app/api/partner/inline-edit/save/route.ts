@@ -1,13 +1,8 @@
 import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { isPartnerSkinId } from '@/lib/partner-skins';
+import { isSuperadmin } from '@/lib/superadmin';
 import { NextRequest, NextResponse } from 'next/server';
-
-// Superadmin emails - can edit ALL partner pages
-const SUPERADMIN_EMAILS = [
-  'fabianmarian8@gmail.com',
-  'fabianmarian8@users.noreply.github.com',
-];
 
 // Whitelist povolených polí
 const ALLOWED_FIELDS = [
@@ -96,10 +91,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if user is superadmin
-    const isSuperadmin = user.email && SUPERADMIN_EMAILS.includes(user.email.toLowerCase());
+    const userIsSuperadmin = isSuperadmin(user.email);
 
     // Use admin client for superadmins to bypass RLS
-    const queryClient = isSuperadmin
+    const queryClient = userIsSuperadmin
       ? createAdminClient(
           process.env.NEXT_PUBLIC_SUPABASE_URL!,
           process.env.SUPABASE_SERVICE_ROLE_KEY!
@@ -113,7 +108,7 @@ export async function POST(request: NextRequest) {
       .eq('id', partner_id);
 
     // Non-superadmins must own the partner
-    if (!isSuperadmin) {
+    if (!userIsSuperadmin) {
       partnerQuery = partnerQuery.eq('user_id', user.id);
     }
 
@@ -190,14 +185,11 @@ export async function POST(request: NextRequest) {
     const forwardedFor = request.headers.get('x-forwarded-for');
     const ipAddress = forwardedFor?.split(',')[0]?.trim() || null;
 
-    // DEBUG: Log user info pre audit
-    console.log('[inline-edit/save] DEBUG User object:', JSON.stringify(user, null, 2));
-    console.log('[inline-edit/save] Audit params:', {
+    // Log audit context (without sensitive user data)
+    console.log('[inline-edit/save] Audit context:', {
       user_id: user.id,
-      user_email: user.email,
-      ip_address: ipAddress,
-      isSuperadmin,
-      user_keys: Object.keys(user || {})
+      is_superadmin: userIsSuperadmin,
+      has_ip: !!ipAddress
     });
 
     // Použiť RPC funkciu ktorá nastaví audit kontext A vykoná operáciu v jednej transakcii

@@ -11,17 +11,20 @@ export interface RateLimitResult {
 }
 
 function getRatelimit() {
-  if (!ratelimit && process.env.UPSTASH_REDIS_REST_URL) {
-    const redis = new Redis({
-      url: process.env.UPSTASH_REDIS_REST_URL,
-      token: process.env.UPSTASH_REDIS_REST_TOKEN!,
-    });
+  if (!ratelimit) {
+    const url = process.env.UPSTASH_REDIS_REST_URL;
+    const token = process.env.UPSTASH_REDIS_REST_TOKEN;
 
-    ratelimit = new Ratelimit({
-      redis,
-      limiter: Ratelimit.slidingWindow(5, '15 m'), // 5 requests per 15 minutes
-      analytics: true,
-    });
+    // Only initialize if both URL and token are available
+    if (url && token) {
+      const redis = new Redis({ url, token });
+      ratelimit = new Ratelimit({
+        redis,
+        limiter: Ratelimit.slidingWindow(5, '15 m'), // 5 requests per 15 minutes
+        analytics: true,
+      });
+    }
+    // If missing, returns null and falls back to in-memory rate limiting
   }
   return ratelimit;
 }

@@ -59,27 +59,20 @@ export async function verifyCredentials(username: string, password: string): Pro
   const adminUsername = process.env.ADMIN_USERNAME;
   const adminPasswordHash = process.env.ADMIN_PASSWORD_HASH;
 
-  // Fallback to plain password for backwards compatibility (remove after migration)
-  const adminPasswordPlain = process.env.ADMIN_PASSWORD;
-
   if (!adminUsername) {
     throw new Error('ADMIN_USERNAME environment variable is required');
   }
 
-  if (!adminPasswordHash && !adminPasswordPlain) {
-    throw new Error('ADMIN_PASSWORD_HASH or ADMIN_PASSWORD environment variable is required');
+  if (!adminPasswordHash) {
+    throw new Error(
+      'ADMIN_PASSWORD_HASH environment variable is required. ' +
+      'Generate with: node -e "console.log(require(\'bcryptjs\').hashSync(\'your-password\', 12))"'
+    );
   }
 
-  // Check username first
   if (username !== adminUsername) {
     return false;
   }
 
-  // Use bcrypt hash if available, otherwise fall back to plain text (temporary)
-  if (adminPasswordHash) {
-    return bcrypt.compare(password, adminPasswordHash);
-  }
-
-  // Fallback for migration period - remove this after setting ADMIN_PASSWORD_HASH
-  return password === adminPasswordPlain;
+  return bcrypt.compare(password, adminPasswordHash);
 }

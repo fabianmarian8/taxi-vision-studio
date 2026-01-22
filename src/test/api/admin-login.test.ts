@@ -19,8 +19,8 @@ vi.mock('@/lib/rate-limit', () => ({
   checkRateLimit: vi.fn().mockResolvedValue({ success: true, remaining: 4 }),
 }));
 
-// Import after mocks
-import { POST } from '@app/api/admin/login/route';
+// Import after mocks - use relative path for app routes
+import { POST } from '../../../app/api/admin/login/route';
 import { verifyCredentials, createSession } from '@/lib/auth';
 import { checkRateLimit } from '@/lib/rate-limit';
 
@@ -81,7 +81,7 @@ describe('POST /api/admin/login', () => {
 
     it('should return success for valid credentials', async () => {
       vi.mocked(verifyCredentials).mockResolvedValue(true);
-      vi.mocked(createSession).mockResolvedValue(undefined);
+      vi.mocked(createSession).mockResolvedValue('mock-session-token');
 
       const request = createMockRequest({
         method: 'POST',
@@ -127,7 +127,7 @@ describe('POST /api/admin/login', () => {
         resetAt: new Date(),
       });
       vi.mocked(verifyCredentials).mockResolvedValue(true);
-      vi.mocked(createSession).mockResolvedValue(undefined);
+      vi.mocked(createSession).mockResolvedValue('mock-session-token');
 
       const request = createMockRequest({
         method: 'POST',

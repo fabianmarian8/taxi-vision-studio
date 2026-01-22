@@ -497,15 +497,12 @@ async function UniversalListView({
   );
 
   if (partnersNeedingHeroImage.length > 0) {
-    // Use admin client to bypass RLS for reading partner hero images
-    const { createClient: createAdminClient } = await import('@supabase/supabase-js');
-    const adminClient = createAdminClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    );
+    // Use server client with RLS - requires public read policy on partners and partner_drafts
+    // See: supabase/migrations/20260122_public_read_partner_hero.sql
+    const supabase = await createClient();
     const partnerSlugs = partnersNeedingHeroImage.map(s => createServiceSlug(s.name));
 
-    const { data: partnerData } = await adminClient
+    const { data: partnerData } = await supabase
       .from('partners')
       .select('slug, id')
       .in('slug', partnerSlugs);
@@ -513,7 +510,7 @@ async function UniversalListView({
     if (partnerData && partnerData.length > 0) {
       const partnerIds = partnerData.map(p => p.id);
 
-      const { data: drafts } = await adminClient
+      const { data: drafts } = await supabase
         .from('partner_drafts')
         .select('partner_id, hero_image_url')
         .in('partner_id', partnerIds)

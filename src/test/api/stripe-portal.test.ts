@@ -18,8 +18,8 @@ vi.mock('@/lib/stripe', () => ({
   },
 }));
 
-// Import after mocks
-import { POST } from '@app/api/stripe/portal/route';
+// Import after mocks - use relative path for app routes
+import { POST } from '../../../app/api/stripe/portal/route';
 import { stripe } from '@/lib/stripe';
 
 describe('POST /api/stripe/portal', () => {

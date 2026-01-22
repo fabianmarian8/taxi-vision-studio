@@ -105,7 +105,7 @@
     "vitest": "^2.1.8"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "bash -c 'eslint --fix \"$@\" || true' --"
+    "*.{ts,tsx}": "eslint --fix"
   },
   "browserslist": [
     "chrome >= 100",

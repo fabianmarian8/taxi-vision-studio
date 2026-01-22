@@ -35,7 +35,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { username, password } = await request.json();
+    let username: string;
+    let password: string;
+    try {
+      const body = await request.json();
+      username = body.username;
+      password = body.password;
+    } catch {
+      log.warn('Invalid JSON in request body');
+      await logger.flush();
+      return NextResponse.json(
+        { error: 'Invalid request body' },
+        { status: 400 }
+      );
+    }
 
     if (!username || !password) {
       log.warn('Missing credentials', { hasUsername: !!username, hasPassword: !!password });
