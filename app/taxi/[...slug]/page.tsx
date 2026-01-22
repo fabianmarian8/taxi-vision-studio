@@ -55,7 +55,7 @@ import { NearbyMunicipalities } from '@/components/NearbyMunicipalities';
 import { ReportNumberButton } from '@/components/ReportNumberModal';
 import { OwnerClaimButton } from '@/components/OwnerClaimButton';
 import { getMunicipalityStats } from '@/lib/municipality-data';
-import { TaxiPromoBanner } from '@/components/TaxiPromoBanner';
+import { TaxiSlotsBanner } from '@/components/TaxiSlotsBanner';
 import { getApprovedPartnerData } from '@/lib/partner-data';
 import { checkPartnerOwnership } from '@/lib/partner-ownership';
 import { checkCityEditAccess } from '@/lib/city-ownership';
@@ -609,6 +609,14 @@ async function UniversalListView({
         </div>
       </section>
 
+      {/* Partner & Premium slots banner - NAD zoznamom */}
+      <TaxiSlotsBanner
+        cityName={city.name}
+        locationText={locationText}
+        partnerCount={Math.min(partners.length, 1)}
+        premiumCount={Math.min(premiums.length, 2)}
+      />
+
       {/* Kompaktný List View - 80px riadky podľa oponenta */}
       <section className="py-2 px-4 bg-white">
         <div className="container mx-auto max-w-4xl">
@@ -877,13 +885,6 @@ async function UniversalListView({
           )}
         </div>
       </section>
-
-      {/* Partner & Premium info banner */}
-      <TaxiPromoBanner
-        cityName={city.name}
-        locationText={locationText}
-        taxiCount={city.taxiServices.length}
-      />
 
       <CityContent citySlug={city.slug} cityName={city.name} />
       <NearbyCitiesSection
