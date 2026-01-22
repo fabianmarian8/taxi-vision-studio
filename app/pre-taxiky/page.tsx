@@ -19,6 +19,8 @@ import {
   ShieldCheck,
   Rocket,
   HelpCircle,
+  Mail,
+  XCircle,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
@@ -30,6 +32,7 @@ import {
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { cn } from '@/lib/utils';
 import { CheckoutButton } from './CheckoutForm';
+import { ContactButton } from '@/components/ContactButton';
 
 export const metadata: Metadata = {
   title: 'Pre taxislužby - PREMIUM a PARTNER program | Taxi NearMe',
@@ -312,7 +315,7 @@ export default function PreTaxikyPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {/* PREMIUM Package */}
             <Card className="bg-slate-900/40 border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm order-2 md:order-1">
               <CardHeader className="pb-6 md:pb-8 border-b border-white/5 p-6 md:p-8">
@@ -408,6 +411,41 @@ export default function PreTaxikyPage() {
                     </Link>
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+
+            {/* Slots Unavailable Box */}
+            <Card className="bg-slate-900/40 border-red-500/30 hover:border-red-500/50 transition-all duration-300 backdrop-blur-sm order-3 flex flex-col">
+              <CardHeader className="pb-6 md:pb-8 border-b border-white/5 p-6 md:p-8">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <CardTitle className="text-xl md:text-2xl font-bold text-red-400 mb-1 md:mb-2">Sloty obsadené?</CardTitle>
+                    <p className="text-slate-400 text-xs md:text-sm">Máme pre vás riešenie</p>
+                  </div>
+                  <XCircle className="h-6 w-6 md:h-8 md:w-8 text-red-500/50" />
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-2xl md:text-3xl font-black text-white">Individuálne</span>
+                </div>
+                <div className="text-xs md:text-sm text-slate-500 mt-1">Cena podľa dohody</div>
+              </CardHeader>
+              <CardContent className="pt-6 md:pt-8 p-6 md:p-8 flex-1 flex flex-col">
+                <div className="flex-1">
+                  <p className="text-slate-300 text-sm md:text-base mb-4 leading-relaxed">
+                    Vo vašom meste už nie sú dostupné žiadne Partner alebo Premium sloty?
+                  </p>
+                  <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                    Kontaktujte nás a nájdeme pre vás alternatívne riešenie - rozšírenie do okolitých miest, špeciálne kampane alebo iné formy propagácie.
+                  </p>
+                </div>
+                <ContactButton
+                  className="w-full inline-flex items-center justify-center gap-2 bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 text-red-400 hover:text-red-300 font-bold px-6 py-3 md:py-4 rounded-xl transition-all text-sm md:text-base"
+                  subject="Záujem o alternatívne riešenie - sloty obsadené"
+                  prefilledMessage="Mám záujem o propagáciu mojej taxislužby, ale vo svojom meste už nie sú dostupné Partner/Premium sloty. Prosím o informácie o alternatívnych možnostiach."
+                >
+                  <Mail className="h-4 w-4 md:h-5 md:w-5" />
+                  Kontaktujte nás
+                </ContactButton>
               </CardContent>
             </Card>
           </div>
