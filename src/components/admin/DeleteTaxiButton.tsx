@@ -18,10 +18,15 @@ export function DeleteTaxiButton({ citySlug, serviceName, onDeleted }: DeleteTax
   useEffect(() => {
     const checkAdmin = async () => {
       try {
-        const res = await fetch('/api/admin/check');
+        const res = await fetch('/api/admin/check', {
+          credentials: 'include',
+          cache: 'no-store',
+        });
         if (res.ok) {
           const data = await res.json();
-          setIsAdmin(data.isAdmin && data.username === 'admin');
+          setIsAdmin(data.isAdmin === true && data.username === 'admin');
+        } else {
+          setIsAdmin(false);
         }
       } catch {
         // Not admin
