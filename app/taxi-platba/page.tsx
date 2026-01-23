@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
-export default function TaxiPlatbaPage() {
+function TaxiPlatbaForm() {
   const searchParams = useSearchParams();
 
   const [suma, setSuma] = useState('');
@@ -70,6 +70,78 @@ export default function TaxiPlatbaPage() {
   };
 
   return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Suma */}
+      <div className="space-y-2">
+        <label htmlFor="suma" className="text-sm font-medium text-foreground">
+          Suma
+        </label>
+        <div className="relative">
+          <Input
+            id="suma"
+            type="text"
+            inputMode="decimal"
+            value={suma}
+            onChange={(e) => setSuma(e.target.value)}
+            className="text-2xl h-14 pr-12 text-center font-semibold"
+            autoFocus
+          />
+          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xl text-muted-foreground">
+            EUR
+          </span>
+        </div>
+      </div>
+
+      {/* Poznámka */}
+      <div className="space-y-2">
+        <label htmlFor="poznamka" className="text-sm font-medium text-foreground">
+          Poznámka (voliteľné)
+        </label>
+        <Input
+          id="poznamka"
+          type="text"
+          value={poznamka}
+          onChange={(e) => setPoznamka(e.target.value)}
+        />
+      </div>
+
+      {/* Error */}
+      {error && (
+        <p className="text-sm text-red-500 text-center">{error}</p>
+      )}
+
+      {/* Submit */}
+      <Button
+        type="submit"
+        variant="success"
+        size="lg"
+        className="w-full text-lg"
+        disabled={loading || !suma}
+      >
+        {loading ? 'Načítavam...' : 'Zaplatiť kartou'}
+      </Button>
+    </form>
+  );
+}
+
+function FormSkeleton() {
+  return (
+    <div className="space-y-6 animate-pulse">
+      <div className="space-y-2">
+        <div className="h-4 w-12 bg-muted rounded" />
+        <div className="h-14 bg-muted rounded" />
+      </div>
+      <div className="space-y-2">
+        <div className="h-4 w-32 bg-muted rounded" />
+        <div className="h-11 bg-muted rounded" />
+      </div>
+      <div className="h-12 bg-muted rounded" />
+    </div>
+  );
+}
+
+export default function TaxiPlatbaPage() {
+  return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-sm space-y-8">
         {/* Logo */}
@@ -83,57 +155,9 @@ export default function TaxiPlatbaPage() {
         </div>
 
         {/* Formulár */}
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Suma */}
-          <div className="space-y-2">
-            <label htmlFor="suma" className="text-sm font-medium text-foreground">
-              Suma
-            </label>
-            <div className="relative">
-              <Input
-                id="suma"
-                type="text"
-                inputMode="decimal"
-                value={suma}
-                onChange={(e) => setSuma(e.target.value)}
-                className="text-2xl h-14 pr-12 text-center font-semibold"
-                autoFocus
-              />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xl text-muted-foreground">
-                EUR
-              </span>
-            </div>
-          </div>
-
-          {/* Poznámka */}
-          <div className="space-y-2">
-            <label htmlFor="poznamka" className="text-sm font-medium text-foreground">
-              Poznámka (voliteľné)
-            </label>
-            <Input
-              id="poznamka"
-              type="text"
-              value={poznamka}
-              onChange={(e) => setPoznamka(e.target.value)}
-            />
-          </div>
-
-          {/* Error */}
-          {error && (
-            <p className="text-sm text-red-500 text-center">{error}</p>
-          )}
-
-          {/* Submit */}
-          <Button
-            type="submit"
-            variant="success"
-            size="lg"
-            className="w-full text-lg"
-            disabled={loading || !suma}
-          >
-            {loading ? 'Načítavam...' : 'Zaplatiť kartou'}
-          </Button>
-        </form>
+        <Suspense fallback={<FormSkeleton />}>
+          <TaxiPlatbaForm />
+        </Suspense>
       </div>
     </div>
   );
