@@ -8,34 +8,52 @@ interface TaxiServiceDB {
   premium_expires_at: string | null;
 }
 
+interface ApprovedSubmission {
+  name: string;
+  phone: string;
+  description: string | null;
+  city_slug: string;
+}
+
 /**
  * Merge taxi services from JSON with premium/partner status from Supabase
+ * Also includes approved user submissions as new taxi services
  * This allows automatic updates from Stripe webhooks to take effect
  */
 export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData> {
   try {
     const supabase = await createClient();
 
-    // Fetch taxi services status from DB for this city
-    const { data: dbServices, error } = await supabase
-      .from('taxi_services')
-      .select('name, is_premium, is_partner, premium_expires_at')
-      .eq('city_slug', city.slug);
+    // Fetch taxi services status and approved submissions in parallel
+    const [dbServicesResult, approvedSubmissionsResult] = await Promise.all([
+      supabase
+        .from('taxi_services')
+        .select('name, is_premium, is_partner, premium_expires_at')
+        .eq('city_slug', city.slug),
+      supabase
+        .from('taxi_submissions')
+        .select('name, phone, description, city_slug')
+        .eq('city_slug', city.slug)
+        .eq('status', 'approved'),
+    ]);
+
+    const { data: dbServices, error } = dbServicesResult;
+    const { data: approvedSubmissions, error: submissionsError } = approvedSubmissionsResult;
 
     if (error) {
       console.error('Error fetching taxi services from DB:', error);
-      return city; // Return original data on error
     }
-
-    if (!dbServices || dbServices.length === 0) {
-      return city; // No DB data, return original
+    if (submissionsError) {
+      console.error('Error fetching approved submissions:', submissionsError);
     }
 
     // Create a map for quick lookup (case-insensitive)
     const dbServiceMap = new Map<string, TaxiServiceDB>();
-    dbServices.forEach((service) => {
-      dbServiceMap.set(service.name.toLowerCase(), service);
-    });
+    if (dbServices) {
+      dbServices.forEach((service) => {
+        dbServiceMap.set(service.name.toLowerCase(), service);
+      });
+    }
 
     // Helper to check if premium is expired
     const isExpired = (expiresAt: string | null | undefined): boolean => {
@@ -44,7 +62,7 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
     };
 
     // Merge DB status into JSON taxi services
-    const mergedServices = city.taxiServices.map((service): TaxiService => {
+    const mergedFromJson = city.taxiServices.map((service): TaxiService => {
       const dbService = dbServiceMap.get(service.name.toLowerCase());
 
       if (dbService) {
@@ -80,9 +98,39 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
       return service;
     });
 
+    // Create a set of existing service names (case-insensitive) to avoid duplicates
+    const existingNames = new Set(
+      city.taxiServices.map((s) => s.name.toLowerCase())
+    );
+
+    // Add approved submissions that are not already in JSON
+    const submissionsAsServices: TaxiService[] = [];
+    if (approvedSubmissions && approvedSubmissions.length > 0) {
+      for (const submission of approvedSubmissions) {
+        // Skip if already exists in JSON
+        if (existingNames.has(submission.name.toLowerCase())) {
+          continue;
+        }
+
+        // Create TaxiService from submission
+        const newService: TaxiService = {
+          name: submission.name,
+          phone: submission.phone,
+          description: submission.description || undefined,
+          isPremium: false,
+          isPartner: false,
+        };
+
+        submissionsAsServices.push(newService);
+      }
+    }
+
+    // Combine JSON services with approved submissions
+    const allServices = [...mergedFromJson, ...submissionsAsServices];
+
     return {
       ...city,
-      taxiServices: mergedServices,
+      taxiServices: allServices,
     };
   } catch (error) {
     console.error('Error merging taxi services:', error);
