@@ -29,6 +29,7 @@ export interface PartnerData {
 }
 
 export interface TaxiService {
+  id?: string; // UUID z databázy
   name: string;
   slug?: string; // Explicitný slug (ak sa líši od generovaného z názvu)
   website?: string;
@@ -41,6 +42,7 @@ export interface TaxiService {
   customDescription?: string; // Vlastný text pre detail stránku (namiesto generovania)
   logo?: string; // Cesta k logu taxislužby (napr. /logos/fast-taxi-zvolen.webp)
   gallery?: string[]; // Pole ciest k fotkám taxislužby (zobrazí sa ako galéria)
+  isVerified?: boolean; // Overená taxislužba (Mini, Premium alebo Partner plán)
   isPremium?: boolean;
   isPartner?: boolean;
   isPromotional?: boolean; // Flag pre marketingové promo premium (neplatia)

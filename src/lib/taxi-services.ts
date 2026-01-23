@@ -2,7 +2,9 @@ import { createClient } from '@/lib/supabase/server';
 import type { TaxiService, CityData } from '@/data/cities';
 
 interface TaxiServiceDB {
+  id: string;
   name: string;
+  is_verified: boolean;
   is_premium: boolean;
   is_partner: boolean;
   premium_expires_at: string | null;
@@ -33,7 +35,7 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
     const [dbServicesResult, approvedSubmissionsResult, hiddenServicesResult] = await Promise.all([
       supabase
         .from('taxi_services')
-        .select('name, is_premium, is_partner, premium_expires_at')
+        .select('id, name, is_verified, is_premium, is_partner, premium_expires_at')
         .eq('city_slug', city.slug),
       supabase
         .from('taxi_submissions')
@@ -98,8 +100,13 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
         // Partner status: DB takes priority, fallback to JSON
         const isPartner = dbService.is_partner || service.isPartner;
 
+        // Verified status from DB (all paid plans get verified)
+        const isVerified = dbService.is_verified || dbPremiumValid || isPartner;
+
         return {
           ...service,
+          id: dbService.id, // Include DB ID for checkout links
+          isVerified,
           isPremium: dbPremiumValid || jsonPremiumValid || promotionalPremiumValid,
           isPartner,
           premiumExpiresAt: effectiveExpiration,

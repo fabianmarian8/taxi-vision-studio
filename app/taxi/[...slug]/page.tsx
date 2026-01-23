@@ -2255,8 +2255,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   <MapPin className="h-4 w-4" />
                   <span>{service.address ? service.address : `${city.name}, ${city.region}`}</span>
                 </div>
-                {/* Overená taxislužba badge - len pre Premium/Partner */}
-                {(isPremium || isPartner) && (
+                {/* Overená taxislužba badge - pre Mini/Premium/Partner */}
+                {(service.isVerified || isPremium || isPartner) && (
                   <div className="flex items-center gap-1 mt-2 text-sm text-green-600">
                     <CheckCircle2 className="h-4 w-4" />
                     <span className="font-medium">Overená taxislužba</span>
@@ -2295,9 +2295,9 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             )}
 
             {/* Mini verifikačný banner - len pre neoverené služby */}
-            {!isPremium && !isPartner && (
+            {!service.isVerified && !isPremium && !isPartner && (
               <Link
-                href="/pre-taxiky"
+                href={service.id ? `/api/checkout/verify/${service.id}` : '/pre-taxiky'}
                 className="flex items-center gap-3 mt-4 p-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl transition-all group"
               >
                 <div className="w-10 h-10 rounded-full bg-emerald-100 group-hover:bg-emerald-200 flex items-center justify-center flex-shrink-0 transition-colors">

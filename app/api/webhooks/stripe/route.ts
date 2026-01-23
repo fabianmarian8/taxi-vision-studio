@@ -129,12 +129,14 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
   // Extract metadata (may be missing from Payment Links)
   const citySlug = (subscription.metadata?.city_slug as string) || 'unknown';
   const taxiServiceName = (subscription.metadata?.taxi_service_name as string) || 'Unknown Service';
+  const taxiServiceId = subscription.metadata?.taxi_service_id as string | undefined;
 
-  // Log warning if metadata is missing
-  if (citySlug === 'unknown' || taxiServiceName === 'Unknown Service') {
+  // Log warning if metadata is missing (but taxi_service_id is enough)
+  if (!taxiServiceId && (citySlug === 'unknown' || taxiServiceName === 'Unknown Service')) {
     console.warn(`⚠️ Subscription ${subscription.id} missing metadata:`, {
       city_slug: citySlug,
       taxi_service_name: taxiServiceName,
+      taxi_service_id: taxiServiceId,
       customer_email: customerEmail,
       metadata: subscription.metadata,
     });
@@ -174,8 +176,8 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
     plan_type: getPlanTypeFromAmount(amountCents),
   });
 
-  // Link subscription to taxi service (auto-enables premium)
-  await linkSubscriptionToTaxiService(subscription.id, citySlug, taxiServiceName);
+  // Link subscription to taxi service (auto-enables verified/premium)
+  await linkSubscriptionToTaxiService(subscription.id, citySlug, taxiServiceName, taxiServiceId);
 
   // Log event with Stripe event ID for idempotency
   await logSubscriptionEvent(subscription.id, 'created', amountCents, null, subscription.status, stripeEventId);
@@ -314,18 +316,14 @@ async function handlePaymentFailed(invoice: Stripe.Invoice, stripeEventId: strin
 }
 
 /**
- * Link Stripe subscription to taxi service for auto premium/partner enable/disable
+ * Link Stripe subscription to taxi service for auto verified/premium/partner enable/disable
  */
 async function linkSubscriptionToTaxiService(
   stripeSubscriptionId: string,
   citySlug: string | undefined,
-  taxiServiceName: string | undefined
+  taxiServiceName: string | undefined,
+  taxiServiceId: string | undefined
 ) {
-  if (!citySlug || !taxiServiceName) {
-    console.warn('Missing city_slug or taxi_service_name in subscription metadata');
-    return;
-  }
-
   // Get our subscription ID with plan_type
   const { data: subscription } = await getSupabase()
     .from('subscriptions')
@@ -339,35 +337,67 @@ async function linkSubscriptionToTaxiService(
   }
 
   const isActive = subscription.status === 'active';
+  const isPremiumPlan = subscription.plan_type === 'premium' || subscription.plan_type === 'partner';
   const isPartnerPlan = subscription.plan_type === 'partner';
 
-  // Find and update the matching taxi service
-  // SECURITY: Escape LIKE pattern characters to prevent pattern injection
-  const escapedName = taxiServiceName
-    .replace(/\\/g, '\\\\')
-    .replace(/%/g, '\\%')
-    .replace(/_/g, '\\_');
+  // Update data - all plans get verified, only premium+ get is_premium
+  const updateData = {
+    subscription_id: subscription.id,
+    is_verified: isActive, // All plans get verified badge
+    is_premium: isActive && isPremiumPlan, // Only premium/partner get highlighted
+    is_partner: isActive && isPartnerPlan, // Only partner gets partner features
+    premium_expires_at: isActive ? subscription.current_period_end : null,
+    updated_at: new Date().toISOString(),
+  };
 
-  const { error, count } = await getSupabase()
-    .from('taxi_services')
-    .update({
-      subscription_id: subscription.id,
-      is_premium: isActive,
-      is_partner: isActive && isPartnerPlan,
-      premium_expires_at: isActive ? subscription.current_period_end : null,
-      updated_at: new Date().toISOString(),
-    }, { count: 'exact' })
-    .eq('city_slug', citySlug)
-    .ilike('name', escapedName);
+  let error;
+  let count;
+
+  // If we have taxi_service_id, use it directly (most secure)
+  if (taxiServiceId) {
+    const result = await getSupabase()
+      .from('taxi_services')
+      .update(updateData, { count: 'exact' })
+      .eq('id', taxiServiceId);
+
+    error = result.error;
+    count = result.count;
+
+    if (!error && count === 1) {
+      console.log(`✅ Linked subscription ${stripeSubscriptionId} to taxi service ID ${taxiServiceId} (plan: ${subscription.plan_type})`);
+    }
+  }
+  // Fallback to city_slug + name matching
+  else if (citySlug && taxiServiceName) {
+    // SECURITY: Escape LIKE pattern characters to prevent pattern injection
+    const escapedName = taxiServiceName
+      .replace(/\\/g, '\\\\')
+      .replace(/%/g, '\\%')
+      .replace(/_/g, '\\_');
+
+    const result = await getSupabase()
+      .from('taxi_services')
+      .update(updateData, { count: 'exact' })
+      .eq('city_slug', citySlug)
+      .ilike('name', escapedName);
+
+    error = result.error;
+    count = result.count;
+
+    if (!error && count === 1) {
+      console.log(`✅ Linked subscription ${stripeSubscriptionId} to ${taxiServiceName} in ${citySlug} (plan: ${subscription.plan_type})`);
+    }
+  } else {
+    console.warn('Missing taxi_service_id and city_slug/taxi_service_name in subscription metadata');
+    return;
+  }
 
   if (error) {
     console.error('Error linking subscription to taxi service:', error);
   } else if (count === 0) {
-    console.warn(`⚠️ No taxi service found for ${taxiServiceName} in ${citySlug}`);
+    console.warn(`⚠️ No taxi service found for ID ${taxiServiceId || `${taxiServiceName} in ${citySlug}`}`);
   } else if (count && count > 1) {
-    console.error(`🚨 SECURITY: Multiple (${count}) taxi services updated for ${taxiServiceName} in ${citySlug}!`);
-  } else {
-    console.log(`✅ Linked subscription ${stripeSubscriptionId} to ${taxiServiceName} in ${citySlug} (partner: ${isPartnerPlan})`);
+    console.error(`🚨 SECURITY: Multiple (${count}) taxi services updated!`);
   }
 }
 
