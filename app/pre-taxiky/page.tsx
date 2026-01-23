@@ -12,11 +12,9 @@ import {
   ArrowRight,
   Users,
   MapPin,
-  BarChart3,
   Zap,
   Globe,
   Smartphone,
-  ShieldCheck,
   Rocket,
   HelpCircle,
   Mail,
@@ -302,52 +300,16 @@ export default function PreTaxikyPage() {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-2xl md:text-5xl font-black text-white mb-3 md:mb-4">
-              Investícia, ktorá sa vráti
+              Cenník balíčkov
             </h2>
             <p className="text-sm md:text-lg text-slate-400">
-              Stačí <strong>jediná jazda mesačne</strong> navyše a máte to zaplatené.
+              Investícia, ktorá sa vráti
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
-            {/* MINI Package */}
-            <Card className="bg-slate-900/40 border-white/10 hover:border-emerald-400/30 transition-all duration-300 backdrop-blur-sm order-3 md:order-1">
-              <CardHeader className="pb-4 md:pb-6 border-b border-white/5 p-4 md:p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <CardTitle className="text-lg md:text-xl font-bold text-emerald-400 mb-1">MINI</CardTitle>
-                    <p className="text-slate-400 text-xs">Základné overenie</p>
-                  </div>
-                  <ShieldCheck className="h-5 w-5 md:h-6 md:w-6 text-emerald-400/50" />
-                </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl md:text-3xl font-black text-white">0,99€</span>
-                  <span className="text-slate-500 text-xs md:text-sm font-medium">/ mesiac</span>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-4 md:pt-6 p-4 md:p-6">
-                <ul className="space-y-2 md:space-y-3 mb-4 md:mb-6">
-                  {[
-                    'Pravidelné overenie čísla',
-                    'Zobrazenie vlastného loga',
-                  ].map((feat, i) => (
-                    <li key={i} className="flex items-start gap-2 text-slate-300 text-xs md:text-sm">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400/70 flex-shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-                <CheckoutButton
-                  plan="mini"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 font-bold px-4 py-2.5 md:py-3 rounded-xl transition-all text-xs md:text-sm"
-                >
-                  Vybrať MINI
-                </CheckoutButton>
-              </CardContent>
-            </Card>
-
+          <div className="grid md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
             {/* PREMIUM Package */}
-            <Card className="bg-slate-900/40 border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm order-2 md:order-2">
+            <Card className="bg-slate-900/40 border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm order-2 md:order-1">
               <CardHeader className="pb-6 md:pb-8 border-b border-white/5 p-6 md:p-8">
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -387,7 +349,7 @@ export default function PreTaxikyPage() {
             </Card>
 
             {/* PARTNER Package */}
-            <Card className="relative bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-yellow-400/50 shadow-2xl shadow-yellow-400/10 transform md:-translate-y-4 order-1 md:order-3">
+            <Card className="relative bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-yellow-400/50 shadow-2xl shadow-yellow-400/10 transform md:-translate-y-4 order-1 md:order-2">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-yellow-400 text-slate-950 text-[10px] md:text-xs font-black px-4 py-1 rounded-b-lg tracking-widest uppercase whitespace-nowrap">
                 Najpredávanejšie
               </div>
@@ -445,7 +407,7 @@ export default function PreTaxikyPage() {
             </Card>
 
             {/* Slots Unavailable Box */}
-            <Card className="bg-slate-900/40 border-red-500/30 hover:border-red-500/50 transition-all duration-300 backdrop-blur-sm order-4 flex flex-col">
+            <Card className="bg-slate-900/40 border-red-500/30 hover:border-red-500/50 transition-all duration-300 backdrop-blur-sm order-3 flex flex-col">
               <CardHeader className="pb-6 md:pb-8 border-b border-white/5 p-6 md:p-8">
                 <div className="flex justify-between items-start mb-4">
                   <div>
