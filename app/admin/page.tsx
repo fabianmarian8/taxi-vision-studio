@@ -182,6 +182,21 @@ export default async function AdminDashboard() {
               </CardContent>
             </Card>
           </Link>
+
+          {/* Taxi Platba Generator Card */}
+          <Link href="/admin/taxi-platba">
+            <Card className="cursor-pointer border-cyan-200 bg-cyan-50/50">
+              <CardHeader>
+                <CardTitle>Platobné linky</CardTitle>
+                <CardDescription>
+                  Generovať platobné linky pre taxi jazdy
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full" variant="outline">Otvoriť</Button>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
 
         {/* Instructions */}
