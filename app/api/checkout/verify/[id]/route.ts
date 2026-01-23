@@ -88,14 +88,23 @@ export async function GET(
     // Priame presmerovanie na Stripe Checkout
     return NextResponse.redirect(session.url!);
   } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown';
+    const errorStack = error instanceof Error ? error.stack : undefined;
+
     log.error('Verification checkout failed', {
-      error: error instanceof Error ? error.message : 'Unknown',
+      error: errorMessage,
+      stack: errorStack,
       taxiServiceId,
       duration: Date.now() - startTime,
     });
     await logger.flush();
+
+    // Return detailed error in development
     return NextResponse.json(
-      { error: 'Failed to create checkout session' },
+      {
+        error: 'Failed to create checkout session',
+        details: errorMessage,
+      },
       { status: 500 }
     );
   }
