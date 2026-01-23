@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server';
+import { createAnonymousClient } from '@/lib/supabase/server';
 import type { TaxiService, CityData } from '@/data/cities';
 
 interface TaxiServiceDB {
@@ -29,7 +29,7 @@ interface HiddenService {
  */
 export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData> {
   try {
-    const supabase = await createClient();
+    const supabase = createAnonymousClient();
 
     // Fetch taxi services status, approved submissions, and hidden services in parallel
     const [dbServicesResult, approvedSubmissionsResult, hiddenServicesResult] = await Promise.all([

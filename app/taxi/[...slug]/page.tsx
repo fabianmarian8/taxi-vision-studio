@@ -14,7 +14,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
-import { createClient } from '@/lib/supabase/server';
+import { createAnonymousClient } from '@/lib/supabase/server';
 import { Header } from '@/components/Header';
 import { HowItWorks } from '@/components/HowItWorks';
 import { GeometricLines } from '@/components/GeometricLines';
@@ -503,7 +503,7 @@ async function UniversalListView({
   if (partnersNeedingHeroImage.length > 0) {
     // Use server client with RLS - requires public read policy on partners and partner_drafts
     // See: supabase/migrations/20260122_public_read_partner_hero.sql
-    const supabase = await createClient();
+    const supabase = createAnonymousClient();
     const partnerSlugs = partnersNeedingHeroImage.map(s => createServiceSlug(s.name));
 
     const { data: partnerData } = await supabase

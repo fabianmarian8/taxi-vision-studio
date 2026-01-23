@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server';
+import { createClientSafe } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { DEFAULT_PARTNER_SKIN } from '@/lib/partner-skins';
 import { isSuperadmin } from '@/lib/superadmin';
@@ -57,13 +57,9 @@ export async function checkPartnerOwnership(partnerSlug: string): Promise<Partne
   };
 
   try {
-    // During static generation, cookies() will throw - return default
-    let supabase;
-    try {
-      supabase = await createClient();
-    } catch (e) {
-      // Static generation - no cookies available
-      console.log('[checkPartnerOwnership] Static generation, returning default');
+    // createClientSafe returns null during static generation
+    const supabase = await createClientSafe();
+    if (!supabase) {
       return defaultResult;
     }
 

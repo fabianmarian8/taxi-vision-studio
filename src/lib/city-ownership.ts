@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server';
+import { createClientSafe } from '@/lib/supabase/server';
 import { isSuperadmin } from '@/lib/superadmin';
 
 export interface CityOwnershipResult {
@@ -18,12 +18,9 @@ export async function checkCityEditAccess(): Promise<CityOwnershipResult> {
   };
 
   try {
-    // During static generation, cookies() will throw - return default
-    let supabase;
-    try {
-      supabase = await createClient();
-    } catch {
-      // Static generation - no cookies available
+    // createClientSafe returns null during static generation
+    const supabase = await createClientSafe();
+    if (!supabase) {
       return defaultResult;
     }
 
