@@ -56,6 +56,7 @@ import { ReportNumberButton } from '@/components/ReportNumberModal';
 import { OwnerClaimButton } from '@/components/OwnerClaimButton';
 import { getMunicipalityStats } from '@/lib/municipality-data';
 import { TaxiSlotsBanner } from '@/components/TaxiSlotsBanner';
+import { AddTaxiButton } from '@/components/AddTaxiModal';
 import { getApprovedPartnerData } from '@/lib/partner-data';
 import { checkPartnerOwnership } from '@/lib/partner-ownership';
 import { checkCityEditAccess } from '@/lib/city-ownership';
@@ -874,6 +875,11 @@ async function UniversalListView({
                 </div>
               );
             })}
+          </div>
+
+          {/* Tlačidlo na pridanie taxislužby */}
+          <div className="mt-4">
+            <AddTaxiButton citySlug={city.slug} cityName={city.name} />
           </div>
 
           {/* Empty state podľa oponenta */}

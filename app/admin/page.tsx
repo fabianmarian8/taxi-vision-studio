@@ -78,6 +78,21 @@ export default async function AdminDashboard() {
             </Card>
           </Link>
 
+          {/* Taxi Submissions Card */}
+          <Link href="/admin/taxi-submissions">
+            <Card className="cursor-pointer border-emerald-200 bg-emerald-50/50">
+              <CardHeader>
+                <CardTitle>Návrhy taxislužieb</CardTitle>
+                <CardDescription>
+                  Schvaľovať nové taxislužby navrhnuté používateľmi
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full" variant="outline">Otvoriť</Button>
+              </CardContent>
+            </Card>
+          </Link>
+
           {/* Partner Drafts Card */}
           <Link href="/admin/partner-drafts">
             <Card className="cursor-pointer border-purple-200 bg-purple-50/50">

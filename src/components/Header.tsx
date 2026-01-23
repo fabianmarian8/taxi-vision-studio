@@ -3,7 +3,6 @@
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import { ContactFormModal } from "./ContactFormModal";
 import { useState } from "react";
 import { UserMenu } from "./UserMenu";
 
@@ -15,7 +14,6 @@ interface HeaderProps {
 export const Header = ({ partnerSlug, isOwner = false }: HeaderProps) => {
   const router = useRouter();
   const pathname = usePathname();
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleNavClick = (sectionId: string) => (e: React.MouseEvent) => {
@@ -90,21 +88,8 @@ export const Header = ({ partnerSlug, isOwner = false }: HeaderProps) => {
             </Link>
           </nav>
 
-          {/* Pravá strana: +pridať a hamburger vedľa seba */}
+          {/* Pravá strana: user menu a hamburger */}
           <div className="flex items-center gap-2">
-            <button
-              onClick={() => setIsContactModalOpen(true)}
-              className="home-button"
-            >
-              <span>+</span>
-              <span>p</span>
-              <span>r</span>
-              <span>i</span>
-              <span>d</span>
-              <span>a</span>
-              <span>ť</span>
-            </button>
-
             <UserMenu partnerSlug={partnerSlug} isOwner={isOwner} />
 
             {/* Mobile: hamburger menu */}
@@ -163,10 +148,6 @@ export const Header = ({ partnerSlug, isOwner = false }: HeaderProps) => {
         </div>
       )}
 
-      <ContactFormModal
-        isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
-      />
     </header>
   );
 };
