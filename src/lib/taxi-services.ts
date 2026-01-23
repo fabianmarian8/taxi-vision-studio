@@ -15,6 +15,11 @@ interface ApprovedSubmission {
   city_slug: string;
 }
 
+interface HiddenService {
+  service_name: string;
+  city_slug: string;
+}
+
 /**
  * Merge taxi services from JSON with premium/partner status from Supabase
  * Also includes approved user submissions as new taxi services
@@ -24,8 +29,8 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
   try {
     const supabase = await createClient();
 
-    // Fetch taxi services status and approved submissions in parallel
-    const [dbServicesResult, approvedSubmissionsResult] = await Promise.all([
+    // Fetch taxi services status, approved submissions, and hidden services in parallel
+    const [dbServicesResult, approvedSubmissionsResult, hiddenServicesResult] = await Promise.all([
       supabase
         .from('taxi_services')
         .select('name, is_premium, is_partner, premium_expires_at')
@@ -35,16 +40,30 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
         .select('name, phone, description, city_slug')
         .eq('city_slug', city.slug)
         .eq('status', 'approved'),
+      supabase
+        .from('hidden_taxi_services')
+        .select('service_name, city_slug')
+        .eq('city_slug', city.slug),
     ]);
 
     const { data: dbServices, error } = dbServicesResult;
     const { data: approvedSubmissions, error: submissionsError } = approvedSubmissionsResult;
+    const { data: hiddenServices, error: hiddenError } = hiddenServicesResult;
 
     if (error) {
       console.error('Error fetching taxi services from DB:', error);
     }
     if (submissionsError) {
       console.error('Error fetching approved submissions:', submissionsError);
+    }
+    if (hiddenError) {
+      console.error('Error fetching hidden services:', hiddenError);
+    }
+
+    // Create a set of hidden service names (case-insensitive)
+    const hiddenNames = new Set<string>();
+    if (hiddenServices) {
+      hiddenServices.forEach((hs) => hiddenNames.add(hs.service_name.toLowerCase()));
     }
 
     // Create a map for quick lookup (case-insensitive)
@@ -128,9 +147,14 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
     // Combine JSON services with approved submissions
     const allServices = [...mergedFromJson, ...submissionsAsServices];
 
+    // Filter out hidden services
+    const visibleServices = allServices.filter(
+      (service) => !hiddenNames.has(service.name.toLowerCase())
+    );
+
     return {
       ...city,
-      taxiServices: allServices,
+      taxiServices: visibleServices,
     };
   } catch (error) {
     console.error('Error merging taxi services:', error);

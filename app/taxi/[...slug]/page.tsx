@@ -57,6 +57,7 @@ import { OwnerClaimButton } from '@/components/OwnerClaimButton';
 import { getMunicipalityStats } from '@/lib/municipality-data';
 import { TaxiSlotsBanner } from '@/components/TaxiSlotsBanner';
 import { AddTaxiButton } from '@/components/AddTaxiModal';
+import { DeleteTaxiButton } from '@/components/admin/DeleteTaxiButton';
 import { getApprovedPartnerData } from '@/lib/partner-data';
 import { checkPartnerOwnership } from '@/lib/partner-ownership';
 import { checkCityEditAccess } from '@/lib/city-ownership';
@@ -859,17 +860,23 @@ async function UniversalListView({
                     </div>
                   )}
 
-                  {/* Telefónne číslo + Nahlásiť nefunkčné - globálne pre všetky služby */}
+                  {/* Telefónne číslo + Nahlásiť nefunkčné + Admin delete - globálne pre všetky služby */}
                   {service.phone && (
                     <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100 relative z-10">
                       <p className="text-sm text-foreground/60">
                         {service.phone}
                       </p>
-                      <ReportNumberButton
-                        serviceName={service.name}
-                        servicePhone={service.phone}
-                        cityName={city.name}
-                      />
+                      <div className="flex items-center gap-1">
+                        <ReportNumberButton
+                          serviceName={service.name}
+                          servicePhone={service.phone}
+                          cityName={city.name}
+                        />
+                        <DeleteTaxiButton
+                          citySlug={city.slug}
+                          serviceName={service.name}
+                        />
+                      </div>
                     </div>
                   )}
                 </div>
