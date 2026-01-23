@@ -74,7 +74,8 @@ import {
   generateIntroText,
   getLocativePhrase,
   getAccusativePhrase,
-  getGenitivePhrase
+  getGenitivePhrase,
+  getTaxiServiceLabel
 } from '@/utils/declensions';
 
 // ISR: Revalidate every 60 seconds for partner data updates
@@ -276,13 +277,13 @@ export async function generateMetadata({
       // Pre obce (isVillage) iný formát - bez "Taxi" v nadpise
       const titlePrefix = city.isVillage ? '' : 'Taxi ';
       const description = countText
-        ? `${city.isVillage ? 'Taxislužba' : 'Taxi'} ${locationText} ${city.name} - ${countText} taxislužieb s telefónnymi číslami. ${taxiServicesList ? `${taxiServicesList}.` : ''} Objednajte taxi jednoducho.`
+        ? `${city.isVillage ? 'Taxislužba' : 'Taxi'} ${locationText} ${city.name} - ${countText} ${getTaxiServiceLabel(taxiCount)} s telefónnymi číslami. ${taxiServicesList ? `${taxiServicesList}.` : ''} Objednajte taxi jednoducho.`
         : `${city.isVillage ? 'Taxislužba' : 'Taxi'} ${locationText} ${city.name} - Kontakty na taxislužby. Objednajte taxi jednoducho.`;
 
       // Title format: "Streda nad Bodrogom - 1 taxislužba" pre obce, "Taxi Bratislava - 15+ taxislužieb" pre mestá
       // SEO: bez brand suffixu pre lepšie využitie title limitu (~60 znakov)
       const titleWithCount = countText
-        ? `${titlePrefix}${city.name} - ${countText} ${taxiCount === 1 ? 'taxislužba' : 'taxislužieb'}`
+        ? `${titlePrefix}${city.name} - ${countText} ${getTaxiServiceLabel(taxiCount)}`
         : `${titlePrefix}${city.name} - Taxislužby`;
 
       return {
@@ -290,7 +291,7 @@ export async function generateMetadata({
         description,
         keywords: city.keywords || [`taxi ${city.name}`, `taxislužby ${city.name}`, `taxi ${city.region}`, 'objednať taxi'],
         openGraph: {
-          title: `${titlePrefix}${city.name} - ${countText ? countText + (taxiCount === 1 ? ' taxislužba' : ' taxislužieb') : 'Taxislužby'}`,
+          title: `${titlePrefix}${city.name} - ${countText ? countText + ' ' + getTaxiServiceLabel(taxiCount) : 'Taxislužby'}`,
           description,
           type: 'website',
           locale: 'sk_SK',
@@ -597,7 +598,7 @@ async function UniversalListView({
             {city.isVillage ? city.name : `Taxi ${city.name}`}
           </h1>
           <p className="text-sm text-foreground/60 mt-1">
-            {city.taxiServices.length} {city.taxiServices.length === 1 ? 'taxislužba' : 'taxislužieb'} • {city.region}
+            {city.taxiServices.length} {getTaxiServiceLabel(city.taxiServices.length)} • {city.region}
           </p>
           {/* City description - editable by admin */}
           {city.description && (

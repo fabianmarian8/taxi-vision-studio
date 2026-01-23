@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { slovakCities } from '@/data/cities';
+import { getTaxiServiceLabel } from '@/utils/declensions';
 
 export default async function AdminCitiesPage() {
   const session = await getSession();
@@ -71,7 +72,7 @@ export default async function AdminCitiesPage() {
                             <CardHeader>
                               <CardTitle className="text-base">{city.name}</CardTitle>
                               <CardDescription className="text-xs">
-                                {city.taxiServices.length} {city.taxiServices.length === 1 ? 'taxislužba' : 'taxislužieb'}
+                                {city.taxiServices.length} {getTaxiServiceLabel(city.taxiServices.length)}
                               </CardDescription>
                             </CardHeader>
                           </Card>

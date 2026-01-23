@@ -402,4 +402,14 @@ export function generateIntroText(municipality: { slug: string; name: string }):
   return `${locative} nie je evidovaná taxislužba. Tieto najbližšie jazdia ${accusative}:`;
 }
 
+/**
+ * Správne slovenské skloňovanie slova "taxislužba" podľa počtu
+ * 1 taxislužba, 2-4 taxislužby, 5+ taxislužieb
+ */
+export function getTaxiServiceLabel(count: number): string {
+  if (count === 1) return 'taxislužba';
+  if (count >= 2 && count <= 4) return 'taxislužby';
+  return 'taxislužieb';
+}
+
 export { manualDeclensions };
