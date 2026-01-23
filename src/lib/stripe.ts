@@ -27,12 +27,14 @@ export const stripe = new Proxy({} as Stripe, {
 
 // Price IDs from Stripe Dashboard
 export const STRIPE_PRICES = {
+  mini: process.env.STRIPE_MINI_PRICE_ID || '',
   premium: process.env.STRIPE_PREMIUM_PRICE_ID || '',
   partner: process.env.STRIPE_PARTNER_PRICE_ID || '',
 };
 
 // Plan amounts in cents
 export const PLAN_AMOUNTS = {
+  mini: 99,     // 0.99 EUR
   premium: 399, // 3.99 EUR
   partner: 899, // 8.99 EUR
 };
@@ -108,7 +110,8 @@ export function calculateMRR(subscriptions: Stripe.Subscription[]): number {
 /**
  * Get plan type from price ID
  */
-export function getPlanTypeFromPrice(priceId: string): 'premium' | 'partner' | 'unknown' {
+export function getPlanTypeFromPrice(priceId: string): 'mini' | 'premium' | 'partner' | 'unknown' {
+  if (priceId === STRIPE_PRICES.mini) return 'mini';
   if (priceId === STRIPE_PRICES.premium) return 'premium';
   if (priceId === STRIPE_PRICES.partner) return 'partner';
 
@@ -119,9 +122,11 @@ export function getPlanTypeFromPrice(priceId: string): 'premium' | 'partner' | '
 /**
  * Get plan type from subscription amount
  */
-export function getPlanTypeFromAmount(amountCents: number): 'premium' | 'partner' {
-  // Partner is 899 cents, Premium is 399 cents
-  return amountCents >= 800 ? 'partner' : 'premium';
+export function getPlanTypeFromAmount(amountCents: number): 'mini' | 'premium' | 'partner' {
+  // Partner is 899 cents, Premium is 399 cents, Mini is 99 cents
+  if (amountCents >= 800) return 'partner';
+  if (amountCents >= 300) return 'premium';
+  return 'mini';
 }
 
 /**

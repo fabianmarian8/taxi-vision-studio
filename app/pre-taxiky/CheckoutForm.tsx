@@ -5,7 +5,7 @@ import { ArrowRight, Loader2, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface CheckoutFormProps {
-  plan: 'premium' | 'partner';
+  plan: 'mini' | 'premium' | 'partner';
   onClose?: () => void;
 }
 
@@ -102,15 +102,25 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
     }
   };
 
-  const isPremium = plan === 'premium';
+  const isPartner = plan === 'partner';
+  const isMini = plan === 'mini';
+
+  const planNames = { mini: 'MINI', premium: 'PREMIUM', partner: 'PARTNER' };
+  const planColors = {
+    mini: 'text-emerald-400',
+    premium: 'text-white',
+    partner: 'text-yellow-400'
+  };
 
   return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <div className={cn(
         "relative w-full max-w-md rounded-2xl p-6 md:p-8",
-        isPremium
-          ? "bg-slate-900 border border-white/10"
-          : "bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-yellow-400/50"
+        isPartner
+          ? "bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-yellow-400/50"
+          : isMini
+            ? "bg-slate-900 border border-emerald-500/30"
+            : "bg-slate-900 border border-white/10"
       )}>
         {/* Close button */}
         <button
@@ -122,11 +132,8 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
 
         {/* Header */}
         <div className="mb-6">
-          <h2 className={cn(
-            "text-2xl font-bold mb-2",
-            isPremium ? "text-white" : "text-yellow-400"
-          )}>
-            {isPremium ? 'PREMIUM' : 'PARTNER'} balíček
+          <h2 className={cn("text-2xl font-bold mb-2", planColors[plan])}>
+            {planNames[plan]} balíček
           </h2>
           <p className="text-slate-400 text-sm">
             Vyplňte údaje a pokračujte na platbu
@@ -183,9 +190,11 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
             disabled={isLoading}
             className={cn(
               "w-full flex items-center justify-center gap-2 font-bold px-6 py-4 rounded-xl transition-all text-base disabled:opacity-50 disabled:cursor-not-allowed",
-              isPremium
-                ? "bg-white/10 hover:bg-white/20 border border-white/10 text-white"
-                : "bg-yellow-400 hover:bg-yellow-300 text-slate-900 shadow-lg shadow-yellow-400/20 hover:shadow-yellow-400/30"
+              isPartner
+                ? "bg-yellow-400 hover:bg-yellow-300 text-slate-900 shadow-lg shadow-yellow-400/20 hover:shadow-yellow-400/30"
+                : isMini
+                  ? "bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/30 text-emerald-400"
+                  : "bg-white/10 hover:bg-white/20 border border-white/10 text-white"
             )}
           >
             {isLoading ? (
@@ -203,7 +212,7 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
 
           {/* Price info */}
           <p className="text-center text-slate-500 text-xs">
-            {isPremium ? '3,99€' : '8,99€'} / mesiac • Bez viazanosti • Zrušíte kedykoľvek
+            {plan === 'mini' ? '0,99€' : plan === 'premium' ? '3,99€' : '8,99€'} / mesiac • Bez viazanosti • Zrušíte kedykoľvek
           </p>
         </form>
       </div>
@@ -217,7 +226,7 @@ export function CheckoutButton({
   className,
   children
 }: {
-  plan: 'premium' | 'partner';
+  plan: 'mini' | 'premium' | 'partner';
   className?: string;
   children: React.ReactNode;
 }) {

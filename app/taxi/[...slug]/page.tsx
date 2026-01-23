@@ -23,7 +23,7 @@ import { CityContent } from '@/components/CityContent';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { LocalBusinessSchema } from '@/components/schema/LocalBusinessSchema';
 import { TaxiServiceSchema } from '@/components/schema/TaxiServiceSchema';
-import { MapPin, Phone, Globe, Crown, ArrowLeft, Star, BadgeCheck, CheckCircle2, ArrowRight, Clock, Award, Car, MessageCircle, Eye, FileText, ScrollText, Users, Facebook, Instagram, Mail } from 'lucide-react';
+import { MapPin, Phone, Globe, Crown, ArrowLeft, Star, BadgeCheck, CheckCircle2, ArrowRight, Clock, Award, Car, MessageCircle, Eye, FileText, ScrollText, Users, Facebook, Instagram, Mail, ShieldCheck } from 'lucide-react';
 import { getCityBySlug, createRegionSlug, slovakCities, getRegionBySlug, type CityData, type TaxiService, findNearbyCitiesWithTaxis } from '@/data/cities';
 import { NearbyCitiesSection } from '@/components/NearbyCitiesSection';
 import { getMunicipalityBySlug, findNearestCitiesWithTaxis, allMunicipalities, type Municipality } from '@/data/municipalities';
@@ -2279,6 +2279,23 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             {/* Galéria fotiek */}
             {service.gallery && service.gallery.length > 0 && (
               <TaxiGallery images={service.gallery} serviceName={service.name} />
+            )}
+
+            {/* Mini verifikačný banner - len pre neoverené služby */}
+            {!isPremium && !isPartner && (
+              <Link
+                href="/pre-taxiky"
+                className="flex items-center gap-3 mt-4 p-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl transition-all group"
+              >
+                <div className="w-10 h-10 rounded-full bg-emerald-100 group-hover:bg-emerald-200 flex items-center justify-center flex-shrink-0 transition-colors">
+                  <ShieldCheck className="h-5 w-5 text-emerald-600" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold text-emerald-800 text-sm">Overte túto taxislužbu</p>
+                  <p className="text-emerald-600 text-xs">Získajte badge overenia už od 0,99€/mesiac</p>
+                </div>
+                <ArrowRight className="h-4 w-4 text-emerald-500 group-hover:translate-x-1 transition-transform flex-shrink-0" />
+              </Link>
             )}
           </div>
         </section>
