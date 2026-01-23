@@ -280,9 +280,10 @@ export async function generateMetadata({
         : `${city.isVillage ? 'Taxislužba' : 'Taxi'} ${locationText} ${city.name} - Kontakty na taxislužby. Objednajte taxi jednoducho.`;
 
       // Title format: "Streda nad Bodrogom - 1 taxislužba" pre obce, "Taxi Bratislava - 15+ taxislužieb" pre mestá
+      // SEO: bez brand suffixu pre lepšie využitie title limitu (~60 znakov)
       const titleWithCount = countText
-        ? `${titlePrefix}${city.name} - ${countText} ${taxiCount === 1 ? 'taxislužba' : 'taxislužieb'} | ${siteName}`
-        : `${titlePrefix}${city.name} - Taxislužby | ${siteName}`;
+        ? `${titlePrefix}${city.name} - ${countText} ${taxiCount === 1 ? 'taxislužba' : 'taxislužieb'}`
+        : `${titlePrefix}${city.name} - Taxislužby`;
 
       return {
         title: titleWithCount,
@@ -306,7 +307,7 @@ export async function generateMetadata({
       const currentUrl = `${baseUrl}/taxi/${location.slug}`;
       
       return {
-        title: `${location.metaDescription.split('-')[0].trim()} | ${siteName}`,
+        title: `${location.metaDescription.split('-')[0].trim()}`,
         description: location.metaDescription,
         keywords: [`taxi ${location.name}`, `taxislužba ${location.name}`, `taxi ${location.district}`, `taxi ${location.region}`],
         openGraph: {
@@ -352,7 +353,7 @@ export async function generateMetadata({
       const description = generateUniqueMetaDescription(service.name, city.name, service.phone || '');
 
       return {
-        title: `${service.name} - Taxi ${city.name} | ${siteName}`,
+        title: `${service.name} - Taxi ${city.name}`,
         description,
         keywords: [service.name, `taxi ${city.name}`, `taxislužba ${city.name}`, `${service.name} ${city.name}`],
         openGraph: {
@@ -374,7 +375,7 @@ export async function generateMetadata({
       const description = `Taxi v okrese ${district.name} - Zoznam ${district.municipalitiesCount} obcí a miest s taxislužbami. Objednajte taxi jednoducho.`;
 
       return {
-        title: `Taxi okres ${district.name} - ${district.municipalitiesCount} obcí | ${siteName}`,
+        title: `Taxi okres ${district.name} - ${district.municipalitiesCount} obcí`,
         description,
         keywords: [`taxi ${district.name}`, `taxislužby okres ${district.name}`, `taxi ${district.region}`, 'taxi obce'],
         openGraph: {
@@ -397,11 +398,11 @@ export async function generateMetadata({
       const currentUrl = `${baseUrl}/taxi/${regionSlug}/${district.slug}/${municipality.slug}`;
       let description = `Taxi v obci ${municipality.name}, okres ${district.name} - Najbližšie taxislužby v meste ${nearestCity?.city.name} (${nearestCity?.distance} km). Objednajte taxi.`;
       let keywords = [`taxi ${municipality.name}`, `taxi okres ${district.name}`, `taxislužby ${municipality.name}`, `taxi ${district.region}`];
-      let title = `Taxi ${municipality.name} - okres ${district.name} | ${siteName}`;
+      let title = `Taxi ${municipality.name} - okres ${district.name}`;
 
       // SEO optimalizácia pre Lešť - multilingválne dopyty pre NATO vojská
       if (municipality.slug === 'lest-vojensky-obvod') {
-        title = `Taxi Lešť NATO base - Military Taxi Service | ${siteName}`;
+        title = `Taxi Lešť NATO base - Military Taxi Service`;
         description = `Reliable 24/7 Taxi service for NATO personnel at Lešť military base. English speaking drivers, transfers to Zvolen, Banská Bystrica, and Airports (Vienna, Budapest). Book via WhatsApp.`;
         keywords = [
           ...keywords,
