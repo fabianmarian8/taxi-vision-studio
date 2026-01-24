@@ -101,12 +101,12 @@ const sentryWebpackPluginOptions = {
   // Only print logs for uploading source maps in CI
   silent: !process.env.CI,
 
-  // Upload a larger set of source maps for prettier stack traces (increases build time)
-  widenClientFileUpload: true,
+  // Disabled to speed up builds - was causing ~2x longer compile times
+  widenClientFileUpload: false,
 
-  // Automatically annotate React components to show their full name in breadcrumbs and session replay
+  // Disabled - deprecated and slows down builds
   reactComponentAnnotation: {
-    enabled: true,
+    enabled: false,
   },
 
   // Route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
@@ -115,8 +115,12 @@ const sentryWebpackPluginOptions = {
   // Hides source maps from generated client bundles
   hideSourceMaps: true,
 
-  // Automatically tree-shake Sentry logger statements to reduce bundle size
-  disableLogger: true,
+  // Tree-shake Sentry logger statements (use new webpack config path)
+  webpack: {
+    treeshake: {
+      removeDebugLogging: true,
+    },
+  },
 };
 
 // Wrapper order: Axiom -> Bundle Analyzer -> Sentry (outer to inner)
