@@ -1,4 +1,3 @@
-import { createClientSafe } from '@/lib/supabase/server';
 import { isSuperadmin } from '@/lib/superadmin';
 
 export interface CityOwnershipResult {
@@ -8,40 +7,18 @@ export interface CityOwnershipResult {
 }
 
 /**
- * Check if the current user is a superadmin who can edit city pages
+ * Check if the current user is a superadmin who can edit city pages.
+ *
+ * NOTE: For ISR/static pages, this always returns default (not admin).
+ * Server-side auth checks are not possible in static pages.
+ * Use client-side checks if admin features are needed.
  */
 export async function checkCityEditAccess(): Promise<CityOwnershipResult> {
-  const defaultResult: CityOwnershipResult = {
+  // For static/ISR pages, always return default (not admin)
+  // Server-side auth would cause "static to dynamic" errors
+  return {
     isAdmin: false,
     userId: null,
     userEmail: null,
   };
-
-  try {
-    // createClientSafe returns null during static generation
-    const supabase = await createClientSafe();
-    if (!supabase) {
-      return defaultResult;
-    }
-
-    // Get current user
-    const { data: { user } } = await supabase.auth.getUser();
-
-    if (!user) {
-      return defaultResult;
-    }
-
-    // Check if user is superadmin
-    const userIsSuperadmin = isSuperadmin(user.email);
-
-    return {
-      isAdmin: userIsSuperadmin,
-      userId: user.id,
-      userEmail: user.email || null,
-    };
-
-  } catch (error) {
-    console.error('[checkCityEditAccess] Error:', error);
-    return defaultResult;
-  }
 }

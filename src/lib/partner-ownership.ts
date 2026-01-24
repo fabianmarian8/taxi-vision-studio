@@ -1,7 +1,4 @@
-import { createClientSafe } from '@/lib/supabase/server';
-import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { DEFAULT_PARTNER_SKIN } from '@/lib/partner-skins';
-import { isSuperadmin } from '@/lib/superadmin';
 
 export interface PartnerDraftData {
   id: string;
@@ -43,11 +40,16 @@ export interface PartnerOwnershipResult {
 }
 
 /**
- * Skontroluje či je aktuálne prihlásený user vlastníkom partnera
- * a vráti jeho draft dáta ak existujú
+ * Check if current user owns a partner profile.
+ *
+ * NOTE: For ISR/static pages, this always returns default (not owner).
+ * Server-side auth checks are not possible in static pages.
+ * Use client-side checks if inline editor is needed.
  */
 export async function checkPartnerOwnership(partnerSlug: string): Promise<PartnerOwnershipResult> {
-  const defaultResult: PartnerOwnershipResult = {
+  // For static/ISR pages, always return default (not owner)
+  // Server-side auth would cause "static to dynamic" errors
+  return {
     isOwner: false,
     draftData: null,
     partnerId: null,
@@ -55,126 +57,6 @@ export async function checkPartnerOwnership(partnerSlug: string): Promise<Partne
     partnerSlug: null,
     citySlug: null
   };
-
-  try {
-    // createClientSafe returns null during static generation
-    const supabase = await createClientSafe();
-    if (!supabase) {
-      return defaultResult;
-    }
-
-    // Získaj aktuálneho usera
-    const { data: { user } } = await supabase.auth.getUser();
-
-    console.log('[checkPartnerOwnership] Looking for slug:', partnerSlug);
-    console.log('[checkPartnerOwnership] Current user:', user?.id || 'not logged in');
-
-    if (!user) {
-      console.log('[checkPartnerOwnership] No user, returning default');
-      return defaultResult;
-    }
-
-    // Check if user is superadmin FIRST (before query that might fail due to RLS)
-    const userIsSuperadmin = isSuperadmin(user.email);
-    console.log('[checkPartnerOwnership] Is superadmin:', userIsSuperadmin, 'email:', user.email);
-
-    // Use admin client for superadmins to bypass RLS
-    const queryClient = userIsSuperadmin
-      ? createAdminClient(
-          process.env.NEXT_PUBLIC_SUPABASE_URL!,
-          process.env.SUPABASE_SERVICE_ROLE_KEY!
-        )
-      : supabase;
-
-    // Nájdi partnera podľa slugu
-    // NOTE: Niektoré stĺpce (whatsapp, booking_url, etc.) nemusia existovať v starších DB
-    const { data: partner, error } = await queryClient
-      .from('partners')
-      .select(`
-        id,
-        user_id,
-        slug,
-        city_slug,
-        partner_drafts (
-          id,
-          status,
-          company_name,
-          description,
-          show_description,
-          phone,
-          email,
-          website,
-          hero_title,
-          hero_subtitle,
-          hero_image_url,
-          hero_image_zoom,
-          hero_image_pos_x,
-          hero_image_pos_y,
-          services,
-          show_services,
-          services_description,
-          gallery,
-          social_facebook,
-          social_instagram,
-          whatsapp,
-          booking_url,
-          pricelist_url,
-          transport_rules_url,
-          contact_url,
-          template_variant,
-          updated_at
-        )
-      `)
-      .eq('slug', partnerSlug)
-      .single();
-
-    if (error || !partner) {
-      console.log('[checkPartnerOwnership] Partner not found or error:', error?.message);
-      return defaultResult;
-    }
-
-    console.log('[checkPartnerOwnership] Found partner:', partner.id, 'user_id:', partner.user_id);
-
-    // Kontrola vlastníctva alebo superadmin (userIsSuperadmin already checked above)
-    if (partner.user_id !== user.id && !userIsSuperadmin) {
-      console.log('[checkPartnerOwnership] User mismatch - partner.user_id:', partner.user_id, 'user.id:', user.id);
-      return defaultResult;
-    }
-
-    console.log('[checkPartnerOwnership] User IS owner!', userIsSuperadmin ? '(superadmin)' : '');
-
-    // Nájdi najnovší draft (preferuj draft status, potom approved)
-    const drafts = (partner.partner_drafts || []) as PartnerDraftData[];
-
-    // Najprv skús nájsť draft s status='draft'
-    let latestDraft = drafts
-      .filter((d) => d.status === 'draft')
-      .sort((a, b) =>
-        new Date(b.updated_at || 0).getTime() - new Date(a.updated_at || 0).getTime()
-      )[0];
-
-    // Ak nie je draft, použi approved
-    if (!latestDraft) {
-      latestDraft = drafts
-        .filter((d) => d.status === 'approved')
-        .sort((a, b) =>
-          new Date(b.updated_at || 0).getTime() - new Date(a.updated_at || 0).getTime()
-        )[0];
-    }
-
-    return {
-      isOwner: true,
-      draftData: latestDraft || null,
-      partnerId: partner.id,
-      draftId: latestDraft?.id || null,
-      partnerSlug: partner.slug,
-      citySlug: partner.city_slug
-    };
-
-  } catch (error) {
-    console.error('[checkPartnerOwnership] Error:', error);
-    return defaultResult;
-  }
 }
 
 interface BaseData {
