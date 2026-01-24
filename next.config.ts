@@ -20,7 +20,11 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 const nextConfig: NextConfig = {
-  // TypeScript a ESLint sa spustia počas buildu bez výnimiek
+  // Skip ESLint during builds - warningy spomalovali webpack z 53s na 138s
+  // ESLint stále beží lokálne cez pre-commit hook
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 
   // Image optimization
   images: {
