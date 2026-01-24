@@ -60,37 +60,56 @@ export async function middleware(request: NextRequest) {
       return NextResponse.next();
     }
 
-    const session = request.cookies.get('session')?.value;
     const isApiRoute = pathname.startsWith('/api/admin');
 
-    if (!session) {
-      // For API routes, return JSON 401 instead of redirect
-      if (isApiRoute) {
-        return NextResponse.json(
-          { error: 'Unauthorized' },
-          { status: 401 }
-        );
+    // First check for legacy JWT session
+    const legacySession = request.cookies.get('session')?.value;
+    if (legacySession) {
+      try {
+        await jwtVerify(legacySession, getSecretKey());
+        return NextResponse.next();
+      } catch {
+        // Legacy session invalid, continue to check Supabase auth
       }
-      // For pages, redirect to login
-      return NextResponse.redirect(new URL('/admin/login', request.url));
     }
 
-    try {
-      // Verify session
-      await jwtVerify(session, getSecretKey());
-      return NextResponse.next();
-    } catch (error) {
-      console.error('Session verification failed in middleware:', error);
-      // For API routes, return JSON 401 instead of redirect
-      if (isApiRoute) {
-        return NextResponse.json(
-          { error: 'Unauthorized' },
-          { status: 401 }
-        );
+    // Check for Supabase auth (for superadmin users)
+    let response = NextResponse.next({ request });
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll() {
+            return request.cookies.getAll();
+          },
+          setAll(cookiesToSet) {
+            cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
+            response = NextResponse.next({ request });
+            cookiesToSet.forEach(({ name, value, options }) =>
+              response.cookies.set(name, value, options)
+            );
+          },
+        },
       }
-      // For pages, redirect to login
-      return NextResponse.redirect(new URL('/admin/login', request.url));
+    );
+
+    const { data: { user } } = await supabase.auth.getUser();
+
+    if (user) {
+      // User is authenticated via Supabase, allow access
+      // The API route itself will check if user is superadmin
+      return response;
     }
+
+    // No valid session found
+    if (isApiRoute) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+    return NextResponse.redirect(new URL('/admin/login', request.url));
   }
 
   return NextResponse.next();

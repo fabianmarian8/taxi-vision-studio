@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
-import { isSuperadmin } from '@/lib/superadmin';
 
 interface OwnershipState {
   isLoading: boolean;
@@ -15,6 +14,9 @@ interface OwnershipState {
 /**
  * Client-side hook for checking user ownership/admin status.
  * Safe to use in ISR/static pages - runs after hydration.
+ *
+ * Uses server-side API to check superadmin status because
+ * SUPERADMIN_EMAILS env var is not available on client.
  */
 export function useOwnership(partnerSlug?: string) {
   const [state, setState] = useState<OwnershipState>({
@@ -28,10 +30,17 @@ export function useOwnership(partnerSlug?: string) {
   useEffect(() => {
     async function checkOwnership() {
       try {
-        const supabase = createClient();
-        const { data: { session } } = await supabase.auth.getSession();
+        // Check superadmin status via server API
+        // This is necessary because SUPERADMIN_EMAILS is server-only
+        const adminResponse = await fetch('/api/auth/check-superadmin');
+        const adminData = await adminResponse.json();
 
-        if (!session?.user) {
+        const userIsAdmin = adminData.isAdmin === true;
+        const userId = adminData.userId || null;
+        const userEmail = adminData.email || null;
+
+        // If not logged in
+        if (!userId) {
           setState({
             isLoading: false,
             isAdmin: false,
@@ -42,36 +51,34 @@ export function useOwnership(partnerSlug?: string) {
           return;
         }
 
-        const user = session.user;
-        const userIsAdmin = isSuperadmin(user.email);
-
-        // If no partnerSlug provided, just check admin status
+        // If no partnerSlug provided, just return admin status
         if (!partnerSlug) {
           setState({
             isLoading: false,
             isAdmin: userIsAdmin,
             isOwner: false,
-            userId: user.id,
-            userEmail: user.email || null,
+            userId,
+            userEmail,
           });
           return;
         }
 
         // Check partner ownership
+        const supabase = createClient();
         const { data: partner } = await supabase
           .from('partners')
           .select('id, user_id, slug')
           .eq('slug', partnerSlug)
           .single();
 
-        const isOwner = partner?.user_id === user.id || userIsAdmin;
+        const isOwner = partner?.user_id === userId || userIsAdmin;
 
         setState({
           isLoading: false,
           isAdmin: userIsAdmin,
           isOwner,
-          userId: user.id,
-          userEmail: user.email || null,
+          userId,
+          userEmail,
         });
       } catch (error) {
         console.error('[useOwnership] Error:', error);

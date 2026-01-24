@@ -1,19 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getSession } from '@/lib/auth';
 import { createClient } from '@/lib/supabase/server';
+import { isSuperadmin } from '@/lib/superadmin';
 import { logger } from '@/lib/logger';
 
 // POST - skryť taxislužbu (pridá do hidden_taxi_services)
 export async function POST(request: NextRequest) {
-  const session = await getSession();
-  if (!session) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  const supabase = await createClient();
+  const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+
+  // Debug logging
+  console.log('[delete API] Session check:', {
+    hasSession: !!session,
+    hasUser: !!session?.user,
+    email: session?.user?.email,
+    sessionError: sessionError?.message,
+  });
+
+  if (!session?.user) {
+    return NextResponse.json({
+      error: 'Unauthorized',
+      debug: { hasSession: !!session, sessionError: sessionError?.message }
+    }, { status: 401 });
   }
 
-  // Kontrola či je superadmin (username = 'admin')
-  if (session.username !== 'admin') {
-    return NextResponse.json({ error: 'Forbidden - only superadmin can delete' }, { status: 403 });
+  const isAdmin = isSuperadmin(session.user.email);
+  console.log('[delete API] Superadmin check:', { email: session.user.email, isAdmin });
+
+  // Check if user is superadmin
+  if (!isAdmin) {
+    return NextResponse.json({
+      error: 'Forbidden - only superadmin can delete',
+      debug: { email: session.user.email, isAdmin }
+    }, { status: 403 });
   }
+
+  const userEmail = session.user.email || 'unknown';
 
   const log = logger.with({ endpoint: 'admin/taxi-services/delete' });
 
@@ -44,7 +65,7 @@ export async function POST(request: NextRequest) {
       log.info('Deleted taxi submission', {
         citySlug,
         serviceName,
-        deletedBy: session.username,
+        deletedBy: userEmail,
       });
       await logger.flush();
 
@@ -61,7 +82,7 @@ export async function POST(request: NextRequest) {
       .insert({
         city_slug: citySlug,
         service_name: serviceName,
-        hidden_by: session.username,
+        hidden_by: userEmail,
         reason: reason || 'Removed by superadmin',
       });
 
@@ -83,7 +104,7 @@ export async function POST(request: NextRequest) {
     log.info('Hidden taxi service', {
       citySlug,
       serviceName,
-      hiddenBy: session.username,
+      hiddenBy: userEmail,
     });
     await logger.flush();
 
@@ -107,15 +128,15 @@ export async function POST(request: NextRequest) {
 
 // GET - zoznam skrytých služieb
 export async function GET(request: NextRequest) {
-  const session = await getSession();
-  if (!session) {
+  const supabase = await createClient();
+  const { data: { session } } = await supabase.auth.getSession();
+
+  if (!session?.user || !isSuperadmin(session.user.email)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   const { searchParams } = new URL(request.url);
   const citySlug = searchParams.get('citySlug');
-
-  const supabase = await createClient();
 
   let query = supabase.from('hidden_taxi_services').select('*');
 
@@ -134,12 +155,14 @@ export async function GET(request: NextRequest) {
 
 // DELETE - obnoviť skrytú službu (odstrániť z hidden_taxi_services)
 export async function DELETE(request: NextRequest) {
-  const session = await getSession();
-  if (!session) {
+  const supabase = await createClient();
+  const { data: { session } } = await supabase.auth.getSession();
+
+  if (!session?.user) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  if (session.username !== 'admin') {
+  if (!isSuperadmin(session.user.email)) {
     return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   }
 
@@ -150,7 +173,6 @@ export async function DELETE(request: NextRequest) {
     return NextResponse.json({ error: 'id is required' }, { status: 400 });
   }
 
-  const supabase = await createClient();
   const { error } = await supabase
     .from('hidden_taxi_services')
     .delete()

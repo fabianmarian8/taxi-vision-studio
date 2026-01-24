@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Trash2, Loader2 } from 'lucide-react';
+import { useOwnership } from '@/hooks/useOwnership';
 
 interface DeleteTaxiButtonProps {
   citySlug: string;
@@ -10,32 +11,12 @@ interface DeleteTaxiButtonProps {
 }
 
 export function DeleteTaxiButton({ citySlug, serviceName, onDeleted }: DeleteTaxiButtonProps) {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const { isAdmin, isLoading } = useOwnership();
   const [isDeleting, setIsDeleting] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
-  // Check if user is admin on mount
-  useEffect(() => {
-    const checkAdmin = async () => {
-      try {
-        const res = await fetch('/api/admin/check', {
-          credentials: 'include',
-          cache: 'no-store',
-        });
-        if (res.ok) {
-          const data = await res.json();
-          setIsAdmin(data.isAdmin === true && data.username === 'admin');
-        } else {
-          setIsAdmin(false);
-        }
-      } catch {
-        // Not admin
-      }
-    };
-    checkAdmin();
-  }, []);
-
-  if (!isAdmin) {
+  // Don't show while loading or if not admin
+  if (isLoading || !isAdmin) {
     return null;
   }
 
