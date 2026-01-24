@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useCallback, useRef, useEffect, ReactNode } from 'react';
 import { Pencil, Save, X, Loader2, Check } from 'lucide-react';
+import { useOwnership } from '@/hooks/useOwnership';
 
 // City draft data
 export interface CityDraftData {
@@ -36,16 +37,19 @@ export function useCityEditor() {
 interface CityEditorProviderProps {
   children: ReactNode;
   initialData: Partial<CityDraftData>;
-  isAdmin: boolean;
+  /** @deprecated Admin status is now checked client-side */
+  isAdmin?: boolean;
   citySlug: string;
 }
 
 export function CityEditorProvider({
   children,
   initialData,
-  isAdmin,
   citySlug,
 }: CityEditorProviderProps) {
+  // Check admin status client-side
+  const { isAdmin, isLoading: isOwnershipLoading } = useOwnership();
+
   // Editor state
   const [isEditMode, setIsEditMode] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
@@ -159,8 +163,8 @@ export function CityEditorProvider({
     setHasPendingChanges(false);
   }, []);
 
-  // If not admin, just render children without editor functionality
-  if (!isAdmin) {
+  // If still loading or not admin, just render children without editor functionality
+  if (isOwnershipLoading || !isAdmin) {
     return <>{children}</>;
   }
 

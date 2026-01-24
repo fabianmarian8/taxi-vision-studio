@@ -60,7 +60,6 @@ import { AddTaxiButton } from '@/components/AddTaxiModal';
 import { DeleteTaxiButton } from '@/components/admin/DeleteTaxiButton';
 import { getApprovedPartnerData } from '@/lib/partner-data';
 import { checkPartnerOwnership } from '@/lib/partner-ownership';
-import { checkCityEditAccess } from '@/lib/city-ownership';
 import { getPartnerSkinClass, normalizePartnerSkin } from '@/lib/partner-skins';
 import { PartnerPageWrapper, CityEditorProvider, EditableCityDescription } from '@/components/inline-editor';
 import { EditableHeroTitle, EditableDescription, EditableHeroImage, EditableGallery, EditableServices, EditableContactButtons, EditablePhoneButton } from '@/components/partner/PartnerPageContent';
@@ -486,13 +485,11 @@ async function UniversalListView({
   regionSlug,
   locationText,
   partnerRatings,
-  isAdmin = false
 }: {
   city: CityData;
   regionSlug: string;
   locationText: string;
   partnerRatings: Map<string, { rating: number; count: number }>;
-  isAdmin?: boolean;
 }) {
   // Fetch hero images from Supabase for partners without JSON heroImage
   const partnerHeroImages = new Map<string, string>();
@@ -579,7 +576,6 @@ async function UniversalListView({
   return (
     <CityEditorProvider
       initialData={cityEditorData}
-      isAdmin={isAdmin}
       citySlug={city.slug}
     >
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -946,11 +942,9 @@ async function CityPage({ city }: { city: CityData }) {
   // Fetch ratings for partner services
   const partnerRatings = await getPartnerRatings(city.taxiServices);
 
-  // Check if current user is admin (for inline city editing)
-  const { isAdmin } = await checkCityEditAccess();
-
-  // Všetky mestá používajú vylepšený List View dizajn od oponenta
-  return <UniversalListView city={city} regionSlug={regionSlug} locationText={locationText} partnerRatings={partnerRatings} isAdmin={isAdmin} />;
+  // Admin status is now checked client-side in CityEditorProvider
+  // This allows the page to remain static/ISR compatible
+  return <UniversalListView city={city} regionSlug={regionSlug} locationText={locationText} partnerRatings={partnerRatings} />;
 
 }
 // Helper to sort services by tier: Partner > Premium > Standard > Alphabetical
