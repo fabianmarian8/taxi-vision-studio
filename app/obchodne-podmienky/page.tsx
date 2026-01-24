@@ -7,11 +7,11 @@ import { FooterLegal } from "@/components/FooterLegal";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 
 export const metadata: Metadata = {
-  title: 'Obchodné podmienky – PREMIUM a PARTNER služby – TaxiNearMe.sk',
-  description: 'Všeobecné obchodné podmienky pre platené služby PREMIUM a PARTNER na portáli TaxiNearMe.sk. Mesačné predplatné pre taxislužby.',
+  title: 'Obchodné podmienky – MINI, PREMIUM a PARTNER služby – TaxiNearMe.sk',
+  description: 'Všeobecné obchodné podmienky pre platené služby MINI, PREMIUM a PARTNER na portáli TaxiNearMe.sk. Mesačné predplatné pre taxislužby.',
   openGraph: {
-    title: 'Obchodné podmienky – PREMIUM a PARTNER služby – TaxiNearMe.sk',
-    description: 'Všeobecné obchodné podmienky pre platené služby PREMIUM a PARTNER na portáli TaxiNearMe.sk.',
+    title: 'Obchodné podmienky – MINI, PREMIUM a PARTNER služby – TaxiNearMe.sk',
+    description: 'Všeobecné obchodné podmienky pre platené služby MINI, PREMIUM a PARTNER na portáli TaxiNearMe.sk.',
     type: 'website',
     locale: 'sk_SK',
     url: 'https://www.taxinearme.sk/obchodne-podmienky',
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: SEO_CONSTANTS.twitterSite,
-    title: 'Obchodné podmienky – PREMIUM a PARTNER služby – TaxiNearMe.sk',
-    description: 'Všeobecné obchodné podmienky pre platené služby PREMIUM a PARTNER na portáli TaxiNearMe.sk.',
+    title: 'Obchodné podmienky – MINI, PREMIUM a PARTNER služby – TaxiNearMe.sk',
+    description: 'Všeobecné obchodné podmienky pre platené služby MINI, PREMIUM a PARTNER na portáli TaxiNearMe.sk.',
     images: [SEO_CONSTANTS.defaultImage],
   },
   alternates: {
@@ -44,7 +44,7 @@ const ObchodnePodmienky = () => {
         </Link>
 
         <h1 className="text-4xl md:text-5xl font-black mb-8 text-foreground">
-          Obchodné podmienky pre služby PREMIUM a PARTNER
+          Obchodné podmienky pre služby MINI, PREMIUM a PARTNER
         </h1>
 
         <div className="prose prose-lg max-w-none space-y-8">
@@ -59,7 +59,7 @@ const ObchodnePodmienky = () => {
             </h2>
             <p className="text-foreground/80 leading-relaxed">
               Tieto Všeobecné obchodné podmienky (ďalej len "VOP") upravujú práva a povinnosti
-              zmluvných strán pri poskytovaní platených služieb PREMIUM a PARTNER na webovom
+              zmluvných strán pri poskytovaní platených služieb MINI, PREMIUM a PARTNER na webovom
               portáli TaxiNearMe.sk.
             </p>
             <div className="bg-card p-6 rounded-lg border-2 border-foreground/10">
@@ -84,7 +84,7 @@ const ObchodnePodmienky = () => {
             </div>
             <p className="text-foreground/80 leading-relaxed mt-4">
               <strong>Objednávateľ:</strong> Fyzická osoba - podnikateľ alebo právnická osoba (taxislužba),
-              ktorá si objedná službu PREMIUM alebo PARTNER.
+              ktorá si objedná službu MINI, PREMIUM alebo PARTNER.
             </p>
           </section>
 
@@ -97,6 +97,15 @@ const ObchodnePodmienky = () => {
               Predmetom zmluvy je poskytovanie digitálnych služieb zvýhodneného zobrazenia
               taxislužby na portáli TaxiNearMe.sk. Poskytovateľ ponúka nasledujúce služby:
             </p>
+
+            <div className="bg-emerald-50 p-6 rounded-lg border-2 border-emerald-200 mt-4">
+              <h3 className="text-xl font-bold text-emerald-900 mb-3">MINI (Overenie čísla) - 0,99 EUR / mesiac</h3>
+              <ul className="list-disc pl-6 space-y-2 text-foreground/80">
+                <li>Badge "OVERENÉ" pri telefónnom čísle taxislužby</li>
+                <li>Zvýšená dôveryhodnosť pre zákazníkov</li>
+                <li>Dostupné priamo na stránke taxislužby</li>
+              </ul>
+            </div>
 
             <div className="bg-purple-50 p-6 rounded-lg border-2 border-purple-200 mt-4">
               <h3 className="text-xl font-bold text-purple-900 mb-3">PREMIUM - 3,99 EUR / mesiac</h3>
@@ -148,6 +157,7 @@ const ObchodnePodmienky = () => {
               Poskytovateľ nie je platcom DPH. Uvedené ceny sú konečné.
             </p>
             <ul className="list-disc pl-8 space-y-2 text-foreground/80">
+              <li><strong>MINI:</strong> 0,99 EUR / mesiac</li>
               <li><strong>PREMIUM:</strong> 3,99 EUR / mesiac</li>
               <li><strong>PARTNER:</strong> 8,99 EUR / mesiac</li>
             </ul>
@@ -188,6 +198,7 @@ const ObchodnePodmienky = () => {
               6. Aktivácia služby a dodacie lehoty
             </h2>
             <ul className="list-disc pl-8 space-y-2 text-foreground/80">
+              <li><strong>MINI:</strong> Automatická aktivácia ihneď po prijatí platby</li>
               <li><strong>PREMIUM:</strong> Aktivácia do 24 hodín od prijatia platby</li>
               <li><strong>PARTNER:</strong> Aktivácia do 48 hodín od prijatia platby a dodania
                 potrebných podkladov (logo, popis, fotografie a pod.)</li>
@@ -246,7 +257,8 @@ const ObchodnePodmienky = () => {
                 Dôležité upozornenie o skončení predplatného:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-foreground/80">
-                <li>Všetky výhody služieb PREMIUM a PARTNER sa vzťahujú <strong>výhradne na obdobie aktívneho predplatného</strong></li>
+                <li>Všetky výhody služieb MINI, PREMIUM a PARTNER sa vzťahujú <strong>výhradne na obdobie aktívneho predplatného</strong></li>
+                <li><strong>Po skončení MINI:</strong> taxislužba stratí badge "OVERENÉ" pri telefónnom čísle</li>
                 <li><strong>Po skončení PREMIUM:</strong> taxislužba stratí zlaté zvýraznenie, badge "OVERENÉ" a prioritnú pozíciu v zozname</li>
                 <li><strong>Po skončení PARTNER:</strong> okrem vyššie uvedeného bude odstránená aj personalizovaná stránka taxislužby vrátane galérie a cenníka</li>
                 <li>Taxislužba sa automaticky vráti do štandardného (bezplatného) zobrazenia v zozname</li>
