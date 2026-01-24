@@ -41,39 +41,15 @@ export function createAnonymousClient() {
 }
 
 /**
- * Safe client creation that returns null during static generation.
- * Use this for auth-dependent operations in pages that are pre-rendered.
+ * Safe client creation for static/ISR pages.
+ * ALWAYS returns null to prevent static-to-dynamic errors.
+ *
+ * Ownership checks should be done client-side for ISR pages.
+ * This function exists to maintain backwards compatibility.
  */
 export async function createClientSafe() {
-  // During build/static generation, return null instead of triggering DYNAMIC_SERVER_USAGE
-  if (process.env.NEXT_PHASE === 'phase-production-build') {
-    return null;
-  }
-
-  try {
-    const cookieStore = await cookies()
-
-    return createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          getAll() {
-            return cookieStore.getAll()
-          },
-          setAll(cookiesToSet) {
-            try {
-              cookiesToSet.forEach(({ name, value, options }) =>
-                cookieStore.set(name, value, options)
-              )
-            } catch {
-              // Ignored in Server Components
-            }
-          },
-        },
-      }
-    )
-  } catch {
-    return null;
-  }
+  // Always return null for static/ISR pages
+  // Calling cookies() during ISR revalidation causes "static to dynamic" errors
+  // See: https://nextjs.org/docs/messages/app-static-to-dynamic-error
+  return null;
 }
