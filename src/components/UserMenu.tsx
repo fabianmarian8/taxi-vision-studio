@@ -63,8 +63,10 @@ export function UserMenu({
 
   const handleSignOut = async () => {
     setIsOpen(false);
-    // Use the signout route
-    window.location.href = '/partner/auth/signout';
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    // Refresh current page instead of redirecting
+    window.location.reload();
   };
 
   const handleToggleEdit = () => {
