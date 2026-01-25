@@ -1,10 +1,21 @@
 'use client';
 
-import { Menu, X } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import { useState } from "react";
-import { UserMenu } from "./UserMenu";
+import { useState, lazy, Suspense } from "react";
+
+// Lazy-load UserMenu - obsahuje Supabase auth, nie je kritický pre LCP
+const UserMenu = lazy(() => import("./UserMenu").then(mod => ({ default: mod.UserMenu })));
+
+// Skeleton pre UserMenu loading state
+function UserMenuSkeleton() {
+  return (
+    <div className="home-button flex items-center justify-center">
+      <User className="h-4 w-4 text-[#1a1a1a] opacity-50" />
+    </div>
+  );
+}
 
 interface HeaderProps {
   partnerSlug?: string;
@@ -90,7 +101,9 @@ export const Header = ({ partnerSlug, isOwner = false }: HeaderProps) => {
 
           {/* Pravá strana: user menu a hamburger */}
           <div className="flex items-center gap-2">
-            <UserMenu partnerSlug={partnerSlug} isOwner={isOwner} />
+            <Suspense fallback={<UserMenuSkeleton />}>
+              <UserMenu partnerSlug={partnerSlug} isOwner={isOwner} />
+            </Suspense>
 
             {/* Mobile: hamburger menu */}
             <button
