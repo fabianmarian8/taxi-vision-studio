@@ -13,9 +13,17 @@ import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import { MapPinIcon } from '@/components/icons/MapPinIcon';
 import { MapPin, Clock, ArrowRight } from 'lucide-react';
-import { Header } from '@/components/Header';
 import { RegionCard } from '@/components/RegionCard';
 import { GeometricLines } from '@/components/GeometricLines';
+
+// Dynamic import pre Header - obsahuje Supabase auth, nie je kritický pre LCP
+const Header = dynamic(
+  () => import('@/components/Header').then((mod) => ({ default: mod.Header })),
+  {
+    ssr: true,
+    loading: () => <HeaderSkeleton />,
+  }
+);
 
 // Dynamic import pre SearchPanel - nie je potrebný pre initial paint
 const SearchPanel = dynamic(
@@ -53,6 +61,25 @@ const HowItWorks = dynamic(
 );
 
 // Skeleton komponenty pre loading states
+function HeaderSkeleton() {
+  return (
+    <header className="sticky top-0 z-50 bg-[#f5a623] border-b border-foreground/30">
+      <div className="container mx-auto px-4 md:px-8 py-1.5 md:py-4">
+        <div className="flex items-center justify-between">
+          <div className="w-16 h-8 bg-foreground/10 rounded animate-pulse" />
+          <div className="hidden md:flex gap-6">
+            <div className="w-12 h-4 bg-foreground/10 rounded animate-pulse" />
+            <div className="w-20 h-4 bg-foreground/10 rounded animate-pulse" />
+            <div className="w-12 h-4 bg-foreground/10 rounded animate-pulse" />
+            <div className="w-14 h-4 bg-foreground/10 rounded animate-pulse" />
+          </div>
+          <div className="w-8 h-8 bg-foreground/10 rounded animate-pulse" />
+        </div>
+      </div>
+    </header>
+  );
+}
+
 function SearchPanelSkeleton() {
   return (
     <div className="w-full max-w-2xl mx-auto px-4">

@@ -84,7 +84,16 @@ const nextConfig: NextConfig = {
     // optimizeCss vypnute - na Verceli sposobuje pomale TTFB a nefunguje spolahlivo
     optimizeCss: false,
     // Optimalizácia importov pre menší bundle size
-    optimizePackageImports: ['lucide-react', 'date-fns', 'recharts', '@radix-ui/react-icons'],
+    optimizePackageImports: [
+      'lucide-react',
+      'date-fns',
+      'recharts',
+      '@radix-ui/react-icons',
+      '@supabase/supabase-js',
+      '@floating-ui/react',
+      'sonner',
+      '@tanstack/react-query',
+    ],
     
     // Server Actions - pripravené pre Stripe platby
     serverActions: {
