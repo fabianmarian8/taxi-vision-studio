@@ -10,13 +10,21 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import { MapPinIcon } from '@/components/icons/MapPinIcon';
 import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { Header } from '@/components/Header';
-import { SearchPanel } from '@/components/SearchPanel';
 import { RegionCard } from '@/components/RegionCard';
 import { GeometricLines } from '@/components/GeometricLines';
-import { getRegionsData } from '@/data/cities';
+
+// Dynamic import pre SearchPanel - nie je potrebný pre initial paint
+const SearchPanel = dynamic(
+  () => import('@/components/SearchPanel').then((mod) => ({ default: mod.SearchPanel })),
+  {
+    ssr: true,
+    loading: () => <SearchPanelSkeleton />,
+  }
+);
 
 // Dynamic imports pre komponenty pod foldom - znižuje initial JS bundle
 // Tieto komponenty nie sú viditeľné pri prvom renderovaní (below the fold)
@@ -44,7 +52,22 @@ const HowItWorks = dynamic(
   }
 );
 
-// Skeleton komponenty pre loading states (below-the-fold komponenty)
+// Skeleton komponenty pre loading states
+function SearchPanelSkeleton() {
+  return (
+    <div className="w-full max-w-2xl mx-auto px-4">
+      <div className="bg-card rounded-[4px] border border-foreground/20 p-1.5 md:p-2 flex items-center gap-1.5 md:gap-2">
+        <div className="flex-1 h-10 md:h-12 bg-foreground/5 rounded animate-pulse" />
+        <div className="w-10 h-10 md:w-12 md:h-12 bg-foreground/10 rounded animate-pulse" />
+        <div className="w-10 h-10 md:w-12 md:h-12 bg-foreground/10 rounded animate-pulse" />
+      </div>
+      <p className="text-center text-xs md:text-sm text-foreground/50 font-bold mt-3 md:mt-4">
+        Nacitavam vyhladavanie...
+      </p>
+    </div>
+  );
+}
+
 function HowItWorksSkeleton() {
   return (
     <section className="py-12 md:py-16 px-4 md:px-8">
@@ -77,18 +100,45 @@ function AlphabeticalCityListSkeleton() {
   );
 }
 
-// Async načítanie route-pages.json - neiportuje sa do JS bundle
+// Async načítanie dát - neimportuje sa do JS bundle
 async function getRoutePages() {
   const routePagesData = await import('../src/data/route-pages.json');
   return routePagesData.default;
+}
+
+// Regions data - lightweight, len názvy a počty
+interface RegionData {
+  name: string;
+  slug: string;
+  citiesCount: number;
+}
+
+async function getRegions(): Promise<RegionData[]> {
+  // Import len potrebné dáta, nie celý cities.json
+  const citiesData = await import('../src/data/cities.json');
+  const cities = citiesData.default.cities as Array<{ name: string; slug: string; region: string; isVillage?: boolean }>;
+
+  const uniqueRegions = Array.from(new Set(cities.map((city) => city.region))).sort();
+
+  return uniqueRegions.map((region) => ({
+    name: region,
+    slug: region
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/\s+/g, '-'),
+    citiesCount: cities.filter((city) => city.region === region && !city.isVillage).length,
+  }));
 }
 
 // Note: Globálna metadata je definovaná v app/layout.tsx
 // HomePage je Server Component, ktorý obsahuje vnorené Client Components (Header, SearchPanel, ArticleBanner)
 
 export default async function HomePage() {
-  const regions = getRegionsData();
-  const routePagesData = await getRoutePages();
+  const [regions, routePagesData] = await Promise.all([
+    getRegions(),
+    getRoutePages(),
+  ]);
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
