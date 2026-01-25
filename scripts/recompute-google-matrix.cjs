@@ -6,7 +6,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY || 'AIzaSyCFNUO3vwJ0wIHe3IVNYmgoTEA0RZPFx-4';
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+if (!GOOGLE_API_KEY) {
+  console.error('ERROR: GOOGLE_API_KEY environment variable is required');
+  process.exit(1);
+}
 const BATCH_SIZE = 10; // 10 origins × 10 destinations = 100 elements per request (safe limit)
 const DELAY_MS = 200; // 200ms delay between requests
 

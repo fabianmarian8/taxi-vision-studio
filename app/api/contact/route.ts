@@ -3,6 +3,11 @@ import { Resend } from 'resend';
 import { z } from 'zod';
 import { escapeHtml, escapeHtmlWithBreaks } from '@/lib/html-escape';
 import { logger } from '@/lib/logger';
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
+
+// Rate limit: 5 submissions per 15 minutes per IP
+const CONTACT_RATE_LIMIT = 5;
+const CONTACT_WINDOW_MS = 15 * 60 * 1000;
 
 // Helper pre podmienené logovanie (iba v development)
 const isDev = process.env.NODE_ENV === 'development';
@@ -101,9 +106,24 @@ const ContactFormEmail = ({
 
 export async function POST(request: NextRequest) {
   const startTime = Date.now();
-  const log = logger.with({ endpoint: 'contact' });
+  const clientIp = getClientIp(request);
+  const log = logger.with({ endpoint: 'contact', clientIp });
 
   try {
+    // Rate limit check
+    const rateLimitKey = `contact:${clientIp}`;
+    const rateLimit = await checkRateLimit(rateLimitKey, CONTACT_RATE_LIMIT, CONTACT_WINDOW_MS);
+
+    if (!rateLimit.success) {
+      const retryAfter = Math.ceil((rateLimit.resetAt.getTime() - Date.now()) / 1000);
+      log.warn('Rate limit exceeded', { retryAfter });
+      await logger.flush();
+      return NextResponse.json(
+        { error: 'Príliš veľa požiadaviek. Skúste neskôr.' },
+        { status: 429, headers: { 'Retry-After': String(retryAfter) } }
+      );
+    }
+
     devLog('[Contact API] Received POST request');
 
     // Kontrola API kľúča

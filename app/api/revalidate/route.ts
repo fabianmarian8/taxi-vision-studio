@@ -38,6 +38,11 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Path parameter is required' }, { status: 400 });
     }
 
+    // Validate path format - must start with / and be a valid path
+    if (!path.startsWith('/') || path.includes('..') || path.includes('\0')) {
+      return NextResponse.json({ error: 'Invalid path format' }, { status: 400 });
+    }
+
     // Revalidate the specified path
     revalidatePath(path);
 

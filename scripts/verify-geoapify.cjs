@@ -6,7 +6,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const GEOAPIFY_API_KEY = '8dfc3b8c650b4e9589bc789ffda4be5b';
+const GEOAPIFY_API_KEY = process.env.GEOAPIFY_API_KEY;
+if (!GEOAPIFY_API_KEY) {
+  console.error('ERROR: GEOAPIFY_API_KEY environment variable is required');
+  process.exit(1);
+}
 const SAMPLE_SIZE = 3000;
 const DELAY_MS = 50; // 20 req/s should be safe
 const THRESHOLD_PERCENT = 30; // 30% rozdiel = problém

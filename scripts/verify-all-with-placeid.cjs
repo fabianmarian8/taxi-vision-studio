@@ -9,7 +9,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY || 'AIzaSyDeOUUCHV1blii6PBqJzOLYUF8Y2dqul9g';
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+if (!GOOGLE_API_KEY) {
+  console.error('ERROR: GOOGLE_API_KEY environment variable is required');
+  process.exit(1);
+}
 
 // RÝCHLOSŤ - paralelné requesty
 const PARALLEL_REQUESTS = 20;  // 20 súčasne

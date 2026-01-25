@@ -14,7 +14,11 @@ const path = require('path');
 const https = require('https');
 
 // === KONFIGURÁCIA ===
-const RESEND_API_KEY = 're_85fb8hVQ_8pkLheudxM3NLjwZMMcJjGxa';
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+if (!RESEND_API_KEY) {
+  console.error('ERROR: RESEND_API_KEY environment variable is required');
+  process.exit(1);
+}
 const FROM_EMAIL = 'Marián Fabián <info@taxinearme.sk>';
 const REPLY_TO = 'info@taxinearme.sk';
 const DAILY_LIMIT = 1000; // Zvýšené predplatné - poslať všetko naraz

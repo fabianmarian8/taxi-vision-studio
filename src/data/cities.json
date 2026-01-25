@@ -810,7 +810,7 @@
       "region": "Bratislavský kraj",
       "heroImage": "/images/bratislava-hero.webp",
       "description": "Hlavné mesto Slovenska s najväčším počtom taxislužieb. Nájdite si spoľahlivé taxi v Bratislave kedykoľvek potrebujete.",
-      "metaDescription": "Nájdite taxi v meste Bratislava. 32 taxislužieb s telefónnymi číslami a webovými stránkami: Taxi-Bratislava-City, TAXI-TAXI, EASY TAXI, FUN TAXI, City Taxi a ďalšie. Kontaktujte priamo.",
+      "metaDescription": "Nájdite taxi v meste Bratislava. 39 taxislužieb s telefónnymi číslami a webovými stránkami. Kontaktujte priamo.",
       "keywords": [
         "taxi bratislava",
         "taxislužba bratislava",
@@ -1068,9 +1068,9 @@
           "placeId": "ChIJR07mtPOLbEcRuXbaYu-Mq8w"
         },
         {
-          "name": "VB Taxi Bratislava",
+          "name": "Green Taxi Bratislava",
           "phone": "+421905660660",
-          "website": null,
+          "website": "https://www.greentaxibratislava.sk",
           "isPremium": false,
           "isPromotional": false,
           "address": "Vlčie hrdlo 90, Bratislava",
@@ -1123,6 +1123,15 @@
           "isPremium": false,
           "isPromotional": false,
           "address": "Bratislava"
+        },
+        {
+          "name": "Correct Taxi Bratislava",
+          "phone": "+421914155155",
+          "website": "https://www.correct-taxi.sk",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Bratislava",
+          "placeId": null
         }
       ],
       "latitude": 48.151699,

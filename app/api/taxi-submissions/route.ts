@@ -5,6 +5,11 @@ import { escapeHtml, escapeHtmlWithBreaks } from '@/lib/html-escape';
 import { logger } from '@/lib/logger';
 import { createClient } from '@/lib/supabase/server';
 import { getSession } from '@/lib/auth';
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
+
+// Rate limit: 3 submissions per hour per IP
+const SUBMISSION_RATE_LIMIT = 3;
+const SUBMISSION_WINDOW_MS = 60 * 60 * 1000;
 
 // Zod schéma pre validáciu
 const submissionSchema = z.object({
@@ -105,9 +110,24 @@ const SubmissionEmail = ({
 // POST - vytvorenie nového návrhu
 export async function POST(request: NextRequest) {
   const startTime = Date.now();
-  const log = logger.with({ endpoint: 'taxi-submissions' });
+  const clientIp = getClientIp(request);
+  const log = logger.with({ endpoint: 'taxi-submissions', clientIp });
 
   try {
+    // Rate limit check
+    const rateLimitKey = `submission:${clientIp}`;
+    const rateLimit = await checkRateLimit(rateLimitKey, SUBMISSION_RATE_LIMIT, SUBMISSION_WINDOW_MS);
+
+    if (!rateLimit.success) {
+      const retryAfter = Math.ceil((rateLimit.resetAt.getTime() - Date.now()) / 1000);
+      log.warn('Rate limit exceeded', { retryAfter });
+      await logger.flush();
+      return NextResponse.json(
+        { error: 'Príliš veľa návrhov. Skúste neskôr.' },
+        { status: 429, headers: { 'Retry-After': String(retryAfter) } }
+      );
+    }
+
     const body = await request.json();
 
     // Validácia

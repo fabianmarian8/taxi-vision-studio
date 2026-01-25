@@ -11,7 +11,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY || 'AIzaSyDeOUUCHV1blii6PBqJzOLYUF8Y2dqul9g';
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+if (!GOOGLE_API_KEY) {
+  console.error('ERROR: GOOGLE_API_KEY environment variable is required');
+  process.exit(1);
+}
 
 // Problémové páry z verifikácie - na testovanie
 const PROBLEM_PAIRS = [

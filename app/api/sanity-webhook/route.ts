@@ -17,9 +17,13 @@ interface SanityWebhookPayload {
 
 export async function POST(request: NextRequest) {
   try {
-    // Overiť webhook secret
+    // Overiť webhook secret - POVINNÉ
     const secret = request.headers.get('sanity-webhook-secret')
-    if (SANITY_WEBHOOK_SECRET && secret !== SANITY_WEBHOOK_SECRET) {
+    if (!SANITY_WEBHOOK_SECRET) {
+      console.error('[Sanity Webhook] SANITY_WEBHOOK_SECRET is not configured')
+      return NextResponse.json({ error: 'Webhook not configured' }, { status: 500 })
+    }
+    if (secret !== SANITY_WEBHOOK_SECRET) {
       return NextResponse.json({ error: 'Invalid secret' }, { status: 401 })
     }
 

@@ -11,7 +11,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY || 'AIzaSyDeOUUCHV1blii6PBqJzOLYUF8Y2dqul9g';
+const GOOGLE_API_KEY_RAW = process.env.GOOGLE_API_KEY;
+if (!GOOGLE_API_KEY_RAW) {
+  console.error('ERROR: GOOGLE_API_KEY environment variable is required');
+  process.exit(1);
+}
+const GOOGLE_API_KEY: string = GOOGLE_API_KEY_RAW;
 const CITIES_JSON_PATH = path.join(__dirname, '../src/data/cities.json');
 
 interface TaxiService {

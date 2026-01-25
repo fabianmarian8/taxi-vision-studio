@@ -51,12 +51,18 @@ export async function POST(request: NextRequest) {
 
     const supabase = await createClient();
 
+    // Escape LIKE pattern special characters to prevent pattern injection
+    const escapedServiceName = serviceName
+      .replace(/\\/g, '\\\\')
+      .replace(/%/g, '\\%')
+      .replace(/_/g, '\\_');
+
     // Najprv skús zmazať z taxi_submissions (ak to je submission)
     const { data: deletedSubmission } = await supabase
       .from('taxi_submissions')
       .delete()
       .eq('city_slug', citySlug)
-      .ilike('name', serviceName)
+      .ilike('name', escapedServiceName)
       .eq('status', 'approved')
       .select()
       .single();
