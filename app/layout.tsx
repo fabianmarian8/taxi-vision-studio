@@ -179,15 +179,15 @@ export default function RootLayout({
 
         {/*
           Google Analytics (gtag.js) s Consent Mode v2
-          - Načíta sa po hydratácii (afterInteractive)
+          - Načíta sa lazy (lazyOnload) - nezablokuje initial paint
           - Consent nastavený na granted pre analytics
           - Všetka inicializácia v jednom skripte
         */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XM0ES676GB"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

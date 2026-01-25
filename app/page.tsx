@@ -17,7 +17,6 @@ import { SearchPanel } from '@/components/SearchPanel';
 import { RegionCard } from '@/components/RegionCard';
 import { GeometricLines } from '@/components/GeometricLines';
 import { getRegionsData } from '@/data/cities';
-import routePagesData from '../src/data/route-pages.json';
 
 // Dynamic imports pre komponenty pod foldom - znižuje initial JS bundle
 // Tieto komponenty nie sú viditeľné pri prvom renderovaní (below the fold)
@@ -78,11 +77,18 @@ function AlphabeticalCityListSkeleton() {
   );
 }
 
+// Async načítanie route-pages.json - neiportuje sa do JS bundle
+async function getRoutePages() {
+  const routePagesData = await import('../src/data/route-pages.json');
+  return routePagesData.default;
+}
+
 // Note: Globálna metadata je definovaná v app/layout.tsx
 // HomePage je Server Component, ktorý obsahuje vnorené Client Components (Header, SearchPanel, ArticleBanner)
 
-export default function HomePage() {
+export default async function HomePage() {
   const regions = getRegionsData();
+  const routePagesData = await getRoutePages();
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
