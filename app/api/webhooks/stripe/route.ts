@@ -395,7 +395,38 @@ async function linkSubscriptionToTaxiService(
   if (error) {
     console.error('Error linking subscription to taxi service:', error);
   } else if (count === 0) {
-    console.warn(`⚠️ No taxi service found for ID ${taxiServiceId || `${taxiServiceName} in ${citySlug}`}`);
+    // Service not found in DB - create it (it may exist only in JSON)
+    console.log(`⚠️ No taxi service found for ${taxiServiceName} in ${citySlug}, creating new record...`);
+
+    if (citySlug && taxiServiceName) {
+      // Get city_id for the city_slug
+      const { data: city } = await getSupabase()
+        .from('cities')
+        .select('id')
+        .eq('slug', citySlug)
+        .single();
+
+      const insertData = {
+        name: taxiServiceName,
+        city_id: city?.id || null,
+        city_slug: citySlug,
+        subscription_id: subscription.id,
+        is_verified: isActive,
+        is_premium: isActive && isPremiumPlan,
+        is_partner: isActive && isPartnerPlan,
+        premium_expires_at: isActive ? subscription.current_period_end : null,
+      };
+
+      const { error: insertError } = await getSupabase()
+        .from('taxi_services')
+        .insert(insertData);
+
+      if (insertError) {
+        console.error('Error creating taxi service:', insertError);
+      } else {
+        console.log(`✅ Created taxi service ${taxiServiceName} in ${citySlug} with ${subscription.plan_type} plan`);
+      }
+    }
   } else if (count && count > 1) {
     console.error(`🚨 SECURITY: Multiple (${count}) taxi services updated!`);
   }
