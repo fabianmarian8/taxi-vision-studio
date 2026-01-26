@@ -20,6 +20,7 @@ export interface DraftData {
   hero_image_pos_x?: number;
   hero_image_pos_y?: number;
   services?: string[];
+  show_services?: boolean;
   services_description?: string;
   gallery?: string[];
   social_facebook?: string;
@@ -30,7 +31,7 @@ export interface DraftData {
   pricelist_url?: string;
   transport_rules_url?: string;
   contact_url?: string;
-  [key: string]: string | number | string[] | undefined; // Allow dynamic field access
+  [key: string]: string | number | boolean | string[] | undefined; // Allow dynamic field access
 }
 
 interface EditorContextType {

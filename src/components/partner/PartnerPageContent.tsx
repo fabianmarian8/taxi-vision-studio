@@ -453,11 +453,20 @@ export function EditableServices({ defaultServices, children }: EditableServices
 
   const currentServices = (draftData.services as string[]) || defaultServices;
 
+  // Check show_services from draftData (for preview mode)
+  // Default to true if not set (backward compatibility)
+  const showServices = draftData.show_services !== undefined ? draftData.show_services : true;
+
   const handleSave = (services: string[]) => {
     if (saveField) {
       saveField('services', services);
     }
   };
+
+  // Hide services section if show_services is false (preview mode toggle)
+  if (!showServices) {
+    return null;
+  }
 
   if (!isEditMode) {
     return <>{children}</>;
