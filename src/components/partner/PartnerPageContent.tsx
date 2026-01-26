@@ -83,12 +83,20 @@ export function EditableHeroSubtitle({ defaultValue }: { defaultValue: string })
 
 /**
  * Editable description section
+ * Podporuje show_description toggle z preview editora
  */
 export function EditableDescription({ defaultValue }: { defaultValue: string }) {
   const { isEditMode, draftData, openEditor } = useSafeInlineEditor();
-  const value = 'description' in draftData ? (draftData.description as string) ?? defaultValue : defaultValue;
 
-  if (!value && !isEditMode) return null;
+  // Použiť description z draftData ak existuje (vrátane prázdneho stringu)
+  const value = 'description' in draftData ? (draftData.description as string) : defaultValue;
+
+  // Kontrola show_description z draftData (pre preview mode)
+  // Default je true ak nie je nastavené (spätná kompatibilita)
+  const showDescription = draftData.show_description !== undefined ? draftData.show_description : true;
+
+  // Skryť sekciu ak je show_description vypnutý ALEBO ak nie je žiadny text
+  if (!showDescription || (!value && !isEditMode)) return null;
 
   return (
     <div className="mt-6 md:mt-8 partner-card rounded-xl p-4 md:p-6">

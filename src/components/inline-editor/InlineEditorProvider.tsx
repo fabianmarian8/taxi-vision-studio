@@ -10,6 +10,7 @@ import { PreviewMessage } from '@/lib/preview-protocol';
 export interface DraftData {
   company_name?: string;
   description?: string;
+  show_description?: boolean;
   phone?: string;
   email?: string;
   website?: string;
@@ -143,17 +144,10 @@ export function InlineEditorProvider({
       const message = event.data as PreviewMessage;
       if (message?.type === 'PREVIEW_UPDATE' && message.payload) {
         console.log('[InlineEditor] Received PREVIEW_UPDATE');
-        // Filter out empty string values - don't override with empty
-        const filteredPayload: Partial<DraftData> = {};
-        for (const [key, value] of Object.entries(message.payload)) {
-          // Keep the value if it's not an empty string
-          if (value !== '') {
-            filteredPayload[key] = value as string | number | string[] | undefined;
-          }
-        }
+        // Priamo použiť payload - prázdne stringy sú validná hodnota (vymazaný text)
         setDraftData(prev => ({
           ...prev,
-          ...filteredPayload
+          ...message.payload as Partial<DraftData>
         }));
       }
     };
