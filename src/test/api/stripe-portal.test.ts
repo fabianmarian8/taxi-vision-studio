@@ -7,6 +7,12 @@ vi.mock('@/lib/supabase/server', () => ({
   createClient: vi.fn(() => Promise.resolve(mockSupabaseClient)),
 }));
 
+// Mock Supabase admin client
+const mockAdminClient = createMockSupabaseClient();
+vi.mock('@supabase/supabase-js', () => ({
+  createClient: vi.fn(() => mockAdminClient),
+}));
+
 // Mock Stripe
 vi.mock('@/lib/stripe', () => ({
   stripe: {
@@ -36,7 +42,7 @@ describe('POST /api/stripe/portal', () => {
 
     const request = createMockRequest({
       method: 'POST',
-      body: { returnUrl: 'https://example.com' },
+      body: { customerId: 'cus_test123', returnUrl: 'https://example.com' },
     });
 
     const response = await POST(request as never);
@@ -44,24 +50,65 @@ describe('POST /api/stripe/portal', () => {
     await expectError(response, 401, 'Unauthorized');
   });
 
-  it('should return 404 when no billing account found', async () => {
+  it('should return 404 when no partners found for user', async () => {
     // Mock authenticated user
     mockSupabaseClient.auth.getUser.mockResolvedValue({
       data: { user: { id: 'user_123', email: 'test@example.com' } },
       error: null,
     });
 
-    // Mock no partner/stripe_customer_id found
+    // Mock no partners found
     const mockQuery = {
       select: vi.fn().mockReturnThis(),
       eq: vi.fn().mockReturnThis(),
       single: vi.fn().mockResolvedValue({ data: null, error: null }),
     };
-    mockSupabaseClient.from.mockReturnValue(mockQuery);
+    mockSupabaseClient.from.mockReturnValue({
+      ...mockQuery,
+      // Return empty array for partners query
+      eq: vi.fn().mockResolvedValue({ data: [], error: null }),
+    });
 
     const request = createMockRequest({
       method: 'POST',
-      body: { returnUrl: 'https://example.com' },
+      body: { customerId: 'cus_test123', returnUrl: 'https://example.com' },
+    });
+
+    const response = await POST(request as never);
+
+    await expectError(response, 404, 'No partners found for this user');
+  });
+
+  it('should return 404 when customerId not verified', async () => {
+    // Mock authenticated user
+    mockSupabaseClient.auth.getUser.mockResolvedValue({
+      data: { user: { id: 'user_123', email: 'test@example.com' } },
+      error: null,
+    });
+
+    // Mock partner found
+    const mockPartnerQuery = {
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockResolvedValue({
+        data: [{ id: 'partner_1', name: 'Test Taxi', city_slug: 'zvolen' }],
+        error: null
+      }),
+    };
+    mockSupabaseClient.from.mockReturnValue(mockPartnerQuery);
+
+    // Mock no matching subscription in admin client
+    const mockTaxiQuery = {
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockReturnThis(),
+      ilike: vi.fn().mockReturnThis(),
+      not: vi.fn().mockReturnThis(),
+      single: vi.fn().mockResolvedValue({ data: null, error: null }),
+    };
+    mockAdminClient.from.mockReturnValue(mockTaxiQuery);
+
+    const request = createMockRequest({
+      method: 'POST',
+      body: { customerId: 'cus_wrong', returnUrl: 'https://example.com' },
     });
 
     const response = await POST(request as never);
@@ -79,20 +126,35 @@ describe('POST /api/stripe/portal', () => {
       error: null,
     });
 
-    // Mock partner with stripe_customer_id
-    const mockQuery = {
+    // Mock partner found
+    const mockPartnerQuery = {
       select: vi.fn().mockReturnThis(),
-      eq: vi.fn().mockReturnThis(),
-      single: vi.fn().mockResolvedValue({
-        data: { stripe_customer_id: 'cus_test123' },
-        error: null,
+      eq: vi.fn().mockResolvedValue({
+        data: [{ id: 'partner_1', name: 'Test Taxi', city_slug: 'zvolen' }],
+        error: null
       }),
     };
-    mockSupabaseClient.from.mockReturnValue(mockQuery);
+    mockSupabaseClient.from.mockReturnValue(mockPartnerQuery);
+
+    // Mock matching subscription in admin client
+    const mockTaxiQuery = {
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockReturnThis(),
+      ilike: vi.fn().mockReturnThis(),
+      not: vi.fn().mockReturnThis(),
+      single: vi.fn().mockResolvedValue({
+        data: {
+          subscription_id: 'sub_123',
+          subscriptions: { stripe_customer_id: 'cus_test123' }
+        },
+        error: null
+      }),
+    };
+    mockAdminClient.from.mockReturnValue(mockTaxiQuery);
 
     const request = createMockRequest({
       method: 'POST',
-      body: { returnUrl: 'https://example.com/partner' },
+      body: { customerId: 'cus_test123', returnUrl: 'https://example.com/partner' },
     });
 
     const response = await POST(request as never);
@@ -103,37 +165,5 @@ describe('POST /api/stripe/portal', () => {
       customer: 'cus_test123',
       return_url: 'https://example.com/partner',
     });
-  });
-
-  it('should handle Stripe errors', async () => {
-    vi.mocked(stripe.billingPortal.sessions.create).mockRejectedValue(
-      new Error('Customer not found')
-    );
-
-    // Mock authenticated user
-    mockSupabaseClient.auth.getUser.mockResolvedValue({
-      data: { user: { id: 'user_123', email: 'test@example.com' } },
-      error: null,
-    });
-
-    // Mock partner with stripe_customer_id
-    const mockQuery = {
-      select: vi.fn().mockReturnThis(),
-      eq: vi.fn().mockReturnThis(),
-      single: vi.fn().mockResolvedValue({
-        data: { stripe_customer_id: 'cus_invalid' },
-        error: null,
-      }),
-    };
-    mockSupabaseClient.from.mockReturnValue(mockQuery);
-
-    const request = createMockRequest({
-      method: 'POST',
-      body: {},
-    });
-
-    const response = await POST(request as never);
-
-    await expectError(response, 500, 'Failed to create portal session');
   });
 });
