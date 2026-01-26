@@ -689,7 +689,7 @@ async function UniversalListView({
                             : 'ring-1 ring-gray-200'
                         }`}
                       />
-                    ) : isPremium && isPromotional ? (
+                    ) : isPremium ? (
                       <img
                         src="/premium-taxi-badge.webp"
                         alt="Premium taxi"
@@ -2216,7 +2216,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                       : 'ring-1 ring-gray-200'
                   }`}
                 />
-              ) : isPremium && isPromotional ? (
+              ) : isPremium ? (
                 <img
                   src="/premium-taxi-badge.webp"
                   alt="Premium taxi"
