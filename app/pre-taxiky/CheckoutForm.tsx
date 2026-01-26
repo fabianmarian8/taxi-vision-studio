@@ -1,8 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-import { ArrowRight, Loader2, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowRight, Loader2, X, AlertTriangle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+
+// Cooldown konfigurácia (5 minút)
+const CHECKOUT_COOLDOWN_MS = 5 * 60 * 1000;
+const CHECKOUT_STORAGE_KEY = 'taxi_checkout_attempt';
 
 interface CheckoutFormProps {
   plan: 'mini' | 'premium' | 'partner';
@@ -58,6 +62,26 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
   const [taxiServiceName, setTaxiServiceName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [recentAttempt, setRecentAttempt] = useState<{ city: string; service: string; time: number } | null>(null);
+
+  // Kontrola nedávneho pokusu o platbu pri načítaní
+  useEffect(() => {
+    try {
+      const stored = sessionStorage.getItem(CHECKOUT_STORAGE_KEY);
+      if (stored) {
+        const attempt = JSON.parse(stored);
+        const elapsed = Date.now() - attempt.time;
+        if (elapsed < CHECKOUT_COOLDOWN_MS) {
+          setRecentAttempt(attempt);
+        } else {
+          // Vypršaný pokus - vyčistiť
+          sessionStorage.removeItem(CHECKOUT_STORAGE_KEY);
+        }
+      }
+    } catch {
+      // Ignorovať chyby pri čítaní sessionStorage
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -89,7 +113,25 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
       const data = await response.json();
 
       if (!response.ok) {
+        // Špecifická chyba pre duplicitné predplatné
+        if (response.status === 409) {
+          setError(`Táto taxislužba už má aktívne ${data.existingPlan?.toUpperCase() || ''} predplatné. Kontaktujte nás ak chcete zmeniť plán.`);
+          setIsLoading(false);
+          return;
+        }
         throw new Error(data.error || 'Nepodarilo sa vytvoriť checkout session');
+      }
+
+      // Uložiť pokus do sessionStorage pred presmerovaním
+      try {
+        const cityName = CITIES.find(c => c.slug === citySlug)?.name || citySlug;
+        sessionStorage.setItem(CHECKOUT_STORAGE_KEY, JSON.stringify({
+          city: cityName,
+          service: taxiServiceName.trim(),
+          time: Date.now(),
+        }));
+      } catch {
+        // Ignorovať chyby pri zápise
       }
 
       // Presmerovanie na Stripe Checkout
@@ -139,6 +181,22 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
             Vyplňte údaje a pokračujte na platbu
           </p>
         </div>
+
+        {/* Warning banner pre nedávny pokus */}
+        {recentAttempt && (
+          <div className="mb-4 p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg flex items-start gap-3">
+            <AlertTriangle className="h-5 w-5 text-amber-400 flex-shrink-0 mt-0.5" />
+            <div className="text-sm">
+              <p className="text-amber-200 font-medium">
+                Nedávno ste začali platbu
+              </p>
+              <p className="text-amber-200/70 mt-1">
+                Pre <strong>{recentAttempt.service}</strong> v meste {recentAttempt.city}.
+                Skontrolujte si email, či ste nedostali potvrdenie platby.
+              </p>
+            </div>
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* City Select */}

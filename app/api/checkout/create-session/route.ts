@@ -1,6 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe, STRIPE_PRICES } from '@/lib/stripe';
 import { logger } from '@/lib/logger';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { createHash } from 'crypto';
+
+// Lazy-initialized Supabase client
+let _supabase: SupabaseClient | null = null;
+
+function getSupabase(): SupabaseClient {
+  if (!_supabase) {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    if (!url || !key) {
+      throw new Error('Supabase credentials not configured');
+    }
+    _supabase = createClient(url, key);
+  }
+  return _supabase;
+}
+
+// Generate idempotency key from city_slug + taxi_service_name
+function generateIdempotencyKey(citySlug: string, taxiServiceName: string): string {
+  const data = `checkout:${citySlug}:${taxiServiceName}:${Date.now()}`;
+  return createHash('sha256').update(data).digest('hex').substring(0, 32);
+}
 
 export async function POST(request: NextRequest) {
   const startTime = Date.now();
@@ -32,6 +55,36 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Normalizované hodnoty pre porovnanie
+    const normalizedCitySlug = citySlug.trim().toLowerCase();
+    const normalizedTaxiName = taxiServiceName.trim();
+
+    // OCHRANA: Kontrola existujúcej aktívnej subscription pre túto taxislužbu
+    const { data: existingSubscription } = await getSupabase()
+      .from('subscriptions')
+      .select('id, status, stripe_subscription_id, plan_type')
+      .eq('city_slug', normalizedCitySlug)
+      .ilike('taxi_service_name', normalizedTaxiName)
+      .in('status', ['active', 'trialing', 'past_due'])
+      .maybeSingle();
+
+    if (existingSubscription) {
+      log.warn('Duplicate checkout attempt blocked', {
+        citySlug: normalizedCitySlug,
+        taxiServiceName: normalizedTaxiName,
+        existingSubscriptionId: existingSubscription.stripe_subscription_id,
+        existingPlan: existingSubscription.plan_type,
+      });
+      await logger.flush();
+      return NextResponse.json(
+        {
+          error: 'Táto taxislužba už má aktívne predplatné',
+          existingPlan: existingSubscription.plan_type,
+        },
+        { status: 409 }
+      );
+    }
+
     // Získať Price ID
     const priceId = plan === 'partner'
       ? STRIPE_PRICES.partner
@@ -47,30 +100,38 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Generovanie idempotency key pre ochranu proti duplicitným requestom
+    const idempotencyKey = generateIdempotencyKey(normalizedCitySlug, normalizedTaxiName);
+
     // Vytvorenie Checkout Session s metadata na subscription
-    const session = await stripe.checkout.sessions.create({
-      mode: 'subscription',
-      line_items: [
-        {
-          price: priceId,
-          quantity: 1,
+    const session = await stripe.checkout.sessions.create(
+      {
+        mode: 'subscription',
+        line_items: [
+          {
+            price: priceId,
+            quantity: 1,
+          },
+        ],
+        // Metadata sa automaticky prenesú na subscription objekt
+        subscription_data: {
+          metadata: {
+            city_slug: normalizedCitySlug,
+            taxi_service_name: normalizedTaxiName,
+          },
         },
-      ],
-      // Metadata sa automaticky prenesú na subscription objekt
-      subscription_data: {
-        metadata: {
-          city_slug: citySlug.trim().toLowerCase(),
-          taxi_service_name: taxiServiceName.trim(),
-        },
+        // URLs
+        success_url: `${getBaseUrl(request)}/dakujeme?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${getBaseUrl(request)}/pre-taxiky`,
+        // Automatické vyplnenie
+        billing_address_collection: 'required',
+        // Povolenie promo kódov
+        allow_promotion_codes: true,
       },
-      // URLs
-      success_url: `${getBaseUrl(request)}/dakujeme?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${getBaseUrl(request)}/pre-taxiky`,
-      // Automatické vyplnenie
-      billing_address_collection: 'required',
-      // Povolenie promo kódov
-      allow_promotion_codes: true,
-    });
+      {
+        idempotencyKey,
+      }
+    );
 
     log.info('Checkout session created', {
       sessionId: session.id,
