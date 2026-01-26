@@ -3,7 +3,7 @@
 import { ReactNode, useContext, useState } from 'react';
 import { EditableField, ImageCropEditor, GalleryEditor, ServiceTagsEditor, ButtonLinksEditor, type ButtonLinks } from '@/components/inline-editor';
 import { EditorContext } from '@/components/inline-editor/InlineEditorProvider';
-import { ImageIcon, Images, Tags, Settings, Phone, MessageCircle, Clock, FileText, ScrollText, Mail, Facebook, Instagram, Globe, Users, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ImageIcon, Images, Tags, Settings, Phone, MessageCircle, Clock, FileText, ScrollText, Mail, Facebook, Instagram, Globe, Users, X, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 interface PartnerPageContentProps {
   children: ReactNode;
@@ -437,13 +437,14 @@ export function EditableGallery({ defaultImages, serviceName, partnerId }: Edita
 
 /**
  * Editable services/tags section
+ * Renders services from draftData (preview/edit) or defaultServices
  */
 interface EditableServicesProps {
   defaultServices: string[];
-  children: ReactNode;
+  children?: ReactNode;
 }
 
-export function EditableServices({ defaultServices, children }: EditableServicesProps) {
+export function EditableServices({ defaultServices }: EditableServicesProps) {
   const context = useContext(EditorContext);
   const [isEditorOpen, setIsEditorOpen] = useState(false);
 
@@ -451,6 +452,7 @@ export function EditableServices({ defaultServices, children }: EditableServices
   const draftData = context?.draftData ?? {};
   const saveField = context?.saveField;
 
+  // Use services from draftData if available (preview mode), otherwise use defaults
   const currentServices = (draftData.services as string[]) || defaultServices;
 
   // Check show_services from draftData (for preview mode)
@@ -463,13 +465,31 @@ export function EditableServices({ defaultServices, children }: EditableServices
     }
   };
 
-  // Hide services section if show_services is false (preview mode toggle)
-  if (!showServices) {
+  // Hide services section if show_services is false OR no services to show
+  if (!showServices || currentServices.length === 0) {
     return null;
   }
 
+  // Render services content
+  const servicesContent = (
+    <div className="mt-6 md:mt-8 partner-card rounded-xl p-4 md:p-6">
+      <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">Ponúkané služby</h2>
+      <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2">
+        {currentServices.map((svc: string, index: number) => (
+          <span
+            key={index}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 partner-tag rounded-full text-sm font-medium ${svc.length > 25 ? 'col-span-2' : ''}`}
+          >
+            <CheckCircle2 className="h-4 w-4" />
+            {svc}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+
   if (!isEditMode) {
-    return <>{children}</>;
+    return servicesContent;
   }
 
   return (
@@ -488,7 +508,7 @@ export function EditableServices({ defaultServices, children }: EditableServices
 
         {/* Content */}
         <div className="group-hover:opacity-90 transition-opacity">
-          {children}
+          {servicesContent}
         </div>
       </div>
 

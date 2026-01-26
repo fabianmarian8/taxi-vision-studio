@@ -1885,24 +1885,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             />
 
             {/* Services Section - NAD sekciou O nás */}
-            {initialEditorData.services && initialEditorData.services.length > 0 && (
-              <EditableServices defaultServices={initialEditorData.services}>
-                <div className="mt-6 md:mt-8 partner-card rounded-xl p-4 md:p-6">
-                  <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">Ponúkané služby</h2>
-                  <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2">
-                    {initialEditorData.services.map((svc: string, index: number) => (
-                      <span
-                        key={index}
-                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 partner-tag rounded-full text-sm font-medium ${svc.length > 25 ? 'col-span-2' : ''}`}
-                      >
-                        <CheckCircle2 className="h-4 w-4" />
-                        {svc}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </EditableServices>
-            )}
+            {/* Komponent sa sám rozhodne či zobrazí služby na základe draftData.services a show_services */}
+            <EditableServices defaultServices={initialEditorData.services || []} />
 
             {/* About / Description Section - editable */}
             <EditableDescription defaultValue={mergedDescription || ''} />
