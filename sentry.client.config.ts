@@ -28,6 +28,14 @@ Sentry.init({
     // Browser extensions
     'ResizeObserver loop',
     'Non-Error promise rejection',
+    // React hydration errors (caused by browser extensions, translators, etc.)
+    /removeChild/,
+    /insertBefore/,
+    /appendChild/,
+    /Hydration failed/,
+    /There was an error while hydrating/,
+    /Minified React error #418/,
+    /Minified React error #423/,
     // Network errors
     'Failed to fetch',
     'NetworkError',
