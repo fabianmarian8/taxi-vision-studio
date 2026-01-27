@@ -2133,12 +2133,13 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
         <Footer />
 
-        {/* Sticky Call Bar - Mobile only */}
-        {serviceSlug === 'volaj-taxi' && service.phone && (
+        {/* Sticky Call Bar - Mobile only (all partners) */}
+        {service.phone && (
           <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
             <a
               href={`tel:${service.phone.replace(/\s/g, '')}`}
               className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white py-4 px-6 font-bold text-lg shadow-lg transition-colors"
+              style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
             >
               <Phone className="h-6 w-6" />
               <span>Zavolať {service.phone}</span>
@@ -2386,25 +2387,40 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         <Footer />
       </div>
 
-      {/* Sticky Footer - vždy viditeľné na mobile */}
+      {/* Sticky Footer - Mobile only */}
       {service.phone && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.15)] z-50 md:hidden"
-          style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
-        >
-          <div className="flex items-center justify-between px-4 py-3">
-            <div className="text-sm">
-              <span className="text-gray-500">Taxislužba</span>
-              <p className="font-bold text-gray-900 truncate max-w-[150px]">{service.name}</p>
-            </div>
+        isPremium ? (
+          // Premium services get full green call bar (same as partners)
+          <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
             <a
               href={`tel:${service.phone.replace(/\s/g, '')}`}
-              className="flex items-center gap-2 px-5 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all"
+              className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white py-4 px-6 font-bold text-lg shadow-lg transition-colors"
+              style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
             >
-              <Phone className="h-5 w-5" />
-              <span>Zavolať</span>
+              <Phone className="h-6 w-6" />
+              <span>Zavolať {service.phone}</span>
             </a>
           </div>
-        </div>
+        ) : (
+          // Standard services get compact white bar
+          <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.15)] z-50 md:hidden"
+            style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+          >
+            <div className="flex items-center justify-between px-4 py-3">
+              <div className="text-sm">
+                <span className="text-gray-500">Taxislužba</span>
+                <p className="font-bold text-gray-900 truncate max-w-[150px]">{service.name}</p>
+              </div>
+              <a
+                href={`tel:${service.phone.replace(/\s/g, '')}`}
+                className="flex items-center gap-2 px-5 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all"
+              >
+                <Phone className="h-5 w-5" />
+                <span>Zavolať</span>
+              </a>
+            </div>
+          </div>
+        )
       )}
     </>
   );
