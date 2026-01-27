@@ -73,35 +73,28 @@ export function TaxiSlotsBanner({ cityName, locationText, partnerCount, premiumC
   const CollapsedHeader = () => (
     <button
       onClick={() => setIsExpanded(!isExpanded)}
-      className={`w-full border rounded-xl p-4 shadow-sm hover:shadow-md transition-all flex items-center justify-between group ${config.bgColor}`}
+      className={`w-full border rounded-xl p-2 md:p-4 shadow-sm hover:shadow-md transition-all flex items-center justify-between group ${config.bgColor}`}
     >
-      <div className="flex items-center gap-3">
-        {config.icon}
-        <span className={`font-bold ${config.textColor}`}>
-          Ste taxislužba {locationText} {cityName}?
+      {/* Mobile: kompaktný layout */}
+      <div className="flex items-center gap-2 md:gap-3 flex-1 min-w-0">
+        <span className="hidden md:block">{config.icon}</span>
+        <span className={`font-bold text-sm md:text-base truncate ${config.textColor}`}>
+          <span className="md:hidden">Ste taxislužba {locationText} {cityName}?</span>
+          <span className="hidden md:inline">Ste taxislužba {locationText} {cityName}?</span>
         </span>
         {!allSlotsTaken && (
-          <span className={`text-xs px-2 py-0.5 rounded-full ${
+          <span className={`text-xs px-2 py-0.5 rounded-full whitespace-nowrap ${
             partnerAvailable
               ? 'bg-emerald-100 text-emerald-700'
               : 'bg-amber-100 text-amber-700'
           }`}>
-            {partnerAvailable ? 'Partner slot voľný' : `${premiumSlotsLeft} Premium voľné`}
+            {partnerAvailable ? '1 Partner voľný' : `${premiumSlotsLeft} Premium voľné`}
           </span>
         )}
       </div>
-      <span className="flex items-center gap-2 text-gray-500 group-hover:text-gray-700">
-        {isExpanded ? (
-          <>
-            <span className="text-sm">Zavrieť</span>
-            <ChevronUp className="h-5 w-5" />
-          </>
-        ) : (
-          <>
-            <span className="text-sm">Zobraziť viac</span>
-            <ChevronDown className="h-5 w-5" />
-          </>
-        )}
+      <span className="flex items-center gap-1 md:gap-2 text-gray-500 group-hover:text-gray-700 ml-2 flex-shrink-0">
+        <span className="text-sm hidden md:inline">{isExpanded ? 'Zavrieť' : 'Zobraziť viac'}</span>
+        {isExpanded ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
       </span>
     </button>
   );
@@ -152,7 +145,7 @@ export function TaxiSlotsBanner({ cityName, locationText, partnerCount, premiumC
   );
 
   return (
-    <section className="py-4 px-4 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-2 md:py-4 px-4 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto max-w-4xl">
         <CollapsedHeader />
 
