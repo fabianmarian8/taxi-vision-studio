@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { createClient } from '@/lib/supabase/server';
 import { isSuperadmin } from '@/lib/superadmin';
 import { logger } from '@/lib/logger';
@@ -49,7 +50,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const supabase = await createClient();
+    // Use the same supabase client from auth check (line 8) - don't create a new one!
+    // Creating a new client can cause cookie/auth issues
 
     // Escape LIKE pattern special characters to prevent pattern injection
     const escapedServiceName = serviceName
@@ -75,6 +77,9 @@ export async function POST(request: NextRequest) {
       });
       await logger.flush();
 
+      // Invalidate ISR cache for the city page
+      revalidatePath(`/taxi/${citySlug}`);
+
       return NextResponse.json({
         success: true,
         message: 'Taxislužba bola zmazaná (submission)',
@@ -93,8 +98,9 @@ export async function POST(request: NextRequest) {
       });
 
     if (insertError) {
-      // Ak už existuje, to je OK
+      // Ak už existuje, to je OK - ale aj tak revalidatuj cache
       if (insertError.code === '23505') {
+        revalidatePath(`/taxi/${citySlug}`);
         return NextResponse.json({
           success: true,
           message: 'Taxislužba je už skrytá',
@@ -113,6 +119,9 @@ export async function POST(request: NextRequest) {
       hiddenBy: userEmail,
     });
     await logger.flush();
+
+    // Invalidate ISR cache for the city page
+    revalidatePath(`/taxi/${citySlug}`);
 
     return NextResponse.json({
       success: true,
@@ -179,6 +188,13 @@ export async function DELETE(request: NextRequest) {
     return NextResponse.json({ error: 'id is required' }, { status: 400 });
   }
 
+  // First get the city_slug before deleting (for cache revalidation)
+  const { data: hiddenService } = await supabase
+    .from('hidden_taxi_services')
+    .select('city_slug')
+    .eq('id', id)
+    .single();
+
   const { error } = await supabase
     .from('hidden_taxi_services')
     .delete()
@@ -186,6 +202,11 @@ export async function DELETE(request: NextRequest) {
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  // Invalidate ISR cache for the city page
+  if (hiddenService?.city_slug) {
+    revalidatePath(`/taxi/${hiddenService.city_slug}`);
   }
 
   return NextResponse.json({ success: true });
