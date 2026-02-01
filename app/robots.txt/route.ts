@@ -20,17 +20,20 @@ User-Agent: Googlebot
 Allow: /
 Disallow: /admin/
 Disallow: /api/
+Disallow: /_next/static/
 
 User-Agent: Bingbot
 Allow: /
 Disallow: /admin/
 Disallow: /api/
+Disallow: /_next/static/
 Crawl-delay: 1
 
 User-Agent: Yandex
 Allow: /
 Disallow: /admin/
 Disallow: /api/
+Disallow: /_next/static/
 Crawl-delay: 2
 
 # === SOCIAL MEDIA BOTY ===
@@ -48,12 +51,14 @@ User-Agent: AhrefsBot
 Allow: /
 Disallow: /admin/
 Disallow: /api/
+Disallow: /_next/static/
 Crawl-delay: 10
 
 User-Agent: SemrushBot
 Allow: /
 Disallow: /admin/
 Disallow: /api/
+Disallow: /_next/static/
 Crawl-delay: 10
 
 # === BLOKOVANÉ BOTY ===
@@ -74,6 +79,7 @@ User-Agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
+Disallow: /_next/static/
 
 # === SITEMAPY ===
 # Sitemap Index (odporúčané pre Google)
