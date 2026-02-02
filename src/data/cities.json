@@ -6796,8 +6796,9 @@
           "address": "Mierové námestie 4012/19, 903 01 Senec",
           "placeId": "ChIJ2yMohXudbEcR5aYhRwyR5Uw",
           "partnerData": {
-            "heroImage": "/logos/fast-taxi-zvolen-hero.webp",
-            "description": "Profesionálna preprava s dôrazom na spoľahlivosť, bezpečnosť a komfort."
+            "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
+            "description": "Profesionálna preprava s dôrazom na spoľahlivosť, bezpečnosť a komfort.",
+            "googlePlaceId": "ChIJ2yMohXudbEcR5aYhRwyR5Uw"
           }
         }
       ],
