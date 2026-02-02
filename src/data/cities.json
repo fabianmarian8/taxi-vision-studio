@@ -6788,11 +6788,12 @@
         },
         {
           "name": "Royal Taxi",
-          "phone": null,
+          "phone": "+421914442244",
           "website": null,
           "isPremium": true,
           "isPartner": true,
-          "isPromotional": false
+          "isPromotional": false,
+          "address": "Mierové námestie 4012/19, 903 01 Senec"
         }
       ],
       "latitude": 48.219947,
