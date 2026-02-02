@@ -1736,11 +1736,9 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 h-[200px] md:h-[260px]"
               >
                 <div
-                  className="absolute inset-0 bg-no-repeat"
+                  className="absolute inset-0 bg-no-repeat bg-[length:160%] bg-[center_30%] md:bg-[length:var(--hero-zoom)] md:bg-[position:var(--hero-pos-x)_var(--hero-pos-y)]"
                   style={{
                     backgroundImage: 'var(--hero-image)',
-                    backgroundPosition: 'var(--hero-pos-x) var(--hero-pos-y)',
-                    backgroundSize: 'var(--hero-zoom)',
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
