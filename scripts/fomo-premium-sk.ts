@@ -24,6 +24,7 @@ dotenv.config({ path: '.env' });
  * - Používa flag `isPromotional = true` na odlíšenie od platiacich zákazníkov
  * - Preskakuje mestá kde už je platiaci Premium (isPromotional = false, isPremium = true)
  * - Preskakuje mestá s iba 1 taxislužbou (žiadna konkurencia)
+ * - V mestách s 3+ taxislužbami vylučuje predchádzajúceho víťaza (garantovaná rotácia)
  * - Spúšťa sa automaticky každý týždeň cez GitHub Actions
  * - Posiela email notifikáciu cez Resend ak má taxislužba email
  */
@@ -204,6 +205,9 @@ async function runFomoMarketing() {
       continue;
     }
 
+    // Remember previous promotional winner BEFORE reset (for rotation)
+    const previousWinner = city.taxiServices.find(t => t.isPromotional)?.name;
+
     // Reset existing promotional in this city
     for (const taxi of city.taxiServices) {
       if (taxi.isPromotional) {
@@ -215,7 +219,12 @@ async function runFomoMarketing() {
     }
 
     // Select random winner from non-premium services
-    const eligible = city.taxiServices.filter(t => !t.isPremium);
+    // If city has 3+ taxis, exclude previous winner to ensure rotation
+    const nonPremium = city.taxiServices.filter(t => !t.isPremium);
+    const eligible = nonPremium.length >= 3 && previousWinner
+      ? nonPremium.filter(t => t.name !== previousWinner)
+      : nonPremium;
+
     if (eligible.length === 0) {
       continue;
     }
