@@ -6793,7 +6793,8 @@
           "isPremium": true,
           "isPartner": true,
           "isPromotional": false,
-          "address": "Mierové námestie 4012/19, 903 01 Senec"
+          "address": "Mierové námestie 4012/19, 903 01 Senec",
+          "placeId": "ChIJ2yMohXudbEcR5aYhRwyR5Uw"
         }
       ],
       "latitude": 48.219947,
