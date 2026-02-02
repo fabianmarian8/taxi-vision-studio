@@ -810,7 +810,7 @@
       "region": "Bratislavský kraj",
       "heroImage": "/images/bratislava-hero.webp",
       "description": "Hlavné mesto Slovenska s najväčším počtom taxislužieb. Nájdite si spoľahlivé taxi v Bratislave kedykoľvek potrebujete.",
-      "metaDescription": "Nájdite taxi v meste Bratislava. 32 taxislužieb s telefónnymi číslami a webovými stránkami: Taxi-Bratislava-City, TAXI-TAXI, EASY TAXI, FUN TAXI, City Taxi a ďalšie. Kontaktujte priamo.",
+      "metaDescription": "Nájdite taxi v meste Bratislava. 39 taxislužieb s telefónnymi číslami a webovými stránkami. Kontaktujte priamo.",
       "keywords": [
         "taxi bratislava",
         "taxislužba bratislava",
@@ -1068,9 +1068,9 @@
           "placeId": "ChIJR07mtPOLbEcRuXbaYu-Mq8w"
         },
         {
-          "name": "VB Taxi Bratislava",
+          "name": "Green Taxi Bratislava",
           "phone": "+421905660660",
-          "website": null,
+          "website": "https://www.greentaxibratislava.sk",
           "isPremium": false,
           "isPromotional": false,
           "address": "Vlčie hrdlo 90, Bratislava",
@@ -1123,6 +1123,15 @@
           "isPremium": false,
           "isPromotional": false,
           "address": "Bratislava"
+        },
+        {
+          "name": "Correct Taxi Bratislava",
+          "phone": "+421914155155",
+          "website": "https://www.correct-taxi.sk",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Bratislava",
+          "placeId": null
         }
       ],
       "latitude": 48.151699,
@@ -1211,6 +1220,13 @@
           "address": "Stanovište taxislužby, Brezno",
           "placeId": "ChIJbXLeGIRvFUcRN_klwgSej6I",
           "premiumExpiresAt": "2026-01-27T18:19:55.622Z"
+        },
+        {
+          "name": "BR Taxi",
+          "phone": "+421910955666",
+          "website": null,
+          "isPremium": false,
+          "isPromotional": false
         }
       ],
       "latitude": 48.805335,
@@ -5922,6 +5938,13 @@
           "phone": "+421905535455",
           "address": "2, Štúrova 34, Považská Bystrica",
           "placeId": "ChIJgeLGwOSLFEcRqGBDg2TmXTA"
+        },
+        {
+          "name": "Môj Taxi - Považská Bystrica",
+          "phone": "+421902030902",
+          "website": null,
+          "isPremium": true,
+          "isPromotional": false
         }
       ],
       "latitude": 49.115932,
@@ -6762,6 +6785,14 @@
           "phone": "+421949575705",
           "address": "Jánošíkova 25, Senec",
           "placeId": "ChIJP9ABrjWdbEcRg3YzVsbF7l0"
+        },
+        {
+          "name": "Royal Taxi",
+          "phone": null,
+          "website": null,
+          "isPremium": true,
+          "isPartner": true,
+          "isPromotional": false
         }
       ],
       "latitude": 48.219947,
@@ -9873,7 +9904,7 @@
           "name": "Fast Taxi Zvolen",
           "phone": "+421 902 048 583",
           "website": "https://zvolen-taxi.sk/",
-          "isPartner": true,
+          "isPartner": false,
           "partnerData": {
             "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
             "description": "Fast Taxi Zvolen je profesionálna taxislužba s dlhoročnými skúsenosťami v oblasti osobnej prepravy. Ponúkame spoľahlivé služby 24 hodín denne, 7 dní v týždni. Naša flotila moderných vozidiel zabezpečí váš komfort a bezpečnosť na každej ceste. Profesionálni vodiči, anglicky hovoriaci personál, monitorovanie letov pri letiskových transferoch.",

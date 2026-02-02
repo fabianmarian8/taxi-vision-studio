@@ -6785,6 +6785,14 @@
           "phone": "+421949575705",
           "address": "Jánošíkova 25, Senec",
           "placeId": "ChIJP9ABrjWdbEcRg3YzVsbF7l0"
+        },
+        {
+          "name": "Royal Taxi",
+          "phone": null,
+          "website": null,
+          "isPremium": true,
+          "isPartner": true,
+          "isPromotional": false
         }
       ],
       "latitude": 48.219947,
