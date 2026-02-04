@@ -81,7 +81,7 @@ import {
 
 // ISR: Revalidate every 60 seconds for partner data updates
 // Partners can edit their profiles in real-time, so we need fresh data
-export const revalidate = 60;
+export const revalidate = 3600; // 1 hour - reduced from 60s to save ISR writes (on-demand revalidation handles immediate updates)
 
 // Enable dynamic params for all patterns
 export const dynamicParams = true;

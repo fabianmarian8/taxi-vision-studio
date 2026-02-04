@@ -46,7 +46,7 @@ export interface ApprovedPartnerData {
  * NOTE: No in-memory caching is used because:
  * 1. Vercel serverless functions are stateless - cache doesn't persist across instances
  * 2. We use on-demand revalidation (revalidatePath) in admin API after approval
- * 3. Next.js ISR with revalidate=60 provides the caching layer
+ * 3. Next.js ISR with revalidate=3600 provides the caching layer
  */
 export async function getApprovedPartnerData(partnerSlug: string): Promise<ApprovedPartnerData | null> {
   try {
