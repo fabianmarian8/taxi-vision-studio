@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,11 +10,49 @@ import { Copy, Check, ArrowLeft } from 'lucide-react';
 const PRESET_AMOUNTS = [5, 10, 15, 20, 25, 30, 40, 50];
 const BASE_URL = 'https://www.taxinearme.sk';
 
+interface CityOption {
+  slug: string;
+  name: string;
+}
+
 export default function TaxiPlatbaAdminPage() {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
   const [customAmount, setCustomAmount] = useState('');
   const [poznamka, setPoznamka] = useState('');
+  const [citySlug, setCitySlug] = useState('');
+  const [taxiServiceName, setTaxiServiceName] = useState('');
+  const [taxiServicePhone, setTaxiServicePhone] = useState('');
   const [copied, setCopied] = useState(false);
+  const [cities, setCities] = useState<CityOption[]>([]);
+  const [loadingCities, setLoadingCities] = useState(true);
+
+  useEffect(() => {
+    const fetchCities = async () => {
+      try {
+        const response = await fetch('/api/regions');
+        if (response.ok) {
+          const data = await response.json();
+          const allCities: CityOption[] = [];
+          if (data.regions) {
+            for (const region of data.regions) {
+              if (region.cities) {
+                for (const city of region.cities) {
+                  allCities.push({ slug: city.slug, name: city.name });
+                }
+              }
+            }
+          }
+          allCities.sort((a, b) => a.name.localeCompare(b.name, 'sk'));
+          setCities(allCities);
+        }
+      } catch (error) {
+        console.error('Failed to load cities:', error);
+      } finally {
+        setLoadingCities(false);
+      }
+    };
+    fetchCities();
+  }, []);
 
   const activeAmount = selectedAmount || (customAmount ? parseFloat(customAmount.replace(',', '.')) : null);
 
@@ -24,6 +62,15 @@ export default function TaxiPlatbaAdminPage() {
     let url = `${BASE_URL}/taxi-platba?suma=${activeAmount}`;
     if (poznamka.trim()) {
       url += `&poznamka=${encodeURIComponent(poznamka.trim())}`;
+    }
+    if (citySlug) {
+      url += `&citySlug=${encodeURIComponent(citySlug)}`;
+    }
+    if (taxiServiceName.trim()) {
+      url += `&taxiServiceName=${encodeURIComponent(taxiServiceName.trim())}`;
+    }
+    if (taxiServicePhone.trim()) {
+      url += `&taxiServicePhone=${encodeURIComponent(taxiServicePhone.trim())}`;
     }
     return url;
   };
@@ -52,6 +99,9 @@ export default function TaxiPlatbaAdminPage() {
     setSelectedAmount(null);
     setCustomAmount('');
     setPoznamka('');
+    setCitySlug('');
+    setTaxiServiceName('');
+    setTaxiServicePhone('');
     setCopied(false);
   };
 
@@ -75,10 +125,54 @@ export default function TaxiPlatbaAdminPage() {
           <CardHeader>
             <CardTitle>Vytvoriť platobný link</CardTitle>
             <CardDescription>
-              Vyber sumu alebo zadaj vlastnú a vygeneruj link pre zákazníka
+              Vyber sumu, mesto a taxislužbu a vygeneruj link pre zákazníka
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
+            {/* Mesto */}
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Mesto *</label>
+              <select
+                value={citySlug}
+                onChange={(e) => setCitySlug(e.target.value)}
+                className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm"
+              >
+                <option value="">-- Vyber mesto --</option>
+                <option value="other">Iné / Neznáme</option>
+                {loadingCities ? (
+                  <option disabled>Načítavam...</option>
+                ) : (
+                  cities.map((city) => (
+                    <option key={city.slug} value={city.slug}>
+                      {city.name}
+                    </option>
+                  ))
+                )}
+              </select>
+            </div>
+
+            {/* Názov taxislužby */}
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Názov taxislužby *</label>
+              <Input
+                type="text"
+                value={taxiServiceName}
+                onChange={(e) => setTaxiServiceName(e.target.value)}
+                placeholder="napr. Goral Taxi"
+              />
+            </div>
+
+            {/* Telefónne číslo */}
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Telefónne číslo *</label>
+              <Input
+                type="tel"
+                value={taxiServicePhone}
+                onChange={(e) => setTaxiServicePhone(e.target.value)}
+                placeholder="+421 9XX XXX XXX"
+              />
+            </div>
+
             {/* Preset Amounts */}
             <div className="space-y-2">
               <label className="text-sm font-medium">Predvolené sumy</label>
@@ -177,10 +271,12 @@ export default function TaxiPlatbaAdminPage() {
             <CardTitle className="text-base">Ako to funguje</CardTitle>
           </CardHeader>
           <CardContent className="text-sm text-muted-foreground space-y-2">
-            <p>1. Vyber predvolenú sumu alebo zadaj vlastnú</p>
-            <p>2. Voliteľne pridaj poznámku (uvidíš ju v Stripe)</p>
-            <p>3. Skopíruj link a pošli zákazníkovi cez SMS/WhatsApp</p>
-            <p>4. Zákazník klikne, zaplatí kartou, hotovo</p>
+            <p>1. Vyber mesto, zadaj názov a telefón taxislužby</p>
+            <p>2. Vyber predvolenú sumu alebo zadaj vlastnú</p>
+            <p>3. Voliteľne pridaj poznámku (uvidíš ju v Stripe)</p>
+            <p>4. Skopíruj link a pošli zákazníkovi cez SMS/WhatsApp</p>
+            <p>5. Zákazník klikne, zaplatí kartou, hotovo</p>
+            <p className="text-xs mt-2 text-muted-foreground/70">Všetky údaje sa uložia do Stripe pre prehľad v admin paneli.</p>
           </CardContent>
         </Card>
       </main>

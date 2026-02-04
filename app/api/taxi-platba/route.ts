@@ -8,7 +8,29 @@ const PRODUCT_ID = 'prod_TqQEeWQAlC24oD';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { suma, poznamka } = body;
+    const { suma, poznamka, citySlug, taxiServiceName, taxiServicePhone } = body;
+
+    // Validácia povinných polí
+    if (!taxiServiceName?.trim()) {
+      return NextResponse.json(
+        { error: 'Názov taxislužby je povinný' },
+        { status: 400 }
+      );
+    }
+
+    if (!taxiServicePhone?.trim()) {
+      return NextResponse.json(
+        { error: 'Telefónne číslo taxislužby je povinné' },
+        { status: 400 }
+      );
+    }
+
+    if (!citySlug?.trim()) {
+      return NextResponse.json(
+        { error: 'Mesto/obec je povinné' },
+        { status: 400 }
+      );
+    }
 
     // Validácia sumy
     if (!suma || typeof suma !== 'number') {
@@ -52,6 +74,9 @@ export async function POST(request: NextRequest) {
         metadata: {
           typ: 'taxi-platba',
           poznamka: poznamka?.trim() || '',
+          city_slug: citySlug.trim(),
+          taxi_service_name: taxiServiceName.trim(),
+          taxi_service_phone: taxiServicePhone.trim(),
         },
       },
       // URLs

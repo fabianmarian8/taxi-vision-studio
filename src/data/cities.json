@@ -3735,6 +3735,33 @@
       "heroImage": "/images/kysucke-nove-mesto-hero.webp"
     },
     {
+      "name": "Lendak",
+      "slug": "lendak",
+      "region": "Prešovský kraj",
+      "isVillage": true,
+      "description": "Goralská obec pod Tatrami s vlastnou taxislužbou. Goral Taxi ponúka spoľahlivú prepravu v okolí Kežmarku a Vysokých Tatier.",
+      "metaDescription": "Taxi Lendak - Goral Taxi. Spoľahlivá taxislužba v goralskej obci pod Tatrami. Kontaktujte +421 903 648 323.",
+      "keywords": [
+        "taxi lendak",
+        "taxislužba lendak",
+        "goral taxi",
+        "taxi kežmarok",
+        "taxi tatry"
+      ],
+      "taxiServices": [
+        {
+          "name": "Goral Taxi",
+          "phone": "+421903648323",
+          "website": null,
+          "description": "Spoľahlivá taxislužba v goralskej obci Lendak",
+          "isPremium": true,
+          "isVerified": true
+        }
+      ],
+      "latitude": 49.2489,
+      "longitude": 20.3456
+    },
+    {
       "name": "Leopoldov",
       "slug": "leopoldov",
       "region": "Trnavský kraj",
