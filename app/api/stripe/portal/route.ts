@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
         .eq('city_slug', partner.city_slug)
         .ilike('name', partner.name)
         .not('subscription_id', 'is', null)
-        .single();
+        .maybeSingle();
 
       if (taxiService?.subscriptions) {
         const sub = taxiService.subscriptions as unknown as { stripe_customer_id: string };

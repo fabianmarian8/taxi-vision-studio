@@ -69,7 +69,7 @@ export function useOwnership(partnerSlug?: string) {
           .from('partners')
           .select('id, user_id, slug')
           .eq('slug', partnerSlug)
-          .single();
+          .maybeSingle();
 
         const isOwner = partner?.user_id === userId || userIsAdmin;
 

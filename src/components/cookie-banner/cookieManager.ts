@@ -139,7 +139,7 @@ const enableGoogleAnalytics = (): void => {
     window.gtag('consent', 'update', {
       analytics_storage: 'granted'
     });
-    console.log('✅ Google Analytics enabled');
+    // GA consent granted
   }
 };
 
@@ -151,7 +151,7 @@ const disableGoogleAnalytics = (): void => {
     window.gtag('consent', 'update', {
       analytics_storage: 'denied'
     });
-    console.log('❌ Google Analytics disabled');
+    // GA consent denied
   }
 };
 
@@ -161,7 +161,7 @@ const disableGoogleAnalytics = (): void => {
 const enableFacebookPixel = (): void => {
   if (typeof window !== 'undefined' && window.fbq) {
     window.fbq('consent', 'grant');
-    console.log('✅ Facebook Pixel enabled');
+    // FB pixel consent granted
   }
 };
 
@@ -171,7 +171,7 @@ const enableFacebookPixel = (): void => {
 const disableFacebookPixel = (): void => {
   if (typeof window !== 'undefined' && window.fbq) {
     window.fbq('consent', 'revoke');
-    console.log('❌ Facebook Pixel disabled');
+    // FB pixel consent revoked
   }
 };
 
@@ -182,7 +182,7 @@ const disableFacebookPixel = (): void => {
 const enableMicrosoftClarity = (): void => {
   // Clarity beží vždy z layout.tsx - táto funkcia nerobí nič
   if (typeof window !== 'undefined' && window.clarity) {
-    console.log('✅ Microsoft Clarity is running (always-on tracking)');
+    // Clarity is always-on
   }
 };
 
@@ -192,7 +192,7 @@ const enableMicrosoftClarity = (): void => {
  */
 const disableMicrosoftClarity = (): void => {
   // Clarity má bežať vždy - nedeaktivujeme ho
-  console.log('⚠️ Microsoft Clarity deactivation skipped (always-on tracking)');
+  // Clarity deactivation skipped (always-on)
 };
 
 /**

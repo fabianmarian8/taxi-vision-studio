@@ -4,8 +4,6 @@ import { createClient } from '@supabase/supabase-js';
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 const TELEGRAM_WEBHOOK_SECRET = process.env.TELEGRAM_WEBHOOK_SECRET;
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 interface TelegramMessage {
   message_id: number;
@@ -30,44 +28,36 @@ interface TelegramUpdate {
 
 export async function POST(request: NextRequest) {
   try {
-    // SECURITY: Validate Telegram webhook secret token
-    // This token is set when registering the webhook with setWebhook API
-    // Telegram sends it in X-Telegram-Bot-Api-Secret-Token header
-    if (TELEGRAM_WEBHOOK_SECRET) {
-      const secretHeader = request.headers.get('x-telegram-bot-api-secret-token');
-      if (secretHeader !== TELEGRAM_WEBHOOK_SECRET) {
-        console.warn('Telegram webhook: Invalid or missing secret token');
-        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-      }
+    // SECURITY: Validate Telegram webhook secret token (required)
+    if (!TELEGRAM_WEBHOOK_SECRET) {
+      console.error('[telegram-webhook] TELEGRAM_WEBHOOK_SECRET not configured');
+      return NextResponse.json({ error: 'Webhook not configured' }, { status: 500 });
+    }
+
+    const secretHeader = request.headers.get('x-telegram-bot-api-secret-token');
+    if (secretHeader !== TELEGRAM_WEBHOOK_SECRET) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     // Read raw body first for better error handling
     const rawBody = await request.text();
-    console.log('Telegram webhook raw body length:', rawBody.length);
 
     let update: TelegramUpdate;
     try {
       update = JSON.parse(rawBody);
-    } catch (parseError) {
-      console.error('JSON parse error:', parseError);
-      console.error('Raw body preview:', rawBody.substring(0, 500));
+    } catch {
       // Return 200 to prevent Telegram from retrying
       return NextResponse.json({ ok: true, error: 'parse_error' });
     }
 
-    console.log('Telegram webhook received:', JSON.stringify(update, null, 2));
-
     // Only process messages from our admin chat
     if (!update.message) {
-      console.log('No message in update');
       return NextResponse.json({ ok: true });
     }
 
     const chatId = String(update.message.chat.id);
-    console.log('Chat ID:', chatId, 'Expected:', TELEGRAM_CHAT_ID);
 
     if (chatId !== TELEGRAM_CHAT_ID) {
-      console.log('Chat ID mismatch, ignoring');
       return NextResponse.json({ ok: true });
     }
 
@@ -76,12 +66,8 @@ export async function POST(request: NextRequest) {
 
     // Skip if no text
     if (!text) {
-      console.log('No text in message');
       return NextResponse.json({ ok: true });
     }
-
-    console.log('Message text:', text);
-    console.log('Reply to message:', message.reply_to_message?.text);
 
     // Extract partner_id from reply or from /reply command
     let partnerId: string | null = null;
@@ -90,7 +76,6 @@ export async function POST(request: NextRequest) {
     // Method 1: Reply to message - extract partner_id from original message
     if (message.reply_to_message?.text) {
       const originalText = message.reply_to_message.text;
-      console.log('Looking for partner ID in:', originalText);
 
       // Look for partner ID - try multiple patterns
       // Pattern 1: 🆔 `uuid` or 🆔 uuid
@@ -101,12 +86,9 @@ export async function POST(request: NextRequest) {
         idMatch = originalText.match(/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i);
       }
 
-      console.log('ID match result:', idMatch);
-
       if (idMatch) {
         partnerId = idMatch[1];
         replyText = text;
-        console.log('Found partner ID:', partnerId);
       }
     }
 
@@ -119,25 +101,28 @@ export async function POST(request: NextRequest) {
         if (/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(potentialId)) {
           partnerId = potentialId;
           replyText = parts.slice(1).join(' ');
-          console.log('Found partner ID from /reply command:', partnerId);
         }
       }
     }
 
     // If we have a valid reply, save it to Supabase
     if (partnerId && replyText) {
-      console.log('Saving reply to Supabase for partner:', partnerId);
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-      const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
+      if (!supabaseUrl || !supabaseKey) {
+        console.error('[telegram-webhook] Supabase not configured');
+        return NextResponse.json({ ok: true });
+      }
+
+      const supabase = createClient(supabaseUrl, supabaseKey);
 
       // Verify partner exists
-      const { data: partner, error: partnerError } = await supabase
+      const { data: partner } = await supabase
         .from('partners')
         .select('id, name')
         .eq('id', partnerId)
-        .single();
-
-      console.log('Partner lookup result:', partner, partnerError);
+        .maybeSingle();
 
       if (!partner) {
         await sendTelegramMessage(`❌ Partner s ID ${partnerId} neexistuje.`);
@@ -152,19 +137,16 @@ export async function POST(request: NextRequest) {
       });
 
       if (error) {
-        console.error('Error saving reply:', error);
+        console.error('[telegram-webhook] Error saving reply:', error.message);
         await sendTelegramMessage(`❌ Chyba pri ukladaní odpovede: ${error.message}`);
       } else {
-        console.log('Reply saved successfully');
         await sendTelegramMessage(`✅ Odpoveď odoslaná partnerovi ${partner.name}`);
       }
-    } else {
-      console.log('No valid partner ID or reply text found');
     }
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    console.error('Telegram webhook error:', error);
+    console.error('[telegram-webhook] Error:', error instanceof Error ? error.message : error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

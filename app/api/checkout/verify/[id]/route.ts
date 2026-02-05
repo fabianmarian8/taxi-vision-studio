@@ -27,7 +27,7 @@ export async function GET(
       .from('taxi_services')
       .select('id, name, city_slug, is_verified')
       .eq('id', taxiServiceId)
-      .single();
+      .maybeSingle();
 
     if (dbError || !taxiService) {
       log.warn('Taxi service not found', { taxiServiceId });

@@ -128,22 +128,18 @@ export function InlineEditorProvider({
     const params = new URLSearchParams(window.location.search);
     const isPreview = params.get('preview') === 'editor';
 
-    console.log('[InlineEditor] Preview check:', { isPreview, search: window.location.search });
-
     if (!isPreview) return;
 
     setIsPreviewMode(true);
 
     // Small delay to ensure component is mounted, then notify parent
     const readyTimeout = setTimeout(() => {
-      console.log('[InlineEditor] Sending PREVIEW_READY to parent');
       window.parent.postMessage({ type: 'PREVIEW_READY' }, '*');
     }, 100);
 
     const handleMessage = (event: MessageEvent) => {
       const message = event.data as PreviewMessage;
       if (message?.type === 'PREVIEW_UPDATE' && message.payload) {
-        console.log('[InlineEditor] Received PREVIEW_UPDATE');
         // Priamo použiť payload - prázdne stringy sú validná hodnota (vymazaný text)
         setDraftData(prev => ({
           ...prev,
@@ -170,12 +166,10 @@ export function InlineEditorProvider({
   // Save changes to API (debounced) - returns true on success, false on failure
   const saveToApi = useCallback(async (changes: Record<string, unknown>): Promise<boolean> => {
     if (isPreviewMode) {
-      console.log('[InlineEditor] In preview mode, skipping API save');
       return true;
     }
 
     if (!partnerId) {
-      console.log('[InlineEditor] No partnerId, skipping API save (demo mode)');
       setHasPendingChanges(false);
       return true; // Demo mode is always "successful"
     }
@@ -201,16 +195,13 @@ export function InlineEditorProvider({
         setHasPendingChanges(false);
         setSaveError(null);
         onSaveSuccess?.(result.draft_id);
-        console.log('[InlineEditor] Saved:', Object.keys(changes));
         return true;
       } else {
-        console.error('[InlineEditor] Save failed:', result.error);
         setSaveError(result.error || 'Chyba pri ukladaní');
         setHasPendingChanges(true); // Keep pending state on error
         return false;
       }
-    } catch (error) {
-      console.error('[InlineEditor] Save error:', error);
+    } catch {
       setSaveError('Chyba siete. Skontrolujte pripojenie.');
       setHasPendingChanges(true);
       return false;
@@ -278,14 +269,12 @@ export function InlineEditorProvider({
       if (saveResult) {
         pendingChangesRef.current = {};
       } else {
-        console.error('[InlineEditor] Failed to save pending changes before publish');
         alert('Chyba pri ukladaní zmien. Skúste znova.');
         return;
       }
     }
 
     if (!partnerId || !draftId) {
-      console.log('[InlineEditor] No partnerId/draftId, demo mode publish');
       alert('Zmeny boli publikované! (demo)');
       return;
     }
@@ -308,11 +297,9 @@ export function InlineEditorProvider({
         // Refresh page to show published version
         window.location.reload();
       } else {
-        console.error('[InlineEditor] Publish failed:', result.error);
         alert('Chyba pri publikovaní: ' + result.error);
       }
-    } catch (error) {
-      console.error('[InlineEditor] Publish error:', error);
+    } catch {
       alert('Chyba pri publikovaní zmien');
     } finally {
       setIsPublishing(false);
@@ -329,7 +316,6 @@ export function InlineEditorProvider({
 
     setDraftData({ ...originalData });
     setIsEditMode(false);
-    console.log('[InlineEditor] Discarded changes');
   }, [originalData]);
 
   // Toggle edit mode function for external access (e.g., UserMenu)

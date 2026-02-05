@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
     .maybeSingle();
 
   if (existingEvent) {
-    console.log(`⏭️ Skipping duplicate event: ${event.id}`);
+    log.info('Skipping duplicate event');
     return NextResponse.json({ received: true, skipped: true });
   }
 
@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
         break;
 
       default:
-        console.log(`Unhandled event type: ${event.type}`);
+        log.info('Unhandled event type');
     }
   } catch (error) {
     log.error('Webhook processing failed', {
@@ -108,7 +108,7 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
   const periodEnd = subscriptionItem?.current_period_end;
 
   if (!periodStart || !periodEnd) {
-    console.error(`Missing period data for subscription ${subscription.id}`);
+    logger.error('Missing period data for subscription', { subscriptionId: subscription.id });
     throw new Error('Missing period data');
   }
 
@@ -123,7 +123,9 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
       customerName = customer.name || '';
     }
   } catch (err) {
-    console.warn('Could not retrieve customer from Stripe:', err);
+    logger.warn('Could not retrieve customer from Stripe', {
+      error: err instanceof Error ? err.message : 'Unknown',
+    });
   }
 
   // Extract metadata (may be missing from Payment Links)
@@ -133,12 +135,10 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
 
   // Log warning if metadata is missing (but taxi_service_id is enough)
   if (!taxiServiceId && (citySlug === 'unknown' || taxiServiceName === 'Unknown Service')) {
-    console.warn(`⚠️ Subscription ${subscription.id} missing metadata:`, {
+    logger.warn('Subscription missing metadata', {
+      subscriptionId: subscription.id,
       city_slug: citySlug,
       taxi_service_name: taxiServiceName,
-      taxi_service_id: taxiServiceId,
-      customer_email: customerEmail,
-      metadata: subscription.metadata,
     });
   }
 
@@ -164,13 +164,12 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
   });
 
   if (error) {
-    console.error('Error inserting subscription:', error);
+    logger.error('Error inserting subscription', { error: error.message, subscriptionId: subscription.id });
     throw error;
   }
 
-  console.log(`✅ Subscription created: ${subscription.id}`, {
-    customer_email: customerEmail,
-    customer_name: customerName,
+  logger.info('Subscription created', {
+    subscriptionId: subscription.id,
     city_slug: citySlug,
     taxi_service_name: taxiServiceName,
     plan_type: getPlanTypeFromAmount(amountCents),
@@ -191,7 +190,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
   const periodEnd = subscriptionItem?.current_period_end;
 
   if (!periodStart || !periodEnd) {
-    console.error(`Missing period data for subscription ${subscription.id}`);
+    logger.error('Missing period data for subscription', { subscriptionId: subscription.id });
     throw new Error('Missing period data');
   }
 
@@ -200,7 +199,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
     .from('subscriptions')
     .select('status')
     .eq('stripe_subscription_id', subscription.id)
-    .single();
+    .maybeSingle();
 
   const previousStatus = existing?.status || null;
 
@@ -221,7 +220,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
     .eq('stripe_subscription_id', subscription.id);
 
   if (error) {
-    console.error('Error updating subscription:', error);
+    logger.error('Error updating subscription', { error: error.message, subscriptionId: subscription.id });
     throw error;
   }
 
@@ -244,7 +243,7 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription, stri
     .from('subscriptions')
     .select('status')
     .eq('stripe_subscription_id', subscription.id)
-    .single();
+    .maybeSingle();
 
   const previousStatus = existing?.status || null;
 
@@ -259,7 +258,7 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription, stri
     .eq('stripe_subscription_id', subscription.id);
 
   if (error) {
-    console.error('Error canceling subscription:', error);
+    logger.error('Error canceling subscription', { error: error.message, subscriptionId: subscription.id });
     throw error;
   }
 
@@ -329,10 +328,10 @@ async function linkSubscriptionToTaxiService(
     .from('subscriptions')
     .select('id, status, plan_type, current_period_end')
     .eq('stripe_subscription_id', stripeSubscriptionId)
-    .single();
+    .maybeSingle();
 
   if (!subscription) {
-    console.warn(`Subscription not found: ${stripeSubscriptionId}`);
+    logger.warn('Subscription not found for linking', { stripeSubscriptionId });
     return;
   }
 
@@ -364,7 +363,7 @@ async function linkSubscriptionToTaxiService(
     count = result.count;
 
     if (!error && count === 1) {
-      console.log(`✅ Linked subscription ${stripeSubscriptionId} to taxi service ID ${taxiServiceId} (plan: ${subscription.plan_type})`);
+      logger.info('Linked subscription to taxi service', { stripeSubscriptionId, taxiServiceId, plan: subscription.plan_type });
     }
   }
   // Fallback to city_slug + name matching
@@ -385,18 +384,18 @@ async function linkSubscriptionToTaxiService(
     count = result.count;
 
     if (!error && count === 1) {
-      console.log(`✅ Linked subscription ${stripeSubscriptionId} to ${taxiServiceName} in ${citySlug} (plan: ${subscription.plan_type})`);
+      logger.info('Linked subscription to taxi service by name', { stripeSubscriptionId, taxiServiceName, citySlug, plan: subscription.plan_type });
     }
   } else {
-    console.warn('Missing taxi_service_id and city_slug/taxi_service_name in subscription metadata');
+    logger.warn('Missing taxi_service_id and city_slug/taxi_service_name in subscription metadata');
     return;
   }
 
   if (error) {
-    console.error('Error linking subscription to taxi service:', error);
+    logger.error('Error linking subscription to taxi service', { error: error.message });
   } else if (count === 0) {
     // Service not found in DB - create it (it may exist only in JSON)
-    console.log(`⚠️ No taxi service found for ${taxiServiceName} in ${citySlug}, creating new record...`);
+    logger.info('No taxi service found, creating new record', { taxiServiceName, citySlug });
 
     if (citySlug && taxiServiceName) {
       // Get city_id for the city_slug
@@ -404,7 +403,7 @@ async function linkSubscriptionToTaxiService(
         .from('cities')
         .select('id')
         .eq('slug', citySlug)
-        .single();
+        .maybeSingle();
 
       const insertData = {
         name: taxiServiceName,
@@ -422,13 +421,13 @@ async function linkSubscriptionToTaxiService(
         .insert(insertData);
 
       if (insertError) {
-        console.error('Error creating taxi service:', insertError);
+        logger.error('Error creating taxi service', { error: insertError.message });
       } else {
-        console.log(`✅ Created taxi service ${taxiServiceName} in ${citySlug} with ${subscription.plan_type} plan`);
+        logger.info('Created taxi service', { taxiServiceName, citySlug, plan: subscription.plan_type });
       }
     }
   } else if (count && count > 1) {
-    console.error(`🚨 SECURITY: Multiple (${count}) taxi services updated!`);
+    logger.error('SECURITY: Multiple taxi services updated', { count, taxiServiceName, citySlug });
   }
 }
 
@@ -445,10 +444,10 @@ async function logSubscriptionEvent(
     .from('subscriptions')
     .select('id')
     .eq('stripe_subscription_id', stripeSubscriptionId)
-    .single();
+    .maybeSingle();
 
   if (!subscription) {
-    console.warn(`Subscription not found for ${stripeSubscriptionId}`);
+    logger.warn('Subscription not found for event logging', { stripeSubscriptionId });
     return;
   }
 
@@ -464,7 +463,7 @@ async function logSubscriptionEvent(
 
   // Throw on non-duplicate errors so Stripe retries
   if (error && !error.message?.includes('duplicate')) {
-    console.error('Error logging subscription event:', error);
+    logger.error('Error logging subscription event', { error: error.message, stripeSubscriptionId });
     throw error;
   }
 }

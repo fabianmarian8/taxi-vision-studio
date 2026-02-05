@@ -98,7 +98,7 @@ export async function POST(request: NextRequest) {
         .lt('snapshot_date', endDate)
         .order('snapshot_date', { ascending: false })
         .limit(1)
-        .single();
+        .maybeSingle();
 
       const { error } = await supabase.from('keyword_rankings').upsert(
         {
