@@ -103,6 +103,7 @@ describe('POST /api/stripe/portal', () => {
       ilike: vi.fn().mockReturnThis(),
       not: vi.fn().mockReturnThis(),
       single: vi.fn().mockResolvedValue({ data: null, error: null }),
+      maybeSingle: vi.fn().mockResolvedValue({ data: null, error: null }),
     };
     mockAdminClient.from.mockReturnValue(mockTaxiQuery);
 
@@ -143,6 +144,13 @@ describe('POST /api/stripe/portal', () => {
       ilike: vi.fn().mockReturnThis(),
       not: vi.fn().mockReturnThis(),
       single: vi.fn().mockResolvedValue({
+        data: {
+          subscription_id: 'sub_123',
+          subscriptions: { stripe_customer_id: 'cus_test123' }
+        },
+        error: null
+      }),
+      maybeSingle: vi.fn().mockResolvedValue({
         data: {
           subscription_id: 'sub_123',
           subscriptions: { stripe_customer_id: 'cus_test123' }
