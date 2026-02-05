@@ -2232,11 +2232,17 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   <MapPin className="h-4 w-4" />
                   <span>{service.address ? service.address : `${city.name}, ${city.region}`}</span>
                 </div>
-                {/* Overená taxislužba badge - pre Mini/Premium/Partner */}
-                {(service.isVerified || isPremium || isPartner) && (
+                {/* Overená/Neoverená taxislužba badge */}
+                {(service.isVerified || isPremium || isPartner) ? (
                   <div className="flex items-center gap-1 mt-2 text-sm text-green-600">
                     <CheckCircle2 className="h-4 w-4" />
                     <span className="font-medium">Overená taxislužba</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-1.5 mt-2">
+                    <span className="text-xs bg-gray-400 text-white px-2 py-0.5 rounded font-medium">
+                      Neoverené
+                    </span>
                   </div>
                 )}
               </div>
