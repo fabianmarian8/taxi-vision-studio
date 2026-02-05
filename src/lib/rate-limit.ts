@@ -2,7 +2,8 @@ import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
 
 // Lazy initialization
-let ratelimit: Ratelimit | null = null;
+let _redis: Redis | null = null;
+const limiters = new Map<string, Ratelimit>();
 
 export interface RateLimitResult {
   success: boolean;
@@ -10,23 +11,39 @@ export interface RateLimitResult {
   resetAt: Date;
 }
 
-function getRatelimit() {
-  if (!ratelimit) {
+function getRedis(): Redis | null {
+  if (!_redis) {
     const url = process.env.UPSTASH_REDIS_REST_URL;
     const token = process.env.UPSTASH_REDIS_REST_TOKEN;
-
-    // Only initialize if both URL and token are available
     if (url && token) {
-      const redis = new Redis({ url, token });
-      ratelimit = new Ratelimit({
-        redis,
-        limiter: Ratelimit.slidingWindow(5, '15 m'), // 5 requests per 15 minutes
-        analytics: true,
-      });
+      _redis = new Redis({ url, token });
     }
-    // If missing, returns null and falls back to in-memory rate limiting
   }
-  return ratelimit;
+  return _redis;
+}
+
+function msToWindow(ms: number): `${number}${'s' | 'm' | 'h'}` {
+  if (ms >= 3600000) return `${Math.round(ms / 3600000)}h`;
+  if (ms >= 60000) return `${Math.round(ms / 60000)}m`;
+  return `${Math.round(ms / 1000)}s`;
+}
+
+function getLimiter(limit: number, windowMs: number): Ratelimit | null {
+  const redis = getRedis();
+  if (!redis) return null;
+
+  const key = `${limit}:${windowMs}`;
+  let limiter = limiters.get(key);
+  if (!limiter) {
+    limiter = new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(limit, msToWindow(windowMs)),
+      analytics: true,
+      prefix: `rl:${key}`,
+    });
+    limiters.set(key, limiter);
+  }
+  return limiter;
 }
 
 /**
@@ -41,10 +58,10 @@ export async function checkRateLimit(
   limit: number = 5,
   windowMs: number = 15 * 60 * 1000 // 15 minutes
 ): Promise<RateLimitResult> {
-  const limiter = getRatelimit();
+  const limiter = getLimiter(limit, windowMs);
 
   if (limiter) {
-    // Use Upstash Redis rate limiting
+    // Use Upstash Redis rate limiting with correct limits
     const result = await limiter.limit(identifier);
     return {
       success: result.success,

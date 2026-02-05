@@ -7,6 +7,13 @@
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
+/**
+ * Escape Markdown special characters in user input
+ */
+function escapeMarkdown(text: string): string {
+  return text.replace(/([*_`[\]])/g, '\\$1');
+}
+
 interface TelegramResult {
   success: boolean;
   error?: string;
@@ -60,18 +67,18 @@ export function formatOwnerClaimMessage(data: {
 
   return `\u{1F695} *MAJITEL TAXISLUZBY - Ziadost o upravu*
 
-\u{1F4CD} *Taxisluzba:* ${data.serviceName}
-\u{1F4DE} *Tel. v databaze:* ${data.servicePhone || 'neuvedene'}
-\u{1F3D9}\u{FE0F} *Mesto:* ${data.cityName}
-\u{1F517} *URL:* taxinearme.sk/taxi/${data.citySlug}
+\u{1F4CD} *Taxisluzba:* ${escapeMarkdown(data.serviceName)}
+\u{1F4DE} *Tel. v databaze:* ${escapeMarkdown(data.servicePhone || 'neuvedene')}
+\u{1F3D9}\u{FE0F} *Mesto:* ${escapeMarkdown(data.cityName)}
+\u{1F517} *URL:* taxinearme.sk/taxi/${escapeMarkdown(data.citySlug)}
 
 \u{1F464} *Kontaktna osoba:*
-\u{2022} Meno: ${data.ownerName}
-\u{2022} Telefon: ${data.ownerPhone}
-\u{2022} Email: ${data.ownerEmail || 'neuvedeny'}
+\u{2022} Meno: ${escapeMarkdown(data.ownerName)}
+\u{2022} Telefon: ${escapeMarkdown(data.ownerPhone)}
+\u{2022} Email: ${escapeMarkdown(data.ownerEmail || 'neuvedeny')}
 
 \u{1F4AC} *Sprava:*
-${data.message || '(bez spravy)'}
+${escapeMarkdown(data.message || '(bez spravy)')}
 
 \u{23F0} *Cas:* ${timestamp}`;
 }
@@ -93,15 +100,15 @@ export function formatPhoneReportMessage(data: {
     'not_exists': '\u{1F6AB} Taxisluzba neexistuje',
   };
 
-  const reasonText = reasonLabels[data.reason] || data.reason;
-  const commentText = data.comment ? `\n\u{1F4AC} *Komentar:* ${data.comment}` : '';
-  const urlText = data.pageUrl ? `\n\u{1F517} *Stranka:* ${data.pageUrl}` : '';
+  const reasonText = reasonLabels[data.reason] || escapeMarkdown(data.reason);
+  const commentText = data.comment ? `\n\u{1F4AC} *Komentar:* ${escapeMarkdown(data.comment)}` : '';
+  const urlText = data.pageUrl ? `\n\u{1F517} *Stranka:* ${escapeMarkdown(data.pageUrl)}` : '';
 
   return `\u{1F6A8} *NAHLASENIE NEFUNKCNEHO CISLA*
 
-\u{1F695} *Taxisluzba:* ${data.serviceName}
-\u{1F4DE} *Telefon:* \`${data.servicePhone}\`
-\u{1F4CD} *Mesto:* ${data.cityName}
+\u{1F695} *Taxisluzba:* ${escapeMarkdown(data.serviceName)}
+\u{1F4DE} *Telefon:* \`${escapeMarkdown(data.servicePhone)}\`
+\u{1F4CD} *Mesto:* ${escapeMarkdown(data.cityName)}
 
 \u{26A0}\u{FE0F} *Dovod:* ${reasonText}${commentText}${urlText}
 

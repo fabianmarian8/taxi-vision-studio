@@ -6,6 +6,11 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
+
+// Rate limit: 30 requests per minute per IP
+const ROUTE_RATE_LIMIT = 30;
+const ROUTE_WINDOW_MS = 60 * 1000;
 
 interface RouteResponse {
   distance: number; // kilometers
@@ -179,6 +184,16 @@ function calculateAirDistance(
 }
 
 export async function GET(request: NextRequest) {
+  const clientIp = getClientIp(request);
+  const rateLimit = await checkRateLimit(`route:${clientIp}`, ROUTE_RATE_LIMIT, ROUTE_WINDOW_MS);
+
+  if (!rateLimit.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Try again later.' },
+      { status: 429 }
+    );
+  }
+
   const { searchParams } = new URL(request.url);
 
   const from = searchParams.get('from');

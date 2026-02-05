@@ -19,9 +19,12 @@ function getSupabase(): SupabaseClient {
   return _supabase;
 }
 
-// Generate idempotency key from city_slug + taxi_service_name
+// Generate idempotency key from city_slug + taxi_service_name + current hour
+// Same inputs within the same hour produce the same key (prevents duplicate checkouts)
+// After 1 hour, a new checkout can be created for the same service
 function generateIdempotencyKey(citySlug: string, taxiServiceName: string): string {
-  const data = `checkout:${citySlug}:${taxiServiceName}:${Date.now()}`;
+  const hourBucket = Math.floor(Date.now() / 3600000);
+  const data = `checkout:${citySlug}:${taxiServiceName}:${hourBucket}`;
   return createHash('sha256').update(data).digest('hex').substring(0, 32);
 }
 

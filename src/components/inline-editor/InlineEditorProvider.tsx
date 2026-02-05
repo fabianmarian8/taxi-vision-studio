@@ -208,7 +208,7 @@ export function InlineEditorProvider({
     } finally {
       setIsSaving(false);
     }
-  }, [partnerId, draftId, onSaveSuccess]);
+  }, [partnerId, draftId, onSaveSuccess, isPreviewMode]);
 
   // Debounced save - accumulates changes and saves after 1s of inactivity
   const debouncedSave = useCallback((fieldKey: string, value: unknown) => {
