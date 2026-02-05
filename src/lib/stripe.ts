@@ -123,9 +123,8 @@ export function getPlanTypeFromPrice(priceId: string): 'mini' | 'premium' | 'par
  * Get plan type from subscription amount
  */
 export function getPlanTypeFromAmount(amountCents: number): 'mini' | 'premium' | 'partner' {
-  // Partner is 899 cents, Premium is 399 cents, Mini is 99 cents
-  if (amountCents >= 800) return 'partner';
-  if (amountCents >= 300) return 'premium';
+  if (amountCents >= PLAN_AMOUNTS.partner) return 'partner';   // >= 899
+  if (amountCents >= PLAN_AMOUNTS.premium) return 'premium';   // >= 399
   return 'mini';
 }
 

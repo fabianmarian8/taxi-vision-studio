@@ -58,52 +58,31 @@ export async function GET(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    console.log('[API] GET /api/admin/cities/[slug] - START');
-
     const session = await getSession();
     if (!session) {
-      console.log('[API] No session found');
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     const { slug } = await params;
-    console.log('[API] Looking for city with slug:', slug);
 
     // Read cities data from GitHub or local file system
     const data = await readCitiesData();
     const cities = data.cities as CityData[];
 
-    console.log('[API] Total cities available:', cities.length);
-
     const city = cities.find(c => c.slug === slug);
-    console.log('[API] City found:', city ? 'YES' : 'NO');
 
     if (!city) {
-      console.log('[API] City not found - returning 404');
-      console.log('[API] First 5 slugs:', cities.slice(0, 5).map(c => c.slug));
 
-      // Return detailed debug info in response
       return NextResponse.json({
         error: 'City not found',
-        debug: {
-          requestedSlug: slug,
-          totalCities: cities.length,
-          sampleSlugs: cities.slice(0, 10).map(c => c.slug),
-          possibleMatches: cities
-            .filter(c => c.slug.includes(slug.substring(0, 5)))
-            .map(c => ({ name: c.name, slug: c.slug }))
-        }
       }, { status: 404 });
     }
 
-    console.log('[API] Returning city:', city.name);
     return NextResponse.json(city);
   } catch (error) {
     console.error('[API] CRITICAL ERROR:', error);
     return NextResponse.json({
       error: 'Internal server error',
-      message: error instanceof Error ? error.message : 'Unknown error',
-      stack: error instanceof Error ? error.stack : undefined
     }, { status: 500 });
   }
 }

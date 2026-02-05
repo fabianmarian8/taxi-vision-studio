@@ -1,11 +1,6 @@
 import { createClient } from '@/lib/supabase/server';
 import { NextRequest, NextResponse } from 'next/server';
-
-// Superadmin emails - can edit ALL city pages
-const SUPERADMIN_EMAILS = [
-  'fabianmarian8@gmail.com',
-  'fabianmarian8@users.noreply.github.com',
-];
+import { isSuperadmin } from '@/lib/superadmin';
 
 // Whitelist of allowed fields
 const ALLOWED_FIELDS = [
@@ -31,8 +26,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if user is superadmin
-    const isSuperadmin = user.email && SUPERADMIN_EMAILS.includes(user.email.toLowerCase());
-    if (!isSuperadmin) {
+    if (!isSuperadmin(user.email)) {
       return NextResponse.json({
         success: false,
         error: 'Only superadmins can edit cities'

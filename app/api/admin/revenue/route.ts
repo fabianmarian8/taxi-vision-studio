@@ -99,7 +99,8 @@ export async function GET(request: NextRequest) {
     const { data: allSubscriptions } = await supabase
       .from('subscriptions')
       .select('*')
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: false })
+      .limit(500);
 
     // Get recent created events with subscription details
     const { data: recentCreated } = await supabase
@@ -107,7 +108,8 @@ export async function GET(request: NextRequest) {
       .select('*, subscriptions(*)')
       .eq('event_type', 'created')
       .gte('created_at', new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString())
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: false })
+      .limit(100);
 
     // Get recent canceled events with subscription details
     const { data: recentCanceled } = await supabase
@@ -115,7 +117,8 @@ export async function GET(request: NextRequest) {
       .select('*, subscriptions(*)')
       .eq('event_type', 'canceled')
       .gte('created_at', new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString())
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: false })
+      .limit(100);
 
     return NextResponse.json({
       mrr,

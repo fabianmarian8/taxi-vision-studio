@@ -2,12 +2,7 @@ import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
-
-// Superadmin emails - can edit ALL partner pages
-const SUPERADMIN_EMAILS = [
-  'fabianmarian8@gmail.com',
-  'fabianmarian8@users.noreply.github.com',
-];
+import { isSuperadmin } from '@/lib/superadmin';
 
 // POST /api/partner/inline-edit/publish
 // Publikovanie zmien (status -> approved)
@@ -35,10 +30,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if user is superadmin
-    const isSuperadmin = user.email && SUPERADMIN_EMAILS.includes(user.email.toLowerCase());
+    const userIsSuperadmin = isSuperadmin(user.email);
 
     // Use admin client for superadmins to bypass RLS
-    const queryClient = isSuperadmin
+    const queryClient = userIsSuperadmin
       ? createAdminClient(
           process.env.NEXT_PUBLIC_SUPABASE_URL!,
           process.env.SUPABASE_SERVICE_ROLE_KEY!
@@ -51,7 +46,7 @@ export async function POST(request: NextRequest) {
       .select('id, slug, city_slug, user_id')
       .eq('id', partner_id);
 
-    if (!isSuperadmin) {
+    if (!userIsSuperadmin) {
       partnerQuery = partnerQuery.eq('user_id', user.id);
     }
 

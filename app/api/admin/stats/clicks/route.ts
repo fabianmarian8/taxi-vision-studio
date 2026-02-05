@@ -34,7 +34,8 @@ export async function GET() {
     const { data: clicksByService, error: serviceError } = await supabase
       .from('click_events')
       .select('city_slug, service_name, event_type')
-      .order('created_at', { ascending: false });
+      .order('created_at', { ascending: false })
+      .limit(10000);
 
     if (serviceError) throw serviceError;
 
