@@ -151,7 +151,7 @@ export function RouteMap({
   useEffect(() => {
     // Small delay to ensure container is ready
     const timer = setTimeout(() => {
-      initMap().catch(() => {});
+      initMap().catch((err) => console.error('RouteMap init failed:', err));
     }, 100);
 
     return () => {

@@ -93,7 +93,7 @@ function CityRouteMapInner({
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      initMap().catch(() => {});
+      initMap().catch((err) => console.error('CityRouteMap init failed:', err));
     }, 100);
 
     return () => {

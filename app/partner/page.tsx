@@ -209,14 +209,19 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
 
       const cityCandidates = subscriptionsByCity.get(partner.city_slug) || [];
       const MIN_FUZZY_LENGTH = 5;
+      const MIN_LENGTH_RATIO = 0.7;
       const fuzzyMatch =
         normalizedPartnerName.length >= MIN_FUZZY_LENGTH
-          ? cityCandidates.find(
-              (candidate) =>
-                candidate.normalizedName.length >= MIN_FUZZY_LENGTH &&
-                (candidate.normalizedName.includes(normalizedPartnerName) ||
-                  normalizedPartnerName.includes(candidate.normalizedName))
-            )
+          ? cityCandidates.find((candidate) => {
+              if (candidate.normalizedName.length < MIN_FUZZY_LENGTH) return false;
+              const shorter = Math.min(candidate.normalizedName.length, normalizedPartnerName.length);
+              const longer = Math.max(candidate.normalizedName.length, normalizedPartnerName.length);
+              if (shorter / longer < MIN_LENGTH_RATIO) return false;
+              return (
+                candidate.normalizedName.includes(normalizedPartnerName) ||
+                normalizedPartnerName.includes(candidate.normalizedName)
+              );
+            })
           : undefined;
 
       if (fuzzyMatch) {
