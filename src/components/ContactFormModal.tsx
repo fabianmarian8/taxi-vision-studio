@@ -1,4 +1,5 @@
 import { useState } from "react";
+import * as Sentry from "@sentry/nextjs";
 import {
   Dialog,
   DialogContent,
@@ -46,7 +47,8 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
       } else {
         setSubmitStatus("error");
       }
-    } catch {
+    } catch (error) {
+      Sentry.captureException(error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

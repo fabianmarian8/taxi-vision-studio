@@ -208,11 +208,16 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
       }
 
       const cityCandidates = subscriptionsByCity.get(partner.city_slug) || [];
-      const fuzzyMatch = cityCandidates.find(
-        (candidate) =>
-          candidate.normalizedName.includes(normalizedPartnerName) ||
-          normalizedPartnerName.includes(candidate.normalizedName)
-      );
+      const MIN_FUZZY_LENGTH = 5;
+      const fuzzyMatch =
+        normalizedPartnerName.length >= MIN_FUZZY_LENGTH
+          ? cityCandidates.find(
+              (candidate) =>
+                candidate.normalizedName.length >= MIN_FUZZY_LENGTH &&
+                (candidate.normalizedName.includes(normalizedPartnerName) ||
+                  normalizedPartnerName.includes(candidate.normalizedName))
+            )
+          : undefined;
 
       if (fuzzyMatch) {
         partnerSubscriptions.set(partner.id, fuzzyMatch.subscription);

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useCallback, useId, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { fetchRouteGeometry } from '@/utils/fetchRouteGeometry';
 
 // Fix for default marker icons - using localized assets
 const startIcon = L.icon({
@@ -34,13 +35,6 @@ interface CityRouteMapProps {
   toName: string;
 }
 
-interface RouteApiResponse {
-  distance: number;
-  duration: number;
-  geometry: [number, number][];
-  source: 'openrouteservice' | 'osrm' | 'estimate';
-}
-
 function CityRouteMapInner({
   fromLat,
   fromLng,
@@ -53,39 +47,14 @@ function CityRouteMapInner({
   const mapInstanceRef = useRef<L.Map | null>(null);
   const routeAbortRef = useRef<AbortController | null>(null);
 
-  const fetchRoute = useCallback(async (): Promise<RouteApiResponse | null> => {
+  const initMap = useCallback(async () => {
+    if (!mapContainerRef.current || mapInstanceRef.current) return;
+
     routeAbortRef.current?.abort();
     const controller = new AbortController();
     routeAbortRef.current = controller;
 
-    try {
-      const params = new URLSearchParams({
-        from: `${fromLat},${fromLng}`,
-        to: `${toLat},${toLng}`,
-      });
-
-      const response = await fetch(`/api/route?${params.toString()}`, {
-        signal: controller.signal,
-        cache: 'no-store',
-      });
-
-      if (!response.ok) return null;
-      const data = (await response.json()) as RouteApiResponse;
-      if (!Array.isArray(data.geometry) || data.geometry.length < 2) return null;
-      return data;
-    } catch (error) {
-      if (error instanceof DOMException && error.name === 'AbortError') {
-        return null;
-      }
-      console.error('CityRouteMap route fetch error:', error);
-      return null;
-    }
-  }, [fromLat, fromLng, toLat, toLng]);
-
-  const initMap = useCallback(async () => {
-    if (!mapContainerRef.current || mapInstanceRef.current) return;
-
-    const route = await fetchRoute();
+    const route = await fetchRouteGeometry(fromLat, fromLng, toLat, toLng, controller.signal);
     if (!mapContainerRef.current || mapInstanceRef.current) return;
 
     const fromPoint: L.LatLngTuple = [fromLat, fromLng];
@@ -120,11 +89,11 @@ function CityRouteMapInner({
     map.fitBounds(bounds, { padding: [50, 50] });
 
     mapInstanceRef.current = map;
-  }, [fetchRoute, fromLat, fromLng, toLat, toLng, fromName, toName]);
+  }, [fromLat, fromLng, toLat, toLng, fromName, toName]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      void initMap();
+      initMap().catch(() => {});
     }, 100);
 
     return () => {
