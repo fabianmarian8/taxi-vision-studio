@@ -11,6 +11,15 @@ interface PageProps {
   searchParams: Promise<{ as?: string }>;
 }
 
+function normalizeCompanyName(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 export default async function PartnerDashboard({ searchParams }: PageProps) {
   const params = await searchParams;
   const impersonatingSlug = params.as || null;
@@ -134,33 +143,79 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
 
-    // Get all taxi_services with subscriptions for these partners
-    for (const partner of partners) {
-      const { data: taxiService } = await adminClient
-        .from('taxi_services')
-        .select(`
-          subscription_id,
-          subscriptions (
-            stripe_customer_id,
-            status,
-            plan_type
-          )
-        `)
-        .eq('city_slug', partner.city_slug)
-        .ilike('name', partner.name)
-        .not('subscription_id', 'is', null)
-        .single();
+    const citySlugs = Array.from(new Set(partners.map((partner) => partner.city_slug).filter(Boolean)));
 
-      if (taxiService?.subscriptions) {
-        // Supabase returns nested object when using .single()
-        const sub = taxiService.subscriptions as unknown as { stripe_customer_id: string; status: string; plan_type: string };
-        if (sub.stripe_customer_id) {
-          partnerSubscriptions.set(partner.id, {
-            stripe_customer_id: sub.stripe_customer_id,
-            status: sub.status,
-            plan_type: sub.plan_type,
-          });
-        }
+    const { data: taxiServicesWithSubscriptions } = await adminClient
+      .from('taxi_services')
+      .select(`
+        name,
+        city_slug,
+        subscriptions (
+          stripe_customer_id,
+          status,
+          plan_type
+        )
+      `)
+      .in('city_slug', citySlugs)
+      .not('subscription_id', 'is', null);
+
+    const exactSubscriptionMap = new Map<string, { stripe_customer_id: string; status: string; plan_type: string }>();
+    const subscriptionsByCity = new Map<
+      string,
+      Array<{ normalizedName: string; subscription: { stripe_customer_id: string; status: string; plan_type: string } }>
+    >();
+
+    for (const taxiService of taxiServicesWithSubscriptions || []) {
+      const rawSubscription = (taxiService as { subscriptions?: unknown }).subscriptions;
+      const subscription = Array.isArray(rawSubscription) ? rawSubscription[0] : rawSubscription;
+      if (!subscription || typeof subscription !== 'object') continue;
+
+      const { stripe_customer_id, status, plan_type } = subscription as {
+        stripe_customer_id?: string;
+        status?: string;
+        plan_type?: string;
+      };
+
+      const serviceName = (taxiService as { name?: string }).name;
+      const serviceCitySlug = (taxiService as { city_slug?: string }).city_slug;
+      if (!stripe_customer_id || !serviceName || !serviceCitySlug) continue;
+
+      const mappedSubscription = {
+        stripe_customer_id,
+        status: status || 'unknown',
+        plan_type: plan_type || 'unknown',
+      };
+      const normalizedServiceName = normalizeCompanyName(serviceName);
+      const exactKey = `${serviceCitySlug}::${normalizedServiceName}`;
+
+      if (!exactSubscriptionMap.has(exactKey)) {
+        exactSubscriptionMap.set(exactKey, mappedSubscription);
+      }
+
+      const cityServices = subscriptionsByCity.get(serviceCitySlug) || [];
+      cityServices.push({ normalizedName: normalizedServiceName, subscription: mappedSubscription });
+      subscriptionsByCity.set(serviceCitySlug, cityServices);
+    }
+
+    for (const partner of partners) {
+      const normalizedPartnerName = normalizeCompanyName(partner.name);
+      const exactKey = `${partner.city_slug}::${normalizedPartnerName}`;
+
+      const exactMatch = exactSubscriptionMap.get(exactKey);
+      if (exactMatch) {
+        partnerSubscriptions.set(partner.id, exactMatch);
+        continue;
+      }
+
+      const cityCandidates = subscriptionsByCity.get(partner.city_slug) || [];
+      const fuzzyMatch = cityCandidates.find(
+        (candidate) =>
+          candidate.normalizedName.includes(normalizedPartnerName) ||
+          normalizedPartnerName.includes(candidate.normalizedName)
+      );
+
+      if (fuzzyMatch) {
+        partnerSubscriptions.set(partner.id, fuzzyMatch.subscription);
       }
     }
   }

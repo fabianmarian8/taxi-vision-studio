@@ -1,31 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
 // Use anon key for public insert (RLS allows anyone to insert)
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-// Simple in-memory rate limiting for click tracking
-const clickRateLimit = new Map<string, { count: number; resetTime: number }>();
 const CLICK_RATE_LIMIT = 60; // max 60 clicks per minute per IP
 const CLICK_WINDOW_MS = 60 * 1000;
-
-function isClickRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const record = clickRateLimit.get(ip);
-
-  if (!record || now > record.resetTime) {
-    clickRateLimit.set(ip, { count: 1, resetTime: now + CLICK_WINDOW_MS });
-    return false;
-  }
-
-  if (record.count >= CLICK_RATE_LIMIT) {
-    return true;
-  }
-
-  record.count++;
-  return false;
-}
 
 // Validate event_type whitelist
 const VALID_EVENT_TYPES = ['phone_click', 'website_click', 'whatsapp_click', 'directions_click'];
@@ -40,11 +22,23 @@ export async function POST(request: NextRequest) {
 
   try {
     // Rate limiting
-    const forwardedFor = request.headers.get('x-forwarded-for');
-    const clientIp = forwardedFor ? forwardedFor.split(',')[0].trim() : 'unknown';
+    const clientIp = getClientIp(request);
+    const rateLimit = await checkRateLimit(
+      `track-click:${clientIp}`,
+      CLICK_RATE_LIMIT,
+      CLICK_WINDOW_MS
+    );
 
-    if (isClickRateLimited(clientIp)) {
-      return NextResponse.json({ success: true, tracked: false, reason: 'rate_limited' });
+    if (!rateLimit.success) {
+      const retryAfter = Math.ceil((rateLimit.resetAt.getTime() - Date.now()) / 1000);
+      return NextResponse.json(
+        { success: true, tracked: false, reason: 'rate_limited' },
+        {
+          headers: {
+            'Retry-After': String(Math.max(retryAfter, 1)),
+          },
+        }
+      );
     }
 
     const body = await request.json();

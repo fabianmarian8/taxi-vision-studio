@@ -31,18 +31,12 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
 
     try {
       // Použitie našej vlastnej API route s Resend službou
-      console.log("Submitting form to /api/contact...");
       const response = await fetch("/api/contact", {
         method: "POST",
         body: formData,
       });
 
-      console.log("Response status:", response.status);
-      console.log("Response ok:", response.ok);
-
       if (response.ok) {
-        const successData = await response.json();
-        console.log("Email sent successfully:", successData);
         setSubmitStatus("success");
         form.reset();
         setTimeout(() => {
@@ -50,16 +44,9 @@ export const ContactFormModal = ({ isOpen, onClose }: ContactFormModalProps) => 
           setSubmitStatus("idle");
         }, 2000);
       } else {
-        const errorData = await response.json().catch(() => ({ error: "Unknown error" }));
-        console.error("Error response:", {
-          status: response.status,
-          statusText: response.statusText,
-          data: errorData,
-        });
         setSubmitStatus("error");
       }
-    } catch (error) {
-      console.error("Network or fetch error:", error);
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

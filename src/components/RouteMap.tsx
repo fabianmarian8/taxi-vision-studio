@@ -43,6 +43,13 @@ interface RouteMapProps {
   priceMax?: number; // Manual price override
 }
 
+interface RouteApiResponse {
+  distance: number;
+  duration: number;
+  geometry: [number, number][];
+  source: 'openrouteservice' | 'osrm' | 'estimate';
+}
+
 export function RouteMap({
   fromLat,
   fromLng,
@@ -60,9 +67,7 @@ export function RouteMap({
 }: RouteMapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
-
-  const fromPosition: L.LatLngExpression = [fromLat, fromLng];
-  const toPosition: L.LatLngExpression = [toLat, toLng];
+  const routeAbortRef = useRef<AbortController | null>(null);
 
   // Get precomputed distance (synchronous, no API call)
   const precomputed = getPrecomputedDistance(fromSlug, toSlug);
@@ -97,14 +102,51 @@ export function RouteMap({
     max: manualPriceMax ?? calculatedPrice.max,
   };
 
+  const fetchRoute = useCallback(async (): Promise<RouteApiResponse | null> => {
+    routeAbortRef.current?.abort();
+    const controller = new AbortController();
+    routeAbortRef.current = controller;
+
+    try {
+      const params = new URLSearchParams({
+        from: `${fromLat},${fromLng}`,
+        to: `${toLat},${toLng}`,
+      });
+
+      const response = await fetch(`/api/route?${params.toString()}`, {
+        signal: controller.signal,
+        cache: 'no-store',
+      });
+
+      if (!response.ok) return null;
+      const data = (await response.json()) as RouteApiResponse;
+      if (!Array.isArray(data.geometry) || data.geometry.length < 2) return null;
+      return data;
+    } catch (error) {
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        return null;
+      }
+      console.error('RouteMap route fetch error:', error);
+      return null;
+    }
+  }, [fromLat, fromLng, toLat, toLng]);
+
   // Initialize map
-  const initMap = useCallback(() => {
+  const initMap = useCallback(async () => {
     if (!mapContainerRef.current || mapInstanceRef.current) return;
+
+    const route = await fetchRoute();
+    if (!mapContainerRef.current || mapInstanceRef.current) return;
+
+    const fromPoint: L.LatLngTuple = [fromLat, fromLng];
+    const toPoint: L.LatLngTuple = [toLat, toLng];
+    const geometry = route?.geometry?.length ? route.geometry : [fromPoint, toPoint];
+    const isEstimatedRoute = route?.source === 'estimate' || !route;
 
     // Create map
     const map = L.map(mapContainerRef.current, {
       scrollWheelZoom: false,
-    }).setView(fromPosition, 10);
+    }).setView(fromPoint, 10);
 
     // Add tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -112,39 +154,41 @@ export function RouteMap({
     }).addTo(map);
 
     // Add start marker
-    L.marker(fromPosition, { icon: startIcon })
+    L.marker(fromPoint, { icon: startIcon })
       .addTo(map)
       .bindPopup(`<div class="font-bold">${fromName}</div><div class="text-sm">Začiatok trasy</div>`);
 
     // Add end marker
-    L.marker(toPosition, { icon: endIcon })
+    L.marker(toPoint, { icon: endIcon })
       .addTo(map)
       .bindPopup(`<div class="font-bold">${toName}</div><div class="text-sm">Taxislužby</div>`);
 
-    // Add straight line between points (dashed for visual representation)
-    L.polyline([fromPosition, toPosition], {
+    // Add route polyline (real road geometry when available)
+    L.polyline(geometry, {
       color: '#fbbf24',
-      weight: 3,
-      opacity: 0.7,
-      dashArray: '10, 10',
+      weight: 4,
+      opacity: 0.85,
+      dashArray: isEstimatedRoute ? '10, 10' : undefined,
     }).addTo(map);
 
     // Fit bounds
-    const bounds = L.latLngBounds([fromPosition, toPosition]);
+    const bounds = L.latLngBounds(geometry as L.LatLngTuple[]);
     map.fitBounds(bounds, { padding: [50, 50] });
 
     mapInstanceRef.current = map;
-  }, [fromLat, fromLng, toLat, toLng, fromName, toName]);
+  }, [fetchRoute, fromLat, fromLng, toLat, toLng, fromName, toName]);
 
   // Initialize and cleanup map
   useEffect(() => {
     // Small delay to ensure container is ready
     const timer = setTimeout(() => {
-      initMap();
+      void initMap();
     }, 100);
 
     return () => {
       clearTimeout(timer);
+      routeAbortRef.current?.abort();
+      routeAbortRef.current = null;
       if (mapInstanceRef.current) {
         mapInstanceRef.current.remove();
         mapInstanceRef.current = null;

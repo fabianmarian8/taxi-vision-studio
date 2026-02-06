@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
-import { getRevalidateRateLimiter, getClientIp } from '@/lib/rate-limiter';
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
 const REVALIDATE_SECRET = process.env.REVALIDATE_SECRET;
+const REVALIDATE_RATE_LIMIT = 10;
+const REVALIDATE_WINDOW_MS = 60 * 1000;
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,23 +15,26 @@ export async function POST(request: NextRequest) {
     }
 
     // SECURITY: Rate limiting
-    const rateLimiter = getRevalidateRateLimiter();
-    if (rateLimiter) {
-      const ip = getClientIp(request.headers);
-      const { success, remaining, reset } = await rateLimiter.limit(ip);
+    const ip = getClientIp(request);
+    const rateLimit = await checkRateLimit(
+      `revalidate:${ip}`,
+      REVALIDATE_RATE_LIMIT,
+      REVALIDATE_WINDOW_MS
+    );
 
-      if (!success) {
-        return NextResponse.json(
-          { error: 'Too many requests', retryAfter: Math.ceil((reset - Date.now()) / 1000) },
-          {
-            status: 429,
-            headers: {
-              'X-RateLimit-Remaining': String(remaining),
-              'X-RateLimit-Reset': String(reset),
-            },
-          }
-        );
-      }
+    if (!rateLimit.success) {
+      const retryAfter = Math.ceil((rateLimit.resetAt.getTime() - Date.now()) / 1000);
+      return NextResponse.json(
+        { error: 'Too many requests', retryAfter: Math.max(retryAfter, 1) },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(Math.max(retryAfter, 1)),
+            'X-RateLimit-Remaining': String(rateLimit.remaining),
+            'X-RateLimit-Reset': String(rateLimit.resetAt.getTime()),
+          },
+        }
+      );
     }
 
     const path = request.nextUrl.searchParams.get('path');

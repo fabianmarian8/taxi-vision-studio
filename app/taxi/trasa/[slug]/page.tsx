@@ -6,6 +6,7 @@ import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { MapPin, Clock, Car, Phone, ArrowRight } from 'lucide-react';
 import { getCityBySlug, type CityData } from '@/data/cities';
 import { getMunicipalityBySlug, findNearestCitiesWithTaxis, type Municipality } from '@/data/municipalities';
+import { getDistrictForMunicipality } from '@/data/districts';
 
 interface RoutePageProps {
   params: Promise<{ slug: string }>;
@@ -60,6 +61,19 @@ function findLocation(slug: string): { type: 'city'; data: CityData } | { type: 
   return null;
 }
 
+function getTaxiPath(location: { type: 'city'; data: CityData } | { type: 'municipality'; data: Municipality }): string {
+  if (location.type === 'city') {
+    return location.data.slug;
+  }
+
+  const district = getDistrictForMunicipality(location.data);
+  if (!district) {
+    return location.data.slug;
+  }
+
+  return `${district.regionSlug}/${district.slug}/${location.data.slug}`;
+}
+
 export async function generateMetadata({ params }: RoutePageProps): Promise<Metadata> {
   const { slug } = await params;
   const parsed = parseRouteSlug(slug);
@@ -105,12 +119,8 @@ export default async function RoutePage({ params }: RoutePageProps) {
 
   const fromName = fromLocation.data.name;
   const toName = toLocation.data.name;
-  const fromSlug = fromLocation.type === 'city'
-    ? fromLocation.data.slug
-    : `banskobystricky-kraj/rimavska-sobota/${fromLocation.data.slug}`; // TODO: dynamický región
-  const toSlug = toLocation.type === 'city'
-    ? toLocation.data.slug
-    : `banskobystricky-kraj/rimavska-sobota/${toLocation.data.slug}`;
+  const fromSlug = getTaxiPath(fromLocation);
+  const toSlug = getTaxiPath(toLocation);
 
   // Vypočítaj vzdialenosť a cenu
   let distance = 0;

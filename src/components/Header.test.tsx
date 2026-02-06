@@ -107,7 +107,7 @@ describe('Header', () => {
       document.getElementById = originalGetElementById;
     });
 
-    it('naviguje na homepage a potom scroll keď nie sme na homepage', async () => {
+    it('naviguje na homepage hash sekciu keď nie sme na homepage', async () => {
       const user = userEvent.setup();
       mockPathname.mockReturnValue('/o-nas');
 
@@ -116,7 +116,7 @@ describe('Header', () => {
       const mestaLink = screen.getAllByText('Mestá')[0];
       await user.click(mestaLink);
 
-      expect(mockPush).toHaveBeenCalledWith('/');
+      expect(mockPush).toHaveBeenCalledWith('/#cities');
     });
 
     it('linky O nás a Kontakt sú Next.js Link komponenty', () => {

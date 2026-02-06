@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, Suspense } from 'react';
+import { useEffect, Suspense, useRef } from 'react';
 
 const GA_MEASUREMENT_ID = 'G-XM0ES676GB';
 
@@ -11,6 +11,7 @@ const GA_MEASUREMENT_ID = 'G-XM0ES676GB';
 function GoogleAnalyticsTracking() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const lastTrackedPathRef = useRef<string>('');
 
   useEffect(() => {
     // Check if gtag is available (loaded from layout.tsx)
@@ -18,9 +19,12 @@ function GoogleAnalyticsTracking() {
     if (!pathname || typeof gtag !== 'function') return;
 
     const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
+    if (lastTrackedPathRef.current === url) return;
+    lastTrackedPathRef.current = url;
 
     // Track page view on route change
-    gtag('config', GA_MEASUREMENT_ID, {
+    gtag('event', 'page_view', {
+      send_to: GA_MEASUREMENT_ID,
       page_path: url,
       page_location: window.location.href,
       page_title: document.title,

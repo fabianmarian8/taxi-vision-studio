@@ -38,15 +38,8 @@ export const Header = ({ partnerSlug, isOwner = false }: HeaderProps) => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // If we're on another page, navigate to homepage then scroll
-      router.push('/');
-      // Wait for navigation to complete before scrolling
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+      // If we're on another page, navigate directly with hash
+      router.push(`/#${sectionId}`);
     }
   };
 

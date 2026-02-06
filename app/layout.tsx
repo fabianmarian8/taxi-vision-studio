@@ -204,10 +204,11 @@ export default function RootLayout({
             });
 
             // Inicializácia GA4
+            // send_page_view: false -> page views trackujeme ručne v GoogleAnalytics.tsx
+            // (zabraňuje duplicitnému meraniu pri App Router route changes)
             gtag('js', new Date());
             gtag('config', 'G-XM0ES676GB', {
-              page_path: window.location.pathname,
-              send_page_view: true
+              send_page_view: false
             });
           `}
         </Script>
