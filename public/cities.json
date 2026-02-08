@@ -9554,7 +9554,7 @@
       "slug": "vrbove",
       "region": "Trnavský kraj",
       "description": "Mesto v Trnavskom kraji. Vyberte si taxi vo Vrbovom.",
-      "metaDescription": "Nájdite taxi v meste Vrbové. 3 taxislužby s telefónnymi číslami a webovými stránkami: A-Taxi Piešťany, ALPHA TAXI ČACHTICE, Taxi Piešťany - Peter Baláž. Kontaktujte priamo.",
+      "metaDescription": "Nájdite taxi v meste Vrbové. 4 taxislužby s telefónnymi číslami a webovými stránkami: A-Taxi Piešťany, ALPHA TAXI ČACHTICE, Taxi Piešťany - Peter Baláž, RED TAXI. Kontaktujte priamo.",
       "keywords": [
         "taxi vrbové",
         "taxislužba vrbové",
@@ -9590,6 +9590,13 @@
           "isPromotional": false,
           "address": "Piešťany, 92101",
           "placeId": "ChIJl3g464VUa0cRVNn1iVxD7zQ"
+        },
+        {
+          "name": "RED TAXI",
+          "phone": "+421944522701",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Nám. Slobody 6, Vrbové"
         }
       ],
       "latitude": 48.619531,
