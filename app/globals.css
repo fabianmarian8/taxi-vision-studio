@@ -447,7 +447,7 @@ input, textarea {
 
 /* Partner page background - prevents flash of yellow on load */
 .partner-page-bg {
-  background-image: var(--partner-bg-image, url('/textures/kraft-paper-bg.jpg'));
+  background-image: var(--partner-bg-image, url('/textures/kraft-paper-bg.webp'));
   background-size: cover;
   background-position: center top;
   background-attachment: var(--partner-bg-attachment, fixed);
@@ -456,7 +456,7 @@ input, textarea {
 
 /* Partner skins - CSS variables allow safe visual swaps without layout changes */
 .partner-skin {
-  --partner-bg-image: url('/textures/kraft-paper-bg.jpg');
+  --partner-bg-image: url('/textures/kraft-paper-bg.webp');
   --partner-bg-attachment: fixed;
   --partner-hero-fallback: linear-gradient(135deg, #7c3aed 0%, #6d28d9 45%, #3730a3 100%);
   --partner-card-bg: rgba(255, 255, 255, 0.9);

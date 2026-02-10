@@ -32,7 +32,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**', // Všetky HTTPS domény (pre externé obrázky)
+        hostname: 'cdn.sanity.io',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.supabase.co',
       },
     ],
     // Image formats
