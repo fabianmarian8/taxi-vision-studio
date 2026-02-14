@@ -642,7 +642,7 @@ async function UniversalListView({
               const serviceType = isPartner ? 'partner' : isPremium ? 'premium' : 'standard';
 
               // Partner hero image pre pozadie - JSON, Supabase, alebo default
-              const partnerHeroImage = service.partnerData?.heroImage || partnerHeroImages.get(serviceSlug) || (isPartner ? '/logos/fast-taxi-zvolen-hero.webp' : undefined);
+              const partnerHeroImage = service.partnerData?.heroImage || partnerHeroImages.get(serviceSlug) || (isPartner ? '/logos/fast-taxi-zvolen-hero.jpg' : undefined);
 
               return (
                 <div
