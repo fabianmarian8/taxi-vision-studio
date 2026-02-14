@@ -39,39 +39,38 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if customerId belongs to a taxi_service subscription in one of user's partner cities
-    let verifiedCustomerId: string | null = null;
-
+    // Verify customerId: find subscription, then check it's linked to a taxi_service in partner's city
     const citySlugs = partners.map(p => p.city_slug).filter(Boolean);
 
-    if (citySlugs.length > 0) {
-      const { data: taxiServices, error: tsError } = await adminClient
+    // Step 1: Find all subscriptions for this stripe_customer_id
+    const { data: subscriptions, error: subError } = await adminClient
+      .from('subscriptions')
+      .select('id')
+      .eq('stripe_customer_id', customerId);
+
+    if (subError) {
+      console.error('Portal: subscription query error:', subError);
+    }
+
+    // Step 2: Check if any subscription is linked to a taxi_service in partner's city
+    let verifiedCustomerId: string | null = null;
+    const subscriptionIds = subscriptions?.map(s => s.id) || [];
+
+    if (subscriptionIds.length > 0 && citySlugs.length > 0) {
+      const { data: taxiService, error: tsError } = await adminClient
         .from('taxi_services')
-        .select(`
-          name,
-          city_slug,
-          subscriptions (
-            stripe_customer_id
-          )
-        `)
+        .select('id')
+        .in('subscription_id', subscriptionIds)
         .in('city_slug', citySlugs)
-        .not('subscription_id', 'is', null);
+        .limit(1)
+        .maybeSingle();
 
       if (tsError) {
-        console.error('Portal: taxi_services query error:', tsError);
+        console.error('Portal: taxi_service query error:', tsError);
       }
 
-      console.log('Portal: found taxi_services with subscriptions:', taxiServices?.length || 0,
-        'looking for customerId:', customerId);
-
-      for (const ts of taxiServices || []) {
-        const rawSub = (ts as { subscriptions?: unknown }).subscriptions;
-        const sub = (Array.isArray(rawSub) ? rawSub[0] : rawSub) as { stripe_customer_id?: string } | null;
-        console.log('Portal: checking', (ts as { name?: string }).name, 'customerID:', sub?.stripe_customer_id);
-        if (sub?.stripe_customer_id === customerId) {
-          verifiedCustomerId = customerId;
-          break;
-        }
+      if (taxiService) {
+        verifiedCustomerId = customerId;
       }
     }
 
@@ -79,9 +78,9 @@ export async function POST(request: NextRequest) {
       console.error('Portal access denied:', {
         userId: user.id,
         requestedCustomerId: customerId,
+        subscriptionsFound: subscriptionIds.length,
         partnerCount: partners.length,
         citySlugs,
-        taxiServicesFound: citySlugs.length > 0 ? 'queried' : 'skipped (no citySlugs)',
       });
       return NextResponse.json(
         { error: 'No billing account found' },

@@ -58,14 +58,8 @@ describe('POST /api/stripe/portal', () => {
     });
 
     // Mock no partners found
-    const mockQuery = {
-      select: vi.fn().mockReturnThis(),
-      eq: vi.fn().mockReturnThis(),
-      single: vi.fn().mockResolvedValue({ data: null, error: null }),
-    };
     mockSupabaseClient.from.mockReturnValue({
-      ...mockQuery,
-      // Return empty array for partners query
+      select: vi.fn().mockReturnThis(),
       eq: vi.fn().mockResolvedValue({ data: [], error: null }),
     });
 
@@ -79,7 +73,7 @@ describe('POST /api/stripe/portal', () => {
     await expectError(response, 404, 'No partners found for this user');
   });
 
-  it('should return 404 when customerId not verified', async () => {
+  it('should return 404 when subscription not found for customerId', async () => {
     // Mock authenticated user
     mockSupabaseClient.auth.getUser.mockResolvedValue({
       data: { user: { id: 'user_123', email: 'test@example.com' } },
@@ -87,22 +81,19 @@ describe('POST /api/stripe/portal', () => {
     });
 
     // Mock partner found
-    const mockPartnerQuery = {
+    mockSupabaseClient.from.mockReturnValue({
       select: vi.fn().mockReturnThis(),
       eq: vi.fn().mockResolvedValue({
         data: [{ id: 'partner_1', name: 'Test Taxi', city_slug: 'zvolen' }],
         error: null
       }),
-    };
-    mockSupabaseClient.from.mockReturnValue(mockPartnerQuery);
+    });
 
-    // Mock no matching taxi_service with subscription in admin client
-    const mockTaxiQuery = {
+    // Mock admin client: no subscriptions found for this customerId
+    mockAdminClient.from.mockReturnValue({
       select: vi.fn().mockReturnThis(),
-      in: vi.fn().mockReturnThis(),
-      not: vi.fn().mockResolvedValue({ data: [], error: null }),
-    };
-    mockAdminClient.from.mockReturnValue(mockTaxiQuery);
+      eq: vi.fn().mockResolvedValue({ data: [], error: null }),
+    });
 
     const request = createMockRequest({
       method: 'POST',
@@ -125,27 +116,40 @@ describe('POST /api/stripe/portal', () => {
     });
 
     // Mock partner found
-    const mockPartnerQuery = {
+    mockSupabaseClient.from.mockReturnValue({
       select: vi.fn().mockReturnThis(),
       eq: vi.fn().mockResolvedValue({
         data: [{ id: 'partner_1', name: 'Test Taxi', city_slug: 'zvolen' }],
         error: null
       }),
-    };
-    mockSupabaseClient.from.mockReturnValue(mockPartnerQuery);
+    });
 
-    // Mock matching taxi_service with subscription in admin client
-    const mockTaxiQuery = {
-      select: vi.fn().mockReturnThis(),
-      in: vi.fn().mockReturnThis(),
-      not: vi.fn().mockResolvedValue({
-        data: [{
-          subscriptions: { stripe_customer_id: 'cus_test123' }
-        }],
-        error: null
-      }),
-    };
-    mockAdminClient.from.mockReturnValue(mockTaxiQuery);
+    // Admin client: first call finds subscriptions, second call finds taxi_service
+    let adminCallCount = 0;
+    mockAdminClient.from.mockImplementation(() => {
+      adminCallCount++;
+      if (adminCallCount === 1) {
+        // First call: subscriptions query - returns array
+        return {
+          select: vi.fn().mockReturnThis(),
+          eq: vi.fn().mockResolvedValue({
+            data: [{ id: 'sub_uuid_123' }],
+            error: null
+          }),
+        };
+      } else {
+        // Second call: taxi_services query
+        return {
+          select: vi.fn().mockReturnThis(),
+          in: vi.fn().mockReturnThis(),
+          limit: vi.fn().mockReturnThis(),
+          maybeSingle: vi.fn().mockResolvedValue({
+            data: { id: 'ts_1' },
+            error: null
+          }),
+        };
+      }
+    });
 
     const request = createMockRequest({
       method: 'POST',
