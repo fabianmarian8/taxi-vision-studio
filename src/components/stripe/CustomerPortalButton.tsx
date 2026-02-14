@@ -15,9 +15,11 @@ export function CustomerPortalButton({
   variant = 'outline'
 }: CustomerPortalButtonProps) {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleClick = async () => {
     setLoading(true);
+    setError('');
     try {
       const response = await fetch('/api/stripe/portal', {
         method: 'POST',
@@ -29,7 +31,8 @@ export function CustomerPortalButton({
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || `HTTP ${response.status}`);
       }
 
       const data = await response.json();
@@ -38,22 +41,28 @@ export function CustomerPortalButton({
       } else {
         throw new Error('No portal URL received');
       }
-    } catch (error) {
-      console.error('Portal error:', error);
-      // In a real app, you might want to show a toast notification here
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Nepodarilo sa otvoriť portál';
+      console.error('Portal error:', err);
+      setError(message);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <Button
-      onClick={handleClick}
-      disabled={loading || !customerId}
-      variant={variant}
-      className={className}
-    >
-      {loading ? 'Načítavam...' : 'Spravovať predplatné'}
-    </Button>
+    <div>
+      <Button
+        onClick={handleClick}
+        disabled={loading || !customerId}
+        variant={variant}
+        className={className}
+      >
+        {loading ? 'Načítavam...' : 'Spravovať predplatné'}
+      </Button>
+      {error && (
+        <p className="text-red-500 text-xs mt-1">{error}</p>
+      )}
+    </div>
   );
 }

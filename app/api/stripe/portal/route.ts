@@ -39,26 +39,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if any of user's partners has a subscription with this customerId
+    // Check if customerId belongs to a taxi_service subscription in one of user's partner cities
     let verifiedCustomerId: string | null = null;
 
-    for (const partner of partners) {
-      const { data: taxiService } = await adminClient
+    const citySlugs = partners.map(p => p.city_slug).filter(Boolean);
+
+    if (citySlugs.length > 0) {
+      const { data: taxiServices } = await adminClient
         .from('taxi_services')
         .select(`
-          subscription_id,
           subscriptions (
             stripe_customer_id
           )
         `)
-        .eq('city_slug', partner.city_slug)
-        .ilike('name', partner.name)
-        .not('subscription_id', 'is', null)
-        .maybeSingle();
+        .in('city_slug', citySlugs)
+        .not('subscription_id', 'is', null);
 
-      if (taxiService?.subscriptions) {
-        const sub = taxiService.subscriptions as unknown as { stripe_customer_id: string };
-        if (sub.stripe_customer_id === customerId) {
+      for (const ts of taxiServices || []) {
+        const rawSub = (ts as { subscriptions?: unknown }).subscriptions;
+        const sub = (Array.isArray(rawSub) ? rawSub[0] : rawSub) as { stripe_customer_id?: string } | null;
+        if (sub?.stripe_customer_id === customerId) {
           verifiedCustomerId = customerId;
           break;
         }
