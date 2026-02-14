@@ -59,6 +59,7 @@ const CITIES = [
 
 export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
   const [citySlug, setCitySlug] = useState('');
+  const [customCity, setCustomCity] = useState('');
   const [taxiServiceName, setTaxiServiceName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
@@ -92,10 +93,17 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
       return;
     }
 
+    if (citySlug === 'other' && !customCity.trim()) {
+      setError('Zadajte názov mesta');
+      return;
+    }
+
     if (!taxiServiceName.trim()) {
       setError('Zadajte názov vašej taxislužby');
       return;
     }
+
+    const effectiveCitySlug = citySlug === 'other' ? customCity.trim() : citySlug;
 
     setIsLoading(true);
 
@@ -105,7 +113,7 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           plan,
-          citySlug,
+          citySlug: effectiveCitySlug,
           taxiServiceName: taxiServiceName.trim(),
         }),
       });
@@ -124,7 +132,7 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
 
       // Uložiť pokus do sessionStorage pred presmerovaním
       try {
-        const cityName = CITIES.find(c => c.slug === citySlug)?.name || citySlug;
+        const cityName = citySlug === 'other' ? customCity.trim() : (CITIES.find(c => c.slug === citySlug)?.name || citySlug);
         sessionStorage.setItem(CHECKOUT_STORAGE_KEY, JSON.stringify({
           city: cityName,
           service: taxiServiceName.trim(),
@@ -216,8 +224,18 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
                   {city.name}
                 </option>
               ))}
-              <option value="other">Iné mesto (napíšte nám)</option>
+              <option value="other">Iné mesto</option>
             </select>
+            {citySlug === 'other' && (
+              <input
+                type="text"
+                value={customCity}
+                onChange={(e) => setCustomCity(e.target.value)}
+                placeholder="Zadajte názov mesta alebo obce"
+                className="w-full mt-2 bg-slate-800 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+                required
+              />
+            )}
           </div>
 
           {/* Taxi Service Name */}
