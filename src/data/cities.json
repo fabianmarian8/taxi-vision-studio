@@ -10399,6 +10399,7 @@
           "phone": "+421949235929",
           "isPremium": false,
           "isPromotional": false,
+          "isPartner": true,
           "address": "Novoť 325, 029 55 Novoť",
           "description": "0949 235 929 (5-miestne) | 0907 373 029 (9-miestne)"
         }
