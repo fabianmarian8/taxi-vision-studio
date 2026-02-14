@@ -10397,11 +10397,10 @@
           "name": "OuKej Taxi",
           "website": "https://oukej-taxi-sk.webnode.sk/",
           "phone": "+421949235929",
-          "isPremium": true,
-          "isPromotional": true,
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Novoť 325, 029 55 Novoť",
-          "description": "0949 235 929 (5-miestne) | 0907 373 029 (9-miestne)",
-          "premiumExpiresAt": "2026-02-16T07:57:11.377Z"
+          "description": "0949 235 929 (5-miestne) | 0907 373 029 (9-miestne)"
         }
       ],
       "latitude": 49.388036,

@@ -33,6 +33,9 @@ const CITIES_PATH = path.join(__dirname, '../src/data/cities.json');
 const SITE_URL = 'https://taxinearme.sk';
 const FROM_EMAIL = 'TaxiNearMe.sk <info@taxinearme.sk>';
 
+// Mestá vylúčené z FOMO rotácie (nedostanú free premium)
+const EXCLUDED_CITIES = ['zakamenne'];
+
 interface TaxiService {
   name: string;
   website?: string;
@@ -190,6 +193,11 @@ async function runFomoMarketing() {
 
     // Skip: only 1 taxi (no competition)
     if (city.taxiServices.length === 1) {
+      continue;
+    }
+
+    // Skip: excluded cities
+    if (EXCLUDED_CITIES.includes(city.slug)) {
       continue;
     }
 
