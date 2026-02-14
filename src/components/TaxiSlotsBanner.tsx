@@ -7,18 +7,19 @@ import { Star, ChevronDown, ChevronUp, Shield, Crown, Mail } from 'lucide-react'
 interface TaxiSlotsBannerProps {
   cityName: string;
   locationText: string; // "v meste" alebo "v obci"
-  partnerCount: number; // aktuálny počet partnerov (0 alebo 1)
-  premiumCount: number; // aktuálny počet premium (0-2)
+  partnerCount: number; // aktuálny počet partnerov (0-2)
+  premiumCount: number; // aktuálny počet premium (0-3)
 }
 
-const MAX_PARTNER_SLOTS = 1;
-const MAX_PREMIUM_SLOTS = 2;
+const MAX_PARTNER_SLOTS = 2;
+const MAX_PREMIUM_SLOTS = 3;
 
 export function TaxiSlotsBanner({ cityName, locationText, partnerCount, premiumCount }: TaxiSlotsBannerProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const partnerAvailable = partnerCount < MAX_PARTNER_SLOTS;
   const premiumAvailable = premiumCount < MAX_PREMIUM_SLOTS;
+  const partnerSlotsLeft = MAX_PARTNER_SLOTS - partnerCount;
   const premiumSlotsLeft = MAX_PREMIUM_SLOTS - premiumCount;
 
   // Určenie stavu
@@ -32,8 +33,8 @@ export function TaxiSlotsBanner({ cityName, locationText, partnerCount, premiumC
         bgColor: 'bg-emerald-50 border-emerald-200',
         textColor: 'text-emerald-800',
         icon: <Shield className="h-5 w-5 text-emerald-600" />,
-        title: `Staňte sa jediným Partnerom ${locationText} ${cityName}!`,
-        subtitle: `K dispozícii limitovaný počet: 1× Partner slot${premiumAvailable ? `, ${premiumSlotsLeft}× Premium slot${premiumSlotsLeft > 1 ? 'y' : ''}` : ''}`,
+        title: `Staňte sa Partnerom ${locationText} ${cityName}!`,
+        subtitle: `K dispozícii limitovaný počet: ${partnerSlotsLeft}× Partner slot${partnerSlotsLeft > 1 ? 'y' : ''}${premiumAvailable ? `, ${premiumSlotsLeft}× Premium slot${premiumSlotsLeft > 1 ? 'y' : ''}` : ''}`,
         ctaText: 'Aktivovať teraz',
         ctaHref: '/pre-taxiky',
         ctaStyle: 'bg-emerald-600 hover:bg-emerald-700 text-white',
@@ -46,7 +47,7 @@ export function TaxiSlotsBanner({ cityName, locationText, partnerCount, premiumC
         bgColor: 'bg-amber-50 border-amber-200',
         textColor: 'text-amber-800',
         icon: <Crown className="h-5 w-5 text-amber-600" />,
-        title: `Partner slot ${locationText} ${cityName} je obsadený`,
+        title: `Partner sloty ${locationText} ${cityName} sú obsadené`,
         subtitle: `Limitovaný počet: zostáva už len ${premiumSlotsLeft} Premium slot${premiumSlotsLeft > 1 ? 'y' : ''}!`,
         ctaText: 'Získať Premium',
         ctaHref: '/pre-taxiky',
@@ -88,7 +89,7 @@ export function TaxiSlotsBanner({ cityName, locationText, partnerCount, premiumC
               ? 'bg-emerald-100 text-emerald-700'
               : 'bg-amber-100 text-amber-700'
           }`}>
-            {partnerAvailable ? '1 Partner voľný' : `${premiumSlotsLeft} Premium voľné`}
+            {partnerAvailable ? `${partnerSlotsLeft} Partner voľn${partnerSlotsLeft > 1 ? 'é' : 'ý'}` : `${premiumSlotsLeft} Premium voľn${premiumSlotsLeft > 1 ? 'é' : 'ý'}`}
           </span>
         )}
       </div>

@@ -613,8 +613,8 @@ async function UniversalListView({
       <TaxiSlotsBanner
         cityName={city.name}
         locationText={locationText}
-        partnerCount={Math.min(partners.length, 1)}
-        premiumCount={Math.min(premiums.length, 2)}
+        partnerCount={Math.min(partners.length, 2)}
+        premiumCount={Math.min(premiums.length, 3)}
       />
 
       {/* Kompaktný List View - 80px riadky podľa oponenta */}
