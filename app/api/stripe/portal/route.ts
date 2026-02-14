@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
+import { isSuperadmin } from '@/lib/superadmin';
 
 export async function POST(request: NextRequest) {
   try {
@@ -19,30 +20,19 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { customerId, returnUrl } = body;
 
-    // SECURITY: Verify that this customerId belongs to a subscription
-    // associated with a partner owned by the current user
     const adminClient = createAdminClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
 
-    // Get user's partners
-    const { data: partners, error: partnerError } = await supabase
-      .from('partners')
-      .select('id, name, city_slug')
-      .eq('user_id', user.id);
+    // SECURITY: Verify that this customerId belongs to a valid subscription
+    // Superadmins can access any partner's portal (they impersonate via dashboard)
+    // Regular users can only access subscriptions linked to their own partners
 
-    if (partnerError || !partners || partners.length === 0) {
-      return NextResponse.json(
-        { error: 'No partners found for this user' },
-        { status: 404 }
-      );
-    }
+    const userEmail = user.email;
+    const isAdmin = isSuperadmin(userEmail);
 
-    // Verify customerId: find subscription, then check it's linked to a taxi_service in partner's city
-    const citySlugs = partners.map(p => p.city_slug).filter(Boolean);
-
-    // Step 1: Find all subscriptions for this stripe_customer_id
+    // Step 1: Find subscription by stripe_customer_id
     const { data: subscriptions, error: subError } = await adminClient
       .from('subscriptions')
       .select('id')
@@ -52,36 +42,52 @@ export async function POST(request: NextRequest) {
       console.error('Portal: subscription query error:', subError);
     }
 
-    // Step 2: Check if any subscription is linked to a taxi_service in partner's city
-    let verifiedCustomerId: string | null = null;
     const subscriptionIds = subscriptions?.map(s => s.id) || [];
+    let verifiedCustomerId: string | null = null;
 
-    if (subscriptionIds.length > 0 && citySlugs.length > 0) {
-      const { data: taxiService, error: tsError } = await adminClient
-        .from('taxi_services')
-        .select('id')
-        .in('subscription_id', subscriptionIds)
-        .in('city_slug', citySlugs)
-        .limit(1)
-        .maybeSingle();
+    if (subscriptionIds.length > 0) {
+      if (isAdmin) {
+        // Superadmin: just verify the subscription exists and is linked to a taxi_service
+        const { data: taxiService } = await adminClient
+          .from('taxi_services')
+          .select('id')
+          .in('subscription_id', subscriptionIds)
+          .limit(1)
+          .maybeSingle();
 
-      if (tsError) {
-        console.error('Portal: taxi_service query error:', tsError);
-      }
+        if (taxiService) {
+          verifiedCustomerId = customerId;
+        }
+      } else {
+        // Regular user: verify subscription is linked to a taxi_service in their partner's city
+        const { data: partners, error: partnerError } = await supabase
+          .from('partners')
+          .select('city_slug')
+          .eq('user_id', user.id);
 
-      if (taxiService) {
-        verifiedCustomerId = customerId;
+        if (partnerError) {
+          console.error('Portal: partners query error:', partnerError);
+        }
+
+        const citySlugs = (partners || []).map(p => p.city_slug).filter(Boolean);
+
+        if (citySlugs.length > 0) {
+          const { data: taxiService } = await adminClient
+            .from('taxi_services')
+            .select('id')
+            .in('subscription_id', subscriptionIds)
+            .in('city_slug', citySlugs)
+            .limit(1)
+            .maybeSingle();
+
+          if (taxiService) {
+            verifiedCustomerId = customerId;
+          }
+        }
       }
     }
 
     if (!verifiedCustomerId) {
-      console.error('Portal access denied:', {
-        userId: user.id,
-        requestedCustomerId: customerId,
-        subscriptionsFound: subscriptionIds.length,
-        partnerCount: partners.length,
-        citySlugs,
-      });
       return NextResponse.json(
         { error: 'No billing account found' },
         { status: 404 }
