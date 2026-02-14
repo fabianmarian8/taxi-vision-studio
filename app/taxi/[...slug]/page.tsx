@@ -641,8 +641,8 @@ async function UniversalListView({
               // Typ služby pre vizuálne odlíšenie
               const serviceType = isPartner ? 'partner' : isPremium ? 'premium' : 'standard';
 
-              // Partner hero image pre pozadie - JSON alebo Supabase
-              const partnerHeroImage = service.partnerData?.heroImage || partnerHeroImages.get(serviceSlug);
+              // Partner hero image pre pozadie - JSON, Supabase, alebo default
+              const partnerHeroImage = service.partnerData?.heroImage || partnerHeroImages.get(serviceSlug) || (isPartner ? '/logos/fast-taxi-zvolen-hero.webp' : undefined);
 
               return (
                 <div
@@ -688,6 +688,12 @@ async function UniversalListView({
                             ? 'ring-2 ring-amber-300'
                             : 'ring-1 ring-gray-200'
                         }`}
+                      />
+                    ) : isPartner ? (
+                      <img
+                        src="/images/taxi-placeholder-icon.png"
+                        alt="Partner taxi"
+                        className="w-10 h-10 rounded-full object-cover transition-transform hover:scale-105 ring-2 ring-purple-300"
                       />
                     ) : isPremium ? (
                       <img
