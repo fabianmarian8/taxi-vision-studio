@@ -45,9 +45,11 @@ export async function POST(request: NextRequest) {
     const citySlugs = partners.map(p => p.city_slug).filter(Boolean);
 
     if (citySlugs.length > 0) {
-      const { data: taxiServices } = await adminClient
+      const { data: taxiServices, error: tsError } = await adminClient
         .from('taxi_services')
         .select(`
+          name,
+          city_slug,
           subscriptions (
             stripe_customer_id
           )
@@ -55,9 +57,17 @@ export async function POST(request: NextRequest) {
         .in('city_slug', citySlugs)
         .not('subscription_id', 'is', null);
 
+      if (tsError) {
+        console.error('Portal: taxi_services query error:', tsError);
+      }
+
+      console.log('Portal: found taxi_services with subscriptions:', taxiServices?.length || 0,
+        'looking for customerId:', customerId);
+
       for (const ts of taxiServices || []) {
         const rawSub = (ts as { subscriptions?: unknown }).subscriptions;
         const sub = (Array.isArray(rawSub) ? rawSub[0] : rawSub) as { stripe_customer_id?: string } | null;
+        console.log('Portal: checking', (ts as { name?: string }).name, 'customerID:', sub?.stripe_customer_id);
         if (sub?.stripe_customer_id === customerId) {
           verifiedCustomerId = customerId;
           break;
@@ -66,9 +76,12 @@ export async function POST(request: NextRequest) {
     }
 
     if (!verifiedCustomerId) {
-      console.error('Portal access denied: customerId not found for user partners', {
+      console.error('Portal access denied:', {
         userId: user.id,
         requestedCustomerId: customerId,
+        partnerCount: partners.length,
+        citySlugs,
+        taxiServicesFound: citySlugs.length > 0 ? 'queried' : 'skipped (no citySlugs)',
       });
       return NextResponse.json(
         { error: 'No billing account found' },
