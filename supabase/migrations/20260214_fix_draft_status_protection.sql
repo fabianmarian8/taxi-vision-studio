@@ -1,19 +1,11 @@
--- FIX: Oprava castovania JSONB array na TEXT[] v RPC funkciách
--- Spusti tento script v Supabase SQL Editor
+-- Migration: Remove status/submitted_at/reviewed_at from update_partner_draft_with_audit
+-- Date: 2026-02-14
+-- Purpose: Prevent accidental status changes when saving draft edits.
+-- Status changes should ONLY happen through publish_partner_draft_with_audit or admin functions.
+-- Root cause: OuKej Taxi draft status was changed from 'approved' to 'draft' during a save,
+-- making their published data invisible on the public page.
 
--- Helper funkcia pre bezpečnú konverziu JSONB array na TEXT[]
-CREATE OR REPLACE FUNCTION jsonb_to_text_array(p_jsonb JSONB)
-RETURNS TEXT[]
-LANGUAGE SQL
-IMMUTABLE
-AS $$
-  SELECT CASE
-    WHEN p_jsonb IS NULL OR jsonb_typeof(p_jsonb) != 'array' THEN NULL
-    ELSE ARRAY(SELECT jsonb_array_elements_text(p_jsonb))
-  END;
-$$;
-
--- Aktualizovaná funkcia update_partner_draft_with_audit
+-- Fix 1: Remove status, submitted_at, reviewed_at from UPDATE function
 CREATE OR REPLACE FUNCTION update_partner_draft_with_audit(
   p_draft_id UUID,
   p_partner_id UUID,
@@ -45,7 +37,8 @@ BEGIN
   -- Dočasne deaktivujeme trigger aby sa nespustil dvakrát
   SET LOCAL audit.skip_trigger = 'true';
 
-  -- UPDATE draft s opravenými array castami
+  -- UPDATE draft - BEZ status/submitted_at/reviewed_at
+  -- Tieto polia mení len publish_partner_draft_with_audit alebo admin funkcie
   UPDATE partner_drafts
   SET
     company_name = COALESCE((p_changes->>'company_name'), company_name),
@@ -60,7 +53,6 @@ BEGIN
     hero_image_zoom = COALESCE((p_changes->>'hero_image_zoom')::INTEGER, hero_image_zoom),
     hero_image_pos_x = COALESCE((p_changes->>'hero_image_pos_x')::INTEGER, hero_image_pos_x),
     hero_image_pos_y = COALESCE((p_changes->>'hero_image_pos_y')::INTEGER, hero_image_pos_y),
-    -- OPRAVA: Používame helper funkciu pre array konverziu
     services = COALESCE(jsonb_to_text_array(p_changes->'services'), services),
     show_services = COALESCE((p_changes->>'show_services')::BOOLEAN, show_services),
     gallery = COALESCE(jsonb_to_text_array(p_changes->'gallery'), gallery),
@@ -73,7 +65,6 @@ BEGIN
     contact_url = COALESCE((p_changes->>'contact_url'), contact_url),
     services_description = COALESCE((p_changes->>'services_description'), services_description),
     template_variant = COALESCE((p_changes->>'template_variant'), template_variant),
-    -- REMOVED: status, submitted_at, reviewed_at - tieto polia meni len publish_partner_draft_with_audit
     updated_at = NOW()
   WHERE id = p_draft_id
     AND partner_id = p_partner_id
@@ -90,27 +81,13 @@ BEGIN
   WHERE NOT v_old_data ? key
      OR v_old_data->key IS DISTINCT FROM v_new_data->key;
 
-  -- Priamy INSERT do audit logu (nie cez trigger)
+  -- Priamy INSERT do audit logu
   INSERT INTO audit.activity_log (
-    schema_name,
-    table_name,
-    operation,
-    user_id,
-    user_email,
-    ip_address,
-    old_data,
-    new_data,
-    changed_fields
+    schema_name, table_name, operation, user_id, user_email,
+    ip_address, old_data, new_data, changed_fields
   ) VALUES (
-    'public',
-    'partner_drafts',
-    'UPDATE',
-    p_user_id,
-    p_user_email,
-    p_ip_address,
-    v_old_data,
-    v_new_data,
-    v_changed_fields
+    'public', 'partner_drafts', 'UPDATE', p_user_id, p_user_email,
+    p_ip_address, v_old_data, v_new_data, v_changed_fields
   );
 
   RETURN jsonb_build_object(
@@ -121,7 +98,7 @@ BEGIN
 END;
 $$;
 
--- Aktualizovaná funkcia insert_partner_draft_with_audit
+-- Fix 2: Change default status for new drafts from 'pending' to 'draft'
 CREATE OR REPLACE FUNCTION insert_partner_draft_with_audit(
   p_partner_id UUID,
   p_changes JSONB,
@@ -141,7 +118,7 @@ BEGIN
   -- Dočasne deaktivujeme trigger
   SET LOCAL audit.skip_trigger = 'true';
 
-  -- INSERT nový draft s opravenými array castami
+  -- INSERT nový draft
   INSERT INTO partner_drafts (
     partner_id,
     company_name,
@@ -168,9 +145,7 @@ BEGIN
     contact_url,
     services_description,
     template_variant,
-    status,
-    submitted_at,
-    reviewed_at
+    status
   ) VALUES (
     p_partner_id,
     p_changes->>'company_name',
@@ -197,9 +172,7 @@ BEGIN
     p_changes->>'contact_url',
     p_changes->>'services_description',
     p_changes->>'template_variant',
-    COALESCE(p_changes->>'status', 'draft'),
-    (p_changes->>'submitted_at')::TIMESTAMPTZ,
-    (p_changes->>'reviewed_at')::TIMESTAMPTZ
+    'draft'
   )
   RETURNING id INTO v_draft_id;
 
@@ -210,25 +183,11 @@ BEGIN
 
   -- Priamy INSERT do audit logu
   INSERT INTO audit.activity_log (
-    schema_name,
-    table_name,
-    operation,
-    user_id,
-    user_email,
-    ip_address,
-    old_data,
-    new_data,
-    changed_fields
+    schema_name, table_name, operation, user_id, user_email,
+    ip_address, old_data, new_data, changed_fields
   ) VALUES (
-    'public',
-    'partner_drafts',
-    'INSERT',
-    p_user_id,
-    p_user_email,
-    p_ip_address,
-    NULL,
-    v_new_data,
-    v_new_data
+    'public', 'partner_drafts', 'INSERT', p_user_id, p_user_email,
+    p_ip_address, NULL, v_new_data, v_new_data
   );
 
   RETURN jsonb_build_object(
@@ -240,8 +199,6 @@ END;
 $$;
 
 -- Granty
-GRANT EXECUTE ON FUNCTION jsonb_to_text_array TO authenticated;
-GRANT EXECUTE ON FUNCTION jsonb_to_text_array TO service_role;
 GRANT EXECUTE ON FUNCTION update_partner_draft_with_audit TO authenticated;
 GRANT EXECUTE ON FUNCTION update_partner_draft_with_audit TO service_role;
 GRANT EXECUTE ON FUNCTION insert_partner_draft_with_audit TO authenticated;

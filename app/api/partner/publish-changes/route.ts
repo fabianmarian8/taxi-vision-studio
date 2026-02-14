@@ -60,10 +60,12 @@ export async function POST(request: NextRequest) {
     }
 
     // Priprav draft data
+    // SECURITY: Strip status/submitted_at/reviewed_at from formData to prevent client override
+    const { status: _s, submitted_at: _sa, reviewed_at: _ra, ...safeFormData } = formData || {};
     const draftData = {
+      ...safeFormData,
       partner_id: partner_id,
       status: 'approved' as const,
-      ...formData,
       submitted_at: new Date().toISOString(),
       reviewed_at: new Date().toISOString(),
     };
