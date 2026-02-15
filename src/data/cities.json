@@ -10400,7 +10400,11 @@
           "isPremium": false,
           "isPromotional": false,
           "isPartner": true,
-          "address": "Novoť 325, 029 55 Novoť",
+          "address": "Nižný Koniec, Poriečie, 029 56 Zákamenné",
+          "placeId": "ChIJJRQ-myk1FEcR_cGtNhzWN5g",
+          "partnerData": {
+            "googlePlaceId": "ChIJJRQ-myk1FEcR_cGtNhzWN5g"
+          },
           "description": "0949 235 929 (5-miestne) | 0907 373 029 (9-miestne)"
         }
       ],
