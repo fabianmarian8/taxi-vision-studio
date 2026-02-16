@@ -3,8 +3,6 @@
  * Extracted from /app/api/admin/azet-scraper/route.ts for shared use.
  */
 
-import * as https from 'https';
-
 export interface AzetService {
   name: string;
   phone: string | null;
@@ -47,29 +45,20 @@ function isBlacklistedPhone(phone: string): boolean {
   });
 }
 
-export function fetchUrl(url: string): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const req = https.get(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'sk,en-US;q=0.9,en;q=0.8'
-      }
-    }, (res) => {
-      if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        fetchUrl(res.headers.location).then(resolve).catch(reject);
-        return;
-      }
-      let data = '';
-      res.on('data', (chunk: string) => data += chunk);
-      res.on('end', () => resolve(data));
-    });
-    req.on('error', reject);
-    req.setTimeout(30000, () => {
-      req.destroy();
-      reject(new Error('Timeout'));
-    });
+export async function fetchUrl(url: string): Promise<string> {
+  const response = await fetch(url, {
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Accept-Language': 'sk,en-US;q=0.9,en;q=0.8',
+    },
+    redirect: 'follow',
+    signal: AbortSignal.timeout(30000),
   });
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}`);
+  }
+  return response.text();
 }
 
 function extractCompanyLinks(html: string): { name: string; url: string; id: string }[] {
