@@ -4,8 +4,18 @@ import { z } from 'zod';
 import { escapeHtml, escapeHtmlWithBreaks } from '@/lib/html-escape';
 import { logger } from '@/lib/logger';
 import { createClient } from '@/lib/supabase/server';
+import { createClient as createServiceClient } from '@supabase/supabase-js';
 import { getSession } from '@/lib/auth';
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
+
+// Service role client for admin operations (bypasses RLS)
+function getAdminClient() {
+  return createServiceClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    { auth: { persistSession: false } }
+  );
+}
 
 // Rate limit: 3 submissions per hour per IP
 const SUBMISSION_RATE_LIMIT = 3;
@@ -227,7 +237,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const status = searchParams.get('status') || 'pending';
 
-  const supabase = await createClient();
+  const supabase = getAdminClient();
   const { data, error } = await supabase
     .from('taxi_submissions')
     .select('*')
@@ -255,7 +265,7 @@ export async function PATCH(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
   }
 
-  const supabase = await createClient();
+  const supabase = getAdminClient();
   const { data, error } = await supabase
     .from('taxi_submissions')
     .update({
