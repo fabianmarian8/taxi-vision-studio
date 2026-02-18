@@ -2368,6 +2368,13 @@
           "isPremium": false,
           "isPromotional": false,
           "address": "Partizánska 2, Handlová"
+        },
+        {
+          "name": "Taxi Papučka",
+          "phone": "+421907384100",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Handlová"
         }
       ],
       "latitude": 48.731432,
