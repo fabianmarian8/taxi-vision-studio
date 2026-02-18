@@ -2320,11 +2320,10 @@
           "name": "RG TAXI",
           "website": "https://www.facebook.com/RGTAXIHandlova",
           "phone": "+421944433553",
-          "isPremium": true,
-          "isPromotional": true,
+          "isPremium": false,
+          "isPromotional": false,
           "address": "Márie Kršákovej 2, Handlová",
-          "placeId": "ChIJZwNPP9zfFEcRpUuuND6sVVQ",
-          "premiumExpiresAt": "2026-01-27T18:19:55.622Z"
+          "placeId": "ChIJZwNPP9zfFEcRpUuuND6sVVQ"
         },
         {
           "name": "MK Taxi",

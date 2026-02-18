@@ -36,6 +36,12 @@ const FROM_EMAIL = 'TaxiNearMe.sk <info@taxinearme.sk>';
 // Mestá vylúčené z FOMO rotácie (nedostanú free premium)
 const EXCLUDED_CITIES = ['zakamenne'];
 
+// Konkrétne taxislužby vylúčené z FOMO rotácie (nikdy nedostanú promo premium)
+// Formát: "city_slug/taxi_name"
+const EXCLUDED_SERVICES = [
+  'handlova/RG TAXI',
+];
+
 interface TaxiService {
   name: string;
   website?: string;
@@ -227,8 +233,9 @@ async function runFomoMarketing() {
     }
 
     // Select random winner from non-premium services
+    // Exclude individually excluded services
     // If city has 3+ taxis, exclude previous winner to ensure rotation
-    const nonPremium = city.taxiServices.filter(t => !t.isPremium);
+    const nonPremium = city.taxiServices.filter(t => !t.isPremium && !EXCLUDED_SERVICES.includes(`${city.slug}/${t.name}`));
     const eligible = nonPremium.length >= 3 && previousWinner
       ? nonPremium.filter(t => t.name !== previousWinner)
       : nonPremium;
