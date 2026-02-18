@@ -2361,6 +2361,13 @@
           "isPromotional": false,
           "address": "1. mája 295/17, Handlová",
           "placeId": "ChIJw2hrj0XfFEcRxfNH_sl1CrM"
+        },
+        {
+          "name": "VIP TAXI Handlová",
+          "phone": "+421903262828",
+          "isPremium": false,
+          "isPromotional": false,
+          "address": "Partizánska 2, Handlová"
         }
       ],
       "latitude": 48.731432,
