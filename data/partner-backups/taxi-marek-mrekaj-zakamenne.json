@@ -1,0 +1,26 @@
+{
+  "backupDate": "2026-02-18",
+  "reason": "past_due - card_velocity_exceeded, zákazník zablokoval platbu",
+  "stripeSubscriptionId": "sub_1SqsNADXTJd8sDBAm2EUD3El",
+  "stripeCustomerId": "cus_ToVLEOlgYHmjyr",
+  "customerName": "Marek Mrekaj",
+  "customerEmail": "spilo11@azet.sk",
+  "planType": "partner",
+  "amountCents": 899,
+  "citySlug": "zakamenne",
+  "originalData": {
+    "name": "Taxi Marek Mrekaj",
+    "slug": "taxi-marek-mrekaj-zakamenne",
+    "logo": "/logos/taxi-marek-mrekaj.webp",
+    "phone": "+421911504333",
+    "isPremium": false,
+    "isPromotional": false,
+    "isPartner": true,
+    "partnerData": {
+      "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
+      "googlePlaceId": "ChIJpazWgnTLFUcRamdSS_RTFrg"
+    },
+    "address": "Poriecie 1265/164, Zákamenné",
+    "placeId": "ChIJpazWgnTLFUcRamdSS_RTFrg"
+  }
+}

@@ -10433,16 +10433,9 @@
       "taxiServices": [
         {
           "name": "Taxi Marek Mrekaj",
-          "slug": "taxi-marek-mrekaj-zakamenne",
-          "logo": "/logos/taxi-marek-mrekaj.webp",
           "phone": "+421911504333",
           "isPremium": false,
           "isPromotional": false,
-          "isPartner": true,
-          "partnerData": {
-            "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
-            "googlePlaceId": "ChIJpazWgnTLFUcRamdSS_RTFrg"
-          },
           "address": "Poriecie 1265/164, Zákamenné",
           "placeId": "ChIJpazWgnTLFUcRamdSS_RTFrg"
         },
