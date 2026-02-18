@@ -8762,7 +8762,7 @@
       "slug": "trebisov",
       "region": "Košický kraj",
       "description": "Okresné mesto v regióne Zemplín. Objednajte si taxi v Trebišove.",
-      "metaDescription": "Nájdite taxi v meste Trebišov. 8 taxislužieb s telefónnymi číslami a webovými stránkami: EBBE TAXI, Gold Taxi Trebišov, Taxi Gold Trebišov, Taxi Trebišov Gray a ďalšie. Kontaktujte priamo.",
+      "metaDescription": "Nájdite taxi v meste Trebišov. 9 taxislužieb s telefónnymi číslami a webovými stránkami: RS Dolina TAXi, EBBE TAXI, Gold Taxi Trebišov, Taxi Gold Trebišov, Taxi Trebišov Gray a ďalšie. Kontaktujte priamo.",
       "keywords": [
         "taxi trebišov",
         "taxislužba trebišov",
@@ -8771,6 +8771,13 @@
         "taxi trebišov ceny"
       ],
       "taxiServices": [
+        {
+          "name": "RS Dolina TAXi Trebišov , Byšta",
+          "phone": "+421950706000",
+          "address": "Byšta 100, 076 13 Byšta",
+          "isPremium": true,
+          "isPromotional": false
+        },
         {
           "name": "Gold Taxi Trebišov",
           "website": "https://goldtaxi.sk",
