@@ -224,8 +224,21 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
     throw error;
   }
 
-  // Log event if status changed
+  // Handle status transitions
   if (previousStatus !== subscription.status) {
+    const inactiveStatuses = ['past_due', 'unpaid', 'canceled', 'incomplete_expired'];
+    const wasActive = previousStatus === 'active';
+    const isNowInactive = inactiveStatuses.includes(subscription.status);
+    const isNowActive = subscription.status === 'active';
+
+    if (wasActive && isNowInactive) {
+      // Payment lapsed - deactivate taxi service but keep subscription_id for reactivation
+      await deactivateTaxiService(subscription.id, `status_changed_to_${subscription.status}`);
+    } else if (!wasActive && isNowActive) {
+      // Payment restored - reactivate taxi service
+      await reactivateTaxiService(subscription.id);
+    }
+
     await logSubscriptionEvent(
       subscription.id,
       'updated',
@@ -261,6 +274,9 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription, stri
     logger.error('Error canceling subscription', { error: error.message, subscriptionId: subscription.id });
     throw error;
   }
+
+  // Deactivate taxi service (keep subscription_id linked for reactivation)
+  await deactivateTaxiService(subscription.id, 'subscription_deleted');
 
   // Log cancellation event
   await logSubscriptionEvent(
@@ -302,6 +318,9 @@ async function handlePaymentFailed(invoice: Stripe.Invoice, stripeEventId: strin
       updated_at: new Date().toISOString(),
     })
     .eq('stripe_subscription_id', subscriptionId);
+
+  // Deactivate taxi service (keep subscription_id linked for reactivation)
+  await deactivateTaxiService(subscriptionId, 'payment_failed');
 
   // Log event
   await logSubscriptionEvent(
@@ -428,6 +447,85 @@ async function linkSubscriptionToTaxiService(
     }
   } else if (count && count > 1) {
     logger.error('SECURITY: Multiple taxi services updated', { count, taxiServiceName, citySlug });
+  }
+}
+
+/**
+ * Deactivate taxi service when payment fails or subscription is canceled.
+ * Keeps subscription_id linked so reactivation can find the right record.
+ */
+async function deactivateTaxiService(stripeSubscriptionId: string, reason: string) {
+  // Find our subscription record
+  const { data: subscription } = await getSupabase()
+    .from('subscriptions')
+    .select('id')
+    .eq('stripe_subscription_id', stripeSubscriptionId)
+    .maybeSingle();
+
+  if (!subscription) {
+    logger.warn('Subscription not found for deactivation', { stripeSubscriptionId, reason });
+    return;
+  }
+
+  // Deactivate taxi service but keep subscription_id linked
+  const { error, count } = await getSupabase()
+    .from('taxi_services')
+    .update({
+      is_verified: false,
+      is_premium: false,
+      is_partner: false,
+      premium_expires_at: null,
+      updated_at: new Date().toISOString(),
+    }, { count: 'exact' })
+    .eq('subscription_id', subscription.id);
+
+  if (error) {
+    logger.error('Error deactivating taxi service', { error: error.message, stripeSubscriptionId, reason });
+  } else if (count && count > 0) {
+    logger.info('Taxi service deactivated', { stripeSubscriptionId, reason, count });
+  } else {
+    logger.info('No taxi service linked to deactivate', { stripeSubscriptionId, reason });
+  }
+}
+
+/**
+ * Reactivate taxi service when payment is restored.
+ * Uses subscription plan_type to determine which badges to restore.
+ */
+async function reactivateTaxiService(stripeSubscriptionId: string) {
+  // Find our subscription with plan details
+  const { data: subscription } = await getSupabase()
+    .from('subscriptions')
+    .select('id, plan_type, current_period_end')
+    .eq('stripe_subscription_id', stripeSubscriptionId)
+    .maybeSingle();
+
+  if (!subscription) {
+    logger.warn('Subscription not found for reactivation', { stripeSubscriptionId });
+    return;
+  }
+
+  const isPremiumPlan = subscription.plan_type === 'premium' || subscription.plan_type === 'partner';
+  const isPartnerPlan = subscription.plan_type === 'partner';
+
+  // Restore taxi service badges based on plan type
+  const { error, count } = await getSupabase()
+    .from('taxi_services')
+    .update({
+      is_verified: true,
+      is_premium: isPremiumPlan,
+      is_partner: isPartnerPlan,
+      premium_expires_at: subscription.current_period_end,
+      updated_at: new Date().toISOString(),
+    }, { count: 'exact' })
+    .eq('subscription_id', subscription.id);
+
+  if (error) {
+    logger.error('Error reactivating taxi service', { error: error.message, stripeSubscriptionId });
+  } else if (count && count > 0) {
+    logger.info('Taxi service reactivated', { stripeSubscriptionId, plan: subscription.plan_type, count });
+  } else {
+    logger.info('No taxi service linked to reactivate', { stripeSubscriptionId });
   }
 }
 
