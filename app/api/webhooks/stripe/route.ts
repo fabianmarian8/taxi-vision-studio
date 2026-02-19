@@ -194,20 +194,25 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
     throw new Error('Missing period data');
   }
 
-  // Get previous status
+  const newPlanType = getPlanTypeFromAmount(amountCents);
+
+  // Get previous status and plan_type
   const { data: existing } = await getSupabase()
     .from('subscriptions')
-    .select('status')
+    .select('id, status, plan_type')
     .eq('stripe_subscription_id', subscription.id)
     .maybeSingle();
 
   const previousStatus = existing?.status || null;
+  const previousPlanType = existing?.plan_type || null;
 
-  // Update subscription
+  // Update subscription (including plan_type and stripe_price_id for upgrades/downgrades)
   const { error } = await getSupabase()
     .from('subscriptions')
     .update({
       status: subscription.status,
+      plan_type: newPlanType,
+      stripe_price_id: subscriptionItem?.price?.id || '',
       amount_cents: amountCents,
       current_period_start: new Date(periodStart * 1000).toISOString(),
       current_period_end: new Date(periodEnd * 1000).toISOString(),
@@ -225,7 +230,8 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
   }
 
   // Handle status transitions
-  if (previousStatus !== subscription.status) {
+  const statusChanged = previousStatus !== subscription.status;
+  if (statusChanged) {
     const inactiveStatuses = ['past_due', 'unpaid', 'canceled', 'incomplete_expired'];
     const wasActive = previousStatus === 'active';
     const isNowInactive = inactiveStatuses.includes(subscription.status);
@@ -238,16 +244,39 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
       // Payment restored - reactivate taxi service
       await reactivateTaxiService(subscription.id);
     }
-
-    await logSubscriptionEvent(
-      subscription.id,
-      'updated',
-      amountCents,
-      previousStatus,
-      subscription.status,
-      stripeEventId
-    );
   }
+
+  // Handle plan change (upgrade/downgrade) while status stays active
+  const planChanged = previousPlanType !== newPlanType;
+  if (planChanged && subscription.status === 'active' && existing?.id) {
+    const isPremiumPlan = newPlanType === 'premium' || newPlanType === 'partner';
+    const isPartnerPlan = newPlanType === 'partner';
+
+    await getSupabase()
+      .from('taxi_services')
+      .update({
+        is_premium: isPremiumPlan,
+        is_partner: isPartnerPlan,
+        updated_at: new Date().toISOString(),
+      })
+      .eq('subscription_id', existing.id);
+
+    logger.info('Taxi service flags updated for plan change', {
+      subscriptionId: subscription.id,
+      previousPlan: previousPlanType,
+      newPlan: newPlanType,
+    });
+  }
+
+  // Always log event for idempotency (prevents duplicate processing on Stripe retries)
+  await logSubscriptionEvent(
+    subscription.id,
+    'updated',
+    amountCents,
+    previousStatus,
+    subscription.status,
+    stripeEventId
+  );
 }
 
 async function handleSubscriptionDeleted(subscription: Stripe.Subscription, stripeEventId: string) {
