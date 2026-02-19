@@ -175,11 +175,12 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
     plan_type: getPlanTypeFromAmount(amountCents),
   });
 
+  // Atomic claim: Log event BEFORE side effects to prevent duplicate processing
+  const claimed = await logSubscriptionEvent(subscription.id, 'created', amountCents, null, subscription.status, stripeEventId);
+  if (!claimed) return; // Another worker already processed this event
+
   // Link subscription to taxi service (auto-enables verified/premium)
   await linkSubscriptionToTaxiService(subscription.id, citySlug, taxiServiceName, taxiServiceId);
-
-  // Log event with Stripe event ID for idempotency
-  await logSubscriptionEvent(subscription.id, 'created', amountCents, null, subscription.status, stripeEventId);
 }
 
 async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stripeEventId: string) {
@@ -203,10 +204,15 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
     .eq('stripe_subscription_id', subscription.id)
     .maybeSingle();
 
-  const previousStatus = existing?.status || null;
-  const previousPlanType = existing?.plan_type || null;
+  if (!existing) {
+    logger.warn('Subscription not found for update, skipping', { subscriptionId: subscription.id });
+    return;
+  }
 
-  // Update subscription (including plan_type and stripe_price_id for upgrades/downgrades)
+  const previousStatus = existing.status;
+  const previousPlanType = existing.plan_type;
+
+  // Update subscription data (idempotent - safe to run multiple times)
   const { error } = await getSupabase()
     .from('subscriptions')
     .update({
@@ -229,10 +235,21 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
     throw error;
   }
 
+  // Atomic claim: Log event BEFORE side effects to prevent duplicate processing
+  const claimed = await logSubscriptionEvent(
+    subscription.id,
+    'updated',
+    amountCents,
+    previousStatus,
+    subscription.status,
+    stripeEventId
+  );
+  if (!claimed) return; // Another worker already processed this event
+
   // Handle status transitions
   const statusChanged = previousStatus !== subscription.status;
   if (statusChanged) {
-    const inactiveStatuses = ['past_due', 'unpaid', 'canceled', 'incomplete_expired'];
+    const inactiveStatuses = ['past_due', 'unpaid', 'canceled', 'incomplete_expired', 'paused'];
     const wasActive = previousStatus === 'active';
     const isNowInactive = inactiveStatuses.includes(subscription.status);
     const isNowActive = subscription.status === 'active';
@@ -248,35 +265,34 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
 
   // Handle plan change (upgrade/downgrade) while status stays active
   const planChanged = previousPlanType !== newPlanType;
-  if (planChanged && subscription.status === 'active' && existing?.id) {
+  if (planChanged && subscription.status === 'active') {
     const isPremiumPlan = newPlanType === 'premium' || newPlanType === 'partner';
     const isPartnerPlan = newPlanType === 'partner';
 
-    await getSupabase()
+    const { error: flagError } = await getSupabase()
       .from('taxi_services')
       .update({
+        is_verified: true,
         is_premium: isPremiumPlan,
         is_partner: isPartnerPlan,
+        premium_expires_at: new Date(periodEnd * 1000).toISOString(),
         updated_at: new Date().toISOString(),
       })
       .eq('subscription_id', existing.id);
 
-    logger.info('Taxi service flags updated for plan change', {
-      subscriptionId: subscription.id,
-      previousPlan: previousPlanType,
-      newPlan: newPlanType,
-    });
+    if (flagError) {
+      logger.error('Error updating taxi service flags for plan change', {
+        error: flagError.message,
+        subscriptionId: subscription.id,
+      });
+    } else {
+      logger.info('Taxi service flags updated for plan change', {
+        subscriptionId: subscription.id,
+        previousPlan: previousPlanType,
+        newPlan: newPlanType,
+      });
+    }
   }
-
-  // Always log event for idempotency (prevents duplicate processing on Stripe retries)
-  await logSubscriptionEvent(
-    subscription.id,
-    'updated',
-    amountCents,
-    previousStatus,
-    subscription.status,
-    stripeEventId
-  );
 }
 
 async function handleSubscriptionDeleted(subscription: Stripe.Subscription, stripeEventId: string) {
@@ -304,11 +320,8 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription, stri
     throw error;
   }
 
-  // Deactivate taxi service (keep subscription_id linked for reactivation)
-  await deactivateTaxiService(subscription.id, 'subscription_deleted');
-
-  // Log cancellation event
-  await logSubscriptionEvent(
+  // Atomic claim: Log event BEFORE side effects to prevent duplicate processing
+  const claimed = await logSubscriptionEvent(
     subscription.id,
     'canceled',
     null,
@@ -316,6 +329,10 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription, stri
     'canceled',
     stripeEventId
   );
+  if (!claimed) return; // Another worker already processed this event
+
+  // Deactivate taxi service (keep subscription_id linked for reactivation)
+  await deactivateTaxiService(subscription.id, 'subscription_deleted');
 }
 
 async function handleInvoicePaid(invoice: Stripe.Invoice, stripeEventId: string) {
@@ -339,7 +356,7 @@ async function handlePaymentFailed(invoice: Stripe.Invoice, stripeEventId: strin
   const subscriptionId = (invoice as unknown as { subscription?: string | null }).subscription;
   if (!subscriptionId) return;
 
-  // Update subscription status
+  // Update subscription status (idempotent)
   await getSupabase()
     .from('subscriptions')
     .update({
@@ -348,11 +365,8 @@ async function handlePaymentFailed(invoice: Stripe.Invoice, stripeEventId: strin
     })
     .eq('stripe_subscription_id', subscriptionId);
 
-  // Deactivate taxi service (keep subscription_id linked for reactivation)
-  await deactivateTaxiService(subscriptionId, 'payment_failed');
-
-  // Log event
-  await logSubscriptionEvent(
+  // Atomic claim: Log event BEFORE side effects to prevent duplicate processing
+  const claimed = await logSubscriptionEvent(
     subscriptionId,
     'payment_failed',
     invoice.amount_due,
@@ -360,6 +374,10 @@ async function handlePaymentFailed(invoice: Stripe.Invoice, stripeEventId: strin
     'past_due',
     stripeEventId
   );
+  if (!claimed) return; // Another worker already processed this event
+
+  // Deactivate taxi service (keep subscription_id linked for reactivation)
+  await deactivateTaxiService(subscriptionId, 'payment_failed');
 }
 
 /**
@@ -442,37 +460,43 @@ async function linkSubscriptionToTaxiService(
   if (error) {
     logger.error('Error linking subscription to taxi service', { error: error.message });
   } else if (count === 0) {
+    // Block creation of unknown/placeholder taxi services from missing metadata
+    if (!citySlug || citySlug === 'unknown' || !taxiServiceName || taxiServiceName === 'Unknown Service') {
+      logger.error('Refusing to create taxi service with unknown metadata', {
+        citySlug, taxiServiceName, stripeSubscriptionId,
+      });
+      return;
+    }
+
     // Service not found in DB - create it (it may exist only in JSON)
     logger.info('No taxi service found, creating new record', { taxiServiceName, citySlug });
 
-    if (citySlug && taxiServiceName) {
-      // Get city_id for the city_slug
-      const { data: city } = await getSupabase()
-        .from('cities')
-        .select('id')
-        .eq('slug', citySlug)
-        .maybeSingle();
+    // Get city_id for the city_slug
+    const { data: city } = await getSupabase()
+      .from('cities')
+      .select('id')
+      .eq('slug', citySlug)
+      .maybeSingle();
 
-      const insertData = {
-        name: taxiServiceName,
-        city_id: city?.id || null,
-        city_slug: citySlug,
-        subscription_id: subscription.id,
-        is_verified: isActive,
-        is_premium: isActive && isPremiumPlan,
-        is_partner: isActive && isPartnerPlan,
-        premium_expires_at: isActive ? subscription.current_period_end : null,
-      };
+    const insertData = {
+      name: taxiServiceName,
+      city_id: city?.id || null,
+      city_slug: citySlug,
+      subscription_id: subscription.id,
+      is_verified: isActive,
+      is_premium: isActive && isPremiumPlan,
+      is_partner: isActive && isPartnerPlan,
+      premium_expires_at: isActive ? subscription.current_period_end : null,
+    };
 
-      const { error: insertError } = await getSupabase()
-        .from('taxi_services')
-        .insert(insertData);
+    const { error: insertError } = await getSupabase()
+      .from('taxi_services')
+      .insert(insertData);
 
-      if (insertError) {
-        logger.error('Error creating taxi service', { error: insertError.message });
-      } else {
-        logger.info('Created taxi service', { taxiServiceName, citySlug, plan: subscription.plan_type });
-      }
+    if (insertError) {
+      logger.error('Error creating taxi service', { error: insertError.message });
+    } else {
+      logger.info('Created taxi service', { taxiServiceName, citySlug, plan: subscription.plan_type });
     }
   } else if (count && count > 1) {
     logger.error('SECURITY: Multiple taxi services updated', { count, taxiServiceName, citySlug });
@@ -558,6 +582,12 @@ async function reactivateTaxiService(stripeSubscriptionId: string) {
   }
 }
 
+/**
+ * Atomically claim and log a subscription event.
+ * Returns true if successfully claimed (proceed with side effects).
+ * Returns false if event was already claimed by another worker (skip side effects).
+ * This prevents race conditions when Stripe sends concurrent retries.
+ */
 async function logSubscriptionEvent(
   stripeSubscriptionId: string,
   eventType: string,
@@ -565,7 +595,7 @@ async function logSubscriptionEvent(
   previousStatus: string | null,
   newStatus: string | null,
   stripeEventId: string
-) {
+): Promise<boolean> {
   // Get subscription ID from our database
   const { data: subscription } = await getSupabase()
     .from('subscriptions')
@@ -575,10 +605,10 @@ async function logSubscriptionEvent(
 
   if (!subscription) {
     logger.warn('Subscription not found for event logging', { stripeSubscriptionId });
-    return;
+    return true; // Can't claim without subscription_id, let processing continue
   }
 
-  // Insert with stripe_event_id for idempotency (UNIQUE constraint handles duplicates)
+  // Atomic claim via UNIQUE constraint on stripe_event_id
   const { error } = await getSupabase().from('subscription_events').insert({
     subscription_id: subscription.id,
     stripe_event_id: stripeEventId,
@@ -588,9 +618,15 @@ async function logSubscriptionEvent(
     new_status: newStatus,
   });
 
-  // Throw on non-duplicate errors so Stripe retries
-  if (error && !error.message?.includes('duplicate')) {
+  if (error?.message?.includes('duplicate')) {
+    logger.info('Event already claimed by another worker', { stripeEventId, stripeSubscriptionId });
+    return false; // Already processed - skip side effects
+  }
+
+  if (error) {
     logger.error('Error logging subscription event', { error: error.message, stripeSubscriptionId });
     throw error;
   }
+
+  return true; // Successfully claimed - proceed with side effects
 }

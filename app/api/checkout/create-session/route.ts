@@ -92,37 +92,42 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // OCHRANA: Kontrola existujúcej aktívnej subscription pre túto taxislužbu
-    try {
-      const { data: existingSubscription } = await getSupabase()
-        .from('subscriptions')
-        .select('id, status, stripe_subscription_id, plan_type')
-        .eq('city_slug', normalizedCitySlug)
-        .ilike('taxi_service_name', normalizedTaxiName)
-        .in('status', ['active', 'trialing', 'past_due'])
-        .maybeSingle();
+    // OCHRANA: Kontrola existujúcej aktívnej subscription pre túto taxislužbu (fail-closed)
+    const { data: existingSubscription, error: subCheckError } = await getSupabase()
+      .from('subscriptions')
+      .select('id, status, stripe_subscription_id, plan_type')
+      .eq('city_slug', normalizedCitySlug)
+      .ilike('taxi_service_name', normalizedTaxiName)
+      .in('status', ['active', 'trialing', 'past_due'])
+      .maybeSingle();
 
-      if (existingSubscription) {
-        log.warn('Duplicate checkout attempt blocked', {
-          citySlug: normalizedCitySlug,
-          taxiServiceName: normalizedTaxiName,
-          existingSubscriptionId: existingSubscription.stripe_subscription_id,
-          existingPlan: existingSubscription.plan_type,
-        });
-        await logger.flush();
-        return NextResponse.json(
-          {
-            error: 'Táto taxislužba už má aktívne predplatné',
-            existingPlan: existingSubscription.plan_type,
-          },
-          { status: 409 }
-        );
-      }
-    } catch (subErr) {
-      // Nekritické - ak Supabase zlyhá, pokračujeme (Stripe webhook zabráni duplicitám)
-      log.warn('Supabase subscription check failed, continuing', {
-        error: subErr instanceof Error ? subErr.message : 'Unknown',
+    if (subCheckError) {
+      // Fail-closed: ak Supabase zlyhá, NEPOVOLÍME checkout (ochrana pred duplicitami)
+      log.error('Supabase subscription check failed, blocking checkout', {
+        error: subCheckError.message,
       });
+      await logger.flush();
+      return NextResponse.json(
+        { error: 'Dočasná chyba pri overovaní predplatného. Skúste to znova.' },
+        { status: 503 }
+      );
+    }
+
+    if (existingSubscription) {
+      log.warn('Duplicate checkout attempt blocked', {
+        citySlug: normalizedCitySlug,
+        taxiServiceName: normalizedTaxiName,
+        existingSubscriptionId: existingSubscription.stripe_subscription_id,
+        existingPlan: existingSubscription.plan_type,
+      });
+      await logger.flush();
+      return NextResponse.json(
+        {
+          error: 'Táto taxislužba už má aktívne predplatné',
+          existingPlan: existingSubscription.plan_type,
+        },
+        { status: 409 }
+      );
     }
 
     // Získať Price ID
