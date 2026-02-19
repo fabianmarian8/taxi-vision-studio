@@ -3,6 +3,7 @@ import { stripe, STRIPE_PRICES } from '@/lib/stripe';
 import { logger } from '@/lib/logger';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { createHash } from 'crypto';
+import citiesData from '@/data/cities.json';
 
 // Lazy-initialized Supabase client
 let _supabase: SupabaseClient | null = null;
@@ -62,6 +63,35 @@ export async function POST(request: NextRequest) {
     const normalizedCitySlug = citySlug.trim().toLowerCase();
     const normalizedTaxiName = taxiServiceName.trim();
 
+    // VALIDÁCIA: Overenie, že taxislužba existuje v cities.json
+    const city = (citiesData as { cities: { slug: string; taxiServices: { name: string }[] }[] }).cities
+      .find((c) => c.slug === normalizedCitySlug);
+
+    if (!city) {
+      log.warn('Checkout attempt for unknown city', { citySlug: normalizedCitySlug });
+      await logger.flush();
+      return NextResponse.json(
+        { error: 'Mesto nebolo nájdené v našej databáze' },
+        { status: 400 }
+      );
+    }
+
+    const serviceExists = city.taxiServices.some(
+      (t) => t.name === normalizedTaxiName
+    );
+
+    if (!serviceExists) {
+      log.warn('Checkout attempt for unknown taxi service', {
+        citySlug: normalizedCitySlug,
+        taxiServiceName: normalizedTaxiName,
+      });
+      await logger.flush();
+      return NextResponse.json(
+        { error: 'Taxislužba nebola nájdená v tomto meste' },
+        { status: 400 }
+      );
+    }
+
     // OCHRANA: Kontrola existujúcej aktívnej subscription pre túto taxislužbu
     const { data: existingSubscription } = await getSupabase()
       .from('subscriptions')
@@ -106,6 +136,22 @@ export async function POST(request: NextRequest) {
     // Generovanie idempotency key pre ochranu proti duplicitným requestom
     const idempotencyKey = generateIdempotencyKey(normalizedCitySlug, normalizedTaxiName);
 
+    // Pokúsiť sa nájsť taxi_service_id v Supabase pre spoľahlivejšie prepojenie
+    let taxiServiceId: string | undefined;
+    try {
+      const { data: dbService } = await getSupabase()
+        .from('taxi_services')
+        .select('id')
+        .eq('city_slug', normalizedCitySlug)
+        .ilike('name', normalizedTaxiName)
+        .maybeSingle();
+      if (dbService) {
+        taxiServiceId = dbService.id;
+      }
+    } catch {
+      // Nie je kritické - webhook použije fallback cez city_slug + name
+    }
+
     // Vytvorenie Checkout Session s metadata na subscription
     const session = await stripe.checkout.sessions.create(
       {
@@ -121,6 +167,7 @@ export async function POST(request: NextRequest) {
           metadata: {
             city_slug: normalizedCitySlug,
             taxi_service_name: normalizedTaxiName,
+            ...(taxiServiceId ? { taxi_service_id: taxiServiceId } : {}),
           },
         },
         // URLs

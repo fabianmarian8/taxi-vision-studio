@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ArrowRight, Loader2, X, AlertTriangle } from 'lucide-react';
+import { ArrowRight, Loader2, X, AlertTriangle, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 // Cooldown konfigurácia (5 minút)
@@ -13,59 +13,41 @@ interface CheckoutFormProps {
   onClose?: () => void;
 }
 
-// Zoznam slovenských miest (hlavné mestá)
-const CITIES = [
-  { slug: 'bratislava', name: 'Bratislava' },
-  { slug: 'kosice', name: 'Košice' },
-  { slug: 'presov', name: 'Prešov' },
-  { slug: 'zilina', name: 'Žilina' },
-  { slug: 'banska-bystrica', name: 'Banská Bystrica' },
-  { slug: 'nitra', name: 'Nitra' },
-  { slug: 'trnava', name: 'Trnava' },
-  { slug: 'trencin', name: 'Trenčín' },
-  { slug: 'martin', name: 'Martin' },
-  { slug: 'poprad', name: 'Poprad' },
-  { slug: 'prievidza', name: 'Prievidza' },
-  { slug: 'zvolen', name: 'Zvolen' },
-  { slug: 'povazska-bystrica', name: 'Považská Bystrica' },
-  { slug: 'michalovce', name: 'Michalovce' },
-  { slug: 'nove-zamky', name: 'Nové Zámky' },
-  { slug: 'spisska-nova-ves', name: 'Spišská Nová Ves' },
-  { slug: 'komarno', name: 'Komárno' },
-  { slug: 'humenne', name: 'Humenné' },
-  { slug: 'levice', name: 'Levice' },
-  { slug: 'lucenec', name: 'Lučenec' },
-  { slug: 'ruzomberok', name: 'Ružomberok' },
-  { slug: 'liptovsky-mikulas', name: 'Liptovský Mikuláš' },
-  { slug: 'piestany', name: 'Piešťany' },
-  { slug: 'dunajska-streda', name: 'Dunajská Streda' },
-  { slug: 'bardejov', name: 'Bardejov' },
-  { slug: 'vranov-nad-toplou', name: 'Vranov nad Topľou' },
-  { slug: 'dolny-kubin', name: 'Dolný Kubín' },
-  { slug: 'cadca', name: 'Čadca' },
-  { slug: 'pezinok', name: 'Pezinok' },
-  { slug: 'partizanske', name: 'Partizánske' },
-  { slug: 'rimavska-sobota', name: 'Rimavská Sobota' },
-  { slug: 'senica', name: 'Senica' },
-  { slug: 'hlohovec', name: 'Hlohovec' },
-  { slug: 'galanta', name: 'Galanta' },
-  { slug: 'sala', name: 'Šaľa' },
-  { slug: 'malacky', name: 'Malacky' },
-  { slug: 'snina', name: 'Snina' },
-  { slug: 'stara-lubovna', name: 'Stará Ľubovňa' },
-  { slug: 'trebisov', name: 'Trebišov' },
-  { slug: 'kezmarok', name: 'Kežmarok' },
-].sort((a, b) => a.name.localeCompare(b.name, 'sk'));
+interface CityOption {
+  slug: string;
+  name: string;
+}
+
+interface TaxiServiceOption {
+  name: string;
+  hasPaidSubscription: boolean;
+  isPartner: boolean;
+}
 
 export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
+  const [cities, setCities] = useState<CityOption[]>([]);
   const [citySlug, setCitySlug] = useState('');
-  const [customCity, setCustomCity] = useState('');
-  const [taxiServiceName, setTaxiServiceName] = useState('');
+  const [citySearch, setCitySearch] = useState('');
+  const [taxiServices, setTaxiServices] = useState<TaxiServiceOption[]>([]);
+  const [selectedService, setSelectedService] = useState('');
+  const [isLoadingCities, setIsLoadingCities] = useState(true);
+  const [isLoadingServices, setIsLoadingServices] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [recentAttempt, setRecentAttempt] = useState<{ city: string; service: string; time: number } | null>(null);
 
-  // Kontrola nedávneho pokusu o platbu pri načítaní
+  // Načítať zoznam miest
+  useEffect(() => {
+    fetch('/api/checkout/taxi-services')
+      .then((res) => res.json())
+      .then((data) => {
+        setCities(data.cities || []);
+        setIsLoadingCities(false);
+      })
+      .catch(() => setIsLoadingCities(false));
+  }, []);
+
+  // Kontrola nedávneho pokusu o platbu
   useEffect(() => {
     try {
       const stored = sessionStorage.getItem(CHECKOUT_STORAGE_KEY);
@@ -75,14 +57,52 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
         if (elapsed < CHECKOUT_COOLDOWN_MS) {
           setRecentAttempt(attempt);
         } else {
-          // Vypršaný pokus - vyčistiť
           sessionStorage.removeItem(CHECKOUT_STORAGE_KEY);
         }
       }
     } catch {
-      // Ignorovať chyby pri čítaní sessionStorage
+      // Ignorovať
     }
   }, []);
+
+  // Načítať taxislužby pre vybrané mesto
+  useEffect(() => {
+    if (!citySlug) {
+      setTaxiServices([]);
+      setSelectedService('');
+      return;
+    }
+
+    setIsLoadingServices(true);
+    setSelectedService('');
+    setError('');
+
+    fetch(`/api/checkout/taxi-services?city=${citySlug}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setTaxiServices(data.services || []);
+        setIsLoadingServices(false);
+      })
+      .catch(() => {
+        setTaxiServices([]);
+        setIsLoadingServices(false);
+      });
+  }, [citySlug]);
+
+  // Filtrované mestá podľa vyhľadávania
+  const filteredCities = citySearch.trim()
+    ? cities.filter((c) =>
+        c.name.toLowerCase().includes(citySearch.toLowerCase())
+      )
+    : cities;
+
+  // Dostupné taxislužby (vylúčiť tie s aktívnym plateným predplatným)
+  const availableServices = taxiServices.filter((s) => {
+    // Ak už majú platené predplatné rovnakého alebo vyššieho plánu, skryť
+    if (s.hasPaidSubscription) return false;
+    if (s.isPartner) return false;
+    return true;
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -93,17 +113,10 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
       return;
     }
 
-    if (citySlug === 'other' && !customCity.trim()) {
-      setError('Zadajte názov mesta');
+    if (!selectedService) {
+      setError('Vyberte vašu taxislužbu');
       return;
     }
-
-    if (!taxiServiceName.trim()) {
-      setError('Zadajte názov vašej taxislužby');
-      return;
-    }
-
-    const effectiveCitySlug = citySlug === 'other' ? customCity.trim() : citySlug;
 
     setIsLoading(true);
 
@@ -113,15 +126,14 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           plan,
-          citySlug: effectiveCitySlug,
-          taxiServiceName: taxiServiceName.trim(),
+          citySlug,
+          taxiServiceName: selectedService,
         }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        // Špecifická chyba pre duplicitné predplatné
         if (response.status === 409) {
           setError(`Táto taxislužba už má aktívne ${data.existingPlan?.toUpperCase() || ''} predplatné. Kontaktujte nás ak chcete zmeniť plán.`);
           setIsLoading(false);
@@ -130,19 +142,18 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
         throw new Error(data.error || 'Nepodarilo sa vytvoriť checkout session');
       }
 
-      // Uložiť pokus do sessionStorage pred presmerovaním
+      // Uložiť pokus pred presmerovaním
       try {
-        const cityName = citySlug === 'other' ? customCity.trim() : (CITIES.find(c => c.slug === citySlug)?.name || citySlug);
+        const cityName = cities.find((c) => c.slug === citySlug)?.name || citySlug;
         sessionStorage.setItem(CHECKOUT_STORAGE_KEY, JSON.stringify({
           city: cityName,
-          service: taxiServiceName.trim(),
+          service: selectedService,
           time: Date.now(),
         }));
       } catch {
-        // Ignorovať chyby pri zápise
+        // Ignorovať
       }
 
-      // Presmerovanie na Stripe Checkout
       if (data.url) {
         window.location.href = data.url;
       }
@@ -186,7 +197,7 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
             {planNames[plan]} balíček
           </h2>
           <p className="text-slate-400 text-sm">
-            Vyplňte údaje a pokračujte na platbu
+            Vyberte vašu taxislužbu a pokračujte na platbu
           </p>
         </div>
 
@@ -207,50 +218,84 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* City Select */}
+          {/* City Select with search */}
           <div>
             <label className="block text-sm font-medium text-slate-300 mb-2">
               Mesto pôsobenia *
             </label>
-            <select
-              value={citySlug}
-              onChange={(e) => setCitySlug(e.target.value)}
-              className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
-              required
-            >
-              <option value="">Vyberte mesto</option>
-              {CITIES.map((city) => (
-                <option key={city.slug} value={city.slug}>
-                  {city.name}
-                </option>
-              ))}
-              <option value="other">Iné mesto</option>
-            </select>
-            {citySlug === 'other' && (
-              <input
-                type="text"
-                value={customCity}
-                onChange={(e) => setCustomCity(e.target.value)}
-                placeholder="Zadajte názov mesta alebo obce"
-                className="w-full mt-2 bg-slate-800 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
-                required
-              />
+            {isLoadingCities ? (
+              <div className="flex items-center gap-2 text-slate-400 py-3">
+                <Loader2 className="h-4 w-4 animate-spin" />
+                <span className="text-sm">Načítavam mestá...</span>
+              </div>
+            ) : (
+              <>
+                {/* Search input for cities */}
+                <div className="relative mb-2">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500" />
+                  <input
+                    type="text"
+                    value={citySearch}
+                    onChange={(e) => setCitySearch(e.target.value)}
+                    placeholder="Hľadať mesto..."
+                    className="w-full bg-slate-800 border border-white/10 rounded-lg pl-9 pr-4 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
+                  />
+                </div>
+                <select
+                  value={citySlug}
+                  onChange={(e) => {
+                    setCitySlug(e.target.value);
+                    setCitySearch('');
+                  }}
+                  className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+                  required
+                >
+                  <option value="">Vyberte mesto</option>
+                  {filteredCities.map((city) => (
+                    <option key={city.slug} value={city.slug}>
+                      {city.name}
+                    </option>
+                  ))}
+                </select>
+              </>
             )}
           </div>
 
-          {/* Taxi Service Name */}
+          {/* Taxi Service Select */}
           <div>
             <label className="block text-sm font-medium text-slate-300 mb-2">
-              Názov taxislužby *
+              Vaša taxislužba *
             </label>
-            <input
-              type="text"
-              value={taxiServiceName}
-              onChange={(e) => setTaxiServiceName(e.target.value)}
-              placeholder="napr. Fast Taxi Zvolen"
-              className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
-              required
-            />
+            {!citySlug ? (
+              <p className="text-slate-500 text-sm py-2">
+                Najprv vyberte mesto
+              </p>
+            ) : isLoadingServices ? (
+              <div className="flex items-center gap-2 text-slate-400 py-3">
+                <Loader2 className="h-4 w-4 animate-spin" />
+                <span className="text-sm">Načítavam taxislužby...</span>
+              </div>
+            ) : availableServices.length === 0 ? (
+              <div className="text-amber-200/70 text-sm bg-amber-500/10 border border-amber-500/20 rounded-lg px-4 py-3">
+                {taxiServices.length === 0
+                  ? 'V tomto meste zatiaľ nemáme evidované žiadne taxislužby. Kontaktujte nás na info@taxinearme.sk.'
+                  : 'Všetky taxislužby v tomto meste už majú aktívne predplatné.'}
+              </div>
+            ) : (
+              <select
+                value={selectedService}
+                onChange={(e) => setSelectedService(e.target.value)}
+                className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50"
+                required
+              >
+                <option value="">Vyberte vašu taxislužbu</option>
+                {availableServices.map((service) => (
+                  <option key={service.name} value={service.name}>
+                    {service.name}
+                  </option>
+                ))}
+              </select>
+            )}
           </div>
 
           {/* Error */}
@@ -263,7 +308,7 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
           {/* Submit Button */}
           <button
             type="submit"
-            disabled={isLoading}
+            disabled={isLoading || !citySlug || !selectedService}
             className={cn(
               "w-full flex items-center justify-center gap-2 font-bold px-6 py-4 rounded-xl transition-all text-base disabled:opacity-50 disabled:cursor-not-allowed",
               isPartner
