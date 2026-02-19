@@ -2326,7 +2326,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
         {/* Inline checkout for non-Premium/Partner services */}
         {!isPremium && !isPartner && (
-          <section className="px-4 pb-6" id="checkout">
+          <section className="px-4 pb-6">
             <div className="container mx-auto max-w-4xl space-y-3">
               <ServiceCheckout
                 citySlug={city.slug}

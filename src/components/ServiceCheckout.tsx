@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Crown, Star, ShieldCheck, CheckCircle2, Loader2 } from 'lucide-react';
+import { Crown, Star, ShieldCheck, CheckCircle2, Loader2, ChevronDown, ChevronUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const CHECKOUT_COOLDOWN_MS = 5 * 60 * 1000;
@@ -94,6 +94,7 @@ export function ServiceCheckout({
   isVerified,
   locationText,
 }: ServiceCheckoutProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const [loadingPlan, setLoadingPlan] = useState<PlanType | null>(null);
   const [error, setError] = useState('');
 
@@ -159,112 +160,137 @@ export function ServiceCheckout({
   }
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white rounded-2xl border border-gray-200 p-5 md:p-6">
-      {/* Header */}
-      <div className="text-center mb-5">
-        <h3 className="text-lg md:text-xl font-bold text-gray-900">
-          Zvýšte viditeľnosť vašej taxislužby
-        </h3>
-        <p className="text-sm text-gray-500 mt-1">
-          Vyberte si balíček pre <strong>{serviceName}</strong> {locationText} {cityName}
-        </p>
-      </div>
-
-      {/* Nedávny pokus */}
-      {recentAttempt && recentAttempt.service === serviceName && (
-        <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-700">
-          Nedávno ste začali platbu. Skontrolujte si email, či ste nedostali potvrdenie.
+    <div id="checkout">
+      {/* Zbalený header */}
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full border border-amber-200 bg-amber-50 rounded-xl p-3 md:p-4 shadow-sm hover:shadow-md transition-all flex items-center justify-between group"
+      >
+        <div className="flex items-center gap-2 md:gap-3 flex-1 min-w-0">
+          <Star className="h-5 w-5 text-amber-600 hidden md:block" />
+          <span className="font-bold text-sm md:text-base text-amber-800 truncate">
+            Ste majiteľom tejto taxislužby?
+          </span>
+          <span className="text-xs px-2 py-0.5 rounded-full whitespace-nowrap bg-amber-100 text-amber-700">
+            od 0,99€/mes
+          </span>
         </div>
-      )}
+        <span className="flex items-center gap-1 md:gap-2 text-gray-500 group-hover:text-gray-700 ml-2 flex-shrink-0">
+          <span className="text-sm hidden md:inline">{isExpanded ? 'Zavrieť' : 'Zobraziť balíčky'}</span>
+          {isExpanded ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+        </span>
+      </button>
 
-      {/* Plan cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-        {PLANS.map((plan) => {
-          const isActive = plan.id === 'mini' && isVerified;
-          const isLoading = loadingPlan === plan.id;
-          const isDisabled = isActive || loadingPlan !== null;
+      {/* Rozbalený obsah s balíčkami */}
+      {isExpanded && (
+        <div className="mt-3 bg-gradient-to-b from-gray-50 to-white rounded-2xl border border-gray-200 p-5 md:p-6 animate-in slide-in-from-top-2 duration-200">
+          {/* Header */}
+          <div className="text-center mb-5">
+            <h3 className="text-lg md:text-xl font-bold text-gray-900">
+              Zvýšte viditeľnosť vašej taxislužby
+            </h3>
+            <p className="text-sm text-gray-500 mt-1">
+              Vyberte si balíček pre <strong>{serviceName}</strong> {locationText} {cityName}
+            </p>
+          </div>
 
-          return (
-            <div
-              key={plan.id}
-              className={cn(
-                'relative rounded-xl border p-4 transition-all',
-                plan.accent.card,
-                plan.popular && 'ring-2 ring-amber-300',
-              )}
-            >
-              {/* Popular badge */}
-              {plan.popular && (
-                <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-900 text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap">
-                  Najpredávanejšie
-                </div>
-              )}
-
-              {/* Icon + Name */}
-              <div className="flex items-center gap-2 mb-3">
-                <plan.icon className={cn('h-5 w-5', plan.id === 'mini' ? 'text-emerald-600' : plan.id === 'partner' ? 'text-amber-600' : 'text-purple-600')} />
-                <span className="font-bold text-gray-900">{plan.name}</span>
-                {isActive && (
-                  <span className="text-[10px] bg-emerald-100 text-emerald-600 px-2 py-0.5 rounded-full font-bold">
-                    Aktívne
-                  </span>
-                )}
-              </div>
-
-              {/* Price */}
-              <div className="mb-3">
-                <span className="text-2xl font-black text-gray-900">{plan.price}</span>
-                <span className="text-gray-500 text-sm"> / mesiac</span>
-              </div>
-
-              {/* Features */}
-              <ul className="space-y-1.5 mb-4">
-                {plan.features.map((feat, i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
-                    <CheckCircle2 className={cn('h-3.5 w-3.5 flex-shrink-0 mt-0.5', plan.id === 'mini' ? 'text-emerald-500' : plan.id === 'partner' ? 'text-amber-500' : 'text-gray-400')} />
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA */}
-              <button
-                onClick={() => !isDisabled && handleCheckout(plan.id)}
-                disabled={isDisabled}
-                className={cn(
-                  'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold transition-all',
-                  isActive ? plan.accent.btnDisabled : plan.accent.btn,
-                  isDisabled && !isActive && 'opacity-50 cursor-not-allowed',
-                )}
-              >
-                {isLoading ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : isActive ? (
-                  'Váš aktuálny plán'
-                ) : plan.id === 'mini' ? (
-                  'Overiť'
-                ) : plan.id === 'partner' ? (
-                  'Stať sa partnerom'
-                ) : (
-                  'Vybrať PREMIUM'
-                )}
-              </button>
+          {/* Nedávny pokus */}
+          {recentAttempt && recentAttempt.service === serviceName && (
+            <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-700">
+              Nedávno ste začali platbu. Skontrolujte si email, či ste nedostali potvrdenie.
             </div>
-          );
-        })}
-      </div>
+          )}
 
-      {/* Error */}
-      {error && (
-        <div className="mt-3 text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-2">
-          {error}
+          {/* Plan cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {PLANS.map((plan) => {
+              const isActive = plan.id === 'mini' && isVerified;
+              const isLoading = loadingPlan === plan.id;
+              const isDisabled = isActive || loadingPlan !== null;
+
+              return (
+                <div
+                  key={plan.id}
+                  className={cn(
+                    'relative rounded-xl border p-4 transition-all',
+                    plan.accent.card,
+                    plan.popular && 'ring-2 ring-amber-300',
+                  )}
+                >
+                  {/* Popular badge */}
+                  {plan.popular && (
+                    <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-900 text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap">
+                      Najpredávanejšie
+                    </div>
+                  )}
+
+                  {/* Icon + Name */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <plan.icon className={cn('h-5 w-5', plan.id === 'mini' ? 'text-emerald-600' : plan.id === 'partner' ? 'text-amber-600' : 'text-purple-600')} />
+                    <span className="font-bold text-gray-900">{plan.name}</span>
+                    {isActive && (
+                      <span className="text-[10px] bg-emerald-100 text-emerald-600 px-2 py-0.5 rounded-full font-bold">
+                        Aktívne
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Price */}
+                  <div className="mb-3">
+                    <span className="text-2xl font-black text-gray-900">{plan.price}</span>
+                    <span className="text-gray-500 text-sm"> / mesiac</span>
+                  </div>
+
+                  {/* Features */}
+                  <ul className="space-y-1.5 mb-4">
+                    {plan.features.map((feat, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
+                        <CheckCircle2 className={cn('h-3.5 w-3.5 flex-shrink-0 mt-0.5', plan.id === 'mini' ? 'text-emerald-500' : plan.id === 'partner' ? 'text-amber-500' : 'text-gray-400')} />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA */}
+                  <button
+                    onClick={() => !isDisabled && handleCheckout(plan.id)}
+                    disabled={isDisabled}
+                    className={cn(
+                      'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold transition-all',
+                      isActive ? plan.accent.btnDisabled : plan.accent.btn,
+                      isDisabled && !isActive && 'opacity-50 cursor-not-allowed',
+                    )}
+                  >
+                    {isLoading ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : isActive ? (
+                      'Váš aktuálny plán'
+                    ) : plan.id === 'mini' ? (
+                      'Overiť'
+                    ) : plan.id === 'partner' ? (
+                      'Stať sa partnerom'
+                    ) : (
+                      'Vybrať PREMIUM'
+                    )}
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Error */}
+          {error && (
+            <div className="mt-3 text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-2">
+              {error}
+            </div>
+          )}
+
+          {/* Note */}
+          <p className="text-center text-gray-400 text-[11px] mt-4">
+            Bez viazanosti • Zrušíte kedykoľvek • Bezpečná platba cez Stripe
+          </p>
         </div>
       )}
-
-      {/* Note */}
-      <p className="text-center text-gray-400 text-[11px] mt-4">
-        Bez viazanosti • Zrušíte kedykoľvek • Bezpečná platba cez Stripe
-      </p>
     </div>
   );
 }

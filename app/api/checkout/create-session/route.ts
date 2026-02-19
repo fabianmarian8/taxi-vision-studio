@@ -93,29 +93,36 @@ export async function POST(request: NextRequest) {
     }
 
     // OCHRANA: Kontrola existujúcej aktívnej subscription pre túto taxislužbu
-    const { data: existingSubscription } = await getSupabase()
-      .from('subscriptions')
-      .select('id, status, stripe_subscription_id, plan_type')
-      .eq('city_slug', normalizedCitySlug)
-      .ilike('taxi_service_name', normalizedTaxiName)
-      .in('status', ['active', 'trialing', 'past_due'])
-      .maybeSingle();
+    try {
+      const { data: existingSubscription } = await getSupabase()
+        .from('subscriptions')
+        .select('id, status, stripe_subscription_id, plan_type')
+        .eq('city_slug', normalizedCitySlug)
+        .ilike('taxi_service_name', normalizedTaxiName)
+        .in('status', ['active', 'trialing', 'past_due'])
+        .maybeSingle();
 
-    if (existingSubscription) {
-      log.warn('Duplicate checkout attempt blocked', {
-        citySlug: normalizedCitySlug,
-        taxiServiceName: normalizedTaxiName,
-        existingSubscriptionId: existingSubscription.stripe_subscription_id,
-        existingPlan: existingSubscription.plan_type,
-      });
-      await logger.flush();
-      return NextResponse.json(
-        {
-          error: 'Táto taxislužba už má aktívne predplatné',
+      if (existingSubscription) {
+        log.warn('Duplicate checkout attempt blocked', {
+          citySlug: normalizedCitySlug,
+          taxiServiceName: normalizedTaxiName,
+          existingSubscriptionId: existingSubscription.stripe_subscription_id,
           existingPlan: existingSubscription.plan_type,
-        },
-        { status: 409 }
-      );
+        });
+        await logger.flush();
+        return NextResponse.json(
+          {
+            error: 'Táto taxislužba už má aktívne predplatné',
+            existingPlan: existingSubscription.plan_type,
+          },
+          { status: 409 }
+        );
+      }
+    } catch (subErr) {
+      // Nekritické - ak Supabase zlyhá, pokračujeme (Stripe webhook zabráni duplicitám)
+      log.warn('Supabase subscription check failed, continuing', {
+        error: subErr instanceof Error ? subErr.message : 'Unknown',
+      });
     }
 
     // Získať Price ID
@@ -199,13 +206,14 @@ export async function POST(request: NextRequest) {
       url: session.url,
     });
   } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown';
     log.error('Checkout session creation failed', {
-      error: error instanceof Error ? error.message : 'Unknown',
+      error: errorMessage,
       duration: Date.now() - startTime,
     });
     await logger.flush();
     return NextResponse.json(
-      { error: 'Failed to create checkout session' },
+      { error: `Nepodarilo sa vytvoriť platbu: ${errorMessage}` },
       { status: 500 }
     );
   }
