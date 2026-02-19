@@ -18,7 +18,10 @@ export const runtime = 'nodejs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.taxinearme.sk';
-  const currentDate = new Date();
+  // Reálny dátum poslednej aktualizácie dát (z cities.json)
+  const dataLastUpdated = new Date(citiesData.lastUpdated || '2026-01-15');
+  // Blog články sa menia zriedka
+  const blogDate = new Date('2025-12-01');
 
   // Získanie unikátnych regiónov
   const regions = [...new Set(citiesData.cities.map((city) => city.region))].sort();
@@ -28,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Homepage - NAJVYŠŠIA PRIORITA
   sitemap.push({
     url: baseUrl,
-    lastModified: currentDate,
+    lastModified: dataLastUpdated,
     changeFrequency: 'daily',
     priority: 1.0,
   });
@@ -38,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const regionSlug = createRegionSlug(region);
     sitemap.push({
       url: `${baseUrl}/kraj/${regionSlug}`,
-      lastModified: currentDate,
+      lastModified: dataLastUpdated,
       changeFrequency: 'weekly',
       priority: 0.7,
     });
@@ -49,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   districts.forEach((district) => {
     sitemap.push({
       url: `${baseUrl}/taxi/${district.regionSlug}/${district.slug}`,
-      lastModified: currentDate,
+      lastModified: dataLastUpdated,
       changeFrequency: 'weekly',
       priority: 0.6,
     });
@@ -69,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   legalPages.forEach((page) => {
     sitemap.push({
       url: `${baseUrl}${page.path}`,
-      lastModified: currentDate,
+      lastModified: dataLastUpdated,
       changeFrequency: 'monthly',
       priority: page.priority,
     });
@@ -95,7 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   blogArticles.forEach((article) => {
     sitemap.push({
       url: `${baseUrl}${article}`,
-      lastModified: currentDate,
+      lastModified: blogDate,
       changeFrequency: 'monthly',
       priority: 0.6,
     });

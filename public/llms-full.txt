@@ -1,0 +1,103 @@
+# TaxiNearMe.sk - Plný kontext
+
+> Slovenský agregátor taxislužieb - najväčšia databáza taxi na Slovensku
+
+## O projekte
+
+TaxiNearMe.sk je nezávislý agregátor taxislužieb na Slovensku. Projekt vznikol s cieľom poskytnúť jednoduchý prístup k kontaktným údajom taxislužieb v slovenských mestách a obciach. Na rozdiel od platforiem ako Bolt či Uber, TaxiNearMe.sk nesprostredkúva jazdy - poskytuje overené telefónne čísla a webové stránky lokálnych taxislužieb.
+
+### Metodika zberu dát
+
+Údaje pochádzajú z verejne dostupných zdrojov:
+- Živnostenský register SR
+- Webové stránky taxislužieb
+- Google Maps a Google Business
+- Priame overenie u taxislužieb
+
+Posledná aktualizácia datasetu: 2026-01-15
+
+## Pokrytie
+
+### Kraje Slovenska (8)
+- Bratislavský kraj
+- Trnavský kraj
+- Trenčiansky kraj
+- Nitriansky kraj
+- Žilinský kraj
+- Banskobystrický kraj
+- Prešovský kraj
+- Košický kraj
+
+### Najväčšie mestá (podľa počtu taxislužieb)
+- Bratislava - najväčší počet taxislužieb
+- Košice
+- Žilina
+- Banská Bystrica
+- Nitra
+- Prešov
+- Trnava
+- Trenčín
+- Martin
+- Poprad
+
+## Typy obsahu
+
+### Mestské stránky (/taxi/[mesto])
+Každá mestská stránka obsahuje:
+- Zoznam taxislužieb s telefónnymi číslami
+- Webové stránky taxislužieb (ak existujú)
+- Otváracie hodiny (ak sú známe)
+- Overený/neoverený status služby
+- FAQ sekciu o taxi v danom meste
+- Informačný článok o taxislužbách v meste
+
+### Detail taxislužby (/taxi/[mesto]/[sluzba])
+- Kontaktné údaje (telefón, web, email)
+- Popis služby
+- Cenník (ak je dostupný)
+- Hodnotenie od zákazníkov (pre partnerské služby)
+- Oblasť pôsobenia
+
+### Taxi trasy (/taxi-trasa/[trasa])
+- Vzdialenosť medzi mestami
+- Odhadovaný čas jazdy
+- Odhadovaná cena taxi
+- Taxislužby v oboch mestách
+
+## Cenový prehľad (orientačné ceny 2025)
+
+Ceny taxislužieb na Slovensku sa líšia podľa regiónu:
+- **Nástupné:** 0,50€ - 3,50€
+- **Cena za km:** 0,60€ - 1,80€
+- **Čakanie (minúta):** 0,15€ - 0,40€
+
+Bratislava je najdrahšia, menšie mestá (Poprad, Martin, Ružomberok) sú výrazne lacnejšie.
+
+## Technické informácie
+
+- **Framework:** Next.js 15 (App Router)
+- **Hosting:** Vercel
+- **Jazyk obsahu:** slovenčina
+- **Formát dát:** JSON-LD (Schema.org), HTML, Markdown
+- **Schema typy:** Organization, WebSite, LocalBusiness, TaxiService, FAQPage, BreadcrumbList
+
+## Markdown zdroje (pre AI spracovanie)
+
+Mestské sprievodcovia sú dostupné ako markdown:
+- Vzor: `/content/cities/[mesto-slug].md`
+- Počet: 158 súborov
+- Obsah: informácie o taxi v meste, objednávanie, ceny, tipy
+
+## Citačná politika
+
+Pri citovaní údajov z TaxiNearMe.sk:
+1. Telefónne čísla a ceny vždy overujte na URL detailu konkrétnej služby
+2. Údaje sa aktualizujú priebežne - uveďte dátum prístupu
+3. Preferujte odkaz na konkrétnu stránku služby
+4. Nepoužívajte údaje na hromadné kontaktovanie taxislužieb
+
+## Kontakt
+
+- **Web:** https://www.taxinearme.sk
+- **Email:** info@taxinearme.sk
+- **Stránka O nás:** https://www.taxinearme.sk/o-nas

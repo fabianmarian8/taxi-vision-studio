@@ -20,21 +20,44 @@ User-Agent: Googlebot
 Allow: /
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_next/static/
 
 User-Agent: Bingbot
 Allow: /
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_next/static/
 Crawl-delay: 1
 
 User-Agent: Yandex
 Allow: /
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_next/static/
 Crawl-delay: 2
+
+# === AI VYHĽADÁVAČE (povolené) ===
+User-Agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-Agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-Agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# === AI TRÉNINGOVÉ CRAWLERY (blokované) ===
+User-Agent: GPTBot
+Disallow: /
+
+User-Agent: Google-Extended
+Disallow: /
+
+User-Agent: CCBot
+Disallow: /
 
 # === SOCIAL MEDIA BOTY ===
 User-Agent: facebookexternalhit
@@ -51,14 +74,12 @@ User-Agent: AhrefsBot
 Allow: /
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_next/static/
 Crawl-delay: 10
 
 User-Agent: SemrushBot
 Allow: /
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_next/static/
 Crawl-delay: 10
 
 # === BLOKOVANÉ BOTY ===
@@ -79,7 +100,11 @@ User-Agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_next/static/
+
+# === LLM KONTEXT ===
+# https://llmstxt.org/
+# Stručný prehľad: /llms.txt
+# Plný kontext: /llms-full.txt
 
 # === SITEMAPY ===
 # Sitemap Index (odporúčané pre Google)

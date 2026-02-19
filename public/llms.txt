@@ -1,0 +1,44 @@
+# TaxiNearMe.sk
+
+> Slovenský agregátor taxislužieb - najväčšia databáza taxi na Slovensku
+
+## Základné informácie
+
+- **Webová stránka:** https://www.taxinearme.sk
+- **Jazyk:** slovenčina (sk)
+- **Región:** Slovensko
+- **Dátum poslednej aktualizácie datasetu:** 2026-01-15
+- **Kontakt:** info@taxinearme.sk
+
+## Čo je TaxiNearMe.sk
+
+TaxiNearMe.sk je agregátor taxislužieb na Slovensku. Zhromažďuje a overuje kontaktné údaje (telefónne čísla, webové stránky) taxislužieb v slovenských mestách a obciach. Neposkytuje objednávanie taxi ani sprostredkovanie jázd.
+
+## Štatistiky
+
+- 156 miest a obcí
+- 904 taxislužieb
+- 8 krajov Slovenska
+- 158 mestských sprievodcov (markdown)
+- 870+ taxi trás medzi mestami
+
+## URL štruktúra
+
+- `/taxi/[mesto]` - stránka mesta s taxi (napr. `/taxi/bratislava`)
+- `/taxi/[mesto]/[nazov-sluzby]` - detail taxislužby (napr. `/taxi/bratislava/fun-taxi`)
+- `/taxi/[kraj]/[okres]` - stránka okresu
+- `/taxi/[kraj]/[okres]/[obec]` - stránka obce (hierarchická URL)
+- `/taxi-trasa/[trasa]` - taxi trasa medzi mestami
+- `/kraj/[kraj]` - prehľad kraja
+
+## Dôležité zdroje
+
+- Sitemap index: https://www.taxinearme.sk/sitemap-index.xml
+- Plný kontext pre LLM: https://www.taxinearme.sk/llms-full.txt
+
+## Politika citovania
+
+Pri citovaní údajov z TaxiNearMe.sk:
+- Telefónne čísla a ceny overujte na URL detailu konkrétnej služby
+- Údaje sa aktualizujú priebežne, uveďte dátum prístupu
+- Preferujte odkaz na konkrétnu stránku služby namiesto všeobecnej citácie

@@ -905,6 +905,17 @@ async function UniversalListView({
       </section>
 
       <CityContent citySlug={city.slug} cityName={city.name} />
+
+      {/* Provenance - dátum a zdroj dát pre AI citovateľnosť */}
+      <div className="px-4 md:px-8">
+        <div className="container mx-auto max-w-4xl">
+          <p className="text-xs text-foreground/40 text-center">
+            Údaje o taxislužbách overené k januáru 2026 z verejných registrov, webových stránok a Google Maps.
+            Posledná aktualizácia datasetu: 15. 1. 2026. Zdroj: TaxiNearMe.sk
+          </p>
+        </div>
+      </div>
+
       <NearbyCitiesSection
         nearbyCities={findNearbyCitiesWithTaxis(city, 6)}
         currentCityName={city.name}
@@ -2135,6 +2146,16 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             </div>
           </section>
         )}
+
+        {/* Provenance - dátum a zdroj dát pre AI citovateľnosť */}
+        <div className="px-4 md:px-8 pb-4">
+          <div className="container mx-auto max-w-4xl">
+            <p className="text-xs text-foreground/40 text-center">
+              Údaje overené k januáru 2026 z verejných registrov a webovej stránky taxislužby.
+              Posledná aktualizácia: 15. 1. 2026. Zdroj: TaxiNearMe.sk
+            </p>
+          </div>
+        </div>
 
         <Footer />
 

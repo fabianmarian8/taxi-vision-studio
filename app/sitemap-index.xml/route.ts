@@ -10,7 +10,8 @@
 
 export async function GET() {
   const baseUrl = 'https://www.taxinearme.sk';
-  const lastmod = new Date().toISOString();
+  // Reálny dátum poslednej aktualizácie datasetu
+  const lastmod = '2026-01-15T17:30:00.000Z';
 
   // Definícia všetkých sitemap
   const sitemaps = [

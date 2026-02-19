@@ -23,7 +23,8 @@ export const runtime = 'nodejs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.taxinearme.sk';
-  const currentDate = new Date();
+  // Reálny dátum poslednej aktualizácie dát
+  const dataLastUpdated = new Date(citiesData.lastUpdated || '2026-01-15');
 
   const sitemap: MetadataRoute.Sitemap = [];
 
@@ -41,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Hierarchický formát: /taxi/[regionSlug]/[districtSlug]/[municipalitySlug]
         sitemap.push({
           url: `${baseUrl}/taxi/${district.regionSlug}/${district.slug}/${obec.slug}`,
-          lastModified: currentDate,
+          lastModified: dataLastUpdated,
           changeFrequency: 'weekly', // Prioritné obce crawlovať častejšie
           priority: 0.5, // Vyššia priorita pre prioritné obce
         });

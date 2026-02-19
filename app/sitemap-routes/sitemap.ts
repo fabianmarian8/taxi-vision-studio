@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   routePagesData.routes.forEach((route) => {
     sitemap.push({
       url: `${baseUrl}/trasa/${route.slug}`,
-      lastModified: new Date(),
+      lastModified: routesDate,
       changeFrequency: 'monthly',
       priority: 0.7,
     });

@@ -19,7 +19,8 @@ export const runtime = 'nodejs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.taxinearme.sk';
-  const currentDate = new Date();
+  // Reálny dátum poslednej aktualizácie dát
+  const dataLastUpdated = new Date(citiesData.lastUpdated || '2026-01-15');
 
   const sitemap: MetadataRoute.Sitemap = [];
 
@@ -28,28 +29,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const hasTaxi = city.taxiServices && city.taxiServices.length > 0;
 
     if (hasTaxi) {
-      let cityUrl: string;
-
-      // Pre obce (isVillage: true) použiť hierarchickú URL
-      if (city.isVillage) {
-        const municipality = getMunicipalityBySlug(city.slug);
-        const district = municipality ? getDistrictForMunicipality(municipality) : null;
-
-        if (district) {
-          cityUrl = `${baseUrl}/taxi/${district.regionSlug}/${district.slug}/${city.slug}`;
-        } else {
-          // Fallback na jednoduchú URL ak sa nenájde okres
-          cityUrl = `${baseUrl}/taxi/${city.slug}`;
-        }
-      } else {
-        // Štandardné mestá - jednoduchá URL
-        cityUrl = `${baseUrl}/taxi/${city.slug}`;
-      }
+      // Mestá aj dediny s taxi používajú flat URL /taxi/[slug]
+      // (route handler redirectuje hierarchické URL na flat pre dediny s taxi)
+      const cityUrl = `${baseUrl}/taxi/${city.slug}`;
 
       // Mesto/obec s taxi
       sitemap.push({
         url: cityUrl,
-        lastModified: currentDate,
+        lastModified: dataLastUpdated,
         changeFrequency: 'weekly',
         priority: 0.9,
       });
@@ -59,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         const serviceSlug = createServiceSlug(service.name);
         sitemap.push({
           url: `${cityUrl}/${serviceSlug}`,
-          lastModified: currentDate,
+          lastModified: dataLastUpdated,
           changeFrequency: 'monthly',
           priority: 0.8,
         });

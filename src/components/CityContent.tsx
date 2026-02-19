@@ -1,6 +1,5 @@
-'use client';
-
-import { useEffect, useState } from 'react';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 import { Card, CardContent } from "@/components/ui/card";
 import { FileText } from "lucide-react";
 
@@ -9,37 +8,24 @@ interface CityContentProps {
   cityName: string;
 }
 
-export const CityContent = ({ citySlug, cityName }: CityContentProps) => {
-  const [content, setContent] = useState<string>('');
-  const [loading, setLoading] = useState(true);
+export async function CityContent({ citySlug, cityName }: CityContentProps) {
+  let content = '';
 
-  useEffect(() => {
-    const loadContent = async () => {
-      try {
-        // Try to load city-specific content
-        const response = await fetch(`/content/cities/${citySlug}.md`);
-        if (response.ok) {
-          const text = await response.text();
-          setContent(text);
-        }
-      } catch (error) {
-        console.error('Error loading city content:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  try {
+    const filePath = join(process.cwd(), 'public', 'content', 'cities', `${citySlug}.md`);
+    content = await readFile(filePath, 'utf-8');
+  } catch {
+    // Súbor neexistuje - nerender nič
+    return null;
+  }
 
-    loadContent();
-  }, [citySlug]);
-
-  // Don't render if no content is available
-  if (!content || loading) {
+  if (!content) {
     return null;
   }
 
   // Parse markdown content into sections
   const sections = content.split('\n## ').filter(Boolean);
-  
+
   return (
     <section className="py-12 md:py-20 lg:py-24 px-4 md:px-8 relative">
       <div className="container mx-auto max-w-4xl relative z-10">
@@ -63,7 +49,7 @@ export const CityContent = ({ citySlug, cityName }: CityContentProps) => {
                   const lines = section.split('\n');
                   const title = lines[0].replace(/^## /, '');
                   const body = lines.slice(1).join('\n').trim();
-                  
+
                   return (
                     <div key={index} className="mb-6 md:mb-8 last:mb-0">
                       <h3 className="text-xl md:text-2xl font-black text-foreground mb-3 md:mb-4">
@@ -82,4 +68,4 @@ export const CityContent = ({ citySlug, cityName }: CityContentProps) => {
       </div>
     </section>
   );
-};
+}
