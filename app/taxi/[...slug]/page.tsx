@@ -56,6 +56,7 @@ import { ReportNumberButton } from '@/components/ReportNumberModal';
 import { OwnerClaimButton } from '@/components/OwnerClaimButton';
 import { getMunicipalityStats } from '@/lib/municipality-data';
 import { TaxiSlotsBanner } from '@/components/TaxiSlotsBanner';
+import { ServiceCheckout } from '@/components/ServiceCheckout';
 import { AddTaxiButton } from '@/components/AddTaxiModal';
 import { DeleteTaxiButton } from '@/components/admin/DeleteTaxiButton';
 import { getApprovedPartnerData } from '@/lib/partner-data';
@@ -2285,8 +2286,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
 
             {/* Mini verifikačný banner - len pre neoverené služby */}
             {!service.isVerified && !isPremium && !isPartner && (
-              <Link
-                href={service.id ? `/api/checkout/verify/${service.id}` : '/pre-taxiky'}
+              <a
+                href="#checkout"
                 className="flex items-center gap-3 mt-4 p-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl transition-all group"
               >
                 <div className="w-10 h-10 rounded-full bg-emerald-100 group-hover:bg-emerald-200 flex items-center justify-center flex-shrink-0 transition-colors">
@@ -2297,7 +2298,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                   <p className="text-emerald-600 text-xs">Získajte badge overenia už od 0,99€/mesiac</p>
                 </div>
                 <ArrowRight className="h-4 w-4 text-emerald-500 group-hover:translate-x-1 transition-transform flex-shrink-0" />
-              </Link>
+              </a>
             )}
           </div>
         </section>
@@ -2323,30 +2324,18 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           </div>
         </section>
 
-        {/* Promo banner for non-Premium/Partner services */}
+        {/* Inline checkout for non-Premium/Partner services */}
         {!isPremium && !isPartner && (
-          <section className="px-4 pb-6">
+          <section className="px-4 pb-6" id="checkout">
             <div className="container mx-auto max-w-4xl space-y-3">
-              {/* Upgrade banner */}
-              <div className="bg-gradient-to-r from-purple-50 to-amber-50 rounded-xl p-4 border border-purple-100">
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-amber-500 flex items-center justify-center flex-shrink-0">
-                      <Crown className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-gray-900 text-sm">Ste majiteľom?</p>
-                      <p className="text-gray-500 text-xs">Získajte lepšiu pozíciu</p>
-                    </div>
-                  </div>
-                  <Link
-                    href="/pre-taxiky"
-                    className="inline-flex items-center gap-1 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all"
-                  >
-                    Zistiť viac
-                  </Link>
-                </div>
-              </div>
+              <ServiceCheckout
+                citySlug={city.slug}
+                cityName={city.name}
+                serviceName={service.name}
+                serviceSlug={serviceSlug}
+                isVerified={service.isVerified}
+                locationText={locationText}
+              />
 
               {/* Owner claim - update info */}
               <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">

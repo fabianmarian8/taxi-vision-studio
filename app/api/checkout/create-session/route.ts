@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const { plan, citySlug, taxiServiceName } = body;
+    const { plan, citySlug, taxiServiceName, cancelUrl } = body;
 
     // Validácia
     if (!plan || !['mini', 'premium', 'partner'].includes(plan)) {
@@ -172,7 +172,9 @@ export async function POST(request: NextRequest) {
         },
         // URLs
         success_url: `${getBaseUrl(request)}/dakujeme?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${getBaseUrl(request)}/pre-taxiky`,
+        cancel_url: cancelUrl && typeof cancelUrl === 'string' && cancelUrl.startsWith('/') && !cancelUrl.includes('://')
+          ? `${getBaseUrl(request)}${cancelUrl}`
+          : `${getBaseUrl(request)}/pre-taxiky`,
         // Automatické vyplnenie
         billing_address_collection: 'required',
         // Povolenie promo kódov

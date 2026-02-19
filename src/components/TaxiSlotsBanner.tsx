@@ -36,7 +36,7 @@ export function TaxiSlotsBanner({ cityName, locationText, partnerCount, premiumC
         title: `Staňte sa Partnerom ${locationText} ${cityName}!`,
         subtitle: `K dispozícii limitovaný počet: ${partnerSlotsLeft}× Partner slot${partnerSlotsLeft > 1 ? 'y' : ''}${premiumAvailable ? `, ${premiumSlotsLeft}× Premium slot${premiumSlotsLeft > 1 ? 'y' : ''}` : ''}`,
         ctaText: 'Aktivovať teraz',
-        ctaHref: '/pre-taxiky',
+        ctaHref: '/pre-taxiky#pricing',
         ctaStyle: 'bg-emerald-600 hover:bg-emerald-700 text-white',
       };
     }
@@ -50,7 +50,7 @@ export function TaxiSlotsBanner({ cityName, locationText, partnerCount, premiumC
         title: `Partner sloty ${locationText} ${cityName} sú obsadené`,
         subtitle: `Limitovaný počet: zostáva už len ${premiumSlotsLeft} Premium slot${premiumSlotsLeft > 1 ? 'y' : ''}!`,
         ctaText: 'Získať Premium',
-        ctaHref: '/pre-taxiky',
+        ctaHref: '/pre-taxiky#pricing',
         ctaStyle: 'bg-amber-600 hover:bg-amber-700 text-white',
       };
     }
