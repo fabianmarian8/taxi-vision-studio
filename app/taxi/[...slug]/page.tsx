@@ -627,6 +627,7 @@ async function UniversalListView({
               // Služba s redirectTo na partner stránku sa tiež zobrazí ako partner
               const isPartner = service.isPartner || !!service.redirectTo;
               const isPremium = service.isPremium;
+              const isVerified = service.isVerified;
               const isPromotional = service.isPromotional; // Promo premium (nie platiaci)
               const ratingData = partnerRatings.get(service.name);
               const primaryAction = getPrimaryAction(service);
@@ -762,8 +763,15 @@ async function UniversalListView({
                             </span>
                           </>
                         )}
+                        {/* Overené badge pre Mini plán (verified, nie premium/partner) */}
+                        {!isPartner && !isPremium && isVerified && (
+                          <span className="text-[10px] bg-green-600 text-white px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
+                            <BadgeCheck className="h-3 w-3" />
+                            OVERENÉ
+                          </span>
+                        )}
                         {/* Neoverené badge pre štandardné služby */}
-                        {!isPartner && !isPremium && (
+                        {!isPartner && !isPremium && !isVerified && (
                           <span className="text-[10px] bg-gray-400 text-white px-1.5 py-0.5 rounded font-medium">
                             Neoverené
                           </span>
@@ -1056,6 +1064,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
                 city.taxiServices.slice(0, 1).map((service, idx) => {
                   const isPartner = service.isPartner || !!service.redirectTo;
                   const isPremium = service.isPremium && !isPartner;
+                  const isVerified = service.isVerified;
                   const serviceSlug = createServiceSlug(service.name);
                   const serviceDetailUrl = `/taxi/${city.slug}/${serviceSlug}`;
                   return (
@@ -1087,10 +1096,10 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
                             </span>
                           )}
                           {/* Trust signál s dátumom */}
-                          {(isPartner || isPremium) ? (
+                          {(isPartner || isPremium || isVerified) ? (
                             <span className="text-[10px] bg-green-600 text-white px-2 py-0.5 rounded font-bold flex items-center gap-1">
                               <BadgeCheck className="h-3 w-3" />
-                              Overené: 01/2026
+                              OVERENÉ
                             </span>
                           ) : (
                             <span className="text-[10px] bg-gray-400 text-white px-2 py-0.5 rounded font-medium">
