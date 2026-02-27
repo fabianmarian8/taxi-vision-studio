@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
+import { revalidatePath } from 'next/cache';
 import { constructWebhookEvent, getPlanTypeFromAmount, stripe } from '@/lib/stripe';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { logger } from '@/lib/logger';
@@ -291,6 +292,15 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
         previousPlan: previousPlanType,
         newPlan: newPlanType,
       });
+      // Revalidate cached pages after plan change
+      const citySlug = subscription.metadata?.city_slug as string | undefined;
+      if (citySlug) {
+        try {
+          revalidatePath(`/taxi/${citySlug}`);
+        } catch (e) {
+          logger.warn('Failed to revalidate after plan change', { error: e instanceof Error ? e.message : 'Unknown' });
+        }
+      }
     }
   }
 }
@@ -459,7 +469,17 @@ async function linkSubscriptionToTaxiService(
 
   if (error) {
     logger.error('Error linking subscription to taxi service', { error: error.message });
-  } else if (count === 0) {
+  } else if (count && count >= 1 && citySlug) {
+    // Revalidate cached pages so the verified badge shows immediately
+    try {
+      revalidatePath(`/taxi/${citySlug}`);
+      logger.info('Revalidated city page', { citySlug });
+    } catch (e) {
+      logger.warn('Failed to revalidate page', { citySlug, error: e instanceof Error ? e.message : 'Unknown' });
+    }
+  }
+
+  if (!error && count === 0) {
     // Block creation of unknown/placeholder taxi services from missing metadata
     if (!citySlug || citySlug === 'unknown' || !taxiServiceName || taxiServiceName === 'Unknown Service') {
       logger.error('Refusing to create taxi service with unknown metadata', {
@@ -497,6 +517,12 @@ async function linkSubscriptionToTaxiService(
       logger.error('Error creating taxi service', { error: insertError.message });
     } else {
       logger.info('Created taxi service', { taxiServiceName, citySlug, plan: subscription.plan_type });
+      // Revalidate cached pages so the new service shows immediately
+      try {
+        revalidatePath(`/taxi/${citySlug}`);
+      } catch (e) {
+        logger.warn('Failed to revalidate after insert', { citySlug, error: e instanceof Error ? e.message : 'Unknown' });
+      }
     }
   } else if (count && count > 1) {
     logger.error('SECURITY: Multiple taxi services updated', { count, taxiServiceName, citySlug });
@@ -511,7 +537,7 @@ async function deactivateTaxiService(stripeSubscriptionId: string, reason: strin
   // Find our subscription record
   const { data: subscription } = await getSupabase()
     .from('subscriptions')
-    .select('id')
+    .select('id, city_slug')
     .eq('stripe_subscription_id', stripeSubscriptionId)
     .maybeSingle();
 
@@ -536,6 +562,14 @@ async function deactivateTaxiService(stripeSubscriptionId: string, reason: strin
     logger.error('Error deactivating taxi service', { error: error.message, stripeSubscriptionId, reason });
   } else if (count && count > 0) {
     logger.info('Taxi service deactivated', { stripeSubscriptionId, reason, count });
+    // Revalidate cached pages
+    if (subscription.city_slug) {
+      try {
+        revalidatePath(`/taxi/${subscription.city_slug}`);
+      } catch (e) {
+        logger.warn('Failed to revalidate after deactivation', { error: e instanceof Error ? e.message : 'Unknown' });
+      }
+    }
   } else {
     logger.info('No taxi service linked to deactivate', { stripeSubscriptionId, reason });
   }
@@ -549,7 +583,7 @@ async function reactivateTaxiService(stripeSubscriptionId: string) {
   // Find our subscription with plan details
   const { data: subscription } = await getSupabase()
     .from('subscriptions')
-    .select('id, plan_type, current_period_end')
+    .select('id, plan_type, current_period_end, city_slug')
     .eq('stripe_subscription_id', stripeSubscriptionId)
     .maybeSingle();
 
@@ -577,6 +611,14 @@ async function reactivateTaxiService(stripeSubscriptionId: string) {
     logger.error('Error reactivating taxi service', { error: error.message, stripeSubscriptionId });
   } else if (count && count > 0) {
     logger.info('Taxi service reactivated', { stripeSubscriptionId, plan: subscription.plan_type, count });
+    // Revalidate cached pages
+    if (subscription.city_slug) {
+      try {
+        revalidatePath(`/taxi/${subscription.city_slug}`);
+      } catch (e) {
+        logger.warn('Failed to revalidate after reactivation', { error: e instanceof Error ? e.message : 'Unknown' });
+      }
+    }
   } else {
     logger.info('No taxi service linked to reactivate', { stripeSubscriptionId });
   }
