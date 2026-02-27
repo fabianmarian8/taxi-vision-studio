@@ -1,13 +1,37 @@
 {
   "backupDate": "2026-02-27",
-  "reason": "past_due - insufficient funds, platba sa nepodarila zopakovať",
-  "stripeSubscriptionId": "sub_1Stx8nDXTJd8sDBAlYtsH4c9",
-  "stripeCustomerId": "cus_TrgVblLihneFLO",
-  "customerName": "Tomáš Macuch",
-  "customerEmail": "dinkosro@gmail.com",
-  "planType": "partner",
-  "amountCents": 899,
+  "reason": "past_due - insufficient funds, všetky subscripcie neaktívne",
   "citySlug": "povazska-bystrica",
+  "customerName": "Tomáš Macuch",
+  "customerAddress": "Rozkvet, Považská Bystrica, 017 01",
+  "subscriptions": [
+    {
+      "stripeSubscriptionId": "sub_1StrM1DXTJd8sDBAAOgUp4tx",
+      "stripeCustomerId": "cus_TraXJ2Uqai9hMT",
+      "customerEmail": "balza-rincania.08@icloud.com",
+      "planType": "premium",
+      "amountCents": 399,
+      "status": "canceled"
+    },
+    {
+      "stripeSubscriptionId": "sub_1StrN5DXTJd8sDBA8UUg99N6",
+      "stripeCustomerId": "cus_TraYCotLP05Jhh",
+      "customerEmail": "balza-rincania.08@icloud.com",
+      "planType": "premium",
+      "amountCents": 399,
+      "status": "canceled",
+      "note": "duplikát - pravdepodobne dvojklik"
+    },
+    {
+      "stripeSubscriptionId": "sub_1Stx8nDXTJd8sDBAlYtsH4c9",
+      "stripeCustomerId": "cus_TrgVblLihneFLO",
+      "customerEmail": "dinkosro@gmail.com",
+      "planType": "partner",
+      "amountCents": 899,
+      "status": "past_due",
+      "note": "platba zlyhala - insufficient funds"
+    }
+  ],
   "originalData": {
     "name": "Môj Taxi - Považská Bystrica",
     "phone": "+421902030902",
