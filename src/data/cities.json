@@ -6090,7 +6090,7 @@
           "name": "Môj Taxi - Považská Bystrica",
           "phone": "+421902030902",
           "website": null,
-          "isPremium": true,
+          "isPremium": false,
           "isPromotional": false
         }
       ],
