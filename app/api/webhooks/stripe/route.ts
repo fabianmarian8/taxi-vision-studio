@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { revalidatePath } from 'next/cache';
 import { constructWebhookEvent, getPlanTypeFromAmount, stripe } from '@/lib/stripe';
+import { createServiceSlug } from '@/utils/urlUtils';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { logger } from '@/lib/logger';
 
@@ -270,7 +271,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
     const isPremiumPlan = newPlanType === 'premium' || newPlanType === 'partner';
     const isPartnerPlan = newPlanType === 'partner';
 
-    const { error: flagError } = await getSupabase()
+    const { data: updatedServices, error: flagError } = await getSupabase()
       .from('taxi_services')
       .update({
         is_verified: true,
@@ -279,27 +280,24 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
         premium_expires_at: new Date(periodEnd * 1000).toISOString(),
         updated_at: new Date().toISOString(),
       })
-      .eq('subscription_id', existing.id);
+      .eq('subscription_id', existing.id)
+      .select('name, city_slug');
 
     if (flagError) {
       logger.error('Error updating taxi service flags for plan change', {
         error: flagError.message,
         subscriptionId: subscription.id,
       });
+      throw flagError;
     } else {
       logger.info('Taxi service flags updated for plan change', {
         subscriptionId: subscription.id,
         previousPlan: previousPlanType,
         newPlan: newPlanType,
       });
-      // Revalidate cached pages after plan change
-      const citySlug = subscription.metadata?.city_slug as string | undefined;
-      if (citySlug) {
-        try {
-          revalidatePath(`/taxi/${citySlug}`);
-        } catch (e) {
-          logger.warn('Failed to revalidate after plan change', { error: e instanceof Error ? e.message : 'Unknown' });
-        }
+      const svc = updatedServices?.[0];
+      if (svc?.city_slug) {
+        revalidateTaxiPaths(svc.city_slug, svc.name);
       }
     }
   }
@@ -367,13 +365,18 @@ async function handlePaymentFailed(invoice: Stripe.Invoice, stripeEventId: strin
   if (!subscriptionId) return;
 
   // Update subscription status (idempotent)
-  await getSupabase()
+  const { error: updateError } = await getSupabase()
     .from('subscriptions')
     .update({
       status: 'past_due',
       updated_at: new Date().toISOString(),
     })
     .eq('stripe_subscription_id', subscriptionId);
+
+  if (updateError) {
+    logger.error('Error updating subscription to past_due', { error: updateError.message, subscriptionId });
+    throw updateError;
+  }
 
   // Atomic claim: Log event BEFORE side effects to prevent duplicate processing
   const claimed = await logSubscriptionEvent(
@@ -388,6 +391,22 @@ async function handlePaymentFailed(invoice: Stripe.Invoice, stripeEventId: strin
 
   // Deactivate taxi service (keep subscription_id linked for reactivation)
   await deactivateTaxiService(subscriptionId, 'payment_failed');
+}
+
+/**
+ * Revalidate ISR cache for both city list and service detail pages
+ */
+function revalidateTaxiPaths(citySlug: string, serviceName?: string) {
+  try {
+    revalidatePath(`/taxi/${citySlug}`);
+    if (serviceName) {
+      const serviceSlug = createServiceSlug(serviceName);
+      revalidatePath(`/taxi/${citySlug}/${serviceSlug}`);
+    }
+    logger.info('Revalidated taxi pages', { citySlug, serviceName });
+  } catch (e) {
+    logger.warn('Failed to revalidate pages', { citySlug, error: e instanceof Error ? e.message : 'Unknown' });
+  }
 }
 
 /**
@@ -469,14 +488,9 @@ async function linkSubscriptionToTaxiService(
 
   if (error) {
     logger.error('Error linking subscription to taxi service', { error: error.message });
+    throw error;
   } else if (count && count >= 1 && citySlug) {
-    // Revalidate cached pages so the verified badge shows immediately
-    try {
-      revalidatePath(`/taxi/${citySlug}`);
-      logger.info('Revalidated city page', { citySlug });
-    } catch (e) {
-      logger.warn('Failed to revalidate page', { citySlug, error: e instanceof Error ? e.message : 'Unknown' });
-    }
+    revalidateTaxiPaths(citySlug, taxiServiceName);
   }
 
   if (!error && count === 0) {
@@ -515,14 +529,10 @@ async function linkSubscriptionToTaxiService(
 
     if (insertError) {
       logger.error('Error creating taxi service', { error: insertError.message });
+      throw insertError;
     } else {
       logger.info('Created taxi service', { taxiServiceName, citySlug, plan: subscription.plan_type });
-      // Revalidate cached pages so the new service shows immediately
-      try {
-        revalidatePath(`/taxi/${citySlug}`);
-      } catch (e) {
-        logger.warn('Failed to revalidate after insert', { citySlug, error: e instanceof Error ? e.message : 'Unknown' });
-      }
+      revalidateTaxiPaths(citySlug, taxiServiceName);
     }
   } else if (count && count > 1) {
     logger.error('SECURITY: Multiple taxi services updated', { count, taxiServiceName, citySlug });
@@ -537,7 +547,7 @@ async function deactivateTaxiService(stripeSubscriptionId: string, reason: strin
   // Find our subscription record
   const { data: subscription } = await getSupabase()
     .from('subscriptions')
-    .select('id, city_slug')
+    .select('id')
     .eq('stripe_subscription_id', stripeSubscriptionId)
     .maybeSingle();
 
@@ -547,7 +557,7 @@ async function deactivateTaxiService(stripeSubscriptionId: string, reason: strin
   }
 
   // Deactivate taxi service but keep subscription_id linked
-  const { error, count } = await getSupabase()
+  const { data: updatedServices, error } = await getSupabase()
     .from('taxi_services')
     .update({
       is_verified: false,
@@ -555,20 +565,18 @@ async function deactivateTaxiService(stripeSubscriptionId: string, reason: strin
       is_partner: false,
       premium_expires_at: null,
       updated_at: new Date().toISOString(),
-    }, { count: 'exact' })
-    .eq('subscription_id', subscription.id);
+    })
+    .eq('subscription_id', subscription.id)
+    .select('name, city_slug');
 
   if (error) {
     logger.error('Error deactivating taxi service', { error: error.message, stripeSubscriptionId, reason });
-  } else if (count && count > 0) {
-    logger.info('Taxi service deactivated', { stripeSubscriptionId, reason, count });
-    // Revalidate cached pages
-    if (subscription.city_slug) {
-      try {
-        revalidatePath(`/taxi/${subscription.city_slug}`);
-      } catch (e) {
-        logger.warn('Failed to revalidate after deactivation', { error: e instanceof Error ? e.message : 'Unknown' });
-      }
+    throw error;
+  } else if (updatedServices && updatedServices.length > 0) {
+    logger.info('Taxi service deactivated', { stripeSubscriptionId, reason, count: updatedServices.length });
+    const svc = updatedServices[0];
+    if (svc.city_slug) {
+      revalidateTaxiPaths(svc.city_slug, svc.name);
     }
   } else {
     logger.info('No taxi service linked to deactivate', { stripeSubscriptionId, reason });
@@ -583,7 +591,7 @@ async function reactivateTaxiService(stripeSubscriptionId: string) {
   // Find our subscription with plan details
   const { data: subscription } = await getSupabase()
     .from('subscriptions')
-    .select('id, plan_type, current_period_end, city_slug')
+    .select('id, plan_type, current_period_end')
     .eq('stripe_subscription_id', stripeSubscriptionId)
     .maybeSingle();
 
@@ -596,7 +604,7 @@ async function reactivateTaxiService(stripeSubscriptionId: string) {
   const isPartnerPlan = subscription.plan_type === 'partner';
 
   // Restore taxi service badges based on plan type
-  const { error, count } = await getSupabase()
+  const { data: updatedServices, error } = await getSupabase()
     .from('taxi_services')
     .update({
       is_verified: true,
@@ -604,20 +612,18 @@ async function reactivateTaxiService(stripeSubscriptionId: string) {
       is_partner: isPartnerPlan,
       premium_expires_at: subscription.current_period_end,
       updated_at: new Date().toISOString(),
-    }, { count: 'exact' })
-    .eq('subscription_id', subscription.id);
+    })
+    .eq('subscription_id', subscription.id)
+    .select('name, city_slug');
 
   if (error) {
     logger.error('Error reactivating taxi service', { error: error.message, stripeSubscriptionId });
-  } else if (count && count > 0) {
-    logger.info('Taxi service reactivated', { stripeSubscriptionId, plan: subscription.plan_type, count });
-    // Revalidate cached pages
-    if (subscription.city_slug) {
-      try {
-        revalidatePath(`/taxi/${subscription.city_slug}`);
-      } catch (e) {
-        logger.warn('Failed to revalidate after reactivation', { error: e instanceof Error ? e.message : 'Unknown' });
-      }
+    throw error;
+  } else if (updatedServices && updatedServices.length > 0) {
+    logger.info('Taxi service reactivated', { stripeSubscriptionId, plan: subscription.plan_type, count: updatedServices.length });
+    const svc = updatedServices[0];
+    if (svc.city_slug) {
+      revalidateTaxiPaths(svc.city_slug, svc.name);
     }
   } else {
     logger.info('No taxi service linked to reactivate', { stripeSubscriptionId });
