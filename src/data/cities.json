@@ -3830,8 +3830,8 @@
           "phone": "+421903648323",
           "website": null,
           "description": "Spoľahlivá taxislužba v goralskej obci Lendak",
-          "isPremium": true,
-          "isVerified": true
+          "isPremium": false,
+          "isVerified": false
         }
       ],
       "latitude": 49.2489,
