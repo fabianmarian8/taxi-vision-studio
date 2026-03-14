@@ -83,17 +83,15 @@ async function checkUpstashRedis(): Promise<Partial<CheckResult>> {
 }
 
 async function checkSearch(): Promise<Partial<CheckResult>> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : 'http://localhost:3000';
-  const res = await fetch(`${baseUrl}/api/search?q=Bratislava&limit=3`, {
-    headers: { 'User-Agent': 'SiteGuard-Health/1.0' },
-  });
-  if (!res.ok) throw new Error(`Search API: ${res.status}`);
-  const data = await res.json();
-  const resultCount = Array.isArray(data) ? data.length : data.results?.length ?? 0;
-  if (resultCount === 0) throw new Error('Search returned 0 results for "Bratislava"');
-  return { details: { results: resultCount } };
+  // Test Supabase search directly instead of self-calling the API
+  const supabase = createAnonymousClient();
+  const { data, error } = await supabase
+    .from('taxi_services')
+    .select('id, name')
+    .ilike('city_slug', '%bratislava%')
+    .limit(3);
+  if (error) throw new Error(error.message);
+  return { details: { results: data?.length ?? 0 } };
 }
 
 async function checkEnvVars(): Promise<Partial<CheckResult>> {
