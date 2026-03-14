@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createAnonymousClient } from '@/lib/supabase/server';
+import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 import { stripe } from '@/lib/stripe';
 import { logger } from '@/lib/logger';
 
@@ -8,6 +9,14 @@ export const runtime = 'nodejs';
 
 // Secret token to prevent public access
 const HEALTH_SECRET = process.env.HEALTH_CHECK_SECRET;
+
+// Service role client for smoke tests that need write access
+function getServiceClient() {
+  return createSupabaseClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+  );
+}
 
 interface CheckResult {
   ok: boolean;
@@ -115,6 +124,90 @@ async function checkStripeWebhookSecret(): Promise<Partial<CheckResult>> {
   return {};
 }
 
+// --- Smoke tests for business operations ---
+
+async function checkPartnerDraftSave(): Promise<Partial<CheckResult>> {
+  const sb = getServiceClient();
+  // Find any partner to test with
+  const { data: partner, error: findErr } = await sb
+    .from('partners')
+    .select('id')
+    .limit(1)
+    .single();
+  if (findErr || !partner) throw new Error(`No partner found: ${findErr?.message}`);
+
+  // Try to insert a test draft and immediately delete it
+  const testChanges = { _health_check: true, company_name: '__HEALTH_CHECK_TEST__' };
+  const { data: draft, error: insertErr } = await sb
+    .from('partner_drafts')
+    .insert({
+      partner_id: partner.id,
+      changes: testChanges,
+      status: 'draft',
+    })
+    .select('id')
+    .single();
+  if (insertErr) throw new Error(`Draft insert failed: ${insertErr.message}`);
+
+  // Clean up immediately
+  const { error: deleteErr } = await sb
+    .from('partner_drafts')
+    .delete()
+    .eq('id', draft.id);
+  if (deleteErr) throw new Error(`Draft cleanup failed: ${deleteErr.message}`);
+
+  return { details: { partner_id: partner.id } };
+}
+
+async function checkClickTracking(): Promise<Partial<CheckResult>> {
+  const sb = getServiceClient();
+  // Insert a test click event and delete it
+  const { data: click, error: insertErr } = await sb
+    .from('click_events')
+    .insert({
+      event_type: 'phone_click',
+      city_slug: '__health_check__',
+      service_name: '__HEALTH_CHECK_TEST__',
+      user_agent: 'SiteGuard-Health/1.0',
+    })
+    .select('id')
+    .single();
+  if (insertErr) throw new Error(`Click insert failed: ${insertErr.message}`);
+
+  // Clean up
+  const { error: deleteErr } = await sb
+    .from('click_events')
+    .delete()
+    .eq('id', click.id);
+  if (deleteErr) throw new Error(`Click cleanup failed: ${deleteErr.message}`);
+
+  return {};
+}
+
+async function checkSubscriptionsTable(): Promise<Partial<CheckResult>> {
+  const sb = getServiceClient();
+  const { count, error } = await sb
+    .from('subscriptions')
+    .select('*', { count: 'exact', head: true })
+    .eq('status', 'active');
+  if (error) throw new Error(`Subscriptions query failed: ${error.message}`);
+  return { details: { active: count } };
+}
+
+async function checkStripeCheckoutDryRun(): Promise<Partial<CheckResult>> {
+  // Verify Stripe can list prices for all plans (validates price IDs)
+  const miniId = process.env.STRIPE_MINI_PRICE_ID;
+  const premiumId = process.env.STRIPE_PREMIUM_PRICE_ID;
+  const partnerId = process.env.STRIPE_PARTNER_PRICE_ID;
+  if (!miniId || !premiumId || !partnerId) {
+    throw new Error(`Missing price IDs: mini=${!!miniId} premium=${!!premiumId} partner=${!!partnerId}`);
+  }
+  // Verify at least one price is retrievable
+  const price = await stripe.prices.retrieve(miniId);
+  if (!price.active) throw new Error(`Mini price ${miniId} is not active`);
+  return { details: { plan: price.nickname || 'mini', active: price.active } };
+}
+
 export async function GET(request: Request) {
   // Authenticate with secret token
   const url = new URL(request.url);
@@ -137,6 +230,10 @@ export async function GET(request: Request) {
     search,
     envVars,
     webhookSecret,
+    partnerDraft,
+    clickTracking,
+    subscriptions,
+    checkoutDryRun,
   ] = await Promise.all([
     timedCheck('supabase', checkSupabase),
     timedCheck('supabase_auth', checkSupabaseAuth),
@@ -146,6 +243,10 @@ export async function GET(request: Request) {
     timedCheck('search', checkSearch),
     timedCheck('env_vars', checkEnvVars),
     timedCheck('webhook_secret', checkStripeWebhookSecret),
+    timedCheck('partner_draft_save', checkPartnerDraftSave),
+    timedCheck('click_tracking', checkClickTracking),
+    timedCheck('subscriptions', checkSubscriptionsTable),
+    timedCheck('checkout_dry_run', checkStripeCheckoutDryRun),
   ]);
 
   const checks = {
@@ -157,6 +258,10 @@ export async function GET(request: Request) {
     search,
     env_vars: envVars,
     webhook_secret: webhookSecret,
+    partner_draft_save: partnerDraft,
+    click_tracking: clickTracking,
+    subscriptions,
+    checkout_dry_run: checkoutDryRun,
   };
 
   const totalChecks = Object.values(checks).length;
@@ -166,7 +271,7 @@ export async function GET(request: Request) {
     .map(([name]) => name);
 
   // Determine overall status
-  const criticalServices = ['supabase', 'stripe', 'env_vars'];
+  const criticalServices = ['supabase', 'stripe', 'env_vars', 'partner_draft_save', 'checkout_dry_run'];
   const hasCriticalFailure = failedChecks.some((f) => criticalServices.includes(f));
 
   let status: 'healthy' | 'degraded' | 'critical';
