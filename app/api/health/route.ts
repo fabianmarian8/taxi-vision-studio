@@ -137,13 +137,12 @@ async function checkPartnerDraftSave(): Promise<Partial<CheckResult>> {
   if (findErr || !partner) throw new Error(`No partner found: ${findErr?.message}`);
 
   // Try to insert a test draft and immediately delete it
-  const testChanges = { _health_check: true, company_name: '__HEALTH_CHECK_TEST__' };
   const { data: draft, error: insertErr } = await sb
     .from('partner_drafts')
     .insert({
       partner_id: partner.id,
-      changes: testChanges,
       status: 'draft',
+      company_name: '__HEALTH_CHECK_TEST__',
     })
     .select('id')
     .single();
