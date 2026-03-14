@@ -7,8 +7,8 @@ import * as Sentry from '@sentry/nextjs';
 Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
 
-  // Performance Monitoring
-  tracesSampleRate: 0.1, // 10% of transactions
+  // Performance Monitoring — znížené z 10% na 1% kvôli Vercel free tier limitom
+  tracesSampleRate: 0.01,
 
   // Setting this option to true will print useful information to the console while you're setting up Sentry.
   debug: false,

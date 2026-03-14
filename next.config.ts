@@ -126,8 +126,11 @@ const sentryWebpackPluginOptions = {
     enabled: false,
   },
 
-  // Route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
-  tunnelRoute: '/monitoring',
+  // Tunnel VYPNUTÝ — /monitoring route spôsoboval serverless function invocations
+  // pre každý Sentry event, čo žralo Vercel free tier limity.
+  // Sentry requesty teraz idú priamo na sentry.io (ad-blockery ich môžu blokovať,
+  // ale ušetríme tisíce function invocations mesačne).
+  // tunnelRoute: '/monitoring',
 
   // Hides source maps from generated client bundles
   hideSourceMaps: true,

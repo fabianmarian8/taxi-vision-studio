@@ -7,12 +7,13 @@ import * as Sentry from '@sentry/nextjs';
 Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
 
-  // Performance Monitoring
-  tracesSampleRate: 0.1, // 10% of transactions for performance monitoring
+  // Performance Monitoring — znížené z 10% na 1% kvôli Vercel free tier limitom
+  tracesSampleRate: 0.01,
 
-  // Session Replay
-  replaysSessionSampleRate: 0.01, // 1% of sessions
-  replaysOnErrorSampleRate: 0.1, // 10% of sessions with errors
+  // Session Replay — VYPNUTÉ kvôli Vercel bandwidth a function invocation limitom
+  // Replay dáta prechádzali cez /monitoring tunnel = serverless function invocations
+  replaysSessionSampleRate: 0,
+  replaysOnErrorSampleRate: 0,
 
   // Setting this option to true will print useful information to the console while you're setting up Sentry.
   debug: false,
@@ -57,12 +58,7 @@ Sentry.init({
     /googletagmanager\.com/i,
   ],
 
-  // Integrations
-  integrations: [
-    Sentry.replayIntegration({
-      // Mask all text and block all media
-      maskAllText: true,
-      blockAllMedia: true,
-    }),
-  ],
+  // Integrations — replayIntegration ODSTRÁNENÁ kvôli Vercel limitom
+  // (replay SDK pridával ~36 KB gzip do bundlu + generoval kontinuálny stream dát)
+  integrations: [],
 });
