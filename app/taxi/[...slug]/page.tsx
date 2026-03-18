@@ -931,7 +931,7 @@ async function UniversalListView({
       />
       <CityFAQ cityName={city.name} citySlug={city.slug} isVillage={city.isVillage} />
       <HowItWorks />
-      <NextWebBanner />
+      {partners.length === 0 && <NextWebBanner />}
       <Footer />
     </div>
     </CityEditorProvider>
@@ -2170,7 +2170,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           </div>
         </div>
 
-        <NextWebBanner />
+        {/* Banner skrytý pre partnerov */}
         <Footer />
 
         {/* Sticky Call Bar - Mobile only (all partners) */}
