@@ -23,6 +23,7 @@ import { FooterLegal } from '@/components/FooterLegal';
 import { CityRouteMapWrapper } from '@/components/CityRouteMapWrapper';
 import { ExpandableTaxiList } from '@/components/ExpandableTaxiList';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { NextWebBanner } from '@/components/NextWebBanner';
 import cityRoutesData from '../../../src/data/city-routes.json';
 import citiesData from '../../../src/data/cities.json';
 
@@ -14831,6 +14832,8 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
             </p>
           </div>
         </section>
+
+        <NextWebBanner />
 
         {/* Footer */}
         <FooterLegal />

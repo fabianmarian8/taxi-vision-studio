@@ -10,6 +10,7 @@ import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { ArticleSchema } from '@/components/schema/ArticleSchema';
 import { ArticleAuthor } from '@/components/ArticleAuthor';
+import { NextWebBanner } from '@/components/NextWebBanner';
 
 export const metadata: Metadata = {
   title: 'Čo kontroluje finančná správa pri taxi - eKasa, doklady, pokuty | TaxiNearMe.sk',
@@ -491,6 +492,8 @@ export default function KontrolaFinancnaSpravaTaxiPage() {
           </Link>
         </div>
       </section>
+
+      <NextWebBanner />
 
     </div>
   );

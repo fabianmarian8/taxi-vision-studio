@@ -47,6 +47,7 @@ import { GoogleReviewsSection } from '@/components/GoogleReviewsSection';
 import { fetchGoogleReviews } from '@/lib/google-reviews';
 import { ServiceContactButtons } from '@/components/ServiceContactButtons';
 import { PhoneLink } from '@/components/PhoneLink';
+import { NextWebBanner } from '@/components/NextWebBanner';
 import { TrackedPhoneButton } from '@/components/TrackedPhoneButton';
 import { TaxiGallery } from '@/components/TaxiGallery';
 import { TaxiPricelist } from '@/components/TaxiPricelist';
@@ -930,6 +931,7 @@ async function UniversalListView({
       />
       <CityFAQ cityName={city.name} citySlug={city.slug} isVillage={city.isVillage} />
       <HowItWorks />
+      <NextWebBanner />
       <Footer />
     </div>
     </CityEditorProvider>
@@ -1506,6 +1508,7 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
 
       {/* HowItWorks - SKRYTÉ pre obce bez taxi (šablónový obsah) */}
       {hasTaxiServices && <HowItWorks />}
+      <NextWebBanner />
       <Footer />
     </div>
   );
@@ -1613,6 +1616,7 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
       </section>
 
       <HowItWorks />
+      <NextWebBanner />
       <Footer />
     </div>
   );
@@ -2166,6 +2170,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           </div>
         </div>
 
+        <NextWebBanner />
         <Footer />
 
         {/* Sticky Call Bar - Mobile only (all partners) */}
@@ -2413,6 +2418,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           </section>
         )}
 
+        <NextWebBanner />
         <Footer />
       </div>
 

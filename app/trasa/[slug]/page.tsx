@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { MapPin, Clock, Car, ArrowLeft, Phone, HelpCircle, ExternalLink, Euro, Star } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { NextWebBanner } from '@/components/NextWebBanner';
 import routePagesData from '../../../src/data/route-pages.json';
 
 interface CarrierData {
@@ -331,6 +332,8 @@ export default async function RoutePage({ params }: RoutePageProps) {
             </p>
           </div>
         </section>
+
+        <NextWebBanner />
       </div>
     </>
   );

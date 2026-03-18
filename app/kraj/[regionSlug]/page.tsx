@@ -24,6 +24,7 @@ import { MapPin } from 'lucide-react';
 import { getRegionBySlug, getCitiesByRegion, getRegionsData } from '@/data/cities';
 import { getDistrictsByRegionSlug } from '@/data/districts';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { NextWebBanner } from '@/components/NextWebBanner';
 
 // Generate static params for all regions at build time
 export function generateStaticParams() {
@@ -200,6 +201,8 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
 
       {/* How It Works */}
       <HowItWorks />
+
+      <NextWebBanner />
 
       {/* Footer with 3D Border */}
       <footer className="border-t border-foreground/30 py-8 md:py-12 px-4 md:px-8 relative">

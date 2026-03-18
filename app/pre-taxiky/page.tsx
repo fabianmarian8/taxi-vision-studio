@@ -29,6 +29,7 @@ import {
 } from '@/components/ui/accordion';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { cn } from '@/lib/utils';
+import { NextWebBanner } from '@/components/NextWebBanner';
 import { CheckoutButton } from './CheckoutForm';
 import { ContactButton } from '@/components/ContactButton';
 
@@ -509,6 +510,7 @@ export default function PreTaxikyPage() {
         </div>
       </section>
       
+      <NextWebBanner />
       <Footer />
     </div>
   );

@@ -16,6 +16,7 @@ import { Card } from '@/components/ui/card';
 import { Header } from '@/components/Header';
 import { FooterLegal } from '@/components/FooterLegal';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { NextWebBanner } from '@/components/NextWebBanner';
 import cityRoutesData from '../../src/data/city-routes.json';
 
 interface CityRouteData {
@@ -345,6 +346,8 @@ export default function TaxiTrasaHubPage() {
             </article>
           </div>
         </section>
+
+        <NextWebBanner />
 
         {/* Footer */}
         <FooterLegal />

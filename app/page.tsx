@@ -15,6 +15,7 @@ import { MapPinIcon } from '@/components/icons/MapPinIcon';
 import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { RegionCard } from '@/components/RegionCard';
 import { GeometricLines } from '@/components/GeometricLines';
+import { NextWebBanner } from '@/components/NextWebBanner';
 
 // Dynamic import pre Header - obsahuje Supabase auth, nie je kritický pre LCP
 const Header = dynamic(
@@ -351,6 +352,8 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      <NextWebBanner />
 
       {/* Footer with 3D Border */}
       <footer className="border-t border-foreground/30 py-5 md:py-7 px-2 md:px-5 bg-white relative">

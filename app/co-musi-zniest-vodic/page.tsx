@@ -12,6 +12,7 @@ import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { ArticleSchema } from '@/components/schema/ArticleSchema';
 import { ArticleAuthor } from '@/components/ArticleAuthor';
+import { NextWebBanner } from '@/components/NextWebBanner';
 
 export const metadata: Metadata = {
   title: 'Čo všetko musí zniesť vodič taxi | TaxiNearMe.sk',
@@ -430,6 +431,8 @@ export default function CoMusiZniestVodicPage() {
           </div>
         </div>
       </section>
+
+      <NextWebBanner />
     </div>
   );
 }

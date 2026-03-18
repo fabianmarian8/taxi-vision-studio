@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Users, Target, ArrowRight } from "lucide-react";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { NextWebBanner } from '@/components/NextWebBanner';
 
 export const metadata: Metadata = {
   title: 'O nás | TaxiNearMe.sk',
@@ -238,6 +239,8 @@ export default function AboutPage() {
           </Link>
         </div>
       </section>
+
+      <NextWebBanner />
 
       {/* Footer */}
       <footer className="border-t border-gray-200 py-8 px-4 md:px-8">

@@ -12,6 +12,7 @@ import { ShareButton } from "@/components/ShareButton";
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { ArticleSchema } from '@/components/schema/ArticleSchema';
 import { ArticleAuthor } from '@/components/ArticleAuthor';
+import { NextWebBanner } from '@/components/NextWebBanner';
 
 export const metadata: Metadata = {
   title: 'Temná stránka Boltu a Uberu | TaxiNearMe.sk',
@@ -436,6 +437,8 @@ export default function TemnaBoltUberPage() {
           </div>
         </div>
       </section>
+
+      <NextWebBanner />
     </div>
   );
 }

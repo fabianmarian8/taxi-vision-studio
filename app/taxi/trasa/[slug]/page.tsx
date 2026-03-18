@@ -5,6 +5,7 @@ import { Header } from '@/components/Header';
 import { SEOBreadcrumbs } from '@/components/SEOBreadcrumbs';
 import { MapPin, Clock, Car, Phone, ArrowRight } from 'lucide-react';
 import { getCityBySlug, type CityData } from '@/data/cities';
+import { NextWebBanner } from '@/components/NextWebBanner';
 import { getMunicipalityBySlug, findNearestCitiesWithTaxis, type Municipality } from '@/data/municipalities';
 import { getDistrictForMunicipality } from '@/data/districts';
 
@@ -274,6 +275,8 @@ export default async function RoutePage({ params }: RoutePageProps) {
           * Uvedené údaje sú orientačné. Skutočná cena závisí od konkrétnej taxislužby a aktuálnych podmienok.
         </p>
       </main>
+
+      <NextWebBanner />
     </div>
   );
 }

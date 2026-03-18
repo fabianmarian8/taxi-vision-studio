@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Mail } from 'lucide-react';
 import { FooterLegal } from '@/components/FooterLegal';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
+import { NextWebBanner } from '@/components/NextWebBanner';
 
 export const metadata: Metadata = {
   title: 'Kontakt | Taxi NearMe',
@@ -99,6 +100,7 @@ export default function ContactPage() {
         </Link>
       </div>
 
+      <NextWebBanner />
       <FooterLegal />
     </div>
   );
