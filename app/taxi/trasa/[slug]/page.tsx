@@ -186,6 +186,8 @@ export default async function RoutePage({ params }: RoutePageProps) {
 
       <SEOBreadcrumbs items={breadcrumbItems} />
 
+      <NextWebBanner />
+
       <main className="container mx-auto max-w-4xl px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
@@ -276,7 +278,6 @@ export default async function RoutePage({ params }: RoutePageProps) {
         </p>
       </main>
 
-      <NextWebBanner />
     </div>
   );
 }

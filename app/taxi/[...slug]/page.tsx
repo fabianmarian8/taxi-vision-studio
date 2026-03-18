@@ -611,6 +611,8 @@ async function UniversalListView({
         </div>
       </section>
 
+      <NextWebBanner />
+
       {/* Partner & Premium slots banner - NAD zoznamom */}
       <TaxiSlotsBanner
         cityName={city.name}
@@ -931,7 +933,6 @@ async function UniversalListView({
       />
       <CityFAQ cityName={city.name} citySlug={city.slug} isVillage={city.isVillage} />
       <HowItWorks />
-      <NextWebBanner />
       <Footer />
     </div>
     </CityEditorProvider>
@@ -1042,6 +1043,8 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
       <Header />
 
       <SEOBreadcrumbs items={breadcrumbItems} />
+
+      <NextWebBanner />
 
       {/* Above The Fold dizajn - pre VŠETKY obce bez taxislužieb */}
       {!hasTaxiServices && nearestCities.length > 0 ? (
@@ -1508,7 +1511,6 @@ function MunicipalityPage({ municipality, isHierarchical = false, district, over
 
       {/* HowItWorks - SKRYTÉ pre obce bez taxi (šablónový obsah) */}
       {hasTaxiServices && <HowItWorks />}
-      <NextWebBanner />
       <Footer />
     </div>
   );
@@ -1543,6 +1545,8 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
           { label: `Okres ${district.name}` },
         ]}
       />
+
+      <NextWebBanner />
 
       <section className="pt-4 md:pt-6 py-8 md:py-12 lg:py-16 px-4 md:px-8 relative">
         <GeometricLines variant="hero" count={8} />
@@ -1616,7 +1620,6 @@ function DistrictPage({ district, regionSlug }: { district: District; regionSlug
       </section>
 
       <HowItWorks />
-      <NextWebBanner />
       <Footer />
     </div>
   );
@@ -2225,6 +2228,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           </div>
         </div>
 
+        <NextWebBanner />
+
         {/* Profilová sekcia - zlúčená karta */}
         <section className="bg-white">
           <div className="container mx-auto max-w-4xl px-4 py-6">
@@ -2418,7 +2423,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           </section>
         )}
 
-        <NextWebBanner />
         <Footer />
       </div>
 

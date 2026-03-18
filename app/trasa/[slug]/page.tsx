@@ -150,6 +150,7 @@ export default async function RoutePage({ params }: RoutePageProps) {
       />
 
       <div className="min-h-screen bg-white">
+        <NextWebBanner />
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-primary-yellow/20 via-white to-white py-12 md:py-16">
           <div className="container mx-auto max-w-4xl px-4 md:px-8">
@@ -333,7 +334,6 @@ export default async function RoutePage({ params }: RoutePageProps) {
           </div>
         </section>
 
-        <NextWebBanner />
       </div>
     </>
   );

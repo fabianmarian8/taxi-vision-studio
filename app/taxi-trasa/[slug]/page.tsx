@@ -421,6 +421,8 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
         {/* Header */}
         <Header />
 
+        <NextWebBanner />
+
         {/* Above The Fold dizajn - jednotný pre všetky trasy */}
         <section className="relative bg-gradient-to-br from-primary-yellow/10 via-white to-blue-50/30">
             {/* Kompaktný Hero - všetko dôležité na jednej obrazovke */}
@@ -14832,8 +14834,6 @@ export default async function CityRoutePage({ params }: RoutePageProps) {
             </p>
           </div>
         </section>
-
-        <NextWebBanner />
 
         {/* Footer */}
         <FooterLegal />

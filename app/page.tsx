@@ -205,6 +205,8 @@ export default async function HomePage() {
       {/* Black line separator - z-10 */}
       <div className="border-b border-foreground/30 relative z-10"></div>
 
+      <NextWebBanner />
+
       {/* ZMENA: Odstránený spoločný <div className="bg-white"> wrapper.
          Teraz sú sekcie priamymi súrodencami Headeru a Hero sekcie.
          Aplikujeme bg-white na každú sekciu zvlášť.
@@ -352,8 +354,6 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-
-      <NextWebBanner />
 
       {/* Footer with 3D Border */}
       <footer className="border-t border-foreground/30 py-5 md:py-7 px-2 md:px-5 bg-white relative">

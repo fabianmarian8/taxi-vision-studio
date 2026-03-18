@@ -117,6 +117,8 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
       {/* Breadcrumbs */}
       <SEOBreadcrumbs items={[{ label: regionName }]} />
 
+      <NextWebBanner />
+
       {/* Region Header Section */}
       <section className="pt-4 md:pt-6 py-8 md:py-12 lg:py-16 px-4 md:px-8 relative">
         <GeometricLines variant="hero" count={8} />
@@ -201,8 +203,6 @@ export default async function RegionPage({ params }: { params: Promise<{ regionS
 
       {/* How It Works */}
       <HowItWorks />
-
-      <NextWebBanner />
 
       {/* Footer with 3D Border */}
       <footer className="border-t border-foreground/30 py-8 md:py-12 px-4 md:px-8 relative">

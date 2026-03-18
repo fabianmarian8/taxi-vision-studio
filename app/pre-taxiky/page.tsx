@@ -117,6 +117,8 @@ export default function PreTaxikyPage() {
     <div className="min-h-screen bg-slate-950 text-slate-50 selection:bg-purple-500/30">
       <Header />
 
+      <NextWebBanner />
+
       {/* Hero Section */}
       <section className="pt-20 pb-12 md:pt-32 md:pb-20 px-4 md:px-8 relative overflow-hidden">
         <GeometricLines variant="hero" count={12} />
@@ -510,7 +512,6 @@ export default function PreTaxikyPage() {
         </div>
       </section>
       
-      <NextWebBanner />
       <Footer />
     </div>
   );

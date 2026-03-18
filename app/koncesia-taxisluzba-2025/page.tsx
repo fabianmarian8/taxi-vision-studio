@@ -64,6 +64,8 @@ export default function KoncesiaTaxisluzbaPage() {
           { label: 'Koncesia na taxislužbu 2025' }
         ]} />
 
+        <NextWebBanner />
+
         <section className="pt-3 md:pt-4 pb-6 md:pb-8 px-3 md:px-6 relative overflow-hidden">
         <GeometricLines variant="hero" count={12} />
 
@@ -503,7 +505,6 @@ export default function KoncesiaTaxisluzbaPage() {
         </div>
       </section>
 
-      <NextWebBanner />
 
     </div>
   );

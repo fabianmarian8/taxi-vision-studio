@@ -35,6 +35,8 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
+      <NextWebBanner />
+
       {/* Hero Section - Typografická elegancia */}
       <section className="pt-16 pb-20 px-4 md:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto max-w-4xl text-center">
@@ -239,8 +241,6 @@ export default function AboutPage() {
           </Link>
         </div>
       </section>
-
-      <NextWebBanner />
 
       {/* Footer */}
       <footer className="border-t border-gray-200 py-8 px-4 md:px-8">

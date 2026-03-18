@@ -179,6 +179,8 @@ export default function TaxiTrasaHubPage() {
         {/* Header */}
         <Header />
 
+        <NextWebBanner />
+
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-primary-yellow/20 via-white to-white py-12 md:py-16">
           <div className="container mx-auto max-w-6xl px-4 md:px-8">
@@ -346,8 +348,6 @@ export default function TaxiTrasaHubPage() {
             </article>
           </div>
         </section>
-
-        <NextWebBanner />
 
         {/* Footer */}
         <FooterLegal />

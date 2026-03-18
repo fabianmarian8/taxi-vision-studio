@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Download, Share2, FileText } from "lucide-react";
 import { toast } from "sonner";
 import { ArticleAuthor } from "@/components/ArticleAuthor";
+import { NextWebBanner } from "@/components/NextWebBanner";
 
 // Helper funkcia na formátovanie dátumu - konzistentná medzi SSR/CSR
 // Používame rovnaký formát ako v ArticleBanner
@@ -154,6 +155,8 @@ export function PriceComparisonContent() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+
+      <NextWebBanner />
 
       {/* Hero Section */}
       <section className="pt-8 pb-12 md:pt-12 md:pb-16 px-4 md:px-8 relative hero-3d-bg">
@@ -348,6 +351,7 @@ export function PriceComparisonContent() {
           </Button>
         </div>
       </section>
+
     </div>
   );
 }

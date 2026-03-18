@@ -53,6 +53,8 @@ export default function ContactPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
+      <NextWebBanner />
+
       <div className="container mx-auto max-w-4xl px-8 py-24">
         <Link href="/">
           <Button variant="ghost" className="mb-8">
@@ -100,7 +102,6 @@ export default function ContactPage() {
         </Link>
       </div>
 
-      <NextWebBanner />
       <FooterLegal />
     </div>
   );
