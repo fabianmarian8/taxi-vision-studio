@@ -931,7 +931,7 @@ async function UniversalListView({
       />
       <CityFAQ cityName={city.name} citySlug={city.slug} isVillage={city.isVillage} />
       <HowItWorks />
-      {partners.length === 0 && <NextWebBanner />}
+      <NextWebBanner />
       <Footer />
     </div>
     </CityEditorProvider>
