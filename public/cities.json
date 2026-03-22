@@ -10265,7 +10265,7 @@
           "phone": "+421911504333",
           "isPremium": false,
           "isPromotional": false,
-          "isPartner": true,
+          "isPartner": false,
           "partnerData": {
             "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
             "googlePlaceId": "ChIJpazWgnTLFUcRamdSS_RTFrg"
@@ -10277,11 +10277,15 @@
           "name": "OuKej Taxi",
           "website": "https://oukej-taxi-sk.webnode.sk/",
           "phone": "+421949235929",
-          "isPremium": true,
-          "isPromotional": true,
-          "address": "Novoť 325, 029 55 Novoť",
-          "description": "0949 235 929 (5-miestne) | 0907 373 029 (9-miestne)",
-          "premiumExpiresAt": "2026-01-27T18:19:55.622Z"
+          "isPremium": false,
+          "isPromotional": false,
+          "isPartner": false,
+          "address": "Nižný Koniec, Poriečie, 029 56 Zákamenné",
+          "placeId": "ChIJJRQ-myk1FEcR_cGtNhzWN5g",
+          "partnerData": {
+            "googlePlaceId": "ChIJJRQ-myk1FEcR_cGtNhzWN5g"
+          },
+          "description": "0949 235 929 (5-miestne) | 0907 373 029 (9-miestne)"
         }
       ],
       "latitude": 49.388036,

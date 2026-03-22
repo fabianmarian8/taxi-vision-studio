@@ -95,7 +95,9 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
         // Promotional premium (FOMO marketing) - never expires, only when flag is removed
         const promotionalPremiumValid = service.isPremium && service.isPromotional;
 
-        // Partner status: DB is source of truth
+        // Partner status: DB is source of truth when DB record exists
+        // When subscription expires, webhook sets is_partner=false in DB
+        // and that must take precedence over stale JSON data
         const isPartner = dbService.is_partner;
 
         // Verified status from DB (all paid plans get verified)

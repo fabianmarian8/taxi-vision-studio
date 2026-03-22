@@ -10592,7 +10592,7 @@
           "phone": "+421911504333",
           "isPremium": false,
           "isPromotional": false,
-          "isPartner": true,
+          "isPartner": false,
           "partnerData": {
             "heroImage": "/logos/fast-taxi-zvolen-hero.jpg",
             "googlePlaceId": "ChIJpazWgnTLFUcRamdSS_RTFrg"
@@ -10606,7 +10606,7 @@
           "phone": "+421949235929",
           "isPremium": false,
           "isPromotional": false,
-          "isPartner": true,
+          "isPartner": false,
           "address": "Nižný Koniec, Poriečie, 029 56 Zákamenné",
           "placeId": "ChIJJRQ-myk1FEcR_cGtNhzWN5g",
           "partnerData": {
