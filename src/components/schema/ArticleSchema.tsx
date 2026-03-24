@@ -67,10 +67,8 @@ export const ArticleSchema = ({
   };
 
   return (
-    <Script
-      id="article-schema"
+    <script
       type="application/ld+json"
-      strategy="beforeInteractive"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(articleSchema),
       }}

@@ -103,5 +103,3 @@ export const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
     />
   );
 };
- );
-};

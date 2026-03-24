@@ -114,7 +114,3 @@ export const TaxiServiceSchema = ({ service, city, citySlug, serviceSlug }: Taxi
     />
   );
 };
- }}
-    />
-  );
-};
