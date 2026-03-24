@@ -95,12 +95,13 @@ export const LocalBusinessSchema = ({ city }: LocalBusinessSchemaProps) => {
   };
 
   return (
-    <Script
-      id={`local-business-${city.slug}`}
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(localBusinessSchema),
       }}
     />
   );
+};
+ );
 };

@@ -106,12 +106,15 @@ export const TaxiServiceSchema = ({ service, city, citySlug, serviceSlug }: Taxi
   };
 
   return (
-    <Script
-      id={`taxi-service-${citySlug}-${serviceSlug}`}
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(taxiServiceSchema),
       }}
+    />
+  );
+};
+ }}
     />
   );
 };

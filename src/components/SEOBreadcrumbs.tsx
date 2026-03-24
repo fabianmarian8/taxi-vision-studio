@@ -1,16 +1,19 @@
 /**
  * SEOBreadcrumbs - Server Component
  *
- * Zmena z Client Component na Server Component pre lepšiu indexáciu.
- * Schema.org BreadcrumbList sa teraz renderuje priamo v HTML,
+ * Server Component pre lepšiu indexáciu.
+ * Schema.org BreadcrumbList sa renderuje priamo v HTML cez natívny <script> tag,
  * čo zaručuje, že Googlebot uvidí structured data pri prvom crawle.
  *
- * Podľa Google Indexing 2025 dokumentov:
- * "SSR/SSG je najlepšie pre SEO - Googlebot dostane plne renderovanú HTML"
+ * DÔLEŽITÉ: Používame natívny <script> (nie next/script Script),
+ * pretože Next.js <Script> je pre externé/lazy JS skripty.
+ * Pre inline JSON-LD structured data je správny plain HTML <script> tag.
+ *
+ * Podľa Google Search Central: structured data musí byť v <head> alebo <body>,
+ * renderovaná pri SSR — natívny <script> to zaručuje.
  */
 
 import Link from 'next/link';
-import Script from 'next/script';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -54,14 +57,14 @@ export const SEOBreadcrumbs = ({ items }: SEOBreadcrumbsProps) => {
     ]
   };
 
-  // Generovanie unikátneho ID pre script tag
-  const scriptId = `breadcrumb-schema-${items.map(i => i.label).join('-').toLowerCase().replace(/[^a-z0-9-]/g, '')}`;
-
   return (
     <>
-      {/* Schema.org BreadcrumbList - renderované na serveri */}
-      <Script
-        id={scriptId}
+      {/*
+        Schema.org BreadcrumbList - plain <script> tag (NIE next/script <Script>)
+        Renderované priamo v HTML pri SSR → Googlebot vidí structured data okamžite.
+        next/script <Script> je pre lazy-load externých JS súborov, nie pre JSON-LD.
+      */}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),

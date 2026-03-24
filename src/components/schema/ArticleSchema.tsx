@@ -8,7 +8,6 @@
  * E-E-A-T: Author je teraz Person s prepojením na /o-nas stránku
  */
 
-import Script from 'next/script';
 import { authorData } from '@/components/ArticleAuthor';
 
 interface ArticleSchemaProps {
