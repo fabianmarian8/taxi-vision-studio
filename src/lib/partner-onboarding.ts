@@ -223,7 +223,7 @@ export async function handlePartnerOnboarding(
     const notificationEmail = process.env.PARTNER_NOTIFICATION_EMAIL || 'fabianmarian8@gmail.com';
     const resendApiKey = process.env.RESEND_API_KEY;
     if (resendApiKey && isNewUser) {
-      const fromEmail = process.env.FROM_EMAIL || 'noreply@taxinearme.sk';
+      const fromEmail = process.env.FROM_EMAIL || 'info@taxinearme.sk';
       const resend = new Resend(resendApiKey);
       await resend.emails.send({
         from: `Taxi NearMe <${fromEmail}>`,
@@ -363,7 +363,7 @@ async function sendPartnerWelcomeEmail(params: WelcomeEmailParams): Promise<bool
     return false;
   }
 
-  const fromEmail = process.env.FROM_EMAIL || 'noreply@taxinearme.sk';
+  const fromEmail = process.env.FROM_EMAIL || 'info@taxinearme.sk';
   const resend = new Resend(resendApiKey);
 
   const { error } = await resend.emails.send({
