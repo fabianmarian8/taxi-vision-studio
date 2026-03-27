@@ -5,6 +5,7 @@ import { constructWebhookEvent, getPlanTypeFromAmount, stripe } from '@/lib/stri
 import { createServiceSlug } from '@/utils/urlUtils';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { logger } from '@/lib/logger';
+import { handlePartnerOnboarding } from '@/lib/partner-onboarding';
 
 // Lazy-initialized Supabase client to avoid build-time errors
 let _supabase: SupabaseClient | null = null;
@@ -183,6 +184,39 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
 
   // Link subscription to taxi service (auto-enables verified/premium)
   await linkSubscriptionToTaxiService(subscription.id, citySlug, taxiServiceName, taxiServiceId);
+
+  // Auto-onboard partner if partner plan
+  const planType = getPlanTypeFromAmount(amountCents);
+  if (planType === 'partner' && customerEmail) {
+    try {
+      const result = await handlePartnerOnboarding(getSupabase(), {
+        email: customerEmail,
+        name: customerName || taxiServiceName,
+        citySlug,
+        taxiServiceName,
+        stripeSubscriptionId: subscription.id,
+      });
+
+      if (result.success) {
+        logger.info('Partner auto-onboarding completed', {
+          subscriptionId: subscription.id,
+          partnerId: result.partnerId,
+          emailSent: result.emailSent,
+        });
+      } else {
+        logger.error('Partner auto-onboarding failed', {
+          subscriptionId: subscription.id,
+          error: result.error,
+        });
+      }
+    } catch (onboardingError) {
+      // Non-critical — subscription was already saved, don't fail the webhook
+      logger.error('Partner auto-onboarding threw', {
+        subscriptionId: subscription.id,
+        error: onboardingError instanceof Error ? onboardingError.message : 'Unknown',
+      });
+    }
+  }
 }
 
 async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stripeEventId: string) {
