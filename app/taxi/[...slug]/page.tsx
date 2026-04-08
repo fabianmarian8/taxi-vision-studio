@@ -61,7 +61,7 @@ import { TaxiSlotsBanner } from '@/components/TaxiSlotsBanner';
 import { ServiceCheckout } from '@/components/ServiceCheckout';
 import { AddTaxiButton } from '@/components/AddTaxiModal';
 import { DeleteTaxiButton } from '@/components/admin/DeleteTaxiButton';
-import { getApprovedPartnerData } from '@/lib/partner-data';
+import { getApprovedPartnerData, getClaimedProfile } from '@/lib/partner-data';
 import { checkPartnerOwnership } from '@/lib/partner-ownership';
 import { getPartnerSkinClass, normalizePartnerSkin } from '@/lib/partner-skins';
 import { PartnerPageWrapper, CityEditorProvider, EditableCityDescription } from '@/components/inline-editor';
@@ -1641,8 +1641,11 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
   const isPremium = service.isPremium;
   const isPromotional = service.isPromotional; // Promo premium (nie platiaci)
 
-  // Partner page - full branded page
-  if (isPartner) {
+  // Check if this service has been claimed (free tier partner record exists)
+  const claimedProfile = !isPartner ? await getClaimedProfile(serviceSlug) : null;
+
+  // Partner page - full branded page (or claimed free profile with editor)
+  if (isPartner || claimedProfile) {
     // Fetch approved data from Supabase (partner portal changes)
     const approvedData = await getApprovedPartnerData(serviceSlug);
 
@@ -1725,6 +1728,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         draftId={draftId}
         partnerSlug={serviceSlug}
         citySlug={city.slug}
+        planTier={claimedProfile?.planTier}
       >
       <div className={`min-h-screen overflow-x-hidden partner-page-bg partner-skin ${skinClass} ${serviceSlug === 'volaj-taxi' ? 'pb-16 md:pb-0' : ''}`}>
         <TaxiServiceSchema
@@ -2195,14 +2199,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
     );
   }
 
-  // Fetch approved partner data for claimed profiles (free tier)
-  // This allows free users who claimed their profile to update phone/website/description
-  const approvedFreeData = await getApprovedPartnerData(serviceSlug);
-
-  // Use approved data for free-tier editable fields (phone, website, description)
-  const displayPhone = approvedFreeData?.phone || service.phone;
-  const displayWebsite = approvedFreeData?.website || service.website;
-  const displayDescription = approvedFreeData?.description || service.customDescription || service.description;
+  // Non-partner, non-claimed service page (no partner record exists)
 
   // Získaj iniciály pre fallback logo
   const initials = service.name
@@ -2306,20 +2303,20 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             </div>
 
             {/* Hlavné CTA tlačidlo - cez celú šírku */}
-            {displayPhone && (
+            {service.phone && (
               <a
-                href={`tel:${displayPhone.replace(/\s/g, '')}`}
+                href={`tel:${service.phone.replace(/\s/g, '')}`}
                 className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all shadow-lg text-lg"
               >
                 <Phone className="h-6 w-6" />
-                <span>Zavolať {displayPhone}</span>
+                <span>Zavolať {service.phone}</span>
               </a>
             )}
 
             {/* Webová stránka - sekundárne */}
-            {displayWebsite && (
+            {service.website && (
               <a
-                href={displayWebsite.startsWith('http') ? displayWebsite : `https://${displayWebsite}`}
+                href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full mt-3 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-xl transition-all"
@@ -2335,11 +2332,11 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             )}
 
             {/* Claim flow - prevzatie profilu cez SMS */}
-            {!service.isVerified && !isPremium && !isPartner && displayPhone && (
+            {!service.isVerified && !isPremium && !isPartner && service.phone && (
               <div className="mt-4">
                 <ClaimProfileFlow
                   serviceName={service.name}
-                  servicePhone={displayPhone}
+                  servicePhone={service.phone}
                   cityName={city.name}
                   citySlug={city.slug}
                 />
@@ -2355,9 +2352,9 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               <h2 className="text-lg font-bold text-gray-900 mb-4">
                 O taxislužbe
               </h2>
-              {displayDescription ? (
+              {service.customDescription ? (
                 <div className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
-                  {displayDescription}
+                  {service.customDescription}
                 </div>
               ) : (
                 <>
@@ -2420,17 +2417,17 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
       </div>
 
       {/* Sticky Footer - Mobile only */}
-      {displayPhone && (
+      {service.phone && (
         isPremium ? (
           // Premium services get full green call bar (same as partners)
           <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
             <a
-              href={`tel:${displayPhone.replace(/\s/g, '')}`}
+              href={`tel:${service.phone.replace(/\s/g, '')}`}
               className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white py-4 px-6 font-bold text-lg shadow-lg transition-colors"
               style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
             >
               <Phone className="h-6 w-6" />
-              <span>Zavolať {displayPhone}</span>
+              <span>Zavolať {service.phone}</span>
             </a>
           </div>
         ) : (
@@ -2444,7 +2441,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 <p className="font-bold text-gray-900 truncate max-w-[150px]">{service.name}</p>
               </div>
               <a
-                href={`tel:${displayPhone.replace(/\s/g, '')}`}
+                href={`tel:${service.phone.replace(/\s/g, '')}`}
                 className="flex items-center gap-2 px-5 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all"
               >
                 <Phone className="h-5 w-5" />

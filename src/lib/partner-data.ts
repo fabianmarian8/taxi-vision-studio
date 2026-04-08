@@ -1,10 +1,20 @@
 import { createClient } from '@supabase/supabase-js';
+import { normalizePlanType, type PlanTier } from '@/lib/tier-config';
 
 // Create a read-only client for fetching approved partner data
 function getReadOnlyClient() {
   return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    { auth: { persistSession: false } }
+  );
+}
+
+// Admin client for bypassing RLS (server-side only)
+function getAdminClient() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
     { auth: { persistSession: false } }
   );
 }
@@ -102,6 +112,36 @@ export async function getApprovedPartnerData(partnerSlug: string): Promise<Appro
     };
   } catch (error) {
     console.error('[getApprovedPartnerData] Error:', error);
+    return null;
+  }
+}
+
+export interface ClaimedProfile {
+  partnerId: string;
+  planTier: PlanTier;
+}
+
+/**
+ * Check if a service has been claimed (has a partner record).
+ * Uses admin client to bypass RLS.
+ * Returns partner info if claimed, null otherwise.
+ */
+export async function getClaimedProfile(serviceSlug: string): Promise<ClaimedProfile | null> {
+  try {
+    const supabase = getAdminClient();
+    const { data: partner, error } = await supabase
+      .from('partners')
+      .select('id, plan_type')
+      .eq('slug', serviceSlug)
+      .maybeSingle();
+
+    if (error || !partner) return null;
+
+    return {
+      partnerId: partner.id,
+      planTier: normalizePlanType(partner.plan_type),
+    };
+  } catch {
     return null;
   }
 }

@@ -3,6 +3,7 @@
 import { ReactNode, useState, useEffect } from 'react';
 import { InlineEditorProvider, type DraftData } from './InlineEditorProvider';
 import { createClient } from '@/lib/supabase/client';
+import type { PlanTier } from '@/lib/tier-config';
 
 interface PartnerPageWrapperProps {
   children: ReactNode;
@@ -13,6 +14,7 @@ interface PartnerPageWrapperProps {
   draftId?: string | null;
   partnerSlug?: string;
   citySlug?: string;
+  planTier?: PlanTier;
 }
 
 /**
@@ -28,6 +30,7 @@ export function PartnerPageWrapper({
   draftId: initialDraftId = null,
   partnerSlug,
   citySlug,
+  planTier,
 }: PartnerPageWrapperProps) {
   const [ownershipState, setOwnershipState] = useState({
     isOwner: serverIsOwner,
@@ -115,6 +118,7 @@ export function PartnerPageWrapper({
       draftId={ownershipState.draftId}
       partnerSlug={partnerSlug}
       citySlug={citySlug}
+      planTier={planTier}
     >
       {children}
     </InlineEditorProvider>
