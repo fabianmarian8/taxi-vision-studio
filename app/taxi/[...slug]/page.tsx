@@ -2195,6 +2195,15 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
     );
   }
 
+  // Fetch approved partner data for claimed profiles (free tier)
+  // This allows free users who claimed their profile to update phone/website/description
+  const approvedFreeData = await getApprovedPartnerData(serviceSlug);
+
+  // Use approved data for free-tier editable fields (phone, website, description)
+  const displayPhone = approvedFreeData?.phone || service.phone;
+  const displayWebsite = approvedFreeData?.website || service.website;
+  const displayDescription = approvedFreeData?.description || service.customDescription || service.description;
+
   // Získaj iniciály pre fallback logo
   const initials = service.name
     .split(' ')
@@ -2297,20 +2306,20 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             </div>
 
             {/* Hlavné CTA tlačidlo - cez celú šírku */}
-            {service.phone && (
+            {displayPhone && (
               <a
-                href={`tel:${service.phone.replace(/\s/g, '')}`}
+                href={`tel:${displayPhone.replace(/\s/g, '')}`}
                 className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all shadow-lg text-lg"
               >
                 <Phone className="h-6 w-6" />
-                <span>Zavolať {service.phone}</span>
+                <span>Zavolať {displayPhone}</span>
               </a>
             )}
 
             {/* Webová stránka - sekundárne */}
-            {service.website && (
+            {displayWebsite && (
               <a
-                href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
+                href={displayWebsite.startsWith('http') ? displayWebsite : `https://${displayWebsite}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full mt-3 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-xl transition-all"
@@ -2326,11 +2335,11 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             )}
 
             {/* Claim flow - prevzatie profilu cez SMS */}
-            {!service.isVerified && !isPremium && !isPartner && service.phone && (
+            {!service.isVerified && !isPremium && !isPartner && displayPhone && (
               <div className="mt-4">
                 <ClaimProfileFlow
                   serviceName={service.name}
-                  servicePhone={service.phone}
+                  servicePhone={displayPhone}
                   cityName={city.name}
                   citySlug={city.slug}
                 />
@@ -2346,9 +2355,9 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               <h2 className="text-lg font-bold text-gray-900 mb-4">
                 O taxislužbe
               </h2>
-              {service.customDescription ? (
+              {displayDescription ? (
                 <div className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
-                  {service.customDescription}
+                  {displayDescription}
                 </div>
               ) : (
                 <>
@@ -2411,17 +2420,17 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
       </div>
 
       {/* Sticky Footer - Mobile only */}
-      {service.phone && (
+      {displayPhone && (
         isPremium ? (
           // Premium services get full green call bar (same as partners)
           <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
             <a
-              href={`tel:${service.phone.replace(/\s/g, '')}`}
+              href={`tel:${displayPhone.replace(/\s/g, '')}`}
               className="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white py-4 px-6 font-bold text-lg shadow-lg transition-colors"
               style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
             >
               <Phone className="h-6 w-6" />
-              <span>Zavolať {service.phone}</span>
+              <span>Zavolať {displayPhone}</span>
             </a>
           </div>
         ) : (
@@ -2435,7 +2444,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 <p className="font-bold text-gray-900 truncate max-w-[150px]">{service.name}</p>
               </div>
               <a
-                href={`tel:${service.phone.replace(/\s/g, '')}`}
+                href={`tel:${displayPhone.replace(/\s/g, '')}`}
                 className="flex items-center gap-2 px-5 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all"
               >
                 <Phone className="h-5 w-5" />

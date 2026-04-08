@@ -3,7 +3,6 @@
 import { ReactNode, useState, useEffect } from 'react';
 import { InlineEditorProvider, type DraftData } from './InlineEditorProvider';
 import { createClient } from '@/lib/supabase/client';
-import { isSuperadmin } from '@/lib/superadmin';
 
 interface PartnerPageWrapperProps {
   children: ReactNode;
@@ -50,7 +49,16 @@ export function PartnerPageWrapper({
         }
 
         const user = session.user;
-        const userIsAdmin = isSuperadmin(user.email);
+
+        // Check superadmin via server API (SUPERADMIN_EMAILS is server-only env var)
+        let userIsAdmin = false;
+        try {
+          const adminResponse = await fetch('/api/auth/check-superadmin');
+          const adminData = await adminResponse.json();
+          userIsAdmin = adminData.isAdmin === true;
+        } catch {
+          // Silently fail — non-admin is the safe default
+        }
 
         // Fetch partner data with drafts
         const { data: partner } = await supabase
