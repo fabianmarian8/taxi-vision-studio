@@ -221,7 +221,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     <td style="text-align: center;">
       <div style="font-size: 32px; margin-bottom: 8px;">&#128662;</div>
       <h1 style="color: #000; margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px;">TaxiNearMe.sk</h1>
-      <p style="color: rgba(0,0,0,0.6); margin: 4px 0 0; font-size: 13px;">Najvaecsi katalog taxisluzieb na Slovensku</p>
+      <p style="color: rgba(0,0,0,0.6); margin: 4px 0 0; font-size: 13px;">Najväčší katalóg taxislužieb na Slovensku</p>
     </td>
   </tr></table>
 </td></tr>
@@ -233,8 +233,8 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   <table width="100%" cellpadding="0" cellspacing="0"><tr>
     <td style="background: #f0fdf4; border: 2px solid #86efac; border-radius: 10px; padding: 16px 20px; text-align: center;">
       <div style="font-size: 28px; margin-bottom: 4px;">&#9989;</div>
-      <p style="margin: 0; font-size: 18px; font-weight: 700; color: #166534;">Profil uspesne prevzaty!</p>
-      <p style="margin: 4px 0 0; color: #15803d; font-size: 14px;"><strong>${taxiServiceName}</strong> je teraz overena taxisluzba</p>
+      <p style="margin: 0; font-size: 18px; font-weight: 700; color: #166534;">Profil úspešne prevzatý!</p>
+      <p style="margin: 4px 0 0; color: #15803d; font-size: 14px;"><strong>${taxiServiceName}</strong> je teraz overená taxislužba</p>
     </td>
   </tr></table>
 
@@ -242,7 +242,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   <!-- Login credentials -->
   <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 20px;"><tr>
     <td style="background: #1e293b; border-radius: 10px; padding: 20px 24px;">
-      <p style="color: #94a3b8; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 12px;">Prihlasovacie udaje</p>
+      <p style="color: #94a3b8; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 12px;">Prihlasovacie údaje</p>
       <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
           <td style="color: #94a3b8; font-size: 13px; padding: 4px 0;">Email:</td>
@@ -253,7 +253,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
           <td style="color: #fbbf24; font-size: 14px; font-weight: 700; font-family: monospace; padding: 4px 0; text-align: right;">${password}</td>
         </tr>
       </table>
-      <p style="color: #64748b; font-size: 11px; margin: 12px 0 0;">&#128274; Heslo si zmente po prvom prihlaseni</p>
+      <p style="color: #64748b; font-size: 11px; margin: 12px 0 0;">&#128274; Heslo si zmeňte po prvom prihlásení</p>
     </td>
   </tr></table>
   ` : ''}
@@ -261,18 +261,18 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   <!-- CTA Button -->
   <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 24px;"><tr>
     <td align="center">
-      <a href="https://www.taxinearme.sk/partner/login" style="display: inline-block; background: #f5a623; color: #000; padding: 14px 36px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 16px; letter-spacing: -0.3px;">&#128073; Prihlasit sa do Partner portalu</a>
+      <a href="https://www.taxinearme.sk/partner/login" style="display: inline-block; background: #f5a623; color: #000; padding: 14px 36px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 16px; letter-spacing: -0.3px;">&#128073; Prihlásiť sa do Partner portálu</a>
     </td>
   </tr></table>
 
   <!-- Free features -->
   <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 28px;"><tr>
     <td style="border-top: 1px solid #e5e7eb; padding-top: 24px;">
-      <p style="font-size: 13px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px;">&#127381; Vas bezplatny profil obsahuje:</p>
+      <p style="font-size: 13px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px;">&#127381; Váš bezplatný profil obsahuje:</p>
       <table width="100%" cellpadding="0" cellspacing="0">
-        <tr><td style="padding: 6px 0; font-size: 14px; color: #374151;">&#9989; Uprava nazvu, telefonu, webu a popisu</td></tr>
-        <tr><td style="padding: 6px 0; font-size: 14px; color: #374151;">&#9989; Badge "Overena taxisluzba" na profile</td></tr>
-        <tr><td style="padding: 6px 0; font-size: 14px; color: #374151;">&#9989; Pristup do Partner portalu</td></tr>
+        <tr><td style="padding: 6px 0; font-size: 14px; color: #374151;">&#9989; Úprava názvu, telefónu, webu a popisu</td></tr>
+        <tr><td style="padding: 6px 0; font-size: 14px; color: #374151;">&#9989; Badge "Overená taxislužba" na profile</td></tr>
+        <tr><td style="padding: 6px 0; font-size: 14px; color: #374151;">&#9989; Prístup do Partner portálu</td></tr>
       </table>
     </td>
   </tr></table>
@@ -280,8 +280,8 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   <!-- Upgrade section -->
   <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 28px;"><tr>
     <td style="border-top: 1px solid #e5e7eb; padding-top: 24px;">
-      <p style="font-size: 16px; font-weight: 700; color: #111; margin: 0 0 4px;">&#128640; Chcete viac zakaznikov?</p>
-      <p style="font-size: 13px; color: #6b7280; margin: 0 0 16px;">Odomknite funkcie, ktore privadzaju nove hovory:</p>
+      <p style="font-size: 16px; font-weight: 700; color: #111; margin: 0 0 4px;">&#128640; Chcete viac zákazníkov?</p>
+      <p style="font-size: 13px; color: #6b7280; margin: 0 0 16px;">Odomknite funkcie, ktoré privádzajú nové hovory:</p>
     </td>
   </tr></table>
 
@@ -292,17 +292,17 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       <table width="100%" cellpadding="0" cellspacing="0" style="border: 2px solid #bfdbfe; border-radius: 10px; overflow: hidden;">
         <tr>
           <td style="background: #2563eb; padding: 10px 16px; color: #fff; font-weight: 700; font-size: 14px;">
-            &#128310; Spravovany profil
+            &#128310; Spravovaný profil
             <span style="float: right; font-size: 16px; font-weight: 800;">5,99 &#8364;/mes</span>
           </td>
         </tr>
         <tr>
           <td style="background: #eff6ff; padding: 12px 16px;">
             <table cellpadding="0" cellspacing="0">
-              <tr><td style="font-size: 13px; color: #1e40af; padding: 3px 0;">&#10003; Hero obrazok a branding</td></tr>
-              <tr><td style="font-size: 13px; color: #1e40af; padding: 3px 0;">&#10003; Sluzby, tagy a popis sluzieb</td></tr>
+              <tr><td style="font-size: 13px; color: #1e40af; padding: 3px 0;">&#10003; Hero obrázok a branding</td></tr>
+              <tr><td style="font-size: 13px; color: #1e40af; padding: 3px 0;">&#10003; Služby, tagy a popis služieb</td></tr>
               <tr><td style="font-size: 13px; color: #1e40af; padding: 3px 0;">&#10003; WhatsApp, Facebook, Instagram</td></tr>
-              <tr><td style="font-size: 13px; color: #1e40af; padding: 3px 0;">&#10003; Zvyraznenie v zozname</td></tr>
+              <tr><td style="font-size: 13px; color: #1e40af; padding: 3px 0;">&#10003; Zvýraznenie v zozname</td></tr>
             </table>
           </td>
         </tr>
@@ -321,10 +321,10 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         <tr>
           <td style="background: #fffbeb; padding: 12px 16px;">
             <table cellpadding="0" cellspacing="0">
-              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Vlastna personalizovana stranka</td></tr>
-              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Fotogaleria vozidiel</td></tr>
-              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Google recenzie na profile</td></tr>
-              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Prioritne umiestnenie v meste</td></tr>
+              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Vlastná personalizovaná stránka</td></tr>
+              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Fotogaléria vozidiel</td></tr>
+              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Google recenzie na vašom profile</td></tr>
+              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Prioritné umiestnenie v meste</td></tr>
             </table>
           </td>
         </tr>
@@ -343,10 +343,10 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         <tr>
           <td style="background: #f5f3ff; padding: 12px 16px;">
             <table cellpadding="0" cellspacing="0">
-              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Exkluzivna pozicia #1 v meste</td></tr>
-              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Statistiky hladani a kliknuti</td></tr>
-              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Zvyraznenie na trasach do inych miest</td></tr>
-              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Prioritna podpora</td></tr>
+              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Exkluzívna pozícia #1 v meste</td></tr>
+              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Štatistiky hľadaní a kliknutí</td></tr>
+              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Zvýraznenie na trasách do iných miest</td></tr>
+              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Prioritná podpora</td></tr>
             </table>
           </td>
         </tr>
@@ -357,7 +357,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   <!-- CTA pricing -->
   <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 8px;"><tr>
     <td align="center">
-      <a href="https://www.taxinearme.sk/pre-taxiky#pricing" style="display: inline-block; background: #111827; color: #fbbf24; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px;">Porovnat baliky a upgradnut &#8594;</a>
+      <a href="https://www.taxinearme.sk/pre-taxiky#pricing" style="display: inline-block; background: #111827; color: #fbbf24; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px;">Porovnať balíky a upgradnúť &#8594;</a>
     </td>
   </tr></table>
 
@@ -365,8 +365,8 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
 <!-- FOOTER -->
 <tr><td style="background: #1e293b; padding: 20px 28px; border-radius: 0 0 12px 12px; text-align: center;">
-  <p style="color: #94a3b8; font-size: 12px; margin: 0;">TaxiNearMe.sk &mdash; Najvacsi katalog taxisluzieb na Slovensku</p>
-  <p style="color: #64748b; font-size: 11px; margin: 8px 0 0;">Tento email bol odoslany po prevzati profilu. Ak ste si profil neprevzali vy, kontaktujte nas na <a href="mailto:info@taxinearme.sk" style="color: #fbbf24;">info@taxinearme.sk</a></p>
+  <p style="color: #94a3b8; font-size: 12px; margin: 0;">TaxiNearMe.sk &mdash; Najväčší katalóg taxislužieb na Slovensku</p>
+  <p style="color: #64748b; font-size: 11px; margin: 8px 0 0;">Tento email bol odoslaný po prevzatí profilu. Ak ste si profil neprevzali vy, kontaktujte nás na <a href="mailto:info@taxinearme.sk" style="color: #fbbf24;">info@taxinearme.sk</a></p>
 </td></tr>
 
 </table>
