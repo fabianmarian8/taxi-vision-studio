@@ -198,31 +198,74 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       .eq('city_slug', citySlug)
       .ilike('name', taxiServiceName);
 
-    // Krok 4: Pošli welcome email (ak máme reálny email a je nový user)
-    if (isNewUser && ownerEmail) {
+    // Krok 4: Pošli welcome email — vždy keď máme email
+    if (ownerEmail) {
       try {
         const resend = new (await import('resend')).Resend(process.env.RESEND_API_KEY);
         await resend.emails.send({
           from: process.env.FROM_EMAIL || 'info@taxinearme.sk',
           to: ownerEmail,
-          subject: 'Váš profil na TaxiNearMe.sk bol prevzatý',
+          subject: `${taxiServiceName} — profil na TaxiNearMe.sk prevzatý`,
           html: `
-            <h2>Vitajte na TaxiNearMe.sk!</h2>
-            <p>Úspešne ste prevzali profil taxislužby <strong>${taxiServiceName}</strong>.</p>
-            <p><strong>Prihlasovacie údaje:</strong></p>
-            <ul>
-              <li>Email: ${email}</li>
-              <li>Heslo: ${password}</li>
-            </ul>
-            <p><a href="https://www.taxinearme.sk/partner/login">Prihlásiť sa do partner portálu</a></p>
-            <p>Po prihlásení si môžete upraviť základné údaje vášho profilu (názov, telefón, web, popis).</p>
-            <p>Pre viac funkcií (fotky, galéria, vlastná stránka) si pozrite naše <a href="https://www.taxinearme.sk/pre-taxiky">platené balíky</a>.</p>
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+              <div style="background: #f5a623; padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
+                <h1 style="color: #000; margin: 0; font-size: 22px;">TaxiNearMe.sk</h1>
+              </div>
+              <div style="padding: 24px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px;">
+                <h2 style="color: #111; margin-top: 0;">Vitajte, ${taxiServiceName}!</h2>
+                <p>Profil vašej taxislužby bol úspešne prevzatý a overený.</p>
+
+                ${isNewUser ? `
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin: 16px 0;">
+                  <p style="font-weight: bold; margin-top: 0;">Prihlasovacie údaje do Partner portálu:</p>
+                  <p style="margin: 4px 0;">Email: <strong>${email}</strong></p>
+                  <p style="margin: 4px 0;">Heslo: <strong>${password}</strong></p>
+                </div>
+                ` : ''}
+
+                <p><a href="https://www.taxinearme.sk/partner/login" style="display: inline-block; background: #f5a623; color: #000; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">Prihlásiť sa do Partner portálu</a></p>
+
+                <h3 style="margin-top: 24px;">Čo môžete robiť s bezplatným profilom:</h3>
+                <ul>
+                  <li>Upraviť názov, telefón, web a popis</li>
+                  <li>Badge "Overená taxislužba" na vašom profile</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">Chcete viac?</h3>
+                <table style="width: 100%; border-collapse: collapse; margin: 12px 0;">
+                  <tr>
+                    <td style="padding: 10px; background: #eff6ff; border-radius: 6px; vertical-align: top;">
+                      <strong style="color: #2563eb;">Spravovaný profil — 5,99 €/mes</strong><br/>
+                      <span style="font-size: 13px; color: #555;">Hero obrázok, služby, tagy, WhatsApp, sociálne siete</span>
+                    </td>
+                  </tr>
+                  <tr><td style="padding: 4px;"></td></tr>
+                  <tr>
+                    <td style="padding: 10px; background: #fffbeb; border-radius: 6px; vertical-align: top;">
+                      <strong style="color: #d97706;">Partner — 14,99 €/mes</strong><br/>
+                      <span style="font-size: 13px; color: #555;">Vlastná stránka, fotogaléria, Google recenzie, prioritné umiestnenie</span>
+                    </td>
+                  </tr>
+                  <tr><td style="padding: 4px;"></td></tr>
+                  <tr>
+                    <td style="padding: 10px; background: #f5f3ff; border-radius: 6px; vertical-align: top;">
+                      <strong style="color: #7c3aed;">Leader mesta — 24,99 €/mes</strong><br/>
+                      <span style="font-size: 13px; color: #555;">Exkluzívna pozícia #1, analytika, zvýraznenie na trasách</span>
+                    </td>
+                  </tr>
+                </table>
+
+                <p><a href="https://www.taxinearme.sk/pre-taxiky#pricing" style="color: #f5a623; font-weight: bold;">Pozrieť všetky balíky →</a></p>
+
+                <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
+                <p style="font-size: 12px; color: #999;">Tento email bol odoslaný z TaxiNearMe.sk po prevzatí profilu. Ak ste si profil neprevzali vy, kontaktujte nás na info@taxinearme.sk.</p>
+              </div>
+            </div>
           `,
         });
         log.info('Welcome email sent', { to: ownerEmail });
       } catch (emailError) {
         log.error('Failed to send welcome email', { error: String(emailError) });
-        // Neprerušuj flow — email nie je kritický
       }
     }
 
