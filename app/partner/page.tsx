@@ -8,6 +8,7 @@ import { isSuperadmin } from '@/lib/superadmin';
 import { CustomerPortalButton } from '@/components/stripe/CustomerPortalButton';
 import { TierStatusBanner } from '@/components/TierStatusBanner';
 import { UpgradePlanCard } from '@/components/UpgradePlanCard';
+import { PartnerAnalytics } from '@/components/PartnerAnalytics';
 import { getCityBySlug } from '@/data/cities';
 
 // Načítaj trasy pre personalizované ukážky v TierStatusBanner
@@ -21,7 +22,7 @@ async function getRoutesForCity(citySlug: string) {
     const normalize = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const cityNorm = normalize(cityName);
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     
     let routes: Array<{ slug: string; origin: string; destination: string; distance_km: number }> = routeData.default.routes
       .filter((r: { origin: string }) =>
         normalize(r.origin) === cityNorm
@@ -379,6 +380,20 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
             );
           }
           return null;
+        })()}
+
+        {/* Analytika výkonu — pre Leader alebo zamknutá ukážka */}
+        {!userIsSuperadmin && partners && partners.length > 0 && (() => {
+          const p = partners[0];
+          const sub = partnerSubscriptions.get(p.id);
+          const pt = sub?.plan_type || (p as { plan_type?: string }).plan_type || 'free';
+          return (
+            <PartnerAnalytics
+              citySlug={p.city_slug}
+              serviceName={p.name}
+              planType={pt}
+            />
+          );
         })()}
 
         {/* Upgrade Plan Card — priamy Stripe checkout z dashboardu */}

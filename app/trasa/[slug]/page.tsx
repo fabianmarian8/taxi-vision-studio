@@ -1,10 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { MapPin, Clock, Car, ArrowLeft, Phone, HelpCircle, ExternalLink, Euro, Star } from 'lucide-react';
+import { MapPin, Clock, Car, ArrowLeft, Phone, HelpCircle, ExternalLink, Euro, Star, Crown } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { SEO_CONSTANTS } from '@/lib/seo-constants';
 import { NextWebBanner } from '@/components/NextWebBanner';
+import { createAnonymousClient } from '@/lib/supabase/server';
 import routePagesData from '../../../src/data/route-pages.json';
 
 interface CarrierData {
@@ -94,6 +95,25 @@ export default async function RoutePage({ params }: RoutePageProps) {
 
   if (!route) {
     notFound();
+  }
+
+  // Načítaj Leader taxislužby pre zvýraznenie na trase
+  let leaderServiceNames: Set<string> = new Set();
+  try {
+    const supabase = createAnonymousClient();
+    // Nájdi taxislužby s leader subscription v origin meste
+    const originSlug = route.origin.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-');
+    const { data: leaderServices } = await supabase
+      .from('subscriptions')
+      .select('taxi_service_name')
+      .eq('city_slug', originSlug)
+      .eq('status', 'active')
+      .gte('amount_cents', 2499); // Leader = 24.99€+
+    if (leaderServices) {
+      leaderServiceNames = new Set(leaderServices.map(s => s.taxi_service_name?.toLowerCase()));
+    }
+  } catch {
+    // Non-critical — pokračuj bez zvýraznenia
   }
 
   // Generate JSON-LD structured data
@@ -233,8 +253,16 @@ export default async function RoutePage({ params }: RoutePageProps) {
               )}
 
               <div className="grid gap-4">
-                {route.carriers.map((carrier, index) => (
-                  <Card key={index} className="p-5 hover:shadow-md transition-shadow">
+                {route.carriers.map((carrier, index) => {
+                  const isLeader = leaderServiceNames.has(carrier.name.toLowerCase());
+                  return (
+                  <Card key={index} className={`p-5 hover:shadow-md transition-shadow ${isLeader ? 'ring-2 ring-purple-400 border-purple-300 bg-purple-50/30 relative' : ''}`}>
+                    {isLeader && (
+                      <div className="absolute -top-2.5 left-4 bg-purple-600 text-white text-[10px] font-bold px-3 py-0.5 rounded-full flex items-center gap-1">
+                        <Crown className="h-3 w-3" />
+                        LEADER
+                      </div>
+                    )}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="flex-1">
                         <h3 className="font-bold text-foreground text-lg mb-1">{carrier.name}</h3>
@@ -271,7 +299,8 @@ export default async function RoutePage({ params }: RoutePageProps) {
                       </div>
                     </div>
                   </Card>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </section>

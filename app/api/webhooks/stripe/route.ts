@@ -320,8 +320,8 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
   // Handle plan change (upgrade/downgrade) while status stays active
   const planChanged = previousPlanType !== newPlanType;
   if (planChanged && subscription.status === 'active') {
-    const isPremiumPlan = newPlanType === 'premium' || newPlanType === 'partner';
-    const isPartnerPlan = newPlanType === 'partner';
+    const isPremiumPlan = ['premium', 'partner', 'managed', 'newPartner', 'leader'].includes(newPlanType);
+    const isPartnerPlan = ['partner', 'newPartner', 'leader'].includes(newPlanType);
 
     const { data: updatedServices, error: flagError } = await getSupabase()
       .from('taxi_services')
@@ -483,8 +483,8 @@ async function linkSubscriptionToTaxiService(
   }
 
   const isActive = subscription.status === 'active';
-  const isPremiumPlan = subscription.plan_type === 'premium' || subscription.plan_type === 'partner';
-  const isPartnerPlan = subscription.plan_type === 'partner';
+  const isPremiumPlan = ['premium', 'partner', 'managed', 'newPartner', 'leader'].includes(subscription.plan_type);
+  const isPartnerPlan = ['partner', 'newPartner', 'leader'].includes(subscription.plan_type);
 
   // Update data - all plans get verified, only premium+ get is_premium
   const updateData = {
@@ -652,8 +652,8 @@ async function reactivateTaxiService(stripeSubscriptionId: string) {
     return;
   }
 
-  const isPremiumPlan = subscription.plan_type === 'premium' || subscription.plan_type === 'partner';
-  const isPartnerPlan = subscription.plan_type === 'partner';
+  const isPremiumPlan = ['premium', 'partner', 'managed', 'newPartner', 'leader'].includes(subscription.plan_type);
+  const isPartnerPlan = ['partner', 'newPartner', 'leader'].includes(subscription.plan_type);
 
   // Restore taxi service badges based on plan type
   const { data: updatedServices, error } = await getSupabase()

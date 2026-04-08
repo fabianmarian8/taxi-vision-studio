@@ -150,7 +150,7 @@ export const TIER_INFO: Record<PlanTier, TierInfo> = {
       'SMS overenie vlastníctva',
       'Úprava názvu a kontaktov',
       'Badge "Overená taxislužba"',
-      'Základné štatistiky',
+      'Prístup do Partner portálu',
     ],
   },
   managed: {
