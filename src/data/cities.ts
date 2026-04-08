@@ -45,6 +45,7 @@ export interface TaxiService {
   isVerified?: boolean; // Overená taxislužba (Mini, Premium alebo Partner plán)
   isPremium?: boolean;
   isPartner?: boolean;
+  isLeader?: boolean; // Leader mesta — exkluzívna pozícia #1, fialové zvýraznenie
   isPromotional?: boolean; // Flag pre marketingové promo premium (neplatia)
   premiumExpiresAt?: string; // ISO date string pre expiráciu
   partnerData?: PartnerData;

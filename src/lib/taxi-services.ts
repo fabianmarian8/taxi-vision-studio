@@ -31,8 +31,8 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
   try {
     const supabase = createAnonymousClient();
 
-    // Fetch taxi services status, approved submissions, and hidden services in parallel
-    const [dbServicesResult, approvedSubmissionsResult, hiddenServicesResult] = await Promise.all([
+    // Fetch taxi services status, approved submissions, hidden services, and leader partners in parallel
+    const [dbServicesResult, approvedSubmissionsResult, hiddenServicesResult, leaderPartnersResult] = await Promise.all([
       supabase
         .from('taxi_services')
         .select('id, name, is_verified, is_premium, is_partner, premium_expires_at')
@@ -46,11 +46,17 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
         .from('hidden_taxi_services')
         .select('service_name, city_slug')
         .eq('city_slug', city.slug),
+      supabase
+        .from('partners')
+        .select('name, plan_type')
+        .eq('city_slug', city.slug)
+        .eq('plan_type', 'leader'),
     ]);
 
     const { data: dbServices, error } = dbServicesResult;
     const { data: approvedSubmissions, error: submissionsError } = approvedSubmissionsResult;
     const { data: hiddenServices, error: hiddenError } = hiddenServicesResult;
+    const { data: leaderPartners } = leaderPartnersResult;
 
     if (error) {
       console.error('Error fetching taxi services from DB:', error);
@@ -60,6 +66,12 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
     }
     if (hiddenError) {
       console.error('Error fetching hidden services:', hiddenError);
+    }
+
+    // Create a set of leader partner names (case-insensitive)
+    const leaderNames = new Set<string>();
+    if (leaderPartners) {
+      leaderPartners.forEach((p) => leaderNames.add(p.name.toLowerCase()));
     }
 
     // Create a set of hidden service names (case-insensitive)
@@ -109,6 +121,7 @@ export async function mergeTaxiServicesWithDB(city: CityData): Promise<CityData>
           isVerified,
           isPremium: dbPremiumValid || promotionalPremiumValid,
           isPartner,
+          isLeader: leaderNames.has(service.name.toLowerCase()),
           premiumExpiresAt: effectiveExpiration,
         };
       }

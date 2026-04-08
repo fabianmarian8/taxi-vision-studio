@@ -630,6 +630,7 @@ async function UniversalListView({
               const serviceSlug = createServiceSlug(service.name);
               // Služba s redirectTo na partner stránku sa tiež zobrazí ako partner
               const isPartner = service.isPartner || !!service.redirectTo;
+              const isLeader = service.isLeader;
               const isPremium = service.isPremium;
               const isVerified = service.isVerified;
               const isPromotional = service.isPromotional; // Promo premium (nie platiaci)
@@ -747,8 +748,8 @@ async function UniversalListView({
                         {/* Badge */}
                         {isPartner && (
                           <>
-                            <span className="text-[10px] bg-purple-600 text-white px-1.5 py-0.5 rounded font-bold">
-                              PARTNER
+                            <span className={`text-[10px] text-white px-1.5 py-0.5 rounded font-bold ${isLeader ? 'bg-gradient-to-r from-purple-600 to-purple-700' : 'bg-purple-600'}`}>
+                              {isLeader ? 'LEADER' : 'PARTNER'}
                             </span>
                             <span className="text-[10px] bg-green-600 text-white px-1.5 py-0.5 rounded font-bold flex items-center gap-0.5">
                               <BadgeCheck className="h-3 w-3" />
@@ -977,21 +978,25 @@ async function CityPage({ city }: { city: CityData }) {
   return <UniversalListView city={city} regionSlug={regionSlug} locationText={locationText} partnerRatings={partnerRatings} />;
 
 }
-// Helper to sort services by tier: Partner > Premium > Standard > Alphabetical
+// Helper to sort services by tier: Leader > Partner > Premium > Standard > Alphabetical
 function sortServicesByTier(services: TaxiService[]) {
   return [...services].sort((a, b) => {
-    // 1. Partner (check isPartner OR redirectTo which implies partner linking)
+    // 1. Leader (exkluzívna pozícia #1)
+    if (a.isLeader && !b.isLeader) return -1;
+    if (!a.isLeader && b.isLeader) return 1;
+
+    // 2. Partner (check isPartner OR redirectTo which implies partner linking)
     const aPartner = a.isPartner || !!a.redirectTo;
     const bPartner = b.isPartner || !!b.redirectTo;
-    
+
     if (aPartner && !bPartner) return -1;
     if (!aPartner && bPartner) return 1;
 
-    // 2. Premium
+    // 3. Premium
     if (a.isPremium && !b.isPremium) return -1;
     if (!a.isPremium && b.isPremium) return 1;
 
-    // 3. Alphabetical
+    // 4. Alphabetical
     return a.name.localeCompare(b.name, 'sk');
   });
 }
