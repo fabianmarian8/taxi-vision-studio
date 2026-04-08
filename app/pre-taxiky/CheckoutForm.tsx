@@ -336,7 +336,7 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
 
           {/* Price info */}
           <p className="text-center text-slate-500 text-xs">
-            {plan === 'mini' ? '0,99€' : plan === 'premium' ? '3,99€' : '8,99€'} / mesiac • Bez viazanosti • Zrušíte kedykoľvek
+            {{ mini: '0,99€', premium: '5,99€', partner: '14,99€', managed: '5,99€', newPartner: '14,99€', leader: '24,99€' }[plan] || '0€'} / mesiac • Bez viazanosti • Zrušíte kedykoľvek
           </p>
         </form>
       </div>

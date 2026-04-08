@@ -380,7 +380,7 @@ export default function PreTaxikyPage() {
                   ))}
                 </ul>
                 <CheckoutButton
-                  plan="premium"
+                  plan="managed"
                   className="w-full inline-flex items-center justify-center gap-2 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-400 font-bold px-5 py-3 rounded-xl transition-all text-sm"
                 >
                   Vybrať Spravovaný
@@ -427,7 +427,7 @@ export default function PreTaxikyPage() {
                 </ul>
                 <div className="space-y-3">
                   <CheckoutButton
-                    plan="partner"
+                    plan="newPartner"
                     className="w-full inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-black px-5 py-3 rounded-xl transition-all shadow-lg shadow-yellow-400/20 hover:shadow-yellow-400/30 hover:scale-[1.02] text-sm"
                   >
                     Stať sa Partnerom
