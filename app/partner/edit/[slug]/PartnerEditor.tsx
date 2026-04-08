@@ -1090,13 +1090,48 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
             </div>
           </div>
 
-          {/* Live Preview Panel */}
-          <IframePreview
-            formData={formData}
-            partnerSlug={partner.slug}
-            citySlug={citySlug || partner.city_slug}
-            cityName={cityName}
-          />
+          {/* Live Preview Panel — len pre Partner+ tier */}
+          {(() => {
+            const pt: PlanTier = normalizePlanType(partner.plan_type);
+            const tierOrder: PlanTier[] = ['free', 'managed', 'partner', 'leader'];
+            const hasPartnerAccess = tierOrder.indexOf(pt) >= tierOrder.indexOf('partner');
+
+            if (hasPartnerAccess) {
+              return (
+                <IframePreview
+                  formData={formData}
+                  partnerSlug={partner.slug}
+                  citySlug={citySlug || partner.city_slug}
+                  cityName={cityName}
+                />
+              );
+            }
+
+            return (
+              <div className="hidden lg:block">
+                <div className="sticky top-24">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <Lock className="h-4 w-4" />
+                      <span className="font-medium">Živý náhľad stránky</span>
+                    </div>
+                  </div>
+                  <div className="bg-gray-100 rounded-xl border-2 border-dashed border-gray-300 flex flex-col items-center justify-center text-center p-8" style={{ minHeight: '500px' }}>
+                    <Lock className="h-10 w-10 text-gray-300 mb-4" />
+                    <p className="text-gray-500 font-semibold mb-2">Vlastná stránka s náhľadom</p>
+                    <p className="text-gray-400 text-sm mb-4">Dostupná v balíku Partner (14,99 €/mes) a vyššie</p>
+                    <a
+                      href="/pre-taxiky#pricing"
+                      className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm px-4 py-2 rounded-lg transition-colors"
+                    >
+                      Upgradnúť na Partner
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </div>
     </div>
