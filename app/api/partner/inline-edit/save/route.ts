@@ -3,6 +3,7 @@ import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { isPartnerSkinId } from '@/lib/partner-skins';
 import { isSuperadmin } from '@/lib/superadmin';
 import { NextRequest, NextResponse } from 'next/server';
+import { normalizePlanType, isFieldAccessible } from '@/lib/tier-config';
 
 // Whitelist povolených polí
 const ALLOWED_FIELDS = [
@@ -104,7 +105,7 @@ export async function POST(request: NextRequest) {
     // Overenie vlastníctva (superadmins can edit any partner)
     let partnerQuery = queryClient
       .from('partners')
-      .select('id, slug, city_slug, user_id')
+      .select('id, slug, city_slug, user_id, plan_type')
       .eq('id', partner_id);
 
     // Non-superadmins must own the partner
@@ -121,12 +122,25 @@ export async function POST(request: NextRequest) {
       }, { status: 403 });
     }
 
-    // Sanitizácia - len povolené polia + type coercion + validácia
+    // Tier-based enforcement — superadmins obchádzajú tier limity
+    const partnerPlanType = (partner as { plan_type?: string }).plan_type;
+    const planTier = userIsSuperadmin ? 'leader' as const : normalizePlanType(partnerPlanType);
+
+    // Sanitizácia - len povolené polia + tier gating + type coercion + validácia
     const sanitizedChanges: Record<string, unknown> = {};
     const validationErrors: string[] = [];
 
     for (const [key, value] of Object.entries(changes as Record<string, unknown>)) {
-      if (ALLOWED_FIELDS.includes(key)) {
+      // Whitelist check
+      if (!ALLOWED_FIELDS.includes(key)) continue;
+
+      // Tier gating — odmietni polia mimo rozsahu aktuálneho tieru
+      if (!isFieldAccessible(key, planTier)) {
+        validationErrors.push(`Pole "${key}" vyžaduje vyšší balík`);
+        continue;
+      }
+
+      if (true) { // Zachovanie pôvodného if bloku pre backward compat
         // Konverzia na správne typy pre databázu
         if (key === 'hero_image_pos_x' || key === 'hero_image_pos_y' || key === 'hero_image_zoom') {
           // Tieto polia sú integer v databáze

@@ -34,9 +34,9 @@ import { CheckoutButton } from './CheckoutForm';
 import { ContactButton } from '@/components/ContactButton';
 
 export const metadata: Metadata = {
-  title: 'Pre taxislužby - PREMIUM a PARTNER program | Taxi NearMe',
+  title: 'Pre taxislužby — Prevezmite a spravujte svoj profil | Taxi NearMe',
   description:
-    'Zvýšte viditeľnosť vašej taxislužby na najväčšom slovenskom portáli. PREMIUM zvýraznenie a PARTNER program pre profesionálne taxislužby.',
+    'Prevezmite kontrolu nad profilom vašej taxislužby. Zadarmo overenie, spravovaný profil alebo vlastná stránka s prioritným umiestnením.',
   keywords: [
     'taxi reklama',
     'propagácia taxislužby',
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     'taxi portál slovensko',
   ],
   openGraph: {
-    title: 'Pre taxislužby - PREMIUM a PARTNER program | Taxi NearMe',
-    description: 'Zvýšte viditeľnosť vašej taxislužby na najväčšom slovenskom portáli.',
+    title: 'Pre taxislužby — Prevezmite a spravujte svoj profil | Taxi NearMe',
+    description: 'Prevezmite kontrolu nad profilom vašej taxislužby na najväčšom slovenskom portáli.',
     type: 'website',
     locale: 'sk_SK',
     url: 'https://www.taxinearme.sk/pre-taxiky',
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: SEO_CONSTANTS.twitterSite,
-    title: 'Pre taxislužby - PREMIUM a PARTNER program | Taxi NearMe',
-    description: 'Zvýšte viditeľnosť vašej taxislužby na najväčšom slovenskom portáli.',
+    title: 'Pre taxislužby — Prevezmite a spravujte svoj profil | Taxi NearMe',
+    description: 'Prevezmite kontrolu nad profilom vašej taxislužby na najväčšom slovenskom portáli.',
     images: [SEO_CONSTANTS.defaultImage],
   },
   alternates: {
@@ -299,108 +299,144 @@ export default function PreTaxikyPage() {
       {/* Pricing Section */}
       <section className="py-12 md:py-24 px-4 md:px-8 relative" id="pricing">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[800px] md:h-[500px] bg-purple-600/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none" />
-        
+
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-2xl md:text-5xl font-black text-white mb-3 md:mb-4">
-              Cenník balíčkov
+              Vyberte si, ako chcete riadiť svoj profil
             </h2>
             <p className="text-sm md:text-lg text-slate-400">
-              Investícia, ktorá sa vráti
+              Prevezmite kontrolu nad tým, ako vás vidia vaši budúci zákazníci
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
-            {/* PREMIUM Package */}
-            <Card className="bg-slate-900/40 border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm order-2 md:order-1">
-              <CardHeader className="pb-6 md:pb-8 border-b border-white/5 p-6 md:p-8">
-                <div className="flex justify-between items-start mb-4">
+          <div className="grid md:grid-cols-4 gap-4 md:gap-5 max-w-6xl mx-auto">
+            {/* FREE — Prevzatý profil */}
+            <Card className="bg-slate-900/40 border-green-500/20 hover:border-green-500/40 transition-all duration-300 backdrop-blur-sm">
+              <CardHeader className="pb-6 border-b border-white/5 p-5 md:p-6">
+                <div className="flex justify-between items-start mb-3">
                   <div>
-                    <CardTitle className="text-xl md:text-2xl font-bold text-white mb-1 md:mb-2">PREMIUM</CardTitle>
-                    <p className="text-slate-400 text-xs md:text-sm">Pre začínajúce taxislužby</p>
+                    <CardTitle className="text-lg md:text-xl font-bold text-green-400 mb-1">Prevzatý profil</CardTitle>
+                    <p className="text-slate-400 text-xs">Kontrola nad základnými údajmi</p>
                   </div>
-                  <Crown className="h-6 w-6 md:h-8 md:w-8 text-slate-600" />
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl md:text-4xl font-black text-white">3,99€</span>
-                  <span className="text-slate-500 text-sm md:text-base font-medium">/ mesiac</span>
+                  <span className="text-3xl md:text-4xl font-black text-white">0€</span>
                 </div>
-                <div className="text-xs md:text-sm text-slate-500 line-through mt-1">Bežne 5,99€</div>
+                <div className="text-xs text-green-400/80 mt-1 font-medium">Zadarmo, navždy</div>
               </CardHeader>
-              <CardContent className="pt-6 md:pt-8 p-6 md:p-8">
-                <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+              <CardContent className="pt-5 p-5 md:p-6">
+                <ul className="space-y-2.5 mb-6">
                   {[
-                    'Prednostné zobrazenie v zozname',
-                    'Zlaté zvýraznenie profilu',
+                    'SMS overenie vlastníctva',
+                    'Úprava názvu a telefónu',
+                    'Úprava webu a popisu',
                     'Badge "Overená taxislužba"',
-                    'Väčšie tlačidlo na volanie',
-                    'Zobrazenie loga',
+                    'Prístup do partner portálu',
                   ].map((feat, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-300 text-sm md:text-base">
-                      <CheckCircle2 className="h-5 w-5 text-slate-500 flex-shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2.5 text-slate-300 text-sm">
+                      <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="#claim"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-green-500/10 hover:bg-green-500/20 border border-green-500/30 text-green-400 font-bold px-5 py-3 rounded-xl transition-all text-sm"
+                >
+                  Prevziať profil zadarmo
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* SPRAVOVANÝ PROFIL */}
+            <Card className="bg-slate-900/40 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 backdrop-blur-sm">
+              <CardHeader className="pb-6 border-b border-white/5 p-5 md:p-6">
+                <div className="flex justify-between items-start mb-3">
+                  <div>
+                    <CardTitle className="text-lg md:text-xl font-bold text-blue-400 mb-1">Spravovaný profil</CardTitle>
+                    <p className="text-slate-400 text-xs">Kompletná správa vizuálu</p>
+                  </div>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl md:text-4xl font-black text-white">5,99€</span>
+                  <span className="text-slate-500 text-sm font-medium">/ mesiac</span>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-5 p-5 md:p-6">
+                <ul className="space-y-2.5 mb-6">
+                  {[
+                    'Všetko z bezplatného profilu',
+                    'Hero obrázok a branding',
+                    'Služby, tagy a popis služieb',
+                    'WhatsApp a sociálne siete',
+                    'Objednávkový odkaz',
+                    'Zvýraznenie v zozname',
+                  ].map((feat, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-slate-300 text-sm">
+                      <CheckCircle2 className="h-4 w-4 text-blue-500 flex-shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
                   ))}
                 </ul>
                 <CheckoutButton
                   plan="premium"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold px-6 py-3 md:py-4 rounded-xl transition-all text-sm md:text-base"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-400 font-bold px-5 py-3 rounded-xl transition-all text-sm"
                 >
-                  Vybrať PREMIUM
+                  Vybrať Spravovaný
                 </CheckoutButton>
               </CardContent>
             </Card>
 
-            {/* PARTNER Package */}
-            <Card className="relative bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-yellow-400/50 shadow-2xl shadow-yellow-400/10 transform md:-translate-y-4 order-1 md:order-2">
+            {/* PARTNER */}
+            <Card className="relative bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-yellow-400/50 shadow-2xl shadow-yellow-400/10 transform md:-translate-y-3">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-yellow-400 text-slate-950 text-[10px] md:text-xs font-black px-4 py-1 rounded-b-lg tracking-widest uppercase whitespace-nowrap">
                 Najpredávanejšie
               </div>
-              <CardHeader className="pb-6 md:pb-8 border-b border-white/10 p-6 md:p-8">
-                <div className="flex justify-between items-start mb-4">
+              <CardHeader className="pb-6 border-b border-white/10 p-5 md:p-6">
+                <div className="flex justify-between items-start mb-3">
                   <div>
-                    <CardTitle className="text-xl md:text-2xl font-bold text-yellow-400 mb-1 md:mb-2">PARTNER</CardTitle>
-                    <p className="text-slate-300 text-xs md:text-sm">Kompletná digitálna prezentácia</p>
+                    <CardTitle className="text-lg md:text-xl font-bold text-yellow-400 mb-1">Partner</CardTitle>
+                    <p className="text-slate-300 text-xs">Vlastná stránka + priorita</p>
                   </div>
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-yellow-400/20 rounded-lg flex items-center justify-center">
-                    <Star className="h-5 w-5 md:h-6 md:w-6 text-yellow-400 fill-yellow-400" />
+                  <div className="w-9 h-9 bg-yellow-400/20 rounded-lg flex items-center justify-center">
+                    <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
                   </div>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl md:text-5xl font-black text-white">8,99€</span>
-                  <span className="text-slate-500 text-sm md:text-base font-medium">/ mesiac</span>
+                  <span className="text-3xl md:text-4xl font-black text-white">14,99€</span>
+                  <span className="text-slate-500 text-sm font-medium">/ mesiac</span>
                 </div>
-                <div className="text-xs md:text-sm text-slate-500 line-through mt-1">Bežne 12,99€</div>
               </CardHeader>
-              <CardContent className="pt-6 md:pt-8 p-6 md:p-8">
-                <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+              <CardContent className="pt-5 p-5 md:p-6">
+                <ul className="space-y-2.5 mb-6">
                   {[
-                    'Všetky výhody PREMIUM',
+                    'Všetko zo Spravovaného',
                     'Vlastná personalizovaná stránka',
                     'Fotogaléria vozidiel',
-                    'Rozšírený popis služieb a cenník',
-                    'Partner portál - obsah si môžete upravovať okamžite aj sami',
+                    'Cenník a prepravný poriadok',
                     'Import Google recenzií',
-                    'Prioritná podpora 24/7',
+                    'Prioritné umiestnenie',
+                    'Výber vizuálnej šablóny',
                   ].map((feat, i) => (
-                    <li key={i} className="flex items-start gap-3 text-white text-sm md:text-base">
-                      <CheckCircle2 className="h-5 w-5 text-yellow-400 flex-shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2.5 text-white text-sm">
+                      <CheckCircle2 className="h-4 w-4 text-yellow-400 flex-shrink-0 mt-0.5" />
                       <span className="font-medium">{feat}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="space-y-3 md:space-y-4">
+                <div className="space-y-3">
                   <CheckoutButton
                     plan="partner"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-black px-6 py-3 md:py-4 rounded-xl transition-all shadow-lg shadow-yellow-400/20 hover:shadow-yellow-400/30 hover:scale-[1.02] text-sm md:text-base"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-black px-5 py-3 rounded-xl transition-all shadow-lg shadow-yellow-400/20 hover:shadow-yellow-400/30 hover:scale-[1.02] text-sm"
                   >
-                    Stať sa PARTNEROM
-                    <ArrowRight className="h-5 w-5" />
+                    Stať sa Partnerom
+                    <ArrowRight className="h-4 w-4" />
                   </CheckoutButton>
                   <div className="text-center">
                     <Link
                       href="/taxi/zvolen/fast-taxi-zvolen"
-                      className="text-xs md:text-sm text-slate-400 hover:text-white underline underline-offset-4 decoration-slate-700 hover:decoration-white transition-all"
+                      className="text-xs text-slate-400 hover:text-white underline underline-offset-4 decoration-slate-700 hover:decoration-white transition-all"
                     >
                       Pozrieť ukážku partnera
                     </Link>
@@ -409,38 +445,44 @@ export default function PreTaxikyPage() {
               </CardContent>
             </Card>
 
-            {/* Slots Unavailable Box */}
-            <Card className="bg-slate-900/40 border-red-500/30 hover:border-red-500/50 transition-all duration-300 backdrop-blur-sm order-3 flex flex-col">
-              <CardHeader className="pb-6 md:pb-8 border-b border-white/5 p-6 md:p-8">
-                <div className="flex justify-between items-start mb-4">
+            {/* LEADER MESTA */}
+            <Card className="bg-slate-900/40 border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 backdrop-blur-sm">
+              <CardHeader className="pb-6 border-b border-white/5 p-5 md:p-6">
+                <div className="flex justify-between items-start mb-3">
                   <div>
-                    <CardTitle className="text-xl md:text-2xl font-bold text-red-400 mb-1 md:mb-2">Sloty obsadené?</CardTitle>
-                    <p className="text-slate-400 text-xs md:text-sm">Máme pre vás riešenie</p>
+                    <CardTitle className="text-lg md:text-xl font-bold text-purple-400 mb-1">Leader mesta</CardTitle>
+                    <p className="text-slate-400 text-xs">Exkluzívna pozícia #1</p>
                   </div>
-                  <XCircle className="h-6 w-6 md:h-8 md:w-8 text-red-500/50" />
+                  <Crown className="h-6 w-6 text-purple-500" />
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-2xl md:text-3xl font-black text-white">Individuálne</span>
+                  <span className="text-2xl md:text-3xl font-black text-white">24,99€</span>
+                  <span className="text-slate-500 text-sm font-medium">/ mesiac</span>
                 </div>
-                <div className="text-xs md:text-sm text-slate-500 mt-1">Cena podľa dohody</div>
+                <div className="text-xs text-purple-400/70 mt-1">Dominantná pozícia vo vašom meste</div>
               </CardHeader>
-              <CardContent className="pt-6 md:pt-8 p-6 md:p-8 flex-1 flex flex-col">
-                <div className="flex-1">
-                  <p className="text-slate-300 text-sm md:text-base mb-4 leading-relaxed">
-                    Vo vašom meste už nie sú dostupné žiadne Partner alebo Premium sloty?
-                  </p>
-                  <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-                    Kontaktujte nás a nájdeme pre vás alternatívne riešenie - rozšírenie do okolitých miest, špeciálne kampane alebo iné formy propagácie.
-                  </p>
-                </div>
-                <ContactButton
-                  className="w-full inline-flex items-center justify-center gap-2 bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 text-red-400 hover:text-red-300 font-bold px-6 py-3 md:py-4 rounded-xl transition-all text-sm md:text-base"
-                  subject="Záujem o alternatívne riešenie - sloty obsadené"
-                  prefilledMessage="Mám záujem o propagáciu mojej taxislužby, ale vo svojom meste už nie sú dostupné Partner/Premium sloty. Prosím o informácie o alternatívnych možnostiach."
+              <CardContent className="pt-5 p-5 md:p-6">
+                <ul className="space-y-2.5 mb-6">
+                  {[
+                    'Všetko z Partnera',
+                    'Exkluzívna pozícia #1 v meste',
+                    'Štatistiky hľadaní taxi vo vašom meste',
+                    'Analytika kliknutí na vaše číslo',
+                    'Zvýraznenie na trasách do iných miest',
+                    'Prioritná podpora',
+                  ].map((feat, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-slate-300 text-sm">
+                      <CheckCircle2 className="h-4 w-4 text-purple-500 flex-shrink-0 mt-0.5" />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+                <CheckoutButton
+                  plan="leader"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-400 font-bold px-5 py-3 rounded-xl transition-all text-sm"
                 >
-                  <Mail className="h-4 w-4 md:h-5 md:w-5" />
-                  Kontaktujte nás
-                </ContactButton>
+                  Vybrať Leader
+                </CheckoutButton>
               </CardContent>
             </Card>
           </div>

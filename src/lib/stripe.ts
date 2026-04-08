@@ -27,16 +27,24 @@ export const stripe = new Proxy({} as Stripe, {
 
 // Price IDs from Stripe Dashboard
 export const STRIPE_PRICES = {
+  // Legacy ceny (pre existujúcich zákazníkov)
   mini: process.env.STRIPE_MINI_PRICE_ID || '',
   premium: process.env.STRIPE_PREMIUM_PRICE_ID || '',
   partner: process.env.STRIPE_PARTNER_PRICE_ID || '',
+  // Nové ceny (nový cenník)
+  managed: process.env.STRIPE_MANAGED_PRICE_ID || '',
+  newPartner: process.env.STRIPE_NEW_PARTNER_PRICE_ID || '',
+  leader: process.env.STRIPE_LEADER_PRICE_ID || '',
 };
 
-// Plan amounts in cents
+// Plan amounts in cents (nový cenník)
 export const PLAN_AMOUNTS = {
-  mini: 99,     // 0.99 EUR
-  premium: 399, // 3.99 EUR
-  partner: 899, // 8.99 EUR
+  mini: 99,       // 0.99 EUR (legacy)
+  premium: 399,   // 3.99 EUR (legacy)
+  partner: 899,   // 8.99 EUR (legacy)
+  managed: 599,   // 5.99 EUR (nový)
+  newPartner: 1499, // 14.99 EUR (nový)
+  leader: 2499,   // 24.99 EUR (nový)
 };
 
 /**
@@ -122,9 +130,12 @@ export function getPlanTypeFromPrice(priceId: string): 'mini' | 'premium' | 'par
 /**
  * Get plan type from subscription amount
  */
-export function getPlanTypeFromAmount(amountCents: number): 'mini' | 'premium' | 'partner' {
-  if (amountCents >= PLAN_AMOUNTS.partner) return 'partner';   // >= 899
-  if (amountCents >= PLAN_AMOUNTS.premium) return 'premium';   // >= 399
+export function getPlanTypeFromAmount(amountCents: number): 'mini' | 'premium' | 'partner' | 'managed' | 'newPartner' | 'leader' {
+  if (amountCents >= PLAN_AMOUNTS.leader) return 'leader';         // >= 2499 (24.99€)
+  if (amountCents >= PLAN_AMOUNTS.newPartner) return 'newPartner'; // >= 1499 (14.99€)
+  if (amountCents >= PLAN_AMOUNTS.partner) return 'partner';       // >= 899 (legacy 8.99€)
+  if (amountCents >= PLAN_AMOUNTS.managed) return 'managed';       // >= 599 (5.99€)
+  if (amountCents >= PLAN_AMOUNTS.premium) return 'premium';       // >= 399 (legacy 3.99€)
   return 'mini';
 }
 

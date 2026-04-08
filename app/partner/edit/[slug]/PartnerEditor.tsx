@@ -6,9 +6,11 @@ import Link from 'next/link';
 import { Partner, PartnerDraft } from '@/lib/supabase/types';
 import { IframePreview } from './IframePreview';
 import { PARTNER_SKINS, normalizePartnerSkin } from '@/lib/partner-skins';
+import { type PlanTier, normalizePlanType, TIER_INFO, getNextTier } from '@/lib/tier-config';
+import { Lock, ArrowRight } from 'lucide-react';
 
 interface Props {
-  partner: Partner & { partner_drafts: PartnerDraft[] };
+  partner: Partner & { partner_drafts: PartnerDraft[]; plan_type?: string | null };
   initialDraft: PartnerDraft | null;
   userEmail: string;
   rejectionMessage?: string | null;
@@ -485,27 +487,43 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
           <div className="bg-white rounded-xl shadow-sm overflow-hidden">
             {/* Tabs */}
             <div className="border-b border-gray-200">
-              <nav className="flex">
-                {[
-                  { id: 'general', label: 'Základné info' },
-                  { id: 'hero', label: 'Hero sekcia' },
-                  { id: 'appearance', label: 'Vzhľad' },
-                  { id: 'gallery', label: 'Galéria' },
-                  { id: 'social', label: 'Sociálne siete' },
-                ].map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id as typeof activeTab)}
-                    className={`flex-1 py-3 px-4 text-sm font-medium border-b-2 transition-colors ${
-                      activeTab === tab.id
-                        ? 'border-purple-600 text-purple-600'
-                        : 'border-transparent text-gray-500 hover:text-gray-700'
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </nav>
+              {(() => {
+                const planTier: PlanTier = normalizePlanType(partner.plan_type);
+                const tabDefs: { id: typeof activeTab; label: string; minTier: PlanTier }[] = [
+                  { id: 'general', label: 'Základné info', minTier: 'free' },
+                  { id: 'hero', label: 'Hero sekcia', minTier: 'managed' },
+                  { id: 'appearance', label: 'Vzhľad', minTier: 'partner' },
+                  { id: 'gallery', label: 'Galéria', minTier: 'partner' },
+                  { id: 'social', label: 'Sociálne siete', minTier: 'managed' },
+                ];
+                const tierOrder: PlanTier[] = ['free', 'managed', 'partner', 'leader'];
+                const hasAccess = (min: PlanTier) => tierOrder.indexOf(planTier) >= tierOrder.indexOf(min);
+
+                return (
+                  <nav className="flex">
+                    {tabDefs.map((tab) => {
+                      const locked = !hasAccess(tab.minTier);
+                      return (
+                        <button
+                          key={tab.id}
+                          onClick={() => !locked && setActiveTab(tab.id)}
+                          className={`flex-1 py-3 px-4 text-sm font-medium border-b-2 transition-colors flex items-center justify-center gap-1.5 ${
+                            locked
+                              ? 'border-transparent text-gray-300 cursor-not-allowed'
+                              : activeTab === tab.id
+                                ? 'border-purple-600 text-purple-600'
+                                : 'border-transparent text-gray-500 hover:text-gray-700'
+                          }`}
+                          title={locked ? `Vyžaduje ${TIER_INFO[tab.minTier].name} (${TIER_INFO[tab.minTier].price})` : undefined}
+                        >
+                          {locked && <Lock className="h-3.5 w-3.5" />}
+                          {tab.label}
+                        </button>
+                      );
+                    })}
+                  </nav>
+                );
+              })()}
             </div>
 
             {/* Tab Content */}
@@ -594,7 +612,41 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
                     />
                   </div>
 
-                  <div>
+                  {/* Služby — vyžaduje Spravovaný profil */}
+                  {(() => {
+                    const pt: PlanTier = normalizePlanType(partner.plan_type);
+                    const tierOrder: PlanTier[] = ['free', 'managed', 'partner', 'leader'];
+                    const locked = tierOrder.indexOf(pt) < tierOrder.indexOf('managed');
+                    if (locked) {
+                      const next = TIER_INFO['managed'];
+                      return (
+                        <div className="relative rounded-xl border-2 border-dashed border-gray-200 p-6 bg-gray-50">
+                          <div className="absolute inset-0 flex items-center justify-center z-10">
+                            <a href="/pre-taxiky#pricing" className="flex items-center gap-2 bg-white border border-gray-300 shadow-sm text-sm font-semibold text-gray-700 px-4 py-2 rounded-full hover:bg-gray-50 transition-colors">
+                              <Lock className="h-4 w-4" />
+                              Odomknúť v {next.name} ({next.price})
+                              <ArrowRight className="h-3.5 w-3.5" />
+                            </a>
+                          </div>
+                          <div className="opacity-20 pointer-events-none">
+                            <p className="text-sm font-medium text-gray-700 mb-3">Služby, WhatsApp, objednávkový odkaz a ďalšie</p>
+                            <div className="flex flex-wrap gap-2">
+                              {['Letisko', 'Nonstop', 'VIP preprava', 'Platba kartou'].map(s => (
+                                <span key={s} className="px-3 py-1.5 rounded-full text-sm bg-gray-200 text-gray-500">{s}</span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    }
+                    return null;
+                  })()}
+
+                  {(() => {
+                    const pt: PlanTier = normalizePlanType(partner.plan_type);
+                    const tierOrder: PlanTier[] = ['free', 'managed', 'partner', 'leader'];
+                    return tierOrder.indexOf(pt) >= tierOrder.indexOf('managed');
+                  })() && <div>
                     <div className="flex items-center justify-between mb-3">
                       <label className="block text-sm font-medium text-gray-700">
                         Služby
@@ -699,7 +751,7 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
                         Pridať
                       </button>
                     </div>
-                  </div>
+                  </div>}
                 </div>
               )}
 

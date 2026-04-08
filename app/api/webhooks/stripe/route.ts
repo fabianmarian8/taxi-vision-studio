@@ -185,8 +185,26 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
   // Link subscription to taxi service (auto-enables verified/premium)
   await linkSubscriptionToTaxiService(subscription.id, citySlug, taxiServiceName, taxiServiceId);
 
-  // Auto-onboard partner if partner plan
+  // Update partner plan_type if partner_id is in metadata
+  const partnerId = subscription.metadata?.partner_id as string | undefined;
   const planType = getPlanTypeFromAmount(amountCents);
+  if (partnerId) {
+    // Mapovanie Stripe plan type na tier plan_type
+    const planToTier: Record<string, string> = {
+      leader: 'leader',
+      newPartner: 'partner',
+      partner: 'partner',   // legacy
+      managed: 'managed',
+      premium: 'managed',   // legacy premium = managed
+      mini: 'free',         // legacy mini = free
+    };
+    const newPlanType = planToTier[planType] || 'free';
+    await getSupabase()
+      .from('partners')
+      .update({ plan_type: newPlanType })
+      .eq('id', partnerId);
+    logger.info('Partner plan_type updated', { partnerId, newPlanType, stripePlan: planType });
+  }
   if (planType === 'partner' && customerEmail) {
     try {
       const result = await handlePartnerOnboarding(getSupabase(), {

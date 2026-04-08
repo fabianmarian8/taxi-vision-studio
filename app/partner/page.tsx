@@ -6,6 +6,49 @@ import { PasswordSettings } from './PasswordSettings';
 import { SuperadminPartnerList } from './SuperadminPartnerList';
 import { isSuperadmin } from '@/lib/superadmin';
 import { CustomerPortalButton } from '@/components/stripe/CustomerPortalButton';
+import { TierStatusBanner } from '@/components/TierStatusBanner';
+import { UpgradePlanCard } from '@/components/UpgradePlanCard';
+import { getCityBySlug } from '@/data/cities';
+
+// Načítaj trasy pre personalizované ukážky v TierStatusBanner
+async function getRoutesForCity(citySlug: string) {
+  try {
+    const routeData = await import('@/data/route-pages.json');
+    const city = getCityBySlug(citySlug);
+    const cityName = city?.name || citySlug;
+
+    // Nájdi trasy kde origin alebo destination matchuje mesto
+    const normalize = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const cityNorm = normalize(cityName);
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let routes: Array<{ slug: string; origin: string; destination: string; distance_km: number }> = routeData.default.routes
+      .filter((r: { origin: string }) =>
+        normalize(r.origin) === cityNorm
+      )
+      .map((r: { slug: string; origin: string; destination: string; distance_km: string | number }) => ({
+        slug: r.slug,
+        origin: r.origin,
+        destination: r.destination,
+        distance_km: typeof r.distance_km === 'string' ? parseInt(r.distance_km) : r.distance_km,
+      }));
+
+    // Ak nemá priame trasy, vyber reálne existujúce trasy ako ukážku
+    if (routes.length === 0) {
+      const sampleRoutes = routeData.default.routes.slice(0, 5);
+      routes = sampleRoutes.map((r: { slug: string; origin: string; destination: string; distance_km: string | number }) => ({
+        slug: r.slug,
+        origin: cityName,
+        destination: typeof r.destination === 'string' ? r.destination.split(' ')[0] : r.destination,
+        distance_km: typeof r.distance_km === 'string' ? parseInt(r.distance_km) : r.distance_km,
+      }));
+    }
+
+    return { cityName, routes: routes.slice(0, 5) };
+  } catch {
+    return { cityName: citySlug, routes: [] };
+  }
+}
 
 interface PageProps {
   searchParams: Promise<{ as?: string }>;
@@ -302,6 +345,58 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
 
       {/* Main content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Free tier info banner */}
+        {!userIsSuperadmin && partners && partners.length > 0 && (() => {
+          const pt = (partners[0] as { plan_type?: string }).plan_type;
+          if (pt === 'free' || (!pt && !partnerSubscriptions.get(partners[0].id))) {
+            return (
+              <div className="bg-green-50 border-2 border-green-300 rounded-xl p-5 mb-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="text-lg font-bold text-green-800 mb-1">Bezplatný profil — Prevzatý</h2>
+                    <p className="text-sm text-green-700 mb-3">
+                      Máte prístup k základným úpravám profilu (názov, telefón, web, popis).
+                      Pre rozšírené funkcie ako fotky, galéria, vlastná stránka a prioritné umiestnenie
+                      si vyberte jeden z platených balíkov.
+                    </p>
+                    <a
+                      href="/pre-taxiky#pricing"
+                      className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold text-sm px-4 py-2 rounded-lg transition-colors"
+                    >
+                      Pozrieť platené balíky
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+          return null;
+        })()}
+
+        {/* Upgrade Plan Card — priamy Stripe checkout z dashboardu */}
+        {!userIsSuperadmin && partners && partners.length > 0 && (() => {
+          const p = partners[0];
+          const sub = partnerSubscriptions.get(p.id);
+          const pt = sub?.plan_type || (p as { plan_type?: string }).plan_type || 'free';
+          return (
+            <UpgradePlanCard
+              currentPlanType={pt}
+              partnerId={p.id}
+              partnerSlug={p.slug}
+              citySlug={p.city_slug}
+              taxiServiceName={p.name}
+            />
+          );
+        })()}
+
         {/* Superadmin Partner List */}
         {userIsSuperadmin && (
           <SuperadminPartnerList
@@ -309,6 +404,21 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
             currentImpersonating={impersonatingSlug}
           />
         )}
+
+        {/* Tier Status Banner — zobrazí aktuálny balík, zamknuté funkcie a ukážky trás */}
+        {!impersonatingSlug && partners && partners.length > 0 && await (async () => {
+          const firstPartner = partners[0];
+          const firstPartnerSub = partnerSubscriptions.get(firstPartner.id);
+          const planType = firstPartnerSub?.plan_type || (firstPartner as { plan_type?: string }).plan_type || 'free';
+          const { cityName, routes } = await getRoutesForCity(firstPartner.city_slug);
+          return (
+            <TierStatusBanner
+              planType={planType}
+              cityName={cityName}
+              routePreviews={routes}
+            />
+          );
+        })()}
 
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900">

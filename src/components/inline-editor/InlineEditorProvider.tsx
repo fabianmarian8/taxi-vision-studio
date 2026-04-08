@@ -5,6 +5,7 @@ import { FloatingAdminBar } from './FloatingAdminBar';
 import { EditorDrawer } from './EditorDrawer';
 import type { FieldType } from './EditableField';
 import { PreviewMessage } from '@/lib/preview-protocol';
+import { isFieldAccessible, type PlanTier } from '@/lib/tier-config';
 
 // Draft data type - all editable fields
 export interface DraftData {
@@ -43,6 +44,7 @@ interface EditorContextType {
   saveField: (fieldKey: string, value: string | number | string[]) => Promise<void>;
   isSaving: boolean;
   lastSaved: Date | null;
+  planTier: PlanTier;
 }
 
 export const EditorContext = createContext<EditorContextType | null>(null);
@@ -66,6 +68,7 @@ interface InlineEditorProviderProps {
   citySlug?: string;
   onSaveSuccess?: (draftId: string) => void;
   onPublishSuccess?: () => void;
+  planTier?: PlanTier;
 }
 
 export function InlineEditorProvider({
@@ -77,7 +80,8 @@ export function InlineEditorProvider({
   partnerSlug,
   citySlug,
   onSaveSuccess,
-  onPublishSuccess
+  onPublishSuccess,
+  planTier = 'partner'
 }: InlineEditorProviderProps) {
   // Editor state
   const [isEditMode, setIsEditMode] = useState(false);
@@ -330,10 +334,15 @@ export function InlineEditorProvider({
       isEditMode: isOwner ? isEditMode : false, // Non-owners always see non-edit mode
       toggleEditMode: isOwner ? toggleEditMode : () => {}, // Non-owners can't toggle
       draftData,
-      openEditor,
+      openEditor: (fieldKey, fieldType, label) => {
+        // Client-side gating — zamknuté polia sa nedajú otvoriť
+        if (!isFieldAccessible(fieldKey, planTier)) return;
+        openEditor(fieldKey, fieldType, label);
+      },
       saveField,
       isSaving,
-      lastSaved
+      lastSaved,
+      planTier,
     }}>
       {children}
 

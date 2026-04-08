@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { Crown, Star, ShieldCheck, CheckCircle2, Loader2, ChevronDown, ChevronUp } from 'lucide-react';
+import { Crown, Star, ShieldCheck, CheckCircle2, Loader2, ChevronDown, ChevronUp, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const CHECKOUT_COOLDOWN_MS = 5 * 60 * 1000;
 const CHECKOUT_STORAGE_KEY = 'taxi_checkout_attempt';
 
-type PlanType = 'mini' | 'premium' | 'partner';
+type PlanType = 'premium' | 'partner' | 'leader';
 
 interface ServiceCheckoutProps {
   citySlug: string;
@@ -33,48 +34,33 @@ const PLANS: {
   };
 }[] = [
   {
-    id: 'mini',
-    name: 'MINI',
-    price: '0,99€',
-    features: [
-      'Badge "Overená taxislužba"',
-      'Zvýšená dôveryhodnosť',
-    ],
-    icon: ShieldCheck,
-    accent: {
-      card: 'bg-emerald-50 border-emerald-200',
-      badge: 'bg-emerald-100 text-emerald-700',
-      btn: 'bg-emerald-600 hover:bg-emerald-700 text-white',
-      btnDisabled: 'bg-emerald-100 text-emerald-500 cursor-default',
-    },
-  },
-  {
     id: 'premium',
-    name: 'PREMIUM',
-    price: '3,99€',
+    name: 'Spravovaný profil',
+    price: '5,99€',
     features: [
-      'Prednostné zobrazenie v zozname',
-      'Zlaté zvýraznenie profilu',
-      'Badge + logo + väčšie tlačidlo',
+      'Hero obrázok a branding',
+      'Služby, tagy a popis',
+      'WhatsApp a sociálne siete',
+      'Zvýraznenie v zozname',
     ],
     icon: Crown,
     accent: {
-      card: 'bg-white border-gray-200',
-      badge: 'bg-gray-100 text-gray-600',
-      btn: 'bg-purple-600 hover:bg-purple-700 text-white',
-      btnDisabled: 'bg-gray-100 text-gray-400 cursor-default',
+      card: 'bg-blue-50 border-blue-200',
+      badge: 'bg-blue-100 text-blue-700',
+      btn: 'bg-blue-600 hover:bg-blue-700 text-white',
+      btnDisabled: 'bg-blue-100 text-blue-400 cursor-default',
     },
   },
   {
     id: 'partner',
-    name: 'PARTNER',
-    price: '8,99€',
+    name: 'Partner',
+    price: '14,99€',
     popular: true,
     features: [
       'Vlastná personalizovaná stránka',
       'Fotogaléria + cenník',
-      'Partner portál na úpravy',
-      'Import Google recenzií',
+      'Google recenzie',
+      'Prioritné umiestnenie',
     ],
     icon: Star,
     accent: {
@@ -82,6 +68,25 @@ const PLANS: {
       badge: 'bg-amber-100 text-amber-700',
       btn: 'bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-black shadow-md shadow-yellow-200',
       btnDisabled: 'bg-amber-100 text-amber-400 cursor-default',
+    },
+  },
+  {
+    id: 'leader',
+    name: 'Leader mesta',
+    price: '24,99€',
+    features: [
+      'Všetko z Partnera',
+      'Exkluzívna pozícia #1',
+      'Štatistiky hľadaní v meste',
+      'Analytika kliknutí na číslo',
+      'Zvýraznenie na trasách',
+    ],
+    icon: Crown,
+    accent: {
+      card: 'bg-purple-50 border-purple-200',
+      badge: 'bg-purple-100 text-purple-700',
+      btn: 'bg-purple-600 hover:bg-purple-700 text-white',
+      btnDisabled: 'bg-purple-100 text-purple-400 cursor-default',
     },
   },
 ];
@@ -169,10 +174,10 @@ export function ServiceCheckout({
         <div className="flex items-center gap-2 md:gap-3 flex-1 min-w-0">
           <Star className="h-5 w-5 text-amber-600 hidden md:block" />
           <span className="font-bold text-sm md:text-base text-amber-800 truncate">
-            Ste majiteľom tejto taxislužby?
+            Spravujte svoj profil profesionálne
           </span>
-          <span className="text-xs px-2 py-0.5 rounded-full whitespace-nowrap bg-amber-100 text-amber-700">
-            od 0,99€/mes
+          <span className="text-xs px-2 py-0.5 rounded-full whitespace-nowrap bg-blue-100 text-blue-700">
+            od 5,99€/mes
           </span>
         </div>
         <span className="flex items-center gap-1 md:gap-2 text-gray-500 group-hover:text-gray-700 ml-2 flex-shrink-0">
@@ -204,7 +209,7 @@ export function ServiceCheckout({
           {/* Plan cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {PLANS.map((plan) => {
-              const isActive = plan.id === 'mini' && isVerified;
+              const isActive = false; // Mini plan removed — no auto-active state
               const isLoading = loadingPlan === plan.id;
               const isDisabled = isActive || loadingPlan !== null;
 
@@ -226,7 +231,7 @@ export function ServiceCheckout({
 
                   {/* Icon + Name */}
                   <div className="flex items-center gap-2 mb-3">
-                    <plan.icon className={cn('h-5 w-5', plan.id === 'mini' ? 'text-emerald-600' : plan.id === 'partner' ? 'text-amber-600' : 'text-purple-600')} />
+                    <plan.icon className={cn('h-5 w-5', plan.id === 'partner' ? 'text-amber-600' : plan.id === 'leader' ? 'text-purple-600' : 'text-blue-600')} />
                     <span className="font-bold text-gray-900">{plan.name}</span>
                     {isActive && (
                       <span className="text-[10px] bg-emerald-100 text-emerald-600 px-2 py-0.5 rounded-full font-bold">
@@ -245,7 +250,7 @@ export function ServiceCheckout({
                   <ul className="space-y-1.5 mb-4">
                     {plan.features.map((feat, i) => (
                       <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
-                        <CheckCircle2 className={cn('h-3.5 w-3.5 flex-shrink-0 mt-0.5', plan.id === 'mini' ? 'text-emerald-500' : plan.id === 'partner' ? 'text-amber-500' : 'text-gray-400')} />
+                        <CheckCircle2 className={cn('h-3.5 w-3.5 flex-shrink-0 mt-0.5', plan.id === 'partner' ? 'text-amber-500' : plan.id === 'leader' ? 'text-purple-500' : 'text-blue-500')} />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -265,12 +270,12 @@ export function ServiceCheckout({
                       <Loader2 className="h-4 w-4 animate-spin" />
                     ) : isActive ? (
                       'Váš aktuálny plán'
-                    ) : plan.id === 'mini' ? (
-                      'Overiť'
                     ) : plan.id === 'partner' ? (
                       'Stať sa partnerom'
+                    ) : plan.id === 'leader' ? (
+                      'Vybrať Leader'
                     ) : (
-                      'Vybrať PREMIUM'
+                      'Vybrať Spravovaný'
                     )}
                   </button>
                 </div>

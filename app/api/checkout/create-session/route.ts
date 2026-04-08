@@ -35,12 +35,12 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const { plan, citySlug, taxiServiceName, cancelUrl } = body;
+    const { plan, citySlug, taxiServiceName, cancelUrl, partnerId } = body;
 
     // Validácia
-    if (!plan || !['mini', 'premium', 'partner'].includes(plan)) {
+    if (!plan || !['mini', 'premium', 'partner', 'managed', 'newPartner', 'leader'].includes(plan)) {
       return NextResponse.json(
-        { error: 'Invalid plan. Must be "mini", "premium" or "partner".' },
+        { error: 'Invalid plan.' },
         { status: 400 }
       );
     }
@@ -130,12 +130,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Získať Price ID
-    const priceId = plan === 'partner'
-      ? STRIPE_PRICES.partner
-      : plan === 'premium'
-        ? STRIPE_PRICES.premium
-        : STRIPE_PRICES.mini;
+    // Získať Price ID — nové plány majú prednosť
+    const priceMap: Record<string, string> = {
+      managed: STRIPE_PRICES.managed,
+      newPartner: STRIPE_PRICES.newPartner,
+      leader: STRIPE_PRICES.leader,
+      // Legacy plány (pre staré checkout linky)
+      mini: STRIPE_PRICES.mini,
+      premium: STRIPE_PRICES.premium,
+      partner: STRIPE_PRICES.partner,
+    };
+    const priceId = priceMap[plan] || '';
 
     if (!priceId) {
       console.error(`Missing Stripe price ID for plan: ${plan}`);
@@ -180,6 +185,7 @@ export async function POST(request: NextRequest) {
             city_slug: normalizedCitySlug,
             taxi_service_name: normalizedTaxiName,
             ...(taxiServiceId ? { taxi_service_id: taxiServiceId } : {}),
+            ...(partnerId ? { partner_id: partnerId } : {}),
           },
         },
         // URLs

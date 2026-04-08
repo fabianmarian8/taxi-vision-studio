@@ -55,6 +55,7 @@ import { MunicipalityInfo } from '@/components/MunicipalityInfo';
 import { NearbyMunicipalities } from '@/components/NearbyMunicipalities';
 import { ReportNumberButton } from '@/components/ReportNumberModal';
 import { OwnerClaimButton } from '@/components/OwnerClaimButton';
+import { ClaimProfileFlow } from '@/components/ClaimProfileFlow';
 import { getMunicipalityStats } from '@/lib/municipality-data';
 import { TaxiSlotsBanner } from '@/components/TaxiSlotsBanner';
 import { ServiceCheckout } from '@/components/ServiceCheckout';
@@ -2324,21 +2325,16 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               <TaxiGallery images={service.gallery} serviceName={service.name} />
             )}
 
-            {/* Mini verifikačný banner - len pre neoverené služby */}
-            {!service.isVerified && !isPremium && !isPartner && (
-              <a
-                href="#checkout"
-                className="flex items-center gap-3 mt-4 p-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl transition-all group"
-              >
-                <div className="w-10 h-10 rounded-full bg-emerald-100 group-hover:bg-emerald-200 flex items-center justify-center flex-shrink-0 transition-colors">
-                  <ShieldCheck className="h-5 w-5 text-emerald-600" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-emerald-800 text-sm">Overte túto taxislužbu</p>
-                  <p className="text-emerald-600 text-xs">Získajte badge overenia už od 0,99€/mesiac</p>
-                </div>
-                <ArrowRight className="h-4 w-4 text-emerald-500 group-hover:translate-x-1 transition-transform flex-shrink-0" />
-              </a>
+            {/* Claim flow - prevzatie profilu cez SMS */}
+            {!service.isVerified && !isPremium && !isPartner && service.phone && (
+              <div className="mt-4">
+                <ClaimProfileFlow
+                  serviceName={service.name}
+                  servicePhone={service.phone}
+                  cityName={city.name}
+                  citySlug={city.slug}
+                />
+              </div>
             )}
           </div>
         </section>
@@ -2377,18 +2373,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 locationText={locationText}
               />
 
-              {/* Owner claim - update info */}
-              <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="text-gray-600 text-sm">Potrebujete aktualizovať údaje?</p>
-                  <OwnerClaimButton
-                    serviceName={service.name}
-                    servicePhone={service.phone}
-                    cityName={city.name}
-                    citySlug={city.slug}
-                  />
-                </div>
-              </div>
             </div>
           </section>
         )}
