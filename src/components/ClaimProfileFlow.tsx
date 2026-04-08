@@ -14,7 +14,7 @@ type Step = 'phone' | 'code' | 'success';
 
 function maskPhone(phone: string): string {
   // +421 901 234 567 -> +421 9XX XXX 567
-  const cleaned = phone.replace(/[\s\-\(\)]/g, '');
+  const cleaned = phone.replace(/[\s\-()]/g, '');
   if (cleaned.length >= 10) {
     return cleaned.slice(0, 5) + ' XXX ' + cleaned.slice(-3);
   }
@@ -38,11 +38,6 @@ export function ClaimProfileFlow({
   const [loginInfo, setLoginInfo] = useState<{ email: string; password: string; loginUrl: string } | null>(null);
   const [countdown, setCountdown] = useState(0);
 
-  // Feature flag
-  if (process.env.NEXT_PUBLIC_CLAIM_ENABLED !== 'true') {
-    return null;
-  }
-
   // Odpočet pre resend
   useEffect(() => {
     if (countdown <= 0) return;
@@ -61,6 +56,11 @@ export function ClaimProfileFlow({
     setLoginInfo(null);
     setCountdown(0);
   }, []);
+
+  // Feature flag — musí byť za všetkými hooks
+  if (process.env.NEXT_PUBLIC_CLAIM_ENABLED !== 'true') {
+    return null;
+  }
 
   async function handleSendOTP() {
     setIsSubmitting(true);
@@ -204,15 +204,17 @@ export function ClaimProfileFlow({
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Email (voliteľné — pre zaslanie prihlasovacích údajov)
+                        Váš email *
                       </label>
                       <input
                         type="email"
+                        required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-yellow focus:border-primary-yellow"
                         placeholder="vas@email.sk"
                       />
+                      <p className="text-xs text-gray-500 mt-1">Na tento email vám pošleme prihlasovacie údaje</p>
                     </div>
                   </div>
 
@@ -222,7 +224,7 @@ export function ClaimProfileFlow({
 
                   <button
                     onClick={handleSendOTP}
-                    disabled={isSubmitting || !phoneInput}
+                    disabled={isSubmitting || !phoneInput || !email}
                     className="w-full mt-4 flex items-center justify-center gap-2 px-4 py-3 bg-primary-yellow hover:bg-primary-yellow/90 text-gray-900 font-bold rounded-lg transition-colors disabled:opacity-50"
                   >
                     {isSubmitting ? (
