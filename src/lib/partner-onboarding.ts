@@ -34,6 +34,11 @@ export function generatePartnerSlug(name: string, citySlug: string): string {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
 
+  // Ak názov už obsahuje mesto (napr. "Fast Taxi Zvolen" + citySlug "zvolen"), nepridávaj duplicitne
+  if (base.endsWith(`-${citySlug}`) || base === citySlug) {
+    return base;
+  }
+
   return `${base}-${citySlug}`;
 }
 
