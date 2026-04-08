@@ -167,10 +167,13 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
   const isMini = plan === 'mini';
 
   const planNames: Record<string, string> = { mini: 'MINI', premium: 'PREMIUM', partner: 'PARTNER', managed: 'Spravovaný profil', newPartner: 'Partner', leader: 'Leader mesta' };
-  const planColors = {
+  const planColors: Record<string, string> = {
     mini: 'text-emerald-400',
     premium: 'text-white',
-    partner: 'text-yellow-400'
+    partner: 'text-yellow-400',
+    managed: 'text-blue-400',
+    newPartner: 'text-yellow-400',
+    leader: 'text-purple-400',
   };
 
   return (
