@@ -207,60 +207,173 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
           to: ownerEmail,
           subject: `${taxiServiceName} — profil na TaxiNearMe.sk prevzatý`,
           html: `
-            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
-              <div style="background: #f5a623; padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
-                <h1 style="color: #000; margin: 0; font-size: 22px;">TaxiNearMe.sk</h1>
-              </div>
-              <div style="padding: 24px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px;">
-                <h2 style="color: #111; margin-top: 0;">Vitajte, ${taxiServiceName}!</h2>
-                <p>Profil vašej taxislužby bol úspešne prevzatý a overený.</p>
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin: 0; padding: 0; background: #f3f4f6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background: #f3f4f6; padding: 24px 0;">
+<tr><td align="center">
+<table width="600" cellpadding="0" cellspacing="0" style="max-width: 600px; width: 100%;">
 
-                ${isNewUser ? `
-                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin: 16px 0;">
-                  <p style="font-weight: bold; margin-top: 0;">Prihlasovacie údaje do Partner portálu:</p>
-                  <p style="margin: 4px 0;">Email: <strong>${email}</strong></p>
-                  <p style="margin: 4px 0;">Heslo: <strong>${password}</strong></p>
-                </div>
-                ` : ''}
+<!-- HEADER -->
+<tr><td style="background: linear-gradient(135deg, #f5a623, #e09000); padding: 32px 24px; text-align: center; border-radius: 12px 12px 0 0;">
+  <table width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td style="text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 8px;">&#128662;</div>
+      <h1 style="color: #000; margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px;">TaxiNearMe.sk</h1>
+      <p style="color: rgba(0,0,0,0.6); margin: 4px 0 0; font-size: 13px;">Najvaecsi katalog taxisluzieb na Slovensku</p>
+    </td>
+  </tr></table>
+</td></tr>
 
-                <p><a href="https://www.taxinearme.sk/partner/login" style="display: inline-block; background: #f5a623; color: #000; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">Prihlásiť sa do Partner portálu</a></p>
+<!-- BODY -->
+<tr><td style="background: #fff; padding: 32px 28px; border-left: 1px solid #e5e7eb; border-right: 1px solid #e5e7eb;">
 
-                <h3 style="margin-top: 24px;">Čo môžete robiť s bezplatným profilom:</h3>
-                <ul>
-                  <li>Upraviť názov, telefón, web a popis</li>
-                  <li>Badge "Overená taxislužba" na vašom profile</li>
-                </ul>
+  <!-- Success badge -->
+  <table width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td style="background: #f0fdf4; border: 2px solid #86efac; border-radius: 10px; padding: 16px 20px; text-align: center;">
+      <div style="font-size: 28px; margin-bottom: 4px;">&#9989;</div>
+      <p style="margin: 0; font-size: 18px; font-weight: 700; color: #166534;">Profil uspesne prevzaty!</p>
+      <p style="margin: 4px 0 0; color: #15803d; font-size: 14px;"><strong>${taxiServiceName}</strong> je teraz overena taxisluzba</p>
+    </td>
+  </tr></table>
 
-                <h3 style="margin-top: 20px;">Chcete viac?</h3>
-                <table style="width: 100%; border-collapse: collapse; margin: 12px 0;">
-                  <tr>
-                    <td style="padding: 10px; background: #eff6ff; border-radius: 6px; vertical-align: top;">
-                      <strong style="color: #2563eb;">Spravovaný profil — 5,99 €/mes</strong><br/>
-                      <span style="font-size: 13px; color: #555;">Hero obrázok, služby, tagy, WhatsApp, sociálne siete</span>
-                    </td>
-                  </tr>
-                  <tr><td style="padding: 4px;"></td></tr>
-                  <tr>
-                    <td style="padding: 10px; background: #fffbeb; border-radius: 6px; vertical-align: top;">
-                      <strong style="color: #d97706;">Partner — 14,99 €/mes</strong><br/>
-                      <span style="font-size: 13px; color: #555;">Vlastná stránka, fotogaléria, Google recenzie, prioritné umiestnenie</span>
-                    </td>
-                  </tr>
-                  <tr><td style="padding: 4px;"></td></tr>
-                  <tr>
-                    <td style="padding: 10px; background: #f5f3ff; border-radius: 6px; vertical-align: top;">
-                      <strong style="color: #7c3aed;">Leader mesta — 24,99 €/mes</strong><br/>
-                      <span style="font-size: 13px; color: #555;">Exkluzívna pozícia #1, analytika, zvýraznenie na trasách</span>
-                    </td>
-                  </tr>
-                </table>
+  ${isNewUser ? `
+  <!-- Login credentials -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 20px;"><tr>
+    <td style="background: #1e293b; border-radius: 10px; padding: 20px 24px;">
+      <p style="color: #94a3b8; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 12px;">Prihlasovacie udaje</p>
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td style="color: #94a3b8; font-size: 13px; padding: 4px 0;">Email:</td>
+          <td style="color: #fff; font-size: 14px; font-weight: 600; padding: 4px 0; text-align: right;">${email}</td>
+        </tr>
+        <tr>
+          <td style="color: #94a3b8; font-size: 13px; padding: 4px 0;">Heslo:</td>
+          <td style="color: #fbbf24; font-size: 14px; font-weight: 700; font-family: monospace; padding: 4px 0; text-align: right;">${password}</td>
+        </tr>
+      </table>
+      <p style="color: #64748b; font-size: 11px; margin: 12px 0 0;">&#128274; Heslo si zmente po prvom prihlaseni</p>
+    </td>
+  </tr></table>
+  ` : ''}
 
-                <p><a href="https://www.taxinearme.sk/pre-taxiky#pricing" style="color: #f5a623; font-weight: bold;">Pozrieť všetky balíky →</a></p>
+  <!-- CTA Button -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 24px;"><tr>
+    <td align="center">
+      <a href="https://www.taxinearme.sk/partner/login" style="display: inline-block; background: #f5a623; color: #000; padding: 14px 36px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 16px; letter-spacing: -0.3px;">&#128073; Prihlasit sa do Partner portalu</a>
+    </td>
+  </tr></table>
 
-                <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
-                <p style="font-size: 12px; color: #999;">Tento email bol odoslaný z TaxiNearMe.sk po prevzatí profilu. Ak ste si profil neprevzali vy, kontaktujte nás na info@taxinearme.sk.</p>
-              </div>
-            </div>
+  <!-- Free features -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 28px;"><tr>
+    <td style="border-top: 1px solid #e5e7eb; padding-top: 24px;">
+      <p style="font-size: 13px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px;">&#127381; Vas bezplatny profil obsahuje:</p>
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr><td style="padding: 6px 0; font-size: 14px; color: #374151;">&#9989; Uprava nazvu, telefonu, webu a popisu</td></tr>
+        <tr><td style="padding: 6px 0; font-size: 14px; color: #374151;">&#9989; Badge "Overena taxisluzba" na profile</td></tr>
+        <tr><td style="padding: 6px 0; font-size: 14px; color: #374151;">&#9989; Pristup do Partner portalu</td></tr>
+      </table>
+    </td>
+  </tr></table>
+
+  <!-- Upgrade section -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 28px;"><tr>
+    <td style="border-top: 1px solid #e5e7eb; padding-top: 24px;">
+      <p style="font-size: 16px; font-weight: 700; color: #111; margin: 0 0 4px;">&#128640; Chcete viac zakaznikov?</p>
+      <p style="font-size: 13px; color: #6b7280; margin: 0 0 16px;">Odomknite funkcie, ktore privadzaju nove hovory:</p>
+    </td>
+  </tr></table>
+
+  <!-- Tier cards -->
+  <table width="100%" cellpadding="0" cellspacing="0">
+    <!-- Managed -->
+    <tr><td style="padding-bottom: 10px;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="border: 2px solid #bfdbfe; border-radius: 10px; overflow: hidden;">
+        <tr>
+          <td style="background: #2563eb; padding: 10px 16px; color: #fff; font-weight: 700; font-size: 14px;">
+            &#128310; Spravovany profil
+            <span style="float: right; font-size: 16px; font-weight: 800;">5,99 &#8364;/mes</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="background: #eff6ff; padding: 12px 16px;">
+            <table cellpadding="0" cellspacing="0">
+              <tr><td style="font-size: 13px; color: #1e40af; padding: 3px 0;">&#10003; Hero obrazok a branding</td></tr>
+              <tr><td style="font-size: 13px; color: #1e40af; padding: 3px 0;">&#10003; Sluzby, tagy a popis sluzieb</td></tr>
+              <tr><td style="font-size: 13px; color: #1e40af; padding: 3px 0;">&#10003; WhatsApp, Facebook, Instagram</td></tr>
+              <tr><td style="font-size: 13px; color: #1e40af; padding: 3px 0;">&#10003; Zvyraznenie v zozname</td></tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+
+    <!-- Partner -->
+    <tr><td style="padding-bottom: 10px;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="border: 2px solid #fbbf24; border-radius: 10px; overflow: hidden;">
+        <tr>
+          <td style="background: #f59e0b; padding: 10px 16px; color: #000; font-weight: 700; font-size: 14px;">
+            &#11088; Partner
+            <span style="float: right; font-size: 16px; font-weight: 800;">14,99 &#8364;/mes</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="background: #fffbeb; padding: 12px 16px;">
+            <table cellpadding="0" cellspacing="0">
+              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Vlastna personalizovana stranka</td></tr>
+              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Fotogaleria vozidiel</td></tr>
+              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Google recenzie na profile</td></tr>
+              <tr><td style="font-size: 13px; color: #92400e; padding: 3px 0;">&#10003; Prioritne umiestnenie v meste</td></tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+
+    <!-- Leader -->
+    <tr><td style="padding-bottom: 10px;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="border: 2px solid #a78bfa; border-radius: 10px; overflow: hidden;">
+        <tr>
+          <td style="background: #7c3aed; padding: 10px 16px; color: #fff; font-weight: 700; font-size: 14px;">
+            &#128081; Leader mesta
+            <span style="float: right; font-size: 16px; font-weight: 800;">24,99 &#8364;/mes</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="background: #f5f3ff; padding: 12px 16px;">
+            <table cellpadding="0" cellspacing="0">
+              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Exkluzivna pozicia #1 v meste</td></tr>
+              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Statistiky hladani a kliknuti</td></tr>
+              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Zvyraznenie na trasach do inych miest</td></tr>
+              <tr><td style="font-size: 13px; color: #5b21b6; padding: 3px 0;">&#10003; Prioritna podpora</td></tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+
+  <!-- CTA pricing -->
+  <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 8px;"><tr>
+    <td align="center">
+      <a href="https://www.taxinearme.sk/pre-taxiky#pricing" style="display: inline-block; background: #111827; color: #fbbf24; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px;">Porovnat baliky a upgradnut &#8594;</a>
+    </td>
+  </tr></table>
+
+</td></tr>
+
+<!-- FOOTER -->
+<tr><td style="background: #1e293b; padding: 20px 28px; border-radius: 0 0 12px 12px; text-align: center;">
+  <p style="color: #94a3b8; font-size: 12px; margin: 0;">TaxiNearMe.sk &mdash; Najvacsi katalog taxisluzieb na Slovensku</p>
+  <p style="color: #64748b; font-size: 11px; margin: 8px 0 0;">Tento email bol odoslany po prevzati profilu. Ak ste si profil neprevzali vy, kontaktujte nas na <a href="mailto:info@taxinearme.sk" style="color: #fbbf24;">info@taxinearme.sk</a></p>
+</td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>
           `,
         });
         log.info('Welcome email sent', { to: ownerEmail });
