@@ -1,4 +1,5 @@
 export { FloatingAdminBar } from './FloatingAdminBar';
+export { LockedEditorBar } from './LockedEditorBar';
 export { EditableField, type FieldType } from './EditableField';
 export { EditorDrawer } from './EditorDrawer';
 export { InlineEditorProvider, useInlineEditor, EditorContext, type DraftData } from './InlineEditorProvider';

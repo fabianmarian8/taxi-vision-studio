@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useCallback, useRef, useEffect, ReactNode } from 'react';
 import { FloatingAdminBar } from './FloatingAdminBar';
+import { LockedEditorBar } from './LockedEditorBar';
 import { EditorDrawer } from './EditorDrawer';
 import type { FieldType } from './EditableField';
 import { PreviewMessage } from '@/lib/preview-protocol';
@@ -327,15 +328,19 @@ export function InlineEditorProvider({
     setIsEditMode(prev => !prev);
   }, []);
 
+  // Live editing is available for leader tier + legacy partner tier (grandfathered)
+  const canEditLive = planTier === 'leader' || planTier === 'partner';
+  const showEditor = isOwner && canEditLive;
+
   // Always wrap in EditorContext.Provider so child components can access context
-  // But only show admin UI if owner
+  // But only show admin UI if owner AND leader tier
   return (
     <EditorContext.Provider value={{
-      isEditMode: isOwner ? isEditMode : false, // Non-owners always see non-edit mode
-      toggleEditMode: isOwner ? toggleEditMode : () => {}, // Non-owners can't toggle
+      isEditMode: showEditor ? isEditMode : false, // Non-leaders always see non-edit mode
+      toggleEditMode: showEditor ? toggleEditMode : () => {}, // Non-leaders can't toggle
       draftData,
       openEditor: (fieldKey, fieldType, label) => {
-        // Client-side gating — zamknuté polia sa nedajú otvoriť
+        if (!showEditor) return; // Non-leaders can't open editor
         if (!isFieldAccessible(fieldKey, planTier)) return;
         openEditor(fieldKey, fieldType, label);
       },
@@ -348,32 +353,36 @@ export function InlineEditorProvider({
 
       {/* Only show admin UI if owner and not in preview mode */}
       {isOwner && !isPreviewMode && (
-        <>
-          {/* Floating Admin Bar */}
-          <FloatingAdminBar
-            isEditMode={isEditMode}
-            onToggleEditMode={() => setIsEditMode(!isEditMode)}
-            hasUnsavedChanges={hasUnsavedChanges}
-            isSaving={isSaving}
-            onPublish={handlePublish}
-            onDiscard={handleDiscard}
-            isPublishing={isPublishing}
-            lastSaved={lastSaved}
-            saveError={saveError}
-            hasPendingChanges={hasPendingChanges}
-          />
+        canEditLive ? (
+          <>
+            {/* Floating Admin Bar */}
+            <FloatingAdminBar
+              isEditMode={isEditMode}
+              onToggleEditMode={() => setIsEditMode(!isEditMode)}
+              hasUnsavedChanges={hasUnsavedChanges}
+              isSaving={isSaving}
+              onPublish={handlePublish}
+              onDiscard={handleDiscard}
+              isPublishing={isPublishing}
+              lastSaved={lastSaved}
+              saveError={saveError}
+              hasPendingChanges={hasPendingChanges}
+            />
 
-          {/* Editor Drawer */}
-          <EditorDrawer
-            isOpen={drawerOpen}
-            onClose={() => setDrawerOpen(false)}
-            fieldKey={activeField?.key || null}
-            fieldType={activeField?.type || null}
-            label={activeField?.label || ''}
-            currentValue={activeField ? String(draftData[activeField.key] || '') : ''}
-            onSave={handleSaveField}
-          />
-        </>
+            {/* Editor Drawer */}
+            <EditorDrawer
+              isOpen={drawerOpen}
+              onClose={() => setDrawerOpen(false)}
+              fieldKey={activeField?.key || null}
+              fieldType={activeField?.type || null}
+              label={activeField?.label || ''}
+              currentValue={activeField ? String(draftData[activeField.key] || '') : ''}
+              onSave={handleSaveField}
+            />
+          </>
+        ) : (
+          <LockedEditorBar />
+        )
       )}
     </EditorContext.Provider>
   );
