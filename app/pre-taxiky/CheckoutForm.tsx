@@ -9,7 +9,7 @@ const CHECKOUT_COOLDOWN_MS = 5 * 60 * 1000;
 const CHECKOUT_STORAGE_KEY = 'taxi_checkout_attempt';
 
 interface CheckoutFormProps {
-  plan: 'mini' | 'premium' | 'partner';
+  plan: 'mini' | 'premium' | 'partner' | 'managed' | 'newPartner' | 'leader';
   onClose?: () => void;
 }
 
@@ -166,7 +166,7 @@ export function CheckoutForm({ plan, onClose }: CheckoutFormProps) {
   const isPartner = plan === 'partner';
   const isMini = plan === 'mini';
 
-  const planNames = { mini: 'MINI', premium: 'PREMIUM', partner: 'PARTNER' };
+  const planNames: Record<string, string> = { mini: 'MINI', premium: 'PREMIUM', partner: 'PARTNER', managed: 'Spravovaný profil', newPartner: 'Partner', leader: 'Leader mesta' };
   const planColors = {
     mini: 'text-emerald-400',
     premium: 'text-white',
@@ -347,7 +347,7 @@ export function CheckoutButton({
   className,
   children
 }: {
-  plan: 'mini' | 'premium' | 'partner';
+  plan: 'mini' | 'premium' | 'partner' | 'managed' | 'newPartner' | 'leader';
   className?: string;
   children: React.ReactNode;
 }) {
