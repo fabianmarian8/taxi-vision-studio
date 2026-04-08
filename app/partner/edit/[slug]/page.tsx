@@ -201,11 +201,12 @@ export default async function PartnerEditPage({ params }: Props) {
       .maybeSingle();
 
     if (taxiService?.is_partner) {
-      partner.plan_type = 'partner';
-      // Also fix the DB record for future
+      // Grandfathered: old partner subscribers get leader-level access
+      // This ensures they keep live editing and all features
+      partner.plan_type = 'leader';
       await adminClient
         .from('partners')
-        .update({ plan_type: 'partner' })
+        .update({ plan_type: 'leader' })
         .eq('id', partner.id);
     } else if (taxiService?.is_premium) {
       partner.plan_type = 'managed';

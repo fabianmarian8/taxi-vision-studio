@@ -328,8 +328,8 @@ export function InlineEditorProvider({
     setIsEditMode(prev => !prev);
   }, []);
 
-  // Live editing is available for leader tier + legacy partner tier (grandfathered)
-  const canEditLive = planTier === 'leader' || planTier === 'partner';
+  // Live editing is only available for leader tier
+  const canEditLive = planTier === 'leader';
   const showEditor = isOwner && canEditLive;
 
   // Always wrap in EditorContext.Provider so child components can access context
