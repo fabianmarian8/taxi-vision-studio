@@ -185,6 +185,37 @@ export default async function PartnerEditPage({ params }: Props) {
   const city = citiesData.cities.find((c) => c.slug === partner.city_slug);
   const cityName = city?.name || partner.city_slug;
 
+  // Fix plan_type from taxi_services if not set in partners table
+  // Old partners may not have plan_type set (webhook only sets it for new subscriptions with partner_id in metadata)
+  const adminClient = createAdminClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+
+  if (!partner.plan_type || partner.plan_type === 'free') {
+    const { data: taxiService } = await adminClient
+      .from('taxi_services')
+      .select('is_partner, is_premium')
+      .eq('city_slug', partner.city_slug)
+      .eq('name', partner.name)
+      .maybeSingle();
+
+    if (taxiService?.is_partner) {
+      partner.plan_type = 'partner';
+      // Also fix the DB record for future
+      await adminClient
+        .from('partners')
+        .update({ plan_type: 'partner' })
+        .eq('id', partner.id);
+    } else if (taxiService?.is_premium) {
+      partner.plan_type = 'managed';
+      await adminClient
+        .from('partners')
+        .update({ plan_type: 'managed' })
+        .eq('id', partner.id);
+    }
+  }
+
   return (
     <PartnerEditor
       partner={partner}
