@@ -70,46 +70,15 @@ export async function GET(
       });
     }
 
-    // No working draft — find latest approved to clone from
-    const { data: approvedDraft } = await adminClient
-      .from('partner_drafts')
-      .select('company_name, description, phone, email, website, hero_image_url, hero_image_zoom, hero_image_pos_x, hero_image_pos_y, hero_title, hero_subtitle, services, show_services, services_description, gallery, social_facebook, social_instagram, whatsapp, booking_url, pricelist_url, transport_rules_url, contact_url, template_variant, show_description')
-      .eq('partner_id', partner.id)
-      .eq('status', 'approved')
-      .order('updated_at', { ascending: false })
-      .limit(1)
-      .maybeSingle();
-
-    // Create new working draft (clone from approved or empty)
-    const newDraftData = approvedDraft || {};
-    const { data: newDraft, error: insertError } = await adminClient
-      .from('partner_drafts')
-      .insert({
-        partner_id: partner.id,
-        status: 'draft',
-        ...newDraftData,
-      })
-      .select('id, status, company_name, description, phone, email, website, hero_image_url, hero_image_zoom, hero_image_pos_x, hero_image_pos_y, hero_title, hero_subtitle, services, show_services, services_description, gallery, social_facebook, social_instagram, whatsapp, booking_url, pricelist_url, transport_rules_url, contact_url, template_variant, show_description, updated_at')
-      .single();
-
-    if (insertError || !newDraft) {
-      console.error('[session] Failed to create working draft:', insertError?.message);
-      // Fallback — still return owner info, save route will handle draft creation
-      return NextResponse.json({
-        isOwner: true,
-        partnerId: partner.id,
-        draftId: null,
-        planTier,
-        draftData: null,
-      });
-    }
-
+    // No working draft — don't create one eagerly.
+    // Save route will create it on first actual edit.
+    // This prevents dashboard from showing "Rozpracované" when nothing was changed.
     return NextResponse.json({
       isOwner: true,
       partnerId: partner.id,
-      draftId: newDraft.id,
+      draftId: null,
       planTier,
-      draftData: newDraft,
+      draftData: null,
     });
   } catch (error) {
     console.error('[session] Error:', error);
