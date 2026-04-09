@@ -1695,10 +1695,16 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
       : null;
     const mergedEmail = approvedData?.email || null;
 
-    const templateVariant = normalizePartnerSkin(
-      draftData?.template_variant ?? approvedData?.template_variant ?? null
-    );
-    const skinClass = getPartnerSkinClass(templateVariant);
+    // Determine effective tier for display (free claimed profiles should NOT get partner branding)
+    const effectiveTier = claimedProfile?.planTier || (isPartner ? 'partner' : 'free');
+    const isFreeOnly = effectiveTier === 'free' && !isPartner;
+    const showPartnerBadge = isPartner || effectiveTier === 'partner' || effectiveTier === 'leader';
+    const showManagedBadge = effectiveTier === 'managed';
+
+    const templateVariant = isFreeOnly
+      ? undefined
+      : normalizePartnerSkin(draftData?.template_variant ?? approvedData?.template_variant ?? null);
+    const skinClass = isFreeOnly ? '' : getPartnerSkinClass(templateVariant);
 
     // Build initial data for inline editor (draft data overrides approved data)
     const initialEditorData = {
@@ -1736,7 +1742,7 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         citySlug={city.slug}
         planTier={claimedProfile?.planTier}
       >
-      <div className={`min-h-screen overflow-x-hidden partner-page-bg partner-skin ${skinClass} ${serviceSlug === 'volaj-taxi' ? 'pb-16 md:pb-0' : ''}`}>
+      <div className={`min-h-screen overflow-x-hidden ${isFreeOnly ? 'bg-gray-50' : `partner-page-bg partner-skin ${skinClass}`} ${serviceSlug === 'volaj-taxi' ? 'pb-16 md:pb-0' : ''}`}>
         <TaxiServiceSchema
           service={service}
           city={city}
@@ -1795,10 +1801,18 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                       <BadgeCheck className="h-2.5 w-2.5 md:h-3 md:w-3" />
                       OVERENÉ
                     </div>
-                    <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-[10px] md:text-xs font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-1">
-                      <Star className="h-2.5 w-2.5 md:h-3 md:w-3" />
-                      PARTNER
-                    </div>
+                    {showPartnerBadge && (
+                      <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-[10px] md:text-xs font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-1">
+                        <Star className="h-2.5 w-2.5 md:h-3 md:w-3" />
+                        PARTNER
+                      </div>
+                    )}
+                    {showManagedBadge && (
+                      <div className="bg-blue-500 text-white text-[10px] md:text-xs font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-1">
+                        <ShieldCheck className="h-2.5 w-2.5 md:h-3 md:w-3" />
+                        SPRAVOVANÝ
+                      </div>
+                    )}
                     {service.nonstop && (
                       <div className="bg-blue-600 text-white text-[10px] md:text-xs font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-1">
                         <Clock className="h-2.5 w-2.5 md:h-3 md:w-3" />
@@ -1847,17 +1861,25 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 defaultPosX={50}
                 defaultPosY={50}
               >
-              <div className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 partner-hero-fallback p-5 md:p-12">
+              <div className={`relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 ${isFreeOnly ? 'bg-gradient-to-br from-gray-700 to-gray-900' : 'partner-hero-fallback'} p-5 md:p-12`}>
                 {/* Badges */}
                 <div className="flex gap-1.5 md:gap-2 mb-4 md:mb-6">
                   <div className="bg-green-500 text-white text-[10px] md:text-sm font-black px-2 md:px-4 py-0.5 md:py-1.5 rounded-full flex items-center gap-1">
                     <BadgeCheck className="h-2.5 w-2.5 md:h-4 md:w-4" />
                     OVERENÉ
                   </div>
-                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-[10px] md:text-sm font-black px-2 md:px-4 py-0.5 md:py-1.5 rounded-full flex items-center gap-1">
-                    <Star className="h-2.5 w-2.5 md:h-4 md:w-4" />
-                    PARTNER
-                  </div>
+                  {showPartnerBadge && (
+                    <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-purple-900 text-[10px] md:text-sm font-black px-2 md:px-4 py-0.5 md:py-1.5 rounded-full flex items-center gap-1">
+                      <Star className="h-2.5 w-2.5 md:h-4 md:w-4" />
+                      PARTNER
+                    </div>
+                  )}
+                  {showManagedBadge && (
+                    <div className="bg-blue-500 text-white text-[10px] md:text-sm font-black px-2 md:px-4 py-0.5 md:py-1.5 rounded-full flex items-center gap-1">
+                      <ShieldCheck className="h-2.5 w-2.5 md:h-4 md:w-4" />
+                      SPRAVOVANÝ
+                    </div>
+                  )}
                   {service.nonstop && (
                     <div className="bg-blue-600 text-white text-[10px] md:text-sm font-black px-2 md:px-4 py-0.5 md:py-1.5 rounded-full flex items-center gap-1">
                       <Clock className="h-2.5 w-2.5 md:h-4 md:w-4" />
