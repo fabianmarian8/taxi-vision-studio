@@ -383,7 +383,7 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
         })()}
 
         {/* Analytika výkonu — pre Leader alebo zamknutá ukážka */}
-        {!userIsSuperadmin && partners && partners.length > 0 && (() => {
+        {partners && partners.length > 0 && (() => {
           const p = partners[0];
           const sub = partnerSubscriptions.get(p.id);
           const pt = sub?.plan_type || (p as { plan_type?: string }).plan_type || 'free';
