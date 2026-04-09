@@ -1647,8 +1647,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
   const isPremium = service.isPremium;
   const isPromotional = service.isPromotional; // Promo premium (nie platiaci)
 
-  // Check if this service has been claimed (free tier partner record exists)
-  const claimedProfile = !isPartner ? await getClaimedProfile(serviceSlug) : null;
+  // Check partner record for plan tier (needed for live editor gating + claimed free profiles)
+  const claimedProfile = await getClaimedProfile(serviceSlug);
 
   // Partner page - full branded page (or claimed free profile with editor)
   if (isPartner || claimedProfile) {
