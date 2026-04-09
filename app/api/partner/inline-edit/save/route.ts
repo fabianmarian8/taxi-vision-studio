@@ -5,6 +5,11 @@ import { isSuperadmin } from '@/lib/superadmin';
 import { NextRequest, NextResponse } from 'next/server';
 import { normalizePlanType, isFieldAccessible } from '@/lib/tier-config';
 
+// Increase body size limit for gallery arrays with URLs
+export const config = {
+  api: { bodyParser: { sizeLimit: '10mb' } },
+};
+
 // Whitelist povolených polí
 const ALLOWED_FIELDS = [
   'company_name',
@@ -140,7 +145,7 @@ export async function POST(request: NextRequest) {
         continue;
       }
 
-      if (true) { // Zachovanie pôvodného if bloku pre backward compat
+      {
         // Konverzia na správne typy pre databázu
         if (key === 'hero_image_pos_x' || key === 'hero_image_pos_y' || key === 'hero_image_zoom') {
           // Tieto polia sú integer v databáze
@@ -171,7 +176,18 @@ export async function POST(request: NextRequest) {
           if (!isValidStringArray(value)) {
             validationErrors.push(`${key} must be an array of strings`);
           } else {
-            sanitizedChanges[key] = value;
+            // Strip base64 data URLs from gallery — only allow https:// URLs
+            if (key === 'gallery') {
+              const filtered = (value as string[]).filter(url =>
+                url.startsWith('http://') || url.startsWith('https://')
+              );
+              if (filtered.length !== (value as string[]).length) {
+                console.warn(`[inline-edit/save] Stripped ${(value as string[]).length - filtered.length} base64 images from gallery`);
+              }
+              sanitizedChanges[key] = filtered;
+            } else {
+              sanitizedChanges[key] = value;
+            }
           }
         } else {
           sanitizedChanges[key] = value;
