@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { isSuperadmin } from '@/lib/superadmin';
 import { normalizePlanType, isFieldAccessible } from '@/lib/tier-config';
+import { createServiceSlug } from '@/utils/urlUtils';
 
 // POST /api/partner/publish-changes
 // Uloženie a publikovanie zmien (pre partner editor)
@@ -44,7 +45,7 @@ export async function POST(request: NextRequest) {
     // Overenie vlastníctva + načítanie partnera
     let partnerQuery = queryClient
       .from('partners')
-      .select('id, slug, city_slug, user_id, plan_type')
+      .select('id, name, slug, city_slug, user_id, plan_type')
       .eq('id', partner_id);
 
     if (!userIsSuperadmin) {
@@ -153,7 +154,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Revalidácia stránky
-    const pagePath = `/taxi/${partner.city_slug}/${partner.slug}`;
+    const pagePath = `/taxi/${partner.city_slug}/${createServiceSlug(partner.name)}`;
     revalidatePath(pagePath);
 
     console.log('[publish-changes] Published:', {

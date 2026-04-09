@@ -3,6 +3,7 @@ import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { isSuperadmin } from '@/lib/superadmin';
+import { createServiceSlug } from '@/utils/urlUtils';
 
 // POST /api/partner/inline-edit/publish
 // Publikovanie zmien (status -> approved)
@@ -43,7 +44,7 @@ export async function POST(request: NextRequest) {
     // Overenie vlastníctva + načítanie partnera (superadmins can publish any)
     let partnerQuery = queryClient
       .from('partners')
-      .select('id, slug, city_slug, user_id')
+      .select('id, name, slug, city_slug, user_id')
       .eq('id', partner_id);
 
     if (!userIsSuperadmin) {
@@ -97,7 +98,7 @@ export async function POST(request: NextRequest) {
       .eq('status', 'draft');
 
     // Revalidácia stránky
-    const pagePath = `/taxi/${partner.city_slug}/${partner.slug}`;
+    const pagePath = `/taxi/${partner.city_slug}/${createServiceSlug(partner.name)}`;
     revalidatePath(pagePath);
 
     console.log('[inline-edit/publish] Published and cleaned drafts:', {

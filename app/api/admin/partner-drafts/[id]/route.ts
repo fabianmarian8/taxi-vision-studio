@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { revalidatePath } from 'next/cache';
+import { createServiceSlug } from '@/utils/urlUtils';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -101,8 +102,11 @@ export async function PATCH(request: NextRequest, { params }: Props) {
 
   // Invalidate Next.js cache for partner pages (on-demand revalidation)
   // This immediately refreshes the public pages after approval
-  if (action === 'approve' && draft?.partners?.slug && draft?.partners?.city_slug) {
-    const partnerPath = `/taxi/${draft.partners.city_slug}/${draft.partners.slug}`;
+  if (action === 'approve' && draft?.partners?.name && draft?.partners?.city_slug) {
+    // Use createServiceSlug(name) for the URL path - partner DB slug may contain city suffix
+    // but the actual route uses the service slug derived from the service name
+    const serviceSlug = createServiceSlug(draft.partners.name);
+    const partnerPath = `/taxi/${draft.partners.city_slug}/${serviceSlug}`;
     const cityPath = `/taxi/${draft.partners.city_slug}`;
 
     revalidatePath(partnerPath);

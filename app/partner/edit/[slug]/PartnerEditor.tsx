@@ -7,6 +7,7 @@ import { Partner, PartnerDraft } from '@/lib/supabase/types';
 import { IframePreview } from './IframePreview';
 import { PARTNER_SKINS, normalizePartnerSkin } from '@/lib/partner-skins';
 import { type PlanTier, normalizePlanType, TIER_INFO, getNextTier } from '@/lib/tier-config';
+import { createServiceSlug } from '@/utils/urlUtils';
 import { Lock, ArrowRight } from 'lucide-react';
 
 interface Props {
@@ -1093,7 +1094,7 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
           {/* Live Preview Panel — dostupný pre všetkých */}
           <IframePreview
             formData={formData}
-            partnerSlug={partner.slug}
+            partnerSlug={createServiceSlug(partner.name)}
             citySlug={citySlug || partner.city_slug}
             cityName={cityName}
           />
