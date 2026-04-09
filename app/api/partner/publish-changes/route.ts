@@ -3,6 +3,7 @@ import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { isSuperadmin } from '@/lib/superadmin';
+import { normalizePlanType, isFieldAccessible } from '@/lib/tier-config';
 
 // POST /api/partner/publish-changes
 // Uloženie a publikovanie zmien (pre partner editor)
@@ -43,7 +44,7 @@ export async function POST(request: NextRequest) {
     // Overenie vlastníctva + načítanie partnera
     let partnerQuery = queryClient
       .from('partners')
-      .select('id, slug, city_slug, user_id')
+      .select('id, slug, city_slug, user_id, plan_type')
       .eq('id', partner_id);
 
     if (!userIsSuperadmin) {
@@ -59,11 +60,21 @@ export async function POST(request: NextRequest) {
       }, { status: 403 });
     }
 
+    // Tier-based enforcement — publish route receives the full form payload,
+    // so inaccessible fields must be stripped server-side.
+    const partnerPlanType = (partner as { plan_type?: string }).plan_type;
+    const planTier = userIsSuperadmin ? 'leader' as const : normalizePlanType(partnerPlanType);
+
     // Priprav draft data
     // SECURITY: Strip status/submitted_at/reviewed_at from formData to prevent client override
     const { status: _s, submitted_at: _sa, reviewed_at: _ra, ...safeFormData } = formData || {};
+    const filteredFormData = Object.fromEntries(
+      Object.entries(safeFormData).filter(([key]) => isFieldAccessible(key, planTier))
+    );
+    const strippedFields = Object.keys(safeFormData).filter((key) => !isFieldAccessible(key, planTier));
+
     const draftData = {
-      ...safeFormData,
+      ...filteredFormData,
       partner_id: partner_id,
       status: 'approved' as const,
       submitted_at: new Date().toISOString(),
@@ -80,7 +91,8 @@ export async function POST(request: NextRequest) {
     console.log('[publish-changes] DEBUG User:', {
       user_id: user.id,
       user_email: user.email,
-      isSuperadmin: userIsSuperadmin
+      isSuperadmin: userIsSuperadmin,
+      strippedFields,
     });
 
     if (draft_id) {
