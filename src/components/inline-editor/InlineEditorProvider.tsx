@@ -46,6 +46,7 @@ interface EditorContextType {
   isSaving: boolean;
   lastSaved: Date | null;
   planTier: PlanTier;
+  partnerId: string | null;
 }
 
 export const EditorContext = createContext<EditorContextType | null>(null);
@@ -348,6 +349,7 @@ export function InlineEditorProvider({
       isSaving,
       lastSaved,
       planTier,
+      partnerId,
     }}>
       {children}
 

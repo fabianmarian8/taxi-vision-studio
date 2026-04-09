@@ -174,14 +174,14 @@ export function EditableHeroImage({
   defaultPosX = 50,
   defaultPosY = 50,
   children,
-  partnerId
-}: EditableHeroImageProps) {
+}: Omit<EditableHeroImageProps, 'partnerId'>) {
   const context = useContext(EditorContext);
   const [isEditorOpen, setIsEditorOpen] = useState(false);
 
   const isEditMode = context?.isEditMode ?? false;
   const draftData = context?.draftData ?? {};
   const saveField = context?.saveField;
+  const partnerId = context?.partnerId ?? null;
 
   // Get current values from draft or defaults
   const currentImage = 'hero_image_url' in draftData ? (draftData.hero_image_url as string) ?? defaultImage : defaultImage;
@@ -269,7 +269,7 @@ function getThumbnail(imagePath: string): string {
   return imagePath.slice(0, ext) + '-thumb' + imagePath.slice(ext);
 }
 
-export function EditableGallery({ defaultImages, serviceName, partnerId }: EditableGalleryProps) {
+export function EditableGallery({ defaultImages, serviceName }: Omit<EditableGalleryProps, 'partnerId'>) {
   const context = useContext(EditorContext);
   const [isEditorOpen, setIsEditorOpen] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -278,6 +278,7 @@ export function EditableGallery({ defaultImages, serviceName, partnerId }: Edita
   const isEditMode = context?.isEditMode ?? false;
   const draftData = context?.draftData ?? {};
   const saveField = context?.saveField;
+  const partnerId = context?.partnerId ?? null;
 
   // Get images from draft or defaults - live update!
   const currentImages = 'gallery' in draftData

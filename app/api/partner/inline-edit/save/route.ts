@@ -5,11 +5,6 @@ import { isSuperadmin } from '@/lib/superadmin';
 import { NextRequest, NextResponse } from 'next/server';
 import { normalizePlanType, isFieldAccessible } from '@/lib/tier-config';
 
-// Increase body size limit for gallery arrays with URLs
-export const config = {
-  api: { bodyParser: { sizeLimit: '10mb' } },
-};
-
 // Whitelist povolených polí
 const ALLOWED_FIELDS = [
   'company_name',

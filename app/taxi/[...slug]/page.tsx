@@ -1775,7 +1775,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 defaultZoom={heroImageZoom}
                 defaultPosX={heroImagePosX}
                 defaultPosY={heroImagePosY}
-                partnerId={partnerId}
               >
               <div
                 className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 h-[200px] md:h-[260px]"
@@ -1847,7 +1846,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
                 defaultZoom={100}
                 defaultPosX={50}
                 defaultPosY={50}
-                partnerId={partnerId}
               >
               <div className="relative rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 partner-hero-fallback p-5 md:p-12">
                 {/* Badges */}
@@ -1924,7 +1922,6 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
             <EditableGallery
               defaultImages={mergedGallery || []}
               serviceName={service.name}
-              partnerId={partnerId}
             />
 
             {/* Services Section - NAD sekciou O nás */}
