@@ -97,6 +97,10 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
           id,
           status,
           company_name,
+          phone,
+          description,
+          hero_image_url,
+          gallery,
           submitted_at,
           reviewed_at,
           updated_at
@@ -113,6 +117,10 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
           id,
           status,
           company_name,
+          phone,
+          description,
+          hero_image_url,
+          gallery,
           submitted_at,
           reviewed_at,
           updated_at
@@ -129,6 +137,10 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
           id,
           status,
           company_name,
+          phone,
+          description,
+          hero_image_url,
+          gallery,
           submitted_at,
           reviewed_at,
           updated_at
@@ -256,17 +268,22 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
   const city = featuredPartner ? getCityBySlug(featuredPartner.city_slug) : null;
   const cityName = city?.name || featuredPartner?.city_slug || '';
 
-  // Profile completeness checks
-  const profileChecks = featuredDraft ? [
-    { label: 'Kontakty vyplnené', done: !!(featuredDraft.phone) },
-    { label: 'Popis doplnený', done: !!(featuredDraft.description) },
-    { label: 'Hero obrázok', done: !!(featuredDraft.hero_image_url) },
-    { label: 'Galéria', done: ((featuredDraft.gallery as string[]) || []).length > 0 },
-  ] : [
-    { label: 'Kontakty vyplnené', done: false },
-    { label: 'Popis doplnený', done: false },
-    { label: 'Hero obrázok', done: false },
-    { label: 'Galéria', done: false },
+  // Find matching service from JSON for fallback data
+  const jsonService = city?.taxiServices.find(s =>
+    s.name.toLowerCase() === featuredPartner?.name.toLowerCase()
+  );
+
+  // Profile completeness — merge draft + JSON fallback
+  const hasPhone = !!(featuredDraft?.phone || jsonService?.phone);
+  const hasDescription = !!(featuredDraft?.description || jsonService?.description || jsonService?.customDescription);
+  const hasHeroImage = !!(featuredDraft?.hero_image_url || jsonService?.partnerData?.heroImage);
+  const hasGallery = ((featuredDraft?.gallery as string[]) || jsonService?.gallery || []).length > 0;
+
+  const profileChecks = [
+    { label: 'Kontakty vyplnené', done: hasPhone },
+    { label: 'Popis doplnený', done: hasDescription },
+    { label: 'Hero obrázok', done: hasHeroImage },
+    { label: 'Galéria', done: hasGallery },
   ];
   const completedFields = profileChecks.filter(c => c.done).length;
   const completeness = profileChecks.length > 0 ? Math.round((completedFields / profileChecks.length) * 100) : 0;
