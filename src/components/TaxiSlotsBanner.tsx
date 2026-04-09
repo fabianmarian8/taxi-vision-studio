@@ -2,66 +2,67 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Star, ChevronDown, ChevronUp, Shield, Crown, Mail } from 'lucide-react';
+import { Star, ChevronDown, ChevronUp, Crown, Shield } from 'lucide-react';
 
 interface TaxiSlotsBannerProps {
   cityName: string;
   locationText: string; // "v meste" alebo "v obci"
+  leaderCount: number; // aktuálny počet leaderov (0-1)
   partnerCount: number; // aktuálny počet partnerov (0-2)
-  premiumCount: number; // aktuálny počet premium (0-3)
 }
 
+const MAX_LEADER_SLOTS = 1;
 const MAX_PARTNER_SLOTS = 2;
-const MAX_PREMIUM_SLOTS = 3;
 
-export function TaxiSlotsBanner({ cityName, locationText, partnerCount, premiumCount }: TaxiSlotsBannerProps) {
+export function TaxiSlotsBanner({ cityName, locationText, leaderCount, partnerCount }: TaxiSlotsBannerProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const leaderAvailable = leaderCount < MAX_LEADER_SLOTS;
   const partnerAvailable = partnerCount < MAX_PARTNER_SLOTS;
-  const premiumAvailable = premiumCount < MAX_PREMIUM_SLOTS;
+  const leaderSlotsLeft = MAX_LEADER_SLOTS - leaderCount;
   const partnerSlotsLeft = MAX_PARTNER_SLOTS - partnerCount;
-  const premiumSlotsLeft = MAX_PREMIUM_SLOTS - premiumCount;
 
-  // Určenie stavu
-  const allSlotsTaken = !partnerAvailable && !premiumAvailable;
+  const allSlotsTaken = !leaderAvailable && !partnerAvailable;
 
-  // Texty a farby podľa stavu
   const getStatusConfig = () => {
+    if (leaderAvailable) {
+      return {
+        bgColor: 'bg-purple-50 border-purple-200',
+        textColor: 'text-purple-800',
+        icon: <Crown className="h-5 w-5 text-purple-600" />,
+        title: `Staňte sa Leader taxislužbou ${locationText} ${cityName}!`,
+        subtitle: `Exkluzívna pozícia #1 je voľná${partnerAvailable ? ` + ${partnerSlotsLeft}× Partner slot${partnerSlotsLeft > 1 ? 'y' : ''}` : ''}`,
+        badge: 'Leader voľný',
+        badgeStyle: 'bg-purple-100 text-purple-700',
+        ctaText: 'Získať pozíciu #1',
+        ctaHref: '/pre-taxiky#pricing',
+        ctaStyle: 'bg-purple-600 hover:bg-purple-700 text-white',
+      };
+    }
+
     if (partnerAvailable) {
-      // Partner voľný - zelená, motivačný
       return {
         bgColor: 'bg-emerald-50 border-emerald-200',
         textColor: 'text-emerald-800',
         icon: <Shield className="h-5 w-5 text-emerald-600" />,
         title: `Staňte sa Partnerom ${locationText} ${cityName}!`,
-        subtitle: `K dispozícii limitovaný počet: ${partnerSlotsLeft}× Partner slot${partnerSlotsLeft > 1 ? 'y' : ''}${premiumAvailable ? `, ${premiumSlotsLeft}× Premium slot${premiumSlotsLeft > 1 ? 'y' : ''}` : ''}`,
+        subtitle: `Zostáva ${partnerSlotsLeft} Partner slot${partnerSlotsLeft > 1 ? 'y' : ''}`,
+        badge: `${partnerSlotsLeft} Partner voľn${partnerSlotsLeft > 1 ? 'é' : 'ý'}`,
+        badgeStyle: 'bg-emerald-100 text-emerald-700',
         ctaText: 'Aktivovať teraz',
         ctaHref: '/pre-taxiky#pricing',
         ctaStyle: 'bg-emerald-600 hover:bg-emerald-700 text-white',
       };
     }
 
-    if (premiumAvailable) {
-      // Partner obsadený, premium voľné - oranžová, urgentná
-      return {
-        bgColor: 'bg-amber-50 border-amber-200',
-        textColor: 'text-amber-800',
-        icon: <Crown className="h-5 w-5 text-amber-600" />,
-        title: `Partner sloty ${locationText} ${cityName} sú obsadené`,
-        subtitle: `Limitovaný počet: zostáva už len ${premiumSlotsLeft} Premium slot${premiumSlotsLeft > 1 ? 'y' : ''}!`,
-        ctaText: 'Získať Premium',
-        ctaHref: '/pre-taxiky#pricing',
-        ctaStyle: 'bg-amber-600 hover:bg-amber-700 text-white',
-      };
-    }
-
-    // Všetko obsadené - červená
     return {
-      bgColor: 'bg-red-50 border-red-200',
-      textColor: 'text-red-800',
-      icon: <Shield className="h-5 w-5 text-red-600" />,
-      title: `Všetky exkluzívne pozície ${locationText} ${cityName} sú obsadené`,
-      subtitle: `Partner: ${partnerCount}/${MAX_PARTNER_SLOTS} • Premium: ${premiumCount}/${MAX_PREMIUM_SLOTS}`,
+      bgColor: 'bg-gray-50 border-gray-200',
+      textColor: 'text-gray-700',
+      icon: <Shield className="h-5 w-5 text-gray-500" />,
+      title: `Exkluzívne pozície ${locationText} ${cityName} sú obsadené`,
+      subtitle: `Leader: ${leaderCount}/${MAX_LEADER_SLOTS} \u2022 Partner: ${partnerCount}/${MAX_PARTNER_SLOTS}`,
+      badge: null,
+      badgeStyle: '',
       ctaText: 'Kontaktujte nás',
       ctaHref: '/kontakt',
       ctaStyle: 'bg-gray-800 hover:bg-gray-900 text-white',
@@ -70,26 +71,19 @@ export function TaxiSlotsBanner({ cityName, locationText, partnerCount, premiumC
 
   const config = getStatusConfig();
 
-  // Zbalený header pre rozbaľovací režim
   const CollapsedHeader = () => (
     <button
       onClick={() => setIsExpanded(!isExpanded)}
       className={`w-full border rounded-xl p-2 md:p-4 shadow-sm hover:shadow-md transition-all flex items-center justify-between group ${config.bgColor}`}
     >
-      {/* Mobile: kompaktný layout */}
       <div className="flex items-center gap-2 md:gap-3 flex-1 min-w-0">
         <span className="hidden md:block">{config.icon}</span>
         <span className={`font-bold text-sm md:text-base truncate ${config.textColor}`}>
-          <span className="md:hidden">Ste taxislužba {locationText} {cityName}?</span>
-          <span className="hidden md:inline">Ste taxislužba {locationText} {cityName}?</span>
+          Ste taxislužba {locationText} {cityName}?
         </span>
-        {!allSlotsTaken && (
-          <span className={`text-xs px-2 py-0.5 rounded-full whitespace-nowrap ${
-            partnerAvailable
-              ? 'bg-emerald-100 text-emerald-700'
-              : 'bg-amber-100 text-amber-700'
-          }`}>
-            {partnerAvailable ? `${partnerSlotsLeft} Partner voľn${partnerSlotsLeft > 1 ? 'é' : 'ý'}` : `${premiumSlotsLeft} Premium voľn${premiumSlotsLeft > 1 ? 'é' : 'ý'}`}
+        {config.badge && (
+          <span className={`text-xs px-2 py-0.5 rounded-full whitespace-nowrap ${config.badgeStyle}`}>
+            {config.badge}
           </span>
         )}
       </div>
@@ -100,7 +94,6 @@ export function TaxiSlotsBanner({ cityName, locationText, partnerCount, premiumC
     </button>
   );
 
-  // Rozbalený obsah
   const ExpandedContent = () => (
     <div className={`border rounded-2xl p-6 shadow-lg ${config.bgColor}`}>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">

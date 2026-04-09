@@ -535,6 +535,7 @@ async function UniversalListView({
   }
 
   // Separate services by tier (redirectTo = partner redirect, counts as partner)
+  const leaders = city.taxiServices.filter(s => s.isLeader);
   const partners = city.taxiServices.filter(s => s.isPartner || s.redirectTo);
   const premiums = city.taxiServices.filter(s => s.isPremium && !s.isPartner && !s.redirectTo);
   const standard = city.taxiServices.filter(s => !s.isPremium && !s.isPartner && !s.redirectTo);
@@ -618,8 +619,8 @@ async function UniversalListView({
       <TaxiSlotsBanner
         cityName={city.name}
         locationText={locationText}
+        leaderCount={Math.min(leaders.length, 1)}
         partnerCount={Math.min(partners.length, 2)}
-        premiumCount={Math.min(premiums.length, 3)}
       />
 
       {/* Kompaktný List View - 80px riadky podľa oponenta */}
