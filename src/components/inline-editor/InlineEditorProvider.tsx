@@ -91,12 +91,12 @@ export function InlineEditorProvider({
   const [isPublishing, setIsPublishing] = useState(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
   const [draftId, setDraftId] = useState<string | null>(initialDraftId);
-  // Sync draftId when PartnerPageWrapper finds it client-side
+  // Sync draftId when session bootstrap resolves (props update)
   useEffect(() => {
-    if (initialDraftId && !draftId) {
+    if (initialDraftId) {
       setDraftId(initialDraftId);
     }
-  }, [initialDraftId]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [initialDraftId]);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [hasPendingChanges, setHasPendingChanges] = useState(false);
   const [isPreviewMode, setIsPreviewMode] = useState(false);

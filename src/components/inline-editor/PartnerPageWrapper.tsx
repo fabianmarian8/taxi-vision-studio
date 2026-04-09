@@ -2,12 +2,11 @@
 
 import { ReactNode, useState, useEffect } from 'react';
 import { InlineEditorProvider, type DraftData } from './InlineEditorProvider';
-import { createClient } from '@/lib/supabase/client';
 import type { PlanTier } from '@/lib/tier-config';
 
 interface PartnerPageWrapperProps {
   children: ReactNode;
-  /** @deprecated Use partnerSlug instead - ownership is now checked client-side */
+  /** @deprecated Server-side ownership not used — session bootstrap handles this */
   isOwner?: boolean;
   initialData: Partial<DraftData>;
   partnerId?: string | null;
@@ -17,108 +16,75 @@ interface PartnerPageWrapperProps {
   planTier?: PlanTier;
 }
 
+interface SessionState {
+  status: 'loading' | 'ready';
+  isOwner: boolean;
+  partnerId: string | null;
+  draftId: string | null;
+  planTier: PlanTier | undefined;
+}
+
 /**
- * Klientský wrapper pre partner stránky
- * Obaľuje obsah do InlineEditorProvider ak je používateľ vlastníkom
- * Ownership sa kontroluje client-side pre kompatibilitu s ISR
+ * Klientský wrapper pre partner stránky.
+ * Volá server bootstrap endpoint pre ownership + draft resolution.
+ * Editor sa mountne až keď server odpovie — žiadne race conditions.
  */
 export function PartnerPageWrapper({
   children,
-  isOwner: serverIsOwner = false,
   initialData,
-  partnerId: initialPartnerId = null,
-  draftId: initialDraftId = null,
   partnerSlug,
   citySlug,
-  planTier,
+  planTier: serverPlanTier,
 }: PartnerPageWrapperProps) {
-  const [ownershipState, setOwnershipState] = useState({
-    isOwner: serverIsOwner,
-    partnerId: initialPartnerId,
-    draftId: initialDraftId,
+  const [session, setSession] = useState<SessionState>({
+    status: 'loading',
+    isOwner: false,
+    partnerId: null,
+    draftId: null,
+    planTier: serverPlanTier,
   });
 
   useEffect(() => {
-    // Skip if no partnerSlug to check
-    if (!partnerSlug) return;
+    if (!partnerSlug) {
+      setSession(s => ({ ...s, status: 'ready' }));
+      return;
+    }
 
-    async function checkOwnership() {
+    async function bootstrap() {
       try {
-        const supabase = createClient();
-        const { data: { session } } = await supabase.auth.getSession();
+        const response = await fetch(`/api/partner/inline-edit/session/${encodeURIComponent(partnerSlug!)}`);
+        const data = await response.json();
 
-        if (!session?.user) {
-          return;
-        }
-
-        const user = session.user;
-
-        // Check superadmin via server API (SUPERADMIN_EMAILS is server-only env var)
-        let userIsAdmin = false;
-        try {
-          const adminResponse = await fetch('/api/auth/check-superadmin');
-          const adminData = await adminResponse.json();
-          userIsAdmin = adminData.isAdmin === true;
-        } catch {
-          // Silently fail — non-admin is the safe default
-        }
-
-        // Fetch partner data with drafts
-        const { data: partner } = await supabase
-          .from('partners')
-          .select(`
-            id,
-            user_id,
-            slug,
-            partner_drafts (
-              id,
-              status,
-              updated_at
-            )
-          `)
-          .eq('slug', partnerSlug)
-          .single();
-
-        if (!partner) return;
-
-        const isOwner = partner.user_id === user.id || userIsAdmin;
-
-        if (isOwner) {
-          // Find latest draft
-          const drafts = (partner.partner_drafts || []) as Array<{ id: string; status: string; updated_at: string | null }>;
-          let latestDraft = drafts
-            .filter((d) => d.status === 'draft')
-            .sort((a, b) => new Date(b.updated_at || 0).getTime() - new Date(a.updated_at || 0).getTime())[0];
-
-          if (!latestDraft) {
-            latestDraft = drafts
-              .filter((d) => d.status === 'approved')
-              .sort((a, b) => new Date(b.updated_at || 0).getTime() - new Date(a.updated_at || 0).getTime())[0];
-          }
-
-          setOwnershipState({
+        if (data.isOwner) {
+          setSession({
+            status: 'ready',
             isOwner: true,
-            partnerId: partner.id,
-            draftId: latestDraft?.id || null,
+            partnerId: data.partnerId,
+            draftId: data.draftId,
+            planTier: data.planTier || serverPlanTier,
           });
+        } else {
+          setSession(s => ({ ...s, status: 'ready', isOwner: false }));
         }
       } catch (error) {
-        console.error('[PartnerPageWrapper] Ownership check error:', error);
+        console.error('[PartnerPageWrapper] Session bootstrap error:', error);
+        setSession(s => ({ ...s, status: 'ready', isOwner: false }));
       }
     }
 
-    checkOwnership();
-  }, [partnerSlug]);
+    bootstrap();
+  }, [partnerSlug, serverPlanTier]);
 
+  // Always render children — editor overlay is conditional on session.isOwner
   return (
     <InlineEditorProvider
-      isOwner={ownershipState.isOwner}
+      isOwner={session.status === 'ready' ? session.isOwner : false}
       initialData={initialData}
-      partnerId={ownershipState.partnerId}
-      draftId={ownershipState.draftId}
+      partnerId={session.partnerId}
+      draftId={session.draftId}
       partnerSlug={partnerSlug}
       citySlug={citySlug}
-      planTier={planTier}
+      planTier={session.planTier}
     >
       {children}
     </InlineEditorProvider>
