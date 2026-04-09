@@ -253,17 +253,27 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
   const featuredPlanType = featuredSub?.plan_type || (featuredPartner as { plan_type?: string } | null)?.plan_type || 'free';
 
   // Profile health for featured partner
-  const featuredDrafts = featuredPartner
-    ? [...(featuredPartner.partner_drafts || [])].sort(
-        (a: { updated_at?: string | null }, b: { updated_at?: string | null }) =>
-          new Date(b.updated_at || 0).getTime() - new Date(a.updated_at || 0).getTime()
-      )
-    : [];
-  const featuredDraft = featuredDrafts[0] as {
+  type DraftRow = {
     status?: string; phone?: string; description?: string;
     hero_image_url?: string; gallery?: string[]; company_name?: string;
     updated_at?: string | null; submitted_at?: string | null;
-  } | undefined;
+  };
+  const allDrafts = featuredPartner
+    ? [...(featuredPartner.partner_drafts || [])].sort(
+        (a: { updated_at?: string | null }, b: { updated_at?: string | null }) =>
+          new Date(b.updated_at || 0).getTime() - new Date(a.updated_at || 0).getTime()
+      ) as DraftRow[]
+    : [];
+
+  // For display status: show "Live" if latest approved is newer than latest working draft
+  // (bootstrap creates empty working draft after publish — dashboard shouldn't show "Rozpracované" for that)
+  const latestApproved = allDrafts.find(d => d.status === 'approved');
+  const latestWorkingDraft = allDrafts.find(d => d.status === 'draft');
+  const isWorkingDraftEmpty = latestWorkingDraft && !latestWorkingDraft.phone && !latestWorkingDraft.description && !latestWorkingDraft.hero_image_url;
+  const displayStatus = (latestApproved && (!latestWorkingDraft || isWorkingDraftEmpty)) ? 'approved' : (latestWorkingDraft?.status || latestApproved?.status || 'draft');
+
+  // Use approved draft for health data (it has the real content), working draft for status
+  const featuredDraft = latestApproved || latestWorkingDraft || allDrafts[0];
 
   const city = featuredPartner ? getCityBySlug(featuredPartner.city_slug) : null;
   const cityName = city?.name || featuredPartner?.city_slug || '';
@@ -345,7 +355,7 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
             cityName={cityName}
             partnerSlug={featuredPartner.slug}
             planType={featuredPlanType}
-            draftStatus={featuredDraft?.status || null}
+            draftStatus={displayStatus}
             lastUpdated={featuredDraft?.updated_at || null}
             profileHealth={{ completedFields, totalFields: profileChecks.length }}
           />
@@ -356,7 +366,7 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <ProfileStatusPanel
               partnerSlug={featuredPartner.slug}
-              draftStatus={featuredDraft?.status || null}
+              draftStatus={displayStatus}
               lastUpdated={featuredDraft?.updated_at || null}
               checks={profileChecks}
               completeness={completeness}
