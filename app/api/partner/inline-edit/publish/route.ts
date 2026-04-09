@@ -88,11 +88,19 @@ export async function POST(request: NextRequest) {
       }, { status: 404 });
     }
 
+    // Clean up: delete any remaining status='draft' rows for this partner
+    // After publish, there should be no working drafts — next edit creates a fresh one
+    await queryClient
+      .from('partner_drafts')
+      .delete()
+      .eq('partner_id', partner_id)
+      .eq('status', 'draft');
+
     // Revalidácia stránky
     const pagePath = `/taxi/${partner.city_slug}/${partner.slug}`;
     revalidatePath(pagePath);
 
-    console.log('[inline-edit/publish] Published:', {
+    console.log('[inline-edit/publish] Published and cleaned drafts:', {
       partner_id,
       draft_id,
       path: pagePath

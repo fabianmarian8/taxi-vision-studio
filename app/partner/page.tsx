@@ -265,15 +265,14 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
       ) as DraftRow[]
     : [];
 
-  // For display status: show "Live" if latest approved is newer than latest working draft
-  // (bootstrap creates empty working draft after publish — dashboard shouldn't show "Rozpracované" for that)
+  // Simple status: if any draft row has status='draft', show "Rozpracované". Otherwise "Live".
+  // Publish cleans up all draft rows, so after publish there's only approved = Live.
   const latestApproved = allDrafts.find(d => d.status === 'approved');
-  const latestWorkingDraft = allDrafts.find(d => d.status === 'draft');
-  const isWorkingDraftEmpty = latestWorkingDraft && !latestWorkingDraft.phone && !latestWorkingDraft.description && !latestWorkingDraft.hero_image_url;
-  const displayStatus = (latestApproved && (!latestWorkingDraft || isWorkingDraftEmpty)) ? 'approved' : (latestWorkingDraft?.status || latestApproved?.status || 'draft');
+  const hasWorkingDraft = allDrafts.some(d => d.status === 'draft');
+  const displayStatus = hasWorkingDraft ? 'draft' : (latestApproved ? 'approved' : 'draft');
 
   // Use approved draft for health data (it has the real content), working draft for status
-  const featuredDraft = latestApproved || latestWorkingDraft || allDrafts[0];
+  const featuredDraft = latestApproved || allDrafts[0];
 
   const city = featuredPartner ? getCityBySlug(featuredPartner.city_slug) : null;
   const cityName = city?.name || featuredPartner?.city_slug || '';
