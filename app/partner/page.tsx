@@ -5,51 +5,12 @@ import Link from 'next/link';
 import { PasswordSettings } from './PasswordSettings';
 import { SuperadminPartnerList } from './SuperadminPartnerList';
 import { isSuperadmin } from '@/lib/superadmin';
-import { CustomerPortalButton } from '@/components/stripe/CustomerPortalButton';
-import { TierStatusBanner } from '@/components/TierStatusBanner';
-import { UpgradePlanCard } from '@/components/UpgradePlanCard';
-import { PartnerAnalytics } from '@/components/PartnerAnalytics';
 import { getCityBySlug } from '@/data/cities';
-
-// Načítaj trasy pre personalizované ukážky v TierStatusBanner
-async function getRoutesForCity(citySlug: string) {
-  try {
-    const routeData = await import('@/data/route-pages.json');
-    const city = getCityBySlug(citySlug);
-    const cityName = city?.name || citySlug;
-
-    // Nájdi trasy kde origin alebo destination matchuje mesto
-    const normalize = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    const cityNorm = normalize(cityName);
-
-     
-    let routes: Array<{ slug: string; origin: string; destination: string; distance_km: number }> = routeData.default.routes
-      .filter((r: { origin: string }) =>
-        normalize(r.origin) === cityNorm
-      )
-      .map((r: { slug: string; origin: string; destination: string; distance_km: string | number }) => ({
-        slug: r.slug,
-        origin: r.origin,
-        destination: r.destination,
-        distance_km: typeof r.distance_km === 'string' ? parseInt(r.distance_km) : r.distance_km,
-      }));
-
-    // Ak nemá priame trasy, vyber reálne existujúce trasy ako ukážku
-    if (routes.length === 0) {
-      const sampleRoutes = routeData.default.routes.slice(0, 5);
-      routes = sampleRoutes.map((r: { slug: string; origin: string; destination: string; distance_km: string | number }) => ({
-        slug: r.slug,
-        origin: cityName,
-        destination: typeof r.destination === 'string' ? r.destination.split(' ')[0] : r.destination,
-        distance_km: typeof r.distance_km === 'string' ? parseInt(r.distance_km) : r.distance_km,
-      }));
-    }
-
-    return { cityName, routes: routes.slice(0, 5) };
-  } catch {
-    return { cityName: citySlug, routes: [] };
-  }
-}
+import { ServiceIdentityStrip } from '@/components/dashboard/ServiceIdentityStrip';
+import { ServiceStatusCard } from '@/components/dashboard/ServiceStatusCard';
+import { ProfileStatusPanel } from '@/components/dashboard/ProfileStatusPanel';
+import { PerformancePanel } from '@/components/dashboard/PerformancePanel';
+import { PlanAndUnlocksPanel } from '@/components/dashboard/PlanAndUnlocksPanel';
 
 interface PageProps {
   searchParams: Promise<{ as?: string }>;
@@ -274,68 +235,66 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
     }
   }
 
-  const statusLabels: Record<string, { label: string; color: string }> = {
-    draft: { label: 'Rozpracované', color: 'bg-gray-100 text-gray-700' },
-    pending: { label: 'Čaká na schválenie', color: 'bg-yellow-100 text-yellow-700' },
-    approved: { label: 'Schválené', color: 'bg-green-100 text-green-700' },
-    rejected: { label: 'Zamietnuté', color: 'bg-red-100 text-red-700' },
-  };
+  // === Command Center data preparation ===
+  const featuredPartner = partners?.[0] || null;
+  const featuredSub = featuredPartner ? partnerSubscriptions.get(featuredPartner.id) : null;
+  const featuredPlanType = featuredSub?.plan_type || (featuredPartner as { plan_type?: string } | null)?.plan_type || 'free';
+
+  // Profile health for featured partner
+  const featuredDrafts = featuredPartner
+    ? [...(featuredPartner.partner_drafts || [])].sort(
+        (a: { updated_at?: string | null }, b: { updated_at?: string | null }) =>
+          new Date(b.updated_at || 0).getTime() - new Date(a.updated_at || 0).getTime()
+      )
+    : [];
+  const featuredDraft = featuredDrafts[0] as {
+    status?: string; phone?: string; description?: string;
+    hero_image_url?: string; gallery?: string[]; company_name?: string;
+    updated_at?: string | null; submitted_at?: string | null;
+  } | undefined;
+
+  const city = featuredPartner ? getCityBySlug(featuredPartner.city_slug) : null;
+  const cityName = city?.name || featuredPartner?.city_slug || '';
+
+  // Profile completeness checks
+  const profileChecks = featuredDraft ? [
+    { label: 'Kontakty vyplnené', done: !!(featuredDraft.phone) },
+    { label: 'Popis doplnený', done: !!(featuredDraft.description) },
+    { label: 'Hero obrázok', done: !!(featuredDraft.hero_image_url) },
+    { label: 'Galéria', done: ((featuredDraft.gallery as string[]) || []).length > 0 },
+  ] : [
+    { label: 'Kontakty vyplnené', done: false },
+    { label: 'Popis doplnený', done: false },
+    { label: 'Hero obrázok', done: false },
+    { label: 'Galéria', done: false },
+  ];
+  const completedFields = profileChecks.filter(c => c.done).length;
+  const completeness = profileChecks.length > 0 ? Math.round((completedFields / profileChecks.length) * 100) : 0;
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      {/* Header — kompaktný, len account actions */}
+      <header className="bg-white border-b border-gray-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className={`w-10 h-10 ${userIsSuperadmin ? 'bg-gradient-to-br from-purple-600 to-indigo-600' : 'bg-purple-600'} rounded-full flex items-center justify-center`}>
-                {userIsSuperadmin ? (
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                ) : (
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                )}
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <h1 className="text-xl font-bold text-gray-900">Partner Portal</h1>
-                  {userIsSuperadmin && (
-                    <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-0.5 rounded-full">
-                      SUPERADMIN
-                    </span>
-                  )}
-                </div>
-                <p className="text-sm text-gray-500">{user.email}</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
+              <h1 className="text-lg font-bold text-gray-900">Partner Portal</h1>
               {userIsSuperadmin && (
-                <Link
-                  href="/admin"
-                  className="text-purple-600 hover:text-purple-800 text-sm font-medium"
-                >
-                  Admin Panel
+                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-0.5 rounded-full">
+                  SUPERADMIN
+                </span>
+              )}
+              <span className="text-sm text-gray-400">{user.email}</span>
+            </div>
+            <div className="flex items-center gap-3 text-sm">
+              {userIsSuperadmin && (
+                <Link href="/admin" className="text-purple-600 hover:text-purple-800 font-medium">
+                  Admin
                 </Link>
               )}
               <PasswordSettings />
               <form action="/partner/auth/signout" method="POST">
-                <button
-                  type="submit"
-                  className="text-gray-600 hover:text-gray-900 text-sm font-medium"
-                >
+                <button type="submit" className="text-gray-500 hover:text-gray-700">
                   Odhlásiť sa
                 </button>
               </form>
@@ -344,244 +303,90 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
         </div>
       </header>
 
-      {/* Main content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Free tier info banner */}
-        {!userIsSuperadmin && partners && partners.length > 0 && (() => {
-          const pt = (partners[0] as { plan_type?: string }).plan_type;
-          if (pt === 'free' || (!pt && !partnerSubscriptions.get(partners[0].id))) {
-            return (
-              <div className="bg-green-50 border-2 border-green-300 rounded-xl p-5 mb-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h2 className="text-lg font-bold text-green-800 mb-1">Bezplatný profil — Prevzatý</h2>
-                    <p className="text-sm text-green-700 mb-3">
-                      Máte prístup k základným úpravám profilu (názov, telefón, web, popis).
-                      Pre rozšírené funkcie ako fotky, galéria, vlastná stránka a prioritné umiestnenie
-                      si vyberte jeden z platených balíkov.
-                    </p>
-                    <a
-                      href="/pre-taxiky#pricing"
-                      className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold text-sm px-4 py-2 rounded-lg transition-colors"
-                    >
-                      Pozrieť platené balíky
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            );
-          }
-          return null;
-        })()}
-
-        {/* Analytika výkonu — pre Leader alebo zamknutá ukážka */}
-        {partners && partners.length > 0 && (() => {
-          const p = partners[0];
-          const sub = partnerSubscriptions.get(p.id);
-          const pt = sub?.plan_type || (p as { plan_type?: string }).plan_type || 'free';
-          return (
-            <PartnerAnalytics
-              citySlug={p.city_slug}
-              serviceName={p.name}
-              planType={pt}
-            />
-          );
-        })()}
-
-        {/* Upgrade Plan Card — priamy Stripe checkout z dashboardu */}
-        {!userIsSuperadmin && partners && partners.length > 0 && (() => {
-          const p = partners[0];
-          const sub = partnerSubscriptions.get(p.id);
-          const pt = sub?.plan_type || (p as { plan_type?: string }).plan_type || 'free';
-          return (
-            <UpgradePlanCard
-              currentPlanType={pt}
-              partnerId={p.id}
-              partnerSlug={p.slug}
-              citySlug={p.city_slug}
-              taxiServiceName={p.name}
-            />
-          );
-        })()}
-
-        {/* Superadmin Partner List */}
-        {userIsSuperadmin && (
-          <SuperadminPartnerList
-            partners={allPartners}
-            currentImpersonating={impersonatingSlug}
-          />
-        )}
-
-        {/* Tier Status Banner — zobrazí aktuálny balík, zamknuté funkcie a ukážky trás */}
-        {!impersonatingSlug && partners && partners.length > 0 && await (async () => {
-          const firstPartner = partners[0];
-          const firstPartnerSub = partnerSubscriptions.get(firstPartner.id);
-          const planType = firstPartnerSub?.plan_type || (firstPartner as { plan_type?: string }).plan_type || 'free';
-          const { cityName, routes } = await getRoutesForCity(firstPartner.city_slug);
-          return (
-            <TierStatusBanner
-              planType={planType}
-              cityName={cityName}
-              routePreviews={routes}
-            />
-          );
-        })()}
-
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">
-            {impersonatingSlug && displayPartnerName
-              ? `Taxislužby partnera: ${displayPartnerName}`
-              : 'Vaše taxislužby'}
-          </h2>
-          <p className="text-gray-600 mt-1">
-            {impersonatingSlug
-              ? 'Upravujete profil ako superadmin'
-              : 'Spravujte informácie o vašich taxislužbách'}
-          </p>
-        </div>
-
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 py-6">
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
             Chyba pri načítaní dát: {error.message}
           </div>
         )}
 
-        {partners && partners.length === 0 && (
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center">
-            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg
-                className="w-8 h-8 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                />
-              </svg>
-            </div>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
-              {impersonatingSlug ? 'Žiadne taxislužby pre tohto partnera' : 'Žiadne taxislužby'}
-            </h3>
-            <p className="text-gray-500">
-              {impersonatingSlug ? (
-                <>
-                  Tento partner nemá priradenú žiadnu taxislužbu.
-                  <br />
-                  <Link href="/partner" className="text-purple-600 hover:underline">
-                    Vrátiť sa späť
-                  </Link>
-                </>
-              ) : (
-                <>
-                  Zatiaľ nemáte priradenú žiadnu taxislužbu.
-                  <br />
-                  Kontaktujte administrátora pre pridanie vašej taxislužby.
-                </>
-              )}
-            </p>
+        {/* Superadmin Partner List */}
+        {userIsSuperadmin && (
+          <div className="mb-6">
+            <SuperadminPartnerList
+              partners={allPartners}
+              currentImpersonating={impersonatingSlug}
+            />
           </div>
         )}
 
+        {/* Vrstva 1: Service Identity Strip */}
+        {featuredPartner && (
+          <ServiceIdentityStrip
+            serviceName={featuredPartner.name}
+            citySlug={featuredPartner.city_slug}
+            cityName={cityName}
+            partnerSlug={featuredPartner.slug}
+            planType={featuredPlanType}
+            draftStatus={featuredDraft?.status || null}
+            lastUpdated={featuredDraft?.updated_at || null}
+            profileHealth={{ completedFields, totalFields: profileChecks.length }}
+          />
+        )}
+
+        {/* Vrstva 2: 3-column grid — Profil | Výkon | Balík */}
+        {featuredPartner && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <ProfileStatusPanel
+              partnerSlug={featuredPartner.slug}
+              draftStatus={featuredDraft?.status || null}
+              lastUpdated={featuredDraft?.updated_at || null}
+              checks={profileChecks}
+              completeness={completeness}
+            />
+            <PerformancePanel
+              citySlug={featuredPartner.city_slug}
+              serviceName={featuredPartner.name}
+              planType={featuredPlanType}
+            />
+            <PlanAndUnlocksPanel
+              planType={featuredPlanType}
+              partnerId={featuredPartner.id}
+              partnerSlug={featuredPartner.slug}
+              citySlug={featuredPartner.city_slug}
+              taxiServiceName={featuredPartner.name}
+              hasSubscription={!!featuredSub}
+            />
+          </div>
+        )}
+
+        {/* Vrstva 3: Moje taxislužby */}
         {partners && partners.length > 0 && (
-          <div className="grid gap-6 md:grid-cols-2">
-            {partners.map((partner) => {
-              // Sort drafts by updated_at descending and get the latest
-              const sortedDrafts = [...(partner.partner_drafts || [])].sort(
-                (a, b) => new Date(b.updated_at || 0).getTime() - new Date(a.updated_at || 0).getTime()
-              );
-              const latestDraft = sortedDrafts[0];
-              const status = latestDraft?.status || 'draft';
-              const statusInfo = statusLabels[status];
-              const subscription = partnerSubscriptions.get(partner.id);
-
-              return (
-                <div
+          <>
+            <h2 className="text-lg font-bold text-gray-900 mb-4">
+              {impersonatingSlug && displayPartnerName
+                ? `Taxislužby partnera: ${displayPartnerName}`
+                : 'Moje taxislužby'}
+            </h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              {partners.map((partner) => (
+                <ServiceStatusCard
                   key={partner.id}
-                  className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
-                >
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-900">
-                          {partner.name}
-                        </h3>
-                        <p className="text-sm text-gray-500">{partner.city_slug}</p>
-                      </div>
-                      <div className="flex flex-col items-end gap-1">
-                        <span
-                          className={`px-3 py-1 rounded-full text-xs font-medium ${statusInfo.color}`}
-                        >
-                          {statusInfo.label}
-                        </span>
-                        {subscription && (
-                          <span
-                            className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                              subscription.status === 'active'
-                                ? 'bg-green-100 text-green-700'
-                                : 'bg-gray-100 text-gray-600'
-                            }`}
-                          >
-                            {subscription.plan_type?.toUpperCase()} {subscription.status === 'active' ? '✓' : ''}
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                  partner={partner}
+                  subscription={partnerSubscriptions.get(partner.id) || null}
+                />
+              ))}
+            </div>
+          </>
+        )}
 
-                    {latestDraft?.submitted_at && (
-                      <p className="text-sm text-gray-500 mb-4">
-                        Odoslané:{' '}
-                        {new Date(latestDraft.submitted_at).toLocaleDateString('sk-SK')}
-                      </p>
-                    )}
-
-                    <div className="flex gap-3">
-                      <Link
-                        href={`/partner/edit/${partner.slug}`}
-                        className="flex-1 bg-purple-600 text-white text-center py-2 px-4 rounded-lg font-medium hover:bg-purple-700 transition-colors"
-                      >
-                        Upraviť
-                      </Link>
-                      <Link
-                        href={`/taxi/${partner.city_slug}/${partner.slug}`}
-                        target="_blank"
-                        className="flex-1 relative bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 text-center py-2 px-4 rounded-lg font-bold hover:from-yellow-500 hover:to-orange-600 transition-all shadow-md hover:shadow-lg"
-                      >
-                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full animate-pulse">
-                          NEW
-                        </span>
-                        LIVE úpravy
-                      </Link>
-                    </div>
-
-                    {/* Stripe Customer Portal - pre správu predplatného */}
-                    {subscription && subscription.stripe_customer_id && (
-                      <div className="mt-4 pt-4 border-t border-gray-100">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm text-gray-600">Predplatné</span>
-                          <CustomerPortalButton
-                            customerId={subscription.stripe_customer_id}
-                            variant="outline"
-                            className="text-sm"
-                          />
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
+        {partners && partners.length === 0 && !userIsSuperadmin && (
+          <div className="bg-white rounded-xl border border-gray-200 p-8 text-center">
+            <p className="text-gray-500">
+              Zatiaľ nemáte priradenú žiadnu taxislužbu.
+              <br />
+              Kontaktujte administrátora pre pridanie vašej taxislužby.
+            </p>
           </div>
         )}
       </main>
