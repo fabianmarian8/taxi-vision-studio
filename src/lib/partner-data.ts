@@ -58,7 +58,7 @@ export interface ApprovedPartnerData {
  * 2. We use on-demand revalidation (revalidatePath) in admin API after approval
  * 3. Next.js ISR with revalidate=3600 provides the caching layer
  */
-export async function getApprovedPartnerData(partnerSlug: string): Promise<ApprovedPartnerData | null> {
+export async function getApprovedPartnerData(partnerSlug: string, citySlug?: string): Promise<ApprovedPartnerData | null> {
   try {
     const supabase = getReadOnlyClient();
 
@@ -73,7 +73,16 @@ export async function getApprovedPartnerData(partnerSlug: string): Promise<Appro
     }
 
     // RPC returns an array, get first result
-    const draft = Array.isArray(data) ? data[0] : data;
+    let draft = Array.isArray(data) ? data[0] : data;
+
+    // Fallback: try with city suffix if not found (DB slug may include city)
+    if (!draft && citySlug) {
+      const slugWithCity = `${partnerSlug}-${citySlug}`;
+      const { data: data2 } = await supabase.rpc('get_approved_partner_data', {
+        p_slug: slugWithCity
+      });
+      draft = Array.isArray(data2) ? data2[0] : data2;
+    }
 
     if (!draft) {
       console.log('[getApprovedPartnerData] No approved draft found for:', partnerSlug);
@@ -126,21 +135,43 @@ export interface ClaimedProfile {
  * Uses admin client to bypass RLS.
  * Returns partner info if claimed, null otherwise.
  */
-export async function getClaimedProfile(serviceSlug: string): Promise<ClaimedProfile | null> {
+export async function getClaimedProfile(serviceSlug: string, citySlug?: string): Promise<ClaimedProfile | null> {
   try {
     const supabase = getAdminClient();
+
+    // Try exact slug match first
     const { data: partner, error } = await supabase
       .from('partners')
       .select('id, plan_type')
       .eq('slug', serviceSlug)
       .maybeSingle();
 
-    if (error || !partner) return null;
+    if (!error && partner) {
+      return {
+        partnerId: partner.id,
+        planTier: normalizePlanType(partner.plan_type),
+      };
+    }
 
-    return {
-      partnerId: partner.id,
-      planTier: normalizePlanType(partner.plan_type),
-    };
+    // Fallback: partner DB slug may have city suffix (e.g. "lest-taxi-vojensky-obvod-zvolen")
+    // while URL uses service slug without city (e.g. "lest-taxi-vojensky-obvod")
+    if (citySlug) {
+      const slugWithCity = `${serviceSlug}-${citySlug}`;
+      const { data: partnerWithCity } = await supabase
+        .from('partners')
+        .select('id, plan_type')
+        .eq('slug', slugWithCity)
+        .maybeSingle();
+
+      if (partnerWithCity) {
+        return {
+          partnerId: partnerWithCity.id,
+          planTier: normalizePlanType(partnerWithCity.plan_type),
+        };
+      }
+    }
+
+    return null;
   } catch {
     return null;
   }

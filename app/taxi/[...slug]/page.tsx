@@ -1648,12 +1648,12 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
   const isPromotional = service.isPromotional; // Promo premium (nie platiaci)
 
   // Check partner record for plan tier (needed for live editor gating + claimed free profiles)
-  const claimedProfile = await getClaimedProfile(serviceSlug);
+  const claimedProfile = await getClaimedProfile(serviceSlug, city.slug);
 
   // Partner page - full branded page (or claimed free profile with editor)
   if (isPartner || claimedProfile) {
     // Fetch approved data from Supabase (partner portal changes)
-    const approvedData = await getApprovedPartnerData(serviceSlug);
+    const approvedData = await getApprovedPartnerData(serviceSlug, city.slug);
 
     // Check if current user is owner (for inline editing)
     const { isOwner, draftData, partnerId, draftId } = await checkPartnerOwnership(serviceSlug);
