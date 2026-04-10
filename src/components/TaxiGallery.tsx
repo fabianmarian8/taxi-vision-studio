@@ -37,6 +37,17 @@ export function TaxiGallery({ images, serviceName }: TaxiGalleryProps) {
     };
   }, [lightboxOpen]);
 
+  if (!images || images.length === 0) return null;
+
+  const openLightbox = (index: number) => {
+    setCurrentIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
   const goNext = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
   };
