@@ -76,31 +76,41 @@ export async function handlePartnerOnboarding(
 
   // -- Step 1: Create or find auth user --
   try {
-    // Check if user already exists
-    const { data: listData } = await supabase.auth.admin.listUsers();
-    const existingUser = listData?.users?.find(
-      (u) => u.email?.toLowerCase() === email.toLowerCase()
-    );
+    // Create-first pattern: try create, then paginated search if exists
+    password = generateSecurePassword();
+    const { data: newUser, error: createError } = await supabase.auth.admin.createUser({
+      email,
+      password,
+      email_confirm: true,
+    });
 
-    if (existingUser) {
-      userId = existingUser.id;
-      log.info('Auth user already exists', { userId });
-    } else {
-      password = generateSecurePassword();
-      const { data: newUser, error: createError } = await supabase.auth.admin.createUser({
-        email,
-        password,
-        email_confirm: true,
-      });
-
-      if (createError) {
-        log.error('Failed to create auth user', { error: createError.message });
-        return { success: false, error: `Auth user creation failed: ${createError.message}` };
-      }
-
+    if (newUser?.user) {
       userId = newUser.user.id;
       isNewUser = true;
       log.info('Auth user created', { userId });
+    } else {
+      // User likely exists — find with paginated search
+      password = null; // Don't send password for existing users
+      let existingUser = null;
+      let page = 1;
+      const perPage = 1000;
+      while (!existingUser) {
+        const { data } = await supabase.auth.admin.listUsers({ page, perPage });
+        if (!data?.users?.length) break;
+        existingUser = data.users.find(
+          (u) => u.email?.toLowerCase() === email.toLowerCase()
+        );
+        if (data.users.length < perPage) break;
+        page++;
+      }
+
+      if (!existingUser) {
+        log.error('Failed to create or find auth user', { error: createError?.message });
+        return { success: false, error: `Auth user creation failed: ${createError?.message}` };
+      }
+
+      userId = existingUser.id;
+      log.info('Auth user already exists', { userId });
     }
   } catch (err) {
     log.error('Auth user step failed', { error: err instanceof Error ? err.message : 'Unknown' });

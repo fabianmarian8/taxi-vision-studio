@@ -78,7 +78,7 @@ function Footer() {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-sm text-slate-400 font-medium text-center md:text-left">
-            © 2025 Taxi NearMe. Všetky práva vyhradené.
+            © {new Date().getFullYear()} Taxi NearMe. Všetky práva vyhradené.
           </div>
           <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             <Link
@@ -100,7 +100,7 @@ function Footer() {
               Obchodné podmienky
             </Link>
             <Link
-              href="/"
+              href="/kontakt"
               className="text-sm text-slate-400 hover:text-yellow-400 transition-colors"
             >
               Kontakt

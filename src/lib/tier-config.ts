@@ -18,6 +18,7 @@ export function normalizePlanType(planType: string | null | undefined): PlanTier
     case 'mini': return 'free'; // Legacy 0.99€ = teraz free
     case 'premium': return 'managed';
     case 'partner': return 'partner';
+    case 'newPartner': return 'partner'; // 14.99€ newPartner = partner tier
     case 'leader': return 'leader';
     case 'free': return 'free';
     case 'managed': return 'managed';

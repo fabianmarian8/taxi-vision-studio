@@ -17,6 +17,23 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Missing city_slug or service_name' }, { status: 400 });
     }
 
+    // Ownership check: verify user's partner matches the queried service
+    const { data: partner } = await supabase
+      .from('partners')
+      .select('city_slug, name')
+      .eq('user_id', user.id)
+      .eq('city_slug', citySlug)
+      .maybeSingle();
+
+    if (!partner) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    }
+
+    // Verify partner name matches the queried service (case-insensitive)
+    if (partner.name?.toLowerCase() !== serviceName.toLowerCase()) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    }
+
     // Admins use service role for bypassing RLS
     const { createClient: createAdminClient } = await import('@supabase/supabase-js');
     const adminSupabase = createAdminClient(

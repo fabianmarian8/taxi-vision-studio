@@ -142,22 +142,30 @@ function checkRateLimitInMemory(
  * Works with Vercel, Cloudflare, and direct connections
  */
 export function getClientIp(request: Request): string {
-  // Vercel
-  const forwardedFor = request.headers.get('x-forwarded-for');
-  if (forwardedFor) {
-    return forwardedFor.split(',')[0].trim();
+  // On Vercel, x-vercel-forwarded-for is set by the platform and cannot be spoofed
+  const vercelIp = request.headers.get('x-vercel-forwarded-for');
+  if (vercelIp) {
+    return vercelIp.split(',')[0].trim();
   }
 
-  // Cloudflare
+  // Cloudflare sets cf-connecting-ip (trusted when behind Cloudflare)
   const cfConnectingIp = request.headers.get('cf-connecting-ip');
   if (cfConnectingIp) {
     return cfConnectingIp;
   }
 
-  // Real IP header
+  // x-real-ip set by trusted reverse proxy
   const realIp = request.headers.get('x-real-ip');
   if (realIp) {
     return realIp;
+  }
+
+  // x-forwarded-for as last resort — take the LAST entry (closest to the server)
+  // to reduce spoofing risk when not behind a trusted proxy
+  const forwardedFor = request.headers.get('x-forwarded-for');
+  if (forwardedFor) {
+    const parts = forwardedFor.split(',').map(s => s.trim()).filter(Boolean);
+    return parts[parts.length - 1];
   }
 
   // Fallback

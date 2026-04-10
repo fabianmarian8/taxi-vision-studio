@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
+import { timingSafeEqual } from 'crypto';
+
+function timingSafeCompare(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(Buffer.from(a), Buffer.from(b));
+}
 
 const REVALIDATE_SECRET = process.env.REVALIDATE_SECRET;
 const REVALIDATE_RATE_LIMIT = 10;
@@ -8,9 +14,9 @@ const REVALIDATE_WINDOW_MS = 60 * 1000;
 
 export async function POST(request: NextRequest) {
   try {
-    // SECURITY: Validate secret token
+    // SECURITY: Validate secret token (timing-safe)
     const authHeader = request.headers.get('x-revalidate-secret');
-    if (!REVALIDATE_SECRET || authHeader !== REVALIDATE_SECRET) {
+    if (!REVALIDATE_SECRET || !authHeader || !timingSafeCompare(authHeader, REVALIDATE_SECRET)) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 

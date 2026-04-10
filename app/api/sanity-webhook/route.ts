@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
+import { timingSafeEqual } from 'crypto'
+
+function timingSafeCompare(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(Buffer.from(a), Buffer.from(b));
+}
 
 // Webhook secret pre overenie že request je od Sanity
 const SANITY_WEBHOOK_SECRET = process.env.SANITY_WEBHOOK_SECRET
@@ -23,7 +29,7 @@ export async function POST(request: NextRequest) {
       console.error('[Sanity Webhook] SANITY_WEBHOOK_SECRET is not configured')
       return NextResponse.json({ error: 'Webhook not configured' }, { status: 500 })
     }
-    if (secret !== SANITY_WEBHOOK_SECRET) {
+    if (!secret || !timingSafeCompare(secret, SANITY_WEBHOOK_SECRET)) {
       return NextResponse.json({ error: 'Invalid secret' }, { status: 401 })
     }
 

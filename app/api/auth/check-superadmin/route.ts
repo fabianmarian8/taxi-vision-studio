@@ -11,29 +11,26 @@ import { isSuperadmin } from '@/lib/superadmin';
 export async function GET() {
   try {
     const supabase = await createClient();
-    const { data: { session } } = await supabase.auth.getSession();
+    // Use getUser() instead of getSession() — getUser() validates JWT server-side
+    const { data: { user } } = await supabase.auth.getUser();
 
     // Cache headers - private (per-user), 60s cache
     const cacheHeaders = {
       'Cache-Control': 'private, max-age=60, stale-while-revalidate=120',
     };
 
-    if (!session?.user) {
+    if (!user) {
       return NextResponse.json(
-        { isAdmin: false, email: null },
+        { isAdmin: false },
         { headers: cacheHeaders }
       );
     }
 
-    const email = session.user.email;
+    const email = user.email;
     const isAdmin = isSuperadmin(email);
 
     return NextResponse.json(
-      {
-        isAdmin,
-        email,
-        userId: session.user.id
-      },
+      { isAdmin },
       { headers: cacheHeaders }
     );
   } catch (error) {

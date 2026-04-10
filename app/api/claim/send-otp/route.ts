@@ -51,8 +51,26 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       return NextResponse.json({ error: 'Neplatné telefónne číslo' }, { status: 400 });
     }
 
-    // Overenie: zadané číslo musí zodpovedať číslu v profile
-    if (!phoneNumbersMatch(phone, profilePhone)) {
+    // Overenie: zadané číslo musí zodpovedať číslu v DB pre danú taxislužbu
+    const supabase = getSupabase();
+    const escapedServiceName = taxiServiceName.replace(/[%_\\]/g, '\\$&');
+    const { data: taxiService } = await (supabase
+      .from('taxi_services' as never) as ReturnType<typeof supabase.from>)
+      .select('phone')
+      .eq('city_slug', citySlug)
+      .ilike('name', escapedServiceName)
+      .limit(1)
+      .single();
+
+    if (!taxiService) {
+      return NextResponse.json(
+        { error: 'Taxislužba nebola nájdená.' },
+        { status: 404 }
+      );
+    }
+
+    const dbPhone = (taxiService as { phone: string }).phone;
+    if (!dbPhone || !phoneNumbersMatch(phone, dbPhone)) {
       return NextResponse.json(
         { error: 'Zadané číslo nezodpovedá číslu v profile taxislužby.' },
         { status: 400 }
@@ -64,7 +82,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000); // 10 minút
 
     // Ulož do DB (tabuľka nie je v generated types, použijeme type assertion)
-    const supabase = getSupabase();
     const { error: dbError } = await (supabase
       .from('claim_verifications' as never) as ReturnType<typeof supabase.from>)
       .insert({

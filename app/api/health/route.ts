@@ -212,7 +212,7 @@ export async function GET(request: Request) {
   const url = new URL(request.url);
   const token = url.searchParams.get('token');
 
-  if (HEALTH_SECRET && token !== HEALTH_SECRET) {
+  if (!HEALTH_SECRET || token !== HEALTH_SECRET) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

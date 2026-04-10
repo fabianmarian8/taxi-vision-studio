@@ -86,6 +86,16 @@ export async function POST(request: NextRequest) {
         await handlePaymentFailed(event.data.object as Stripe.Invoice, event.id);
         break;
 
+      case 'checkout.session.completed': {
+        const session = event.data.object as Stripe.Checkout.Session;
+        if (session.subscription && session.mode === 'subscription') {
+          // Fallback: if subscription.created was missed, fetch and process it
+          const sub = await stripe.subscriptions.retrieve(session.subscription as string);
+          await handleSubscriptionCreated(sub, event.id);
+        }
+        break;
+      }
+
       default:
         log.info('Unhandled event type');
     }
@@ -178,9 +188,9 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
     plan_type: getPlanTypeFromAmount(amountCents),
   });
 
-  // Atomic claim: Log event BEFORE side effects to prevent duplicate processing
-  const claimed = await logSubscriptionEvent(subscription.id, 'created', amountCents, null, subscription.status, stripeEventId);
-  if (!claimed) return; // Another worker already processed this event
+  // Run side effects BEFORE claiming the event.
+  // If side effects fail, the event stays unclaimed so Stripe retries will re-attempt.
+  // The upsert above is idempotent, so re-runs are safe.
 
   // Link subscription to taxi service (auto-enables verified/premium)
   await linkSubscriptionToTaxiService(subscription.id, citySlug, taxiServiceName, taxiServiceId);
@@ -189,14 +199,13 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
   const partnerId = subscription.metadata?.partner_id as string | undefined;
   const planType = getPlanTypeFromAmount(amountCents);
   if (partnerId) {
-    // Mapovanie Stripe plan type na tier plan_type
     const planToTier: Record<string, string> = {
       leader: 'leader',
       newPartner: 'partner',
-      partner: 'partner',   // legacy
+      partner: 'partner',
       managed: 'managed',
-      premium: 'managed',   // legacy premium = managed
-      mini: 'free',         // legacy mini = free
+      premium: 'managed',
+      mini: 'free',
     };
     const newPlanType = planToTier[planType] || 'free';
     await getSupabase()
@@ -205,11 +214,10 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
       .eq('id', partnerId);
     logger.info('Partner plan_type updated', { partnerId, newPlanType, stripePlan: planType });
   }
-  // Auto-onboarding for all paid plans (managed, newPartner, partner, leader)
-  // Legacy plans (mini, premium) don't get partner onboarding
+
+  // Auto-onboarding for paid plans
   const paidPlansWithOnboarding = ['managed', 'newPartner', 'partner', 'leader'];
   if (paidPlansWithOnboarding.includes(planType) && customerEmail) {
-    // Determine the tier for the partner record
     const planToTierForOnboarding: Record<string, string> = {
       leader: 'leader',
       newPartner: 'partner',
@@ -249,6 +257,9 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
       });
     }
   }
+
+  // Claim event AFTER all side effects succeeded — retry-safe
+  await logSubscriptionEvent(subscription.id, 'created', amountCents, null, subscription.status, stripeEventId);
 }
 
 async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stripeEventId: string) {
@@ -273,7 +284,9 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
     .maybeSingle();
 
   if (!existing) {
-    logger.warn('Subscription not found for update, skipping', { subscriptionId: subscription.id });
+    // Subscription not in DB (e.g., created event failed). Upsert it now instead of silently skipping.
+    logger.warn('Subscription not found for update, upserting', { subscriptionId: subscription.id });
+    await handleSubscriptionCreated(subscription, stripeEventId);
     return;
   }
 
@@ -303,18 +316,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
     throw error;
   }
 
-  // Atomic claim: Log event BEFORE side effects to prevent duplicate processing
-  const claimed = await logSubscriptionEvent(
-    subscription.id,
-    'updated',
-    amountCents,
-    previousStatus,
-    subscription.status,
-    stripeEventId
-  );
-  if (!claimed) return; // Another worker already processed this event
-
-  // Handle status transitions
+  // Handle status transitions (side effects run BEFORE claiming for retry safety)
   const statusChanged = previousStatus !== subscription.status;
   if (statusChanged) {
     const inactiveStatuses = ['past_due', 'unpaid', 'canceled', 'incomplete_expired', 'paused'];
@@ -367,6 +369,16 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription, stri
       }
     }
   }
+
+  // Claim event AFTER all side effects succeeded
+  await logSubscriptionEvent(
+    subscription.id,
+    'updated',
+    amountCents,
+    previousStatus,
+    subscription.status,
+    stripeEventId
+  );
 }
 
 async function handleSubscriptionDeleted(subscription: Stripe.Subscription, stripeEventId: string) {
@@ -394,8 +406,11 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription, stri
     throw error;
   }
 
-  // Atomic claim: Log event BEFORE side effects to prevent duplicate processing
-  const claimed = await logSubscriptionEvent(
+  // Run side effects BEFORE claiming for retry safety
+  await deactivateTaxiService(subscription.id, 'subscription_deleted');
+
+  // Claim event AFTER side effects succeeded
+  await logSubscriptionEvent(
     subscription.id,
     'canceled',
     null,
@@ -403,16 +418,49 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription, stri
     'canceled',
     stripeEventId
   );
-  if (!claimed) return; // Another worker already processed this event
-
-  // Deactivate taxi service (keep subscription_id linked for reactivation)
-  await deactivateTaxiService(subscription.id, 'subscription_deleted');
 }
 
 async function handleInvoicePaid(invoice: Stripe.Invoice, stripeEventId: string) {
-  // Get subscription ID from invoice (handle both old and new API structure)
   const subscriptionId = (invoice as unknown as { subscription?: string | null }).subscription;
   if (!subscriptionId) return;
+
+  // Fetch fresh subscription data from Stripe to get updated period
+  try {
+    const stripeSubscription = await stripe.subscriptions.retrieve(subscriptionId);
+    const subscriptionItem = stripeSubscription.items.data[0];
+    const periodEnd = subscriptionItem?.current_period_end;
+
+    if (periodEnd) {
+      // Update subscription period and ensure active status
+      const { error: updateError } = await getSupabase()
+        .from('subscriptions')
+        .update({
+          status: stripeSubscription.status,
+          current_period_start: subscriptionItem?.current_period_start
+            ? new Date(subscriptionItem.current_period_start * 1000).toISOString()
+            : undefined,
+          current_period_end: new Date(periodEnd * 1000).toISOString(),
+          updated_at: new Date().toISOString(),
+        })
+        .eq('stripe_subscription_id', subscriptionId);
+
+      if (updateError) {
+        logger.error('Error updating subscription period on invoice.paid', {
+          error: updateError.message, subscriptionId,
+        });
+      }
+    }
+
+    // Reactivate taxi service if subscription is now active (e.g., past_due recovery)
+    if (stripeSubscription.status === 'active') {
+      await reactivateTaxiService(subscriptionId);
+    }
+  } catch (err) {
+    logger.error('Error fetching subscription in handleInvoicePaid', {
+      error: err instanceof Error ? err.message : 'Unknown',
+      subscriptionId,
+    });
+  }
 
   // Log renewal event
   await logSubscriptionEvent(
@@ -444,8 +492,11 @@ async function handlePaymentFailed(invoice: Stripe.Invoice, stripeEventId: strin
     throw updateError;
   }
 
-  // Atomic claim: Log event BEFORE side effects to prevent duplicate processing
-  const claimed = await logSubscriptionEvent(
+  // Run side effects BEFORE claiming for retry safety (idempotent deactivation)
+  await deactivateTaxiService(subscriptionId, 'payment_failed');
+
+  // Claim event AFTER side effects succeeded
+  await logSubscriptionEvent(
     subscriptionId,
     'payment_failed',
     invoice.amount_due,
@@ -453,10 +504,6 @@ async function handlePaymentFailed(invoice: Stripe.Invoice, stripeEventId: strin
     'past_due',
     stripeEventId
   );
-  if (!claimed) return; // Another worker already processed this event
-
-  // Deactivate taxi service (keep subscription_id linked for reactivation)
-  await deactivateTaxiService(subscriptionId, 'payment_failed');
 }
 
 /**

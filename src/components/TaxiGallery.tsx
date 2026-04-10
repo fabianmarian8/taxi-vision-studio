@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface TaxiGalleryProps {
@@ -24,18 +24,18 @@ export function TaxiGallery({ images, serviceName }: TaxiGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  if (!images || images.length === 0) return null;
-
-  const openLightbox = (index: number) => {
-    setCurrentIndex(index);
-    setLightboxOpen(true);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-    document.body.style.overflow = 'auto';
-  };
+  // Manage body scroll lock with proper cleanup on unmount/navigation
+  // Must be before early return to satisfy Rules of Hooks
+  useEffect(() => {
+    if (lightboxOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [lightboxOpen]);
 
   const goNext = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);

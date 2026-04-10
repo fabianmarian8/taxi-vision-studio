@@ -65,6 +65,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       .select('*')
       .eq('phone', normalizedPhone)
       .eq('city_slug', citySlug)
+      .eq('taxi_service_name', taxiServiceName)
       .eq('verified', false)
       .gt('expires_at', new Date().toISOString())
       .order('created_at', { ascending: false })
@@ -78,34 +79,40 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       );
     }
 
-    const v = verification as { id: string; code: string; attempts: number };
+    const v = verification as { id: string };
 
-    // Kontrola max pokusov
-    if (v.attempts >= MAX_ATTEMPTS) {
+    // Atomická verifikácia: increment attempts + code check + mark verified
+    // Používa SELECT FOR UPDATE v DB → žiadny race condition
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data: otpResult, error: rpcError } = await (supabase as any)
+      .rpc('verify_otp_attempt', {
+        p_id: v.id,
+        p_code: code,
+        p_max_attempts: MAX_ATTEMPTS,
+      });
+
+    if (rpcError) {
+      log.error('OTP RPC error', { error: rpcError.message });
+      return NextResponse.json({ error: 'Interná chyba' }, { status: 500 });
+    }
+
+    const otpRow = otpResult?.[0] || otpResult;
+    const result = otpRow?.result;
+    const remaining = otpRow?.remaining ?? 0;
+
+    if (result === 'max_attempts') {
       return NextResponse.json(
         { error: 'Príliš veľa nesprávnych pokusov. Vyžiadajte si nový kód.' },
         { status: 400 }
       );
     }
 
-    // Inkrementuj attempts
-    await claimTable
-      .update({ attempts: v.attempts + 1 })
-      .eq('id', v.id);
-
-    // Overenie kódu
-    if (v.code !== code) {
-      const remaining = MAX_ATTEMPTS - v.attempts - 1;
+    if (result === 'wrong_code') {
       return NextResponse.json(
         { error: `Nesprávny kód. Zostáva ${remaining} pokusov.` },
         { status: 400 }
       );
     }
-
-    // Kód správny — označ ako verified
-    await claimTable
-      .update({ verified: true })
-      .eq('id', v.id);
 
     log.info('OTP verified, creating account');
 
@@ -115,33 +122,43 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     const email = ownerEmail || `${citySlug}-${taxiServiceName.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').slice(0, 30)}@claim.taxinearme.sk`;
     const password = generateSecurePassword();
 
-    // Krok 1: Nájdi alebo vytvor Supabase auth usera
+    // Krok 1: Vytvor Supabase auth usera (create-first pattern)
+    // Ak user existuje, createUser vráti error → hľadáme ho paginated
     let userId: string;
     let isNewUser = false;
 
-    const { data: listData } = await supabase.auth.admin.listUsers();
-    const existingUser = listData?.users?.find(
-      (u) => u.email?.toLowerCase() === email.toLowerCase()
-    );
+    const { data: newUser, error: createError } = await supabase.auth.admin.createUser({
+      email,
+      password,
+      email_confirm: true,
+    });
 
-    if (existingUser) {
-      userId = existingUser.id;
-      log.info('Existing user found', { userId });
-    } else {
-      const { data: newUser, error: createError } = await supabase.auth.admin.createUser({
-        email,
-        password,
-        email_confirm: true,
-      });
-
-      if (createError || !newUser?.user) {
-        log.error('Failed to create user', { error: createError?.message });
-        return NextResponse.json({ error: 'Nepodarilo sa vytvoriť účet' }, { status: 500 });
-      }
-
+    if (newUser?.user) {
       userId = newUser.user.id;
       isNewUser = true;
       log.info('New user created', { userId });
+    } else {
+      // User likely exists — find with paginated search
+      let existingUser = null;
+      let page = 1;
+      const perPage = 1000;
+      while (!existingUser) {
+        const { data } = await supabase.auth.admin.listUsers({ page, perPage });
+        if (!data?.users?.length) break;
+        existingUser = data.users.find(
+          (u) => u.email?.toLowerCase() === email.toLowerCase()
+        );
+        if (data.users.length < perPage) break;
+        page++;
+      }
+
+      if (!existingUser) {
+        log.error('Failed to create or find user', { error: createError?.message });
+        return NextResponse.json({ error: 'Nepodarilo sa vytvoriť účet' }, { status: 500 });
+      }
+
+      userId = existingUser.id;
+      log.info('Existing user found', { userId });
     }
 
     // Krok 2: Vytvor partner záznam (plan_type: 'free')
@@ -192,11 +209,16 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     }
 
     // Krok 3: Nastav is_verified na taxi_services
+    const escapedServiceName = taxiServiceName.replace(/[%_\\]/g, '\\$&');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    await (supabase.from('taxi_services' as never) as any)
+    const { error: verifyError } = await (supabase.from('taxi_services' as never) as any)
       .update({ is_verified: true })
       .eq('city_slug', citySlug)
-      .ilike('name', taxiServiceName);
+      .ilike('name', escapedServiceName);
+
+    if (verifyError) {
+      log.error('Failed to verify taxi service', { error: verifyError.message });
+    }
 
     // Krok 4: Pošli welcome email — vždy keď máme email
     if (ownerEmail) {
@@ -387,11 +409,8 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       isNewUser,
       partnerId,
       email: isNewUser ? email : undefined,
-      // Heslo pošleme len pri novom účte (a len raz, v response)
-      // V produkcii by malo ísť len emailom
       loginInfo: isNewUser ? {
         email,
-        password,
         loginUrl: 'https://www.taxinearme.sk/partner/login',
       } : undefined,
     });

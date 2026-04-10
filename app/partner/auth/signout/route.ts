@@ -39,11 +39,7 @@ async function handleSignOut(request: Request) {
   return NextResponse.redirect(new URL('/partner/login', origin), { status: 303 });
 }
 
-// Support both POST and GET for signout
+// POST only — GET signout is a CSRF vector (<img src="/signout"> logs out any user)
 export async function POST(request: Request) {
-  return handleSignOut(request);
-}
-
-export async function GET(request: Request) {
   return handleSignOut(request);
 }

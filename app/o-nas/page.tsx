@@ -247,7 +247,7 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-gray-600">
-              © 2025 TaxiNearMe.sk. Všetky práva vyhradené.
+              © {new Date().getFullYear()} TaxiNearMe.sk. Všetky práva vyhradené.
             </div>
             <div className="flex gap-6">
               <Link href="/ochrana-sukromia" className="text-sm text-gray-600 hover:text-gray-900">

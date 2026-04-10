@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { revalidatePath } from 'next/cache';
 import { createServiceSlug } from '@/utils/urlUtils';
+import { getSession } from '@/lib/auth';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -20,6 +21,10 @@ interface Props {
 
 // GET - Get single draft (using direct query for single item)
 export async function GET(request: NextRequest, { params }: Props) {
+  const session = await getSession();
+  if (!session) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
   const { id } = await params;
   const supabase = getClient();
   if (!supabase) {
@@ -51,6 +56,11 @@ export async function GET(request: NextRequest, { params }: Props) {
 
 // PATCH - Approve or reject draft
 export async function PATCH(request: NextRequest, { params }: Props) {
+  const session = await getSession();
+  if (!session) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   const { id } = await params;
   const body = await request.json();
   const { action, admin_notes } = body;

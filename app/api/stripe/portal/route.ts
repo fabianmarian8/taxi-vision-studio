@@ -59,29 +59,31 @@ export async function POST(request: NextRequest) {
           verifiedCustomerId = customerId;
         }
       } else {
-        // Regular user: verify subscription is linked to a taxi_service in their partner's city
+        // Regular user: verify subscription is linked to THEIR OWN taxi service (service-level, not city-level)
         const { data: partners, error: partnerError } = await supabase
           .from('partners')
-          .select('city_slug')
+          .select('city_slug, name')
           .eq('user_id', user.id);
 
         if (partnerError) {
           console.error('Portal: partners query error:', partnerError);
         }
 
-        const citySlugs = (partners || []).map(p => p.city_slug).filter(Boolean);
-
-        if (citySlugs.length > 0) {
+        for (const partner of (partners || [])) {
+          if (!partner.city_slug || !partner.name) continue;
+          const escapedName = partner.name.replace(/[%_\\]/g, '\\$&');
           const { data: taxiService } = await adminClient
             .from('taxi_services')
             .select('id')
             .in('subscription_id', subscriptionIds)
-            .in('city_slug', citySlugs)
+            .eq('city_slug', partner.city_slug)
+            .ilike('name', escapedName)
             .limit(1)
             .maybeSingle();
 
           if (taxiService) {
             verifiedCustomerId = customerId;
+            break;
           }
         }
       }
@@ -94,10 +96,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate returnUrl — must be relative path or same-domain
+    let safeReturnUrl = `${getBaseUrl(request)}/partner`;
+    if (returnUrl && typeof returnUrl === 'string') {
+      if (returnUrl.startsWith('/') && !returnUrl.includes('://')) {
+        safeReturnUrl = `${getBaseUrl(request)}${returnUrl}`;
+      }
+      // Ignore absolute URLs to prevent open redirect
+    }
+
     // Create portal session using verified customer ID
     const session = await stripe.billingPortal.sessions.create({
       customer: verifiedCustomerId,
-      return_url: returnUrl || `${getBaseUrl(request)}/partner`,
+      return_url: safeReturnUrl,
     });
 
     return NextResponse.json({ url: session.url });
