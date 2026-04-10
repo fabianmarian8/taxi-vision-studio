@@ -4,6 +4,7 @@ import { SupabaseClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
 import { logger } from '@/lib/logger';
 import { escapeHtml } from '@/lib/html-escape';
+import { resolveTaxiServiceId } from '@/lib/partner-service-link';
 
 export interface PartnerOnboardingParams {
   email: string;
@@ -119,16 +120,30 @@ export async function handlePartnerOnboarding(
 
   // -- Step 2: Create partner record --
   let partnerId: string;
+  let taxiServiceId = '';
   try {
+    const taxiServiceMatch = await resolveTaxiServiceId(supabase, {
+      stripeSubscriptionId,
+      citySlug,
+      taxiServiceName,
+    });
+    taxiServiceId = taxiServiceMatch.id;
+
     // Check if partner already exists for this user
     const { data: existingPartner } = await supabase
       .from('partners')
-      .select('id, slug')
+      .select('id, slug, taxi_service_id')
       .eq('user_id', userId)
       .maybeSingle();
 
     if (existingPartner) {
       partnerId = existingPartner.id;
+      if (taxiServiceId && existingPartner.taxi_service_id !== taxiServiceId) {
+        await supabase
+          .from('partners')
+          .update({ taxi_service_id: taxiServiceId })
+          .eq('id', partnerId);
+      }
       log.info('Partner record already exists', { partnerId, slug: existingPartner.slug });
     } else {
       // Generate unique slug
@@ -152,6 +167,7 @@ export async function handlePartnerOnboarding(
           slug,
           city_slug: citySlug,
           plan_type: params.planTier || 'partner',
+          taxi_service_id: taxiServiceId || null,
         })
         .select('id')
         .single();
@@ -162,7 +178,7 @@ export async function handlePartnerOnboarding(
       }
 
       partnerId = newPartner.id;
-      log.info('Partner record created', { partnerId, slug });
+      log.info('Partner record created', { partnerId, slug, taxiServiceId: taxiServiceId || null });
     }
   } catch (err) {
     log.error('Partner record step failed', { error: err instanceof Error ? err.message : 'Unknown' });

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { normalizePlanType } from '@/lib/tier-config';
 import {
   LineChart,
   Line,
@@ -40,16 +41,23 @@ interface SubscriptionEvent {
 interface MonthlyData {
   month: string;
   mrr: number;
-  premium_count: number;
+  managed_count: number;
   partner_count: number;
+  leader_count: number;
+}
+
+interface TierSummary {
+  count: number;
+  mrr: number;
 }
 
 interface RevenueData {
   mrr: number;
   subscriptions: {
     total: number;
-    premium: number;
-    partner: number;
+    managed: TierSummary;
+    partner: TierSummary;
+    leader: TierSummary;
   };
   expiring: {
     sevenDays: Subscription[];
@@ -70,6 +78,19 @@ interface RevenueData {
     created: SubscriptionEvent[];
     canceled: SubscriptionEvent[];
   };
+}
+
+function getPlanBadgeClasses(planType: string) {
+  switch (normalizePlanType(planType)) {
+    case 'leader':
+      return 'bg-purple-100 text-purple-800';
+    case 'partner':
+      return 'bg-amber-100 text-amber-800';
+    case 'managed':
+      return 'bg-blue-100 text-blue-800';
+    default:
+      return 'bg-gray-100 text-gray-700';
+  }
 }
 
 export function RevenueClient() {
@@ -161,7 +182,7 @@ export function RevenueClient() {
       </div>
 
       {/* KPI Cards - Row 1 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
         {/* MRR Card */}
         <Card className="border-green-200 bg-green-50/50">
           <CardHeader className="pb-2">
@@ -184,18 +205,34 @@ export function RevenueClient() {
           </CardContent>
         </Card>
 
-        {/* Premium Count */}
+        {/* Active Count */}
         <Card>
           <CardHeader className="pb-2">
             <CardDescription className="flex items-center gap-2">
-              <Crown className="h-4 w-4 text-purple-500" />
-              Premium predplatne
+              <Users className="h-4 w-4 text-slate-500" />
+              Aktivne predplatne
             </CardDescription>
-            <CardTitle className="text-3xl font-bold">{data.subscriptions.premium}</CardTitle>
+            <CardTitle className="text-3xl font-bold">{data.subscriptions.total}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              {(data.subscriptions.premium * 3.99).toFixed(2)} EUR/mesiac
+              Vsetky aktivne Stripe predplatne
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Managed Count */}
+        <Card>
+          <CardHeader className="pb-2">
+            <CardDescription className="flex items-center gap-2">
+              <Crown className="h-4 w-4 text-blue-500" />
+              Spravovany tier
+            </CardDescription>
+            <CardTitle className="text-3xl font-bold">{data.subscriptions.managed.count}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground">
+              {data.subscriptions.managed.mrr.toFixed(2)} EUR/mesiac
             </p>
           </CardContent>
         </Card>
@@ -204,18 +241,37 @@ export function RevenueClient() {
         <Card>
           <CardHeader className="pb-2">
             <CardDescription className="flex items-center gap-2">
-              <Star className="h-4 w-4 text-yellow-500" />
-              Partner predplatne
+              <Star className="h-4 w-4 text-amber-500" />
+              Partner tier
             </CardDescription>
-            <CardTitle className="text-3xl font-bold">{data.subscriptions.partner}</CardTitle>
+            <CardTitle className="text-3xl font-bold">{data.subscriptions.partner.count}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              {(data.subscriptions.partner * 8.99).toFixed(2)} EUR/mesiac
+              {data.subscriptions.partner.mrr.toFixed(2)} EUR/mesiac
             </p>
           </CardContent>
         </Card>
 
+        {/* Leader Count */}
+        <Card>
+          <CardHeader className="pb-2">
+            <CardDescription className="flex items-center gap-2">
+              <Target className="h-4 w-4 text-purple-500" />
+              Leader tier
+            </CardDescription>
+            <CardTitle className="text-3xl font-bold">{data.subscriptions.leader.count}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground">
+              {data.subscriptions.leader.mrr.toFixed(2)} EUR/mesiac
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* KPI Cards - Row 2 */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Churn Rate */}
         <Card className={data.metrics.churnRate > 5 ? 'border-red-200 bg-red-50/50' : ''}>
           <CardHeader className="pb-2">
@@ -233,10 +289,7 @@ export function RevenueClient() {
             </p>
           </CardContent>
         </Card>
-      </div>
 
-      {/* KPI Cards - Row 2 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* ARPU */}
         <Card className="border-blue-200 bg-blue-50/50">
           <CardHeader className="pb-2">
@@ -328,8 +381,9 @@ export function RevenueClient() {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="premium_count" name="Premium" fill="#8b5cf6" />
-                <Bar dataKey="partner_count" name="Partner" fill="#eab308" />
+                <Bar dataKey="managed_count" name="Spravovany" fill="#3b82f6" />
+                <Bar dataKey="partner_count" name="Partner" fill="#f59e0b" />
+                <Bar dataKey="leader_count" name="Leader" fill="#8b5cf6" />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
@@ -362,11 +416,7 @@ export function RevenueClient() {
                     </p>
                   </div>
                   <div className="text-right">
-                    <span className={`px-2 py-1 rounded text-xs font-medium ${
-                      sub.plan_type === 'partner'
-                        ? 'bg-yellow-100 text-yellow-800'
-                        : 'bg-purple-100 text-purple-800'
-                    }`}>
+                    <span className={`px-2 py-1 rounded text-xs font-medium ${getPlanBadgeClasses(sub.plan_type)}`}>
                       {sub.plan_type?.toUpperCase()}
                     </span>
                     <p className="text-sm text-red-600 mt-1">
@@ -436,11 +486,7 @@ export function RevenueClient() {
                     <td className="py-3 px-2">{sub.customer_email || '-'}</td>
                     <td className="py-3 px-2">{sub.taxi_service_name || '-'}</td>
                     <td className="py-3 px-2">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${
-                        sub.plan_type === 'partner'
-                          ? 'bg-yellow-100 text-yellow-800'
-                          : 'bg-purple-100 text-purple-800'
-                      }`}>
+                      <span className={`px-2 py-1 rounded text-xs font-medium ${getPlanBadgeClasses(sub.plan_type)}`}>
                         {sub.plan_type?.toUpperCase()}
                       </span>
                     </td>
@@ -454,11 +500,7 @@ export function RevenueClient() {
                     <td className="py-3 px-2">{event.subscriptions?.customer_email || '-'}</td>
                     <td className="py-3 px-2">{event.subscriptions?.taxi_service_name || '-'}</td>
                     <td className="py-3 px-2">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${
-                        event.subscriptions?.plan_type === 'partner'
-                          ? 'bg-yellow-100 text-yellow-800'
-                          : 'bg-purple-100 text-purple-800'
-                      }`}>
+                      <span className={`px-2 py-1 rounded text-xs font-medium ${getPlanBadgeClasses(event.subscriptions?.plan_type || 'free')}`}>
                         {event.subscriptions?.plan_type?.toUpperCase()}
                       </span>
                     </td>
@@ -474,11 +516,7 @@ export function RevenueClient() {
                     <td className="py-3 px-2">{event.subscriptions?.customer_email || '-'}</td>
                     <td className="py-3 px-2">{event.subscriptions?.taxi_service_name || '-'}</td>
                     <td className="py-3 px-2">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${
-                        event.subscriptions?.plan_type === 'partner'
-                          ? 'bg-yellow-100 text-yellow-800'
-                          : 'bg-purple-100 text-purple-800'
-                      }`}>
+                      <span className={`px-2 py-1 rounded text-xs font-medium ${getPlanBadgeClasses(event.subscriptions?.plan_type || 'free')}`}>
                         {event.subscriptions?.plan_type?.toUpperCase()}
                       </span>
                     </td>
@@ -538,11 +576,7 @@ export function RevenueClient() {
                           </p>
                         </div>
                         <div className="text-right">
-                          <span className={`px-2 py-1 rounded text-xs font-medium ${
-                            sub.plan_type === 'partner'
-                              ? 'bg-yellow-100 text-yellow-800'
-                              : 'bg-purple-100 text-purple-800'
-                          }`}>
+                          <span className={`px-2 py-1 rounded text-xs font-medium ${getPlanBadgeClasses(sub.plan_type)}`}>
                             {sub.plan_type.toUpperCase()}
                           </span>
                           <p className="text-sm text-red-600 mt-1">
@@ -578,11 +612,7 @@ export function RevenueClient() {
                             </p>
                           </div>
                           <div className="text-right">
-                            <span className={`px-2 py-1 rounded text-xs font-medium ${
-                              sub.plan_type === 'partner'
-                                ? 'bg-yellow-100 text-yellow-800'
-                                : 'bg-purple-100 text-purple-800'
-                            }`}>
+                            <span className={`px-2 py-1 rounded text-xs font-medium ${getPlanBadgeClasses(sub.plan_type)}`}>
                               {sub.plan_type.toUpperCase()}
                             </span>
                             <p className="text-sm text-muted-foreground mt-1">

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSession } from '@/lib/auth';
 import { createClient } from '@supabase/supabase-js';
+import { normalizePlanType, type PlanTier } from '@/lib/tier-config';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -10,6 +11,21 @@ function getSupabase() {
     return null;
   }
   return createClient(supabaseUrl, supabaseServiceKey);
+}
+
+type RevenueTier = Exclude<PlanTier, 'free'>;
+
+function createTierSummary() {
+  return {
+    managed: { count: 0, mrr: 0 },
+    partner: { count: 0, mrr: 0 },
+    leader: { count: 0, mrr: 0 },
+  };
+}
+
+function getRevenueTier(planType: string | null | undefined): RevenueTier | null {
+  const normalized = normalizePlanType(planType);
+  return normalized === 'free' ? null : normalized;
 }
 
 export async function GET(request: NextRequest) {
@@ -38,9 +54,13 @@ export async function GET(request: NextRequest) {
       return total + (sub.amount_cents || 0);
     }, 0) / 100;
 
-    // Count by plan type
-    const premiumCount = (activeSubscriptions || []).filter(s => s.plan_type === 'premium').length;
-    const partnerCount = (activeSubscriptions || []).filter(s => s.plan_type === 'partner').length;
+    const subscriptionsByTier = createTierSummary();
+    for (const subscription of activeSubscriptions || []) {
+      const tier = getRevenueTier(subscription.plan_type);
+      if (!tier) continue;
+      subscriptionsByTier[tier].count += 1;
+      subscriptionsByTier[tier].mrr += (subscription.amount_cents || 0) / 100;
+    }
 
     // Get expiring subscriptions (next 7 and 30 days)
     const now = new Date();
@@ -81,7 +101,7 @@ export async function GET(request: NextRequest) {
 
     const newThisMonth = (recentEvents || []).filter(e => e.event_type === 'created').length;
     const canceledThisMonth = (recentEvents || []).filter(e => e.event_type === 'canceled').length;
-    const totalActive = premiumCount + partnerCount;
+    const totalActive = (activeSubscriptions || []).length;
     const churnRate = totalActive > 0 ? (canceledThisMonth / totalActive) * 100 : 0;
 
     // Calculate ARPU and LTV
@@ -123,9 +143,10 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       mrr,
       subscriptions: {
-        total: premiumCount + partnerCount,
-        premium: premiumCount,
-        partner: partnerCount,
+        total: totalActive,
+        managed: subscriptionsByTier.managed,
+        partner: subscriptionsByTier.partner,
+        leader: subscriptionsByTier.leader,
       },
       expiring: expiringSoon,
       history: history || [],
@@ -173,8 +194,9 @@ async function calculateMonthlyHistoryManually(supabaseClient: any) {
     history.push({
       month: monthKey,
       mrr,
-      premium_count: activeSubs.filter((s: { plan_type?: string }) => s.plan_type === 'premium').length,
-      partner_count: activeSubs.filter((s: { plan_type?: string }) => s.plan_type === 'partner').length,
+      managed_count: activeSubs.filter((s: { plan_type?: string }) => getRevenueTier(s.plan_type) === 'managed').length,
+      partner_count: activeSubs.filter((s: { plan_type?: string }) => getRevenueTier(s.plan_type) === 'partner').length,
+      leader_count: activeSubs.filter((s: { plan_type?: string }) => getRevenueTier(s.plan_type) === 'leader').length,
       new_subscriptions: 0, // Would need events table
       canceled_subscriptions: 0,
     });

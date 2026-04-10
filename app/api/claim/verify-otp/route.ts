@@ -5,6 +5,7 @@ import { normalizePhoneNumber } from '@/lib/zadarma';
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 import { generateSecurePassword, generatePartnerSlug } from '@/lib/partner-onboarding';
 import { logger } from '@/lib/logger';
+import { resolveTaxiServiceId } from '@/lib/partner-service-link';
 
 const verifyOTPSchema = z.object({
   phone: z.string().min(9),
@@ -163,16 +164,26 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
     // Krok 2: Vytvor partner záznam (plan_type: 'free')
     let partnerId: string;
+    const taxiServiceMatch = await resolveTaxiServiceId(supabase, {
+      citySlug,
+      taxiServiceName,
+    });
+    const taxiServiceId = taxiServiceMatch.id || null;
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const partnersTable = supabase.from('partners' as never) as any;
     const { data: existingPartner } = await partnersTable
-      .select('id')
+      .select('id, taxi_service_id')
       .eq('user_id', userId)
       .single();
 
     if (existingPartner) {
       partnerId = existingPartner.id;
+      if (taxiServiceId && existingPartner.taxi_service_id !== taxiServiceId) {
+        await partnersTable
+          .update({ taxi_service_id: taxiServiceId })
+          .eq('id', partnerId);
+      }
     } else {
       const slug = generatePartnerSlug(taxiServiceName, citySlug);
 
@@ -195,6 +206,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
           slug: finalSlug,
           city_slug: citySlug,
           plan_type: 'free',
+          taxi_service_id: taxiServiceId,
         })
         .select('id')
         .single();
@@ -209,15 +221,17 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     }
 
     // Krok 3: Nastav is_verified na taxi_services
-    const escapedServiceName = taxiServiceName.replace(/[%_\\]/g, '\\$&');
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { error: verifyError } = await (supabase.from('taxi_services' as never) as any)
-      .update({ is_verified: true })
-      .eq('city_slug', citySlug)
-      .ilike('name', escapedServiceName);
+    if (taxiServiceId) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { error: verifyError } = await (supabase.from('taxi_services' as never) as any)
+        .update({ is_verified: true })
+        .eq('id', taxiServiceId);
 
-    if (verifyError) {
-      log.error('Failed to verify taxi service', { error: verifyError.message });
+      if (verifyError) {
+        log.error('Failed to verify taxi service', { error: verifyError.message, taxiServiceId });
+      }
+    } else {
+      log.warn('Taxi service not linked during claim verification', { taxiServiceName, citySlug });
     }
 
     // Krok 4: Pošli welcome email — vždy keď máme email

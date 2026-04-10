@@ -5,8 +5,11 @@ export interface Partner {
   user_id: string;
   email: string;
   name: string;
+  phone?: string | null;
   slug: string;
   city_slug: string;
+  plan_type?: string | null;
+  taxi_service_id?: string | null;
   created_at: string;
   updated_at: string;
 }

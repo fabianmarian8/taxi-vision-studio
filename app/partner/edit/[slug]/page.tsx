@@ -193,12 +193,19 @@ export default async function PartnerEditPage({ params }: Props) {
   );
 
   if (!partner.plan_type || partner.plan_type === 'free') {
-    const { data: taxiService } = await adminClient
+    let taxiServiceQuery = adminClient
       .from('taxi_services')
-      .select('is_partner, is_premium')
-      .eq('city_slug', partner.city_slug)
-      .eq('name', partner.name)
-      .maybeSingle();
+      .select('is_partner, is_premium');
+
+    if (partner.taxi_service_id) {
+      taxiServiceQuery = taxiServiceQuery.eq('id', partner.taxi_service_id);
+    } else {
+      taxiServiceQuery = taxiServiceQuery
+        .eq('city_slug', partner.city_slug)
+        .eq('name', partner.name);
+    }
+
+    const { data: taxiService } = await taxiServiceQuery.maybeSingle();
 
     if (taxiService?.is_partner) {
       // Grandfathered: old partner subscribers get leader-level access

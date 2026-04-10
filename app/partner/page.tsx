@@ -11,18 +11,10 @@ import { ServiceStatusCard } from '@/components/dashboard/ServiceStatusCard';
 import { ProfileStatusPanel } from '@/components/dashboard/ProfileStatusPanel';
 import { PerformancePanel } from '@/components/dashboard/PerformancePanel';
 import { PlanAndUnlocksPanel } from '@/components/dashboard/PlanAndUnlocksPanel';
+import { normalizeCompanyName } from '@/lib/partner-service-link';
 
 interface PageProps {
   searchParams: Promise<{ as?: string }>;
-}
-
-function normalizeCompanyName(value: string): string {
-  return value
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
 }
 
 export default async function PartnerDashboard({ searchParams }: PageProps) {
@@ -47,6 +39,7 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
     name: string;
     slug: string;
     city_slug: string;
+    taxi_service_id: string | null;
     email: string | null;
     user_id: string | null;
     created_at: string;
@@ -61,7 +54,7 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
 
     const { data: allPartnersData } = await adminClient
       .from('partners')
-      .select('id, name, slug, city_slug, email, user_id, created_at')
+      .select('id, name, slug, city_slug, taxi_service_id, email, user_id, created_at')
       .order('name');
 
     allPartners = allPartnersData || [];
@@ -160,29 +153,70 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
 
-    const citySlugs = Array.from(new Set(partners.map((partner) => partner.city_slug).filter(Boolean)));
+    const taxiServiceIds = Array.from(
+      new Set(
+        partners
+          .map((partner) => partner.taxi_service_id)
+          .filter((value): value is string => Boolean(value))
+      )
+    );
 
-    const { data: taxiServicesWithSubscriptions } = await adminClient
-      .from('taxi_services')
-      .select(`
-        name,
-        city_slug,
-        subscriptions (
-          stripe_customer_id,
-          status,
-          plan_type
-        )
-      `)
-      .in('city_slug', citySlugs)
-      .not('subscription_id', 'is', null);
+    const [linkedServicesResult, fallbackServicesResult] = await Promise.all([
+      taxiServiceIds.length > 0
+        ? adminClient
+            .from('taxi_services')
+            .select(`
+              id,
+              name,
+              city_slug,
+              subscriptions (
+                stripe_customer_id,
+                status,
+                plan_type
+              )
+            `)
+            .in('id', taxiServiceIds)
+        : Promise.resolve({ data: [], error: null }),
+      adminClient
+        .from('taxi_services')
+        .select(`
+          id,
+          name,
+          city_slug,
+          subscriptions (
+            stripe_customer_id,
+            status,
+            plan_type
+          )
+        `)
+        .in('city_slug', Array.from(new Set(partners.map((partner) => partner.city_slug).filter(Boolean))))
+        .not('subscription_id', 'is', null),
+    ]);
 
+    const linkedSubscriptionMap = new Map<string, { stripe_customer_id: string; status: string; plan_type: string }>();
     const exactSubscriptionMap = new Map<string, { stripe_customer_id: string; status: string; plan_type: string }>();
-    const subscriptionsByCity = new Map<
-      string,
-      Array<{ normalizedName: string; subscription: { stripe_customer_id: string; status: string; plan_type: string } }>
-    >();
 
-    for (const taxiService of taxiServicesWithSubscriptions || []) {
+    for (const taxiService of linkedServicesResult.data || []) {
+      const rawSubscription = (taxiService as { subscriptions?: unknown }).subscriptions;
+      const subscription = Array.isArray(rawSubscription) ? rawSubscription[0] : rawSubscription;
+      if (!subscription || typeof subscription !== 'object') continue;
+
+      const { stripe_customer_id, status, plan_type } = subscription as {
+        stripe_customer_id?: string;
+        status?: string;
+        plan_type?: string;
+      };
+
+      if (!stripe_customer_id) continue;
+
+      linkedSubscriptionMap.set((taxiService as { id: string }).id, {
+        stripe_customer_id,
+        status: status || 'unknown',
+        plan_type: plan_type || 'unknown',
+      });
+    }
+
+    for (const taxiService of fallbackServicesResult.data || []) {
       const rawSubscription = (taxiService as { subscriptions?: unknown }).subscriptions;
       const subscription = Array.isArray(rawSubscription) ? rawSubscription[0] : rawSubscription;
       if (!subscription || typeof subscription !== 'object') continue;
@@ -197,52 +231,29 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
       const serviceCitySlug = (taxiService as { city_slug?: string }).city_slug;
       if (!stripe_customer_id || !serviceName || !serviceCitySlug) continue;
 
-      const mappedSubscription = {
-        stripe_customer_id,
-        status: status || 'unknown',
-        plan_type: plan_type || 'unknown',
-      };
-      const normalizedServiceName = normalizeCompanyName(serviceName);
-      const exactKey = `${serviceCitySlug}::${normalizedServiceName}`;
-
+      const exactKey = `${serviceCitySlug}::${normalizeCompanyName(serviceName)}`;
       if (!exactSubscriptionMap.has(exactKey)) {
-        exactSubscriptionMap.set(exactKey, mappedSubscription);
+        exactSubscriptionMap.set(exactKey, {
+          stripe_customer_id,
+          status: status || 'unknown',
+          plan_type: plan_type || 'unknown',
+        });
       }
-
-      const cityServices = subscriptionsByCity.get(serviceCitySlug) || [];
-      cityServices.push({ normalizedName: normalizedServiceName, subscription: mappedSubscription });
-      subscriptionsByCity.set(serviceCitySlug, cityServices);
     }
 
     for (const partner of partners) {
-      const normalizedPartnerName = normalizeCompanyName(partner.name);
-      const exactKey = `${partner.city_slug}::${normalizedPartnerName}`;
+      if (partner.taxi_service_id) {
+        const linkedSubscription = linkedSubscriptionMap.get(partner.taxi_service_id);
+        if (linkedSubscription) {
+          partnerSubscriptions.set(partner.id, linkedSubscription);
+          continue;
+        }
+      }
 
+      const exactKey = `${partner.city_slug}::${normalizeCompanyName(partner.name)}`;
       const exactMatch = exactSubscriptionMap.get(exactKey);
       if (exactMatch) {
         partnerSubscriptions.set(partner.id, exactMatch);
-        continue;
-      }
-
-      const cityCandidates = subscriptionsByCity.get(partner.city_slug) || [];
-      const MIN_FUZZY_LENGTH = 5;
-      const MIN_LENGTH_RATIO = 0.7;
-      const fuzzyMatch =
-        normalizedPartnerName.length >= MIN_FUZZY_LENGTH
-          ? cityCandidates.find((candidate) => {
-              if (candidate.normalizedName.length < MIN_FUZZY_LENGTH) return false;
-              const shorter = Math.min(candidate.normalizedName.length, normalizedPartnerName.length);
-              const longer = Math.max(candidate.normalizedName.length, normalizedPartnerName.length);
-              if (shorter / longer < MIN_LENGTH_RATIO) return false;
-              return (
-                candidate.normalizedName.includes(normalizedPartnerName) ||
-                normalizedPartnerName.includes(candidate.normalizedName)
-              );
-            })
-          : undefined;
-
-      if (fuzzyMatch) {
-        partnerSubscriptions.set(partner.id, fuzzyMatch.subscription);
       }
     }
   }

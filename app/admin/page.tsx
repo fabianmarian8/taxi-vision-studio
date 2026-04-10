@@ -1,6 +1,7 @@
 import { getSession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -10,6 +11,30 @@ export default async function AdminDashboard() {
   if (!session) {
     redirect('/admin/login');
   }
+
+  const adminClient = createAdminClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+
+  async function getPendingCount(table: 'partner_drafts' | 'taxi_submissions') {
+    try {
+      const { count } = await adminClient
+        .from(table)
+        .select('*', { count: 'exact', head: true })
+        .eq('status', 'pending');
+      return count || 0;
+    } catch {
+      return 0;
+    }
+  }
+
+  const [pendingPartnerDraftsCount, pendingTaxiSubmissionsCount] = await Promise.all([
+    getPendingCount('partner_drafts'),
+    getPendingCount('taxi_submissions'),
+  ]);
+
+  const pendingApprovals = pendingPartnerDraftsCount + pendingTaxiSubmissionsCount;
 
   return (
     <div className="min-h-screen bg-background">
@@ -32,6 +57,31 @@ export default async function AdminDashboard() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
+        <Card className={`mb-6 ${pendingApprovals > 0 ? 'border-amber-200 bg-amber-50/60' : 'border-emerald-200 bg-emerald-50/60'}`}>
+          <CardHeader>
+            <CardTitle>Dnes vyžaduje pozornosť</CardTitle>
+            <CardDescription>
+              {pendingApprovals > 0
+                ? `${pendingApprovals} položiek čaká na schválenie`
+                : 'Žiadne čakajúce schvaľovanie'}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-3 md:grid-cols-2">
+            <div className="flex items-center justify-between rounded-lg border bg-white px-4 py-3">
+              <span className="text-sm font-medium">Partner úpravy</span>
+              <span className="rounded-full bg-purple-100 px-3 py-1 text-sm font-bold text-purple-700">
+                {pendingPartnerDraftsCount}
+              </span>
+            </div>
+            <div className="flex items-center justify-between rounded-lg border bg-white px-4 py-3">
+              <span className="text-sm font-medium">Návrhy taxislužieb</span>
+              <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-bold text-emerald-700">
+                {pendingTaxiSubmissionsCount}
+              </span>
+            </div>
+          </CardContent>
+        </Card>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Taxislužby Card */}
           <Link href="/admin/services">
@@ -82,7 +132,14 @@ export default async function AdminDashboard() {
           <Link href="/admin/taxi-submissions">
             <Card className="cursor-pointer border-emerald-200 bg-emerald-50/50">
               <CardHeader>
-                <CardTitle>Návrhy taxislužieb</CardTitle>
+                <div className="flex items-center justify-between gap-3">
+                  <CardTitle>Návrhy taxislužieb</CardTitle>
+                  {pendingTaxiSubmissionsCount > 0 && (
+                    <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-bold text-emerald-700">
+                      {pendingTaxiSubmissionsCount}
+                    </span>
+                  )}
+                </div>
                 <CardDescription>
                   Schvaľovať nové taxislužby navrhnuté používateľmi
                 </CardDescription>
@@ -95,15 +152,37 @@ export default async function AdminDashboard() {
 
           {/* Partner Drafts Card */}
           <Link href="/admin/partner-drafts">
-            <Card className="cursor-pointer border-purple-200 bg-purple-50/50">
+              <Card className="cursor-pointer border-purple-200 bg-purple-50/50">
+                <CardHeader>
+                  <div className="flex items-center justify-between gap-3">
+                    <CardTitle>Partner úpravy</CardTitle>
+                    {pendingPartnerDraftsCount > 0 && (
+                      <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-bold text-purple-700">
+                        {pendingPartnerDraftsCount}
+                      </span>
+                    )}
+                  </div>
+                  <CardDescription>
+                    Schvaľovať zmeny od partnerov taxislužieb
+                  </CardDescription>
+                </CardHeader>
+              <CardContent>
+                <Button className="w-full" variant="outline">Otvoriť</Button>
+              </CardContent>
+            </Card>
+          </Link>
+
+          {/* Discovery Agent Card */}
+          <Link href="/admin/discoveries">
+            <Card className="cursor-pointer border-sky-200 bg-sky-50/50">
               <CardHeader>
-                <CardTitle>Partner úpravy</CardTitle>
+                <CardTitle>Discovery Agent</CardTitle>
                 <CardDescription>
-                  Schvaľovať zmeny od partnerov taxislužieb
+                  Automaticky objavene taxisluzby z Brave Search
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full" variant="outline">Otvoriť</Button>
+                <Button className="w-full" variant="outline">Otvorit</Button>
               </CardContent>
             </Card>
           </Link>
