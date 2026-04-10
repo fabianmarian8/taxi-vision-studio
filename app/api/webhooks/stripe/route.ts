@@ -86,6 +86,17 @@ export async function POST(request: NextRequest) {
         await handlePaymentFailed(event.data.object as Stripe.Invoice, event.id);
         break;
 
+      case 'invoice.payment_action_required':
+        await handlePaymentActionRequired(event.data.object as Stripe.Invoice, event.id);
+        break;
+
+      case 'customer.deleted':
+        await handleCustomerDeleted(
+          event.data.object as Stripe.Customer | Stripe.DeletedCustomer,
+          event.id
+        );
+        break;
+
       case 'checkout.session.completed': {
         const session = event.data.object as Stripe.Checkout.Session;
         if (session.subscription && session.mode === 'subscription') {
@@ -506,6 +517,87 @@ async function handlePaymentFailed(invoice: Stripe.Invoice, stripeEventId: strin
   );
 }
 
+async function handlePaymentActionRequired(invoice: Stripe.Invoice, stripeEventId: string) {
+  const subscriptionId = (invoice as unknown as { subscription?: string | null }).subscription;
+  const invoiceWithIntent = invoice as Stripe.Invoice & {
+    payment_intent?: string | Stripe.PaymentIntent | null;
+  };
+  const customerId =
+    typeof invoice.customer === 'string'
+      ? invoice.customer
+      : invoice.customer?.id || null;
+  const paymentIntentId =
+    typeof invoiceWithIntent.payment_intent === 'string'
+      ? invoiceWithIntent.payment_intent
+      : invoiceWithIntent.payment_intent?.id || null;
+
+  logger.warn('Stripe invoice requires customer action', {
+    invoiceId: invoice.id,
+    subscriptionId,
+    customerId,
+    hostedInvoiceUrl: invoice.hosted_invoice_url,
+    paymentIntentId,
+  });
+
+  if (!subscriptionId) {
+    return;
+  }
+
+  await logSubscriptionEvent(
+    subscriptionId,
+    'payment_action_required',
+    invoice.amount_due,
+    null,
+    null,
+    stripeEventId,
+    {
+      invoice_id: invoice.id,
+      customer_id: customerId,
+      hosted_invoice_url: invoice.hosted_invoice_url,
+      payment_intent_id: paymentIntentId,
+    }
+  );
+}
+
+async function handleCustomerDeleted(
+  customer: Stripe.Customer | Stripe.DeletedCustomer,
+  stripeEventId: string
+) {
+  const customerId = customer.id;
+
+  const { data: subscriptions, error } = await getSupabase()
+    .from('subscriptions')
+    .select('stripe_subscription_id, status')
+    .eq('stripe_customer_id', customerId);
+
+  if (error) {
+    logger.error('Error loading subscriptions for deleted customer', {
+      error: error.message,
+      customerId,
+    });
+    throw error;
+  }
+
+  logger.warn('Stripe customer deleted', {
+    customerId,
+    stripeEventId,
+    localSubscriptions: subscriptions?.length ?? 0,
+    subscriptionIds: subscriptions?.map((subscription) => subscription.stripe_subscription_id) || [],
+  });
+
+  if (subscriptions?.length === 1) {
+    await logSubscriptionEvent(
+      subscriptions[0].stripe_subscription_id,
+      'customer_deleted',
+      null,
+      subscriptions[0].status || null,
+      null,
+      stripeEventId,
+      { customer_id: customerId }
+    );
+  }
+}
+
 /**
  * Revalidate ISR cache for both city list and service detail pages
  */
@@ -755,7 +847,8 @@ async function logSubscriptionEvent(
   amountCents: number | null,
   previousStatus: string | null,
   newStatus: string | null,
-  stripeEventId: string
+  stripeEventId: string,
+  metadata: Record<string, unknown> = {}
 ): Promise<boolean> {
   // Get subscription ID from our database
   const { data: subscription } = await getSupabase()
@@ -777,6 +870,7 @@ async function logSubscriptionEvent(
     amount_cents: amountCents,
     previous_status: previousStatus,
     new_status: newStatus,
+    metadata,
   });
 
   if (error?.message?.includes('duplicate')) {

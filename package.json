@@ -18,7 +18,8 @@
     "seed-premium": "node scripts/seed-marketing-premium.js",
     "scrape-azet": "node --loader ts-node/esm scripts/scrape-azet-taxi.ts",
     "import-azet": "node --loader ts-node/esm scripts/import-azet-data.ts",
-    "fomo-premium": "npx tsx scripts/fomo-premium-sk.ts"
+    "fomo-premium": "npx tsx scripts/fomo-premium-sk.ts",
+    "smoke:health": "node scripts/smoke-health.mjs"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.16",

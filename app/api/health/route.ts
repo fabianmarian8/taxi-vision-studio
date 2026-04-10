@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createAnonymousClient } from '@/lib/supabase/server';
 import { createClient as createSupabaseClient } from '@supabase/supabase-js';
-import { stripe } from '@/lib/stripe';
+import { STRIPE_PRICES, stripe } from '@/lib/stripe';
 import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
@@ -194,17 +194,43 @@ async function checkSubscriptionsTable(): Promise<Partial<CheckResult>> {
 }
 
 async function checkStripeCheckoutDryRun(): Promise<Partial<CheckResult>> {
-  // Verify Stripe can list prices for all plans (validates price IDs)
-  const miniId = process.env.STRIPE_MINI_PRICE_ID;
-  const premiumId = process.env.STRIPE_PREMIUM_PRICE_ID;
-  const partnerId = process.env.STRIPE_PARTNER_PRICE_ID;
-  if (!miniId || !premiumId || !partnerId) {
-    throw new Error(`Missing price IDs: mini=${!!miniId} premium=${!!premiumId} partner=${!!partnerId}`);
+  const requiredPlans = ['managed', 'newPartner', 'leader'] as const;
+  const optionalPlans = ['mini', 'premium', 'partner'] as const;
+
+  const missingRequired = requiredPlans.filter((plan) => !STRIPE_PRICES[plan]);
+  if (missingRequired.length > 0) {
+    throw new Error(`Missing required price IDs: ${missingRequired.join(', ')}`);
   }
-  // Verify at least one price is retrievable
-  const price = await stripe.prices.retrieve(miniId);
-  if (!price.active) throw new Error(`Mini price ${miniId} is not active`);
-  return { details: { plan: price.nickname || 'mini', active: price.active } };
+
+  const plansToValidate = [
+    ...requiredPlans,
+    ...optionalPlans.filter((plan) => Boolean(STRIPE_PRICES[plan])),
+  ];
+
+  const prices = await Promise.all(
+    plansToValidate.map(async (plan) => {
+      const price = await stripe.prices.retrieve(STRIPE_PRICES[plan]);
+      return {
+        plan,
+        id: price.id,
+        active: price.active,
+        currency: price.currency,
+        unit_amount: price.unit_amount,
+      };
+    })
+  );
+
+  const inactivePlans = prices.filter((price) => !price.active).map((price) => price.plan);
+  if (inactivePlans.length > 0) {
+    throw new Error(`Inactive Stripe prices: ${inactivePlans.join(', ')}`);
+  }
+
+  return {
+    details: {
+      validated_plans: prices.map((price) => price.plan),
+      prices,
+    },
+  };
 }
 
 export async function GET(request: Request) {
