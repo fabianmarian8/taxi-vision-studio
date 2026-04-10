@@ -50,6 +50,7 @@ import { PhoneLink } from '@/components/PhoneLink';
 import { NextWebBanner } from '@/components/NextWebBanner';
 import { TrackedPhoneButton } from '@/components/TrackedPhoneButton';
 import { TaxiGallery } from '@/components/TaxiGallery';
+import { FreePreviewPhone, FreePreviewWebsite, FreePreviewDescription } from '@/components/FreeProfilePreview';
 import { TaxiPricelist } from '@/components/TaxiPricelist';
 import { MunicipalityInfo } from '@/components/MunicipalityInfo';
 import { NearbyMunicipalities } from '@/components/NearbyMunicipalities';
@@ -2321,29 +2322,11 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
               </div>
             </div>
 
-            {/* Hlavné CTA tlačidlo - cez celú šírku */}
-            {service.phone && (
-              <a
-                href={`tel:${service.phone.replace(/\s/g, '')}`}
-                className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all shadow-lg text-lg"
-              >
-                <Phone className="h-6 w-6" />
-                <span>Zavolať {service.phone}</span>
-              </a>
-            )}
+            {/* Hlavné CTA tlačidlo - reaktívne pre preview */}
+            <FreePreviewPhone phone={service.phone} />
 
-            {/* Webová stránka - sekundárne */}
-            {service.website && (
-              <a
-                href={service.website.startsWith('http') ? service.website : `https://${service.website}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full mt-3 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-xl transition-all"
-              >
-                <Globe className="h-5 w-5" />
-                <span>Navštíviť web</span>
-              </a>
-            )}
+            {/* Webová stránka - reaktívne pre preview */}
+            <FreePreviewWebsite website={service.website} />
 
             {/* Galéria fotiek */}
             {service.gallery && service.gallery.length > 0 && (
@@ -2364,26 +2347,12 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
           </div>
         </section>
 
-        {/* O taxislužbe - SEO content */}
-        <section className="py-6 px-4">
-          <div className="container mx-auto max-w-4xl">
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-              <h2 className="text-lg font-bold text-gray-900 mb-4">
-                O taxislužbe
-              </h2>
-              {service.customDescription ? (
-                <div className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
-                  {service.customDescription}
-                </div>
-              ) : (
-                <>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{content.intro}</p>
-                  <p className="text-gray-500 text-xs leading-relaxed">{content.disclaimer}</p>
-                </>
-              )}
-            </div>
-          </div>
-        </section>
+        {/* O taxislužbe - reaktívne pre preview */}
+        <FreePreviewDescription
+          customDescription={service.customDescription}
+          seoIntro={content.intro}
+          seoDisclaimer={content.disclaimer}
+        />
 
         {/* Inline checkout for non-Premium/Partner services */}
         {!isPremium && !isPartner && (
@@ -2479,7 +2448,8 @@ async function ServicePage({ city, service, serviceSlug }: { city: CityData; ser
         isOwner={false}
         initialData={{
           company_name: service.name,
-          description: '',
+          description: service.customDescription || '',
+          show_description: !!service.customDescription,
           phone: service.phone || '',
           email: '',
           website: service.website || '',
