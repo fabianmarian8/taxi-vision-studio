@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Smartphone, Monitor, ExternalLink } from 'lucide-react';
 import { PreviewMessage } from '@/lib/preview-protocol';
+import { getServicePageUrl } from '@/utils/urlUtils';
 
 interface IframePreviewProps {
   formData: {
@@ -38,8 +39,9 @@ export function IframePreview({ formData, partnerSlug, citySlug, cityName }: Ifr
   const [iframeReady, setIframeReady] = useState(false);
   const [lastSentData, setLastSentData] = useState<string>('');
 
-  // Construct URL with preview param
-  const previewUrl = `/taxi/${citySlug}/${partnerSlug}?preview=editor`;
+  // Construct URL with preview param — use service name from formData for correct slug
+  const serviceName = formData.company_name || '';
+  const previewUrl = `${getServicePageUrl(citySlug, serviceName)}?preview=editor`;
 
   // Handle messages from iframe (e.g. ready signal)
   useEffect(() => {
@@ -124,7 +126,7 @@ export function IframePreview({ formData, partnerSlug, citySlug, cityName }: Ifr
           </div>
 
           <a
-            href={`/taxi/${citySlug}/${partnerSlug}`}
+            href={getServicePageUrl(citySlug, serviceName)}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-purple-600 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors"

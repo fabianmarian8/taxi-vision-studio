@@ -30,3 +30,13 @@ export function createServiceSlug(serviceName: string): string {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '');
 }
+
+/**
+ * Jediný správny spôsob ako zostaviť URL na detail taxi služby.
+ * VŽDY použi túto funkciu namiesto manuálneho skladania /taxi/${city}/${slug}.
+ * Slug sa generuje z názvu služby (BEZ city suffixu) — to je formát,
+ * ktorý detail page rozpozná.
+ */
+export function getServicePageUrl(citySlug: string, serviceName: string): string {
+  return `/taxi/${citySlug}/${createServiceSlug(serviceName)}`;
+}

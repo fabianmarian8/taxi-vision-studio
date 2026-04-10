@@ -146,12 +146,19 @@ function detectRouteType(slugArray: string[]): RouteType {
     // First, check if it's a city + service pattern
     const city = getCityBySlug(first);
     if (city) {
-      // Check both explicit slug field and generated slug from name
-      const service = city.taxiServices.find(s =>
-        s.slug === second || createServiceSlug(s.name) === second
-      );
+      // Check explicit slug, generated slug from name, and city-suffixed slug (fallback)
+      const service = city.taxiServices.find(s => {
+        const nameSlug = createServiceSlug(s.name);
+        return s.slug === second
+          || nameSlug === second
+          || `${nameSlug}-${first}` === second; // fallback: partner DB slug has city suffix
+      });
       if (service) {
-        // Check if service has redirect
+        // Redirect city-suffixed slug to canonical URL (without city suffix)
+        const canonicalSlug = createServiceSlug(service.name);
+        if (second !== canonicalSlug && second !== service.slug) {
+          return { type: 'redirect', to: `/taxi/${first}/${canonicalSlug}` };
+        }
         if (service.redirectTo) {
           return { type: 'redirect', to: service.redirectTo };
         }

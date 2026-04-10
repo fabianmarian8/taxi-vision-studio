@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ExternalLink, Pencil, CreditCard } from 'lucide-react';
 import { CustomerPortalButton } from '@/components/stripe/CustomerPortalButton';
-import { createServiceSlug } from '@/utils/urlUtils';
+import { getServicePageUrl } from '@/utils/urlUtils';
 
 interface PartnerDraft {
   id: string;
@@ -87,7 +87,7 @@ export function ServiceStatusCard({ partner, subscription }: ServiceStatusCardPr
             Upraviť
           </Link>
           <Link
-            href={`/taxi/${partner.city_slug}/${createServiceSlug(partner.name)}`}
+            href={getServicePageUrl(partner.city_slug, partner.name)}
             target="_blank"
             className="inline-flex items-center justify-center gap-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium py-2 px-3 rounded-lg transition-colors"
           >

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ExternalLink, Pencil, Clock } from 'lucide-react';
 import { normalizePlanType, TIER_INFO, type PlanTier } from '@/lib/tier-config';
-import { createServiceSlug } from '@/utils/urlUtils';
+import { getServicePageUrl } from '@/utils/urlUtils';
 
 interface ServiceIdentityStripProps {
   serviceName: string;
@@ -94,7 +94,7 @@ export function ServiceIdentityStrip({
               Upravit profil
             </Link>
             <Link
-              href={`/taxi/${citySlug}/${createServiceSlug(serviceName)}`}
+              href={getServicePageUrl(citySlug, serviceName)}
               target="_blank"
               className="inline-flex items-center gap-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium px-3 py-2 rounded-lg transition-colors"
             >
