@@ -11,6 +11,7 @@ export interface PartnerOnboardingParams {
   citySlug: string;
   taxiServiceName: string;
   stripeSubscriptionId: string;
+  planTier?: string; // 'managed' | 'partner' | 'leader'
 }
 
 interface OnboardingResult {
@@ -140,6 +141,7 @@ export async function handlePartnerOnboarding(
           email,
           slug,
           city_slug: citySlug,
+          plan_type: params.planTier || 'partner',
         })
         .select('id')
         .single();
@@ -218,6 +220,7 @@ export async function handlePartnerOnboarding(
       citySlug,
       password,
       isNewUser,
+      planTier: params.planTier,
     });
   } catch (err) {
     log.error('Welcome email step failed', { error: err instanceof Error ? err.message : 'Unknown' });
@@ -274,15 +277,24 @@ interface WelcomeEmailParams {
   citySlug: string;
   password: string | null;
   isNewUser: boolean;
+  planTier?: string;
 }
 
 function buildWelcomeEmailHtml(params: WelcomeEmailParams): string {
-  const { email, taxiServiceName, citySlug, password, isNewUser } = params;
+  const { email, taxiServiceName, citySlug, password, isNewUser, planTier } = params;
 
   const cityName = citySlug
     .split('-')
     .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
+
+  // Tier-aware labels
+  const tierLabels: Record<string, string> = {
+    managed: 'Spravovaný profil',
+    partner: 'Partner',
+    leader: 'Leader mesta',
+  };
+  const planLabel = tierLabels[planTier || 'partner'] || 'Partner';
 
   const loginUrl = 'https://taxinearme.sk/partner/login';
 
@@ -320,19 +332,32 @@ function buildWelcomeEmailHtml(params: WelcomeEmailParams): string {
 
     <div style="background: #f8f9fa; padding: 30px; border-radius: 0 0 10px 10px;">
       <p style="font-size: 16px;">Dobrý deň,</p>
-      <p>ďakujeme za aktiváciu <strong>Partner balíka</strong> pre taxislužbu <strong>${escapeHtml(taxiServiceName)}</strong> v meste <strong>${escapeHtml(cityName)}</strong>!</p>
+      <p>ďakujeme za aktiváciu balíka <strong>${escapeHtml(planLabel)}</strong> pre taxislužbu <strong>${escapeHtml(taxiServiceName)}</strong> v meste <strong>${escapeHtml(cityName)}</strong>!</p>
 
       ${credentialsSection}
 
       <a href="${loginUrl}" style="display: inline-block; background: #8b5cf6; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px; margin: 10px 0;">Prihlásiť sa do Partner portálu</a>
 
-      <h3 style="margin: 25px 0 10px 0; color: #6366f1;">Vaše Partner výhody</h3>
+      <h3 style="margin: 25px 0 10px 0; color: #6366f1;">Vaše ${escapeHtml(planLabel)} výhody</h3>
       <ul style="padding-left: 20px;">
+        ${planTier === 'managed' ? `
+        <li>Hero obrázok a branding vašej stránky</li>
+        <li>Služby, tagy a popis firmy</li>
+        <li>WhatsApp a sociálne siete</li>
+        <li>Zvýraznenie v zozname taxislužieb</li>
+        ` : planTier === 'leader' ? `
+        <li>Všetko z Partner balíka</li>
+        <li>Exkluzívna pozícia #1 vo vašom meste</li>
+        <li>Štatistiky hľadaní taxi vo vašom meste</li>
+        <li>Analytika kliknutí na vaše číslo</li>
+        <li>Zvýraznenie na trasách do iných miest</li>
+        ` : `
         <li>Vlastná profilová stránka s logom a galériou</li>
         <li>Zvýraznené zobrazenie na stránke mesta ${escapeHtml(cityName)}</li>
         <li>Možnosť pridať cenník, služby a kontaktné informácie</li>
         <li>Partner badge pre väčšiu dôveryhodnosť</li>
-        <li>Priamy kontaktný formulár od zákazníkov</li>
+        <li>Google recenzie na vašej stránke</li>
+        `}
       </ul>
 
       <h3 style="margin: 25px 0 10px 0; color: #6366f1;">Úprava vašej stránky</h3>
@@ -374,7 +399,7 @@ async function sendPartnerWelcomeEmail(params: WelcomeEmailParams): Promise<bool
   const { error } = await resend.emails.send({
     from: `Taxi NearMe <${fromEmail}>`,
     to: [params.email],
-    subject: `Vitajte v Partner programe – ${params.taxiServiceName}`,
+    subject: `Vitajte v programe ${params.planTier === 'managed' ? 'Spravovaný profil' : params.planTier === 'leader' ? 'Leader mesta' : 'Partner'} – ${params.taxiServiceName}`,
     html: buildWelcomeEmailHtml(params),
   });
 

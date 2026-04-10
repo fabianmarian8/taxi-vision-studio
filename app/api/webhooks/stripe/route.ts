@@ -205,7 +205,19 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
       .eq('id', partnerId);
     logger.info('Partner plan_type updated', { partnerId, newPlanType, stripePlan: planType });
   }
-  if (planType === 'partner' && customerEmail) {
+  // Auto-onboarding for all paid plans (managed, newPartner, partner, leader)
+  // Legacy plans (mini, premium) don't get partner onboarding
+  const paidPlansWithOnboarding = ['managed', 'newPartner', 'partner', 'leader'];
+  if (paidPlansWithOnboarding.includes(planType) && customerEmail) {
+    // Determine the tier for the partner record
+    const planToTierForOnboarding: Record<string, string> = {
+      leader: 'leader',
+      newPartner: 'partner',
+      partner: 'partner',
+      managed: 'managed',
+    };
+    const tierForPartner = planToTierForOnboarding[planType] || 'managed';
+
     try {
       const result = await handlePartnerOnboarding(getSupabase(), {
         email: customerEmail,
@@ -213,6 +225,7 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
         citySlug,
         taxiServiceName,
         stripeSubscriptionId: subscription.id,
+        planTier: tierForPartner,
       });
 
       if (result.success) {
@@ -220,6 +233,7 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription, stri
           subscriptionId: subscription.id,
           partnerId: result.partnerId,
           emailSent: result.emailSent,
+          planTier: tierForPartner,
         });
       } else {
         logger.error('Partner auto-onboarding failed', {

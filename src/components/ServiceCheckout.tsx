@@ -8,7 +8,7 @@ import Link from 'next/link';
 const CHECKOUT_COOLDOWN_MS = 5 * 60 * 1000;
 const CHECKOUT_STORAGE_KEY = 'taxi_checkout_attempt';
 
-type PlanType = 'premium' | 'partner' | 'leader';
+type PlanType = 'managed' | 'newPartner' | 'leader';
 
 interface ServiceCheckoutProps {
   citySlug: string;
@@ -34,7 +34,7 @@ const PLANS: {
   };
 }[] = [
   {
-    id: 'premium',
+    id: 'managed',
     name: 'Spravovaný profil',
     price: '5,99€',
     features: [
@@ -52,7 +52,7 @@ const PLANS: {
     },
   },
   {
-    id: 'partner',
+    id: 'newPartner',
     name: 'Partner',
     price: '14,99€',
     popular: true,
@@ -231,7 +231,7 @@ export function ServiceCheckout({
 
                   {/* Icon + Name */}
                   <div className="flex items-center gap-2 mb-3">
-                    <plan.icon className={cn('h-5 w-5', plan.id === 'partner' ? 'text-amber-600' : plan.id === 'leader' ? 'text-purple-600' : 'text-blue-600')} />
+                    <plan.icon className={cn('h-5 w-5', plan.id === 'newPartner' ? 'text-amber-600' : plan.id === 'leader' ? 'text-purple-600' : 'text-blue-600')} />
                     <span className="font-bold text-gray-900">{plan.name}</span>
                     {isActive && (
                       <span className="text-[10px] bg-emerald-100 text-emerald-600 px-2 py-0.5 rounded-full font-bold">
@@ -250,7 +250,7 @@ export function ServiceCheckout({
                   <ul className="space-y-1.5 mb-4">
                     {plan.features.map((feat, i) => (
                       <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
-                        <CheckCircle2 className={cn('h-3.5 w-3.5 flex-shrink-0 mt-0.5', plan.id === 'partner' ? 'text-amber-500' : plan.id === 'leader' ? 'text-purple-500' : 'text-blue-500')} />
+                        <CheckCircle2 className={cn('h-3.5 w-3.5 flex-shrink-0 mt-0.5', plan.id === 'newPartner' ? 'text-amber-500' : plan.id === 'leader' ? 'text-purple-500' : 'text-blue-500')} />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -270,7 +270,7 @@ export function ServiceCheckout({
                       <Loader2 className="h-4 w-4 animate-spin" />
                     ) : isActive ? (
                       'Váš aktuálny plán'
-                    ) : plan.id === 'partner' ? (
+                    ) : plan.id === 'newPartner' ? (
                       'Stať sa partnerom'
                     ) : plan.id === 'leader' ? (
                       'Vybrať Leader'
