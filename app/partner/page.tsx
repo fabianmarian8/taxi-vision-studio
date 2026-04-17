@@ -13,6 +13,7 @@ import { PerformancePanel } from '@/components/dashboard/PerformancePanel';
 import { PlanAndUnlocksPanel } from '@/components/dashboard/PlanAndUnlocksPanel';
 import { OnboardingBanner } from '@/components/dashboard/OnboardingBanner';
 import { normalizeCompanyName } from '@/lib/partner-service-link';
+import { type PlanTier, normalizePlanType } from '@/lib/tier-config';
 
 interface PageProps {
   searchParams: Promise<{ as?: string }>;
@@ -373,37 +374,62 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
         )}
 
         {/* Onboarding banner — zobrazí sa iba ak profil nie je 100% */}
-        {featuredPartner && (
-          <OnboardingBanner
-            partnerSlug={featuredPartner.slug}
-            items={[
-              {
-                label: 'Kontakty',
-                description: 'Telefónne číslo pre zákazníkov',
-                done: hasPhone,
-                editorTab: 'general',
-              },
-              {
-                label: 'Popis služby',
-                description: 'Čo ponúkate a prečo vás zvoliť',
-                done: hasDescription,
-                editorTab: 'general',
-              },
-              {
-                label: 'Hero obrázok',
-                description: 'Hlavná fotka profilu',
-                done: hasHeroImage,
-                editorTab: 'hero',
-              },
-              {
-                label: 'Galéria vozidiel',
-                description: 'Fotky áut pre budovanie dôvery',
-                done: hasGallery,
-                editorTab: 'gallery',
-              },
-            ]}
-          />
-        )}
+        {featuredPartner && (() => {
+          const tierOrder: PlanTier[] = ['free', 'managed', 'partner', 'leader'];
+          const currentTier = normalizePlanType(featuredPlanType);
+          const canAccess = (min: PlanTier) =>
+            tierOrder.indexOf(currentTier) >= tierOrder.indexOf(min);
+
+          const allItems: Array<{
+            label: string;
+            description: string;
+            done: boolean;
+            editorTab: 'general' | 'hero' | 'gallery' | 'social' | 'appearance';
+            minTier: PlanTier;
+          }> = [
+            {
+              label: 'Kontakty',
+              description: 'Telefónne číslo pre zákazníkov',
+              done: hasPhone,
+              editorTab: 'general',
+              minTier: 'free',
+            },
+            {
+              label: 'Popis služby',
+              description: 'Čo ponúkate a prečo vás zvoliť',
+              done: hasDescription,
+              editorTab: 'general',
+              minTier: 'free',
+            },
+            {
+              label: 'Hero obrázok',
+              description: 'Hlavná fotka profilu',
+              done: hasHeroImage,
+              editorTab: 'hero',
+              minTier: 'managed',
+            },
+            {
+              label: 'Galéria vozidiel',
+              description: 'Fotky áut pre budovanie dôvery',
+              done: hasGallery,
+              editorTab: 'gallery',
+              minTier: 'partner',
+            },
+          ];
+
+          const items = allItems
+            .filter((item) => canAccess(item.minTier))
+            .map(({ minTier: _minTier, ...rest }) => rest);
+
+          if (items.length === 0) return null;
+
+          return (
+            <OnboardingBanner
+              partnerSlug={featuredPartner.slug}
+              items={items}
+            />
+          );
+        })()}
 
         {/* Vrstva 2: 3-column grid — Profil | Výkon | Balík */}
         {featuredPartner && (

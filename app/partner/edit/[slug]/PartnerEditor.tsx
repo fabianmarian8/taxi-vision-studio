@@ -89,7 +89,19 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
   const initialTabFromUrl = (() => {
     const t = searchParams?.get('tab');
     const valid = ['general', 'hero', 'gallery', 'social', 'appearance'] as const;
-    return (valid as readonly string[]).includes(t || '') ? (t as typeof valid[number]) : 'general';
+    if (!(valid as readonly string[]).includes(t || '')) return 'general';
+    const requested = t as typeof valid[number];
+    const tabMinTier: Record<typeof valid[number], PlanTier> = {
+      general: 'free',
+      hero: 'managed',
+      social: 'managed',
+      gallery: 'partner',
+      appearance: 'partner',
+    };
+    const tierOrder: PlanTier[] = ['free', 'managed', 'partner', 'leader'];
+    const currentTier = normalizePlanType(partner.plan_type);
+    const hasAccess = tierOrder.indexOf(currentTier) >= tierOrder.indexOf(tabMinTier[requested]);
+    return hasAccess ? requested : 'general';
   })();
   const [activeTab, setActiveTab] = useState<'general' | 'hero' | 'gallery' | 'social' | 'appearance'>(initialTabFromUrl);
   const [uploading, setUploading] = useState(false);

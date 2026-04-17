@@ -602,6 +602,70 @@ export default function PreTaxikyPage() {
         </div>
       </section>
 
+      {/* Free claim instructions */}
+      <section id="claim" className="py-12 md:py-20 px-4 md:px-8 scroll-mt-20">
+        <div className="container mx-auto max-w-3xl">
+          <div className="text-center mb-8 md:mb-10">
+            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 rounded-full px-4 py-1.5 text-green-400 text-xs font-bold mb-4">
+              <CheckCircle2 className="h-3.5 w-3.5" />
+              ZADARMO · 0€ NAVŽDY
+            </div>
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-3">
+              Ako si prevziať profil zadarmo
+            </h2>
+            <p className="text-sm md:text-base text-slate-400">
+              SMS overenie · úprava kontaktov · badge overenej taxislužby
+            </p>
+          </div>
+
+          <ol className="space-y-4 md:space-y-5">
+            <li className="flex gap-4 bg-slate-900/40 border border-white/10 rounded-xl p-4 md:p-5">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 text-green-400 font-black flex items-center justify-center text-sm">1</div>
+              <div>
+                <div className="font-bold text-white text-sm md:text-base mb-1">Nájdite svoj profil</div>
+                <div className="text-xs md:text-sm text-slate-400">
+                  Otvorte zoznam taxislužieb vo vašom meste (napr. cez stránku <Link href="/" className="text-purple-400 hover:text-purple-300 underline">hlavnej stránky</Link>) a nájdite svoju taxislužbu.
+                </div>
+              </div>
+            </li>
+            <li className="flex gap-4 bg-slate-900/40 border border-white/10 rounded-xl p-4 md:p-5">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 text-green-400 font-black flex items-center justify-center text-sm">2</div>
+              <div>
+                <div className="font-bold text-white text-sm md:text-base mb-1">Kliknite na „Prevziať profil"</div>
+                <div className="text-xs md:text-sm text-slate-400">
+                  Na detaile vašej taxislužby uvidíte tlačidlo na prevzatie profilu. Zadáte telefónne číslo uvedené v profile.
+                </div>
+              </div>
+            </li>
+            <li className="flex gap-4 bg-slate-900/40 border border-white/10 rounded-xl p-4 md:p-5">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 text-green-400 font-black flex items-center justify-center text-sm">3</div>
+              <div>
+                <div className="font-bold text-white text-sm md:text-base mb-1">Potvrďte cez SMS</div>
+                <div className="text-xs md:text-sm text-slate-400">
+                  Dostanete SMS s overovacím kódom. Po zadaní získate kontrolu nad profilom a môžete upraviť kontakty, otváracie hodiny a popis.
+                </div>
+              </div>
+            </li>
+          </ol>
+
+          <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-xl transition-all text-sm"
+            >
+              Hľadať svoju taxislužbu
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/partner/login"
+              className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 border border-white/10 text-white font-semibold px-6 py-3 rounded-xl transition-all text-sm"
+            >
+              Už mám profil — prihlásiť sa
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-12 md:py-20 px-4 md:px-8 bg-slate-900/30">
         <div className="container mx-auto max-w-3xl">
