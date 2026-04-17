@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 import { Partner, PartnerDraft } from '@/lib/supabase/types';
@@ -84,7 +85,13 @@ export function PartnerEditor({ partner, initialDraft, userEmail, rejectionMessa
   const [saving, setSaving] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
-  const [activeTab, setActiveTab] = useState<'general' | 'hero' | 'gallery' | 'social' | 'appearance'>('general');
+  const searchParams = useSearchParams();
+  const initialTabFromUrl = (() => {
+    const t = searchParams?.get('tab');
+    const valid = ['general', 'hero', 'gallery', 'social', 'appearance'] as const;
+    return (valid as readonly string[]).includes(t || '') ? (t as typeof valid[number]) : 'general';
+  })();
+  const [activeTab, setActiveTab] = useState<'general' | 'hero' | 'gallery' | 'social' | 'appearance'>(initialTabFromUrl);
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState<string | null>(null);
   const [galleryUploading, setGalleryUploading] = useState(false);

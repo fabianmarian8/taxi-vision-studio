@@ -11,6 +11,7 @@ import { ServiceStatusCard } from '@/components/dashboard/ServiceStatusCard';
 import { ProfileStatusPanel } from '@/components/dashboard/ProfileStatusPanel';
 import { PerformancePanel } from '@/components/dashboard/PerformancePanel';
 import { PlanAndUnlocksPanel } from '@/components/dashboard/PlanAndUnlocksPanel';
+import { OnboardingBanner } from '@/components/dashboard/OnboardingBanner';
 import { normalizeCompanyName } from '@/lib/partner-service-link';
 
 interface PageProps {
@@ -368,6 +369,39 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
             draftStatus={displayStatus}
             lastUpdated={featuredDraft?.updated_at || null}
             profileHealth={{ completedFields, totalFields: profileChecks.length }}
+          />
+        )}
+
+        {/* Onboarding banner — zobrazí sa iba ak profil nie je 100% */}
+        {featuredPartner && (
+          <OnboardingBanner
+            partnerSlug={featuredPartner.slug}
+            items={[
+              {
+                label: 'Kontakty',
+                description: 'Telefónne číslo pre zákazníkov',
+                done: hasPhone,
+                editorTab: 'general',
+              },
+              {
+                label: 'Popis služby',
+                description: 'Čo ponúkate a prečo vás zvoliť',
+                done: hasDescription,
+                editorTab: 'general',
+              },
+              {
+                label: 'Hero obrázok',
+                description: 'Hlavná fotka profilu',
+                done: hasHeroImage,
+                editorTab: 'hero',
+              },
+              {
+                label: 'Galéria vozidiel',
+                description: 'Fotky áut pre budovanie dôvery',
+                done: hasGallery,
+                editorTab: 'gallery',
+              },
+            ]}
           />
         )}
 

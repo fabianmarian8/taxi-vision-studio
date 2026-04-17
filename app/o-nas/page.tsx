@@ -183,7 +183,7 @@ export default function AboutPage() {
       {/* Čísla */}
       <section className="py-16 px-4 md:px-8 bg-gray-900 text-white">
         <div className="container mx-auto max-w-5xl">
-          <div className="grid grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-3 gap-4 md:gap-8 text-center">
             <div>
               <div className="text-4xl md:text-5xl font-black text-yellow-400 mb-2">140+</div>
               <p className="text-gray-400 text-sm">miest</p>

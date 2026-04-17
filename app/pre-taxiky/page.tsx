@@ -310,47 +310,29 @@ export default function PreTaxikyPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-4 md:gap-5 max-w-6xl mx-auto">
-            {/* FREE — Prevzatý profil */}
-            <Card className="bg-slate-900/40 border-green-500/20 hover:border-green-500/40 transition-all duration-300 backdrop-blur-sm">
-              <CardHeader className="pb-6 border-b border-white/5 p-5 md:p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <CardTitle className="text-lg md:text-xl font-bold text-green-400 mb-1">Prevzatý profil</CardTitle>
-                    <p className="text-slate-400 text-xs">Kontrola nad základnými údajmi</p>
-                  </div>
+          {/* Free claim banner — nad pricing, nie v gride */}
+          <div className="max-w-3xl mx-auto mb-8 md:mb-10">
+            <Link
+              href="#claim"
+              className="group flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 bg-green-500/5 hover:bg-green-500/10 border border-green-500/20 hover:border-green-500/40 rounded-xl px-5 py-4 transition-all"
+            >
+              <div className="flex items-center gap-3 text-center sm:text-left">
+                <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0" />
+                <div>
+                  <div className="text-sm md:text-base font-bold text-white">Alebo si najprv len prevezmite profil zadarmo</div>
+                  <div className="text-xs text-slate-400">SMS overenie · úprava kontaktov · badge overenej taxislužby · 0€ navždy</div>
                 </div>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-3xl md:text-4xl font-black text-white">0€</span>
-                </div>
-                <div className="text-xs text-green-400/80 mt-1 font-medium">Zadarmo, navždy</div>
-              </CardHeader>
-              <CardContent className="pt-5 p-5 md:p-6">
-                <ul className="space-y-2.5 mb-6">
-                  {[
-                    'SMS overenie vlastníctva',
-                    'Úprava názvu a telefónu',
-                    'Úprava webu a popisu',
-                    'Badge "Overená taxislužba"',
-                    'Prístup do partner portálu',
-                  ].map((feat, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-slate-300 text-sm">
-                      <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="#claim"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-green-500/10 hover:bg-green-500/20 border border-green-500/30 text-green-400 font-bold px-5 py-3 rounded-xl transition-all text-sm"
-                >
-                  Prevziať profil zadarmo
-                </Link>
-              </CardContent>
-            </Card>
+              </div>
+              <div className="flex items-center gap-1 text-green-400 font-semibold text-sm whitespace-nowrap">
+                Prevziať zadarmo
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+              </div>
+            </Link>
+          </div>
 
+          <div className="grid md:grid-cols-3 gap-4 md:gap-5 max-w-5xl mx-auto">
             {/* SPRAVOVANÝ PROFIL */}
-            <Card className="bg-slate-900/40 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 backdrop-blur-sm">
+            <Card className="order-2 md:order-1 bg-slate-900/40 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 backdrop-blur-sm">
               <CardHeader className="pb-6 border-b border-white/5 p-5 md:p-6">
                 <div className="flex justify-between items-start mb-3">
                   <div>
@@ -389,7 +371,7 @@ export default function PreTaxikyPage() {
             </Card>
 
             {/* PARTNER */}
-            <Card className="relative bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-yellow-400/50 shadow-2xl shadow-yellow-400/10 transform md:-translate-y-3">
+            <Card className="order-1 md:order-2 relative bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-yellow-400/50 shadow-2xl shadow-yellow-400/10 md:-translate-y-3">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-yellow-400 text-slate-950 text-[10px] md:text-xs font-black px-4 py-1 rounded-b-lg tracking-widest uppercase whitespace-nowrap">
                 Najpredávanejšie
               </div>
@@ -446,7 +428,7 @@ export default function PreTaxikyPage() {
             </Card>
 
             {/* LEADER MESTA */}
-            <Card className="bg-slate-900/40 border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 backdrop-blur-sm">
+            <Card className="order-3 bg-slate-900/40 border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 backdrop-blur-sm">
               <CardHeader className="pb-6 border-b border-white/5 p-5 md:p-6">
                 <div className="flex justify-between items-start mb-3">
                   <div>
@@ -485,6 +467,137 @@ export default function PreTaxikyPage() {
                 </CheckoutButton>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Comparison Table — desktop + mobile accordion */}
+          <div className="mt-12 md:mt-16 max-w-5xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-bold text-white text-center mb-6 md:mb-8">
+              Porovnanie funkcií
+            </h3>
+
+            {/* Desktop table */}
+            <div className="hidden md:block bg-slate-900/40 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-white/5 border-b border-white/10">
+                    <th className="text-left py-4 px-5 font-semibold text-slate-300">Funkcia</th>
+                    <th className="py-4 px-3 font-bold text-green-400 text-center w-[110px]">Zadarmo</th>
+                    <th className="py-4 px-3 font-bold text-blue-400 text-center w-[110px]">Spravovaný</th>
+                    <th className="py-4 px-3 font-bold text-yellow-400 text-center w-[110px] bg-yellow-400/5">Partner</th>
+                    <th className="py-4 px-3 font-bold text-purple-400 text-center w-[110px]">Leader</th>
+                  </tr>
+                </thead>
+                <tbody className="text-slate-300">
+                  {[
+                    { f: 'SMS overenie vlastníctva', v: [true, true, true, true] },
+                    { f: 'Úprava názvu, telefónu, webu', v: [true, true, true, true] },
+                    { f: 'Badge "Overená taxislužba"', v: [true, true, true, true] },
+                    { f: 'Prístup do partner portálu', v: [true, true, true, true] },
+                    { f: 'Hero obrázok a branding', v: [false, true, true, true] },
+                    { f: 'Služby, tagy a popis služieb', v: [false, true, true, true] },
+                    { f: 'WhatsApp a sociálne siete', v: [false, true, true, true] },
+                    { f: 'Objednávkový odkaz', v: [false, true, true, true] },
+                    { f: 'Zvýraznenie v zozname', v: [false, true, true, true] },
+                    { f: 'Vlastná personalizovaná stránka', v: [false, false, true, true] },
+                    { f: 'Fotogaléria vozidiel', v: [false, false, true, true] },
+                    { f: 'Cenník a prepravný poriadok', v: [false, false, true, true] },
+                    { f: 'Import Google recenzií', v: [false, false, true, true] },
+                    { f: 'Prioritné umiestnenie', v: [false, false, true, true] },
+                    { f: 'Výber vizuálnej šablóny', v: [false, false, true, true] },
+                    { f: 'Exkluzívna pozícia #1 v meste', v: [false, false, false, true] },
+                    { f: 'Štatistiky hľadaní vo vašom meste', v: [false, false, false, true] },
+                    { f: 'Analytika kliknutí na číslo', v: [false, false, false, true] },
+                    { f: 'Zvýraznenie na trasách', v: [false, false, false, true] },
+                    { f: 'Prioritná podpora', v: [false, false, false, true] },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors last:border-b-0">
+                      <td className="py-3 px-5 text-slate-200">{row.f}</td>
+                      {row.v.map((yes, ci) => (
+                        <td key={ci} className={cn('py-3 px-3 text-center', ci === 2 && 'bg-yellow-400/5')}>
+                          {yes ? (
+                            <CheckCircle2 className={cn('h-5 w-5 inline-block',
+                              ci === 0 && 'text-green-500',
+                              ci === 1 && 'text-blue-500',
+                              ci === 2 && 'text-yellow-400',
+                              ci === 3 && 'text-purple-500'
+                            )} />
+                          ) : (
+                            <XCircle className="h-5 w-5 inline-block text-slate-700" />
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                  <tr className="bg-white/5">
+                    <td className="py-4 px-5 font-bold text-white">Cena / mesiac</td>
+                    <td className="py-4 px-3 text-center font-black text-green-400">0€</td>
+                    <td className="py-4 px-3 text-center font-black text-blue-400">5,99€</td>
+                    <td className="py-4 px-3 text-center font-black text-yellow-400 bg-yellow-400/5">14,99€</td>
+                    <td className="py-4 px-3 text-center font-black text-purple-400">24,99€</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile — accordion per tier */}
+            <div className="md:hidden space-y-3">
+              {[
+                {
+                  tier: 'Zadarmo', price: '0€', color: 'green',
+                  feats: ['SMS overenie', 'Úprava kontaktov', 'Badge overenej TS', 'Partner portál'],
+                  missing: ['Hero obrázok, branding', 'Vlastná stránka', 'Google recenzie', 'Štatistiky'],
+                },
+                {
+                  tier: 'Spravovaný', price: '5,99€/mes', color: 'blue',
+                  feats: ['Všetko zo Zadarmo', 'Hero obrázok', 'Služby a tagy', 'WhatsApp + socky', 'Objednávkový odkaz', 'Zvýraznenie v zozname'],
+                  missing: ['Vlastná stránka', 'Google recenzie', 'Štatistiky hľadaní'],
+                },
+                {
+                  tier: 'Partner', price: '14,99€/mes', color: 'yellow', highlight: true,
+                  feats: ['Všetko zo Spravovaného', 'Vlastná stránka', 'Fotogaléria áut', 'Cenník + prepravný poriadok', 'Google recenzie', 'Prioritné umiestnenie', 'Výber šablóny'],
+                  missing: ['Exkluzívna #1 pozícia', 'Analytika kliknutí'],
+                },
+                {
+                  tier: 'Leader mesta', price: '24,99€/mes', color: 'purple',
+                  feats: ['Všetko z Partnera', 'Exkluzívna #1 v meste', 'Štatistiky hľadaní', 'Analytika kliknutí', 'Zvýraznenie na trasách', 'Prioritná podpora'],
+                  missing: [],
+                },
+              ].map((t, i) => (
+                <details key={i} className={cn(
+                  'group rounded-xl border overflow-hidden',
+                  t.highlight ? 'bg-yellow-400/5 border-yellow-400/30' : 'bg-slate-900/40 border-white/10'
+                )}>
+                  <summary className="flex items-center justify-between px-4 py-3 cursor-pointer list-none">
+                    <div>
+                      <div className={cn('font-bold text-sm',
+                        t.color === 'green' && 'text-green-400',
+                        t.color === 'blue' && 'text-blue-400',
+                        t.color === 'yellow' && 'text-yellow-400',
+                        t.color === 'purple' && 'text-purple-400',
+                      )}>{t.tier}</div>
+                      <div className="text-xs text-slate-400">{t.price}</div>
+                    </div>
+                    <ArrowRight className="h-4 w-4 text-slate-400 group-open:rotate-90 transition-transform" />
+                  </summary>
+                  <div className="px-4 pb-4 border-t border-white/5">
+                    <ul className="space-y-1.5 pt-3">
+                      {t.feats.map((f, fi) => (
+                        <li key={fi} className="flex items-start gap-2 text-xs text-slate-200">
+                          <CheckCircle2 className="h-3.5 w-3.5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                      {t.missing.map((f, fi) => (
+                        <li key={`m${fi}`} className="flex items-start gap-2 text-xs text-slate-500">
+                          <XCircle className="h-3.5 w-3.5 text-slate-700 flex-shrink-0 mt-0.5" />
+                          <span className="line-through">{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>
