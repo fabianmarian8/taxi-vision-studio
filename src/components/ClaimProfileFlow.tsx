@@ -245,12 +245,12 @@ export function ClaimProfileFlow({
               {/* Step 2: Enter code */}
               {step === 'code' && (
                 <>
-                  <div className="bg-blue-50 rounded-lg p-3 mb-4 border border-blue-100">
-                    <p className="text-sm text-blue-800">
+                  <div className="bg-amber-50 rounded-lg p-3 mb-4 border border-amber-100">
+                    <p className="text-sm text-amber-900">
                       <KeyRound className="h-4 w-4 inline mr-1" />
                       SMS kód bol odoslaný na číslo končiace <strong>...{phoneLast4}</strong>
                     </p>
-                    <p className="text-xs text-blue-600 mt-1">Kód je platný 10 minút</p>
+                    <p className="text-xs text-amber-700 mt-1">Kód je platný 10 minút</p>
                   </div>
 
                   <div>

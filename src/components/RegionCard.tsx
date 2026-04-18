@@ -51,13 +51,13 @@ export const RegionCard = ({ name, slug, citiesCount }: RegionCardProps) => {
   return (
     <div className="perspective-1000">
       <Link href={`/kraj/${slug}`} className="block" title={`Taxislužby v kraji ${name}`}>
-        <div className={`group relative bg-card rounded-lg md:rounded-xl p-2 md:p-4 card-3d cursor-pointer overflow-hidden transition-all duration-300 border-l-4 ${borderColor}`}>
+        <div className={`group relative bg-card rounded-lg md:rounded-xl p-2.5 md:p-4 card-3d cursor-pointer overflow-hidden transition-all duration-300 border-l-4 ${borderColor} hover:-translate-y-0.5 hover:shadow-lg`}>
           {/* 3D Decorative Element */}
           <div className="absolute top-0 right-0 w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-foreground/5 to-transparent rounded-full -mr-7 -mt-7 md:-mr-10 md:-mt-10"></div>
 
-          <div className="relative z-10 flex items-start gap-2 md:gap-2">
-            <div className={`flex-shrink-0 w-6 h-6 md:w-7 md:h-7 ${accentColor} rounded-md md:rounded-lg flex items-center justify-center`}>
-              <MapPin className="h-3 w-3 md:h-4 md:w-4 text-white" strokeWidth={2.5} />
+          <div className="relative z-10 flex items-start gap-2.5 md:gap-3">
+            <div className={`flex-shrink-0 w-8 h-8 md:w-9 md:h-9 ${accentColor} rounded-md md:rounded-lg flex items-center justify-center`}>
+              <MapPin className="h-4 w-4 md:h-5 md:w-5 text-white" strokeWidth={2.5} />
             </div>
 
             <div className="flex-1 min-w-0">
