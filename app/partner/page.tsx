@@ -314,20 +314,34 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header — kompaktný, len account actions */}
+      {/* Header — brand logo + account actions */}
       <header className="bg-white border-b border-gray-200">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <h1 className="text-lg font-bold text-gray-900">Partner Portal</h1>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3">
+          <div className="flex items-center justify-between gap-3">
+            <Link href="/partner" className="flex items-center gap-2.5 min-w-0">
+              <img
+                src="/taxi-nearme-logo.webp"
+                alt=""
+                width={32}
+                height={32}
+                className="h-8 w-8 object-contain flex-shrink-0"
+              />
+              <div className="min-w-0 leading-tight">
+                <div className="text-sm font-black text-gray-900 truncate">Taxi NearMe</div>
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-gray-400">
+                  Partner portal
+                </div>
+              </div>
+            </Link>
+            <div className="flex items-center gap-3 text-sm">
               {userIsSuperadmin && (
-                <span className="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-0.5 rounded-full">
-                  SUPERADMIN
+                <span className="hidden sm:inline-flex bg-purple-100 text-purple-700 text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full">
+                  Superadmin
                 </span>
               )}
-              <span className="text-sm text-gray-400">{user.email}</span>
-            </div>
-            <div className="flex items-center gap-3 text-sm">
+              <span className="hidden md:inline text-xs text-gray-400 truncate max-w-[180px]">
+                {user.email}
+              </span>
               {userIsSuperadmin && (
                 <Link href="/admin" className="text-purple-600 hover:text-purple-800 font-medium">
                   Admin
@@ -336,7 +350,7 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
               <PasswordSettings />
               <form action="/partner/auth/signout" method="POST">
                 <button type="submit" className="text-gray-500 hover:text-gray-700">
-                  Odhlásiť sa
+                  Odhlásiť
                 </button>
               </form>
             </div>
@@ -469,7 +483,57 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
           );
         })()}
 
-        {/* Vrstva 2: 3-column grid — Profil | Výkon | Balík */}
+        {/* Vrstva 2a: Stat row — len reálne dáta z DB, žiadne mock metriky */}
+        {featuredPartner && (() => {
+          const tier = normalizePlanType(featuredPlanType);
+          const tierName = TIER_INFO[tier]?.name || '—';
+          const statusMap: Record<string, { label: string; color: string }> = {
+            approved: { label: 'Live', color: 'text-green-600' },
+            draft:    { label: 'Rozpracované', color: 'text-amber-600' },
+            pending:  { label: 'Čaká schválenie', color: 'text-yellow-600' },
+            rejected: { label: 'Zamietnuté', color: 'text-red-600' },
+          };
+          const statusInfo = statusMap[displayStatus || 'draft'] || statusMap.draft;
+
+          return (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
+                <div className="text-[10px] font-black uppercase tracking-wider text-gray-400 mb-1">
+                  Status profilu
+                </div>
+                <div className={`text-xl md:text-2xl font-black ${statusInfo.color}`}>
+                  {statusInfo.label}
+                </div>
+              </div>
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
+                <div className="text-[10px] font-black uppercase tracking-wider text-gray-400 mb-1">
+                  Kompletnosť
+                </div>
+                <div className="text-xl md:text-2xl font-black text-gray-900 tabular-nums">
+                  {completeness} <span className="text-base text-gray-400">%</span>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
+                <div className="text-[10px] font-black uppercase tracking-wider text-gray-400 mb-1">
+                  Balík
+                </div>
+                <div className="text-xl md:text-2xl font-black text-gray-900 truncate">
+                  {tierName}
+                </div>
+              </div>
+              <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
+                <div className="text-[10px] font-black uppercase tracking-wider text-gray-400 mb-1">
+                  Mesto
+                </div>
+                <div className="text-xl md:text-2xl font-black text-gray-900 truncate">
+                  {cityName || featuredPartner.city_slug}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
+
+        {/* Vrstva 2b: 3-column grid — Profil | Výkon | Balík */}
         {featuredPartner && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <ProfileStatusPanel

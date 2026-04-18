@@ -45,7 +45,7 @@ export function ProfileStatusPanel({ partnerSlug, draftStatus, checks, completen
           </div>
           <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
             <div
-              className={`h-full rounded-full transition-all ${completeness === 100 ? 'bg-green-500' : 'bg-purple-500'}`}
+              className={`h-full rounded-full transition-all ${completeness === 100 ? 'bg-green-500' : 'bg-[hsl(var(--primary-yellow))]'}`}
               style={{ width: `${completeness}%` }}
             />
           </div>
@@ -66,7 +66,7 @@ export function ProfileStatusPanel({ partnerSlug, draftStatus, checks, completen
 
         <Link
           href={`/partner/edit/${partnerSlug}`}
-          className="inline-flex items-center justify-center gap-1.5 bg-purple-50 hover:bg-purple-100 text-purple-700 text-sm font-semibold py-2 rounded-lg transition-colors"
+          className="inline-flex items-center justify-center gap-1.5 bg-amber-50 hover:bg-amber-100 text-amber-900 text-sm font-semibold py-2 rounded-lg transition-colors"
         >
           <Pencil className="h-3.5 w-3.5" />
           Otvoriť editor
