@@ -81,7 +81,7 @@ export function ServiceStatusCard({ partner, subscription }: ServiceStatusCardPr
         <div className="flex gap-2">
           <Link
             href={`/partner/edit/${partner.slug}`}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-purple-600 hover:bg-purple-700 text-white text-sm font-bold py-2 px-3 rounded-lg transition-colors"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[hsl(var(--primary-yellow))] hover:bg-[hsl(var(--primary-yellow-dark))] text-gray-900 text-sm font-bold py-2 px-3 rounded-lg transition-colors"
           >
             <Pencil className="h-3.5 w-3.5" />
             Upraviť
