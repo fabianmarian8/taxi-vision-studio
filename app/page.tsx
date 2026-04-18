@@ -178,25 +178,27 @@ export default async function HomePage() {
         <GeometricLines variant="hero" count={10} />
         <div className="container mx-auto max-w-6xl relative">
           <div className="text-center space-y-2 md:space-y-3">
-            {/* Taxi Logo - preloaded v layout.tsx pre lepšie LCP */}
+            {/* Taxi Logo - preloaded v layout.tsx pre lepšie LCP
+                (6e) zmenšené z h-24..52 → h-16..32, drop-shadow 3D offset podľa brand kit */}
             <div className="mb-0">
               <Image
                 src="/taxi-nearme-logo.webp"
                 alt="Taxi NearMe - Slovenský zoznam taxislužieb"
-                className="h-24 md:h-36 lg:h-44 xl:h-52 w-auto mx-auto rounded-2xl"
+                className="h-16 md:h-24 lg:h-28 xl:h-32 w-auto mx-auto rounded-2xl"
+                style={{ filter: 'drop-shadow(4px 6px 0 rgba(15,15,15,0.15))' }}
                 width={600}
                 height={327}
-                sizes="(max-width: 640px) 176px, (max-width: 768px) 264px, (max-width: 1024px) 322px, 380px"
+                sizes="(max-width: 640px) 112px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
                 priority
                 fetchPriority="high"
               />
             </div>
 
-            <h1 className="text-2xl md:text-3xl lg:text-4xl text-foreground max-w-2xl mx-auto font-black px-4">
-              Kompletný katalóg taxislužieb na Slovensku
+            <h1 className="text-2xl md:text-3xl lg:text-4xl text-foreground max-w-2xl mx-auto font-black tracking-tight px-4">
+              Kompletný katalóg taxislužieb na&nbsp;Slovensku
             </h1>
-            <p className="text-xs md:text-sm lg:text-base text-foreground/80 max-w-2xl mx-auto font-medium px-4">
-              Nájdite spoľahlivé taxi kdekoľvek ste - rýchlo, jednoducho a vždy nablízku.
+            <p className="text-sm md:text-base text-foreground/80 max-w-2xl mx-auto font-semibold px-4">
+              Nájdite spoľahlivé taxi kdekoľvek ste &mdash; rýchlo, jednoducho a&nbsp;vždy nablízku.
             </p>
           </div>
         </div>
