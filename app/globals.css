@@ -46,10 +46,16 @@ input, textarea {
     --radius: 1rem;
 
     /* Custom 3D Design Tokens */
-    --taxi-yellow: 41 65% 73%;
+    --taxi-yellow: 36 91% 55%;         /* fixed: was 41 65% 73% (pastel) — real brand #F5A623 */
+    --taxi-yellow-light: 36 91% 80%;   /* #FCD49A */
+    --taxi-yellow-dark: 36 86% 45%;    /* #D68910 */
+    --taxi-orange: 20 100% 63%;        /* #FF8C42 */
+    --taxi-orange-light: 22 100% 85%;  /* #FFD4B3 */
     --taxi-dark: 0 0% 6%;
     --taxi-white: 0 0% 100%;
     --taxi-shadow: 0 0% 0%;
+    --taxi-logo-blue: 224 64% 33%;     /* #1E3A8A — deep blue from logo */
+    --taxi-logo-red: 0 65% 51%;        /* #D32F2F — Slovak coat-of-arms red */
 
     /* Extended Color Palette - Based on Design System */
     /* Primary Yellow - #F5A623 */
@@ -60,6 +66,15 @@ input, textarea {
     /* Secondary Orange - #FF8C42 */
     --secondary-orange: 23 100% 63%;
     --secondary-orange-light: 23 100% 85%;
+
+    /* Foreground opacity scale (single near-black, 7 opacity levels) */
+    --fg1: #0F0F0F;                    /* headings, body */
+    --fg2: rgba(15,15,15,0.80);        /* primary paragraph */
+    --fg3: rgba(15,15,15,0.70);        /* secondary text, footer meta */
+    --fg4: rgba(15,15,15,0.60);        /* muted, timestamps */
+    --fg5: rgba(15,15,15,0.30);        /* placeholder, icon mute */
+    --fg6: rgba(15,15,15,0.10);        /* hairlines, skeletons */
+    --fg7: rgba(15,15,15,0.05);        /* alt section bg */
 
     /* Neutral Grays */
     --neutral-bg: 220 14% 96%; /* #F3F4F6 for section backgrounds */
@@ -75,11 +90,27 @@ input, textarea {
     --neutral-800: 0 0% 15%;
     --neutral-900: 0 0% 9%;
 
-    /* Region Colors - Geographic System */
-    --region-west: 200 80% 55%; /* Modrá - Západ */
-    --region-east: 330 70% 55%; /* Ružová - Východ */
-    --region-central: 150 60% 50%; /* Zelená - Stred */
-    --region-north: 270 60% 55%; /* Fialová - Sever */
+    /* Region Colors - Geographic System (saturated Tailwind values for contrast) */
+    --region-west: 221 83% 53%;    /* #2563EB — Modrá (Bratislavský, Trnavský) */
+    --region-east: 333 71% 51%;    /* #DB2777 — Ružová (Košický, Prešovský) */
+    --region-central: 160 84% 39%; /* #10B981 — Zelená (Banskobystrický, Žilinský) */
+    --region-north: 262 83% 58%;   /* #8B5CF6 — Fialová (Trenčiansky, Nitriansky) */
+
+    /* Transport-mode semantic colors (route pages) */
+    --mode-taxi-bg: 36 91% 55% / 0.08;
+    --mode-taxi-fg: 36 91% 55%;
+    --mode-train-bg: 213 97% 87%;  /* #DBEAFE */
+    --mode-train-fg: 221 83% 53%;  /* #2563EB */
+    --mode-bus-bg: 149 80% 90%;    /* #D1FAE5 */
+    --mode-bus-fg: 142 71% 42%;    /* #16A34A */
+    --mode-coffee-bg: 48 96% 89%;  /* #FEF3C7 */
+    --mode-coffee-fg: 32 95% 44%;  /* #D97706 */
+
+    /* Partner page skins (CSS-var-driven theme overrides) */
+    --skin-metro: 221 83% 53%;   /* #2563EB */
+    --skin-sunset: 20 96% 48%;   /* #EA580C */
+    --skin-forest: 160 84% 39%;  /* #059669 */
+    --skin-silver: 28 55% 33%;   /* #8B5A2B */
 
     /* Semantic Colors */
     --success: 142 71% 45%;
@@ -88,6 +119,49 @@ input, textarea {
     --info-light: 199 89% 92%;
     --warning: 38 92% 50%;
     --warning-light: 38 92% 92%;
+    --danger: 0 84% 60%;         /* #EF4444 */
+    --danger-light: 0 93% 94%;   /* #FEE2E2 */
+
+    /* Extended radii (was just --radius: 1rem) */
+    --radius-xs: 4px;     /* search input — intentionally crisp */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;    /* --radius base */
+    --radius-xl: 20px;
+    --radius-pill: 9999px;
+
+    /* Soft / ambient shadows (cards on white — separate from signature 3D) */
+    --shadow-soft-sm: 0 1px 3px rgba(15,23,42,0.08);
+    --shadow-soft-md: 0 4px 6px -1px rgba(0,0,0,0.10);
+    --shadow-soft-lg: 0 10px 25px -5px rgba(0,0,0,0.15);
+
+    /* Motion tokens */
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --dur-fast: 150ms;
+    --dur-base: 300ms;
+    --dur-slow: 600ms;
+
+    /* Typography scale */
+    --fs-xs: 12px;
+    --fs-sm: 14px;
+    --fs-base: 16px;
+    --fs-lg: 18px;
+    --fs-xl: 20px;
+    --fs-2xl: 24px;
+    --fs-3xl: 30px;
+    --fs-4xl: 36px;
+    --fs-5xl: 48px;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
+    --lh-tight: 1.1;
+    --lh-snug: 1.25;
+    --lh-normal: 1.5;
+    --ls-tight: -0.03em;
+    --ls-normal: 0;
 
     /* 3D Shadow System */
     --shadow-3d-sm:
@@ -702,3 +776,52 @@ input, textarea {
     zoom: 1 !important;
   }
 }
+
+/* ============================================================================
+   Design system utility classes (ported from Claude Design kit)
+   ========================================================================= */
+
+/* Lead / small paragraph roles */
+.p-lead {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--fg2);
+}
+
+.p-small {
+  font-size: var(--fs-xs);
+  color: var(--fg3);
+  font-weight: var(--fw-semibold);
+}
+
+/* Eyebrow label — 11px black, sentence-case */
+.eyebrow {
+  font-size: 11px;
+  font-weight: var(--fw-black);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--fg1);
+}
+
+/* Prices — green + tabular numerals */
+.price {
+  font-weight: var(--fw-bold);
+  color: hsl(var(--success));
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tip box — yellow wash (never blue) */
+.tip-box {
+  padding: 12px 16px;
+  background: rgba(245, 166, 35, 0.10);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  color: var(--fg2);
+}
+
+/* .home-button and .card-3d are NOT redefined here — both class names are
+   already used extensively in the codebase. .home-button has its own rule
+   at ~line 472; .card-3d is relied on as a bare marker (components layer
+   their own rounded-full/rounded-xl on it). Redefining .card-3d with a
+   fixed border-radius would clobber rounded-full circles (HowItWorks step
+   icons) and rounded-xl cards on mobile — kept out intentionally. */
