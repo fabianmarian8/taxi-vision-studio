@@ -12,8 +12,10 @@ import { ProfileStatusPanel } from '@/components/dashboard/ProfileStatusPanel';
 import { PerformancePanel } from '@/components/dashboard/PerformancePanel';
 import { PlanAndUnlocksPanel } from '@/components/dashboard/PlanAndUnlocksPanel';
 import { OnboardingBanner } from '@/components/dashboard/OnboardingBanner';
+import { DashboardSidebar } from '@/components/dashboard/ui/DashboardSidebar';
 import { normalizeCompanyName } from '@/lib/partner-service-link';
-import { type PlanTier, normalizePlanType } from '@/lib/tier-config';
+import { type PlanTier, normalizePlanType, TIER_INFO } from '@/lib/tier-config';
+import { getServicePageUrl } from '@/utils/urlUtils';
 
 interface PageProps {
   searchParams: Promise<{ as?: string }>;
@@ -342,25 +344,61 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 py-6">
-        {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
-            Chyba pri načítaní dát: {error.message}
-          </div>
-        )}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 md:flex md:gap-6">
+        <DashboardSidebar
+          partnerSlug={featuredPartner?.slug || null}
+          publicProfileUrl={
+            featuredPartner
+              ? getServicePageUrl(featuredPartner.city_slug, featuredPartner.name)
+              : null
+          }
+          isSuperadmin={userIsSuperadmin}
+        />
 
-        {/* Superadmin Partner List */}
-        {userIsSuperadmin && (
-          <div className="mb-6">
-            <SuperadminPartnerList
-              partners={allPartners}
-              currentImpersonating={impersonatingSlug}
-            />
-          </div>
-        )}
+        <main className="flex-1 min-w-0">
+          {/* Dashboard greeting — only when we actually have a partner + real tier */}
+          {featuredPartner && (() => {
+            const tier = normalizePlanType(featuredPlanType);
+            const tierName = TIER_INFO[tier]?.name;
+            return (
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-5">
+                <div className="min-w-0">
+                  <h2 className="text-xl md:text-2xl font-black text-gray-900 truncate">
+                    {featuredPartner.name}
+                  </h2>
+                  <p className="text-sm text-gray-500 mt-0.5">
+                    Prehľad · {cityName || featuredPartner.city_slug}
+                    {tierName && <> · <span className="font-semibold">{tierName}</span></>}
+                  </p>
+                </div>
+                <Link
+                  href={`/partner/edit/${featuredPartner.slug}`}
+                  className="inline-flex items-center justify-center gap-1.5 bg-[hsl(var(--primary-yellow))] hover:bg-[hsl(var(--primary-yellow-dark))] text-gray-900 text-sm font-bold py-2 px-4 rounded-lg transition-colors flex-shrink-0"
+                >
+                  Upraviť profil
+                </Link>
+              </div>
+            );
+          })()}
 
-        {/* Vrstva 1: Service Identity Strip */}
-        {featuredPartner && (
+          {error && (
+            <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
+              Chyba pri načítaní dát: {error.message}
+            </div>
+          )}
+
+          {/* Superadmin Partner List */}
+          {userIsSuperadmin && (
+            <div className="mb-6">
+              <SuperadminPartnerList
+                partners={allPartners}
+                currentImpersonating={impersonatingSlug}
+              />
+            </div>
+          )}
+
+          {/* Vrstva 1: Service Identity Strip */}
+          {featuredPartner && (
           <ServiceIdentityStrip
             serviceName={featuredPartner.name}
             citySlug={featuredPartner.city_slug}
@@ -477,16 +515,17 @@ export default async function PartnerDashboard({ searchParams }: PageProps) {
           </>
         )}
 
-        {partners && partners.length === 0 && !userIsSuperadmin && (
-          <div className="bg-white rounded-xl border border-gray-200 p-8 text-center">
-            <p className="text-gray-500">
-              Zatiaľ nemáte priradenú žiadnu taxislužbu.
-              <br />
-              Kontaktujte administrátora pre pridanie vašej taxislužby.
-            </p>
-          </div>
-        )}
-      </main>
+          {partners && partners.length === 0 && !userIsSuperadmin && (
+            <div className="bg-white rounded-xl border border-gray-200 p-8 text-center">
+              <p className="text-gray-500">
+                Zatiaľ nemáte priradenú žiadnu taxislužbu.
+                <br />
+                Kontaktujte administrátora pre pridanie vašej taxislužby.
+              </p>
+            </div>
+          )}
+        </main>
+      </div>
     </div>
   );
 }

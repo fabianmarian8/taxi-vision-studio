@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Phone, MousePointerClick, Search, TrendingUp, Lock } from 'lucide-react';
+import { Phone, MousePointerClick, Search, Lock } from 'lucide-react';
 import { normalizePlanType } from '@/lib/tier-config';
+import { DashPanel } from './ui';
 
 interface PerformancePanelProps {
   citySlug: string;
@@ -32,18 +33,21 @@ export function PerformancePanel({ citySlug, serviceName, planType }: Performanc
       .finally(() => setLoading(false));
   }, [citySlug, serviceName, isLeader]);
 
-  return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5 flex flex-col">
-      <div className="flex items-center justify-between mb-3">
-        <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide">Výkon</h3>
-        {isLeader && (
-          <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-bold">Leader</span>
-        )}
-      </div>
+  const rightBadge = isLeader ? (
+    <span className="text-[10px] bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">
+      Leader
+    </span>
+  ) : null;
 
+  return (
+    <DashPanel
+      title="Výkon"
+      right={rightBadge}
+      accentDot
+      footer={isLeader && data ? <span>Posledných 30 dní</span> : undefined}
+    >
       {!isLeader ? (
-        /* Locked state */
-        <div className="flex-1 flex flex-col items-center justify-center text-center py-4">
+        <div className="flex flex-col items-center justify-center text-center py-4">
           <Lock className="h-8 w-8 text-gray-200 mb-3" />
           <p className="text-sm font-semibold text-gray-500 mb-1">Analytika výkonu</p>
           <p className="text-xs text-gray-400 mb-3">Dostupné v Leader balíku</p>
@@ -55,41 +59,38 @@ export function PerformancePanel({ citySlug, serviceName, planType }: Performanc
           </a>
         </div>
       ) : loading ? (
-        <div className="flex-1 flex items-center justify-center py-4">
+        <div className="flex items-center justify-center py-4">
           <div className="animate-spin h-5 w-5 border-2 border-purple-600 border-t-transparent rounded-full" />
         </div>
       ) : data ? (
-        <div className="flex-1">
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Phone className="h-4 w-4 text-green-600" />
-                Kliknutia na číslo
-              </div>
-              <span className="text-lg font-bold text-gray-900">{data.phoneClicks}</span>
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Phone className="h-4 w-4 text-green-600" />
+              Kliknutia na číslo
             </div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <MousePointerClick className="h-4 w-4 text-blue-600" />
-                Interakcie s profilom
-              </div>
-              <span className="text-lg font-bold text-gray-900">{data.totalServiceClicks}</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Search className="h-4 w-4 text-amber-600" />
-                Hľadaní v meste
-              </div>
-              <span className="text-lg font-bold text-gray-900">{data.totalCityClicks}</span>
-            </div>
+            <span className="text-lg font-bold text-gray-900 tabular-nums">{data.phoneClicks}</span>
           </div>
-          <p className="text-xs text-gray-400 mt-3">Posledných 30 dní</p>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <MousePointerClick className="h-4 w-4 text-blue-600" />
+              Interakcie s profilom
+            </div>
+            <span className="text-lg font-bold text-gray-900 tabular-nums">{data.totalServiceClicks}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Search className="h-4 w-4 text-amber-600" />
+              Hľadaní v meste
+            </div>
+            <span className="text-lg font-bold text-gray-900 tabular-nums">{data.totalCityClicks}</span>
+          </div>
         </div>
       ) : (
-        <div className="flex-1 flex items-center justify-center">
+        <div className="flex items-center justify-center py-4">
           <p className="text-sm text-gray-400">Zatiaľ nemáme dáta</p>
         </div>
       )}
-    </div>
+    </DashPanel>
   );
 }
